@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.env
+triplestore/*
+!triplestore/.gitkeep
+data/papers/
+phase4_validation/repos/
+logs/
+*.faiss
+*.pkl
+.DS_Store
