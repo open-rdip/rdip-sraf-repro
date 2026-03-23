@@ -84,6 +84,7 @@ def _parse_conda_dep(dep_str: str) -> tuple[str, str | None, str | None]:
     # Split on = separators
     parts = re.split(r"[=<>!]+", dep_str, maxsplit=2)
     name  = parts[0].strip()
+    name = name.lower().replace("-", "_")
 
     # Extract operator + version
     version_match = re.search(r"[=<>!]+(.+?)(?:=.+)?$", dep_str)

@@ -1,0 +1,63 @@
+# sre_engine/sparql/construct_seed_conflicts.sparql
+# Detects random seed conflicts between original and reproduction graphs.
+# Covers: different seed value, seed present in original but absent in reproduction.
+#
+# Parameters:
+#   ?originalGraph     — named graph URI of the original study
+#   ?reproductionGraph — named graph URI of the reproduction attempt
+
+PREFIX rdip: <https://w3id.org/rdip/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+    ?conflict a rdip:SeedConflict ;
+        rdip:conflictType      "random_seed_conflict" ;
+        rdip:parameterName     ?seedName ;
+        rdip:originalValue     ?origValue ;
+        rdip:reproductionValue ?reprValueFinal ;
+        rdip:severity          "HIGH" ;
+        rdip:message           ?message ;
+        rdip:affectedActivity  ?origActivity .
+}
+WHERE {
+    GRAPH <https://w3id.org/rdip/graph/study001> {
+        ?origActivity rdip:hasParameter ?origSeed .
+        ?origSeed     a                 rdip:RandomSeed ;
+                      rdip:parameterName  ?seedName ;
+                      rdip:parameterValue ?origValue .
+    }
+
+    OPTIONAL {
+        GRAPH <https://w3id.org/rdip/graph/study002> {
+            ?reprActivity rdip:hasParameter ?reprSeed .
+            ?reprSeed     a                 rdip:RandomSeed ;
+                          rdip:parameterName  ?seedName ;
+                          rdip:parameterValue ?reprValue .
+        }
+    }
+
+    FILTER(!BOUND(?reprValue) || ?origValue != ?reprValue)
+
+    BIND(IF(!BOUND(?reprValue), "absent", STR(?reprValue)) AS ?reprValueFinal)
+
+    BIND(IRI(CONCAT(
+        "https://w3id.org/rdip/conflict/seed-",
+        REPLACE(STR(?seedName), "[^a-zA-Z0-9]", "-"),
+        "-",
+        SUBSTR(MD5(STR(?origActivity)), 1, 8)
+    )) AS ?conflict)
+
+    BIND(IF(
+        ?reprValueFinal = "absent",
+        CONCAT(
+            "HIGH: Seed '", STR(?seedName),
+            "' (value: ", STR(?origValue), ") absent in reproduction. ",
+            "Set seed=", STR(?origValue), " in reproduction script."
+        ),
+        CONCAT(
+            "HIGH: Seed '", STR(?seedName),
+            "' mismatch: original=", STR(?origValue),
+            " reproduction=", ?reprValueFinal
+        )
+    ) AS ?message)
+}

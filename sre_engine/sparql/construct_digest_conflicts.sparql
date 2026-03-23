@@ -1,0 +1,55 @@
+# sre_engine/sparql/construct_digest_conflicts.sparql
+# Detects Docker image digest mismatches or absent digests.
+# A missing or different digest means the container environment
+# cannot be guaranteed identical.
+#
+# Parameters:
+#   ?originalGraph     — named graph URI of the original study
+#   ?reproductionGraph — named graph URI of the reproduction attempt
+
+PREFIX rdip: <https://w3id.org/rdip/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+    ?conflict a rdip:DigestConflict ;
+        rdip:conflictType      "image_digest_divergence" ;
+        rdip:originalValue     ?origDigest ;
+        rdip:reproductionValue ?reprDigestFinal ;
+        rdip:severity          "CRITICAL" ;
+        rdip:message           ?message ;
+        rdip:affectedSpec      ?origSpec .
+}
+WHERE {
+    GRAPH <https://w3id.org/rdip/graph/study001> {
+        ?origSpec rdip:imageDigest ?origDigest .
+        FILTER(?origDigest != "" && ?origDigest != "unspecified")
+    }
+
+    OPTIONAL {
+        GRAPH <https://w3id.org/rdip/graph/study002> {
+            ?reprSpec rdip:imageDigest ?reprDigest .
+        }
+    }
+
+    FILTER(!BOUND(?reprDigest) || ?origDigest != ?reprDigest)
+
+    BIND(IF(!BOUND(?reprDigest), "absent", STR(?reprDigest)) AS ?reprDigestFinal)
+
+    BIND(IRI(CONCAT(
+        "https://w3id.org/rdip/conflict/digest-",
+        SUBSTR(MD5(STR(?origSpec)), 1, 8)
+    )) AS ?conflict)
+
+    BIND(IF(
+        ?reprDigestFinal = "absent",
+        CONCAT(
+            "CRITICAL: Image digest absent in reproduction. ",
+            "Original: ", STR(?origDigest),
+            ". Pin Docker image to this digest for bit-level identity."
+        ),
+        CONCAT(
+            "CRITICAL: Image digest mismatch. Original: ", STR(?origDigest),
+            " Reproduction: ", ?reprDigestFinal
+        )
+    ) AS ?message)
+}

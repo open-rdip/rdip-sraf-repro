@@ -1,0 +1,61 @@
+# Detects dependency version mismatches between original and reproduction graphs.
+# Materialises rdip:VersionConflict triples into the conflict graph.
+#
+# Parameters (bind before execution):
+#   ?originalGraph      — named graph URI of the original study
+#   ?reproductionGraph  — named graph URI of the reproduction attempt
+#   ?conflictGraph      — named graph URI to write conflicts into
+
+
+PREFIX rdip: <https://w3id.org/rdip/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+    ?conflict a rdip:VersionConflict ;
+        rdip:conflictType      "dependency_version_mismatch" ;
+        rdip:dependencyName    ?depName ;
+        rdip:originalValue     ?origVersion ;
+        rdip:reproductionValue ?reprVersion ;
+        rdip:severity          "HIGH" ;
+        rdip:message           ?message ;
+        rdip:affectedDependency ?origDep .
+}
+WHERE {
+    # Original dependency
+    GRAPH ?originalGraph {
+        ?origSoftware rdip:softwareDependency ?origDep .
+        ?origDep      rdip:dependencyName     ?depName ;
+                      rdip:dependencyVersion  ?origVersion .
+        FILTER(?origVersion != "unspecified")
+    }
+
+    # Matching dependency in reproduction graph
+    # Match on normalised name — handles pip vs conda naming differences
+    GRAPH ?reproductionGraph {
+        ?reprSoftware rdip:softwareDependency ?reprDep .
+        ?reprDep      rdip:dependencyName     ?reprName ;
+                      rdip:dependencyVersion  ?reprVersion .
+        FILTER(?reprVersion != "unspecified")
+        FILTER(
+            LCASE(REPLACE(STR(?depName), "-", "_")) =
+            LCASE(REPLACE(STR(?reprName), "-", "_"))
+        )
+    }
+
+    # Only keep where versions differ
+    FILTER(?origVersion != ?reprVersion)
+
+    BIND(IRI(CONCAT(
+        "https://w3id.org/rdip/conflict/version-",
+        REPLACE(STR(?depName), "[^a-zA-Z0-9]", "-"),
+        "-",
+        SUBSTR(MD5(STR(?origDep)), 1, 8)
+    )) AS ?conflict)
+
+    BIND(CONCAT(
+        "Dependency '", STR(?depName),
+        "' version mismatch: original=", STR(?origVersion),
+        " reproduction=", STR(?reprVersion),
+        ". This may cause different results if the API changed between versions."
+    ) AS ?message)
+}
