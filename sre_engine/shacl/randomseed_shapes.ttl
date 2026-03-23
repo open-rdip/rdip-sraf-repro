@@ -1,0 +1,80 @@
+# sre_engine/shacl/randomseed_shapes.ttl
+# SHACL shapes for rdip:RandomSeed and rdip:Parameter
+# Stochastic reproducibility requires explicit seed declaration.
+
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdip: <https://w3id.org/rdip/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# ── RandomSeed must have name and value ───────────────────────────────────────
+
+rdip:RandomSeedShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:RandomSeed ;
+    rdfs:label "Random seed completeness" ;
+
+    sh:property [
+        sh:path     rdip:parameterName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+        sh:message  "CRITICAL: rdip:parameterName is missing on RandomSeed node." ;
+    ] ;
+
+    sh:property [
+        sh:path     rdip:parameterValue ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+        sh:message  "CRITICAL: rdip:parameterValue is missing on RandomSeed. The seed value must be explicitly declared for stochastic reproducibility." ;
+    ] ;
+
+    sh:property [
+        sh:path     rdip:parameterDataType ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING: rdip:parameterDataType is missing on RandomSeed." ;
+    ] .
+
+
+# ── DataAnalysisActivity should declare at least one RandomSeed ───────────────
+# This is a Warning not Violation — not all studies require random seeds
+# (e.g. deterministic algorithms, purely analytical papers)
+
+rdip:DataAnalysisActivitySeedShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:DataAnalysisActivity ;
+    rdfs:label "Analysis activity should declare random seeds" ;
+
+    sh:property [
+        sh:path     rdip:hasParameter ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING: No rdip:hasParameter (including RandomSeed) linked to this DataAnalysisActivity. If your study involves stochastic processes (model training, sampling, data splitting), declare all random seeds used." ;
+    ] .
+
+
+# ── Parameter must have name and value ────────────────────────────────────────
+
+rdip:ParameterShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:Parameter ;
+    rdfs:label "Parameter completeness" ;
+
+    sh:property [
+        sh:path     rdip:parameterName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+        sh:message  "CRITICAL: rdip:parameterName is missing on Parameter node." ;
+    ] ;
+
+    sh:property [
+        sh:path     rdip:parameterValue ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+        sh:message  "CRITICAL: rdip:parameterValue is missing on Parameter node." ;
+    ] .

@@ -1,0 +1,79 @@
+# sre_engine/shacl/environment_shapes.ttl
+# SHACL shapes for rdip:ComputingEnvironment and rdip:EnvironmentSpec
+# These enforce mandatory presence of environment metadata
+# required for deterministic reproducibility.
+
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdip: <https://w3id.org/rdip/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# ── EnvironmentSpec must have imageDigest ─────────────────────────────────────
+
+rdip:EnvironmentSpecShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:EnvironmentSpec ;
+    rdfs:label "Environment specification completeness" ;
+
+    sh:property [
+        sh:path     rdip:imageDigest ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+        sh:message  "CRITICAL: rdip:imageDigest is missing. Without a pinned image digest the container environment cannot be deterministically reproduced. Pin your Docker image to a specific digest (e.g. FROM image@sha256:...) and record it here." ;
+    ] ;
+
+    sh:property [
+        sh:path     rdip:specType ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING: rdip:specType is missing. Specify the environment type (docker, conda, pip)." ;
+    ] ;
+
+    sh:property [
+        sh:path     rdip:specUri ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING: rdip:specUri is missing. Link to the environment specification file in your repository." ;
+    ] .
+
+
+# ── ComputingEnvironment should declare CUDA and OS ──────────────────────────
+
+rdip:ComputingEnvironmentShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:ComputingEnvironment ;
+    rdfs:label "Computing environment hardware specification" ;
+
+    sh:property [
+        sh:path     rdip:cudaVersion ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING: rdip:cudaVersion is not declared. GPU-dependent results may not be reproducible across CUDA versions. Declare your CUDA version in the Dockerfile ENV or as metadata." ;
+    ] ;
+
+    sh:property [
+        sh:path     rdip:osVersion ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING: rdip:osVersion is not declared. Declare the operating system and version used for execution." ;
+    ] .
+
+
+# ── ResearchActivity must be linked to a ComputingEnvironment ─────────────────
+
+rdip:ResearchActivityEnvShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:ResearchActivity ;
+    rdfs:label "Research activity must declare execution environment" ;
+
+    sh:property [
+        sh:path     rdip:executedIn ;
+        sh:minCount 1 ;
+        sh:class    rdip:ComputingEnvironment ;
+        sh:severity sh:Violation ;
+        sh:message  "CRITICAL: rdip:executedIn is missing. The research activity must be linked to a rdip:ComputingEnvironment. Without this the execution context is unknown." ;
+    ] .

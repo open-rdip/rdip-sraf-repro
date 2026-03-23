@@ -1,0 +1,29 @@
+{
+  "status": "ok",
+  "original_study_id": "study001",
+  "reproduction_study_id": "study002",
+  "original_triples": 431,
+  "reproduction_triples": 237,
+  "conflict_graph_uri": "https://w3id.org/rdip/graph/study001/conflicts",
+  "conflict_counts": {
+    "version_conflicts": 0,
+    "digest_conflicts": 0,
+    "seed_conflicts": 0
+  },
+  "shacl_conforms": false,
+  "shacl_violations": {
+    "critical": [],
+    "warnings": [
+      {
+        "severity": "WARNING",
+        "message": "WARNING: rdip:cudaVersion is not declared. GPU-dependent results may not be reproducible across CUDA versions. Declare your CUDA version in the Dockerfile ENV or as metadata.",
+        "path": "rdip:cudaVersion",
+        "focus": "<https://w3id.org/rdip/instance/env-study002>"
+      }
+    ]
+  },
+  "stage2_conflicts": 0,
+  "stage3_critical": 0,
+  "total_conflicts": 0,
+  "report_generated": "2026-03-21T13:21:42.861659"
+}

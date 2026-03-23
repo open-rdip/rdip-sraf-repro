@@ -1,0 +1,72 @@
+# sre_engine/shacl/dependency_shapes.ttl
+# SHACL shapes for rdip:SoftwareDependency
+# Enforce pinned versions and mandatory metadata.
+
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdip: <https://w3id.org/rdip/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# ── Every SoftwareDependency must have name and version ───────────────────────
+
+rdip:SoftwareDependencyShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:SoftwareDependency ;
+    rdfs:label "Software dependency completeness" ;
+
+    sh:property [
+        sh:path     rdip:dependencyName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+        sh:message  "CRITICAL: rdip:dependencyName is missing on a SoftwareDependency node." ;
+    ] ;
+
+    sh:property [
+        sh:path     rdip:dependencyVersion ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+        sh:message  "CRITICAL: rdip:dependencyVersion is missing. All dependencies must have pinned versions for reproducibility. Use == for pip and = for conda to pin exact versions." ;
+    ] ;
+
+    sh:property [
+        sh:path     rdip:dependencyType ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING: rdip:dependencyType is missing. Specify whether the dependency is conda, pip, or system." ;
+    ] .
+
+
+# ── Unspecified versions are treated as a warning ─────────────────────────────
+
+rdip:SoftwareDependencyVersionShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:SoftwareDependency ;
+    rdfs:label "Dependency version should be pinned" ;
+
+    sh:property [
+        sh:path        rdip:dependencyVersion ;
+        sh:not [
+            sh:hasValue "unspecified"
+        ] ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING: Dependency version is 'unspecified'. Pin exact versions in your environment file to ensure reproducibility." ;
+    ] .
+
+
+# ── SoftwareApplication must link to at least one dependency ─────────────────
+
+rdip:SoftwareApplicationShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:SoftwareApplication ;
+    rdfs:label "Software application must declare dependencies" ;
+
+    sh:property [
+        sh:path     rdip:softwareDependency ;
+        sh:minCount 1 ;
+        sh:class    rdip:SoftwareDependency ;
+        sh:severity sh:Violation ;
+        sh:message  "CRITICAL: No rdip:SoftwareDependency linked to this SoftwareApplication. Provide a requirements.txt, environment.yml, or Dockerfile with dependency declarations." ;
+    ] .
