@@ -1,6 +1,5 @@
 venv/
-__pycache__/
-*.pyc
+
 .env
 triplestore/*
 !triplestore/.gitkeep
@@ -11,3 +10,18 @@ logs/
 *.pkl
 .DS_Store
 .embeddings_cache/
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Test repositories (cloned on demand)
+test_repos/
+
+# Apptainer image artifacts
+*.sif
+
+# Logs
+logs/*.log

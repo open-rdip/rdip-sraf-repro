@@ -1,0 +1,85 @@
+# SRAF local development stack — Mac / Linux
+#
+# Three services:
+#   oxigraph     — RDF triplestore, port 7878
+#   sraf-engine  — Python pipeline container, sleeps until you `exec` into it
+#   dashboard    — Streamlit dashboard, port 8501
+#
+# Quick start:
+#   docker compose up -d oxigraph sraf-engine
+#   docker compose exec sraf-engine python config.py
+#   docker compose up -d dashboard   # then visit http://localhost:8501
+
+services:
+  oxigraph:
+    image: ghcr.io/oxigraph/oxigraph:latest
+    container_name: sraf-oxigraph
+    platform: linux/amd64
+    command:
+      - serve
+      - --location
+      - /data
+      - --bind
+      - 0.0.0.0:7878
+    ports:
+      - "7878:7878"
+    volumes:
+      - ./triplestore:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/7878 && echo -e 'GET / HTTP/1.0\\r\\n\\r\\n' >&3 && head -1 <&3 | grep -q '200 OK'"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+
+  sraf-engine:
+    build:
+      context: .
+      dockerfile: containers/sraf-engine.Dockerfile
+    image: sraf-engine:latest
+    container_name: sraf-engine
+    platform: linux/amd64
+    depends_on:
+      - oxigraph
+    environment:
+      - OXIGRAPH_HOST=oxigraph
+      - OXIGRAPH_PORT=7878
+      - LLM_BACKEND=${LLM_BACKEND:-openai}
+      - LLM_MODEL=${LLM_MODEL:-gpt-4o}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - PYTHONPATH=/workspace
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    # Stay alive for interactive `docker compose exec`
+    command: ["sleep", "infinity"]
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: containers/sraf-engine.Dockerfile
+    image: sraf-engine:latest
+    container_name: sraf-dashboard
+    platform: linux/amd64
+    depends_on:
+      - oxigraph
+    environment:
+      - OXIGRAPH_HOST=oxigraph
+      - OXIGRAPH_PORT=7878
+      - PYTHONPATH=/workspace
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    command:
+      - streamlit
+      - run
+      - dashboard/app.py
+      - --server.address=0.0.0.0
+      - --server.port=8501
+      - --server.headless=true
+    # Start dashboard manually with: docker compose up -d dashboard
+    profiles:
+      - dashboard

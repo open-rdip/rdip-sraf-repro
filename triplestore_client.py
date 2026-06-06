@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BASE_URL = f"http://{os.getenv('OXIGRAPH_HOST','localhost')}:{os.getenv('OXIGRAPH_PORT','3030')}"
+from config import OXIGRAPH_URL as BASE_URL
 
 
 def sparql_query(query: str) -> dict:

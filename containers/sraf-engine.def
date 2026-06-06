@@ -1,0 +1,54 @@
+# SRAF engine — Apptainer definition file
+#
+# Build:   apptainer build sraf-engine.sif containers/sraf-engine.def
+# Run:     apptainer run sraf-engine.sif python lifter/lifter.py --study-id X --repo-dir Y
+#
+# Same image as the Dockerfile, packaged for HPC environments where Docker is unavailable.
+
+Bootstrap: docker
+From: python:3.12-slim-bookworm
+
+%files
+    requirements.txt /workspace/requirements.txt
+
+%post
+    apt-get update && apt-get install -y --no-install-recommends \
+        git \
+        curl \
+        build-essential \
+        ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+    cd /workspace
+    pip install --no-cache-dir --upgrade pip
+    pip install --no-cache-dir -r requirements.txt
+
+    # Pre-create directories the engine writes to
+    mkdir -p /workspace/logs /workspace/validation/results /workspace/data
+
+%environment
+    export OXIGRAPH_HOST=localhost
+    export OXIGRAPH_PORT=7878
+    export PYTHONUNBUFFERED=1
+    export PYTHONDONTWRITEBYTECODE=1
+    export PYTHONPATH=/workspace
+
+%runscript
+    cd /workspace
+    exec "$@"
+
+%labels
+    Project SRAF
+    Maintainer Suhel.Acharya
+    Version 0.1
+
+%help
+    SRAF engine container.
+
+    Usage examples:
+      apptainer run sraf-engine.sif python config.py
+      apptainer run sraf-engine.sif python lifter/lifter.py --study-id X --repo-dir Y
+
+    Note: this image does NOT bundle the repo code. Bind-mount your repo at
+    /workspace when running, e.g.:
+      apptainer run --bind $(pwd):/workspace sraf-engine.sif python config.py

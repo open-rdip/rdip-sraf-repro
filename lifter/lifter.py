@@ -13,6 +13,8 @@ maps to RDIP triples, and uploads to Oxigraph.
 import sys
 import os
 import argparse
+from parsers.dmp_parser import parse_madmp
+from mapper.rdip_mapper import map_dmp
 
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -124,6 +126,18 @@ def lift_from_docker_image(study_id: str, image_ref: str,
     print(f"[Lifter] Uploaded {n} triples to <{uri}>")
     return {"study_id": study_id, "status": "ok", "triples": n}
 
+def lift_dmp(study_id: str, dmp_file: str) -> str:
+    """Ingest an maDMP JSON file into the RDIP Knowledge Graph."""
+    print(f"[Lifter] Parsing maDMP: {dmp_file}")
+    parsed = parse_madmp(dmp_file)
+    g = map_dmp(study_id, parsed)
+    turtle = to_turtle(g)
+    graph_uri = f"https://w3id.org/rdip/graph/{study_id}"
+    upload_graph(graph_uri, turtle)
+    print(f"[Lifter] DMP: uploaded {len(g)} triples to <{graph_uri}>")
+    return turtle
+
+
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 def main():
@@ -140,6 +154,8 @@ def main():
                         help="Overwrite existing graph if it exists")
     parser.add_argument("--skip-ontology-check", action="store_true",
                         help="Skip ontology version check (faster for bulk runs)")
+    parser.add_argument("--dmp-file", default=None,
+                    help="Path to maDMP JSON (RDA DMP Common Standard)")
     args = parser.parse_args()
 
     # Ensure ontology is loaded

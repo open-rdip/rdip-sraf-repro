@@ -154,6 +154,54 @@ def map_pip(study_id: str, parsed: dict) -> Graph:
 
     return g
 
+# ── maDMP → RDIP ─────────────────────────────────────────────────────────────
+
+def map_dmp(study_id: str, parsed: dict) -> Graph:
+    """
+    Map parsed maDMP data to RDIP triples.
+    DMP commitments become verifiable assertions in the KG.
+    Produces:
+      rdip:ResearchActivity → rdip:identifier (from DMP ID)
+      rdip:ResearchActivity → rdip:generatesDataset → rdip:Dataset (×n)
+      rdip:Dataset → rdip:dataLicense, rdip:accessLevel, rdip:datasetLandingPage
+    """
+    g        = _base_graph()
+    activity = study_uri(study_id)
+
+    g.add((activity, RDF.type, RDIP.ResearchActivity))
+
+    # DMP identifier
+    if parsed.get("dmp_id"):
+        g.add((activity, RDIP.identifier,
+               Literal(parsed["dmp_id"], datatype=XSD.string)))
+
+    # Dataset commitments from DMP
+    for i, ds in enumerate(parsed.get("datasets", [])):
+        ds_node = URIRef(f"{BASE}dataset-{study_id}-{i}")
+        g.add((ds_node, RDF.type, RDIP.Dataset))
+        g.add((activity, RDIP.generatesDataset, ds_node))
+
+        if ds.get("dataset_id"):
+            g.add((ds_node, RDIP.identifier,
+                   Literal(ds["dataset_id"], datatype=XSD.string)))
+
+        if ds.get("title"):
+            g.add((ds_node, RDFS.label,
+                   Literal(ds["title"], datatype=XSD.string)))
+
+        for dist in ds.get("distributions", []):
+            if dist.get("license"):
+                g.add((ds_node, RDIP.dataLicense,
+                       URIRef(dist["license"])))
+            if dist.get("data_access"):
+                g.add((ds_node, RDIP.accessLevel,
+                       Literal(dist["data_access"], datatype=XSD.string)))
+            if dist.get("access_url"):
+                g.add((ds_node, RDIP.datasetLandingPage,
+                       URIRef(dist["access_url"])))
+
+    return g
+
 
 # ── Shared helpers ────────────────────────────────────────────────────────────
 

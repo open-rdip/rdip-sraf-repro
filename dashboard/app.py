@@ -231,6 +231,8 @@ if page == "FAIR-R Scorer":
                         f"{icon} **{c['label']}** "
                         f"(+{c['points']}/{c['max']} pts)"
                     )
+                    if c.get("rda_indicator"):
+                        st.caption(f"RDA Maturity Indicator: {c['rda_indicator']}")
                     if not c["met"] and c["fix"]:
                         st.info(f"💡 {c['fix']}")
 
@@ -247,6 +249,8 @@ if page == "FAIR-R Scorer":
                     f"{badge} [{rec['dimension']}] {rec['label']}",
                     expanded=(rec["severity"] == "critical")
                 ):
+                    if rec.get("rda_indicator"):                                      # ← add
+                        st.caption(f"RDA Maturity Indicator: {rec['rda_indicator']}")
                     st.markdown(f"**Recommendation:** {rec['fix']}")
 
 

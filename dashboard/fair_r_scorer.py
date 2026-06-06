@@ -26,32 +26,28 @@ from triplestore_client import sparql_query
 RDIP      = "https://w3id.org/rdip/"
 GRAPH_BASE = "https://w3id.org/rdip/graph"
 
-
-# ── Scoring model ─────────────────────────────────────────────────────────────
-# Each criterion: (label, sparql_ask_template, weight_within_dimension, severity)
-# Weights within a dimension sum to 1.0
-# severity: "critical" = blocks full tier, "warning" = informational
-
 DIMENSIONS = {
     "Findable": {
         "max_score": 15,
         "weight":    0.15,
         "criteria": [
             {
-                "label":    "Persistent identifier declared",
-                "property": "rdip:identifier",
-                "ask":      "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}identifier> ?o }} }}",
-                "weight":   0.5,
-                "severity": "critical",
-                "fix":      "Add rdip:identifier to your ResearchProject node. Use your paper DOI or repository URL.",
+                "label":         "Persistent identifier declared",
+                "rda_indicator": "RDA-F1-01M",
+                "property":      "rdip:identifier",
+                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}identifier> ?o }} }}",
+                "weight":        0.5,
+                "severity":      "critical",
+                "fix":           "Add rdip:identifier to your ResearchProject node. Use your paper DOI or repository URL.",
             },
             {
-                "label":    "Dataset landing page declared",
-                "property": "rdip:datasetLandingPage",
-                "ask":      "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}datasetLandingPage> ?o }} }}",
-                "weight":   0.5,
-                "severity": "warning",
-                "fix":      "Add rdip:datasetLandingPage linking to where your dataset can be accessed.",
+                "label":         "Dataset landing page declared",
+                "rda_indicator": "RDA-F3-01M",
+                "property":      "rdip:datasetLandingPage",
+                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}datasetLandingPage> ?o }} }}",
+                "weight":        0.5,
+                "severity":      "warning",
+                "fix":           "Add rdip:datasetLandingPage linking to where your dataset can be accessed.",
             },
         ]
     },
@@ -60,20 +56,22 @@ DIMENSIONS = {
         "weight":    0.15,
         "criteria": [
             {
-                "label":    "Access level declared",
-                "property": "rdip:accessLevel",
-                "ask":      "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}accessLevel> ?o }} }}",
-                "weight":   0.5,
-                "severity": "warning",
-                "fix":      "Declare rdip:accessLevel (open, restricted, or embargoed).",
+                "label":         "Access level declared",
+                "rda_indicator": "RDA-A1-01M",
+                "property":      "rdip:accessLevel",
+                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}accessLevel> ?o }} }}",
+                "weight":        0.5,
+                "severity":      "warning",
+                "fix":           "Declare rdip:accessLevel (open, restricted, or embargoed).",
             },
             {
-                "label":    "Data license declared",
-                "property": "rdip:dataLicense",
-                "ask":      "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}dataLicense> ?o }} }}",
-                "weight":   0.5,
-                "severity": "critical",
-                "fix":      "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0).",
+                "label":         "Data license declared",
+                "rda_indicator": "RDA-A1.1-01M",
+                "property":      "rdip:dataLicense",
+                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}dataLicense> ?o }} }}",
+                "weight":        0.5,
+                "severity":      "critical",
+                "fix":           "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0).",
             },
         ]
     },
@@ -82,20 +80,22 @@ DIMENSIONS = {
         "weight":    0.20,
         "criteria": [
             {
-                "label":    "Method declared",
-                "property": "rdip:usedMethod",
-                "ask":      "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}usedMethod> ?o }} }}",
-                "weight":   0.5,
-                "severity": "warning",
-                "fix":      "Link your ResearchActivity to an rdip:Method instance describing the algorithm used.",
+                "label":         "Method declared",
+                "rda_indicator": "RDA-I1-01M",
+                "property":      "rdip:usedMethod",
+                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}usedMethod> ?o }} }}",
+                "weight":        0.5,
+                "severity":      "warning",
+                "fix":           "Link your ResearchActivity to an rdip:Method instance describing the algorithm used.",
             },
             {
-                "label":    "Workflow language declared",
-                "property": "rdip:workflowLanguage",
-                "ask":      "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}workflowLanguage> ?o }} }}",
-                "weight":   0.5,
-                "severity": "warning",
-                "fix":      "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow).",
+                "label":         "Workflow language declared",
+                "rda_indicator": "RDA-I2-01M",
+                "property":      "rdip:workflowLanguage",
+                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}workflowLanguage> ?o }} }}",
+                "weight":        0.5,
+                "severity":      "warning",
+                "fix":           "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow).",
             },
         ]
     },
@@ -104,20 +104,22 @@ DIMENSIONS = {
         "weight":    0.20,
         "criteria": [
             {
-                "label":    "Software license declared",
-                "property": "rdip:softwareLicense",
-                "ask":      "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}softwareLicense> ?o }} }}",
-                "weight":   0.5,
-                "severity": "critical",
-                "fix":      "Add a software license to your repository and declare rdip:softwareLicense.",
+                "label":         "Software license declared",
+                "rda_indicator": "RDA-R1.1-01M",
+                "property":      "rdip:softwareLicense",
+                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}softwareLicense> ?o }} }}",
+                "weight":        0.5,
+                "severity":      "critical",
+                "fix":           "Add a software license to your repository and declare rdip:softwareLicense.",
             },
             {
-                "label":    "Commit hash recorded",
-                "property": "rdip:commitHash",
-                "ask":      "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}commitHash> ?o }} }}",
-                "weight":   0.5,
-                "severity": "critical",
-                "fix":      "Tag your release commit and record the SHA as rdip:commitHash.",
+                "label":         "Commit hash recorded",
+                "rda_indicator": "RDA-R1-01M",
+                "property":      "rdip:commitHash",
+                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}commitHash> ?o }} }}",
+                "weight":        0.5,
+                "severity":      "critical",
+                "fix":           "Tag your release commit and record the SHA as rdip:commitHash.",
             },
         ]
     },
@@ -126,28 +128,31 @@ DIMENSIONS = {
         "weight":    0.30,
         "criteria": [
             {
-                "label":    "Image digest pinned",
-                "property": "rdip:imageDigest",
-                "ask":      "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}imageDigest> ?o . FILTER(?o != \"\") }} }}",
-                "weight":   0.4,
-                "severity": "critical",
-                "fix":      "Pin your Docker image to a specific digest: FROM image@sha256:<digest>.",
+                "label":         "Image digest pinned",
+                "rda_indicator": "Novel extension (no RDA equivalent)",
+                "property":      "rdip:imageDigest",
+                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}imageDigest> ?o . FILTER(?o != \"\") }} }}",
+                "weight":        0.4,
+                "severity":      "critical",
+                "fix":           "Pin your Docker image to a specific digest: FROM image@sha256:<digest>.",
             },
             {
-                "label":    "Random seed declared",
-                "property": "rdip:RandomSeed",
-                "ask":      "ASK {{ GRAPH <{graph}> {{ ?s a <{rdip}RandomSeed> }} }}",
-                "weight":   0.3,
-                "severity": "critical",
-                "fix":      "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances.",
+                "label":         "Random seed declared",
+                "rda_indicator": "Novel extension (no RDA equivalent)",
+                "property":      "rdip:RandomSeed",
+                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s a <{rdip}RandomSeed> }} }}",
+                "weight":        0.3,
+                "severity":      "critical",
+                "fix":           "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances.",
             },
             {
-                "label":    "Evaluation result linked",
-                "property": "rdip:EvaluationResult",
-                "ask":      "ASK {{ GRAPH <{graph}> {{ ?s a <{rdip}EvaluationResult> }} }}",
-                "weight":   0.3,
-                "severity": "warning",
-                "fix":      "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue.",
+                "label":         "Evaluation result linked",
+                "rda_indicator": "Novel extension (no RDA equivalent)",
+                "property":      "rdip:EvaluationResult",
+                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s a <{rdip}EvaluationResult> }} }}",
+                "weight":        0.3,
+                "severity":      "warning",
+                "fix":           "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue.",
             },
         ]
     },
@@ -203,6 +208,7 @@ def compute_fair_r(study_id: str) -> dict:
             dim_score += points
             criteria_results.append({
                 "label":    criterion["label"],
+                "rda_indicator": criterion.get("rda_indicator", ""),
                 "property": criterion["property"],
                 "met":      met,
                 "points":   round(points, 2),
@@ -214,6 +220,7 @@ def compute_fair_r(study_id: str) -> dict:
             if not met:
                 recommendations.append({
                     "dimension": dim_name,
+                    "rda_indicator": criterion.get("rda_indicator", ""),
                     "severity":  criterion["severity"],
                     "label":     criterion["label"],
                     "fix":       criterion["fix"],
