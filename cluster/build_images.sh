@@ -1,41 +1,48 @@
 #!/usr/bin/env bash
-# Build / pull the three Apptainer images SRAF needs on the cluster.
+# Assemble the Apptainer images SRAF needs on the cluster.
 #
-#   sraf-engine.sif  — built from containers/sraf-engine.def (the pipeline)
-#   oxigraph.sif     — pulled from the official Oxigraph image (triplestore)
-#   vllm.sif         — pulled from vllm/vllm-openai (LLM server)
+# IMPORTANT — fakeroot constraint on AIT Slurm:
+#   This account is NOT in /etc/subuid and user-namespace mapping is disabled,
+#   so `apptainer build` from a .def file FAILS (it can't run the %post section).
+#   Workaround: pull prebuilt images (no %post) and convert a Docker-built
+#   engine image. Neither path needs fakeroot.
 #
-# Images are built in node-local scratch then moved to ~/images to avoid
-# hammering the NFS home volume during the build.
+#   ENGINE: build it with Docker on your Mac, then ship the tar here:
+#     # on Mac:
+#     docker build --platform=linux/amd64 \
+#         -f containers/sraf-engine.Dockerfile -t sraf-engine:latest .
+#     docker save sraf-engine:latest | gzip > ~/sraf-engine.tar.gz
+#     scp ~/sraf-engine.tar.gz dsai-st125286p@ait-slurm:~/
+#     # on cluster:
+#     gunzip ~/sraf-engine.tar.gz
+#   ...then run this script.
 #
 # Usage:  bash cluster/build_images.sh
 set -euo pipefail
 
-REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 IMAGES_DIR="${HOME}/images"
-# Use a job-local scratch dir if inside Slurm, else a tmp dir.
-SCRATCH="${SLURM_JOB_ID:+/tmp/${SLURM_JOB_ID}}"
-SCRATCH="${SCRATCH:-$(mktemp -d)}"
-mkdir -p "${IMAGES_DIR}" "${SCRATCH}"
+ENGINE_TAR="${HOME}/sraf-engine.tar"
+mkdir -p "${IMAGES_DIR}"
 
-# Apptainer needs a cache/tmp with room — point it at scratch, not home.
-export APPTAINER_CACHEDIR="${SCRATCH}/apptainer_cache"
-export APPTAINER_TMPDIR="${SCRATCH}/apptainer_tmp"
-mkdir -p "${APPTAINER_CACHEDIR}" "${APPTAINER_TMPDIR}"
+# --- engine: convert the Docker archive shipped from the Mac (no fakeroot) ---
+if [[ -f "${ENGINE_TAR}" ]]; then
+  echo "==> Converting engine docker-archive -> sraf-engine.sif"
+  apptainer build --force "${IMAGES_DIR}/sraf-engine.sif" "docker-archive:${ENGINE_TAR}"
+else
+  echo "!! ${ENGINE_TAR} not found."
+  echo "   Build sraf-engine:latest with Docker on your Mac, docker save it,"
+  echo "   scp the tar here, gunzip it, then re-run. Skipping engine for now."
+fi
 
-echo "==> Building sraf-engine.sif from def file"
-apptainer build "${SCRATCH}/sraf-engine.sif" "${REPO_ROOT}/containers/sraf-engine.def"
-mv -f "${SCRATCH}/sraf-engine.sif" "${IMAGES_DIR}/sraf-engine.sif"
-
+# --- oxigraph: pull (no %post, works unprivileged) ---
 echo "==> Pulling oxigraph.sif"
-apptainer pull --force "${SCRATCH}/oxigraph.sif" docker://ghcr.io/oxigraph/oxigraph:latest
-mv -f "${SCRATCH}/oxigraph.sif" "${IMAGES_DIR}/oxigraph.sif"
+apptainer pull --force "${IMAGES_DIR}/oxigraph.sif" docker://ghcr.io/oxigraph/oxigraph:latest
 
-echo "==> Pulling vllm.sif (large — CUDA image)"
-# Pin a version in production; latest is fine for first onboarding.
-apptainer pull --force "${SCRATCH}/vllm.sif" docker://vllm/vllm-openai:latest
-mv -f "${SCRATCH}/vllm.sif" "${IMAGES_DIR}/vllm.sif"
+# --- vllm: large CUDA image — only needed for RAG / the build harness, ---
+# --- NOT for the lifter-only verification. Uncomment when wiring up vLLM. ---
+# echo "==> Pulling vllm.sif"
+# apptainer pull --force "${IMAGES_DIR}/vllm.sif" docker://vllm/vllm-openai:latest
 
 echo
-echo "==> Done. Images in ${IMAGES_DIR}:"
-ls -lh "${IMAGES_DIR}"/*.sif
+echo "==> Images in ${IMAGES_DIR}:"
+ls -lh "${IMAGES_DIR}"/*.sif 2>/dev/null || echo "  (none yet)"
