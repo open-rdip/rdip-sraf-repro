@@ -56,8 +56,9 @@ OXIGRAPH_HOST=127.0.0.1 OXIGRAPH_PORT=7878 PYTHONPATH="${REPO_ROOT}" \
 GRAPH_URI="https://w3id.org/rdip/graph/${STUDY_ID}"
 OUT="${TRIPLESTORE}/exports"; mkdir -p "${OUT}"
 echo "==> Exporting <${GRAPH_URI}> to ${OUT}/${STUDY_ID}.ttl"
-curl -s -H 'Accept: text/turtle' \
-    "http://127.0.0.1:7878/store?graph=${GRAPH_URI}" \
+curl -s -G 'http://127.0.0.1:7878/store' \
+    --data-urlencode "graph=${GRAPH_URI}" \
+    -H 'Accept: text/turtle' \
     -o "${OUT}/${STUDY_ID}.ttl" || echo "  (export via curl failed — non-fatal)"
 
 echo "==> rdip: lines in export:"
