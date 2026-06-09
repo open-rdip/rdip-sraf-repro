@@ -45,8 +45,7 @@ done
 echo "==> Lifting ${STUDY_ID}"
 cd "${REPO_ROOT}"
 OXIGRAPH_HOST=127.0.0.1 OXIGRAPH_PORT=7878 PYTHONPATH="${REPO_ROOT}" \
-  conda run --no-capture-output -p "${CONDA_ENV}" \
-  python lifter/lifter.py \
+  "${CONDA_ENV}/bin/python" lifter/lifter.py \
       --study-id "${STUDY_ID}" \
       --repo-dir "${REPO_DIR}" \
       --skip-ontology-check --overwrite
