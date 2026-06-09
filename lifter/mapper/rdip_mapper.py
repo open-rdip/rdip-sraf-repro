@@ -203,6 +203,44 @@ def map_dmp(study_id: str, parsed: dict) -> Graph:
     return g
 
 
+# ── Repository metadata → RDIP ───────────────────────────────────────────────
+
+def map_repo_metadata(study_id: str, meta: dict) -> Graph:
+    """Map repo-level metadata recoverable WITHOUT an LLM into RDIP triples.
+
+    Feeds three FAIR-R criteria directly from the clone + corpus row:
+      rdip:identifier      (Findable)  ← paper/repo URL
+      rdip:softwareLicense (Reusable)  ← SPDX from LICENSE detection
+      rdip:commitHash      (Reusable)  ← git rev-parse HEAD
+    Attached to the same activity / software nodes the env-file maps use, so
+    everything stays in one connected per-study graph.
+    """
+    g        = _base_graph()
+    activity = study_uri(study_id)
+    software = software_uri(study_id)
+
+    g.add((activity, RDF.type, RDIP.ResearchActivity))
+    if meta.get("identifier"):
+        g.add((activity, RDIP.identifier,
+               Literal(meta["identifier"], datatype=XSD.anyURI)))
+
+    has_software = False
+    if meta.get("software_license"):
+        g.add((software, RDIP.softwareLicense,
+               Literal(meta["software_license"], datatype=XSD.string)))
+        has_software = True
+    if meta.get("commit_hash"):
+        g.add((software, RDIP.commitHash,
+               Literal(meta["commit_hash"], datatype=XSD.string)))
+        has_software = True
+
+    if has_software:
+        g.add((software, RDF.type, RDIP.SoftwareApplication))
+        g.add((activity, RDIP.usedSoftware, software))
+
+    return g
+
+
 # ── Shared helpers ────────────────────────────────────────────────────────────
 
 def _add_dependency(g: Graph, software: URIRef,

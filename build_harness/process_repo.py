@@ -30,13 +30,14 @@ sys.path.insert(0, str(REPO_ROOT))
 
 from build_harness.artifact_finder import find_artifacts          # noqa: E402
 from build_harness.build_tester import run_build_test             # noqa: E402
+from build_harness.repo_metadata import extract_repo_metadata     # noqa: E402
 # Import parser/mapper submodules directly — NOT lifter.lifter, whose top-level
 # imports assume lifter/ is the script dir.
 from lifter.parsers.docker_parser import parse_dockerfile         # noqa: E402
 from lifter.parsers.conda_parser import from_repo as conda_from_repo  # noqa: E402
 from lifter.parsers.pip_parser import from_repo as pip_from_repo  # noqa: E402
 from lifter.mapper.rdip_mapper import (                           # noqa: E402
-    map_docker, map_conda, map_pip, merge_graphs, to_turtle,
+    map_docker, map_conda, map_pip, map_repo_metadata, merge_graphs, to_turtle,
 )
 from triplestore_client import upload_graph, fetch_graph, count_triples  # noqa: E402
 from dashboard.fair_r_scorer import compute_fair_r                # noqa: E402
@@ -59,10 +60,14 @@ def _clone(repo_url: str, dest: str) -> bool:
         return False
 
 
-def _lift(study_id: str, repo_dir: str, artifacts: dict) -> dict:
-    """Lift each artifact from its real location, merge, upload once."""
+def _lift(study_id: str, repo_dir: str, artifacts: dict, repo_meta: dict) -> dict:
+    """Lift each artifact from its real location + repo metadata, merge, upload."""
     by_type = artifacts["by_type"]
     graphs, lifted = [], {}
+
+    # Repo-level metadata (identifier / license / commit) — no env files needed,
+    # so this lifts even repos with no artifacts at all.
+    graphs.append(map_repo_metadata(study_id, repo_meta))
 
     if "docker" in by_type:
         try:
@@ -108,7 +113,7 @@ def process(study_id: str, repo_url: str, scratch: str,
         return _persist(record, study_id, None)
 
     try:
-        # 2. find artifacts
+        # 2. find artifacts + repo-level metadata
         artifacts = find_artifacts(clone_dir)
         record["artifacts"] = {
             "by_type": artifacts["by_type"],
@@ -116,9 +121,11 @@ def process(study_id: str, repo_url: str, scratch: str,
             "n_found": len(artifacts["all"]),
             "all": artifacts["all"],
         }
+        repo_meta = extract_repo_metadata(clone_dir, repo_url)
+        record["repo_meta"] = repo_meta
 
-        # 3. lift
-        record["lift"] = _lift(study_id, clone_dir, artifacts)
+        # 3. lift (env artifacts + repo metadata)
+        record["lift"] = _lift(study_id, clone_dir, artifacts, repo_meta)
 
         # 4. build-test (containerless venv)
         record["build"] = run_build_test(
