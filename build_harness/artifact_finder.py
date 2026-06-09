@@ -33,15 +33,27 @@ MAX_DEPTH = 4  # root is depth 0; deeper than this is almost always vendored
 # break depth ties in favour of a real runtime spec.
 DEPRIORITIZE = ("doc", "test", "example", "benchmark", "tutorial", "sample")
 
+# The canonical filename for each type. A variant like requirements-1bit-mpi.txt
+# must never beat the real requirements.txt at the same depth.
+CANONICAL = {
+    "docker": {"dockerfile"},
+    "conda":  {"environment.yml", "environment.yaml"},
+    "pip":    {"requirements.txt"},
+    "setup":  {"pyproject.toml", "setup.py"},
+    "r":      {"renv.lock"},
+}
+
 
 def _matches(name: str, pattern: str) -> bool:
     return Path(name).match(pattern)
 
 
 def _rank(a: dict) -> tuple:
-    """Lower is better: shallow first, then non-auxiliary, then path order."""
+    """Lower is better: shallow → canonical → non-auxiliary → path order."""
+    name = Path(a["rel_path"]).name.lower()
+    non_canon = 0 if name in CANONICAL.get(a["type"], set()) else 1
     aux = 1 if any(k in a["rel_path"].lower() for k in DEPRIORITIZE) else 0
-    return (a["depth"], aux, a["rel_path"])
+    return (a["depth"], non_canon, aux, a["rel_path"])
 
 
 def find_artifacts(repo_dir: str) -> dict:
