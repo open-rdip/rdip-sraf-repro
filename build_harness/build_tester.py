@@ -34,17 +34,25 @@ def _run(cmd: list[str], cwd: str, timeout: int, log: list[str]) -> tuple[int, s
 
 def run_build_test(repo_dir: str, artifacts: dict, scratch_dir: str,
                    timeout: int = 1800) -> dict:
-    """Attempt to construct the repo's Python environment in a scratch venv.
+    """Two-level reproducibility outcome for the declared Python environment.
+
+    Tier 1 — RESOLUTION: does the declared dependency set resolve into a
+             consistent install plan? (pip --dry-run) A failure here means the
+             spec itself is internally broken / unsatisfiable.
+    Tier 2 — BUILD:      does it actually install into a clean venv, including
+             any compiled extensions? A pass here is full environment
+             reconstruction.
 
     Returns:
       {
-        "attempted":   bool,
-        "success":     bool,
-        "method":      "pip-requirements" | "pip-setup" | "none",
-        "stage_failed": str | None,
-        "duration_s":  float,
-        "log_tail":    str,
-        "notes":       str,
+        "attempted":       bool,
+        "resolve_success": bool | None,   # Tier 1
+        "build_success":   bool,          # Tier 2 (the headline outcome)
+        "method":          "pip-requirements" | "pip-setup" | "none",
+        "stage_failed":    str | None,    # venv-create|resolve|build-install|*-timeout
+        "duration_s":      float,
+        "log_tail":        str,
+        "notes":           str,
       }
     """
     t0 = time.time()
@@ -52,22 +60,22 @@ def run_build_test(repo_dir: str, artifacts: dict, scratch_dir: str,
     by_type = artifacts["by_type"]
     primary_dir = artifacts["primary_dir"]
 
-    # Decide install method from what was found.
+    # Decide install target from what was found.
     if "pip" in by_type:
         method = "pip-requirements"
-        req_path = str(Path(repo_dir) / by_type["pip"])
-        install_cmd_factory = lambda pip: [pip, "install", "-r", req_path]
-        install_cwd = repo_dir
+        target = ["-r", str(Path(repo_dir) / by_type["pip"])]
+        cwd = repo_dir
     elif "setup" in by_type:
         method = "pip-setup"
-        install_cmd_factory = lambda pip: [pip, "install", "."]
-        install_cwd = primary_dir
+        target = ["."]
+        cwd = primary_dir
     else:
         return {
-            "attempted": False, "success": False, "method": "none",
-            "stage_failed": None, "duration_s": round(time.time() - t0, 1),
-            "log_tail": "", "notes": "No pip/setup artifact to build from "
-                                     "(docker/conda-only builds deferred).",
+            "attempted": False, "resolve_success": None, "build_success": False,
+            "method": "none", "stage_failed": None,
+            "duration_s": round(time.time() - t0, 1), "log_tail": "",
+            "notes": "No pip/setup artifact to build from "
+                     "(docker/conda-only builds deferred).",
         }
 
     venv_dir = Path(scratch_dir) / "venv"
@@ -75,32 +83,40 @@ def run_build_test(repo_dir: str, artifacts: dict, scratch_dir: str,
     if "conda" in by_type:
         notes = "environment.yml present but built via pip venv (conda build deferred)."
 
-    # 1. create venv
+    # 0. create venv
     rc, _ = _run([sys.executable, "-m", "venv", str(venv_dir)],
                  cwd=scratch_dir, timeout=120, log=log)
     if rc != 0:
-        return _result(False, method, "venv-create", t0, log, notes)
+        return _result(method, None, False, "venv-create", t0, log, notes)
 
     pip = str(venv_dir / "bin" / "pip")
-    # 2. upgrade pip (best-effort, don't fail the build on this)
+    # best-effort tooling upgrade (don't gate the outcome on it)
     _run([pip, "install", "--upgrade", "pip", "setuptools", "wheel"],
          cwd=scratch_dir, timeout=300, log=log)
 
-    # 3. the actual install — this is the reproducibility signal
-    rc, _ = _run(install_cmd_factory(pip), cwd=install_cwd, timeout=timeout, log=log)
+    # Tier 1 — RESOLUTION (dry-run: resolve the dependency graph, install nothing)
+    rc, _ = _run([pip, "install", "--dry-run", "--ignore-installed"] + target,
+                 cwd=cwd, timeout=min(timeout, 600), log=log)
     if rc == 124:
-        return _result(False, method, "install-timeout", t0, log, notes)
+        return _result(method, False, False, "resolve-timeout", t0, log, notes)
     if rc != 0:
-        return _result(False, method, "install", t0, log, notes)
+        return _result(method, False, False, "resolve", t0, log, notes)
 
-    return _result(True, method, None, t0, log, notes)
+    # Tier 2 — BUILD (actually install into the venv)
+    rc, _ = _run([pip, "install"] + target, cwd=cwd, timeout=timeout, log=log)
+    if rc == 124:
+        return _result(method, True, False, "build-timeout", t0, log, notes)
+    if rc != 0:
+        return _result(method, True, False, "build-install", t0, log, notes)
+
+    return _result(method, True, True, None, t0, log, notes)
 
 
-def _result(success, method, stage_failed, t0, log, notes):
-    import time
+def _result(method, resolve_success, build_success, stage_failed, t0, log, notes):
     return {
         "attempted": True,
-        "success": success,
+        "resolve_success": resolve_success,
+        "build_success": build_success,
         "method": method,
         "stage_failed": stage_failed,
         "duration_s": round(time.time() - t0, 1),

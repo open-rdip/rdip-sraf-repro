@@ -188,9 +188,10 @@ def main():
     os.makedirs(args.scratch, exist_ok=True)
     rec = process(args.study_id, args.repo_url, args.scratch,
                   keep=args.keep, build_timeout=args.build_timeout)
+    b = rec.get("build", {})
     print(f"\n[process_repo] {args.study_id}: status={rec['status']} "
           f"triples={rec.get('lift', {}).get('triples', 0)} "
-          f"build={rec.get('build', {}).get('success')} "
+          f"resolve={b.get('resolve_success')} build={b.get('build_success')} "
           f"fair_r={rec.get('fair_r', {}).get('total_score')}")
 
 

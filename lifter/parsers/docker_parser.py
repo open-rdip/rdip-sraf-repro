@@ -156,6 +156,17 @@ def parse_dockerfile(dockerfile_path: str) -> dict:
             for k, v in matches:
                 labels[k] = v
 
+    # Author-declared image digest: only present if the Dockerfile pins the
+    # base image as `FROM image@sha256:<hex>`. A bare tag (or :latest) yields no
+    # digest — a true negative that reflects the author NOT pinning, which is
+    # exactly the reproducibility behaviour we measure (RQ1). We do NOT resolve
+    # the digest ourselves, which would credit a pin the author never declared.
+    image_digest = ""
+    if "@" in from_image:
+        after_at = from_image.split("@", 1)[1].strip()
+        if after_at.startswith("sha256:"):
+            image_digest = after_at
+
     # Combine env + arg for version extraction
     all_vars = {**arg_vars, **env_vars}
 
@@ -174,7 +185,7 @@ def parse_dockerfile(dockerfile_path: str) -> dict:
 
     return {
         "source":          "dockerfile",
-        "image_digest":    "",          # not available from static analysis
+        "image_digest":    image_digest,   # author-declared FROM ...@sha256 pin, else ""
         "image_name":      from_image,
         "os":              "linux",
         "architecture":    "",
