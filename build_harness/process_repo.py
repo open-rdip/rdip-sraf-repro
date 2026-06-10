@@ -31,6 +31,17 @@ sys.path.insert(0, str(REPO_ROOT))
 from build_harness.artifact_finder import find_artifacts          # noqa: E402
 from build_harness.build_tester import run_build_test             # noqa: E402
 from build_harness.repo_metadata import extract_repo_metadata     # noqa: E402
+from build_harness.python_version import (                        # noqa: E402
+    resolve_python_version, choose_interpreter,
+)
+
+# PyTorch/CUDA wheels live on the PyTorch index; include a few common CUDA
+# builds plus CPU so `torch==x+cuYYY` pins resolve. Override via env.
+PYTORCH_INDEXES = [u for u in os.getenv(
+    "SRAF_PYTORCH_INDEXES",
+    "https://download.pytorch.org/whl/cu121,"
+    "https://download.pytorch.org/whl/cu118,"
+    "https://download.pytorch.org/whl/cpu").split(",") if u]
 # Import parser/mapper submodules directly — NOT lifter.lifter, whose top-level
 # imports assume lifter/ is the script dir.
 from lifter.parsers.docker_parser import parse_dockerfile         # noqa: E402
@@ -127,9 +138,16 @@ def process(study_id: str, repo_url: str, scratch: str,
         # 3. lift (env artifacts + repo metadata)
         record["lift"] = _lift(study_id, clone_dir, artifacts, repo_meta)
 
-        # 4. build-test (containerless venv)
+        # 3b. resolve the repo's DECLARED Python version -> interpreter
+        pyver, pysrc = resolve_python_version(clone_dir, artifacts)
+        interp, pyused, ladder_ok = choose_interpreter(pyver)
+        record["python"] = {"declared": pyver, "source": pysrc,
+                            "used": pyused, "ladder_available": ladder_ok}
+
+        # 4. build-test (containerless venv, declared Python + PyTorch index)
         record["build"] = run_build_test(
-            clone_dir, artifacts, scratch, timeout=build_timeout)
+            clone_dir, artifacts, scratch, timeout=build_timeout,
+            base_python=interp, extra_index=PYTORCH_INDEXES)
 
         # 5. FAIR-R score (queries the graph we just uploaded)
         if record["lift"]["triples"] > 0:

@@ -42,6 +42,7 @@ def _row(r: dict) -> dict:
     f = r.get("fair_r", {}) or {}
     lift = r.get("lift", {}) or {}
     meta = r.get("repo_meta", {}) or {}
+    py = r.get("python", {}) or {}
     by_type = a.get("by_type", {}) or {}
     return {
         "study_id": r.get("study_id", ""),
@@ -60,6 +61,9 @@ def _row(r: dict) -> dict:
         "tier": f.get("tier"),
         "license": meta.get("software_license"),
         "has_commit": bool(meta.get("commit_hash")),
+        "py_declared": py.get("declared"),
+        "py_used": py.get("used"),
+        "ladder_ok": py.get("ladder_available"),
     }
 
 
@@ -85,6 +89,17 @@ def summarize(rows: list[dict]) -> list[str]:
     if sf:
         lines.append("- Failure stage breakdown: " + ", ".join(f"{k}={v}" for k, v in sf.most_common()))
     lines.append("")
+
+    # build interpreter (validates the version-aware fix)
+    declared = sum(1 for r in rows if r["py_declared"])
+    ladder = sum(1 for r in rows if r["ladder_ok"])
+    if any(r["py_used"] for r in rows):
+        lines.append("## Build interpreter\n")
+        lines.append(f"- declared a Python version: {declared}/{n} ({_pct(declared, n)})")
+        lines.append(f"- ran on the interpreter ladder: {ladder}/{n} ({_pct(ladder, n)})")
+        used = Counter(r["py_used"] for r in rows if r["py_used"])
+        lines.append("- versions used: " + ", ".join(f"{k}={v}" for k, v in sorted(used.items())))
+        lines.append("")
 
     # FAIR-R
     scores = [r["fair_r"] for r in rows if isinstance(r["fair_r"], (int, float))]

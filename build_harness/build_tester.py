@@ -33,7 +33,8 @@ def _run(cmd: list[str], cwd: str, timeout: int, log: list[str]) -> tuple[int, s
 
 
 def run_build_test(repo_dir: str, artifacts: dict, scratch_dir: str,
-                   timeout: int = 1800) -> dict:
+                   timeout: int = 1800, base_python: str | None = None,
+                   extra_index: list | None = None) -> dict:
     """Two-level reproducibility outcome for the declared Python environment.
 
     Tier 1 — RESOLUTION: does the declared dependency set resolve into a
@@ -61,21 +62,27 @@ def run_build_test(repo_dir: str, artifacts: dict, scratch_dir: str,
     primary_dir = artifacts["primary_dir"]
 
     # Decide install target from what was found.
+    setup_dir = None
+    if "setup" in by_type:
+        d = (Path(repo_dir) / by_type["setup"]).parent
+        if (d / "setup.py").exists() or (d / "pyproject.toml").exists():
+            setup_dir = str(d)   # setup.cfg alone is not pip-installable
+
     if "pip" in by_type:
         method = "pip-requirements"
         target = ["-r", str(Path(repo_dir) / by_type["pip"])]
         cwd = repo_dir
-    elif "setup" in by_type:
+    elif setup_dir:
         method = "pip-setup"
         target = ["."]
-        cwd = primary_dir
+        cwd = setup_dir
     else:
         return {
             "attempted": False, "resolve_success": None, "build_success": False,
             "method": "none", "stage_failed": None,
             "duration_s": round(time.time() - t0, 1), "log_tail": "",
-            "notes": "No pip/setup artifact to build from "
-                     "(docker/conda-only builds deferred).",
+            "notes": "No installable pip/setup artifact "
+                     "(requirements / setup.py / pyproject absent).",
         }
 
     venv_dir = Path(scratch_dir) / "venv"
@@ -83,8 +90,15 @@ def run_build_test(repo_dir: str, artifacts: dict, scratch_dir: str,
     if "conda" in by_type:
         notes = "environment.yml present but built via pip venv (conda build deferred)."
 
+    # Build the venv with the repo's DECLARED Python (base_python), not ours.
+    py = base_python or sys.executable
+    # PyTorch/CUDA wheels (e.g. torch==x+cuYYY) live on the PyTorch index.
+    idx = []
+    for u in (extra_index or []):
+        idx += ["--extra-index-url", u]
+
     # 0. create venv
-    rc, _ = _run([sys.executable, "-m", "venv", str(venv_dir)],
+    rc, _ = _run([py, "-m", "venv", str(venv_dir)],
                  cwd=scratch_dir, timeout=120, log=log)
     if rc != 0:
         return _result(method, None, False, "venv-create", t0, log, notes)
@@ -95,7 +109,7 @@ def run_build_test(repo_dir: str, artifacts: dict, scratch_dir: str,
          cwd=scratch_dir, timeout=300, log=log)
 
     # Tier 1 — RESOLUTION (dry-run: resolve the dependency graph, install nothing)
-    rc, _ = _run([pip, "install", "--dry-run", "--ignore-installed"] + target,
+    rc, _ = _run([pip, "install", "--dry-run", "--ignore-installed"] + idx + target,
                  cwd=cwd, timeout=min(timeout, 600), log=log)
     if rc == 124:
         return _result(method, False, False, "resolve-timeout", t0, log, notes)
@@ -103,7 +117,7 @@ def run_build_test(repo_dir: str, artifacts: dict, scratch_dir: str,
         return _result(method, False, False, "resolve", t0, log, notes)
 
     # Tier 2 — BUILD (actually install into the venv)
-    rc, _ = _run([pip, "install"] + target, cwd=cwd, timeout=timeout, log=log)
+    rc, _ = _run([pip, "install"] + idx + target, cwd=cwd, timeout=timeout, log=log)
     if rc == 124:
         return _result(method, True, False, "build-timeout", t0, log, notes)
     if rc != 0:
