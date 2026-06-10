@@ -74,6 +74,15 @@ def generate_report(diff_result: dict, output_json: str = None) -> str:
                          f"{cc['seed_conflicts']}")
             lines.append("  → Stochastic results will differ from the original.")
 
+        if cc.get("hardware_conflicts", 0) > 0:
+            lines.append(f"\n  {SEVERITY_ICON['HIGH']} "
+                         f"Hardware / environment conflicts: "
+                         f"{cc['hardware_conflicts']}")
+            lines.append("  → CUDA / GPU / OS divergence may alter numerical results.")
+            lines.append("  → Query the conflict graph for details:")
+            lines.append(f"    GRAPH <{diff_result.get('conflict_graph_uri', '')}>")
+            lines.append("    WHERE { ?c a rdip:HardwareConflict ; rdip:message ?m }")
+
     # ── Stage 3 SHACL violations ──────────────────────────────────────────────
     if critical or warnings:
         lines.append("\n" + "─" * 60)
@@ -103,6 +112,7 @@ def generate_report(diff_result: dict, output_json: str = None) -> str:
     lines.append(f"  Version conflicts:    {cc.get('version_conflicts', 0)}")
     lines.append(f"  Digest conflicts:     {cc.get('digest_conflicts', 0)}")
     lines.append(f"  Seed conflicts:       {cc.get('seed_conflicts', 0)}")
+    lines.append(f"  Hardware conflicts:   {cc.get('hardware_conflicts', 0)}")
     lines.append(f"  SHACL critical:       {len(critical)}")
     lines.append(f"  SHACL warnings:       {len(warnings)}")
     lines.append(f"  SHACL conforms:       {diff_result.get('shacl_conforms', False)}")

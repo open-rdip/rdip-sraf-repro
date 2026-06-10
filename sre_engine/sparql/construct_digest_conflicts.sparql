@@ -20,13 +20,13 @@ CONSTRUCT {
         rdip:affectedSpec      ?origSpec .
 }
 WHERE {
-    GRAPH <https://w3id.org/rdip/graph/study001> {
+    GRAPH ?originalGraph {
         ?origSpec rdip:imageDigest ?origDigest .
         FILTER(?origDigest != "" && ?origDigest != "unspecified")
     }
 
     OPTIONAL {
-        GRAPH <https://w3id.org/rdip/graph/study002> {
+        GRAPH ?reproductionGraph {
             ?reprSpec rdip:imageDigest ?reprDigest .
         }
     }

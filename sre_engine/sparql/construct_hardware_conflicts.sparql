@@ -1,0 +1,64 @@
+# sre_engine/sparql/construct_hardware_conflicts.sparql
+# Detects computing-environment / hardware conflicts between an original study
+# and a reproduction attempt: CUDA version, GPU model, and OS.
+# Covers both value mismatch and present-in-original / absent-in-reproduction.
+#
+# Parameters (substituted by diff_engine before execution):
+#   ?originalGraph     - named graph URI of the original study
+#   ?reproductionGraph - named graph URI of the reproduction attempt
+
+PREFIX rdip: <https://w3id.org/rdip/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+    ?conflict a rdip:HardwareConflict ;
+        rdip:conflictType      "hardware_specification_change" ;
+        rdip:hardwareProperty  ?propLabel ;
+        rdip:originalValue     ?origValue ;
+        rdip:reproductionValue ?reprValueFinal ;
+        rdip:severity          ?sev ;
+        rdip:message           ?message ;
+        rdip:affectedActivity  ?origActivity .
+}
+WHERE {
+    # The three hardware dimensions, each with its own severity weight.
+    VALUES (?prop ?propLabel ?sev) {
+        (rdip:cudaVersion "cuda_version" "HIGH")
+        (rdip:gpuModel    "gpu_model"    "MEDIUM")
+        (rdip:osVersion   "os_version"   "LOW")
+    }
+
+    # Original computing environment value for this property.
+    GRAPH ?originalGraph {
+        ?origActivity rdip:executedIn ?origEnv .
+        ?origEnv ?prop ?origValue .
+    }
+
+    # Matching value in the reproduction (may be absent).
+    OPTIONAL {
+        GRAPH ?reproductionGraph {
+            ?reprActivity rdip:executedIn ?reprEnv .
+            ?reprEnv ?prop ?reprValue .
+        }
+    }
+
+    # Keep only genuine divergences: absent in reproduction, or different value.
+    FILTER(!BOUND(?reprValue) || STR(?origValue) != STR(?reprValue))
+
+    BIND(IF(!BOUND(?reprValue), "absent", STR(?reprValue)) AS ?reprValueFinal)
+
+    BIND(IRI(CONCAT(
+        "https://w3id.org/rdip/conflict/hardware-",
+        ?propLabel, "-",
+        SUBSTR(MD5(STR(?origActivity)), 1, 8)
+    )) AS ?conflict)
+
+    BIND(IF(
+        ?reprValueFinal = "absent",
+        CONCAT(?sev, ": ", ?propLabel, " '", STR(?origValue),
+               "' declared in the original but absent in the reproduction."),
+        CONCAT(?sev, ": ", ?propLabel, " mismatch: original=", STR(?origValue),
+               " reproduction=", ?reprValueFinal,
+               ". May alter numerical results or kernel/library selection.")
+    ) AS ?message)
+}

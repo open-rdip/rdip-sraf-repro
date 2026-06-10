@@ -20,7 +20,7 @@ CONSTRUCT {
         rdip:affectedActivity  ?origActivity .
 }
 WHERE {
-    GRAPH <https://w3id.org/rdip/graph/study001> {
+    GRAPH ?originalGraph {
         ?origActivity rdip:hasParameter ?origSeed .
         ?origSeed     a                 rdip:RandomSeed ;
                       rdip:parameterName  ?seedName ;
@@ -28,7 +28,7 @@ WHERE {
     }
 
     OPTIONAL {
-        GRAPH <https://w3id.org/rdip/graph/study002> {
+        GRAPH ?reproductionGraph {
             ?reprActivity rdip:hasParameter ?reprSeed .
             ?reprSeed     a                 rdip:RandomSeed ;
                           rdip:parameterName  ?seedName ;

@@ -192,15 +192,17 @@ def run_diff(original_study_id: str,
     all_conflicts   = Graph()
     all_conflicts.bind("rdip", RDIP)
     conflict_counts = {
-        "version_conflicts": 0,
-        "digest_conflicts":  0,
-        "seed_conflicts":    0,
+        "version_conflicts":  0,
+        "digest_conflicts":   0,
+        "seed_conflicts":     0,
+        "hardware_conflicts": 0,
     }
 
     for filename, key in [
-        ("construct_version_conflicts.sparql", "version_conflicts"),
-        ("construct_digest_conflicts.sparql",  "digest_conflicts"),
-        ("construct_seed_conflicts.sparql",    "seed_conflicts"),
+        ("construct_version_conflicts.sparql",  "version_conflicts"),
+        ("construct_digest_conflicts.sparql",   "digest_conflicts"),
+        ("construct_seed_conflicts.sparql",     "seed_conflicts"),
+        ("construct_hardware_conflicts.sparql", "hardware_conflicts"),
     ]:
         try:
             query    = _load_sparql(filename)
