@@ -9,6 +9,7 @@ the right directory to each parser — and records *where* artifacts were found,
 which is itself a reportable real-world result.
 """
 from __future__ import annotations
+import re
 from pathlib import Path
 
 # Filename patterns grouped by the parser that consumes them.
@@ -29,9 +30,13 @@ SKIP_DIRS = {
 
 MAX_DEPTH = 4  # root is depth 0; deeper than this is almost always vendored
 
-# Path hints that mark an artifact as auxiliary (docs/tests/examples) — used to
-# break depth ties in favour of a real runtime spec.
-DEPRIORITIZE = ("doc", "test", "example", "benchmark", "tutorial", "sample")
+# Path TOKENS that mark an artifact as auxiliary (docs/tests/examples) — used to
+# break depth ties in favour of a real runtime spec. Matched against path
+# segments split on separators, NOT as substrings (else "doc" hits "docker").
+DEPRIORITIZE = {
+    "doc", "docs", "documentation", "test", "tests", "example", "examples",
+    "benchmark", "benchmarks", "tutorial", "tutorials", "sample", "samples",
+}
 
 # The canonical filename for each type. A variant like requirements-1bit-mpi.txt
 # must never beat the real requirements.txt at the same depth.
@@ -52,7 +57,8 @@ def _rank(a: dict) -> tuple:
     """Lower is better: shallow → canonical → non-auxiliary → path order."""
     name = Path(a["rel_path"]).name.lower()
     non_canon = 0 if name in CANONICAL.get(a["type"], set()) else 1
-    aux = 1 if any(k in a["rel_path"].lower() for k in DEPRIORITIZE) else 0
+    tokens = set(re.split(r"[/_.\-]+", a["rel_path"].lower()))
+    aux = 1 if tokens & DEPRIORITIZE else 0
     return (a["depth"], non_canon, aux, a["rel_path"])
 
 

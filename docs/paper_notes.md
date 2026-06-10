@@ -110,6 +110,17 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
 - `lifter/mapper/rdip_mapper.py`: `map_repo_metadata()`.
 - `cluster/`: onboarding scripts (containerless), `download_models.sbatch`.
 - `analysis/summarize_results.py`: corpus stats → `results_summary.md/.csv`.
+- `analysis/predictor_analysis.py`: **Phase IV (RQ1/RQ4).** Logistic regression
+  of resolve/build outcome on metadata predictors (odds ratios + p-values, with
+  a regularised fallback for separation), and Spearman of FAIR-R vs outcome.
+  Predictors = artifact presence/placement, license, log(triples), plus
+  `has_seed`/log(stars) merged from `repo_list.csv`. Needs scipy+statsmodels.
+- `tests/` + `pytest.ini`: **48-test pytest suite** (artifact finder, version
+  resolver, repo metadata, docker parser, build-tester branches, all four
+  conflict queries, summarizer). Caught a real bug: `DEPRIORITIZE` used substring
+  matching so `"doc"` hit `"docker"`, nullifying the docs/test de-prioritisation
+  — now token-based. (Methods note: artifact *selection* is non-trivial and was
+  unit-tested.)
 - **RQ2 semantic diff — complete & tested.** Four-conflict taxonomy now
   functional: `construct_{version,digest,seed,hardware}_conflicts.sparql` +
   `diff_engine.py` + `conflict_report.py`. New hardware query (CUDA/GPU/OS).
