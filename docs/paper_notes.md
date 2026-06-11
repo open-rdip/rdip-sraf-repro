@@ -145,3 +145,51 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
 - End-to-end diff-engine run against Oxigraph (query logic already verified).
 - Executable SHACL shapes for the FAIR-R dimensions (proposal promises SHACL;
   scorer currently uses SPARQL ASK).
+
+## Advisor feedback — progress meeting (2026-06-10)
+
+- **TOP PRIORITY (gating): design the scoring metric rigorously BEFORE more
+  automation.** The FAIR-R weights (e.g. identifier = 7.5) are currently ad-hoc /
+  self-invented. Professors: do a careful design + analysis, grounded in the
+  literature, not made up. Concretely: (1) review what FAIR/reproducibility
+  assessment standards already do — **F-UJI** (Devaraju & Huber 2022, Horizon
+  2020 / FAIRsFAIR), RDA FAIR Data Maturity Model, and software-specific FAIR
+  (FAIR4RS); (2) **calibrate against reference papers** — take a paper that
+  *should* score ~perfect and one that should score low, and derive/justify the
+  criteria + weights from them; (3) benchmark our rubric against existing tools
+  and document what is reused vs. novel. This also fixes our own finding that
+  FAIR-R is currently flat and RQ4 is carried by the license criterion alone.
+  → DONE (grounding + proposed rubric): see `docs/fair_r_scoring_rubric.md`.
+  Key basis: RDA priority (Essential/Important/Useful) for within-dimension
+  weights; F-UJI hierarchy + graded maturity scoring (benchmark); FAIR4RS for
+  software criteria; ML Reproducibility Checklist for the novel Reproducible
+  dimension; weights then empirically refined via RQ4. Calibrate against
+  reference (badged/repro-challenge) papers + benchmark vs F-UJI.
+  → CODE DONE: `dashboard/fair_r_scorer.py` rebuilt to graded scoring
+  (absent/partial/full = 0/0.5/1.0) with RDA-priority weights
+  (essential/important/useful = 3/2/1), Reproducible via explicit sub-weights
+  (R1 0.4, R2 0.3, R3 0.3), recommendations sorted essential-first. Each
+  criterion carries its mapped standard. 6 unit tests in
+  `tests/test_fair_r_scorer.py` (perfect repo = 100, priority splits exact).
+  Still TODO: confirm exact RDA priority labels from the spec table; express
+  criteria as SHACL shapes; update the Streamlit dashboard to the graded view.
+- Look into a second EU/Horizon-2020 **code/software evaluation tool** the
+  professor referenced (FAIR-for-software / code assessment) — find + cite.
+- **Framing:** add a use-case / significance slide BEFORE the RQs, and tie the
+  RQs to the research vision. The use case to lead with: an author, before
+  submitting, uploads their paper + materials and gets a FAIR-R score plus
+  concrete recommendations to make the work more reproducible.
+- **New idea — citation-based reproducibility signal.** When paper A cites paper
+  B and reports a comparison (e.g. a results table), distinguish two citation
+  types: (a) A actually re-ran B's system, vs (b) A copied B's reported numbers.
+  Citation context is evidence of whether a system is runnable / results match;
+  distinguishing the two is itself valuable. Worth exploring as an extra signal.
+- **Result-level reproducibility (the 30 full-run subset):** be explicit that we
+  execute these and compare obtained results against the numbers *claimed in the
+  paper's tables* ("does it reproduce the advertised score"). Make the 66
+  build-only / 30 full-run split explicit in slides. (Professors: very hard but
+  very valuable — worth showing even partially.)
+- **Logistics:** strong encouragement to submit to a conference (~mid–late July,
+  possibly ~24 July; an information-science / digital-library venue near TPDL).
+  Proceedings via Springer LNAI; workshops/posters/challenges via CEUR. Share the
+  presentation slides with the professors by email.
