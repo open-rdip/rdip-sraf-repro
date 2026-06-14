@@ -85,6 +85,17 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
   only harness artifact (now fixed). The corrected version-aware re-run is the
   real RQ1 signal; the gap between the two runs quantifies environment rot.
 
+- **Version-aware corpus (clean, 96/97 on the interpreter ladder) — the headline
+  RQ1 result.** Controlling for declared Python: resolution 43% -> 55.8%
+  (48/86), build 41% -> 52.3% (45/86); failures resolve=35, build-install=3,
+  resolve-timeout=3. So ~half of declared ML environments still fail to
+  reconstruct even on the correct interpreter. Declared a Python version: 42%;
+  versions used 3.10=58 (default), 3.8=18, 3.9=7, 3.12=11, 3.11=2. RQ1 predictors
+  (logreg, n=86): license presence significant for resolve (OR 7.3, p=0.026) and
+  build (OR 7.7, p=0.024); has_conda borderline (p=0.05); log(triples) trending
+  negative (p~0.05-0.07). RQ4 Spearman rho~0.22-0.25 (still carried by licence
+  until the graded re-score + extraction add FAIR-R variance).
+
 - **Failure-mode taxonomy is itself a finding.** The resolution-failure causes
   (no wheel for declared interpreter, sdist build failure, conflicting pins,
   malformed/nonexistent requirements) are a reportable characterisation of *how*
@@ -171,8 +182,12 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
   (R1 0.4, R2 0.3, R3 0.3), recommendations sorted essential-first. Each
   criterion carries its mapped standard. 6 unit tests in
   `tests/test_fair_r_scorer.py` (perfect repo = 100, priority splits exact).
-  Still TODO: confirm exact RDA priority labels from the spec table; express
-  criteria as SHACL shapes; update the Streamlit dashboard to the graded view.
+  SHACL DONE: 6 dimension shape files in `sre_engine/shacl/` (findable,
+  accessible, interoperable, reusable, methodological, provenance) — severity =
+  priority (essential->Violation, important/useful->Warning), wired into the
+  diff_engine SHACL stage; parse + pyshacl tests in `tests/test_shacl_shapes.py`.
+  Still TODO: confirm exact RDA priority labels from the spec table; update the
+  Streamlit dashboard to the graded view; run the (quiet) FAIR-R re-score.
 - Look into a second EU/Horizon-2020 **code/software evaluation tool** the
   professor referenced (FAIR-for-software / code assessment) — find + cite.
 - **Framing:** add a use-case / significance slide BEFORE the RQs, and tie the

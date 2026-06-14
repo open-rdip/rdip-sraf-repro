@@ -1,0 +1,42 @@
+# sre_engine/shacl/accessible_shapes.ttl
+# FAIR-R Accessible dimension as executable SHACL. Maps to RDA-A1 / A1.1.
+
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdip: <https://w3id.org/rdip/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+rdip:AccessibleDatasetShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:Dataset ;
+    rdfs:label "Accessible: licence, access level, landing page" ;
+
+    sh:property [
+        sh:path     rdip:dataLicense ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message  "CRITICAL (Accessible / RDA-A1.1, essential): rdip:dataLicense is missing. Declare a machine-readable data licence (SPDX identifier)." ;
+    ] ;
+
+    sh:property [
+        sh:path     rdip:accessLevel ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING (Accessible / RDA-A1, important): rdip:accessLevel is missing. Declare the access level (open / restricted / embargoed) using a controlled vocabulary." ;
+    ] ;
+
+    sh:property [
+        sh:path     rdip:datasetLandingPage ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING (Accessible / RDA-F3, important): rdip:datasetLandingPage is missing. Link a resolvable landing page where the dataset can be accessed." ;
+    ] .
+
+rdip:ActivityGeneratesDatasetShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:ResearchActivity ;
+    sh:property [
+        sh:path     rdip:generatesDataset ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING (Accessible): the activity declares no dataset (rdip:generatesDataset); access metadata cannot be assessed." ;
+    ] .

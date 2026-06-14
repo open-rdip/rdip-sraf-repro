@@ -1,0 +1,33 @@
+# sre_engine/shacl/reusable_shapes.ttl
+# FAIR-R Reusable dimension as executable SHACL. Maps to RDA-R1.1 / R1.2; FAIR4RS.
+
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdip: <https://w3id.org/rdip/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+rdip:ReusableSoftwareShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:SoftwareApplication ;
+    rdfs:label "Reusable: software licence and versioning" ;
+    sh:property [
+        sh:path     rdip:softwareLicense ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message  "CRITICAL (Reusable / RDA-R1.1, essential): rdip:softwareLicense is missing. Add a standard (SPDX) software licence to the repository." ;
+    ] ;
+    sh:property [
+        sh:path     rdip:commitHash ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING (Reusable / RDA-R1.2, important): rdip:commitHash is missing. Record the release commit SHA (and a tagged version) for reuse." ;
+    ] .
+
+rdip:ActivityUsesSoftwareShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:ResearchActivity ;
+    sh:property [
+        sh:path     rdip:usedSoftware ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING (Reusable): the activity declares no software (rdip:usedSoftware); reuse metadata cannot be assessed." ;
+    ] .

@@ -20,21 +20,39 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
+import time                                            # noqa: E402
 from dashboard.fair_r_scorer import compute_fair_r   # noqa: E402
-from triplestore_client import graph_exists           # noqa: E402
-from config import OUTPUT_DIR                          # noqa: E402
+from triplestore_client import graph_exists, sparql_query  # noqa: E402
+from config import OUTPUT_DIR, OXIGRAPH_URL           # noqa: E402
 
 
 def graph_uri(study_id: str) -> str:
     return f"https://w3id.org/rdip/graph/{study_id}"
 
 
+def _wait_for_oxigraph(timeout: int = 20) -> bool:
+    for _ in range(timeout):
+        try:
+            sparql_query("ASK {}")
+            return True
+        except Exception:  # noqa: BLE001
+            time.sleep(1)
+    return False
+
+
 def main():
+    if not _wait_for_oxigraph():
+        print(f"Oxigraph not reachable at {OXIGRAPH_URL}. "
+              f"Start it first:  ~/bin/oxigraph serve --location ~/triplestore "
+              f"--bind 127.0.0.1:7878 &")
+        return
+
     results_dir = Path(OUTPUT_DIR)
     files = sorted(glob.glob(str(results_dir / "*.json")))
     if not files:
         print(f"No result JSONs in {results_dir}")
         return
+    print(f"Re-scoring {len(files)} studies against {OXIGRAPH_URL} ...")
 
     updated = skipped = 0
     for f in files:
@@ -43,11 +61,12 @@ def main():
         if not sid:
             continue
         if not graph_exists(graph_uri(sid)):
-            print(f"  {sid}: no graph in store — leaving fair_r unchanged")
+            print(f"  {sid:16s} no graph — skipped")
             skipped += 1
             continue
 
         res = compute_fair_r(sid)
+        print(f"  {sid:16s} {res['total_score']:5.1f}/100  {res['tier']}")
         rec["fair_r"] = {
             "total_score": res["total_score"],
             "tier": res["tier"],

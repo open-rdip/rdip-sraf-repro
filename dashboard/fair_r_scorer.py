@@ -229,10 +229,11 @@ def _criterion_max(criterion: dict, dim: dict) -> float:
     return PRIORITY_WEIGHT[criterion["priority"]] / total * dim["max_score"]
 
 
-def compute_fair_r(study_id: str) -> dict:
+def compute_fair_r(study_id: str, verbose: bool = False) -> dict:
     """Compute the graded, standards-weighted FAIR-R score for a study."""
     graph_uri = f"{GRAPH_BASE}/{study_id}"
-    print(f"\n[Scorer] Computing FAIR-R for {study_id}  <{graph_uri}>")
+    if verbose:
+        print(f"\n[Scorer] Computing FAIR-R for {study_id}  <{graph_uri}>")
 
     total_score = 0.0
     dimension_scores = {}
@@ -267,8 +268,9 @@ def compute_fair_r(study_id: str) -> dict:
                     "points_available": round(c_max - points, 2),
                 })
 
-            print(f"  [{LEVEL_NAME[level]:7s}] {dim_name:14s} | {c['label']:32s} "
-                  f"+{points:.1f}/{c_max:.1f}")
+            if verbose:
+                print(f"  [{LEVEL_NAME[level]:7s}] {dim_name:14s} | {c['label']:32s} "
+                      f"+{points:.1f}/{c_max:.1f}")
 
         total_score += dim_score
         dimension_scores[dim_name] = {
@@ -286,7 +288,8 @@ def compute_fair_r(study_id: str) -> dict:
     recommendations.sort(key=lambda r: (prio_rank.get(r["priority"], 3),
                                         -r["points_available"]))
 
-    print(f"\n[Scorer] FAIR-R: {total_score}/100 — {tier.upper()}")
+    if verbose:
+        print(f"\n[Scorer] FAIR-R: {total_score}/100 — {tier.upper()}")
     return {
         "study_id": study_id,
         "graph_uri": graph_uri,

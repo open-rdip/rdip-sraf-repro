@@ -1,0 +1,28 @@
+# sre_engine/shacl/interoperable_shapes.ttl
+# FAIR-R Interoperable dimension as executable SHACL. Maps to RDA-I1 / I2.
+
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdip: <https://w3id.org/rdip/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+rdip:InteroperableActivityShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:ResearchActivity ;
+    rdfs:label "Interoperable: method declared" ;
+    sh:property [
+        sh:path     rdip:usedMethod ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING (Interoperable / RDA-I1, important): rdip:usedMethod is missing. Link the activity to an rdip:Method describing the algorithm used." ;
+    ] .
+
+rdip:MethodWorkflowShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:Method ;
+    rdfs:label "Interoperable: workflow language" ;
+    sh:property [
+        sh:path     rdip:workflowLanguage ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING (Interoperable / RDA-I2, important): rdip:workflowLanguage is missing on the Method. Declare the workflow language (Python, Snakemake, Nextflow, …)." ;
+    ] .
