@@ -29,7 +29,7 @@ CONDA_PY="${HOME}/envs/sraf/bin/python"
 MODELS=(
   "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8"                       # primary   ~15 GB
   "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8"        # secondary ~9  GB
-  "RedHatAI/Mistral-Small-Instruct-2409-quantized.w8a8"       # third     ~23 GB
+  "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8"   # third     ~24 GB
 )
 export HF_TOKEN="${HF_TOKEN:-}"
 

@@ -93,8 +93,19 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
   versions used 3.10=58 (default), 3.8=18, 3.9=7, 3.12=11, 3.11=2. RQ1 predictors
   (logreg, n=86): license presence significant for resolve (OR 7.3, p=0.026) and
   build (OR 7.7, p=0.024); has_conda borderline (p=0.05); log(triples) trending
-  negative (p~0.05-0.07). RQ4 Spearman rho~0.22-0.25 (still carried by licence
-  until the graded re-score + extraction add FAIR-R variance).
+  negative (p~0.05-0.07).
+
+- **RQ4 interim result (graded re-score, env-only FAIR-R).** After applying the
+  graded scorer, FAIR-R spreads 21.1-33.9 (mean 29.3) and **no longer
+  significantly correlates with the outcome**: resolve rho=0.18 (p=0.09), build
+  rho=0.15 (p=0.16). The earlier "significant" 0.25 was tautological (FAIR-R was
+  essentially `license_present`, which predicts the outcome). Honest framing:
+  with only environment-side metadata populated, metadata completeness does NOT
+  predict reconstructability — a clean interim null that motivates the extraction
+  phase. Nuance to test later: environment-spec completeness tracks project
+  complexity (harder to build), so it may pull against the licence signal; this
+  is what RQ4's empirical weight-refinement is meant to surface. Re-test RQ4 once
+  the paper-extracted dimensions (seeds, methods, eval) populate the score.
 
 - **Failure-mode taxonomy is itself a finding.** The resolution-failure causes
   (no wheel for declared interpreter, sdist build failure, conflicting pins,
@@ -108,7 +119,13 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
 - Cluster policy: **max 1 running job, 1 node/job, 7-day max.** Corpus runs as a
   single sequential, resumable job (not a Slurm array).
 - Containerless runtime: conda env (`~/envs/sraf`, call its python by abs path)
-  + standalone Oxigraph binary (`~/bin/oxigraph` 0.5.8). No Apptainer on compute.
+  + standalone Oxigraph binary (`~/bin/oxigraph` 0.5.8). No Apptainer on the CPU
+  compute node (skynetcpu).
+- **GPU node (ASL-gpu / skynet) DOES have Apptainer** (`/usr/bin/apptainer`) +
+  2x RTX A6000 48 GB, driver 560.35.03. So vLLM serves via the official
+  `vllm/vllm-openai` Apptainer container on the GPU node (48 GB holds any 8-bit
+  model on one card); `torch`/`vllm` are not in the system Python — serve through
+  the container, models from `HF_HOME`, OpenAI-compatible API on localhost.
 
 ## What is built (code state)
 
@@ -120,6 +137,21 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
 - `lifter/parsers/docker_parser.py`: extracts author-declared `@sha256` digest.
 - `lifter/mapper/rdip_mapper.py`: `map_repo_metadata()`.
 - `cluster/`: onboarding scripts (containerless), `download_models.sbatch`.
+- `rag_pipeline/extractor.py`: refactored into a backend abstraction —
+  `Extractor` ABC + `OpenAICompatExtractor` (covers openai / vllm / llamacpp via
+  one OpenAI-compatible impl) + `GeminiExtractor`; `get_extractor(backend, model)`
+  factory from config; lazy SDK clients; duplicate `_extract_google` bug removed.
+  `extract_metadata` / `merge_extractions` kept stable for the pipeline.
+  Multi-model = `get_extractor("vllm", model=<repo>)`. Tests in test_extractor.py.
+- `rag_pipeline/run_corpus_extraction.py` + `cluster/extract_corpus.sbatch`:
+  Phase II extraction over the corpus. ONE job (1-job policy) runs vLLM (in the
+  vllm/vllm-openai Apptainer container, GPU) + Oxigraph + the extraction loop;
+  conda-env python hits the vLLM OpenAI API over localhost. Run per model via
+  `--export MODEL=<repo>`; resumable (marker files). Enriches study graphs ->
+  re-score -> RQ4 becomes a real test. Models: Qwen2.5-14B-GPTQ-Int8 (verified),
+  RedHatAI Llama-3.1-8B w8a8 (verified), Mistral-Small w8a8 (verify exact id).
+  NOTE: multi-model RQ3 eval needs per-model JSON outputs (task #19, separate
+  runner) — appending all 3 to one graph would mix them.
 - `analysis/summarize_results.py`: corpus stats → `results_summary.md/.csv`.
 - `analysis/predictor_analysis.py`: **Phase IV (RQ1/RQ4).** Logistic regression
   of resolve/build outcome on metadata predictors (odds ratios + p-values, with
