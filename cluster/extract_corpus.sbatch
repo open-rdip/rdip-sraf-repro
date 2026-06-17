@@ -19,23 +19,21 @@ set -uo pipefail
 REPO_ROOT="${SLURM_SUBMIT_DIR:-$HOME/rdip-sre}"
 MODEL="${MODEL:?set MODEL=<hf repo id>}"
 CONDA_PY="$HOME/envs/sraf/bin/python"
+VLLM_PY="$HOME/envs/vllm/bin/python"          # pip-installed vLLM (CUDA-matched)
 OXI_BIN="$HOME/bin/oxigraph"
-VLLM_IMG="$HOME/images/vllm.sif"
 TRIPLESTORE="$HOME/triplestore"
 export HF_HOME="$HOME/models"
 export HF_TOKEN="${HF_TOKEN:-}"
 VPORT=8000; OPORT=7878
 mkdir -p "$REPO_ROOT/logs" "$TRIPLESTORE"
 
-# --- 1. vLLM OpenAI server on the GPU (background) ---
+# --- 1. vLLM OpenAI server on the GPU (background; pip-installed, CUDA-matched) ---
 # Mistral models need vLLM's mistral tokenizer mode; others don't.
 EXTRA_ARGS=""
 case "$MODEL" in *[Mm]istral*) EXTRA_ARGS="--tokenizer-mode mistral" ;; esac
 echo "==> starting vLLM for $MODEL  ${EXTRA_ARGS}"
-apptainer exec --nv \
-    --bind "$HF_HOME:$HF_HOME" \
-    --env HF_HOME="$HF_HOME" --env HF_TOKEN="$HF_TOKEN" \
-    "$VLLM_IMG" python3 -m vllm.entrypoints.openai.api_server \
+HF_HOME="$HF_HOME" HF_TOKEN="$HF_TOKEN" \
+    "$VLLM_PY" -m vllm.entrypoints.openai.api_server \
         --model "$MODEL" --host 127.0.0.1 --port "$VPORT" \
         --max-model-len 8192 --gpu-memory-utilization 0.90 ${EXTRA_ARGS} \
     > "$REPO_ROOT/logs/vllm-$SLURM_JOB_ID.out" 2>&1 &

@@ -121,11 +121,15 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
 - Containerless runtime: conda env (`~/envs/sraf`, call its python by abs path)
   + standalone Oxigraph binary (`~/bin/oxigraph` 0.5.8). No Apptainer on the CPU
   compute node (skynetcpu).
-- **GPU node (ASL-gpu / skynet) DOES have Apptainer** (`/usr/bin/apptainer`) +
-  2x RTX A6000 48 GB, driver 560.35.03. So vLLM serves via the official
-  `vllm/vllm-openai` Apptainer container on the GPU node (48 GB holds any 8-bit
-  model on one card); `torch`/`vllm` are not in the system Python — serve through
-  the container, models from `HF_HOME`, OpenAI-compatible API on localhost.
+- **GPU node (ASL-gpu / skynet):** 2x RTX A6000 48 GB, **driver 560.35.03 =
+  CUDA 12.6 max**. Apptainer IS present here, BUT the `vllm/vllm-openai:latest`
+  container ships PyTorch built for CUDA 12.8 -> `torch._C._cuda_init()` fails
+  ("driver too old, found 12060"). The driver can't be changed, so we DON'T use
+  the container. Instead serve via **pip-installed vLLM pinned to a CUDA<=12.6
+  build** in `~/envs/vllm` (`vllm==0.8.5`, torch 2.6+cu124), run directly on the
+  GPU node — no container. `cluster/extract_corpus.sbatch` uses `$HOME/envs/vllm/
+  bin/python -m vllm.entrypoints.openai.api_server`. 48 GB holds any 8-bit model
+  on one card; OpenAI-compatible API on localhost; models from `HF_HOME`.
 
 ## What is built (code state)
 
