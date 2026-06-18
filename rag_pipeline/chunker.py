@@ -7,8 +7,7 @@ then falls back to chunking the full paper body.
 
 import re
 from pathlib import Path
-from pypdf import PdfReader
-from sympy import python
+# pypdf is imported lazily inside extract_text so the module imports without it.
 
 
 # Section headings that typically contain reproducibility metadata
@@ -33,6 +32,7 @@ def extract_text(pdf_path: str) -> str:
     Extract full text from a PDF file.
     Returns concatenated text from all pages.
     """
+    from pypdf import PdfReader  # lazy
     path = Path(pdf_path)
     if not path.exists():
         raise FileNotFoundError(f"PDF not found: {pdf_path}")

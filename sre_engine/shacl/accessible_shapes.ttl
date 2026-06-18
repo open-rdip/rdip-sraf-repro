@@ -3,11 +3,12 @@
 
 @prefix sh:   <http://www.w3.org/ns/shacl#> .
 @prefix rdip: <https://w3id.org/rdip/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 rdip:AccessibleDatasetShape
     a sh:NodeShape ;
-    sh:targetClass rdip:Dataset ;
+    sh:targetClass dcat:Dataset ;
     rdfs:label "Accessible: licence, access level, landing page" ;
 
     sh:property [

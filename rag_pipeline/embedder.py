@@ -12,8 +12,9 @@ import pickle
 import numpy as np
 from pathlib import Path
 
-from sentence_transformers import SentenceTransformer
-import faiss
+# sentence_transformers and faiss are heavy and only needed at run time; they
+# are imported lazily inside the methods that use them, so the module can be
+# imported (and unit-tested) without them installed.
 
 
 MODEL_NAME  = "allenai/specter2_base"
@@ -43,6 +44,7 @@ class EmbeddingStore:
 
     def _load_model(self):
         if self.model is None:
+            from sentence_transformers import SentenceTransformer  # lazy
             print(f"[Embedder] Loading model {MODEL_NAME} ...")
             self.model = SentenceTransformer(MODEL_NAME)
 
@@ -51,6 +53,7 @@ class EmbeddingStore:
 
     def build(self, chunks: list[str]):
         """Embed chunks and build FAISS index. Saves to disk."""
+        import faiss  # lazy
         self._load_model()
         print(f"[Embedder] Embedding {len(chunks)} chunks "
               f"for study {self.study_id} ...")
@@ -79,6 +82,7 @@ class EmbeddingStore:
 
     def load(self):
         """Load existing index from disk."""
+        import faiss  # lazy
         if not self.is_built():
             raise RuntimeError(
                 f"No index for study {self.study_id}. Call build() first."
@@ -92,6 +96,7 @@ class EmbeddingStore:
         Retrieve the top_k most relevant chunks for a query.
         Loads index from disk if not already loaded.
         """
+        import faiss  # lazy
         if self.index is None:
             self.load()
 

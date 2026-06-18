@@ -162,8 +162,8 @@ def map_dmp(study_id: str, parsed: dict) -> Graph:
     DMP commitments become verifiable assertions in the KG.
     Produces:
       rdip:ResearchActivity → rdip:identifier (from DMP ID)
-      rdip:ResearchActivity → rdip:generatesDataset → rdip:Dataset (×n)
-      rdip:Dataset → rdip:dataLicense, rdip:accessLevel, rdip:datasetLandingPage
+      rdip:ResearchActivity → rdip:generatesDataset → dcat:Dataset (×n)
+      dcat:Dataset → rdip:dataLicense, rdip:accessLevel, rdip:datasetLandingPage
     """
     g        = _base_graph()
     activity = study_uri(study_id)
@@ -178,7 +178,7 @@ def map_dmp(study_id: str, parsed: dict) -> Graph:
     # Dataset commitments from DMP
     for i, ds in enumerate(parsed.get("datasets", [])):
         ds_node = URIRef(f"{BASE}dataset-{study_id}-{i}")
-        g.add((ds_node, RDF.type, RDIP.Dataset))
+        g.add((ds_node, RDF.type, DCAT.Dataset))
         g.add((activity, RDIP.generatesDataset, ds_node))
 
         if ds.get("dataset_id"):

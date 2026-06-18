@@ -10,6 +10,7 @@ from rdflib import Graph, Namespace, URIRef, Literal, RDF, XSD
 
 RDIP = Namespace("https://w3id.org/rdip/")
 PROV = Namespace("http://www.w3.org/ns/prov#")
+DCAT = Namespace("http://www.w3.org/ns/dcat#")   # datasets are dcat:Dataset
 BASE = "https://w3id.org/rdip/instance/"
 
 
@@ -47,6 +48,8 @@ def map_extraction(study_id: str, extracted: dict) -> Graph:
       - rdip:SoftwareDependency instances (from narrative)
       - rdip:ComputingEnvironment hardware properties
       - rdip:Method instances
+      - dcat:Dataset instances (via rdip:usedDataset)
+      - rdip:EvaluationResult instances (via rdip:generatesResult)
     """
     g        = _base_graph()
     activity = activity_uri(study_id)
@@ -121,6 +124,39 @@ def map_extraction(study_id: str, extracted: dict) -> Graph:
             g.add((method_node, RDIP.description,
                    Literal(method["description"], datatype=XSD.string)))
         g.add((activity, RDIP.usedMethod, method_node))
+
+    # ── Datasets (the schema extracted them; previously dropped) ──────────────
+    # No rdip:Dataset class exists in the ontology; link via rdip:usedDataset
+    # and describe with rdip:title / rdip:version (both ontology-valid).
+    for ds in extracted.get("datasets", []):
+        if not ds.get("name"):
+            continue
+        ds_node = mint("dataset")
+        g.add((ds_node, RDF.type, DCAT.Dataset))
+        g.add((activity, RDIP.usedDataset, ds_node))
+        g.add((ds_node, RDIP.title,
+               Literal(ds["name"], datatype=XSD.string)))
+        if ds.get("version"):
+            g.add((ds_node, RDIP.version,
+                   Literal(str(ds["version"]), datatype=XSD.string)))
+
+    # ── Evaluation results (the paper's claimed metrics) ──────────────────────
+    # Ground truth for the result-reproducibility test: a reproducer compares
+    # their re-run numbers against these. Linked via rdip:generatesResult.
+    for ev in extracted.get("evaluation_results", []):
+        if not ev.get("metric"):
+            continue
+        ev_node = mint("eval")
+        g.add((ev_node, RDF.type, RDIP.EvaluationResult))
+        g.add((ev_node, RDIP.metricName,
+               Literal(ev["metric"], datatype=XSD.string)))
+        if ev.get("value") not in (None, ""):
+            g.add((ev_node, RDIP.metricValue,
+                   Literal(str(ev["value"]), datatype=XSD.string)))
+        if ev.get("split"):
+            g.add((ev_node, RDIP.splitLabel,
+                   Literal(ev["split"], datatype=XSD.string)))
+        g.add((activity, RDIP.generatesResult, ev_node))
 
     return g
 

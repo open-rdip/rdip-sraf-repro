@@ -147,6 +147,12 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
   factory from config; lazy SDK clients; duplicate `_extract_google` bug removed.
   `extract_metadata` / `merge_extractions` kept stable for the pipeline.
   Multi-model = `get_extractor("vllm", model=<repo>)`. Tests in test_extractor.py.
+  Extracts seeds, hyperparameters, methods, datasets, AND **evaluation results**
+  ({metric,value,split} -> rdip:EvaluationResult via rdip:generatesResult) —
+  the latter gives R3 its eval half AND the claimed-number ground truth for the
+  run-test (RQ2). Code reconciled with ontology v2.0.0: datasets are dcat:Dataset
+  (imported), not rdip:Dataset; scorer uses real v2.0.0 property names. Mapper
+  tests in test_mapper.py.
 - `rag_pipeline/run_corpus_extraction.py` + `cluster/extract_corpus.sbatch`:
   Phase II extraction over the corpus. ONE job (1-job policy) runs vLLM (in the
   vllm/vllm-openai Apptainer container, GPU) + Oxigraph + the extraction loop;
@@ -244,3 +250,62 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
   possibly ~24 July; an information-science / digital-library venue near TPDL).
   Proceedings via Springer LNAI; workshops/posters/challenges via CEUR. Share the
   presentation slides with the professors by email.
+
+## 2026-06-18 — scoring finalised (#14/#15/#16 closed)
+
+- **#14 RDA priorities confirmed against the spec.** Web-fetched the RDA FAIR
+  Data Maturity Model spec (Zenodo 3909563) and verified the priority of every
+  criterion: F1/F2/F3 Essential; A1-01M Important, A1-02M Essential, A1.1-01M
+  Essential; I1/I2/I3 Important; R1.1 Essential, R1.2 Important, R1.3 Essential.
+  First pass had **3 mismatches**, now corrected in `fair_r_scorer.py`: landing
+  page (Important→Essential), related links (Useful→Important), community
+  standard (Useful→Essential). Rubric doc + tests updated; SHACL shapes already
+  in place. → the rubric's within-dimension weights are now defensibly
+  *standards-traceable*, not invented (the professor's #1 ask).
+- **#16 dashboard graded view.** `dashboard/app.py` FAIR-R page rewired from the
+  old binary output (met / severity) to the graded scorer: radar now plots
+  **percent per dimension** (comparable axes); each criterion shows its maturity
+  **level** (absent/partial/full) + **RDA priority** dot + points/max + the
+  standard it maps to; recommendations are **priority-sorted** (Essential first)
+  and show **points recoverable** per fix.
+- **#15 calibration harness built** (`calibration/`): `run_calibration.py`
+  (construct-validity check — pairwise rank concordance + high–low separation +
+  optional Spearman/Mann-Whitney), `reference_set.yaml` (10 internal corpus
+  anchors banded by independent evidence: seed+req+container & high build score
+  = high; no-seed/no-container/low-score build-only = low — `external` ACM /
+  ReScience-badged section left as a template to populate), and
+  `fuji_benchmark.md` (procedure to score the dataset-PID subset with F-UJI and
+  compare F/A/I/R per-dimension; Reproducible has no F-UJI analogue, validated
+  via RQ4). 10 unit tests on the pure metrics. **Run pending:** execute
+  `python calibration/run_calibration.py` on the cluster where Oxigraph holds the
+  lifted corpus to get the actual construct-validity number for the paper.
+- Test suite now **81 passing** (71 + 10 calibration).
+
+## 2026-06-18 — multi-model extraction pipeline (#18 closed)
+
+- **Pipeline is now genuinely multi-model.** `pipeline.run()` takes
+  `backend`/`model`, builds one extractor (reused client) for the study, and
+  writes each model's output to a **model-scoped graph**
+  `…/graph/<study>/ext/<model_slug>` — so several models can extract the same
+  paper without overwriting one another. An explicit `target_graph` overrides
+  this (that's how the *chosen* model's triples get merged into the canonical
+  study graph later, in #19/#20). Each run also persists the raw merged
+  extraction to `data/extractions/<study>__<slug>.json` (backend, model,
+  timestamp, counts, full metadata) for the gold-standard comparison.
+- **Corpus runner** (`run_corpus_extraction.py`) loops several models in one
+  submission via `SRAF_MODELS="vllm:<repo>,google:gemini-1.5-pro"` (falls back
+  to the single configured model), with a **per-(study, model)** resume marker.
+  NB: vLLM serves one model per server, so on the cluster run one *submission*
+  per vLLM model (markers keep them separate); `SRAF_MODELS` multiplexing is for
+  API backends. The sbatch already threads `MODEL`→vLLM + `LLM_MODEL`, and the
+  always-model-scoped graph means different model submissions no longer collide.
+- **Import hygiene fixes (found while testing):** removed a stray, unused
+  `from sympy import python` in `chunker.py` (it forced sympy as a dep for
+  nothing); made `pypdf`, `sentence_transformers`, and `faiss` **lazy** imports
+  so the RAG modules import (and unit-test) without the heavy stack installed.
+- 7 new tests (`tests/test_pipeline.py`): model_slug, per-model graph scoping,
+  model threading, JSON persistence, explicit-target override, SRAF_MODELS
+  parsing. **Test suite now 88 passing.**
+- **Blocked on:** `~/envs/sraf/bin/pip install openai` on the cluster (+ vLLM
+  serving) before the corpus extraction can actually run — code is ready and the
+  run is a single `sbatch --export=ALL,MODEL=<repo> cluster/extract_corpus.sbatch`.

@@ -66,13 +66,13 @@ DIMENSIONS = {
             {
                 "label": "Descriptive metadata",
                 "priority": "essential", "standard": "RDA-F2-01M / FsF-F2-01M",
-                "present": "ASK {{ GRAPH <{g}> {{ ?s rdfs:label ?o }} }}",
+                "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:title ?o }} }}",
                 "full": None,
                 "fix": "Provide core descriptive metadata (title, creator, date, keywords).",
             },
             {
                 "label": "Landing page",
-                "priority": "important", "standard": "RDA-F3-01M / FsF-F3-01M",
+                "priority": "essential", "standard": "RDA-F3-01M / FsF-F3-01M",
                 "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:datasetLandingPage ?o }} }}",
                 "full": None,
                 "fix": "Link a landing page where the dataset can be accessed.",
@@ -127,8 +127,10 @@ DIMENSIONS = {
             },
             {
                 "label": "Related links",
-                "priority": "useful", "standard": "RDA-I3-01M / FsF-I3-01M",
-                "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:isRelatedTo ?o }} }}",
+                "priority": "important", "standard": "RDA-I3-01M / FsF-I3-01M",
+                "present": ("ASK {{ GRAPH <{g}> {{ {{ ?s rdip:citesDataset ?o }} "
+                            "UNION {{ ?s rdip:derivedFrom ?o }} "
+                            "UNION {{ ?s rdip:generatesPublication ?o }} }} }}"),
                 "full": None,
                 "fix": "Link related entities (datasets, publications) via typed relations.",
             },
@@ -154,8 +156,8 @@ DIMENSIONS = {
             },
             {
                 "label": "Community standard",
-                "priority": "useful", "standard": "RDA-R1.3-01M / FsF-R1.3-01M",
-                "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:conformsTo ?o }} }}",
+                "priority": "essential", "standard": "RDA-R1.3-01M / FsF-R1.3-01M",
+                "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:dataFormat ?o }} }}",
                 "full": None,
                 "fix": "Adopt a community metadata / file-format standard.",
             },
@@ -187,9 +189,9 @@ DIMENSIONS = {
                 "label": "Data provenance (R3)",
                 "fraction": 0.3, "standard": "ML Repro Checklist (data, splits, eval)",
                 "present": ("ASK {{ GRAPH <{g}> {{ {{ ?s a rdip:EvaluationResult }} "
-                            "UNION {{ ?s a rdip:Dataset }} }} }}"),
-                "full": ("ASK {{ GRAPH <{g}> {{ ?s a rdip:EvaluationResult . "
-                         "?d a rdip:Dataset }} }}"),
+                            "UNION {{ ?s rdip:generatesDataset ?d }} "
+                            "UNION {{ ?s rdip:usedDataset ?d }} }} }}"),
+                "full": "ASK {{ GRAPH <{g}> {{ ?s a rdip:EvaluationResult }} }}",
                 "fix": "Record dataset identity, train/val/test splits, preprocessing, and evaluation results.",
             },
         ],

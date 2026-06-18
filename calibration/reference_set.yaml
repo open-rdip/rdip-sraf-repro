@@ -1,0 +1,69 @@
+# FAIR-R calibration reference set
+# ---------------------------------
+# Construct-validity ground truth for the FAIR-R rubric (see
+# docs/fair_r_scoring_rubric.md §5 and calibration/run_calibration.py).
+#
+# Each entry pins a study to an EXPECTED band, set from evidence OUTSIDE the
+# rubric. The harness then checks the rubric's computed scores reproduce the
+# expected ordering. `band` is one of: high | mid | low.
+#
+#   study_id : graph id in the KG (https://w3id.org/rdip/graph/<study_id>)
+#   band     : expected band (the ground-truth label)
+#   note     : the external evidence justifying the label
+#
+# ── external ────────────────────────────────────────────────────────────────
+# Artifacts with an INDEPENDENT reproducibility signal — ACM Artifact Review
+# badges ("Artifacts Evaluated — Reusable", "Results Reproduced") or a
+# successful ReScience-C / ML Reproducibility Challenge report. These must be
+# lifted into the KG before they can be scored; until then the harness skips
+# them. POPULATE with verified entries (confirm the badge + repo before adding):
+external: []
+  # - study_id: ref_rescience_001
+  #   band: high
+  #   note: "ReScience-C reproduction, MIT licence, seeds + pinned env, DOI"
+  #   repo_url: https://github.com/<org>/<repo>
+  #   doi: 10.5281/zenodo.XXXXXXX
+  # - study_id: ref_nocode_001
+  #   band: low
+  #   note: "Paper with no released code, no licence, no seeds"
+
+# ── internal ────────────────────────────────────────────────────────────────
+# First-pass construct validity drawn from our own 96-repo corpus, banded by
+# documented reproducibility infrastructure (independent of the FAIR-R rubric):
+#   high = random seed declared + requirements + container/build evidence,
+#          high build score, fully buildable;
+#   low  = no seed, no container, lowest build scores, build-only/failed.
+# This tests the core claim — the rubric should separate repos that carry
+# reproducibility infrastructure from those that do not.
+internal:
+  - study_id: study002
+    band: high
+    note: "seed + requirements + Docker, b_score 7, full tier (Kronecker KGE)"
+  - study_id: study003
+    band: high
+    note: "seed + requirements + Docker, b_score 7, full tier (Camouflaged OD)"
+  - study_id: study004
+    band: high
+    note: "seed + requirements + Docker, b_score 7, full tier"
+  - study_id: study006
+    band: high
+    note: "seed + requirements + conda, b_score 6, full tier"
+  - study_id: study015
+    band: high
+    note: "seed + requirements + Docker, b_score 6, full tier"
+
+  - study_id: study056
+    band: low
+    note: "no seed, no Docker, b_score 3, build_only (CaloHadronic)"
+  - study_id: study057
+    band: low
+    note: "no seed, no Docker, b_score 3, build_only (strong lenses)"
+  - study_id: study058
+    band: low
+    note: "no seed, no Docker, b_score 3, build_only (ToxiGen)"
+  - study_id: study060
+    band: low
+    note: "no seed, no Docker, b_score 3, build_only (Jukebox)"
+  - study_id: study061
+    band: low
+    note: "no seed, no Docker, b_score 3, build_only (SocNavBench)"

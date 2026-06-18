@@ -15,9 +15,9 @@ import dashboard.fair_r_scorer as fr  # noqa: E402
 
 
 def test_criterion_max_by_priority():
-    # Findable: essential(3) + essential(3) + important(2) = 8; PID = 3/8 * 15
+    # Findable (RDA): all three essential = 3+3+3 = 9; PID = 3/9 * 15 = 5.0
     f = fr.DIMENSIONS["Findable"]
-    assert abs(fr._criterion_max(f["criteria"][0], f) - 5.625) < 0.01
+    assert abs(fr._criterion_max(f["criteria"][0], f) - 5.0) < 0.01
 
 
 def test_criterion_max_by_fraction():
@@ -27,9 +27,9 @@ def test_criterion_max_by_fraction():
 
 
 def test_reusable_priority_split():
-    # Reusable: essential(3)+important(2)+useful(1)=6; software licence = 3/6 * 20 = 10
+    # Reusable (RDA): essential(3)+important(2)+essential(3)=8; software = 3/8 * 20 = 7.5
     r = fr.DIMENSIONS["Reusable"]
-    assert abs(fr._criterion_max(r["criteria"][0], r) - 10.0) < 0.01
+    assert abs(fr._criterion_max(r["criteria"][0], r) - 7.5) < 0.01
 
 
 def test_graded_points_and_levels(monkeypatch):
@@ -44,11 +44,11 @@ def test_graded_points_and_levels(monkeypatch):
     fcrit = {c["label"]: c for c in res["dimension_scores"]["Findable"]["criteria"]}
     pid = fcrit["Persistent identifier"]
     assert pid["level"] == "partial"
-    assert abs(pid["points"] - 2.81) < 0.05            # 0.5 * 5.625
+    assert abs(pid["points"] - 2.5) < 0.05             # 0.5 * 5.0
 
     rcrit = {c["label"]: c for c in res["dimension_scores"]["Reusable"]["criteria"]}
     assert rcrit["Software licence"]["level"] == "full"
-    assert abs(rcrit["Software licence"]["points"] - 10.0) < 0.05
+    assert abs(rcrit["Software licence"]["points"] - 7.5) < 0.05
 
     repro = {c["label"]: c for c in res["dimension_scores"]["Reproducible"]["criteria"]}
     assert abs(repro["Computational environment (R1)"]["points"] - 6.0) < 0.05  # 0.5 * 12

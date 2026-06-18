@@ -50,10 +50,12 @@ Grounds the **novel Reproducible dimension**, which has no RDA equivalent.
 Two levels of weighting, each justified rather than asserted:
 
 1. **Within a dimension — by RDA priority.** Each criterion inherits its RDA
-   indicator's priority. Proposed numeric mapping: **Essential = 3, Important =
-   2, Useful = 1**. A criterion's share of its dimension = its priority ÷ sum of
-   priorities in that dimension. (Exact Essential/Important/Useful labels must be
-   read off the RDA spec table — see §6 action.)
+   indicator's priority. Numeric mapping: **Essential = 3, Important = 2, Useful =
+   1**. A criterion's share of its dimension = its priority ÷ sum of priorities in
+   that dimension. Priorities are **confirmed against the RDA spec** (FAIR Data
+   Maturity Model v0.90, Zenodo 3909563): F1/F2/F3 Essential; A1-02M Essential,
+   A1-01M Important; A1.1 Essential; I1/I2/I3 Important; R1.1 Essential, R1.2
+   Important, R1.3 Essential.
 
 2. **Across dimensions — grounded, then empirically validated.** Keep the F/A/I/R
    weights aligned to RDA emphasis, and justify the Reproducible weight (0.30) by
@@ -81,15 +83,15 @@ identifier), matching F-UJI's licence/PID tests.
 
 ## 4. Proposed FAIR-R rubric (criteria → standard → priority)
 
-Priorities below are a first mapping **to be confirmed against the RDA spec
-table**. "FsF-*" = the corresponding F-UJI metric to benchmark against.
+Priorities below are **confirmed against the RDA spec** (FAIR Data Maturity Model
+v0.90). "FsF-*" = the corresponding F-UJI metric to benchmark against.
 
 ### Findable (RDA-aligned)
 | Criterion | Maps to | Priority |
 |---|---|---|
 | Persistent identifier (PID scheme + resolves) | RDA-F1-01M / FsF-F1-01D, F1-02D | Essential |
 | Descriptive core metadata (creator, title, date, …) | RDA-F2-01M / FsF-F2-01M | Essential |
-| Metadata includes the data identifier / landing page | RDA-F3-01M / FsF-F3-01M | Important |
+| Metadata includes the data identifier / landing page | RDA-F3-01M / FsF-F3-01M | Essential |
 
 ### Accessible
 | Criterion | Maps to | Priority |
@@ -103,14 +105,14 @@ table**. "FsF-*" = the corresponding F-UJI metric to benchmark against.
 |---|---|---|
 | Formal knowledge representation (RDF/JSON-LD) | RDA-I1-01M / FsF-I1-01M | Important |
 | Uses shared semantic resources / vocabularies | RDA-I1-02M / FsF-I1-02M | Important |
-| Links to related entities (PROV-O / DataCite relations) | RDA-I3-01M / FsF-I3-01M | Useful |
+| Links to related entities (PROV-O / DataCite relations) | RDA-I3-01M / FsF-I3-01M | Important |
 
 ### Reusable
 | Criterion | Maps to | Priority |
 |---|---|---|
 | Software licence (SPDX) | RDA-R1.1-01M / FsF-R1.1-01M; FAIR4RS R | Essential |
 | Provenance: commit hash + versioning | RDA-R1.2-01M / FsF-R1.2-01M; FAIR4RS | Important |
-| Community metadata / format standard | RDA-R1.3-01M / FsF-R1.3-01M | Useful |
+| Community metadata / format standard | RDA-R1.3-01M / FsF-R1.3-01M | Essential |
 
 ### Reproducible (novel — grounded in ML Repro Checklist + FAIR4RS)
 | Sub-dimension | Criterion | Grounded in |
@@ -147,8 +149,11 @@ cites a specific, published checklist item rather than being invented.
 - `dashboard/fair_r_scorer.py`: replace binary `ASK` with the 3-level graded
   check; replace equal 0.5 weights with the RDA-priority weights; add the new
   F/A/I/R criteria (descriptive metadata, access protocol, semantic resources).
-- Confirm each criterion's **RDA priority** against the spec table (Zenodo
-  3909563) and fill the priority column exactly.
+- ~~Confirm each criterion's **RDA priority** against the spec table (Zenodo
+  3909563) and fill the priority column exactly.~~ **Done** — priorities verified
+  against the spec PDF; three first-pass mismatches corrected (landing page
+  Important→Essential, related links Useful→Important, community standard
+  Useful→Essential).
 - Express each criterion as an executable **SHACL shape** (as the proposal
   promises) rather than only SPARQL ASK.
 - Keep the cross-dimension weights configurable so RQ4 can refine them.

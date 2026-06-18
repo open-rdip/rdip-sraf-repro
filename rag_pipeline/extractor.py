@@ -46,13 +46,16 @@ the passage below. Return a JSON object with EXACTLY this structure:
   }},
   "hyperparameters": [{{"name": "string", "value": "string"}}],
   "datasets": [{{"name": "string", "version": "string or null"}}],
-  "methods": [{{"name": "string", "description": "string"}}]
+  "methods": [{{"name": "string", "description": "string"}}],
+  "evaluation_results": [{{"metric": "string", "value": "string", "split": "string or null"}}]
 }}
 
 Rules:
 - Use null for absent scalar fields, [] for absent arrays
 - Extract version numbers exactly as written
 - Only extract integer random seeds that are explicitly stated
+- For evaluation_results, extract each reported metric with its exact reported
+  value and the split it was measured on (train / validation / test) if stated
 - Do not invent values not present in the text
 
 Passage:
@@ -209,8 +212,9 @@ def merge_extractions(extractions: list[dict]) -> dict:
         "dependencies": [], "random_seeds": [],
         "hardware": {"gpu_model": None, "cuda_version": None, "cpu_info": None},
         "hyperparameters": [], "datasets": [], "methods": [],
+        "evaluation_results": [],
     }
-    seen_deps, seen_params, seen_datasets = set(), set(), set()
+    seen_deps, seen_params, seen_datasets, seen_evals = set(), set(), set(), set()
 
     for ext in extractions:
         if not ext:
@@ -237,4 +241,9 @@ def merge_extractions(extractions: list[dict]) -> dict:
         for method in ext.get("methods", []):
             if method not in merged["methods"]:
                 merged["methods"].append(method)
+        for ev in ext.get("evaluation_results", []):
+            metric = (ev.get("metric") or "").lower()
+            key = (metric, (ev.get("split") or "").lower())
+            if metric and key not in seen_evals:
+                merged["evaluation_results"].append(ev); seen_evals.add(key)
     return merged
