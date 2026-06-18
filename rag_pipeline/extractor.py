@@ -206,44 +206,77 @@ def extract_metadata(passage: str, backend: str | None = None,
     return _DEFAULT.extract(passage)
 
 
+# Models frequently emit these as a *string* where they mean "absent"; treat
+# them as null so they don't become spurious values/triples.
+_NULLISH = {"", "null", "none", "n/a", "na", "nan", "nil",
+            "unknown", "not specified", "not reported", "not stated"}
+
+
+def _clean(v):
+    """Coerce model-emitted nullish strings (e.g. the literal "null") to None."""
+    if isinstance(v, str) and v.strip().lower() in _NULLISH:
+        return None
+    return v
+
+
+def _key(name) -> str:
+    """Lowercased identity key for an item; '' for nullish/absent names."""
+    c = _clean(name)
+    return c.strip().lower() if isinstance(c, str) else ""
+
+
 def merge_extractions(extractions: list[dict]) -> dict:
-    """Merge per-chunk extractions, de-duplicating by name within each category."""
+    """Merge per-chunk extractions, de-duplicating by name within each category.
+    Nullish strings ("null", "n/a", …) are normalised to None throughout."""
     merged = {
         "dependencies": [], "random_seeds": [],
         "hardware": {"gpu_model": None, "cuda_version": None, "cpu_info": None},
         "hyperparameters": [], "datasets": [], "methods": [],
         "evaluation_results": [],
     }
-    seen_deps, seen_params, seen_datasets, seen_evals = set(), set(), set(), set()
+    seen_deps, seen_params, seen_datasets, seen_evals, seen_methods = (
+        set(), set(), set(), set(), set())
 
     for ext in extractions:
         if not ext:
             continue
         for dep in ext.get("dependencies", []):
-            key = dep.get("name", "").lower()
+            key = _key(dep.get("name"))
             if key and key not in seen_deps:
-                merged["dependencies"].append(dep); seen_deps.add(key)
+                merged["dependencies"].append(
+                    {"name": dep.get("name"), "version": _clean(dep.get("version"))})
+                seen_deps.add(key)
         for seed in ext.get("random_seeds", []):
             if isinstance(seed, int) and seed not in merged["random_seeds"]:
                 merged["random_seeds"].append(seed)
         hw = ext.get("hardware", {}) or {}
         for field in ("gpu_model", "cuda_version", "cpu_info"):
-            if hw.get(field) and not merged["hardware"][field]:
-                merged["hardware"][field] = hw[field]
+            val = _clean(hw.get(field))
+            if val and not merged["hardware"][field]:
+                merged["hardware"][field] = val
         for param in ext.get("hyperparameters", []):
-            key = param.get("name", "").lower()
+            key = _key(param.get("name"))
             if key and key not in seen_params:
-                merged["hyperparameters"].append(param); seen_params.add(key)
+                merged["hyperparameters"].append(
+                    {"name": param.get("name"), "value": _clean(param.get("value"))})
+                seen_params.add(key)
         for ds in ext.get("datasets", []):
-            key = ds.get("name", "").lower()
+            key = _key(ds.get("name"))
             if key and key not in seen_datasets:
-                merged["datasets"].append(ds); seen_datasets.add(key)
+                merged["datasets"].append(
+                    {"name": ds.get("name"), "version": _clean(ds.get("version"))})
+                seen_datasets.add(key)
         for method in ext.get("methods", []):
-            if method not in merged["methods"]:
-                merged["methods"].append(method)
+            key = _key(method.get("name") if isinstance(method, dict) else method)
+            if key and key not in seen_methods:
+                merged["methods"].append(method); seen_methods.add(key)
         for ev in ext.get("evaluation_results", []):
-            metric = (ev.get("metric") or "").lower()
-            key = (metric, (ev.get("split") or "").lower())
+            metric = _key(ev.get("metric"))
+            split = (_clean(ev.get("split")) or "")
+            key = (metric, split.lower())
             if metric and key not in seen_evals:
-                merged["evaluation_results"].append(ev); seen_evals.add(key)
+                merged["evaluation_results"].append(
+                    {"metric": ev.get("metric"), "value": _clean(ev.get("value")),
+                     "split": _clean(ev.get("split"))})
+                seen_evals.add(key)
     return merged

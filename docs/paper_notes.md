@@ -309,3 +309,52 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
 - **Blocked on:** `~/envs/sraf/bin/pip install openai` on the cluster (+ vLLM
   serving) before the corpus extraction can actually run — code is ready and the
   run is a single `sbatch --export=ALL,MODEL=<repo> cluster/extract_corpus.sbatch`.
+- **Decision:** extraction model access = **local vLLM (open-weights)**, not an
+  API — weights live in `$HOME/models`, served by the pinned vLLM (0.8.5/cu124,
+  driver-compatible) on `127.0.0.1:8000`, called by the `openai` client. Keeps
+  the reproducibility story "locally hosted, citable open weights." `openai`
+  client now confirmed present in the `sraf` env (2.43.0) — blocker cleared.
+
+## 2026-06-18 — RQ3 extraction evaluator built (#19 harness)
+
+- **Precision/recall/F1 evaluator** (`evaluation/eval_extraction.py`): compares
+  each model's `data/extractions/<study>__<slug>.json` against hand gold files,
+  per field (dependencies, seeds, hyperparameters, datasets, methods,
+  evaluation_results, hardware). Two strictnesses — **lenient** (item found by
+  identifying key) and **strict** (key + value, with value canonicalisation so
+  `0.94`/`0.940`/`94%` compare equal). Reports micro P/R/F1 per field + overall,
+  plus macro F1 (mean per-study F1). Pairs only studies that have both gold and
+  an extraction; skips the rest. 12 unit tests; suite now **100 passing**.
+- **Gold schema + template** (`evaluation/gold_schema.md`,
+  `gold_standard/study001.template.json`): gold mirrors the extraction
+  `metadata` block so they're directly comparable; annotate from the **paper
+  PDF** (not the repo) since this measures paper extraction. Eval-result values
+  are the paper's *claimed* numbers — same targets RQ #20 (result repro) checks
+  re-run numbers against.
+- **Remaining for #19 (human):** annotate 12→50 gold files, then run
+  `python evaluation/eval_extraction.py --model <slug> [--strict]`. Auto-gold is
+  deliberately NOT generated — gold must be human-verified to be a valid
+  reference.
+
+## 2026-06-18 — first real extraction run (smoke test, 3 papers) ✅
+
+- **Local-vLLM extraction works end-to-end on the cluster.** `extract-16211`:
+  vLLM served Qwen2.5-14B-Instruct-GPTQ-Int8, Oxigraph up, study001–003 extracted
+  → per-model graphs `…/graph/<study>/ext/qwen-…` + JSON artifacts written, 148 /
+  102 / 279 triples appended. Counts looked sane (e.g. study003: 7 params, 17
+  eval results, 5 datasets).
+- **Bug caught from real output + fixed:** Qwen sometimes emits the literal
+  string `"null"` (and `"N/A"`, `"none"`, …) instead of JSON null — study001
+  hardware came back `{'gpu_model':'null', …}`. A truthy `"null"` string would
+  become bogus triples and inflate RQ3 false positives. Added `_clean`/`_key`
+  nullish normalisation throughout `merge_extractions` (hardware + every list
+  field's name/value), with a regression test. Suite now **101 passing**. (The 3
+  smoke-test JSONs predate the fix; a full/`SRAF_FORCE` run will overwrite them.)
+- **Benign warnings (no action):** sraf-env torch "CUDA driver too old" — that
+  env doesn't use the GPU, embeddings run on CPU; specter2 "mean pooling" notice
+  is expected for that model.
+- **Quality note for later:** `methods` extraction is over-liberal (22–38 per
+  paper) — likely to show low methods precision in RQ3; revisit the prompt once
+  gold exists to calibrate against.
+- **Before the full run:** `git pull` on the cluster to get the `_clean` fix,
+  then drop `SRAF_LIMIT` for all 96.

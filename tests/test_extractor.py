@@ -59,3 +59,22 @@ def test_merge_dedup_and_union():
     assert m["hardware"]["gpu_model"] == "A100"
     assert m["hardware"]["cuda_version"] == "12.1"     # filled from b
     assert len(m["hyperparameters"]) == 1
+
+
+def test_merge_normalises_nullish_strings():
+    # models sometimes emit the literal string "null"/"N/A" instead of JSON null
+    ext = {"dependencies": [{"name": "null", "version": "1.0"},
+                            {"name": "torch", "version": "N/A"}],
+           "random_seeds": [],
+           "hardware": {"gpu_model": "null", "cuda_version": "none",
+                        "cpu_info": "Not specified"},
+           "hyperparameters": [], "datasets": [],
+           "methods": [{"name": "none", "description": "x"}],
+           "evaluation_results": [{"metric": "acc", "value": "null", "split": "test"}]}
+    m = merge_extractions([ext])
+    # nullish-named items dropped; real one kept with version cleaned to None
+    assert [d["name"] for d in m["dependencies"]] == ["torch"]
+    assert m["dependencies"][0]["version"] is None
+    assert m["hardware"] == {"gpu_model": None, "cuda_version": None, "cpu_info": None}
+    assert m["methods"] == []                          # "none"-named method dropped
+    assert m["evaluation_results"][0]["value"] is None  # "null" value cleaned
