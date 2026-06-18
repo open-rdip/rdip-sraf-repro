@@ -386,6 +386,30 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
   `gold_schema.md` rewritten to document layout + mapping. Verified against real
   gold (self-match F1 = 1.0; all 12 normalise cleanly). Suite **103 passing**.
 - **To produce numbers (cluster, where extractions live):** after `git pull`,
-  `python evaluation/eval_extraction.py --model <slug> --tier gold [--strict]`
-  and `python evaluation/compare_models.py --tier gold`. Headline on gold-12,
-  then silver-95 for scale.
+  `python -m evaluation.compare_models --tier gold` (and `--strict`, `--tier silver`).
+
+## 2026-06-18 — RQ3 first cut + evaluator overhaul
+
+- **First run (3 models × gold-12, exact match) gave alarmingly low F1 (~0.10
+  overall).** Diagnosis (from inspecting the gold), NOT model failure:
+  1. **seeds = 0 on gold** — all 12 gold papers contain *zero* RandomSeed
+     entries, so F1=0 is undefined → must be **N/A**, not reported as failure.
+  2. **software is rigged** — gold averages ~8 (up to 23) software because it
+     includes the whole `requirements.txt`; the paper-only LLM finds the 2–4 the
+     paper names. Repo-derived field → Phase-I territory, not the LLM's job.
+  3. **methods/eval killed by exact string match** — gold names are verbose with
+     acronyms ("Round-to-nearest (RTN)", "Camouflage-Aware Feature Refinement
+     (CAFR)", metrics like "Zero-shot FID-30K"); a model outputting "RTN"/"FID"
+     scored 0. Matching artifact, not wrong extraction.
+  Stable signal even so: ranking **Mistral-24B > Qwen-14B > Llama-8B**.
+- **Evaluator overhauled** (`eval_extraction.py`, `compare_models.py`):
+  - **Two match modes** — exact + **fuzzy** (normalised, acronym-aware via
+    parentheticals/initials, token-Jaccard ≥0.5, substring containment). Report
+    BOTH for a defensible range ("exact X → fuzzy Y").
+  - **Field grouping** — HEADLINE = paper-derivable (methods, parameters,
+    datasets, evaluation_results, environment); software + random_seeds shown
+    separately as **[repo]** asymmetry; fields with no gold support → **N/A**.
+  - `compare_models` prints exact + fuzzy tables with a model legend
+    (qwen/llama/mistral). 103 tests pass.
+- **Next:** re-run `python -m evaluation.compare_models --tier gold` (+`--strict`,
+  `--tier silver`) after pull; read the fuzzy HEADLINE as the fair RQ3 number.

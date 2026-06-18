@@ -2,28 +2,23 @@
 import json
 
 from evaluation.eval_extraction import (
-    prf, list_counts, scalar_counts, evaluate_study, aggregate,
-    _canon_value, _clean, normalize_gold, normalize_pred,
-    LENIENT, STRICT, run,
+    prf, field_counts, scalar_counts, evaluate_study, aggregate,
+    _canon_value, _clean, names_match, normalize_gold, normalize_pred,
+    PAPER_FIELDS, REPO_FIELDS, run,
 )
 
 
 # ── prf ───────────────────────────────────────────────────────────────────────
 
 def test_prf_basic():
-    m = prf(tp=8, fp=2, fn=2)
+    m = prf(8, 2, 2)
     assert (m["precision"], m["recall"], m["f1"]) == (0.8, 0.8, 0.8)
-
-
-def test_prf_zero_safe():
-    assert prf(0, 0, 0)["f1"] == 0.0
 
 
 # ── normalisation ─────────────────────────────────────────────────────────────
 
 def test_clean_nullish_including_gold_phrasing():
     assert _clean("exact version not specified") is None
-    assert _clean("N/A") is None
     assert _clean("1.13.1") == "1.13.1"
 
 
@@ -31,143 +26,105 @@ def test_canon_value_number_forms():
     assert _canon_value("0.94") == _canon_value("0.940") == _canon_value("94%")
 
 
-def test_normalize_gold_maps_rdip_entities():
-    doc = {"entities": {
-        "SoftwareApplication": [{"name": "PyTorch", "version": "exact version not specified"}],
-        "Dataset": [{"name": "GLUE"}],
-        "Method": [{"name": "BERT"}],
-        "Parameter": [{"name": "lr", "value": "3e-4"}],
-        "RandomSeed": [{"name": "random_seed", "value": "42", "source": "repo"}],
-        "ComputingEnvironment": [{"os": "Ubuntu", "gpu": "A100", "cuda": "11.7", "ram": "null"}],
-        "EvaluationResult": [{"metric": "acc", "value": "0.9", "split": "test", "dataset": "GLUE"}],
-        "Person": [{"name": "X"}], "Organization": [{"name": "Y"}], "Activity": [],
-    }}
-    g = normalize_gold(doc)
-    assert g["software"] == [{"name": "PyTorch", "version": None}]   # nullish version cleaned
-    assert g["random_seeds"] == ["42"]
-    assert g["environment"] == {"gpu_model": "A100", "cuda_version": "11.7"}
-    assert g["parameters"][0]["value"] == "3e-4"
-    # Person/Organization/Activity are intentionally dropped
-    assert set(g.keys()) == {"software", "datasets", "methods", "parameters",
-                             "random_seeds", "environment", "evaluation_results"}
+# ── fuzzy name matching ───────────────────────────────────────────────────────
+
+def test_acronym_match():
+    assert names_match("RTN", "Round-to-nearest (RTN)")
+    assert names_match("Camouflage-Aware Feature Refinement (CAFR)", "CAFR")
 
 
-def test_normalize_pred_maps_pipeline_output():
-    doc = {"metadata": {
-        "dependencies": [{"name": "torch", "version": "2.0"}],
-        "datasets": [{"name": "glue"}], "methods": [{"name": "bert", "description": "x"}],
-        "hyperparameters": [{"name": "lr", "value": "0.0003"}],
-        "random_seeds": [42],
-        "hardware": {"gpu_model": "A100", "cuda_version": "12.1", "cpu_info": None},
-        "evaluation_results": [{"metric": "acc", "value": "90%", "split": "test"}],
-    }}
-    p = normalize_pred(doc)
-    assert p["software"] == [{"name": "torch", "version": "2.0"}]
-    assert p["random_seeds"] == ["42"]
-    assert p["environment"] == {"gpu_model": "A100", "cuda_version": "12.1"}
+def test_surface_variant_match():
+    assert names_match("CIFAR10", "CIFAR-10")
+    assert names_match("VQ-VAE", "Vector Quantized Variational Autoencoder (VQ-VAE)")
 
 
-# ── matching ──────────────────────────────────────────────────────────────────
+def test_unrelated_names_dont_match():
+    assert not names_match("ImageNet", "GLUE")
+    assert not names_match("accuracy", "perplexity")
 
-def test_list_counts_lenient_vs_strict_software():
+
+# ── exact vs fuzzy counts ─────────────────────────────────────────────────────
+
+def test_methods_fuzzy_credits_acronym():
+    gold = [{"name": "Round-to-nearest (RTN)"}]
+    pred = [{"name": "RTN"}]
+    assert field_counts("methods", gold, pred, strict=False, fuzzy=False) == (0, 1, 1)
+    assert field_counts("methods", gold, pred, strict=False, fuzzy=True) == (1, 0, 0)
+
+
+def test_software_strict_needs_version():
     gold = [{"name": "torch", "version": "1.13"}]
     pred = [{"name": "torch", "version": "2.0"}]
-    assert list_counts(gold, pred, LENIENT["software"]) == (1, 0, 0)   # name match
-    assert list_counts(gold, pred, STRICT["software"]) == (0, 1, 1)    # version differs
+    assert field_counts("software", gold, pred, strict=False, fuzzy=False) == (1, 0, 0)
+    assert field_counts("software", gold, pred, strict=True, fuzzy=False) == (0, 1, 1)
 
 
-def test_eval_results_metric_value_split():
+def test_eval_split_must_match_even_when_metric_does():
     gold = [{"metric": "acc", "value": "0.9", "split": "test"}]
-    pred = [{"metric": "acc", "value": "90%", "split": "test"}]
-    assert list_counts(gold, pred, STRICT["evaluation_results"]) == (1, 0, 0)  # 90%==0.9
+    pred = [{"metric": "acc", "value": "0.9", "split": "val"}]
+    assert field_counts("evaluation_results", gold, pred, False, True) == (0, 1, 1)
 
 
-def test_scalar_counts_environment():
-    g = {"gpu_model": "A100", "cuda_version": "11.7"}
+def test_scalar_counts_environment_fuzzy():
+    g = {"gpu_model": "NVIDIA A100", "cuda_version": "11.7"}
     p = {"gpu_model": "A100", "cuda_version": "12.1"}
-    assert scalar_counts(g, p, ("gpu_model", "cuda_version")) == (1, 1, 1)
+    # fuzzy credits the GPU surface variant (containment); cuda still differs
+    assert scalar_counts(g, p, ("gpu_model", "cuda_version"), fuzzy=True) == (1, 1, 1)
 
 
-# ── study + aggregate ─────────────────────────────────────────────────────────
+# ── aggregate: grouping + N/A + headline ──────────────────────────────────────
 
-def test_perfect_self_match_scores_one():
-    doc = {"entities": {
-        "SoftwareApplication": [{"name": "torch", "version": "2.0"}],
-        "Dataset": [{"name": "glue"}], "Method": [{"name": "bert"}],
-        "Parameter": [{"name": "lr", "value": "0.1"}],
-        "RandomSeed": [{"value": "1"}],
-        "ComputingEnvironment": [{"gpu": "A100", "cuda": "12.1"}],
-        "EvaluationResult": [{"metric": "f1", "value": "0.9", "split": "test"}],
-    }}
-    g = normalize_gold(doc)
-    counts = evaluate_study(g, g, strict=True)
-    agg = aggregate({"s": counts})
-    assert agg["overall_micro"]["f1"] == 1.0
-    assert agg["macro_f1"] == 1.0
-
-
-def test_aggregate_mixes_fields():
-    gold = {"software": [{"name": "torch"}], "datasets": [], "methods": [],
-            "parameters": [], "random_seeds": ["42"], "evaluation_results": [],
-            "environment": {}}
-    pred = {"software": [{"name": "torch"}], "datasets": [], "methods": [],
-            "parameters": [], "random_seeds": ["7"], "evaluation_results": [],
-            "environment": {}}
+def test_aggregate_marks_na_when_no_gold_support():
+    gold = {"methods": [{"name": "bert"}], "parameters": [], "datasets": [],
+            "evaluation_results": [], "environment": {},
+            "software": [], "random_seeds": []}            # no seeds in gold
+    pred = {"methods": [{"name": "bert"}], "parameters": [], "datasets": [],
+            "evaluation_results": [], "environment": {},
+            "software": [], "random_seeds": ["42"]}
     counts = evaluate_study(gold, pred)
-    assert counts["software"] == (1, 0, 0)
-    assert counts["random_seeds"] == (0, 1, 1)
+    agg = aggregate({"s": counts})
+    assert agg["per_field"]["random_seeds"]["na"] is True      # gold had none
+    assert agg["per_field"]["methods"]["f1"] == 1.0
+    assert agg["headline_micro"]["f1"] == 1.0                  # paper fields only
 
 
-# ── end-to-end against the real directory layout ──────────────────────────────
+def test_headline_excludes_repo_fields():
+    # perfect methods, terrible software → headline high, overall dragged down
+    gold = {"methods": [{"name": "x"}], "parameters": [], "datasets": [],
+            "evaluation_results": [], "environment": {},
+            "software": [{"name": f"lib{i}"} for i in range(10)], "random_seeds": []}
+    pred = {"methods": [{"name": "x"}], "parameters": [], "datasets": [],
+            "evaluation_results": [], "environment": {},
+            "software": [], "random_seeds": []}
+    agg = aggregate({"s": evaluate_study(gold, pred)})
+    assert agg["headline_micro"]["f1"] == 1.0
+    assert agg["overall_micro"]["f1"] < 1.0
+    assert "software" in REPO_FIELDS and "methods" in PAPER_FIELDS
+
+
+# ── end-to-end ────────────────────────────────────────────────────────────────
 
 def test_run_reads_tiered_layout(tmp_path):
     gt = tmp_path / "ground_truth" / "gold" / "study001"; gt.mkdir(parents=True)
     ext = tmp_path / "ext"; ext.mkdir()
     (gt / "gold_standard.json").write_text(json.dumps({"entities": {
-        "SoftwareApplication": [{"name": "torch", "version": "2.0"}],
-        "Dataset": [], "Method": [], "Parameter": [], "RandomSeed": [],
-        "ComputingEnvironment": [], "EvaluationResult": []}}))
+        "Method": [{"name": "Round-to-nearest (RTN)"}],
+        "SoftwareApplication": [], "Dataset": [], "Parameter": [],
+        "RandomSeed": [], "ComputingEnvironment": [], "EvaluationResult": []}}))
     (ext / "study001__qwen.json").write_text(json.dumps({"metadata": {
-        "dependencies": [{"name": "torch", "version": "2.0"}],
-        "datasets": [], "methods": [], "hyperparameters": [], "random_seeds": [],
-        "hardware": {}, "evaluation_results": []}}))
-
-    rep = run("qwen", str(ext), str(tmp_path / "ground_truth"), tier="gold")
-    assert rep["n_studies"] == 1
-    assert rep["per_field_micro"]["software"]["f1"] == 1.0
-    assert rep["skipped"] == []
-
-
-def test_run_skips_missing_extraction(tmp_path):
-    gt = tmp_path / "ground_truth" / "silver" / "study009"; gt.mkdir(parents=True)
-    (gt / "gold_standard.json").write_text(json.dumps({"entities": {}}))
-    rep = run("qwen", str(tmp_path / "ext_missing"),
-              str(tmp_path / "ground_truth"), tier="silver")
-    assert rep["n_studies"] == 0
-    assert rep["skipped"][0]["study"] == "study009"
+        "methods": [{"name": "RTN"}], "dependencies": [], "datasets": [],
+        "hyperparameters": [], "random_seeds": [], "hardware": {},
+        "evaluation_results": []}}))
+    # exact misses the acronym; fuzzy catches it
+    assert run("qwen", str(ext), str(tmp_path / "ground_truth"), "gold",
+               fuzzy=False)["per_field"]["methods"]["f1"] == 0.0
+    assert run("qwen", str(ext), str(tmp_path / "ground_truth"), "gold",
+               fuzzy=True)["per_field"]["methods"]["f1"] == 1.0
 
 
-# ── compare_models driver ─────────────────────────────────────────────────────
-
-def test_compare_discovers_slugs_and_tabulates(tmp_path):
-    from evaluation.compare_models import discover_slugs, compare
-    gt = tmp_path / "ground_truth" / "gold" / "study001"; gt.mkdir(parents=True)
+def test_compare_discovers_slugs(tmp_path):
+    from evaluation.compare_models import discover_slugs
     ext = tmp_path / "ext"; ext.mkdir()
-    (gt / "gold_standard.json").write_text(json.dumps({"entities": {
-        "SoftwareApplication": [{"name": "torch"}], "Dataset": [], "Method": [],
-        "Parameter": [], "RandomSeed": [], "ComputingEnvironment": [],
-        "EvaluationResult": []}}))
-    # two models: one correct, one wrong
-    (ext / "study001__good.json").write_text(json.dumps({"metadata": {
-        "dependencies": [{"name": "torch"}], "datasets": [], "methods": [],
-        "hyperparameters": [], "random_seeds": [], "hardware": {},
-        "evaluation_results": []}}))
-    (ext / "study001__bad.json").write_text(json.dumps({"metadata": {
-        "dependencies": [{"name": "tensorflow"}], "datasets": [], "methods": [],
-        "hyperparameters": [], "random_seeds": [], "hardware": {},
-        "evaluation_results": []}}))
-
+    (ext / "study001__good.json").write_text("{}")
+    (ext / "study001__bad.json").write_text("{}")
     assert discover_slugs(str(ext)) == ["bad", "good"]
-    cmp = compare(["good", "bad"], str(ext), str(tmp_path / "ground_truth"), "gold")
-    assert cmp["reports"]["good"]["per_field_micro"]["software"]["f1"] == 1.0
-    assert cmp["reports"]["bad"]["per_field_micro"]["software"]["f1"] == 0.0

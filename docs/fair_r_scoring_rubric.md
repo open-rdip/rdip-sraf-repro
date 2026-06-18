@@ -126,7 +126,7 @@ cites a specific, published checklist item rather than being invented.
 
 ---
 
-## 5. Calibration & validation plan (the advisors' explicit ask)
+## 5. Calibration & validation plan
 
 1. **Reference-paper calibration (construct validity).** Assemble a small
    reference set: papers that *should* score high — e.g. ACM "Artifact Evaluated

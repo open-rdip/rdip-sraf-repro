@@ -3,22 +3,27 @@
 Extraction precision / recall / F1 against the human ground truth (RQ3).
 
 SCOPE: SRAF's instrument uses *reproducibility* metadata, so RQ3 evaluates the
-LLM paper-extraction on the seven reproducibility fields only — software,
-datasets, methods, parameters, random seeds, environment, evaluation results.
-The ground truth's richer RDIP entities (Person / Organization / Activity /
-relations) are out of scope here and are mapped away.
+LLM paper-extraction on the reproducibility fields only. Fields are grouped:
 
-Both sides are normalised to a common shape before scoring:
-  • ground truth  data/ground_truth/<tier>/<study>/gold_standard.json
-                  (RDIP entities: SoftwareApplication, Dataset, Method,
-                   Parameter, RandomSeed, ComputingEnvironment, EvaluationResult)
-  • prediction    data/extractions/<study>__<model_slug>.json  (pipeline output)
+  PAPER-DERIVABLE (headline)  : methods, parameters, datasets,
+                                evaluation_results, environment
+  REPO-DERIVED (asymmetry)    : software, random_seeds
+    — the ground truth drew these from the repo (requirements.txt, code seeds),
+      which the paper-only LLM never saw; SRAF supplies them deterministically
+      in Phase I. Reported separately, not in the headline.
 
-Two strictnesses: lenient (item found by its identifying key) and strict (key +
-value). Reports micro P/R/F1 per field + overall, and macro F1 (mean per-study).
+Matching has two independent axes:
+  • value strictness : lenient (item found) vs strict (--strict: + value)
+  • name matching    : exact vs fuzzy (--match)
+      fuzzy = normalised + acronym-aware + token-overlap, so a model that
+      outputs 'RTN' is credited against gold 'Round-to-nearest (RTN)', and
+      'CIFAR10' against 'CIFAR-10'. Report BOTH for a defensible range.
 
-    python evaluation/eval_extraction.py --model <slug> [--tier gold|silver]
-                                         [--strict] [--json out.json]
+A field whose gold side is empty across all studies is marked N/A (e.g. seeds
+on the 12 gold papers, which contain none).
+
+    python -m evaluation.eval_extraction --model <slug> [--tier gold|silver]
+                                         [--match exact|fuzzy] [--strict]
 """
 from __future__ import annotations
 
@@ -26,7 +31,7 @@ import argparse
 import glob
 import json
 import os
-from itertools import combinations  # noqa: F401  (kept for parity/testing)
+import re
 
 
 # ── Normalisation helpers ─────────────────────────────────────────────────────
@@ -35,13 +40,15 @@ _NULLISH = {"", "null", "none", "n/a", "na", "nan", "nil", "unknown",
             "not specified", "exact version not specified", "not reported",
             "not stated", "modern gpus"}
 
+_STOP = {"the", "a", "an", "of", "and", "or", "for", "to", "in", "on", "with",
+         "via", "using", "based", "our", "their"}
+
 
 def _s(x) -> str:
     return (str(x) if x is not None else "").strip().lower()
 
 
 def _clean(v):
-    """Coerce nullish strings (incl. gold's 'exact version not specified') to None."""
     if isinstance(v, str) and v.strip().lower() in _NULLISH:
         return None
     return v
@@ -63,16 +70,59 @@ def _canon_value(x) -> str:
         return s
 
 
+def _norm(s) -> str:
+    """Lowercase, drop parentheticals, strip punctuation, collapse whitespace."""
+    s = _s(s)
+    s = re.sub(r"\(.*?\)", " ", s)
+    s = re.sub(r"[^a-z0-9]+", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def _tokens(s) -> list[str]:
+    return [t for t in _norm(s).split() if t not in _STOP and len(t) > 1]
+
+
+def _acronyms(s) -> set[str]:
+    out = set()
+    for m in re.findall(r"\(([A-Za-z0-9\-]{2,})\)", s or ""):   # parenthetical
+        out.add(re.sub(r"[^a-z0-9]", "", m.lower()))
+    toks = _tokens(s)
+    if len(toks) >= 2:
+        out.add("".join(t[0] for t in toks))                    # initials
+    return out
+
+
+def names_match(a, b) -> bool:
+    """Entity-aware fuzzy name equality (normalised + acronym + token overlap)."""
+    na, nb = _norm(a), _norm(b)
+    if not na or not nb:
+        return False
+    if na == nb:
+        return True
+    # acronym: one side's normalised string equals the other's acronym
+    aca, acb = _acronyms(a), _acronyms(b)
+    if na.replace(" ", "") in acb or nb.replace(" ", "") in aca:
+        return True
+    if aca & acb:
+        return True
+    ta, tb = set(_tokens(a)), set(_tokens(b))
+    if ta and tb:
+        if len(ta & tb) / len(ta | tb) >= 0.5:                  # Jaccard
+            return True
+    sa, sb = na.replace(" ", ""), nb.replace(" ", "")
+    short, long = (sa, sb) if len(sa) <= len(sb) else (sb, sa)
+    if len(short) >= 4 and short in long:                       # containment
+        return True
+    return False
+
+
 # ── Adapters: both sides → common reproducibility-field shape ──────────────────
 
-def _named(items, name_getter):
-    """Keep only items whose name is non-nullish (robust to either side emitting
-    the literal 'null'/'n/a')."""
-    return [i for i in (items or []) if _clean(name_getter(i)) is not None]
+def _named(items, get):
+    return [i for i in (items or []) if _clean(get(i)) is not None]
 
 
 def normalize_gold(doc: dict) -> dict:
-    """RDIP ground-truth entities → the seven reproducibility fields."""
     e = doc.get("entities", {}) or {}
     env_list = e.get("ComputingEnvironment") or []
     env0 = env_list[0] if env_list else {}
@@ -95,7 +145,6 @@ def normalize_gold(doc: dict) -> dict:
 
 
 def normalize_pred(doc: dict) -> dict:
-    """Pipeline extraction `metadata` → the seven reproducibility fields."""
     md = doc.get("metadata", doc) or {}
     hw = md.get("hardware") or {}
     _n = lambda x: x.get("name")
@@ -117,31 +166,31 @@ def normalize_pred(doc: dict) -> dict:
     }
 
 
-# ── Field keys (item identity) ────────────────────────────────────────────────
+# ── Field model: (name, exact-extra, value) per item ──────────────────────────
 
-LENIENT = {
-    "software":           lambda x: _s(x.get("name")),
-    "datasets":           lambda x: _s(x.get("name")),
-    "methods":            lambda x: _s(x.get("name")),
-    "parameters":         lambda x: _s(x.get("name")),
-    "random_seeds":       lambda x: _s(x),
-    "evaluation_results": lambda x: (_s(x.get("metric")), _s(x.get("split"))),
-}
-STRICT = {
-    "software":           lambda x: (_s(x.get("name")), _s(x.get("version"))),
-    "datasets":           lambda x: _s(x.get("name")),
-    "methods":            lambda x: _s(x.get("name")),
-    "parameters":         lambda x: (_s(x.get("name")), _canon_value(x.get("value"))),
-    "random_seeds":       lambda x: _s(x),
-    "evaluation_results": lambda x: (_s(x.get("metric")), _canon_value(x.get("value")),
-                                     _s(x.get("split"))),
-}
-LIST_FIELDS = list(LENIENT.keys())
-ENV_SLOTS = ("gpu_model", "cuda_version")
+LIST_FIELDS = ["software", "datasets", "methods", "parameters",
+               "random_seeds", "evaluation_results"]
 FIELDS = LIST_FIELDS + ["environment"]
+PAPER_FIELDS = ["methods", "parameters", "datasets", "evaluation_results", "environment"]
+REPO_FIELDS = ["software", "random_seeds"]
 
 
-# ── Core metrics (pure) ───────────────────────────────────────────────────────
+def _triple(field: str, item):
+    """(name, exact_extra, value) for an item — extra must match exactly."""
+    if field == "software":
+        return item.get("name"), "", item.get("version")
+    if field in ("datasets", "methods"):
+        return item.get("name"), "", None
+    if field == "parameters":
+        return item.get("name"), "", item.get("value")
+    if field == "random_seeds":
+        return item, "", None                      # item is the value string
+    if field == "evaluation_results":
+        return item.get("metric"), _s(item.get("split")), item.get("value")
+    raise KeyError(field)
+
+
+# ── Core metrics ──────────────────────────────────────────────────────────────
 
 def prf(tp: int, fp: int, fn: int) -> dict:
     p = tp / (tp + fp) if (tp + fp) else 0.0
@@ -151,66 +200,96 @@ def prf(tp: int, fp: int, fn: int) -> dict:
             "precision": round(p, 3), "recall": round(r, 3), "f1": round(f, 3)}
 
 
-def list_counts(gold_items, pred_items, key_fn) -> tuple[int, int, int]:
-    g = {key_fn(i) for i in (gold_items or []) if key_fn(i) not in ("", (), None)}
-    p = {key_fn(i) for i in (pred_items or []) if key_fn(i) not in ("", (), None)}
-    return len(g & p), len(p - g), len(g - p)
+def field_counts(field, gold_items, pred_items, strict, fuzzy) -> tuple[int, int, int]:
+    """Greedy one-to-one matching. name: exact (_s) or fuzzy; extra (split):
+    exact; value (strict only): canonicalised."""
+    gold = [_triple(field, i) for i in (gold_items or [])]
+    pred = [_triple(field, i) for i in (pred_items or [])]
+    gold = [g for g in gold if _clean(g[0]) is not None and _s(g[0])]
+    pred = [p for p in pred if _clean(p[0]) is not None and _s(p[0])]
+    used = [False] * len(pred)
+    tp = 0
+    for gn, ge, gv in gold:
+        for j, (pn, pe, pv) in enumerate(pred):
+            if used[j] or _s(ge) != _s(pe):
+                continue
+            nm = names_match(gn, pn) if fuzzy else (_s(gn) == _s(pn))
+            if not nm:
+                continue
+            if strict and _canon_value(gv) != _canon_value(pv):
+                continue
+            used[j] = True
+            tp += 1
+            break
+    return tp, used.count(False), len(gold) - tp
 
 
-def scalar_counts(gold: dict, pred: dict, slots) -> tuple[int, int, int]:
-    """TP/FP/FN over a fixed set of scalar slots (e.g. environment)."""
+def scalar_counts(gold, pred, slots, fuzzy) -> tuple[int, int, int]:
     gold, pred = gold or {}, pred or {}
     tp = fp = fn = 0
     for s in slots:
-        g, p = _s(gold.get(s)), _s(pred.get(s))
-        if g and p:
-            tp += 1 if g == p else 0
-            fp += 0 if g == p else 1
-            fn += 0 if g == p else 1
-        elif p and not g:
+        g, p = gold.get(s), pred.get(s)
+        gs, ps = _s(g), _s(p)
+        if gs and ps:
+            ok = names_match(g, p) if fuzzy else (gs == ps)
+            tp += 1 if ok else 0
+            fp += 0 if ok else 1
+            fn += 0 if ok else 1
+        elif ps and not gs:
             fp += 1
-        elif g and not p:
+        elif gs and not ps:
             fn += 1
     return tp, fp, fn
 
 
-def evaluate_study(gold: dict, pred: dict, strict: bool = False) -> dict:
-    keys = STRICT if strict else LENIENT
-    out = {f: list_counts(gold.get(f), pred.get(f), keys[f]) for f in LIST_FIELDS}
+def evaluate_study(gold, pred, strict=False, fuzzy=False) -> dict:
+    out = {f: field_counts(f, gold.get(f), pred.get(f), strict, fuzzy)
+           for f in LIST_FIELDS}
     out["environment"] = scalar_counts(gold.get("environment"),
-                                       pred.get("environment"), ENV_SLOTS)
+                                       pred.get("environment"),
+                                       ("gpu_model", "cuda_version"), fuzzy)
     return out
 
 
+def _micro(per_study, fields) -> dict:
+    tot = [0, 0, 0]
+    for c in per_study.values():
+        for f in fields:
+            tot[0] += c[f][0]; tot[1] += c[f][1]; tot[2] += c[f][2]
+    return prf(*tot)
+
+
 def aggregate(per_study: dict[str, dict]) -> dict:
-    field_tot = {f: [0, 0, 0] for f in FIELDS}
-    overall = [0, 0, 0]
-    study_f1 = []
-    for counts in per_study.values():
-        s_tp = s_fp = s_fn = 0
-        for f in FIELDS:
-            tp, fp, fn = counts[f]
-            field_tot[f][0] += tp; field_tot[f][1] += fp; field_tot[f][2] += fn
-            s_tp += tp; s_fp += fp; s_fn += fn
-        overall[0] += s_tp; overall[1] += s_fp; overall[2] += s_fn
-        study_f1.append(prf(s_tp, s_fp, s_fn)["f1"])
+    field = {}
+    for f in FIELDS:
+        tot = [0, 0, 0]
+        for c in per_study.values():
+            tot[0] += c[f][0]; tot[1] += c[f][1]; tot[2] += c[f][2]
+        m = prf(*tot)
+        m["support"] = tot[0] + tot[2]            # gold positives (tp + fn)
+        m["na"] = (m["support"] == 0)
+        field[f] = m
+    macro = []
+    for c in per_study.values():
+        t = [0, 0, 0]
+        for f in PAPER_FIELDS:
+            t[0] += c[f][0]; t[1] += c[f][1]; t[2] += c[f][2]
+        macro.append(prf(*t)["f1"])
     return {
         "n_studies": len(per_study),
-        "per_field_micro": {f: prf(*field_tot[f]) for f in FIELDS},
-        "overall_micro": prf(*overall),
-        "macro_f1": round(sum(study_f1) / len(study_f1), 3) if study_f1 else 0.0,
+        "per_field": field,
+        "headline_micro": _micro(per_study, PAPER_FIELDS),   # paper-derivable
+        "repo_micro": _micro(per_study, REPO_FIELDS),        # asymmetric
+        "overall_micro": _micro(per_study, FIELDS),
+        "macro_f1": round(sum(macro) / len(macro), 3) if macro else 0.0,
     }
 
 
 # ── I/O + driver ──────────────────────────────────────────────────────────────
 
-def load_pairs(model_slug: str, extractions_dir: str, gt_dir: str, tier: str
-               ) -> tuple[dict, list]:
-    """{study: (gold_fields, pred_fields)} for studies with BOTH a ground-truth
-    file (this tier) and this model's extraction."""
+def load_pairs(model_slug, extractions_dir, gt_dir, tier):
     pairs, skipped = {}, []
-    tier_dir = os.path.join(gt_dir, tier)
-    for sdir in sorted(glob.glob(os.path.join(tier_dir, "study*"))):
+    for sdir in sorted(glob.glob(os.path.join(gt_dir, tier, "study*"))):
         study = os.path.basename(sdir)
         gpath = os.path.join(sdir, "gold_standard.json")
         ppath = os.path.join(extractions_dir, f"{study}__{model_slug}.json")
@@ -224,47 +303,53 @@ def load_pairs(model_slug: str, extractions_dir: str, gt_dir: str, tier: str
     return pairs, skipped
 
 
-def run(model_slug: str, extractions_dir: str, gt_dir: str,
-        tier: str = "gold", strict: bool = False) -> dict:
+def run(model_slug, extractions_dir, gt_dir, tier="gold", strict=False, fuzzy=False):
     pairs, skipped = load_pairs(model_slug, extractions_dir, gt_dir, tier)
-    per_study = {s: evaluate_study(g, p, strict) for s, (g, p) in pairs.items()}
+    per_study = {s: evaluate_study(g, p, strict, fuzzy) for s, (g, p) in pairs.items()}
     rep = aggregate(per_study)
     rep.update({"model": model_slug, "tier": tier, "strict": strict,
-                "skipped": skipped})
+                "fuzzy": fuzzy, "skipped": skipped})
     return rep
 
 
-def print_report(rep: dict) -> None:
-    mode = "strict" if rep["strict"] else "lenient"
-    print(f"\n=== RQ3 extraction eval — model={rep['model']} — tier={rep['tier']} "
-          f"({mode}) — {rep['n_studies']} studies ===")
-    print(f"  {'field':20s} {'P':>6} {'R':>6} {'F1':>6}   (tp/fp/fn)")
-    for f, m in rep["per_field_micro"].items():
-        print(f"  {f:20s} {m['precision']:6.3f} {m['recall']:6.3f} {m['f1']:6.3f}   "
-              f"({m['tp']}/{m['fp']}/{m['fn']})")
-    o = rep["overall_micro"]
-    print(f"  {'OVERALL (micro)':20s} {o['precision']:6.3f} {o['recall']:6.3f} "
-          f"{o['f1']:6.3f}   ({o['tp']}/{o['fp']}/{o['fn']})")
-    print(f"  macro F1 (per-study mean): {rep['macro_f1']:.3f}")
-    if rep["skipped"]:
-        print(f"  skipped {len(rep['skipped'])} study(ies) with no extraction "
-              f"for this model")
+def _f1cell(m):
+    return "  n/a " if m["na"] else f"{m['f1']:6.3f}"
+
+
+def print_report(rep):
+    mode = ("strict" if rep["strict"] else "lenient") + \
+           ("/fuzzy" if rep["fuzzy"] else "/exact")
+    print(f"\n=== RQ3 — model={rep['model']} tier={rep['tier']} ({mode}) — "
+          f"{rep['n_studies']} studies ===")
+    print(f"  {'field':20s} {'P':>6} {'R':>6} {'F1':>6}  (tp/fp/fn)")
+    for f in PAPER_FIELDS + REPO_FIELDS:
+        m = rep["per_field"][f]
+        tag = "  [repo]" if f in REPO_FIELDS else ""
+        print(f"  {f:20s} {m['precision']:6.3f} {m['recall']:6.3f} {_f1cell(m)}  "
+              f"({m['tp']}/{m['fp']}/{m['fn']}){tag}")
+    h, o = rep["headline_micro"], rep["overall_micro"]
+    print(f"  {'HEADLINE (paper)':20s} {h['precision']:6.3f} {h['recall']:6.3f} "
+          f"{h['f1']:6.3f}")
+    print(f"  {'overall (all)':20s} {o['precision']:6.3f} {o['recall']:6.3f} "
+          f"{o['f1']:6.3f}")
+    print(f"  macro F1 (paper, per-study mean): {rep['macro_f1']:.3f}")
 
 
 def main() -> int:
     here = os.path.dirname(os.path.abspath(__file__))
     root = os.path.dirname(here)
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--model", required=True,
-                    help="model slug (matches data/extractions/<study>__<slug>.json)")
+    ap.add_argument("--model", required=True)
     ap.add_argument("--tier", default="gold", choices=["gold", "silver"])
+    ap.add_argument("--match", default="exact", choices=["exact", "fuzzy"])
     ap.add_argument("--extractions", default=os.path.join(root, "data", "extractions"))
     ap.add_argument("--ground-truth", default=os.path.join(root, "data", "ground_truth"))
     ap.add_argument("--strict", action="store_true")
     ap.add_argument("--json", default=None)
     args = ap.parse_args()
 
-    rep = run(args.model, args.extractions, args.ground_truth, args.tier, args.strict)
+    rep = run(args.model, args.extractions, args.ground_truth, args.tier,
+              args.strict, fuzzy=(args.match == "fuzzy"))
     print_report(rep)
     if args.json:
         json.dump(rep, open(args.json, "w"), indent=2)
