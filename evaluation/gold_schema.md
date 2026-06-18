@@ -1,71 +1,68 @@
-# Gold-standard annotation schema (RQ3)
+# RQ3 ground truth — layout, schema, and scoring
 
-The gold standard is a set of hand-annotated JSON files, one per study, that
-record the reproducibility metadata a careful human finds **in the paper PDF**.
-`eval_extraction.py` compares each model's automatic extraction against these to
-report precision / recall / F1.
+## Layout
 
-## File location & naming
+    data/ground_truth/
+      gold/   <study>/gold_standard.json          # 12 studies, thoroughly verified (headline)
+      silver/ <study>/gold_standard.json          # 95 studies, quick-verified (scale)
+              <study>/prompt.txt                   # the Gemini prompt used
+              <study>/repo_metadata.json           # auto-parsed repo facts (deps/seeds/env/license)
+      silver/README.md                             # entity statistics
 
-    evaluation/gold_standard/<study_id>.json      e.g. study001.json
+Each `gold_standard.json` is a full **RDIP knowledge graph** for the paper:
+`project`, `entities` (SoftwareApplication, Dataset, Method, Person,
+Organization, Parameter, RandomSeed, ComputingEnvironment, EvaluationResult,
+Activity), `relations`, and verification metadata (`_status`, `_verified_by`,
+`_verification_depth`). Built with Gemini 2.5 Flash from *paper PDF +
+`repo_metadata.json`*, then human-verified.
 
-One file per annotated study. Annotate **50** studies (we start from the 12-paper
-pilot and grow to 50). Files ending in `.template.json` are ignored by the
-evaluator.
+## Scope of RQ3 (reproducibility fields only)
 
-## Format
+SRAF's instrument uses reproducibility metadata, so the evaluator scores the
+**seven reproducibility fields** and maps everything else away. The adapter
+(`eval_extraction.py`) reduces both the ground truth and the model output to a
+common shape:
 
-Each file mirrors the pipeline's extraction `metadata` block, so gold and
-prediction are directly comparable. Either wrap it in `{"metadata": {…}}` or
-provide the fields flat — the evaluator accepts both.
+| field (compared) | ground-truth entity | model output (`metadata`) |
+|---|---|---|
+| software | `SoftwareApplication` (name, version) | `dependencies` (name, version) |
+| datasets | `Dataset` (name) | `datasets` (name) |
+| methods | `Method` (name) | `methods` (name) |
+| parameters | `Parameter` (name, value) | `hyperparameters` (name, value) |
+| random_seeds | `RandomSeed` (value) | `random_seeds` (int) |
+| environment | `ComputingEnvironment` (gpu, cuda) | `hardware` (gpu_model, cuda_version) |
+| evaluation_results | `EvaluationResult` (metric, value, split) | `evaluation_results` (metric, value, split) |
 
-```json
-{
-  "study_id": "study001",
-  "annotator": "initials",
-  "metadata": {
-    "dependencies":       [{"name": "pytorch", "version": "1.13.1"}],
-    "random_seeds":       [42, 1234],
-    "hardware":           {"gpu_model": "NVIDIA A100",
-                           "cuda_version": "11.7", "cpu_info": null},
-    "hyperparameters":    [{"name": "learning_rate", "value": "3e-4"},
-                           {"name": "batch_size", "value": "32"}],
-    "datasets":           [{"name": "ImageNet", "version": null}],
-    "methods":            [{"name": "ResNet-50", "description": "backbone"}],
-    "evaluation_results": [{"metric": "accuracy", "value": "0.943",
-                            "split": "test"}]
-  }
-}
-```
+`Person`, `Organization`, `Activity`, and `relations` are **out of RQ3 scope**
+(they show RDIP's full expressiveness but aren't part of the reproducibility
+instrument). Nullish gold phrasings like `"exact version not specified"` are
+treated as absent.
 
-## Annotation rules (keep gold and model judged on the same basis)
+## Scoring
 
-- Record only what is **stated in the paper text** (the PDF the model also sees),
-  not what is in the repo — this evaluates *paper* extraction.
-- `random_seeds`: integers explicitly given as seeds. Omit if none stated.
-- `dependencies`: libraries/frameworks with the version if the paper gives one;
-  leave `version` as `null` when unversioned.
-- `hyperparameters`: name + value as written (`"3e-4"`, `"32"`); don't convert.
-- `datasets`: dataset name; `version` only if stated.
-- `evaluation_results`: each headline reported metric with its value and the
-  split it was measured on (`train`/`validation`/`test`/`null`). Record the
-  paper's **claimed** number — this is also what RQ (result reproducibility, #20)
-  compares re-run numbers against.
-- `hardware`: GPU model, CUDA version, CPU if stated; `null` otherwise.
-- Use `[]` for an absent list, `null` for an absent scalar.
+- **lenient** — item found by its identifying key (software/dataset/method/param
+  NAME; seed VALUE; eval (metric, split)).
+- **strict** — key **plus** value (software name+version; param name+value; eval
+  metric+value+split). Values canonicalised so `0.94`/`0.940`/`94%` match.
+- Reported per field and overall as micro P/R/F1 (pool tp/fp/fn across studies)
+  plus macro F1 (mean per-study F1).
 
-## How scoring works
+## Note on fairness (paper-only extraction)
 
-- **lenient** match: an item counts as found if its identifying key matches —
-  dependency NAME, hyperparameter NAME, dataset NAME, method NAME, eval
-  (metric, split). Measures whether the model found the right *thing*.
-- **strict** match: key **plus value** (dependency name+version, hyperparam
-  name+value, eval metric+value+split). Measures whether it also got the value
-  right. Values are canonicalised so `0.94`, `0.940`, and `94%` compare equal.
-- Reported per field and overall as micro-averaged P/R/F1 (pool TP/FP/FN across
-  studies) plus a macro F1 (mean of per-study F1).
+The model output is extracted from the **paper PDF only**; the ground truth also
+drew on `repo_metadata.json`. SRAF supplies repo-derived facts (software
+versions, code seeds, license, Docker env) **deterministically in Phase I**, so
+RQ3 deliberately measures only the LLM's *paper*-extraction component. Lower
+recall on repo-only software/seeds is expected and motivates SRAF's
+deterministic+LLM fusion design — report per field so this is transparent.
 
-Run, once extractions exist:
+## Run
 
-    python evaluation/eval_extraction.py --model <model_slug>          # lenient
-    python evaluation/eval_extraction.py --model <model_slug> --strict # +values
+    # headline (12 gold), per model, lenient then strict
+    python evaluation/eval_extraction.py --model <slug> --tier gold
+    python evaluation/eval_extraction.py --model <slug> --tier gold --strict
+    # scale (95 silver)
+    python evaluation/eval_extraction.py --model <slug> --tier silver
+
+    # side-by-side across all models in one table
+    python evaluation/compare_models.py --tier gold

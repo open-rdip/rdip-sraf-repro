@@ -358,3 +358,34 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
   gold exists to calibrate against.
 - **Before the full run:** `git pull` on the cluster to get the `_clean` fix,
   then drop `SRAF_LIMIT` for all 96.
+
+## 2026-06-18 — ground truth received + RQ3 scope decided
+
+- **Ground truth delivered by Suhel** at `data/ground_truth/{gold,silver}/<study>/
+  gold_standard.json`: a full **RDIP KG per paper** (10 entity types + relations +
+  activities + project), Gemini-2.5-Flash-built from *paper + repo_metadata.json*,
+  then human-verified. **gold = 12** (thorough, first-author verified) → headline;
+  **silver = 95** (quick-verified) → scale. Schema consistent across all 107 files;
+  0 UNCERTAIN remaining.
+- **RQ3 scope decision (important):** evaluate the **reproducibility fields only**
+  (software, datasets, methods, parameters, seeds, environment, eval results).
+  Rationale: the contribution is the SRAF engine; FAIR-R consumes only these
+  fields; Person/Org/Activity/relations show RDIP expressiveness but aren't part
+  of the instrument. **No prompt change, no extraction re-run** — Qwen run stands,
+  Llama/Mistral run as-is.
+- **Fairness framing:** gold was built from paper + repo metadata; the vLLM
+  extraction is **paper-only**. SRAF supplies repo-derived facts (software
+  versions, code seeds, license, env) **deterministically in Phase I**, so RQ3
+  measures the LLM's *paper*-extraction component specifically. Lower recall on
+  repo-only software/seeds is expected and **motivates the deterministic+LLM
+  fusion design** — report per field for transparency.
+- **Evaluator reworked to the real schema** (`evaluation/eval_extraction.py`):
+  adapter maps both RDIP gold entities and pipeline output → the 7 repro fields;
+  lenient/strict; micro+macro P/R/F1; `--tier gold|silver`. Added
+  `compare_models.py` (auto-discovers model slugs → one side-by-side F1 table).
+  `gold_schema.md` rewritten to document layout + mapping. Verified against real
+  gold (self-match F1 = 1.0; all 12 normalise cleanly). Suite **103 passing**.
+- **To produce numbers (cluster, where extractions live):** after `git pull`,
+  `python evaluation/eval_extraction.py --model <slug> --tier gold [--strict]`
+  and `python evaluation/compare_models.py --tier gold`. Headline on gold-12,
+  then silver-95 for scale.
