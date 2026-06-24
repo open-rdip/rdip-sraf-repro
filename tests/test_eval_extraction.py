@@ -59,9 +59,16 @@ def test_software_strict_needs_version():
     assert field_counts("software", gold, pred, strict=True, fuzzy=False) == (0, 1, 1)
 
 
-def test_eval_split_must_match_even_when_metric_does():
+def test_eval_matches_on_metric_and_value_ignoring_split():
+    # models often omit split; identity is metric + reported value
     gold = [{"metric": "acc", "value": "0.9", "split": "test"}]
-    pred = [{"metric": "acc", "value": "0.9", "split": "val"}]
+    pred = [{"metric": "acc", "value": "90%", "split": None}]
+    assert field_counts("evaluation_results", gold, pred, False, True) == (1, 0, 0)
+
+
+def test_eval_value_must_match():
+    gold = [{"metric": "acc", "value": "0.9", "split": "test"}]
+    pred = [{"metric": "acc", "value": "0.5", "split": "test"}]
     assert field_counts("evaluation_results", gold, pred, False, True) == (0, 1, 1)
 
 

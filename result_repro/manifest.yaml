@@ -1,0 +1,420 @@
+# Result-reproducibility manifest (RQ #20)
+# Fill run.command + obtained[] per repo, then run compare_results.py
+
+- study_id: "study001"
+  repo_url: "https://github.com/microsoft/DeepSpeed"
+  paper_title: "ZeroQuant-V2: Exploring Post-training Quantization in LLMs from Comprehensive Study to Low Rank Compensation"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "PPL", claimed: "10.90", split: "test", dataset: "BLOOM-176B"}
+    - {metric: "PPL", claimed: "10.33", split: "test", dataset: "OPT-66B"}
+    - {metric: "PPL", claimed: "11.02", split: "test", dataset: "BLOOM-176B (W4A16 GPTQ)"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study002"
+  repo_url: "https://github.com/dice-group/dice-embeddings"
+  paper_title: "Kronecker Decomposition for Knowledge Graph Embeddings"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "MRR", claimed: "0.1", split: "test", dataset: "benchmark"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study003"
+  repo_url: "https://github.com/zhimengxin/rcod"
+  paper_title: "Toward Realistic Camouflaged Object Detection: Benchmarks and Method"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "S_alpha", claimed: "77.0", split: "test", dataset: "SINet"}
+    - {metric: "S_alpha", claimed: "81.1", split: "test", dataset: "SegMaR"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study004"
+  repo_url: "https://github.com/impredicative/irc-url-title-bot"
+  paper_title: "A Study of the Mathematics of Deep Learning"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "S_alpha", claimed: "77.0", split: "test", dataset: "SINet"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study005"
+  repo_url: "https://github.com/cross-domain-compositing/cross-domain-compositing"
+  paper_title: "eDiff-I: Text-to-Image Diffusion Models with an Ensemble of Expert Denoisers"
+  language: "Jupyter Notebook"
+  status: "pending"
+  claimed:
+    []   # no claimed numbers in ground truth
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study006"
+  repo_url: "https://github.com/baitingluo/l-map"
+  paper_title: "Scalable Decision-Making in Stochastic Environments through Learned Temporal Abstraction"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "Average Score", claimed: "105.74 ± 2.24", split: "test", dataset: "Medium-Expert Hopper (Deterministic)"}
+    - {metric: "Average Score", claimed: "73.90 ± 1.91", split: "test", dataset: "Medium Hopper (Deterministic)"}
+    - {metric: "Average Score", claimed: "91.18 ± 0.56", split: "test", dataset: "Medium-Replay Hopper (Deterministic)"}
+    - {metric: "Average Score", claimed: "106.11 ± 2.16", split: "test", dataset: "Medium-Expert-Mod Hopper (Moderate Stochasticity)"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study007"
+  repo_url: "https://github.com/ShangtongZhang/DeepRL"
+  paper_title: "Truncated Emphatic Temporal Difference Methods for Prediction and Control"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "Average variance", claimed: "7 * 10^3", split: "test", dataset: "Stochastic MuJoCo"}
+    - {metric: "Average variance", claimed: "1.8 * 10^4", split: "test", dataset: "Stochastic MuJoCo"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study008"
+  repo_url: "https://github.com/konstantinjdobler/tight-budget-llm-adaptation"
+  paper_title: "Language Adaptation on a Tight Academic Compute Budget: Tokenizer Swapping Works and Pure bfloat16 Is Enough"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "Avg. German test splits", claimed: "47.2", split: "test", dataset: "German test splits (pure bfloat16)"}
+    - {metric: "Avg. German test splits", claimed: "46.1", split: "test", dataset: "German test splits (mixed precision)"}
+    - {metric: "MMLU", claimed: "59.7", split: "test", dataset: "German (pure bfloat16)"}
+    - {metric: "HellaSwag", claimed: "35.9", split: "test", dataset: "German (pure bfloat16)"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study009"
+  repo_url: "https://github.com/open-mmlab/mmpose"
+  paper_title: "HigherHRNet: Scale-Aware Representation Learning for Bottom-Up Human Pose Estimation"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "AP", claimed: "70.5%", split: "test-dev", dataset: "COCO2017"}
+    - {metric: "AP", claimed: "67.6%", split: "test", dataset: "CrowdPose"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study010"
+  repo_url: "https://github.com/open-mmlab/mmocr"
+  paper_title: "SVTR: Scene Text Recognition with a Single Visual Model"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "AP", claimed: "70.5%", split: "test-dev", dataset: "COCO2017"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study011"
+  repo_url: "https://github.com/open-mmlab/mmclassification"
+  paper_title: "RepVGG: Making VGG-style ConvNets Great Again"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "top-1 accuracy", claimed: "over 80%", split: "test", dataset: "ImageNet "}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study012"
+  repo_url: "https://github.com/open-mmlab/mmsegmentation"
+  paper_title: "Panoptic Feature Pyramid Networks"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "PQ", claimed: "40.9", split: "test", dataset: "COCO"}
+    - {metric: "PQ", claimed: "58.1", split: "test", dataset: "Cityscapes"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study013"
+  repo_url: "https://github.com/zenodo/zenodo"
+  paper_title: "The Cells Out of Sample (COOS) dataset and benchmarks for measuring out-of-sample generalization of image classifiers"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "accuracy", claimed: "0.990", split: "test", dataset: "Test1"}
+    - {metric: "accuracy", claimed: "0.979", split: "test", dataset: "Test3"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study014"
+  repo_url: "https://github.com/open-mmlab/mmdetection3d"
+  paper_title: "H3DNet: 3D Object Detection Using Hybrid Geometric Primitives"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "mAP", claimed: "67.2%", split: "test", dataset: "ScanNet"}
+    - {metric: "mAP", claimed: "60.1%", split: "test", dataset: "SUN RGB-D"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study015"
+  repo_url: "https://github.com/Yuriyzabegaev/FTHM-Solver"
+  paper_title: "A block preconditioner for thermo-poromechanics with frictional deformation of fractures"
+  language: "Jupyter Notebook"
+  status: "pending"
+  claimed:
+    []   # no claimed numbers in ground truth
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study016"
+  repo_url: "https://github.com/avalon-benchmark/avalon"
+  paper_title: "Avalon: A Benchmark for RL Generalization Using Procedurally Generated Worlds"
+  language: "Jupyter Notebook"
+  status: "pending"
+  claimed:
+    - {metric: "steps per second", claimed: "2,880", split: "test", dataset: "Small GLES2 (basic)"}
+    - {metric: "steps per second", claimed: "11,730", split: "test", dataset: "Small GLES2 (basic) multi-process"}
+    - {metric: "optimality gap score", claimed: "0.71", split: "test", dataset: "eat (MT-TB)"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study017"
+  repo_url: "https://github.com/biomedsciai/histocartography"
+  paper_title: "HistoCartography: A Toolkit for Graph Analytics in Digital Pathology"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "Processing Time", claimed: "1.77", split: "test", dataset: "Tumor"}
+    - {metric: "Processing Time", claimed: "0.80", split: "test", dataset: "Tumor"}
+    - {metric: "Processing Time", claimed: "186.10", split: "test", dataset: "WSI"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study018"
+  repo_url: "https://github.com/markson14/WheatDet"
+  paper_title: "RetinaMask: Learning to predict masks improves state-of-the-art single-shot detection for free"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "mAP", claimed: "41.4", split: "test-dev", dataset: "COCO"}
+    - {metric: "mAP", claimed: "41.7", split: "test-dev", dataset: "COCO"}
+    - {metric: "mAP", claimed: "39.1", split: "test-dev", dataset: "COCO"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study019"
+  repo_url: "https://github.com/Res2Net/mmdetection"
+  paper_title: "Res2Net: A New Multi-scale Backbone Architecture"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "top-1 error", claimed: "20.81", split: "val", dataset: "ImageNet"}
+    - {metric: "mAP", claimed: "39.2", split: "val", dataset: "MS COCO"}
+    - {metric: "F-measure", claimed: "0.884", split: "test", dataset: "DUTS"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study020"
+  repo_url: "https://github.com/yueliukth/csaw-m"
+  paper_title: "CSAW-M: An Ordinal Classification Dataset for Benchmarking Mammographic Masking of Cancer"
+  language: "Jupyter Notebook"
+  status: "pending"
+  claimed:
+    - {metric: "AUC", claimed: "0.64", split: "test", dataset: "CSAW-M"}
+    - {metric: "accuracy", claimed: "0.45", split: "test", dataset: "CSAW-M"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study021"
+  repo_url: "https://github.com/jeonjaehyeong/dpl"
+  paper_title: "Semantic Diversity-aware Prototype-based Learning for Unbiased Scene Graph Generation"
+  language: "Jupyter Notebook"
+  status: "pending"
+  claimed:
+    - {metric: "mR@50", claimed: "18.3", split: "test", dataset: "Visual Genome"}
+    - {metric: "mR@100", claimed: "21.6", split: "test", dataset: "Visual Genome"}
+    - {metric: "mR@50", claimed: "13.6", split: "test", dataset: "GQA"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study022"
+  repo_url: "https://github.com/reczoo/FuxiCTR"
+  paper_title: "TransAct: Transformer-based Realtime User Action Model for Recommendation at Pinterest"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "REPIN_GAINS", claimed: "5.2%", split: "test", dataset: "Pinterest Homefeed Dataset"}
+    - {metric: "CLICK_GAINS", claimed: "2.4%", split: "test", dataset: "Pinterest Homefeed Dataset"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study023"
+  repo_url: "https://github.com/modelscope/modelscope-agent"
+  paper_title: "Mobile-Agent-v2: Mobile Device Operation Assistant with Effective Navigation via Multi-Agent Collaboration"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "Success Rate", claimed: "88.3%", split: "test", dataset: "Mobile-Eval"}
+    - {metric: "Success Rate", claimed: "90%", split: "test", dataset: "Mobile-Eval"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study024"
+  repo_url: "https://github.com/1qb-information-technologies/ccvm"
+  paper_title: "Non-convex Quadratic Programming Using Coherent Optical Networks"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "objective_value", claimed: "-1029.5", split: "test", dataset: "BoxQP"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study025"
+  repo_url: "https://github.com/yihao6/vfa"
+  paper_title: "Vector Field Attention for Deformable Image Registration"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "Dice similarity coefficient (DSC)", claimed: "mean of 132 labels", split: "test", dataset: "T1-weighted MR images"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}
+
+- study_id: "study026"
+  repo_url: "https://github.com/PerdonLiu/CSE-Autoloss"
+  paper_title: "Loss Function Discovery for Object Detection via Convergence-Simulation Driven Search"
+  language: "Python"
+  status: "pending"
+  claimed:
+    - {metric: "mAP", claimed: "38.5", split: "test", dataset: "COCO"}
+    - {metric: "mAP", claimed: "37.2", split: "test", dataset: "COCO"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: null
+    notes: ""
+  obtained: []   # - {metric: ..., value: ..., split: ...}

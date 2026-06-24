@@ -1,20 +1,18 @@
-# SRAF — IJCKG 2026 Paper: Outline & Scoring Comparison
+# SRAF Updates
 
 Working title: *SRAF: An Ontology-Grounded Instrument for Auditing Computational
 Reproducibility Metadata at Scale*
 
 ---
 
-## Part 1 — Paper Outline
-
-Each heading lists, in plain English, what goes in that section.
+## Paper Outline
 
 ### Abstract
 - The reproducibility problem is well known but has never been measured at the
   *metadata* level.
 - We built SRAF, an ontology-grounded tool that turns each repository's
   reproducibility metadata into a knowledge graph and scores it.
-- We ran it on 96 real ML repositories and report which metadata actually
+- We ran it on 95 real ML repositories and report which metadata actually
   predict whether a project can be rebuilt.
 - Contribution: a semantically-queryable instrument + the first empirical,
   variable-level evidence on reproducibility metadata.
@@ -105,7 +103,7 @@ Each heading lists, in plain English, what goes in that section.
 
 ---
 
-## Part 2 — Scoring: what changed and why it matters
+## Scoring: what changed and why it matters
 
 ### A. How SRAF's new scoring compares to the old one and to existing tools
 
@@ -130,7 +128,7 @@ Each heading lists, in plain English, what goes in that section.
 | Reusable | RDA-R1.1/R1.2 · F-UJI FsF-R1.1 · FAIR4RS (software) |
 | Reproducible (novel) | ML Reproducibility Checklist (Pineau/NeurIPS) + FAIR4RS — no RDA equivalent |
 
-### C. What changed, in plain English (old → new), and why it is meaningful
+### C. What changed, and why it is meaningful
 
 - **From made-up weights to standards-based weights.** Old: numbers like "7.5"
   were chosen by hand. New: each criterion's weight comes from its RDA priority
@@ -165,3 +163,9 @@ Each heading lists, in plain English, what goes in that section.
 > "weights grounded in the RDA/F-UJI standards, graded like F-UJI, with a novel
 > reproducibility dimension grounded in the ML Reproducibility Checklist, and
 > validated against real outcomes."*
+
+## Models Used
+
+- models--Qwen--Qwen2.5-14B-Instruct-GPTQ-Int8
+- models--RedHatAI--Meta-Llama-3.1-8B-Instruct-quantized.w8a8
+- models--RedHatAI--Mistral-Small-24B-Instruct-2501-quantized.w8a8

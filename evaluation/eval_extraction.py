@@ -186,8 +186,15 @@ def _triple(field: str, item):
     if field == "random_seeds":
         return item, "", None                      # item is the value string
     if field == "evaluation_results":
-        return item.get("metric"), _s(item.get("split")), item.get("value")
+        # identity = metric + reported value (split is unreliable: models often
+        # omit it while gold says 'test', so it is NOT a hard constraint).
+        return item.get("metric"), "", item.get("value")
     raise KeyError(field)
+
+
+# evaluation results are only "the same" if the reported VALUE also matches, so
+# value is part of identity even in lenient mode.
+_VALUE_IN_LENIENT = {"evaluation_results"}
 
 
 # ── Core metrics ──────────────────────────────────────────────────────────────
@@ -207,6 +214,7 @@ def field_counts(field, gold_items, pred_items, strict, fuzzy) -> tuple[int, int
     pred = [_triple(field, i) for i in (pred_items or [])]
     gold = [g for g in gold if _clean(g[0]) is not None and _s(g[0])]
     pred = [p for p in pred if _clean(p[0]) is not None and _s(p[0])]
+    need_value = strict or field in _VALUE_IN_LENIENT
     used = [False] * len(pred)
     tp = 0
     for gn, ge, gv in gold:
@@ -216,7 +224,7 @@ def field_counts(field, gold_items, pred_items, strict, fuzzy) -> tuple[int, int
             nm = names_match(gn, pn) if fuzzy else (_s(gn) == _s(pn))
             if not nm:
                 continue
-            if strict and _canon_value(gv) != _canon_value(pv):
+            if need_value and _canon_value(gv) != _canon_value(pv):
                 continue
             used[j] = True
             tp += 1

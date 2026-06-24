@@ -413,3 +413,43 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
     (qwen/llama/mistral). 103 tests pass.
 - **Next:** re-run `python -m evaluation.compare_models --tier gold` (+`--strict`,
   `--tier silver`) after pull; read the fuzzy HEADLINE as the fair RQ3 number.
+
+## 2026-06-18 — ground-truth verification
+
+- Built `evaluation/verify_ground_truth.py`: grounds each GT entity against its
+  source (paper-derived → PDF text via pdftotext; software/seeds → repo_metadata).
+  **GT precision is high: 96.9% of entities grounded** (gold 97.9%, silver 96.3%).
+- **Fixed (both tiers):** removed **12 invalid EvaluationResults** with
+  non-numeric/null values ("exact value varies…", "human-like", "qualitative",
+  "scales well", "good agreement", null); removed **study002 `Wikitext-2`**
+  (a KGE paper — confirmed absent; it actually uses FB15K-237/KINSHIP/UMLS/
+  WN18RR/YAGO).
+- **Two important caveats:**
+  1. Most remaining 91 flags are **false positives** — pdftotext garbles result
+     TABLES (so numeric eval values read as "not found") and concatenated/hyphen
+     names mis-tokenise (e.g. ChestX-ray14 IS present). Do NOT mass-delete.
+  2. The harness measures GT **precision only, not recall**. study002 exposed a
+     **recall gap** (gold had 2/5+ datasets). Recall gaps *also* penalise the
+     models in RQ3 (their correct extractions count as FP vs an incomplete gold).
+     → low RQ3 is **partly GT incompleteness, not only model over-extraction**
+     (correcting my earlier over-confident claim).
+- Report: `evaluation/gt_verification_report.md`.
+- **Decision:** no 12→50 gold expansion. **gold-12 (audited) = RQ3 headline,
+  silver-95 = scale.** Eval-value recall left as a documented limitation.
+
+## 2026-06-18 — RQ #20 result-reproducibility scaffolding
+
+- Goal: does a repo that *builds* reproduce the **numbers claimed in its paper**?
+  Scope = **26 full-tier repos** (`final_tier==full`); claimed numbers come from
+  the audited GT `EvaluationResult` (52 claims total).
+- Built `result_repro/`: `generate_manifest.py` (→ `manifest.yaml`: 26 repos ×
+  claimed numbers + blank run/obtained fields), `run_result.sbatch` (clone →
+  venv on declared Python → run `run.command` → log), `compare_results.py`
+  (classify reproduced / partial / mismatch / run_failed; 5% rel or 0.01 abs
+  tol; fuzzy metric match acc↔accuracy, 94%↔0.94), `README.md` (workflow).
+  6 unit tests; suite now **110 passing**.
+- **Semi-manual by necessity:** each repo runs differently, so the per-repo
+  `run.command` + dataset staging is filled by hand from each README; the harness
+  handles clone/env/run/log + the claimed-vs-obtained comparison.
+- Report the build→run→result funnel: resolve% → build% → run% → result-match%.
+  Even a partial subset reproducing headline numbers is a strong finding (advisors).

@@ -106,18 +106,46 @@
     ],
     "Dataset": [
       {
-        "name": "Freebase",
-        "format": "RDF",
+        "name": "FB15K-237",
+        "format": "knowledge graph",
+        "access": "open",
+        "role": "used",
+        "derived_from": "Freebase"
+      },
+      {
+        "name": "WN18RR",
+        "format": "knowledge graph",
+        "access": "open",
+        "role": "used",
+        "derived_from": "WordNet"
+      },
+      {
+        "name": "YAGO3-10",
+        "format": "knowledge graph",
+        "access": "open",
+        "role": "used",
+        "derived_from": "YAGO"
+      },
+      {
+        "name": "KINSHIP",
+        "format": "knowledge graph",
         "access": "open",
         "role": "used",
         "derived_from": null
       },
       {
-        "name": "Wikitext-2",
-        "format": "text",
+        "name": "UMLS",
+        "format": "knowledge graph",
         "access": "open",
         "role": "used",
         "derived_from": null
+      },
+      {
+        "name": "NELL-995",
+        "format": "knowledge graph",
+        "access": "open",
+        "role": "used",
+        "derived_from": "NELL"
       }
     ],
     "Method": [
