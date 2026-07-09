@@ -1,4 +1,9 @@
-# SRAF — Abstract (IJCKG 2026 full-paper draft, for review)
+# SRAF (IJCKG 2026 full-paper draft, for review)
+
+**Title:** SRAF: An Ontology-Grounded Knowledge Graph Framework for Auditing the
+Reproducibility of Machine-Learning Research
+
+## Abstract
 
 Computational reproducibility remains a persistent challenge in machine-learning
 research, yet it is rarely measured in a principled, standards-grounded manner.
@@ -23,10 +28,13 @@ are fully buildable, and that the presence of a software license is
 significantly associated with successful reproduction (odds ratio ≈ 7, p ≈
 0.025). Benchmarking three open-weight large language models against a
 human-verified ground truth that is 96.9% source-grounded, we characterize the
-accuracy and limitations of automated reproducibility-metadata extraction [best
-F1 ≈ 0.NN]. We further assess result-level reproducibility by re-executing a
-subset of buildable artifacts and comparing the obtained metrics against the
-values claimed in their papers. SRAF, its RDIP knowledge graph, and the
+accuracy and limitations of automated reproducibility-metadata extraction, where
+the strongest open-weight model attains a headline F1 of approximately 0.27 and
+extraction is most reliable for datasets and weakest for reported evaluation
+results, establishing automated extraction as feasible yet a key bottleneck. We
+further assess result-level reproducibility by re-executing a subset of buildable
+artifacts and comparing the obtained metrics against the values claimed in their
+papers. SRAF, its RDIP knowledge graph, and the
 annotated corpus together constitute a reusable, standards-grounded instrument
 for auditing and improving the reproducibility of computational research.
 

@@ -414,6 +414,17 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
 - **Next:** re-run `python -m evaluation.compare_models --tier gold` (+`--strict`,
   `--tier silver`) after pull; read the fuzzy HEADLINE as the fair RQ3 number.
 
+### RQ3 FINAL numbers (corrected GT, 2026-06-18)
+- **gold-12 fuzzy headline F1:** qwen 0.223 / llama 0.230 / **mistral 0.273**
+  (lenient); strict 0.194 / 0.203 / **0.241**. exact (lenient) 0.131/0.108/0.151.
+- **silver-95 fuzzy headline F1:** qwen 0.208 / llama 0.185 / **mistral 0.226**.
+- Per-field (gold, fuzzy lenient): **datasets ≈0.55** (best), parameters ≈0.29,
+  environment ≈0.46, methods ≈0.18, **evaluation_results ≈0.00** (hard floor —
+  neither side reads result tables reliably). seeds N/A on gold.
+- **Ranking stable: Mistral-24B > Qwen-14B ≈ Llama-8B** (size-ordered).
+- Abstract number = **best F1 ≈ 0.27** (Mistral, entity-aware match). Filled in
+  docs/abstract.md; title added (SRAF: An Ontology-Grounded KG Framework…).
+
 ## 2026-06-18 — ground-truth verification
 
 - Built `evaluation/verify_ground_truth.py`: grounds each GT entity against its
