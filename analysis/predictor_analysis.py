@@ -44,7 +44,7 @@ def load_frame() -> pd.DataFrame:
         meta = r.get("repo_meta", {}) or {}
         lift = r.get("lift", {}) or {}
         attempted = b.get("attempted", False)
-        rows.append({
+        row = {
             "study_id": r.get("study_id"),
             "has_docker": int("docker" in by),
             "has_conda": int("conda" in by),
@@ -56,7 +56,11 @@ def load_frame() -> pd.DataFrame:
                                 if b.get("resolve_success") is not None else np.nan),
             "build_success": int(bool(b.get("build_success"))) if attempted else np.nan,
             "fair_r": fr.get("total_score", np.nan),
-        })
+        }
+        # per-dimension FAIR-R scores (RQ4 diagnosis: where does the signal live?)
+        for dim, sc in (fr.get("dimension_scores") or {}).items():
+            row[f"fair_{dim.lower()}"] = sc
+        rows.append(row)
     df = pd.DataFrame(rows)
 
     if REPO_LIST.exists():
@@ -139,6 +143,32 @@ def spearman_report(df: pd.DataFrame) -> list[str]:
     return lines
 
 
+def dimension_spearman_report(df: pd.DataFrame) -> list[str]:
+    """RQ4 diagnosis: which FAIR-R dimension carries outcome signal?"""
+    from scipy.stats import spearmanr
+    dims = [c for c in df.columns if c.startswith("fair_") and c != "fair_r"]
+    lines = ["### Per-dimension Spearman — FAIR-R dimensions vs outcome (RQ4 diagnosis)\n"]
+    if not dims:
+        lines.append("- no per-dimension scores in result JSONs "
+                     "(re-run build_harness.rescore with the current scorer).\n")
+        return lines
+    lines.append("| dimension | rho (resolve) | p | rho (build) | p |")
+    lines.append("|---|---:|---:|---:|---:|")
+    for dim in sorted(dims):
+        cells = [dim.replace("fair_", "").capitalize()]
+        for outcome in ("resolve_success", "build_success"):
+            d = df.dropna(subset=[dim, outcome])
+            if len(d) > 3 and d[dim].nunique() > 1 and d[outcome].nunique() > 1:
+                rho, p = spearmanr(d[dim], d[outcome])
+                star = " *" if p < 0.05 else ""
+                cells += [f"{rho:+.3f}", f"{p:.3f}{star}"]
+            else:
+                cells += ["--", "--"]
+        lines.append("| " + " | ".join(cells) + " |")
+    lines.append("")
+    return lines
+
+
 def main():
     df = load_frame()
     if df.empty:
@@ -151,6 +181,7 @@ def main():
     lines += logit_report(df, "resolve_success")
     lines += logit_report(df, "build_success")
     lines += spearman_report(df)
+    lines += dimension_spearman_report(df)
     report = "\n".join(lines)
     (OUT_DIR / "predictor_analysis.md").write_text(report)
     print(report)
