@@ -50,10 +50,12 @@ for i in $(seq 1 120); do
   sleep 5
 done
 
-# --- run the full sweep (engine-driven, streaming, resumable) ---
+# --- run the sweep (engine-driven, streaming, resumable) ---
+# smoke-test one repo:  sbatch --export=ALL,STUDY=study002 result_repro/run_all.sbatch
 export VLLM_SERVER_URL="http://127.0.0.1:${PORT}"
+STUDY_ARG=""; [ -n "${STUDY:-}" ] && STUDY_ARG="--study ${STUDY}"
 "$CONDA_PY" -m result_repro.run_all \
-    --backend vllm --model "$MODEL" \
+    --backend vllm --model "$MODEL" ${STUDY_ARG} \
     --run-timeout "${RUN_TIMEOUT:-2700}" \
     --disk-cap "${DISK_CAP:-40}"
 

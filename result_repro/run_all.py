@@ -246,6 +246,22 @@ def main() -> int:
     ap.add_argument("--force", action="store_true", help="ignore per-study markers")
     a = ap.parse_args()
 
+    # --- preflight: make sure the LLM backend is actually reachable ---
+    if not a.no_llm_parse and (a.backend or "").lower() in ("vllm", "llamacpp"):
+        import urllib.request
+        from config import VLLM_SERVER_URL, LLAMACPP_SERVER_URL
+        url = (VLLM_SERVER_URL if (a.backend or "").lower() == "vllm"
+               else LLAMACPP_SERVER_URL).rstrip("/") + "/v1/models"
+        try:
+            urllib.request.urlopen(url, timeout=8)
+        except Exception:  # noqa: BLE001
+            print(f"\nERROR: LLM server not reachable at {url}\n"
+                  f"vLLM must be serving on a GPU node. Either submit the job\n"
+                  f"  sbatch result_repro/run_all.sbatch\n"
+                  f"or start vLLM on a GPU node first (set VLLM_SERVER_URL), then re-run.\n"
+                  f"(The login node has no GPU, so it cannot serve the model.)")
+            return 2
+
     os.makedirs(ROWS_DIR, exist_ok=True)
     entries = yaml.safe_load(open(a.manifest)) or []
     todo = [e for e in entries if (not a.study or e["study_id"] == a.study)]
