@@ -45,6 +45,7 @@ from result_repro.compare_results import compare_entry                       # n
 RECIPES_DIR = os.path.join(ROOT, "data", "recipes")
 RESULTS_DIR = os.path.join(ROOT, "result_repro", "results")
 ROWS_DIR = os.path.join(RESULTS_DIR, "rows")
+LOGS_DIR = os.path.join(RESULTS_DIR, "logs")
 
 
 def _s(x):
@@ -176,6 +177,10 @@ def process_study(entry: dict, backend, model, args) -> dict:
 
         log, outcome, reason = run_experiment(
             repo, recipe, args.run_timeout, args.setup_timeout, args.disk_cap)
+        # keep a small log tail so failures are debuggable (and LLM-parseable later)
+        os.makedirs(LOGS_DIR, exist_ok=True)
+        open(os.path.join(LOGS_DIR, f"{sid}.log"), "w").write(log[-40000:])
+        row["log_tail"] = log[-1500:]
         if outcome != "ran":
             row.update(status="run_failed", reason=outcome or reason); return row
 

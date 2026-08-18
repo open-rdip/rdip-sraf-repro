@@ -23,8 +23,9 @@ REPO_ROOT="${SLURM_SUBMIT_DIR:-$HOME/rdip-sre}"; cd "$REPO_ROOT"; mkdir -p logs
 CONDA_PY="$HOME/envs/sraf/bin/python"
 
 STUDY_ARG=""; [ -n "${STUDY:-}" ] && STUDY_ARG="--study ${STUDY}"
+FORCE_ARG=""; [ -n "${FORCE:-}" ] && FORCE_ARG="--force"
 "$CONDA_PY" -m result_repro.run_all \
-    --no-llm-parse ${STUDY_ARG} \
+    --no-llm-parse ${STUDY_ARG} ${FORCE_ARG} \
     --run-timeout "${RUN_TIMEOUT:-2700}" \
     --disk-cap "${DISK_CAP:-40}"
 
