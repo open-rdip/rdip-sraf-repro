@@ -28,14 +28,19 @@ mkdir -p logs
 
 CONDA_PY="$HOME/envs/sraf/bin/python"
 VLLM_PY="$HOME/envs/vllm/bin/python"
-MODEL="${MODEL:-$HOME/models/RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8}"
+# HF repo id served by vLLM (resolved from the local HF cache). Best extractor:
+MODEL="${MODEL:-RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8}"
 PORT="${PORT:-8000}"
 
+# Mistral models need vLLM's mistral tokenizer mode; others don't.
+EXTRA_ARGS=""
+case "$MODEL" in *[Mm]istral*) EXTRA_ARGS="--tokenizer-mode mistral" ;; esac
+
 # --- serve vLLM (background) ---
-echo "==> starting vLLM: $MODEL"
+echo "==> starting vLLM: $MODEL  ${EXTRA_ARGS}"
 "$VLLM_PY" -m vllm.entrypoints.openai.api_server \
     --model "$MODEL" --host 127.0.0.1 --port "$PORT" \
-    --max-model-len 8192 --gpu-memory-utilization 0.55 &
+    --max-model-len 8192 --gpu-memory-utilization 0.55 ${EXTRA_ARGS} &
 VLLM_PID=$!
 trap 'kill $VLLM_PID 2>/dev/null' EXIT
 
