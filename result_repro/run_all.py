@@ -161,6 +161,11 @@ def process_study(entry: dict, backend, model, args) -> dict:
         rp = os.path.join(RECIPES_DIR, f"{sid}.json")
         if os.path.isfile(rp) and not args.reextract:
             recipe = json.load(open(rp))
+        elif args.no_llm_parse:
+            # run phase: no LLM available; recipe must have been extracted in phase 1
+            row.update(status="run_failed",
+                       reason="recipe_missing (run extract_recipes first)")
+            return row
         else:
             recipe = extract_recipe(read_repo_text(repo), backend=backend, model=model)
             recipe["study_id"], recipe["repo_url"] = sid, entry.get("repo_url")
