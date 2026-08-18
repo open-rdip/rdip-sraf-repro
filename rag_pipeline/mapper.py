@@ -30,6 +30,10 @@ def env_uri(study_id: str) -> URIRef:
     return URIRef(f"{BASE}env-{study_id}")
 
 
+def recipe_uri(study_id: str) -> URIRef:
+    return URIRef(f"{BASE}recipe-{study_id}")
+
+
 def _base_graph() -> Graph:
     g = Graph()
     g.bind("rdip", RDIP)
@@ -157,6 +161,50 @@ def map_extraction(study_id: str, extracted: dict) -> Graph:
             g.add((ev_node, RDIP.splitLabel,
                    Literal(ev["split"], datatype=XSD.string)))
         g.add((activity, RDIP.generatesResult, ev_node))
+
+    return g
+
+
+def map_recipe(study_id: str, recipe: dict) -> Graph:
+    """Map an extracted execution recipe to RDIP triples.
+
+    Emits an rdip:ExecutionRecipe (the engine-derived "how to reproduce") linked to
+    the study's activity, so result-level reproduction is driven by extracted
+    metadata rather than a hand-written command:
+      rdip:runCommand, rdip:entryPoint, rdip:setupStep (ordered), rdip:requiresDataset,
+      rdip:requiresCheckpoint, rdip:producesMetric, rdip:recipeConfidence.
+    """
+    g = _base_graph()
+    activity = activity_uri(study_id)
+    rec = recipe_uri(study_id)
+    g.add((activity, RDF.type, RDIP.DataAnalysisActivity))
+    g.add((rec, RDF.type, RDIP.ExecutionRecipe))
+    g.add((activity, RDIP.hasExecutionRecipe, rec))
+
+    if recipe.get("run_command"):
+        g.add((rec, RDIP.runCommand,
+               Literal(str(recipe["run_command"]), datatype=XSD.string)))
+    if recipe.get("entry_point"):
+        g.add((rec, RDIP.entryPoint,
+               Literal(str(recipe["entry_point"]), datatype=XSD.string)))
+    if recipe.get("requires_checkpoint"):
+        g.add((rec, RDIP.requiresCheckpoint,
+               Literal(str(recipe["requires_checkpoint"]), datatype=XSD.string)))
+    if recipe.get("confidence"):
+        g.add((rec, RDIP.recipeConfidence,
+               Literal(str(recipe["confidence"]), datatype=XSD.string)))
+
+    for step in recipe.get("setup_steps", []) or []:
+        if step:
+            g.add((rec, RDIP.setupStep, Literal(str(step), datatype=XSD.string)))
+    for ds in recipe.get("requires_dataset", []) or []:
+        name = ds.get("name") if isinstance(ds, dict) else ds
+        if name:
+            g.add((rec, RDIP.requiresDataset, Literal(str(name), datatype=XSD.string)))
+    for m in recipe.get("produces_metric", []) or []:
+        metric = m.get("metric") if isinstance(m, dict) else m
+        if metric:
+            g.add((rec, RDIP.producesMetric, Literal(str(metric), datatype=XSD.string)))
 
     return g
 

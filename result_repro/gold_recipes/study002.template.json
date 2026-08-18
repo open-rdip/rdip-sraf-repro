@@ -1,0 +1,10 @@
+{
+  "study_id": "study002",
+  "run_command": "FILL: the exact command from the repo README that reports the metric",
+  "entry_point": "FILL: script the command invokes, e.g. main.py",
+  "setup_steps": ["FILL: install / data / checkpoint download commands, in order"],
+  "requires_dataset": [{"name": "FILL", "download": "FILL or null"}],
+  "requires_checkpoint": null,
+  "produces_metric": [{"metric": "FILL, e.g. MRR", "dataset": "FILL or null"}],
+  "confidence": "high"
+}

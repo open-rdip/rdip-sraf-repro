@@ -30,20 +30,41 @@ SCRATCH="/tmp/result-$SLURM_JOB_ID"
 mkdir -p "$REPO_ROOT/logs" "$SCRATCH"
 trap 'rm -rf "$SCRATCH"' EXIT
 
-# --- pull repo_url + command for this study out of the manifest ---
+# --- repo_url + command: prefer the ENGINE-extracted recipe, fall back to manifest ---
 read -r REPO_URL CMD < <("$CONDA_PY" - "$MANIFEST" "$STUDY" <<'PY'
-import sys, yaml
+import sys, json, os, yaml
 man = yaml.safe_load(open(sys.argv[1])) or []
-e = next((m for m in man if m["study_id"] == sys.argv[2]), None)
+sid = sys.argv[2]
+e = next((m for m in man if m["study_id"] == sid), None)
 if not e:
     print("NONE NONE"); sys.exit()
-cmd = (e.get("run") or {}).get("command") or ""
+root = os.path.dirname(os.path.dirname(sys.argv[1]))
+recipe = os.path.join(root, "data", "recipes", sid + ".json")
+cmd = ""
+if os.path.isfile(recipe):                       # engine-extracted recipe wins
+    cmd = (json.load(open(recipe)).get("run_command") or "")
+if not cmd:                                      # fallback: any manual command
+    cmd = (e.get("run") or {}).get("command") or ""
 print(e.get("repo_url") or "NONE", cmd.replace("\n", " ") or "NONE")
 PY
 )
 echo "==> STUDY=$STUDY  repo=$REPO_URL"
 [ "$REPO_URL" = "NONE" ] && { echo "no repo_url in manifest"; exit 1; }
-[ "$CMD" = "NONE" ] && { echo "run.command is empty in manifest — fill it first"; exit 1; }
+[ "$CMD" = "NONE" ] && { echo "no run command — extract a recipe first (result_repro.extract_recipes) or fill run.command"; exit 1; }
+
+# --- show the extracted recipe (setup steps are advisory; stage data per README) ---
+RECIPE_JSON="$REPO_ROOT/data/recipes/$STUDY.json"
+if [ -f "$RECIPE_JSON" ]; then
+  echo "==> engine-extracted recipe: $RECIPE_JSON"
+  "$CONDA_PY" - "$RECIPE_JSON" <<'PY'
+import sys, json
+r = json.load(open(sys.argv[1]))
+print("   confidence:", r.get("confidence"), "| entry_point:", r.get("entry_point"))
+print("   requires_checkpoint:", r.get("requires_checkpoint"))
+for s in (r.get("setup_steps") or []):
+    print("   setup:", s)
+PY
+fi
 
 # --- clone + environment (declared Python ladder, like the build harness) ---
 git clone --depth 1 "$REPO_URL" "$SCRATCH/repo" || { echo "clone failed"; exit 1; }
