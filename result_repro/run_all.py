@@ -241,26 +241,37 @@ def main() -> int:
     ap.add_argument("--disk-cap", type=float, default=40.0, dest="disk_cap", help="GB")
     ap.add_argument("--tol", type=float, default=0.05)
     ap.add_argument("--abs-tol", type=float, default=0.01)
+    ap.add_argument("--server-wait", type=int, default=1200, dest="server_wait",
+                    help="seconds to wait for the LLM server to load (default 1200)")
     ap.add_argument("--no-llm-parse", action="store_true", help="regex-only metric parse")
     ap.add_argument("--reextract", action="store_true", help="ignore cached recipes")
     ap.add_argument("--force", action="store_true", help="ignore per-study markers")
     a = ap.parse_args()
 
-    # --- preflight: make sure the LLM backend is actually reachable ---
+    # --- preflight: wait for the LLM backend to come up (24B models load slowly) ---
     if not a.no_llm_parse and (a.backend or "").lower() in ("vllm", "llamacpp"):
+        import time
         import urllib.request
         from config import VLLM_SERVER_URL, LLAMACPP_SERVER_URL
         url = (VLLM_SERVER_URL if (a.backend or "").lower() == "vllm"
                else LLAMACPP_SERVER_URL).rstrip("/") + "/v1/models"
-        try:
-            urllib.request.urlopen(url, timeout=8)
-        except Exception:  # noqa: BLE001
-            print(f"\nERROR: LLM server not reachable at {url}\n"
-                  f"vLLM must be serving on a GPU node. Either submit the job\n"
+        print(f"Waiting for LLM server at {url} (up to {a.server_wait}s) ...")
+        deadline, ok = time.time() + a.server_wait, False
+        while time.time() < deadline:
+            try:
+                urllib.request.urlopen(url, timeout=8)
+                ok = True
+                break
+            except Exception:  # noqa: BLE001
+                time.sleep(10)
+        if not ok:
+            print(f"\nERROR: LLM server still not reachable at {url} after "
+                  f"{a.server_wait}s.\nvLLM must be serving on a GPU node. Submit\n"
                   f"  sbatch result_repro/run_all.sbatch\n"
-                  f"or start vLLM on a GPU node first (set VLLM_SERVER_URL), then re-run.\n"
+                  f"or start vLLM on a GPU node first (set VLLM_SERVER_URL).\n"
                   f"(The login node has no GPU, so it cannot serve the model.)")
             return 2
+        print("  LLM server is up.")
 
     os.makedirs(ROWS_DIR, exist_ok=True)
     entries = yaml.safe_load(open(a.manifest)) or []
