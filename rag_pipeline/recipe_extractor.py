@@ -48,6 +48,10 @@ recipe needed to reproduce the paper's main reported result. Return ONLY this JS
 Rules:
 - Prefer an evaluation/test command over full training when the paper reports a metric from a released checkpoint.
 - Use commands exactly as written in the docs; do NOT invent flags or file names.
+- Do NOT include a command to clone this repository — it is already cloned and you are running inside it.
+- If a checkpoint or dataset is only given as a URL, put the download AND any unzip/extract into setup_steps (e.g. "wget <url> -O ckpt.zip", "unzip ckpt.zip -d ckpt"), and make run_command reference the resulting LOCAL path. Never pass a URL where a local file/directory path is expected.
+- If the run command has a placeholder path (e.g. /path/to/ckpt, $checkpoint_dir), it is not directly runnable: keep it but set confidence to "low".
+- When the repo is a multi-method toolbox, choose the config/checkpoint that matches THIS paper's method and reported result, not a generic demo config.
 - If the docs do not state how to reproduce a reported number, set run_command to null and confidence to "low".
 - setup_steps are only commands explicitly documented (install, data download, checkpoint download).
 

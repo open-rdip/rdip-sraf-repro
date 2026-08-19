@@ -114,16 +114,15 @@ def run_experiment(repo_dir: str, recipe: dict, run_to: int, setup_to: int,
             os.path.isfile(os.path.join(repo_dir, "pyproject.toml")):
         _sh("python -m pip install -q -e .", repo_dir, setup_to, env, log)
 
-    for step in recipe.get("setup_steps") or []:
-        if not step:
-            continue
-        _sh(str(step), repo_dir, setup_to, env, log)
-        if _du_gb(repo_dir) > cap_gb:
-            return "\n".join(log), "data_too_large", f"scratch exceeded {cap_gb} GB"
-
-    rc = _sh(cmd, repo_dir, run_to, env, log)
+    # Run the recipe's setup steps + command as ONE shell script, so `cd` and
+    # `export` from setup persist into the run command (real recipes are multi-line).
+    steps = [str(s) for s in (recipe.get("setup_steps") or []) if s]
+    script = "\n".join(steps + [cmd])
+    rc = _sh(script, repo_dir, setup_to + run_to, env, log)
+    if _du_gb(repo_dir) > cap_gb:
+        return "\n".join(log), "data_too_large", f"scratch exceeded {cap_gb} GB"
     if rc == "timeout":
-        return "\n".join(log), "run_timeout", f"run exceeded {run_to}s"
+        return "\n".join(log), "run_timeout", f"run exceeded {setup_to + run_to}s"
     if rc != 0:
         return "\n".join(log), "run_error", f"run exited {rc}"
     return "\n".join(log), "ran", ""
