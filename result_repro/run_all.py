@@ -52,6 +52,41 @@ def _s(x):
     return "" if x is None else str(x).strip()
 
 
+PLACEHOLDER_RE = re.compile(
+    r"/path/to|/path_to|path_to_|\$\{?checkpoint|<checkpoint|/your/|/PATH/|"
+    r"checkpoint[ _]path|/tmp/outdir|/path\b", re.I)
+
+
+def classify_failure(log: str) -> str:
+    """Bucket a run_error log into the paper's blocker taxonomy."""
+    low = log.lower()
+    if "mujoco" in low:
+        return "missing_system_dep:mujoco"
+    if "unzip: not found" in low or "unzip: command not found" in low:
+        return "missing_tool:unzip"
+    if "404 not found" in low or "error 404" in low:
+        return "dead_download:404"
+    if "500 internal server error" in low or "error 500" in low:
+        return "dead_download:500"
+    if "403" in low and ("download" in low or "drive.google" in low or "usercontent" in low):
+        return "gated_download:403"
+    if "cuda out of memory" in low or "out of memory" in low:
+        return "gpu_oom"
+    if "host key verification" in low or "git@github.com" in log or \
+            ("permission denied" in low and "publickey" in low):
+        return "auth_ssh"
+    m = re.search(r"no module named '([^']+)'", log, re.I)
+    if m:
+        return f"missing_dependency:{m.group(1)}"
+    if "failed to build" in low and "editable" in low:
+        return "install_build_error"
+    if "configuration error: `project`" in low or "invalid pyproject.toml" in low:
+        return "install_build_error"
+    if "no such file or directory" in low:
+        return "missing_file_or_data"
+    return "run_error:other"
+
+
 def _du_gb(path: str) -> float:
     total = 0
     for dp, _, fs in os.walk(path):
@@ -174,6 +209,10 @@ def process_study(entry: dict, backend, model, args) -> dict:
         row["recipe_command"] = recipe.get("run_command")
         row["recipe_confidence"] = recipe.get("confidence")
 
+        # a command that is only a placeholder is not runnable — don't waste a run
+        if PLACEHOLDER_RE.search(recipe.get("run_command") or ""):
+            row.update(status="run_failed", reason="placeholder_recipe"); return row
+
         log, outcome, reason = run_experiment(
             repo, recipe, args.run_timeout, args.setup_timeout, args.disk_cap)
         # keep a small log tail so failures are debuggable (and LLM-parseable later)
@@ -181,7 +220,9 @@ def process_study(entry: dict, backend, model, args) -> dict:
         open(os.path.join(LOGS_DIR, f"{sid}.log"), "w").write(log[-40000:])
         row["log_tail"] = log[-1500:]
         if outcome != "ran":
-            row.update(status="run_failed", reason=outcome or reason); return row
+            if outcome == "run_error":
+                reason = classify_failure(log)     # fine-grained taxonomy from the log
+            row.update(status="run_failed", reason=reason); return row
 
         obtained = []
         if not args.no_llm_parse:
