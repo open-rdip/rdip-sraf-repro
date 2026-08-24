@@ -44,7 +44,8 @@ done
 export VLLM_SERVER_URL="http://127.0.0.1:${PORT}"
 export LLM_MAX_TOKENS="${LLM_MAX_TOKENS:-3000}"   # avoid truncating longer recipes (e.g. study019)
 STUDY_ARG=""; [ -n "${STUDY:-}" ] && STUDY_ARG="--study ${STUDY}"
+MANIFEST_ARG=""; [ -n "${MANIFEST:-}" ] && MANIFEST_ARG="--manifest ${MANIFEST}"
 "$CONDA_PY" -m result_repro.extract_recipes \
-    --backend vllm --model "$MODEL" ${STUDY_ARG}
+    --backend vllm --model "$MODEL" ${STUDY_ARG} ${MANIFEST_ARG}
 
 echo "==> recipes written to data/recipes/ — now run phase 2 (run_all.sbatch)"

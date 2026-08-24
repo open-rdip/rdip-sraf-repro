@@ -142,6 +142,22 @@ def run_experiment(repo_dir: str, recipe: dict, run_to: int, setup_to: int,
     env["PATH"] = venv_bin + os.pathsep + env.get("PATH", "")
     env["VIRTUAL_ENV"] = os.path.join(repo_dir, ".venv")
 
+    # some nodes lack `unzip`; provide a shim so a recipe's unzip step isn't OUR failure
+    try:
+        shim = os.path.join(venv_bin, "unzip")
+        with open(shim, "w") as f:
+            f.write("#!/usr/bin/env python3\n"
+                    "import sys, zipfile\n"
+                    "a=sys.argv[1:]; zp=None; dest='.'; i=0\n"
+                    "while i < len(a):\n"
+                    "    if a[i]=='-d': dest=a[i+1]; i+=2; continue\n"
+                    "    if a[i].startswith('-'): i+=1; continue\n"
+                    "    zp = zp or a[i]; i+=1\n"
+                    "zipfile.ZipFile(zp).extractall(dest)\n")
+        os.chmod(shim, 0o755)
+    except OSError:
+        pass
+
     _sh("python -m pip install -q --upgrade pip", repo_dir, 300, env, log)
     if os.path.isfile(os.path.join(repo_dir, "requirements.txt")):
         _sh("python -m pip install -q -r requirements.txt", repo_dir, setup_to, env, log)

@@ -1,0 +1,59 @@
+# Positive-control / validation set for result-level reproduction.
+#
+# NOT part of the 96-paper corpus. These are curated, known-reproducible artifacts
+# used ONLY to validate that the engine works end-to-end: released checkpoint +
+# small auto-downloading data + exact eval command + fits one 48GB GPU + fast.
+# If the engine reproduces these, the ~0 on the corpus reflects the artifacts, not
+# the tool. Keep this set clearly separate from manifest.yaml in the paper.
+
+- study_id: "ctrl_cifar_chenyaofo"
+  repo_url: "https://github.com/chenyaofo/pytorch-cifar-models"
+  paper_title: "Pretrained models on CIFAR10/100 in PyTorch (torch.hub)"
+  language: "Python"
+  status: "pending"
+  claimed:
+  - {metric: "top-1 accuracy", claimed: "94.37", split: "test", dataset: "CIFAR-10 (resnet56)"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: 10
+    notes: "CIFAR-10 auto-downloads (~170MB); load cifar10_resnet56 via torch.hub,
+      released weights, eval on test set -> top-1. Documented per-model accuracy in README."
+  obtained: []
+  priority: A
+
+- study_id: "ctrl_cifar_huyvnphan"
+  repo_url: "https://github.com/huyvnphan/PyTorch_CIFAR10"
+  paper_title: "Pretrained TorchVision models on CIFAR10 (with weights)"
+  language: "Python"
+  status: "pending"
+  claimed:
+  - {metric: "top-1 accuracy", claimed: "93.07", split: "test", dataset: "CIFAR-10 (vgg11_bn)"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: 15
+    notes: "Released CIFAR-10 weights + Lightning eval script; per-model accuracy table
+      in README. Weights download via provided script; CIFAR-10 auto-downloads."
+  obtained: []
+  priority: A
+
+- study_id: "ctrl_sst2_bert"
+  repo_url: "https://huggingface.co/JeremiahZ/bert-base-uncased-sst2"
+  paper_title: "bert-base-uncased fine-tuned on GLUE SST-2 (model card)"
+  language: "Python"
+  status: "pending"
+  claimed:
+  - {metric: "accuracy", claimed: "92.7", split: "validation", dataset: "GLUE SST-2"}
+  run:
+    command: ""
+    gpu: true
+    data_ready: false
+    est_minutes: 10
+    notes: "NLP control (proves engine isn't vision-only). SST-2 auto-downloads via
+      `datasets`; released checkpoint on the Hub; run transformers text-classification
+      eval -> accuracy. Fallback checkpoint: distilbert-base-uncased-finetuned-sst-2-english."
+  obtained: []
+  priority: A

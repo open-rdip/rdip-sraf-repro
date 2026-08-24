@@ -24,8 +24,9 @@ CONDA_PY="$HOME/envs/sraf/bin/python"
 
 STUDY_ARG=""; [ -n "${STUDY:-}" ] && STUDY_ARG="--study ${STUDY}"
 FORCE_ARG=""; [ -n "${FORCE:-}" ] && FORCE_ARG="--force"
+MANIFEST_ARG=""; [ -n "${MANIFEST:-}" ] && MANIFEST_ARG="--manifest ${MANIFEST}"
 "$CONDA_PY" -m result_repro.run_all \
-    --no-llm-parse ${STUDY_ARG} ${FORCE_ARG} \
+    --no-llm-parse ${STUDY_ARG} ${FORCE_ARG} ${MANIFEST_ARG} \
     --run-timeout "${RUN_TIMEOUT:-2700}" \
     --disk-cap "${DISK_CAP:-40}"
 
