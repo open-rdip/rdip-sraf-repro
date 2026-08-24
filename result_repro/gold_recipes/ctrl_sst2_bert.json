@@ -4,12 +4,12 @@
   "run_command": "python eval.py",
   "setup_steps": [
     "pip install -q torch transformers datasets",
-    "cat > eval.py <<'PYEOF'\nimport torch\nfrom datasets import load_dataset\nfrom transformers import AutoTokenizer, AutoModelForSequenceClassification\nmid = 'JeremiahZ/bert-base-uncased-sst2'\ntok = AutoTokenizer.from_pretrained(mid)\nmodel = AutoModelForSequenceClassification.from_pretrained(mid)\ndev = 'cuda' if torch.cuda.is_available() else 'cpu'\nmodel.eval().to(dev)\nds = load_dataset('glue', 'sst2')['validation']\nc = 0\nfor i in range(0, len(ds), 64):\n    b = ds[i:i+64]\n    enc = tok(b['sentence'], padding=True, truncation=True, return_tensors='pt').to(dev)\n    with torch.no_grad():\n        pr = model(**enc).logits.argmax(-1).cpu().tolist()\n    c += sum(int(p == l) for p, l in zip(pr, b['label']))\nprint(f\"accuracy: {100*c/len(ds):.2f}\")\nPYEOF"
+    "cat > eval.py <<'PYEOF'\nimport torch\nfrom datasets import load_dataset\nfrom transformers import AutoTokenizer, AutoModelForSequenceClassification\nmid = 'JeremiahZ/bert-base-uncased-sst2'\ntok = AutoTokenizer.from_pretrained(mid)\nmodel = AutoModelForSequenceClassification.from_pretrained(mid)\ndev = 'cuda' if torch.cuda.is_available() else 'cpu'\nmodel.eval().to(dev)\nds = load_dataset('nyu-mll/glue', 'sst2')['validation']\nc = 0\nfor i in range(0, len(ds), 64):\n    b = ds[i:i+64]\n    enc = tok(b['sentence'], padding=True, truncation=True, return_tensors='pt').to(dev)\n    with torch.no_grad():\n        pr = model(**enc).logits.argmax(-1).cpu().tolist()\n    c += sum(int(p == l) for p, l in zip(pr, b['label']))\nprint(f\"accuracy: {100*c/len(ds):.2f}\")\nPYEOF"
   ],
   "requires_dataset": [
     {
       "name": "GLUE SST-2",
-      "download": "auto via datasets"
+      "download": "auto via datasets (nyu-mll/glue)"
     }
   ],
   "requires_checkpoint": "JeremiahZ/bert-base-uncased-sst2 (HF hub)",
