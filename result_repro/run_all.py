@@ -43,6 +43,7 @@ from rag_pipeline.recipe_extractor import (read_repo_text, extract_recipe,   # n
 from result_repro.compare_results import compare_entry                       # noqa: E402
 
 RECIPES_DIR = os.path.join(ROOT, "data", "recipes")
+GOLD_DIR = os.path.join(ROOT, "result_repro", "gold_recipes")
 RESULTS_DIR = os.path.join(ROOT, "result_repro", "results")
 ROWS_DIR = os.path.join(RESULTS_DIR, "rows")
 LOGS_DIR = os.path.join(RESULTS_DIR, "logs")
@@ -209,9 +210,16 @@ def process_study(entry: dict, backend, model, args) -> dict:
         if not _clone(entry.get("repo_url"), repo):
             row.update(status="run_failed", reason="clone_failed"); return row
 
+        # a hand-written GOLD recipe (if present) takes priority: it lets us test
+        # the execution/compare harness independently of autonomous extraction.
+        gold = os.path.join(GOLD_DIR, f"{sid}.json")
         rp = os.path.join(RECIPES_DIR, f"{sid}.json")
-        if os.path.isfile(rp) and not args.reextract:
+        if os.path.isfile(gold):
+            recipe = json.load(open(gold))
+            row["recipe_source"] = "gold"
+        elif os.path.isfile(rp) and not args.reextract:
             recipe = json.load(open(rp))
+            row["recipe_source"] = "extracted"
         elif args.no_llm_parse:
             # run phase: no LLM available; recipe must have been extracted in phase 1
             row.update(status="run_failed",
@@ -222,6 +230,7 @@ def process_study(entry: dict, backend, model, args) -> dict:
             recipe["study_id"], recipe["repo_url"] = sid, entry.get("repo_url")
             os.makedirs(RECIPES_DIR, exist_ok=True)
             json.dump(recipe, open(rp, "w"), indent=2)
+            row["recipe_source"] = "extracted"
         row["recipe_command"] = recipe.get("run_command")
         row["recipe_confidence"] = recipe.get("confidence")
 
