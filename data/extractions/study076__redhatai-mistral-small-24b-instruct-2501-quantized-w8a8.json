@@ -1,0 +1,106 @@
+{
+  "study_id": "study076",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study076/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:08:01.478344+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 5,
+    "methods": 14,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "synthetic and real-world data",
+        "version": null
+      },
+      {
+        "name": "heterogeneous attributed multilayer network",
+        "version": null
+      },
+      {
+        "name": "synthetic",
+        "version": null
+      },
+      {
+        "name": "real-world",
+        "version": null
+      },
+      {
+        "name": "synthetic datasets",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PIHAM",
+        "description": "a versatile and scalable probabilistic generative model designed to perform inference in attributed multilayer networks"
+      },
+      {
+        "name": "Laplace approximations",
+        "description": "avoid the need for explicit derivations"
+      },
+      {
+        "name": "automatic differentiation methods",
+        "description": "avoid the need for explicit derivations"
+      },
+      {
+        "name": "cross-validation routine",
+        "description": "determine the optimal combination of layers and attributes"
+      },
+      {
+        "name": "softmax",
+        "description": "applied to every row of the community membership matrices"
+      },
+      {
+        "name": "logistic",
+        "description": "transformation function for Bernoulli distribution"
+      },
+      {
+        "name": "exponential",
+        "description": "transformation function for Poisson distribution"
+      },
+      {
+        "name": "Gaussian",
+        "description": "transformation function for Gaussian distribution"
+      },
+      {
+        "name": "LM technique",
+        "description": "Transformed posterior distributions into the simplex space using the LM technique and employing Dirichlet distributions"
+      },
+      {
+        "name": "Bernoulli distributions",
+        "description": "for the binary layers"
+      },
+      {
+        "name": "Gaussian distributions",
+        "description": "for the distance layer"
+      },
+      {
+        "name": "Categorical distributions",
+        "description": "for the attributes caste and religion"
+      },
+      {
+        "name": "Poisson distribution",
+        "description": "for the covariate representing the years of education"
+      },
+      {
+        "name": "5-fold cross-validation",
+        "description": "for determining the number of communities K"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

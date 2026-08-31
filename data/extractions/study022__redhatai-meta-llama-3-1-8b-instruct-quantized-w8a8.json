@@ -1,0 +1,206 @@
+{
+  "study_id": "study022",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study022/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:17:56.753887+00:00",
+  "counts": {
+    "dependencies": 14,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 3,
+    "methods": 15,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Pinnability",
+        "version": null
+      },
+      {
+        "name": "TransAct",
+        "version": null
+      },
+      {
+        "name": "nvFuser",
+        "version": null
+      },
+      {
+        "name": "cuCollections",
+        "version": null
+      },
+      {
+        "name": "CUDA Graphs",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "Flink",
+        "version": null
+      },
+      {
+        "name": "Kafka",
+        "version": null
+      },
+      {
+        "name": "RockDB",
+        "version": null
+      },
+      {
+        "name": "NVIDIA/cuCollections",
+        "version": null
+      },
+      {
+        "name": "CUDA",
+        "version": "9"
+      },
+      {
+        "name": "CNN",
+        "version": null
+      },
+      {
+        "name": "RNN",
+        "version": null
+      },
+      {
+        "name": "transformer",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "GPU",
+      "cuda_version": "9",
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "user sequence length",
+        "value": "100"
+      },
+      {
+        "name": "dimension of action embedding",
+        "value": "32"
+      },
+      {
+        "name": "dropout rate",
+        "value": "0.1"
+      },
+      {
+        "name": "dimension of feed forward network",
+        "value": "32"
+      },
+      {
+        "name": "batch size",
+        "value": "12000"
+      },
+      {
+        "name": "downsampling ratio",
+        "value": "fixed ratio"
+      },
+      {
+        "name": "sampling ratio",
+        "value": "statistical distribution and importance"
+      },
+      {
+        "name": "early fusion method",
+        "value": "concat"
+      },
+      {
+        "name": "number of encoder layers",
+        "value": "2"
+      },
+      {
+        "name": "number of heads",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pinterest Homefeed view log",
+        "version": "three weeks"
+      },
+      {
+        "name": "FVL",
+        "version": null
+      },
+      {
+        "name": "Pinterest dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Pinnability with TransAct",
+        "description": "null"
+      },
+      {
+        "name": "Fuse CUDA kernels",
+        "description": "Fuse operations as much as possible."
+      },
+      {
+        "name": "Combine memory copies",
+        "description": "null"
+      },
+      {
+        "name": "TransAct",
+        "description": "null"
+      },
+      {
+        "name": "baseline models",
+        "description": "null"
+      },
+      {
+        "name": "scatter-gather architecture",
+        "description": "split requests into small batches and run them in parallel on multiple leaf nodes for better latency"
+      },
+      {
+        "name": "hybrid cache",
+        "description": "uses both DRAM and SSD"
+      },
+      {
+        "name": "CUDA Graphs",
+        "description": "completely eliminate the remaining small operations overhead"
+      },
+      {
+        "name": "Adam optimizer",
+        "description": "with a learning rate scheduler"
+      },
+      {
+        "name": "transformer encoder",
+        "description": "with 2 transformer blocks"
+      },
+      {
+        "name": "feed forward network",
+        "description": null
+      },
+      {
+        "name": "weighted cross-entropy loss",
+        "description": "multi-label classification tasks"
+      },
+      {
+        "name": "concat",
+        "description": "early fusion method"
+      },
+      {
+        "name": "transformer",
+        "description": "sequence aggregation architecture"
+      },
+      {
+        "name": "standard transformer encoder",
+        "description": "sequence aggregation architecture"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "variance of evaluation results",
+        "value": "reduced",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "study_id": "study068",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study068/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:00:46.825130+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 1,
+    "methods": 8,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "open source codes",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia GTX Titan Xp",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "ShapeNetCore",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PointNet",
+        "description": "A deep learning model for point cloud classification"
+      },
+      {
+        "name": "encoder-decoder network",
+        "description": "in 323voxel space followed by an analytic patch-based completion in 1283resolution"
+      },
+      {
+        "name": "isosurface",
+        "description": "MATLAB function"
+      },
+      {
+        "name": "Chamfer loss",
+        "description": "a widely used metric to compare two shapes"
+      },
+      {
+        "name": "GFV loss",
+        "description": "enables the controller to find the correct semantic shape category"
+      },
+      {
+        "name": "discriminator loss",
+        "description": "essential to create a realistic shape"
+      },
+      {
+        "name": "RLGAN-Net",
+        "description": "hybrid approach overcomes the limitation"
+      },
+      {
+        "name": "AE",
+        "description": "selecting the results of AE when the shape is more reasonable according to the trained discriminator"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "classification accuracy",
+        "value": "improvement",
+        "split": null
+      },
+      {
+        "metric": "Chamfer distance",
+        "value": "16%",
+        "split": null
+      },
+      {
+        "metric": "Classi\ufb01cation accuracy",
+        "value": "higher the better",
+        "split": null
+      },
+      {
+        "metric": "classification",
+        "value": "Fig. 5b",
+        "split": null
+      },
+      {
+        "metric": "Chamfer loss",
+        "value": "LCHand GFV",
+        "split": null
+      }
+    ]
+  }
+}

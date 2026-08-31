@@ -1,0 +1,67 @@
+{
+  "study_id": "study076",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study076/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:23:38.176005+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 4,
+    "methods": 4,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "model_hyperparameters",
+        "value": "described in Section S2 of the Supplementary Information"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "real-world heterogeneous attributed multilayer network",
+        "version": "collected in 2013 through surveys in the Indian village"
+      },
+      {
+        "name": "synthetic",
+        "version": null
+      },
+      {
+        "name": "real-world",
+        "version": null
+      },
+      {
+        "name": "synthetic datasets",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PIHAM",
+        "description": "A versatile and scalable probabilistic generative model designed to perform inference in attributed multilayer networks."
+      },
+      {
+        "name": "f(\u00b7)",
+        "description": "selected to be the softmax function, applied to every row of the community membership matrices"
+      },
+      {
+        "name": "g(\u00b7)",
+        "description": "varies depending on the distribution type, as illustrated in Table 1"
+      },
+      {
+        "name": "cross-validation",
+        "description": "5-fold cross-validation procedure for K\u2208[1,10]"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

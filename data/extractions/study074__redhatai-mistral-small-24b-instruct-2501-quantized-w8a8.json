@@ -1,0 +1,42 @@
+{
+  "study_id": "study074",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study074/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:06:21.723174+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 2,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ChatGPT",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "DroidBot-GPT",
+        "description": "a two-step solution where the LLM model chooses to edit in a text box, DroidBot-GPT sends another prompt ended with \u201cWhat should I enter to the view with the text \u2018<text content>\u2019? Just return the text and nothing else. \u201d , after which DroidBot-GPT types in the response."
+      },
+      {
+        "name": "GUI description",
+        "description": "converting the GUI interface into a familiar natural language sentence that can be more readily processed by GPT models"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "study_id": "study095",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study095/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:24:38.100135+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 4,
+    "methods": 8,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Faiss",
+        "version": null
+      },
+      {
+        "name": "DPR",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia V100",
+      "cuda_version": null,
+      "cpu_info": "Intel Xeon E5- 2698 v4"
+    },
+    "hyperparameters": [
+      {
+        "name": "code size of the PQ",
+        "value": "96 and 8 bits"
+      },
+      {
+        "name": "l",
+        "value": "1000"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NQ",
+        "version": null
+      },
+      {
+        "name": "TQA",
+        "version": null
+      },
+      {
+        "name": "English Wikipedia",
+        "version": null
+      },
+      {
+        "name": "RAG",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DPR",
+        "description": "BERT-based reader and training method"
+      },
+      {
+        "name": "Fusion-in-Decoder",
+        "description": "large model"
+      },
+      {
+        "name": "DPR with linear scan",
+        "description": ""
+      },
+      {
+        "name": "DPR with Hierarchical Navigable Small World (HSNW) graphs",
+        "description": "which builds a multi-layer structure consisting of a hierarchical set of proximity graphs"
+      },
+      {
+        "name": "simple locality sensitive hashing (LSH)",
+        "description": ""
+      },
+      {
+        "name": "product quantization (PQ)",
+        "description": ""
+      },
+      {
+        "name": "BPR",
+        "description": "BPR"
+      },
+      {
+        "name": "HNSW",
+        "description": "HNSW"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 recall",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "top-20 recall",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "top-100 recall",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "EM QA accuracy",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "index size",
+        "value": "2GB",
+        "split": null
+      },
+      {
+        "metric": "query time",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "EM QA accuracy",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy",
+        "value": "44.5",
+        "split": null
+      }
+    ]
+  }
+}

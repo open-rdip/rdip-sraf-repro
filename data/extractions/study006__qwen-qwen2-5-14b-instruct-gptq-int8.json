@@ -1,0 +1,195 @@
+{
+  "study_id": "study006",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study006/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:34:28.008927+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 3,
+    "hyperparameters": 5,
+    "datasets": 5,
+    "methods": 16,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      1,
+      2,
+      3
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "horizon",
+        "value": "15"
+      },
+      {
+        "name": "control_rate",
+        "value": "10 Hz"
+      },
+      {
+        "name": "macro action length",
+        "value": "3"
+      },
+      {
+        "name": "planning horizon in raw action space for gym locomotion tasks",
+        "value": "9"
+      },
+      {
+        "name": "planning horizon in raw action space for Adroit tasks",
+        "value": "15"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Stochastic MuJoCo tasks",
+        "version": null
+      },
+      {
+        "name": "Adroit",
+        "version": null
+      },
+      {
+        "name": "AntMaze",
+        "version": null
+      },
+      {
+        "name": "Cloned",
+        "version": null
+      },
+      {
+        "name": "Expert",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "L-MAP",
+        "description": "A method that outperforms model-based baselines TAP and TT, and shows competitive or superior results compared to 1R2R and model-free methods CQL and IQL."
+      },
+      {
+        "name": "TAP",
+        "description": "Model-based baseline"
+      },
+      {
+        "name": "TT",
+        "description": "Model-based baseline"
+      },
+      {
+        "name": "1R2R",
+        "description": "Risk-averse model-based algorithm specifically designed for stochastic domains"
+      },
+      {
+        "name": "CQL",
+        "description": "Model-free method"
+      },
+      {
+        "name": "IQL",
+        "description": "Model-free method"
+      },
+      {
+        "name": "Latent Macro Action Planner (L-MAP)",
+        "description": "Leverages temporal abstractions learned with a state-conditioned VQ-V AE to construct a discrete latent space of macro-actions."
+      },
+      {
+        "name": "Conservative Q-Learning (CQL)",
+        "description": "Model-free actor-critic method."
+      },
+      {
+        "name": "Implicit Q-Learning (IQL)",
+        "description": "Model-free actor-critic method."
+      },
+      {
+        "name": "CompILE",
+        "description": "Learns latent codes representing variable-length behavior segments, enabling cross-task generalization."
+      },
+      {
+        "name": "RPL",
+        "description": "Employs a hierarchical policy architecture to simplify long-horizon tasks by decomposing them into sub-policies."
+      },
+      {
+        "name": "OPAL",
+        "description": "Introduces a continuous space of primitive actions to reduce distributional shift in offline RL, enhancing policy robustness."
+      },
+      {
+        "name": "ACT",
+        "description": "Not detailed in the provided text."
+      },
+      {
+        "name": "PRISE",
+        "description": "Applies sequence compression to learn variable-length action primitives, improving behavior cloning by capturing essential behavioral patterns."
+      },
+      {
+        "name": "BC",
+        "description": "An additional baseline method."
+      },
+      {
+        "name": "MCTS",
+        "description": "Monte Carlo Tree Search used for macro-level planning, which iteratively selects actions using the UCT policy, applies progressive widening to balance exploration and exploitation, performs parallel expansion of multiple macro actions and their potential outcomes, and backpropagates estimated Q-values."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance",
+        "value": "highest",
+        "split": null
+      },
+      {
+        "metric": "score",
+        "value": "higher",
+        "split": "Medium-Replay-High Hopper dataset"
+      },
+      {
+        "metric": "performance",
+        "value": "outperforms",
+        "split": "Medium-Expert-Mod Hopper dataset"
+      },
+      {
+        "metric": "average success rate",
+        "value": "83.33%",
+        "split": "all AntMaze environments"
+      },
+      {
+        "metric": "success rate",
+        "value": "78.33%",
+        "split": "Large-Play"
+      },
+      {
+        "metric": "success rate",
+        "value": "81.67%",
+        "split": "Large-Diverse"
+      },
+      {
+        "metric": "success rate",
+        "value": "93.33%",
+        "split": "Umaze"
+      },
+      {
+        "metric": "success rate",
+        "value": "88.33%",
+        "split": "Medium-Diverse"
+      },
+      {
+        "metric": "success rate",
+        "value": "93.33%",
+        "split": null
+      },
+      {
+        "metric": "average score",
+        "value": "51.40",
+        "split": null
+      },
+      {
+        "metric": "average score",
+        "value": "18.79",
+        "split": "non-expert datasets"
+      }
+    ]
+  }
+}

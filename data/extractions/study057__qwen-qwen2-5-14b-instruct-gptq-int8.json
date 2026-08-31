@@ -1,0 +1,124 @@
+{
+  "study_id": "study057",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study057/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:11:15.341578+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 1,
+    "methods": 11,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "faiss",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "magnitude range",
+        "value": "0.5 in r-band"
+      },
+      {
+        "name": "oversampling_factor",
+        "value": null
+      },
+      {
+        "name": "batch_size",
+        "value": "512"
+      },
+      {
+        "name": "learning_rate_classification_head",
+        "value": "0.01"
+      },
+      {
+        "name": "learning_rate_remaining_network_parameters",
+        "value": "0.001"
+      },
+      {
+        "name": "minibatch_size",
+        "value": "128"
+      },
+      {
+        "name": "learning_rate_for_CNN_encoder_parameters",
+        "value": "smaller learning rate"
+      },
+      {
+        "name": "learning_rate_for_linear_classification_head",
+        "value": "larger learning rate"
+      },
+      {
+        "name": "queue length",
+        "value": "262,144"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "DR9",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "self-supervised learning",
+        "description": "Mining for strong gravitational lenses"
+      },
+      {
+        "name": "linear classification",
+        "description": "directly on the self-supervised representations"
+      },
+      {
+        "name": "fine-tuning",
+        "description": "of the self-supervised model"
+      },
+      {
+        "name": "binary_cross_entropy_loss",
+        "description": "Used for training the linear classifier."
+      },
+      {
+        "name": "image_augmentation",
+        "description": "Includes jitter/crop, random rotations, Gaussian noise, and Gaussian blur."
+      },
+      {
+        "name": "oversampling",
+        "description": "Ensures a nonzero average number of lenses in each batch during fine-tuning."
+      },
+      {
+        "name": "self-supervised_representation_learning",
+        "description": "reduces the problem to one that can be solved with minimal computing resources and computational background"
+      },
+      {
+        "name": "fine-tuned_self-supervised_classification",
+        "description": "attach a fully connected layer on the 2048-dimensional output of the self-supervised encoder CNN and fine-tune the network in a supervised setup using the available lens labels"
+      },
+      {
+        "name": "ResNet50 network",
+        "description": "Used as the encoder architecture."
+      },
+      {
+        "name": "representation vector",
+        "description": "Resulting from the encoder architecture, has 2048 dimensions."
+      },
+      {
+        "name": "image augmentations",
+        "description": "Carefully crafted set of augmentations applied successively to images during pretraining."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

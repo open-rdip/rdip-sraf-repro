@@ -1,0 +1,282 @@
+{
+  "study_id": "study025",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study025/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:19:08.333471+00:00",
+  "counts": {
+    "dependencies": 7,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 11,
+    "methods": 13,
+    "evaluation_results": 21
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "FreeSurfer",
+        "version": null
+      },
+      {
+        "name": "SAMSEG",
+        "version": null
+      },
+      {
+        "name": "neurite",
+        "version": null
+      },
+      {
+        "name": "U-Net",
+        "version": null
+      },
+      {
+        "name": "V oxelmorph",
+        "version": null
+      },
+      {
+        "name": "V oxelmorph-diff",
+        "version": null
+      },
+      {
+        "name": "TransMorph",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX A6000",
+      "cuda_version": null,
+      "cpu_info": "2.61GHz"
+    },
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "value": "0.05"
+      },
+      {
+        "name": "\u03b20",
+        "value": "0"
+      },
+      {
+        "name": "TRE loss weight",
+        "value": "5"
+      },
+      {
+        "name": "Other loss weight 1",
+        "value": "0.2"
+      },
+      {
+        "name": "Other loss weight 2",
+        "value": "0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IXI dataset",
+        "version": "publicly available"
+      },
+      {
+        "name": "Unsupervised T1w MR Atlas to Subject Registration Dataset",
+        "version": null
+      },
+      {
+        "name": "T2-weighted images",
+        "version": null
+      },
+      {
+        "name": "T1-weighted images",
+        "version": null
+      },
+      {
+        "name": "T1w MR",
+        "version": null
+      },
+      {
+        "name": "lung CT",
+        "version": null
+      },
+      {
+        "name": "T1-weighted MR images",
+        "version": null
+      },
+      {
+        "name": "T2-weighted MR images",
+        "version": null
+      },
+      {
+        "name": "atlas",
+        "version": null
+      },
+      {
+        "name": "Learn2Reg Challenge",
+        "version": "394 training scans"
+      },
+      {
+        "name": "Learn2Reg 2022 Challenge",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "V oxelMorph",
+        "description": "with a scaling-and-squaring layer to encourage diffeomorphic registration"
+      },
+      {
+        "name": "TransMorph",
+        "description": "8A hybrid deep learning architecture that combines the Transformer structure with convolutional networks"
+      },
+      {
+        "name": "Im2grid",
+        "description": "12our previous method using coordinate translator modules"
+      },
+      {
+        "name": "DMR",
+        "description": "27A deep learning based architecture based on the Deformer module"
+      },
+      {
+        "name": "PR-Net++",
+        "description": "34A deep learning method that adopts a dual-stream architecture and incorporates correlation layers"
+      },
+      {
+        "name": "VFA",
+        "description": null
+      },
+      {
+        "name": "inner product",
+        "description": "similarity in the attention computation"
+      },
+      {
+        "name": "cosine similarity",
+        "description": "in the attention computation"
+      },
+      {
+        "name": "V oxelmorph-diff",
+        "description": "A variant of V oxelMorph with a scaling-and-squaring layer to encourage diffeomorphic registration"
+      },
+      {
+        "name": "VXM",
+        "description": "unsupervised registration"
+      },
+      {
+        "name": "SLANT",
+        "description": "segmentation"
+      },
+      {
+        "name": "weighted sum",
+        "description": "computing the weighted sum of the vectors in Rusing the attention of x"
+      },
+      {
+        "name": "affine transformation",
+        "description": "applying the affine transformation that directly corresponds to a displacement in the scanner coordinate system"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "seconds per 15 subject",
+        "value": "0.9",
+        "split": "test"
+      },
+      {
+        "metric": "peak performance",
+        "value": "95%",
+        "split": null
+      },
+      {
+        "metric": "DSC",
+        "value": "0.771\u00b10.030",
+        "split": "T1w atlas to subject registration"
+      },
+      {
+        "metric": "DSC",
+        "value": "0.635\u00b10.043",
+        "split": "T2w to T1w"
+      },
+      {
+        "metric": "mean DSC",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "HD95",
+        "value": "95%",
+        "split": null
+      },
+      {
+        "metric": "TRE",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "TRE30",
+        "value": "30%",
+        "split": "test"
+      },
+      {
+        "metric": "SDLogJ",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Dice similarity coefficient (DSC)",
+        "value": "70.726",
+        "split": "T1w Atlas \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "Dice similarity coefficient (DSC)",
+        "value": "0.593",
+        "split": "T2w Subject \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "Number of non-diffeomorphic voxels (ND Voxels)",
+        "value": "7280",
+        "split": "T1w Atlas \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "Number of non-diffeomorphic voxels (ND Voxels)",
+        "value": "711",
+        "split": "T2w Subject \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "Number of non-diffeomorphic volume (ND Volume)",
+        "value": "2660",
+        "split": "T1w Atlas \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "Number of non-diffeomorphic volume (ND Volume)",
+        "value": "1359",
+        "split": "T2w Subject \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "Number of parameters",
+        "value": "0.3M",
+        "split": "T1w Atlas \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "Number of floating point operations (FLOPs)",
+        "value": "0.24%",
+        "split": "T1w Atlas \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "Number of floating point operations (FLOPs)",
+        "value": "0.01%",
+        "split": "T2w Subject \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "performance",
+        "value": "similar",
+        "split": null
+      },
+      {
+        "metric": "\u03b2",
+        "value": "above 1",
+        "split": null
+      },
+      {
+        "metric": "TRE",
+        "value": "30",
+        "split": "test"
+      }
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "study_id": "study026",
+  "repo_url": "https://github.com/PerdonLiu/CSE-Autoloss",
+  "started": "2026-06-09T15:27:03.444501+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "docker/Dockerfile",
+      "pip": "requirements.txt",
+      "setup": "setup.py"
+    },
+    "depth_note": "subdir",
+    "n_found": 4,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.cfg",
+        "depth": 0
+      },
+      {
+        "type": "docker",
+        "rel_path": "docker/Dockerfile",
+        "depth": 1
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/PerdonLiu/CSE-Autoloss",
+    "commit_hash": "b08ec06ca46b74d5615c53ef117ebf77d996ed9f",
+    "software_license": "Apache-2.0"
+  },
+  "lift": {
+    "lifted": {
+      "docker": "docker/Dockerfile",
+      "pip": "requirements.txt"
+    },
+    "triples": 13,
+    "n_sources": 3
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": false,
+    "build_success": false,
+    "method": "pip-requirements",
+    "stage_failed": "resolve",
+    "duration_s": 5.8,
+    "log_tail": "$ /home/dsai-st125286p/envs/sraf/bin/python -m venv /tmp/15856/study026/venv\n\n$ /tmp/15856/study026/venv/bin/pip install --upgrade pip setuptools wheel\nRequirement already satisfied: pip in ./venv/lib/python3.12/site-packages (25.0.1)\nCollecting pip\n  Using cached pip-26.1.2-py3-none-any.whl.metadata (4.6 kB)\nCollecting setuptools\n  Using cached setuptools-82.0.1-py3-none-any.whl.metadata (6.5 kB)\nCollecting wheel\n  Using cached wheel-0.47.0-py3-none-any.whl.metadata (2.3 kB)\nCollecting packaging>=24.0 (from wheel)\n  Using cached packaging-26.2-py3-none-any.whl.metadata (3.5 kB)\nUsing cached pip-26.1.2-py3-none-any.whl (1.8 MB)\nUsing cached setuptools-82.0.1-py3-none-any.whl (1.0 MB)\nUsing cached wheel-0.47.0-py3-none-any.whl (32 kB)\nUsing cached packaging-26.2-py3-none-any.whl (100 kB)\nInstalling collected packages: setuptools, pip, packaging, wheel\n  Attempting uninstall: pip\n    Found existing installation: pip 25.0.1\n    Uninstalling pip-25.0.1:\n      Successfully uninstalled pip-25.0.1\nSuccessfully installed packaging-26.2 pip-26.1.2 setuptools-82.0.1 wheel-0.47.0\n\n$ /tmp/15856/study026/venv/bin/pip install --dry-run --ignore-installed -r /tmp/15856/study026/study026/requirements.txt\n.txt (line 3))\n  Using cached imagecorruptions-1.1.2-py3-none-any.whl.metadata (3.5 kB)\nCollecting mmlvis (from -r /tmp/15856/study026/study026/requirements/optional.txt (line 4))\n  Downloading mmlvis-10.5.3-py3-none-any.whl.metadata (859 bytes)\nCollecting scipy (from -r /tmp/15856/study026/study026/requirements/optional.txt (line 5))\n  Using cached scipy-1.17.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)\nCollecting sklearn (from -r /tmp/15856/study026/study026/requirements/optional.txt (line 6))\n  Downloading sklearn-0.0.post12.tar.gz (2.6 kB)\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Getting requirements to build wheel: started\n  Getting requirements to build wheel: finished with status 'error'\n  error: subprocess-exited-with-error\n  \n  \u00d7 Getting requirements to build wheel did not run successfully.\n  \u2502 exit code: 1\n  \u2570\u2500> [15 lines of output]\n      The 'sklearn' PyPI package is deprecated, use 'scikit-learn'\n      rather than 'sklearn' for pip commands.\n      \n      Here is how to fix this error in the main use cases:\n      - use 'pip install scikit-learn' rather than 'pip install sklearn'\n      - replace 'sklearn' by 'scikit-learn' in your pip requirements files\n        (requirements.txt, setup.py, setup.cfg, Pipfile, etc ...)\n      - if the 'sklearn' package is used by one of your dependencies,\n        it would be great if you take some time to track which package uses\n        'sklearn' instead of 'scikit-learn' and report it to their issue tracker\n      - as a last resort, set the environment variable\n        SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True to avoid this error\n      \n      More information is available at\n      https://github.com/scikit-learn/sklearn-pypi-package\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nERROR: Failed to build 'sklearn' when getting requirements to build wheel\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 27.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 20.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 8.4
+}

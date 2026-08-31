@@ -1,0 +1,143 @@
+{
+  "study_id": "study033",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study033/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:32:30.210924+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 5,
+    "methods": 15,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": "1"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03bbadv",
+        "value": "string"
+      },
+      {
+        "name": "\u03bbart",
+        "value": "string"
+      },
+      {
+        "name": "\u03bbrec",
+        "value": "string"
+      },
+      {
+        "name": "\u03bbself",
+        "value": "string"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "DeepLesion",
+        "version": null
+      },
+      {
+        "name": "Spineweb",
+        "version": "2"
+      },
+      {
+        "name": "CL2",
+        "version": null
+      },
+      {
+        "name": "CL1",
+        "version": null
+      },
+      {
+        "name": "SYN",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "CNNMAR",
+        "description": "one of the state-of-the-art supervised approaches to MAR"
+      },
+      {
+        "name": "LI",
+        "description": "conventional method"
+      },
+      {
+        "name": "NMAR",
+        "description": "conventional method"
+      },
+      {
+        "name": "UNet",
+        "description": "supervised method"
+      },
+      {
+        "name": "cGANMAR",
+        "description": "supervised method"
+      },
+      {
+        "name": "CycleGAN",
+        "description": "unsupervised method"
+      },
+      {
+        "name": "DIP",
+        "description": "unsupervised method"
+      },
+      {
+        "name": "MUNIT",
+        "description": "unsupervised method"
+      },
+      {
+        "name": "DRIT",
+        "description": "unsupervised method"
+      },
+      {
+        "name": "artifact pyramid decoding",
+        "description": "a special way to merge the artifact code and the content code during the decoding of an artifact-affected image"
+      },
+      {
+        "name": "ADN",
+        "description": "Artifact Disentanglement Network"
+      },
+      {
+        "name": "Artifact Pyramid Decoding (APD)",
+        "description": "A method to effectively merge the artifact code from EIa."
+      },
+      {
+        "name": "Artifact Consistency Loss",
+        "description": "A loss based on the observation that the difference between xa and \u02c6x and the difference between \u02c6ya and y should be close due to the use of the same artifact."
+      },
+      {
+        "name": "Self-Reduction Loss",
+        "description": "A mechanism that first adds artifacts to y which creates \u02c6ya and then removes the artifacts from \u02c6ya which results \u02dcy."
+      },
+      {
+        "name": "Ours",
+        "description": ""
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "PSNR",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "SSIM",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "study_id": "study084",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study084/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:13:44.885590+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 8,
+    "methods": 10,
+    "evaluation_results": 9
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "AdamW",
+        "version": null
+      },
+      {
+        "name": "RandAugment",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "k",
+        "value": "16"
+      },
+      {
+        "name": "batch_size",
+        "value": "512"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1e\u22124"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.02"
+      },
+      {
+        "name": "image_resolution",
+        "value": "256\u00d7256"
+      },
+      {
+        "name": "momentum",
+        "value": "0.995"
+      },
+      {
+        "name": "queue_size",
+        "value": "65,536"
+      },
+      {
+        "name": "distillation_weight",
+        "value": "0.4"
+      },
+      {
+        "name": "epochs",
+        "value": "30"
+      },
+      {
+        "name": "\u03b1",
+        "value": "0.4"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NLVR2",
+        "version": null
+      },
+      {
+        "name": "Flickr30K",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "Conceptual 12M",
+        "version": null
+      },
+      {
+        "name": "Conceptual Captions",
+        "version": null
+      },
+      {
+        "name": "SBU Captions",
+        "version": null
+      },
+      {
+        "name": "Visual Genome",
+        "version": null
+      },
+      {
+        "name": "RefCOCO+",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "text-assignment pre-training",
+        "description": "pre-training the model for image-pair"
+      },
+      {
+        "name": "parameter sharing",
+        "description": "the two multimodal blocks share all parameters"
+      },
+      {
+        "name": "sitm",
+        "description": "image-text matching score"
+      },
+      {
+        "name": "sitc",
+        "description": "filter top-k candidates"
+      },
+      {
+        "name": "hard negative mining",
+        "description": null
+      },
+      {
+        "name": "BERT base",
+        "description": "123.7M parameters"
+      },
+      {
+        "name": "ViT-B/16",
+        "description": "85.8M parameters"
+      },
+      {
+        "name": "image-text contrastive learning",
+        "description": ""
+      },
+      {
+        "name": "contrastive hard negative mining",
+        "description": ""
+      },
+      {
+        "name": "momentum distillation",
+        "description": ""
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "dev",
+        "value": "82.13",
+        "split": null
+      },
+      {
+        "metric": "test-P",
+        "value": "82.36",
+        "split": null
+      },
+      {
+        "metric": "TR",
+        "value": "97.30",
+        "split": "test"
+      },
+      {
+        "metric": "IR",
+        "value": "90.95",
+        "split": "test"
+      },
+      {
+        "metric": "TR",
+        "value": "93.96",
+        "split": null
+      },
+      {
+        "metric": "IR",
+        "value": "88.55",
+        "split": null
+      },
+      {
+        "metric": "SNLI-VE",
+        "value": "77.06",
+        "split": null
+      },
+      {
+        "metric": "NLVR2",
+        "value": "77.51",
+        "split": null
+      },
+      {
+        "metric": "VQA",
+        "value": "71.40",
+        "split": null
+      }
+    ]
+  }
+}

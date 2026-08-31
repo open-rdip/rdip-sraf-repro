@@ -1,0 +1,53 @@
+{
+  "study_id": "study078",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study078/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:08:47.886932+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 2,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "QUDIO",
+        "description": "a novel distributed-VQA scheme in a lazy communication manner"
+      },
+      {
+        "name": "Shuffle-QUDIO",
+        "description": "a new quantum distributed optimization framework where local Hamiltonian terms are randomly shuffled and sampled without replacement according to the worker\u2019s rank before each iteration"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "approximation error",
+        "value": "smaller",
+        "split": null
+      },
+      {
+        "metric": "communication overhead",
+        "value": "lower",
+        "split": null
+      },
+      {
+        "metric": "speedup ratio",
+        "value": "sub-linear",
+        "split": null
+      }
+    ]
+  }
+}

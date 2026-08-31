@@ -1,0 +1,187 @@
+{
+  "study_id": "study019",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study019/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:16:45.393789+00:00",
+  "counts": {
+    "dependencies": 9,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 6,
+    "methods": 10,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ResNet-50",
+        "version": null
+      },
+      {
+        "name": "Res2Net-50",
+        "version": null
+      },
+      {
+        "name": "CutMix",
+        "version": null
+      },
+      {
+        "name": "ResNet",
+        "version": null
+      },
+      {
+        "name": "Res2Net",
+        "version": null
+      },
+      {
+        "name": "SimpleBaseline",
+        "version": "67"
+      },
+      {
+        "name": "Grad-CAM",
+        "version": "[55]"
+      },
+      {
+        "name": "Deeplab v3+",
+        "version": null
+      },
+      {
+        "name": "Mask R-CNN",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "s",
+        "value": "4"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "DUT-OMRON",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "COCO validation set",
+        "version": null
+      },
+      {
+        "name": "CIFAR-100",
+        "version": null
+      },
+      {
+        "name": "PASCAL VOC12",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Res2Net",
+        "description": "multi-scale representation ability"
+      },
+      {
+        "name": "ResNet",
+        "description": "v1d"
+      },
+      {
+        "name": "SimpleBaseline",
+        "description": "key-points estimation method"
+      },
+      {
+        "name": "Class Activation Mapping",
+        "description": "using Grad-CAM"
+      },
+      {
+        "name": "ResNeXt",
+        "description": null
+      },
+      {
+        "name": "DLA",
+        "description": null
+      },
+      {
+        "name": "Deeplab v3+",
+        "description": "null"
+      },
+      {
+        "name": "Res2Net-50",
+        "description": "null"
+      },
+      {
+        "name": "Res2Net-101",
+        "description": "null"
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 error",
+        "value": "3.05 %",
+        "split": null
+      },
+      {
+        "metric": "F-measure",
+        "value": "5.2%",
+        "split": null
+      },
+      {
+        "metric": "MAE",
+        "value": "2.1%",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": "70.4",
+        "split": null
+      },
+      {
+        "metric": "AP 50",
+        "value": "88.6",
+        "split": null
+      },
+      {
+        "metric": "AP 75",
+        "value": "78.3",
+        "split": null
+      },
+      {
+        "metric": "AP M",
+        "value": "67.1",
+        "split": null
+      },
+      {
+        "metric": "AP L",
+        "value": "77.2",
+        "split": null
+      },
+      {
+        "metric": "classification results",
+        "value": "favourably",
+        "split": null
+      },
+      {
+        "metric": "mean IoU",
+        "value": "1.5",
+        "split": null
+      }
+    ]
+  }
+}

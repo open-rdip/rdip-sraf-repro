@@ -1,0 +1,119 @@
+{
+  "study_id": "study048",
+  "repo_url": "https://github.com/ibm/topography-searcher",
+  "started": "2026-06-09T15:35:54.447271+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "pip": "requirements.txt",
+      "setup": "pyproject.toml"
+    },
+    "depth_note": "root",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "pyproject.toml",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/ibm/topography-searcher",
+    "commit_hash": "78f4d00ab2c12a687f8ec145a59d204fbc4d61a2",
+    "software_license": "MIT"
+  },
+  "lift": {
+    "lifted": {
+      "pip": "requirements.txt"
+    },
+    "triples": 101,
+    "n_sources": 2
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 39.0,
+    "log_tail": "  Downloading pillow-10.3.0-cp312-cp312-manylinux_2_28_x86_64.whl (4.5 MB)\n     \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 4.5/4.5 MB 15.4 MB/s  0:00:00\nCollecting pyparsing==3.1.2 (from -r /tmp/15856/study048/study048/requirements.txt (line 349))\n  Downloading pyparsing-3.1.2-py3-none-any.whl (103 kB)\nCollecting python-dateutil==2.9.0.post0 (from -r /tmp/15856/study048/study048/requirements.txt (line 352))\n  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)\nCollecting rdkit==2023.9.6 (from -r /tmp/15856/study048/study048/requirements.txt (line 355))\n  Downloading rdkit-2023.9.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.8 MB)\n     \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 34.8/34.8 MB 4.9 MB/s  0:00:07\nCollecting scikit-learn==1.5.0 (from -r /tmp/15856/study048/study048/requirements.txt (line 381))\n  Downloading scikit_learn-1.5.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)\n     \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 13.1/13.1 MB 7.9 MB/s  0:00:01\nCollecting scipy==1.13.1 (from -r /tmp/15856/study048/study048/requirements.txt (line 403))\n  Downloading scipy-1.13.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (38.2 MB)\n     \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 38.2/38.2 MB 6.3 MB/s  0:00:06\nCollecting six==1.16.0 (from -r /tmp/15856/study048/study048/requirements.txt (line 429))\n  Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)\nCollecting threadpoolctl==3.5.0 (from -r /tmp/15856/study048/study048/requirements.txt (line 432))\n  Downloading threadpoolctl-3.5.0-py3-none-any.whl (18 kB)\nWould install ase-3.22.1 contourpy-1.2.1 cycler-0.12.1 fonttools-4.53.0 joblib-1.4.2 kiwisolver-1.4.5 matplotlib-3.9.0 networkx-3.3 nptyping-2.5.0 numpy-1.26.4 packaging-24.1 pillow-10.3.0 pyparsing-3.1.2 python-dateutil-2.9.0.post0 rdkit-2023.9.6 scikit-learn-1.5.0 scipy-1.13.1 six-1.16.0 threadpoolctl-3.5.0\n\n$ /tmp/15856/study048/venv/bin/pip install -r /tmp/15856/study048/study048/requirements.txt\n9))\n  Using cached pillow-10.3.0-cp312-cp312-manylinux_2_28_x86_64.whl (4.5 MB)\nCollecting pyparsing==3.1.2 (from -r /tmp/15856/study048/study048/requirements.txt (line 349))\n  Using cached pyparsing-3.1.2-py3-none-any.whl (103 kB)\nCollecting python-dateutil==2.9.0.post0 (from -r /tmp/15856/study048/study048/requirements.txt (line 352))\n  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)\nCollecting rdkit==2023.9.6 (from -r /tmp/15856/study048/study048/requirements.txt (line 355))\n  Using cached rdkit-2023.9.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.8 MB)\nCollecting scikit-learn==1.5.0 (from -r /tmp/15856/study048/study048/requirements.txt (line 381))\n  Using cached scikit_learn-1.5.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)\nCollecting scipy==1.13.1 (from -r /tmp/15856/study048/study048/requirements.txt (line 403))\n  Using cached scipy-1.13.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (38.2 MB)\nCollecting six==1.16.0 (from -r /tmp/15856/study048/study048/requirements.txt (line 429))\n  Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)\nCollecting threadpoolctl==3.5.0 (from -r /tmp/15856/study048/study048/requirements.txt (line 432))\n  Using cached threadpoolctl-3.5.0-py3-none-any.whl (18 kB)\nInstalling collected packages: threadpoolctl, six, pyparsing, pillow, packaging, numpy, networkx, kiwisolver, joblib, fonttools, cycler, scipy, rdkit, python-dateutil, nptyping, contourpy, scikit-learn, matplotlib, ase\n  Attempting uninstall: packaging\n    Found existing installation: packaging 26.2\n    Uninstalling packaging-26.2:\n      Successfully uninstalled packaging-26.2\n\nSuccessfully installed ase-3.22.1 contourpy-1.2.1 cycler-0.12.1 fonttools-4.53.0 joblib-1.4.2 kiwisolver-1.4.5 matplotlib-3.9.0 networkx-3.3 nptyping-2.5.0 numpy-1.26.4 packaging-24.1 pillow-10.3.0 pyparsing-3.1.2 python-dateutil-2.9.0.post0 rdkit-2023.9.6 scikit-learn-1.5.0 scipy-1.13.1 six-1.16.0 threadpoolctl-3.5.0\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 27.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 20.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 45.3
+}

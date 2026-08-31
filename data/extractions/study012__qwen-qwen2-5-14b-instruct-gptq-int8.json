@@ -1,0 +1,148 @@
+{
+  "study_id": "study012",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study012/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:38:38.158885+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 3,
+    "methods": 13,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "minibatch size",
+        "value": "32"
+      },
+      {
+        "name": "image crops per GPU",
+        "value": "4"
+      },
+      {
+        "name": "number of channels in the semantic branch",
+        "value": "128"
+      },
+      {
+        "name": "FPN output channels per scale",
+        "value": "256"
+      },
+      {
+        "name": "Semantic segmentation branch output channels",
+        "value": "128"
+      },
+      {
+        "name": "backbone",
+        "value": "ResNet-50"
+      },
+      {
+        "name": "\u03bbi",
+        "value": "tuned"
+      },
+      {
+        "name": "\u03bbs",
+        "value": "tuned"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": "[6]"
+      },
+      {
+        "name": "Cityscapes",
+        "version": "[14]"
+      },
+      {
+        "name": "COCO Panoptic",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Mask R-CNN 1 \u00d7 training setting",
+        "description": "default setting with scale jitter (shorter image side in [640, 800])"
+      },
+      {
+        "name": "Panoptic FPN",
+        "description": "uses PQ (panoptic quality) as the default metric"
+      },
+      {
+        "name": "ResNet-50 Semantic FPN",
+        "description": "architecture used for semantic segmentation with varying number of channels in the semantic branch"
+      },
+      {
+        "name": "element-wise sum and concatenation",
+        "description": "methods for aggregating feature maps from different FPN levels"
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "base model for instance segmentation"
+      },
+      {
+        "name": "color augmentation",
+        "description": "[40]"
+      },
+      {
+        "name": "multi-scale inference",
+        "description": "used at test time"
+      },
+      {
+        "name": "training schedule",
+        "description": "specific to semantic segmentation similar to Cityscapes schedule but with double learning rate and halved batch size"
+      },
+      {
+        "name": "Post-processing for Panoptic inference",
+        "description": "Resolves overlaps between different instances based on confidence scores, resolves overlaps between instance and semantic segmentation outputs in favor of instances, and removes stuff regions labeled 'other' or under a given area threshold."
+      },
+      {
+        "name": "[1]",
+        "description": "Approach for panoptic segmentation recently proposed"
+      },
+      {
+        "name": "FPN",
+        "description": "Feature Pyramid Network used for creating a single-network baseline for performing both instance and semantic segmentation."
+      },
+      {
+        "name": "Dilated Convolution",
+        "description": "Common design for producing high-resolution outputs."
+      },
+      {
+        "name": "Symmetric Encoder-Decoder Model",
+        "description": "Model architecture popular for semantic segmentation with lateral connections."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "comparable",
+        "split": null
+      },
+      {
+        "metric": "compute",
+        "value": "roughly half",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "significantly outperforms",
+        "split": null
+      },
+      {
+        "metric": "PQ",
+        "value": "substantially outperforms",
+        "split": null
+      }
+    ]
+  }
+}

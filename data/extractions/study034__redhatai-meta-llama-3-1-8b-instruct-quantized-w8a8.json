@@ -1,0 +1,283 @@
+{
+  "study_id": "study034",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study034/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:25:14.623192+00:00",
+  "counts": {
+    "dependencies": 7,
+    "random_seeds": 2,
+    "hyperparameters": 6,
+    "datasets": 6,
+    "methods": 24,
+    "evaluation_results": 15
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Mesh R-CNN",
+        "version": null
+      },
+      {
+        "name": "Total3D",
+        "version": null
+      },
+      {
+        "name": "Pano-Re",
+        "version": null
+      },
+      {
+        "name": "ResNet-18",
+        "version": null
+      },
+      {
+        "name": "marching cubes algorithm",
+        "version": null
+      },
+      {
+        "name": "AdamW",
+        "version": "[34]"
+      },
+      {
+        "name": "Mask2Former",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      1,
+      4
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning rate",
+        "value": "10\u22124"
+      },
+      {
+        "name": "batch size",
+        "value": "8"
+      },
+      {
+        "name": "lambda geometry",
+        "value": "5.0"
+      },
+      {
+        "name": "lambda seg",
+        "value": "25.0"
+      },
+      {
+        "name": "lambda occupancy",
+        "value": "50.0,25.0,10.0"
+      },
+      {
+        "name": "power",
+        "value": "0.9"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "dataset",
+        "version": null
+      },
+      {
+        "name": "Pano-Re",
+        "version": null
+      },
+      {
+        "name": "PRQ",
+        "version": null
+      },
+      {
+        "name": "3D-Front",
+        "version": null
+      },
+      {
+        "name": "Matterport3D",
+        "version": null
+      },
+      {
+        "name": "Front-3D",
+        "version": "[13]"
+      }
+    ],
+    "methods": [
+      {
+        "name": "Uni-3D",
+        "description": "either with single- or multi-scale feature lifting"
+      },
+      {
+        "name": "Mesh R-CNN",
+        "description": null
+      },
+      {
+        "name": "Total3D",
+        "description": null
+      },
+      {
+        "name": "Pano-Re",
+        "description": null
+      },
+      {
+        "name": "back-projection of multi-scale 2D features",
+        "description": "fuse into the U-Net encoders"
+      },
+      {
+        "name": "polynomial-based learning rate scheduling",
+        "description": "null"
+      },
+      {
+        "name": "step learning rate schedule",
+        "description": "null"
+      },
+      {
+        "name": "marching cubes algorithm",
+        "description": "null"
+      },
+      {
+        "name": "Depth-aware Panoptic Quality (DPQ)",
+        "description": "evaluates segmentation and depth estimation jointly"
+      },
+      {
+        "name": "Panoptic Quality (PQ)",
+        "description": "evaluates panoptic segmentation"
+      },
+      {
+        "name": "3D panoptic reconstruction quality (3D PRQ)",
+        "description": "evaluates the model performance on 3D scene understanding"
+      },
+      {
+        "name": "root mean square error (RMSE)",
+        "description": "of the estimated depth"
+      },
+      {
+        "name": "Masked Cross Attention",
+        "description": "Segment Query Features, Depth Query Features, Masked Cross Attention, MaskSelf-Attention, Self-Attention, Cross-Decoder Query Association, Decoder Layer 1, Decoder Layer 2, Panoptic Segment Decoder, Depth Decoder, Decoder Layer 9"
+      },
+      {
+        "name": "Transformer encoder",
+        "description": "image features (F1, F2, or F3)"
+      },
+      {
+        "name": "Cross-decoder query association layer",
+        "description": "communication between segment and depth queries belonging to the same segment"
+      },
+      {
+        "name": "self-attention layer",
+        "description": "typical self-attention layer"
+      },
+      {
+        "name": "3D generative U-Net",
+        "description": "as in [8]"
+      },
+      {
+        "name": "truncated distance field (TDF)",
+        "description": "along the view direction with truncation \u03c4= 3"
+      },
+      {
+        "name": "polynomial-based learning rate scheduler",
+        "description": "multiplies the base learning rate with (1\u2212i/N)0.9"
+      },
+      {
+        "name": "3D network",
+        "description": "uses depth information"
+      },
+      {
+        "name": "depth feature embedding",
+        "description": "regards depth as a distance field embedding"
+      },
+      {
+        "name": "2D queries",
+        "description": "learned 2D queries"
+      },
+      {
+        "name": "semantic segmentation",
+        "description": "solves stuff layouts"
+      },
+      {
+        "name": "Transformer-based architecture",
+        "description": "simultaneously addresses panoptic segmentation and depth estimation"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "PRQ",
+        "value": "~10",
+        "split": null
+      },
+      {
+        "metric": "thing classes",
+        "value": "+1.11",
+        "split": null
+      },
+      {
+        "metric": "stuff classes",
+        "value": "+0.83",
+        "split": null
+      },
+      {
+        "metric": "PRQ",
+        "value": "1.68",
+        "split": "thing classes with 2D queries"
+      },
+      {
+        "metric": "PRQ",
+        "value": "2.38",
+        "split": "thing classes without 2D queries"
+      },
+      {
+        "metric": "PRQ",
+        "value": "2.45",
+        "split": "stuff classes with 2D queries"
+      },
+      {
+        "metric": "PRQ",
+        "value": "2.30",
+        "split": "stuff classes without 2D queries"
+      },
+      {
+        "metric": "PRQ",
+        "value": "0.54",
+        "split": "stuff classes with ground truth depth"
+      },
+      {
+        "metric": "DPQ",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "PQ",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "3D PRQ",
+        "value": "9261",
+        "split": null
+      },
+      {
+        "metric": "RMSE",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "stuff PRQ",
+        "value": "0.27",
+        "split": null
+      },
+      {
+        "metric": "things",
+        "value": "0.08",
+        "split": null
+      },
+      {
+        "metric": "stuff PRQ",
+        "value": "1.66",
+        "split": "thing classes"
+      }
+    ]
+  }
+}

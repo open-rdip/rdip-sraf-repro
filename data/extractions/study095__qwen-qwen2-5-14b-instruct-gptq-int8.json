@@ -1,0 +1,167 @@
+{
+  "study_id": "study095",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study095/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:37:09.390930+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 4,
+    "methods": 15,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia V100",
+      "cuda_version": null,
+      "cpu_info": "Intel Xeon E5- 2698 v4"
+    },
+    "hyperparameters": [
+      {
+        "name": "PQ code size",
+        "value": "96"
+      },
+      {
+        "name": "PQ bit size",
+        "value": "8"
+      },
+      {
+        "name": "number of bits per passage of LSH",
+        "value": "768"
+      },
+      {
+        "name": "number of centroids of PQ",
+        "value": "96"
+      },
+      {
+        "name": "code size of PQ",
+        "value": "8 bits"
+      },
+      {
+        "name": "l",
+        "value": "1000"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NQ",
+        "version": null
+      },
+      {
+        "name": "TQA",
+        "version": null
+      },
+      {
+        "name": "English Wikipedia",
+        "version": null
+      },
+      {
+        "name": "Wikipedia corpus",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "BERT-based reader",
+        "description": "Same as that used by DPR"
+      },
+      {
+        "name": "Faiss",
+        "description": "Used for building the passage index"
+      },
+      {
+        "name": "FiD (large)",
+        "description": "A model with more than twice as many parameters as the improved model."
+      },
+      {
+        "name": "BPR combined with state-of-the-art reader models",
+        "description": "Includes comparison with an improved reader based on ELECTRA-large."
+      },
+      {
+        "name": "BPR",
+        "description": "Baseline model used for comparison."
+      },
+      {
+        "name": "DPR with linear scan",
+        "description": "Baseline model used for comparison."
+      },
+      {
+        "name": "DPR with Hierarchical Navigable Small World (HSNW) graphs",
+        "description": "Baseline model used for comparison, builds a multi-layer structure consisting of a hierarchical set of proximity graphs."
+      },
+      {
+        "name": "simple locality sensitive hashing (LSH)",
+        "description": "Post-hoc quantization algorithm applied to DPR passage index."
+      },
+      {
+        "name": "product quantization (PQ)",
+        "description": "Post-hoc quantization algorithm applied to DPR passage index."
+      },
+      {
+        "name": "DPR",
+        "description": "Dense Passage Retrieval"
+      },
+      {
+        "name": "FiD",
+        "description": "Fine-tuned Dense Retriever"
+      },
+      {
+        "name": "RAG",
+        "description": "Retrieval-Augmented Generation"
+      },
+      {
+        "name": "BART",
+        "description": "Bidirectional and Auto-Regressive Transformers"
+      },
+      {
+        "name": "ELECTRA",
+        "description": "Efficiently Learning the Parameters, Resources, and Architecture"
+      },
+      {
+        "name": "T5",
+        "description": "Text-to-text Transfer Transformer"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-k recall",
+        "value": "similar or even better than DPR",
+        "split": "test"
+      },
+      {
+        "metric": "exact match (EM) QA accuracy",
+        "value": "similar or even better than DPR",
+        "split": "test"
+      },
+      {
+        "metric": "index size",
+        "value": "reduced from 65GB to 2GB",
+        "split": null
+      },
+      {
+        "metric": "query time",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "EM QA accuracy",
+        "value": "outperforms all models except the large model of Fusion-in-Decoder (FiD)",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy",
+        "value": "41.6",
+        "split": "NQ"
+      },
+      {
+        "metric": "Exact match QA accuracy",
+        "value": "56.8",
+        "split": "TQA"
+      }
+    ]
+  }
+}

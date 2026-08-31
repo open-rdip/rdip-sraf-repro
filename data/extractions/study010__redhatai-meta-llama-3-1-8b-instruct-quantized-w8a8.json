@@ -1,0 +1,147 @@
+{
+  "study_id": "study010",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study010/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:12:30.459748+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 2,
+    "methods": 12,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PaddlePaddle",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "weight decay",
+        "value": "0.05"
+      },
+      {
+        "name": "learning rate",
+        "value": "5 10^4"
+      },
+      {
+        "name": "batch size",
+        "value": "2048"
+      },
+      {
+        "name": "epochs",
+        "value": "21"
+      },
+      {
+        "name": "warm-up epochs",
+        "value": "2"
+      },
+      {
+        "name": "predict length",
+        "value": "25"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IC13",
+        "version": null
+      },
+      {
+        "name": "IC15",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "SVTR",
+        "description": "null"
+      },
+      {
+        "name": "SVTR-T",
+        "description": "null"
+      },
+      {
+        "name": "SVTR-L",
+        "description": "accurate, fast and versatile"
+      },
+      {
+        "name": "disjoint linear projection",
+        "description": "4x4 disjoint linear projection"
+      },
+      {
+        "name": "7x7 convolution with stride 4",
+        "description": "7x7 convolution with stride 4"
+      },
+      {
+        "name": "two consecutive 3x3 convolutions with stride 2 and batch normalization",
+        "description": "two consecutive 3x3 convolutions with stride 2 and batch normalization"
+      },
+      {
+        "name": "global mixing",
+        "description": "global mixing"
+      },
+      {
+        "name": "local mixing",
+        "description": "local mixing"
+      },
+      {
+        "name": "multi-head self-attention",
+        "description": "for dependence modeling"
+      },
+      {
+        "name": "layer norm",
+        "description": "for feature fusion"
+      },
+      {
+        "name": "MLP",
+        "description": "for feature fusion"
+      },
+      {
+        "name": "self-attention mechanism",
+        "description": "to capture local patterns"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "1.9%",
+        "split": "IC13"
+      },
+      {
+        "metric": "accuracy",
+        "value": "6.6%",
+        "split": "IC15"
+      },
+      {
+        "metric": "word accuracy",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "correlation",
+        "value": "among components within a prede\ufb01ned window",
+        "split": null
+      },
+      {
+        "metric": "character morphology feature",
+        "value": "and establish the associations between components within a character",
+        "split": null
+      },
+      {
+        "metric": "stroke-like feature",
+        "value": "vital for character identi\ufb01cation",
+        "split": null
+      }
+    ]
+  }
+}

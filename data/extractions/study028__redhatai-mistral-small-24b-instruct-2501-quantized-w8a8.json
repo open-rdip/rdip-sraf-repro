@@ -1,0 +1,185 @@
+{
+  "study_id": "study028",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study028/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:26:45.628069+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 8,
+    "methods": 10,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "ResNet18",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX 3090 24 GB",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning_rate",
+        "value": "0.03"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.00003"
+      },
+      {
+        "name": "epochs",
+        "value": "256"
+      },
+      {
+        "name": "Gaussian blurred radius",
+        "value": "[0,15]"
+      },
+      {
+        "name": "pixel values of the blurred region",
+        "value": "[0.59,1]"
+      },
+      {
+        "name": "batch_size",
+        "value": "64"
+      },
+      {
+        "name": "threshold",
+        "value": "0.067"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "validation dataset",
+        "version": null
+      },
+      {
+        "name": "test dataset",
+        "version": null
+      },
+      {
+        "name": "Chexpert",
+        "version": null
+      },
+      {
+        "name": "RSNA dataset",
+        "version": null
+      },
+      {
+        "name": "NIH chest radiograph dataset",
+        "version": null
+      },
+      {
+        "name": "Zhanglab",
+        "version": null
+      },
+      {
+        "name": "RSNA",
+        "version": null
+      },
+      {
+        "name": "Zhanglab dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "cycle cosine annealing schedule",
+        "description": "null"
+      },
+      {
+        "name": "fAnoGAN",
+        "description": "null"
+      },
+      {
+        "name": "Ganomaly",
+        "description": "null"
+      },
+      {
+        "name": "CutPaste",
+        "description": "null"
+      },
+      {
+        "name": "AnatPaste augmentation",
+        "description": "Augmented anomaly"
+      },
+      {
+        "name": "Grad-CAM",
+        "description": "visualization technique used to highlight important areas in images"
+      },
+      {
+        "name": "one-class classifier",
+        "description": null
+      },
+      {
+        "name": "SGD optimizer",
+        "description": null
+      },
+      {
+        "name": "AnatPaste",
+        "description": ""
+      },
+      {
+        "name": "CutPaste-Scar",
+        "description": "a pretext task to extract a region from a normal image, paste it on another part of the image, and classify the image as an anomaly"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AUC",
+        "value": null,
+        "split": "validation"
+      },
+      {
+        "metric": "AUC",
+        "value": "93%",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "high",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "0.7%",
+        "split": "Zhanglab"
+      },
+      {
+        "metric": "accuracy",
+        "value": "2.7%",
+        "split": "Chexpert"
+      },
+      {
+        "metric": "accuracy",
+        "value": "1.5%",
+        "split": "RSNA"
+      },
+      {
+        "metric": "F1-score",
+        "value": "best",
+        "split": null
+      },
+      {
+        "metric": "AUC",
+        "value": "76.8%",
+        "split": "test"
+      }
+    ]
+  }
+}

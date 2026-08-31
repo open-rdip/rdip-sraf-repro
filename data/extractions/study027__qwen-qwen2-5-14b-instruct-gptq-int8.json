@@ -1,0 +1,332 @@
+{
+  "study_id": "study027",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study027/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:50:15.988367+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 26,
+    "datasets": 7,
+    "methods": 31,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "STAMP software",
+        "version": "v1.1.1"
+      },
+      {
+        "name": "STAMP",
+        "version": "v1.1.1"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX A6000, L40 or H100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "value": "0.7"
+      },
+      {
+        "name": "maximum token length",
+        "value": "1,000"
+      },
+      {
+        "name": "n_neighbors",
+        "value": "15"
+      },
+      {
+        "name": "min_dist",
+        "value": "0.1"
+      },
+      {
+        "name": "tile embedding method",
+        "value": "Virchow2"
+      },
+      {
+        "name": "number of embeddings averaged",
+        "value": "25"
+      },
+      {
+        "name": "slide encoder",
+        "value": "CHIEF"
+      },
+      {
+        "name": "tile_size",
+        "value": "224x224 pixels"
+      },
+      {
+        "name": "downsampled_tile_size",
+        "value": "448x448 pixels"
+      },
+      {
+        "name": "effective_resolution",
+        "value": "[0.5, ~1.14, 2] MPP"
+      },
+      {
+        "name": "CONCH_v1.5_effective_resolution",
+        "value": "~0.57, ~2.28 MPP"
+      },
+      {
+        "name": "edge_detection_thresholds",
+        "value": "[40, 100]"
+      },
+      {
+        "name": "input_size",
+        "value": "768"
+      },
+      {
+        "name": "hidden_size",
+        "value": "256"
+      },
+      {
+        "name": "activation_function",
+        "value": "SiLU"
+      },
+      {
+        "name": "dropout",
+        "value": null
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1e-4"
+      },
+      {
+        "name": "weight_decay",
+        "value": "1e-2"
+      },
+      {
+        "name": "epochs",
+        "value": "32"
+      },
+      {
+        "name": "solver",
+        "value": "lbfgs"
+      },
+      {
+        "name": "L2_penalty",
+        "value": "1.0"
+      },
+      {
+        "name": "maximum_iterations",
+        "value": "10000"
+      },
+      {
+        "name": "class_weights",
+        "value": "balanced"
+      },
+      {
+        "name": "ABMIL configuration",
+        "value": "single-head attention and bag size 512"
+      },
+      {
+        "name": "gated ABMIL baseline",
+        "value": "full bags (no tile subsampling) and multiplicative gating in the attention pathway"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IEO cohort",
+        "version": null
+      },
+      {
+        "name": "GECCO consortium datasets",
+        "version": null
+      },
+      {
+        "name": "PathoBench dataset",
+        "version": null
+      },
+      {
+        "name": "CPTAC pancreatic ductal adenocarcinoma (PDA) cohort",
+        "version": null
+      },
+      {
+        "name": "PathoBench",
+        "version": null
+      },
+      {
+        "name": "CHIEF pretraining dataset",
+        "version": null
+      },
+      {
+        "name": "DACHS",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "EAGLE",
+        "description": "implementation of EAGLE, tested slide encoders, implementations of the MLP and LP classifiers, the GPT-4o-based in-context learning, UMAP visualization, top tiles and slide search"
+      },
+      {
+        "name": "logistic regression",
+        "description": "standard approach used"
+      },
+      {
+        "name": "GPT-4o",
+        "description": "received prompts containing two example images per class, plus the query image; run three times per image with temperature=0.7 and max token length of 1,000"
+      },
+      {
+        "name": "UMAP",
+        "description": "applied to project patient embeddings from all cohorts into two dimensions with n_neighbors=15 and min_dist=0.1"
+      },
+      {
+        "name": "slide-level retrieval",
+        "description": "facilitated by EAGLE's embeddings after L2 normalization and cosine similarity search"
+      },
+      {
+        "name": "feature extraction",
+        "description": "tiles are reprocessed with Virchow2 to extract detailed feature embeddings."
+      },
+      {
+        "name": "slide-level representation creation",
+        "description": "averaging the 25 embeddings to create a compact, unsupervised slide-level representation."
+      },
+      {
+        "name": "downstream task model",
+        "description": "a small MLP classifier is used for downstream tasks."
+      },
+      {
+        "name": "region selection",
+        "description": "negative control experiments performed using uniform random tile selection without replacement."
+      },
+      {
+        "name": "TITAN",
+        "description": "Baseline model for computational efficiency comparison"
+      },
+      {
+        "name": "CHIEF",
+        "description": "Part of the EAGLE process for feature extraction"
+      },
+      {
+        "name": "GigaPath",
+        "description": "Not detailed in the provided text"
+      },
+      {
+        "name": "CTransPath",
+        "description": "Part of the EAGLE process for tile selection"
+      },
+      {
+        "name": "Vir-chow2",
+        "description": "Used for feature extraction of selected tiles"
+      },
+      {
+        "name": "WSI segmentation",
+        "description": "Performed using STAMP v1.1.1 pipeline"
+      },
+      {
+        "name": "Tile extraction",
+        "description": "Performed using STAMP v1.1.1 pipeline"
+      },
+      {
+        "name": "Feature generation",
+        "description": "Performed using STAMP v1.1.1 pipeline"
+      },
+      {
+        "name": "Canny edge detection",
+        "description": "Used to exclude tiles predominantly containing background"
+      },
+      {
+        "name": "MLP",
+        "description": "Multi-layer perceptron with specified architecture and training parameters"
+      },
+      {
+        "name": "logistic_regression",
+        "description": "Used for few-shot linear probing experiments with specified hyperparameters"
+      },
+      {
+        "name": "L2 normalization",
+        "description": "Normalization of embeddings"
+      },
+      {
+        "name": "cosine similarity search",
+        "description": "Search method used for finding top matches"
+      },
+      {
+        "name": "attention concentration metrics",
+        "description": "Computed from per-tile attention weights"
+      },
+      {
+        "name": "Lorenz curves",
+        "description": "Cumulative attention mass vs cumulative fraction of tiles"
+      },
+      {
+        "name": "Gini coefficient",
+        "description": "Summary statistic for concentration"
+      },
+      {
+        "name": "fraction of tiles required to accumulate 50% and 80% of total mass",
+        "description": "Summary statistic for concentration"
+      },
+      {
+        "name": "top-k mass statistics",
+        "description": "Top 1, top 2, and top 25 mass statistics"
+      },
+      {
+        "name": "average rank profiles",
+        "description": "Aggregation method for Lorenz curves"
+      },
+      {
+        "name": "early stopping",
+        "description": "performed using a validation set"
+      },
+      {
+        "name": "early fusion",
+        "description": "pooling each slide separately and averaging slide embeddings to obtain a patient representation"
+      },
+      {
+        "name": "STAMP pipeline",
+        "description": "aggregation method for Virchow2 embeddings"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AUROC",
+        "value": "highest average AUROC scores",
+        "split": null
+      },
+      {
+        "metric": "Time",
+        "value": "time for processing 25 WSIs",
+        "split": null
+      },
+      {
+        "metric": "FLOPs",
+        "value": "FLOPs for processing 25 WSIs",
+        "split": null
+      },
+      {
+        "metric": "AUROC",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "AUPRC",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "Balanced Accuracy",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "F1 Scores",
+        "value": null,
+        "split": "test"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "run_command": "python tools/test.py configs/pspnet/pspnet_r50-d8_512x1024_80k_cityscapes.py /path/to/checkpoint --eval mIoU",
+  "setup_steps": [
+    "pip install -r requirements/build.txt",
+    "pip install -r requirements/optional.txt",
+    "pip install -r requirements/test.txt",
+    "pip install -e .",
+    "mkdir -p data/cityscapes",
+    "cd data/cityscapes && wget https://cityscapes.org/downloads/ -O cityscapes.zip && unzip cityscapes.zip && cd ../.."
+  ],
+  "requires_dataset": [
+    {
+      "name": "Cityscapes",
+      "download": "wget https://cityscapes.org/downloads/ -O cityscapes.zip && unzip cityscapes.zip"
+    }
+  ],
+  "requires_checkpoint": "/path/to/checkpoint",
+  "produces_metric": [
+    {
+      "metric": "mIoU",
+      "dataset": "Cityscapes"
+    }
+  ],
+  "entry_point": "tools/test.py",
+  "confidence": "low",
+  "study_id": "study012",
+  "repo_url": "https://github.com/open-mmlab/mmsegmentation"
+}

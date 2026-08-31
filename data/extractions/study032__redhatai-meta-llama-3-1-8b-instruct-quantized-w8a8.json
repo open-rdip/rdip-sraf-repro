@@ -1,0 +1,139 @@
+{
+  "study_id": "study032",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study032/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:23:10.742579+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 10,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "string",
+        "version": "string"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "WOMD",
+        "version": null
+      },
+      {
+        "name": "Waymo Open Motion Dataset (WOMD)",
+        "version": "103k 20-second scenarios"
+      }
+    ],
+    "methods": [
+      {
+        "name": "string",
+        "description": "string"
+      },
+      {
+        "name": "TestLSTM Baseline",
+        "description": null
+      },
+      {
+        "name": "Scene Transformer",
+        "description": null
+      },
+      {
+        "name": "JFP",
+        "description": null
+      },
+      {
+        "name": "MotionLM (joint)",
+        "description": null
+      },
+      {
+        "name": "ValMotionLM (marginal)",
+        "description": null
+      },
+      {
+        "name": "temporally causal modeling",
+        "description": "exposes more information to the model"
+      },
+      {
+        "name": "acausal conditioning",
+        "description": "exposes more information to the model"
+      },
+      {
+        "name": "autoregressive rollouts",
+        "description": "capture the diversity of multimodal future behavior"
+      },
+      {
+        "name": "MotionLM",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "minADE",
+        "value": " \u2193",
+        "split": null
+      },
+      {
+        "metric": "minFDE",
+        "value": " \u2193",
+        "split": null
+      },
+      {
+        "metric": "Miss Rate",
+        "value": " \u2193",
+        "split": null
+      },
+      {
+        "metric": "Soft mAP",
+        "value": " \u2191",
+        "split": null
+      },
+      {
+        "metric": "Prediction overlap rate",
+        "value": "0.07462",
+        "split": "Test"
+      },
+      {
+        "metric": "Prediction overlap rate",
+        "value": "0.0404",
+        "split": "Val"
+      },
+      {
+        "metric": "mAP",
+        "value": "3.7%",
+        "split": null
+      },
+      {
+        "metric": "mAP",
+        "value": "0.6069",
+        "split": "Marginal"
+      },
+      {
+        "metric": "mAP",
+        "value": "0.5997",
+        "split": "Temporally causal conditional"
+      },
+      {
+        "metric": "mAP",
+        "value": "0.5899",
+        "split": "Acausal conditional"
+      },
+      {
+        "metric": "prediction overlap rate",
+        "value": "0.02671",
+        "split": "validation"
+      }
+    ]
+  }
+}

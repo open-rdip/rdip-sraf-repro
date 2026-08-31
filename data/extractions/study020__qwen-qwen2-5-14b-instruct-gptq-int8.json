@@ -1,0 +1,135 @@
+{
+  "study_id": "study020",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study020/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:44:27.518180+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 2,
+    "methods": 11,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Libra",
+        "version": "10"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "64"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1e-6"
+      },
+      {
+        "name": "backbone",
+        "value": "ResNet-34"
+      },
+      {
+        "name": "data_augmentation",
+        "value": "small random brightness and contrast jittering"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "mammograms",
+        "version": null
+      },
+      {
+        "name": "CSAW-M",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Adam optimizer",
+        "description": "[ 29]"
+      },
+      {
+        "name": "ImageNet-pretrained weights",
+        "description": "[ 14]"
+      },
+      {
+        "name": "data augmentation",
+        "description": "random horizontal and vertical flipping, random rotation of 10 degrees, and small random brightness and contrast jittering"
+      },
+      {
+        "name": "ResNet34 one-hot",
+        "description": "Uses a standard approach for categorical classification, predicting masking levels independently using standard softmax and cross-entropy loss to predict one-hot encodings."
+      },
+      {
+        "name": "ResNet34 multi-hot",
+        "description": "Accounts for the ordinal relation between masking levels using multi-hot encodings, training a model with multi-hot encoding could be seen as multi-label classification."
+      },
+      {
+        "name": "Task 1",
+        "description": "Identifying low- and high-masking mammograms, considering the two lowest masking levels (1 and 2) as low-masking levels, and the two highest ones (7 and 8) as high-masking levels."
+      },
+      {
+        "name": "Task 2",
+        "description": "Measuring the correlation between predicted masking estimates and certain cancers, specifically interval cancers and large invasive cancers, using AUC for individual cancer types and composite endpoint (CEP)."
+      },
+      {
+        "name": "5-fold cross-validation",
+        "description": "used to determine the stopping iteration"
+      },
+      {
+        "name": "Ordinal classification",
+        "description": "modeling the median expert opinion of masking potential level in the range [1-8]"
+      },
+      {
+        "name": "odds ratio computation",
+        "description": "Compute the odds ratio of having interval cancer in different quartiles of model predictions relative to the first quartile."
+      },
+      {
+        "name": "conversion of discrete masking predictions",
+        "description": "Convert discrete masking predictions to continuous values by computing a weighted average of probabilities."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "F1-score",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "area under the ROC curve (AUC)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "composite endpoint (CEP)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "odds ratio (OR)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "average mean absolute error (AMAE)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Kendall\u2019s \u03c4b",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

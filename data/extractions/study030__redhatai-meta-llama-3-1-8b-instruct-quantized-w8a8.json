@@ -1,0 +1,354 @@
+{
+  "study_id": "study030",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study030/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:22:19.345016+00:00",
+  "counts": {
+    "dependencies": 8,
+    "random_seeds": 1,
+    "hyperparameters": 13,
+    "datasets": 7,
+    "methods": 13,
+    "evaluation_results": 31
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "OpenPifPaf",
+        "version": null
+      },
+      {
+        "name": "ResNet",
+        "version": null
+      },
+      {
+        "name": "Shuf\ufb02eNetV2",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "SGD",
+        "version": null
+      },
+      {
+        "name": "Nesterov momentum",
+        "version": null
+      },
+      {
+        "name": "model averaging",
+        "version": null
+      },
+      {
+        "name": "sub-pixel convolution",
+        "version": "52"
+      }
+    ],
+    "random_seeds": [
+      42
+    ],
+    "hardware": {
+      "gpu_model": "V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch size",
+        "value": "32"
+      },
+      {
+        "name": "weight decay",
+        "value": "10\u22125"
+      },
+      {
+        "name": "learning rate target",
+        "value": null
+      },
+      {
+        "name": "learning rate warmup epochs",
+        "value": "1"
+      },
+      {
+        "name": "learning rate decay factor",
+        "value": "10"
+      },
+      {
+        "name": "learning rate decay epochs",
+        "value": "10"
+      },
+      {
+        "name": "momentum",
+        "value": "0.95"
+      },
+      {
+        "name": "weight decay constant",
+        "value": "10\u22122"
+      },
+      {
+        "name": "string",
+        "value": "string"
+      },
+      {
+        "name": "output features",
+        "value": "24"
+      },
+      {
+        "name": "block repeats",
+        "value": "1"
+      },
+      {
+        "name": "target learning rate",
+        "value": "10\u22125"
+      },
+      {
+        "name": "decay constant",
+        "value": "10\u22122"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CrowdPose",
+        "version": null
+      },
+      {
+        "name": "val set",
+        "version": null
+      },
+      {
+        "name": "PoseTrack",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "thehard subset",
+        "version": null
+      },
+      {
+        "name": "PoseTrack 2018",
+        "version": null
+      },
+      {
+        "name": "PoseTrack 2017",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "OpenPifPaf predictions",
+        "description": null
+      },
+      {
+        "name": "Single-Image Training",
+        "description": null
+      },
+      {
+        "name": "string",
+        "description": "string"
+      },
+      {
+        "name": "ours",
+        "description": "fast method"
+      },
+      {
+        "name": "bottom-up method",
+        "description": null
+      },
+      {
+        "name": "field-based methods",
+        "description": null
+      },
+      {
+        "name": "methods based on associative embedding",
+        "description": null
+      },
+      {
+        "name": "ResNet",
+        "description": "standard ResNet models"
+      },
+      {
+        "name": "Shuf\ufb02eNetV2",
+        "description": "Shuf\ufb02eNetV2 back-bones"
+      },
+      {
+        "name": "Shuf\ufb02eNetV2K16",
+        "description": null
+      },
+      {
+        "name": "Shuf\ufb02eNetV2k30",
+        "description": null
+      },
+      {
+        "name": "OpenPifPaf",
+        "description": "ours"
+      },
+      {
+        "name": "DetTrack",
+        "description": "of\ufb02ine"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AP",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AP0.50",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AP0.75",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AP easy",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "APmedium",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AP hard",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "FPS",
+        "value": "13.7",
+        "split": null
+      },
+      {
+        "metric": "time per image",
+        "value": "152 ms",
+        "split": null
+      },
+      {
+        "metric": "MOTA",
+        "value": "53.8",
+        "split": "PoseTrack 2017"
+      },
+      {
+        "metric": "FPS",
+        "value": "3",
+        "split": "PoseTrack 2017"
+      },
+      {
+        "metric": "AP",
+        "value": "70.3",
+        "split": "PoseTrack 2017"
+      },
+      {
+        "metric": "STAF",
+        "value": "68.8",
+        "split": "PoseTrack 2017"
+      },
+      {
+        "metric": "MOTA",
+        "value": "54.5",
+        "split": "MIPAL"
+      },
+      {
+        "metric": "MOTA",
+        "value": "57.8",
+        "split": "MSRA/FlowTrack"
+      },
+      {
+        "metric": "FPS",
+        "value": "0.7",
+        "split": "MSRA/FlowTrack"
+      },
+      {
+        "metric": "AP",
+        "value": "74.6",
+        "split": "MSRA/FlowTrack"
+      },
+      {
+        "metric": "MOTA",
+        "value": "57.9",
+        "split": "HRNet"
+      },
+      {
+        "metric": "AP",
+        "value": "74.9",
+        "split": "HRNet"
+      },
+      {
+        "metric": "MOTA",
+        "value": "58.0",
+        "split": "LightTrack"
+      },
+      {
+        "metric": "AP",
+        "value": "66.6",
+        "split": "LightTrack"
+      },
+      {
+        "metric": "MOTA",
+        "value": "60.6",
+        "split": "KeyTrack"
+      },
+      {
+        "metric": "FPS",
+        "value": "12.2",
+        "split": "KeyTrack"
+      },
+      {
+        "metric": "AP",
+        "value": "71.5",
+        "split": "KeyTrack"
+      },
+      {
+        "metric": "MOTA",
+        "value": "64.1",
+        "split": "DetTrack"
+      },
+      {
+        "metric": "AP",
+        "value": "74.1",
+        "split": "DetTrack"
+      },
+      {
+        "metric": "MOTP",
+        "value": "84.5",
+        "split": "PoseTrack 2017"
+      },
+      {
+        "metric": "precision",
+        "value": "84.1",
+        "split": "PoseTrack 2017"
+      },
+      {
+        "metric": "recall",
+        "value": "77.7",
+        "split": "PoseTrack 2017"
+      },
+      {
+        "metric": "MOTP",
+        "value": "84.9",
+        "split": "PoseTrack 2018"
+      },
+      {
+        "metric": "precision",
+        "value": "84.4",
+        "split": "PoseTrack 2018"
+      },
+      {
+        "metric": "recall",
+        "value": "78.3",
+        "split": "PoseTrack 2018"
+      }
+    ]
+  }
+}

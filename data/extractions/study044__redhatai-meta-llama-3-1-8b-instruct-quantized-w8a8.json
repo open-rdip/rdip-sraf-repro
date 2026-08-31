@@ -1,0 +1,179 @@
+{
+  "study_id": "study044",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study044/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:30:16.060529+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 8,
+    "methods": 10,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "QwQ-32B",
+        "version": null
+      },
+      {
+        "name": "LLMs",
+        "version": null
+      },
+      {
+        "name": "COCONUT",
+        "version": "[27]"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "QwQ-32B",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "entropy threshold \u03c4",
+        "value": "string"
+      },
+      {
+        "name": "required number of consecutive confident steps k",
+        "value": "string"
+      },
+      {
+        "name": "ntoken",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "AIME 2024",
+        "version": null
+      },
+      {
+        "name": "concept tokens",
+        "version": null
+      },
+      {
+        "name": "Math500",
+        "version": null
+      },
+      {
+        "name": "GSM8K",
+        "version": null
+      },
+      {
+        "name": "GPQA-Diamond",
+        "version": null
+      },
+      {
+        "name": "HumanEval",
+        "version": null
+      },
+      {
+        "name": "MBPPMBPP",
+        "version": null
+      },
+      {
+        "name": "LiveCodeBench",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Soft Thinking",
+        "description": "path exploration across consecutive concept tokens"
+      },
+      {
+        "name": "Cold Stop mechanism",
+        "description": "dynamically stops intermediate reasoning when the model becomes overconfident"
+      },
+      {
+        "name": "COCONUT",
+        "description": "training-free"
+      },
+      {
+        "name": "average embedding",
+        "description": "simple average"
+      },
+      {
+        "name": "Soft Thinking with Cold Stop",
+        "description": "with Cold Stop"
+      },
+      {
+        "name": "Soft Thinking without Cold Stop",
+        "description": "without Cold Stop"
+      },
+      {
+        "name": "Cold Stop",
+        "description": "mitigates generation collapse"
+      },
+      {
+        "name": "standard CoT",
+        "description": null
+      },
+      {
+        "name": "Standard CoT Thinking",
+        "description": "employs explicit step-by-step reasoning"
+      },
+      {
+        "name": "Standard Greedy CoT Thinking",
+        "description": "utilizes greedy decoding at each step of the reasoning process"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "substantially improves",
+        "split": null
+      },
+      {
+        "metric": "token efficiency",
+        "value": "substantially improves",
+        "split": null
+      },
+      {
+        "metric": "generation length",
+        "value": "increases",
+        "split": "all problems"
+      },
+      {
+        "metric": "generation length",
+        "value": "shorter",
+        "split": "problems that are solved correctly"
+      },
+      {
+        "metric": "average generation length",
+        "value": "significant reduction",
+        "split": null
+      },
+      {
+        "metric": "average generation length for correct solutions",
+        "value": "increase",
+        "split": null
+      },
+      {
+        "metric": "problems solved",
+        "value": "more",
+        "split": null
+      },
+      {
+        "metric": "overall efficiency",
+        "value": "greater",
+        "split": null
+      },
+      {
+        "metric": "Pass@1",
+        "value": "c/n",
+        "split": null
+      },
+      {
+        "metric": "number of tokens generated for correct solutions",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "study_id": "study036",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study036/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:26:25.442884+00:00",
+  "counts": {
+    "dependencies": 4,
+    "random_seeds": 4,
+    "hyperparameters": 2,
+    "datasets": 12,
+    "methods": 11,
+    "evaluation_results": 20
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "LLM",
+        "version": null
+      },
+      {
+        "name": "T5",
+        "version": "small and base; Raffel et al. 2020"
+      },
+      {
+        "name": "RoBERTa",
+        "version": "Mikolov et al. 2013; Liu et al. 2019"
+      },
+      {
+        "name": "GPT-4",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      20,
+      8,
+      10,
+      5
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "order of answer options",
+        "value": "randomized"
+      },
+      {
+        "name": "training/validation split",
+        "value": "80%/20%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "GPQA",
+        "version": null
+      },
+      {
+        "name": "GPQA Diamond",
+        "version": null
+      },
+      {
+        "name": "GPQA questions",
+        "version": null
+      },
+      {
+        "name": "biology questions",
+        "version": null
+      },
+      {
+        "name": "physics questions",
+        "version": null
+      },
+      {
+        "name": "chemistry questions",
+        "version": null
+      },
+      {
+        "name": "SQuAD",
+        "version": "Rajpurkar et al., 2016"
+      },
+      {
+        "name": "Natural Questions",
+        "version": "Kwiatkowski et al., 2019; Sen and Saffari, 2020"
+      },
+      {
+        "name": "unspecified",
+        "version": null
+      },
+      {
+        "name": "extended set",
+        "version": null
+      },
+      {
+        "name": "main set",
+        "version": null
+      },
+      {
+        "name": "diamond set",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Llama-2-70B-chat",
+        "description": null
+      },
+      {
+        "name": "GPT-3.5-turbo-16k",
+        "description": null
+      },
+      {
+        "name": "GPT-4",
+        "description": null
+      },
+      {
+        "name": "few-shot chain-of-thought prompting",
+        "description": "string"
+      },
+      {
+        "name": "GPT-4 with search",
+        "description": "string"
+      },
+      {
+        "name": "self-ask (Press et al., 2022)",
+        "description": "string"
+      },
+      {
+        "name": "few-shot CoT GPT-4",
+        "description": "string"
+      },
+      {
+        "name": "GPT-4\u2013based baseline",
+        "description": null
+      },
+      {
+        "name": "T5 for span-identification task",
+        "description": "fine-tuned on labelled answer options"
+      },
+      {
+        "name": "single-layer continuous bag-of-words classifier with RoBERTa embeddings",
+        "description": "trained on answers"
+      },
+      {
+        "name": "unspecified",
+        "description": "skilled non-expert validator accuracy"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "string",
+        "split": "closed-book"
+      },
+      {
+        "metric": "accuracy",
+        "value": "string",
+        "split": "open-book"
+      },
+      {
+        "metric": "accuracy",
+        "value": "39.4%",
+        "split": "extended set of questions"
+      },
+      {
+        "metric": "accuracy",
+        "value": "38% - 40%",
+        "split": "three sets"
+      },
+      {
+        "metric": "accuracy",
+        "value": "58.1%",
+        "split": "biology questions"
+      },
+      {
+        "metric": "accuracy",
+        "value": "37.0%",
+        "split": "physics questions"
+      },
+      {
+        "metric": "accuracy",
+        "value": "31.8%",
+        "split": "chemistry questions"
+      },
+      {
+        "metric": "abstention rate",
+        "value": "37.2%",
+        "split": "main set"
+      },
+      {
+        "metric": "accuracy",
+        "value": "39%",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "25%",
+        "split": "validation"
+      },
+      {
+        "metric": "accuracy",
+        "value": "28.8%",
+        "split": "n=6"
+      },
+      {
+        "metric": "accuracy",
+        "value": "30.4%",
+        "split": "n=4"
+      },
+      {
+        "metric": "accuracy",
+        "value": "31.6%",
+        "split": "n=5"
+      },
+      {
+        "metric": "accuracy",
+        "value": "30.4%",
+        "split": "n=3"
+      },
+      {
+        "metric": "accuracy",
+        "value": "34.1%",
+        "split": "\u00b12.3%"
+      },
+      {
+        "metric": "accuracy",
+        "value": "45.6%",
+        "split": "expert validation"
+      },
+      {
+        "metric": "accuracy",
+        "value": "30.4%",
+        "split": "non-expert validation"
+      },
+      {
+        "metric": "accuracy",
+        "value": null,
+        "split": "extended set"
+      },
+      {
+        "metric": "accuracy",
+        "value": null,
+        "split": "main set"
+      },
+      {
+        "metric": "accuracy",
+        "value": null,
+        "split": "diamond set"
+      }
+    ]
+  }
+}

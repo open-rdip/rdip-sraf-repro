@@ -1,0 +1,199 @@
+{
+  "study_id": "study046",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study046/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:31:13.596654+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 1,
+    "hyperparameters": 6,
+    "datasets": 4,
+    "methods": 14,
+    "evaluation_results": 12
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      0
+    ],
+    "hardware": {
+      "gpu_model": "NVIDIA GeForce GTX2070",
+      "cuda_version": null,
+      "cpu_info": "i7-8700K"
+    },
+    "hyperparameters": [
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.0005"
+      },
+      {
+        "name": "learning rate",
+        "value": "0.01"
+      },
+      {
+        "name": "epochs",
+        "value": "500"
+      },
+      {
+        "name": "width",
+        "value": "32"
+      },
+      {
+        "name": "scale",
+        "value": "0.75"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "weld defect dataset",
+        "version": null
+      },
+      {
+        "name": "MS COCO",
+        "version": "\u00d71.25"
+      },
+      {
+        "name": "COCO trainval35k",
+        "version": null
+      },
+      {
+        "name": "COCO test-dev2017",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "LF-YOLO",
+        "description": "model for weld defect detection"
+      },
+      {
+        "name": "our network",
+        "description": "null"
+      },
+      {
+        "name": "classical models",
+        "description": "null"
+      },
+      {
+        "name": "EFE module",
+        "description": "a highly effective feature extraction block"
+      },
+      {
+        "name": "RMF module",
+        "description": "a novel module to utilize and extract information"
+      },
+      {
+        "name": "stochastic gradient descent",
+        "description": "null"
+      },
+      {
+        "name": "MMdetection",
+        "description": "null"
+      },
+      {
+        "name": "Cascasde-RCNN",
+        "description": "null"
+      },
+      {
+        "name": "Faster-RCNN",
+        "description": "null"
+      },
+      {
+        "name": "Dynamic-RCNN",
+        "description": "null"
+      },
+      {
+        "name": "JOURNAL OF L ATEX CLASS FILES",
+        "description": "one-stage networks"
+      },
+      {
+        "name": "SSD",
+        "description": "one-stage networks"
+      },
+      {
+        "name": "YOLO v3",
+        "description": "one-stage networks"
+      },
+      {
+        "name": "R-FCN",
+        "description": "two-stage networks"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP 50",
+        "value": "92.9",
+        "split": "weld defect dataset"
+      },
+      {
+        "metric": "FLOPs",
+        "value": "4.0G",
+        "split": "weld defect dataset"
+      },
+      {
+        "metric": "Params",
+        "value": "7.3M",
+        "split": "weld defect dataset"
+      },
+      {
+        "metric": "FPS",
+        "value": "61.5",
+        "split": "weld defect dataset"
+      },
+      {
+        "metric": "mAP 50",
+        "value": "50.3",
+        "split": "MS COCO"
+      },
+      {
+        "metric": "mAP 50",
+        "value": "90.0",
+        "split": null
+      },
+      {
+        "metric": "FPS",
+        "value": "10.2",
+        "split": null
+      },
+      {
+        "metric": "FLOPs",
+        "value": "243.2",
+        "split": null
+      },
+      {
+        "metric": "Params",
+        "value": "68.9",
+        "split": null
+      },
+      {
+        "metric": "mAP 50",
+        "value": "43.9",
+        "split": "test-dev2017"
+      },
+      {
+        "metric": "FLOPs(G)",
+        "value": "1.0",
+        "split": null
+      },
+      {
+        "metric": "Params(M)",
+        "value": "1.1",
+        "split": null
+      }
+    ]
+  }
+}

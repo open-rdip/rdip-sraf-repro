@@ -1,0 +1,189 @@
+{
+  "study_id": "study013",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study013/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:13:53.114651+00:00",
+  "counts": {
+    "dependencies": 4,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 11,
+    "methods": 13,
+    "evaluation_results": 9
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Python",
+        "version": "variety"
+      },
+      {
+        "name": "Nvidia",
+        "version": null
+      },
+      {
+        "name": "Scikit-Learn",
+        "version": "[25]"
+      },
+      {
+        "name": "VGG16",
+        "version": "pre-trained"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia GPU",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "EHRs",
+        "version": null
+      },
+      {
+        "name": "COOS-7",
+        "version": null
+      },
+      {
+        "name": "COOS",
+        "version": null
+      },
+      {
+        "name": "protein localization dataset",
+        "version": null
+      },
+      {
+        "name": "Training",
+        "version": null
+      },
+      {
+        "name": "Test1",
+        "version": null
+      },
+      {
+        "name": "Test2",
+        "version": null
+      },
+      {
+        "name": "Test3",
+        "version": null
+      },
+      {
+        "name": "Test4",
+        "version": null
+      },
+      {
+        "name": "Training dataset",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "predictive modeling",
+        "description": "using EHRs"
+      },
+      {
+        "name": "feature robustness",
+        "description": "in non-stationary health records"
+      },
+      {
+        "name": "stochastic gene expression",
+        "description": "and its consequences"
+      },
+      {
+        "name": "illumination correction",
+        "description": "of images for high-throughput microscopy"
+      },
+      {
+        "name": "multivariate image analysis",
+        "description": "for cell death screening assay"
+      },
+      {
+        "name": "methods development",
+        "description": "improve the out-of-sample generalization baselines"
+      },
+      {
+        "name": "Classi\ufb01cation Baselines",
+        "description": "Classi\ufb01ers using a variety of classi\ufb01ers"
+      },
+      {
+        "name": "deep learning model",
+        "description": "detect pneumonia in chest radiographs"
+      },
+      {
+        "name": "logistic regression",
+        "description": "classic computer vision features"
+      },
+      {
+        "name": "fully-supervised CNN",
+        "description": null
+      },
+      {
+        "name": "deep learning models",
+        "description": null
+      },
+      {
+        "name": "PCI",
+        "description": "self-supervised method designed for microscopy images"
+      },
+      {
+        "name": "VGG16",
+        "description": "pretrained CNN on ImageNet"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "balanced classi\ufb01cation error",
+        "value": "1.1%",
+        "split": "Test1"
+      },
+      {
+        "metric": "balanced classi\ufb01cation error",
+        "value": "1.1%",
+        "split": "Test2"
+      },
+      {
+        "metric": "balanced classi\ufb01cation error",
+        "value": "6.8%",
+        "split": null
+      },
+      {
+        "metric": "balanced classi\ufb01cation error",
+        "value": "fully-supervised CNN",
+        "split": "Test3"
+      },
+      {
+        "metric": "balanced classi\ufb01cation error",
+        "value": "fully-supervised CNN",
+        "split": "Test4"
+      },
+      {
+        "metric": "performance",
+        "value": "best",
+        "split": "20% of Training dataset"
+      },
+      {
+        "metric": "performance",
+        "value": "best",
+        "split": "80% of Training dataset"
+      },
+      {
+        "metric": "performance",
+        "value": "outperform",
+        "split": "classic unsupervised feature representation methods for cancer cell morphology"
+      },
+      {
+        "metric": "performance",
+        "value": "best",
+        "split": "overall performing layers"
+      }
+    ]
+  }
+}

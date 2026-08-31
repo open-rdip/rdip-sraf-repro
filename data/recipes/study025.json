@@ -1,0 +1,24 @@
+{
+  "run_command": "vfa-run evaluate --checkpoint vfa_v0.0.6_lumir --eval_data_configs /path/to/eval_data_configs.json",
+  "setup_steps": [
+    "wget https://iacl.ece.jhu.edu/~yihao/vfa/vfa_v0.0.6_lumir.zip -O vfa_v0.0.6_lumir.zip",
+    "unzip vfa_v0.0.6_lumir.zip -d vfa_v0.0.6_lumir"
+  ],
+  "requires_dataset": [
+    {
+      "name": "LUMIR dataset",
+      "download": null
+    }
+  ],
+  "requires_checkpoint": null,
+  "produces_metric": [
+    {
+      "metric": "Dice loss",
+      "dataset": null
+    }
+  ],
+  "entry_point": "vfa-run",
+  "confidence": "high",
+  "study_id": "study025",
+  "repo_url": "https://github.com/yihao6/vfa"
+}

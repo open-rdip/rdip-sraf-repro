@@ -1,0 +1,210 @@
+{
+  "study_id": "study018",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study018/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:43:16.593265+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 2,
+    "methods": 9,
+    "evaluation_results": 17
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": "1.0"
+      },
+      {
+        "name": "Caffe2",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia 1080 Ti, Nvidia M40",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b2",
+        "value": "0.11"
+      },
+      {
+        "name": "backbone_architecture",
+        "value": "ResNet-50"
+      },
+      {
+        "name": "image_resizing",
+        "value": "shorter side of 800 pixels"
+      },
+      {
+        "name": "Threshold",
+        "value": "0.5"
+      },
+      {
+        "name": "backbone_network",
+        "value": "ResNet-50-FPN, ResNet-101-FPN"
+      },
+      {
+        "name": "input_resolution",
+        "value": "120x101x700, 137x101x800"
+      },
+      {
+        "name": "backbone",
+        "value": "ResNet-50-FPN, ResNet-101-FPN, ResNeXt32x8d-101-FPN"
+      },
+      {
+        "name": "multi_scale",
+        "value": "{640, 800, 1200}"
+      },
+      {
+        "name": "iterations_schedule",
+        "value": "2x"
+      },
+      {
+        "name": "Self-Adjusting Smooth L1 loss setting",
+        "value": "0.11"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO minival",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": "minival"
+      }
+    ],
+    "methods": [
+      {
+        "name": "Self-Adjusting Smooth L1 Loss",
+        "description": "Smooth L1 loss with adjustable parameter \u03b2. Used values include 1.0 and 0.11."
+      },
+      {
+        "name": "Best Matching policy",
+        "description": "Component of the model described in Section 3"
+      },
+      {
+        "name": "Self-Adjusting Smooth L1",
+        "description": "Component of the model described in Section 3"
+      },
+      {
+        "name": "Mask Prediction head",
+        "description": "Component of the model described in Section 3"
+      },
+      {
+        "name": "RetinaNet",
+        "description": "Baseline method for comparison"
+      },
+      {
+        "name": "Our Method of BBox prediction",
+        "description": "Proposed bounding box prediction method"
+      },
+      {
+        "name": "Our Method of Mask prediction",
+        "description": "Proposed mask prediction method"
+      },
+      {
+        "name": "Group Normalization",
+        "description": "Applied only on the extra layers (FPN, localization, and classification)"
+      },
+      {
+        "name": "Multi-Task Training with Mask Prediction",
+        "description": "Training with instance segmentation to improve bounding box accuracy."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Train APbb",
+        "value": "36.2",
+        "split": "train"
+      },
+      {
+        "metric": "APbb 50",
+        "value": "55.0",
+        "split": "train"
+      },
+      {
+        "metric": "APbb 75",
+        "value": "38.7",
+        "split": "train"
+      },
+      {
+        "metric": "APm 50",
+        "value": "32.7",
+        "split": "train"
+      },
+      {
+        "metric": "APm 75",
+        "value": "34.9",
+        "split": "train"
+      },
+      {
+        "metric": "mAP",
+        "value": "28.9",
+        "split": "validation"
+      },
+      {
+        "metric": "AP",
+        "value": "35.3",
+        "split": "minival"
+      },
+      {
+        "metric": "AP50",
+        "value": "55.6",
+        "split": "minival"
+      },
+      {
+        "metric": "AP75",
+        "value": "37.8",
+        "split": "minival"
+      },
+      {
+        "metric": "APS",
+        "value": "19.4",
+        "split": "minival"
+      },
+      {
+        "metric": "APM",
+        "value": "38.9",
+        "split": "minival"
+      },
+      {
+        "metric": "APL",
+        "value": "46.9",
+        "split": "minival"
+      },
+      {
+        "metric": "bbox AP",
+        "value": "37.1",
+        "split": "test-dev"
+      },
+      {
+        "metric": "mask AP",
+        "value": "38.5",
+        "split": "test-dev"
+      },
+      {
+        "metric": "mAP",
+        "value": "42.6",
+        "split": "test"
+      },
+      {
+        "metric": "mAP",
+        "value": "36.4",
+        "split": null
+      },
+      {
+        "metric": "mAP improvement",
+        "value": "0.7",
+        "split": null
+      }
+    ]
+  }
+}

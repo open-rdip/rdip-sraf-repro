@@ -1,0 +1,175 @@
+{
+  "study_id": "study026",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study026/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:19:29.856107+00:00",
+  "counts": {
+    "dependencies": 8,
+    "random_seeds": 3,
+    "hyperparameters": 1,
+    "datasets": 6,
+    "methods": 12,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Faster R-CNN",
+        "version": "R50"
+      },
+      {
+        "name": "FCOS",
+        "version": "R50"
+      },
+      {
+        "name": "CSE-Autoloss",
+        "version": null
+      },
+      {
+        "name": "Bounded IoU loss",
+        "version": null
+      },
+      {
+        "name": "GIoU loss",
+        "version": null
+      },
+      {
+        "name": "ATSS",
+        "version": "Zhang et al., 2020"
+      },
+      {
+        "name": "Cascade R-CNN",
+        "version": "R50 (Cai & Vasconcelos, 2018)"
+      },
+      {
+        "name": "Mask R-CNN",
+        "version": "R50 (He et al., 2017)"
+      }
+    ],
+    "random_seeds": [
+      42,
+      0,
+      5
+    ],
+    "hardware": {
+      "gpu_model": "8 GPUs",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "loss",
+        "value": "CSE-Autoloss-A"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "object detection",
+        "version": null
+      },
+      {
+        "name": "two-stage detectors",
+        "version": null
+      },
+      {
+        "name": "one-stage detectors",
+        "version": null
+      },
+      {
+        "name": "VOC",
+        "version": null
+      },
+      {
+        "name": "BDD",
+        "version": null
+      },
+      {
+        "name": "different architectures across datasets",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "random search",
+        "description": "random search"
+      },
+      {
+        "name": "vanilla evolution search",
+        "description": "vanilla evolution search"
+      },
+      {
+        "name": "CSE-Autoloss",
+        "description": "CSE-Autoloss speeds up the search process by 20x because of the effective convergence-simulation modules and discovers well-performed loss combinations in around 1.5 wall-clock days"
+      },
+      {
+        "name": "Evolution search",
+        "description": "Classi\ufb01cation GIoU"
+      },
+      {
+        "name": "best-discovered loss functions",
+        "description": null
+      },
+      {
+        "name": "Bounded IoU loss",
+        "description": "null"
+      },
+      {
+        "name": "GIoU loss",
+        "description": "null"
+      },
+      {
+        "name": "Faster R-CNN",
+        "description": "null"
+      },
+      {
+        "name": "FCOS",
+        "description": "null"
+      },
+      {
+        "name": "ATSS",
+        "description": "null"
+      },
+      {
+        "name": "Cascade R-CNN",
+        "description": "null"
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "efficiency",
+        "value": "much better",
+        "split": null
+      },
+      {
+        "metric": "wall-clock hours",
+        "value": "hundreds",
+        "split": "server with 8 GPUs"
+      },
+      {
+        "metric": "speedup",
+        "value": "20x",
+        "split": null
+      },
+      {
+        "metric": "wall-clock days",
+        "value": "1.5",
+        "split": null
+      },
+      {
+        "metric": "AP (%)",
+        "value": "37.8",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": "1.1%",
+        "split": null
+      }
+    ]
+  }
+}

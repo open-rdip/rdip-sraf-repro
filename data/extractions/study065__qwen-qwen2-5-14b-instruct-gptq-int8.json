@@ -1,0 +1,84 @@
+{
+  "study_id": "study065",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study065/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:15:22.780171+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 2,
+    "methods": 7,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "RoBERTa",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "threshold",
+        "value": "\u00b5s\u2212\u03c3s"
+      },
+      {
+        "name": "L",
+        "value": "12"
+      },
+      {
+        "name": "H",
+        "value": "768"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "AMI Meeting Corpus",
+        "version": "IB4003"
+      },
+      {
+        "name": "SNLI dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "TextTiling",
+        "description": "Detects topic changes with a similarity score based on word frequencies."
+      },
+      {
+        "name": "Modified TextTiling",
+        "description": "Detects topic changes based on a new similarity score using BERT embeddings."
+      },
+      {
+        "name": "Sentence-BERT",
+        "description": "pre-trained on the SNLI dataset"
+      },
+      {
+        "name": "Max pooling",
+        "description": "used to filter out words with limited semantic value"
+      },
+      {
+        "name": "TCNs",
+        "description": "common practice for training a supervised classifier for sequence labelling"
+      },
+      {
+        "name": "Sentence Representation",
+        "description": "Experiment with two different sentence representation approaches using RoBERTa."
+      },
+      {
+        "name": "RoBERTa feature extraction",
+        "description": "Extract fixed-sized vector via max pooling of the second to last layer."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

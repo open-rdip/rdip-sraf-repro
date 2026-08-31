@@ -1,0 +1,136 @@
+{
+  "study_id": "study087",
+  "repo_url": "https://github.com/dahyun-kang/ifsl",
+  "started": "2026-06-10T14:54:19.112289+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "conda": "environment.yml"
+    },
+    "depth_note": "root",
+    "n_found": 1,
+    "all": [
+      {
+        "type": "conda",
+        "rel_path": "environment.yml",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/dahyun-kang/ifsl",
+    "commit_hash": "d0b0c0d1b01c036eaae1470585764d1321ec5336",
+    "software_license": "MIT"
+  },
+  "lift": {
+    "lifted": {
+      "conda": "environment.yml"
+    },
+    "triples": 1050,
+    "n_sources": 2
+  },
+  "python": {
+    "declared": "3.8",
+    "source": "conda",
+    "used": "3.8",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": false,
+    "resolve_success": null,
+    "build_success": false,
+    "method": "none",
+    "stage_failed": null,
+    "duration_s": 0.0,
+    "log_tail": "",
+    "notes": "No installable pip/setup artifact (requirements / setup.py / pyproject absent)."
+  },
+  "fair_r": {
+    "total_score": 51.79,
+    "tier": "fair",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 12.5,
+      "Reproducible": 19.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 3.5,
+  "fair_r_scorer": "graded-v2"
+}

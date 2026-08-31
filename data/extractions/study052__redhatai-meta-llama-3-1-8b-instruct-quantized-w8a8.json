@@ -1,0 +1,198 @@
+{
+  "study_id": "study052",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study052/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:32:56.295190+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 1,
+    "hyperparameters": 4,
+    "datasets": 7,
+    "methods": 14,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "github",
+        "version": "https://github.com/chenhongge/RobustTrees"
+      },
+      {
+        "name": "XGBoost",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      100
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03f5",
+        "value": "0.3"
+      },
+      {
+        "name": "number of trees",
+        "value": "20"
+      },
+      {
+        "name": "depth",
+        "value": "string"
+      },
+      {
+        "name": "step size shrinkage",
+        "value": "string"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "MNIST",
+        "version": null
+      },
+      {
+        "name": "string",
+        "version": null
+      },
+      {
+        "name": "Fashion-MNIST",
+        "version": null
+      },
+      {
+        "name": "small and medium binary classification models",
+        "version": null
+      },
+      {
+        "name": "datasets for robust GBDT models",
+        "version": null
+      },
+      {
+        "name": "MNIST 2 vs. 6",
+        "version": null
+      },
+      {
+        "name": "Chang & Lin (2011)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "robust training",
+        "description": "robust training"
+      },
+      {
+        "name": "Cheng\u2019s\u2113\u221eattack",
+        "description": "Cheng\u2019s\u2113\u221eattack"
+      },
+      {
+        "name": "random forest",
+        "description": "random forest"
+      },
+      {
+        "name": "Algorithm 1",
+        "description": "string"
+      },
+      {
+        "name": "\u2113\u221eattack",
+        "description": "Cheng\u2019s attack"
+      },
+      {
+        "name": "GBDT",
+        "description": "Gradient Boosting Decision Trees"
+      },
+      {
+        "name": "adversarial training",
+        "description": "Kantchelian et al. (2016)"
+      },
+      {
+        "name": "Cheng\u2019s \u2113\u221eattack",
+        "description": "string"
+      },
+      {
+        "name": "Kantchelian\u2019s \u2113\u221eattack",
+        "description": "string"
+      },
+      {
+        "name": "Kantchelian\u2019s \u21131attack",
+        "description": "string"
+      },
+      {
+        "name": "Kantchelian\u2019s \u21132attack",
+        "description": "string"
+      },
+      {
+        "name": "Papernot\u2019s attack",
+        "description": "string"
+      },
+      {
+        "name": "Algorithm 2",
+        "description": "null"
+      },
+      {
+        "name": "XGBoost",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "99%",
+        "split": null
+      },
+      {
+        "metric": "accuracy loss",
+        "value": "1%",
+        "split": null
+      },
+      {
+        "metric": "average \u2113\u221edistortion",
+        "value": "string",
+        "split": "string"
+      },
+      {
+        "metric": "average \u21131distortion",
+        "value": "string",
+        "split": "string"
+      },
+      {
+        "metric": "average \u21132distortion",
+        "value": "string",
+        "split": "string"
+      },
+      {
+        "metric": "test accuracy",
+        "value": "string",
+        "split": "string"
+      },
+      {
+        "metric": "accuracy",
+        "value": "slightly loses",
+        "split": "MNIST"
+      },
+      {
+        "metric": "robustness improvement",
+        "value": "consistently observed",
+        "split": null
+      },
+      {
+        "metric": "\u2113\u221edistortion",
+        "value": "string",
+        "split": "string"
+      },
+      {
+        "metric": "\u21131distortion",
+        "value": "string",
+        "split": "string"
+      },
+      {
+        "metric": "\u21132distortion",
+        "value": "string",
+        "split": "string"
+      }
+    ]
+  }
+}

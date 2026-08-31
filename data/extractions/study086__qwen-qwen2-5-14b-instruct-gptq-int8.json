@@ -1,0 +1,144 @@
+{
+  "study_id": "study086",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study086/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:30:01.626258+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 3,
+    "methods": 11,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A10G",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "512"
+      },
+      {
+        "name": "number_of_steps",
+        "value": "256"
+      },
+      {
+        "name": "radical hyperparameters",
+        "value": "maximize model change"
+      },
+      {
+        "name": "learning_rate",
+        "value": "2e-4"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Llama-2-7b",
+        "version": null
+      },
+      {
+        "name": "240,000 samples",
+        "version": null
+      },
+      {
+        "name": "D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Universal Prompt Optimization",
+        "description": "Feature of GCG used to treat Llama-2-7b with two mentioned templates as two different models and run the attack on both simultaneously."
+      },
+      {
+        "name": "Query Generation",
+        "description": "Process involving generating one query for Llama-2-7b model on an NVIDIA A10G GPU taking approximately 1.5 hours, and generating one query with GCG taking approximately 2.5 hours, and generating one query with ARCA taking approximately 3 hours."
+      },
+      {
+        "name": "Model Verification",
+        "description": "Involves generating output using the prompt template suggested in the model's repository, if available; otherwise, uses the model\u2019s default prompt template or the corresponding prompt template from the FastChat repository. For all pre-trained models without a prompt template, uses FastChat\u2019s zero-shot prompt."
+      },
+      {
+        "name": "LOESS smoothing",
+        "description": "used to smooth the TRR curve"
+      },
+      {
+        "name": "fine-tuning",
+        "description": "process of adapting pre-trained models to specific tasks or datasets"
+      },
+      {
+        "name": "ProFLingo",
+        "description": "black-box fingerprinting-based copyright protection scheme for large language models"
+      },
+      {
+        "name": "GCG",
+        "description": "A method used for generating queries."
+      },
+      {
+        "name": "ARCA",
+        "description": "A method used for generating queries."
+      },
+      {
+        "name": "TRR evaluation",
+        "description": "evaluated the TRRs of these fine-tuned checkpoints by simply checking whether the keyword was present in the first sentence (concluding with a period)"
+      },
+      {
+        "name": "Llama-2-7b",
+        "description": "Original model with several fine-tuned variants."
+      },
+      {
+        "name": "Mistral-7B-v0.1",
+        "description": "Original model with several fine-tuned variants."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "TRR",
+        "value": "0.24",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "better",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours)",
+        "value": "0.98",
+        "split": "Zero-shot"
+      },
+      {
+        "metric": "TRR (Ours)",
+        "value": "0.98",
+        "split": "Alpaca"
+      },
+      {
+        "metric": "TRR (Ours)",
+        "value": "0.96",
+        "split": "Fine-tuning"
+      },
+      {
+        "metric": "TRR (Ours)",
+        "value": "0.92",
+        "split": "ChatGPT"
+      },
+      {
+        "metric": "TRR (Ours)",
+        "value": "0.98",
+        "split": "Tigerbot"
+      },
+      {
+        "metric": "TRR (Ours)",
+        "value": "0.92",
+        "split": "Dolly V2"
+      }
+    ]
+  }
+}

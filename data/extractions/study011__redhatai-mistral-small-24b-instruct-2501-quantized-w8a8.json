@@ -1,0 +1,123 @@
+{
+  "study_id": "study011",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study011/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:11:56.372071+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 1,
+    "methods": 12,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "1080Ti",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "epochs",
+        "value": "200"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DiracNet",
+        "description": "a well-designed re-parameterization of conv kernels"
+      },
+      {
+        "name": "Trivial Re-param",
+        "description": "a simpler re-parameterization of conv kernels by directly adding an identity kernel to the 3\u00d73 kernel"
+      },
+      {
+        "name": "Asymmetric Conv Block (ACB)",
+        "description": "another form of structural re-parameterization"
+      },
+      {
+        "name": "Residual Reorg",
+        "description": "builds each stage by re-organizing it in a ResNet-like manner"
+      },
+      {
+        "name": "Autoaugment",
+        "description": ""
+      },
+      {
+        "name": "label smoothing",
+        "description": ""
+      },
+      {
+        "name": "mixup",
+        "description": ""
+      },
+      {
+        "name": "structural re-parameterization",
+        "description": ""
+      },
+      {
+        "name": "RepVGG-B0",
+        "description": "trained in 120 epochs"
+      },
+      {
+        "name": "Identity w/o BN",
+        "description": "Removes the BN in identity branch"
+      },
+      {
+        "name": "Post-addition BN",
+        "description": "Removes the BN layers in the three branches and appends a BN layer after the addition"
+      },
+      {
+        "name": "+ReLU in branches",
+        "description": "Inserts ReLU into each branch (after BN and before addition)"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Acc",
+        "value": "79.38",
+        "split": null
+      },
+      {
+        "metric": "Speed",
+        "value": "581",
+        "split": null
+      },
+      {
+        "metric": "Params",
+        "value": "55.77",
+        "split": null
+      },
+      {
+        "metric": "FLOPs",
+        "value": "11.3",
+        "split": null
+      },
+      {
+        "metric": "MULs",
+        "value": "6.0",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "74.5%",
+        "split": null
+      }
+    ]
+  }
+}

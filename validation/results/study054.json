@@ -1,0 +1,168 @@
+{
+  "study_id": "study054",
+  "repo_url": "https://github.com/6lackmitchell/ccbf-control",
+  "started": "2026-06-10T12:08:45.417599+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "Dockerfile",
+      "setup": "pyproject.toml"
+    },
+    "depth_note": "root",
+    "n_found": 4,
+    "all": [
+      {
+        "type": "setup",
+        "rel_path": "pyproject.toml",
+        "depth": 0
+      },
+      {
+        "type": "docker",
+        "rel_path": "Dockerfile",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "src/ccbf/setup.py",
+        "depth": 2
+      },
+      {
+        "type": "setup",
+        "rel_path": "src/ccbf/setup.cfg",
+        "depth": 2
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/6lackmitchell/ccbf-control",
+    "commit_hash": "0895d9e7d64f6d32b534632b60d044c85334ac4e",
+    "software_license": null
+  },
+  "lift": {
+    "lifted": {
+      "docker": "Dockerfile"
+    },
+    "triples": 12,
+    "n_sources": 2
+  },
+  "python": {
+    "declared": null,
+    "source": "default",
+    "used": "3.10",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-setup",
+    "stage_failed": null,
+    "duration_s": 991.7,
+    "log_tail": "httpcore-1.0.9 httpx-0.28.1 idna-3.18 ipykernel-7.3.0 ipython-8.39.0 ipywidgets-8.1.8 isoduration-20.11.0 jax-0.4.38 jaxlib-0.4.38 jaxopt-0.8.5 jedi-0.20.0 joblib-1.5.3 json5-0.14.0 jsonpointer-3.1.1 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 jupyter-1.1.1 jupyter-console-6.6.3 jupyter-events-0.12.1 jupyter-lsp-2.3.1 jupyter_client-8.9.1 jupyter_core-5.9.1 jupyter_server-2.19.0 jupyter_server_terminals-0.5.4 jupyterlab-4.5.8 jupyterlab_pygments-0.3.0 jupyterlab_server-2.28.0 jupyterlab_widgets-3.0.16 kaleido-0.2.0 kiwisolver-1.5.0 kvxopt-1.3.3.1 lark-1.3.1 librt-0.11.0 matplotlib-3.10.9 matplotlib-inline-0.2.2 mistune-3.2.1 ml_dtypes-0.5.4 multiprocess-0.70.19 mypy-1.20.2 mypy_extensions-1.1.0 nbclient-0.11.0 nbconvert-7.17.1 nbformat-5.10.4 nest-asyncio2-1.7.2 notebook-7.5.7 notebook_shim-0.2.4 numpy-1.26.4 opt_einsum-3.4.0 osqp-1.1.2 overrides-7.7.0 packaging-26.2 pandas-2.3.3 pandocfilters-1.5.1 parso-0.8.7 pathos-0.3.5 pathspec-1.1.1 pexpect-4.9.0 pillow-12.2.0 platformdirs-4.10.0 plotly-5.24.1 pox-0.3.7 ppft-1.7.8 prometheus_client-0.25.0 prompt_toolkit-3.0.52 psutil-7.2.2 psy-taliro-1.0.0 ptyprocess-0.7.0 pure_eval-0.2.3 pycparser-3.0 pyparsing-3.3.2 python-dateutil-2.9.0.post0 python-json-logger-4.1.0 pytz-2026.2 pyzmq-27.1.0 referencing-0.37.0 requests-2.34.2 rfc3339-validator-0.1.4 rfc3986-validator-0.1.1 rfc3987-syntax-1.1.0 rpds-py-0.30.0 rtamt-0.3.5 scipy-1.15.3 scs-3.2.11 setuptools-69.5.1 six-1.17.0 sortedcontainers-2.4.0 soupsieve-2.8.4 stack-data-0.6.3 tenacity-9.1.4 terminado-0.18.1 threadpoolctl-3.6.0 tinycss2-1.5.1 tomli-2.4.1 tornado-6.5.7 traitlets-5.15.1 typing_extensions-4.15.0 tzdata-2026.2 uri-template-1.3.0 urllib3-2.7.0 wcwidth-0.8.1 webcolors-25.10.0 webencodings-0.5.1 websocket-client-1.9.0 widgetsnbextension-4.0.15\n\n$ /tmp/15889/study054/venv/bin/pip install --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu .\n debugpy-1.8.21 decorator-5.3.1 defusedxml-0.7.1 diffcp-1.1.8 dill-0.4.1 exceptiongroup-1.3.1 executing-2.2.1 fastjsonschema-2.21.2 fonttools-4.63.0 fqdn-1.5.1 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.18 ipykernel-7.3.0 ipython-8.39.0 ipywidgets-8.1.8 isoduration-20.11.0 jax-0.4.38 jaxlib-0.4.38 jaxopt-0.8.5 jedi-0.20.0 jinja2-3.1.6 joblib-1.5.3 json5-0.14.0 jsonpointer-3.1.1 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 jupyter-1.1.1 jupyter-client-8.9.1 jupyter-console-6.6.3 jupyter-core-5.9.1 jupyter-events-0.12.1 jupyter-lsp-2.3.1 jupyter-server-2.19.0 jupyter-server-terminals-0.5.4 jupyterlab-4.5.8 jupyterlab-pygments-0.3.0 jupyterlab-server-2.28.0 jupyterlab_widgets-3.0.16 kaleido-0.2.0 kiwisolver-1.5.0 kvxopt-1.3.3.1 lark-1.3.1 librt-0.11.0 matplotlib-3.10.9 matplotlib-inline-0.2.2 mistune-3.2.1 ml_dtypes-0.5.4 multiprocess-0.70.19 mypy-1.20.2 mypy-extensions-1.1.0 nbclient-0.11.0 nbconvert-7.17.1 nbformat-5.10.4 nest-asyncio2-1.7.2 notebook-7.5.7 notebook-shim-0.2.4 numpy-1.26.4 opt_einsum-3.4.0 osqp-1.1.2 overrides-7.7.0 pandas-2.3.3 pandocfilters-1.5.1 parso-0.8.7 pathos-0.3.5 pathspec-1.1.1 pexpect-4.9.0 pillow-12.2.0 platformdirs-4.10.0 plotly-5.24.1 pox-0.3.7 ppft-1.7.8 prometheus-client-0.25.0 prompt_toolkit-3.0.52 psutil-7.2.2 psy-taliro-1.0.0 ptyprocess-0.7.0 pure-eval-0.2.3 pycparser-3.0 pygments-2.20.0 pyparsing-3.3.2 python-dateutil-2.9.0.post0 python-json-logger-4.1.0 pytz-2026.2 pyyaml-6.0.3 pyzmq-27.1.0 referencing-0.37.0 requests-2.34.2 rfc3339-validator-0.1.4 rfc3986-validator-0.1.1 rfc3987-syntax-1.1.0 rpds-py-0.30.0 rtamt-0.3.5 scipy-1.15.3 scs-3.2.11 send2trash-2.1.0 setuptools-69.5.1 six-1.17.0 sortedcontainers-2.4.0 soupsieve-2.8.4 stack_data-0.6.3 tenacity-9.1.4 terminado-0.18.1 threadpoolctl-3.6.0 tinycss2-1.5.1 tomli-2.4.1 tornado-6.5.7 traitlets-5.15.1 typing-extensions-4.15.0 tzdata-2026.2 uri-template-1.3.0 urllib3-2.7.0 wcwidth-0.8.1 webcolors-25.10.0 webencodings-0.5.1 websocket-client-1.9.0 widgetsnbextension-4.0.15\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 35.29,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 5.0,
+      "Reproducible": 10.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Software licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Add a standard (SPDX) software licence to the repository.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Data provenance (R3)",
+        "priority": "\u2014",
+        "level": "absent",
+        "fix": "Record dataset identity, train/val/test splits, preprocessing, and evaluation results.",
+        "points_available": 9.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 1010.5,
+  "fair_r_scorer": "graded-v2"
+}

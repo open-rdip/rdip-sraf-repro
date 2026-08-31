@@ -1,0 +1,119 @@
+{
+  "study_id": "study058",
+  "repo_url": "https://github.com/microsoft/toxigen",
+  "started": "2026-06-09T15:49:54.196724+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "pip": "requirements.txt",
+      "setup": "setup.py"
+    },
+    "depth_note": "root",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/microsoft/toxigen",
+    "commit_hash": "01517e814639e0334c920a3c502036c8158aac87",
+    "software_license": "MIT"
+  },
+  "lift": {
+    "lifted": {
+      "pip": "requirements.txt"
+    },
+    "triples": 31,
+    "n_sources": 2
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": false,
+    "build_success": false,
+    "method": "pip-requirements",
+    "stage_failed": "resolve",
+    "duration_s": 6.4,
+    "log_tail": "$ /home/dsai-st125286p/envs/sraf/bin/python -m venv /tmp/15856/study058/venv\n\n$ /tmp/15856/study058/venv/bin/pip install --upgrade pip setuptools wheel\nRequirement already satisfied: pip in ./venv/lib/python3.12/site-packages (25.0.1)\nCollecting pip\n  Using cached pip-26.1.2-py3-none-any.whl.metadata (4.6 kB)\nCollecting setuptools\n  Using cached setuptools-82.0.1-py3-none-any.whl.metadata (6.5 kB)\nCollecting wheel\n  Using cached wheel-0.47.0-py3-none-any.whl.metadata (2.3 kB)\nCollecting packaging>=24.0 (from wheel)\n  Using cached packaging-26.2-py3-none-any.whl.metadata (3.5 kB)\nUsing cached pip-26.1.2-py3-none-any.whl (1.8 MB)\nUsing cached setuptools-82.0.1-py3-none-any.whl (1.0 MB)\nUsing cached wheel-0.47.0-py3-none-any.whl (32 kB)\nUsing cached packaging-26.2-py3-none-any.whl (100 kB)\nInstalling collected packages: setuptools, pip, packaging, wheel\n  Attempting uninstall: pip\n    Found existing installation: pip 25.0.1\n    Uninstalling pip-25.0.1:\n      Successfully uninstalled pip-25.0.1\nSuccessfully installed packaging-26.2 pip-26.1.2 setuptools-82.0.1 wheel-0.47.0\n\n$ /tmp/15856/study058/venv/bin/pip install --dry-run --ignore-installed -r /tmp/15856/study058/study058/requirements.txt\ness/_in_process.py\", line 70, in _build_backend\n          obj = import_module(mod_path)\n                ^^^^^^^^^^^^^^^^^^^^^^^\n        File \"/home/dsai-st125286p/envs/sraf/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n          return _bootstrap._gcd_import(name[level:], package, level)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n        File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n        File \"<frozen importlib._bootstrap>\", line 1310, in _find_and_load_unlocked\n        File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n        File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n        File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n        File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n        File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n        File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n        File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n        File \"/tmp/pip-build-env-rnu_n9lj/overlay/lib/python3.12/site-packages/setuptools/__init__.py\", line 16, in <module>\n          import setuptools.version\n        File \"/tmp/pip-build-env-rnu_n9lj/overlay/lib/python3.12/site-packages/setuptools/version.py\", line 1, in <module>\n          import pkg_resources\n        File \"/tmp/pip-build-env-rnu_n9lj/overlay/lib/python3.12/site-packages/pkg_resources/__init__.py\", line 2172, in <module>\n          register_finder(pkgutil.ImpImporter, find_on_path)\n                          ^^^^^^^^^^^^^^^^^^^\n      AttributeError: module 'pkgutil' has no attribute 'ImpImporter'. Did you mean: 'zipimporter'?\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nERROR: Failed to build 'numpy' when getting requirements to build wheel\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 27.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 20.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 8.2
+}

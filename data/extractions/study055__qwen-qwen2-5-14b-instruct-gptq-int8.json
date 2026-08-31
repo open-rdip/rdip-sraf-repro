@@ -1,0 +1,179 @@
+{
+  "study_id": "study055",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study055/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:09:47.913100+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 17,
+    "datasets": 0,
+    "methods": 17,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": "44"
+      },
+      {
+        "name": "pytorch lightning",
+        "version": "46"
+      },
+      {
+        "name": "Adam optimizer",
+        "version": "45"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": "CPU"
+    },
+    "hyperparameters": [
+      {
+        "name": "MQ loss",
+        "value": "defined in (13)"
+      },
+      {
+        "name": "epochs",
+        "value": "15"
+      },
+      {
+        "name": "batch_size",
+        "value": "1024"
+      },
+      {
+        "name": "learning_rate_max",
+        "value": "0.0005"
+      },
+      {
+        "name": "warm_up_period",
+        "value": "400 batches"
+      },
+      {
+        "name": "Batch size",
+        "value": "1024"
+      },
+      {
+        "name": "Optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "Learning rate",
+        "value": "0.0005"
+      },
+      {
+        "name": "batch_size_initial",
+        "value": "2"
+      },
+      {
+        "name": "updates_per_epoch_initial",
+        "value": "1750"
+      },
+      {
+        "name": "batch_size_final",
+        "value": "5"
+      },
+      {
+        "name": "updates_per_epoch_final",
+        "value": "1450"
+      },
+      {
+        "name": "learning_rate_scheduling",
+        "value": "true"
+      },
+      {
+        "name": "global_learnable_parameters",
+        "value": "true"
+      },
+      {
+        "name": "time_series_specific_learnable_parameters",
+        "value": "true"
+      },
+      {
+        "name": "lr_multiplier_for_per_series_parameters",
+        "value": "true"
+      },
+      {
+        "name": "beta",
+        "value": "0.3"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "AQ-NBEATS-FiLM",
+        "description": "has similar compute explosion, but clearly better accuracy"
+      },
+      {
+        "name": "AQ-NBEATS-OUT",
+        "description": "has comparable accuracy, but compute cost is multiplied by a factor of Q only for one of the blocks, making it order of magnitude more compute efficient"
+      },
+      {
+        "name": "parametric approach",
+        "description": "assumes a certain PDF for the forecast distribution and involves a forecasting model that produces 5 parameters of this PDF"
+      },
+      {
+        "name": "Gaussian processes",
+        "description": "a viable option for slightly more general modeling"
+      },
+      {
+        "name": "Student-t distribution",
+        "description": "can be used on top of MLP, DeepAR and Transformer models"
+      },
+      {
+        "name": "Gaussian mixture model",
+        "description": "another approach to handling multi-modality and asymmetry of forecast distribution"
+      },
+      {
+        "name": "normalized quantile loss",
+        "description": "\u03c1Npy,pyqq\u201c# py\u00b4pyqqq{y, ify\u011bpyq, py\u00b4pyqqpq\u00b41q{y,ify\u0103pyq."
+      },
+      {
+        "name": "Naive",
+        "description": "Uses the mean of the normal distribution of possible future values as the point forecast and estimates the standard deviation using the standard deviation of residuals."
+      },
+      {
+        "name": "ARIMA",
+        "description": "Fitted using auto.arima() function in the forecast package, quantiles derived using forecast() function."
+      },
+      {
+        "name": "ES",
+        "description": "Fitted using ets() function in the forecast package, quantiles derived using forecast() function."
+      },
+      {
+        "name": "Theta method",
+        "description": "Estimates quantiles through bootstrapping using dotm() function in the forecTheta package."
+      },
+      {
+        "name": "Neural models",
+        "description": "Sourced from GluonTS, a Python package for probabilistic time-series modeling."
+      },
+      {
+        "name": "AQ-NBEATS-CAT",
+        "description": "Quantile level is appended as one of the elements in the input time-series history."
+      },
+      {
+        "name": "AQ-ESRNN",
+        "description": "Model with global and time-series specific learnable parameters, uses learning rate scheduling and has a configurable number of layers."
+      },
+      {
+        "name": "novel approach to probabilistic forecasting",
+        "description": "applicable to a variety of machine learning models, enabling a model to produce an arbitrary quantile at inference time"
+      },
+      {
+        "name": "architectural modifications to the ESRNN forecasting algorithm",
+        "description": "expanding it with the any-quantile capability"
+      },
+      {
+        "name": "architectural modifications to the N-BEATS forecasting algorithm",
+        "description": "expanding it with the any-quantile capability"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

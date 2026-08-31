@@ -1,0 +1,172 @@
+{
+  "study_id": "study080",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study080/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:10:50.273169+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 7,
+    "methods": 17,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "k",
+        "value": "9"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "HABITAT",
+        "version": null
+      },
+      {
+        "name": "ROBOTHOR",
+        "version": null
+      },
+      {
+        "name": "MP3D",
+        "version": null
+      },
+      {
+        "name": "P ASTURE",
+        "version": null
+      },
+      {
+        "name": "H ABITAT (MP3D)",
+        "version": null
+      },
+      {
+        "name": "PASTURE",
+        "version": null
+      },
+      {
+        "name": "LAION-5B",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "FBE heuristic exploration",
+        "description": "default CoW exploration strategy"
+      },
+      {
+        "name": "learnable exploration",
+        "description": "optimized on HABITAT (MP3D) train scenes"
+      },
+      {
+        "name": "learned exploration",
+        "description": "optimized on ROBOTHOR train scenes"
+      },
+      {
+        "name": "CLIP-Ref",
+        "description": "CLIP with k=9 referring expressions"
+      },
+      {
+        "name": "CLIP-Patch",
+        "description": "CLIP with k=9 patches"
+      },
+      {
+        "name": "CLIP-Grad",
+        "description": "CLIP with gradient relevance"
+      },
+      {
+        "name": "MDETR",
+        "description": "segmentation model"
+      },
+      {
+        "name": "OWL",
+        "description": "OWL-ViT detector"
+      },
+      {
+        "name": "CoWs",
+        "description": "n/a"
+      },
+      {
+        "name": "CLIP",
+        "description": "n/a"
+      },
+      {
+        "name": "OWL-ViT",
+        "description": "n/a"
+      },
+      {
+        "name": "CoW",
+        "description": "navigation steps"
+      },
+      {
+        "name": "SemanticNav-ZSON",
+        "description": "train in the target evaluation simulators for 500M steps"
+      },
+      {
+        "name": "EmbCLIP-ZSON",
+        "description": "train in the target evaluation simulators for 60M steps"
+      },
+      {
+        "name": "FBE",
+        "description": "decision to use for most experiments"
+      },
+      {
+        "name": "ROBOTHOR learnable exploration",
+        "description": ""
+      },
+      {
+        "name": "HABITAT learnable exploration",
+        "description": ""
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "inverse path length (SPL)",
+        "value": "Success weighted by the oracle shortest path length and normal- ized by the actual path length",
+        "split": null
+      },
+      {
+        "metric": "SUCCESS (SR)",
+        "value": null,
+        "split": "validation"
+      },
+      {
+        "metric": "Success weighted by inverse path length (SPL)",
+        "value": null,
+        "split": "validation"
+      },
+      {
+        "metric": "Average success",
+        "value": "27.4",
+        "split": null
+      },
+      {
+        "metric": "CoW",
+        "value": "4.9",
+        "split": null
+      },
+      {
+        "metric": "competitor",
+        "value": "4.8",
+        "split": null
+      },
+      {
+        "metric": "EmbCLIP-ZSON",
+        "value": "15.6",
+        "split": null
+      },
+      {
+        "metric": "MP3D SUCCESS",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

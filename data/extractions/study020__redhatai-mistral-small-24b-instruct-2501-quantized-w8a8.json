@@ -1,0 +1,122 @@
+{
+  "study_id": "study020",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study020/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:19:31.435260+00:00",
+  "counts": {
+    "dependencies": 4,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 2,
+    "methods": 7,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Adam",
+        "version": null
+      },
+      {
+        "name": "ImageNet-pretrained weights",
+        "version": null
+      },
+      {
+        "name": "ResNet-34",
+        "version": null
+      },
+      {
+        "name": "Libra",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "64"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1e\u22126"
+      },
+      {
+        "name": "data augmentation",
+        "value": "10 degrees, and small random brightness and contrast jittering"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "mammography images",
+        "version": null
+      },
+      {
+        "name": "CSAW-M",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "5-fold cross-validation",
+        "description": "to determine the stopping iteration"
+      },
+      {
+        "name": "ResNet34 one-hot",
+        "description": "This model uses a standard approach for categorical classification, where each class is treated independently. Masking levels are predicted independently using standard softmax and cross-entropy loss to predict one-hot encodings."
+      },
+      {
+        "name": "ResNet34 multi-hot",
+        "description": "This model accounts for the ordinal relation between masking levels using multi-hot encodings."
+      },
+      {
+        "name": "F1-score",
+        "description": "a common metric to assess the performance in information retrieval"
+      },
+      {
+        "name": "AUC",
+        "description": "area under the ROC curve"
+      },
+      {
+        "name": "odds ratio",
+        "description": "a measurement often used in clinical studies"
+      },
+      {
+        "name": "odds ratio computation",
+        "description": "The odds ratio is computed relative to a reference group, in this case the reference is the first quartile g1, as ORi=Oi/O1."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "F1-score",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "AUC",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "odds ratio",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "average mean absolute error (AMAE)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Kendall\u2019s \u03c4b",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

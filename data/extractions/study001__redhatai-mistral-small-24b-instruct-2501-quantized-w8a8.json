@@ -1,0 +1,147 @@
+{
+  "study_id": "study001",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study001/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:02:46.886773+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 2,
+    "methods": 17,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning rate",
+        "value": null
+      }
+    ],
+    "datasets": [
+      {
+        "name": "OPT",
+        "version": null
+      },
+      {
+        "name": "BLOOM",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GPTQ",
+        "description": "quantization strategy"
+      },
+      {
+        "name": "FGQ",
+        "description": "quantization strategy"
+      },
+      {
+        "name": "ZeroQuant",
+        "description": "effective and efficient in terms of GPU resources, time cost, and data usage for INT4 weight quantization"
+      },
+      {
+        "name": "RTN",
+        "description": "directly applies PTQ on the trained data and follows the procedure detailed in Section A to perform the quantization"
+      },
+      {
+        "name": "per-row quantization",
+        "description": "for weight quantization"
+      },
+      {
+        "name": "per-token quantization",
+        "description": "for activation"
+      },
+      {
+        "name": "PTQ",
+        "description": "Post-Training Quantization"
+      },
+      {
+        "name": "row-wise quantization",
+        "description": ""
+      },
+      {
+        "name": "fine-grained quantization schemes",
+        "description": "where every kelements possess their own scaling factor and/or zero point"
+      },
+      {
+        "name": "block-k quantization",
+        "description": "can be implemented on modern GPUs"
+      },
+      {
+        "name": "ZQ-Global",
+        "description": ""
+      },
+      {
+        "name": "ZQ-Local",
+        "description": ""
+      },
+      {
+        "name": "ZQ-Global\u2217",
+        "description": "optimizes a larger subnetwork"
+      },
+      {
+        "name": "ZQ-Local\u2217",
+        "description": ""
+      },
+      {
+        "name": "W4A8 quantization",
+        "description": ""
+      },
+      {
+        "name": "INT8 weight-only quantization",
+        "description": "a standard method for reducing memory costs in LLMs, with negligible degradation in accuracy"
+      },
+      {
+        "name": "INT4 weight-only quantization",
+        "description": "for small models results in substantial accuracy degradation ( Class-3), but this effect lessens as the model"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "LoRC",
+        "value": "Coarse-grained weight quantization",
+        "split": null
+      },
+      {
+        "metric": "PPL improvement",
+        "value": "0.5",
+        "split": null
+      },
+      {
+        "metric": "accuracy loss",
+        "value": "less than 0.05",
+        "split": null
+      },
+      {
+        "metric": "PPL degradation",
+        "value": "around 0.3 points",
+        "split": null
+      },
+      {
+        "metric": "Class-2",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Class-3",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "PPL",
+        "value": "0.5",
+        "split": null
+      }
+    ]
+  }
+}

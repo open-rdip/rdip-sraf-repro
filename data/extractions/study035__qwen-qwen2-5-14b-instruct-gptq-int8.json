@@ -1,0 +1,214 @@
+{
+  "study_id": "study035",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study035/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:58:03.901487+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 6,
+    "methods": 15,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Jetson AGX Xavier",
+      "cuda_version": null,
+      "cpu_info": "Xeon Silver 4114"
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "1"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.0002"
+      },
+      {
+        "name": "batch_size_horse_zebra",
+        "value": "1"
+      },
+      {
+        "name": "batch_size_edges_shoes",
+        "value": "4"
+      },
+      {
+        "name": "batch_size_map_aerial_photo",
+        "value": "1"
+      },
+      {
+        "name": "batch_size_cityscapes",
+        "value": "1"
+      },
+      {
+        "name": "batch_size_gaugan",
+        "value": "16"
+      },
+      {
+        "name": "population_size_evolutionary_algorithm",
+        "value": "100"
+      },
+      {
+        "name": "number_of_iterations_evolutionary_algorithm",
+        "value": "500"
+      },
+      {
+        "name": "parent_ratio_evolutionary_algorithm",
+        "value": "0.25"
+      },
+      {
+        "name": "mutation_ratio_evolutionary_algorithm",
+        "value": "0.5"
+      },
+      {
+        "name": "mutation_probability_evolutionary_algorithm",
+        "value": "0.2"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "horse \u2192 zebra",
+        "version": null
+      },
+      {
+        "name": "edges \u2192 shoes",
+        "version": null
+      },
+      {
+        "name": "Cityscapes",
+        "version": null
+      },
+      {
+        "name": "horse\u2192zebra",
+        "version": null
+      },
+      {
+        "name": "edges\u2192shoes",
+        "version": null
+      },
+      {
+        "name": "map\u2192aerial photo",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GauGAN",
+        "description": "Training time measured on 8 2080Ti GPUs"
+      },
+      {
+        "name": "CycleGAN",
+        "description": "Compared in training and search time with GAN Compression and Fast GAN Compression"
+      },
+      {
+        "name": "Pix2pix",
+        "description": "Compared in training and search time with GAN Compression and Fast GAN Compression"
+      },
+      {
+        "name": "GAN Compression",
+        "description": "Compared in training and search time with Fast GAN Compression"
+      },
+      {
+        "name": "Fast GAN Compression",
+        "description": "Accelerates the training of GAN Compression by 1.6-3.7\u00d7; reduces search cost by 3.5-12\u00d7 when using evolutionary algorithm instead of brute-force search"
+      },
+      {
+        "name": "SPADE modules",
+        "description": "These modules consume about 88% of the computation."
+      },
+      {
+        "name": "MUNIT generator",
+        "description": "Decomposes ResBlock layers in the content encoder and decoder, and up-sample layers in the decoder."
+      },
+      {
+        "name": "style encoder",
+        "description": "Remains unchanged as it consumes less than 10% of computation."
+      },
+      {
+        "name": "Our training strategy",
+        "description": "Allows finding a sub-network with a smaller gap between the student and teacher model."
+      },
+      {
+        "name": "Unpaired-to-paired Transform",
+        "description": "Transforming unpaired conditional GANs into a pseudo paired training setting using the teacher model's output."
+      },
+      {
+        "name": "From-scratch Training",
+        "description": "Training without any pre-trained model"
+      },
+      {
+        "name": "Aguinaldo et al. [54]",
+        "description": "Distillation method applied to Pix2pix model"
+      },
+      {
+        "name": "Yim et al. [55]",
+        "description": "Distillation method used in recognition networks"
+      },
+      {
+        "name": "Intermediate Distillation",
+        "description": "Our proposed distillation method"
+      },
+      {
+        "name": "Evolutionary Algorithm",
+        "description": "Population size P=100, number of iterations T=500, parent ratio rp=0.25, mutation ratio rm=0.5, mutation probability rp=0.2."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "training time",
+        "value": "measured on 8 2080Ti GPUs",
+        "split": null
+      },
+      {
+        "metric": "inference speed",
+        "value": "about 40FPS",
+        "split": null
+      },
+      {
+        "metric": "training acceleration",
+        "value": "1.6-3.7\u00d7",
+        "split": null
+      },
+      {
+        "metric": "search cost reduction",
+        "value": "3.5-12\u00d7",
+        "split": null
+      },
+      {
+        "metric": "Fr\u00e9chet Inception Distance (FID)",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "Performance",
+        "value": "40.98",
+        "split": null
+      },
+      {
+        "metric": "mIoU",
+        "value": "32.57",
+        "split": "validation"
+      },
+      {
+        "metric": "LPIPS",
+        "value": "lower indicates better reconstruction",
+        "split": null
+      },
+      {
+        "metric": "FID",
+        "value": "65.48",
+        "split": "translated test images vs real training+test images"
+      },
+      {
+        "metric": "FID",
+        "value": "96.15",
+        "split": "translated test images vs real test images"
+      }
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "study_id": "study092",
+  "repo_url": "https://github.com/luigy-mach/trade",
+  "started": "2026-06-09T16:14:41.518167+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "docker/Dockerfile",
+      "pip": "tracklet/multitracker/re3/demo/requirements-testing.txt"
+    },
+    "depth_note": "subdir",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "docker",
+        "rel_path": "docker/Dockerfile",
+        "depth": 1
+      },
+      {
+        "type": "pip",
+        "rel_path": "tracklet/multitracker/re3/demo/requirements-testing.txt",
+        "depth": 4
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/luigy-mach/trade",
+    "commit_hash": "a7388cdb141ae4167155cefc50d2484f919f626b",
+    "software_license": null
+  },
+  "lift": {
+    "lifted": {
+      "docker": "docker/Dockerfile"
+    },
+    "triples": 12,
+    "n_sources": 2
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": false,
+    "build_success": false,
+    "method": "pip-requirements",
+    "stage_failed": "resolve",
+    "duration_s": 4.1,
+    "log_tail": "$ /home/dsai-st125286p/envs/sraf/bin/python -m venv /tmp/15856/study092/venv\n\n$ /tmp/15856/study092/venv/bin/pip install --upgrade pip setuptools wheel\nRequirement already satisfied: pip in ./venv/lib/python3.12/site-packages (25.0.1)\nCollecting pip\n  Using cached pip-26.1.2-py3-none-any.whl.metadata (4.6 kB)\nCollecting setuptools\n  Using cached setuptools-82.0.1-py3-none-any.whl.metadata (6.5 kB)\nCollecting wheel\n  Using cached wheel-0.47.0-py3-none-any.whl.metadata (2.3 kB)\nCollecting packaging>=24.0 (from wheel)\n  Using cached packaging-26.2-py3-none-any.whl.metadata (3.5 kB)\nUsing cached pip-26.1.2-py3-none-any.whl (1.8 MB)\nUsing cached setuptools-82.0.1-py3-none-any.whl (1.0 MB)\nUsing cached wheel-0.47.0-py3-none-any.whl (32 kB)\nUsing cached packaging-26.2-py3-none-any.whl (100 kB)\nInstalling collected packages: setuptools, pip, packaging, wheel\n  Attempting uninstall: pip\n    Found existing installation: pip 25.0.1\n    Uninstalling pip-25.0.1:\n      Successfully uninstalled pip-25.0.1\nSuccessfully installed packaging-26.2 pip-26.1.2 setuptools-82.0.1 wheel-0.47.0\n\n$ /tmp/15856/study092/venv/bin/pip install --dry-run --ignore-installed -r /tmp/15856/study092/study092/tracklet/multitracker/re3/demo/requirements-testing.txt\nERROR: Could not find a version that satisfies the requirement tensorflow==1.4.1 (from versions: 2.16.0rc0, 2.16.1, 2.16.2, 2.17.0rc0, 2.17.0rc1, 2.17.0, 2.17.1, 2.18.0rc0, 2.18.0rc1, 2.18.0rc2, 2.18.0, 2.18.1, 2.19.0rc0, 2.19.0, 2.19.1, 2.20.0rc0, 2.20.0, 2.21.0rc0, 2.21.0rc1, 2.21.0)\nERROR: No matching distribution found for tensorflow==1.4.1\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 17.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 10.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reusable",
+        "rda_indicator": "RDA-R1.1-01M",
+        "severity": "critical",
+        "label": "Software license declared",
+        "fix": "Add a software license to your repository and declare rdip:softwareLicense."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 23.9
+}

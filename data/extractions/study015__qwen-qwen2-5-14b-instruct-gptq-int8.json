@@ -1,0 +1,65 @@
+{
+  "study_id": "study015",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study015/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:40:00.834062+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Fluids",
+        "description": "95(2):193\u2013214, February 2023"
+      },
+      {
+        "name": "A new algebraic multigrid approach for Stokes problems",
+        "description": "Numer. Math., 132(1):51\u201384, January 2016"
+      },
+      {
+        "name": "Numerical solution of saddle point problems",
+        "description": "Acta Numer., 14:1\u2013137, May 2005"
+      },
+      {
+        "name": "Incomplete Gaussian Elimination as a Preconditioning for Generalized Conjugate Gradient Acceleration",
+        "description": "SPE Reservoir Simulation Symposium, pages SPE\u201312265\u2013MS, San Francisco, California, November 1983"
+      },
+      {
+        "name": "Constrained Residual Acceleration of Conjugate Residual Methods",
+        "description": "SPE Reservoir Simulation Symposium, pages SPE\u201313536\u2013MS, Dallas, Texas, February 1985"
+      },
+      {
+        "name": "A block preconditioner for non-isothermal flow in porous media",
+        "description": "J. Comput. Phys., 395:636\u2013652, October 2019"
+      },
+      {
+        "name": "Constrained pressure-temperature residual (CPTR) preconditioner performance for large-scale thermal CO$$_2$$ injection simulation",
+        "description": "Comput. Geosci., May 2024"
+      },
+      {
+        "name": "Multigrid smoothers for ultraparallel computing",
+        "description": "SISC, 33(5):2864\u20132887, 2011"
+      },
+      {
+        "name": "System-AMG approaches for industrial fully and adaptive implicit oil reservoir simulations",
+        "description": "PhD thesis, Universit\u00e4t zu K\u00f6ln, 2015"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

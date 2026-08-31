@@ -1,0 +1,107 @@
+{
+  "study_id": "study043",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study043/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:29:54.858882+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 2,
+    "methods": 9,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Adam",
+        "version": "Kingma & Ba, 2015"
+      },
+      {
+        "name": "Kumar et al. (2019)",
+        "version": null
+      },
+      {
+        "name": "Engel et al. (2019)",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "TITAN V",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning rate",
+        "value": "10\u22124"
+      },
+      {
+        "name": "\u03b2",
+        "value": "(0.5,0.9)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "internal dataset",
+        "version": null
+      },
+      {
+        "name": "VCTK",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RA VE",
+        "description": "same feature matching loss as in the original paper"
+      },
+      {
+        "name": "unsupervised NSynth",
+        "description": "state-of-the-art model"
+      },
+      {
+        "name": "autoencoder from SING",
+        "description": "state-of-the-art model"
+      },
+      {
+        "name": "DDSP",
+        "description": "approach"
+      },
+      {
+        "name": "NSF",
+        "description": "approach"
+      },
+      {
+        "name": "NSynth",
+        "description": null
+      },
+      {
+        "name": "SING",
+        "description": null
+      },
+      {
+        "name": "strided convolutional network",
+        "description": "applied on different scales of the audio signal to prevent artifacts"
+      },
+      {
+        "name": "feature matching loss",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "90/10 train/test split",
+        "value": null,
+        "split": "train/test"
+      },
+      {
+        "metric": "90/10 train/test split",
+        "value": null,
+        "split": "test"
+      }
+    ]
+  }
+}

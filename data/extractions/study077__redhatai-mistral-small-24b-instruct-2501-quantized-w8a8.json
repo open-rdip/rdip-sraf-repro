@@ -1,0 +1,74 @@
+{
+  "study_id": "study077",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study077/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:08:30.500921+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 5,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "GSM8K",
+        "version": null
+      },
+      {
+        "name": "MBPP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Monte Carlo Tree Search",
+        "description": "navigate the vast search space of possible workflows efficiently"
+      },
+      {
+        "name": "code-represented workflows",
+        "description": "navigate the vast search space of possible workflows efficiently"
+      },
+      {
+        "name": "AF LOW",
+        "description": "Tree-structured iteration process"
+      },
+      {
+        "name": "ScEnsemble operator",
+        "description": ""
+      },
+      {
+        "name": "Programmer operator",
+        "description": ""
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "effectiveness",
+        "value": "out-performed manually designed methods and existing automated optimization approaches",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "93.1%",
+        "split": "test"
+      },
+      {
+        "metric": "Score",
+        "value": "0.8591",
+        "split": null
+      }
+    ]
+  }
+}

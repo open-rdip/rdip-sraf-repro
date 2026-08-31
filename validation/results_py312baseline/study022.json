@@ -1,0 +1,119 @@
+{
+  "study_id": "study022",
+  "repo_url": "https://github.com/reczoo/FuxiCTR",
+  "started": "2026-06-09T15:23:27.715335+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "pip": "requirements.txt",
+      "setup": "setup.py"
+    },
+    "depth_note": "root",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/reczoo/FuxiCTR",
+    "commit_hash": "0245987fdc1d43c36164ea496a02324885a8557a",
+    "software_license": "Apache-2.0"
+  },
+  "lift": {
+    "lifted": {
+      "pip": "requirements.txt"
+    },
+    "triples": 56,
+    "n_sources": 2
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 19.8,
+    "log_tail": "cting pyarrow (from -r /tmp/15856/study022/study022/requirements.txt (line 8))\n  Using cached pyarrow-24.0.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)\nCollecting polars>=1.40.1 (from -r /tmp/15856/study022/study022/requirements.txt (line 9))\n  Using cached polars-1.41.2-py3-none-any.whl.metadata (10 kB)\nCollecting keras_preprocessing (from -r /tmp/15856/study022/study022/requirements.txt (line 10))\n  Downloading Keras_Preprocessing-1.1.2-py2.py3-none-any.whl.metadata (1.9 kB)\nCollecting joblib>=1.4.0 (from scikit-learn>=1.8.0->-r /tmp/15856/study022/study022/requirements.txt (line 2))\n  Using cached joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)\nCollecting narwhals>=2.0.1 (from scikit-learn>=1.8.0->-r /tmp/15856/study022/study022/requirements.txt (line 2))\n  Using cached narwhals-2.22.1-py3-none-any.whl.metadata (15 kB)\nCollecting threadpoolctl>=3.5.0 (from scikit-learn>=1.8.0->-r /tmp/15856/study022/study022/requirements.txt (line 2))\n  Using cached threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)\nCollecting python-dateutil>=2.8.2 (from pandas->-r /tmp/15856/study022/study022/requirements.txt (line 5))\n  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)\nCollecting polars-runtime-32==1.41.2 (from polars>=1.40.1->-r /tmp/15856/study022/study022/requirements.txt (line 9))\n  Using cached polars_runtime_32-1.41.2-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)\nCollecting six>=1.9.0 (from keras_preprocessing->-r /tmp/15856/study022/study022/requirements.txt (line 10))\n  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)\nWould install Keras-Preprocessing-1.1.2 PyYAML-6.0.3 h5py-3.16.0 joblib-1.5.3 narwhals-2.22.1 numpy-2.4.6 pandas-3.0.3 polars-1.41.2 polars-runtime-32-1.41.2 pyarrow-24.0.0 python-dateutil-2.9.0.post0 scikit-learn-1.9.0 scipy-1.17.1 six-1.17.0 threadpoolctl-3.6.0 tqdm-4.68.2\n\n$ /tmp/15856/study022/venv/bin/pip install -r /tmp/15856/study022/study022/requirements.txt\nline 9))\n  Using cached polars_runtime_32-1.41.2-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)\nCollecting six>=1.9.0 (from keras_preprocessing->-r /tmp/15856/study022/study022/requirements.txt (line 10))\n  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)\nUsing cached pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)\nUsing cached scikit_learn-1.9.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.1 MB)\nUsing cached numpy-2.4.6-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)\nUsing cached scipy-1.17.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.2 MB)\nUsing cached pandas-3.0.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.9 MB)\nUsing cached h5py-3.16.0-cp312-cp312-manylinux_2_28_x86_64.whl (5.4 MB)\nUsing cached tqdm-4.68.2-py3-none-any.whl (78 kB)\nUsing cached pyarrow-24.0.0-cp312-cp312-manylinux_2_28_x86_64.whl (48.9 MB)\nUsing cached polars-1.41.2-py3-none-any.whl (833 kB)\nUsing cached polars_runtime_32-1.41.2-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (56.4 MB)\nDownloading Keras_Preprocessing-1.1.2-py2.py3-none-any.whl (42 kB)\nUsing cached joblib-1.5.3-py3-none-any.whl (309 kB)\nUsing cached narwhals-2.22.1-py3-none-any.whl (454 kB)\nUsing cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)\nUsing cached six-1.17.0-py2.py3-none-any.whl (11 kB)\nUsing cached threadpoolctl-3.6.0-py3-none-any.whl (18 kB)\nInstalling collected packages: tqdm, threadpoolctl, six, pyyaml, pyarrow, polars-runtime-32, numpy, narwhals, joblib, scipy, python-dateutil, polars, keras_preprocessing, h5py, scikit-learn, pandas\n\nSuccessfully installed h5py-3.16.0 joblib-1.5.3 keras_preprocessing-1.1.2 narwhals-2.22.1 numpy-2.4.6 pandas-3.0.3 polars-1.41.2 polars-runtime-32-1.41.2 pyarrow-24.0.0 python-dateutil-2.9.0.post0 pyyaml-6.0.3 scikit-learn-1.9.0 scipy-1.17.1 six-1.17.0 threadpoolctl-3.6.0 tqdm-4.68.2\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 27.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 20.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 21.9
+}

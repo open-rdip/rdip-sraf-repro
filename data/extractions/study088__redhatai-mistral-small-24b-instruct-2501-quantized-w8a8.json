@@ -1,0 +1,200 @@
+{
+  "study_id": "study088",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study088/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:19:14.330039+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 5,
+    "methods": 11,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "AdamW",
+        "version": null
+      },
+      {
+        "name": "mmseg",
+        "version": "16"
+      },
+      {
+        "name": "UperNet",
+        "version": "69"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "M",
+        "value": "7"
+      },
+      {
+        "name": "window_size",
+        "value": "7"
+      },
+      {
+        "name": "query_dimension",
+        "value": "32"
+      },
+      {
+        "name": "expansion_layer",
+        "value": "4"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "epochs",
+        "value": "300"
+      },
+      {
+        "name": "batch_size",
+        "value": "1024"
+      },
+      {
+        "name": "initial_learning_rate",
+        "value": "0.001"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet-1K",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "ADE20K",
+        "version": null
+      },
+      {
+        "name": "ImageNet-22K",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Performer",
+        "description": "one of the fastest Transformer architectures"
+      },
+      {
+        "name": "Swin Transformer",
+        "description": "shifted window based self-attention computation"
+      },
+      {
+        "name": "window-based self-attention",
+        "description": "computes self-attention within local windows arranged to evenly partition the image in a non-overlapping manner"
+      },
+      {
+        "name": "shifted window partitioning",
+        "description": "alternates between two partitioning configurations in consecutive Swin Transformer blocks"
+      },
+      {
+        "name": "cyclic implementation",
+        "description": "more hardware efficient than naive padding, particularly for deeper stages"
+      },
+      {
+        "name": "shifted window approach",
+        "description": "self-attention modules built on the proposed shifted window approach are more efficient than those of sliding windows in naive/kernel implementations on four network stages"
+      },
+      {
+        "name": "Shifted Window based Self-Attention",
+        "description": "Self-attention in non-overlapped windows"
+      },
+      {
+        "name": "relative position bias",
+        "description": "In computing self-attention, we follow [49, 1, 32, 33] by including a relative position bias B\u2208RM2\u00d7M2to each head in computing similarity: Attention (Q,K,V ) =SoftMax (QKT/\u221a d+B)V,(4) whereQ,K,V\u2208RM2\u00d7dare the query ,keyandvalue ma- trices;dis the query /keydimension, and M2is the number of patches in a window."
+      },
+      {
+        "name": "Swin-L",
+        "description": "Swin-L model with ImageNet-22K pre-training"
+      },
+      {
+        "name": "Swin-T",
+        "description": "Swin-T with the shifted window partitioning"
+      },
+      {
+        "name": "Swin-S",
+        "description": "architecture"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 accuracy",
+        "value": "+2.3%",
+        "split": "test"
+      },
+      {
+        "metric": "speed-up",
+        "value": "13%",
+        "split": null
+      },
+      {
+        "metric": "top-1 accuracy",
+        "value": null,
+        "split": "validation"
+      },
+      {
+        "metric": "low latency",
+        "value": "shown in Table 5",
+        "split": null
+      },
+      {
+        "metric": "significant improvements",
+        "value": "over counterparts without this bias term or that use absolute position embedding",
+        "split": null
+      },
+      {
+        "metric": "slightly drops performance",
+        "value": "Further adding absolute position embedding to the input as in [20]",
+        "split": null
+      },
+      {
+        "metric": "mIoU",
+        "value": "53.5",
+        "split": "val"
+      },
+      {
+        "metric": "top-1 accuracy",
+        "value": "+1.1%",
+        "split": null
+      },
+      {
+        "metric": "box AP",
+        "value": "+2.8",
+        "split": null
+      },
+      {
+        "metric": "mask AP",
+        "value": "+2.2",
+        "split": null
+      },
+      {
+        "metric": "mIoU",
+        "value": "+2.8",
+        "split": null
+      }
+    ]
+  }
+}

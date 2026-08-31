@@ -1,0 +1,132 @@
+{
+  "study_id": "study056",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study056/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:34:27.642889+00:00",
+  "counts": {
+    "dependencies": 6,
+    "random_seeds": 1,
+    "hyperparameters": 2,
+    "datasets": 1,
+    "methods": 9,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Geant4",
+        "version": null
+      },
+      {
+        "name": "CaloHadronic",
+        "version": null
+      },
+      {
+        "name": "Pandora PFA",
+        "version": null
+      },
+      {
+        "name": "transformers",
+        "version": null
+      },
+      {
+        "name": "consistency models",
+        "version": null
+      },
+      {
+        "name": "distillation techniques",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      59
+    ],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": "CPU"
+    },
+    "hyperparameters": [
+      {
+        "name": "NFE",
+        "value": "1, 16, 29, 59"
+      },
+      {
+        "name": "batch_size",
+        "value": "1, 16"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "\ud835\udf0b+ showers",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "CaloHadronic",
+        "description": "point-cloud based generative model"
+      },
+      {
+        "name": "transformers",
+        "description": "null"
+      },
+      {
+        "name": "consistency models",
+        "version": "null"
+      },
+      {
+        "name": "distillation techniques",
+        "version": "null"
+      },
+      {
+        "name": "Pandora PFA",
+        "description": "null"
+      },
+      {
+        "name": "Geant4",
+        "description": "null"
+      },
+      {
+        "name": "generative model",
+        "description": "null"
+      },
+      {
+        "name": "classifiertest",
+        "description": "generative fidelity needs to be further improved"
+      },
+      {
+        "name": "PointCountFM",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "good",
+        "split": null
+      },
+      {
+        "metric": "deviations",
+        "value": "small",
+        "split": null
+      },
+      {
+        "metric": "degree of agreement",
+        "value": "similar or slightly better quality",
+        "split": null
+      },
+      {
+        "metric": "time / shower [s]",
+        "value": "2.09\u00b10.05",
+        "split": null
+      },
+      {
+        "metric": "speed-up",
+        "value": "243",
+        "split": null
+      }
+    ]
+  }
+}

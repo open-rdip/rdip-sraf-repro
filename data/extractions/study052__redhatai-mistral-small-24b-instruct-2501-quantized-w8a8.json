@@ -1,0 +1,135 @@
+{
+  "study_id": "study052",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study052/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:49:17.784020+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 5,
+    "methods": 8,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "XGBoost",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03f5",
+        "value": "0.3"
+      },
+      {
+        "name": "number of trees",
+        "value": "20"
+      },
+      {
+        "name": "depth",
+        "value": "same as Kantchelian et al. (2016)"
+      },
+      {
+        "name": "step size shrinkage",
+        "value": "same as Kantchelian et al. (2016)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "MNIST",
+        "version": null
+      },
+      {
+        "name": "three small datasets",
+        "version": null
+      },
+      {
+        "name": "Fashion-MNIST",
+        "version": null
+      },
+      {
+        "name": "MNIST 2 vs. 6",
+        "version": null
+      },
+      {
+        "name": "Chang & Lin, 2011",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Cheng\u2019s\u2113\u221eattack",
+        "description": ""
+      },
+      {
+        "name": "robust training",
+        "description": ""
+      },
+      {
+        "name": "Robust Information Gain Decision Trees",
+        "description": "robust information gain based decision trees using Algorithm 1"
+      },
+      {
+        "name": "Cheng\u2019s \u2113\u221e attack",
+        "description": "method to find adversarial examples"
+      },
+      {
+        "name": "\u2113\u221eattack",
+        "description": "Cheng\u2019s \u2113\u221eattack"
+      },
+      {
+        "name": "\u21131attack",
+        "description": "Kantchelian\u2019s \u21131attack"
+      },
+      {
+        "name": "\u21132attack",
+        "description": "Kantchelian\u2019s \u21132attack"
+      },
+      {
+        "name": "Algorithm 2",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "distortion",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "accuracy loss",
+        "value": "less than 1%",
+        "split": null
+      },
+      {
+        "metric": "average \u2113\u221edistortion",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "test accuracy",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "accuracy",
+        "value": "slightly loses",
+        "split": null
+      },
+      {
+        "metric": "\u2113\u221edistortion",
+        "value": "average",
+        "split": null
+      }
+    ]
+  }
+}

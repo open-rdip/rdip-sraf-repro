@@ -1,0 +1,183 @@
+{
+  "study_id": "study055",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study055/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:51:28.323827+00:00",
+  "counts": {
+    "dependencies": 6,
+    "random_seeds": 0,
+    "hyperparameters": 14,
+    "datasets": 0,
+    "methods": 14,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "pytorch lightning",
+        "version": null
+      },
+      {
+        "name": "Adam",
+        "version": null
+      },
+      {
+        "name": "GluonTS",
+        "version": null
+      },
+      {
+        "name": "forecast",
+        "version": null
+      },
+      {
+        "name": "forecTheta",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "normalized MQ loss",
+        "value": "defined in (13)"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.0005"
+      },
+      {
+        "name": "warm-up_period",
+        "value": "400"
+      },
+      {
+        "name": "batch_size",
+        "value": "1024"
+      },
+      {
+        "name": "history_points",
+        "value": "168"
+      },
+      {
+        "name": "prediction_points",
+        "value": "48"
+      },
+      {
+        "name": "Layers",
+        "value": "3"
+      },
+      {
+        "name": "Sharing",
+        "value": "False"
+      },
+      {
+        "name": "Lookback period",
+        "value": "168"
+      },
+      {
+        "name": "Batch size",
+        "value": "1024"
+      },
+      {
+        "name": "Optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "Learning rate",
+        "value": "0.0005"
+      },
+      {
+        "name": "beta",
+        "value": "0.3"
+      },
+      {
+        "name": "LR_multiplier",
+        "value": null
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Gaussian processes",
+        "description": "A viable option for slightly more general modeling"
+      },
+      {
+        "name": "Student-t distribution",
+        "description": "A more heavy-tail model such as Student-t distribution can be used on top of MLP, DeepAR and Transformer models, as done in GluonTS library"
+      },
+      {
+        "name": "Gaussian mixture model",
+        "description": "Another approach to handling multi-modality and asymmetry of forecast distribution is based on Gaussian mixture model"
+      },
+      {
+        "name": "normalized quantile loss",
+        "description": "\u03c1Npy,pyqq\u201c# py\u00b4pyqqq{y, ify\u011bpyq, py\u00b4pyqqpq\u00b41q{y,ify\u0103pyq."
+      },
+      {
+        "name": "Naive",
+        "description": "assume that the distribution of possible future values follows a normal distribution"
+      },
+      {
+        "name": "ARIMA",
+        "description": "assume that the distribution of possible future values follows a normal distribution"
+      },
+      {
+        "name": "ES",
+        "description": "assume that the distribution of possible future values follows a normal distribution"
+      },
+      {
+        "name": "Theta",
+        "description": "estimates quantiles through bootstrapping"
+      },
+      {
+        "name": "AQ-NBEATS-CAT",
+        "description": "Input quantile concatenation scheme where quantile level is appended as one of the elements in the input time-series history."
+      },
+      {
+        "name": "batch_size_scheduling",
+        "description": "Increasing batch sizes from 2 to 5"
+      },
+      {
+        "name": "learning_rate_scheduling",
+        "description": "null"
+      },
+      {
+        "name": "AQ-ESRNN",
+        "description": "Model with global learnable parameters and time-series specific learnable parameters"
+      },
+      {
+        "name": "ESRNN",
+        "description": "architectural modifications to the ESRNN forecasting algorithm expanding it with the any-quantile capability"
+      },
+      {
+        "name": "N-BEATS",
+        "description": "architectural modifications to the N-BEATS forecasting algorithm expanding it with the any-quantile"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "better",
+        "split": null
+      },
+      {
+        "metric": "compute cost",
+        "value": "multiplied by a factor of Q",
+        "split": null
+      },
+      {
+        "metric": "compute efficiency",
+        "value": "order of magnitude more",
+        "split": null
+      }
+    ]
+  }
+}

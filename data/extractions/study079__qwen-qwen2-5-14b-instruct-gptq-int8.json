@@ -1,0 +1,173 @@
+{
+  "study_id": "study079",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study079/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:25:11.212538+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 3,
+    "methods": 11,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "VLLM",
+        "version": "Kwon et al., 2023"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100 Tensor Core",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "16"
+      },
+      {
+        "name": "warmup_ratio",
+        "value": "0.1"
+      },
+      {
+        "name": "learning_rate",
+        "value": "2e-5"
+      },
+      {
+        "name": "num_epochs",
+        "value": "5"
+      },
+      {
+        "name": "beta",
+        "value": "0.1"
+      },
+      {
+        "name": "max_length",
+        "value": "1024"
+      },
+      {
+        "name": "r",
+        "value": "256"
+      },
+      {
+        "name": "alpha",
+        "value": "128"
+      },
+      {
+        "name": "lora_dropout",
+        "value": "0.05"
+      },
+      {
+        "name": "learning_rate_lora",
+        "value": "5e-5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "HQ2A",
+        "version": null
+      },
+      {
+        "name": "ASQA",
+        "version": null
+      },
+      {
+        "name": "ELI5",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ERROR-INFORMED REFINEMENT",
+        "description": "Refinement approach used for refining answers."
+      },
+      {
+        "name": "DPO-aligned model",
+        "description": "A refinement model used for generating answers"
+      },
+      {
+        "name": "vanilla refinement model",
+        "description": "A baseline refinement model for comparison"
+      },
+      {
+        "name": "ZERO-SHOT",
+        "description": "Direct prompting without any refinement"
+      },
+      {
+        "name": "IMPROVE",
+        "description": "Refining without detailed feedback"
+      },
+      {
+        "name": "GENERIC",
+        "description": "Prompting with more targeted feedback"
+      },
+      {
+        "name": "EIR",
+        "description": "Fine-grained feedback method"
+      },
+      {
+        "name": "DPO algorithm",
+        "description": "Used for fine-tuning the models"
+      },
+      {
+        "name": "LoRA",
+        "description": "Used for training the Llama2-13B-chat model"
+      },
+      {
+        "name": "Error-informed feedback approach",
+        "description": "Uses fine-grained feedback from an error detection model (EIR)"
+      },
+      {
+        "name": "GENERIC approach",
+        "description": "Baseline method without specific feedback improvement"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Tiger-Score",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "error scores",
+        "value": "best",
+        "split": "ASQA"
+      },
+      {
+        "metric": "error scores",
+        "value": "best",
+        "split": "ELI5"
+      },
+      {
+        "metric": "quality of generation",
+        "value": "improves",
+        "split": "all datasets except ASQA"
+      },
+      {
+        "metric": "quality of generation",
+        "value": "lower",
+        "split": "ASQA"
+      },
+      {
+        "metric": "Error samples",
+        "value": "~2%",
+        "split": null
+      },
+      {
+        "metric": "Error score",
+        "value": "~\u039427%",
+        "split": null
+      },
+      {
+        "metric": "F1 score",
+        "value": "~4%",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "study_id": "study036",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study036/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:58:44.056638+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 3,
+    "methods": 10,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "GPQA",
+        "version": null
+      },
+      {
+        "name": "GPQA Diamond",
+        "version": null
+      },
+      {
+        "name": "extended set of questions",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Closed-book setting",
+        "description": "Model doesn't have runtime access to external information beyond the question, the prompt, and the model's own parameters."
+      },
+      {
+        "name": "Open-book setting",
+        "description": "Model has access to an internet search tool and internet references returned by the searches."
+      },
+      {
+        "name": "few-shot chain-of-thought prompting",
+        "description": "A method used to prompt language models to generate answers with reasoning steps."
+      },
+      {
+        "name": "self-ask",
+        "description": "A structured framework for multi-hop Q&A for language models with access to internet search tools."
+      },
+      {
+        "name": "GPT-4",
+        "description": "used as a baseline model"
+      },
+      {
+        "name": "T5-small",
+        "description": "Fine-tuned for span-identification task"
+      },
+      {
+        "name": "T5-base",
+        "description": "Fine-tuned for span-identification task"
+      },
+      {
+        "name": "Single-layer continuous bag-of-words classifier with RoBERTa embeddings",
+        "description": "Trained on answers"
+      },
+      {
+        "name": "Validator Feedback",
+        "description": "Identifying mistakes in answers and questions by validators."
+      },
+      {
+        "name": "GPT-4 with search",
+        "description": "The best-performing baseline model mentioned in the passage."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "39.4%",
+        "split": "extended set"
+      },
+      {
+        "metric": "abstention rate",
+        "value": "37.2%",
+        "split": "main set"
+      },
+      {
+        "metric": "accuracy",
+        "value": "74%",
+        "split": null
+      },
+      {
+        "metric": "Accuracy",
+        "value": "25%",
+        "split": "validation"
+      },
+      {
+        "metric": "Validator Accuracy",
+        "value": "34.1%",
+        "split": "Overall"
+      },
+      {
+        "metric": "Validator Accuracy",
+        "value": "34.1%\u00b12.3%",
+        "split": "Non-expert"
+      }
+    ]
+  }
+}

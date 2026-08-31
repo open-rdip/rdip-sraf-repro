@@ -1,0 +1,165 @@
+{
+  "study_id": "study053",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study053/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:33:15.399532+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 1,
+    "hyperparameters": 4,
+    "datasets": 14,
+    "methods": 10,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "CLIP",
+        "version": null
+      },
+      {
+        "name": "CLIP-LoRA",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      3
+    ],
+    "hardware": {
+      "gpu_model": "NVIDIA GPU",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "fixed",
+        "value": "hyper-parameters"
+      },
+      {
+        "name": "M",
+        "value": "hyper-parameter"
+      },
+      {
+        "name": "input prompt",
+        "value": "photo of a[kth class name ]"
+      },
+      {
+        "name": "LoRA modules location",
+        "value": "every levels of both encoders"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Vision-Language Models (VLMs)",
+        "version": null
+      },
+      {
+        "name": "CoOp",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "StanfordCars",
+        "version": null
+      },
+      {
+        "name": "SUN397",
+        "version": null
+      },
+      {
+        "name": "Aircraft",
+        "version": null
+      },
+      {
+        "name": "EuroSAT",
+        "version": null
+      },
+      {
+        "name": "Stanford-Cars",
+        "version": null
+      },
+      {
+        "name": "Food101",
+        "version": null
+      },
+      {
+        "name": "OxfordPets",
+        "version": null
+      },
+      {
+        "name": "Flower102",
+        "version": null
+      },
+      {
+        "name": "Caltech101",
+        "version": null
+      },
+      {
+        "name": "DTD",
+        "version": null
+      },
+      {
+        "name": "UCF101",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "prompt- and adapter-based methods",
+        "description": null
+      },
+      {
+        "name": "LoRA modules",
+        "description": "selecting the matrices to adapt and determining the corresponding rank to maximize performance"
+      },
+      {
+        "name": "LoRA",
+        "description": "adapting a larger number of weight matrices"
+      },
+      {
+        "name": "AdaLoRA",
+        "description": "allocating a larger rank to the middle and last layers rather than the first ones"
+      },
+      {
+        "name": "CoOp",
+        "description": "text-only prompt tuning"
+      },
+      {
+        "name": "dynamically adjust the rank of the matrices",
+        "description": "recent methods"
+      },
+      {
+        "name": "Prompt tuning",
+        "description": "soft prompt tuning, context optimization (CoOp)"
+      },
+      {
+        "name": "Adapters",
+        "description": "null"
+      },
+      {
+        "name": "CLIP-LoRA",
+        "description": null
+      },
+      {
+        "name": "Co-CoOp",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 accuracy",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "better",
+        "split": null
+      }
+    ]
+  }
+}

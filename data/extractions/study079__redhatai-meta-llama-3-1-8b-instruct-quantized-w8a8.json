@@ -1,0 +1,270 @@
+{
+  "study_id": "study079",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study079/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:45:46.435267+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 1,
+    "hyperparameters": 9,
+    "datasets": 8,
+    "methods": 18,
+    "evaluation_results": 15
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "VLLM inference library",
+        "version": "Kwon et al., 2023"
+      },
+      {
+        "name": "DPO-aligned model",
+        "version": null
+      },
+      {
+        "name": "vanilla refinement model",
+        "version": null
+      },
+      {
+        "name": "LLaMA3-8B-Instruct",
+        "version": null
+      },
+      {
+        "name": "Mistral-7B-Instruct-v0.3",
+        "version": "v0.3"
+      }
+    ],
+    "random_seeds": [
+      42
+    ],
+    "hardware": {
+      "gpu_model": "NVIDIA A 100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "16"
+      },
+      {
+        "name": "warmup_ratio",
+        "value": "0.1"
+      },
+      {
+        "name": "learning_rate",
+        "value": "2e-5"
+      },
+      {
+        "name": "num_epochs",
+        "value": "5"
+      },
+      {
+        "name": "beta",
+        "value": "0.1"
+      },
+      {
+        "name": "max_length",
+        "value": "1024"
+      },
+      {
+        "name": "r",
+        "value": "256"
+      },
+      {
+        "name": "alpaha",
+        "value": "128"
+      },
+      {
+        "name": "lora_dropout",
+        "value": "0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "HQ2A",
+        "version": null
+      },
+      {
+        "name": "ASQA",
+        "version": null
+      },
+      {
+        "name": "ELI5",
+        "version": null
+      },
+      {
+        "name": "BASE-LINE",
+        "version": null
+      },
+      {
+        "name": "ZERO-SHOT",
+        "version": null
+      },
+      {
+        "name": "IMPROVE",
+        "version": null
+      },
+      {
+        "name": "GENERIC",
+        "version": null
+      },
+      {
+        "name": "EIR",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ERROR-INFORMED REFINEMENT",
+        "description": "refining answers"
+      },
+      {
+        "name": "Tiger-Score (LLaMA-7B)",
+        "description": "evaluation of refined answers"
+      },
+      {
+        "name": "human",
+        "description": "Your body produces a hormone called (vasopressin) an- tidiuretic hormone, or adh, which causes the body to produce less urine at night."
+      },
+      {
+        "name": "model",
+        "description": "During sleep, your body produces less urine [...]"
+      },
+      {
+        "name": "DPO optimization",
+        "description": "correcting major errors to some extent"
+      },
+      {
+        "name": "zero-shot prompting",
+        "description": null
+      },
+      {
+        "name": "coarse-grained feedback",
+        "description": null
+      },
+      {
+        "name": "fine-grained feedback",
+        "description": null
+      },
+      {
+        "name": "direct prompting",
+        "description": null
+      },
+      {
+        "name": "refining without detailed feedback",
+        "description": null
+      },
+      {
+        "name": "DPO algorithm",
+        "description": null
+      },
+      {
+        "name": "LoRA",
+        "description": null
+      },
+      {
+        "name": "Error-informed feedback approach",
+        "description": "Error-informed feedback approach"
+      },
+      {
+        "name": "transforming expert annotations",
+        "description": "for completeness to sentence-level annotations for training the feedback model"
+      },
+      {
+        "name": "annotation procedure",
+        "description": "for collecting expert error annotations on LFQA answers"
+      },
+      {
+        "name": "software development",
+        "description": "develop, maintain, and improve platforms"
+      },
+      {
+        "name": "research and development",
+        "description": "innovating and creating new technologies"
+      },
+      {
+        "name": "machine learning",
+        "description": "drive the development of cutting-edge technologies and solutions"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "score",
+        "value": "1.0",
+        "split": null
+      },
+      {
+        "metric": "time",
+        "value": "6 hours",
+        "split": null
+      },
+      {
+        "metric": "error scores",
+        "value": "best",
+        "split": null
+      },
+      {
+        "metric": "quality of answers",
+        "value": "improved",
+        "split": "all datasets except ASQA"
+      },
+      {
+        "metric": "quality of answers",
+        "value": "lower quality",
+        "split": "ASQA"
+      },
+      {
+        "metric": "fps",
+        "value": "24",
+        "split": null
+      },
+      {
+        "metric": "comprehensiveness",
+        "value": "strongly agree",
+        "split": null
+      },
+      {
+        "metric": "overall answer preference",
+        "value": "weak agreement",
+        "split": null
+      },
+      {
+        "metric": "Precision",
+        "value": "\u2191",
+        "split": null
+      },
+      {
+        "metric": "Recall",
+        "value": "\u2191",
+        "split": null
+      },
+      {
+        "metric": "F1",
+        "value": "~ 4%",
+        "split": null
+      },
+      {
+        "metric": "Error samples",
+        "value": "~2%",
+        "split": null
+      },
+      {
+        "metric": "Error score",
+        "value": "~\u039427%",
+        "split": null
+      },
+      {
+        "metric": "human answer",
+        "value": "There is no back and forth data transmis- sion at all.",
+        "split": null
+      },
+      {
+        "metric": "model answer",
+        "value": "GPS is free because it\u2019s a public service provided by the US",
+        "split": null
+      }
+    ]
+  }
+}

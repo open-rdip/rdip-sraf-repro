@@ -1,0 +1,186 @@
+{
+  "study_id": "study070",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study070/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:41:45.642497+00:00",
+  "counts": {
+    "dependencies": 11,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 6,
+    "methods": 13,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GPT3",
+        "version": "175B parameters"
+      },
+      {
+        "name": "Codex",
+        "version": null
+      },
+      {
+        "name": "GPT-Neo",
+        "version": "2.7B"
+      },
+      {
+        "name": "CodeGen",
+        "version": "2.7B"
+      },
+      {
+        "name": "SBERT",
+        "version": "all-mpnet-v2 (220M)"
+      },
+      {
+        "name": "AdamW",
+        "version": null
+      },
+      {
+        "name": "code-davinci-002",
+        "version": null
+      },
+      {
+        "name": "T5",
+        "version": null
+      },
+      {
+        "name": "TRADE",
+        "version": null
+      },
+      {
+        "name": "TransferQA",
+        "version": null
+      },
+      {
+        "name": "DS2",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning rate",
+        "value": "2\u00d710\u22125"
+      },
+      {
+        "name": "warmup steps",
+        "value": "1000"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pile",
+        "version": null
+      },
+      {
+        "name": "MultiWOZ 2.1",
+        "version": null
+      },
+      {
+        "name": "MultiWOZ 2.4",
+        "version": null
+      },
+      {
+        "name": "MultiWOZ",
+        "version": "2.1"
+      },
+      {
+        "name": "QA data",
+        "version": null
+      },
+      {
+        "name": "DST data",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Codex-Davinci",
+        "description": "null"
+      },
+      {
+        "name": "GPT-Neo",
+        "description": "null"
+      },
+      {
+        "name": "CodeGen",
+        "description": "null"
+      },
+      {
+        "name": "In-Context Learning",
+        "description": "IC-DST GPT-Neo 2.7B"
+      },
+      {
+        "name": "TRADE",
+        "description": "Wu et al., 2020"
+      },
+      {
+        "name": "SGPDST",
+        "description": "Lee et al., 2021"
+      },
+      {
+        "name": "DS2 - BART",
+        "description": "Shin et al., 2022"
+      },
+      {
+        "name": "DS2 - T5",
+        "description": "Shin et al., 2022"
+      },
+      {
+        "name": "SGP-DST",
+        "description": "In SGP-DST, schema information is used as a prompt to query a sequence-to-sequence language model (e.g., T5). It achieves SOTA on MultiWOZ 2.2. Similar to TRADE, the value for each domain and slot pair is predicted in a separate pass."
+      },
+      {
+        "name": "TransferQA",
+        "description": "null"
+      },
+      {
+        "name": "DS2",
+        "description": "re-formulates DST as dialogue summarization problem"
+      },
+      {
+        "name": "T5-DST",
+        "description": "requires finetuning on DST labels"
+      },
+      {
+        "name": "our method",
+        "description": "does not require finetuning on DST labels"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "JGA",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "JGA",
+        "value": "16.70",
+        "split": "few-shot"
+      },
+      {
+        "metric": "JGA",
+        "value": "26.90",
+        "split": "zero-shot"
+      },
+      {
+        "metric": "F1",
+        "value": "28.25",
+        "split": null
+      },
+      {
+        "metric": "DST results",
+        "value": "higher",
+        "split": null
+      }
+    ]
+  }
+}

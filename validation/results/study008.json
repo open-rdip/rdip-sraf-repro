@@ -1,0 +1,154 @@
+{
+  "study_id": "study008",
+  "repo_url": "https://github.com/konstantinjdobler/tight-budget-llm-adaptation",
+  "started": "2026-06-10T08:53:06.970787+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "Dockerfile",
+      "conda": "helpers/main-exp-deps/environment.yml",
+      "setup": "pyproject.toml"
+    },
+    "depth_note": "root",
+    "n_found": 4,
+    "all": [
+      {
+        "type": "setup",
+        "rel_path": "pyproject.toml",
+        "depth": 0
+      },
+      {
+        "type": "docker",
+        "rel_path": "Dockerfile",
+        "depth": 0
+      },
+      {
+        "type": "docker",
+        "rel_path": "helpers/main-exp-deps/Dockerfile.condalock",
+        "depth": 2
+      },
+      {
+        "type": "conda",
+        "rel_path": "helpers/main-exp-deps/environment.yml",
+        "depth": 2
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/konstantinjdobler/tight-budget-llm-adaptation",
+    "commit_hash": "b1dd039f1283ed17a1d2198a4f17f14ccf0e951d",
+    "software_license": "MIT"
+  },
+  "lift": {
+    "lifted": {
+      "docker": "Dockerfile",
+      "conda": "helpers/main-exp-deps/environment.yml"
+    },
+    "triples": 186,
+    "n_sources": 3
+  },
+  "python": {
+    "declared": "3.11",
+    "source": "conda",
+    "used": "3.11",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": false,
+    "build_success": false,
+    "method": "pip-setup",
+    "stage_failed": "resolve",
+    "duration_s": 10.9,
+    "log_tail": "$ /home/dsai-st125286p/pys/py311/bin/python -m venv /tmp/15889/study008/venv\n\n$ /tmp/15889/study008/venv/bin/pip install --upgrade pip setuptools wheel\nRequirement already satisfied: pip in ./venv/lib/python3.11/site-packages (24.0)\nCollecting pip\n  Using cached pip-26.1.2-py3-none-any.whl.metadata (4.6 kB)\nRequirement already satisfied: setuptools in ./venv/lib/python3.11/site-packages (79.0.1)\nCollecting setuptools\n  Using cached setuptools-82.0.1-py3-none-any.whl.metadata (6.5 kB)\nCollecting wheel\n  Using cached wheel-0.47.0-py3-none-any.whl.metadata (2.3 kB)\nCollecting packaging>=24.0 (from wheel)\n  Using cached packaging-26.2-py3-none-any.whl.metadata (3.5 kB)\nUsing cached pip-26.1.2-py3-none-any.whl (1.8 MB)\nUsing cached setuptools-82.0.1-py3-none-any.whl (1.0 MB)\nUsing cached wheel-0.47.0-py3-none-any.whl (32 kB)\nUsing cached packaging-26.2-py3-none-any.whl (100 kB)\nInstalling collected packages: setuptools, pip, packaging, wheel\n  Attempting uninstall: setuptools\n    Found existing installation: setuptools 79.0.1\n    Uninstalling setuptools-79.0.1:\n      Successfully uninstalled setuptools-79.0.1\n  Attempting uninstall: pip\n    Found existing installation: pip 24.0\n    Uninstalling pip-24.0:\n      Successfully uninstalled pip-24.0\nSuccessfully installed packaging-26.2 pip-26.1.2 setuptools-82.0.1 wheel-0.47.0\n\n$ /tmp/15889/study008/venv/bin/pip install --dry-run --ignore-installed --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu .\nhon3.11/site-packages/setuptools/build_meta.py\", line 520, in run_setup\n          super().run_setup(setup_script=setup_script)\n        File \"/tmp/pip-build-env-2iv6dbfn/overlay/lib/python3.11/site-packages/setuptools/build_meta.py\", line 317, in run_setup\n          exec(code, locals())\n        File \"<string>\", line 1, in <module>\n        File \"/tmp/pip-build-env-2iv6dbfn/overlay/lib/python3.11/site-packages/setuptools/__init__.py\", line 117, in setup\n          return distutils.core.setup(**attrs)  # type: ignore[return-value]\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        File \"/tmp/pip-build-env-2iv6dbfn/overlay/lib/python3.11/site-packages/setuptools/_distutils/core.py\", line 160, in setup\n          dist.parse_config_files()\n        File \"/tmp/pip-build-env-2iv6dbfn/overlay/lib/python3.11/site-packages/setuptools/dist.py\", line 762, in parse_config_files\n          pyprojecttoml.apply_configuration(self, filename, ignore_option_errors)\n        File \"/tmp/pip-build-env-2iv6dbfn/overlay/lib/python3.11/site-packages/setuptools/config/pyprojecttoml.py\", line 72, in apply_configuration\n          config = read_configuration(filepath, True, ignore_option_errors, dist)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        File \"/tmp/pip-build-env-2iv6dbfn/overlay/lib/python3.11/site-packages/setuptools/config/pyprojecttoml.py\", line 149, in read_configuration\n          validate(subset, filepath)\n        File \"/tmp/pip-build-env-2iv6dbfn/overlay/lib/python3.11/site-packages/setuptools/config/pyprojecttoml.py\", line 61, in validate\n          raise ValueError(f\"{error}\\n{summary}\") from None\n      ValueError: invalid pyproject.toml config: `project`.\n      configuration error: `project` must contain ['version'] properties\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nERROR: Failed to build 'file:///tmp/15889/study008/study008' when getting requirements to build wheel\n",
+    "notes": "environment.yml present but built via pip venv (conda build deferred)."
+  },
+  "fair_r": {
+    "total_score": 51.79,
+    "tier": "fair",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 12.5,
+      "Reproducible": 19.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 15.9,
+  "fair_r_scorer": "graded-v2"
+}

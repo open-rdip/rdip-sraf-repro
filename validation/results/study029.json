@@ -1,0 +1,157 @@
+{
+  "study_id": "study029",
+  "repo_url": "https://github.com/zhimengj0326/gradient_rewiring_editing",
+  "started": "2026-06-10T09:57:22.985870+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "conda": "environment.yml",
+      "pip": "requirements.txt",
+      "setup": "setup.py"
+    },
+    "depth_note": "root",
+    "n_found": 3,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "conda",
+        "rel_path": "environment.yml",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/zhimengj0326/gradient_rewiring_editing",
+    "commit_hash": "899134695c291b65f3b5e8e7461e6da4d9607d9d",
+    "software_license": null
+  },
+  "lift": {
+    "lifted": {
+      "conda": "environment.yml",
+      "pip": "requirements.txt"
+    },
+    "triples": 1209,
+    "n_sources": 3
+  },
+  "python": {
+    "declared": "3.8",
+    "source": "conda",
+    "used": "3.8",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": false,
+    "build_success": false,
+    "method": "pip-requirements",
+    "stage_failed": "resolve",
+    "duration_s": 59.3,
+    "log_tail": "$ /home/dsai-st125286p/pys/py38/bin/python -m venv /tmp/15889/study029/venv\n\n$ /tmp/15889/study029/venv/bin/pip install --upgrade pip setuptools wheel\nRequirement already satisfied: pip in ./venv/lib/python3.8/site-packages (23.0.1)\nCollecting pip\n  Using cached pip-25.0.1-py3-none-any.whl (1.8 MB)\nRequirement already satisfied: setuptools in ./venv/lib/python3.8/site-packages (56.0.0)\nCollecting setuptools\n  Using cached setuptools-75.3.4-py3-none-any.whl (1.3 MB)\nCollecting wheel\n  Using cached wheel-0.45.1-py3-none-any.whl (72 kB)\nInstalling collected packages: wheel, setuptools, pip\n  Attempting uninstall: setuptools\n    Found existing installation: setuptools 56.0.0\n    Uninstalling setuptools-56.0.0:\n      Successfully uninstalled setuptools-56.0.0\n  Attempting uninstall: pip\n    Found existing installation: pip 23.0.1\n    Uninstalling pip-23.0.1:\n      Successfully uninstalled pip-23.0.1\nSuccessfully installed pip-25.0.1 setuptools-75.3.4 wheel-0.45.1\n\n$ /tmp/15889/study029/venv/bin/pip install --dry-run --ignore-installed --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study029/study029/requirements.txt\ned-1.20.0-py2.py3-none-any.whl.metadata (13 kB)\nCollecting certifi==2023.5.7 (from -r /tmp/15889/study029/study029/requirements.txt (line 5))\n  Using cached certifi-2023.5.7-py3-none-any.whl.metadata (2.2 kB)\nCollecting charset-normalizer==3.2.0 (from -r /tmp/15889/study029/study029/requirements.txt (line 6))\n  Using cached charset_normalizer-3.2.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (31 kB)\nCollecting cmake==3.26.4 (from -r /tmp/15889/study029/study029/requirements.txt (line 7))\n  Using cached cmake-3.26.4-py2.py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.7 kB)\nCollecting comm==0.1.4 (from -r /tmp/15889/study029/study029/requirements.txt (line 8))\n  Using cached comm-0.1.4-py3-none-any.whl.metadata (4.2 kB)\nCollecting contourpy==1.1.0 (from -r /tmp/15889/study029/study029/requirements.txt (line 9))\n  Using cached contourpy-1.1.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.7 kB)\nCollecting cycler==0.11.0 (from -r /tmp/15889/study029/study029/requirements.txt (line 10))\n  Using cached cycler-0.11.0-py3-none-any.whl.metadata (785 bytes)\nCollecting Cython==0.29.20 (from -r /tmp/15889/study029/study029/requirements.txt (line 11))\n  Using cached Cython-0.29.20-cp38-cp38-manylinux1_x86_64.whl.metadata (2.6 kB)\nCollecting daqp==0.5.1 (from -r /tmp/15889/study029/study029/requirements.txt (line 12))\n  Using cached daqp-0.5.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.2 kB)\nCollecting debugpy==1.6.7 (from -r /tmp/15889/study029/study029/requirements.txt (line 13))\n  Using cached debugpy-1.6.7-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.1 kB)\nCollecting decorator==5.1.1 (from -r /tmp/15889/study029/study029/requirements.txt (line 14))\n  Using cached decorator-5.1.1-py3-none-any.whl.metadata (4.0 kB)\nERROR: Could not find a version that satisfies the requirement dspar==0.0.0 (from versions: none)\nERROR: No matching distribution found for dspar==0.0.0\n",
+    "notes": "environment.yml present but built via pip venv (conda build deferred)."
+  },
+  "fair_r": {
+    "total_score": 44.29,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 5.0,
+      "Reproducible": 19.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Software licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Add a standard (SPDX) software licence to the repository.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 72.4,
+  "fair_r_scorer": "graded-v2"
+}

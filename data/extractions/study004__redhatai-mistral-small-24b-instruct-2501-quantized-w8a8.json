@@ -1,0 +1,42 @@
+{
+  "study_id": "study004",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study004/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:05:29.071595+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 2,
+    "methods": 0,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03be",
+        "value": null
+      }
+    ],
+    "datasets": [
+      {
+        "name": "synthetic dataset",
+        "version": null
+      },
+      {
+        "name": "CIFAR-10",
+        "version": null
+      }
+    ],
+    "methods": [],
+    "evaluation_results": []
+  }
+}

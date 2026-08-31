@@ -1,0 +1,187 @@
+{
+  "study_id": "study025",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study025/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:23:27.003065+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 3,
+    "methods": 10,
+    "evaluation_results": 14
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "FreeSurfer",
+        "version": null
+      },
+      {
+        "name": "neurite",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX A6000",
+      "cuda_version": null,
+      "cpu_info": "2.61GHz"
+    },
+    "hyperparameters": [
+      {
+        "name": "number of training epochs",
+        "value": "determined using the validation dataset"
+      },
+      {
+        "name": "number of feature channels",
+        "value": "doubled"
+      },
+      {
+        "name": "temperature",
+        "value": "0.05"
+      },
+      {
+        "name": "\u03b20",
+        "value": "2"
+      },
+      {
+        "name": "weights for the three losses",
+        "value": "5,0.2,0.05"
+      },
+      {
+        "name": "number of epochs",
+        "value": "selected based on the best validation accuracy"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IXI dataset",
+        "version": null
+      },
+      {
+        "name": "Learn2Reg Challenge",
+        "version": null
+      },
+      {
+        "name": "Learn2Reg 2022 Challenge",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "VoxelMorph",
+        "description": "with a scaling-and-squaring layer to encourage diffeomorphic registration"
+      },
+      {
+        "name": "TransMorph",
+        "description": "A hybrid deep learning architecture that combines the Transformer structure with convolutional networks"
+      },
+      {
+        "name": "Im2grid",
+        "description": "our previous method using coordinate translator modules"
+      },
+      {
+        "name": "DMR",
+        "description": "A deep learning based architecture based on the Deformer module"
+      },
+      {
+        "name": "PR-Net++",
+        "description": "A deep learning method that adopts a dual-stream architecture and incorporates correlation layers"
+      },
+      {
+        "name": "cosine similarity",
+        "description": "omits magnitude in the computation of similarity"
+      },
+      {
+        "name": "inner product",
+        "description": "used as the similarity in the attention computation"
+      },
+      {
+        "name": "Voxelmorph-diff",
+        "description": "A variant of VoxelMorph with a scaling-and-squaring layer to encourage diffeomorphic registration"
+      },
+      {
+        "name": "VFA",
+        "description": "We trained VFA using the 394 training scans provided by the Learn2Reg Challenge. A combination of mean squared error loss, diffusion regularizer, and Dice loss was used, with the Dice loss incorporating auxiliary anatomical information from the provided segmentation map of each subject."
+      },
+      {
+        "name": "Attention-based feature matching",
+        "description": "An innovative form of attention that allows prioritizing displacement vectors directly by computing the weighted sum of the vectors in a matrix R using the attention of x, effectively retrieving the displacement of the candidates relative to x based on the feature similarity encoded in the attention map."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "peak performance",
+        "value": "95%",
+        "split": null
+      },
+      {
+        "metric": "inference speed",
+        "value": "0.9 seconds per 15 subjects",
+        "split": "test"
+      },
+      {
+        "metric": "DSC",
+        "value": "0.771\u00b10.030",
+        "split": "T1w atlas to subject registration"
+      },
+      {
+        "metric": "DSC",
+        "value": "0.635\u00b10.043",
+        "split": "T2w to T1w"
+      },
+      {
+        "metric": "mean DSC",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "HD95",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "TRE",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "TRE30",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "SDLogJ",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "DSC",
+        "value": "70.726",
+        "split": null
+      },
+      {
+        "metric": "ND V oxels",
+        "value": "19171",
+        "split": null
+      },
+      {
+        "metric": "ND V olume",
+        "value": "7280",
+        "split": null
+      },
+      {
+        "metric": "TRE",
+        "value": "lowest",
+        "split": "test"
+      },
+      {
+        "metric": "TRE30",
+        "value": "best",
+        "split": "test"
+      }
+    ]
+  }
+}

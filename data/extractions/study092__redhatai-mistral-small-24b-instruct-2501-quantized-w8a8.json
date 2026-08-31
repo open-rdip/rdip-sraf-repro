@@ -1,0 +1,92 @@
+{
+  "study_id": "study092",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study092/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:22:45.086721+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 0,
+    "methods": 2,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "YOLOv3",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "N",
+        "value": "string"
+      },
+      {
+        "name": "\u03b2",
+        "value": null
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "TrADe",
+        "description": "A tracking algorithm to identify when successive bounding boxes are of the same individual and group them as tracklets. Following, an anomaly detection model is used to select the \u201cmost normal\u201d image of each tracklet."
+      },
+      {
+        "name": "Skip",
+        "description": "simpler approach for gallery size reduction"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "FR",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "TVR",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "mAP",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "F\u2217 1",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "classic Re-ID execution time",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "F1",
+        "value": "1",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "much better",
+        "split": null
+      },
+      {
+        "metric": "Re-ID processing time",
+        "value": "decrease drastically",
+        "split": null
+      }
+    ]
+  }
+}

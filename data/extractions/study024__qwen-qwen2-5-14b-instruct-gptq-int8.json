@@ -1,0 +1,119 @@
+{
+  "study_id": "study024",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study024/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:47:20.499335+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 0,
+    "methods": 12,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "pump value",
+        "value": "optimized for the highest success probability"
+      },
+      {
+        "name": "pump field p(t)",
+        "value": "t Tp0"
+      },
+      {
+        "name": "measurement strength j(t)",
+        "value": "j0exp(-\u03b1t T)"
+      },
+      {
+        "name": "injected noise r(t)",
+        "value": "r0exp(-\u03b2t T)"
+      },
+      {
+        "name": "number_of_trials",
+        "value": "1000"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Langevin DL-CCVM (CPU)",
+        "description": "Optics-based CCVM implementation optimized for highest success probability"
+      },
+      {
+        "name": "MF-CCVM (CPU)",
+        "description": "Optics-based CCVM implementation optimized for highest success probability"
+      },
+      {
+        "name": "Langevin solver",
+        "description": "Uses a linear schedule for the pump field p(t) = t Tp0."
+      },
+      {
+        "name": "Pumped Langevin solver",
+        "description": "Uses a linear schedule for the pump field p(t) = t Tp0."
+      },
+      {
+        "name": "DL-CCVM solver",
+        "description": "Uses a linear schedule for the pump field p(t) = t Tp0 and an exponential decay for the injected noise r(t) = r0exp(-\u03b2t T)."
+      },
+      {
+        "name": "MF-CCVM solver",
+        "description": "Uses a modified schedule for the pump field p(t) = t Tp0 + 1 + j(t) to compensate for measurement loss and background loss."
+      },
+      {
+        "name": "BoxQP_instance_solving",
+        "description": "Solving a given BoxQP instance on the physical device."
+      },
+      {
+        "name": "DL-CCVM",
+        "description": "Optics-based implementation of Deep Learning Constrained Convex Vector Machine"
+      },
+      {
+        "name": "MF-CCVM",
+        "description": "Optics-based implementation of Matrix Factorization Constrained Convex Vector Machine"
+      },
+      {
+        "name": "QCQP solver",
+        "description": "General heuristic solver for quadratic programming problems"
+      },
+      {
+        "name": "CPLEX",
+        "description": "Exact solver"
+      },
+      {
+        "name": "Gurobi",
+        "description": "Exact solver"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "success_probability",
+        "value": "Ps",
+        "split": null
+      },
+      {
+        "metric": "Tmax",
+        "value": "niter\u00b7N\u00b7Tpulse",
+        "split": null
+      },
+      {
+        "metric": "Tpulse",
+        "value": "10 picoseconds",
+        "split": null
+      },
+      {
+        "metric": "TTS",
+        "value": "several orders of magnitude more performant",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "study_id": "study042",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study042/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:02:20.003389+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 13,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "DressCode",
+        "version": "24"
+      },
+      {
+        "name": "VITON-HD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "D4-VTON",
+        "description": "Virtual Try-On Network"
+      },
+      {
+        "name": "DSDM",
+        "description": "Some method used in D4-VTON"
+      },
+      {
+        "name": "DITP",
+        "description": "Another component of D4-VTON"
+      },
+      {
+        "name": "Differential Diffusion based VTON",
+        "description": "Uses a diffusion model to synthesize the try-on result after obtaining the warped garment."
+      },
+      {
+        "name": "PBE",
+        "description": "Architecture adopted for synthesis network, pretrained on millions of images for image inpainting."
+      },
+      {
+        "name": "Denoising Path",
+        "description": "Takes the ground truth human image as input."
+      },
+      {
+        "name": "Inpainting Path",
+        "description": "Utilizes the integrated warped garment into the clothing-agnostic image."
+      },
+      {
+        "name": "Differential Information Tracking Path (DITP)",
+        "description": "Proposed to replace the simplistic inpainting path to manage denoising and inpainting tasks."
+      },
+      {
+        "name": "Dynamic Semantics Selector",
+        "description": "Uses self-similarity of garment features to unsupervisedly generate selection masks indicating each channel's semantic group."
+      },
+      {
+        "name": "Group Warping Block",
+        "description": "Generates flows and attention maps for different channel groups."
+      },
+      {
+        "name": "Disentangled Warping Operation",
+        "description": "Uses the selection mask and predicted flows and attention maps to deform garment features."
+      },
+      {
+        "name": "Vanilla",
+        "description": "Baseline model without any modifications"
+      },
+      {
+        "name": "Fixed Grouping",
+        "description": "Evenly divided all channels sequentially without using the Dynamic Semantics Selector"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "warped garment items",
+        "value": "significant improvements",
+        "split": null
+      },
+      {
+        "metric": "all metrics",
+        "value": "significant improvements",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "study_id": "study067",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study067/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:16:54.913140+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 5,
+    "datasets": 0,
+    "methods": 4,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      5
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number_of_posterior_samples",
+        "value": "100"
+      },
+      {
+        "name": "additional_samples_for_conditional_variance",
+        "value": "20"
+      },
+      {
+        "name": "round difference",
+        "value": "between 4 and 10"
+      },
+      {
+        "name": "absolute r-SSE threshold",
+        "value": "\u22650.1"
+      },
+      {
+        "name": "variance threshold",
+        "value": "\u22650.01"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "r-SSE-ICC",
+        "description": "A method used to attribute contribution ratios to state variables."
+      },
+      {
+        "name": "ASE-SV",
+        "description": "method that efficiently attributes the effect to the clinician and AI"
+      },
+      {
+        "name": "Counterfactual Trajectory",
+        "description": "Involves altering the behavior of one agent (A2) to pick up a different object, leading to a change in instructions from Planner."
+      },
+      {
+        "name": "Planner-Actor-Reporter system",
+        "description": "Adopted from Dasgupta et al., 2023, uses a pre-trained LLM and few-shot learning for providing actors with instructions."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

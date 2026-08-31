@@ -1,0 +1,157 @@
+{
+  "study_id": "study040",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study040/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:28:36.819684+00:00",
+  "counts": {
+    "dependencies": 4,
+    "random_seeds": 1,
+    "hyperparameters": 3,
+    "datasets": 8,
+    "methods": 8,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "time series Transformer",
+        "version": null
+      },
+      {
+        "name": "PatchTST",
+        "version": null
+      },
+      {
+        "name": "FEDformer",
+        "version": null
+      },
+      {
+        "name": "P+CI CI P",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      2021
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "model dimension",
+        "value": "D={128,256}"
+      },
+      {
+        "name": "inner-layer dimension",
+        "value": "F= 2D"
+      },
+      {
+        "name": "instance normalization",
+        "value": "used"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IL",
+        "version": null
+      },
+      {
+        "name": "other",
+        "version": null
+      },
+      {
+        "name": "ILI",
+        "version": null
+      },
+      {
+        "name": "Weather",
+        "version": null
+      },
+      {
+        "name": "Traf\ufb01c",
+        "version": null
+      },
+      {
+        "name": "Electricity",
+        "version": null
+      },
+      {
+        "name": "PatchTST",
+        "version": null
+      },
+      {
+        "name": "Weather96",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "feed forward network",
+        "description": "feed forward network"
+      },
+      {
+        "name": "Original TST model",
+        "description": "Zerveas et al. (2021)"
+      },
+      {
+        "name": "patching together with channel-independence",
+        "description": null
+      },
+      {
+        "name": "supervised PatchTST",
+        "description": "with instance normalization (+in) or without instance normalization (-in)"
+      },
+      {
+        "name": "pre-training on Electricity dataset then transferred to other 6 datasets",
+        "description": null
+      },
+      {
+        "name": "PatchTST",
+        "description": "null"
+      },
+      {
+        "name": "FEDformer",
+        "description": "null"
+      },
+      {
+        "name": "P+CI CI P",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "MSE",
+        "value": "scores",
+        "split": "different datasets"
+      },
+      {
+        "metric": "results",
+        "value": "best",
+        "split": null
+      },
+      {
+        "metric": "results",
+        "value": "3.001 1.267",
+        "split": "Table 11"
+      },
+      {
+        "metric": "results",
+        "value": "results",
+        "split": "Table 13"
+      },
+      {
+        "metric": "MSE",
+        "value": "0.152",
+        "split": null
+      },
+      {
+        "metric": "MAE",
+        "value": "0.199",
+        "split": null
+      }
+    ]
+  }
+}

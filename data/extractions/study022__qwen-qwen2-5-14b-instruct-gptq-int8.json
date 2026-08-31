@@ -1,0 +1,162 @@
+{
+  "study_id": "study022",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study022/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:46:04.329174+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 3,
+    "methods": 16,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": "9",
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "realtime user sequence length",
+        "value": "100"
+      },
+      {
+        "name": "dimension of action embedding",
+        "value": "32"
+      },
+      {
+        "name": "number of transformer blocks",
+        "value": "2"
+      },
+      {
+        "name": "dropout rate",
+        "value": "0.1"
+      },
+      {
+        "name": "dimension of hidden layer",
+        "value": "32"
+      },
+      {
+        "name": "batch size",
+        "value": "12000"
+      },
+      {
+        "name": "label weight matrix \ud835\udc40",
+        "value": "empirically determined"
+      },
+      {
+        "name": "user-dependent weight \ud835\udc64\ud835\udc62",
+        "value": "determined by user attributes"
+      },
+      {
+        "name": "sequence_aggregation_architecture",
+        "value": "transformer-based"
+      },
+      {
+        "name": "encoder_layers",
+        "value": "2"
+      },
+      {
+        "name": "heads",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pinterest Homefeed view log",
+        "version": "three weeks of data"
+      },
+      {
+        "name": "FVL",
+        "version": null
+      },
+      {
+        "name": "Pinterest Homefeed view log (FVL)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Pinnability",
+        "description": "Retrained from scratch twice per week."
+      },
+      {
+        "name": "Fuse CUDA kernels",
+        "description": "An effective approach is to fuse operations as much as possible. We leverage standard deep learning compilers such as nvFuser but often found human intervention is needed for many of the remaining operations."
+      },
+      {
+        "name": "Custom consolidated embedding lookup module",
+        "description": "We implement a custom consolidated embedding lookup module to merge the lookup for multiple features into one lookup."
+      },
+      {
+        "name": "CUDA Graphs",
+        "description": "captures the model inference process as a static graph of operations"
+      },
+      {
+        "name": "Flink",
+        "description": "realtime feature processing application"
+      },
+      {
+        "name": "Kafka",
+        "description": "used for generating user action streams"
+      },
+      {
+        "name": "Rockstore",
+        "description": "stores materialized features"
+      },
+      {
+        "name": "Combine memory copies",
+        "description": "Combining multiple tensors into one continuous buffer before transferring them from CPU to GPU."
+      },
+      {
+        "name": "Form larger batches",
+        "description": "Using larger batches for GPU-based inference instead of splitting requests into small batches."
+      },
+      {
+        "name": "Hybrid cache",
+        "description": "Implementing a hybrid cache that uses both DRAM and SSD to compensate for the loss of cache capacity."
+      },
+      {
+        "name": "Utilize CUDA graphs",
+        "description": "Using CUDA Graphs to completely eliminate the remaining small operations overhead."
+      },
+      {
+        "name": "Adam optimizer",
+        "description": "with a learning rate scheduler including warm-up phase and cosine annealing"
+      },
+      {
+        "name": "weighted cross-entropy loss",
+        "description": "optimizes for multi-label classification tasks"
+      },
+      {
+        "name": "early_fusion_method",
+        "description": "concat"
+      },
+      {
+        "name": "sequence_aggregation_model",
+        "description": "standard transformer encoder with 2 encoder layers and one head"
+      },
+      {
+        "name": "random_time_window_mask",
+        "description": "used to avoid recommending content similar to recent engagements"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "model accuracy",
+        "value": null,
+        "split": "third week"
+      }
+    ]
+  }
+}

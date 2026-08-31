@@ -1,0 +1,75 @@
+{
+  "study_id": "study054",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study054/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:33:27.739248+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 3,
+    "methods": 5,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "LGH",
+        "version": null
+      },
+      {
+        "name": "[31, Ch. 2]",
+        "version": null
+      },
+      {
+        "name": "string",
+        "version": "string"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "warehouse environment",
+        "version": null
+      },
+      {
+        "name": "narrow corridor",
+        "version": null
+      },
+      {
+        "name": "string",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Consolidated CBF based control",
+        "description": "Smoothly synthesizes multiple candidate CBFs into one"
+      },
+      {
+        "name": "online adaptation",
+        "description": "online adaptation of k"
+      },
+      {
+        "name": "CBF-QP controller",
+        "description": "centralized CBF-QP controller (8)"
+      },
+      {
+        "name": "C-CBF controller",
+        "description": "decentralized multi-robot goal-reaching problem"
+      },
+      {
+        "name": "string",
+        "description": "string"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

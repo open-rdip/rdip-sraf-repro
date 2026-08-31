@@ -1,0 +1,18 @@
+{
+  "run_command": "python train.py --test_phase 1 --pretrained 1 --classifier resnet18",
+  "setup_steps": [
+    "python train.py --download_weights 1"
+  ],
+  "requires_dataset": [],
+  "requires_checkpoint": null,
+  "produces_metric": [
+    {
+      "metric": "acc/test",
+      "dataset": "CIFAR-10"
+    }
+  ],
+  "entry_point": "train.py",
+  "confidence": "high",
+  "study_id": "ctrl_cifar_huyvnphan",
+  "repo_url": "https://github.com/huyvnphan/PyTorch_CIFAR10"
+}

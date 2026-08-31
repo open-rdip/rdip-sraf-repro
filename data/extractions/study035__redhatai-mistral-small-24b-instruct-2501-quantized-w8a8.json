@@ -1,0 +1,179 @@
+{
+  "study_id": "study035",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study035/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:35:15.894657+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 6,
+    "methods": 15,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Jetson AGX Xavier",
+      "cuda_version": null,
+      "cpu_info": "Xeon Silver 4114"
+    },
+    "hyperparameters": [
+      {
+        "name": "learning_rate",
+        "value": "0.0002"
+      },
+      {
+        "name": "batch_size",
+        "value": "1"
+      },
+      {
+        "name": "population_size",
+        "value": "100"
+      },
+      {
+        "name": "number_of_iterations",
+        "value": "500"
+      },
+      {
+        "name": "parent_ratio",
+        "value": "0.25"
+      },
+      {
+        "name": "mutation_ratio",
+        "value": "0.5"
+      },
+      {
+        "name": "mutation_probability",
+        "value": "0.2"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "horse \u2192zebra",
+        "version": null
+      },
+      {
+        "name": "edges\u2192shoes",
+        "version": null
+      },
+      {
+        "name": "Cityscapes",
+        "version": null
+      },
+      {
+        "name": "horse\u2192zebra",
+        "version": null
+      },
+      {
+        "name": "map\u2192aerial photo",
+        "version": null
+      },
+      {
+        "name": "Pix2pix",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "FID",
+        "description": "The FID score aims to calculate the distance between the distribution of feature vectors extracted from real and gener- ated images using an InceptionV3 network."
+      },
+      {
+        "name": "GAN Compression",
+        "description": "GAN Compression could bring signi\ufb01- cant speedup on various hardware devices."
+      },
+      {
+        "name": "Pruning",
+        "description": "Pruning combined with distillation achieves the best performance on both datasets."
+      },
+      {
+        "name": "Distillation",
+        "description": "Pruning combined with distillation achieves the best performance on both datasets."
+      },
+      {
+        "name": "Inheriting the Teacher Discriminator",
+        "description": "in this setting, we inherit the discriminator\u2019s weights from the teacher discriminator."
+      },
+      {
+        "name": "Unpaired-to-paired Transform",
+        "description": "transforming unpaired conditional GANs into a pseudo paired training setting using the teacher model\u2019s output."
+      },
+      {
+        "name": "Original Model",
+        "description": ""
+      },
+      {
+        "name": "From-scratch Training",
+        "description": ""
+      },
+      {
+        "name": "Intermediate Distillation",
+        "description": ""
+      },
+      {
+        "name": "CycleGAN",
+        "description": "A type of GAN used for image-to-image translation tasks."
+      },
+      {
+        "name": "Pix2pix",
+        "description": "A type of GAN used for image-to-image translation tasks."
+      },
+      {
+        "name": "GauGAN",
+        "description": "A type of GAN used for image-to-image translation tasks."
+      },
+      {
+        "name": "evolutionary algorithm",
+        "description": "An algorithm used for optimization tasks."
+      },
+      {
+        "name": "LPIPS",
+        "description": "measures the perceptual similarity of generated images and the corresponding real images"
+      },
+      {
+        "name": "human preference test",
+        "description": "conducted on the horse \u2192zebra dataset on Amazon Mechanical Turk (AMT)"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "FID",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "FID",
+        "value": null,
+        "split": "train+test"
+      },
+      {
+        "metric": "40.98",
+        "value": "40.98",
+        "split": null
+      },
+      {
+        "metric": "41.49",
+        "value": "41.49",
+        "split": null
+      },
+      {
+        "metric": "40.66",
+        "value": "40.66",
+        "split": null
+      },
+      {
+        "metric": "42.11",
+        "value": "42.11",
+        "split": null
+      },
+      {
+        "metric": "mIoU",
+        "value": "42.06",
+        "split": null
+      }
+    ]
+  }
+}

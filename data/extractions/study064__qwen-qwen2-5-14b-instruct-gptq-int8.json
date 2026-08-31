@@ -1,0 +1,81 @@
+{
+  "study_id": "study064",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study064/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:15:04.083203+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 3,
+    "methods": 3,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning_rate",
+        "value": "3e-4"
+      },
+      {
+        "name": "batch_size",
+        "value": "12"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "past context duration",
+        "value": "1.0s"
+      },
+      {
+        "name": "future prediction duration",
+        "value": "2.0s"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NuScenes",
+        "version": null
+      },
+      {
+        "name": "Lyft dataset",
+        "version": null
+      },
+      {
+        "name": "Lyft",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "model_processing",
+        "description": "Processes 6 camera images at resolution 224\u00d7480 for each past timestep and outputs a sequence of 100m\u00d7100m BEV predictions at 50cm pixel resolution in both the x and y directions."
+      },
+      {
+        "name": "Video Panoptic Quality (VQP)",
+        "description": "Metric defined as VPQ = H\u2211 t=0 \u2211 (pt,qt)\u2208TPt IoU(pt,qt) / (|TPt| + 1/2|FPt| + 1/2|FNt|)"
+      },
+      {
+        "name": "Generalised Energy Distance (DGED)",
+        "description": "Measures the ability of the model to predict multi-modal futures"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Video Panoptic Quality (VQP)",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

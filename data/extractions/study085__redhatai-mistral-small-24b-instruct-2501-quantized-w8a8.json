@@ -1,0 +1,183 @@
+{
+  "study_id": "study085",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study085/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:14:42.212635+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 1,
+    "methods": 15,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "RDkit",
+        "version": null
+      },
+      {
+        "name": "gnina",
+        "version": null
+      },
+      {
+        "name": "libmolgrid",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03bbvar",
+        "value": "\u03bbvar"
+      },
+      {
+        "name": "\u03bbbias",
+        "value": "\u03bbbias"
+      },
+      {
+        "name": "grid_side_length",
+        "value": "23.5\u00c5"
+      },
+      {
+        "name": "grid_resolution",
+        "value": "0.5\u00c5"
+      },
+      {
+        "name": "grid_dimensions",
+        "value": "48"
+      },
+      {
+        "name": "\u03bbrecon",
+        "value": "4.0"
+      },
+      {
+        "name": "\u03bbKL",
+        "value": "0.1"
+      },
+      {
+        "name": "\u03bbsteric",
+        "value": "1.0"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1e\u22125"
+      },
+      {
+        "name": "batch_size",
+        "value": "8"
+      },
+      {
+        "name": "iterations",
+        "value": "1,000,000"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CrossDocked2020",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "variability factor",
+        "description": "This parameter scales the standard deviations used to sample the latent space: z\u2032=\u00b5+\u03bbvar\u03c3z"
+      },
+      {
+        "name": "bias factor",
+        "description": "Instead of using either the posterior or prior distribution, we can sample distributions whose parameters are linearly interpolated between those of the prior and posterior according to a bias factor , referred to as \u03bbbias here: z\u2032=\u00b5interp+\u03c3interp z \u00b5interp =\u03bbbias\u00b5post+(1\u2212\u03bbbias)\u00b5prior \u03c3interp =\u03bbbias\u03c3post+(1\u2212\u03bbbias)\u03c3prior"
+      },
+      {
+        "name": "Atom typing",
+        "description": "Atom typing"
+      },
+      {
+        "name": "Atom gridding",
+        "description": "Atom gridding"
+      },
+      {
+        "name": "Conditional variational autoencoder",
+        "description": "The CVAE input branch encodes the full complex density, while its conditional branch encodes only the receptor density. The complex density is mapped to a probabilistic latent space, which is then sampled as a latent vector z\u223cN(\u00b5,\u03c3). This is combined with the conditional vector c output by the conditional encoder, and together they are provided to the decoder."
+      },
+      {
+        "name": "Atom fitting",
+        "description": "Atom fitting"
+      },
+      {
+        "name": "Bond adding",
+        "description": "Bond adding"
+      },
+      {
+        "name": "UFF minimization",
+        "description": "Universal Force Field minimization"
+      },
+      {
+        "name": "Vina minimization",
+        "description": null
+      },
+      {
+        "name": "CNN scoring functions",
+        "description": null
+      },
+      {
+        "name": "molecular gridding",
+        "description": "a GPU-accelerated molecular gridding library"
+      },
+      {
+        "name": "atom fitting algorithm",
+        "description": "an algorithm that combines iterative atom detection with gradient descent to find a set of atoms that best fits a reference density"
+      },
+      {
+        "name": "RMSprop",
+        "description": "optimizer used for training the model"
+      },
+      {
+        "name": "U-Net",
+        "description": "with transposed convolutions and nearest- neighbor upsampling instead of pooling. U-Net skip connections were included between the convolutional features of the conditional encoder and the decoder to enhance the processing of receptor context."
+      },
+      {
+        "name": "Spectral normalization",
+        "description": "applied to all learnable parameters during training"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "validity",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "novelty",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "uniqueness",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "internal energy",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "RMSD",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "binding affinity",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

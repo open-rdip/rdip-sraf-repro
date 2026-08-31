@@ -1,0 +1,152 @@
+{
+  "study_id": "study069",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study069/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:40:44.072206+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 6,
+    "methods": 11,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "t-SNE",
+        "version": "Van der Maaten and Hinton 2008"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b2",
+        "value": "string"
+      },
+      {
+        "name": "\u03c4",
+        "value": "string"
+      },
+      {
+        "name": "con\ufb01dence parameter",
+        "value": "\ufb01xed value"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CORA",
+        "version": null
+      },
+      {
+        "name": "CITE",
+        "version": null
+      },
+      {
+        "name": "AMAP",
+        "version": null
+      },
+      {
+        "name": "BAT",
+        "version": null
+      },
+      {
+        "name": "EAT",
+        "version": null
+      },
+      {
+        "name": "UAT",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "HSAN",
+        "description": "string"
+      },
+      {
+        "name": "infoNCE",
+        "description": "string"
+      },
+      {
+        "name": "ours",
+        "description": "string"
+      },
+      {
+        "name": "B",
+        "description": "string"
+      },
+      {
+        "name": "B+M",
+        "description": "string"
+      },
+      {
+        "name": "S",
+        "description": "string"
+      },
+      {
+        "name": "S+M",
+        "description": "string"
+      },
+      {
+        "name": "Hard Sample Aware Network (HSAN)",
+        "description": "mines the hard samples in contrastive deep graph clustering"
+      },
+      {
+        "name": "proposed hard sample aware contrastive loss",
+        "description": "forces the network to focus on both positive and negative sample pairs"
+      },
+      {
+        "name": "classical infoNCE loss",
+        "description": null
+      },
+      {
+        "name": "ProGCL",
+        "description": "string"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Loss",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "ACC",
+        "value": "string",
+        "split": "string"
+      },
+      {
+        "metric": "NMI",
+        "value": "8.48",
+        "split": "string"
+      },
+      {
+        "metric": "ACC",
+        "value": "better",
+        "split": "BAT"
+      },
+      {
+        "metric": "performance",
+        "value": "better",
+        "split": null
+      },
+      {
+        "metric": "effectiveness",
+        "value": "superior",
+        "split": null
+      },
+      {
+        "metric": "discriminative capability",
+        "value": "further improving",
+        "split": null
+      }
+    ]
+  }
+}

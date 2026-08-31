@@ -1,0 +1,242 @@
+{
+  "study_id": "study095",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study095/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:53:29.787036+00:00",
+  "counts": {
+    "dependencies": 10,
+    "random_seeds": 1,
+    "hyperparameters": 4,
+    "datasets": 6,
+    "methods": 13,
+    "evaluation_results": 15
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Faiss",
+        "version": "Johnson et al., 2019"
+      },
+      {
+        "name": "BERT",
+        "version": null
+      },
+      {
+        "name": "DPR",
+        "version": null
+      },
+      {
+        "name": "BPR",
+        "version": null
+      },
+      {
+        "name": "BERT-base",
+        "version": null
+      },
+      {
+        "name": "ELECTRA-large",
+        "version": "2020"
+      },
+      {
+        "name": "linear scan",
+        "version": null
+      },
+      {
+        "name": "Hierarchical Navigable Small World (HSNW) graphs",
+        "version": null
+      },
+      {
+        "name": "simple locality sensitive hashing (LSH)",
+        "version": null
+      },
+      {
+        "name": "product quantization (PQ)",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      1000
+    ],
+    "hardware": {
+      "gpu_model": "Nvidia V100",
+      "cuda_version": null,
+      "cpu_info": "Intel Xeon E5-2698 v4"
+    },
+    "hyperparameters": [
+      {
+        "name": "number of bits per passage of the LSH",
+        "value": "768"
+      },
+      {
+        "name": "number of centroids of the PQ",
+        "value": "96"
+      },
+      {
+        "name": "code size of the PQ",
+        "value": "8"
+      },
+      {
+        "name": "l",
+        "value": "1000"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NQ",
+        "version": null
+      },
+      {
+        "name": "TQA",
+        "version": null
+      },
+      {
+        "name": "EM QA",
+        "version": null
+      },
+      {
+        "name": "English Wikipedia",
+        "version": null
+      },
+      {
+        "name": "Wikipedia corpus",
+        "version": "21M passages"
+      },
+      {
+        "name": "RAG",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DPR",
+        "description": "null"
+      },
+      {
+        "name": "BPR",
+        "description": "null"
+      },
+      {
+        "name": "FiD",
+        "description": null
+      },
+      {
+        "name": "Fusion-in-Decoder",
+        "description": null
+      },
+      {
+        "name": "BERT-base",
+        "description": null
+      },
+      {
+        "name": "ELECTRA-large",
+        "description": "improved reader"
+      },
+      {
+        "name": "DPR with linear scan",
+        "description": "null"
+      },
+      {
+        "name": "DPR with Hierarchical Navigable Small World (HSNW) graphs",
+        "description": "null"
+      },
+      {
+        "name": "DPR with simple locality sensitive hashing (LSH)",
+        "description": "null"
+      },
+      {
+        "name": "DPR with product quantization (PQ)",
+        "description": "null"
+      },
+      {
+        "name": "DPR+HNSW",
+        "description": null
+      },
+      {
+        "name": "Hash table lookup",
+        "description": null
+      },
+      {
+        "name": "Linear scan",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-k recall",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "EM QA accuracy",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "index size",
+        "value": "65GB",
+        "split": null
+      },
+      {
+        "metric": "query time",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "EM QA accuracy",
+        "value": "string",
+        "split": "string"
+      },
+      {
+        "metric": "44.5",
+        "value": "44.5",
+        "split": "NQ"
+      },
+      {
+        "metric": "56.1",
+        "value": "56.1",
+        "split": "TQA"
+      },
+      {
+        "metric": "48.2",
+        "value": "48.2",
+        "split": "TQA"
+      },
+      {
+        "metric": "65.0",
+        "value": "65.0",
+        "split": "TQA"
+      },
+      {
+        "metric": "51.4",
+        "value": "51.4",
+        "split": "RAG"
+      },
+      {
+        "metric": "67.6",
+        "value": "67.6",
+        "split": "RAG"
+      },
+      {
+        "metric": "41.6",
+        "value": "41.6",
+        "split": "RAG"
+      },
+      {
+        "metric": "56.8",
+        "value": "56.8",
+        "split": "RAG"
+      },
+      {
+        "metric": "49.0",
+        "value": "49.0",
+        "split": "RAG"
+      },
+      {
+        "metric": "65.6",
+        "value": "65.6",
+        "split": "RAG"
+      }
+    ]
+  }
+}

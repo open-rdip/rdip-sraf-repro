@@ -1,0 +1,79 @@
+{
+  "study_id": "study024",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study024/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:22:20.825871+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 4,
+    "datasets": 0,
+    "methods": 5,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      1000
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": "CPU"
+    },
+    "hyperparameters": [
+      {
+        "name": "pump value",
+        "value": "optimized"
+      },
+      {
+        "name": "p(t)",
+        "value": "t Tp0"
+      },
+      {
+        "name": "j(t)",
+        "value": "j0exp( \u2212\u03b1t T)"
+      },
+      {
+        "name": "r(t)",
+        "value": "r0exp( \u2212\u03b2t T)"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Langevin",
+        "description": ""
+      },
+      {
+        "name": "pumped Langevin",
+        "description": ""
+      },
+      {
+        "name": "DL-CCVM",
+        "description": ""
+      },
+      {
+        "name": "MF-CCVM",
+        "description": ""
+      },
+      {
+        "name": "QCQP",
+        "description": "quadratically constrained quadratic programming solver"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "objective value",
+        "value": "within 0 .1% of the global optimal value",
+        "split": null
+      },
+      {
+        "metric": "TTS",
+        "value": "0.1%",
+        "split": null
+      }
+    ]
+  }
+}

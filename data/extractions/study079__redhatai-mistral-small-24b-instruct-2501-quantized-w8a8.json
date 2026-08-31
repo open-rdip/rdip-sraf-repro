@@ -1,0 +1,187 @@
+{
+  "study_id": "study079",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study079/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:09:56.691328+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 3,
+    "methods": 14,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "VLLM",
+        "version": null
+      },
+      {
+        "name": "LLaMA2-7B-chat",
+        "version": null
+      },
+      {
+        "name": "Mistral-7B-Instruct-v0.1",
+        "version": null
+      },
+      {
+        "name": "DPO",
+        "version": null
+      },
+      {
+        "name": "LoRA",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "16"
+      },
+      {
+        "name": "warmup_ratio",
+        "value": "0.1"
+      },
+      {
+        "name": "learning_rate",
+        "value": "2e-5"
+      },
+      {
+        "name": "num_epochs",
+        "value": "5"
+      },
+      {
+        "name": "beta",
+        "value": "0.1"
+      },
+      {
+        "name": "max_length",
+        "value": "1024"
+      },
+      {
+        "name": "r",
+        "value": "256"
+      },
+      {
+        "name": "alpha",
+        "value": "128"
+      },
+      {
+        "name": "lora_dropout",
+        "value": "0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "HQ2A",
+        "version": null
+      },
+      {
+        "name": "ASQA",
+        "version": null
+      },
+      {
+        "name": "ELI5",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "LoRA fine-tuning",
+        "description": "LoRA fine-tuning of the LLaMA2-13B-chat refinement model"
+      },
+      {
+        "name": "ERROR -INFORMED REFINEMENT",
+        "description": "Refining answers with our ERROR -INFORMED REFINEMENT approach"
+      },
+      {
+        "name": "Tiger-Score",
+        "description": "evaluation of the refined answers with Tiger- Score (LLaMA-7B)"
+      },
+      {
+        "name": "DPO-aligned refinement model",
+        "description": ""
+      },
+      {
+        "name": "vanilla refinement model",
+        "description": ""
+      },
+      {
+        "name": "ZERO-SHOT",
+        "description": ""
+      },
+      {
+        "name": "IMPROVE",
+        "description": ""
+      },
+      {
+        "name": "GENERIC",
+        "description": ""
+      },
+      {
+        "name": "EIR",
+        "description": ""
+      },
+      {
+        "name": "LLaMA3-8B-Instruct",
+        "description": ""
+      },
+      {
+        "name": "Mistral-7B-Instruct-v0.3",
+        "description": ""
+      },
+      {
+        "name": "DPO",
+        "description": "algorithm used for fine-tuning models"
+      },
+      {
+        "name": "LoRA",
+        "description": "used for training Llama2-13B-chat model"
+      },
+      {
+        "name": "Error-informed feedback approach",
+        "description": "refined answers"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "error scores",
+        "value": "best",
+        "split": null
+      },
+      {
+        "metric": "Error samples",
+        "value": "~2%",
+        "split": null
+      },
+      {
+        "metric": "Error score",
+        "value": "~\u039427%",
+        "split": null
+      },
+      {
+        "metric": "F1 scores",
+        "value": "~4%",
+        "split": null
+      },
+      {
+        "metric": "comprehensiveness",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "overall answer preference",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

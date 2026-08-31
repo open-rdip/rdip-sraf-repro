@@ -1,0 +1,42 @@
+{
+  "study_id": "study074",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study074/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:43:23.851375+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 2,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ChatGPT",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "DroidBot-GPT",
+        "description": "GPT-powered UI Automation for Android"
+      },
+      {
+        "name": "GUI description",
+        "description": "translating a graphical user interface into a form that a large language model can handle"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

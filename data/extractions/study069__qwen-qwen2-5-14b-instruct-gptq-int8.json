@@ -1,0 +1,132 @@
+{
+  "study_id": "study069",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study069/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:18:21.121226+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 6,
+    "methods": 10,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b2",
+        "value": null
+      },
+      {
+        "name": "\u03c4",
+        "value": "[0.1,0.3,0.5,0.7,0.9]"
+      },
+      {
+        "name": "con\ufb01dence hyper-parameter \u03c4",
+        "value": null
+      },
+      {
+        "name": "confidence parameter",
+        "value": "fixed value"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CORA",
+        "version": null
+      },
+      {
+        "name": "CITE",
+        "version": null
+      },
+      {
+        "name": "AMAP",
+        "version": null
+      },
+      {
+        "name": "BAT",
+        "version": null
+      },
+      {
+        "name": "EAT",
+        "version": null
+      },
+      {
+        "name": "UAT",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "HSAN",
+        "description": "method with hard sample aware contrastive loss"
+      },
+      {
+        "name": "infoNCE",
+        "description": "baseline method using infoNCE loss"
+      },
+      {
+        "name": "S",
+        "description": "attribute-structure similarity function"
+      },
+      {
+        "name": "M",
+        "description": "weight modulating function"
+      },
+      {
+        "name": "Hard Sample Aware Network (HSAN)",
+        "description": "A method to mine hard samples in contrastive deep graph clustering."
+      },
+      {
+        "name": "attribute and structure encoders",
+        "description": "Embeds the attribute and structure of samples into the latent space."
+      },
+      {
+        "name": "comprehensive similarity measure criterion",
+        "description": "Calculates sample similarities by considering both attribute and structure information."
+      },
+      {
+        "name": "general dynamic weight modulating function",
+        "description": "Proposes a function to up-weight hard sample pairs while down-weighting negative ones."
+      },
+      {
+        "name": "hard sample aware contrastive loss",
+        "description": "Forces the network to focus on hard sample pairs."
+      },
+      {
+        "name": "ProGCL",
+        "description": "Baseline method by Xia et al. 2022a"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "loss",
+        "value": "gradually converges",
+        "split": null
+      },
+      {
+        "metric": "clustering ACC",
+        "value": "gradually converges",
+        "split": null
+      },
+      {
+        "metric": "NMI",
+        "value": "8.48%",
+        "split": "test"
+      },
+      {
+        "metric": "NMI",
+        "value": "18.99%",
+        "split": null
+      }
+    ]
+  }
+}

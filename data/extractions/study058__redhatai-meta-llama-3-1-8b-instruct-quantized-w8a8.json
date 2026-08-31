@@ -1,0 +1,159 @@
+{
+  "study_id": "study058",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study058/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:35:18.413769+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 1,
+    "hyperparameters": 0,
+    "datasets": 8,
+    "methods": 17,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GPT-3",
+        "version": null
+      },
+      {
+        "name": "GPT-Neo",
+        "version": null
+      },
+      {
+        "name": "GPT-J",
+        "version": null
+      },
+      {
+        "name": "Turing-NLG",
+        "version": null
+      },
+      {
+        "name": "GPT-J-6B",
+        "version": "6 Billion Parameters"
+      }
+    ],
+    "random_seeds": [
+      5
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "toxic language detection dataset",
+        "version": null
+      },
+      {
+        "name": "ACL",
+        "version": null
+      },
+      {
+        "name": "EMNLP-IJCNLP",
+        "version": null
+      },
+      {
+        "name": "European Refugee Crisis",
+        "version": null
+      },
+      {
+        "name": "RWJF Discrimination in America",
+        "version": null
+      },
+      {
+        "name": "Twitter",
+        "version": null
+      },
+      {
+        "name": "Dynamically generated datasets",
+        "version": null
+      },
+      {
+        "name": "MTurk workers",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "automated debiasing",
+        "description": "toxic language detection"
+      },
+      {
+        "name": "Neuro-Logic decoding",
+        "description": "(un)supervised neural text generation with predicate logic constraints"
+      },
+      {
+        "name": "Hate speech detection",
+        "description": "Challenges and solutions"
+      },
+      {
+        "name": "Natural instructions",
+        "description": "Benchmarking generalization to new tasks from natural language instructions"
+      },
+      {
+        "name": "Microaggressions and traumatic stress",
+        "description": "Theory, research, and clinical treatment"
+      },
+      {
+        "name": "The impact of racial microaggressions on mental health",
+        "description": "Counseling implications for clients of color"
+      },
+      {
+        "name": "The effect of extremist violence on hateful speech online",
+        "description": null
+      },
+      {
+        "name": "Deepspeed",
+        "description": "System optimizations enable training deep learning models with over"
+      },
+      {
+        "name": "Effects of stereotypes within violent contexts on attitudes, perceptions, and affect",
+        "description": "Arabs as terrorists: Effects of stereotypes within violent con- texts on attitudes, perceptions, and affect"
+      },
+      {
+        "name": "The risk of racial bias in hate speech detection",
+        "description": "In ACL"
+      },
+      {
+        "name": "Social bias frames: Reasoning about social and power implications of language",
+        "description": "In ACL"
+      },
+      {
+        "name": "Annotators with attitudes: How annotator beliefs and identities bias toxic language detection",
+        "description": "In ACL"
+      },
+      {
+        "name": "On biases in language generation",
+        "description": "In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Lan- guage Processing (EMNLP-IJCNLP)"
+      },
+      {
+        "name": "Exposure to hate speech increases prejudice through desensitization",
+        "description": "Aggressive behavior"
+      },
+      {
+        "name": "HateCheck",
+        "description": "Functional tests for hate speech detection models"
+      },
+      {
+        "name": "Measuring the reliability of hate speech annotations",
+        "description": "The case of the European refugee crisis"
+      },
+      {
+        "name": "Implicitly abusive language detection",
+        "description": "Implicitly abusive language\u2013what does it actually look like and why are we not getting there?"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

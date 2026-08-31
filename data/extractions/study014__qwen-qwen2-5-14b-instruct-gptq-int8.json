@@ -1,0 +1,48 @@
+{
+  "study_id": "study014",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study014/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:39:32.539011+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 1,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "ScanNet",
+        "version": null
+      },
+      {
+        "name": "SUN RGB-D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "H3DNet",
+        "description": "Consists of three modules: the first module computes dense pointwise descriptors and predicts geometric primitives and their latent features; the second module converts these geometric primitives into object proposals."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP (0.25)",
+        "value": "67.2%",
+        "split": null
+      }
+    ]
+  }
+}

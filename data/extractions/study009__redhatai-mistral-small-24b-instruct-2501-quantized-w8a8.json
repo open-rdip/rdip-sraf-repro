@@ -1,0 +1,108 @@
+{
+  "study_id": "study009",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study009/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:09:51.586525+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 3,
+    "methods": 8,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "image_size",
+        "value": "640\u00d7640"
+      },
+      {
+        "name": "backbone",
+        "value": "HRNet-W40"
+      },
+      {
+        "name": "crop size",
+        "value": "640\u00d7640"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO2017",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "CrowdPose",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "HigherHRNet",
+        "description": "A method that performs better with small scales thanks to its higher resolution heatmaps."
+      },
+      {
+        "name": "MSR",
+        "description": "multi-resolution supervision."
+      },
+      {
+        "name": "feature concat.",
+        "description": "feature concatenation."
+      },
+      {
+        "name": "res. blocks",
+        "description": "residual blocks."
+      },
+      {
+        "name": "deconvolution module",
+        "description": "generates higher resolution heatmaps"
+      },
+      {
+        "name": "heatmap aggregation strategy",
+        "description": "applies heatmap aggregation strategy"
+      },
+      {
+        "name": "extra residual blocks",
+        "description": "adds 4 residual blocks in the deconvolution module"
+      },
+      {
+        "name": "HigherHRNet-W48",
+        "description": "na \u00a8\u0131ve top-down methods"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AP",
+        "value": "66.3",
+        "split": "val"
+      },
+      {
+        "metric": "APM",
+        "value": "57.1",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": "66.5",
+        "split": null
+      },
+      {
+        "metric": "APH",
+        "value": "1.5",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "study_id": "study012",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study012/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:13:30.760386+00:00",
+  "counts": {
+    "dependencies": 14,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 7,
+    "methods": 8,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Mask R-CNN",
+        "version": "1 \u00d7"
+      },
+      {
+        "name": "ResNet-50",
+        "version": null
+      },
+      {
+        "name": "Non-local",
+        "version": "53"
+      },
+      {
+        "name": "SE",
+        "version": "27"
+      },
+      {
+        "name": "color augmentation",
+        "version": "40"
+      },
+      {
+        "name": "ResNet",
+        "version": null
+      },
+      {
+        "name": "ResNeXt",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "batch norm (BN)",
+        "version": null
+      },
+      {
+        "name": "ResNet-101",
+        "version": null
+      },
+      {
+        "name": "FPN",
+        "version": null
+      },
+      {
+        "name": "dilation-8 network",
+        "version": null
+      },
+      {
+        "name": "symmetric encoder-decoder",
+        "version": null
+      },
+      {
+        "name": "dilation-16 network",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "scale jitter",
+        "value": "[640, 800]"
+      },
+      {
+        "name": "number of stuff classes",
+        "value": "53"
+      },
+      {
+        "name": "number of thing classes",
+        "value": "80"
+      },
+      {
+        "name": "number of channels",
+        "value": "128"
+      },
+      {
+        "name": "learning rate",
+        "value": "double"
+      },
+      {
+        "name": "batch size",
+        "value": "halved"
+      },
+      {
+        "name": "loss combination strategy",
+        "value": "combined loss"
+      },
+      {
+        "name": "\u03bbi",
+        "value": "string"
+      },
+      {
+        "name": "\u03bbs",
+        "value": "string"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": "[6]"
+      },
+      {
+        "name": "Cityscapes",
+        "version": "[14]"
+      },
+      {
+        "name": "COCO Panoptic",
+        "version": null
+      },
+      {
+        "name": "COCO-Stuff",
+        "version": "2017"
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "Panoptic FPN",
+        "version": null
+      },
+      {
+        "name": "COCO Panoptic Segmentation Challenge",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Panoptic FPN",
+        "description": "performs panoptic segmentation"
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "multi-task training"
+      },
+      {
+        "name": "semantic segmentation",
+        "description": "proposed semantic segmentation branch"
+      },
+      {
+        "name": "FPN",
+        "description": "null"
+      },
+      {
+        "name": "ResNet-50",
+        "description": "single backbone"
+      },
+      {
+        "name": "ResNet-101",
+        "description": "single backbone"
+      },
+      {
+        "name": "[1]"
+      },
+      {
+        "name": "instance segmentation",
+        "description": "string"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AP",
+        "value": "average precision averaged over categories and IoU thresholds",
+        "split": null
+      },
+      {
+        "metric": "AP 50",
+        "value": "selected supplementary metric",
+        "split": null
+      },
+      {
+        "metric": "AP 75",
+        "value": "selected supplementary metric",
+        "split": null
+      },
+      {
+        "metric": "PQ",
+        "value": "panoptic quality",
+        "split": null
+      },
+      {
+        "metric": "PQStand",
+        "value": "stuff performance",
+        "split": null
+      },
+      {
+        "metric": "PQTht",
+        "value": "thing performance",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "comparable",
+        "split": null
+      },
+      {
+        "metric": "efficiency",
+        "value": "summation is more efficient",
+        "split": null
+      },
+      {
+        "metric": "results",
+        "value": "demonstrate a strong baseline",
+        "split": null
+      },
+      {
+        "metric": "PQ margin",
+        "value": "4.3 point",
+        "split": null
+      }
+    ]
+  }
+}

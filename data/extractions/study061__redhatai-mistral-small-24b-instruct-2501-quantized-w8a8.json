@@ -1,0 +1,95 @@
+{
+  "study_id": "study061",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study061/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:55:31.960468+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 2,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "collaboration coefficients of the pedestrians",
+        "value": "0"
+      },
+      {
+        "name": "collaboration coefficients of the robot",
+        "value": "1"
+      },
+      {
+        "name": "horizon",
+        "value": "6 seconds"
+      },
+      {
+        "name": "checkpoint tolerance",
+        "value": "1 meter"
+      },
+      {
+        "name": "number of agents",
+        "value": "4"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "SocNavBench",
+        "version": null
+      },
+      {
+        "name": "curated set of 33 episodes",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PedSim",
+        "description": "a popular pedestrian crowd simulator"
+      },
+      {
+        "name": "ORCA",
+        "description": "an efficient navigation planner that provides theoretical non-collision guarantees assuming all agents in the environment use the same planning policy"
+      },
+      {
+        "name": "SA-CADRL",
+        "description": "a deep reinforcement learning based social navigation method which formulates social navigation as a cooperative multi-agent collision avoidance problem with well-crafted rules to inject social awareness"
+      },
+      {
+        "name": "Social Forces",
+        "description": "A formulation to explain pedestrian navigation behavior as being under the influence of social forces including an attractive force to their goal, a repulsive force from other pedestrians and obstacles, and other attractive forces to interesting objects or other pedestrians in the environment."
+      },
+      {
+        "name": "CADRL",
+        "description": "A recent, popular, and relatively state-of-the-art model using a deep reinforcement learning-based navigation method."
+      },
+      {
+        "name": "meta planner",
+        "description": "plans a sub-goal within a 6-second horizon each time a new checkpoint is requested"
+      },
+      {
+        "name": "Pedestrian-unaware Baseline",
+        "description": "meta-planner as a baseline navigation algorithm which does not take into account pedestrians around it"
+      },
+      {
+        "name": "3D unicycle model",
+        "description": "applied to the baseline planner"
+      },
+      {
+        "name": "meta-level planner",
+        "description": "sampling planner that samples trajectories from a connectivity graph and evaluates them via heuristic cost functions and returns the minimum cost trajectory within a budget"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

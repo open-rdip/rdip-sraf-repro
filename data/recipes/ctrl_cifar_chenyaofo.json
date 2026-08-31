@@ -1,0 +1,24 @@
+{
+  "run_command": "python test.py --arch resnet20 --data /path/to/cifar10 --checkpoint /path/to/cifar10_resnet20-4118986f.pt",
+  "setup_steps": [
+    "wget https://github.com/chenyaofo/pytorch-cifar-models/releases/download/resnet/cifar10_resnet20-4118986f.pt -O ckpt.pt",
+    "pip install -r requirements.txt"
+  ],
+  "requires_dataset": [
+    {
+      "name": "CIFAR-10",
+      "download": "wget https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz -O cifar10.tar.gz"
+    }
+  ],
+  "requires_checkpoint": null,
+  "produces_metric": [
+    {
+      "metric": "Top-1 Accuracy",
+      "dataset": "CIFAR-10"
+    }
+  ],
+  "entry_point": "test.py",
+  "confidence": "high",
+  "study_id": "ctrl_cifar_chenyaofo",
+  "repo_url": "https://github.com/chenyaofo/pytorch-cifar-models"
+}

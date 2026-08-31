@@ -1,0 +1,60 @@
+{
+  "study_id": "study037",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study037/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:26:35.447323+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 1,
+    "methods": 3,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Adam optimizer",
+        "version": "Kingma & Ba, 2015"
+      },
+      {
+        "name": "NTK",
+        "version": "Jacot et al., 2018"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning rate",
+        "value": "10\u22123"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "gradient ascent",
+        "description": "used to find x\u22c6 on the learned conservative model, \u02c6f\u03b8"
+      },
+      {
+        "name": "gradient-ascent optimizer",
+        "description": "with a learning rate of 0.05 for continuous tasks and 2.0 for discrete tasks"
+      },
+      {
+        "name": "conservative training",
+        "description": "gradient descent on \u03b8 with respect to the objective in Equation 7"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

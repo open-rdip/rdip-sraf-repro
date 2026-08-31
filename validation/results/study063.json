@@ -1,0 +1,214 @@
+{
+  "study_id": "study063",
+  "repo_url": "https://github.com/k2-fsa/icefall",
+  "started": "2026-06-10T12:44:12.385067+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "docker/Ubuntu18.04-pytorch1.12.1-cuda11.3-cudnn8/Dockerfile",
+      "pip": "requirements.txt",
+      "setup": "pyproject.toml"
+    },
+    "depth_note": "deep",
+    "n_found": 16,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements-ci.txt",
+        "depth": 0
+      },
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "pip",
+        "rel_path": "requirements-tts.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "pyproject.toml",
+        "depth": 0
+      },
+      {
+        "type": "pip",
+        "rel_path": "docs/requirements.txt",
+        "depth": 1
+      },
+      {
+        "type": "pip",
+        "rel_path": "egs/wenetspeech/ASR/whisper/requirements.txt",
+        "depth": 4
+      },
+      {
+        "type": "pip",
+        "rel_path": "egs/speechio/ASR/whisper/requirements.txt",
+        "depth": 4
+      },
+      {
+        "type": "pip",
+        "rel_path": "egs/ljspeech/TTS/matcha/requirements.txt",
+        "depth": 4
+      },
+      {
+        "type": "pip",
+        "rel_path": "egs/wenetspeech4tts/TTS/valle/requirements.txt",
+        "depth": 4
+      },
+      {
+        "type": "pip",
+        "rel_path": "egs/wenetspeech4tts/TTS/f5-tts/requirements.txt",
+        "depth": 4
+      },
+      {
+        "type": "pip",
+        "rel_path": "egs/multi_zh-hans/ASR/whisper/requirements.txt",
+        "depth": 4
+      },
+      {
+        "type": "pip",
+        "rel_path": "egs/aishell/ASR/whisper/requirements.txt",
+        "depth": 4
+      },
+      {
+        "type": "pip",
+        "rel_path": "egs/speech_llm/ASR_LLM/whisper_llm_zh/requirements.txt",
+        "depth": 4
+      },
+      {
+        "type": "docker",
+        "rel_path": "docker/Ubuntu18.04-pytorch1.12.1-cuda11.3-cudnn8/Dockerfile",
+        "depth": 2
+      },
+      {
+        "type": "docker",
+        "rel_path": "docker/Ubuntu18.04-pytorch1.7.1-cuda11.0-cudnn8/Dockerfile",
+        "depth": 2
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/k2-fsa/icefall",
+    "commit_hash": "27e14b33ded8056fccd57c91aaf3d130c46e2ac0",
+    "software_license": "Apache-2.0"
+  },
+  "lift": {
+    "lifted": {
+      "docker": "docker/Ubuntu18.04-pytorch1.12.1-cuda11.3-cudnn8/Dockerfile",
+      "pip": "requirements.txt"
+    },
+    "triples": 114,
+    "n_sources": 3
+  },
+  "python": {
+    "declared": "3.12",
+    "source": "python_requires",
+    "used": "3.12",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 375.1,
+    "log_tail": "safe>=2.1.1 (from werkzeug>=1.0.1->tensorboard->-r /tmp/15889/study063/study063/requirements.txt (line 8))\n  Using cached markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)\nCollecting markdown-it-py>=2.2.0 (from rich->onnxsim->-r /tmp/15889/study063/study063/requirements.txt (line 14))\n  Using cached markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)\nCollecting pygments<3.0.0,>=2.13.0 (from rich->onnxsim->-r /tmp/15889/study063/study063/requirements.txt (line 14))\n  Using cached pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)\nCollecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->onnxsim->-r /tmp/15889/study063/study063/requirements.txt (line 14))\n  Using cached mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)\nWould install Markdown-3.10.2 MarkupSafe-3.0.3 Pygments-2.20.0 Werkzeug-3.1.8 absl-py-2.4.0 black-22.3.0 certifi-2026.5.20 charset-normalizer-3.4.7 click-8.4.1 dill-0.4.1 docopt-0.6.2 flake8-5.0.4 flatbuffers-25.12.19 grpcio-1.81.0 idna-3.18 isort-5.10.1 kaldi-decoder-0.3.0 kaldialign-0.10.0 kaldifst-1.8.0 kaldilm-1.15.4 markdown-it-py-4.2.0 mccabe-0.7.0 mdurl-0.1.2 ml_dtypes-0.5.4 mypy_extensions-1.1.0 num2words-0.5.14 numpy-2.4.6 onnx-1.21.0 onnxconverter-common-1.16.0 onnxoptimizer-0.4.2 onnxruntime-1.26.0 onnxsim-0.6.5 packaging-26.2 pathspec-1.1.1 pillow-12.2.0 platformdirs-4.10.0 protobuf-7.35.0 pycantonese-3.4.0 pycodestyle-2.9.1 pyflakes-2.5.0 pylangacq-0.16.2 pypinyin-0.50.0 python-dateutil-2.9.0.post0 requests-2.34.2 rich-15.0.0 sentencepiece-0.2.1 setuptools-82.0.1 six-1.17.0 tabulate-0.9.0 tensorboard-2.20.0 tensorboard-data-server-0.7.2 typeguard-4.5.2 typing_extensions-4.15.0 urllib3-2.7.0 wcwidth-0.8.1 wordseg-0.0.2\n\n$ /tmp/15889/study063/venv/bin/pip install --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study063/study063/requirements.txt\n2_28_x86_64.whl (22 kB)\nUsing cached flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)\nUsing cached pillow-12.2.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)\nUsing cached rich-15.0.0-py3-none-any.whl (310 kB)\nUsing cached pygments-2.20.0-py3-none-any.whl (1.2 MB)\nUsing cached markdown_it_py-4.2.0-py3-none-any.whl (91 kB)\nUsing cached mdurl-0.1.2-py3-none-any.whl (10.0 kB)\nUsing cached wcwidth-0.8.1-py3-none-any.whl (323 kB)\nInstalling collected packages: flatbuffers, docopt, wordseg, wcwidth, urllib3, typing_extensions, tensorboard-data-server, tabulate, six, sentencepiece, pypinyin, pygments, pyflakes, pycodestyle, protobuf, platformdirs, pillow, pathspec, numpy, num2words, mypy-extensions, mdurl, mccabe, markupsafe, markdown, kaldilm, kaldifst, kaldialign, kaldi-decoder, isort, idna, dill, click, charset_normalizer, certifi, absl-py, werkzeug, typeguard, requests, python-dateutil, onnxruntime, ml_dtypes, markdown-it-py, grpcio, flake8, black, tensorboard, rich, pylangacq, onnx, pycantonese, onnxsim, onnxoptimizer, onnxconverter_common\n\nSuccessfully installed absl-py-2.4.0 black-22.3.0 certifi-2026.5.20 charset_normalizer-3.4.7 click-8.4.1 dill-0.4.1 docopt-0.6.2 flake8-5.0.4 flatbuffers-25.12.19 grpcio-1.81.0 idna-3.18 isort-5.10.1 kaldi-decoder-0.3.0 kaldialign-0.10.0 kaldifst-1.8.0 kaldilm-1.15.4 markdown-3.10.2 markdown-it-py-4.2.0 markupsafe-3.0.3 mccabe-0.7.0 mdurl-0.1.2 ml_dtypes-0.5.4 mypy-extensions-1.1.0 num2words-0.5.14 numpy-2.4.6 onnx-1.21.0 onnxconverter_common-1.16.0 onnxoptimizer-0.4.2 onnxruntime-1.26.0 onnxsim-0.6.5 pathspec-1.1.1 pillow-12.2.0 platformdirs-4.10.0 protobuf-7.35.0 pycantonese-3.4.0 pycodestyle-2.9.1 pyflakes-2.5.0 pygments-2.20.0 pylangacq-0.16.2 pypinyin-0.50.0 python-dateutil-2.9.0.post0 requests-2.34.2 rich-15.0.0 sentencepiece-0.2.1 six-1.17.0 tabulate-0.9.0 tensorboard-2.20.0 tensorboard-data-server-0.7.2 typeguard-4.5.2 typing_extensions-4.15.0 urllib3-2.7.0 wcwidth-0.8.1 werkzeug-3.1.8 wordseg-0.0.2\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 51.79,
+    "tier": "fair",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 12.5,
+      "Reproducible": 19.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 378.5,
+  "fair_r_scorer": "graded-v2"
+}

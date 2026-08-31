@@ -1,0 +1,25 @@
+{
+  "run_command": null,
+  "setup_steps": [
+    "pip install dicee --extra-index-url https://download.pytorch.org/whl/cpu",
+    "wget https://files.dice-research.org/datasets/dice-embeddings/KGs.zip --no-check-certificate",
+    "unzip KGs.zip"
+  ],
+  "requires_dataset": [
+    {
+      "name": "UMLS",
+      "download": null
+    }
+  ],
+  "requires_checkpoint": null,
+  "produces_metric": [
+    {
+      "metric": "MRR",
+      "dataset": "UMLS"
+    }
+  ],
+  "entry_point": "dicee",
+  "confidence": "low",
+  "study_id": "study002",
+  "repo_url": "https://github.com/dice-group/dice-embeddings"
+}

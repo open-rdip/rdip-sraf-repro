@@ -1,0 +1,67 @@
+{
+  "study_id": "study004",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study004/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:32:37.142219+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 3,
+    "methods": 5,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03be",
+        "value": "sensitive to choice"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "synthetic dataset",
+        "version": null
+      },
+      {
+        "name": "CIFAR-10",
+        "version": null
+      },
+      {
+        "name": "Synthetic Data",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "KDE",
+        "description": "Kernel Density Estimation"
+      },
+      {
+        "name": "PAC-Bayesian risk bound on neural nets",
+        "description": "Our method compared with Neyshabur et al., 2017"
+      },
+      {
+        "name": "RMSProp",
+        "description": "Optimizer used in experiments"
+      },
+      {
+        "name": "ADAM",
+        "description": "Optimizer used in experiments"
+      },
+      {
+        "name": "\u03bbmin(Hessian)",
+        "description": "Tracking the minimum eigenvalue of Hessian of the loss function"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

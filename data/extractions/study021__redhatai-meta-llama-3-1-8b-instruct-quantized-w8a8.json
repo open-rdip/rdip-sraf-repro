@@ -1,0 +1,217 @@
+{
+  "study_id": "study021",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study021/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:17:32.175472+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 5,
+    "methods": 15,
+    "evaluation_results": 16
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "DPL",
+        "version": "Motifs backbone"
+      },
+      {
+        "name": "SGD",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "1 GPU",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "N",
+        "value": "string"
+      },
+      {
+        "name": "R",
+        "value": "Lmatch"
+      },
+      {
+        "name": "\u03b1",
+        "value": "10"
+      },
+      {
+        "name": "Rare",
+        "value": "1.0"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "GQA",
+        "version": null
+      },
+      {
+        "name": "VG",
+        "version": null
+      },
+      {
+        "name": "Motifs",
+        "version": null
+      },
+      {
+        "name": "Motifs+re-weighting",
+        "version": null
+      },
+      {
+        "name": "Motifs+DPL",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DPL",
+        "description": "model-agnostic approach"
+      },
+      {
+        "name": "TDE",
+        "description": "unbiased SGG method"
+      },
+      {
+        "name": "DLFE",
+        "description": "unbiased SGG method"
+      },
+      {
+        "name": "re-balancing methods",
+        "description": "recently researched"
+      },
+      {
+        "name": "Motifs",
+        "description": "Motifs"
+      },
+      {
+        "name": "Motifs+re-weighting",
+        "description": "Motifs+re-weighting"
+      },
+      {
+        "name": "Motifs+DPL",
+        "description": "Motifs+DPL"
+      },
+      {
+        "name": "sample-relation feature matching process",
+        "description": "learn the range that can be represented by each predicate, and estimate the specific semantics associated with relation features"
+      },
+      {
+        "name": "orthogonal loss",
+        "description": "prevent unexpected overlap between unrelated predicates due to the symmetry of the normal distribution"
+      },
+      {
+        "name": "Semantic Diversity-aware Prototype-based Learning",
+        "description": "string"
+      },
+      {
+        "name": "object detector",
+        "description": null
+      },
+      {
+        "name": "Softmax",
+        "description": "Softmax function"
+      },
+      {
+        "name": "Cross Entropy Loss",
+        "description": "Cross entropy loss function"
+      },
+      {
+        "name": "Sample Matching Loss",
+        "description": "Sample matching loss function"
+      },
+      {
+        "name": "string",
+        "description": "string"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "R@K",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "mR@K",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "confidence",
+        "value": "highest",
+        "split": "test"
+      },
+      {
+        "metric": "performance",
+        "value": "drop",
+        "split": null
+      },
+      {
+        "metric": "biased predictions",
+        "value": "most relationships",
+        "split": null
+      },
+      {
+        "metric": "mAP",
+        "value": "25.33",
+        "split": "GQA dataset"
+      },
+      {
+        "metric": "R@50 / 100",
+        "value": "61.1 / 63.1",
+        "split": "VG dataset"
+      },
+      {
+        "metric": "mR@50 / 100",
+        "value": "11.0 / 11.8",
+        "split": "VG dataset"
+      },
+      {
+        "metric": "F@50 / 100",
+        "value": "18.6 / 19.9",
+        "split": "VG dataset"
+      },
+      {
+        "metric": "Result of Training",
+        "value": "growing on attached to",
+        "split": null
+      },
+      {
+        "metric": "F@K",
+        "value": "string",
+        "split": "Case 1"
+      },
+      {
+        "metric": "F@K",
+        "value": "string",
+        "split": "Case 2"
+      },
+      {
+        "metric": "R@K",
+        "value": "string",
+        "split": "Case 1"
+      },
+      {
+        "metric": "R@K",
+        "value": "string",
+        "split": "Case 2"
+      },
+      {
+        "metric": "mR@K",
+        "value": "string",
+        "split": "Case 1"
+      },
+      {
+        "metric": "mR@K",
+        "value": "string",
+        "split": "Case 2"
+      }
+    ]
+  }
+}

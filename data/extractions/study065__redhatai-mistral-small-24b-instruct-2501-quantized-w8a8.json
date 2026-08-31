@@ -1,0 +1,80 @@
+{
+  "study_id": "study065",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study065/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:58:07.588925+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 2,
+    "methods": 4,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "BERT",
+        "version": null
+      },
+      {
+        "name": "Sentence-BERT",
+        "version": null
+      },
+      {
+        "name": "RoBERTa",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "threshold",
+        "value": "\u00b5s\u2212\u03c3s"
+      },
+      {
+        "name": "L",
+        "value": "12"
+      },
+      {
+        "name": "H",
+        "value": "768"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "AMI Meeting Corpus",
+        "version": null
+      },
+      {
+        "name": "SNLI dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "TextTiling",
+        "description": "detects topic changes with a similarity score based on word frequencies"
+      },
+      {
+        "name": "mean over all the output vectors",
+        "description": "extract fixed size sentence embeddings"
+      },
+      {
+        "name": "max pooling",
+        "description": "filter out words that hold limited semantic value"
+      },
+      {
+        "name": "RoBERTa",
+        "description": "a pre-training configuration of BERT trained with the Masked Language Modelling objective on a five large English-language corpora totaling over 160GB of uncompressed text"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "study_id": "study037",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study037/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:36:45.888193+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 1,
+    "methods": 2,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Adam optimizer",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "T",
+        "value": "string"
+      },
+      {
+        "name": "learning rate",
+        "value": "10\u22123"
+      },
+      {
+        "name": "learning rate for continuous tasks",
+        "value": "0.05"
+      },
+      {
+        "name": "learning rate for discrete tasks",
+        "value": "2.0"
+      },
+      {
+        "name": "gradient ascent steps",
+        "value": "50"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "conservative objective model",
+        "description": "neural network with two hidden layers of size 2048 each and leaky ReLU activations"
+      },
+      {
+        "name": "neural tangent kernel",
+        "description": "model of neural nets"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "study_id": "study008",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study008/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:11:16.823013+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 13,
+    "methods": 9,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "github",
+        "version": "https://github.com/konstantinjdobler/tight-budget-llm-adaptation"
+      },
+      {
+        "name": "PyTorch",
+        "version": "FSDP (Zhao et al., 2023)"
+      },
+      {
+        "name": "Nvidia H100 GPUs",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia A100 80GB, Nvidia A100 40GB, H100 80GB, A6000 48GB",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "micro-batch size",
+        "value": "string or different ZeRO stages"
+      },
+      {
+        "name": "activation checkpointing",
+        "value": "string or different ZeRO stages"
+      },
+      {
+        "name": "Training steps",
+        "value": "7,680"
+      },
+      {
+        "name": "Warmup steps",
+        "value": "76"
+      },
+      {
+        "name": "Batch size",
+        "value": "256"
+      },
+      {
+        "name": "Context length",
+        "value": "4,096"
+      },
+      {
+        "name": "Total training tokens",
+        "value": "8 billion"
+      },
+      {
+        "name": "Optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "Learning rate",
+        "value": "4\u00d710\u22125"
+      },
+      {
+        "name": "Learning rate decay",
+        "value": "Cosine to 2\u00d710\u22126"
+      },
+      {
+        "name": "Adam \u03b2",
+        "value": "(0.9, 0.95)"
+      },
+      {
+        "name": "Weight decay",
+        "value": "0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CulturaX",
+        "version": null
+      },
+      {
+        "name": "OSCAR23.01",
+        "version": null
+      },
+      {
+        "name": "BOOLQ",
+        "version": null
+      },
+      {
+        "name": "COPA",
+        "version": null
+      },
+      {
+        "name": "HellaSwag",
+        "version": null
+      },
+      {
+        "name": "Open-BookQA",
+        "version": null
+      },
+      {
+        "name": "PIQA",
+        "version": null
+      },
+      {
+        "name": "RACE",
+        "version": null
+      },
+      {
+        "name": "SciTail",
+        "version": null
+      },
+      {
+        "name": "TOXIGEN",
+        "version": null
+      },
+      {
+        "name": "OALL",
+        "version": null
+      },
+      {
+        "name": "AlGhafa-T",
+        "version": null
+      },
+      {
+        "name": "Mistral-7B",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "mixed-precision training",
+        "description": "bfloat16 mixed-precision training"
+      },
+      {
+        "name": "FlashAttention self-attention",
+        "description": "string"
+      },
+      {
+        "name": "RMSNorm CUDA kernels",
+        "description": "string"
+      },
+      {
+        "name": "infinite learning rate schedule",
+        "description": "string"
+      },
+      {
+        "name": "adjusted attention masks",
+        "description": "string"
+      },
+      {
+        "name": "RMSNorm",
+        "description": "weight normalization"
+      },
+      {
+        "name": "pure bfloat16",
+        "description": "training"
+      },
+      {
+        "name": "mixed-precision bfloat16",
+        "description": "training"
+      },
+      {
+        "name": "bfloat16",
+        "description": "language adaptation"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "faster",
+        "value": "39%",
+        "split": "experiments"
+      },
+      {
+        "metric": "impossible",
+        "value": "due to out-of-memory errors",
+        "split": "single 80GB GPU"
+      }
+    ]
+  }
+}

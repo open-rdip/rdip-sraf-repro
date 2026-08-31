@@ -1,0 +1,64 @@
+{
+  "study_id": "study016",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study016/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:14:50.242579+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 4,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "IMPALA",
+        "version": null
+      },
+      {
+        "name": "PPO",
+        "version": null
+      },
+      {
+        "name": "DreamerV2",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Avalon",
+        "description": "Users can easily create entirely new game mechanics, enabling RL research beyond the simple navigation and object manipulation tasks we have presented here."
+      },
+      {
+        "name": "Bayesian optimization",
+        "description": ""
+      },
+      {
+        "name": "Natural Evolution Strategies",
+        "description": ""
+      },
+      {
+        "name": "Automated Curriculum Learning",
+        "description": "A simple form of Automated Curriculum Learning similar to the approaches in [ 24,30]"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "average scores",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

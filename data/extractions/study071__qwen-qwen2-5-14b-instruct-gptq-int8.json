@@ -1,0 +1,176 @@
+{
+  "study_id": "study071",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study071/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:20:27.779668+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 3,
+    "methods": 12,
+    "evaluation_results": 12
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "classifier-free guidance scale",
+        "value": "various values tested"
+      },
+      {
+        "name": "learning_rate",
+        "value": "3e-6"
+      },
+      {
+        "name": "total_batch_size",
+        "value": "128"
+      },
+      {
+        "name": "warmup_period",
+        "value": "500"
+      },
+      {
+        "name": "guidance_scale",
+        "value": "9"
+      },
+      {
+        "name": "tie_threshold_probabilities",
+        "value": "[0.0, 0.2, 0.4, 0.6, 0.8, 1.0]"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pick-a-Pic",
+        "version": "NSFW filtered and not fully updated version"
+      },
+      {
+        "name": "yuvalkirstain/pickapic_v1",
+        "version": null
+      },
+      {
+        "name": "yuvalkirstain/pickapic_v2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PickScore",
+        "description": "A method that selects images based on preference and alignment with prompts."
+      },
+      {
+        "name": "Stable Diffusion XL (Alpha variant)",
+        "description": "used with different classifier-free guidance scales"
+      },
+      {
+        "name": "annotation strategy",
+        "description": "2 images, with ties"
+      },
+      {
+        "name": "objective optimization",
+        "description": "minimizing the KL-divergence between the preference p and the softmax-normalized scores of y1 and y2"
+      },
+      {
+        "name": "weighted average reduction",
+        "description": "applying a weighted average when reducing the loss across examples in the batch, with an inverse proportion to its prompt frequency in the dataset"
+      },
+      {
+        "name": "training framework",
+        "description": "finetuning CLIP-H using the described framework on the Pick-a-Pic training set"
+      },
+      {
+        "name": "CLIP-H",
+        "description": "Baseline model compared against PickScore."
+      },
+      {
+        "name": "Human Experts",
+        "description": "Used for qualitative comparison with models."
+      },
+      {
+        "name": "Random Classifier",
+        "description": "Baseline model compared against PickScore."
+      },
+      {
+        "name": "Aesthetics",
+        "description": "Baseline model based on CLIP-L for aesthetic prediction."
+      },
+      {
+        "name": "ImageReward",
+        "description": "Concurrent work model for comparison."
+      },
+      {
+        "name": "HPS",
+        "description": "Concurrent work model for comparison."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Comparison Win Rate",
+        "value": "71.4",
+        "split": null
+      },
+      {
+        "metric": "Percentage of prompts",
+        "value": "68.5%",
+        "split": null
+      },
+      {
+        "metric": "percentage of prompts with higher aesthetic score",
+        "value": "68.5%",
+        "split": null
+      },
+      {
+        "metric": "percentage of PickScore's choices with higher CLIP-H text-alignment score",
+        "value": "90.5%",
+        "split": null
+      },
+      {
+        "metric": "win ratio",
+        "value": "usually yields preferred images",
+        "split": null
+      },
+      {
+        "metric": "tie ratio",
+        "value": "corresponding tie ratios calculated",
+        "split": null
+      },
+      {
+        "metric": "lose ratio",
+        "value": "corresponding lose ratios calculated",
+        "split": null
+      },
+      {
+        "metric": "Win rate",
+        "value": "53.5%",
+        "split": null
+      },
+      {
+        "metric": "Tie rate",
+        "value": "35.2%",
+        "split": null
+      },
+      {
+        "metric": "Lose rate",
+        "value": "11.2%",
+        "split": null
+      },
+      {
+        "metric": "User preference",
+        "value": "Dreamlike Photoreal 2.0 preferred over Stable Diffusion 2.1",
+        "split": null
+      },
+      {
+        "metric": "Accuracy",
+        "value": "56.8",
+        "split": "test"
+      }
+    ]
+  }
+}

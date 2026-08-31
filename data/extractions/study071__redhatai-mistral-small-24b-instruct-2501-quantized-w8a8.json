@@ -1,0 +1,133 @@
+{
+  "study_id": "study071",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study071/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:04:24.246332+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 3,
+    "methods": 5,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "CLIP-H",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "classifier-free guidance scale",
+        "value": "9"
+      },
+      {
+        "name": "learning_rate",
+        "value": "3e-6"
+      },
+      {
+        "name": "batch_size",
+        "value": "128"
+      },
+      {
+        "name": "warmup_steps",
+        "value": "500"
+      },
+      {
+        "name": "training_steps",
+        "value": "4000"
+      },
+      {
+        "name": "guidance scale",
+        "value": "9"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pick-a-Pic",
+        "version": null
+      },
+      {
+        "name": "pickapic_v1",
+        "version": null
+      },
+      {
+        "name": "pickapic_v2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PickScore",
+        "description": "a scoring function that selects images based on aesthetic and prompt alignment"
+      },
+      {
+        "name": "Stable Diffusion XL (Alpha variant)",
+        "description": "image generation model"
+      },
+      {
+        "name": "Stable Diffusion 1.5",
+        "description": "Dreamlike Photoreal 2.0 is a finetuned version of Stable Diffusion 1.5"
+      },
+      {
+        "name": "Stable Diffusion 2.1",
+        "description": "Preference distribution when comparing Sta- ble Diffusion 2.1 with Dreamlike Photoreal 2.0."
+      },
+      {
+        "name": "Stable Diffusion XL (Alpha)",
+        "description": "Win rate versus classifier-free guidance scale for Stable Diffusion XL (Alpha)."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Win Rate",
+        "value": "71.4",
+        "split": null
+      },
+      {
+        "metric": "Aesthetic Score",
+        "value": "68.5",
+        "split": null
+      },
+      {
+        "metric": "CLIP-H text-alignment score",
+        "value": "90.5%",
+        "split": null
+      },
+      {
+        "metric": "win ratio",
+        "value": "9",
+        "split": null
+      },
+      {
+        "metric": "Tie rate",
+        "value": "35.2%",
+        "split": null
+      },
+      {
+        "metric": "Lose rate",
+        "value": "11.2%",
+        "split": null
+      },
+      {
+        "metric": "user preference",
+        "value": "Dreamlike Photoreal 2.0 over Stable Diffusion 2.1",
+        "split": null
+      },
+      {
+        "metric": "Accuracy",
+        "value": "56.8",
+        "split": "test"
+      }
+    ]
+  }
+}

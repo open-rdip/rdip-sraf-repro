@@ -1,0 +1,152 @@
+{
+  "study_id": "study023",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study023/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:18:15.857866+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 2,
+    "hyperparameters": 1,
+    "datasets": 2,
+    "methods": 5,
+    "evaluation_results": 16
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GPT-4V",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      0,
+      4
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "value": "0"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Mobile-Agent-v2",
+        "version": null
+      },
+      {
+        "name": "Mobile-Agent",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GPT-4V",
+        "description": "direct use of GPT-4V, bypassing the agent architecture for end-to-end operation"
+      },
+      {
+        "name": "Mobile-Agent-v2",
+        "description": "Mobile-Agent-v2, including the planning agent, reflection agent, and memory unit"
+      },
+      {
+        "name": "automating the generation of high-quality operation knowledge",
+        "description": "further improve the performance of Mobile-Agent-v2"
+      },
+      {
+        "name": "Mobile-Agent",
+        "description": "single-agent architecture based on GPT-4V end-to-end screen recognition"
+      },
+      {
+        "name": "multi-agent architecture",
+        "description": "handle the challenges posed by long sequences in UI operation tasks"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "effectiveness",
+        "value": "infeasible",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "declines",
+        "split": "after removing the reflection agent and memory unit"
+      },
+      {
+        "metric": "success rate",
+        "value": "2.7",
+        "split": "ModelBasic"
+      },
+      {
+        "metric": "success rate",
+        "value": "0.9",
+        "split": "Advanced SR&DA"
+      },
+      {
+        "metric": "success rate",
+        "value": "38.2",
+        "split": "Gemini-1.5-Pro"
+      },
+      {
+        "metric": "success rate",
+        "value": "29.8",
+        "split": "Qwen-VL-Max"
+      },
+      {
+        "metric": "success rate",
+        "value": "92.7",
+        "split": "GPT-4V"
+      },
+      {
+        "metric": "success rate",
+        "value": "83.5",
+        "split": "GPT-4V w/o agent"
+      },
+      {
+        "metric": "Rate (CR)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Decision Accuracy (DA)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Reflection Accuracy (RA)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "success rate",
+        "value": "55%",
+        "split": "advanced instructions"
+      },
+      {
+        "metric": "success rate",
+        "value": "20%",
+        "split": "basic instructions"
+      },
+      {
+        "metric": "success rate",
+        "value": "27%",
+        "split": "average improvement"
+      },
+      {
+        "metric": "completion rate",
+        "value": "100%",
+        "split": "knowledge injection"
+      },
+      {
+        "metric": "accuracy",
+        "value": "99%",
+        "split": "Mobile-Eval benchmark"
+      }
+    ]
+  }
+}

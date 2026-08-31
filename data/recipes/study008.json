@@ -1,0 +1,19 @@
+{
+  "run_command": "python eval_de.py --model hf-causal --model_args \"pretrained=/path/to/ckpt\" --device cuda:0 --output_path /path/to/outdir/output.json --csv_path /path/to/outdir/results.csv",
+  "setup_steps": [
+    "git clone -b mmlu_de git@github.com:bjoernpl/lm-evaluation-harness-de.git",
+    "mkdir -p /path/to/outdir/"
+  ],
+  "requires_dataset": [],
+  "requires_checkpoint": "/path/to/ckpt",
+  "produces_metric": [
+    {
+      "metric": "German task performance",
+      "dataset": null
+    }
+  ],
+  "entry_point": "eval_de.py",
+  "confidence": "low",
+  "study_id": "study008",
+  "repo_url": "https://github.com/konstantinjdobler/tight-budget-llm-adaptation"
+}

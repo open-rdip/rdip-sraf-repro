@@ -1,0 +1,100 @@
+{
+  "study_id": "study075",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study075/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:22:55.453677+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 0,
+    "methods": 4,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "Gene 5",
+        "value": "nanoparticle volumetric concentration"
+      },
+      {
+        "name": "Gene 6",
+        "value": "controls the nanoparticle domain size"
+      },
+      {
+        "name": "Gene 7",
+        "value": "controls the domain compactness"
+      },
+      {
+        "name": "Gene 8",
+        "value": "controls the spacing between domains"
+      },
+      {
+        "name": "Gene 9",
+        "value": "applies a background scattering intensity"
+      },
+      {
+        "name": "Gene 10",
+        "value": "sets the systems size by specifying the number of nanoparticles"
+      },
+      {
+        "name": "average diameter",
+        "value": "50 nm"
+      },
+      {
+        "name": "micelle size dispersity",
+        "value": "0.05"
+      },
+      {
+        "name": "core-micelle size ratio",
+        "value": "0.25"
+      },
+      {
+        "name": "micelle volume fraction",
+        "value": "0.15"
+      },
+      {
+        "name": "number_of_genes",
+        "value": "10"
+      },
+      {
+        "name": "micelle diameter range",
+        "value": "50 nm \u00b1 1 nm"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "ML model (neural network)",
+        "description": "developed to directly relate the gene set to the corresponding scattering intensity profile"
+      },
+      {
+        "name": "CREASE",
+        "description": "Utilizes a genetic algorithm to optimize for the set of genes (low dimensional feature space corresponding to a structural arrangement, S(q), and primary particle form, P(q)) that possesses a computed scattering profile(s) that most closely matches the input scattering profile(s). Outputs the real-space arrangement of the \u2018primary particle\u2019 as well as the relevant dimensions of the primary particle."
+      },
+      {
+        "name": "P(q) and S(q) CREASE",
+        "description": "A method used to identify information about micelles and their structural arrangement using scattering profiles."
+      },
+      {
+        "name": "Debye scattering approach",
+        "description": "Computes scattering profiles by evaluating P(q) and combining it with S(q) to obtain the overall scattering intensity I(q)"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "micelle-micelle RDF match",
+        "value": "relatively precise",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "study_id": "study022",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study022/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:21:17.685617+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 3,
+    "methods": 11,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "nvFuser",
+        "version": "7"
+      },
+      {
+        "name": "cuCollections",
+        "version": "8"
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "realtime user sequence length",
+        "value": "100"
+      },
+      {
+        "name": "action embedding dimension",
+        "value": "32"
+      },
+      {
+        "name": "transformer blocks",
+        "value": "2"
+      },
+      {
+        "name": "dropout rate",
+        "value": "0.1"
+      },
+      {
+        "name": "feed forward network dimension",
+        "value": "32"
+      },
+      {
+        "name": "learning rate",
+        "value": "0.0048"
+      },
+      {
+        "name": "batch size",
+        "value": "12000"
+      },
+      {
+        "name": "early fusion method",
+        "value": "concat"
+      },
+      {
+        "name": "sequence aggregation architecture",
+        "value": "transformer-based"
+      },
+      {
+        "name": "number of encoder layers",
+        "value": "2"
+      },
+      {
+        "name": "number of heads",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pinterest\u2019s internal training data",
+        "version": null
+      },
+      {
+        "name": "FVL",
+        "version": null
+      },
+      {
+        "name": "Pinterest Homefeed view log",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Kernel Fusion",
+        "description": "Fuse operations as much as possible"
+      },
+      {
+        "name": "Custom Embedding Lookup",
+        "description": "Merge the lookup for multiple features into one lookup"
+      },
+      {
+        "name": "Memory Copy Combination",
+        "description": "Combine memory copies for hundreds of features"
+      },
+      {
+        "name": "CUDA Graphs",
+        "description": "capture the model inference process as a static graph of operations instead of individually scheduled ones, allowing the computation to be executed as a single unit without any kernel launching overheads"
+      },
+      {
+        "name": "Combined memory copies",
+        "description": "Combine multiple tensors into one continuous buffer before transferring them from CPU to GPU"
+      },
+      {
+        "name": "Larger batches for GPU inference",
+        "description": "Use larger batches in the original requests directly for GPU-based inference"
+      },
+      {
+        "name": "Hybrid cache",
+        "description": "Implement a hybrid cache that uses both DRAM and SSD"
+      },
+      {
+        "name": "Pinnability",
+        "description": "A weighted cross-entropy loss, designed to optimize for multi-label classification tasks."
+      },
+      {
+        "name": "PinSage embedding",
+        "description": "with user action features"
+      },
+      {
+        "name": "early fusion",
+        "description": "concat method based on offline experiment results"
+      },
+      {
+        "name": "sequence aggregation model",
+        "description": "transformer-based architecture with 2 encoder layers and one head"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "study_id": "study053",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study053/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:08:27.798500+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 3,
+    "datasets": 11,
+    "methods": 9,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      3
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "attention_matrices",
+        "value": "value or output matrices (Wv and Wo)"
+      },
+      {
+        "name": "M",
+        "value": "hyper-parameter"
+      },
+      {
+        "name": "input prompt",
+        "value": "a photo of a [kth class name]"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "SUN397",
+        "version": null
+      },
+      {
+        "name": "Aircraft",
+        "version": null
+      },
+      {
+        "name": "EuroSAT",
+        "version": null
+      },
+      {
+        "name": "Stanford-Cars",
+        "version": null
+      },
+      {
+        "name": "Food101",
+        "version": null
+      },
+      {
+        "name": "OxfordPets",
+        "version": null
+      },
+      {
+        "name": "Flower102",
+        "version": null
+      },
+      {
+        "name": "Caltech101",
+        "version": null
+      },
+      {
+        "name": "DTD",
+        "version": null
+      },
+      {
+        "name": "UCF101",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "LoRA modules",
+        "description": "used for adapting Vision-Language Models (VLMs)"
+      },
+      {
+        "name": "LoRA",
+        "description": "Low-Rank Adaptation method for fine-tuning large language models"
+      },
+      {
+        "name": "AdaLoRA",
+        "description": "Adaptive Low-Rank Adaptation method for fine-tuning large language models"
+      },
+      {
+        "name": "Prompt tuning",
+        "description": "Optimizes text-input tokens, which could be extended to intermediate layers. If a transformer-based architecture is used, these learnable tokens can be inserted in vision models."
+      },
+      {
+        "name": "Adapters",
+        "description": "Updates a set of additional parameters."
+      },
+      {
+        "name": "Context Optimization (CoOp)",
+        "description": "Constructs text input c_kas continuous trainable vectors: c_k= (v_1^k, ..., v_M^k, [class k])"
+      },
+      {
+        "name": "CLIP-LoRA",
+        "description": "Adapting both modalities can be necessary for certain tasks."
+      },
+      {
+        "name": "CoOp",
+        "description": "With 4 learnable tokens"
+      },
+      {
+        "name": "Co-CoOp",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 accuracy",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

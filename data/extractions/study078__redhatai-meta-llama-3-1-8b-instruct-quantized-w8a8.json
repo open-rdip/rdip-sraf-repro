@@ -1,0 +1,64 @@
+{
+  "study_id": "study078",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study078/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:45:05.837086+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 0,
+    "datasets": 1,
+    "methods": 3,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      42
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "VQEs",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Shu\ufb04e-QUDIO",
+        "description": "a new quantum distributed optimization framework"
+      },
+      {
+        "name": "QUDIO",
+        "description": "a novel distributed-VQA scheme in a lazy communication manner"
+      },
+      {
+        "name": "parameter-shift rule",
+        "description": "estimates the gradient"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "approximation error",
+        "value": "smaller",
+        "split": null
+      },
+      {
+        "metric": "communication overhead",
+        "value": "lower",
+        "split": "among clients and server"
+      },
+      {
+        "metric": "speedup ratio",
+        "value": "sub-linear",
+        "split": null
+      }
+    ]
+  }
+}

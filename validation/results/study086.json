@@ -1,0 +1,154 @@
+{
+  "study_id": "study086",
+  "repo_url": "https://github.com/hengvt/proflingo",
+  "started": "2026-06-10T14:38:17.449060+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "conda": "auditing-llms/environment.yml",
+      "pip": "requirements.txt",
+      "setup": "llm-attacks/setup.py"
+    },
+    "depth_note": "subdir",
+    "n_found": 4,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "conda",
+        "rel_path": "auditing-llms/environment.yml",
+        "depth": 1
+      },
+      {
+        "type": "pip",
+        "rel_path": "llm-attacks/requirements.txt",
+        "depth": 1
+      },
+      {
+        "type": "setup",
+        "rel_path": "llm-attacks/setup.py",
+        "depth": 1
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/hengvt/proflingo",
+    "commit_hash": "1a0d70a8fa68237e11b6d67823c311b8960ed843",
+    "software_license": "MIT"
+  },
+  "lift": {
+    "lifted": {
+      "conda": "auditing-llms/environment.yml",
+      "pip": "requirements.txt"
+    },
+    "triples": 965,
+    "n_sources": 3
+  },
+  "python": {
+    "declared": "3.9",
+    "source": "conda",
+    "used": "3.9",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 938.6,
+    "log_tail": "yeyeballs-2.6.1 aiohttp-3.13.5 aiosignal-1.4.0 annotated-doc-0.0.4 annotated-types-0.7.0 anthropic-0.25.6 anyio-4.12.1 async-timeout-5.0.1 attrs-26.1.0 bitsandbytes-0.43.1 certifi-2026.5.20 charset-normalizer-3.4.7 click-8.1.8 datasets-2.18.0 dill-0.3.8 distro-1.9.0 docstring_parser-0.18.0 eval_type_backport-0.4.0 exceptiongroup-1.3.1 fastapi-0.128.8 filelock-3.19.1 frozenlist-1.8.0 fschat-0.2.36 fsspec-2024.2.0 h11-0.16.0 hf-xet-1.5.1 httpcore-1.0.9 httpx-0.28.1 huggingface_hub-0.36.2 idna-3.18 importlib_metadata-8.7.1 latex2mathml-3.78.1 markdown-it-py-3.0.0 markdown2-2.5.5 mdurl-0.1.2 mpmath-1.3.0 multidict-6.7.1 multiprocess-0.70.16 networkx-3.2.1 nh3-0.3.5 numpy-1.26.4 nvidia-cublas-cu12-12.1.3.1 nvidia-cuda-cupti-cu12-12.1.105 nvidia-cuda-nvrtc-cu12-12.1.105 nvidia-cuda-runtime-cu12-12.1.105 nvidia-cudnn-cu12-8.9.2.26 nvidia-cufft-cu12-11.0.2.54 nvidia-curand-cu12-10.3.2.106 nvidia-cusolver-cu12-11.4.5.107 nvidia-cusparse-cu12-12.1.0.106 nvidia-nccl-cu12-2.19.3 nvidia-nvjitlink-cu12-12.9.86 nvidia-nvtx-cu12-12.1.105 openai-1.23.2 packaging-26.2 pandas-2.2.2 peft-0.10.0 prompt_toolkit-3.0.52 propcache-0.4.1 protobuf-5.26.1 psutil-5.9.8 pyarrow-21.0.0 pyarrow-hotfix-0.7 pydantic-2.13.4 pydantic_core-2.46.4 python-dateutil-2.9.0.post0 pytz-2026.2 regex-2026.1.15 requests-2.32.5 rich-15.0.0 safetensors-0.7.0 sentencepiece-0.2.0 shortuuid-1.0.13 six-1.17.0 sniffio-1.3.1 starlette-0.49.3 svgwrite-1.4.3 sympy-1.14.0 tiktoken-0.13.0 tokenizers-0.15.2 torch-2.2.2+cu121 tqdm-4.66.2 transformers-4.39.3 triton-2.2.0 trl-0.8.4 typeguard-4.5.2 typing-inspection-0.4.2 typing_extensions-4.15.0 tyro-1.0.13 tzdata-2026.2 urllib3-2.6.3 uvicorn-0.39.0 wavedrom-2.0.3.post3 wcwidth-0.8.1 xxhash-3.7.0 yarl-1.22.0 zipp-3.23.1\n\n$ /tmp/15889/study086/venv/bin/pip install --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study086/study086/requirements.txt\ngingface-hub, anyio, tyro, torch, tokenizers, starlette, httpx, aiohttp, transformers, openai, fastapi, bitsandbytes, anthropic, accelerate, peft, fschat, datasets, trl\n\nSuccessfully installed MarkupSafe-3.0.3 accelerate-0.28.0 aiohappyeyeballs-2.6.1 aiohttp-3.13.5 aiosignal-1.4.0 annotated-doc-0.0.4 annotated-types-0.7.0 anthropic-0.25.6 anyio-4.12.1 async-timeout-5.0.1 attrs-26.1.0 bitsandbytes-0.43.1 certifi-2026.5.20 charset_normalizer-3.4.7 click-8.1.8 datasets-2.18.0 dill-0.3.8 distro-1.9.0 docstring-parser-0.18.0 eval-type-backport-0.4.0 exceptiongroup-1.3.1 fastapi-0.128.8 filelock-3.19.1 frozenlist-1.8.0 fschat-0.2.36 fsspec-2024.2.0 h11-0.16.0 hf-xet-1.5.1 httpcore-1.0.9 httpx-0.28.1 huggingface-hub-0.36.2 idna-3.18 importlib_metadata-8.7.1 jinja2-3.1.6 latex2mathml-3.78.1 markdown-it-py-3.0.0 markdown2-2.5.5 mdurl-0.1.2 mpmath-1.3.0 multidict-6.7.1 multiprocess-0.70.16 networkx-3.2.1 nh3-0.3.5 numpy-1.26.4 nvidia-cublas-cu12-12.1.3.1 nvidia-cuda-cupti-cu12-12.1.105 nvidia-cuda-nvrtc-cu12-12.1.105 nvidia-cuda-runtime-cu12-12.1.105 nvidia-cudnn-cu12-8.9.2.26 nvidia-cufft-cu12-11.0.2.54 nvidia-curand-cu12-10.3.2.106 nvidia-cusolver-cu12-11.4.5.107 nvidia-cusparse-cu12-12.1.0.106 nvidia-nccl-cu12-2.19.3 nvidia-nvjitlink-cu12-12.9.86 nvidia-nvtx-cu12-12.1.105 openai-1.23.2 pandas-2.2.2 peft-0.10.0 prompt-toolkit-3.0.52 propcache-0.4.1 protobuf-5.26.1 psutil-5.9.8 pyarrow-21.0.0 pyarrow-hotfix-0.7 pydantic-2.13.4 pydantic-core-2.46.4 pygments-2.20.0 python-dateutil-2.9.0.post0 pytz-2026.2 pyyaml-6.0.3 regex-2026.1.15 requests-2.32.5 rich-15.0.0 safetensors-0.7.0 sentencepiece-0.2.0 shortuuid-1.0.13 six-1.17.0 sniffio-1.3.1 starlette-0.49.3 svgwrite-1.4.3 sympy-1.14.0 tiktoken-0.13.0 tokenizers-0.15.2 torch-2.2.2+cu121 tqdm-4.66.2 transformers-4.39.3 triton-2.2.0 trl-0.8.4 typeguard-4.5.2 typing-extensions-4.15.0 typing-inspection-0.4.2 tyro-1.0.13 tzdata-2026.2 urllib3-2.6.3 uvicorn-0.39.0 wavedrom-2.0.3.post3 wcwidth-0.8.1 xxhash-3.7.0 yarl-1.22.0 zipp-3.23.1\n",
+    "notes": "environment.yml present but built via pip venv (conda build deferred)."
+  },
+  "fair_r": {
+    "total_score": 51.79,
+    "tier": "fair",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 12.5,
+      "Reproducible": 19.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 940.8,
+  "fair_r_scorer": "graded-v2"
+}

@@ -1,0 +1,254 @@
+{
+  "study_id": "study084",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study084/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:47:43.441173+00:00",
+  "counts": {
+    "dependencies": 9,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 13,
+    "methods": 15,
+    "evaluation_results": 9
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "BERT",
+        "version": null
+      },
+      {
+        "name": "ViT-B/16",
+        "version": null
+      },
+      {
+        "name": "AdamW",
+        "version": null
+      },
+      {
+        "name": "RandAugment",
+        "version": null
+      },
+      {
+        "name": "RefCOCO+",
+        "version": null
+      },
+      {
+        "name": "Grad-CAM",
+        "version": null
+      },
+      {
+        "name": "[53]",
+        "version": null
+      },
+      {
+        "name": "TA",
+        "version": null
+      },
+      {
+        "name": "MLM+ITM",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch size",
+        "value": "512"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.02"
+      },
+      {
+        "name": "learning rate",
+        "value": "1e\u22124"
+      },
+      {
+        "name": "momentum",
+        "value": "0.995"
+      },
+      {
+        "name": "distillation weight",
+        "value": "0.4"
+      },
+      {
+        "name": "queue size",
+        "value": "65,536"
+      },
+      {
+        "name": "\u03b1",
+        "value": "0.4"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NLVR2",
+        "version": null
+      },
+      {
+        "name": "Flickr30Kw",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "Conceptual 12M",
+        "version": null
+      },
+      {
+        "name": "Conceptual 14.1M",
+        "version": null
+      },
+      {
+        "name": "Conceptual Captions",
+        "version": null
+      },
+      {
+        "name": "SBU Captions",
+        "version": null
+      },
+      {
+        "name": "Visual Genome",
+        "version": "42"
+      },
+      {
+        "name": "UNITER",
+        "version": null
+      },
+      {
+        "name": "RefCOCO+",
+        "version": null
+      },
+      {
+        "name": "flickr test",
+        "version": null
+      },
+      {
+        "name": "SNLI-VE",
+        "version": null
+      },
+      {
+        "name": "VQA",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "text-assignment (TA) pre-training",
+        "description": "pre-train the model for image-pair"
+      },
+      {
+        "name": "parameter sharing",
+        "description": "share all parameters"
+      },
+      {
+        "name": "cross-attention (CA) layers sharing",
+        "description": "share CA layers"
+      },
+      {
+        "name": "no sharing",
+        "description": "no sharing"
+      },
+      {
+        "name": "sitm",
+        "description": "image-text matching score"
+      },
+      {
+        "name": "Grad-CAM",
+        "description": "Grad-CAM visualizations"
+      },
+      {
+        "name": "BERT",
+        "description": "BERT baseline"
+      },
+      {
+        "name": "ViT-B/16",
+        "description": "ViT-B/16 baseline"
+      },
+      {
+        "name": "AdamW",
+        "description": "AdamW optimizer"
+      },
+      {
+        "name": "RandAugment",
+        "description": "RandAugment augmentation"
+      },
+      {
+        "name": "image-text contrastive learning",
+        "description": "image-text contrastive learning"
+      },
+      {
+        "name": "MoD",
+        "description": "null"
+      },
+      {
+        "name": "contrastive hard negative mining",
+        "description": "null"
+      },
+      {
+        "name": "momentum distillation",
+        "description": "null"
+      },
+      {
+        "name": "MLM+ITM",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance",
+        "value": "82.13",
+        "split": "dev"
+      },
+      {
+        "metric": "performance",
+        "value": "82.36",
+        "split": "test-P"
+      },
+      {
+        "metric": "average recall",
+        "value": "97.30",
+        "split": "test"
+      },
+      {
+        "metric": "#Pre-trainTraining tasks",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "TR",
+        "value": "93.96",
+        "split": null
+      },
+      {
+        "metric": "IR",
+        "value": "88.55",
+        "split": null
+      },
+      {
+        "metric": "SNLI-VE",
+        "value": "77.06",
+        "split": null
+      },
+      {
+        "metric": "NLVR2VQA",
+        "value": "77.51",
+        "split": null
+      },
+      {
+        "metric": "Images (\ufb02ickr test)",
+        "value": "71.40",
+        "split": "test-P"
+      }
+    ]
+  }
+}

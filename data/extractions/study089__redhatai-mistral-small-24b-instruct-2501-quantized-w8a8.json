@@ -1,0 +1,154 @@
+{
+  "study_id": "study089",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study089/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:20:20.194343+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 3,
+    "methods": 19,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "Number of Input Frames",
+        "value": "8"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CASME II",
+        "version": null
+      },
+      {
+        "name": "SAMM",
+        "version": null
+      },
+      {
+        "name": "SMIC",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "MOL",
+        "description": "includes two main operations of fully-connected convolution (FCC) and channel correspondence convolution (CCC)"
+      },
+      {
+        "name": "MOL w/o F5C",
+        "description": ""
+      },
+      {
+        "name": "MOL w/o CCC",
+        "description": ""
+      },
+      {
+        "name": "MOL w/o FCC",
+        "description": ""
+      },
+      {
+        "name": "MOL w/o OFE",
+        "description": "removing the optical flow estimation module of MOL"
+      },
+      {
+        "name": "MOL w/o FLD",
+        "description": "removing the facial landmark detection module of MOL"
+      },
+      {
+        "name": "MOL w/o OFE&FLD",
+        "description": "removing both task modules"
+      },
+      {
+        "name": "Optical Flow Estimation",
+        "description": "auxiliary task for MER"
+      },
+      {
+        "name": "Facial Landmark Detection",
+        "description": "auxiliary task for MER"
+      },
+      {
+        "name": "F5C Block",
+        "description": "component of MOL"
+      },
+      {
+        "name": "FCC",
+        "description": "transformer-style component of F5C block"
+      },
+      {
+        "name": "CCC",
+        "description": "graph-style component of F5C block"
+      },
+      {
+        "name": "UnsupFlownet",
+        "description": ""
+      },
+      {
+        "name": "RAFT",
+        "description": ""
+      },
+      {
+        "name": "MOL w/o MER&FLD",
+        "description": ""
+      },
+      {
+        "name": "MOL w/o MER",
+        "description": ""
+      },
+      {
+        "name": "MOL w/o MER&OFE",
+        "description": "baseline method which only achieves the facial landmark detection task without the MER and optical flow estimation modules"
+      },
+      {
+        "name": "TCDCN",
+        "description": "facial landmark detection method"
+      },
+      {
+        "name": "HRNetV2",
+        "description": "facial landmark detection method"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Acc",
+        "value": "62.90",
+        "split": null
+      },
+      {
+        "metric": "WF1",
+        "value": "62.52",
+        "split": null
+      },
+      {
+        "metric": "Average EPE",
+        "value": "1.048",
+        "split": null
+      },
+      {
+        "metric": "WF1",
+        "value": "highest",
+        "split": "test"
+      },
+      {
+        "metric": "inter-ocular distance normalized mean error",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "failure rate",
+        "value": "string",
+        "split": null
+      }
+    ]
+  }
+}

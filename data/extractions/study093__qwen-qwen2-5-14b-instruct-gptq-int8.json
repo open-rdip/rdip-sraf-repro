@@ -1,0 +1,144 @@
+{
+  "study_id": "study093",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study093/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:35:52.068142+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 6,
+    "methods": 6,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ResNet50",
+        "version": null
+      },
+      {
+        "name": "PubmedBERT",
+        "version": null
+      },
+      {
+        "name": "AdamW",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "GeForce RTX 3090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number_of_transformer_layers",
+        "value": "4"
+      },
+      {
+        "name": "image_size",
+        "value": "224x224"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1e-4"
+      },
+      {
+        "name": "batch_size",
+        "value": "128"
+      },
+      {
+        "name": "epochs",
+        "value": "100"
+      },
+      {
+        "name": "warmup_epochs",
+        "value": "10"
+      },
+      {
+        "name": "learnable_answer_prompt_vectors",
+        "value": "10"
+      },
+      {
+        "name": "learnable_question_prompt_vectors",
+        "value": "10"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "MedMINIST",
+        "version": "31"
+      },
+      {
+        "name": "VQA-RAD",
+        "version": null
+      },
+      {
+        "name": "SLAKE",
+        "version": null
+      },
+      {
+        "name": "ROCO",
+        "version": null
+      },
+      {
+        "name": "MedICaT",
+        "version": null
+      },
+      {
+        "name": "MIMIC-CXR",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "visual_encoder",
+        "description": "ResNet50"
+      },
+      {
+        "name": "text_encoder",
+        "description": "PubmedBERT"
+      },
+      {
+        "name": "fusion_module",
+        "description": "4 transformer layers"
+      },
+      {
+        "name": "PMC-CLIP",
+        "description": "Adapted for VQA task using ResNet50 and PubmedBERT with 4 transformer layers for fusion module"
+      },
+      {
+        "name": "Image-Text Retrieval (ITR)",
+        "description": "Contains both image-to-text(I2T) and text-to-image(T2I) retrieval."
+      },
+      {
+        "name": "Classi\ufb01cation",
+        "description": "Finetunes the model for different downstream tasks focusing on image classification."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Accuracy",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "AUC",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Recall@K",
+        "value": "K=1,5,10",
+        "split": null
+      }
+    ]
+  }
+}

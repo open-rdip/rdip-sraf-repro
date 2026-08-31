@@ -1,0 +1,174 @@
+{
+  "study_id": "study029",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study029/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:52:03.278697+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 9,
+    "methods": 11,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03bb",
+        "value": "10"
+      },
+      {
+        "name": "model size of GNNs",
+        "value": "small"
+      },
+      {
+        "name": "memory cost",
+        "value": "O(L)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Cora",
+        "version": null
+      },
+      {
+        "name": "arxiv",
+        "version": null
+      },
+      {
+        "name": "Flickr",
+        "version": null
+      },
+      {
+        "name": "A-computers",
+        "version": null
+      },
+      {
+        "name": "ogbn-arxiv",
+        "version": null
+      },
+      {
+        "name": "Reddit",
+        "version": null
+      },
+      {
+        "name": "ogbn-products",
+        "version": null
+      },
+      {
+        "name": "training dataset",
+        "version": null
+      },
+      {
+        "name": "A-photo",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GRE+",
+        "description": "achieves better trade-off results compared to GRE"
+      },
+      {
+        "name": "GRE",
+        "description": "compared to, GRE+ achieves better trade-off results"
+      },
+      {
+        "name": "our proposed method",
+        "description": "investigated for sensitivity w.r.t. \u03bb"
+      },
+      {
+        "name": "Gradient Rewiring Approach (GRE)",
+        "description": "A method proposed to regulate model editing by formulating a constrained optimization problem and solving it via gradient rewiring."
+      },
+      {
+        "name": "ENN",
+        "description": "editor that performs worse than GD"
+      },
+      {
+        "name": "GD",
+        "description": "basic editor that performs well in MLP"
+      },
+      {
+        "name": "GNN architectures",
+        "description": "various GNN architectures used in the study"
+      },
+      {
+        "name": "GRE+5",
+        "description": "specific GNN architecture with 5 training subsets"
+      },
+      {
+        "name": "GRE+2",
+        "description": "specific GNN architecture with 2 training subsets"
+      },
+      {
+        "name": "GRE+3",
+        "description": "specific GNN architecture with 3 training subsets"
+      },
+      {
+        "name": "GCNGD",
+        "description": "A method used for evaluating the effectiveness of model editing"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "success rate",
+        "value": "high",
+        "split": "various GNN architectures and graph datasets"
+      },
+      {
+        "metric": "accuracy dropdown",
+        "value": "lowest",
+        "split": "various GNN architectures and graph datasets"
+      },
+      {
+        "metric": "average accuracy drop",
+        "value": "4.62%",
+        "split": "test"
+      },
+      {
+        "metric": "negative drop in accuracy",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "test accuracy drop",
+        "value": "remains relatively stable",
+        "split": "test"
+      },
+      {
+        "metric": "Accuracy (Acc)",
+        "value": "13.95\u00b111.00",
+        "split": "test"
+      },
+      {
+        "metric": "DrawDown (DD)",
+        "value": "37.25\u00b110.20",
+        "split": "test"
+      },
+      {
+        "metric": "Success Rate (SR)",
+        "value": "1.00",
+        "split": "test"
+      },
+      {
+        "metric": "drawdown",
+        "value": "43.87%",
+        "split": "single edit"
+      },
+      {
+        "metric": "drawdown",
+        "value": "65%",
+        "split": "sequential edit"
+      }
+    ]
+  }
+}

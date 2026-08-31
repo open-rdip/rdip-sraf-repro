@@ -1,0 +1,257 @@
+{
+  "study_id": "study030",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study030/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:29:21.823042+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 6,
+    "methods": 14,
+    "evaluation_results": 16
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ResNet",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "ShuffleNetV2",
+        "version": null
+      },
+      {
+        "name": "SGD",
+        "version": null
+      },
+      {
+        "name": "Nesterov momentum",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch size",
+        "value": "32"
+      },
+      {
+        "name": "weight decay",
+        "value": "10\u22125"
+      },
+      {
+        "name": "learning rate warm up",
+        "value": "10\u22123"
+      },
+      {
+        "name": "learning rate decay factor",
+        "value": "10"
+      },
+      {
+        "name": "model averaging decay constant",
+        "value": "10\u22122"
+      },
+      {
+        "name": "epochs",
+        "value": "50"
+      },
+      {
+        "name": "batches_per_epoch",
+        "value": "4994"
+      },
+      {
+        "name": "synthetic_shifts",
+        "value": "30px"
+      },
+      {
+        "name": "decay constant",
+        "value": "10\u22122"
+      },
+      {
+        "name": "learning rate",
+        "value": "10\u22125"
+      },
+      {
+        "name": "learning rate decay epochs",
+        "value": "250, 280"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CrowdPose",
+        "version": null
+      },
+      {
+        "name": "PoseTrack",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "COCO keypoint",
+        "version": "2017"
+      },
+      {
+        "name": "PoseTrack 2018",
+        "version": null
+      },
+      {
+        "name": "PoseTrack 2017",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "model averaging",
+        "description": "to extract stable models for validation"
+      },
+      {
+        "name": "alternating tasks between batches",
+        "description": "alternate the two tasks between batches"
+      },
+      {
+        "name": "synthetic shifts",
+        "description": "converted from single images to pairs of tracked images via synthetic shifts of up to 30px"
+      },
+      {
+        "name": "ResNet",
+        "description": "Base network with input max-pooling operation removed, stride of 16, and 2048 features at each location."
+      },
+      {
+        "name": "ShuffleNetV2",
+        "description": "Base network with custom configurations ShuffleNetV2K16/K30, specified by the number of output features and block repeats in each stage."
+      },
+      {
+        "name": "ShuffleNetV2K16",
+        "description": "model architecture"
+      },
+      {
+        "name": "ShuffleNetV2k30",
+        "description": "model architecture"
+      },
+      {
+        "name": "OpenPifPaf",
+        "description": "ours"
+      },
+      {
+        "name": "MIPAL",
+        "description": null
+      },
+      {
+        "name": "MSRA/FlowTrack",
+        "description": null
+      },
+      {
+        "name": "HRNet",
+        "description": null
+      },
+      {
+        "name": "LightTrack",
+        "description": null
+      },
+      {
+        "name": "KeyTrack",
+        "description": null
+      },
+      {
+        "name": "DetTrack",
+        "description": "of\ufb02ine"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "pose predictions",
+        "value": null,
+        "split": "validation"
+      },
+      {
+        "metric": "AP",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AP0.50",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AP0.75",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AP easy",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "APmedium",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AP hard",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "FPS",
+        "value": "13.7",
+        "split": null
+      },
+      {
+        "metric": "time per image",
+        "value": "152 ms",
+        "split": null
+      },
+      {
+        "metric": "MOTA",
+        "value": "61.7",
+        "split": null
+      },
+      {
+        "metric": "MOTP",
+        "value": "84.5",
+        "split": "PoseTrack 2017"
+      },
+      {
+        "metric": "precision",
+        "value": "84.1",
+        "split": "PoseTrack 2017"
+      },
+      {
+        "metric": "recall",
+        "value": "77.7",
+        "split": "PoseTrack 2017"
+      },
+      {
+        "metric": "MOTP",
+        "value": "84.9",
+        "split": "PoseTrack 2018"
+      },
+      {
+        "metric": "precision",
+        "value": "84.4",
+        "split": "PoseTrack 2018"
+      },
+      {
+        "metric": "recall",
+        "value": "78.3",
+        "split": "PoseTrack 2018"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "run_command": "python tools/test.py configs/second/second_8x8_160e_kitti-3d-3class.py",
+  "setup_steps": [
+    "pip install -r requirements.txt",
+    "pip install -e .",
+    "mim download mmdet3d --config second_8x8_160e_kitti-3d-3class --dest ./checkpoints"
+  ],
+  "requires_dataset": [
+    {
+      "name": "KITTI",
+      "download": "mim download datasets --config kitti --dest ./data/kitti"
+    }
+  ],
+  "requires_checkpoint": null,
+  "produces_metric": [
+    {
+      "metric": "mAP",
+      "dataset": "KITTI"
+    }
+  ],
+  "entry_point": "tools/test.py",
+  "confidence": "high",
+  "study_id": "study014",
+  "repo_url": "https://github.com/open-mmlab/mmdetection3d"
+}

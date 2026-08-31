@@ -1,33 +1,40 @@
-# SRAF corpus results — 3 repos processed
+# SRAF corpus results — 97 repos processed
 
 ## Processing status
 
-- ok: 3
+- ok: 97
 
 ## Reproducibility outcomes (environment reconstruction)
 
-- Build attempted: 2/3
-- Tier 1 — resolution succeeds: 2/2 (100.0%)
-- Tier 2 — build succeeds:      1/2 (50.0%)
-- Failure stage breakdown: build-install=1
+- Build attempted: 86/97
+- Tier 1 — resolution succeeds: 48/86 (55.8%)
+- Tier 2 — build succeeds:      45/86 (52.3%)
+- Failure stage breakdown: resolve=35, build-install=3, resolve-timeout=3
+
+## Build interpreter
+
+- declared a Python version: 41/97 (42.3%)
+- ran on the interpreter ladder: 96/97 (99.0%)
+- versions used: 3.10=58, 3.11=2, 3.12=11, 3.8=18, 3.9=7
 
 ## FAIR-R score
 
-- mean 24.2 | median 27.5 | min 17.5 | max 27.5
-- tier poor: 3
+- mean 29.3 | median 31.1 | min 21.1 | max 33.9
+- tier poor: 96
 
 ## Artifact placement & presence
 
-- depth `subdir`: 1
-- depth `root`: 1
-- depth `none`: 1
-- repos with NO env files: 1/3 (33.3%)
-- has docker: 1/3 (33.3%)
-- has conda: 1/3 (33.3%)
-- has pip: 2/3 (66.7%)
+- depth `root`: 72
+- depth `subdir`: 21
+- depth `deep`: 3
+- depth `n/a`: 1
+- repos with NO env files: 1/97 (1.0%)
+- has docker: 37/97 (38.1%)
+- has conda: 28/97 (28.9%)
+- has pip: 77/97 (79.4%)
 
 ## Recoverable metadata
 
-- license detected: 2/3 (66.7%)
-- commit hash:      3/3 (100.0%)
-- triples/repo: mean 95 | median 123
+- license detected: 81/97 (83.5%)
+- commit hash:      96/97 (99.0%)
+- triples/repo: mean 271 | median 74

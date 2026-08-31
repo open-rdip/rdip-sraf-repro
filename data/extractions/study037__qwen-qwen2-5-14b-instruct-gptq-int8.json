@@ -1,0 +1,66 @@
+{
+  "study_id": "study037",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study037/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:59:02.532118+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 0,
+    "methods": 4,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of gradient ascent steps",
+        "value": "less than T"
+      },
+      {
+        "name": "learning_rate",
+        "value": "10^-3"
+      },
+      {
+        "name": "gradient_ascent_steps",
+        "value": "50"
+      },
+      {
+        "name": "continuous_tasks_learning_rate",
+        "value": "0.05"
+      },
+      {
+        "name": "discrete_tasks_learning_rate",
+        "value": "2.0"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "gradient ascent",
+        "description": "used to find x\u22c6 on the learned conservative model, \u02c6f\u03b8"
+      },
+      {
+        "name": "Adam optimizer",
+        "description": "Used with a learning rate of 10^-3 to train the conservative objective model."
+      },
+      {
+        "name": "gradient_descent",
+        "description": "used for training \u02c6f\u03b8"
+      },
+      {
+        "name": "conservative_training",
+        "description": "training method used for lower-bounding the true function"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

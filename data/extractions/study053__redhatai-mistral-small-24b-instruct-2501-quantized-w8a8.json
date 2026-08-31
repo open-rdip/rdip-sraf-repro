@@ -1,0 +1,135 @@
+{
+  "study_id": "study053",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study053/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:49:57.503468+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 4,
+    "datasets": 12,
+    "methods": 8,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      3
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "LoRA module placement",
+        "value": "all layers"
+      },
+      {
+        "name": "LoRA module rank",
+        "value": "high"
+      },
+      {
+        "name": "M",
+        "value": "string"
+      },
+      {
+        "name": "input prompt",
+        "value": "a photo of a[kth class name ],k= 1, . . . , K"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "StanfordCars",
+        "version": null
+      },
+      {
+        "name": "SUN397",
+        "version": null
+      },
+      {
+        "name": "Aircraft",
+        "version": null
+      },
+      {
+        "name": "EuroSAT",
+        "version": null
+      },
+      {
+        "name": "Stanford-Cars",
+        "version": null
+      },
+      {
+        "name": "Food101",
+        "version": null
+      },
+      {
+        "name": "OxfordPets",
+        "version": null
+      },
+      {
+        "name": "Flower102",
+        "version": null
+      },
+      {
+        "name": "Caltech101",
+        "version": null
+      },
+      {
+        "name": "DTD",
+        "version": null
+      },
+      {
+        "name": "UCF101",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "LoRA",
+        "description": "modules is not trivial"
+      },
+      {
+        "name": "AdaLoRA",
+        "description": "allocating a larger rank to the middle and last layers"
+      },
+      {
+        "name": "prompt tuning",
+        "description": "optimizes text-input tokens"
+      },
+      {
+        "name": "soft prompt tuning",
+        "description": "optimizes text-input tokens, which could be extended to intermediate layers"
+      },
+      {
+        "name": "context optimization (CoOp)",
+        "description": "constructs text input ckas continuous train- able vectors"
+      },
+      {
+        "name": "CLIP-LoRA",
+        "description": "adapting both modalities can be necessary for certain tasks"
+      },
+      {
+        "name": "CoOp",
+        "description": "4 learnable tokens"
+      },
+      {
+        "name": "Co-CoOp",
+        "description": ""
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 accuracy",
+        "value": "averaged over 3 random seeds",
+        "split": null
+      }
+    ]
+  }
+}

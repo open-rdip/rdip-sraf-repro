@@ -1,0 +1,150 @@
+{
+  "study_id": "study069",
+  "repo_url": "https://github.com/yueliu1999/hsan",
+  "started": "2026-06-10T13:10:43.500704+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "pip": "requirements.txt",
+      "setup": "setup.py"
+    },
+    "depth_note": "root",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/yueliu1999/hsan",
+    "commit_hash": "e9ad59beb3a6afbe16bbc3d8ee046038c06b0932",
+    "software_license": null
+  },
+  "lift": {
+    "lifted": {
+      "pip": "requirements.txt"
+    },
+    "triples": 30,
+    "n_sources": 2
+  },
+  "python": {
+    "declared": null,
+    "source": "default",
+    "used": "3.10",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": false,
+    "build_success": false,
+    "method": "pip-requirements",
+    "stage_failed": "resolve",
+    "duration_s": 10.6,
+    "log_tail": "$ /home/dsai-st125286p/pys/py310/bin/python -m venv /tmp/15889/study069/venv\n\n$ /tmp/15889/study069/venv/bin/pip install --upgrade pip setuptools wheel\nRequirement already satisfied: pip in ./venv/lib/python3.10/site-packages (23.0.1)\nCollecting pip\n  Using cached pip-26.1.2-py3-none-any.whl (1.8 MB)\nRequirement already satisfied: setuptools in ./venv/lib/python3.10/site-packages (79.0.1)\nCollecting setuptools\n  Using cached setuptools-82.0.1-py3-none-any.whl (1.0 MB)\nCollecting wheel\n  Using cached wheel-0.47.0-py3-none-any.whl (32 kB)\nCollecting packaging>=24.0\n  Using cached packaging-26.2-py3-none-any.whl (100 kB)\nInstalling collected packages: setuptools, pip, packaging, wheel\n  Attempting uninstall: setuptools\n    Found existing installation: setuptools 79.0.1\n    Uninstalling setuptools-79.0.1:\n      Successfully uninstalled setuptools-79.0.1\n  Attempting uninstall: pip\n    Found existing installation: pip 23.0.1\n    Uninstalling pip-23.0.1:\n      Successfully uninstalled pip-23.0.1\nSuccessfully installed packaging-26.2 pip-26.1.2 setuptools-82.0.1 wheel-0.47.0\n\n$ /tmp/15889/study069/venv/bin/pip install --dry-run --ignore-installed --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study069/study069/requirements.txt\nLooking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cu121, https://download.pytorch.org/whl/cu118, https://download.pytorch.org/whl/cpu\nERROR: Could not find a version that satisfies the requirement torch==1.7.1 (from versions: 1.11.0, 1.11.0+cpu, 1.12.0, 1.12.0+cpu, 1.12.1, 1.12.1+cpu, 1.13.0, 1.13.0+cpu, 1.13.1, 1.13.1+cpu, 2.0.0, 2.0.0+cpu, 2.0.0+cu118, 2.0.1, 2.0.1+cpu, 2.0.1+cu118, 2.1.0, 2.1.0+cpu, 2.1.0+cu118, 2.1.0+cu121, 2.1.1, 2.1.1+cpu, 2.1.1+cu118, 2.1.1+cu121, 2.1.2, 2.1.2+cpu, 2.1.2+cu118, 2.1.2+cu121, 2.2.0, 2.2.0+cpu, 2.2.0+cu118, 2.2.0+cu121, 2.2.1, 2.2.1+cpu, 2.2.1+cu118, 2.2.1+cu121, 2.2.2, 2.2.2+cpu, 2.2.2+cu118, 2.2.2+cu121, 2.3.0, 2.3.0+cpu, 2.3.0+cu118, 2.3.0+cu121, 2.3.1, 2.3.1+cpu, 2.3.1+cu118, 2.3.1+cu121, 2.4.0, 2.4.0+cpu, 2.4.0+cu118, 2.4.0+cu121, 2.4.1, 2.4.1+cpu, 2.4.1+cu118, 2.4.1+cu121, 2.5.0, 2.5.0+cpu, 2.5.0+cu118, 2.5.0+cu121, 2.5.1, 2.5.1+cpu, 2.5.1+cu118, 2.5.1+cu121, 2.6.0, 2.6.0+cpu, 2.6.0+cu118, 2.7.0, 2.7.0+cpu, 2.7.0+cu118, 2.7.1, 2.7.1+cpu, 2.7.1+cu118, 2.8.0, 2.8.0+cpu, 2.9.0, 2.9.0+cpu, 2.9.1, 2.9.1+cpu, 2.10.0, 2.10.0+cpu, 2.11.0, 2.11.0+cpu, 2.12.0, 2.12.0+cpu)\nERROR: No matching distribution found for torch==1.7.1\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 44.29,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 5.0,
+      "Reproducible": 19.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Software licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Add a standard (SPDX) software licence to the repository.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 13.5,
+  "fair_r_scorer": "graded-v2"
+}

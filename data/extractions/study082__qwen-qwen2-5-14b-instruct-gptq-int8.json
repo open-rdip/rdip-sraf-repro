@@ -1,0 +1,162 @@
+{
+  "study_id": "study082",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study082/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:27:28.416183+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 1,
+    "methods": 18,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "Optimizer",
+        "value": "Adam(Kingma & Ba, 2014)"
+      },
+      {
+        "name": "learning rate",
+        "value": "7\u00b710\u22124"
+      },
+      {
+        "name": "batch size",
+        "value": "64"
+      },
+      {
+        "name": "Input keys",
+        "value": "64"
+      },
+      {
+        "name": "Size of individual RIM",
+        "value": "* 4"
+      },
+      {
+        "name": "Input Heads",
+        "value": "4"
+      },
+      {
+        "name": "Input Dropout",
+        "value": "0.1"
+      },
+      {
+        "name": "Communication keys",
+        "value": "32"
+      },
+      {
+        "name": "Communication Values",
+        "value": "32"
+      },
+      {
+        "name": "Communication heads",
+        "value": "4"
+      },
+      {
+        "name": "Communication Dropout",
+        "value": "0.1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Sequential MNIST Resolution Task",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Sparse Information Flow",
+        "description": "Each RIM's dynamics should only be affected by RIMs which are deemed relevant."
+      },
+      {
+        "name": "Modular Computation Flow and Modular Parameterization",
+        "description": "Each RIM should have its own dynamics operating by default, in the absence of interaction with other RIMs."
+      },
+      {
+        "name": "LSTM / RNN",
+        "description": "Has properties of non-modular memory, sparse information flow, modular computation flow, and modular parameterization."
+      },
+      {
+        "name": "Relational RNN",
+        "description": "Has properties of modular memory, non-sparse information flow, non-modular computation flow, and modular parameterization."
+      },
+      {
+        "name": "NTM",
+        "description": "Has properties of non-modular memory, non-sparse information flow, non-modular computation flow, and modular parameterization."
+      },
+      {
+        "name": "SAB",
+        "description": "Has properties of modular memory, non-sparse information flow, modular computation flow, and non-modular parameterization."
+      },
+      {
+        "name": "IndRNN",
+        "description": "Has properties of non-modular memory, sparse information flow, modular computation flow, and non-modular parameterization."
+      },
+      {
+        "name": "RIMs",
+        "description": "Has properties of non-modular memory, non-sparse information flow, non-modular computation flow, and non-modular parameterization."
+      },
+      {
+        "name": "Consciousness Prior",
+        "description": "Based on the inductive bias of a sparse graphical model describing the interactions between high-level variables, each factor involving few variables and capturing an independent mechanism, and using attention to select only a subset of high-level variables to interact together at any particular time during inference."
+      },
+      {
+        "name": "Recurrent Entity Networks (EnTNet)",
+        "description": "A set of separate recurrent models whose hidden states store the memory slots. These hidden states are either fixed by the gates, or modified through a simple RNN-style update."
+      },
+      {
+        "name": "LSTM",
+        "description": "Performance degrades more severely when changing the sequence length"
+      },
+      {
+        "name": "Transformers",
+        "description": "Strong baseline"
+      },
+      {
+        "name": "EntNet",
+        "description": "Strong baseline"
+      },
+      {
+        "name": "RMC",
+        "description": "Strong baseline"
+      },
+      {
+        "name": "DNC",
+        "description": "Strong baseline"
+      },
+      {
+        "name": "Output Representation Concatenation",
+        "description": "Concatenate the representations of the different RIMs, and use the concatenated representation for learning a policy (in RL experiments) or for predicting the input at the next time step (for bouncing balls as well as all other experiments)."
+      },
+      {
+        "name": "LSTMs",
+        "description": "Long Short-Term Memory networks"
+      },
+      {
+        "name": "TTO",
+        "description": "Time Travelling Oracle upper bound baseline"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Cross Entropy (CE)",
+        "value": "lower for RIMs compared to LSTMs",
+        "split": null
+      },
+      {
+        "metric": "F1 score",
+        "value": "improved for RIMs compared to LSTM and RMC",
+        "split": null
+      }
+    ]
+  }
+}

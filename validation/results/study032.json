@@ -1,0 +1,143 @@
+{
+  "study_id": "study032",
+  "repo_url": "https://github.com/horizonrobotics/gump",
+  "started": "2026-06-10T10:32:05.494933+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "docker/Dockerfile",
+      "pip": "docker/requirements.txt"
+    },
+    "depth_note": "subdir",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "docker/requirements.txt",
+        "depth": 1
+      },
+      {
+        "type": "docker",
+        "rel_path": "docker/Dockerfile",
+        "depth": 1
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/horizonrobotics/gump",
+    "commit_hash": "bfec7cbfe2d1e8ea0e62374e7577ffcfd96ead1a",
+    "software_license": "Apache-2.0"
+  },
+  "lift": {
+    "lifted": {
+      "docker": "docker/Dockerfile",
+      "pip": "docker/requirements.txt"
+    },
+    "triples": 388,
+    "n_sources": 3
+  },
+  "python": {
+    "declared": null,
+    "source": "default",
+    "used": "3.10",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": false,
+    "build_success": false,
+    "method": "pip-requirements",
+    "stage_failed": "resolve",
+    "duration_s": 183.6,
+    "log_tail": "$ /home/dsai-st125286p/pys/py310/bin/python -m venv /tmp/15889/study032/venv\n\n$ /tmp/15889/study032/venv/bin/pip install --upgrade pip setuptools wheel\nRequirement already satisfied: pip in ./venv/lib/python3.10/site-packages (23.0.1)\nCollecting pip\n  Using cached pip-26.1.2-py3-none-any.whl (1.8 MB)\nRequirement already satisfied: setuptools in ./venv/lib/python3.10/site-packages (79.0.1)\nCollecting setuptools\n  Using cached setuptools-82.0.1-py3-none-any.whl (1.0 MB)\nCollecting wheel\n  Using cached wheel-0.47.0-py3-none-any.whl (32 kB)\nCollecting packaging>=24.0\n  Using cached packaging-26.2-py3-none-any.whl (100 kB)\nInstalling collected packages: setuptools, pip, packaging, wheel\n  Attempting uninstall: setuptools\n    Found existing installation: setuptools 79.0.1\n    Uninstalling setuptools-79.0.1:\n      Successfully uninstalled setuptools-79.0.1\n  Attempting uninstall: pip\n    Found existing installation: pip 23.0.1\n    Uninstalling pip-23.0.1:\n      Successfully uninstalled pip-23.0.1\nSuccessfully installed packaging-26.2 pip-26.1.2 setuptools-82.0.1 wheel-0.47.0\n\n$ /tmp/15889/study032/venv/bin/pip install --dry-run --ignore-installed --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study032/study032/docker/requirements.txt\nion.c\n            gcc: numpy/core/src/multiarray/mapping.c\n            gcc: numpy/core/src/multiarray/methods.c\n            gcc: build/src.linux-x86_64-3.10/numpy/core/src/umath/matmul.c\n            error: Command \"gcc -pthread -B /home/dsai-st125286p/pys/py310/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /home/dsai-st125286p/pys/py310/include -fPIC -O2 -isystem /home/dsai-st125286p/pys/py310/include -fPIC -DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/umath -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Inumpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/core/include/numpy -Inumpy/core/src/common -Inumpy/core/src -Inumpy/core -Inumpy/core/src/npymath -Inumpy/core/src/multiarray -Inumpy/core/src/umath -Inumpy/core/src/npysort -I/tmp/15889/study032/venv/include -I/home/dsai-st125286p/pys/py310/include/python3.10 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -c build/src.linux-x86_64-3.10/numpy/core/src/multiarray/scalartypes.c -o build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/multiarray/scalartypes.o -MMD -MF build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/multiarray/scalartypes.o.d\" failed with exit status 1\n            [end of output]\n      \n        note: This error originates from a subprocess, and is likely not a problem with pip.\n        ERROR: Failed building wheel for numpy\n      Failed to build numpy\n      error: failed-wheel-build-for-install\n      \n      \u00d7 Failed to build installable wheels for some pyproject.toml based projects\n      \u2570\u2500> numpy\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nERROR: Failed to build 'h5py' when installing backend dependencies for h5py\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 51.79,
+    "tier": "fair",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 12.5,
+      "Reproducible": 19.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 189.0,
+  "fair_r_scorer": "graded-v2"
+}

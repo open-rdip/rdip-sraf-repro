@@ -1,0 +1,128 @@
+{
+  "study_id": "study053",
+  "repo_url": "https://github.com/maxzanella/clip-lora",
+  "started": "2026-06-10T12:02:33.410127+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "pip": "requirements.txt"
+    },
+    "depth_note": "root",
+    "n_found": 1,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/maxzanella/clip-lora",
+    "commit_hash": "ce3701ba370576f082e1295fbd90760961ead724",
+    "software_license": "GPL-3.0"
+  },
+  "lift": {
+    "lifted": {
+      "pip": "requirements.txt"
+    },
+    "triples": 71,
+    "n_sources": 2
+  },
+  "python": {
+    "declared": null,
+    "source": "default",
+    "used": "3.10",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 346.8,
+    "log_tail": "rements.txt (line 12))\n  Using cached markupsafe-3.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)\nCollecting charset_normalizer<4,>=2 (from requests[socks]->gdown->-r /tmp/15889/study053/study053/requirements.txt (line 5))\n  Using cached charset_normalizer-3.4.7-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)\nCollecting idna<4,>=2.5 (from requests[socks]->gdown->-r /tmp/15889/study053/study053/requirements.txt (line 5))\n  Using cached idna-3.18-py3-none-any.whl.metadata (6.1 kB)\nCollecting certifi>=2023.5.7 (from requests[socks]->gdown->-r /tmp/15889/study053/study053/requirements.txt (line 5))\n  Using cached certifi-2026.5.20-py3-none-any.whl.metadata (2.5 kB)\nCollecting PySocks!=1.5.7,>=1.5.6 (from requests[socks]->gdown->-r /tmp/15889/study053/study053/requirements.txt (line 5))\n  Using cached PySocks-1.7.1-py3-none-any.whl.metadata (13 kB)\nWould install Jinja2-3.1.6 MarkupSafe-3.0.3 PySocks-1.7.1 PyYAML-6.0.3 beautifulsoup4-4.15.0 certifi-2026.5.20 charset-normalizer-3.4.7 entrypoints-0.3 filelock-3.29.1 flake8-3.7.9 fsspec-2026.4.0 ftfy-6.3.1 future-1.0.0 gdown-6.1.0 idna-3.18 isort-4.3.21 joblib-1.5.3 littleutils-0.2.4 mccabe-0.6.1 mpmath-1.3.0 networkx-3.4.2 numpy-2.2.6 ogb-1.3.6 outdated-0.2.2 pandas-2.3.3 pillow-12.2.0 pycodestyle-2.5.0 pyflakes-2.1.1 python-dateutil-2.9.0.post0 pytz-2026.2 regex-2026.5.9 requests-2.34.2 scikit-learn-1.7.2 scipy-1.15.3 setuptools-81.0.0 six-1.17.0 soupsieve-2.8.4 sympy-1.14.0 tabulate-0.10.0 threadpoolctl-3.6.0 torch-2.12.0+cpu torchvision-0.27.0+cpu tqdm-4.68.2 typing_extensions-4.15.0 tzdata-2026.2 urllib3-2.7.0 wcwidth-0.8.1 wilds-1.2.2 yacs-0.1.8 yapf-0.29.0\n\n$ /tmp/15889/study053/venv/bin/pip install --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study053/study053/requirements.txt\n.2.4-py3-none-any.whl (8.1 kB)\nUsing cached pyyaml-6.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (770 kB)\nUsing cached requests-2.34.2-py3-none-any.whl (73 kB)\nUsing cached charset_normalizer-3.4.7-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (216 kB)\nUsing cached idna-3.18-py3-none-any.whl (65 kB)\nUsing cached certifi-2026.5.20-py3-none-any.whl (134 kB)\nUsing cached PySocks-1.7.1-py3-none-any.whl (16 kB)\nUsing cached wcwidth-0.8.1-py3-none-any.whl (323 kB)\nInstalling collected packages: yapf, pytz, mpmath, mccabe, wcwidth, urllib3, tzdata, typing-extensions, tqdm, threadpoolctl, tabulate, sympy, soupsieve, six, setuptools, regex, PyYAML, PySocks, pyflakes, pycodestyle, pillow, numpy, networkx, MarkupSafe, littleutils, joblib, isort, idna, future, fsspec, filelock, entrypoints, charset_normalizer, certifi, yacs, scipy, requests, python-dateutil, jinja2, ftfy, flake8, beautifulsoup4, torch, scikit-learn, pandas, outdated, torchvision, ogb, gdown, wilds\n  Attempting uninstall: setuptools\n    Found existing installation: setuptools 82.0.1\n    Uninstalling setuptools-82.0.1:\n      Successfully uninstalled setuptools-82.0.1\n\nSuccessfully installed MarkupSafe-3.0.3 PySocks-1.7.1 PyYAML-6.0.3 beautifulsoup4-4.15.0 certifi-2026.5.20 charset_normalizer-3.4.7 entrypoints-0.3 filelock-3.29.1 flake8-3.7.9 fsspec-2026.4.0 ftfy-6.3.1 future-1.0.0 gdown-6.1.0 idna-3.18 isort-4.3.21 jinja2-3.1.6 joblib-1.5.3 littleutils-0.2.4 mccabe-0.6.1 mpmath-1.3.0 networkx-3.4.2 numpy-2.2.6 ogb-1.3.6 outdated-0.2.2 pandas-2.3.3 pillow-12.2.0 pycodestyle-2.5.0 pyflakes-2.1.1 python-dateutil-2.9.0.post0 pytz-2026.2 regex-2026.5.9 requests-2.34.2 scikit-learn-1.7.2 scipy-1.15.3 setuptools-81.0.0 six-1.17.0 soupsieve-2.8.4 sympy-1.14.0 tabulate-0.10.0 threadpoolctl-3.6.0 torch-2.12.0+cpu torchvision-0.27.0+cpu tqdm-4.68.2 typing-extensions-4.15.0 tzdata-2026.2 urllib3-2.7.0 wcwidth-0.8.1 wilds-1.2.2 yacs-0.1.8 yapf-0.29.0\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 56.29,
+    "tier": "fair",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 12.5,
+      "Reproducible": 24.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      }
+    ]
+  },
+  "duration_s": 352.8,
+  "fair_r_scorer": "graded-v2"
+}

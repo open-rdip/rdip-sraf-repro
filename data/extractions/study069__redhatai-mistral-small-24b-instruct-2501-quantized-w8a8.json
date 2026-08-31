@@ -1,0 +1,128 @@
+{
+  "study_id": "study069",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study069/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:01:32.053015+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 6,
+    "methods": 10,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b2",
+        "value": null
+      },
+      {
+        "name": "\u03c4",
+        "value": "0.1"
+      },
+      {
+        "name": "confidence parameter",
+        "value": "fixed"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CORA",
+        "version": null
+      },
+      {
+        "name": "CITE",
+        "version": null
+      },
+      {
+        "name": "AMAP",
+        "version": null
+      },
+      {
+        "name": "BAT",
+        "version": null
+      },
+      {
+        "name": "EAT",
+        "version": null
+      },
+      {
+        "name": "UAT",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "HSAN",
+        "description": "null"
+      },
+      {
+        "name": "t-SNE",
+        "description": "null"
+      },
+      {
+        "name": "Attribute Encoder",
+        "description": "Embeds the attribute of samples into the latent space"
+      },
+      {
+        "name": "Structure Encoder",
+        "description": "Embeds the structure of samples into the latent space"
+      },
+      {
+        "name": "Similarity Measure Criterion",
+        "description": "Calculates the sample similarities by considering both attribute and structure information"
+      },
+      {
+        "name": "Dynamic Weight Modulating Function",
+        "description": "Up-weights the hard sample pairs while down-weighting the negative ones"
+      },
+      {
+        "name": "hard sample aware contrastive loss",
+        "description": "forces the network to focus on both positive and negative sample pairs"
+      },
+      {
+        "name": "ProGCL",
+        "description": "Baseline method"
+      },
+      {
+        "name": "attribute-structure similarity function S",
+        "description": "Measures the similarity between samples by considering both attribute and structure information"
+      },
+      {
+        "name": "weight modulating function M",
+        "description": "Enhances the performance of the baseline"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "ACC",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "NMI",
+        "value": "8.48%",
+        "split": null
+      },
+      {
+        "metric": "Loss",
+        "value": null,
+        "split": "BAT"
+      },
+      {
+        "metric": "ACC",
+        "value": null,
+        "split": "BAT"
+      }
+    ]
+  }
+}

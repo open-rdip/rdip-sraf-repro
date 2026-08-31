@@ -1,0 +1,292 @@
+{
+  "study_id": "study027",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study027/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:20:43.102111+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 3,
+    "hyperparameters": 9,
+    "datasets": 14,
+    "methods": 22,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "STAMP",
+        "version": "v1.1.1"
+      },
+      {
+        "name": "ptflops",
+        "version": null
+      },
+      {
+        "name": "Virchow2",
+        "version": null
+      },
+      {
+        "name": "CPath",
+        "version": null
+      },
+      {
+        "name": "CONCH",
+        "version": "v1.5"
+      }
+    ],
+    "random_seeds": [
+      12345,
+      5,
+      50
+    ],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX A6000, L40 or H100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "value": "0.7"
+      },
+      {
+        "name": "n_neighbors",
+        "value": "15"
+      },
+      {
+        "name": "min_dist",
+        "value": "0.1"
+      },
+      {
+        "name": "weighting",
+        "value": "equal"
+      },
+      {
+        "name": "single-head attention",
+        "value": "bag size 512"
+      },
+      {
+        "name": "multiplicative gating",
+        "value": "full bags (no tile subsampling)"
+      },
+      {
+        "name": "L2",
+        "value": "string"
+      },
+      {
+        "name": "softmax",
+        "value": "string"
+      },
+      {
+        "name": "number of patients",
+        "value": "300, 150 or 75"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IEO cohort",
+        "version": null
+      },
+      {
+        "name": "GECCO consortium",
+        "version": null
+      },
+      {
+        "name": "PathoBench",
+        "version": null
+      },
+      {
+        "name": "WSIs",
+        "version": null
+      },
+      {
+        "name": "CPTAC pancreatic ductal adenocarcinoma (PDA) cohort",
+        "version": null
+      },
+      {
+        "name": "WSI",
+        "version": null
+      },
+      {
+        "name": "over 60,000 whole-slide images",
+        "version": null
+      },
+      {
+        "name": "CPTAC",
+        "version": null
+      },
+      {
+        "name": "DACHS",
+        "version": null
+      },
+      {
+        "name": "Kiel",
+        "version": null
+      },
+      {
+        "name": "Bern",
+        "version": null
+      },
+      {
+        "name": "IEO",
+        "version": null
+      },
+      {
+        "name": "Virchow2",
+        "version": null
+      },
+      {
+        "name": "over 1,000 patients",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "STAMP",
+        "description": "open-source software"
+      },
+      {
+        "name": "EAGLE",
+        "description": "implementation of slide encoders, MLP and LP classifiers, GPT-4o\u2013based in-context learning, UMAP visualization, top tiles and slide search"
+      },
+      {
+        "name": "CTransPath",
+        "description": "foundation model"
+      },
+      {
+        "name": "Prov-GigaPath",
+        "description": "foundation model"
+      },
+      {
+        "name": "CONCH",
+        "description": "foundation model"
+      },
+      {
+        "name": "Virchow",
+        "description": "foundation model"
+      },
+      {
+        "name": "Virchow2",
+        "description": "foundation model"
+      },
+      {
+        "name": "UMAP dimensionality reduction",
+        "description": "project patient embeddings from all cohorts into two dimensions"
+      },
+      {
+        "name": "cosine similarity search",
+        "description": "normalize each embedding with L2 and perform a cosine similarity search"
+      },
+      {
+        "name": "CHIEF",
+        "description": "slide encoder"
+      },
+      {
+        "name": "TITAN",
+        "description": null
+      },
+      {
+        "name": "Vir-chow2",
+        "description": null
+      },
+      {
+        "name": "ABMIL",
+        "description": "attention pathway with multiplicative gating"
+      },
+      {
+        "name": "gated ABMIL",
+        "description": "string"
+      },
+      {
+        "name": "Lorenz curves",
+        "description": "string"
+      },
+      {
+        "name": "Gini coefficient",
+        "description": "string"
+      },
+      {
+        "name": "top-k mass statistics",
+        "description": "string"
+      },
+      {
+        "name": "GigaPath",
+        "description": "early fusion of multiple slides per patient for models that do not rely on spatial coordinates"
+      },
+      {
+        "name": "all other models",
+        "description": "early fusion to obtain a patient representation"
+      },
+      {
+        "name": "supervised baseline",
+        "description": null
+      },
+      {
+        "name": "UMAPs",
+        "description": null
+      },
+      {
+        "name": "STAMP pipeline",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "inference time",
+        "value": "string or null",
+        "split": null
+      },
+      {
+        "metric": "FLOPs",
+        "value": "string or null",
+        "split": null
+      },
+      {
+        "metric": "hazard ratio",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "p-value",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AUROC",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "Gini coefficient",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "fraction of tiles required to accumulate 50% and 80% of total mass",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "top-k mass statistics (top 1, top 2, and top 25)",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AUPRC",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "Balanced Accuracy",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "F1 Scores",
+        "value": "string",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "run_command": "./scripts/eval.sh --model_name resnet50 --loss_type multi_hot --img_size 224 --checkpoint_dir ckpt/resnet50_multi_hot_224",
+  "setup_steps": [
+    "wget https://kth-my.sharepoint.com/:u:/g/personal/sorkhei_ug_kth_se/EYUAJz7bg4pFnH8vNSOJBAEB-xHIGG4PByuz2Ot2DIFB9Q?e=Kqtnip -O ckpt.zip",
+    "unzip ckpt.zip -d ckpt",
+    "wget https://doi.org/10.17044/scilifelab.14687271 -O dataset.zip",
+    "unzip dataset.zip -d dataset"
+  ],
+  "requires_dataset": [
+    {
+      "name": "CSAW-M",
+      "download": "wget https://doi.org/10.17044/scilifelab.14687271 -O dataset.zip"
+    }
+  ],
+  "requires_checkpoint": null,
+  "produces_metric": [
+    {
+      "metric": "Ordinal Classification Accuracy",
+      "dataset": "CSAW-M"
+    }
+  ],
+  "entry_point": "src/main.py",
+  "confidence": "high",
+  "study_id": "study020",
+  "repo_url": "https://github.com/yueliukth/csaw-m"
+}

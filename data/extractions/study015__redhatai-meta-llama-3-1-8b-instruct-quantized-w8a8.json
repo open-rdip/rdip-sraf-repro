@@ -1,0 +1,205 @@
+{
+  "study_id": "study015",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study015/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:14:33.022831+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 30,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Flexible and rigorous numerical modelling of multiphysics processes in fractured porous media using PorePy",
+        "description": "using PorePy"
+      },
+      {
+        "name": "Finite volume discretization for poroelastic media with fractures modeled by contact mechanics",
+        "description": "Finite volume discretization"
+      },
+      {
+        "name": "Porepy: An open-source software for simulation of multiphysics processes in fractured porous media",
+        "description": "Porepy"
+      },
+      {
+        "name": "An efficient preconditioner for mixed-dimensional contact poromechanics based on the fixed stress splitting scheme",
+        "description": "based on the fixed stress splitting scheme"
+      },
+      {
+        "name": "Block-partitioned solvers for coupled poromechanics: A unified framework",
+        "description": "A unified framework"
+      },
+      {
+        "name": "Convergence of iterative coupling for coupled flow and geomechanics",
+        "description": "Convergence of iterative coupling"
+      },
+      {
+        "name": "two-stage preconditioner",
+        "description": "for multiphase poromechanics in reservoir simulation"
+      },
+      {
+        "name": "Scalable Multigrid Reduction Framework",
+        "description": "for Multiphase Poromechanics of Heterogeneous Media"
+      },
+      {
+        "name": "block preconditioner",
+        "description": "for thermo-poromechanics with frictional deformation of fractures"
+      },
+      {
+        "name": "Finite Volume Framework",
+        "description": "for the Fully Implicit Thermal-Hydro-Mechanical-Compositional Modeling in Geo-Energy Applications"
+      },
+      {
+        "name": "Hydraulic conductivity",
+        "description": "of rock fractures"
+      },
+      {
+        "name": "Gmsh",
+        "description": "A 3-d finite element mesh generator with built-in pre- and post-processing facilities"
+      },
+      {
+        "name": "multipoint flux approximations",
+        "description": "for quadrilateral grids"
+      },
+      {
+        "name": "stable cell-centered finite volume discretization",
+        "description": "for biot equations"
+      },
+      {
+        "name": "Unified approach to discretization",
+        "description": "of flow in fractured porous media"
+      },
+      {
+        "name": "algebraic multigrid approach",
+        "description": "for Stokes problems"
+      },
+      {
+        "name": "numerical solution of saddle point problems",
+        "description": null
+      },
+      {
+        "name": "incomplete Gaussian Elimination as a Preconditioning for Generalized Conjugate Gradient Acceleration",
+        "description": null
+      },
+      {
+        "name": "Constrained Residual Acceleration of Conjugate Residual Methods",
+        "description": null
+      },
+      {
+        "name": "block preconditioner for non-isothermal flow in porous media",
+        "description": null
+      },
+      {
+        "name": "Constrained pressure-temperature residual (CPTR) preconditioner performance for large-scale thermal CO2 injection simulation",
+        "description": null
+      },
+      {
+        "name": "multigrid smoothers for ultraparallel computing",
+        "description": null
+      },
+      {
+        "name": "System-AMG approaches for industrial fully and adaptive implicit oil reservoir simulations",
+        "description": "PhD thesis"
+      },
+      {
+        "name": "discrete fracture methodology",
+        "description": "advanced"
+      },
+      {
+        "name": "numerical simulator",
+        "description": "efficient"
+      },
+      {
+        "name": "gradient discretization",
+        "description": "hybrid-dimensional darcy flow"
+      },
+      {
+        "name": "mixed-dimensional poromechanical model",
+        "description": "frictionless contact"
+      },
+      {
+        "name": "energy-stable discretization",
+        "description": "two-phase flows"
+      },
+      {
+        "name": "fully coupled numerical model",
+        "description": "thermo-hydro-mechanical processes"
+      },
+      {
+        "name": "discretization approaches",
+        "description": "conceptual models"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "112575",
+        "value": "112575",
+        "split": null
+      },
+      {
+        "metric": "B379\u2013B396",
+        "value": "B379\u2013B396",
+        "split": null
+      },
+      {
+        "metric": "1\u201320",
+        "value": "1\u201320",
+        "split": null
+      },
+      {
+        "metric": "1\u201330",
+        "value": "1\u201330",
+        "split": null
+      },
+      {
+        "metric": "1309\u20131331",
+        "value": "1309\u20131331",
+        "split": null
+      },
+      {
+        "metric": "405\u2013432",
+        "value": "405\u2013432",
+        "split": null
+      },
+      {
+        "metric": "942\u2013968",
+        "value": "942\u2013968",
+        "split": null
+      },
+      {
+        "metric": "benchmark study",
+        "value": "114693",
+        "split": null
+      },
+      {
+        "metric": "numerical analysis",
+        "value": "2024",
+        "split": null
+      },
+      {
+        "metric": "energy-stable discretization",
+        "value": "110984",
+        "split": null
+      },
+      {
+        "metric": "fully coupled numerical model",
+        "value": "114122",
+        "split": "December 2021"
+      }
+    ]
+  }
+}

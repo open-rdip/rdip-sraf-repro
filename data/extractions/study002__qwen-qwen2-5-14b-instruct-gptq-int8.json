@@ -1,0 +1,144 @@
+{
+  "study_id": "study002",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study002/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T01:40:28.733092+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 1,
+    "hyperparameters": 6,
+    "datasets": 5,
+    "methods": 8,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch Lightning",
+        "version": "2019"
+      },
+      {
+        "name": "DASK",
+        "version": "2015"
+      }
+    ],
+    "random_seeds": [
+      1
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "label_smoothing",
+        "value": ".1"
+      },
+      {
+        "name": "optimizer",
+        "value": "ADAM"
+      },
+      {
+        "name": "learning_rate",
+        "value": ".01"
+      },
+      {
+        "name": "batch_size",
+        "value": "1024"
+      },
+      {
+        "name": "embedding_sizes",
+        "value": "[4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400]"
+      },
+      {
+        "name": "number_of_epochs",
+        "value": "1000"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "KINSHIP",
+        "version": null
+      },
+      {
+        "name": "UMLS",
+        "version": null
+      },
+      {
+        "name": "WN18RR",
+        "version": null
+      },
+      {
+        "name": "FB15K-237",
+        "version": null
+      },
+      {
+        "name": "YAGO3-10",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "label_smoothing",
+        "description": "used with values .1 and .2"
+      },
+      {
+        "name": "embedding_vector_size",
+        "description": "varied through a large parameter sweep"
+      },
+      {
+        "name": "1vsAll training strategy",
+        "description": "Commonly used in literature for training KG embedding models."
+      },
+      {
+        "name": "Kronecker Decomposition for Knowledge Graph Embeddings",
+        "description": "Described in the manuscript."
+      },
+      {
+        "name": "Batch Normalization",
+        "description": "Applied to facilitate numerical stability and accelerate convergence during training."
+      },
+      {
+        "name": "Kronecker Decomposition (KD)",
+        "description": "A method to reduce the number of parameters in neural networks by decomposing weight matrices."
+      },
+      {
+        "name": "Kronecker Decomposition for Relation Embeddings",
+        "description": "Applied to DistMult as KD-Rel-DistMult (h,r,t)=h\u25e6 (r\u2297r) \u00b7t, where h,t\u2208E:E\u2208R/u1D451, and r\u2208R:R\u2208R\u221a /u1D451."
+      },
+      {
+        "name": "DistMult",
+        "description": "Used for illustrating methodology due to competitive performance when properly trained, requiring fewer floating point operations and thus less training time compared to more sophisticated models."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "filteredMeanReciprocalRank (MRR)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "hitsatN (H@N)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Hi@1",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "H@3",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "H@10",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

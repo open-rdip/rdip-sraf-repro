@@ -1,0 +1,165 @@
+{
+  "study_id": "study070",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study070/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:19:29.305819+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 3,
+    "methods": 9,
+    "evaluation_results": 13
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "language_models",
+        "value": "Codex-Davinci, GPT-Neo (2.7B), CodeGen (2.7B)"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning_rate",
+        "value": "2\u00d710\u22125"
+      },
+      {
+        "name": "warmup_steps",
+        "value": "1000"
+      },
+      {
+        "name": "temperature",
+        "value": "0"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "MultiWOZ 2.1",
+        "version": "2.1"
+      },
+      {
+        "name": "MultiWOZ 2.4",
+        "version": "2.4"
+      },
+      {
+        "name": "MultiWOZ",
+        "version": "2.1 or 2.4"
+      }
+    ],
+    "methods": [
+      {
+        "name": "fine-tuning",
+        "description": "The retriever is fine-tuned on the selection pool."
+      },
+      {
+        "name": "retriever initialization",
+        "description": "initialized with SBERT all-mpnet-v2 (220M)"
+      },
+      {
+        "name": "IC-DST",
+        "description": "uses In-Context Learning with GPT-Neo 2.7B"
+      },
+      {
+        "name": "In-Context Learning",
+        "description": "Uses context exemplars for few-shot learning."
+      },
+      {
+        "name": "TRADE",
+        "description": "An encoder-decoder framework applied to the DST problem, enabling generalization to unseen values and domains."
+      },
+      {
+        "name": "SGP-DST",
+        "description": "Uses schema information as a prompt to query a sequence-to-sequence language model (e.g., T5). Achieves SOTA on MultiWOZ 2.2."
+      },
+      {
+        "name": "TransferQA",
+        "description": "Similar context provided but incomplete."
+      },
+      {
+        "name": "DS2",
+        "description": "Reformulates DST as a dialogue summarization problem using sequence-to-sequence language models trained with synthetic summary templates."
+      },
+      {
+        "name": "T5-DST",
+        "description": "A few-shot DST model."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "joint goal accuracy (JGA)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA",
+        "value": "12.58",
+        "split": "1%"
+      },
+      {
+        "metric": "all-domain JGA",
+        "value": "31.17",
+        "split": "5%"
+      },
+      {
+        "metric": "all-domain JGA",
+        "value": "36.18",
+        "split": "10%"
+      },
+      {
+        "metric": "all-domain JGA",
+        "value": "46.00",
+        "split": "100%"
+      },
+      {
+        "metric": "per-domain JGA",
+        "value": "32.11",
+        "split": "1%"
+      },
+      {
+        "metric": "per-domain JGA",
+        "value": "43.14",
+        "split": "5%"
+      },
+      {
+        "metric": "per-domain JGA",
+        "value": "46.92",
+        "split": "10%"
+      },
+      {
+        "metric": "per-domain JGA",
+        "value": "56.66",
+        "split": "100%"
+      },
+      {
+        "metric": "F1 on slot-value pairs",
+        "value": "26.90",
+        "split": "1%"
+      },
+      {
+        "metric": "JGA",
+        "value": "42.53",
+        "split": "test"
+      },
+      {
+        "metric": "JGA",
+        "value": "41.73",
+        "split": "validation"
+      },
+      {
+        "metric": "JGA",
+        "value": "46.14",
+        "split": "train"
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "study_id": "study077",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study077/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:44:56.991556+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 1,
+    "hyperparameters": 0,
+    "datasets": 4,
+    "methods": 1,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Monte Carlo Tree Search",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      42
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "six benchmarks",
+        "version": null
+      },
+      {
+        "name": "GSM8K",
+        "version": null
+      },
+      {
+        "name": "MBPP",
+        "version": null
+      },
+      {
+        "name": "test dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "AF LOW",
+        "description": "leveraged Monte Carlo Tree Search and code-represented workflows"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "out-performed manually designed methods and existing automated optimization approaches",
+        "value": "AF LOW",
+        "split": null
+      },
+      {
+        "metric": "outperform stronger ones on the Pareto front of cost-effectiveness",
+        "value": "weaker models",
+        "split": null
+      },
+      {
+        "metric": "score",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "93.1%",
+        "split": null
+      },
+      {
+        "metric": "cost-effectiveness",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "study_id": "study039",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study039/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:00:50.317915+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 5,
+    "methods": 9,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.005"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.0001"
+      },
+      {
+        "name": "\u03bb",
+        "value": "2.5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Kinetics-400",
+        "version": "(Kay et al., 2017)"
+      },
+      {
+        "name": "Kinetics-600",
+        "version": "(Long et al., 2020)"
+      },
+      {
+        "name": "FineGym",
+        "version": null
+      },
+      {
+        "name": "HMDB-51",
+        "version": null
+      },
+      {
+        "name": "MPII Cooking 2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "fine-tuning",
+        "description": "pretrained on Kinetics-400 or Kinetics-600"
+      },
+      {
+        "name": "TimeSformer",
+        "description": "used as backbone"
+      },
+      {
+        "name": "SlowFast",
+        "description": "explored with motion prompts in slow-only, fast-only, and both streams"
+      },
+      {
+        "name": "VMPs",
+        "description": "Variable Motion Patterns"
+      },
+      {
+        "name": "C2D",
+        "description": "Action recognition backbone"
+      },
+      {
+        "name": "I3D",
+        "description": "Action recognition backbone"
+      },
+      {
+        "name": "X3D",
+        "description": "Action recognition backbone"
+      },
+      {
+        "name": "attention variation regularization",
+        "description": "Contributes to generating smooth and clean attention maps"
+      },
+      {
+        "name": "motion prompt layer",
+        "description": "Integrated with TimeSformer backbone to improve action recognition accuracy"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance gain",
+        "value": "0.8%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 mean average precision",
+        "value": "3.9%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 accuracy",
+        "value": "0.8%",
+        "split": null
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "1.5%",
+        "split": "split 1"
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "1.2%",
+        "split": "split 2"
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "0.7%",
+        "split": "split 3"
+      },
+      {
+        "metric": "average accuracy improvement",
+        "value": "1.1%",
+        "split": null
+      }
+    ]
+  }
+}

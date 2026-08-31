@@ -1,0 +1,152 @@
+{
+  "study_id": "study091",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study091/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:52:17.201806+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 8,
+    "methods": 7,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "SonarQube",
+        "version": null
+      },
+      {
+        "name": "VisminnerTD",
+        "version": null
+      },
+      {
+        "name": "Refactoring-Bot",
+        "version": null
+      },
+      {
+        "name": "Travis CI",
+        "version": null
+      },
+      {
+        "name": "Grimoire Lab",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "Structure 101",
+        "version": null
+      },
+      {
+        "name": "SonarQube",
+        "version": null
+      },
+      {
+        "name": "DV8",
+        "version": null
+      },
+      {
+        "name": "NDepend",
+        "version": null
+      },
+      {
+        "name": "CAST",
+        "version": null
+      },
+      {
+        "name": "CodeMRI",
+        "version": null
+      },
+      {
+        "name": "SQuORE",
+        "version": null
+      },
+      {
+        "name": "SonarGraph",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "code smells detection",
+        "description": "comparing three artifacts"
+      },
+      {
+        "name": "TD measurement",
+        "description": "comparing nine tools"
+      },
+      {
+        "name": "FixMe",
+        "description": "identifies SATD in code comments and runs on top of the Probot Framework"
+      },
+      {
+        "name": "Identification",
+        "description": "null"
+      },
+      {
+        "name": "Monitoring",
+        "description": "null"
+      },
+      {
+        "name": "Measurement",
+        "description": "null"
+      },
+      {
+        "name": "Repayment",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "high",
+        "split": "context"
+      },
+      {
+        "metric": "accuracy",
+        "value": "not that high",
+        "split": null
+      },
+      {
+        "metric": "TD interest",
+        "value": "can calculate",
+        "split": null
+      },
+      {
+        "metric": "extra effort for repaying TD",
+        "value": "would be recommended",
+        "split": null
+      },
+      {
+        "metric": "security",
+        "value": "better",
+        "split": null
+      },
+      {
+        "metric": "maintainability at multiple levels",
+        "value": "better",
+        "split": null
+      },
+      {
+        "metric": "architectural analysis",
+        "value": "better",
+        "split": null
+      },
+      {
+        "metric": "number of issues generated",
+        "value": "several",
+        "split": null
+      }
+    ]
+  }
+}

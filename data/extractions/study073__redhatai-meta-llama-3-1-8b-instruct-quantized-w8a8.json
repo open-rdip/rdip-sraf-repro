@@ -1,0 +1,358 @@
+{
+  "study_id": "study073",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study073/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:43:17.180150+00:00",
+  "counts": {
+    "dependencies": 14,
+    "random_seeds": 3,
+    "hyperparameters": 2,
+    "datasets": 4,
+    "methods": 19,
+    "evaluation_results": 33
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PoseCNN",
+        "version": null
+      },
+      {
+        "name": "GT",
+        "version": null
+      },
+      {
+        "name": "Model-based",
+        "version": null
+      },
+      {
+        "name": "Model-free",
+        "version": null
+      },
+      {
+        "name": "SDF",
+        "version": null
+      },
+      {
+        "name": "InfoNCE",
+        "version": null
+      },
+      {
+        "name": "contrast validated pair-wise loss",
+        "version": null
+      },
+      {
+        "name": "triplet loss",
+        "version": null
+      },
+      {
+        "name": "DeepIM",
+        "version": "36"
+      },
+      {
+        "name": "se(3)-TrackNet",
+        "version": "67"
+      },
+      {
+        "name": "PoseRBPF",
+        "version": "8"
+      },
+      {
+        "name": "RGF",
+        "version": "29"
+      },
+      {
+        "name": "ICG",
+        "version": "56"
+      },
+      {
+        "name": "W\u00fcthrich et al.",
+        "version": "72"
+      }
+    ],
+    "random_seeds": [
+      290,
+      2,
+      4
+    ],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX 3090",
+      "cuda_version": null,
+      "cpu_info": "Intel i9-10980XE"
+    },
+    "hyperparameters": [
+      {
+        "name": "LLM-aided texture augmentation",
+        "value": "present"
+      },
+      {
+        "name": "transformer-based architecture",
+        "value": "present"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "YCB-Video",
+        "version": null
+      },
+      {
+        "name": "testing dataset",
+        "version": null
+      },
+      {
+        "name": "YCB-Video dataset",
+        "version": null
+      },
+      {
+        "name": "LINEMOD dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DeeplM",
+        "description": null
+      },
+      {
+        "name": "se(3)-TrackNet",
+        "description": null
+      },
+      {
+        "name": "PoseRBPF",
+        "description": null
+      },
+      {
+        "name": "W\u00fcthrich",
+        "description": null
+      },
+      {
+        "name": "RGF",
+        "description": null
+      },
+      {
+        "name": "ICG",
+        "description": null
+      },
+      {
+        "name": "Ours",
+        "description": null
+      },
+      {
+        "name": "Ours\u2020",
+        "description": null
+      },
+      {
+        "name": "instance-wise training",
+        "description": "null"
+      },
+      {
+        "name": "W/o LLM texture augmentation",
+        "description": "null"
+      },
+      {
+        "name": "W/o transformer",
+        "description": "convolutional and linear layers"
+      },
+      {
+        "name": "pose estimation",
+        "description": null
+      },
+      {
+        "name": "pose initialization",
+        "description": "takes 4 ms"
+      },
+      {
+        "name": "refinement",
+        "description": "takes 0.88 s"
+      },
+      {
+        "name": "pose selection",
+        "description": "takes 0.42 s"
+      },
+      {
+        "name": "tracking",
+        "description": "runs at \u223c32 Hz"
+      },
+      {
+        "name": "our method",
+        "description": "uses the same trained model and configurations for inference without any fine-tuning"
+      },
+      {
+        "name": "state-of-art RGBD methods",
+        "description": null
+      },
+      {
+        "name": "RGB-based methods",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AUC of ADD",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AUC of ADD-S",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "85.0",
+        "split": "Train data size (log10)"
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "87.0",
+        "split": null
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "85.0",
+        "split": "3.5"
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "87.0",
+        "split": "4"
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "89.0",
+        "split": "4.5"
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "91.0",
+        "split": "5"
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "93.0",
+        "split": "5.5"
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "95.0",
+        "split": "6"
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "97.0",
+        "split": "7"
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "99.0",
+        "split": "9"
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "85.0",
+        "split": "3"
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "93.0",
+        "split": "11"
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "95.0",
+        "split": "13"
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "97.0",
+        "split": "15"
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "99.0",
+        "split": "17"
+      },
+      {
+        "metric": "ADD",
+        "value": "60.0",
+        "split": null
+      },
+      {
+        "metric": "ADD-S",
+        "value": "60.0",
+        "split": null
+      },
+      {
+        "metric": "ADD",
+        "value": "60.0",
+        "split": "3"
+      },
+      {
+        "metric": "ADD-S",
+        "value": "60.0",
+        "split": "5"
+      },
+      {
+        "metric": "ADD",
+        "value": "60.0",
+        "split": "7"
+      },
+      {
+        "metric": "ADD-S",
+        "value": "60.0",
+        "split": "9"
+      },
+      {
+        "metric": "ADD",
+        "value": "60.0",
+        "split": "11"
+      },
+      {
+        "metric": "ADD-S",
+        "value": "60.0",
+        "split": "13"
+      },
+      {
+        "metric": "ADD",
+        "value": "60.0",
+        "split": "15"
+      },
+      {
+        "metric": "ADD-S",
+        "value": "60.0",
+        "split": "17"
+      },
+      {
+        "metric": "Train data size (log10)",
+        "value": "3.5",
+        "split": "Train"
+      },
+      {
+        "metric": "Area under the curve (AUC) of ADD and ADD-S",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Recall of ADD that is less than 0.1 of the object diameter (ADD-0.1d)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Average recall (AR) of VSD, MSSD and MSPD metrics",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "AUC",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Recall",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

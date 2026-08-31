@@ -1,0 +1,79 @@
+{
+  "study_id": "study061",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study061/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:13:28.846037+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 1,
+    "methods": 7,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "collaboration coefficients of pedestrians",
+        "value": "0"
+      },
+      {
+        "name": "collaboration coefficient of the robot",
+        "value": "1"
+      },
+      {
+        "name": "sub-goal planning horizon",
+        "value": "6 seconds"
+      },
+      {
+        "name": "checkpoint distance threshold",
+        "value": "1 meter"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "curated set of 33 episodes",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ORCA",
+        "description": "Optimal Reciprocal Collision Avoidance, an efficient navigation planner providing theoretical non-collision guarantees under certain conditions."
+      },
+      {
+        "name": "SA-CADRL",
+        "description": "Socially aware collision avoidance with deep reinforcement learning, formulated as a cooperative multi-agent collision avoidance problem."
+      },
+      {
+        "name": "Social Forces",
+        "description": "An early influential work on modeling pedestrian navigation that represents pedestrian navigation behavior under the influence of 'social forces' including an attractive force to their goal, a repulsive force from other pedestrians and obstacles, and other attractive forces to interesting objects or other pedestrians in the environment."
+      },
+      {
+        "name": "meta-planner",
+        "description": "plans a sub-goal within a 6-second horizon each time a new checkpoint is requested; uses a 3D unicycle model without kinematic constraint application when used as a meta-planner."
+      },
+      {
+        "name": "social navigation formulation",
+        "description": "formulates social navigation as a cooperative multi-agent collision avoidance problem with well-crafted rules to inject social awareness"
+      },
+      {
+        "name": "network configuration",
+        "description": "uses the 4-agent version of the network, taking observations from the three nearest pedestrians to the robot"
+      },
+      {
+        "name": "meta-level planner implementation",
+        "description": "implements a meta-level planner for ORCA and CADRL, which samples trajectories from a connectivity graph and evaluates them via heuristic cost functions"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

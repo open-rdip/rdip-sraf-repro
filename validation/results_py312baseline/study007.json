@@ -1,0 +1,126 @@
+{
+  "study_id": "study007",
+  "repo_url": "https://github.com/ShangtongZhang/DeepRL",
+  "started": "2026-06-09T15:17:04.140158+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "Dockerfile",
+      "pip": "requirements.txt",
+      "setup": "setup.py"
+    },
+    "depth_note": "root",
+    "n_found": 3,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      },
+      {
+        "type": "docker",
+        "rel_path": "Dockerfile",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/ShangtongZhang/DeepRL",
+    "commit_hash": "c0968b5c046314af09944843cdf06f4100c6bb95",
+    "software_license": "MIT"
+  },
+  "lift": {
+    "lifted": {
+      "docker": "Dockerfile",
+      "pip": "requirements.txt"
+    },
+    "triples": 78,
+    "n_sources": 3
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": false,
+    "build_success": false,
+    "method": "pip-requirements",
+    "stage_failed": "resolve",
+    "duration_s": 4.0,
+    "log_tail": "$ /home/dsai-st125286p/envs/sraf/bin/python -m venv /tmp/15856/study007/venv\n\n$ /tmp/15856/study007/venv/bin/pip install --upgrade pip setuptools wheel\nRequirement already satisfied: pip in ./venv/lib/python3.12/site-packages (25.0.1)\nCollecting pip\n  Using cached pip-26.1.2-py3-none-any.whl.metadata (4.6 kB)\nCollecting setuptools\n  Using cached setuptools-82.0.1-py3-none-any.whl.metadata (6.5 kB)\nCollecting wheel\n  Using cached wheel-0.47.0-py3-none-any.whl.metadata (2.3 kB)\nCollecting packaging>=24.0 (from wheel)\n  Using cached packaging-26.2-py3-none-any.whl.metadata (3.5 kB)\nUsing cached pip-26.1.2-py3-none-any.whl (1.8 MB)\nUsing cached setuptools-82.0.1-py3-none-any.whl (1.0 MB)\nUsing cached wheel-0.47.0-py3-none-any.whl (32 kB)\nUsing cached packaging-26.2-py3-none-any.whl (100 kB)\nInstalling collected packages: setuptools, pip, packaging, wheel\n  Attempting uninstall: pip\n    Found existing installation: pip 25.0.1\n    Uninstalling pip-25.0.1:\n      Successfully uninstalled pip-25.0.1\nSuccessfully installed packaging-26.2 pip-26.1.2 setuptools-82.0.1 wheel-0.47.0\n\n$ /tmp/15856/study007/venv/bin/pip install --dry-run --ignore-installed -r /tmp/15856/study007/study007/requirements.txt\nERROR: Could not find a version that satisfies the requirement torch==1.5.1 (from versions: 2.2.0, 2.2.1, 2.2.2, 2.3.0, 2.3.1, 2.4.0, 2.4.1, 2.5.0, 2.5.1, 2.6.0, 2.7.0, 2.7.1, 2.8.0, 2.9.0, 2.9.1, 2.10.0, 2.11.0, 2.12.0)\nERROR: No matching distribution found for torch==1.5.1\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 27.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 20.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 5.1
+}

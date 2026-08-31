@@ -1,0 +1,142 @@
+{
+  "study_id": "study088",
+  "repo_url": "https://github.com/DarshanDeshpande/jax-models",
+  "started": "2026-06-10T14:54:24.211657+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "pip": "requirements.txt",
+      "setup": "setup.py"
+    },
+    "depth_note": "root",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/DarshanDeshpande/jax-models",
+    "commit_hash": "0d59f478fa00a456460e1b25d2594464e8861b6e",
+    "software_license": "Apache-2.0"
+  },
+  "lift": {
+    "lifted": {
+      "pip": "requirements.txt"
+    },
+    "triples": 21,
+    "n_sources": 2
+  },
+  "python": {
+    "declared": "3.12",
+    "source": "python_requires",
+    "used": "3.12",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 232.9,
+    "log_tail": "->flax>=0.3.6->-r /tmp/15889/study088/study088/requirements.txt (line 2))\n  Using cached humanize-4.15.0-py3-none-any.whl.metadata (7.8 kB)\nCollecting simplejson>=3.16.0 (from orbax-checkpoint->flax>=0.3.6->-r /tmp/15889/study088/study088/requirements.txt (line 2))\n  Using cached simplejson-4.1.1-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.8 kB)\nCollecting psutil (from orbax-checkpoint->flax>=0.3.6->-r /tmp/15889/study088/study088/requirements.txt (line 2))\n  Using cached psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)\nCollecting uvloop (from orbax-checkpoint->flax>=0.3.6->-r /tmp/15889/study088/study088/requirements.txt (line 2))\n  Using cached uvloop-0.22.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.9 kB)\nCollecting fsspec (from etils[epath,epy]->orbax-checkpoint->flax>=0.3.6->-r /tmp/15889/study088/study088/requirements.txt (line 2))\n  Using cached fsspec-2026.4.0-py3-none-any.whl.metadata (10 kB)\nCollecting zipp (from etils[epath,epy]->orbax-checkpoint->flax>=0.3.6->-r /tmp/15889/study088/study088/requirements.txt (line 2))\n  Using cached zipp-4.1.0-py3-none-any.whl.metadata (3.6 kB)\nWould install PyYAML-6.0.3 Pygments-2.20.0 absl-py-2.4.0 aiofiles-25.1.0 etils-1.14.0 flax-0.12.7 fsspec-2026.4.0 humanize-4.15.0 jax-0.10.1 jaxlib-0.10.1 markdown-it-py-4.2.0 mdurl-0.1.2 ml_dtypes-0.5.4 msgpack-1.1.2 numpy-2.4.6 opt_einsum-3.4.0 optax-0.2.8 orbax-checkpoint-0.12.0 prometheus_client-0.25.0 protobuf-7.35.0 psutil-7.2.2 rich-15.0.0 scipy-1.17.1 simplejson-4.1.1 tensorstore-0.1.84 tqdm-4.68.2 treescope-0.1.10 typing_extensions-4.15.0 uvloop-0.22.1 zipp-4.1.0\n\n$ /tmp/15889/study088/venv/bin/pip install --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study088/study088/requirements.txt\nUsing cached msgpack-1.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (427 kB)\nUsing cached opt_einsum-3.4.0-py3-none-any.whl (71 kB)\nUsing cached optax-0.2.8-py3-none-any.whl (402 kB)\nUsing cached absl_py-2.4.0-py3-none-any.whl (135 kB)\nUsing cached orbax_checkpoint-0.12.0-py3-none-any.whl (1.3 MB)\nUsing cached prometheus_client-0.25.0-py3-none-any.whl (64 kB)\nUsing cached simplejson-4.1.1-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (190 kB)\nUsing cached tensorstore-0.1.84-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (21.0 MB)\nUsing cached aiofiles-25.1.0-py3-none-any.whl (14 kB)\nUsing cached etils-1.14.0-py3-none-any.whl (172 kB)\nUsing cached fsspec-2026.4.0-py3-none-any.whl (203 kB)\nUsing cached humanize-4.15.0-py3-none-any.whl (132 kB)\nUsing cached protobuf-7.35.0-cp310-abi3-manylinux2014_x86_64.whl (327 kB)\nUsing cached psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)\nUsing cached uvloop-0.22.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.4 MB)\nUsing cached zipp-4.1.0-py3-none-any.whl (10 kB)\nInstalling collected packages: zipp, uvloop, typing_extensions, tqdm, simplejson, PyYAML, pygments, psutil, protobuf, prometheus-client, opt_einsum, numpy, msgpack, mdurl, humanize, fsspec, etils, aiofiles, absl-py, treescope, scipy, ml_dtypes, markdown-it-py, tensorstore, rich, jaxlib, jax, orbax-checkpoint, optax, flax\n\nSuccessfully installed PyYAML-6.0.3 absl-py-2.4.0 aiofiles-25.1.0 etils-1.14.0 flax-0.12.7 fsspec-2026.4.0 humanize-4.15.0 jax-0.10.1 jaxlib-0.10.1 markdown-it-py-4.2.0 mdurl-0.1.2 ml_dtypes-0.5.4 msgpack-1.1.2 numpy-2.4.6 opt_einsum-3.4.0 optax-0.2.8 orbax-checkpoint-0.12.0 prometheus-client-0.25.0 protobuf-7.35.0 psutil-7.2.2 pygments-2.20.0 rich-15.0.0 scipy-1.17.1 simplejson-4.1.1 tensorstore-0.1.84 tqdm-4.68.2 treescope-0.1.10 typing_extensions-4.15.0 uvloop-0.22.1 zipp-4.1.0\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 51.79,
+    "tier": "fair",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 12.5,
+      "Reproducible": 19.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 234.1,
+  "fair_r_scorer": "graded-v2"
+}

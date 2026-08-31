@@ -1,0 +1,112 @@
+{
+  "study_id": "study016",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study016/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:14:47.273643+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 3,
+    "hyperparameters": 0,
+    "datasets": 3,
+    "methods": 6,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "IMPALA",
+        "version": null
+      },
+      {
+        "name": "PPO",
+        "version": null
+      },
+      {
+        "name": "DreamerV2",
+        "version": null
+      },
+      {
+        "name": "Bayesian optimization",
+        "version": null
+      },
+      {
+        "name": "Natural Evolution Strategies (NES)",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      5,
+      3,
+      7
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": "Appendix K"
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "MT-TB",
+        "version": null
+      },
+      {
+        "name": "our benchmark",
+        "version": null
+      },
+      {
+        "name": "MT-TA",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RL",
+        "description": "reinforcement learning"
+      },
+      {
+        "name": "IMPALA",
+        "description": "null"
+      },
+      {
+        "name": "PPO",
+        "description": "null"
+      },
+      {
+        "name": "DreamerV2",
+        "description": "null"
+      },
+      {
+        "name": "Automated Curriculum Learning",
+        "description": "simple form of Automated Curriculum Learning"
+      },
+      {
+        "name": "Avalon",
+        "description": "procedural generation; while the generated worlds are quite complex, they are still far less complex than the real world"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "scores",
+        "value": "non-zero performance",
+        "split": null
+      },
+      {
+        "metric": "scores",
+        "value": "low performance",
+        "split": "four compositional tasks"
+      },
+      {
+        "metric": "performance",
+        "value": "as well as or better than",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "success",
+        "split": "general case"
+      }
+    ]
+  }
+}

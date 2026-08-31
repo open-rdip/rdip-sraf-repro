@@ -1,0 +1,126 @@
+{
+  "study_id": "study073",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study073/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:06:04.555101+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 18,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX 3090",
+      "cuda_version": null,
+      "cpu_info": "Intel i9-10980XE"
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "YCB-Video",
+        "version": null
+      },
+      {
+        "name": "LINEMOD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "W/o transformer",
+        "description": "Replaces the transformer-based architecture by convolutional and linear layers while keeping the similar number of parameters."
+      },
+      {
+        "name": "W/o hierarchical comparison",
+        "description": "Only compares the rendering and the cropped input trained by pose-conditioned triplet loss without two-level hierarchical comparison."
+      },
+      {
+        "name": "Ours-InfoNCE",
+        "description": "Replaces contrast validated pair-wise loss by the InfoNCE loss."
+      },
+      {
+        "name": "Ours\u2020",
+        "description": "end-to-end pose estimation and tracking without external pose initialization"
+      },
+      {
+        "name": "DeepIM",
+        "description": ""
+      },
+      {
+        "name": "se(3)-TrackNet",
+        "description": ""
+      },
+      {
+        "name": "PoseRBPF",
+        "description": ""
+      },
+      {
+        "name": "W\u00fcthrich et al.",
+        "description": ""
+      },
+      {
+        "name": "RGF",
+        "description": ""
+      },
+      {
+        "name": "ICG",
+        "description": ""
+      },
+      {
+        "name": "Ours (proposed)",
+        "description": "default version under the model-free (16 reference images) setup"
+      },
+      {
+        "name": "W/o LLM texture augmentation",
+        "description": "removes the LLM-aided texture augmentation for synthetic training"
+      },
+      {
+        "name": "ADD",
+        "description": "Area under the curve (AUC) of ADD"
+      },
+      {
+        "name": "ADD-S",
+        "description": "Area under the curve (AUC) of ADD-S"
+      },
+      {
+        "name": "ADD-0.1d",
+        "description": "Recall of ADD that is less than 0.1 of the object diameter"
+      },
+      {
+        "name": "VSD",
+        "description": "Average recall (AR) of VSD"
+      },
+      {
+        "name": "MSSD",
+        "description": "Average recall (AR) of MSSD"
+      },
+      {
+        "name": "MSPD",
+        "description": "Average recall (AR) of MSPD"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AUC of ADD",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "AUC of ADD-S",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "AUC",
+        "value": "85.00",
+        "split": null
+      }
+    ]
+  }
+}

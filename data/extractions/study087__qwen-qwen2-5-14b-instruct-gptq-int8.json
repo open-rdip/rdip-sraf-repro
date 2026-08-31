@@ -1,0 +1,154 @@
+{
+  "study_id": "study087",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study087/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:30:37.102402+00:00",
+  "counts": {
+    "dependencies": 4,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 2,
+    "methods": 9,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ResNet50",
+        "version": null
+      },
+      {
+        "name": "ResNet101",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "Adam",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "N-way",
+        "value": "string"
+      },
+      {
+        "name": "K-shot",
+        "value": "string"
+      },
+      {
+        "name": "backbone_networks",
+        "value": "ResNet50, ResNet101"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning_rate_classification_loss",
+        "value": "10^-4"
+      },
+      {
+        "name": "learning_rate_segmentation_loss",
+        "value": "10^-3"
+      },
+      {
+        "name": "threshold_delta",
+        "value": "0.5"
+      },
+      {
+        "name": "number_of_heads",
+        "value": "8"
+      },
+      {
+        "name": "correlation_pyramid",
+        "value": "3"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pascal-5i",
+        "version": "string"
+      },
+      {
+        "name": "COCO-20i",
+        "version": "string"
+      }
+    ],
+    "methods": [
+      {
+        "name": "ASNet",
+        "description": "A method that outperforms existing methods including the most recent ones [88, 90, 92]. It casts few-shot segmentation as the task of correlation feature transform and processes correlation features that have smaller channel dimensions."
+      },
+      {
+        "name": "HSNet [45]",
+        "description": "Another method that casts few-shot segmentation as the task of correlation feature transform and outperforms other visual feature transform methods."
+      },
+      {
+        "name": "ASNet layer with local self-attention",
+        "description": "Compatible with global ASNet in terms of classification exact ratio but degrades segmentation mIoU significantly."
+      },
+      {
+        "name": "Attention masking in Eq. (11)",
+        "description": "Verifies that the attention masking prior is effective."
+      },
+      {
+        "name": "Multi-layer fusion path replacement",
+        "description": "Replaced with spatial average pooling over the support dimensions followed by element-wise addition."
+      },
+      {
+        "name": "FS-S task",
+        "description": "Uses Pascal-5i and COCO-20i datasets for few-shot segmentation."
+      },
+      {
+        "name": "multi-label classification",
+        "description": "Uses ER (exact ratio) and acc (accuracy) metrics."
+      },
+      {
+        "name": "segmentation",
+        "description": "Uses mIoU (mean Intersection over Union) metric."
+      },
+      {
+        "name": "iFSL framework",
+        "description": "Framework used for few-shot learning tasks"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "classification exact ratio",
+        "value": "compatible with global ASNet",
+        "split": null
+      },
+      {
+        "metric": "segmentation mIoU",
+        "value": "degrades significantly",
+        "split": null
+      },
+      {
+        "metric": "ER",
+        "value": "1[ygt= yC]",
+        "split": null
+      },
+      {
+        "metric": "acc",
+        "value": "1 NP n1[y(n) gt=y(n) C]",
+        "split": null
+      },
+      {
+        "metric": "mIoU",
+        "value": "1 CP cIoUc",
+        "split": null
+      }
+    ]
+  }
+}

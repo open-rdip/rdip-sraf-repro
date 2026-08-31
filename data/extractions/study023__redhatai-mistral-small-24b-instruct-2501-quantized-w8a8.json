@@ -1,0 +1,87 @@
+{
+  "study_id": "study023",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study023/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:21:53.417655+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 1,
+    "hyperparameters": 1,
+    "datasets": 0,
+    "methods": 5,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GPT-4V",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      0
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "value": "0"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "SR",
+        "description": "same as DA"
+      },
+      {
+        "name": "GPT-4V",
+        "description": "direct use as a mobile device operation assistant"
+      },
+      {
+        "name": "GPT-4V combined with the agent architecture",
+        "description": "most effective configuration for operational capabilities"
+      },
+      {
+        "name": "Mobile-Agent",
+        "description": "a single-agent architecture based on GPT-4V end-to-end screen recognition"
+      },
+      {
+        "name": "Mobile-Agent-v2",
+        "description": "multi-agent architecture"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "success rate",
+        "value": "2.7",
+        "split": null
+      },
+      {
+        "metric": "CR",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "DA",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "RA",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "decision accuracy",
+        "value": "99%",
+        "split": null
+      }
+    ]
+  }
+}

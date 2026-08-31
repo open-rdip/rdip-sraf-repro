@@ -1,0 +1,86 @@
+{
+  "study_id": "study083",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study083/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:12:36.158761+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 12,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "LPMC",
+        "version": null
+      },
+      {
+        "name": "NTS",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Nystr\u00f6m-based KLR",
+        "description": "Nystr\u00f6m-based Kernel Logistic Regression approaches"
+      },
+      {
+        "name": "MNL",
+        "description": "Multinomial Logit"
+      },
+      {
+        "name": "Random Forests",
+        "description": ""
+      },
+      {
+        "name": "SVM",
+        "description": "Support Vector Machine"
+      },
+      {
+        "name": "XGBoost",
+        "description": "Extreme Gradient Boosting"
+      },
+      {
+        "name": "NN",
+        "description": "Neural Network"
+      },
+      {
+        "name": "gradient descent",
+        "description": ""
+      },
+      {
+        "name": "Momentum",
+        "description": ""
+      },
+      {
+        "name": "Adam",
+        "description": ""
+      },
+      {
+        "name": "L-BFGS-B",
+        "description": ""
+      },
+      {
+        "name": "Nystr\u00f6m method",
+        "description": "approximating the kernel matrix of KLR"
+      },
+      {
+        "name": "Nystr\u00f6m-KLR models",
+        "description": "optimisation algorithms applicable"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

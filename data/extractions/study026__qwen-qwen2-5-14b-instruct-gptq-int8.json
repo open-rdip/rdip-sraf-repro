@@ -1,0 +1,79 @@
+{
+  "study_id": "study026",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study026/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:48:50.284386+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 2,
+    "methods": 2,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "evolution population",
+        "value": "104"
+      },
+      {
+        "name": "evolution population for regression",
+        "value": "103"
+      },
+      {
+        "name": "Search branch",
+        "value": "Classification GIoU"
+      },
+      {
+        "name": "Another branch",
+        "value": "Regression CE"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "VOC",
+        "version": null
+      },
+      {
+        "name": "BDD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Search Algorithm",
+        "description": "Comparison between random search, vanilla evolution search, and CSE-Autoloss."
+      },
+      {
+        "name": "CSE-Autoloss",
+        "description": "Speeds up the search process by 20x compared to vanilla evolution search."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "wall-clock time",
+        "value": "hundreds of hours",
+        "split": null
+      },
+      {
+        "metric": "AP (%)",
+        "value": "38.2",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": "1.1%",
+        "split": null
+      }
+    ]
+  }
+}

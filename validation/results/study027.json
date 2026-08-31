@@ -1,0 +1,128 @@
+{
+  "study_id": "study027",
+  "repo_url": "https://github.com/hms-dbmi/chief",
+  "started": "2026-06-10T09:56:04.926838+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "pip": "requirements.txt"
+    },
+    "depth_note": "root",
+    "n_found": 1,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/hms-dbmi/chief",
+    "commit_hash": "1abed334e674ad2b6ee0430d1ce7d0b566420bb4",
+    "software_license": "GPL-3.0"
+  },
+  "lift": {
+    "lifted": {
+      "pip": "requirements.txt"
+    },
+    "triples": 1021,
+    "n_sources": 2
+  },
+  "python": {
+    "declared": null,
+    "source": "default",
+    "used": "3.10",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": false,
+    "build_success": false,
+    "method": "pip-requirements",
+    "stage_failed": "resolve",
+    "duration_s": 58.5,
+    "log_tail": "$ /home/dsai-st125286p/pys/py310/bin/python -m venv /tmp/15889/study027/venv\n\n$ /tmp/15889/study027/venv/bin/pip install --upgrade pip setuptools wheel\nRequirement already satisfied: pip in ./venv/lib/python3.10/site-packages (23.0.1)\nCollecting pip\n  Using cached pip-26.1.2-py3-none-any.whl (1.8 MB)\nRequirement already satisfied: setuptools in ./venv/lib/python3.10/site-packages (79.0.1)\nCollecting setuptools\n  Using cached setuptools-82.0.1-py3-none-any.whl (1.0 MB)\nCollecting wheel\n  Using cached wheel-0.47.0-py3-none-any.whl (32 kB)\nCollecting packaging>=24.0\n  Using cached packaging-26.2-py3-none-any.whl (100 kB)\nInstalling collected packages: setuptools, pip, packaging, wheel\n  Attempting uninstall: setuptools\n    Found existing installation: setuptools 79.0.1\n    Uninstalling setuptools-79.0.1:\n      Successfully uninstalled setuptools-79.0.1\n  Attempting uninstall: pip\n    Found existing installation: pip 23.0.1\n    Uninstalling pip-23.0.1:\n      Successfully uninstalled pip-23.0.1\nSuccessfully installed packaging-26.2 pip-26.1.2 setuptools-82.0.1 wheel-0.47.0\n\n$ /tmp/15889/study027/venv/bin/pip install --dry-run --ignore-installed --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study027/study027/requirements.txt\n\n  Installing build dependencies: finished with status 'done'\n  Getting requirements to build wheel: started\n  Getting requirements to build wheel: finished with status 'done'\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nCollecting Babel==2.10.1 (from -r /tmp/15889/study027/study027/requirements.txt (line 12))\n  Using cached Babel-2.10.1-py3-none-any.whl.metadata (1.3 kB)\nCollecting backcall==0.2.0 (from -r /tmp/15889/study027/study027/requirements.txt (line 13))\n  Using cached backcall-0.2.0-py2.py3-none-any.whl.metadata (2.0 kB)\nCollecting beautifulsoup4==4.11.1 (from -r /tmp/15889/study027/study027/requirements.txt (line 14))\n  Using cached beautifulsoup4-4.11.1-py3-none-any.whl.metadata (3.5 kB)\nCollecting bleach==5.0.0 (from -r /tmp/15889/study027/study027/requirements.txt (line 15))\n  Using cached bleach-5.0.0-py3-none-any.whl.metadata (26 kB)\nWARNING: Ignoring version 5.0.0 of bleach since it has invalid metadata:\nRequested bleach==5.0.0 from https://files.pythonhosted.org/packages/35/8b/bad37525e7ef0669f013059affb3bbcd9311a24d63eda96723339ee0aab7/bleach-5.0.0-py3-none-any.whl (from -r /tmp/15889/study027/study027/requirements.txt (line 15)) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier\n    tinycss2 (>=1.1.0<1.2) ; extra == 'css'\n             ~~~~~~~~^\nPlease use pip<24.1 if you need to use this version.\nERROR: Could not find a version that satisfies the requirement bleach==5.0.0 (from versions: 0.2.1, 0.2.2, 0.3, 0.3.1, 0.3.3, 0.3.4, 0.5.0, 0.5.1, 1.0.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.1.0, 1.1.1, 1.1.2, 1.1.3, 1.1.4, 1.1.5, 1.2, 1.2.1, 1.2.2, 1.4, 1.4.1, 1.4.2, 1.4.3, 1.5.0, 2.0.0, 2.1, 2.1.1, 2.1.2, 2.1.3, 2.1.4, 3.0.0, 3.0.1, 3.0.2, 3.1.0, 3.1.1, 3.1.2, 3.1.3, 3.1.4, 3.1.5, 3.2.0, 3.2.1, 3.2.2, 3.2.3, 3.3.0, 3.3.1, 4.0.0, 4.1.0, 5.0.0, 5.0.1, 6.0.0, 6.1.0, 6.2.0, 6.3.0, 6.4.0)\nERROR: No matching distribution found for bleach==5.0.0\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 56.29,
+    "tier": "fair",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 12.5,
+      "Reproducible": 24.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      }
+    ]
+  },
+  "duration_s": 66.4,
+  "fair_r_scorer": "graded-v2"
+}

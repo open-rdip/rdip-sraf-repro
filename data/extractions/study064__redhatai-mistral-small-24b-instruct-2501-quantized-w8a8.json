@@ -1,0 +1,112 @@
+{
+  "study_id": "study064",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study064/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:57:41.770087+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 2,
+    "methods": 1,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Adam",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning_rate",
+        "value": "3\u00d710\u22124"
+      },
+      {
+        "name": "batch_size",
+        "value": "12"
+      },
+      {
+        "name": "epochs",
+        "value": "20"
+      },
+      {
+        "name": "past_context_duration",
+        "value": "1.0s"
+      },
+      {
+        "name": "future_prediction_duration",
+        "value": "2.0s"
+      },
+      {
+        "name": "past_context_frames_NuScenes",
+        "value": "3"
+      },
+      {
+        "name": "future_prediction_frames_NuScenes",
+        "value": "4"
+      },
+      {
+        "name": "past_context_frames_Lyft",
+        "value": "6"
+      },
+      {
+        "name": "future_prediction_frames_Lyft",
+        "value": "10"
+      },
+      {
+        "name": "camera_images_per_timestep",
+        "value": "6"
+      },
+      {
+        "name": "image_resolution",
+        "value": "224\u00d7480"
+      },
+      {
+        "name": "BEV_map_size",
+        "value": "100m\u00d7100m"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NuScenes",
+        "version": null
+      },
+      {
+        "name": "Lyft",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Video Panoptic Quality",
+        "description": "VPQ =H\u2211 t=0\u2211 (pt,qt)\u2208TPtIoU(pt,qt) |TPt|+1 2|FPt|+1 2|FNt|"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "VPQ",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "DGED",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Video Panoptic Quality",
+        "value": "VPQ =H\u2211 t=0\u2211 (pt,qt)\u2208TPtIoU(pt,qt) |TPt|+1 2|FPt|+1 2|FNt|",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "study_id": "study061",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study061/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:36:24.191004+00:00",
+  "counts": {
+    "dependencies": 6,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 2,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PedSim",
+        "version": "[16]"
+      },
+      {
+        "name": "ORCA",
+        "version": "[57]"
+      },
+      {
+        "name": "SA-CADRL",
+        "version": "[10]"
+      },
+      {
+        "name": "Social Forces",
+        "version": null
+      },
+      {
+        "name": "CADRL",
+        "version": null
+      },
+      {
+        "name": "sampling planner",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "collaboration coefficients",
+        "value": "pedestrians: 0, robot: 1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "SocNavBench",
+        "version": null
+      },
+      {
+        "name": "curated set of 33 episodes",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PedSim",
+        "description": "open-source implementation"
+      },
+      {
+        "name": "ORCA",
+        "description": "Optimal Reciprocal Collision Avoidance"
+      },
+      {
+        "name": "SA-CADRL",
+        "description": "socially aware collision avoidance with deep reinforcement learning"
+      },
+      {
+        "name": "Social Forces",
+        "description": "formulation to explain pedestrian navigation behavior as being under the influence of social forces"
+      },
+      {
+        "name": "Pedestrian-unaware Baseline",
+        "description": "meta-planner described above as a baseline navigation algorithm which does not take into account pedestrians around it"
+      },
+      {
+        "name": "meta-planner",
+        "description": "plans a sub-goal within a 6-second horizon each time a new checkpoint is requested"
+      },
+      {
+        "name": "cooperative multi-agent collision avoidance",
+        "description": "null"
+      },
+      {
+        "name": "CADRL",
+        "description": "null"
+      },
+      {
+        "name": "sampling planner",
+        "description": "samples trajectories from a connectivity graph and evaluates them via heuristic cost functions and returns the minimum cost trajectory within a budget"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

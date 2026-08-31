@@ -1,0 +1,160 @@
+{
+  "study_id": "study006",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study006/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:07:21.336749+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 3,
+    "datasets": 8,
+    "methods": 13,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      15
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "control rate",
+        "value": "10 Hz"
+      },
+      {
+        "name": "macro action length",
+        "value": "3"
+      },
+      {
+        "name": "planning horizon",
+        "value": "9 for gym locomotion tasks and 15 for Adroit tasks"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Adroit tasks",
+        "version": null
+      },
+      {
+        "name": "Stochastic MuJoCo tasks",
+        "version": null
+      },
+      {
+        "name": "Hopper",
+        "version": null
+      },
+      {
+        "name": "Walker2D",
+        "version": null
+      },
+      {
+        "name": "Medium-Replay-High Hopper",
+        "version": null
+      },
+      {
+        "name": "Medium-Expert-Mod Hopper",
+        "version": null
+      },
+      {
+        "name": "Cloned",
+        "version": null
+      },
+      {
+        "name": "Expert",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "L-MAP",
+        "description": null
+      },
+      {
+        "name": "TAP",
+        "description": null
+      },
+      {
+        "name": "TT",
+        "description": null
+      },
+      {
+        "name": "1R2R",
+        "description": null
+      },
+      {
+        "name": "CQL",
+        "description": null
+      },
+      {
+        "name": "IQL",
+        "description": null
+      },
+      {
+        "name": "CompILE",
+        "description": "learns latent codes representing variable-length behavior segments, enabling cross-task generalization."
+      },
+      {
+        "name": "RPL",
+        "description": "employs a hierarchical policy architecture to simplify long-horizon tasks by decomposing them into sub-policies."
+      },
+      {
+        "name": "OPAL",
+        "description": "introduces a continuous space of primitive actions to reduce distributional shift in offline RL, enhancing policy robustness."
+      },
+      {
+        "name": "ACT",
+        "description": ""
+      },
+      {
+        "name": "PRISE",
+        "description": "applies sequence compression to learn variable-length action primitives, improving behavior cloning by capturing essential behavioral patterns."
+      },
+      {
+        "name": "BC",
+        "description": ""
+      },
+      {
+        "name": "MCTS",
+        "description": "The algorithm iteratively selects actions using the UCT policy, applies progressive widening to balance exploration and ex- ploitation, performs parallel expansion of multiple macro actions and their potential outcomes, and backpropagates estimated Q-values to efficiently explore and refine the planning tree."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance",
+        "value": "highest",
+        "split": null
+      },
+      {
+        "metric": "score",
+        "value": "higher",
+        "split": null
+      },
+      {
+        "metric": "success rate",
+        "value": "83.33%",
+        "split": null
+      },
+      {
+        "metric": "success rates",
+        "value": "93.33%",
+        "split": null
+      },
+      {
+        "metric": "average score",
+        "value": "51.40",
+        "split": null
+      },
+      {
+        "metric": "average score",
+        "value": "18.79",
+        "split": "non-expert"
+      }
+    ]
+  }
+}

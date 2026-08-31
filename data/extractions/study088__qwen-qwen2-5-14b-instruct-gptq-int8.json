@@ -1,0 +1,241 @@
+{
+  "study_id": "study088",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study088/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:32:07.642348+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 4,
+    "methods": 21,
+    "evaluation_results": 13
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "M",
+        "value": "7"
+      },
+      {
+        "name": "window_size",
+        "value": "7"
+      },
+      {
+        "name": "query_dimension_per_head",
+        "value": "32"
+      },
+      {
+        "name": "expansion_layer_ratio",
+        "value": "4"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "epochs",
+        "value": "300"
+      },
+      {
+        "name": "learning_rate_scheduler",
+        "value": "cosine decay"
+      },
+      {
+        "name": "warm_up_epochs",
+        "value": "20"
+      },
+      {
+        "name": "batch_size",
+        "value": "1024"
+      },
+      {
+        "name": "initial_learning_rate",
+        "value": "0.001"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet-1K",
+        "version": null
+      },
+      {
+        "name": "ADE20K",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "not explicitly named but implied to be a segmentation dataset with 25K images",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "shifted window based self-attention computation",
+        "description": "A method used in the Swin Transformer architecture"
+      },
+      {
+        "name": "Swin Transformer architecture",
+        "description": "An architecture that includes shifted window based self-attention computation"
+      },
+      {
+        "name": "Cascade Mask R-CNN",
+        "description": "Framework used for semantic segmentation"
+      },
+      {
+        "name": "Swin Transformer",
+        "description": "Model achieving high detection accuracy"
+      },
+      {
+        "name": "ResNeXt101-64x4d",
+        "description": "Baseline model for comparison"
+      },
+      {
+        "name": "HTC framework",
+        "description": "Improved framework for higher baseline"
+      },
+      {
+        "name": "DeiT-S",
+        "description": "Model compared against Swin-T"
+      },
+      {
+        "name": "window-based self-attention",
+        "description": "Computes self-attention within local windows to efficiently model images."
+      },
+      {
+        "name": "shifted window partitioning",
+        "description": "Alternates between two partitioning configurations in consecutive Swin Transformer blocks to introduce cross-window connections."
+      },
+      {
+        "name": "cyclic implementation",
+        "description": "more hardware efficient than naive padding, particularly for deeper stages"
+      },
+      {
+        "name": "shifted window approach",
+        "description": "self-attention modules are more efficient than those of sliding windows in naive/kernel implementations"
+      },
+      {
+        "name": "Swin Transformer block",
+        "description": "A Swin Transformer block consists of a shifted window based MSA module, followed by a 2-layer MLP with GELU non-linearity in between. A LayerNorm (LN) layer is applied before each MSA module and each MLP, and a residual connection is applied after each module."
+      },
+      {
+        "name": "Swin-B",
+        "description": "Base model with model size and computation complexity similar to ViT-B/DeiT-B"
+      },
+      {
+        "name": "Swin-T",
+        "description": "Version of about 0.25\u00d7 the model size and computational complexity compared to Swin-B"
+      },
+      {
+        "name": "Swin-S",
+        "description": "Version of about 0.5\u00d7 the model size and computational complexity compared to Swin-B"
+      },
+      {
+        "name": "Swin-L",
+        "description": "Version of about 2\u00d7 the model size and computational complexity compared to Swin-B"
+      },
+      {
+        "name": "cyclic-shift",
+        "description": "A method used within each sub-window to maintain the same number of batched windows as regular window partitioning."
+      },
+      {
+        "name": "relative position bias",
+        "description": "In computing self-attention, a relative position bias B\u2208RM2\u00d7M2 is included to each head in computing similarity: Attention(Q,K,V) = SoftMax(QKT/\u221ad + B)V, where Q,K,V\u2208RM2\u00d7d are the query, key, and value matrices; d is the query/key dimension, and M2 is the number of patches in a window."
+      },
+      {
+        "name": "SETR",
+        "description": "Previous best model for comparison on ADE20K"
+      },
+      {
+        "name": "ResNet-101",
+        "description": "compared against Swin-S"
+      },
+      {
+        "name": "ResNeSt-101",
+        "description": "compared against Swin-S"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 accuracy",
+        "value": "+2.3%",
+        "split": "test"
+      },
+      {
+        "metric": "box AP",
+        "value": "51.9",
+        "split": null
+      },
+      {
+        "metric": "mask AP",
+        "value": "45.0",
+        "split": null
+      },
+      {
+        "metric": "speed-up",
+        "value": "13%",
+        "split": null
+      },
+      {
+        "metric": "efficiency",
+        "value": "40.8 \u00d7/2.5\u00d7",
+        "split": null
+      },
+      {
+        "metric": "speed",
+        "value": "4.1/1.5",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "similarly accurate",
+        "split": null
+      },
+      {
+        "metric": "top-1 accuracy",
+        "value": "+1.1%",
+        "split": "ImageNet-1K"
+      },
+      {
+        "metric": "box AP",
+        "value": "+2.8",
+        "split": "COCO"
+      },
+      {
+        "metric": "mask AP",
+        "value": "+2.2",
+        "split": "COCO"
+      },
+      {
+        "metric": "mIoU",
+        "value": "+2.8",
+        "split": "ADE20K"
+      },
+      {
+        "metric": "mIoU",
+        "value": "53.5",
+        "split": "val"
+      },
+      {
+        "metric": "mIoU",
+        "value": "44.0",
+        "split": null
+      }
+    ]
+  }
+}

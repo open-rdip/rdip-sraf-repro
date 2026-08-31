@@ -1,0 +1,196 @@
+{
+  "study_id": "study017",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study017/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:15:43.777884+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 6,
+    "methods": 25,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "numpy",
+        "version": "1.21.2"
+      },
+      {
+        "name": "torch",
+        "version": "1.8.1"
+      },
+      {
+        "name": "DGL",
+        "version": "0.5.3"
+      },
+      {
+        "name": "PyTorch",
+        "version": "1.0.0"
+      },
+      {
+        "name": "HistoCartography",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA P100",
+      "cuda_version": null,
+      "cpu_info": "single-core POWER8 processor"
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "PanNuke",
+        "version": null
+      },
+      {
+        "name": "MoNuSac",
+        "version": null
+      },
+      {
+        "name": "BRACS",
+        "version": null
+      },
+      {
+        "name": "BACH",
+        "version": null
+      },
+      {
+        "name": "UZH",
+        "version": null
+      },
+      {
+        "name": "SICAPv2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Vahadane Stain Norm",
+        "description": ""
+      },
+      {
+        "name": "Macenko Stain Norm",
+        "description": ""
+      },
+      {
+        "name": "Tissue Mask Detection",
+        "description": ""
+      },
+      {
+        "name": "Nuclei Detection",
+        "description": ""
+      },
+      {
+        "name": "Nuclei Concepts",
+        "description": ""
+      },
+      {
+        "name": "Tissue Component Detection",
+        "description": ""
+      },
+      {
+        "name": "Deep Feature Extraction",
+        "description": ""
+      },
+      {
+        "name": "Feature Cube Extraction",
+        "description": ""
+      },
+      {
+        "name": "k-NN Graph Building",
+        "description": ""
+      },
+      {
+        "name": "RAG Graph Building",
+        "description": ""
+      },
+      {
+        "name": "MLCell-Graph Model",
+        "description": ""
+      },
+      {
+        "name": "Tissue-Graph Model",
+        "description": ""
+      },
+      {
+        "name": "HACT Model",
+        "description": ""
+      },
+      {
+        "name": "GnnExplainer",
+        "description": ""
+      },
+      {
+        "name": "GraphGrad-CAM",
+        "description": ""
+      },
+      {
+        "name": "GraphGrad-CAM++",
+        "description": ""
+      },
+      {
+        "name": "GraphLRP",
+        "description": ""
+      },
+      {
+        "name": "Gaussian smoothing",
+        "description": "iteratively applied until the mean of non-tissue pixels is below a threshold"
+      },
+      {
+        "name": "Otsu thresholding",
+        "description": "iteratively applied until the mean of non-tissue pixels is below a threshold"
+      },
+      {
+        "name": "HoVerNet",
+        "description": "model trained on PanNuke and MoNuSac datasets for nuclei segmentation and classification"
+      },
+      {
+        "name": "SLIC",
+        "description": "algorithm used for oversegmenting tissue into homogeneous superpixels"
+      },
+      {
+        "name": "post-hoc feature attribution methods",
+        "description": "null"
+      },
+      {
+        "name": "cell-graph model",
+        "description": ""
+      },
+      {
+        "name": "HACT-Net",
+        "description": ""
+      },
+      {
+        "name": "SegGini",
+        "description": ""
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "run-time",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "weighted-F1 score",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "average Dice score",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "study_id": "study054",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study054/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:50:20.395994+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 0,
+    "methods": 4,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "hp",
+        "value": "1 2pTQp\u2212\u03b5"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Consolidated Control Barrier Function",
+        "description": "a consolidated control barrier function (C-CBF) candidate that smoothly synthesizes multiple candidate CBFs into one"
+      },
+      {
+        "name": "finite-difference methods",
+        "description": "numerically approximate \u02d9Q"
+      },
+      {
+        "name": "C-CBF controller",
+        "description": "a decentralized multi-robot goal-reaching problem"
+      },
+      {
+        "name": "kinematic bicycle model",
+        "description": "a dynamic extension of the kinematic bicycle model described by [31, Ch. 2]"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

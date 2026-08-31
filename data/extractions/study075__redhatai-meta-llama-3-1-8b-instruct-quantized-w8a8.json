@@ -1,0 +1,167 @@
+{
+  "study_id": "study075",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study075/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:43:47.991151+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 1,
+    "hyperparameters": 3,
+    "datasets": 8,
+    "methods": 9,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "neural networks",
+        "version": null
+      },
+      {
+        "name": "P(q) and S(q) CREASE",
+        "version": null
+      },
+      {
+        "name": "ML model",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      52
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "micelle size dispersity",
+        "value": "0.05"
+      },
+      {
+        "name": "core-micelle size ratio",
+        "value": "0.25"
+      },
+      {
+        "name": "micelle volume fraction",
+        "value": "0.15"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "concentrated micelle solutions",
+        "version": null
+      },
+      {
+        "name": "SAXS and/or SANS scattering profiles",
+        "version": null
+      },
+      {
+        "name": "concentrated micelle solution",
+        "version": null
+      },
+      {
+        "name": "target system",
+        "version": null
+      },
+      {
+        "name": "P(q) and S(q) CREASE",
+        "version": null
+      },
+      {
+        "name": "micelle solutions",
+        "version": null
+      },
+      {
+        "name": "SANS profiles",
+        "version": null
+      },
+      {
+        "name": "scattering profiles",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ML model",
+        "description": "linking gene set to S(q) and P(q)"
+      },
+      {
+        "name": "genetic algorithm",
+        "description": "optimizes for the set of genes that possesses a computed scattering profile(s) that most closely matches the input scattering profile(s)"
+      },
+      {
+        "name": "Debye scattering equation",
+        "description": "determines the computed scattering profile(s)"
+      },
+      {
+        "name": "machine learning (ML) model",
+        "description": "determines the computed scattering profile(s)"
+      },
+      {
+        "name": "P(q) and S(q) CREASE",
+        "description": "simultaneously identify the information about the micelles and the structural arrangement"
+      },
+      {
+        "name": "mutation",
+        "description": "randomly changing a gene"
+      },
+      {
+        "name": "combination",
+        "description": "randomly combining different parts of two individuals' gene sets"
+      },
+      {
+        "name": "CREASE",
+        "description": "outputs the real-space arrangement of the material"
+      },
+      {
+        "name": "Debye scattering approach",
+        "description": "very computationally intensive"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "scattering intensity",
+        "value": "I(q)",
+        "split": "target structure"
+      },
+      {
+        "metric": "scattering intensity",
+        "value": "CREASE",
+        "split": null
+      },
+      {
+        "metric": "micelle core and shell sizes",
+        "value": "quantitatively similar",
+        "split": null
+      },
+      {
+        "metric": "micelle volume fractions",
+        "value": "higher",
+        "split": null
+      },
+      {
+        "metric": "RDF profiles",
+        "value": "nearly perfect match",
+        "split": null
+      },
+      {
+        "metric": "match in micelle-micelle RDF",
+        "value": "relatively precise",
+        "split": null
+      },
+      {
+        "metric": "peak RDF value",
+        "value": "minor differences",
+        "split": null
+      },
+      {
+        "metric": "predicted RDF",
+        "value": "closer matches",
+        "split": null
+      }
+    ]
+  }
+}

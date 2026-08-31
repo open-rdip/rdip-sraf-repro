@@ -1,0 +1,91 @@
+{
+  "study_id": "study072",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study072/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:04:57.618156+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 3,
+    "datasets": 3,
+    "methods": 7,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      22
+    ],
+    "hardware": {
+      "gpu_model": "NVIDIA GTX 4090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b2",
+        "value": null
+      },
+      {
+        "name": "P",
+        "value": null
+      },
+      {
+        "name": "mini-batch size",
+        "value": "32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Food-101",
+        "version": null
+      },
+      {
+        "name": "CIFAR-100",
+        "version": null
+      },
+      {
+        "name": "mini-ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "SynerMix-Intra",
+        "description": "adds a branch that closely mirrors the original model"
+      },
+      {
+        "name": "wo-RA&ER",
+        "description": ""
+      },
+      {
+        "name": "w-RA&ER(M)",
+        "description": ""
+      },
+      {
+        "name": "w-RA",
+        "description": "null"
+      },
+      {
+        "name": "w-RA&ER(MM)",
+        "description": "null"
+      },
+      {
+        "name": "w-ER(M)",
+        "description": "null"
+      },
+      {
+        "name": "w-ER(MM)",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "1.22%",
+        "split": null
+      }
+    ]
+  }
+}

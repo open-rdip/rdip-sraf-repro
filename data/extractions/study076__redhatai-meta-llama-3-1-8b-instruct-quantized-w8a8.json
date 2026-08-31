@@ -1,0 +1,106 @@
+{
+  "study_id": "study076",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study076/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:44:13.871644+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 1,
+    "hyperparameters": 4,
+    "datasets": 7,
+    "methods": 5,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PIHAM",
+        "version": "https://github.com/mcontisc/PIHAM"
+      },
+      {
+        "name": "softmax",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      5
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "f(\u00b7)",
+        "value": "softmax"
+      },
+      {
+        "name": "g(\u00b7)",
+        "value": "Logistic"
+      },
+      {
+        "name": "K",
+        "value": "[1,10]"
+      },
+      {
+        "name": "model hyperparameters",
+        "value": "Section S2 of the Supplementary Information"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "synthetic and real-world data",
+        "version": null
+      },
+      {
+        "name": "real-world heterogeneous attributed multilayer network",
+        "version": "collected in 2013"
+      },
+      {
+        "name": "synthetic",
+        "version": null
+      },
+      {
+        "name": "real-world",
+        "version": null
+      },
+      {
+        "name": "community membership matrices",
+        "version": null
+      },
+      {
+        "name": "synthetic data",
+        "version": null
+      },
+      {
+        "name": "Comparison with existing methods",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PIHAM",
+        "description": "probabilistic generative model designed to perform inference in attributed multilayer networks"
+      },
+      {
+        "name": "cross-validation routine",
+        "description": "model selection tests"
+      },
+      {
+        "name": "standard statistical approaches",
+        "description": "standard statistical approaches"
+      },
+      {
+        "name": "LM technique",
+        "description": "Transformed posterior distributions into the simplex space using the LM technique and employing Dirichlet distributions."
+      },
+      {
+        "name": "5-fold cross-validation procedure",
+        "description": "for K\u2208[1,10]"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

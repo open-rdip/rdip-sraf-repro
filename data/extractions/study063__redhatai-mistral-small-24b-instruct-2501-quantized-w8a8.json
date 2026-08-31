@@ -1,0 +1,151 @@
+{
+  "study_id": "study063",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study063/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:57:10.947126+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 9,
+    "methods": 10,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "beam search",
+        "value": null
+      },
+      {
+        "name": "temperature scheduling",
+        "value": null
+      }
+    ],
+    "datasets": [
+      {
+        "name": "VoxPopuli",
+        "version": null
+      },
+      {
+        "name": "MLS",
+        "version": null
+      },
+      {
+        "name": "LibriSpeech",
+        "version": null
+      },
+      {
+        "name": "Meanwhile dataset",
+        "version": null
+      },
+      {
+        "name": "Kincaid46 dataset",
+        "version": null
+      },
+      {
+        "name": "Fleurs",
+        "version": null
+      },
+      {
+        "name": "Audio Degradation Toolbox",
+        "version": null
+      },
+      {
+        "name": "SpeechStew",
+        "version": null
+      },
+      {
+        "name": "Whisper",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Whisper",
+        "description": "significantly underperforms prior work and only beats the VP-10K+FT baseline"
+      },
+      {
+        "name": "VP-10K+FT",
+        "description": "baseline from the original paper"
+      },
+      {
+        "name": "text normalizer",
+        "description": "developed through iterative manual inspection to identify common patterns where naive WER penalized Whisper models for an innocuous difference"
+      },
+      {
+        "name": "ASR performance degradation",
+        "description": "degrades as the additive noise becomes more intensive"
+      },
+      {
+        "name": "buffered transcription",
+        "description": "consecutively transcribing 30-second segments of audio and shifting the window according to the timestamps predicted by the model"
+      },
+      {
+        "name": "FrameBatchASR",
+        "description": "buffered inference implementation in the FrameBatchASR class to enable long-form transcription"
+      },
+      {
+        "name": "zero-shot performance",
+        "description": "downstream translation performance"
+      },
+      {
+        "name": "WER",
+        "description": "Word Error Rate"
+      },
+      {
+        "name": "early stopping",
+        "description": "based on the validation loss"
+      },
+      {
+        "name": "exponential moving average",
+        "description": "estimate of the parameters with a smoothing rate of 0.9999"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "BLEU",
+        "value": "r2 = 0.24",
+        "split": null
+      },
+      {
+        "metric": "WER",
+        "value": "up to 50 percent",
+        "split": null
+      },
+      {
+        "metric": "SNR",
+        "value": "40 dB",
+        "split": null
+      },
+      {
+        "metric": "squared correlation coefficient",
+        "value": "0.83",
+        "split": null
+      },
+      {
+        "metric": "word error rate",
+        "value": "halves for every 16 \u00d7increase in training data",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "80.4%",
+        "split": null
+      },
+      {
+        "metric": "X\u2192entranslation",
+        "value": "7,000 hours",
+        "split": null
+      }
+    ]
+  }
+}

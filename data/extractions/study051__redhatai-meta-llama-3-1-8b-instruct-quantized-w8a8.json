@@ -1,0 +1,116 @@
+{
+  "study_id": "study051",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study051/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:32:32.326016+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 1,
+    "hyperparameters": 6,
+    "datasets": 2,
+    "methods": 9,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Python",
+        "version": null
+      },
+      {
+        "name": "linear algebra",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      30
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "A(0) k",
+        "value": "12"
+      },
+      {
+        "name": "termination tolerance",
+        "value": "\u03b5"
+      },
+      {
+        "name": "maximum number of iterations",
+        "value": null
+      },
+      {
+        "name": "number of CPUs",
+        "value": null
+      },
+      {
+        "name": "method of initialization",
+        "value": null
+      },
+      {
+        "name": "\u03b5",
+        "value": "0.1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Y",
+        "version": null
+      },
+      {
+        "name": "large datasets",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "k-means clustering",
+        "description": "perform k-means clustering over all \u02c6\u03b8i"
+      },
+      {
+        "name": "reversing the vectorization process",
+        "description": "convert to the parameter set \u0398(0)used for initialization"
+      },
+      {
+        "name": "k-means",
+        "description": "determine an initialization for VISTA"
+      },
+      {
+        "name": "EM algorithm",
+        "description": "compute terminal parameter values"
+      },
+      {
+        "name": "LGSSM",
+        "description": "generate the largest log-likelihood"
+      },
+      {
+        "name": "LGSSM clustering",
+        "description": "null"
+      },
+      {
+        "name": "EM implementation",
+        "description": "null"
+      },
+      {
+        "name": "VISTA",
+        "description": "null"
+      },
+      {
+        "name": "EM",
+        "description": "Expectation-Maximization scheme"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "log-likelihood",
+        "value": "higher",
+        "split": null
+      }
+    ]
+  }
+}

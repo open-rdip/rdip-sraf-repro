@@ -1,0 +1,310 @@
+{
+  "study_id": "study017",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study017/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:41:47.677981+00:00",
+  "counts": {
+    "dependencies": 4,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 6,
+    "methods": 22,
+    "evaluation_results": 30
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "numpy",
+        "version": null
+      },
+      {
+        "name": "torch",
+        "version": "1.9.0"
+      },
+      {
+        "name": "dgl",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA P100",
+      "cuda_version": null,
+      "cpu_info": "single-core POWER8 processor"
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "PanNuke",
+        "version": null
+      },
+      {
+        "name": "MoNuSac",
+        "version": null
+      },
+      {
+        "name": "BRACS",
+        "version": null
+      },
+      {
+        "name": "BACH",
+        "version": null
+      },
+      {
+        "name": "UZH",
+        "version": null
+      },
+      {
+        "name": "SICAPv2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Vahadane Stain Norm",
+        "description": "Image stain normalization using Vahadane method"
+      },
+      {
+        "name": "Macenko Stain Norm",
+        "description": "Image stain normalization using Macenko method"
+      },
+      {
+        "name": "Tissue Mask Detection",
+        "description": "Detection of tissue masks from images"
+      },
+      {
+        "name": "Nuclei Detection",
+        "description": "Detection of nuclei from images"
+      },
+      {
+        "name": "Nuclei Concepts",
+        "description": "Concept extraction for nuclei from images and masks"
+      },
+      {
+        "name": "Tissue Component Detection",
+        "description": "Detection of tissue components from images and masks"
+      },
+      {
+        "name": "Deep Feature Extraction",
+        "description": "Extraction of deep features from images and masks"
+      },
+      {
+        "name": "Feature Cube Extraction",
+        "description": "Extraction of feature cubes from images"
+      },
+      {
+        "name": "k-NN Graph Building",
+        "description": "Building k-nearest neighbor graphs from features and masks"
+      },
+      {
+        "name": "RAG Graph Building",
+        "description": "Building Region Adjacency Graphs from features and masks"
+      },
+      {
+        "name": "MLCell-Graph Model",
+        "description": "Machine learning model using cell-graph data"
+      },
+      {
+        "name": "Tissue-Graph Model",
+        "description": "Machine learning model using tissue-graph data"
+      },
+      {
+        "name": "HACT Model",
+        "description": "Model using hierarchical attention on cell and tissue graphs"
+      },
+      {
+        "name": "GnnExplainer",
+        "description": "Graph Neural Network Explainer"
+      },
+      {
+        "name": "GraphGrad-CAM",
+        "description": "Graph-based Grad-CAM method"
+      },
+      {
+        "name": "GraphGrad-CAM++",
+        "description": "Enhanced Graph-based Grad-CAM method"
+      },
+      {
+        "name": "GraphLRP",
+        "description": "Graph-based Layer-wise Relevance Propagation method"
+      },
+      {
+        "name": "HistoCartography",
+        "description": "Includes modules for tissue detection, nuclei detection, and tissue component detection"
+      },
+      {
+        "name": "HoVerNet",
+        "description": "State-of-the-art model for nuclei segmentation and classification integrated in HistoCartography"
+      },
+      {
+        "name": "Otsu thresholding",
+        "description": "Used in tissue detector for iterative application with Gaussian smoothing"
+      },
+      {
+        "name": "Simple Linear Iterative Clustering (SLIC)",
+        "description": "Algorithm used for oversegmentation into homogeneous superpixels"
+      },
+      {
+        "name": "GraphGradCAM",
+        "description": "Module in HistoCartography for interpreting cell-graph models by rendering per-image explanations through node-level saliency maps."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Run time for Preprocessing Vahadane Stain Norm",
+        "value": "1.77",
+        "split": "Tumor RoI"
+      },
+      {
+        "metric": "Run time for Preprocessing Vahadane Stain Norm",
+        "value": "6.46",
+        "split": "WSI Size 1000"
+      },
+      {
+        "metric": "Run time for Preprocessing Vahadane Stain Norm",
+        "value": "29.03",
+        "split": "WSI Size 25000"
+      },
+      {
+        "metric": "Run time for Preprocessing Vahadane Stain Norm",
+        "value": "68.27",
+        "split": "WSI Size 27500"
+      },
+      {
+        "metric": "Run time for Preprocessing Vahadane Stain Norm",
+        "value": "186.10",
+        "split": "WSI Size 11000"
+      },
+      {
+        "metric": "Run time for Preprocessing Macenko Stain Norm",
+        "value": "0.80",
+        "split": "Tumor RoI"
+      },
+      {
+        "metric": "Run time for Preprocessing Macenko Stain Norm",
+        "value": "2.86",
+        "split": "WSI Size 1000"
+      },
+      {
+        "metric": "Run time for Preprocessing Macenko Stain Norm",
+        "value": "11.19",
+        "split": "WSI Size 25000"
+      },
+      {
+        "metric": "Run time for Preprocessing Macenko Stain Norm",
+        "value": "32.37",
+        "split": "WSI Size 27500"
+      },
+      {
+        "metric": "Run time for Preprocessing Macenko Stain Norm",
+        "value": "81.72",
+        "split": "WSI Size 11000"
+      },
+      {
+        "metric": "Run time for Tissue Mask Detection",
+        "value": "1.04",
+        "split": "WSI Size 25000"
+      },
+      {
+        "metric": "Run time for Tissue Mask Detection",
+        "value": "8.09",
+        "split": "WSI Size 11000"
+      },
+      {
+        "metric": "Run time for Feature Cube Extraction",
+        "value": "0.24",
+        "split": "Tumor RoI"
+      },
+      {
+        "metric": "Run time for Feature Cube Extraction",
+        "value": "1.61",
+        "split": "WSI Size 1000"
+      },
+      {
+        "metric": "Run time for Feature Cube Extraction",
+        "value": "5.92",
+        "split": "WSI Size 25000"
+      },
+      {
+        "metric": "Run time for Feature Cube Extraction",
+        "value": "11.77",
+        "split": "WSI Size 27500"
+      },
+      {
+        "metric": "Run time for Feature Cube Extraction",
+        "value": "30.21",
+        "split": "WSI Size 11000"
+      },
+      {
+        "metric": "Run time for Cell-Graph Generation",
+        "value": "2.51",
+        "split": "Tumor RoI"
+      },
+      {
+        "metric": "Run time for Cell-Graph Generation",
+        "value": "13.33",
+        "split": "WSI Size 1000"
+      },
+      {
+        "metric": "Run time for Cell-Graph Generation",
+        "value": "50.26",
+        "split": "WSI Size 25000"
+      },
+      {
+        "metric": "Run time for Tissue-Graph Generation",
+        "value": "4.14",
+        "split": "Tumor RoI"
+      },
+      {
+        "metric": "Run time for Tissue-Graph Generation",
+        "value": "21.30",
+        "split": "WSI Size 1000"
+      },
+      {
+        "metric": "Run time for Tissue-Graph Generation",
+        "value": "83.66",
+        "split": "WSI Size 25000"
+      },
+      {
+        "metric": "Run time for Tissue-Graph Generation",
+        "value": "93.26",
+        "split": "WSI Size 27500"
+      },
+      {
+        "metric": "Run time for Tissue-Graph Generation",
+        "value": "276.71",
+        "split": "WSI Size 11000"
+      },
+      {
+        "metric": "Run time for MLCell-Graph Model",
+        "value": "0.028",
+        "split": "Tumor RoI"
+      },
+      {
+        "metric": "Run time for MLCell-Graph Model",
+        "value": "0.033",
+        "split": "WSI Size 1000"
+      },
+      {
+        "metric": "Run time for MLCell-Graph Model",
+        "value": "0.040",
+        "split": "WSI Size 25000"
+      },
+      {
+        "metric": "weighted-F1 score",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "average Dice score",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

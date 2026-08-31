@@ -1,0 +1,117 @@
+{
+  "study_id": "study009",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study009/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:36:26.011656+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 3,
+    "methods": 6,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "deconvolution_module_count",
+        "value": "1"
+      },
+      {
+        "name": "training_image_size",
+        "value": "512, 640, 768"
+      },
+      {
+        "name": "backbone",
+        "value": "HRNet-W32, HRNet-W40, HRNet-W48"
+      },
+      {
+        "name": "extra_residual_blocks",
+        "value": "4"
+      },
+      {
+        "name": "training image size",
+        "value": "640x640"
+      },
+      {
+        "name": "crop size",
+        "value": "640x640"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO2017",
+        "version": "val"
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "CrowdPose",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "HigherHRNet",
+        "description": "A model that includes multi-resolution supervision, feature concatenation, and residual blocks"
+      },
+      {
+        "name": "HRNet",
+        "description": "Baseline model used for comparison"
+      },
+      {
+        "name": "heatmap_aggregation_strategy",
+        "description": "Improves performance by aggregating heatmaps, especially for large persons."
+      },
+      {
+        "name": "adding_extra_residual_blocks",
+        "description": "Increases AP for both medium and large persons."
+      },
+      {
+        "name": "training_with_larger_image_size",
+        "description": "Investigated but specific results not provided."
+      },
+      {
+        "name": "HigherHRNet-W48",
+        "description": "trained on CrowdPose train and val set"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AP",
+        "value": "66.3",
+        "split": "validation"
+      },
+      {
+        "metric": "AP",
+        "value": "64.4",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": "1.4",
+        "split": "test"
+      },
+      {
+        "metric": "APM",
+        "value": "+1.8",
+        "split": "test"
+      },
+      {
+        "metric": "APH",
+        "value": "+1.5",
+        "split": "test"
+      }
+    ]
+  }
+}

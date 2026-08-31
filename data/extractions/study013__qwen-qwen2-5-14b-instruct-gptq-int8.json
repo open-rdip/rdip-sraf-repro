@@ -1,0 +1,125 @@
+{
+  "study_id": "study013",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study013/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:39:11.578665+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 8,
+    "methods": 6,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Python",
+        "version": null
+      },
+      {
+        "name": "Scikit-Learn",
+        "version": "[25]"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number_of_estimators",
+        "value": "2, 4, 8, 16"
+      },
+      {
+        "name": "batch_size",
+        "value": "128"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COOS-7",
+        "version": null
+      },
+      {
+        "name": "COOS",
+        "version": null
+      },
+      {
+        "name": "Training",
+        "version": null
+      },
+      {
+        "name": "Test1",
+        "version": null
+      },
+      {
+        "name": "Test2",
+        "version": null
+      },
+      {
+        "name": "Test3",
+        "version": null
+      },
+      {
+        "name": "Test4",
+        "version": null
+      },
+      {
+        "name": "Training dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "protein localization classification",
+        "description": "structured dataset for classifying protein localization in cells"
+      },
+      {
+        "name": "Classi\ufb01cation Baselines for COOS-7",
+        "description": "To provide baselines for out-of-sample generalization on COOS-7, we extracted features and built classifiers using a variety"
+      },
+      {
+        "name": "cross-validation",
+        "description": "5-fold cross-validation on the Training dataset"
+      },
+      {
+        "name": "feature_representation_method",
+        "description": "not specified in detail"
+      },
+      {
+        "name": "VGG16",
+        "description": "Pretrained CNN on ImageNet, used for extracting features from 64x64 images."
+      },
+      {
+        "name": "PCI",
+        "description": "Self-supervised method designed for microscopy images, achieving unsupervised state-of-the-art results in classifying protein localization for 64x64 images of yeast cells."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "balanced_classification_error",
+        "value": "1.1%",
+        "split": "Test1"
+      },
+      {
+        "metric": "balanced_classification_error",
+        "value": "1.1%",
+        "split": "Test2"
+      },
+      {
+        "metric": "balanced_classification_error",
+        "value": "lowest_error_value_not_specified",
+        "split": "Test3"
+      },
+      {
+        "metric": "balanced_classification_error",
+        "value": "lowest_error_value_not_specified",
+        "split": "Test4"
+      }
+    ]
+  }
+}

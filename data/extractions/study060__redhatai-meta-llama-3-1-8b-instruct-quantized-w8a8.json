@@ -1,0 +1,225 @@
+{
+  "study_id": "study060",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study060/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:36:08.351041+00:00",
+  "counts": {
+    "dependencies": 12,
+    "random_seeds": 1,
+    "hyperparameters": 6,
+    "datasets": 3,
+    "methods": 19,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "VQ-V AE",
+        "version": "44 kHz"
+      },
+      {
+        "name": "TensorFlow",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "Keras",
+        "version": null
+      },
+      {
+        "name": "OpenCV",
+        "version": null
+      },
+      {
+        "name": "Librosa",
+        "version": null
+      },
+      {
+        "name": "NumPy",
+        "version": null
+      },
+      {
+        "name": "SciPy",
+        "version": null
+      },
+      {
+        "name": "Matplotlib",
+        "version": null
+      },
+      {
+        "name": "Scikit-learn",
+        "version": null
+      },
+      {
+        "name": "Seaborn",
+        "version": null
+      },
+      {
+        "name": "Adam",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      32
+    ],
+    "hardware": {
+      "gpu_model": "V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "model size",
+        "value": "5 billion parameters"
+      },
+      {
+        "name": "top-level prior",
+        "value": "1B"
+      },
+      {
+        "name": "learning rate",
+        "value": "0.00015"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.002"
+      },
+      {
+        "name": "batch size",
+        "value": "32"
+      },
+      {
+        "name": "hop lengths",
+        "value": "8, 32, 128"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "songs primarily in English",
+        "version": null
+      },
+      {
+        "name": "MAESTRO",
+        "version": null
+      },
+      {
+        "name": "raw audio VQ-V AEs",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "VQ-V AE decoders",
+        "description": "fast upsampling of the top level tokens"
+      },
+      {
+        "name": "Transformer upsampling steps",
+        "description": "faster generation"
+      },
+      {
+        "name": "parallel likelihood evaluator",
+        "description": "likelihood and entropy evaluation"
+      },
+      {
+        "name": "parallel sampler",
+        "description": "fast parallel sampling"
+      },
+      {
+        "name": "autoregressive likeli- hood evaluator",
+        "description": "slow autoregressive likeli- hood evaluation"
+      },
+      {
+        "name": "distillation",
+        "description": "information distillation from current model"
+      },
+      {
+        "name": "raw audio hierarchical VQ-V AE",
+        "description": "Razavi et al., 2019"
+      },
+      {
+        "name": "separate autoencoders",
+        "description": "cleaner and more effective"
+      },
+      {
+        "name": "ancestral sampling",
+        "description": "exploring different possibilities"
+      },
+      {
+        "name": "conditioning on styles, lyrics, and raw audio",
+        "description": "useful tool for professional musicians and music enthusiasts"
+      },
+      {
+        "name": "VQ-V AE",
+        "description": "44 kHz upsampling"
+      },
+      {
+        "name": "seq2seq model with lyric conditioning",
+        "description": "singing both intelligible and controllable"
+      },
+      {
+        "name": "WaveNet",
+        "description": "autoregressive model"
+      },
+      {
+        "name": "Parallel WaveNet",
+        "description": "mixture of logistics distribution and probability density distillation"
+      },
+      {
+        "name": "ClariNet",
+        "description": "Gaussian distribution and closed-form loss function"
+      },
+      {
+        "name": "SampleRNN",
+        "description": "multi-scale, hierarchical recurrent neural network with convolutional upsampling"
+      },
+      {
+        "name": "WaveRNN",
+        "description": "recurrent neural networks operating separately on most significant and least significant bytes"
+      },
+      {
+        "name": "WaveGlow",
+        "description": "flow-based model for parallel sample-level audio synthesis"
+      },
+      {
+        "name": "Opus codec",
+        "description": "encodes audio at constant bitrates"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "musicality",
+        "value": "better",
+        "split": null
+      },
+      {
+        "metric": "coherence",
+        "value": "longer",
+        "split": null
+      },
+      {
+        "metric": "singing",
+        "value": "initial",
+        "split": null
+      },
+      {
+        "metric": "spectral convergence (dB)",
+        "value": "-8.3",
+        "split": null
+      },
+      {
+        "metric": "spectral convergence (dB)",
+        "value": "-6.3",
+        "split": "Without spectral loss"
+      },
+      {
+        "metric": "spectral convergence (dB)",
+        "value": "2.9",
+        "split": "With single autoencoder"
+      }
+    ]
+  }
+}

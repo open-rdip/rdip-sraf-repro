@@ -1,0 +1,298 @@
+{
+  "study_id": "study018",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study018/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:16:24.121473+00:00",
+  "counts": {
+    "dependencies": 14,
+    "random_seeds": 1,
+    "hyperparameters": 6,
+    "datasets": 2,
+    "methods": 15,
+    "evaluation_results": 23
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "RetinaNet",
+        "version": null
+      },
+      {
+        "name": "Detectron",
+        "version": null
+      },
+      {
+        "name": "ResNet-50",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": "1.0"
+      },
+      {
+        "name": "Caffe2",
+        "version": null
+      },
+      {
+        "name": "Mask R-CNN",
+        "version": null
+      },
+      {
+        "name": "ResNet-50-FPN",
+        "version": null
+      },
+      {
+        "name": "ResNet-101-FPN",
+        "version": null
+      },
+      {
+        "name": "ResNeXt32x8d-101-FPN",
+        "version": null
+      },
+      {
+        "name": "Group Normalization",
+        "version": null
+      },
+      {
+        "name": "Batch Normalization",
+        "version": null
+      },
+      {
+        "name": "NASNET",
+        "version": null
+      },
+      {
+        "name": "MobileNet",
+        "version": null
+      },
+      {
+        "name": "Shuf\ufb02eNet",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      4
+    ],
+    "hardware": {
+      "gpu_model": "Nvidia 1080 Ti",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b2",
+        "value": "1.0"
+      },
+      {
+        "name": "threshold",
+        "value": "0.5"
+      },
+      {
+        "name": "multi-scale",
+        "value": "{640, 800, 1200}and 2x iterations schedule"
+      },
+      {
+        "name": "Group Normalization",
+        "value": "applied only on the extra layers (FPN, localization, and classi\ufb01cation)"
+      },
+      {
+        "name": "setting",
+        "value": "0.11"
+      },
+      {
+        "name": "schedule",
+        "value": "1.5x"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": "minival"
+      },
+      {
+        "name": "Pascal VOC",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Self-Adjusting Smooth L1",
+        "description": "null"
+      },
+      {
+        "name": "Smooth L1",
+        "description": "null"
+      },
+      {
+        "name": "RetinaNet",
+        "description": "null"
+      },
+      {
+        "name": "Detectron",
+        "description": "null"
+      },
+      {
+        "name": "Best Matching policy",
+        "description": null
+      },
+      {
+        "name": "Mask Prediction head",
+        "description": null
+      },
+      {
+        "name": "Our Method of BBox prediction",
+        "description": null
+      },
+      {
+        "name": "Our Method of Mask prediction",
+        "description": null
+      },
+      {
+        "name": "ResNet-50-FPN",
+        "description": "null"
+      },
+      {
+        "name": "ResNet-101-FPN",
+        "description": "null"
+      },
+      {
+        "name": "ResNeXt32x8d-101-FPN",
+        "description": "null"
+      },
+      {
+        "name": "ResNet-101-FPN-GN",
+        "description": "null"
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "null"
+      },
+      {
+        "name": "Self-Adjusting Smooth L1 loss",
+        "description": null
+      },
+      {
+        "name": "Multi-Task Training with Mask Prediction",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "APbb",
+        "value": "36.2",
+        "split": "Train"
+      },
+      {
+        "metric": "APm",
+        "value": "52.2",
+        "split": "Train"
+      },
+      {
+        "metric": "AP0.5",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "mAP",
+        "value": "28.9",
+        "split": "validation"
+      },
+      {
+        "metric": "AP",
+        "value": "35.3",
+        "split": "trainval135k"
+      },
+      {
+        "metric": "AP50",
+        "value": "55.6",
+        "split": "trainval135k"
+      },
+      {
+        "metric": "AP75",
+        "value": "37.8",
+        "split": "trainval135k"
+      },
+      {
+        "metric": "APS",
+        "value": "19.4",
+        "split": "trainval135k"
+      },
+      {
+        "metric": "MAP",
+        "value": "38.9",
+        "split": "trainval135k"
+      },
+      {
+        "metric": "APL",
+        "value": "46.9",
+        "split": "trainval135k"
+      },
+      {
+        "metric": "AP",
+        "value": "36.2",
+        "split": "minival"
+      },
+      {
+        "metric": "AP50",
+        "value": "55.0",
+        "split": "minival"
+      },
+      {
+        "metric": "AP75",
+        "value": "38.7",
+        "split": "minival"
+      },
+      {
+        "metric": "APS",
+        "value": "19.7",
+        "split": "minival"
+      },
+      {
+        "metric": "MAP",
+        "value": "39.5",
+        "split": "minival"
+      },
+      {
+        "metric": "APL",
+        "value": "48.6",
+        "split": "minival"
+      },
+      {
+        "metric": "accuracy",
+        "value": "37.1",
+        "split": "test"
+      },
+      {
+        "metric": "mask prediction accuracy",
+        "value": "38.5",
+        "split": "test"
+      },
+      {
+        "metric": "speed",
+        "value": "evaluated on Nvidia 1080 Ti",
+        "split": null
+      },
+      {
+        "metric": "FocalLoss",
+        "value": "evaluated on Nvidia M40 / Caffe2",
+        "split": null
+      },
+      {
+        "metric": "mAP",
+        "value": "42.6",
+        "split": "test"
+      },
+      {
+        "metric": "mAP",
+        "value": "0.9",
+        "split": null
+      },
+      {
+        "metric": "s/im",
+        "value": "0.158",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "study_id": "study059",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study059/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:54:04.531199+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 3,
+    "methods": 4,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03bb2",
+        "value": "1.0"
+      },
+      {
+        "name": "K",
+        "value": "3"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "R8",
+        "version": null
+      },
+      {
+        "name": "string",
+        "version": null
+      },
+      {
+        "name": "Reuters8",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "FedSeIT",
+        "description": "alignment and relevance of foreign tasks parameters at each client (for all the tasks at each model training round) minimise inter-client interference and improve inter-client transfer learning without the dense-layer-sharing"
+      },
+      {
+        "name": "FedWeIT",
+        "description": "baseline approach"
+      },
+      {
+        "name": "Federated Selective Inter-client Transfer",
+        "description": "Fed- SeIT framework which aims to minimize inter-client interference and communication cost while maximizing inter-client knowledge transfer in FCL paradigm"
+      },
+      {
+        "name": "Parameter Decomposition",
+        "description": "Due to additive decomposition of parameters, the second term At ccaptures task speci\ufb01c knowledge."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "average gain",
+        "value": "12.4%",
+        "split": null
+      },
+      {
+        "metric": "test set accuracy",
+        "value": "4.4%",
+        "split": "test"
+      },
+      {
+        "metric": "performance gain",
+        "value": "6.8%",
+        "split": null
+      },
+      {
+        "metric": "Task-averaged Test Accuracy",
+        "value": null,
+        "split": "test"
+      }
+    ]
+  }
+}

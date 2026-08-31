@@ -1,0 +1,119 @@
+{
+  "study_id": "study040",
+  "repo_url": "https://github.com/timeseriesAI/tsai",
+  "started": "2026-06-09T15:31:02.292321+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "conda": "environment.yml",
+      "setup": "pyproject.toml"
+    },
+    "depth_note": "root",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "conda",
+        "rel_path": "environment.yml",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "pyproject.toml",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/timeseriesAI/tsai",
+    "commit_hash": "e2ba1efbff6aec73f48a3cf426744eb1d6ffcb14",
+    "software_license": "Apache-2.0"
+  },
+  "lift": {
+    "lifted": {
+      "conda": "environment.yml"
+    },
+    "triples": 35,
+    "n_sources": 2
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-setup",
+    "stage_failed": null,
+    "duration_s": 87.3,
+    "log_tail": "-0.0.4 annotated-types-0.7.0 anyio-4.13.0 apsw-3.53.2.0 apswutils-0.1.2 beartype-0.22.9 beautifulsoup4-4.15.0 blis-1.3.3 catalogue-2.0.10 certifi-2026.5.20 charset-normalizer-3.4.7 click-8.4.1 cloudpathlib-0.24.0 cloudpickle-3.1.2 confection-1.3.3 contourpy-1.3.3 cuda-bindings-13.3.1 cuda-pathfinder-1.5.5 cuda-toolkit-13.0.2 cycler-0.12.1 cymem-2.0.13 fastai-2.8.7 fastcore-1.13.3 fastdownload-0.0.7 fastlite-0.2.4 fastprogress-1.1.6 fasttransform-0.0.2 filelock-3.29.1 fonttools-4.63.0 fsspec-2026.4.0 h11-0.16.0 httpcore-1.0.9 httptools-0.8.0 httpx-0.28.1 idna-3.18 imbalanced-learn-0.14.2 itsdangerous-2.2.0 joblib-1.5.3 kiwisolver-1.5.0 llvmlite-0.47.0 markdown-it-py-4.2.0 matplotlib-3.10.9 mdurl-0.1.2 mpmath-1.3.0 murmurhash-1.0.15 networkx-3.6.1 numba-0.65.1 numpy-2.4.6 nvidia-cublas-13.1.1.3 nvidia-cuda-cupti-13.0.85 nvidia-cuda-nvrtc-13.0.88 nvidia-cuda-runtime-13.0.96 nvidia-cudnn-cu13-9.20.0.48 nvidia-cufft-12.0.0.61 nvidia-cufile-1.15.1.6 nvidia-curand-10.4.0.35 nvidia-cusolver-12.0.4.66 nvidia-cusparse-12.6.3.3 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.29.7 nvidia-nvjitlink-13.0.88 nvidia-nvshmem-cu13-3.4.5 nvidia-nvtx-13.0.85 oauthlib-3.3.1 packaging-26.2 pandas-3.0.3 pillow-12.2.0 plum-dispatch-2.9.0 preshed-3.0.13 psutil-7.2.2 pydantic-2.13.4 pydantic_core-2.46.4 pyparsing-3.3.2 python-dateutil-2.9.0.post0 python-dotenv-1.2.2 python-fasthtml-0.14.2 python-multipart-0.0.32 pyts-0.13.0 requests-2.34.2 rich-15.0.0 scikit-learn-1.7.2 scipy-1.17.1 setuptools-81.0.0 shellingham-1.5.4 six-1.17.0 sklearn-compat-0.1.6 smart_open-7.6.1 soupsieve-2.8.4 spacy-3.8.14 spacy-legacy-3.0.12 spacy-loggers-1.0.5 srsly-2.5.3 starlette-1.2.1 sympy-1.14.0 thinc-8.3.13 threadpoolctl-3.6.0 torch-2.12.0 torchvision-0.27.0 tqdm-4.68.2 triton-3.7.0 tsai-1.0.2 typer-0.26.7 typing-inspection-0.4.2 typing_extensions-4.15.0 urllib3-2.7.0 uvicorn-0.49.0 uvloop-0.22.1 wasabi-1.1.3 watchfiles-1.2.0 weasel-1.0.0 websockets-16.0 wrapt-2.2.1\n\n$ /tmp/15856/study040/venv/bin/pip install .\n3.0.3 annotated-doc-0.0.4 annotated-types-0.7.0 anyio-4.13.0 apsw-3.53.2.0 apswutils-0.1.2 beartype-0.22.9 beautifulsoup4-4.15.0 blis-1.3.3 catalogue-2.0.10 certifi-2026.5.20 charset_normalizer-3.4.7 click-8.4.1 cloudpathlib-0.24.0 cloudpickle-3.1.2 confection-1.3.3 contourpy-1.3.3 cuda-bindings-13.3.1 cuda-pathfinder-1.5.5 cuda-toolkit-13.0.2 cycler-0.12.1 cymem-2.0.13 fastai-2.8.7 fastcore-1.13.3 fastdownload-0.0.7 fastlite-0.2.4 fastprogress-1.1.6 fasttransform-0.0.2 filelock-3.29.1 fonttools-4.63.0 fsspec-2026.4.0 h11-0.16.0 httpcore-1.0.9 httptools-0.8.0 httpx-0.28.1 idna-3.18 imbalanced-learn-0.14.2 itsdangerous-2.2.0 jinja2-3.1.6 joblib-1.5.3 kiwisolver-1.5.0 llvmlite-0.47.0 markdown-it-py-4.2.0 matplotlib-3.10.9 mdurl-0.1.2 mpmath-1.3.0 murmurhash-1.0.15 networkx-3.6.1 numba-0.65.1 numpy-2.4.6 nvidia-cublas-13.1.1.3 nvidia-cuda-cupti-13.0.85 nvidia-cuda-nvrtc-13.0.88 nvidia-cuda-runtime-13.0.96 nvidia-cudnn-cu13-9.20.0.48 nvidia-cufft-12.0.0.61 nvidia-cufile-1.15.1.6 nvidia-curand-10.4.0.35 nvidia-cusolver-12.0.4.66 nvidia-cusparse-12.6.3.3 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.29.7 nvidia-nvjitlink-13.0.88 nvidia-nvshmem-cu13-3.4.5 nvidia-nvtx-13.0.85 oauthlib-3.3.1 pandas-3.0.3 pillow-12.2.0 plum-dispatch-2.9.0 preshed-3.0.13 psutil-7.2.2 pydantic-2.13.4 pydantic-core-2.46.4 pygments-2.20.0 pyparsing-3.3.2 python-dateutil-2.9.0.post0 python-dotenv-1.2.2 python-fasthtml-0.14.2 python-multipart-0.0.32 pyts-0.13.0 pyyaml-6.0.3 requests-2.34.2 rich-15.0.0 scikit-learn-1.7.2 scipy-1.17.1 setuptools-81.0.0 shellingham-1.5.4 six-1.17.0 sklearn-compat-0.1.6 smart-open-7.6.1 soupsieve-2.8.4 spacy-3.8.14 spacy-legacy-3.0.12 spacy-loggers-1.0.5 srsly-2.5.3 starlette-1.2.1 sympy-1.14.0 thinc-8.3.13 threadpoolctl-3.6.0 torch-2.12.0 torchvision-0.27.0 tqdm-4.68.2 triton-3.7.0 tsai-1.0.2 typer-0.26.7 typing-extensions-4.15.0 typing-inspection-0.4.2 urllib3-2.7.0 uvicorn-0.49.0 uvloop-0.22.1 wasabi-1.1.3 watchfiles-1.2.0 weasel-1.0.0 websockets-16.0 wrapt-2.2.1\n",
+    "notes": "environment.yml present but built via pip venv (conda build deferred)."
+  },
+  "fair_r": {
+    "total_score": 27.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 20.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 96.1
+}

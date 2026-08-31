@@ -1,0 +1,152 @@
+{
+  "study_id": "study094",
+  "repo_url": "https://github.com/mit-han-lab/efficientvit",
+  "started": "2026-06-10T15:05:26.999843+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "pip": "requirements.txt",
+      "setup": "pyproject.toml"
+    },
+    "depth_note": "root",
+    "n_found": 4,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "pyproject.toml",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "efficientvit/apps/setup.py",
+        "depth": 2
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/mit-han-lab/efficientvit",
+    "commit_hash": "de7d7733cc0329f391b33f1f459271562ec27bd5",
+    "software_license": "Apache-2.0"
+  },
+  "lift": {
+    "lifted": {
+      "pip": "requirements.txt"
+    },
+    "triples": 166,
+    "n_sources": 2
+  },
+  "python": {
+    "declared": null,
+    "source": "default",
+    "used": "3.10",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 1055.4,
+    "log_tail": "ng-utilities-0.15.3 lvis-0.5.3 markdown-it-py-4.2.0 matplotlib-3.10.9 matplotlib-inline-0.2.2 mdurl-0.1.2 ml_dtypes-0.5.4 moviepy-2.2.1 mpmath-1.3.0 narwhals-2.22.1 networkx-3.4.2 numpy-1.26.4 omegaconf-2.3.0 onnx-1.21.0 onnxruntime-1.23.2 onnxsim-0.6.5 opencv-python-4.11.0.86 orjson-3.11.9 packaging-26.2 pandas-2.3.3 parso-0.8.7 pexpect-4.9.0 pillow-10.4.0 platformdirs-4.10.0 plotly-6.8.0 proglog-0.1.12 prompt_toolkit-3.0.52 protobuf-7.35.0 ptyprocess-0.7.0 pure_eval-0.2.3 pycocotools-2.0.11 pycparser-3.0 pydantic-2.13.4 pydantic_core-2.46.4 pydub-0.25.1 pyparsing-3.3.2 python-dateutil-2.9.0.post0 python-dotenv-1.2.2 python-multipart-0.0.32 pytz-2026.2 rdkit-2026.3.3 regex-2026.5.9 requests-2.34.2 rich-15.0.0 ruamel.yaml-0.17.40 ruamel.yaml.clib-0.2.15 ruff-0.15.16 safetensors-0.8.0 scikit-image-0.25.2 scipy-1.15.3 segment_anything-1.0 semantic-version-2.10.0 sentry-sdk-2.62.0 setuptools-81.0.0 shellingham-1.5.4 six-1.17.0 smmap-5.0.3 soundfile-0.14.0 stack-data-0.6.3 starlette-0.52.1 sympy-1.14.0 texttable-1.7.0 tifffile-2025.5.10 timm-1.0.27 tokenizers-0.22.2 tomli-2.4.1 tomlkit-0.12.0 torch-2.12.0+cpu torch_fidelity-0.4.0 torchdiffeq-0.2.5 torchmetrics-1.9.0 torchprofile-0.1.0 torchvision-0.27.0+cpu tornado-6.5.7 tqdm-4.68.2 traitlets-5.15.1 transformers-5.10.2 typer-0.25.1 typing-inspection-0.4.2 typing_extensions-4.15.0 tzdata-2026.2 urllib3-2.7.0 uvicorn-0.49.0 wandb-0.27.2 wcwidth-0.8.1 websockets-12.0 xyzservices-2026.3.0 zipp-4.1.0\n  Running command git clone --filter=blob:none --quiet https://github.com/alibaba/TinyNeuralNetwork.git /tmp/pip-req-build-6uh555nz\n  Running command git clone --filter=blob:none --quiet https://github.com/facebookresearch/segment-anything.git /tmp/pip-req-build-626bo2uc\n\n$ /tmp/15889/study094/venv/bin/pip install --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study094/study094/requirements.txt\n.9 httpx-0.28.1 huggingface-hub-1.18.0 humanfriendly-10.0 idna-3.18 igraph-1.0.0 imageio-2.37.3 imageio_ffmpeg-0.6.0 importlib-resources-6.5.2 importlib_metadata-9.0.0 ipdb-0.13.13 ipython-8.39.0 jedi-0.20.0 jinja2-3.1.6 kiwisolver-1.5.0 lazy-loader-0.5 lightning-utilities-0.15.3 lvis-0.5.3 markdown-it-py-4.2.0 matplotlib-3.10.9 matplotlib-inline-0.2.2 mdurl-0.1.2 ml_dtypes-0.5.4 moviepy-2.2.1 mpmath-1.3.0 narwhals-2.22.1 networkx-3.4.2 numpy-1.26.4 omegaconf-2.3.0 onnx-1.21.0 onnxruntime-1.23.2 onnxsim-0.6.5 opencv-python-4.11.0.86 orjson-3.11.9 pandas-2.3.3 parso-0.8.7 pexpect-4.9.0 pillow-10.4.0 platformdirs-4.10.0 plotly-6.8.0 proglog-0.1.12 prompt_toolkit-3.0.52 protobuf-7.35.0 ptyprocess-0.7.0 pure-eval-0.2.3 pycocotools-2.0.11 pycparser-3.0 pydantic-2.13.4 pydantic-core-2.46.4 pydub-0.25.1 pygments-2.20.0 pyparsing-3.3.2 python-dateutil-2.9.0.post0 python-dotenv-1.2.2 python-multipart-0.0.32 pytz-2026.2 rdkit-2026.3.3 regex-2026.5.9 requests-2.34.2 rich-15.0.0 ruamel.yaml-0.17.40 ruamel.yaml.clib-0.2.15 ruff-0.15.16 safetensors-0.8.0 scikit-image-0.25.2 scipy-1.15.3 segment_anything-1.0 semantic-version-2.10.0 sentry-sdk-2.62.0 setuptools-81.0.0 shellingham-1.5.4 six-1.17.0 smmap-5.0.3 soundfile-0.14.0 stack_data-0.6.3 starlette-0.52.1 sympy-1.14.0 texttable-1.7.0 tifffile-2025.5.10 timm-1.0.27 tokenizers-0.22.2 tomli-2.4.1 tomlkit-0.12.0 torch-2.12.0+cpu torch-fidelity-0.4.0 torchdiffeq-0.2.5 torchmetrics-1.9.0 torchprofile-0.1.0 torchvision-0.27.0+cpu tornado-6.5.7 tqdm-4.68.2 traitlets-5.15.1 transformers-5.10.2 typer-0.25.1 typing-extensions-4.15.0 typing-inspection-0.4.2 tzdata-2026.2 urllib3-2.7.0 uvicorn-0.49.0 wandb-0.27.2 wcwidth-0.8.1 websockets-12.0 xyzservices-2026.3.0 zipp-4.1.0\n  Running command git clone --filter=blob:none --quiet https://github.com/alibaba/TinyNeuralNetwork.git /tmp/pip-req-build-avs1ma04\n  Running command git clone --filter=blob:none --quiet https://github.com/facebookresearch/segment-anything.git /tmp/pip-req-build-zp9n_w_p\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 51.79,
+    "tier": "fair",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 12.5,
+      "Reproducible": 19.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 1061.3,
+  "fair_r_scorer": "graded-v2"
+}

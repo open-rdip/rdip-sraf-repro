@@ -1,0 +1,133 @@
+{
+  "study_id": "study087",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study087/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:49:31.587080+00:00",
+  "counts": {
+    "dependencies": 8,
+    "random_seeds": 5,
+    "hyperparameters": 1,
+    "datasets": 4,
+    "methods": 3,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ResNet50",
+        "version": null
+      },
+      {
+        "name": "ResNet-101",
+        "version": null
+      },
+      {
+        "name": "Adam",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "Pascal-5i",
+        "version": null
+      },
+      {
+        "name": "COCO-20i",
+        "version": null
+      },
+      {
+        "name": "iFSL framework",
+        "version": null
+      },
+      {
+        "name": "ASNet",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      13,
+      65,
+      37,
+      48,
+      85
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning rate",
+        "value": "10\u22124"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "FS-S",
+        "version": null
+      },
+      {
+        "name": "Pascal-5i",
+        "version": null
+      },
+      {
+        "name": "COCO-20i",
+        "version": null
+      },
+      {
+        "name": "FS-CS",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ASNet",
+        "description": "local self-attention"
+      },
+      {
+        "name": "multi-head attention",
+        "description": "with 8 heads"
+      },
+      {
+        "name": "1-way 1-shot training",
+        "description": "with arbitrary N-way K-shot episodes for evaluation"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "classification exact ratio",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "segmentation mIoU",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "class occurrence and segmentation masks",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "ER",
+        "value": "1",
+        "split": null
+      },
+      {
+        "metric": "acc",
+        "value": "1",
+        "split": null
+      },
+      {
+        "metric": "mIoU",
+        "value": "1",
+        "split": null
+      }
+    ]
+  }
+}

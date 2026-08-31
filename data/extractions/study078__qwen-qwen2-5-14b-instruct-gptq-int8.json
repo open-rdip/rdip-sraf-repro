@@ -1,0 +1,78 @@
+{
+  "study_id": "study078",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study078/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:24:23.946401+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 0,
+    "methods": 5,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of distributed quantum machines",
+        "value": "K"
+      },
+      {
+        "name": "local updates (communication interval)",
+        "value": "W"
+      },
+      {
+        "name": "global iterations",
+        "value": "T"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "QUantum DIstributed Optimization (QUDIO)",
+        "description": "A novel distributed-VQA scheme in a lazy communication manner."
+      },
+      {
+        "name": "Shuffle-QUDIO",
+        "description": "A quantum distributed optimization framework where local Hamiltonian terms are randomly shuffled and sampled without replacement according to the worker's rank before each iteration."
+      },
+      {
+        "name": "Shu\ufb04e-QUDIO",
+        "description": "A method that achieves performance improvements while keeping low communication cost and is compatible with all types of quantum hardware."
+      },
+      {
+        "name": "QUDIO",
+        "description": "The baseline method compared against Shu\ufb04e-QUDIO."
+      },
+      {
+        "name": "parameter-shift rule",
+        "description": "used to estimate the gradient g(t,w)"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "approximation error",
+        "value": "smaller",
+        "split": null
+      },
+      {
+        "metric": "communication overhead",
+        "value": "lower",
+        "split": null
+      },
+      {
+        "metric": "speedup ratio",
+        "value": "sub-linear",
+        "split": null
+      }
+    ]
+  }
+}

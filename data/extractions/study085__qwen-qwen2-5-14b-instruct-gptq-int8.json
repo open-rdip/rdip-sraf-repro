@@ -1,0 +1,142 @@
+{
+  "study_id": "study085",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study085/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:29:15.845236+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 2,
+    "methods": 13,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "libmolgrid",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "variability factor",
+        "value": "\u03bbvar"
+      },
+      {
+        "name": "bias factor",
+        "value": "\u03bbbias"
+      },
+      {
+        "name": "grid side length",
+        "value": "23.5\u00c5"
+      },
+      {
+        "name": "resolution",
+        "value": "0.5\u00c5"
+      },
+      {
+        "name": "spatial dimensions",
+        "value": "NX=NY=NZ=48"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1e-5"
+      },
+      {
+        "name": "batch_size",
+        "value": "8"
+      },
+      {
+        "name": "lambda_recon",
+        "value": "4.0"
+      },
+      {
+        "name": "lambda_kl",
+        "value": "0.1"
+      },
+      {
+        "name": "lambda_steric",
+        "value": "1.0"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "protein-ligand complex",
+        "version": null
+      },
+      {
+        "name": "CrossDocked2020",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "sampling variance investigation",
+        "description": "Investigation of different levels of sampling variance through a setting called the variability factor, denoted \u03bbvar."
+      },
+      {
+        "name": "bias control technique",
+        "description": "A technique for controlling the amount of bias towards the reference molecule by interpolating between prior and posterior distributions according to a bias factor, \u03bbbias."
+      },
+      {
+        "name": "atom typing",
+        "description": "process of converting molecules to an atomic density grid"
+      },
+      {
+        "name": "gridding",
+        "description": "operation involved in converting molecules to an atomic density grid"
+      },
+      {
+        "name": "conditional variational autoencoder (CVAE)",
+        "description": "model used for generating an output ligand density from a docked protein-ligand complex"
+      },
+      {
+        "name": "RDkit sanitization",
+        "description": "Checks valency constraints and attempts to Kekulize aromatic bonds"
+      },
+      {
+        "name": "Universal Force Field (UFF) minimization",
+        "description": "Relaxes internal bond lengths and angles of molecules"
+      },
+      {
+        "name": "Vina minimization",
+        "description": "Minimizes and scores molecules with respect to the receptor"
+      },
+      {
+        "name": "CNN scoring functions",
+        "description": "Estimates binding affinity using an ensemble trained on CrossDocked2020"
+      },
+      {
+        "name": "Atom fitting algorithm",
+        "description": "An optimization problem solved iteratively combining atom detection with gradient descent to find a set of atoms that best fit a reference density grid."
+      },
+      {
+        "name": "Steric clash loss",
+        "description": "Minimized steric clash in terms of the overlap between the generated ligand density and the receptor density."
+      },
+      {
+        "name": "U-Net skip connections",
+        "description": "included between the convolutional features of the conditional encoder and the decoder to enhance the processing of receptor context"
+      },
+      {
+        "name": "Spectral normalization",
+        "description": "applied to all learnable parameters during training"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "validity",
+        "value": "percentage of single connected fragments",
+        "split": "test"
+      }
+    ]
+  }
+}

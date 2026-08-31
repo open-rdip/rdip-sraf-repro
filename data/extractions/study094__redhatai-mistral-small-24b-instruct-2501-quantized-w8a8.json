@@ -1,0 +1,90 @@
+{
+  "study_id": "study094",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study094/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:23:54.010965+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 7,
+    "methods": 3,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "TensorRT",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "LVIS",
+        "version": null
+      },
+      {
+        "name": "V3Det",
+        "version": null
+      },
+      {
+        "name": "OpenImages",
+        "version": null
+      },
+      {
+        "name": "CC3M",
+        "version": null
+      },
+      {
+        "name": "SA-1B",
+        "version": null
+      },
+      {
+        "name": "LVIS-minival",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Grounding DINO 1.5",
+        "description": "Pro for common object detection scenarios"
+      },
+      {
+        "name": "Grounding DINO 1.5 Edge",
+        "description": "End-to-End Open-Set Object Detection"
+      },
+      {
+        "name": "Grounding DINO 1.5 Pro",
+        "description": "Dense Object Detection Grounding DINO 1.5 Pro showcases an exceptional capability to discern objects within dense scenar- ios, where multiple objects are closely positioned or overlapping, making detection a challenging task."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AP",
+        "value": "45.0",
+        "split": "test"
+      },
+      {
+        "metric": "superior",
+        "value": "9",
+        "split": null
+      }
+    ]
+  }
+}

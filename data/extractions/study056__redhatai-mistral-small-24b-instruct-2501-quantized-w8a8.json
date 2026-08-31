@@ -1,0 +1,73 @@
+{
+  "study_id": "study056",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study056/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:52:09.732034+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 0,
+    "methods": 5,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA\u00aeA100 GPU 80GB",
+      "cuda_version": null,
+      "cpu_info": "CPU"
+    },
+    "hyperparameters": [
+      {
+        "name": "NFE",
+        "value": "59"
+      },
+      {
+        "name": "batch_size",
+        "value": "1"
+      },
+      {
+        "name": "learning rate",
+        "value": "OneCycleLR"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "PandoraPFA",
+        "description": "particle flow algorithm"
+      },
+      {
+        "name": "CaloHadronic",
+        "description": "generative networks on calorimeter showers"
+      },
+      {
+        "name": "Geant4",
+        "description": "Monte Carlo-based simulators"
+      },
+      {
+        "name": "PointCountFM",
+        "description": "model better captures the distribution of points per layer"
+      },
+      {
+        "name": "diffusion model",
+        "description": "can result in a less precise approximation along the layer (\ud835\udc66) coordinate"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "NFE",
+        "value": "59",
+        "split": null
+      },
+      {
+        "metric": "Time / Shower",
+        "value": "2.09\u00b10.05",
+        "split": null
+      }
+    ]
+  }
+}

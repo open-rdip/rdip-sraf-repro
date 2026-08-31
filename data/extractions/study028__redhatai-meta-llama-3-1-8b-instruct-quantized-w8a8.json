@@ -1,0 +1,215 @@
+{
+  "study_id": "study028",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study028/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:21:07.819782+00:00",
+  "counts": {
+    "dependencies": 6,
+    "random_seeds": 2,
+    "hyperparameters": 5,
+    "datasets": 10,
+    "methods": 10,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "CNN model",
+        "version": null
+      },
+      {
+        "name": "Grad-CAM",
+        "version": "59"
+      },
+      {
+        "name": "ResNet18",
+        "version": null
+      },
+      {
+        "name": "SGD optimizer",
+        "version": null
+      },
+      {
+        "name": "cycle cosine annealing schedule",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      300,
+      5
+    ],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX 3090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning rate",
+        "value": "0.03, 0.9, and 0.00003"
+      },
+      {
+        "name": "batch size",
+        "value": "64"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "0.03"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.00003"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "validation dataset",
+        "version": null
+      },
+      {
+        "name": "test dataset",
+        "version": null
+      },
+      {
+        "name": "normal chest radiograph",
+        "version": null
+      },
+      {
+        "name": "Chexpert",
+        "version": null
+      },
+      {
+        "name": "RSNA dataset",
+        "version": null
+      },
+      {
+        "name": "NIH chest radiograph dataset",
+        "version": null
+      },
+      {
+        "name": "officially split validation dataset",
+        "version": null
+      },
+      {
+        "name": "Zhanglab",
+        "version": null
+      },
+      {
+        "name": "RSNA",
+        "version": null
+      },
+      {
+        "name": "Zhanglab dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "fAnoGAN",
+        "description": "state-of-the-art UAD model in for medical images"
+      },
+      {
+        "name": "Ganomaly",
+        "description": "GAN-based UAD model"
+      },
+      {
+        "name": "CutPaste",
+        "description": "one-class classifier model with SSL"
+      },
+      {
+        "name": "CNN model",
+        "description": "binary predictions"
+      },
+      {
+        "name": "supervised learning",
+        "description": "string"
+      },
+      {
+        "name": "one-class classifier",
+        "description": "with ResNet18 for feature extraction"
+      },
+      {
+        "name": "AnatPaste",
+        "description": null
+      },
+      {
+        "name": "pretext model",
+        "description": null
+      },
+      {
+        "name": "SALAD",
+        "description": "validated on the Zhanglab dataset"
+      },
+      {
+        "name": "SQUID",
+        "description": "validated on the Zhanglab dataset"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AUC",
+        "value": "highest",
+        "split": "validation dataset"
+      },
+      {
+        "metric": "performances",
+        "value": null,
+        "split": "test dataset"
+      },
+      {
+        "metric": "accuracy",
+        "value": "high",
+        "split": null
+      },
+      {
+        "metric": "AUC",
+        "value": "93%",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "0.7%",
+        "split": "Zhanglab"
+      },
+      {
+        "metric": "accuracy",
+        "value": "2.7%",
+        "split": "Chexpert"
+      },
+      {
+        "metric": "accuracy",
+        "value": "1.5%",
+        "split": "RSNA"
+      },
+      {
+        "metric": "F1-score",
+        "value": "0.067",
+        "split": null
+      },
+      {
+        "metric": "AUC",
+        "value": "76.8",
+        "split": "Zhanglab dataset"
+      },
+      {
+        "metric": "accuracy",
+        "value": "string",
+        "split": "Zhanglab dataset"
+      },
+      {
+        "metric": "F1-score",
+        "value": "string",
+        "split": "Zhanglab dataset"
+      }
+    ]
+  }
+}

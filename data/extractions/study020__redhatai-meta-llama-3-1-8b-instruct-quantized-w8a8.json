@@ -1,0 +1,161 @@
+{
+  "study_id": "study020",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study020/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:17:03.409578+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 1,
+    "hyperparameters": 3,
+    "datasets": 4,
+    "methods": 12,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Adam optimizer",
+        "version": "29"
+      },
+      {
+        "name": "ImageNet",
+        "version": "14"
+      },
+      {
+        "name": "ResNet-34",
+        "version": null
+      },
+      {
+        "name": "Python",
+        "version": null
+      },
+      {
+        "name": "Libra",
+        "version": "10"
+      }
+    ],
+    "random_seeds": [
+      5
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch size",
+        "value": "64"
+      },
+      {
+        "name": "learning rate",
+        "value": "1e\u22126"
+      },
+      {
+        "name": "jittering",
+        "value": "small random brightness and contrast"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "mammograms",
+        "version": null
+      },
+      {
+        "name": "mammography images",
+        "version": null
+      },
+      {
+        "name": "CSAW-M",
+        "version": null
+      },
+      {
+        "name": "interval cancer",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "random horizontal and vertical flipping",
+        "description": "data augmentation"
+      },
+      {
+        "name": "random rotation",
+        "description": "data augmentation"
+      },
+      {
+        "name": "small random brightness and contrast jittering",
+        "description": "data augmentation"
+      },
+      {
+        "name": "5-fold cross-validation",
+        "description": "determine stopping iteration"
+      },
+      {
+        "name": "ResNet34 one-hot",
+        "description": "standard approach for categorical classification"
+      },
+      {
+        "name": "ResNet34 multi-hot",
+        "description": "accounts for the ordinal relation between masking levels using multi-hot encodings"
+      },
+      {
+        "name": "F1-score",
+        "description": "common metric to assess the performance in information retrieval"
+      },
+      {
+        "name": "area under the ROC curve (AUC)",
+        "description": "measure performance"
+      },
+      {
+        "name": "odds ratio (OR)",
+        "description": "ratio of the odds of an event occurring in one group to the odds of it occurring in another group"
+      },
+      {
+        "name": "CSAW-M",
+        "description": "model the median expert opinion of masking potential level"
+      },
+      {
+        "name": "dense area",
+        "description": "computed using Libra"
+      },
+      {
+        "name": "percent density",
+        "description": "computed using Libra"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "F1-score",
+        "value": "string",
+        "split": "test"
+      },
+      {
+        "metric": "AUC",
+        "value": "string",
+        "split": "individual cancer types"
+      },
+      {
+        "metric": "AUC",
+        "value": "string",
+        "split": "composite endpoint (CEP)"
+      },
+      {
+        "metric": "odds ratio (OR)",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "average mean absolute error (AMAE)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Kendall\u2019s \u03c4b",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "study_id": "study041",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study041/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:40:04.773841+00:00",
+  "counts": {
+    "dependencies": 8,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 4,
+    "methods": 1,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Binary Trees",
+        "version": "Debian CLBG Rust#2"
+      },
+      {
+        "name": "Regex-Redux",
+        "version": "Debian CLBG Rust#1"
+      },
+      {
+        "name": "Alacritty",
+        "version": "v0.15.0-dev"
+      },
+      {
+        "name": "fd",
+        "version": "v9.0.0"
+      },
+      {
+        "name": "grmtools",
+        "version": "v0.13.4"
+      },
+      {
+        "name": "Ripgrep",
+        "version": "v14.1.1"
+      },
+      {
+        "name": "som-rs-ast",
+        "version": "git #35b780"
+      },
+      {
+        "name": "som-rs-bc",
+        "version": "git #35b780"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "Binary Trees",
+        "version": "Debian CLBG Rust#2"
+      },
+      {
+        "name": "Regex-Redux",
+        "version": "Debian CLBG Rust#1"
+      },
+      {
+        "name": "Alacritty",
+        "version": "v0.15.0-dev"
+      },
+      {
+        "name": "fd",
+        "version": "v9.0.0"
+      }
+    ],
+    "methods": [
+      {
+        "name": "reference counting",
+        "description": "reference Proc. ACM Program. Lang., Vol. 9, No. OOPSLA2, Article 401. Publication date: October 2025. Garbage Collection for Rust: The Finalizer Frontier 401:17 Table 1. The benchmarks (top) and benchmark suites (bottom) that form our experiment. We altered them to use different memory allocation strategies (Alloy, Rc<T> , etc.).Binary TreesandRegex-Reduxare classic stand-alone GC benchmarks; the other \u2018benchmarks\u2019 represent benchmark suites (e.g.Ripgrepcontains 13 benchmarks). The middle portion of the table shows a variety of \u2018normal\u2019 Rust programs; the bottom portion of the program shows three implementations of the SOM programming language."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

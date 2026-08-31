@@ -1,0 +1,30 @@
+{
+  "run_command": "python tools/test.py configs/glip/glip_swin_tiny_cafr.py /path/to/ckpt --eval mAP",
+  "setup_steps": [
+    "conda create -n RCOD python==3.10",
+    "conda activate RCOD",
+    "conda install pytorch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 pytorch-cuda=11.8 -c pytorch -c nvidia",
+    "pip install mmcv>=2.2.0",
+    "pip install -r requirements/build.txt",
+    "pip install -v -e .",
+    "wget https://drive.google.com/uc?id=1SafBDHRbutQ4D3yqDPOEmZY2u9Ip7Feh -O ckpt.zip",
+    "unzip ckpt.zip -d ckpt"
+  ],
+  "requires_dataset": [
+    {
+      "name": "COD10K-D",
+      "download": "wget https://drive.google.com/uc?id=1SafBDHRbutQ4D3yqDPOEmZY2u9Ip7Feh -O ckpt.zip"
+    }
+  ],
+  "requires_checkpoint": null,
+  "produces_metric": [
+    {
+      "metric": "mAP",
+      "dataset": "COD10K-D"
+    }
+  ],
+  "entry_point": "tools/test.py",
+  "confidence": "low",
+  "study_id": "study003",
+  "repo_url": "https://github.com/zhimengxin/rcod"
+}

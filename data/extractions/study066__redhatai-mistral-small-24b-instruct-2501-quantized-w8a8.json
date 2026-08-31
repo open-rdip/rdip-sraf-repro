@@ -1,0 +1,236 @@
+{
+  "study_id": "study066",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study066/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:59:22.613708+00:00",
+  "counts": {
+    "dependencies": 7,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 3,
+    "methods": 22,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GluonCV",
+        "version": null
+      },
+      {
+        "name": "MXNet",
+        "version": null
+      },
+      {
+        "name": "Auto Augmentation",
+        "version": null
+      },
+      {
+        "name": "Batch Normalization",
+        "version": null
+      },
+      {
+        "name": "ReLU",
+        "version": null
+      },
+      {
+        "name": "Kaiming Initialization",
+        "version": null
+      },
+      {
+        "name": "Detectron2",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "radix",
+        "value": "4"
+      },
+      {
+        "name": "cardinality",
+        "value": "2"
+      },
+      {
+        "name": "network width",
+        "value": "64"
+      },
+      {
+        "name": "crop size",
+        "value": "256\u00d7256"
+      },
+      {
+        "name": "crop_size",
+        "value": "1/0.875 of the crop size along the short edge"
+      },
+      {
+        "name": "dropout ratio",
+        "value": "0.2"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.0001"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "mini-batch size",
+        "value": "8192"
+      },
+      {
+        "name": "image scale augmentation",
+        "value": "short size of a image is picked ran- domly from 640 to 800"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "MS-COCO",
+        "version": "2017"
+      },
+      {
+        "name": "COCO-2017",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Split-Attention",
+        "description": "with the 2s1x64d setting"
+      },
+      {
+        "name": "Bicubic up-sampling",
+        "description": "for input-size greater than 256"
+      },
+      {
+        "name": "Mixup training",
+        "description": "improves the accuracy of ResNetD-50 from 78.31% to 79.15%"
+      },
+      {
+        "name": "Auto augmentation",
+        "description": "further improves the accuracy by 0.26%"
+      },
+      {
+        "name": "Split-Attention block",
+        "description": "accuracy is further boosted to 80.64%"
+      },
+      {
+        "name": "downsampling operation",
+        "description": "ResNeSt-50 achieves 81.13% accuracy"
+      },
+      {
+        "name": "data sharding",
+        "description": "for distributed training on ImageNet, evenly partitioning the data across GPUs"
+      },
+      {
+        "name": "ResNeSt",
+        "description": "Proposed model with better accuracy and latency trade-off"
+      },
+      {
+        "name": "Ef\ufb01cientNet-B4",
+        "description": "Baseline model"
+      },
+      {
+        "name": "SENet-154",
+        "description": "Baseline model"
+      },
+      {
+        "name": "NASNet-A",
+        "description": "Baseline model"
+      },
+      {
+        "name": "AmoebaNet-A",
+        "description": "Baseline model"
+      },
+      {
+        "name": "ResNeSt-200",
+        "description": "Proposed model"
+      },
+      {
+        "name": "Ef\ufb01cientNet-B5",
+        "description": "Baseline model"
+      },
+      {
+        "name": "AmoebaNet-C",
+        "description": "Baseline model"
+      },
+      {
+        "name": "ResNeSt-269",
+        "description": "Proposed model"
+      },
+      {
+        "name": "GPipe",
+        "description": "Baseline model"
+      },
+      {
+        "name": "Ef\ufb01cientNet-B7",
+        "description": "Baseline model"
+      },
+      {
+        "name": "FPN",
+        "description": null
+      },
+      {
+        "name": "synchronized batch normalization",
+        "description": null
+      },
+      {
+        "name": "Faster-RCNNs",
+        "description": null
+      },
+      {
+        "name": "Cascade-RCNNs",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 accuracy",
+        "value": "improves",
+        "split": null
+      },
+      {
+        "metric": "inference speed",
+        "value": "measured using a mini-batch of 16",
+        "split": null
+      },
+      {
+        "metric": "number of parameters",
+        "value": "compared",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "78.31%",
+        "split": null
+      },
+      {
+        "metric": "acc",
+        "value": "83.0",
+        "split": null
+      },
+      {
+        "metric": "COCO AP",
+        "value": null,
+        "split": "validation"
+      },
+      {
+        "metric": "box mAP",
+        "value": "49.2",
+        "split": "test-dev"
+      }
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "study_id": "study063",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study063/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:14:42.825149+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 8,
+    "methods": 7,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "dataset_size",
+        "value": "0.5%, 1%, 2%, 4%, 8% of full dataset size"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "VoxPopuli",
+        "version": null
+      },
+      {
+        "name": "MLS",
+        "version": null
+      },
+      {
+        "name": "LibriSpeech",
+        "version": null
+      },
+      {
+        "name": "Meanwhile",
+        "version": null
+      },
+      {
+        "name": "Kincaid46",
+        "version": null
+      },
+      {
+        "name": "Fleurs",
+        "version": null
+      },
+      {
+        "name": "Whisper dataset",
+        "version": null
+      },
+      {
+        "name": "Whisper",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "text normalizer",
+        "description": "developed through iterative manual inspection to identify common patterns where naive WER penalized Whisper models for an innocuous difference"
+      },
+      {
+        "name": "buffered transcription",
+        "description": "performing transcription of long audio by consecutively transcribing 30-second segments and shifting the window according to the timestamps predicted by the model"
+      },
+      {
+        "name": "FrameBatchASR class",
+        "description": "used for long-form transcription with NVIDIA STT model"
+      },
+      {
+        "name": "Whisper model",
+        "description": "A model used for studying the relationship between the amount of training data and zero-shot performance across different languages."
+      },
+      {
+        "name": "Robustness to Additive Noise",
+        "description": "Measuring WER with white noise or pub noise from the Audio Degradation Toolbox added to the audio."
+      },
+      {
+        "name": "early_stopping",
+        "description": "based on validation loss"
+      },
+      {
+        "name": "exponential_moving_average",
+        "description": "for parameter estimation with smoothing rate of 0.9999"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "BLEU",
+        "value": "r2 = 0.24",
+        "split": null
+      },
+      {
+        "metric": "WER",
+        "value": "drops of up to 50 percent",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "better than the compared models",
+        "split": null
+      },
+      {
+        "metric": "squared correlation coefficient",
+        "value": "0.83",
+        "split": null
+      },
+      {
+        "metric": "regression coefficient for a linear fit",
+        "value": "WER halves for every 16 \u00d7 increase in training data",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "80.3%",
+        "split": "validation"
+      }
+    ]
+  }
+}

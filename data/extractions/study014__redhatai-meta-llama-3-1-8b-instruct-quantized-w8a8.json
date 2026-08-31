@@ -1,0 +1,134 @@
+{
+  "study_id": "study014",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study014/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:14:07.857317+00:00",
+  "counts": {
+    "dependencies": 13,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 4,
+    "methods": 1,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "TensorFlow",
+        "version": null
+      },
+      {
+        "name": "Open3D",
+        "version": null
+      },
+      {
+        "name": "scikit-image",
+        "version": null
+      },
+      {
+        "name": "scipy",
+        "version": null
+      },
+      {
+        "name": "numpy",
+        "version": null
+      },
+      {
+        "name": "matplotlib",
+        "version": null
+      },
+      {
+        "name": "scikit-learn",
+        "version": null
+      },
+      {
+        "name": "cv2",
+        "version": null
+      },
+      {
+        "name": "OpenCV",
+        "version": null
+      },
+      {
+        "name": "PyTorch Geometric",
+        "version": null
+      },
+      {
+        "name": "PyTorch3D",
+        "version": null
+      },
+      {
+        "name": "H3DNet",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "6D object pose estimation dataset",
+        "version": null
+      },
+      {
+        "name": "3D object detection dataset",
+        "version": null
+      },
+      {
+        "name": "ScanNet",
+        "version": null
+      },
+      {
+        "name": "SUN RGB-D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "H3DNet",
+        "description": "a regression methodology for 3D object detection"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP (0.25)",
+        "value": "67.2%",
+        "split": "ScanNet"
+      },
+      {
+        "metric": "relative improvement",
+        "value": "8.5%",
+        "split": "ScanNet"
+      },
+      {
+        "metric": "mAP (0.25)",
+        "value": "67.2%",
+        "split": null
+      },
+      {
+        "metric": "mAP (0.25)",
+        "value": "51.9%",
+        "split": "window"
+      },
+      {
+        "metric": "mAP (0.25)",
+        "value": "61.0%",
+        "split": "door"
+      },
+      {
+        "metric": "mAP (0.25)",
+        "value": "75.3%",
+        "split": "shower-curtain"
+      }
+    ]
+  }
+}

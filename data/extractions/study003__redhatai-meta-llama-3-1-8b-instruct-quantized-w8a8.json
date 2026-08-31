@@ -1,0 +1,412 @@
+{
+  "study_id": "study003",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study003/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:09:24.034097+00:00",
+  "counts": {
+    "dependencies": 20,
+    "random_seeds": 2,
+    "hyperparameters": 2,
+    "datasets": 11,
+    "methods": 31,
+    "evaluation_results": 24
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "COCO API",
+        "version": "[55]"
+      },
+      {
+        "name": "MMDetection",
+        "version": null
+      },
+      {
+        "name": "GLIP",
+        "version": "tiny model [9]"
+      },
+      {
+        "name": "swin-transformer",
+        "version": null
+      },
+      {
+        "name": "FPN",
+        "version": null
+      },
+      {
+        "name": "focal loss",
+        "version": null
+      },
+      {
+        "name": "contrastive loss",
+        "version": null
+      },
+      {
+        "name": "GIoU",
+        "version": null
+      },
+      {
+        "name": "ResNet50",
+        "version": null
+      },
+      {
+        "name": "Faster RCNN",
+        "version": null
+      },
+      {
+        "name": "Vit-T",
+        "version": null
+      },
+      {
+        "name": "Swin-T",
+        "version": null
+      },
+      {
+        "name": "Vit-L",
+        "version": null
+      },
+      {
+        "name": "Swin-L",
+        "version": null
+      },
+      {
+        "name": "Mask RCNN",
+        "version": "ResNet50"
+      },
+      {
+        "name": "SAM",
+        "version": "Vit-T"
+      },
+      {
+        "name": "GDino + CAFR",
+        "version": "Swin-T"
+      },
+      {
+        "name": "YOLOv7-L",
+        "version": null
+      },
+      {
+        "name": "CSPDarknet",
+        "version": "3.8"
+      }
+    ],
+    "random_seeds": [
+      16,
+      10
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning_rate",
+        "value": "0.0003"
+      },
+      {
+        "name": "momentum",
+        "value": "0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": "[55]"
+      },
+      {
+        "name": "entire dataset",
+        "version": null
+      },
+      {
+        "name": "RCOD",
+        "version": null
+      },
+      {
+        "name": "coco-style",
+        "version": null
+      },
+      {
+        "name": "COD",
+        "version": null
+      },
+      {
+        "name": "COD10K-D",
+        "version": null
+      },
+      {
+        "name": "NC4K-D",
+        "version": null
+      },
+      {
+        "name": "CAMO-D",
+        "version": "CAMO dataset [13]"
+      },
+      {
+        "name": "CAMO dataset",
+        "version": null
+      },
+      {
+        "name": "COD10K-v2",
+        "version": "v2"
+      },
+      {
+        "name": "NC4K",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Transformer-based feature extractors",
+        "description": "optimizing and fine-tuning the entire feature extraction process"
+      },
+      {
+        "name": "APG module",
+        "description": null
+      },
+      {
+        "name": "SFR module",
+        "description": null
+      },
+      {
+        "name": "AGP module",
+        "description": null
+      },
+      {
+        "name": "SINet",
+        "description": "null"
+      },
+      {
+        "name": "SegMaR",
+        "description": "null"
+      },
+      {
+        "name": "PreyNet",
+        "description": "null"
+      },
+      {
+        "name": "ZoomNet",
+        "description": "null"
+      },
+      {
+        "name": "FSEL",
+        "description": "null"
+      },
+      {
+        "name": "Faster R-CNN",
+        "description": "null"
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "null"
+      },
+      {
+        "name": "random shuffle",
+        "description": "sequential selection of 16 boxes at a time"
+      },
+      {
+        "name": "canvas filling",
+        "description": "same as online approach"
+      },
+      {
+        "name": "AdamW",
+        "description": "optimizer"
+      },
+      {
+        "name": "fine-tuning",
+        "description": "fine-tuning the final layer parameters"
+      },
+      {
+        "name": "AGP",
+        "description": "AGP (proposed method)"
+      },
+      {
+        "name": "GLIP",
+        "description": "GLIP model"
+      },
+      {
+        "name": "GLIP+Adapter",
+        "description": "GLIP model with adapter module"
+      },
+      {
+        "name": "Method Mask RCNN",
+        "description": "ResNet50 41 289.97"
+      },
+      {
+        "name": "Faster RCNN",
+        "description": "ResNet50 34 176.54"
+      },
+      {
+        "name": "Large Model SAM",
+        "description": "Vit-T 89 371.98"
+      },
+      {
+        "name": "GDino + CAFR",
+        "description": "Swin-T 165 353.98"
+      },
+      {
+        "name": "SAM",
+        "description": "Vit-L 298 1314.89"
+      },
+      {
+        "name": "Mask RCNN",
+        "description": "ResNet50"
+      },
+      {
+        "name": "YOLOv7-L",
+        "description": "Generic Methods"
+      },
+      {
+        "name": "CSPDarknet",
+        "description": "Generic Methods"
+      },
+      {
+        "name": "DEFORMABLE DETR",
+        "description": "null"
+      },
+      {
+        "name": "S WIN",
+        "description": "SWIN-Transformer with its tiny base ,and large pre-trained models"
+      },
+      {
+        "name": "R50",
+        "description": "RESNET50"
+      },
+      {
+        "name": "R101",
+        "description": "RESNET101"
+      },
+      {
+        "name": "GD INO",
+        "description": "GROUNDING DION its tiny and base pre-trained models"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "AP50",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "AP75",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "APm",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "APl",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "mAP (IoU",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "counts of categories",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "numbers of training and test images",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "FLOPs",
+        "value": "289.97",
+        "split": "\u2193"
+      },
+      {
+        "metric": "mAP",
+        "value": "3.8",
+        "split": "COD10K-D"
+      },
+      {
+        "metric": "AP50",
+        "value": "8.2",
+        "split": "COD10K-D"
+      },
+      {
+        "metric": "AP75",
+        "value": "2.8",
+        "split": "COD10K-D"
+      },
+      {
+        "metric": "APm",
+        "value": "1.0",
+        "split": "COD10K-D"
+      },
+      {
+        "metric": "APl",
+        "value": "4.0",
+        "split": "COD10K-D"
+      },
+      {
+        "metric": "mAP",
+        "value": "14.2",
+        "split": "NC4K-D"
+      },
+      {
+        "metric": "AP50",
+        "value": "6.8",
+        "split": "NC4K-D"
+      },
+      {
+        "metric": "AP75",
+        "value": "6.0",
+        "split": "NC4K-D"
+      },
+      {
+        "metric": "APm",
+        "value": "1.7",
+        "split": "NC4K-D"
+      },
+      {
+        "metric": "APl",
+        "value": "7.3",
+        "split": "NC4K-D"
+      },
+      {
+        "metric": "mAP",
+        "value": "5.4",
+        "split": "CAMO-D"
+      },
+      {
+        "metric": "AP50",
+        "value": null,
+        "split": "CAMO-D"
+      },
+      {
+        "metric": "AP75",
+        "value": null,
+        "split": "CAMO-D"
+      },
+      {
+        "metric": "APm",
+        "value": null,
+        "split": "CAMO-D"
+      },
+      {
+        "metric": "APl",
+        "value": null,
+        "split": "CAMO-D"
+      }
+    ]
+  }
+}

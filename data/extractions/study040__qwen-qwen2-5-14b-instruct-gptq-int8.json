@@ -1,0 +1,126 @@
+{
+  "study_id": "study040",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study040/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:01:34.045082+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 2,
+    "hyperparameters": 4,
+    "datasets": 4,
+    "methods": 6,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      42,
+      2021
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "L",
+        "value": "[3, 4, 5]"
+      },
+      {
+        "name": "D",
+        "value": "[128, 256]"
+      },
+      {
+        "name": "F",
+        "value": "2D"
+      },
+      {
+        "name": "maximum epochs",
+        "value": "20"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ILI",
+        "version": null
+      },
+      {
+        "name": "Electricity",
+        "version": null
+      },
+      {
+        "name": "Traffic",
+        "version": null
+      },
+      {
+        "name": "Weather",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "patching",
+        "description": "used in PatchTST model"
+      },
+      {
+        "name": "channel-independence",
+        "description": "used in PatchTST model"
+      },
+      {
+        "name": "instance normalization",
+        "description": "used in time series models to improve forecasting performance"
+      },
+      {
+        "name": "PatchTST",
+        "description": "supervised PatchTST model with instance normalization (+in) or without instance normalization (-in)"
+      },
+      {
+        "name": "PatchTST/64",
+        "description": "Model trained with instance normalization"
+      },
+      {
+        "name": "PatchTST/42",
+        "description": "Model trained without instance normalization"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "forecasting accuracy",
+        "value": "best results",
+        "split": null
+      },
+      {
+        "metric": "MSE",
+        "value": "0.152",
+        "split": "Weather96"
+      },
+      {
+        "metric": "MAE",
+        "value": "0.199",
+        "split": "Weather96"
+      },
+      {
+        "metric": "MSE",
+        "value": "0.197",
+        "split": "192"
+      },
+      {
+        "metric": "MAE",
+        "value": "0.243",
+        "split": "192"
+      },
+      {
+        "metric": "MSE",
+        "value": "0.249",
+        "split": "336"
+      },
+      {
+        "metric": "MAE",
+        "value": "0.283",
+        "split": "336"
+      }
+    ]
+  }
+}

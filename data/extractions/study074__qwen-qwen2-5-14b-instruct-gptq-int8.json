@@ -1,0 +1,41 @@
+{
+  "study_id": "study074",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study074/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:22:13.354558+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 3,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "DroidBot-GPT",
+        "description": "A two-step solution where when the LLM model chooses to edit in a text box, DroidBot-GPT sends another prompt asking what to enter into the view with the specified text content."
+      },
+      {
+        "name": "prompt synthesis",
+        "description": "The prompt includes task representation, GUI elements with action choices, action history, and output requirement."
+      },
+      {
+        "name": "GUI description translation",
+        "description": "Converts a graphical user interface into a natural language sentence for processing by GPT models."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

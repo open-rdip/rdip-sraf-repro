@@ -1,0 +1,265 @@
+{
+  "study_id": "study030",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study030/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:53:05.724324+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 6,
+    "methods": 20,
+    "evaluation_results": 17
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "32"
+      },
+      {
+        "name": "weight_decay",
+        "value": "10^-5"
+      },
+      {
+        "name": "momentum",
+        "value": "0.95"
+      },
+      {
+        "name": "optimizer",
+        "value": "SGD"
+      },
+      {
+        "name": "base_networks",
+        "value": "ResNet or ShuffleNetV2"
+      },
+      {
+        "name": "input_max_pooling",
+        "value": "removed"
+      },
+      {
+        "name": "stride_from_input_to_output_feature_map",
+        "value": "16"
+      },
+      {
+        "name": "features_at_each_location",
+        "value": "2048"
+      },
+      {
+        "name": "decay constant",
+        "value": "10^-2"
+      },
+      {
+        "name": "target learning rate (CrowdPose)",
+        "value": "10^-5"
+      },
+      {
+        "name": "target learning rate (COCO)",
+        "value": "10^-4"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CrowdPose",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "PoseTrack",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "PoseTrack 2018",
+        "version": null
+      },
+      {
+        "name": "PoseTrack 2017",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "SGD optimizer",
+        "description": "with Nesterov momentum"
+      },
+      {
+        "name": "exponential warmup",
+        "description": "for one epoch from 10^-3 of its target value"
+      },
+      {
+        "name": "exponential decay",
+        "description": "over 10 epochs by a factor of 10"
+      },
+      {
+        "name": "model averaging",
+        "description": "to extract stable models for validation"
+      },
+      {
+        "name": "training procedure",
+        "description": "Alternating between batches from PoseTrack and COCO datasets, using SGD optimizer."
+      },
+      {
+        "name": "bottom-up method",
+        "description": "method based on the described approach"
+      },
+      {
+        "name": "field-based methods",
+        "description": "[16], [18], [11]"
+      },
+      {
+        "name": "associative embedding methods",
+        "description": "[17], [24]"
+      },
+      {
+        "name": "ShuffleNetV2K16",
+        "description": "Has the prediction accuracy of a ResNet50 with fewer parameters than a ResNet18. Configuration specified by output features and block repeats of 24(1), 348(4), 696(8), 1392(4), 1392(1)"
+      },
+      {
+        "name": "ShuffleNetV2K30",
+        "description": "Configuration specified by output features and block repeats of 32(1), 512(8), 1024(16), 2048(6), 2048(1)"
+      },
+      {
+        "name": "exponentially weighted model parameters",
+        "description": "At each optimization step, an exponentially weighted version of the model parameters is updated with a decay constant."
+      },
+      {
+        "name": "training schedule",
+        "description": "Learning rate decays at specified epochs during training."
+      },
+      {
+        "name": "auxiliary task training",
+        "description": "Single-image pose estimation on COCO is used as an auxiliary task while training on PoseTrack and COCO simultaneously."
+      },
+      {
+        "name": "OpenPifPaf",
+        "description": "Our method"
+      },
+      {
+        "name": "KeyTrack",
+        "description": "DetTrack (offline)"
+      },
+      {
+        "name": "MIPAL",
+        "description": null
+      },
+      {
+        "name": "MSRA/FlowTrack",
+        "description": null
+      },
+      {
+        "name": "HRNet",
+        "description": null
+      },
+      {
+        "name": "LightTrack",
+        "description": null
+      },
+      {
+        "name": "DetTrack (offline)",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "pose predictions",
+        "value": "example predictions shown",
+        "split": "validation"
+      },
+      {
+        "metric": "AP",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "AP0.50",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "AP0.75",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "APEasy",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "APMedium",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "APHard",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "FPS",
+        "value": "13.7",
+        "split": null
+      },
+      {
+        "metric": "time per image",
+        "value": "152 ms",
+        "split": null
+      },
+      {
+        "metric": "time per image (V100)",
+        "value": "63 ms",
+        "split": null
+      },
+      {
+        "metric": "MOTA",
+        "value": "61.7",
+        "split": null
+      },
+      {
+        "metric": "MOTP",
+        "value": "84.5",
+        "split": "PoseTrack 2017"
+      },
+      {
+        "metric": "precision",
+        "value": "84.1",
+        "split": "PoseTrack 2017"
+      },
+      {
+        "metric": "recall",
+        "value": "77.7",
+        "split": "PoseTrack 2017"
+      },
+      {
+        "metric": "MOTP",
+        "value": "84.9",
+        "split": "PoseTrack 2018"
+      },
+      {
+        "metric": "precision",
+        "value": "84.4",
+        "split": "PoseTrack 2018"
+      },
+      {
+        "metric": "recall",
+        "value": "78.3",
+        "split": "PoseTrack 2018"
+      }
+    ]
+  }
+}

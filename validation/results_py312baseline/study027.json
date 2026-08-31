@@ -1,0 +1,113 @@
+{
+  "study_id": "study027",
+  "repo_url": "https://github.com/hms-dbmi/chief",
+  "started": "2026-06-09T15:27:12.117818+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "pip": "requirements.txt"
+    },
+    "depth_note": "root",
+    "n_found": 1,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/hms-dbmi/chief",
+    "commit_hash": "1abed334e674ad2b6ee0430d1ce7d0b566420bb4",
+    "software_license": "GPL-3.0"
+  },
+  "lift": {
+    "lifted": {
+      "pip": "requirements.txt"
+    },
+    "triples": 1021,
+    "n_sources": 2
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": false,
+    "build_success": false,
+    "method": "pip-requirements",
+    "stage_failed": "resolve",
+    "duration_s": 6.0,
+    "log_tail": "$ /home/dsai-st125286p/envs/sraf/bin/python -m venv /tmp/15856/study027/venv\n\n$ /tmp/15856/study027/venv/bin/pip install --upgrade pip setuptools wheel\nRequirement already satisfied: pip in ./venv/lib/python3.12/site-packages (25.0.1)\nCollecting pip\n  Using cached pip-26.1.2-py3-none-any.whl.metadata (4.6 kB)\nCollecting setuptools\n  Using cached setuptools-82.0.1-py3-none-any.whl.metadata (6.5 kB)\nCollecting wheel\n  Using cached wheel-0.47.0-py3-none-any.whl.metadata (2.3 kB)\nCollecting packaging>=24.0 (from wheel)\n  Using cached packaging-26.2-py3-none-any.whl.metadata (3.5 kB)\nUsing cached pip-26.1.2-py3-none-any.whl (1.8 MB)\nUsing cached setuptools-82.0.1-py3-none-any.whl (1.0 MB)\nUsing cached wheel-0.47.0-py3-none-any.whl (32 kB)\nUsing cached packaging-26.2-py3-none-any.whl (100 kB)\nInstalling collected packages: setuptools, pip, packaging, wheel\n  Attempting uninstall: pip\n    Found existing installation: pip 25.0.1\n    Uninstalling pip-25.0.1:\n      Successfully uninstalled pip-25.0.1\nSuccessfully installed packaging-26.2 pip-26.1.2 setuptools-82.0.1 wheel-0.47.0\n\n$ /tmp/15856/study027/venv/bin/pip install --dry-run --ignore-installed -r /tmp/15856/study027/study027/requirements.txt\nrted\n  Installing build dependencies: finished with status 'done'\n  Getting requirements to build wheel: started\n  Getting requirements to build wheel: finished with status 'done'\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nCollecting Babel==2.10.1 (from -r /tmp/15856/study027/study027/requirements.txt (line 12))\n  Downloading Babel-2.10.1-py3-none-any.whl.metadata (1.3 kB)\nCollecting backcall==0.2.0 (from -r /tmp/15856/study027/study027/requirements.txt (line 13))\n  Downloading backcall-0.2.0-py2.py3-none-any.whl.metadata (2.0 kB)\nCollecting beautifulsoup4==4.11.1 (from -r /tmp/15856/study027/study027/requirements.txt (line 14))\n  Downloading beautifulsoup4-4.11.1-py3-none-any.whl.metadata (3.5 kB)\nCollecting bleach==5.0.0 (from -r /tmp/15856/study027/study027/requirements.txt (line 15))\n  Downloading bleach-5.0.0-py3-none-any.whl.metadata (26 kB)\nWARNING: Ignoring version 5.0.0 of bleach since it has invalid metadata:\nRequested bleach==5.0.0 from https://files.pythonhosted.org/packages/35/8b/bad37525e7ef0669f013059affb3bbcd9311a24d63eda96723339ee0aab7/bleach-5.0.0-py3-none-any.whl (from -r /tmp/15856/study027/study027/requirements.txt (line 15)) has invalid metadata: Expected matching RIGHT_PARENTHESIS for LEFT_PARENTHESIS, after version specifier\n    tinycss2 (>=1.1.0<1.2) ; extra == 'css'\n             ~~~~~~~~^\nPlease use pip<24.1 if you need to use this version.\nERROR: Could not find a version that satisfies the requirement bleach==5.0.0 (from versions: 0.2.1, 0.2.2, 0.3, 0.3.1, 0.3.3, 0.3.4, 0.5.0, 0.5.1, 1.0.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.1.0, 1.1.1, 1.1.2, 1.1.3, 1.1.4, 1.1.5, 1.2, 1.2.1, 1.2.2, 1.4, 1.4.1, 1.4.2, 1.4.3, 1.5.0, 2.0.0, 2.1, 2.1.1, 2.1.2, 2.1.3, 2.1.4, 3.0.0, 3.0.1, 3.0.2, 3.1.0, 3.1.1, 3.1.2, 3.1.3, 3.1.4, 3.1.5, 3.2.0, 3.2.1, 3.2.2, 3.2.3, 3.3.0, 3.3.1, 4.0.0, 4.1.0, 5.0.0, 5.0.1, 6.0.0, 6.1.0, 6.2.0, 6.3.0, 6.4.0)\nERROR: No matching distribution found for bleach==5.0.0\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 27.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 20.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 9.9
+}

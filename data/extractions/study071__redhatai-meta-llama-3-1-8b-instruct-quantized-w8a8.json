@@ -1,0 +1,247 @@
+{
+  "study_id": "study071",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study071/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:42:18.119716+00:00",
+  "counts": {
+    "dependencies": 12,
+    "random_seeds": 1,
+    "hyperparameters": 5,
+    "datasets": 5,
+    "methods": 16,
+    "evaluation_results": 12
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "CLIP",
+        "version": "[7]"
+      },
+      {
+        "name": "Random Template",
+        "version": null
+      },
+      {
+        "name": "Aesthetics",
+        "version": "[14]"
+      },
+      {
+        "name": "Stable Diffusion XL",
+        "version": "Alpha variant"
+      },
+      {
+        "name": "Stable Diffusion 1.5",
+        "version": "1.5"
+      },
+      {
+        "name": "Stable Diffusion 2.1",
+        "version": "2.1"
+      },
+      {
+        "name": "CLIP-H",
+        "version": null
+      },
+      {
+        "name": "Stable Diffusion",
+        "version": "2.1"
+      },
+      {
+        "name": "Dreamlike Photoreal",
+        "version": "2.0"
+      },
+      {
+        "name": "ImageReward",
+        "version": "ImageReward [18]"
+      },
+      {
+        "name": "HPS",
+        "version": "HPS [17]"
+      },
+      {
+        "name": "PickScore",
+        "version": "PickScore (Ours)"
+      }
+    ],
+    "random_seeds": [
+      8
+    ],
+    "hardware": {
+      "gpu_model": "A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "classifier-free guidance scale",
+        "value": "9"
+      },
+      {
+        "name": "learning rate",
+        "value": "3e-6"
+      },
+      {
+        "name": "batch size",
+        "value": "128"
+      },
+      {
+        "name": "guidance scale",
+        "value": "9"
+      },
+      {
+        "name": "Tie Threshold",
+        "value": "0.5, 0.55, 0.6, 0.65, 0.7"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CLIP-H",
+        "version": null
+      },
+      {
+        "name": "aesthetic scorer",
+        "version": null
+      },
+      {
+        "name": "PickScore",
+        "version": null
+      },
+      {
+        "name": "Pick-a-Pic",
+        "version": null
+      },
+      {
+        "name": "Pick-a-Pic\u2019s dataset",
+        "version": "v1"
+      }
+    ],
+    "methods": [
+      {
+        "name": "PickScore",
+        "description": "null"
+      },
+      {
+        "name": "VanillaPickScore",
+        "description": "null"
+      },
+      {
+        "name": "CLIP-H",
+        "description": "null"
+      },
+      {
+        "name": "Random Template",
+        "description": "null"
+      },
+      {
+        "name": "Aesthetics",
+        "description": "null"
+      },
+      {
+        "name": "Vanilla text-to-image model",
+        "description": "null"
+      },
+      {
+        "name": "aesthetic scorer",
+        "description": "scores images based on aesthetics"
+      },
+      {
+        "name": "Stable Diffusion XL",
+        "description": "classifier-free guidance scale comparison"
+      },
+      {
+        "name": "Stable Diffusion XL (Alpha)",
+        "description": "classifier-free guidance scale"
+      },
+      {
+        "name": "Dreamlike Photoreal 2.0",
+        "description": null
+      },
+      {
+        "name": "Stable Diffusion 2.1",
+        "description": null
+      },
+      {
+        "name": "KL-divergence",
+        "description": "minimizing the KL-divergence between the preference and the softmax-normalized scores of y1 and y2"
+      },
+      {
+        "name": "Random",
+        "description": "random classifier"
+      },
+      {
+        "name": "Human Expert",
+        "description": "human experts"
+      },
+      {
+        "name": "ImageReward",
+        "description": "model from concurrent work"
+      },
+      {
+        "name": "HPS",
+        "description": "model from concurrent work"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Win Rate",
+        "value": "71.4",
+        "split": null
+      },
+      {
+        "metric": "Percentage of instances",
+        "value": "68.5",
+        "split": null
+      },
+      {
+        "metric": "aesthetic score",
+        "value": "higher",
+        "split": null
+      },
+      {
+        "metric": "CLIP-H text-alignment score",
+        "value": "higher",
+        "split": null
+      },
+      {
+        "metric": "win ratio",
+        "value": "percentage",
+        "split": null
+      },
+      {
+        "metric": "tie ratio",
+        "value": "ratio",
+        "split": null
+      },
+      {
+        "metric": "lose ratio",
+        "value": "ratio",
+        "split": null
+      },
+      {
+        "metric": "Win/Tie/Lose Ratio",
+        "value": "53.5% 35.2%11.2%",
+        "split": null
+      },
+      {
+        "metric": "Preference distribution",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "user preferences",
+        "value": "Dreamlike Photoreal 2.0",
+        "split": null
+      },
+      {
+        "metric": "Accuracy",
+        "value": "56.8",
+        "split": "validation set"
+      },
+      {
+        "metric": "Accuracy",
+        "value": "56.8",
+        "split": "test set"
+      }
+    ]
+  }
+}

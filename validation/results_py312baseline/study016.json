@@ -1,0 +1,141 @@
+{
+  "study_id": "study016",
+  "repo_url": "https://github.com/avalon-benchmark/avalon",
+  "started": "2026-06-09T15:21:31.859387+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "docker/Dockerfile",
+      "pip": "avalon/server/requirements.txt",
+      "setup": "pyproject.toml"
+    },
+    "depth_note": "subdir",
+    "n_found": 6,
+    "all": [
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "pyproject.toml",
+        "depth": 0
+      },
+      {
+        "type": "docker",
+        "rel_path": "docker/Dockerfile",
+        "depth": 1
+      },
+      {
+        "type": "docker",
+        "rel_path": "docker_torchbeast/Dockerfile",
+        "depth": 1
+      },
+      {
+        "type": "pip",
+        "rel_path": "avalon/server/requirements.txt",
+        "depth": 2
+      },
+      {
+        "type": "docker",
+        "rel_path": "avalon/contest/docker/Dockerfile",
+        "depth": 3
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/avalon-benchmark/avalon",
+    "commit_hash": "1c8f9fecb36e7169bf7c1cffc289f9fa37a5280e",
+    "software_license": "GPL-3.0"
+  },
+  "lift": {
+    "lifted": {
+      "docker": "docker/Dockerfile",
+      "pip": "avalon/server/requirements.txt"
+    },
+    "triples": 28,
+    "n_sources": 3
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 6.3,
+    "log_tail": "quirements.txt (line 3))\n  Downloading sentry_sdk-1.5.12-py2.py3-none-any.whl.metadata (7.7 kB)\nCollecting Werkzeug>=2.0 (from Flask==2.1.2->-r /tmp/15856/study016/study016/avalon/server/requirements.txt (line 2))\n  Using cached werkzeug-3.1.8-py3-none-any.whl.metadata (4.0 kB)\nCollecting Jinja2>=3.0 (from Flask==2.1.2->-r /tmp/15856/study016/study016/avalon/server/requirements.txt (line 2))\n  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)\nCollecting itsdangerous>=2.0 (from Flask==2.1.2->-r /tmp/15856/study016/study016/avalon/server/requirements.txt (line 2))\n  Using cached itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)\nCollecting click>=8.0 (from Flask==2.1.2->-r /tmp/15856/study016/study016/avalon/server/requirements.txt (line 2))\n  Using cached click-8.4.1-py3-none-any.whl.metadata (2.6 kB)\nCollecting urllib3>=1.10.0 (from sentry-sdk==1.5.12->sentry-sdk[flask]==1.5.12->-r /tmp/15856/study016/study016/avalon/server/requirements.txt (line 3))\n  Using cached urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)\nCollecting certifi (from sentry-sdk==1.5.12->sentry-sdk[flask]==1.5.12->-r /tmp/15856/study016/study016/avalon/server/requirements.txt (line 3))\n  Using cached certifi-2026.5.20-py3-none-any.whl.metadata (2.5 kB)\nCollecting blinker>=1.1 (from sentry-sdk[flask]==1.5.12->-r /tmp/15856/study016/study016/avalon/server/requirements.txt (line 3))\n  Using cached blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)\nCollecting MarkupSafe>=2.0 (from Jinja2>=3.0->Flask==2.1.2->-r /tmp/15856/study016/study016/avalon/server/requirements.txt (line 2))\n  Using cached markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)\nWould install Flask-2.1.2 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.8 attrs-21.4.0 blinker-1.9.0 certifi-2026.5.20 click-8.4.1 itsdangerous-2.2.0 sentry-sdk-1.5.12 urllib3-2.7.0\n\n$ /tmp/15856/study016/venv/bin/pip install -r /tmp/15856/study016/study016/avalon/server/requirements.txt\nmp/15856/study016/study016/avalon/server/requirements.txt (line 2))\n  Using cached click-8.4.1-py3-none-any.whl.metadata (2.6 kB)\nCollecting urllib3>=1.10.0 (from sentry-sdk==1.5.12->sentry-sdk[flask]==1.5.12->-r /tmp/15856/study016/study016/avalon/server/requirements.txt (line 3))\n  Using cached urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)\nCollecting certifi (from sentry-sdk==1.5.12->sentry-sdk[flask]==1.5.12->-r /tmp/15856/study016/study016/avalon/server/requirements.txt (line 3))\n  Using cached certifi-2026.5.20-py3-none-any.whl.metadata (2.5 kB)\nCollecting blinker>=1.1 (from sentry-sdk[flask]==1.5.12->-r /tmp/15856/study016/study016/avalon/server/requirements.txt (line 3))\n  Using cached blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)\nCollecting MarkupSafe>=2.0 (from Jinja2>=3.0->Flask==2.1.2->-r /tmp/15856/study016/study016/avalon/server/requirements.txt (line 2))\n  Using cached markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)\nDownloading attrs-21.4.0-py2.py3-none-any.whl (60 kB)\nDownloading Flask-2.1.2-py3-none-any.whl (95 kB)\nDownloading sentry_sdk-1.5.12-py2.py3-none-any.whl (145 kB)\nUsing cached blinker-1.9.0-py3-none-any.whl (8.5 kB)\nUsing cached click-8.4.1-py3-none-any.whl (116 kB)\nUsing cached itsdangerous-2.2.0-py3-none-any.whl (16 kB)\nUsing cached jinja2-3.1.6-py3-none-any.whl (134 kB)\nUsing cached markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)\nUsing cached urllib3-2.7.0-py3-none-any.whl (131 kB)\nUsing cached werkzeug-3.1.8-py3-none-any.whl (226 kB)\nUsing cached certifi-2026.5.20-py3-none-any.whl (134 kB)\nInstalling collected packages: urllib3, MarkupSafe, itsdangerous, click, certifi, blinker, attrs, Werkzeug, sentry-sdk, Jinja2, Flask\n\nSuccessfully installed Flask-2.1.2 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.8 attrs-21.4.0 blinker-1.9.0 certifi-2026.5.20 click-8.4.1 itsdangerous-2.2.0 sentry-sdk-1.5.12 urllib3-2.7.0\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 27.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 20.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 9.0
+}

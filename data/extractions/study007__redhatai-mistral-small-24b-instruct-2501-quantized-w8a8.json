@@ -1,0 +1,122 @@
+{
+  "study_id": "study007",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study007/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:08:04.067105+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 14,
+    "datasets": 0,
+    "methods": 5,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "tile coding software",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "n",
+        "value": "\u221e"
+      },
+      {
+        "name": "\u03b3",
+        "value": "0.99"
+      },
+      {
+        "name": "i(s)",
+        "value": "1"
+      },
+      {
+        "name": "\u03c4 (target policy)",
+        "value": "0.01"
+      },
+      {
+        "name": "\u03f5 (behavior policy)",
+        "value": "0.95"
+      },
+      {
+        "name": "\u03c4 (behavior policy)",
+        "value": "1"
+      },
+      {
+        "name": "\u03b1",
+        "value": "tuned from \u039b \u03b1"
+      },
+      {
+        "name": "temperature",
+        "value": "\u03c4"
+      },
+      {
+        "name": "probability",
+        "value": "0.9"
+      },
+      {
+        "name": "max_steps",
+        "value": "1000"
+      },
+      {
+        "name": "discount factor",
+        "value": "0.99"
+      },
+      {
+        "name": "behavior policy \u00b5(solid|s)",
+        "value": "1/7"
+      },
+      {
+        "name": "behavior policy \u00b5(dashed|s)",
+        "value": "6/7"
+      },
+      {
+        "name": "target policy \u03c0(dashed|s)",
+        "value": "0 to 0.1"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "ETD(0)",
+        "description": "Extension of ETD(0) to the control setting"
+      },
+      {
+        "name": "tile coding",
+        "description": "maps the four-dimensional observation (velocity, acceleration, angular velocity, angular acceleration) to a binary vector in R1024"
+      },
+      {
+        "name": "linear function approximation",
+        "description": null
+      },
+      {
+        "name": "truncated emphatic TD methods",
+        "description": "proposed methods focusing on the effect of n"
+      },
+      {
+        "name": "SARSA",
+        "description": "off-policy expected SARSA without followon trace"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "undiscounted episodic return",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "evaluation return",
+        "value": "maximizing",
+        "split": null
+      }
+    ]
+  }
+}

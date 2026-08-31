@@ -1,0 +1,197 @@
+{
+  "study_id": "study042",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study042/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:29:11.594552+00:00",
+  "counts": {
+    "dependencies": 12,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 4,
+    "methods": 12,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PBE",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "Gumbel-Softmax",
+        "version": null
+      },
+      {
+        "name": "Conv_1",
+        "version": null
+      },
+      {
+        "name": "Conv_2",
+        "version": null
+      },
+      {
+        "name": "PF-AFNPerson (Garment)FS-VTON",
+        "version": null
+      },
+      {
+        "name": "HR-VTON",
+        "version": null
+      },
+      {
+        "name": "SDAFN",
+        "version": null
+      },
+      {
+        "name": "GP-VTON",
+        "version": null
+      },
+      {
+        "name": "LADI - VTON",
+        "version": null
+      },
+      {
+        "name": "DCI-VTON",
+        "version": null
+      },
+      {
+        "name": "SD-VTON",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "K",
+        "value": "predefined number of groups"
+      },
+      {
+        "name": "number of groups",
+        "value": "K"
+      },
+      {
+        "name": "size",
+        "value": "3\u00d73"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "DressCode",
+        "version": "24"
+      },
+      {
+        "name": "millions of images",
+        "version": null
+      },
+      {
+        "name": "garment features",
+        "version": null
+      },
+      {
+        "name": "VITON-HD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DSDM",
+        "description": "string"
+      },
+      {
+        "name": "DITP",
+        "description": "string"
+      },
+      {
+        "name": "DCI-VTON",
+        "description": "exhibits texture squeezing and stretching phenomena"
+      },
+      {
+        "name": "GP-VTON",
+        "description": "mitigates texture squeezing using dynamic gradient truncation but still experiences stretching in the sleeve area"
+      },
+      {
+        "name": "D4-VTON 13",
+        "description": "using DSDM while removing the denoising path"
+      },
+      {
+        "name": "our full model",
+        "description": "our full model"
+      },
+      {
+        "name": "Differential Diffusion based VTON",
+        "description": "null"
+      },
+      {
+        "name": "Dynamic Semantics Selector",
+        "description": "uses self-similarity of garment features to un-supervisedly generate selection masks indicating each channel\u2019s semantic group"
+      },
+      {
+        "name": "Group Warping Block",
+        "description": "generating flows and attention maps for different channel groups"
+      },
+      {
+        "name": "Disentangled Warping Operation",
+        "description": "uses the selection mask and predicted flows and attention maps to deform garment features"
+      },
+      {
+        "name": "Gumbel-Softmax",
+        "description": "differentiable method ensuring exclusive assignment"
+      },
+      {
+        "name": "vanilla",
+        "description": "with fixed grouping"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance",
+        "value": "string",
+        "split": "paired"
+      },
+      {
+        "metric": "performance",
+        "value": "string",
+        "split": "unpaired"
+      },
+      {
+        "metric": "improvement",
+        "value": "substantial",
+        "split": null
+      },
+      {
+        "metric": "texture squeezing",
+        "value": "exhibits",
+        "split": null
+      },
+      {
+        "metric": "stretching",
+        "value": "experiences",
+        "split": "sleeve area"
+      },
+      {
+        "metric": "metrics evaluated on warped garment items",
+        "value": "\u2020",
+        "split": "train"
+      },
+      {
+        "metric": "metrics",
+        "value": "\u22c6",
+        "split": "train"
+      },
+      {
+        "metric": "metrics",
+        "value": "\u22c6",
+        "split": "test"
+      }
+    ]
+  }
+}

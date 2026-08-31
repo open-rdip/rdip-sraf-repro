@@ -1,0 +1,103 @@
+{
+  "study_id": "study048",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study048/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:45:09.674663+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 3,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "reduced temperature",
+        "value": "0.8"
+      },
+      {
+        "name": "RMS gradient tolerance",
+        "value": "0.01"
+      },
+      {
+        "name": "Energy change tolerance",
+        "value": "0.1"
+      },
+      {
+        "name": "RMS force tolerance",
+        "value": "10\u22124"
+      },
+      {
+        "name": "Energy difference tolerance",
+        "value": "10\u22129"
+      },
+      {
+        "name": "\u03b1",
+        "value": "0.40 to 0.5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Cambridge Cluster Database",
+        "version": null
+      },
+      {
+        "name": "Lennard-Jones clusters",
+        "version": null
+      },
+      {
+        "name": "Morse clusters",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Marks decahedron",
+        "description": "algorithm to find the global minima based on the Marks decahedron around LJ 75and LJ 102"
+      },
+      {
+        "name": "master equation approach",
+        "description": "for the dynamics, has provided good evidence that such a surface should have a large potential energy gradient and the lowest possible transition state energies or rearrangement barriers"
+      },
+      {
+        "name": "Monte Carlo",
+        "description": "unbiased algorithm"
+      },
+      {
+        "name": "conjugate gradient algorithm",
+        "description": "Polak-Ribiere variant used for energy minimizations"
+      },
+      {
+        "name": "Monte Carlo simulation",
+        "description": "canonical Monte Carlo simulation at a constant reduced temperature"
+      },
+      {
+        "name": "Conjugate gradient search",
+        "description": "Optimization method used with specific tolerances"
+      },
+      {
+        "name": "Seeding",
+        "description": "Technique employed in calculations"
+      },
+      {
+        "name": "Freezing",
+        "description": "Technique employed in calculations"
+      },
+      {
+        "name": "Angular moves",
+        "description": "Technique employed for atoms with high pair energy"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

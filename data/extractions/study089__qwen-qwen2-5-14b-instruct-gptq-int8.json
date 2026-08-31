@@ -1,0 +1,121 @@
+{
+  "study_id": "study089",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study089/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:32:53.676423+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 3,
+    "methods": 12,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "CASME II",
+        "version": null
+      },
+      {
+        "name": "SAMM",
+        "version": null
+      },
+      {
+        "name": "SMIC",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "MOL",
+        "description": "Method with optical flow estimation and facial landmark detection"
+      },
+      {
+        "name": "MOL w/o OFE",
+        "description": "Method without optical flow estimation"
+      },
+      {
+        "name": "MOL w/o FLD",
+        "description": "Method without facial landmark detection"
+      },
+      {
+        "name": "MOL w/o OFE&FLD",
+        "description": "Method without both optical flow estimation and facial landmark detection"
+      },
+      {
+        "name": "MOL w/o F5C",
+        "description": "MOL without F5C block"
+      },
+      {
+        "name": "MOL w/o FCC",
+        "description": "MOL without FCC component in F5C block"
+      },
+      {
+        "name": "MOL w/o CCC",
+        "description": "MOL without CCC component in F5C block"
+      },
+      {
+        "name": "MOL w/o MER&FLD",
+        "description": "Method without MER and FLD components"
+      },
+      {
+        "name": "MOL w/o MER",
+        "description": "Method without MER component"
+      },
+      {
+        "name": "MOL w/o MER&OFE",
+        "description": "baseline method which only achieves the facial landmark detection task without the MER and optical flow estimation modules"
+      },
+      {
+        "name": "TCDCN",
+        "description": "popular facial landmark detection method"
+      },
+      {
+        "name": "HRNetV2",
+        "description": "popular facial landmark detection method"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Acc",
+        "value": "79.23",
+        "split": null
+      },
+      {
+        "metric": "WF1",
+        "value": "75.85",
+        "split": null
+      },
+      {
+        "metric": "EPE",
+        "value": "1.145",
+        "split": null
+      },
+      {
+        "metric": "WF1",
+        "value": "highest",
+        "split": "test"
+      },
+      {
+        "metric": "inter-ocular distance normalized mean error",
+        "value": null,
+        "split": "CASME II"
+      },
+      {
+        "metric": "failure rate",
+        "value": null,
+        "split": "CASME II"
+      }
+    ]
+  }
+}

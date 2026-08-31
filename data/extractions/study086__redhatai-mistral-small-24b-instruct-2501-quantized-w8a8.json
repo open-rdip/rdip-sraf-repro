@@ -1,0 +1,125 @@
+{
+  "study_id": "study086",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study086/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:15:44.143999+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 2,
+    "methods": 9,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Llama-2-7b",
+        "version": null
+      },
+      {
+        "name": "Mistral-7B-v0.1",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A10G",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "attack_steps",
+        "value": "256"
+      },
+      {
+        "name": "batch_size",
+        "value": "512"
+      },
+      {
+        "name": "learning rate",
+        "value": "lower"
+      },
+      {
+        "name": "learning rate scheduler",
+        "value": "linear"
+      },
+      {
+        "name": "learning_rate",
+        "value": "2e-4"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "240,000 samples",
+        "version": null
+      },
+      {
+        "name": "D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Universal Prompt Optimization",
+        "description": "feature of GCG"
+      },
+      {
+        "name": "GCG",
+        "description": "method for generating queries"
+      },
+      {
+        "name": "ARCA",
+        "description": "method for generating queries"
+      },
+      {
+        "name": "ProFLingo",
+        "description": "the first black-box fingerprinting-based copyright protection scheme for large language models"
+      },
+      {
+        "name": "TRR evaluation",
+        "description": "checking whether the keyword was present in the first sentence (concluding with a period)"
+      },
+      {
+        "name": "Full Fine-tuning",
+        "description": ""
+      },
+      {
+        "name": "PEFT",
+        "description": ""
+      },
+      {
+        "name": "RLHF",
+        "description": ""
+      },
+      {
+        "name": "RLAIF",
+        "description": ""
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "TRR",
+        "value": "0.24",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours)",
+        "value": "0.98",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG)",
+        "value": "0.96",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA)",
+        "value": "0.94",
+        "split": null
+      }
+    ]
+  }
+}

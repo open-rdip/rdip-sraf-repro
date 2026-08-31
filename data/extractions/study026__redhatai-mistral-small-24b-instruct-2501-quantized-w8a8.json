@@ -1,0 +1,86 @@
+{
+  "study_id": "study026",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study026/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:24:04.361418+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 3,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "VOC",
+        "version": null
+      },
+      {
+        "name": "BDD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "CSE-Autoloss",
+        "description": "Search algorithm that speeds up the search process by 20x due to effective convergence-simulation modules"
+      },
+      {
+        "name": "vanilla evolution search",
+        "description": "evaluates around 1000 loss candidates in each generation"
+      },
+      {
+        "name": "Faster R-CNN",
+        "description": "A method for object detection"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "FL + DIoU",
+        "value": "38.7",
+        "split": null
+      },
+      {
+        "metric": "FL + CIoU",
+        "value": "38.8",
+        "split": null
+      },
+      {
+        "metric": "GHM",
+        "value": "38.6",
+        "split": null
+      },
+      {
+        "metric": "FL + CSE-Autoloss-B reg",
+        "value": "39.1",
+        "split": null
+      },
+      {
+        "metric": "CSE-Autoloss-B cls+ GIoU",
+        "value": "39.4",
+        "split": null
+      },
+      {
+        "metric": "CSE-Autoloss-B",
+        "value": "39.6",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": "37.8",
+        "split": null
+      }
+    ]
+  }
+}

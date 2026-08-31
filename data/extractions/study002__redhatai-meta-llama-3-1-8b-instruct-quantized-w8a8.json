@@ -1,0 +1,213 @@
+{
+  "study_id": "study002",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study002/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:08:41.337664+00:00",
+  "counts": {
+    "dependencies": 14,
+    "random_seeds": 2,
+    "hyperparameters": 8,
+    "datasets": 6,
+    "methods": 10,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Kronecker Decomposition",
+        "version": null
+      },
+      {
+        "name": "ADAM",
+        "version": null
+      },
+      {
+        "name": "batch normalization",
+        "version": null
+      },
+      {
+        "name": "grid search",
+        "version": null
+      },
+      {
+        "name": "label smoothing",
+        "version": null
+      },
+      {
+        "name": "label relaxation",
+        "version": null
+      },
+      {
+        "name": "cross entropy loss function",
+        "version": null
+      },
+      {
+        "name": "Lacroix et al. 2018",
+        "version": null
+      },
+      {
+        "name": "Ruffinelli et al. 2019",
+        "version": null
+      },
+      {
+        "name": "Mohamed et al. 2019",
+        "version": null
+      },
+      {
+        "name": "Io\ufb00e and Szegedy 2015",
+        "version": null
+      },
+      {
+        "name": "Kingma and Ba 2014",
+        "version": null
+      },
+      {
+        "name": "PyTorch Lightning",
+        "version": null
+      },
+      {
+        "name": "DASK",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      1000,
+      1
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "embedding vector size",
+        "value": "large parameter sweep"
+      },
+      {
+        "name": "number of epochs",
+        "value": "1000"
+      },
+      {
+        "name": "label smoothing",
+        "value": ".1,.2"
+      },
+      {
+        "name": "label relaxation",
+        "value": ".1,.2"
+      },
+      {
+        "name": "learning rate",
+        "value": ".01"
+      },
+      {
+        "name": "batch size",
+        "value": "1024"
+      },
+      {
+        "name": "embedding vector sizes",
+        "value": "{4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400}"
+      },
+      {
+        "name": "grid search values",
+        "value": "{4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400}"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "KINSHIP",
+        "version": null
+      },
+      {
+        "name": "UMLS",
+        "version": null
+      },
+      {
+        "name": "WN18RR",
+        "version": null
+      },
+      {
+        "name": "FB15K-237",
+        "version": null
+      },
+      {
+        "name": "YAGO3-10",
+        "version": null
+      },
+      {
+        "name": "5 EXPERIMENTAL SETUP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "grid search",
+        "description": null
+      },
+      {
+        "name": "Kronecker Decomposition",
+        "description": null
+      },
+      {
+        "name": "1vsAll training strategy",
+        "description": "see Section 3.2"
+      },
+      {
+        "name": "KD-DistMult",
+        "description": "see Equation 9"
+      },
+      {
+        "name": "KD on entity embeddings",
+        "description": "see Section 4.2 and 4.3"
+      },
+      {
+        "name": "KD on relation embeddings",
+        "description": "see Section 4.2 and 4.3"
+      },
+      {
+        "name": "KD on tail entities embeddings",
+        "description": "see Section 3.2"
+      },
+      {
+        "name": "KD on decompose linear transformation weight matrices",
+        "description": "see Section 4.2 and 4.3"
+      },
+      {
+        "name": "DistMult",
+        "description": "defined in Equation 6"
+      },
+      {
+        "name": "KD variation",
+        "description": "defined in Equation 7"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "MRR",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "H@N",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "H@1",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "H@3",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "H@10",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

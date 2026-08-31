@@ -1,0 +1,24 @@
+{
+  "run_command": null,
+  "setup_steps": [
+    "pip install -r requirements.txt",
+    "docker build --build-arg UID=$(id -u) -t deep_rl:v1.5 ."
+  ],
+  "requires_dataset": [
+    {
+      "name": "BreakoutNoFrameskip-v4",
+      "download": "null"
+    }
+  ],
+  "requires_checkpoint": null,
+  "produces_metric": [
+    {
+      "metric": "BreakoutNoFrameskip-v4",
+      "dataset": "BreakoutNoFrameskip-v4"
+    }
+  ],
+  "entry_point": null,
+  "confidence": "low",
+  "study_id": "study007",
+  "repo_url": "https://github.com/ShangtongZhang/DeepRL"
+}

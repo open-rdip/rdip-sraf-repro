@@ -1,0 +1,132 @@
+{
+  "study_id": "study047",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study047/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:31:27.538114+00:00",
+  "counts": {
+    "dependencies": 4,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 3,
+    "methods": 8,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "uPIT",
+        "version": null
+      },
+      {
+        "name": "Adam",
+        "version": null
+      },
+      {
+        "name": "BLSTM",
+        "version": null
+      },
+      {
+        "name": "TCN",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "L2-norm",
+        "value": "5"
+      },
+      {
+        "name": "learning rate",
+        "value": "1e\u22123"
+      },
+      {
+        "name": "decay rate",
+        "value": "0.98"
+      },
+      {
+        "name": "number of filters",
+        "value": "64"
+      },
+      {
+        "name": "hidden units",
+        "value": "128"
+      },
+      {
+        "name": "chunk size",
+        "value": "K\u2248\u221a2L"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Microsoft\u2019s internal gender-balanced clean speech collection",
+        "version": null
+      },
+      {
+        "name": "benchmarking dataset",
+        "version": null
+      },
+      {
+        "name": "two-speaker speech separation and recognition dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "gradient clipping",
+        "description": "null"
+      },
+      {
+        "name": "uPIT",
+        "description": "null"
+      },
+      {
+        "name": "SI-SNR",
+        "description": "null"
+      },
+      {
+        "name": "SDRi",
+        "description": "null"
+      },
+      {
+        "name": "SI-SNRi",
+        "description": "null"
+      },
+      {
+        "name": "WER",
+        "description": "null"
+      },
+      {
+        "name": "DPRNN",
+        "description": "deep DPRNN with BLSTM as intra- and inter- chunk RNNs"
+      },
+      {
+        "name": "TCN",
+        "description": "optimally con\ufb01gured TCN"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "SDRi",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "SI-SNRi",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "WER",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}
