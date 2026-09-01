@@ -53,36 +53,23 @@ def get_available_studies() -> list[str]:
 
 
 def radar_chart(dimension_scores: dict) -> go.Figure:
-    """Render a radar chart for FAIR-R dimension scores."""
-    dims   = list(dimension_scores.keys())
-    scores = [dimension_scores[d]["score"] for d in dims]
-    maxes  = [dimension_scores[d]["max"] for d in dims]
-    pcts   = [dimension_scores[d]["percent"] for d in dims]
+    """Radar of FAIR-R dimension completeness as percent (comparable axes)."""
+    dims = list(dimension_scores.keys())
+    pcts = [dimension_scores[d]["percent"] for d in dims]
 
     fig = go.Figure()
     fig.add_trace(go.Scatterpolar(
-        r=scores + [scores[0]],
+        r=pcts + [pcts[0]],
         theta=dims + [dims[0]],
         fill="toself",
-        fillcolor="rgba(99, 110, 250, 0.2)",
-        line=dict(color="rgb(99, 110, 250)", width=2),
-        name="Score",
-        hovertemplate="<b>%{theta}</b><br>Score: %{r}<extra></extra>",
-    ))
-    fig.add_trace(go.Scatterpolar(
-        r=maxes + [maxes[0]],
-        theta=dims + [dims[0]],
-        fill="toself",
-        fillcolor="rgba(200, 200, 200, 0.1)",
-        line=dict(color="rgba(150,150,150,0.5)", width=1, dash="dot"),
-        name="Maximum",
-        hovertemplate="<b>%{theta}</b><br>Max: %{r}<extra></extra>",
+        fillcolor="rgba(53, 97, 125, 0.18)",
+        line=dict(color="rgb(53, 97, 125)", width=2),
+        name="% complete",
+        hovertemplate="<b>%{theta}</b><br>%{r:.0f}%<extra></extra>",
     ))
     fig.update_layout(
-        polar=dict(
-            radialaxis=dict(visible=True, range=[0, 30]),
-        ),
-        showlegend=True,
+        polar=dict(radialaxis=dict(visible=True, range=[0, 100])),
+        showlegend=False,
         height=400,
         margin=dict(t=40, b=40),
     )
@@ -126,9 +113,14 @@ def score_gauge(score: float) -> go.Figure:
     return fig
 
 
-def severity_badge(severity: str) -> str:
-    colors = {"critical": "🔴", "warning": "🟡", "info": "🔵"}
-    return colors.get(severity, "⚪")
+def priority_badge(priority: str) -> str:
+    """RDA priority → colour dot (essential outranks important outranks useful)."""
+    return {"essential": "🔴", "important": "🟡", "useful": "🔵"}.get(priority, "⚪")
+
+
+def level_badge(level: str) -> str:
+    """Graded maturity level → icon."""
+    return {"full": "✅", "partial": "🟡", "absent": "❌"}.get(level, "⚪")
 
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
@@ -226,31 +218,37 @@ if page == "FAIR-R Scorer":
                 expanded=(dim["percent"] < 100)
             ):
                 for c in dim["criteria"]:
-                    icon = "✅" if c["met"] else ("❌" if c["severity"] == "critical" else "⚠️")
+                    level = c.get("level", "absent")
+                    prio  = c.get("priority", "—")
                     st.markdown(
-                        f"{icon} **{c['label']}** "
-                        f"(+{c['points']}/{c['max']} pts)"
+                        f"{level_badge(level)} **{c['label']}** "
+                        f"&nbsp; `{level}` &nbsp; {priority_badge(prio)} _{prio}_ "
+                        f"&nbsp; (+{c['points']}/{c['max']} pts)"
                     )
-                    if c.get("rda_indicator"):
-                        st.caption(f"RDA Maturity Indicator: {c['rda_indicator']}")
-                    if not c["met"] and c["fix"]:
+                    if c.get("standard"):
+                        st.caption(f"Maps to: {c['standard']}")
+                    if level != "full" and c.get("fix"):
                         st.info(f"💡 {c['fix']}")
 
         # ── Recommendations ────────────────────────────────────────────────────
         if result["recommendations"]:
             st.subheader("Actionable Recommendations")
             st.caption(
-                "Fix these to improve your FAIR-R score. "
-                "Critical items block replication; warnings reduce trust."
+                "Highest-priority gaps first (RDA Essential → Important → Useful). "
+                "Each shows the points you would recover by fixing it."
             )
-            for i, rec in enumerate(result["recommendations"], 1):
-                badge = severity_badge(rec["severity"])
+            for rec in result["recommendations"]:
+                prio  = rec.get("priority", "—")
+                pts   = rec.get("points_available", 0)
                 with st.expander(
-                    f"{badge} [{rec['dimension']}] {rec['label']}",
-                    expanded=(rec["severity"] == "critical")
+                    f"{priority_badge(prio)} [{rec['dimension']}] {rec['label']} "
+                    f"— +{pts} pts",
+                    expanded=(prio == "essential")
                 ):
-                    if rec.get("rda_indicator"):                                      # ← add
-                        st.caption(f"RDA Maturity Indicator: {rec['rda_indicator']}")
+                    st.caption(
+                        f"Currently **{rec.get('level', 'absent')}** · "
+                        f"RDA priority **{prio}**"
+                    )
                     st.markdown(f"**Recommendation:** {rec['fix']}")
 
 

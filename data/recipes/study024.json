@@ -1,0 +1,23 @@
+{
+  "run_command": "python examples/ccvm_boxqp_dl.py",
+  "setup_steps": [
+    "pip install ccvm-simulators"
+  ],
+  "requires_dataset": [
+    {
+      "name": "benchmarking_instances",
+      "download": "null"
+    }
+  ],
+  "requires_checkpoint": null,
+  "produces_metric": [
+    {
+      "metric": "best_objective_value",
+      "dataset": "test020-100-10.in"
+    }
+  ],
+  "entry_point": "examples/ccvm_boxqp_dl.py",
+  "confidence": "high",
+  "study_id": "study024",
+  "repo_url": "https://github.com/1qb-information-technologies/ccvm"
+}

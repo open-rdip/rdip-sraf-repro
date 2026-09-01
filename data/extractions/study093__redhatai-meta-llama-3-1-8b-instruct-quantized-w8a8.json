@@ -1,0 +1,128 @@
+{
+  "study_id": "study093",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study093/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:52:45.965075+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 1,
+    "hyperparameters": 5,
+    "datasets": 5,
+    "methods": 4,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ResNet50",
+        "version": "[12]"
+      },
+      {
+        "name": "PubmedBERT",
+        "version": "[11]"
+      },
+      {
+        "name": "AdamW",
+        "version": "[20]"
+      }
+    ],
+    "random_seeds": [
+      10
+    ],
+    "hardware": {
+      "gpu_model": "GeForce RTX 3090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "lr",
+        "value": "1\u00d710\u22124"
+      },
+      {
+        "name": "batch size",
+        "value": "128"
+      },
+      {
+        "name": "number of epochs",
+        "value": "100"
+      },
+      {
+        "name": "number of transformer layers",
+        "value": "4"
+      },
+      {
+        "name": "number of learnable answer and question prompt vectors",
+        "value": "10"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "MedMINIST",
+        "version": "[31]"
+      },
+      {
+        "name": "VQA-RAD",
+        "version": "[16]"
+      },
+      {
+        "name": "SLAKE",
+        "version": "[19]"
+      },
+      {
+        "name": "ROCO",
+        "version": "81K samples"
+      },
+      {
+        "name": "MIMIC-CXR",
+        "version": "377,110 samples (image-report pairs)"
+      }
+    ],
+    "methods": [
+      {
+        "name": "ResNet50",
+        "description": null
+      },
+      {
+        "name": "PubmedBERT",
+        "description": null
+      },
+      {
+        "name": "AdamW optimizer",
+        "description": null
+      },
+      {
+        "name": "PMC-CLIP",
+        "description": "adapted for VQA task"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Accuracy",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AUC",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "Recall@K(K=1,5,10)",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "Accuracy",
+        "value": "string",
+        "split": "VQA"
+      },
+      {
+        "metric": "zero-shot evaluation",
+        "value": "reported results",
+        "split": "testset"
+      }
+    ]
+  }
+}

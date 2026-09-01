@@ -1,279 +1,309 @@
 # dashboard/fair_r_scorer.py
 """
-FAIR-R Scoring Model — OB3.
+FAIR-R Scoring Model — OB3 (standards-grounded rebuild).
 
-Computes a quantitative FAIR-R score (0-100) for a study
-by querying its named graph in Oxigraph and checking
-which RDIP metadata criteria are satisfied.
+Scoring is derived from published standards rather than ad-hoc weights
+(see docs/fair_r_scoring_rubric.md):
 
-Five dimensions:
-  Findable      (max 15) — identifier + landing page
-  Accessible    (max 15) — access level + license
-  Interoperable (max 20) — method + workflow language
-  Reusable      (max 20) — software license + commit hash
-  Reproducible  (max 30) — image digest + random seed + evaluation result
+  - Within a dimension, each criterion's weight comes from its RDA FAIR Data
+    Maturity Model priority:  essential = 3, important = 2, useful = 1.
+    criterion_max = (priority / sum of priorities in the dimension) x dimension_max.
+  - Each criterion earns a GRADED level (F-UJI-style maturity), not yes/no:
+        absent = 0.0 x max,  partial (present) = 0.5 x max,  full = 1.0 x max.
+    "full" means machine-readable / standard-conformant (e.g. an SPDX licence,
+    a recognised PID scheme), "partial" means merely present.
+  - The Reproducible dimension uses explicit sub-weights (R1 0.4, R2 0.3, R3 0.3)
+    and is grounded in the ML Reproducibility Checklist + FAIR4RS.
+  - Cross-dimension weights start from the standards and are refined empirically
+    by the RQ4 regression.
 
-Each criterion is checked by a SPARQL ASK query.
-Score = sum of (criterion_weight * max_dimension_score)
+Levels are evaluated with SPARQL ASK queries against the study's named graph:
+a `present` query (level >= 1) and an optional `full` query (level 2).
 """
 
-import sys
 import os
+import sys
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from triplestore_client import sparql_query
 
-RDIP      = "https://w3id.org/rdip/"
 GRAPH_BASE = "https://w3id.org/rdip/graph"
 
+PREFIXES = (
+    "PREFIX rdip: <https://w3id.org/rdip/> "
+    "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> "
+)
+
+PRIORITY_WEIGHT = {"essential": 3, "important": 2, "useful": 1}
+LEVEL_FACTOR = {0: 0.0, 1: 0.5, 2: 1.0}
+LEVEL_NAME = {0: "absent", 1: "partial", 2: "full"}
+
+
+# -----------------------------------------------------------------------------
+# Rubric — every criterion maps to a standard and carries a priority.
+#   present : ASK that is true when the criterion is present at all (level 1)
+#   full    : ASK that is true when present AND machine-readable/standard (level 2);
+#             None means "present implies full".
+#   fraction: (Reproducible only) explicit share of the dimension max.
+# -----------------------------------------------------------------------------
 DIMENSIONS = {
     "Findable": {
         "max_score": 15,
-        "weight":    0.15,
         "criteria": [
             {
-                "label":         "Persistent identifier declared",
-                "rda_indicator": "RDA-F1-01M",
-                "property":      "rdip:identifier",
-                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}identifier> ?o }} }}",
-                "weight":        0.5,
-                "severity":      "critical",
-                "fix":           "Add rdip:identifier to your ResearchProject node. Use your paper DOI or repository URL.",
+                "label": "Persistent identifier",
+                "priority": "essential", "standard": "RDA-F1-01M / FsF-F1-02D",
+                "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:identifier ?o }} }}",
+                "full": ("ASK {{ GRAPH <{g}> {{ ?s rdip:identifier ?o FILTER("
+                         "CONTAINS(LCASE(STR(?o)),\"doi.org\") || "
+                         "CONTAINS(LCASE(STR(?o)),\"handle.net\") || "
+                         "CONTAINS(LCASE(STR(?o)),\"zenodo\") || "
+                         "CONTAINS(LCASE(STR(?o)),\"w3id.org\") || "
+                         "CONTAINS(STR(?o),\"10.\")) }} }}"),
+                "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
             },
             {
-                "label":         "Dataset landing page declared",
-                "rda_indicator": "RDA-F3-01M",
-                "property":      "rdip:datasetLandingPage",
-                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}datasetLandingPage> ?o }} }}",
-                "weight":        0.5,
-                "severity":      "warning",
-                "fix":           "Add rdip:datasetLandingPage linking to where your dataset can be accessed.",
+                "label": "Descriptive metadata",
+                "priority": "essential", "standard": "RDA-F2-01M / FsF-F2-01M",
+                "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:title ?o }} }}",
+                "full": None,
+                "fix": "Provide core descriptive metadata (title, creator, date, keywords).",
             },
-        ]
+            {
+                "label": "Landing page",
+                "priority": "essential", "standard": "RDA-F3-01M / FsF-F3-01M",
+                "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:datasetLandingPage ?o }} }}",
+                "full": None,
+                "fix": "Link a landing page where the dataset can be accessed.",
+            },
+        ],
     },
     "Accessible": {
         "max_score": 15,
-        "weight":    0.15,
         "criteria": [
             {
-                "label":         "Access level declared",
-                "rda_indicator": "RDA-A1-01M",
-                "property":      "rdip:accessLevel",
-                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}accessLevel> ?o }} }}",
-                "weight":        0.5,
-                "severity":      "warning",
-                "fix":           "Declare rdip:accessLevel (open, restricted, or embargoed).",
+                "label": "Access protocol",
+                "priority": "essential", "standard": "RDA-A1-02M / FsF-A1-02M",
+                "present": ("ASK {{ GRAPH <{g}> {{ ?s rdip:identifier ?o "
+                            "FILTER(STRSTARTS(LCASE(STR(?o)),\"http\")) }} }}"),
+                "full": None,
+                "fix": "Expose the artifact over a standard protocol (HTTP/S) via a resolvable identifier.",
             },
             {
-                "label":         "Data license declared",
-                "rda_indicator": "RDA-A1.1-01M",
-                "property":      "rdip:dataLicense",
-                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}dataLicense> ?o }} }}",
-                "weight":        0.5,
-                "severity":      "critical",
-                "fix":           "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0).",
+                "label": "Data licence",
+                "priority": "essential", "standard": "RDA-A1.1-01M / FsF-R1.1-01M",
+                "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:dataLicense ?o }} }}",
+                "full": None,
+                "fix": "Declare a machine-readable data licence (SPDX identifier).",
             },
-        ]
+            {
+                "label": "Access level",
+                "priority": "important", "standard": "RDA-A1-01M / FsF-A1-01M",
+                "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:accessLevel ?o }} }}",
+                "full": ("ASK {{ GRAPH <{g}> {{ ?s rdip:accessLevel ?o FILTER("
+                         "LCASE(STR(?o)) IN (\"open\",\"public\",\"restricted\","
+                         "\"embargoed\",\"closed\")) }} }}"),
+                "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+            },
+        ],
     },
     "Interoperable": {
         "max_score": 20,
-        "weight":    0.20,
         "criteria": [
             {
-                "label":         "Method declared",
-                "rda_indicator": "RDA-I1-01M",
-                "property":      "rdip:usedMethod",
-                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}usedMethod> ?o }} }}",
-                "weight":        0.5,
-                "severity":      "warning",
-                "fix":           "Link your ResearchActivity to an rdip:Method instance describing the algorithm used.",
+                "label": "Method declared",
+                "priority": "important", "standard": "RDA-I1-01M / FsF-I1-01M",
+                "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:usedMethod ?o }} }}",
+                "full": None,
+                "fix": "Link the activity to an rdip:Method describing the algorithm used.",
             },
             {
-                "label":         "Workflow language declared",
-                "rda_indicator": "RDA-I2-01M",
-                "property":      "rdip:workflowLanguage",
-                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}workflowLanguage> ?o }} }}",
-                "weight":        0.5,
-                "severity":      "warning",
-                "fix":           "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow).",
+                "label": "Workflow language",
+                "priority": "important", "standard": "RDA-I2-01M / FsF-I1-02M",
+                "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:workflowLanguage ?o }} }}",
+                "full": None,
+                "fix": "Declare the workflow language (Python, Snakemake, Nextflow, …).",
             },
-        ]
+            {
+                "label": "Related links",
+                "priority": "important", "standard": "RDA-I3-01M / FsF-I3-01M",
+                "present": ("ASK {{ GRAPH <{g}> {{ {{ ?s rdip:citesDataset ?o }} "
+                            "UNION {{ ?s rdip:derivedFrom ?o }} "
+                            "UNION {{ ?s rdip:generatesPublication ?o }} }} }}"),
+                "full": None,
+                "fix": "Link related entities (datasets, publications) via typed relations.",
+            },
+        ],
     },
     "Reusable": {
         "max_score": 20,
-        "weight":    0.20,
         "criteria": [
             {
-                "label":         "Software license declared",
-                "rda_indicator": "RDA-R1.1-01M",
-                "property":      "rdip:softwareLicense",
-                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}softwareLicense> ?o }} }}",
-                "weight":        0.5,
-                "severity":      "critical",
-                "fix":           "Add a software license to your repository and declare rdip:softwareLicense.",
+                "label": "Software licence",
+                "priority": "essential", "standard": "RDA-R1.1-01M / FAIR4RS-R",
+                "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:softwareLicense ?o }} }}",
+                "full": ("ASK {{ GRAPH <{g}> {{ ?s rdip:softwareLicense ?o FILTER("
+                         "?o != \"LicenseRef-Custom\" && STR(?o) != \"\") }} }}"),
+                "fix": "Add a standard (SPDX) software licence to the repository.",
             },
             {
-                "label":         "Commit hash recorded",
-                "rda_indicator": "RDA-R1-01M",
-                "property":      "rdip:commitHash",
-                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}commitHash> ?o }} }}",
-                "weight":        0.5,
-                "severity":      "critical",
-                "fix":           "Tag your release commit and record the SHA as rdip:commitHash.",
+                "label": "Commit + versioning",
+                "priority": "important", "standard": "RDA-R1.2-01M / FAIR4RS",
+                "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:commitHash ?o }} }}",
+                "full": None,
+                "fix": "Record the release commit SHA (and a tagged version).",
             },
-        ]
+            {
+                "label": "Community standard",
+                "priority": "essential", "standard": "RDA-R1.3-01M / FsF-R1.3-01M",
+                "present": "ASK {{ GRAPH <{g}> {{ ?s rdip:dataFormat ?o }} }}",
+                "full": None,
+                "fix": "Adopt a community metadata / file-format standard.",
+            },
+        ],
     },
     "Reproducible": {
         "max_score": 30,
-        "weight":    0.30,
         "criteria": [
             {
-                "label":         "Image digest pinned",
-                "rda_indicator": "Novel extension (no RDA equivalent)",
-                "property":      "rdip:imageDigest",
-                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s <{rdip}imageDigest> ?o . FILTER(?o != \"\") }} }}",
-                "weight":        0.4,
-                "severity":      "critical",
-                "fix":           "Pin your Docker image to a specific digest: FROM image@sha256:<digest>.",
+                "label": "Computational environment (R1)",
+                "fraction": 0.4, "standard": "ML Repro Checklist; FAIR4RS",
+                "present": ("ASK {{ GRAPH <{g}> {{ {{ ?s a rdip:EnvironmentSpec }} "
+                            "UNION {{ ?s rdip:softwareDependency ?d }} }} }}"),
+                "full": ("ASK {{ GRAPH <{g}> {{ ?s rdip:imageDigest ?o "
+                         "FILTER(STR(?o) != \"\") }} }}"),
+                "fix": "Pin the environment: image digest (FROM …@sha256) and exact dependency versions.",
             },
             {
-                "label":         "Random seed declared",
-                "rda_indicator": "Novel extension (no RDA equivalent)",
-                "property":      "rdip:RandomSeed",
-                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s a <{rdip}RandomSeed> }} }}",
-                "weight":        0.3,
-                "severity":      "critical",
-                "fix":           "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances.",
+                "label": "Methodological transparency (R2)",
+                "fraction": 0.3, "standard": "ML Repro Checklist (hyperparams, seeds)",
+                "present": ("ASK {{ GRAPH <{g}> {{ {{ ?s a rdip:RandomSeed }} "
+                            "UNION {{ ?s rdip:hasParameter ?p }} "
+                            "UNION {{ ?s rdip:usedMethod ?m }} }} }}"),
+                "full": ("ASK {{ GRAPH <{g}> {{ ?s a rdip:RandomSeed . "
+                         "?a rdip:usedMethod ?m }} }}"),
+                "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
             },
             {
-                "label":         "Evaluation result linked",
-                "rda_indicator": "Novel extension (no RDA equivalent)",
-                "property":      "rdip:EvaluationResult",
-                "ask":           "ASK {{ GRAPH <{graph}> {{ ?s a <{rdip}EvaluationResult> }} }}",
-                "weight":        0.3,
-                "severity":      "warning",
-                "fix":           "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue.",
+                "label": "Data provenance (R3)",
+                "fraction": 0.3, "standard": "ML Repro Checklist (data, splits, eval)",
+                "present": ("ASK {{ GRAPH <{g}> {{ {{ ?s a rdip:EvaluationResult }} "
+                            "UNION {{ ?s rdip:generatesDataset ?d }} "
+                            "UNION {{ ?s rdip:usedDataset ?d }} }} }}"),
+                "full": "ASK {{ GRAPH <{g}> {{ ?s a rdip:EvaluationResult }} }}",
+                "fix": "Record dataset identity, train/val/test splits, preprocessing, and evaluation results.",
             },
-        ]
+        ],
     },
 }
+
+# Tier thresholds (0-100)
+TIERS = [(85, "excellent"), (70, "good"), (50, "fair"), (0, "poor")]
 
 
 # ── Scoring logic ─────────────────────────────────────────────────────────────
 
-def _check_criterion(graph_uri: str, criterion: dict) -> bool:
-    """Run a single SPARQL ASK query. Returns True if criterion is met."""
-    ask_query = criterion["ask"].format(
-        graph=graph_uri,
-        rdip=RDIP
-    )
+def _ask(query_template: str, graph_uri: str) -> bool:
     try:
-        result = sparql_query(ask_query)
+        result = sparql_query(PREFIXES + query_template.format(g=graph_uri))
         return result.get("boolean", False)
-    except Exception as e:
-        print(f"  [Scorer] Error checking {criterion['label']}: {e}")
+    except Exception as e:  # noqa: BLE001
+        print(f"  [Scorer] ASK error: {e}")
         return False
 
 
-def compute_fair_r(study_id: str) -> dict:
-    """
-    Compute the FAIR-R score for a study.
+def _grade(graph_uri: str, criterion: dict) -> int:
+    """Return maturity level 0 (absent), 1 (partial), 2 (full)."""
+    if not _ask(criterion["present"], graph_uri):
+        return 0
+    if criterion.get("full") is None:
+        return 2
+    return 2 if _ask(criterion["full"], graph_uri) else 1
 
-    Returns a structured result dict containing:
-      - total_score (0-100)
-      - dimension_scores dict
-      - criterion_results list
-      - recommendations list
-      - tier (excellent/good/fair/poor)
-    """
+
+def _criterion_max(criterion: dict, dim: dict) -> float:
+    """Max points for a criterion: explicit fraction, or RDA-priority share."""
+    if "fraction" in criterion:
+        return criterion["fraction"] * dim["max_score"]
+    total = sum(PRIORITY_WEIGHT[c["priority"]] for c in dim["criteria"]
+                if "priority" in c)
+    return PRIORITY_WEIGHT[criterion["priority"]] / total * dim["max_score"]
+
+
+def compute_fair_r(study_id: str, verbose: bool = False) -> dict:
+    """Compute the graded, standards-weighted FAIR-R score for a study."""
     graph_uri = f"{GRAPH_BASE}/{study_id}"
-    print(f"\n[Scorer] Computing FAIR-R score for {study_id}")
-    print(f"[Scorer] Graph: {graph_uri}")
+    if verbose:
+        print(f"\n[Scorer] Computing FAIR-R for {study_id}  <{graph_uri}>")
 
-    total_score       = 0.0
-    dimension_scores  = {}
-    criterion_results = []
-    recommendations   = []
+    total_score = 0.0
+    dimension_scores = {}
+    recommendations = []
 
     for dim_name, dim in DIMENSIONS.items():
-        dim_score        = 0.0
-        dim_max          = dim["max_score"]
+        dim_score = 0.0
         criteria_results = []
-
-        for criterion in dim["criteria"]:
-            met   = _check_criterion(graph_uri, criterion)
-            # Score contribution: criterion weight × dimension max score
-            points = criterion["weight"] * dim_max if met else 0.0
-
+        for c in dim["criteria"]:
+            c_max = _criterion_max(c, dim)
+            level = _grade(graph_uri, c)
+            points = LEVEL_FACTOR[level] * c_max
             dim_score += points
+
             criteria_results.append({
-                "label":    criterion["label"],
-                "rda_indicator": criterion.get("rda_indicator", ""),
-                "property": criterion["property"],
-                "met":      met,
-                "points":   round(points, 2),
-                "max":      round(criterion["weight"] * dim_max, 2),
-                "severity": criterion["severity"],
-                "fix":      criterion["fix"] if not met else None,
+                "label": c["label"],
+                "priority": c.get("priority", "—"),
+                "standard": c.get("standard", ""),
+                "level": LEVEL_NAME[level],
+                "points": round(points, 2),
+                "max": round(c_max, 2),
+                "fix": c["fix"] if level < 2 else None,
             })
 
-            if not met:
+            if level < 2:
                 recommendations.append({
                     "dimension": dim_name,
-                    "rda_indicator": criterion.get("rda_indicator", ""),
-                    "severity":  criterion["severity"],
-                    "label":     criterion["label"],
-                    "fix":       criterion["fix"],
+                    "label": c["label"],
+                    "priority": c.get("priority", "—"),
+                    "level": LEVEL_NAME[level],
+                    "fix": c["fix"],
+                    "points_available": round(c_max - points, 2),
                 })
 
-            status = "✓" if met else "✗"
-            print(f"  [{status}] {dim_name:14s} | "
-                  f"{criterion['label']:40s} "
-                  f"+{points:.1f}/{criterion['weight'] * dim_max:.1f}")
+            if verbose:
+                print(f"  [{LEVEL_NAME[level]:7s}] {dim_name:14s} | {c['label']:32s} "
+                      f"+{points:.1f}/{c_max:.1f}")
 
+        total_score += dim_score
         dimension_scores[dim_name] = {
-            "score":    round(dim_score, 2),
-            "max":      dim_max,
-            "percent":  round((dim_score / dim_max) * 100, 1),
+            "score": round(dim_score, 2),
+            "max": dim["max_score"],
+            "percent": round(dim_score / dim["max_score"] * 100, 1),
             "criteria": criteria_results,
         }
-        total_score += dim_score
 
     total_score = round(total_score, 2)
+    tier = next(name for thr, name in TIERS if total_score >= thr)
 
-    # Determine tier
-    if total_score >= 85:
-        tier = "excellent"
-    elif total_score >= 70:
-        tier = "good"
-    elif total_score >= 50:
-        tier = "fair"
-    else:
-        tier = "poor"
+    # Recommendations: essential gaps first, then by points recoverable.
+    prio_rank = {"essential": 0, "important": 1, "useful": 2, "—": 3}
+    recommendations.sort(key=lambda r: (prio_rank.get(r["priority"], 3),
+                                        -r["points_available"]))
 
-    # Sort recommendations — critical first
-    recommendations.sort(
-        key=lambda r: 0 if r["severity"] == "critical" else 1
-    )
-
-    print(f"\n[Scorer] FAIR-R Score: {total_score}/100 — {tier.upper()}")
-
+    if verbose:
+        print(f"\n[Scorer] FAIR-R: {total_score}/100 — {tier.upper()}")
     return {
-        "study_id":         study_id,
-        "graph_uri":        graph_uri,
-        "total_score":      total_score,
-        "tier":             tier,
+        "study_id": study_id,
+        "graph_uri": graph_uri,
+        "total_score": total_score,
+        "tier": tier,
         "dimension_scores": dimension_scores,
-        "recommendations":  recommendations,
+        "recommendations": recommendations,
     }
 
 
 def score_summary(result: dict) -> str:
-    """Return a compact one-line summary of a FAIR-R result."""
     dims = result["dimension_scores"]
-    parts = " | ".join(
-        f"{k[:2]}: {v['score']}/{v['max']}"
-        for k, v in dims.items()
-    )
+    parts = " | ".join(f"{k[:2]}: {v['score']}/{v['max']}" for k, v in dims.items())
     return (f"FAIR-R={result['total_score']}/100 "
             f"[{result['tier'].upper()}] — {parts}")

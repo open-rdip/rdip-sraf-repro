@@ -1,0 +1,103 @@
+{
+  "study_id": "study051",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study051/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:07:14.686423+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 0,
+    "methods": 10,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Python",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "k-means clustering",
+        "value": "number of clusters not specified"
+      },
+      {
+        "name": "number_of_initializations",
+        "value": "30"
+      },
+      {
+        "name": "termination_tolerance",
+        "value": "\u03b5"
+      },
+      {
+        "name": "maximum_iterations",
+        "value": null
+      },
+      {
+        "name": "number_of_cpus",
+        "value": null
+      },
+      {
+        "name": "initialization_method",
+        "value": null
+      },
+      {
+        "name": "\u03b5",
+        "value": "0.1"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "vectorization",
+        "description": "Each parameter set \u02c6\u03b8i is vectorized into a single vector."
+      },
+      {
+        "name": "k-means clustering",
+        "description": "Performed over all vectorized parameter sets \u02c6\u03b8i to return centers and proportions of class membership."
+      },
+      {
+        "name": "reverse vectorization",
+        "description": "Used to convert the parameter set \u0398(0) back to the original parameter sets."
+      },
+      {
+        "name": "k-means",
+        "description": "used to determine an initialization for VISTA"
+      },
+      {
+        "name": "LGSSM fitting",
+        "description": "fit from each initialization, the one generating the largest log-likelihood is chosen"
+      },
+      {
+        "name": "VISTA",
+        "description": "develops model parameters further than the k-means initialization"
+      },
+      {
+        "name": "previous_mixture_LGSSM_clustering_approach",
+        "description": "implemented in Python, building from the EM implementation introduced in [55]"
+      },
+      {
+        "name": "Kalman filter",
+        "description": "Used to compute \u02c6 xi,l k|j, \u03a9i,l k, and \u03a9i,l k,k\u22121 for each time series i."
+      },
+      {
+        "name": "RTS smoother",
+        "description": "Used to compute \u02c6 xi,l k|j, \u03a9i,l k, and \u03a9i,l k,k\u22121 for each time series i."
+      },
+      {
+        "name": "EM algorithm",
+        "description": "Performed with M-step updates until termination based on the sum over the absolute difference between parameter sets."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

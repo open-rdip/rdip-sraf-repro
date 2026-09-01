@@ -1,0 +1,33 @@
+{
+  "study_id": "study058",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study058/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:53:20.205919+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 1,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Sentence Generation",
+        "description": "To generate sentences for a given minority group, we sample 5 random sentences from the corresponding set of examples, then join them into one string with each example being preceded by a hyphen (\u201c\u2013\u201d) and ending with a newline character (\u201c\n\u201d). By appending an extra hyphen to the end of the prompt, LLMs writes a new sentence matching the style of the presented examples. We stop GPT-3\u2019s generation once it produces a new newline character, indicating the end of the sentence. For each generated sentence, we use a new, randomly-selected set of 5 random sentences."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

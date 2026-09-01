@@ -57,6 +57,7 @@ LLM_MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "2000"))
 
 # Backend-specific
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
 LLAMACPP_SERVER_URL = os.getenv("LLAMACPP_SERVER_URL", "http://localhost:8080")
 VLLM_SERVER_URL = os.getenv("VLLM_SERVER_URL", "http://localhost:8000")
 

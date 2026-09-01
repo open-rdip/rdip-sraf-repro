@@ -1,0 +1,327 @@
+{
+  "study_id": "study027",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study027/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:25:48.474228+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 1,
+    "hyperparameters": 26,
+    "datasets": 13,
+    "methods": 26,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "STAMP",
+        "version": "v1.1.1"
+      },
+      {
+        "name": "ptflops",
+        "version": null
+      },
+      {
+        "name": "UMAP",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      50
+    ],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX A6000",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "value": "0.7"
+      },
+      {
+        "name": "max_token_length",
+        "value": "1,000"
+      },
+      {
+        "name": "n_neighbors",
+        "value": "15"
+      },
+      {
+        "name": "min_dist",
+        "value": "0.1"
+      },
+      {
+        "name": "tile_size",
+        "value": "224\u00d7224 pixels"
+      },
+      {
+        "name": "effective_resolution",
+        "value": "0.5 MPP"
+      },
+      {
+        "name": "canny_edge_detection_thresholds",
+        "value": "40, 100"
+      },
+      {
+        "name": "edge_pixel_threshold",
+        "value": "2%"
+      },
+      {
+        "name": "input_size",
+        "value": "768"
+      },
+      {
+        "name": "hidden_size",
+        "value": "256"
+      },
+      {
+        "name": "activation",
+        "value": "SiLU"
+      },
+      {
+        "name": "dropout",
+        "value": "0.5"
+      },
+      {
+        "name": "epochs",
+        "value": "32"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1\u00d710-4"
+      },
+      {
+        "name": "weight_decay",
+        "value": "1\u00d710\u22122"
+      },
+      {
+        "name": "solver",
+        "value": "lbfgs"
+      },
+      {
+        "name": "L2_penalty",
+        "value": "1.0"
+      },
+      {
+        "name": "maximum_iterations",
+        "value": "10,000"
+      },
+      {
+        "name": "balanced_class_weights",
+        "value": "true"
+      },
+      {
+        "name": "k",
+        "value": "1, 2, 4, 8, 16, 32"
+      },
+      {
+        "name": "bag size",
+        "value": "512"
+      },
+      {
+        "name": "tile subsampling",
+        "value": "no"
+      },
+      {
+        "name": "gating in the attention pathway",
+        "value": "multiplicative"
+      },
+      {
+        "name": "top_k",
+        "value": "3"
+      },
+      {
+        "name": "top_k_mass_statistics",
+        "value": "1, 2, 25"
+      },
+      {
+        "name": "patients",
+        "value": "300"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IEO cohort",
+        "version": null
+      },
+      {
+        "name": "GECCO consortium",
+        "version": null
+      },
+      {
+        "name": "PathoBench",
+        "version": null
+      },
+      {
+        "name": "CPTAC pancreatic ductal adenocarcinoma (PDA) cohort",
+        "version": null
+      },
+      {
+        "name": "CONCH",
+        "version": "v1.5"
+      },
+      {
+        "name": "TITAN",
+        "version": null
+      },
+      {
+        "name": "WSI",
+        "version": null
+      },
+      {
+        "name": "CPTAC",
+        "version": null
+      },
+      {
+        "name": "DACHS",
+        "version": null
+      },
+      {
+        "name": "Kiel",
+        "version": null
+      },
+      {
+        "name": "Bern",
+        "version": null
+      },
+      {
+        "name": "IEO",
+        "version": null
+      },
+      {
+        "name": "Virchow2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "logistic regression",
+        "description": "standard approach"
+      },
+      {
+        "name": "GPT-4o",
+        "description": "prompt containing two example images per class, plus the query image"
+      },
+      {
+        "name": "UMAP",
+        "description": "dimensionality reduction"
+      },
+      {
+        "name": "Virchow2",
+        "description": "tile encoder used to extract detailed feature embeddings"
+      },
+      {
+        "name": "CHIEF",
+        "description": "slide encoder used for its strong performance and computational efficiency"
+      },
+      {
+        "name": "EAGLE",
+        "description": ""
+      },
+      {
+        "name": "TITAN",
+        "description": ""
+      },
+      {
+        "name": "GigaPath",
+        "description": ""
+      },
+      {
+        "name": "two-sided log-rank test",
+        "description": ""
+      },
+      {
+        "name": "CTransPath",
+        "description": ""
+      },
+      {
+        "name": "WSI segmentation",
+        "description": "STAMP v1.1.1 pipeline"
+      },
+      {
+        "name": "tile extraction",
+        "description": "STAMP v1.1.1 pipeline"
+      },
+      {
+        "name": "feature generation",
+        "description": "STAMP v1.1.1 pipeline"
+      },
+      {
+        "name": "Canny edge detection",
+        "description": "background exclusion"
+      },
+      {
+        "name": "MLP",
+        "description": "input size of 768, hidden size of 256 with SiLU activation and dropout, trained for 32 epochs using a one-cycle policy with the AdamW optimizer"
+      },
+      {
+        "name": "ABMIL",
+        "description": "single-head attention and bag size 512"
+      },
+      {
+        "name": "gated ABMIL",
+        "description": "full bags and multiplicative gating in the attention pathway"
+      },
+      {
+        "name": "slide encoders",
+        "description": "combine tile embeddings into a single embedding vector for each slide or patient"
+      },
+      {
+        "name": "cosine similarity search",
+        "description": "performed a cosine similarity search"
+      },
+      {
+        "name": "Lorenz curves",
+        "description": "computed Lorenz curves as the cumulative attention mass versus the cumulative fraction of tiles"
+      },
+      {
+        "name": "Gini coefficient",
+        "description": "summarize concentration using the Gini coefficient"
+      },
+      {
+        "name": "rank profiles",
+        "description": "averaged rank profiles"
+      },
+      {
+        "name": "early stopping",
+        "description": "used for validation"
+      },
+      {
+        "name": "early fusion",
+        "description": "of multiple slides per patient for models that do not rely on spatial coordinates"
+      },
+      {
+        "name": "STAMP pipeline",
+        "description": null
+      },
+      {
+        "name": "UMAPs",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AUROC",
+        "value": "highest average",
+        "split": null
+      },
+      {
+        "metric": "AUPRC",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Balanced Accuracy",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "F1 Scores",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

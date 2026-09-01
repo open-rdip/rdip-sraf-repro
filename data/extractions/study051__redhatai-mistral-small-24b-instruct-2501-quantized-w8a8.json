@@ -1,0 +1,81 @@
+{
+  "study_id": "study051",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study051/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:48:35.849575+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 0,
+    "methods": 8,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Python",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "A(0) k",
+        "value": null
+      },
+      {
+        "name": "\u03b5",
+        "value": "0.1"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "k-means clustering",
+        "description": "performed over all \u02c6\u03b8i, returning both the centers and proportions of class membership"
+      },
+      {
+        "name": "k-means",
+        "description": "used to determine an initialization for VISTA"
+      },
+      {
+        "name": "LGSSM",
+        "description": "fit from each initialization"
+      },
+      {
+        "name": "EM algorithm",
+        "description": "for a single LGSSM for the time series i"
+      },
+      {
+        "name": "EM implementation",
+        "description": "EM implementation introduced in [55]"
+      },
+      {
+        "name": "Kalman filter",
+        "description": "used to compute \u02c6 xi,l k|j, \u2126i,l k, and \u2126i,l k,k\u22121 for each time series i"
+      },
+      {
+        "name": "RTS smoother",
+        "description": "used to compute \u02c6 xi,l k|j, \u2126i,l k, and \u2126i,l k,k\u22121 for each time series i"
+      },
+      {
+        "name": "VISTA",
+        "description": "algorithm that allows for some of the parameters of the mixture model to be fixed while the others are optimized"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "final log-likelihood",
+        "value": "higher",
+        "split": null
+      }
+    ]
+  }
+}

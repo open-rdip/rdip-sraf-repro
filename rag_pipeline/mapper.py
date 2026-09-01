@@ -10,6 +10,7 @@ from rdflib import Graph, Namespace, URIRef, Literal, RDF, XSD
 
 RDIP = Namespace("https://w3id.org/rdip/")
 PROV = Namespace("http://www.w3.org/ns/prov#")
+DCAT = Namespace("http://www.w3.org/ns/dcat#")   # datasets are dcat:Dataset
 BASE = "https://w3id.org/rdip/instance/"
 
 
@@ -27,6 +28,10 @@ def software_uri(study_id: str) -> URIRef:
 
 def env_uri(study_id: str) -> URIRef:
     return URIRef(f"{BASE}env-{study_id}")
+
+
+def recipe_uri(study_id: str) -> URIRef:
+    return URIRef(f"{BASE}recipe-{study_id}")
 
 
 def _base_graph() -> Graph:
@@ -47,6 +52,8 @@ def map_extraction(study_id: str, extracted: dict) -> Graph:
       - rdip:SoftwareDependency instances (from narrative)
       - rdip:ComputingEnvironment hardware properties
       - rdip:Method instances
+      - dcat:Dataset instances (via rdip:usedDataset)
+      - rdip:EvaluationResult instances (via rdip:generatesResult)
     """
     g        = _base_graph()
     activity = activity_uri(study_id)
@@ -121,6 +128,83 @@ def map_extraction(study_id: str, extracted: dict) -> Graph:
             g.add((method_node, RDIP.description,
                    Literal(method["description"], datatype=XSD.string)))
         g.add((activity, RDIP.usedMethod, method_node))
+
+    # ── Datasets (the schema extracted them; previously dropped) ──────────────
+    # No rdip:Dataset class exists in the ontology; link via rdip:usedDataset
+    # and describe with rdip:title / rdip:version (both ontology-valid).
+    for ds in extracted.get("datasets", []):
+        if not ds.get("name"):
+            continue
+        ds_node = mint("dataset")
+        g.add((ds_node, RDF.type, DCAT.Dataset))
+        g.add((activity, RDIP.usedDataset, ds_node))
+        g.add((ds_node, RDIP.title,
+               Literal(ds["name"], datatype=XSD.string)))
+        if ds.get("version"):
+            g.add((ds_node, RDIP.version,
+                   Literal(str(ds["version"]), datatype=XSD.string)))
+
+    # ── Evaluation results (the paper's claimed metrics) ──────────────────────
+    # Ground truth for the result-reproducibility test: a reproducer compares
+    # their re-run numbers against these. Linked via rdip:generatesResult.
+    for ev in extracted.get("evaluation_results", []):
+        if not ev.get("metric"):
+            continue
+        ev_node = mint("eval")
+        g.add((ev_node, RDF.type, RDIP.EvaluationResult))
+        g.add((ev_node, RDIP.metricName,
+               Literal(ev["metric"], datatype=XSD.string)))
+        if ev.get("value") not in (None, ""):
+            g.add((ev_node, RDIP.metricValue,
+                   Literal(str(ev["value"]), datatype=XSD.string)))
+        if ev.get("split"):
+            g.add((ev_node, RDIP.splitLabel,
+                   Literal(ev["split"], datatype=XSD.string)))
+        g.add((activity, RDIP.generatesResult, ev_node))
+
+    return g
+
+
+def map_recipe(study_id: str, recipe: dict) -> Graph:
+    """Map an extracted execution recipe to RDIP triples.
+
+    Emits an rdip:ExecutionRecipe (the engine-derived "how to reproduce") linked to
+    the study's activity, so result-level reproduction is driven by extracted
+    metadata rather than a hand-written command:
+      rdip:runCommand, rdip:entryPoint, rdip:setupStep (ordered), rdip:requiresDataset,
+      rdip:requiresCheckpoint, rdip:producesMetric, rdip:recipeConfidence.
+    """
+    g = _base_graph()
+    activity = activity_uri(study_id)
+    rec = recipe_uri(study_id)
+    g.add((activity, RDF.type, RDIP.DataAnalysisActivity))
+    g.add((rec, RDF.type, RDIP.ExecutionRecipe))
+    g.add((activity, RDIP.hasExecutionRecipe, rec))
+
+    if recipe.get("run_command"):
+        g.add((rec, RDIP.runCommand,
+               Literal(str(recipe["run_command"]), datatype=XSD.string)))
+    if recipe.get("entry_point"):
+        g.add((rec, RDIP.entryPoint,
+               Literal(str(recipe["entry_point"]), datatype=XSD.string)))
+    if recipe.get("requires_checkpoint"):
+        g.add((rec, RDIP.requiresCheckpoint,
+               Literal(str(recipe["requires_checkpoint"]), datatype=XSD.string)))
+    if recipe.get("confidence"):
+        g.add((rec, RDIP.recipeConfidence,
+               Literal(str(recipe["confidence"]), datatype=XSD.string)))
+
+    for step in recipe.get("setup_steps", []) or []:
+        if step:
+            g.add((rec, RDIP.setupStep, Literal(str(step), datatype=XSD.string)))
+    for ds in recipe.get("requires_dataset", []) or []:
+        name = ds.get("name") if isinstance(ds, dict) else ds
+        if name:
+            g.add((rec, RDIP.requiresDataset, Literal(str(name), datatype=XSD.string)))
+    for m in recipe.get("produces_metric", []) or []:
+        metric = m.get("metric") if isinstance(m, dict) else m
+        if metric:
+            g.add((rec, RDIP.producesMetric, Literal(str(metric), datatype=XSD.string)))
 
     return g
 

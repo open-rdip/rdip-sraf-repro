@@ -1,0 +1,104 @@
+{
+  "study_id": "study059",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study059/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:12:17.304338+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 3,
+    "methods": 6,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "lambda2",
+        "value": "1.0"
+      },
+      {
+        "name": "K",
+        "value": "3"
+      },
+      {
+        "name": "C",
+        "value": "3"
+      },
+      {
+        "name": "\u03bb2",
+        "value": "1.0"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "R8",
+        "version": null
+      },
+      {
+        "name": "five datasets",
+        "version": null
+      },
+      {
+        "name": "Reuters8",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "FedSeIT",
+        "description": "A method used in FCL setup to align and relevance of foreign tasks parameters at each client to minimize inter-client interference and improve inter-client transfer learning without dense-layer-sharing."
+      },
+      {
+        "name": "FedWeIT",
+        "description": "Baseline model where weighted additive filter composition is performed."
+      },
+      {
+        "name": "Fed-WeIT",
+        "description": "Baseline federated learning approach."
+      },
+      {
+        "name": "FedSeIT+DLS",
+        "description": "Variant of FedSeIT with dense layer sharing."
+      },
+      {
+        "name": "Federated Selective Inter-client Transfer (FedSeIT)",
+        "description": "Aims to minimize inter-client interference and communication cost while maximizing inter-client knowledge transfer in Federated Continual Learning (FCL) paradigm."
+      },
+      {
+        "name": "Selective Utilization of Global Knowledge",
+        "description": "Each client initializes Bt c using \u03b8G received from the server before training on task t, enabling inter-client knowledge transfer."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "noticeably higher",
+        "split": "test"
+      },
+      {
+        "metric": "performance gain",
+        "value": "12.4%",
+        "split": null
+      },
+      {
+        "metric": "performance gain",
+        "value": "6.8%",
+        "split": "test"
+      },
+      {
+        "metric": "Task-averaged Test Accuracy (TTA)",
+        "value": "average TTA score of 3 runs",
+        "split": "test"
+      }
+    ]
+  }
+}

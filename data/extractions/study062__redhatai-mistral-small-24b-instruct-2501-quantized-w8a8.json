@@ -1,0 +1,71 @@
+{
+  "study_id": "study062",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study062/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:56:11.796487+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 0,
+    "methods": 8,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "JAX",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03f5",
+        "value": null
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "jax.pmap",
+        "description": "primitive in JAX used for efficient parallel performance across GPUs"
+      },
+      {
+        "name": "causal training algorithm for PINNs",
+        "description": "a general causal training algorithm for PINNs that summarizes the proposed re-formulation of the residual and initial conditions loss, the annealing scheme for the \u03f5 parameter, and the stopping criterion for terminating the training upon the convergence of the temporal weights wi"
+      },
+      {
+        "name": "time-marching",
+        "description": "learning the solution sequentially within separate time-windows"
+      },
+      {
+        "name": "curriculum training",
+        "description": "learning the solution sequentially within separate time-windows"
+      },
+      {
+        "name": "causal training strategy",
+        "description": "a crucial enhancement to time-marching approaches"
+      },
+      {
+        "name": "synchronous data-parallelism",
+        "description": "a batch of training data is split into sub-batches, one for each device. Speci\ufb01cally, batches of spatial and temporal points used to evaluate the training loss are generated randomly and independently on each available GPU, and gradients of the training loss are then aggregated across all devices with a collective reduce-mean operation. As such, each device can then update its own local copy of all trainable model parameters at each gradient descent iteration the using global"
+      },
+      {
+        "name": "Taylor-mode automatic differentiation",
+        "description": "a truncated Taylor polynomial approximation that allows for efficient computation of high-order derivatives of function compositions via the Fa\u00e0 di Bruno formula"
+      },
+      {
+        "name": "Algorithm 1",
+        "description": "training a physics-informed neural network"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

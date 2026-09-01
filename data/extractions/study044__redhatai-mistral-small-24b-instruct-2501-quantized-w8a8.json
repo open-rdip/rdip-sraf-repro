@@ -1,0 +1,126 @@
+{
+  "study_id": "study044",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study044/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:41:47.542694+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 7,
+    "methods": 6,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "entropy threshold",
+        "value": "\u03c4"
+      },
+      {
+        "name": "required number of consecutive confident steps",
+        "value": "k"
+      },
+      {
+        "name": "n",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "AIME 2024",
+        "version": null
+      },
+      {
+        "name": "LiveCodeBench",
+        "version": null
+      },
+      {
+        "name": "Math500",
+        "version": null
+      },
+      {
+        "name": "GSM8K",
+        "version": null
+      },
+      {
+        "name": "GPQA-Diamond",
+        "version": null
+      },
+      {
+        "name": "HumanEval",
+        "version": null
+      },
+      {
+        "name": "MBPP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Soft Thinking",
+        "description": "A method that integrates path exploration across consecutive concept tokens, enhancing both reasoning flexibility and depth."
+      },
+      {
+        "name": "Cold Stop mechanism",
+        "description": "dynamically stops intermediate reasoning when the model becomes overconfident"
+      },
+      {
+        "name": "COCONUT",
+        "description": "directly feeds the previous hidden state as the next input embedding"
+      },
+      {
+        "name": "average embedding strategy",
+        "description": "takes the mean of the top- ntoken embeddings"
+      },
+      {
+        "name": "Standard CoT Thinking",
+        "description": "employs explicit step-by-step reasoning"
+      },
+      {
+        "name": "Standard Greedy CoT Thinking",
+        "description": "utilizes greedy decoding at each step of the reasoning process"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "0",
+        "split": null
+      },
+      {
+        "metric": "generation length",
+        "value": "maximum",
+        "split": null
+      },
+      {
+        "metric": "output length",
+        "value": "extremely long",
+        "split": null
+      },
+      {
+        "metric": "token efficiency",
+        "value": "substantially improves",
+        "split": null
+      },
+      {
+        "metric": "Pass@1",
+        "value": "c/n",
+        "split": null
+      },
+      {
+        "metric": "number of tokens generated",
+        "value": "specifically for correct solutions",
+        "split": null
+      }
+    ]
+  }
+}

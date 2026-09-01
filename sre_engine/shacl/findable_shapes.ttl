@@ -1,0 +1,27 @@
+# sre_engine/shacl/findable_shapes.ttl
+# FAIR-R Findable dimension as executable SHACL. Maps to RDA-F1/F2/F3.
+# Priority -> severity: essential = sh:Violation, important = sh:Warning.
+
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdip: <https://w3id.org/rdip/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+rdip:FindableActivityShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:ResearchActivity ;
+    rdfs:label "Findable: persistent identifier and descriptive metadata" ;
+
+    sh:property [
+        sh:path     rdip:identifier ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message  "CRITICAL (Findable / RDA-F1, essential): rdip:identifier is missing. Declare a persistent identifier (DOI or Handle) for the study, not only a repository URL." ;
+    ] ;
+
+    sh:property [
+        sh:path     rdfs:label ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message  "CRITICAL (Findable / RDA-F2, essential): descriptive metadata (rdfs:label / title) is missing. Provide core metadata: title, creator, publication date, keywords." ;
+    ] .

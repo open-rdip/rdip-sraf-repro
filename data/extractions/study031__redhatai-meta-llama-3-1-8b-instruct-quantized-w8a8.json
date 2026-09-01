@@ -1,0 +1,152 @@
+{
+  "study_id": "study031",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study031/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:22:39.640129+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 7,
+    "methods": 9,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "TensorFlow",
+        "version": "2"
+      },
+      {
+        "name": "Scikit-learn",
+        "version": null
+      },
+      {
+        "name": "Label Studio",
+        "version": "free version"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "probability of horizontal and vertical flip",
+        "value": "30%"
+      },
+      {
+        "name": "probability of random brightness, contrast, and saturation adjustment",
+        "value": "10%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "all plankton species",
+        "version": null
+      },
+      {
+        "name": "Plankton anomaly dataset",
+        "version": null
+      },
+      {
+        "name": "plankton species",
+        "version": null
+      },
+      {
+        "name": "Centrales",
+        "version": null
+      },
+      {
+        "name": "Chaetocero",
+        "version": null
+      },
+      {
+        "name": "derived dataset for object detection based experiment",
+        "version": null
+      },
+      {
+        "name": "Phytoplankton anomaly dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Autoencoders",
+        "description": "Towards Phytoplankton Parasite Detection Using Autoencoders"
+      },
+      {
+        "name": "ConvM2-VQVAE1",
+        "description": "autoencoder"
+      },
+      {
+        "name": "HardNet1",
+        "description": "feature extractor"
+      },
+      {
+        "name": "one-class classifier",
+        "description": "classifier"
+      },
+      {
+        "name": "autoencoder ConvM2-VQVAE1",
+        "description": "with HardNet1 as a feature extractor and Local Outlier Factor one-class classifier"
+      },
+      {
+        "name": "Local Outlier Factor",
+        "description": "one-class classifier"
+      },
+      {
+        "name": "F1 score",
+        "description": "evaluation metric"
+      },
+      {
+        "name": "autoencoder",
+        "description": "not explicitly stated"
+      },
+      {
+        "name": "object detection",
+        "description": "not explicitly stated"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "0.72",
+        "value": "0.87",
+        "split": null
+      },
+      {
+        "metric": "0.75",
+        "value": "0.69",
+        "split": null
+      },
+      {
+        "metric": "0.83",
+        "value": "0.67",
+        "split": null
+      },
+      {
+        "metric": "0.67",
+        "value": "0.50",
+        "split": "1"
+      },
+      {
+        "metric": "0.53",
+        "value": "0.48",
+        "split": "0.61"
+      },
+      {
+        "metric": "0.62",
+        "value": "0.53",
+        "split": "0.75"
+      },
+      {
+        "metric": "F1 score",
+        "value": "maximal",
+        "split": null
+      }
+    ]
+  }
+}

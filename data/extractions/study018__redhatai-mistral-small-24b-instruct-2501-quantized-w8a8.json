@@ -1,0 +1,253 @@
+{
+  "study_id": "study018",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study018/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:18:03.394821+00:00",
+  "counts": {
+    "dependencies": 8,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 2,
+    "methods": 12,
+    "evaluation_results": 20
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ResNet-50",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": "1.0"
+      },
+      {
+        "name": "Caffe2",
+        "version": null
+      },
+      {
+        "name": "ResNet-50-FPN",
+        "version": null
+      },
+      {
+        "name": "ResNet-101-FPN",
+        "version": null
+      },
+      {
+        "name": "ResNeXt32x8d-101-FPN",
+        "version": null
+      },
+      {
+        "name": "Group Normalization",
+        "version": null
+      },
+      {
+        "name": "Batch Normalization",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia 1080 Ti",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b2",
+        "value": "1.0"
+      },
+      {
+        "name": "image_size",
+        "value": "800 pixels"
+      },
+      {
+        "name": "threshold",
+        "value": "0.5"
+      },
+      {
+        "name": "multi-scale",
+        "value": "{640, 800, 1200}"
+      },
+      {
+        "name": "iterations",
+        "value": "2x"
+      },
+      {
+        "name": "bounding region",
+        "value": "0.11"
+      },
+      {
+        "name": "schedule",
+        "value": "1.5x"
+      },
+      {
+        "name": "feature layers",
+        "value": "{P3, P4, P5}"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": "minival"
+      },
+      {
+        "name": "Pascal VOC",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Self-Adjusting Smooth L1",
+        "description": "We \ufb01rst ran the Smooth L1 with \ufb01xed values (1.0 and 0.11)"
+      },
+      {
+        "name": "Base 1x",
+        "description": "Base 1x"
+      },
+      {
+        "name": "P3-P5 1x",
+        "description": "P3-P5 1x"
+      },
+      {
+        "name": "P3-P5 1.5x",
+        "description": "P3-P5 1.5x"
+      },
+      {
+        "name": "P2-P5 1x",
+        "description": "P2-P5 1x"
+      },
+      {
+        "name": "Best Matching policy",
+        "description": null
+      },
+      {
+        "name": "Mask Prediction head",
+        "description": null
+      },
+      {
+        "name": "RetinaNet",
+        "description": null
+      },
+      {
+        "name": "Our Method of BBox prediction",
+        "description": null
+      },
+      {
+        "name": "Our Method of Mask prediction",
+        "description": null
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": null
+      },
+      {
+        "name": "Self-Adjusting Smooth L1 loss",
+        "description": "loss function with setting 0.11"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "APbb",
+        "value": "36.2",
+        "split": null
+      },
+      {
+        "metric": "APbb 50",
+        "value": "55.0",
+        "split": null
+      },
+      {
+        "metric": "APbb 75",
+        "value": "38.7",
+        "split": null
+      },
+      {
+        "metric": "APm",
+        "value": "32.7",
+        "split": null
+      },
+      {
+        "metric": "APm 50",
+        "value": "52.2",
+        "split": null
+      },
+      {
+        "metric": "APm 75",
+        "value": "34.9",
+        "split": null
+      },
+      {
+        "metric": "mAP",
+        "value": "21.0",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP",
+        "value": "7.1",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": "35.3",
+        "split": "minival"
+      },
+      {
+        "metric": "AP50",
+        "value": "55.6",
+        "split": "minival"
+      },
+      {
+        "metric": "AP75",
+        "value": "37.8",
+        "split": "minival"
+      },
+      {
+        "metric": "APS",
+        "value": "19.4",
+        "split": "minival"
+      },
+      {
+        "metric": "APM",
+        "value": "38.9",
+        "split": "minival"
+      },
+      {
+        "metric": "APL",
+        "value": "46.9",
+        "split": "minival"
+      },
+      {
+        "metric": "AP",
+        "value": "37.1",
+        "split": "test"
+      },
+      {
+        "metric": "AP50",
+        "value": "56.6",
+        "split": "test"
+      },
+      {
+        "metric": "AP75",
+        "value": "39.8",
+        "split": "test"
+      },
+      {
+        "metric": "APs",
+        "value": "19.1",
+        "split": "test"
+      },
+      {
+        "metric": "APm",
+        "value": "40.6",
+        "split": "test"
+      },
+      {
+        "metric": "APl",
+        "value": "49.4",
+        "split": "test"
+      }
+    ]
+  }
+}

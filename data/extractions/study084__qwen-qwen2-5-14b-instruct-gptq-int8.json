@@ -1,0 +1,204 @@
+{
+  "study_id": "study084",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study084/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:28:36.727707+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 9,
+    "methods": 11,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "BERT",
+        "version": null
+      },
+      {
+        "name": "ViT-B/16",
+        "version": null
+      },
+      {
+        "name": "AdamW",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "sitc",
+        "value": "16"
+      },
+      {
+        "name": "k",
+        "value": "128"
+      },
+      {
+        "name": "batch_size",
+        "value": "512"
+      },
+      {
+        "name": "learning_rate_warmup",
+        "value": "1e-4"
+      },
+      {
+        "name": "learning_rate_decay",
+        "value": "1e-5"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.02"
+      },
+      {
+        "name": "momentum_parameter",
+        "value": "0.995"
+      },
+      {
+        "name": "queue_size",
+        "value": "65536"
+      },
+      {
+        "name": "distillation_weight_rampup",
+        "value": "0.4"
+      },
+      {
+        "name": "weight \u03b1",
+        "value": "0.4"
+      },
+      {
+        "name": "pre-training epochs",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NLVR2",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "Flickr30K",
+        "version": null
+      },
+      {
+        "name": "Conceptual 12M",
+        "version": "[43]"
+      },
+      {
+        "name": "other_dataset",
+        "version": null
+      },
+      {
+        "name": "Conceptual Captions",
+        "version": null
+      },
+      {
+        "name": "SBU Captions",
+        "version": null
+      },
+      {
+        "name": "Visual Genome",
+        "version": null
+      },
+      {
+        "name": "RefCOCO+",
+        "version": "56"
+      }
+    ],
+    "methods": [
+      {
+        "name": "text-assignment (TA) pre-training",
+        "description": "pre-training the model for image-pair"
+      },
+      {
+        "name": "parameter sharing",
+        "description": "sharing parameters between multimodal blocks"
+      },
+      {
+        "name": "Grad-CAM",
+        "description": "used for visualizing attention regions in images"
+      },
+      {
+        "name": "ALBEF",
+        "description": "model used for grounding and attribute relationship visualization"
+      },
+      {
+        "name": "pre-training",
+        "description": "for 30 epochs using a batch size of 512 on 8 NVIDIA A100 GPUs"
+      },
+      {
+        "name": "fine-tuning",
+        "description": "increase the image resolution to 384x384 and interpolate the positional encoding of image patches"
+      },
+      {
+        "name": "ITC MoD loss",
+        "description": "Defined as Lmod itc= (1\u2212\u03b1)Litc+\u03b1 2E(I,T)\u223cD[ KL(qi2t(I)\u2225pi2t(I)) + KL( qt2i(T)\u2225pt2i(T))]"
+      },
+      {
+        "name": "MLM MoD loss",
+        "description": "Defined as Lmod mlm= (1\u2212\u03b1)Lmlm+\u03b1E(I,\u02c6T)\u223cDKL(qmsk(I,\u02c6T)\u2225pmsk(I,\u02c6T))"
+      },
+      {
+        "name": "image-text contrastive learning",
+        "description": "used in pre-training"
+      },
+      {
+        "name": "contrastive hard negative mining",
+        "description": "used in pre-training"
+      },
+      {
+        "name": "momentum distillation",
+        "description": "used in pre-training"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "dev",
+        "value": "82.13",
+        "split": "dev"
+      },
+      {
+        "metric": "test-P",
+        "value": "82.36",
+        "split": "test"
+      },
+      {
+        "metric": "TR",
+        "value": "97.30",
+        "split": "test"
+      },
+      {
+        "metric": "IR",
+        "value": "90.95",
+        "split": "test"
+      },
+      {
+        "metric": "SNLI-VE",
+        "value": "77.06",
+        "split": "test-P"
+      },
+      {
+        "metric": "NLVR2",
+        "value": "77.51",
+        "split": "test-dev"
+      },
+      {
+        "metric": "VQA",
+        "value": "71.40",
+        "split": "test"
+      }
+    ]
+  }
+}

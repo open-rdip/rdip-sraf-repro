@@ -1,0 +1,154 @@
+{
+  "study_id": "study070",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study070/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:03:19.858187+00:00",
+  "counts": {
+    "dependencies": 7,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 4,
+    "methods": 8,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GPT3",
+        "version": "175B"
+      },
+      {
+        "name": "Codex",
+        "version": null
+      },
+      {
+        "name": "GPT-Neo",
+        "version": "2.7B"
+      },
+      {
+        "name": "CodeGen",
+        "version": "2.7B"
+      },
+      {
+        "name": "SBERT",
+        "version": "all-mpnet-v2 (220M)"
+      },
+      {
+        "name": "AdamW",
+        "version": null
+      },
+      {
+        "name": "Codex-davinci",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning_rate",
+        "value": "2\u00d710\u22125"
+      },
+      {
+        "name": "warmup_steps",
+        "value": "1000"
+      },
+      {
+        "name": "temperature",
+        "value": "0"
+      },
+      {
+        "name": "context exemplars",
+        "value": "10"
+      },
+      {
+        "name": "training data percentage",
+        "value": "1%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "DST",
+        "version": null
+      },
+      {
+        "name": "MultiWOZ",
+        "version": "2.1"
+      },
+      {
+        "name": "MultiWOZ 2.1",
+        "version": null
+      },
+      {
+        "name": "MultiWOZ 2.4",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "zero-shot learning",
+        "description": "A single formatting example turn is included"
+      },
+      {
+        "name": "JGA",
+        "description": "It treats a prediction as correct only if for every domain all slots exactly match the ground-truth values."
+      },
+      {
+        "name": "F1",
+        "description": "on slot-value pairs for analysis."
+      },
+      {
+        "name": "In-Context Learning",
+        "description": "IC-DST"
+      },
+      {
+        "name": "TRADE",
+        "description": "An encoder-decoder framework is applied to the DST problem, enabling generalization to unseen values and domains. This was the \ufb01rst work to explore cross-domain transfer in DST. Different from IC-DST, TRADE has to make a prediction for each domain and slot pair in separate passes."
+      },
+      {
+        "name": "SGP-DST",
+        "description": "In SGP-DST, schema information is used as a prompt to query a sequence-to-sequence language model (e.g., T5). It achieves SOTA on MultiWOZ 2.2. Similar to TRADE, the value for each domain and slot pair is predicted in a separate pass."
+      },
+      {
+        "name": "TransferQA",
+        "description": ""
+      },
+      {
+        "name": "DS2",
+        "description": "re-formulated DST as a dialogue summarization problem"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "JGA",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "JGA",
+        "value": "12.58",
+        "split": "1%"
+      },
+      {
+        "metric": "JGA",
+        "value": "31.17",
+        "split": "5%"
+      },
+      {
+        "metric": "JGA",
+        "value": "36.18",
+        "split": "10%"
+      },
+      {
+        "metric": "JGA",
+        "value": "46.00",
+        "split": "100%"
+      }
+    ]
+  }
+}

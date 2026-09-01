@@ -1,0 +1,274 @@
+{
+  "study_id": "study080",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study080/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:46:18.655693+00:00",
+  "counts": {
+    "dependencies": 7,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 9,
+    "methods": 22,
+    "evaluation_results": 17
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "LoCoBot",
+        "version": null
+      },
+      {
+        "name": "FBE",
+        "version": null
+      },
+      {
+        "name": "MP3D",
+        "version": null
+      },
+      {
+        "name": "MDETR",
+        "version": null
+      },
+      {
+        "name": "OWL-ViT",
+        "version": null
+      },
+      {
+        "name": "CLIP",
+        "version": null
+      },
+      {
+        "name": "CoW baselines",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "OWL, B/32",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "k",
+        "value": "9"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "HABITAT",
+        "version": "2021 challenge"
+      },
+      {
+        "name": "ROBOTHOR",
+        "version": null
+      },
+      {
+        "name": "PASTURE",
+        "version": null
+      },
+      {
+        "name": "P ASTURE ",
+        "version": null
+      },
+      {
+        "name": "H ABITAT (MP3D)",
+        "version": "validation sets"
+      },
+      {
+        "name": "R OBOTHOR",
+        "version": null
+      },
+      {
+        "name": "H ABI- TAT",
+        "version": null
+      },
+      {
+        "name": "MP3D",
+        "version": null
+      },
+      {
+        "name": "LAION-5B",
+        "version": "5B"
+      }
+    ],
+    "methods": [
+      {
+        "name": "FBE heuristic exploration",
+        "description": "null"
+      },
+      {
+        "name": "learned exploration optimized on HABITAT (MP3D) train scenes",
+        "description": "null"
+      },
+      {
+        "name": "learned exploration optimized on ROBOTHOR train scenes",
+        "description": "null"
+      },
+      {
+        "name": "CLIP with k=9referring expressions (CLIP-Ref.)",
+        "description": "null"
+      },
+      {
+        "name": "CLIP with k=9patches (CLIP-Patch)",
+        "description": "null"
+      },
+      {
+        "name": "CLIP with gradient relevance (CLIP-Grad.)",
+        "description": "null"
+      },
+      {
+        "name": "MDETR segmentation model (MDETR)",
+        "description": "null"
+      },
+      {
+        "name": "OWL-ViT detector (OWL)",
+        "description": "null"
+      },
+      {
+        "name": "CoW baselines",
+        "description": "object navigation metrics"
+      },
+      {
+        "name": "CoWs",
+        "description": "finding uncommon objects"
+      },
+      {
+        "name": "post-processing mask predictions",
+        "description": "using only the center pixel as a representative target for navigation"
+      },
+      {
+        "name": "architectures using more compute",
+        "description": "ViT-B/16"
+      },
+      {
+        "name": "architectures using less compute",
+        "description": "ViT-B/32"
+      },
+      {
+        "name": "CLIP",
+        "description": "models indicated in pink, orange, and purple"
+      },
+      {
+        "name": "OWL-ViT",
+        "description": "models perform best"
+      },
+      {
+        "name": "CoW",
+        "description": "string"
+      },
+      {
+        "name": "SemanticNav-ZSON",
+        "description": "string"
+      },
+      {
+        "name": "EmbCLIP-ZSON",
+        "description": "string"
+      },
+      {
+        "name": "FBE",
+        "description": "not specified"
+      },
+      {
+        "name": "ROBOTHOR learnable exploration",
+        "description": "not specified"
+      },
+      {
+        "name": "HABITAT learnable exploration",
+        "description": "not specified"
+      },
+      {
+        "name": "R OBOTHOR",
+        "description": "baseline performance"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Success weighted by the oracle shortest path length and normalized by the actual path length",
+        "value": "SPL",
+        "split": null
+      },
+      {
+        "metric": "SUCCESS (SR)",
+        "value": "fraction of episodes",
+        "split": null
+      },
+      {
+        "metric": "Success weighted by inverse path length (SPL)",
+        "value": "Success weighted by the oracle shortest path length and normalized by the actual path length",
+        "split": null
+      },
+      {
+        "metric": "success",
+        "value": "lower",
+        "split": "PASTURE"
+      },
+      {
+        "metric": "success",
+        "value": "higher",
+        "split": "ROBOTHOR (uncommon objects)"
+      },
+      {
+        "metric": "success",
+        "value": "higher",
+        "split": "ROBOTHOR (common objects)"
+      },
+      {
+        "metric": "performance",
+        "value": "worse",
+        "split": "square IDs"
+      },
+      {
+        "metric": "performance",
+        "value": "better",
+        "split": "triangle IDs"
+      },
+      {
+        "metric": "performance",
+        "value": "significantly worse",
+        "split": "PASTURE tasks with distractor objects"
+      },
+      {
+        "metric": "performance",
+        "value": "significantly worse",
+        "split": "PASTURE tasks with natural language specification"
+      },
+      {
+        "metric": "4.9",
+        "value": "string",
+        "split": "string"
+      },
+      {
+        "metric": "4.8",
+        "value": "string",
+        "split": "string"
+      },
+      {
+        "metric": "15.6",
+        "value": "percent- age points",
+        "split": "string"
+      },
+      {
+        "metric": "Fraction of Failure Exploration",
+        "value": "0.00",
+        "split": null
+      },
+      {
+        "metric": "success rate (SR)",
+        "value": "6 percentage points",
+        "split": "OWL ViT-B/32 CoW with post-post processing"
+      },
+      {
+        "metric": "performance",
+        "value": "improve CoW performance",
+        "split": "R OBOTHOR baseline performance"
+      },
+      {
+        "metric": "performance",
+        "value": "take better advantage of appearance descriptions",
+        "split": null
+      }
+    ]
+  }
+}

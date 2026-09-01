@@ -1,0 +1,233 @@
+{
+  "tier": "silver",
+  "strict": false,
+  "models": [
+    "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "redhatai-mistral-small-24b-instruct-2501-quantized-w8a8"
+  ],
+  "reports": {
+    "qwen-qwen2-5-14b-instruct-gptq-int8": {
+      "n_studies": 95,
+      "per_field_micro": {
+        "software": {
+          "tp": 10,
+          "fp": 62,
+          "fn": 1081,
+          "precision": 0.139,
+          "recall": 0.009,
+          "f1": 0.017
+        },
+        "datasets": {
+          "tp": 103,
+          "fp": 170,
+          "fn": 165,
+          "precision": 0.377,
+          "recall": 0.384,
+          "f1": 0.381
+        },
+        "methods": {
+          "tp": 59,
+          "fp": 871,
+          "fn": 229,
+          "precision": 0.063,
+          "recall": 0.205,
+          "f1": 0.097
+        },
+        "parameters": {
+          "tp": 36,
+          "fp": 457,
+          "fn": 190,
+          "precision": 0.073,
+          "recall": 0.159,
+          "f1": 0.1
+        },
+        "random_seeds": {
+          "tp": 2,
+          "fp": 14,
+          "fn": 128,
+          "precision": 0.125,
+          "recall": 0.015,
+          "f1": 0.027
+        },
+        "evaluation_results": {
+          "tp": 12,
+          "fp": 474,
+          "fn": 107,
+          "precision": 0.025,
+          "recall": 0.101,
+          "f1": 0.04
+        },
+        "environment": {
+          "tp": 4,
+          "fp": 26,
+          "fn": 50,
+          "precision": 0.133,
+          "recall": 0.074,
+          "f1": 0.095
+        }
+      },
+      "overall_micro": {
+        "tp": 226,
+        "fp": 2074,
+        "fn": 1950,
+        "precision": 0.098,
+        "recall": 0.104,
+        "f1": 0.101
+      },
+      "macro_f1": 0.097,
+      "model": "qwen-qwen2-5-14b-instruct-gptq-int8",
+      "tier": "silver",
+      "strict": false,
+      "skipped": []
+    },
+    "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8": {
+      "n_studies": 95,
+      "per_field_micro": {
+        "software": {
+          "tp": 29,
+          "fp": 513,
+          "fn": 1062,
+          "precision": 0.054,
+          "recall": 0.027,
+          "f1": 0.036
+        },
+        "datasets": {
+          "tp": 110,
+          "fp": 418,
+          "fn": 158,
+          "precision": 0.208,
+          "recall": 0.41,
+          "f1": 0.276
+        },
+        "methods": {
+          "tp": 64,
+          "fp": 1023,
+          "fn": 224,
+          "precision": 0.059,
+          "recall": 0.222,
+          "f1": 0.093
+        },
+        "parameters": {
+          "tp": 6,
+          "fp": 383,
+          "fn": 220,
+          "precision": 0.015,
+          "recall": 0.027,
+          "f1": 0.02
+        },
+        "random_seeds": {
+          "tp": 7,
+          "fp": 93,
+          "fn": 123,
+          "precision": 0.07,
+          "recall": 0.054,
+          "f1": 0.061
+        },
+        "evaluation_results": {
+          "tp": 4,
+          "fp": 755,
+          "fn": 115,
+          "precision": 0.005,
+          "recall": 0.034,
+          "f1": 0.009
+        },
+        "environment": {
+          "tp": 4,
+          "fp": 35,
+          "fn": 50,
+          "precision": 0.103,
+          "recall": 0.074,
+          "f1": 0.086
+        }
+      },
+      "overall_micro": {
+        "tp": 224,
+        "fp": 3220,
+        "fn": 1952,
+        "precision": 0.065,
+        "recall": 0.103,
+        "f1": 0.08
+      },
+      "macro_f1": 0.078,
+      "model": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+      "tier": "silver",
+      "strict": false,
+      "skipped": []
+    },
+    "redhatai-mistral-small-24b-instruct-2501-quantized-w8a8": {
+      "n_studies": 95,
+      "per_field_micro": {
+        "software": {
+          "tp": 14,
+          "fp": 142,
+          "fn": 1077,
+          "precision": 0.09,
+          "recall": 0.013,
+          "f1": 0.022
+        },
+        "datasets": {
+          "tp": 110,
+          "fp": 211,
+          "fn": 158,
+          "precision": 0.343,
+          "recall": 0.41,
+          "f1": 0.374
+        },
+        "methods": {
+          "tp": 60,
+          "fp": 769,
+          "fn": 228,
+          "precision": 0.072,
+          "recall": 0.208,
+          "f1": 0.107
+        },
+        "parameters": {
+          "tp": 37,
+          "fp": 402,
+          "fn": 189,
+          "precision": 0.084,
+          "recall": 0.164,
+          "f1": 0.111
+        },
+        "random_seeds": {
+          "tp": 2,
+          "fp": 9,
+          "fn": 128,
+          "precision": 0.182,
+          "recall": 0.015,
+          "f1": 0.028
+        },
+        "evaluation_results": {
+          "tp": 10,
+          "fp": 415,
+          "fn": 109,
+          "precision": 0.024,
+          "recall": 0.084,
+          "f1": 0.037
+        },
+        "environment": {
+          "tp": 4,
+          "fp": 25,
+          "fn": 50,
+          "precision": 0.138,
+          "recall": 0.074,
+          "f1": 0.096
+        }
+      },
+      "overall_micro": {
+        "tp": 237,
+        "fp": 1973,
+        "fn": 1939,
+        "precision": 0.107,
+        "recall": 0.109,
+        "f1": 0.108
+      },
+      "macro_f1": 0.104,
+      "model": "redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+      "tier": "silver",
+      "strict": false,
+      "skipped": []
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "study_id": "study010",
+  "repo_url": "https://github.com/open-mmlab/mmocr",
+  "started": "2026-06-10T08:53:55.060490+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "docker/Dockerfile",
+      "pip": "requirements.txt",
+      "setup": "setup.py"
+    },
+    "depth_note": "subdir",
+    "n_found": 7,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.cfg",
+        "depth": 0
+      },
+      {
+        "type": "docker",
+        "rel_path": "docker/Dockerfile",
+        "depth": 1
+      },
+      {
+        "type": "pip",
+        "rel_path": "docs/en/requirements.txt",
+        "depth": 2
+      },
+      {
+        "type": "docker",
+        "rel_path": ".circleci/docker/Dockerfile",
+        "depth": 2
+      },
+      {
+        "type": "docker",
+        "rel_path": "docker/serve/Dockerfile",
+        "depth": 2
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/open-mmlab/mmocr",
+    "commit_hash": "966296f26ac34cf0e96d40ab4a0a94c9a697909a",
+    "software_license": "Apache-2.0"
+  },
+  "lift": {
+    "lifted": {
+      "docker": "docker/Dockerfile",
+      "pip": "requirements.txt"
+    },
+    "triples": 13,
+    "n_sources": 3
+  },
+  "python": {
+    "declared": null,
+    "source": "default",
+    "used": "3.10",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 395.3,
+    "log_tail": "equests>=2.7.9->codecov->-r /tmp/15889/study010/study010/requirements/tests.txt (line 2))\n  Using cached certifi-2026.5.20-py3-none-any.whl.metadata (2.5 kB)\nCollecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch>=1.1->-r /tmp/15889/study010/study010/requirements/build.txt (line 4))\n  Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)\nCollecting MarkupSafe>=2.0 (from jinja2->torch>=1.1->-r /tmp/15889/study010/study010/requirements/build.txt (line 4))\n  Using cached markupsafe-3.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)\nWould install ImageIO-2.37.3 Jinja2-3.1.6 MarkupSafe-3.0.3 Pygments-2.20.0 RapidFuzz-3.14.5 asynctest-0.13.0 attrs-26.1.0 boto3-1.43.26 botocore-1.43.26 certifi-2026.5.20 charset-normalizer-3.4.7 click-8.4.1 codecov-2.1.13 colorama-0.4.6 contourpy-1.3.2 coverage-7.14.1 cycler-0.12.1 exceptiongroup-1.3.1 filelock-3.29.1 flake8-7.3.0 fonttools-4.63.0 fsspec-2026.4.0 idna-3.18 imgaug-0.4.0 iniconfig-2.3.0 interrogate-1.7.0 isort-8.0.1 jmespath-1.1.0 kiwisolver-1.5.0 kwarray-0.7.1 lanms_neo-1.0.2 lazy-loader-0.5 lmdb-2.2.1 matplotlib-3.10.9 mccabe-0.7.0 mpmath-1.3.0 networkx-3.4.2 numpy-2.2.6 opencv-python-4.13.0.92 packaging-26.2 parameterized-0.9.0 pillow-12.2.0 platformdirs-4.10.0 pluggy-1.6.0 py-1.11.0 pyclipper-1.4.0 pycocotools-2.0.11 pycodestyle-2.14.0 pyflakes-3.4.0 pyparsing-3.3.2 pytest-9.0.3 pytest-cov-7.1.0 pytest-runner-6.0.1 python-dateutil-2.9.0.post0 requests-2.34.2 s3transfer-0.18.0 scikit-image-0.25.2 scipy-1.15.3 setuptools-81.0.0 shapely-2.1.2 six-1.17.0 sympy-1.14.0 tabulate-0.10.0 tifffile-2025.5.10 tomli-2.4.1 torch-2.12.0+cpu typing_extensions-4.15.0 ubelt-1.4.2 urllib3-2.7.0 xdoctest-1.3.2 yapf-0.43.0\n\n$ /tmp/15889/study010/venv/bin/pip install --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study010/study010/requirements.txt\n-neo, xdoctest, urllib3, ubelt, typing-extensions, tomli, tabulate, sympy, six, setuptools, rapidfuzz, pytest-runner, pyparsing, pygments, pyflakes, pycodestyle, pyclipper, py, pluggy, platformdirs, Pillow, parameterized, numpy, networkx, mccabe, MarkupSafe, lmdb, lazy-loader, kiwisolver, jmespath, isort, iniconfig, idna, fsspec, fonttools, filelock, cycler, coverage, colorama, click, charset_normalizer, certifi, attrs, asynctest, yapf, tifffile, Shapely, scipy, requests, python-dateutil, pycocotools, opencv-python, kwarray, jinja2, interrogate, imageio, flake8, exceptiongroup, contourpy, torch, scikit-image, pytest, matplotlib, codecov, botocore, s3transfer, pytest-cov, imgaug, boto3\n  Attempting uninstall: setuptools\n    Found existing installation: setuptools 82.0.1\n    Uninstalling setuptools-82.0.1:\n      Successfully uninstalled setuptools-82.0.1\n\nSuccessfully installed MarkupSafe-3.0.3 Pillow-12.2.0 Shapely-2.1.2 asynctest-0.13.0 attrs-26.1.0 boto3-1.43.26 botocore-1.43.26 certifi-2026.5.20 charset_normalizer-3.4.7 click-8.4.1 codecov-2.1.13 colorama-0.4.6 contourpy-1.3.2 coverage-7.14.1 cycler-0.12.1 exceptiongroup-1.3.1 filelock-3.29.1 flake8-7.3.0 fonttools-4.63.0 fsspec-2026.4.0 idna-3.18 imageio-2.37.3 imgaug-0.4.0 iniconfig-2.3.0 interrogate-1.7.0 isort-8.0.1 jinja2-3.1.6 jmespath-1.1.0 kiwisolver-1.5.0 kwarray-0.7.1 lanms-neo-1.0.2 lazy-loader-0.5 lmdb-2.2.1 matplotlib-3.10.9 mccabe-0.7.0 mpmath-1.3.0 networkx-3.4.2 numpy-2.2.6 opencv-python-4.13.0.92 parameterized-0.9.0 platformdirs-4.10.0 pluggy-1.6.0 py-1.11.0 pyclipper-1.4.0 pycocotools-2.0.11 pycodestyle-2.14.0 pyflakes-3.4.0 pygments-2.20.0 pyparsing-3.3.2 pytest-9.0.3 pytest-cov-7.1.0 pytest-runner-6.0.1 python-dateutil-2.9.0.post0 rapidfuzz-3.14.5 requests-2.34.2 s3transfer-0.18.0 scikit-image-0.25.2 scipy-1.15.3 setuptools-81.0.0 six-1.17.0 sympy-1.14.0 tabulate-0.10.0 tifffile-2025.5.10 tomli-2.4.1 torch-2.12.0+cpu typing-extensions-4.15.0 ubelt-1.4.2 urllib3-2.7.0 xdoctest-1.3.2 yapf-0.43.0\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 51.79,
+    "tier": "fair",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 12.5,
+      "Reproducible": 19.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 399.4,
+  "fair_r_scorer": "graded-v2"
+}

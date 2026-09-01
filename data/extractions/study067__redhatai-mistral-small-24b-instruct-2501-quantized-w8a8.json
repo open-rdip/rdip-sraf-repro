@@ -1,0 +1,68 @@
+{
+  "study_id": "study067",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study067/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:59:59.273657+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 2,
+    "datasets": 0,
+    "methods": 3,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      5
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "posterior samples",
+        "value": "100"
+      },
+      {
+        "name": "additional samples for conditional variance",
+        "value": "20"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "r-SSE-ICC",
+        "description": "method for attributing scores to state variables"
+      },
+      {
+        "name": "ASE-SV",
+        "description": "method for attributing effects to clinician and AI"
+      },
+      {
+        "name": "Planner-Actor-Reporter system",
+        "description": "Planner is implemented using a pre-trained LLM and few-shot learning, to provide actors with instructions"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "discrepancies",
+        "value": "up to 95%",
+        "split": null
+      },
+      {
+        "metric": "r-SSE",
+        "value": "0.1",
+        "split": null
+      },
+      {
+        "metric": "variance",
+        "value": "0.01",
+        "split": null
+      }
+    ]
+  }
+}

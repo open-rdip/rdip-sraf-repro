@@ -1,0 +1,144 @@
+{
+  "study_id": "study072",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study072/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:42:39.032509+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 1,
+    "hyperparameters": 2,
+    "datasets": 3,
+    "methods": 13,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "ResNet-101",
+        "version": null
+      },
+      {
+        "name": "NVIDIA GTX 4090",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      22
+    ],
+    "hardware": {
+      "gpu_model": "NVIDIA GTX 4090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b2",
+        "value": "string"
+      },
+      {
+        "name": "mini-batch size",
+        "value": "32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Food-101",
+        "version": null
+      },
+      {
+        "name": "CIFAR-100",
+        "version": null
+      },
+      {
+        "name": "mini-ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "gradient stochasticity",
+        "description": "impact of randomness of synthesized representations within local feature spaces"
+      },
+      {
+        "name": "w-RA&ER",
+        "description": "string"
+      },
+      {
+        "name": "wo-RA&ER",
+        "description": "string"
+      },
+      {
+        "name": "MobileNetV3-Large",
+        "description": "string"
+      },
+      {
+        "name": "tiny-SwinTransformer",
+        "description": "string"
+      },
+      {
+        "name": "SynerMix",
+        "description": "adds a branch that closely mirrors the original model"
+      },
+      {
+        "name": "SynerMix-Intra",
+        "description": "adds a branch that closely mirrors the original model"
+      },
+      {
+        "name": "w-RA&ER(M)",
+        "description": "null"
+      },
+      {
+        "name": "w-ER",
+        "description": "string"
+      },
+      {
+        "name": "w-ER(M)",
+        "description": "string"
+      },
+      {
+        "name": "w-ER(MM)",
+        "description": "string"
+      },
+      {
+        "name": "w-RA",
+        "description": "string"
+      },
+      {
+        "name": "w-RA&ER(MM)",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "1.22%",
+        "split": "string"
+      },
+      {
+        "metric": "epoch count",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "epoch duration",
+        "value": "290 seconds",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "0.41%",
+        "split": "validation"
+      },
+      {
+        "metric": "accuracy",
+        "value": "stable improvement",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "study_id": "study068",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study068/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:40:23.850502+00:00",
+  "counts": {
+    "dependencies": 10,
+    "random_seeds": 1,
+    "hyperparameters": 0,
+    "datasets": 5,
+    "methods": 9,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "AE",
+        "version": null
+      },
+      {
+        "name": "RL-GAN-Net",
+        "version": null
+      },
+      {
+        "name": "vanilla",
+        "version": null
+      },
+      {
+        "name": "RL agent",
+        "version": null
+      },
+      {
+        "name": "AE only",
+        "version": null
+      },
+      {
+        "name": "MATLAB",
+        "version": null
+      },
+      {
+        "name": "RLGAN-Net",
+        "version": null
+      },
+      {
+        "name": "Dai et al.",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "open source codes",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      2048
+    ],
+    "hardware": {
+      "gpu_model": "Nvidia GTX Titan Xp",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "Pinwas",
+        "version": null
+      },
+      {
+        "name": "scanned point data",
+        "version": null
+      },
+      {
+        "name": "mask information",
+        "version": null
+      },
+      {
+        "name": "point cloud data",
+        "version": null
+      },
+      {
+        "name": "ShapeNetCore",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RL-GAN-Net",
+        "description": "hybrid"
+      },
+      {
+        "name": "AE",
+        "description": "only"
+      },
+      {
+        "name": "vanilla",
+        "description": "null"
+      },
+      {
+        "name": "encoder-decoder network",
+        "description": "used in 323 voxel space followed by an analytic patch-based completion in 1283 resolution"
+      },
+      {
+        "name": "Chamfer loss",
+        "description": "LCH"
+      },
+      {
+        "name": "GFV loss",
+        "description": "LGFV"
+      },
+      {
+        "name": "l-GAN",
+        "description": "controller"
+      },
+      {
+        "name": "discriminator loss",
+        "description": "create a realistic shape"
+      },
+      {
+        "name": "vanilla approach",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Chamfer distance",
+        "value": "less than 9%",
+        "split": null
+      },
+      {
+        "metric": "classi\ufb01cation accuracy",
+        "value": "Pin",
+        "split": null
+      },
+      {
+        "metric": "performance gain for shape classification",
+        "value": "higher the better",
+        "split": null
+      },
+      {
+        "metric": "loss terms",
+        "value": null,
+        "split": "different amount of missing data"
+      },
+      {
+        "metric": "Chamfer loss",
+        "value": "not very efficient",
+        "split": null
+      },
+      {
+        "metric": "GFV loss",
+        "value": "impressive",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "impressive",
+        "split": null
+      },
+      {
+        "metric": "dimension",
+        "value": "reduces",
+        "split": null
+      },
+      {
+        "metric": "alignment",
+        "value": "better",
+        "split": null
+      },
+      {
+        "metric": "classi\ufb01cation",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

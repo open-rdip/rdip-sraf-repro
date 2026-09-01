@@ -1,0 +1,65 @@
+{
+  "study_id": "study015",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study015/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:14:28.742290+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "PorePy",
+        "description": "An open-source software for simulation of multiphysics processes in fractured porous media"
+      },
+      {
+        "name": "algebraic multigrid approach",
+        "description": "A new algebraic multigrid approach for Stokes problems"
+      },
+      {
+        "name": "numerical solution of saddle point problems",
+        "description": "Numerical solution of saddle point problems"
+      },
+      {
+        "name": "Incomplete Gaussian Elimination",
+        "description": "Incomplete Gaussian Elimination as a Preconditioning for Generalized Conjugate Gradient Acceler- ation"
+      },
+      {
+        "name": "Constrained Residual Acceleration",
+        "description": "Constrained Residual Acceleration of Conjugate Residual Methods"
+      },
+      {
+        "name": "block preconditioner",
+        "description": "A block preconditioner for non-isothermal flow in porous media"
+      },
+      {
+        "name": "Constrained pressure-temperature residual (CPTR) preconditioner",
+        "description": "Constrained pressure-temperature residual (CPTR) preconditioner performance for large-scale thermal CO2 injection simulation"
+      },
+      {
+        "name": "Multigrid smoothers",
+        "description": "Multigrid smoothers for ultraparallel computing"
+      },
+      {
+        "name": "System-AMG approaches",
+        "description": "System-AMG approaches for industrial fully and adaptive implicit oil reservoir simulations"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "study_id": "study015",
+  "repo_url": "https://github.com/Yuriyzabegaev/FTHM-Solver",
+  "started": "2026-06-10T09:19:53.156734+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "Dockerfile",
+      "pip": "requirements.txt"
+    },
+    "depth_note": "root",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "docker",
+        "rel_path": "Dockerfile",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/Yuriyzabegaev/FTHM-Solver",
+    "commit_hash": "ffa161533c85a351877e170da1df32a5dd1c8aa0",
+    "software_license": "GPL-3.0"
+  },
+  "lift": {
+    "lifted": {
+      "docker": "Dockerfile",
+      "pip": "requirements.txt"
+    },
+    "triples": 18,
+    "n_sources": 3
+  },
+  "python": {
+    "declared": null,
+    "source": "default",
+    "used": "3.10",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 57.4,
+    "log_tail": "ttempting uninstall: pip\n    Found existing installation: pip 23.0.1\n    Uninstalling pip-23.0.1:\n      Successfully uninstalled pip-23.0.1\nSuccessfully installed packaging-26.2 pip-26.1.2 setuptools-82.0.1 wheel-0.47.0\n\n$ /tmp/15889/study015/venv/bin/pip install --dry-run --ignore-installed --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study015/study015/requirements.txt\nLooking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cu121, https://download.pytorch.org/whl/cu118, https://download.pytorch.org/whl/cpu\nCollecting pandas (from -r /tmp/15889/study015/study015/requirements.txt (line 1))\n  Using cached pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (91 kB)\nCollecting numpy>=1.22.4 (from pandas->-r /tmp/15889/study015/study015/requirements.txt (line 1))\n  Using cached numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)\nCollecting python-dateutil>=2.8.2 (from pandas->-r /tmp/15889/study015/study015/requirements.txt (line 1))\n  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)\nCollecting pytz>=2020.1 (from pandas->-r /tmp/15889/study015/study015/requirements.txt (line 1))\n  Using cached pytz-2026.2-py2.py3-none-any.whl.metadata (22 kB)\nCollecting tzdata>=2022.7 (from pandas->-r /tmp/15889/study015/study015/requirements.txt (line 1))\n  Using cached tzdata-2026.2-py2.py3-none-any.whl.metadata (1.4 kB)\nCollecting six>=1.5 (from python-dateutil>=2.8.2->pandas->-r /tmp/15889/study015/study015/requirements.txt (line 1))\n  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)\nWould install numpy-2.2.6 pandas-2.3.3 python-dateutil-2.9.0.post0 pytz-2026.2 six-1.17.0 tzdata-2026.2\n\n$ /tmp/15889/study015/venv/bin/pip install --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study015/study015/requirements.txt\nLooking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cu121, https://download.pytorch.org/whl/cu118, https://download.pytorch.org/whl/cpu\nCollecting pandas (from -r /tmp/15889/study015/study015/requirements.txt (line 1))\n  Using cached pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (91 kB)\nCollecting numpy>=1.22.4 (from pandas->-r /tmp/15889/study015/study015/requirements.txt (line 1))\n  Using cached numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)\nCollecting python-dateutil>=2.8.2 (from pandas->-r /tmp/15889/study015/study015/requirements.txt (line 1))\n  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)\nCollecting pytz>=2020.1 (from pandas->-r /tmp/15889/study015/study015/requirements.txt (line 1))\n  Using cached pytz-2026.2-py2.py3-none-any.whl.metadata (22 kB)\nCollecting tzdata>=2022.7 (from pandas->-r /tmp/15889/study015/study015/requirements.txt (line 1))\n  Using cached tzdata-2026.2-py2.py3-none-any.whl.metadata (1.4 kB)\nCollecting six>=1.5 (from python-dateutil>=2.8.2->pandas->-r /tmp/15889/study015/study015/requirements.txt (line 1))\n  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)\nUsing cached pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)\nUsing cached numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)\nUsing cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)\nUsing cached pytz-2026.2-py2.py3-none-any.whl (510 kB)\nUsing cached six-1.17.0-py2.py3-none-any.whl (11 kB)\nUsing cached tzdata-2026.2-py2.py3-none-any.whl (349 kB)\nInstalling collected packages: pytz, tzdata, six, numpy, python-dateutil, pandas\n\nSuccessfully installed numpy-2.2.6 pandas-2.3.3 python-dateutil-2.9.0.post0 pytz-2026.2 six-1.17.0 tzdata-2026.2\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 42.79,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 12.5,
+      "Reproducible": 10.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Data provenance (R3)",
+        "priority": "\u2014",
+        "level": "absent",
+        "fix": "Record dataset identity, train/val/test splits, preprocessing, and evaluation results.",
+        "points_available": 9.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 61.0,
+  "fair_r_scorer": "graded-v2"
+}

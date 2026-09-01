@@ -1,0 +1,129 @@
+{
+  "study_id": "study045",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study045/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:42:37.160836+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 1,
+    "hyperparameters": 0,
+    "datasets": 7,
+    "methods": 10,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "JAX",
+        "version": "1.0"
+      },
+      {
+        "name": "Haiku",
+        "version": "0.0.5"
+      },
+      {
+        "name": "Jraph",
+        "version": "0.0.1"
+      }
+    ],
+    "random_seeds": [
+      3
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "QM9",
+        "version": null
+      },
+      {
+        "name": "PCQM4Mv2",
+        "version": null
+      },
+      {
+        "name": "OC20",
+        "version": null
+      },
+      {
+        "name": "DES15K",
+        "version": null
+      },
+      {
+        "name": "S2EF",
+        "version": null
+      },
+      {
+        "name": "IS2RE",
+        "version": null
+      },
+      {
+        "name": "IS2RS",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GNS-TAT with Noisy Nodes",
+        "description": "Trained from a random initialization versus pre-trained parameters"
+      },
+      {
+        "name": "Pre-training",
+        "description": "done on PCQM4Mv2 via denoising"
+      },
+      {
+        "name": "TorchMD-NET",
+        "description": "open-source code"
+      },
+      {
+        "name": "denoising in the space of 3D molecular structures",
+        "description": "pre-training neural networks by denoising in the space of 3D molecular structures"
+      },
+      {
+        "name": "AttrMask",
+        "description": "2D-based AttrMask by masking and predicting atomic numbers"
+      },
+      {
+        "name": "Noisy Nodes",
+        "description": "significantly improves performance compared to training from scratch"
+      },
+      {
+        "name": "denoising",
+        "description": "pre-training via denoising"
+      },
+      {
+        "name": "DFT",
+        "description": "denoising structures obtained through relatively cheap methods such as DFT"
+      },
+      {
+        "name": "GNS",
+        "description": "GNS + NN"
+      },
+      {
+        "name": "GNS-TAT",
+        "description": "GNS-TAT + NN"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "MAE",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "SOTA",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Test MAE (HOMO)",
+        "value": "32027",
+        "split": "test"
+      }
+    ]
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "study_id": "study039",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study039/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:28:06.781983+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 5,
+    "methods": 9,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "FineGym",
+        "version": null
+      },
+      {
+        "name": "Kinetics-400",
+        "version": null
+      },
+      {
+        "name": "Kinetics-600",
+        "version": null
+      },
+      {
+        "name": "TimeSformer",
+        "version": "pretrained on Kinetics-600"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "learning rate",
+        "value": "0.005"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.0001"
+      },
+      {
+        "name": "decay strategy",
+        "value": "step decay or cosine decay with a warm-up"
+      },
+      {
+        "name": "number of sampled video frames per video",
+        "value": null
+      },
+      {
+        "name": "regularization term",
+        "value": "\u03bb= 0 or \u03bb= 2.5"
+      },
+      {
+        "name": "\u03bb",
+        "value": "2.5"
+      },
+      {
+        "name": "a",
+        "value": "11.04"
+      },
+      {
+        "name": "b",
+        "value": "-0.59"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Kinetics-400",
+        "version": null
+      },
+      {
+        "name": "Kinetics-600",
+        "version": null
+      },
+      {
+        "name": "FineGym",
+        "version": null
+      },
+      {
+        "name": "HMDB-51",
+        "version": "split 1"
+      },
+      {
+        "name": "MPII Cooking 2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "fine-tuning",
+        "description": "null"
+      },
+      {
+        "name": "learnable slope and shift",
+        "description": "null"
+      },
+      {
+        "name": "SlowFast",
+        "description": "with motion prompts in slow-only stream"
+      },
+      {
+        "name": "C2D",
+        "description": null
+      },
+      {
+        "name": "I3D",
+        "description": null
+      },
+      {
+        "name": "X3D",
+        "description": null
+      },
+      {
+        "name": "TimeSformer",
+        "description": null
+      },
+      {
+        "name": "Motion meets Attention: Video Motion Prompts",
+        "description": null
+      },
+      {
+        "name": "attention variation regularization",
+        "description": "regularization term contributes to generating smooth and clean attention maps"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance gain",
+        "value": "0.8%",
+        "split": null
+      },
+      {
+        "metric": "slope",
+        "value": "smaller",
+        "split": "HMDB-51 split 1"
+      },
+      {
+        "metric": "slope",
+        "value": "steeper",
+        "split": "SlowFast-f"
+      },
+      {
+        "metric": "shift",
+        "value": "smaller",
+        "split": "FineGym"
+      },
+      {
+        "metric": "aandb",
+        "value": "higher",
+        "split": "MPII Cooking 2"
+      },
+      {
+        "metric": "Top-1 mean average precision",
+        "value": "3.9%",
+        "split": "MPII Cooking 2"
+      },
+      {
+        "metric": "Top-1 accuracy",
+        "value": "0.8%",
+        "split": "FineGym"
+      },
+      {
+        "metric": "accuracy",
+        "value": "1.5%",
+        "split": "split 1"
+      },
+      {
+        "metric": "accuracy",
+        "value": "1.2%",
+        "split": "split 2"
+      },
+      {
+        "metric": "accuracy",
+        "value": "0.7%",
+        "split": "split 3"
+      }
+    ]
+  }
+}

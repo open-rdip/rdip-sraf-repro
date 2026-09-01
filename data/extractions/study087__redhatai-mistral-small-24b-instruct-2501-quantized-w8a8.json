@@ -1,0 +1,126 @@
+{
+  "study_id": "study087",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study087/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:16:21.528916+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 3,
+    "methods": 7,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ResNet50",
+        "version": null
+      },
+      {
+        "name": "ResNet-101",
+        "version": null
+      },
+      {
+        "name": "Adam",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning_rate",
+        "value": "10\u22124"
+      },
+      {
+        "name": "threshold",
+        "value": "0.5"
+      },
+      {
+        "name": "number_of_heads",
+        "value": "8"
+      },
+      {
+        "name": "number_of_correlation_pyramid",
+        "value": "3"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "FS-S",
+        "version": null
+      },
+      {
+        "name": "Pascal-5i",
+        "version": null
+      },
+      {
+        "name": "COCO-20i",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ASNet",
+        "description": "ASNet processes correlation features that have smaller channel dimensions, e.g., at most 128, than visual features, e.g., at most 2048 in ResNet50."
+      },
+      {
+        "name": "HSNet",
+        "description": "HSNet outperform other visual feature transform methods, indicating that learning correlations is beneficial for both FS-CS and FS-S."
+      },
+      {
+        "name": "local self-attention",
+        "description": "local self-attention variant compatible with the global ASNet in terms of the classification exact ratio but degrades the segmentation mIoU significantly"
+      },
+      {
+        "name": "attention masking",
+        "description": "attention masking prior is effective"
+      },
+      {
+        "name": "multi-layer fusion path",
+        "description": "fuse outputs from the multi-layer correlations to precisely estimate class occurrence and segmentation masks"
+      },
+      {
+        "name": "FS-CS",
+        "description": null
+      },
+      {
+        "name": "iFSL",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "classification exact ratio",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "segmentation mIoU",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "ER",
+        "value": "1[ygt= yC]",
+        "split": null
+      },
+      {
+        "metric": "acc",
+        "value": "1 NP n1[y(n) gt=y(n) C]",
+        "split": null
+      },
+      {
+        "metric": "mIoU",
+        "value": "1 CP cIoUc",
+        "split": null
+      }
+    ]
+  }
+}

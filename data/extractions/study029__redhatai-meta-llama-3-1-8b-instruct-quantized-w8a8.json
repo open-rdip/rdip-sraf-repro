@@ -1,0 +1,251 @@
+{
+  "study_id": "study029",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study029/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:21:41.392457+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 1,
+    "hyperparameters": 2,
+    "datasets": 19,
+    "methods": 10,
+    "evaluation_results": 16
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GCN",
+        "version": null
+      },
+      {
+        "name": "GraphSAGE",
+        "version": null
+      },
+      {
+        "name": "MLP",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      10
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\\u03bb",
+        "value": "10"
+      },
+      {
+        "name": "\u03bb",
+        "value": "string"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Cora-ogbn-arxivFlickr",
+        "version": null
+      },
+      {
+        "name": "GCN",
+        "version": null
+      },
+      {
+        "name": "Graph-SAGE",
+        "version": null
+      },
+      {
+        "name": "CoraA-photosogbn-arxivFlickrGCNGraph-SAGE",
+        "version": null
+      },
+      {
+        "name": "training dataset",
+        "version": null
+      },
+      {
+        "name": "test set",
+        "version": null
+      },
+      {
+        "name": "A-computers",
+        "version": null
+      },
+      {
+        "name": "EGNN-GCN",
+        "version": null
+      },
+      {
+        "name": "EGNN-SAGE",
+        "version": null
+      },
+      {
+        "name": "ogbn-arxiv",
+        "version": null
+      },
+      {
+        "name": "GRE+5",
+        "version": null
+      },
+      {
+        "name": "GRE+2",
+        "version": null
+      },
+      {
+        "name": "GRE+3",
+        "version": null
+      },
+      {
+        "name": "Flickr",
+        "version": null
+      },
+      {
+        "name": "Reddit",
+        "version": null
+      },
+      {
+        "name": "ogbn-products",
+        "version": null
+      },
+      {
+        "name": "Vtrain",
+        "version": null
+      },
+      {
+        "name": "Vk train",
+        "version": null
+      },
+      {
+        "name": "A-photo dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GRE+",
+        "description": "proposed method"
+      },
+      {
+        "name": "GRE",
+        "description": "GRE"
+      },
+      {
+        "name": "GCN",
+        "description": "GCN"
+      },
+      {
+        "name": "Graph-SAGE",
+        "description": "Graph-SAGE"
+      },
+      {
+        "name": "EGNN",
+        "description": "string"
+      },
+      {
+        "name": "EGNN-GCN",
+        "description": "string"
+      },
+      {
+        "name": "EGNN-SAGE",
+        "description": "string"
+      },
+      {
+        "name": "GD",
+        "description": "string"
+      },
+      {
+        "name": "proposed method",
+        "description": "string"
+      },
+      {
+        "name": "GCNGD",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "success rate",
+        "value": "on par with GRE",
+        "split": null
+      },
+      {
+        "metric": "test accuracy",
+        "value": "trade-off curve close to the top left corner",
+        "split": null
+      },
+      {
+        "metric": "accuracy dropdown",
+        "value": "better trade-off results compared to GRE",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "high accuracy drop",
+        "split": "node classification tasks"
+      },
+      {
+        "metric": "accuracy",
+        "value": "performance degradation",
+        "split": "overall training dataset"
+      },
+      {
+        "metric": "accuracy drop",
+        "value": "4.62%",
+        "split": "string"
+      },
+      {
+        "metric": "test accuracy drop",
+        "value": "4.4",
+        "split": "test"
+      },
+      {
+        "metric": "test accuracy drop",
+        "value": "string",
+        "split": "independent editing setting"
+      },
+      {
+        "metric": "Acc",
+        "value": "13.95\u00b111.00",
+        "split": "test"
+      },
+      {
+        "metric": "DD",
+        "value": "37.25\u00b110.20",
+        "split": "test"
+      },
+      {
+        "metric": "SR",
+        "value": "1.00",
+        "split": "test"
+      },
+      {
+        "metric": "training loss",
+        "value": "on par with or even lower than that of before editing",
+        "split": null
+      },
+      {
+        "metric": "training loss",
+        "value": "performs worse after model editing",
+        "split": "specific sub-training sets"
+      },
+      {
+        "metric": "test accuracy drawdown",
+        "value": "65%",
+        "split": "test"
+      },
+      {
+        "metric": "drawdown",
+        "value": "24.52%",
+        "split": "test"
+      },
+      {
+        "metric": "success rate of edits",
+        "value": "string",
+        "split": "test"
+      }
+    ]
+  }
+}

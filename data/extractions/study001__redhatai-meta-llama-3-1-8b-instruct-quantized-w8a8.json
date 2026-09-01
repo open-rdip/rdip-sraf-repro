@@ -1,0 +1,262 @@
+{
+  "study_id": "study001",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study001/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:08:16.445887+00:00",
+  "counts": {
+    "dependencies": 17,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 2,
+    "methods": 17,
+    "evaluation_results": 13
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GPTQ",
+        "version": "string"
+      },
+      {
+        "name": "FGQ",
+        "version": "string"
+      },
+      {
+        "name": "RTN",
+        "version": "string"
+      },
+      {
+        "name": "ZeroQuant-Local/Global",
+        "version": "string"
+      },
+      {
+        "name": "ZeroQuant",
+        "version": null
+      },
+      {
+        "name": "PTQ",
+        "version": null
+      },
+      {
+        "name": "BLOOM",
+        "version": null
+      },
+      {
+        "name": "OPT",
+        "version": null
+      },
+      {
+        "name": "per-row quantization",
+        "version": null
+      },
+      {
+        "name": "per-token quantization",
+        "version": null
+      },
+      {
+        "name": "GLM-130B",
+        "version": null
+      },
+      {
+        "name": "OPT-66B",
+        "version": null
+      },
+      {
+        "name": "BLOOM-176B",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "TensorFlow",
+        "version": null
+      },
+      {
+        "name": "ZQ-Local",
+        "version": null
+      },
+      {
+        "name": "ZQ-Global",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "modern GPUs",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "activation",
+        "value": "FP16"
+      },
+      {
+        "name": "weight_bits",
+        "value": "4-bit"
+      },
+      {
+        "name": "quantization type",
+        "value": "symmetric"
+      },
+      {
+        "name": "learning rate",
+        "value": "string"
+      },
+      {
+        "name": "scheduler",
+        "value": "string"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "OPT",
+        "version": null
+      },
+      {
+        "name": "BLOOM",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "LoRC",
+        "description": "string"
+      },
+      {
+        "name": "FGQ",
+        "description": "string"
+      },
+      {
+        "name": "GPTQ",
+        "description": "effective and efficient in terms of GPU resources, time cost, and data usage for INT4 weight quantization"
+      },
+      {
+        "name": "ZeroQuant",
+        "description": "effective and efficient in terms of GPU resources, time cost, and data usage for INT4 weight quantization"
+      },
+      {
+        "name": "RTN",
+        "description": "PTQ on the trained data and follows the procedure detailed in Section A to perform the quantization"
+      },
+      {
+        "name": "weight-only quantization",
+        "description": "null"
+      },
+      {
+        "name": "per-row quantization",
+        "description": "null"
+      },
+      {
+        "name": "per-token quantization",
+        "description": "null"
+      },
+      {
+        "name": "fine-grained quantization",
+        "description": "null"
+      },
+      {
+        "name": "ZQ-Global",
+        "description": "null"
+      },
+      {
+        "name": "ZQ-Local",
+        "description": "null"
+      },
+      {
+        "name": "SGD",
+        "description": "string"
+      },
+      {
+        "name": "ZQ-Global\u2217",
+        "description": "optimizes an entire transformer layer"
+      },
+      {
+        "name": "ZQ-Local\u2217",
+        "description": "optimizes a subnetwork"
+      },
+      {
+        "name": "Weight and Activation Quantization",
+        "description": "not specified"
+      },
+      {
+        "name": "INT8 weight-only quantization",
+        "description": "standard method for reducing memory costs in LLMs"
+      },
+      {
+        "name": "INT4 weight-only quantization",
+        "description": "reducing memory costs in LLMs"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance",
+        "value": "string",
+        "split": "train"
+      },
+      {
+        "metric": "performance",
+        "value": "string",
+        "split": "validation"
+      },
+      {
+        "metric": "performance",
+        "value": "string",
+        "split": "test"
+      },
+      {
+        "metric": "accuracy",
+        "value": "negligible degradation",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "substantial accuracy degradation",
+        "split": "Class-3"
+      },
+      {
+        "metric": "accuracy",
+        "value": "minimal accuracy drops",
+        "split": "Class-1"
+      },
+      {
+        "metric": "accuracy",
+        "value": "poorly",
+        "split": "\u22656.7B model sizes"
+      },
+      {
+        "metric": "PPL improvement",
+        "value": "0.5",
+        "split": null
+      },
+      {
+        "metric": "accuracy loss",
+        "value": "less than 0.05",
+        "split": null
+      },
+      {
+        "metric": "PPL degradation",
+        "value": "around 0.3 points",
+        "split": null
+      },
+      {
+        "metric": "string",
+        "value": "string",
+        "split": "string"
+      },
+      {
+        "metric": "performance",
+        "value": "outperforms RTN",
+        "split": null
+      },
+      {
+        "metric": "PPL",
+        "value": "0.5",
+        "split": null
+      }
+    ]
+  }
+}

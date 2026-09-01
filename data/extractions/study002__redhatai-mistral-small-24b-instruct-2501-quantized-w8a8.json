@@ -1,0 +1,147 @@
+{
+  "study_id": "study002",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study002/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:03:32.320794+00:00",
+  "counts": {
+    "dependencies": 4,
+    "random_seeds": 1,
+    "hyperparameters": 6,
+    "datasets": 5,
+    "methods": 8,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ADAM",
+        "version": null
+      },
+      {
+        "name": "batchnormalization",
+        "version": null
+      },
+      {
+        "name": "PyTorch Lightning",
+        "version": null
+      },
+      {
+        "name": "DASK",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      1
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "label smoothing",
+        "value": ".1"
+      },
+      {
+        "name": "label relaxation",
+        "value": ".1"
+      },
+      {
+        "name": "learning_rate",
+        "value": ".01"
+      },
+      {
+        "name": "batch_size",
+        "value": "1024"
+      },
+      {
+        "name": "embedding_vector_size",
+        "value": "{4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400}"
+      },
+      {
+        "name": "label_smoothing",
+        "value": "/u1D6FC\u2208 {.1,.2}"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "KINSHIP",
+        "version": null
+      },
+      {
+        "name": "UMLS",
+        "version": null
+      },
+      {
+        "name": "WN18RR",
+        "version": null
+      },
+      {
+        "name": "FB15K-237",
+        "version": null
+      },
+      {
+        "name": "YAGO3-10",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "grid search",
+        "description": ""
+      },
+      {
+        "name": "label smoothing",
+        "description": "soften target values"
+      },
+      {
+        "name": "label relaxation",
+        "description": "soften target values"
+      },
+      {
+        "name": "1vsAll",
+        "description": "training strategy"
+      },
+      {
+        "name": "Kronecker Decomposition",
+        "description": "applied to embedding vectors and linear transformation weight matrices"
+      },
+      {
+        "name": "DistMult",
+        "description": "de\ufb01nedin Equation 6"
+      },
+      {
+        "name": "KD variation",
+        "description": "de\ufb01ned in Equation 7"
+      },
+      {
+        "name": "KD-Rel-DistMult",
+        "description": "(h,r,t)=h\u25e6 (r\u2297r) \u00b7t"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "MRR",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "H@1",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "H@3",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "H@10",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

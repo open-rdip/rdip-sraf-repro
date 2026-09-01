@@ -1,0 +1,119 @@
+{
+  "study_id": "study048",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study048/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:06:00.013065+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 3,
+    "hyperparameters": 9,
+    "datasets": 2,
+    "methods": 10,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      75,
+      76,
+      77
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number_of_searches",
+        "value": "fixed"
+      },
+      {
+        "name": "reduced temperature",
+        "value": "0.8"
+      },
+      {
+        "name": "RMS gradient tolerance",
+        "value": "0.01"
+      },
+      {
+        "name": "Energy change tolerance",
+        "value": "0.1"
+      },
+      {
+        "name": "RMS force tolerance",
+        "value": "10^-4"
+      },
+      {
+        "name": "Energy difference tolerance",
+        "value": "10^-9"
+      },
+      {
+        "name": "Angular move acceptance ratio",
+        "value": "0.5"
+      },
+      {
+        "name": "Monte Carlo runs",
+        "value": "100"
+      },
+      {
+        "name": "Steps per run",
+        "value": "5000"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Cambridge Cluster Database",
+        "version": null
+      },
+      {
+        "name": "Lennard-Jones clusters",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "transformed energy \u02dcE",
+        "description": "defined by \u02dcE(X) = min{E(X)} where X represents the 3 N-dimensional vector of nuclear coordinates and min signifies that an energy minimization is performed starting from X."
+      },
+      {
+        "name": "Monte Carlo runs",
+        "description": "Conducted without optimizing temperature systematically."
+      },
+      {
+        "name": "Monte Carlo algorithm",
+        "description": "Used to locate global minima in cluster structures."
+      },
+      {
+        "name": "Polak-Ribiere variant of the conjugate gradient algorithm",
+        "description": "used for energy minimization"
+      },
+      {
+        "name": "canonical Monte Carlo simulation",
+        "description": "used to explore the energy landscape"
+      },
+      {
+        "name": "Conjugate gradient search",
+        "description": "Used to find the minimum energy structure."
+      },
+      {
+        "name": "Seeding",
+        "description": "Technique employed in calculations."
+      },
+      {
+        "name": "Freezing",
+        "description": "Technique employed in calculations."
+      },
+      {
+        "name": "Angular moves",
+        "description": "Employed when the highest pair energy exceeds a fraction of the lowest pair energy."
+      },
+      {
+        "name": "Unbiased algorithm",
+        "description": "An algorithm used to find global minima without biasing the starting configuration."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "study_id": "study065",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study065/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:38:07.299194+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 3,
+    "methods": 7,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "BERT",
+        "version": null
+      },
+      {
+        "name": "RoBERTa",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "threshold",
+        "value": "certain"
+      },
+      {
+        "name": "max pooling",
+        "value": "repeatedly"
+      },
+      {
+        "name": "L",
+        "value": "12"
+      },
+      {
+        "name": "H",
+        "value": "768"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "meeting transcript",
+        "version": null
+      },
+      {
+        "name": "AMI Meeting Corpus",
+        "version": "IB4003"
+      },
+      {
+        "name": "SNLI dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "TextTiling",
+        "description": "gold-standard unsupervised method for topic segmentation"
+      },
+      {
+        "name": "Sentence-BERT",
+        "description": "pre-trained on the SNLI dataset (Bowman et al., 2015)"
+      },
+      {
+        "name": "TCNs",
+        "description": "Zhang and Zhou, 2019"
+      },
+      {
+        "name": "sentence representation model",
+        "description": "extract semantic similarity between sentences"
+      },
+      {
+        "name": "segmentation scheme",
+        "description": "employs semantic similarity variations over time to detect topic changes"
+      },
+      {
+        "name": "max pooling",
+        "description": "extract a fixed sized vector via max pooling of the second to last layer"
+      },
+      {
+        "name": "RoBERTa",
+        "description": "trained with hyperparameters L= 12 and H= 768"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

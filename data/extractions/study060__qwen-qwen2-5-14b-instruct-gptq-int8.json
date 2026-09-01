@@ -1,0 +1,141 @@
+{
+  "study_id": "study060",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study060/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:13:02.195175+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 3,
+    "methods": 14,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number_of_samples_per_extension",
+        "value": "4"
+      },
+      {
+        "name": "sampling_rate",
+        "value": "22 kHz"
+      },
+      {
+        "name": "upsampler_size",
+        "value": "small"
+      },
+      {
+        "name": "model_size",
+        "value": "1B parameters"
+      },
+      {
+        "name": "upsampler_size_improved",
+        "value": "1B parameters"
+      },
+      {
+        "name": "model_size_larger",
+        "value": "5 billion parameters"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.00015"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.002"
+      },
+      {
+        "name": "batch_size",
+        "value": "32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "dataset",
+        "version": null
+      },
+      {
+        "name": "MAESTRO",
+        "version": null
+      },
+      {
+        "name": "held-out 3-second audio segments",
+        "version": "5000"
+      }
+    ],
+    "methods": [
+      {
+        "name": "VQ-V AE decoders",
+        "description": "Used for fast upsampling of top level tokens to hear a rough sense of generated content."
+      },
+      {
+        "name": "Human-in-the-loop co-composition process",
+        "description": "Involves generating multiple samples, human selection of a favorite sample, and continuation of generation based on the selected sample."
+      },
+      {
+        "name": "Distillation",
+        "description": "Process of transferring information from a model with slow autoregressive sampling but fast parallel likelihood evaluation to a model with fast parallel sampling but slow autoregressive likelihood evaluation."
+      },
+      {
+        "name": "raw audio hierarchical VQ-V AE",
+        "description": "A model trained for twice as long as previous models, but middle and top-level reconstructions were not capturing much information."
+      },
+      {
+        "name": "ancestral_sampling",
+        "description": "used to explore different possibilities by generating multiple continuations from the same segment."
+      },
+      {
+        "name": "VQ-V AE",
+        "description": "Used with 44 kHz sampling rate"
+      },
+      {
+        "name": "seq2seq model",
+        "description": "With lyric conditioning"
+      },
+      {
+        "name": "Parallel WaveNet",
+        "description": "Improves upon WaveNet by using a mixture of logistics distribution and performing probability density distillation to learn a parallel feed-forward network from a pre-trained autoregressive model."
+      },
+      {
+        "name": "ClariNet",
+        "description": "Achieves similar audio quality to Parallel WaveNet using a simple Gaussian distribution and a closed-form loss function, eliminating the need for Monte-Carlo sampling."
+      },
+      {
+        "name": "SampleRNN",
+        "description": "Uses a multi-scale, hierarchical recurrent neural network with convolutional upsampling to model long-range complex structures."
+      },
+      {
+        "name": "WaveRNN",
+        "description": "Uses recurrent neural networks that operate separately on the most significant and the least significant bytes, allowing efficient deployment in mobile devices."
+      },
+      {
+        "name": "WaveGlow",
+        "description": "A flow-based model for parallel sample-level audio synthesis, trained with a straightforward maximum-likelihood estimation."
+      },
+      {
+        "name": "Adam",
+        "description": "optimizer used for training"
+      },
+      {
+        "name": "nonautoregressive decoders",
+        "description": "Decoders that do not rely on sequential processing"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "spectral convergence (dB)",
+        "value": "-8.3",
+        "split": "test"
+      }
+    ]
+  }
+}

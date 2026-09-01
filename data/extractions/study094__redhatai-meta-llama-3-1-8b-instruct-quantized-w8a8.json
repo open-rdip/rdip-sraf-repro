@@ -1,0 +1,145 @@
+{
+  "study_id": "study094",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study094/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:53:05.161530+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 1,
+    "hyperparameters": 0,
+    "datasets": 9,
+    "methods": 3,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "DINO",
+        "version": "1.5"
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      4
+    ],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": "17"
+      },
+      {
+        "name": "LVIS",
+        "version": "7"
+      },
+      {
+        "name": "V3Det",
+        "version": "25"
+      },
+      {
+        "name": "OpenImages",
+        "version": "13"
+      },
+      {
+        "name": "CC3M",
+        "version": "2"
+      },
+      {
+        "name": "SA-1B",
+        "version": "12"
+      },
+      {
+        "name": "Dense Object Detection Grounding DINO 1.5 Pro",
+        "version": null
+      },
+      {
+        "name": "video detection results",
+        "version": null
+      },
+      {
+        "name": "image-caption pairs",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Grounding DINO 1.5 Pro",
+        "description": "common object detection"
+      },
+      {
+        "name": "Grounding DINO 1.5 Edge",
+        "description": "End-to-End Open-Set Object Detection using GLIP-T and Swin-T"
+      },
+      {
+        "name": "Grounding DINO",
+        "description": "object detection model"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "robust performance",
+        "value": "high accuracy",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "high",
+        "split": null
+      },
+      {
+        "metric": "APall",
+        "value": "46.3",
+        "split": "COCO"
+      },
+      {
+        "metric": "APall",
+        "value": "26.0",
+        "split": "LVISminival"
+      },
+      {
+        "metric": "APr",
+        "value": "20.8",
+        "split": "LVISminival"
+      },
+      {
+        "metric": "FPS(A100/TensorRT)",
+        "value": "10",
+        "split": null
+      },
+      {
+        "metric": "FPS(Orin NX)",
+        "value": "over 10",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "noteworthy",
+        "split": null
+      },
+      {
+        "metric": "ability",
+        "value": "exceptional",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "consistent",
+        "split": "most cases"
+      },
+      {
+        "metric": "accuracy",
+        "value": "high",
+        "split": "when visual clarity is compromised"
+      }
+    ]
+  }
+}

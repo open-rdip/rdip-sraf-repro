@@ -1,0 +1,24 @@
+{
+  "run_command": "python -m torch.distributed.launch --nproc_per_node=$GPUS --master_port=$PORT ./tools/train.py configs/faster_rcnn/faster_rcnn_r50_fpn_giou_1x_coco.py --loss_cls 'Neg(Dot(Mul(Y,Add(1,Sin(Z))),Log(Softmax(X))))' --loss_reg 'Add(1,Neg(Add(Div(I,U),Neg(Div(Add(E,Neg(Add(I,2))),E)))))' --launcher pytorch --checkpoint /path/to/ckpt",
+  "setup_steps": [
+    "wget https://drive.google.com/uc?id=1WtKEJo5bKp4rKq6382CXs7dsd90sSWv1 -O ckpt.zip",
+    "unzip ckpt.zip -d ckpt"
+  ],
+  "requires_dataset": [
+    {
+      "name": "COCO",
+      "download": null
+    }
+  ],
+  "requires_checkpoint": null,
+  "produces_metric": [
+    {
+      "metric": "bbox mAP",
+      "dataset": "COCO val"
+    }
+  ],
+  "entry_point": "./tools/train.py",
+  "confidence": "low",
+  "study_id": "study026",
+  "repo_url": "https://github.com/PerdonLiu/CSE-Autoloss"
+}

@@ -1,0 +1,135 @@
+{
+  "study_id": "study039",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study039/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:38:45.815588+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 5,
+    "methods": 6,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.005"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.0001"
+      },
+      {
+        "name": "lambda",
+        "value": "2.5"
+      },
+      {
+        "name": "\u03bb",
+        "value": "2.5"
+      },
+      {
+        "name": "learnable parameters",
+        "value": "2"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Kinetics-400",
+        "version": null
+      },
+      {
+        "name": "Kinetics-600",
+        "version": null
+      },
+      {
+        "name": "FineGym",
+        "version": null
+      },
+      {
+        "name": "HMDB-51",
+        "version": null
+      },
+      {
+        "name": "MPII Cooking 2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "TimeSformer",
+        "description": "pretrained on Kinetics-600"
+      },
+      {
+        "name": "SlowFast",
+        "description": "fast-only stream"
+      },
+      {
+        "name": "C2D",
+        "description": null
+      },
+      {
+        "name": "I3D",
+        "description": null
+      },
+      {
+        "name": "X3D",
+        "description": null
+      },
+      {
+        "name": "attention variation regularization",
+        "description": "regularization term contributes to generating smooth and clean attention maps, thereby improving the quality of motion prompts"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance gain",
+        "value": "0.8%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 mean average precision",
+        "value": "3.9%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 accuracy",
+        "value": "0.8%",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "1.5%",
+        "split": "1"
+      },
+      {
+        "metric": "accuracy",
+        "value": "1.2%",
+        "split": "2"
+      },
+      {
+        "metric": "accuracy",
+        "value": "0.7%",
+        "split": "3"
+      },
+      {
+        "metric": "accuracy",
+        "value": "1.1%",
+        "split": null
+      }
+    ]
+  }
+}

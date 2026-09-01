@@ -1,0 +1,244 @@
+{
+  "study_id": "study090",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study090/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:51:58.818508+00:00",
+  "counts": {
+    "dependencies": 7,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 1,
+    "methods": 14,
+    "evaluation_results": 15
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "V ovNet",
+        "version": null
+      },
+      {
+        "name": "ConvNeXT",
+        "version": "Liu et al. 2022c"
+      },
+      {
+        "name": "Lift-splat",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "AdamW",
+        "version": "Loshchilov and Hutter 2017"
+      },
+      {
+        "name": "CBGS",
+        "version": "Zhu et al. 2019"
+      },
+      {
+        "name": "ResNet-50",
+        "version": "He et al. 2016"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "resolution",
+        "value": "640 \u00d71600"
+      },
+      {
+        "name": "conv_size",
+        "value": "3\u00d71"
+      },
+      {
+        "name": "learning rate",
+        "value": "2e-4"
+      },
+      {
+        "name": "batch size",
+        "value": "64"
+      },
+      {
+        "name": "epochs",
+        "value": "24"
+      },
+      {
+        "name": "stride",
+        "value": "16"
+      },
+      {
+        "name": "image size",
+        "value": "256 \u00d7704"
+      },
+      {
+        "name": "random cropping",
+        "value": "random"
+      },
+      {
+        "name": "random scaling",
+        "value": "random"
+      },
+      {
+        "name": "random flipping",
+        "value": "random"
+      },
+      {
+        "name": "random rotation",
+        "value": "random"
+      },
+      {
+        "name": "BEV data augmentations",
+        "value": "random"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "nuScenes",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Efficient Voxel Pooling",
+        "description": "null"
+      },
+      {
+        "name": "Multi-frame Fusion",
+        "description": "null"
+      },
+      {
+        "name": "vanilla BEVDepth",
+        "description": "baseline"
+      },
+      {
+        "name": "FCOS3D",
+        "description": "Method Resolution"
+      },
+      {
+        "name": "DETR3D",
+        "description": "Method Resolution"
+      },
+      {
+        "name": "BEVDepth",
+        "description": "null"
+      },
+      {
+        "name": "Camera-aware DepthNet",
+        "description": "null"
+      },
+      {
+        "name": "Depth Loss",
+        "description": "null"
+      },
+      {
+        "name": "Camera-awareness",
+        "description": "null"
+      },
+      {
+        "name": "Depth Re\ufb01nement Module",
+        "description": "null"
+      },
+      {
+        "name": "multi-frame",
+        "description": "null"
+      },
+      {
+        "name": "BCELoss",
+        "description": "null"
+      },
+      {
+        "name": "L1Loss",
+        "description": "null"
+      },
+      {
+        "name": "ResNet-50",
+        "description": "image backbone"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP",
+        "value": "improved",
+        "split": null
+      },
+      {
+        "metric": "NDS",
+        "value": "improved",
+        "split": null
+      },
+      {
+        "metric": "training time",
+        "value": "1.5 days",
+        "split": null
+      },
+      {
+        "metric": "pooling operation speedup",
+        "value": "80\u00d7faster",
+        "split": null
+      },
+      {
+        "metric": "mAP\u2191",
+        "value": "28.2",
+        "split": null
+      },
+      {
+        "metric": "NDS\u2191",
+        "value": "32.7",
+        "split": null
+      },
+      {
+        "metric": "mATE\u2193",
+        "value": "0.21",
+        "split": null
+      },
+      {
+        "metric": "mAOE\u2193",
+        "value": "0.698",
+        "split": null
+      },
+      {
+        "metric": "nuScenes Detection Score (NDS)",
+        "value": "string or null",
+        "split": null
+      },
+      {
+        "metric": "mean Average Precision (mAP)",
+        "value": "string or null",
+        "split": null
+      },
+      {
+        "metric": "mean Average Translation Error (mATE)",
+        "value": "string or null",
+        "split": null
+      },
+      {
+        "metric": "mean Average Scale Error (mASE)",
+        "value": "string or null",
+        "split": null
+      },
+      {
+        "metric": "mean Average Orientation Error (mAOE)",
+        "value": "string or null",
+        "split": null
+      },
+      {
+        "metric": "mean Average Velocity Error (mAVE)",
+        "value": "string or null",
+        "split": null
+      },
+      {
+        "metric": "mean Average Attribute Error (mAAE)",
+        "value": "string or null",
+        "split": null
+      }
+    ]
+  }
+}

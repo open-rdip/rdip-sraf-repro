@@ -1,0 +1,147 @@
+{
+  "study_id": "study021",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study021/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:20:27.135599+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 2,
+    "methods": 6,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "DPL",
+        "version": null
+      },
+      {
+        "name": "Motifs",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "N",
+        "value": "string"
+      },
+      {
+        "name": "R",
+        "value": "string"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "0.01"
+      },
+      {
+        "name": "batch size",
+        "value": "3"
+      },
+      {
+        "name": "\u03b1",
+        "value": "10"
+      },
+      {
+        "name": "d",
+        "value": "128"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "VG",
+        "version": null
+      },
+      {
+        "name": "GQA",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DPL",
+        "description": "string"
+      },
+      {
+        "name": "TDE",
+        "description": "string"
+      },
+      {
+        "name": "DLFE",
+        "description": "string"
+      },
+      {
+        "name": "Semantic Diversity-aware Prototype-based Learning",
+        "description": null
+      },
+      {
+        "name": "SGD",
+        "description": "optimizer"
+      },
+      {
+        "name": "Prototype-based Biased Training",
+        "description": "encourage each relation feature to approach its corresponding prototype"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "R@K",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "mR@K",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "mAP",
+        "value": "25.33",
+        "split": null
+      },
+      {
+        "metric": "PredCls",
+        "value": "61.1 / 63.1",
+        "split": null
+      },
+      {
+        "metric": "SGCls",
+        "value": "11.0 / 11.8",
+        "split": null
+      },
+      {
+        "metric": "SGDet",
+        "value": "18.6 / 19.9",
+        "split": null
+      },
+      {
+        "metric": "R@50",
+        "value": "37.4 / 38.3",
+        "split": null
+      },
+      {
+        "metric": "mR@50",
+        "value": "6.4 / 6.7",
+        "split": null
+      },
+      {
+        "metric": "F@50",
+        "value": "10.9 / 11.4",
+        "split": null
+      },
+      {
+        "metric": "F@K",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

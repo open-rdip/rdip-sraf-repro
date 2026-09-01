@@ -1,0 +1,25 @@
+{
+  "run_command": "python tools/test.py configs/wholebody_2d_keypoint/rtmpose/cocktail14/rtmw_cocktail14_256x192.py --checkpoint checkpoints/rtmw_cocktail14_256x192-100e_20231205_154204-100e.pth --eval mAP",
+  "setup_steps": [
+    "pip install -r requirements.txt",
+    "mkdir -p checkpoints",
+    "wget https://download.openmmlab.com/mmpose/rtmpose/rtmw_cocktail14_256x192-100e_20231205_154204-100e.pth -O checkpoints/rtmw_cocktail14_256x192-100e_20231205_154204-100e.pth"
+  ],
+  "requires_dataset": [
+    {
+      "name": "Cocktail14",
+      "download": null
+    }
+  ],
+  "requires_checkpoint": null,
+  "produces_metric": [
+    {
+      "metric": "mAP",
+      "dataset": "Cocktail14"
+    }
+  ],
+  "entry_point": "tools/test.py",
+  "confidence": "high",
+  "study_id": "study009",
+  "repo_url": "https://github.com/open-mmlab/mmpose"
+}

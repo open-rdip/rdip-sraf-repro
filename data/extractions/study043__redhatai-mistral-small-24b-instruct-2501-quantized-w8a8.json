@@ -1,0 +1,92 @@
+{
+  "study_id": "study043",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study043/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:40:59.788949+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 3,
+    "methods": 6,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Adam optimizer",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "TITAN V",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning_rate",
+        "value": "10\u22124"
+      },
+      {
+        "name": "\u03b2",
+        "value": "(0.5,0.9)"
+      },
+      {
+        "name": "batch_size",
+        "value": "8"
+      },
+      {
+        "name": "multiband decomposition",
+        "value": "16-band"
+      },
+      {
+        "name": "training_steps",
+        "value": "3M"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "internal dataset",
+        "version": null
+      },
+      {
+        "name": "Strings",
+        "version": null
+      },
+      {
+        "name": "VCTK",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RA VE",
+        "description": "Realtime Audio Variational autoEncoder built for high-quality audio representation learning and faster than realtime synthesis"
+      },
+      {
+        "name": "multiband decomposition",
+        "description": "a way to decrease the temporal dimensionality of the data"
+      },
+      {
+        "name": "encoder",
+        "description": "combination of a multiband decomposition followed by a simple convolutional neural network"
+      },
+      {
+        "name": "decoder",
+        "description": "a modified version of the generator proposed by Kumar et al. (2019)"
+      },
+      {
+        "name": "generator",
+        "description": "modified version of the generator proposed by Kumar et al. (2019)"
+      },
+      {
+        "name": "discriminator",
+        "description": "strided convolutional network applied on different scales of the audio signal to prevent artifacts"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

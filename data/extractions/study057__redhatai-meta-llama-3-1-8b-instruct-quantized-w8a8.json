@@ -1,0 +1,147 @@
+{
+  "study_id": "study057",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study057/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:34:56.162425+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 2,
+    "hyperparameters": 8,
+    "datasets": 5,
+    "methods": 12,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Faiss",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "ResNet50",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      12,
+      2048
+    ],
+    "hardware": {
+      "gpu_model": "GPUs",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "oversampling factor",
+        "value": "string (not explicitly stated)"
+      },
+      {
+        "name": "learning rate for classi\ufb01cation head",
+        "value": "0.01"
+      },
+      {
+        "name": "learning rate for remaining network parameters",
+        "value": "0.001"
+      },
+      {
+        "name": "learning rate",
+        "value": "smaller"
+      },
+      {
+        "name": "queue length",
+        "value": "262,144"
+      },
+      {
+        "name": "number of convolutional kernels",
+        "value": "2048"
+      },
+      {
+        "name": "size of convolutional kernels",
+        "value": "2048"
+      },
+      {
+        "name": "number of pooling layers",
+        "value": "2048"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "DR9",
+        "version": null
+      },
+      {
+        "name": "training set",
+        "version": null
+      },
+      {
+        "name": "lens labels",
+        "version": null
+      },
+      {
+        "name": "industry datasets",
+        "version": null
+      },
+      {
+        "name": "sky survey datasets",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "linear model",
+        "description": "null"
+      },
+      {
+        "name": "self-supervised learning",
+        "description": "null"
+      },
+      {
+        "name": "linear classification",
+        "description": "directly on self-supervised representations"
+      },
+      {
+        "name": "fine-tuning",
+        "description": "self-supervised model"
+      },
+      {
+        "name": "oversampling",
+        "description": "during \ufb01ne-tuning to ensure a nonzero average number of lenses in each batch"
+      },
+      {
+        "name": "binary cross-entropy loss",
+        "description": "training loss function"
+      },
+      {
+        "name": "jitter/crop, random rotations, Gaussian noise, and Gaussian blur",
+        "description": "data augmentation methods"
+      },
+      {
+        "name": "SGD optimizer",
+        "description": "optimizer used during training"
+      },
+      {
+        "name": "self-supervised pretraining",
+        "description": "pretraining method (not undertaken separately for each supervised hyperparameter setup)"
+      },
+      {
+        "name": "minibatch gradient descent",
+        "description": "due to memory constraints"
+      },
+      {
+        "name": "linear classi\ufb01cation",
+        "description": "on self-supervised representations"
+      },
+      {
+        "name": "fine-tuned self-supervised classi\ufb01cation",
+        "description": "with fully connected layer and supervised setup"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

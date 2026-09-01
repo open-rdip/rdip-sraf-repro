@@ -1,0 +1,111 @@
+{
+  "study_id": "study047",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study047/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:44:25.873176+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 2,
+    "methods": 3,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "L2-norm",
+        "value": "5"
+      },
+      {
+        "name": "training method",
+        "value": "uPIT"
+      },
+      {
+        "name": "epochs",
+        "value": "100"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1e\u22123"
+      },
+      {
+        "name": "learning_rate_decay",
+        "value": "0.98"
+      },
+      {
+        "name": "early_stopping_patience",
+        "value": "10"
+      },
+      {
+        "name": "gradient_clipping_max_L2_norm",
+        "value": "5"
+      },
+      {
+        "name": "number of filters",
+        "value": "64"
+      },
+      {
+        "name": "number of DPRNN blocks",
+        "value": "6"
+      },
+      {
+        "name": "hidden units in each direction",
+        "value": "128"
+      },
+      {
+        "name": "chunk size K",
+        "value": "\u221a2L"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Microsoft\u2019s internal gender-balanced clean speech collection",
+        "version": null
+      },
+      {
+        "name": "two-speaker speech separation and recognition",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "uPIT",
+        "description": "utterance-level permutation invariant training"
+      },
+      {
+        "name": "SI-SNR",
+        "description": "scale-invariant signal-to-noise ratio"
+      },
+      {
+        "name": "TasNet",
+        "description": "an adaptive front-end method that achieves high speech separation performance on a benchmarking dataset"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "SDRi",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "SI-SNRi",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "WER",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

@@ -162,8 +162,8 @@ def map_dmp(study_id: str, parsed: dict) -> Graph:
     DMP commitments become verifiable assertions in the KG.
     Produces:
       rdip:ResearchActivity → rdip:identifier (from DMP ID)
-      rdip:ResearchActivity → rdip:generatesDataset → rdip:Dataset (×n)
-      rdip:Dataset → rdip:dataLicense, rdip:accessLevel, rdip:datasetLandingPage
+      rdip:ResearchActivity → rdip:generatesDataset → dcat:Dataset (×n)
+      dcat:Dataset → rdip:dataLicense, rdip:accessLevel, rdip:datasetLandingPage
     """
     g        = _base_graph()
     activity = study_uri(study_id)
@@ -178,7 +178,7 @@ def map_dmp(study_id: str, parsed: dict) -> Graph:
     # Dataset commitments from DMP
     for i, ds in enumerate(parsed.get("datasets", [])):
         ds_node = URIRef(f"{BASE}dataset-{study_id}-{i}")
-        g.add((ds_node, RDF.type, RDIP.Dataset))
+        g.add((ds_node, RDF.type, DCAT.Dataset))
         g.add((activity, RDIP.generatesDataset, ds_node))
 
         if ds.get("dataset_id"):
@@ -199,6 +199,44 @@ def map_dmp(study_id: str, parsed: dict) -> Graph:
             if dist.get("access_url"):
                 g.add((ds_node, RDIP.datasetLandingPage,
                        URIRef(dist["access_url"])))
+
+    return g
+
+
+# ── Repository metadata → RDIP ───────────────────────────────────────────────
+
+def map_repo_metadata(study_id: str, meta: dict) -> Graph:
+    """Map repo-level metadata recoverable WITHOUT an LLM into RDIP triples.
+
+    Feeds three FAIR-R criteria directly from the clone + corpus row:
+      rdip:identifier      (Findable)  ← paper/repo URL
+      rdip:softwareLicense (Reusable)  ← SPDX from LICENSE detection
+      rdip:commitHash      (Reusable)  ← git rev-parse HEAD
+    Attached to the same activity / software nodes the env-file maps use, so
+    everything stays in one connected per-study graph.
+    """
+    g        = _base_graph()
+    activity = study_uri(study_id)
+    software = software_uri(study_id)
+
+    g.add((activity, RDF.type, RDIP.ResearchActivity))
+    if meta.get("identifier"):
+        g.add((activity, RDIP.identifier,
+               Literal(meta["identifier"], datatype=XSD.anyURI)))
+
+    has_software = False
+    if meta.get("software_license"):
+        g.add((software, RDIP.softwareLicense,
+               Literal(meta["software_license"], datatype=XSD.string)))
+        has_software = True
+    if meta.get("commit_hash"):
+        g.add((software, RDIP.commitHash,
+               Literal(meta["commit_hash"], datatype=XSD.string)))
+        has_software = True
+
+    if has_software:
+        g.add((software, RDF.type, RDIP.SoftwareApplication))
+        g.add((activity, RDIP.usedSoftware, software))
 
     return g
 

@@ -1,0 +1,50 @@
+{
+  "study_id": "study049",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study049/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:31:59.973881+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 4,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Gy\u00e1rf\u00e1s' path argument",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "non-copying transduction",
+        "description": "obtained from any class with unbounded shrubdepth"
+      },
+      {
+        "name": "Gy\u00e1rf\u00e1s decomposition",
+        "description": "a Gy\u00e1rf\u00e1s decomposition of G"
+      },
+      {
+        "name": "b-index",
+        "description": "b-index of a graph"
+      },
+      {
+        "name": "index",
+        "description": "index of a graph"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

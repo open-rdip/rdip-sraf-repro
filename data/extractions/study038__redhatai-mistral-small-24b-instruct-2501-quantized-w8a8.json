@@ -1,0 +1,82 @@
+{
+  "study_id": "study038",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study038/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:37:20.994678+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 0,
+    "datasets": 3,
+    "methods": 8,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      100
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "single-cell gene expression dataset",
+        "version": null
+      },
+      {
+        "name": "Morpho-MNIST",
+        "version": null
+      },
+      {
+        "name": "PBMCs",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Pearson correlation",
+        "description": "R2 denotes Pearson correlation between ground truth and predicted values"
+      },
+      {
+        "name": "trV AE",
+        "description": "trV AE can accurately predict all cell types in each perturbed condition"
+      },
+      {
+        "name": "VFAE",
+        "description": "Variational Autoencoder"
+      },
+      {
+        "name": "MMD-regularized autoencoder",
+        "description": "Autoencoder with Maximum Mean Discrepancy regularization"
+      },
+      {
+        "name": "CycleGAN",
+        "description": "Generative Adversarial Network for image-to-image translation"
+      },
+      {
+        "name": "scGen",
+        "description": "Variational Autoencoder combined with vector arithmetics"
+      },
+      {
+        "name": "scVI",
+        "description": "Conditional Variational Autoencoder with a negative binomial output distribution"
+      },
+      {
+        "name": "vanilla CV AE",
+        "description": "A model that yields representations in the first layer following the bottleneck that vary strongly across categorical conditions"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "R2",
+        "value": "Pearson correlation between ground truth and predicted values",
+        "split": null
+      }
+    ]
+  }
+}

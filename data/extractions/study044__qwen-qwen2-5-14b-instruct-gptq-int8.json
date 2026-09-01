@@ -1,0 +1,138 @@
+{
+  "study_id": "study044",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study044/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:03:24.216266+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 8,
+    "methods": 8,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "entropy_threshold",
+        "value": "\u03c4"
+      },
+      {
+        "name": "consecutive_confident_steps",
+        "value": "k"
+      },
+      {
+        "name": "ntoken",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCONUT",
+        "version": "TF"
+      },
+      {
+        "name": "Math500",
+        "version": null
+      },
+      {
+        "name": "AIME 2024",
+        "version": null
+      },
+      {
+        "name": "GSM8K",
+        "version": null
+      },
+      {
+        "name": "GPQA-Diamond",
+        "version": null
+      },
+      {
+        "name": "HumanEval",
+        "version": null
+      },
+      {
+        "name": "MBPPMBPP",
+        "version": null
+      },
+      {
+        "name": "LiveCodeBench",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Soft Thinking",
+        "description": "A method that integrates path exploration across consecutive concept tokens, enhancing reasoning flexibility and depth."
+      },
+      {
+        "name": "Cold Stop mechanism",
+        "description": "Dynamically stops intermediate reasoning when the model becomes overconfident."
+      },
+      {
+        "name": "COCONUT",
+        "description": "training-free approach that directly feeds the previous hidden state as the next input embedding"
+      },
+      {
+        "name": "average embedding strategy",
+        "description": "takes the mean of the top-n token embeddings"
+      },
+      {
+        "name": "Cold Stop",
+        "description": "Mitigates generation collapse by avoiding unnecessary exploration along overconfident paths."
+      },
+      {
+        "name": "Soft Thinking with Cold Stop",
+        "description": "Solves more problems than standard CoT and achieves greater overall efficiency."
+      },
+      {
+        "name": "Standard CoT Thinking",
+        "description": "Baseline method that employs explicit step-by-step reasoning"
+      },
+      {
+        "name": "Standard Greedy CoT Thinking",
+        "description": "Baseline method that utilizes greedy decoding at each step of the reasoning process"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "correct answers",
+        "value": "0%",
+        "split": null
+      },
+      {
+        "metric": "generation length",
+        "value": "maximum",
+        "split": null
+      },
+      {
+        "metric": "correct solutions",
+        "value": "small number",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "substantially improved",
+        "split": null
+      },
+      {
+        "metric": "token efficiency",
+        "value": "substantially improved",
+        "split": null
+      },
+      {
+        "metric": "Pass@1",
+        "value": "c/n",
+        "split": null
+      }
+    ]
+  }
+}

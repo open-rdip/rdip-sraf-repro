@@ -1,0 +1,64 @@
+{
+  "study_id": "study016",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study016/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:40:21.560526+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 4,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "IMPALA",
+        "version": null
+      },
+      {
+        "name": "PPO",
+        "version": null
+      },
+      {
+        "name": "DreamerV2",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "IMPALA",
+        "description": "chosen as a baseline algorithm"
+      },
+      {
+        "name": "PPO",
+        "description": "chosen as a baseline algorithm"
+      },
+      {
+        "name": "DreamerV2",
+        "description": "used as a representative model-based baseline without discrete latents and without mixed precision training"
+      },
+      {
+        "name": "Automated Curriculum Learning",
+        "description": "A simple 'difficulty'-based curriculum where the maximum difficulty of future generated worlds for a task is increased (decreased) slightly when the agent succeeds (fails) at the task."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "average scores",
+        "value": "non-zero performance",
+        "split": "MT-TB"
+      }
+    ]
+  }
+}

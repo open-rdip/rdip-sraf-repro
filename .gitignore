@@ -25,3 +25,15 @@ test_repos/
 
 # Logs
 logs/*.log
+*.pptx
+
+*.jpg
+*.pdf
+*.tmp
+# result-repro generated outputs
+result_repro/results/
+
+# more caches / backups
+.pytest_cache/
+pytest-cache-files-*/
+*.bak

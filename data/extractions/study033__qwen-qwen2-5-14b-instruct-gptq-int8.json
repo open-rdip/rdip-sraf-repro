@@ -1,0 +1,165 @@
+{
+  "study_id": "study033",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study033/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:55:30.894841+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 3,
+    "methods": 19,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": "1"
+      },
+      {
+        "name": "Pix2Pix",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03bbadv",
+        "value": "string"
+      },
+      {
+        "name": "\u03bbart",
+        "value": "string"
+      },
+      {
+        "name": "\u03bbrec",
+        "value": "string"
+      },
+      {
+        "name": "\u03bbself",
+        "value": "string"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "SYN",
+        "version": null
+      },
+      {
+        "name": "CL1",
+        "version": null
+      },
+      {
+        "name": "CL2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "UNet",
+        "description": "publicly available implementation in PyTorch1"
+      },
+      {
+        "name": "cGANMAR",
+        "description": "identical to Pix2Pix at the backend using official code of Pix2Pix [13]"
+      },
+      {
+        "name": "CNNMAR",
+        "description": "state-of-the-art supervised approach to MAR"
+      },
+      {
+        "name": "LI",
+        "description": "A conventional method for MAR."
+      },
+      {
+        "name": "NMAR",
+        "description": "A conventional method for MAR."
+      },
+      {
+        "name": "CycleGAN",
+        "description": "An unsupervised method for image-to-image translation."
+      },
+      {
+        "name": "DIP",
+        "description": "An unsupervised method for image-to-image translation."
+      },
+      {
+        "name": "MUNIT",
+        "description": "An unsupervised method for image-to-image translation."
+      },
+      {
+        "name": "DRIT",
+        "description": "An unsupervised method for image-to-image translation."
+      },
+      {
+        "name": "artifact pyramid decoding (APD)",
+        "description": "A design inspired by the feature pyramid network (FPN) used for merging artifact code and content code during the decoding of an artifact-affected image."
+      },
+      {
+        "name": "ADN",
+        "description": "A model that learns to output four intended images through various loss functions including adversarial losses, artifact consistency loss, reconstruction loss, and self-reduction loss."
+      },
+      {
+        "name": "artifact consistency loss",
+        "description": "Loss function based on the observation that the difference between xa and \u02c6x and the difference between \u02c6ya and y should be close due to the use of the same artifact."
+      },
+      {
+        "name": "self-reduction mechanism",
+        "description": "Introduces a process where artifacts are added to y to create \u02c6ya and then removed from \u02c6ya to result in \u02dcy, used to regularize the artifact reduction."
+      },
+      {
+        "name": "PSNR",
+        "description": "Performance metric"
+      },
+      {
+        "name": "SSIM",
+        "description": "Performance metric"
+      },
+      {
+        "name": "ConventionalLI",
+        "description": "[2]"
+      },
+      {
+        "name": "SupervisedCNNMAR",
+        "description": "[4]"
+      },
+      {
+        "name": "UnsupervisedCycleGAN",
+        "description": "[24]"
+      },
+      {
+        "name": "Ours",
+        "description": ""
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "PSNR",
+        "value": "slightly outperform our method",
+        "split": null
+      },
+      {
+        "metric": "SSIM",
+        "value": "slightly outperform our method",
+        "split": null
+      },
+      {
+        "metric": "PSNR",
+        "value": "32.0",
+        "split": "test"
+      },
+      {
+        "metric": "SSIM",
+        "value": "91.0",
+        "split": "test"
+      }
+    ]
+  }
+}

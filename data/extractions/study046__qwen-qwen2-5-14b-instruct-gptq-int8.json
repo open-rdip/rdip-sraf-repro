@@ -1,0 +1,172 @@
+{
+  "study_id": "study046",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study046/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:05:02.844089+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 3,
+    "methods": 10,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA GeForce GTX2070",
+      "cuda_version": null,
+      "cpu_info": "i7-8700K"
+    },
+    "hyperparameters": [
+      {
+        "name": "optimizer",
+        "value": "stochastic gradient descent"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.0005"
+      },
+      {
+        "name": "initial_learning_rate_weld_defect",
+        "value": "0.01"
+      },
+      {
+        "name": "total_epochs_weld_defect",
+        "value": "500"
+      },
+      {
+        "name": "initial_learning_rate_ms_coco",
+        "value": "0.01"
+      },
+      {
+        "name": "total_epochs_ms_coco",
+        "value": "300"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "weld defect dataset",
+        "version": null
+      },
+      {
+        "name": "MS COCO",
+        "version": "\u00d71.25"
+      },
+      {
+        "name": "COCO trainval35k",
+        "version": "36"
+      }
+    ],
+    "methods": [
+      {
+        "name": "EFE module",
+        "description": "A module for exploring multi-scale feature with a parameter-free stage and a parameter-based stage"
+      },
+      {
+        "name": "LF-YOLO model",
+        "description": "A model designed for weld defect detection based on the EFE module"
+      },
+      {
+        "name": "EFE",
+        "description": null
+      },
+      {
+        "name": "RMF module",
+        "description": null
+      },
+      {
+        "name": "MMdetection",
+        "description": "an open source 2D detection toolbox"
+      },
+      {
+        "name": "LF-YOLO",
+        "description": "Combines powerful contextual information and local textural features."
+      },
+      {
+        "name": "SSD [12]",
+        "description": "One-stage network."
+      },
+      {
+        "name": "YOLO v3 [11]",
+        "description": "One-stage network."
+      },
+      {
+        "name": "Faster-RCNN [16]",
+        "description": "Two-stage network."
+      },
+      {
+        "name": "R-FCN [17]",
+        "description": "Two-stage network."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP 50",
+        "value": "92.9",
+        "split": null
+      },
+      {
+        "metric": "FLOPs",
+        "value": "4.0G",
+        "split": null
+      },
+      {
+        "metric": "Params",
+        "value": "7.3M",
+        "split": null
+      },
+      {
+        "metric": "FPS",
+        "value": "61.5",
+        "split": null
+      },
+      {
+        "metric": "mAP 50",
+        "value": "90.0",
+        "split": "test"
+      },
+      {
+        "metric": "FPS",
+        "value": "10.2",
+        "split": "test"
+      },
+      {
+        "metric": "FLOPs",
+        "value": "243.2",
+        "split": "test"
+      },
+      {
+        "metric": "Params",
+        "value": "68.9",
+        "split": "test"
+      },
+      {
+        "metric": "mAP 50",
+        "value": "43.9",
+        "split": "test-dev2017"
+      },
+      {
+        "metric": "FLOPs(G)",
+        "value": "28.7%",
+        "split": null
+      },
+      {
+        "metric": "Params(M)",
+        "value": "25.9%",
+        "split": null
+      }
+    ]
+  }
+}

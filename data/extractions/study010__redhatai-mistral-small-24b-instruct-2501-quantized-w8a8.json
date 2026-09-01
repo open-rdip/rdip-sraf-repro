@@ -1,0 +1,139 @@
+{
+  "study_id": "study010",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study010/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:10:38.280075+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 14,
+    "datasets": 2,
+    "methods": 7,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PaddlePaddle",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.05"
+      },
+      {
+        "name": "initial_learning_rate_english",
+        "value": "5 104\u00d7batchsize 2048"
+      },
+      {
+        "name": "learning_rate_scheduler",
+        "value": "cosine with 2 epochs linear warm-up"
+      },
+      {
+        "name": "training_epochs_english",
+        "value": "21"
+      },
+      {
+        "name": "data_augmentation_english",
+        "value": "rotation, perspective distortion, motion blur, Gaussian noise"
+      },
+      {
+        "name": "alphabet",
+        "value": "all case-insensitive alphanumerics"
+      },
+      {
+        "name": "maximum_predict_length_english",
+        "value": "25"
+      },
+      {
+        "name": "initial_learning_rate_chinese",
+        "value": "3 104\u00d7batchsize 512"
+      },
+      {
+        "name": "learning_rate_scheduler_chinese",
+        "value": "cosine with 5 epochs linear warm-up"
+      },
+      {
+        "name": "training_epochs_chinese",
+        "value": "100"
+      },
+      {
+        "name": "data_augmentation_chinese",
+        "value": null
+      },
+      {
+        "name": "maximum_predict_length_chinese",
+        "value": "40"
+      },
+      {
+        "name": "window size",
+        "value": "7\u00d711"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IC13",
+        "version": null
+      },
+      {
+        "name": "IC15",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "SVTR",
+        "description": "Scene text recognition model"
+      },
+      {
+        "name": "SVTR-T",
+        "description": "Smallest variant of the SVTR family"
+      },
+      {
+        "name": "4x4 disjoint linear projection",
+        "description": "a 4x4 disjoint linear projection"
+      },
+      {
+        "name": "7x7 convolution with stride 4",
+        "description": "a 7x7 convolution with stride 4"
+      },
+      {
+        "name": "patch embedding",
+        "description": "two consecutive 3x3 convolutions with stride 2 and batch normalization"
+      },
+      {
+        "name": "global mixing block",
+        "description": "a layer norm is applied and followed by a multi-head self-attention for dependence modeling. In the following, a layer norm and a MLP are sequentially applied for feature fusion."
+      },
+      {
+        "name": "local mixing",
+        "description": "evaluates the correlation among components within a predefined window. Its objective is to encode the character morphology feature and establish the associations between components within a character, which simulates the stroke-like feature vital for character identification."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "1.9%",
+        "split": null
+      },
+      {
+        "metric": "Word accuracy",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

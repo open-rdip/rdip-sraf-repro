@@ -1,0 +1,252 @@
+{
+  "study_id": "study006",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study006/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:10:33.198674+00:00",
+  "counts": {
+    "dependencies": 6,
+    "random_seeds": 1,
+    "hyperparameters": 3,
+    "datasets": 13,
+    "methods": 16,
+    "evaluation_results": 13
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "MuJoCo",
+        "version": null
+      },
+      {
+        "name": "CompILE",
+        "version": "2019"
+      },
+      {
+        "name": "RPL",
+        "version": "2019"
+      },
+      {
+        "name": "OPAL",
+        "version": "2021"
+      },
+      {
+        "name": "ACT",
+        "version": "2023"
+      },
+      {
+        "name": "PRISE",
+        "version": "2024"
+      }
+    ],
+    "random_seeds": [
+      3
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "control rate",
+        "value": "10 Hz"
+      },
+      {
+        "name": "macro action length",
+        "value": "3"
+      },
+      {
+        "name": "planning horizon",
+        "value": "9"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Hopper",
+        "version": null
+      },
+      {
+        "name": "Walker2D",
+        "version": null
+      },
+      {
+        "name": "Medium-Replay-High Hopper",
+        "version": null
+      },
+      {
+        "name": "Medium-Expert-Mod Hopper",
+        "version": null
+      },
+      {
+        "name": "Stochastic MuJoCo",
+        "version": null
+      },
+      {
+        "name": "Adroit",
+        "version": null
+      },
+      {
+        "name": "AntMaze",
+        "version": null
+      },
+      {
+        "name": "Umaze",
+        "version": null
+      },
+      {
+        "name": "Medium-Diverse",
+        "version": null
+      },
+      {
+        "name": "Large-Play",
+        "version": null
+      },
+      {
+        "name": "Large-Diverse",
+        "version": null
+      },
+      {
+        "name": "Cloned",
+        "version": null
+      },
+      {
+        "name": "Expert",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "L-MAP",
+        "description": null
+      },
+      {
+        "name": "TAP",
+        "description": null
+      },
+      {
+        "name": "TT",
+        "description": null
+      },
+      {
+        "name": "1R2R",
+        "description": null
+      },
+      {
+        "name": "CQL",
+        "description": null
+      },
+      {
+        "name": "IQL",
+        "description": null
+      },
+      {
+        "name": "Conservative Q-Learning",
+        "description": "CQL; Kumar et al. (2020)"
+      },
+      {
+        "name": "Implicit Q-Learning",
+        "description": "IQL; Kostrikov et al. (2022)"
+      },
+      {
+        "name": "TT (+Q)",
+        "description": "uses the IQL critic for value estimation"
+      },
+      {
+        "name": "CompILE",
+        "description": "learns latent codes representing variable-length behavior segments, enabling cross-task generalization"
+      },
+      {
+        "name": "RPL",
+        "description": "employs a hierarchical policy architecture to simplify long-horizon tasks by decomposing them into sub-policies"
+      },
+      {
+        "name": "OPAL",
+        "description": "introduces a continuous space of primitive actions to reduce distributional shift in offline RL, enhancing policy robustness"
+      },
+      {
+        "name": "PRISE",
+        "description": "applies sequence compression to learn variable-length action primitives, improving behavior cloning by capturing essential behavioral patterns"
+      },
+      {
+        "name": "ACT",
+        "description": "not described in the passage"
+      },
+      {
+        "name": "Behavior Cloning (BC)",
+        "description": null
+      },
+      {
+        "name": "MCTS",
+        "description": "UCT policy, progressive widening, parallel expansion, backpropagation"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "score",
+        "value": "higher",
+        "split": "Medium-Replay-High Hopper"
+      },
+      {
+        "metric": "score",
+        "value": "higher",
+        "split": "Medium-Expert-Mod Hopper"
+      },
+      {
+        "metric": "performance",
+        "value": "highest",
+        "split": "Hopper"
+      },
+      {
+        "metric": "performance",
+        "value": "highest",
+        "split": "Walker2D"
+      },
+      {
+        "metric": "performance",
+        "value": "competitive or superior",
+        "split": null
+      },
+      {
+        "metric": "success rate",
+        "value": "83.33%",
+        "split": "all environments"
+      },
+      {
+        "metric": "success rate",
+        "value": "78.33%",
+        "split": "Large-Play environment"
+      },
+      {
+        "metric": "success rate",
+        "value": "81.67%",
+        "split": "Large-Diverse environment"
+      },
+      {
+        "metric": "success rate",
+        "value": "93.33%",
+        "split": "Umaze environment"
+      },
+      {
+        "metric": "success rate",
+        "value": "88.33%",
+        "split": "Medium-Diverse environment"
+      },
+      {
+        "metric": "average score",
+        "value": "51.40",
+        "split": null
+      },
+      {
+        "metric": "average score",
+        "value": "18.79",
+        "split": "non-expert datasets"
+      },
+      {
+        "metric": "scores",
+        "value": null,
+        "split": "Pen and Relocate environments"
+      }
+    ]
+  }
+}

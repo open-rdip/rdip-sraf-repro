@@ -1,0 +1,102 @@
+{
+  "study_id": "study013",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study013/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:13:31.287574+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 8,
+    "methods": 6,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Scikit-Learn",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "128"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COOS-7",
+        "version": null
+      },
+      {
+        "name": "COOS",
+        "version": null
+      },
+      {
+        "name": "Training",
+        "version": null
+      },
+      {
+        "name": "Test1",
+        "version": null
+      },
+      {
+        "name": "Test2",
+        "version": null
+      },
+      {
+        "name": "Test3",
+        "version": null
+      },
+      {
+        "name": "Test4",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "protein localization classification",
+        "description": "a protein localization classification problem"
+      },
+      {
+        "name": "strati\ufb01cation",
+        "description": "strati\ufb01cation of the dataset by multiple kinds of covariate shifts"
+      },
+      {
+        "name": "classi\ufb01cation",
+        "description": "classi\ufb01cation baselines for COOS-7"
+      },
+      {
+        "name": "5-fold cross-validation",
+        "description": "null"
+      },
+      {
+        "name": "VGG16",
+        "description": "pretrained CNN on ImageNet"
+      },
+      {
+        "name": "PCI",
+        "description": "self-supervised method designed for microscopy images"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "balanced classification error",
+        "value": "1.1%",
+        "split": "test"
+      }
+    ]
+  }
+}

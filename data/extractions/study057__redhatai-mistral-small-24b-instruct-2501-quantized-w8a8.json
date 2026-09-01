@@ -1,0 +1,104 @@
+{
+  "study_id": "study057",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study057/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:52:53.966316+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 1,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "faiss",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "oversampling factor",
+        "value": null
+      },
+      {
+        "name": "learning rate for classification head",
+        "value": "0.01"
+      },
+      {
+        "name": "learning rate for remaining network parameters",
+        "value": "0.001"
+      },
+      {
+        "name": "minibatch size",
+        "value": "128"
+      },
+      {
+        "name": "learning rate",
+        "value": "smaller learning rate"
+      },
+      {
+        "name": "queue length",
+        "value": "262,144"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "DR9",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "linear model",
+        "description": "initial linear model to predict labels for the training and validation nonlenses"
+      },
+      {
+        "name": "similarity search",
+        "description": "efficient similarity search using Faiss library"
+      },
+      {
+        "name": "linear classification",
+        "description": "linear classification directly on the self-supervised representations"
+      },
+      {
+        "name": "fine-tuning",
+        "description": "fine-tuning the self-supervised model"
+      },
+      {
+        "name": "binary cross-entropy loss",
+        "description": null
+      },
+      {
+        "name": "image augmentation",
+        "description": "jitter/crop, random rotations, Gaussian noise, and Gaussian blur"
+      },
+      {
+        "name": "minibatch gradient descent",
+        "description": "due to memory constraints introduced by large CNN models and image dimensionality"
+      },
+      {
+        "name": "self-supervised representation learning",
+        "description": "reduces the problem to one that can be solved with minimal computing resources and computational background"
+      },
+      {
+        "name": "ResNet50",
+        "description": "encoder architecture"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

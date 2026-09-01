@@ -1,0 +1,156 @@
+{
+  "study_id": "study029",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study029/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:27:55.979823+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 11,
+    "methods": 9,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03bb",
+        "value": "10"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Cora",
+        "version": null
+      },
+      {
+        "name": "ogbn-arxiv",
+        "version": null
+      },
+      {
+        "name": "Flickr",
+        "version": null
+      },
+      {
+        "name": "A-computers",
+        "version": null
+      },
+      {
+        "name": "GRE+5",
+        "version": null
+      },
+      {
+        "name": "GRE+2",
+        "version": null
+      },
+      {
+        "name": "GRE+3",
+        "version": null
+      },
+      {
+        "name": "Reddit",
+        "version": null
+      },
+      {
+        "name": "ogbn-products",
+        "version": null
+      },
+      {
+        "name": "Vtrain",
+        "version": null
+      },
+      {
+        "name": "A-photo",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GRE",
+        "description": null
+      },
+      {
+        "name": "GRE+",
+        "description": null
+      },
+      {
+        "name": "GCN",
+        "description": null
+      },
+      {
+        "name": "GraphSAGE",
+        "description": null
+      },
+      {
+        "name": "EGNN-GCN",
+        "description": "model architecture"
+      },
+      {
+        "name": "EGNN-SAGE",
+        "description": "model architecture"
+      },
+      {
+        "name": "GD",
+        "description": "basic editor"
+      },
+      {
+        "name": "GNN",
+        "description": "variety of GNN architectures"
+      },
+      {
+        "name": "GCNGD",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "success rate",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "test accuracy dropdown",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "accuracy",
+        "value": "high",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "4.62%",
+        "split": "test"
+      },
+      {
+        "metric": "test accuracy drop",
+        "value": "4.4",
+        "split": "test"
+      },
+      {
+        "metric": "DrawDown",
+        "value": "37.25\u00b110.20",
+        "split": "test"
+      },
+      {
+        "metric": "training loss",
+        "value": "on par with or even lower than that of before editing",
+        "split": "train"
+      },
+      {
+        "metric": "test accuracy drawdown",
+        "value": "43.87%",
+        "split": "test"
+      }
+    ]
+  }
+}

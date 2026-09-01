@@ -1,0 +1,114 @@
+{
+  "study_id": "study090",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study090/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:34:30.760945+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 1,
+    "methods": 7,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "input_image_resolution",
+        "value": "640x1600"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning_rate",
+        "value": "2e-4"
+      },
+      {
+        "name": "batch_size",
+        "value": "64"
+      },
+      {
+        "name": "image backbone",
+        "value": "ResNet-50"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "nuScenes",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "BEVDepth",
+        "description": "Uses pretrained ConvNeXT as backbone."
+      },
+      {
+        "name": "Ef\ufb01cient Voxel Pooling",
+        "description": "Proposed method to improve computational efficiency over existing Voxel Pooling in Lift-splat."
+      },
+      {
+        "name": "Multi-frame Fusion",
+        "description": "Aids in better object detection."
+      },
+      {
+        "name": "image data augmentations",
+        "description": "random cropping, random scaling, random flipping, random rotation"
+      },
+      {
+        "name": "BEV data augmentations",
+        "description": "random scaling, random flipping, random rotation"
+      },
+      {
+        "name": "CBGS strategy",
+        "description": "used in training BEVDepth for 20 epochs"
+      },
+      {
+        "name": "Camera-aware DepthNet",
+        "description": "placed at the feature level with stride 16"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP",
+        "value": "improved",
+        "split": null
+      },
+      {
+        "metric": "NDS",
+        "value": "improved",
+        "split": null
+      },
+      {
+        "metric": "mAP",
+        "value": "0.282",
+        "split": "val"
+      },
+      {
+        "metric": "mATE",
+        "value": "0.768",
+        "split": "val"
+      },
+      {
+        "metric": "mAOE",
+        "value": "0.698",
+        "split": "val"
+      },
+      {
+        "metric": "NDS",
+        "value": "0.327",
+        "split": "val"
+      }
+    ]
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "study_id": "study038",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study038/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:26:59.778911+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 0,
+    "datasets": 18,
+    "methods": 11,
+    "evaluation_results": 9
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      100
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "benchmark",
+        "version": null
+      },
+      {
+        "name": "real-world",
+        "version": null
+      },
+      {
+        "name": "Tuft cells",
+        "version": null
+      },
+      {
+        "name": "Hpoly.Day10pred",
+        "version": null
+      },
+      {
+        "name": "Hpoly.Day10ac",
+        "version": null
+      },
+      {
+        "name": "gut cells",
+        "version": null
+      },
+      {
+        "name": "Hpoly.Day10pred Hpoly.Day10ac db ef real Hpoly.Day10pred Hpoly.Day10",
+        "version": null
+      },
+      {
+        "name": "single-cell gene expression dataset",
+        "version": null
+      },
+      {
+        "name": "IFN-\u03b2 stimulated",
+        "version": null
+      },
+      {
+        "name": "control peripheral blood",
+        "version": null
+      },
+      {
+        "name": "Morpho-MNIST",
+        "version": null
+      },
+      {
+        "name": "MNIST",
+        "version": null
+      },
+      {
+        "name": "CELEBA",
+        "version": null
+      },
+      {
+        "name": "PBMCs",
+        "version": null
+      },
+      {
+        "name": "NK cells",
+        "version": null
+      },
+      {
+        "name": "control",
+        "version": null
+      },
+      {
+        "name": "real stimulated cells",
+        "version": null
+      },
+      {
+        "name": "predicted stimulated cells",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "MMD regularization",
+        "description": "forces representations to be similar across conditions"
+      },
+      {
+        "name": "trV AE",
+        "description": "outperforms existing modeling approaches"
+      },
+      {
+        "name": "CV AEs",
+        "description": "display a well-controlled behavior"
+      },
+      {
+        "name": "CEV AE",
+        "description": "faithful modeling of an interventional distribution can be re-framed as successful perturbation effect prediction across domains"
+      },
+      {
+        "name": "CV AE",
+        "description": "autoencoder with MMD regularization"
+      },
+      {
+        "name": "existing models",
+        "description": null
+      },
+      {
+        "name": "MMD-regularized autoencoder",
+        "description": "string"
+      },
+      {
+        "name": "CycleGAN",
+        "description": "string"
+      },
+      {
+        "name": "scGen",
+        "description": "string"
+      },
+      {
+        "name": "scVI",
+        "description": "string"
+      },
+      {
+        "name": "vanilla CV AE",
+        "description": "yields representations in the first layer following the bottleneck that vary strongly across categorical conditions"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Pearson correlation",
+        "value": "R2",
+        "split": null
+      },
+      {
+        "metric": "mean",
+        "value": "accurately predicts",
+        "split": null
+      },
+      {
+        "metric": "variance",
+        "value": "accurately predicts",
+        "split": null
+      },
+      {
+        "metric": "correlation",
+        "value": "outperforms",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "does not improve",
+        "split": null
+      },
+      {
+        "metric": "Pearson\u2019s R2",
+        "value": "mean and variance gene expression",
+        "split": null
+      },
+      {
+        "metric": "Pearson\u2019s R2",
+        "value": "mean gene expression",
+        "split": "trV AE for the eight different cell types and three conditions"
+      },
+      {
+        "metric": "R2",
+        "value": "best",
+        "split": null
+      },
+      {
+        "metric": "standard deviation",
+        "value": "error bars",
+        "split": null
+      }
+    ]
+  }
+}

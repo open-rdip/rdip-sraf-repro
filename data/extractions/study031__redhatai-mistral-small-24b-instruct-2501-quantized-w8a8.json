@@ -1,0 +1,149 @@
+{
+  "study_id": "study031",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study031/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:30:14.261676+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 5,
+    "methods": 6,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "TensorFlow",
+        "version": "2"
+      },
+      {
+        "name": "Scikit-learn",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "aspect_ratio",
+        "value": "1:2"
+      },
+      {
+        "name": "horizontal_flip_probability",
+        "value": "30%"
+      },
+      {
+        "name": "vertical_flip_probability",
+        "value": "30%"
+      },
+      {
+        "name": "random_brightness_probability",
+        "value": "10%"
+      },
+      {
+        "name": "random_contrast_probability",
+        "value": "10%"
+      },
+      {
+        "name": "random_saturation_probability",
+        "value": "10%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "plankton species",
+        "version": null
+      },
+      {
+        "name": "phytoplankton anomaly dataset",
+        "version": null
+      },
+      {
+        "name": "dataset published in [48]",
+        "version": null
+      },
+      {
+        "name": "2021 Ut\u00a8 o data",
+        "version": null
+      },
+      {
+        "name": "object_detection_dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Autoencoder",
+        "description": "ConvM2-VQVAE1"
+      },
+      {
+        "name": "Feature extractor",
+        "description": "HardNet1"
+      },
+      {
+        "name": "ConvM2-VQVAE1",
+        "description": "autoencoder model"
+      },
+      {
+        "name": "HardNet1",
+        "description": "feature extractor"
+      },
+      {
+        "name": "Local Outlier Factor",
+        "description": "one-class classifier"
+      },
+      {
+        "name": "object_detection",
+        "description": ""
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Pauliella",
+        "value": "0.72",
+        "split": null
+      },
+      {
+        "metric": "Peridiniella Chain",
+        "value": "0.75",
+        "split": null
+      },
+      {
+        "metric": "Peridiniella Single",
+        "value": "0.67",
+        "split": null
+      },
+      {
+        "metric": "Skeletonem",
+        "value": "0.53",
+        "split": null
+      },
+      {
+        "metric": "Average",
+        "value": "0.62",
+        "split": null
+      },
+      {
+        "metric": "F1 score",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "true_positive",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "true_negative",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

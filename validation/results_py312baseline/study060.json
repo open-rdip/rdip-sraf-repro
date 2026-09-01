@@ -1,0 +1,141 @@
+{
+  "study_id": "study060",
+  "repo_url": "https://github.com/openai/jukebox",
+  "started": "2026-06-09T15:50:10.803778+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "apex/examples/docker/Dockerfile",
+      "pip": "requirements.txt",
+      "setup": "setup.py"
+    },
+    "depth_note": "deep",
+    "n_found": 6,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "tensorboardX/setup.py",
+        "depth": 1
+      },
+      {
+        "type": "setup",
+        "rel_path": "tensorboardX/setup.cfg",
+        "depth": 1
+      },
+      {
+        "type": "setup",
+        "rel_path": "apex/setup.py",
+        "depth": 1
+      },
+      {
+        "type": "docker",
+        "rel_path": "apex/examples/docker/Dockerfile",
+        "depth": 3
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/openai/jukebox",
+    "commit_hash": "08efbbc1d4ed1a3cef96e08a931944c8b4d63bb3",
+    "software_license": "MIT"
+  },
+  "lift": {
+    "lifted": {
+      "docker": "apex/examples/docker/Dockerfile",
+      "pip": "requirements.txt"
+    },
+    "triples": 48,
+    "n_sources": 3
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": false,
+    "build_success": false,
+    "method": "pip-requirements",
+    "stage_failed": "resolve",
+    "duration_s": 7.7,
+    "log_tail": "$ /home/dsai-st125286p/envs/sraf/bin/python -m venv /tmp/15856/study060/venv\n\n$ /tmp/15856/study060/venv/bin/pip install --upgrade pip setuptools wheel\nRequirement already satisfied: pip in ./venv/lib/python3.12/site-packages (25.0.1)\nCollecting pip\n  Using cached pip-26.1.2-py3-none-any.whl.metadata (4.6 kB)\nCollecting setuptools\n  Using cached setuptools-82.0.1-py3-none-any.whl.metadata (6.5 kB)\nCollecting wheel\n  Using cached wheel-0.47.0-py3-none-any.whl.metadata (2.3 kB)\nCollecting packaging>=24.0 (from wheel)\n  Using cached packaging-26.2-py3-none-any.whl.metadata (3.5 kB)\nUsing cached pip-26.1.2-py3-none-any.whl (1.8 MB)\nUsing cached setuptools-82.0.1-py3-none-any.whl (1.0 MB)\nUsing cached wheel-0.47.0-py3-none-any.whl (32 kB)\nUsing cached packaging-26.2-py3-none-any.whl (100 kB)\nInstalling collected packages: setuptools, pip, packaging, wheel\n  Attempting uninstall: pip\n    Found existing installation: pip 25.0.1\n    Uninstalling pip-25.0.1:\n      Successfully uninstalled pip-25.0.1\nSuccessfully installed packaging-26.2 pip-26.1.2 setuptools-82.0.1 wheel-0.47.0\n\n$ /tmp/15856/study060/venv/bin/pip install --dry-run --ignore-installed -r /tmp/15856/study060/study060/requirements.txt\nyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'error'\n  error: subprocess-exited-with-error\n  \n  \u00d7 Preparing metadata (pyproject.toml) did not run successfully.\n  \u2502 exit code: 1\n  \u2570\u2500> [18 lines of output]\n      Traceback (most recent call last):\n        File \"/tmp/15856/study060/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 389, in <module>\n          main()\n        File \"/tmp/15856/study060/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 373, in main\n          json_out[\"return_val\"] = hook(**hook_input[\"kwargs\"])\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        File \"/tmp/15856/study060/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 175, in prepare_metadata_for_build_wheel\n          return hook(metadata_directory, config_settings)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        File \"/tmp/pip-build-env-8lvws9nk/overlay/lib/python3.12/site-packages/setuptools/build_meta.py\", line 380, in prepare_metadata_for_build_wheel\n          self.run_setup()\n        File \"/tmp/pip-build-env-8lvws9nk/overlay/lib/python3.12/site-packages/setuptools/build_meta.py\", line 520, in run_setup\n          super().run_setup(setup_script=setup_script)\n        File \"/tmp/pip-build-env-8lvws9nk/overlay/lib/python3.12/site-packages/setuptools/build_meta.py\", line 317, in run_setup\n          exec(code, locals())\n        File \"<string>\", line 358, in <module>\n        File \"<string>\", line 98, in get_ext_modules\n      ModuleNotFoundError: No module named 'numpy.distutils'\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nerror: metadata-generation-failed\n\n\u00d7 Encountered error while generating package metadata.\n\u2570\u2500> numba\n\nnote: This is an issue with the package mentioned above, not pip.\nhint: See above for details.\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 27.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 20.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 9.1
+}

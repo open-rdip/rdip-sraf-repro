@@ -1,0 +1,203 @@
+{
+  "study_id": "study082",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study082/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:47:03.174642+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 3,
+    "hyperparameters": 14,
+    "datasets": 5,
+    "methods": 10,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Transformers",
+        "version": null
+      },
+      {
+        "name": "EntNet",
+        "version": null
+      },
+      {
+        "name": "RMC",
+        "version": null
+      },
+      {
+        "name": "DNC",
+        "version": null
+      },
+      {
+        "name": "Adam",
+        "version": "Kingma & Ba, 2014"
+      }
+    ],
+    "random_seeds": [
+      15,
+      3,
+      2
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning rate",
+        "value": "0.001"
+      },
+      {
+        "name": "batch size",
+        "value": "32"
+      },
+      {
+        "name": "hidden size",
+        "value": "256"
+      },
+      {
+        "name": "num layers",
+        "value": "2"
+      },
+      {
+        "name": "dropout",
+        "value": "0.1"
+      },
+      {
+        "name": "Optimizer",
+        "value": "Adam(Kingma & Ba, 2014)"
+      },
+      {
+        "name": "Input keys",
+        "value": "64"
+      },
+      {
+        "name": "Input Values",
+        "value": "Size of individual RIM * 4"
+      },
+      {
+        "name": "Input Heads",
+        "value": "4"
+      },
+      {
+        "name": "Input Dropout",
+        "value": "0.1"
+      },
+      {
+        "name": "Communication keys",
+        "value": "32"
+      },
+      {
+        "name": "Communication Values",
+        "value": "32"
+      },
+      {
+        "name": "Communication heads",
+        "value": "4"
+      },
+      {
+        "name": "Communication Dropout",
+        "value": "0.1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Sequential MNIST Resolution Task",
+        "version": null
+      },
+      {
+        "name": "Bouncing Balls Environment",
+        "version": null
+      },
+      {
+        "name": "partial observation video prediction task",
+        "version": null
+      },
+      {
+        "name": "environment with 4 balls",
+        "version": null
+      },
+      {
+        "name": "environment with 6-8 balls",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Sparse Information Flow",
+        "description": "Each RIM\u2019s dynamics should only be affected by RIMs which are deemed relevant."
+      },
+      {
+        "name": "Modular Computation Flow and Modular Parameterization",
+        "description": "Each RIM should have its own dynamics operating by default , in the absence of interaction with other RIMs."
+      },
+      {
+        "name": "RNN",
+        "description": "learn long-term dependencies without vanishing or exploding gradients"
+      },
+      {
+        "name": "RIMs",
+        "description": "use of modules (corresponding to factors) which dynamically select which variables (instances) they apply to"
+      },
+      {
+        "name": "EnTNet",
+        "description": "a set of separate recurrent models whose hidden states store the memory slots"
+      },
+      {
+        "name": "LSTM",
+        "description": "null"
+      },
+      {
+        "name": "concatenating representations of the different RIMs",
+        "description": "concatenating representations of the different RIMs"
+      },
+      {
+        "name": "adding another layer of (multi-headed) key-value attention on the output",
+        "description": "adding another layer of (multi-headed) key-value attention on the output"
+      },
+      {
+        "name": "RMC",
+        "description": "Santoro et al., 2018"
+      },
+      {
+        "name": "TTO",
+        "description": "time travelling oracle upper bound baseline"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "generalisation",
+        "value": "improve",
+        "split": null
+      },
+      {
+        "metric": "computation",
+        "value": "speed up",
+        "split": null
+      },
+      {
+        "metric": "test set performance",
+        "value": "comparable",
+        "split": "test"
+      },
+      {
+        "metric": "performance",
+        "value": "degraded",
+        "split": null
+      },
+      {
+        "metric": "Cross Entropy (CE)",
+        "value": "lower",
+        "split": null
+      },
+      {
+        "metric": "F1 score",
+        "value": "improved",
+        "split": null
+      }
+    ]
+  }
+}

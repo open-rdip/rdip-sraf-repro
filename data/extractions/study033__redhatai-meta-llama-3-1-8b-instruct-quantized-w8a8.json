@@ -1,0 +1,179 @@
+{
+  "study_id": "study033",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study033/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:24:06.592241+00:00",
+  "counts": {
+    "dependencies": 10,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 3,
+    "methods": 17,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": "1.0"
+      },
+      {
+        "name": "LI",
+        "version": "2"
+      },
+      {
+        "name": "NMAR",
+        "version": "3"
+      },
+      {
+        "name": "CNNMAR",
+        "version": "4"
+      },
+      {
+        "name": "UNet",
+        "version": "30"
+      },
+      {
+        "name": "cGANMAR",
+        "version": "5"
+      },
+      {
+        "name": "CycleGAN",
+        "version": "18"
+      },
+      {
+        "name": "DIP",
+        "version": "21"
+      },
+      {
+        "name": "MUNIT",
+        "version": "19"
+      },
+      {
+        "name": "DRIT",
+        "version": "20"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03bbadv",
+        "value": "string"
+      },
+      {
+        "name": "\u03bbart",
+        "value": "string"
+      },
+      {
+        "name": "\u03bbrec",
+        "value": "string"
+      },
+      {
+        "name": "\u03bbself",
+        "value": "string"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "SYN",
+        "version": null
+      },
+      {
+        "name": "CL1",
+        "version": null
+      },
+      {
+        "name": "CL2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "UNet",
+        "description": "publicly available implementation in PyTorch"
+      },
+      {
+        "name": "cGANMAR",
+        "description": "identical to Pix2Pix at the backend"
+      },
+      {
+        "name": "CNNMAR",
+        "description": "state-of-the-art supervised approach to MAR"
+      },
+      {
+        "name": "LI",
+        "description": "widely used approaches to MAR"
+      },
+      {
+        "name": "NMAR",
+        "description": "widely used approaches to MAR"
+      },
+      {
+        "name": "CycleGAN",
+        "description": "state-of-the-art approaches to unsupervised image-to-image translation problems"
+      },
+      {
+        "name": "DIP",
+        "description": "state-of-the-art approaches to unsupervised image-to-image translation problems"
+      },
+      {
+        "name": "MUNIT",
+        "description": "state-of-the-art approaches to unsupervised image-to-image translation problems"
+      },
+      {
+        "name": "DRIT",
+        "description": "state-of-the-art approaches to unsupervised image-to-image translation problems"
+      },
+      {
+        "name": "artifact pyramid decoding (APD)",
+        "description": "a feature pyramid design for artifact encoding and decoding"
+      },
+      {
+        "name": "ADN",
+        "description": "string"
+      },
+      {
+        "name": "L1 loss",
+        "description": "minimize the difference between \u02c6x and x"
+      },
+      {
+        "name": "L2 loss",
+        "description": "minimize the difference between \u02c6x and x"
+      },
+      {
+        "name": "Lart loss",
+        "description": "artifact consistency loss"
+      },
+      {
+        "name": "Lself loss",
+        "description": "self-reduction loss"
+      },
+      {
+        "name": "PSNR",
+        "description": "not provided"
+      },
+      {
+        "name": "SSIM",
+        "description": "not provided"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "PSNR",
+        "value": "not provided",
+        "split": null
+      },
+      {
+        "metric": "SSIM",
+        "value": "not provided",
+        "split": null
+      }
+    ]
+  }
+}

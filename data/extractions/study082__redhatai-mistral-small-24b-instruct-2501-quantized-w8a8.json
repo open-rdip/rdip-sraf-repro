@@ -1,0 +1,151 @@
+{
+  "study_id": "study082",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study082/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:12:17.291584+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 2,
+    "methods": 13,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "Optimizer",
+        "value": "Adam(Kingma & Ba, 2014)"
+      },
+      {
+        "name": "learning rate",
+        "value": "7\u00b710\u22124"
+      },
+      {
+        "name": "batch size",
+        "value": "64"
+      },
+      {
+        "name": "Input keys",
+        "value": "64"
+      },
+      {
+        "name": "Input Values Size of individual RIM",
+        "value": "* 4"
+      },
+      {
+        "name": "Input Heads",
+        "value": "4"
+      },
+      {
+        "name": "Input Dropout",
+        "value": "0.1"
+      },
+      {
+        "name": "Communication keys",
+        "value": "32"
+      },
+      {
+        "name": "Communication Values",
+        "value": "32"
+      },
+      {
+        "name": "Communication heads",
+        "value": "4"
+      },
+      {
+        "name": "Communication Dropout",
+        "value": "0.1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Sequential MNIST Resolution Task",
+        "version": null
+      },
+      {
+        "name": "Bouncing Balls Environment",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RIM",
+        "description": "Each RIM\u2019s dynamics should only be affected by RIMs which are deemed relevant."
+      },
+      {
+        "name": "Modular Computation Flow",
+        "description": "Each RIM should have its own dynamics operating by default, in the absence of interaction with other RIMs."
+      },
+      {
+        "name": "Modular Parameterization",
+        "description": "The total number of parameters (i.e. weights) can be reduced since the RIMs can specialize on simple sub-problems."
+      },
+      {
+        "name": "RNN",
+        "description": "allows for such an RNN to learn long-term dependencies without vanishing or exploding gradients."
+      },
+      {
+        "name": "Consciousness Prior",
+        "description": "This is based on the inductive bias of a sparse graphical model describing the interactions between high-level variables, each factor involving few variables and capaturing an independent mechanism, and using attention to select only a subset of high-level variables to interact together at any particular time during inference."
+      },
+      {
+        "name": "Recurrent Entity Networks",
+        "description": "can be viewed as a set of separate recurrent models whose hidden states store the memory slots. These hidden states are either \ufb01xed by the gates, or modi\ufb01ed through a simple RNN-style update."
+      },
+      {
+        "name": "RIMs",
+        "description": "Relatively robust to changing the sequence length (by changing the image resolution)"
+      },
+      {
+        "name": "LSTM",
+        "description": "Performance degraded more severely with changing sequence length"
+      },
+      {
+        "name": "Transformers",
+        "description": null
+      },
+      {
+        "name": "EntNet",
+        "description": null
+      },
+      {
+        "name": "RMC",
+        "description": null
+      },
+      {
+        "name": "DNC",
+        "description": null
+      },
+      {
+        "name": "LSTMs",
+        "description": "Long Short-Term Memory networks"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "test set performance",
+        "value": "comparable",
+        "split": "test"
+      },
+      {
+        "metric": "Cross Entropy",
+        "value": "lower",
+        "split": null
+      },
+      {
+        "metric": "F1 score",
+        "value": "improved",
+        "split": null
+      }
+    ]
+  }
+}

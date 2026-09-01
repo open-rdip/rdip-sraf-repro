@@ -1,0 +1,142 @@
+{
+  "study_id": "study019",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study019/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:43:52.133285+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 5,
+    "methods": 9,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "output_strides",
+        "value": "16"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "DUT-OMRON",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "CIFAR-100",
+        "version": null
+      },
+      {
+        "name": "augmented PASCAL VOC12",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Res2Net",
+        "description": "A variant of ResNet with multi-scale representation ability"
+      },
+      {
+        "name": "ResNet v1d",
+        "description": "Baseline ResNet architecture used for comparison"
+      },
+      {
+        "name": "CutMix",
+        "description": "Data augmentation technique used for training"
+      },
+      {
+        "name": "Res2Net based model",
+        "description": "Used for salient object detection and key-points estimation"
+      },
+      {
+        "name": "ResNet based model",
+        "description": "Baseline model for comparison in salient object detection"
+      },
+      {
+        "name": "SimpleBaseline",
+        "description": "Key-points estimation method used with Res2Net backbone"
+      },
+      {
+        "name": "Grad-CAM",
+        "description": "used to visualize class activation mapping (CAM)"
+      },
+      {
+        "name": "Deeplab v3+",
+        "description": "Segmentation method with backbone network replaced with ResNet and Res2Net."
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "Instance segmentation method."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 error",
+        "value": "3.05%",
+        "split": "validation"
+      },
+      {
+        "metric": "Runtime",
+        "value": "average time to infer the ImageNet validation set with the size of 224 \u00d7224",
+        "split": null
+      },
+      {
+        "metric": "F-measure",
+        "value": "5.2%",
+        "split": null
+      },
+      {
+        "metric": "MAE",
+        "value": "2.1%",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": "71.5",
+        "split": "validation"
+      },
+      {
+        "metric": "AP 50",
+        "value": "89.0",
+        "split": "validation"
+      },
+      {
+        "metric": "AP 75",
+        "value": "78.3",
+        "split": "validation"
+      },
+      {
+        "metric": "AP M",
+        "value": "67.1",
+        "split": "validation"
+      },
+      {
+        "metric": "AP L",
+        "value": "77.2",
+        "split": "validation"
+      },
+      {
+        "metric": "mean IoU",
+        "value": "1.5%",
+        "split": "validation"
+      }
+    ]
+  }
+}

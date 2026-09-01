@@ -1,0 +1,117 @@
+{
+  "study_id": "study056",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study056/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:10:31.355135+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 0,
+    "methods": 5,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": "AMD EPYC 7402"
+    },
+    "hyperparameters": [
+      {
+        "name": "NFE",
+        "value": "59"
+      },
+      {
+        "name": "incident_energies",
+        "value": "10 to 90 GeV in 10 GeV increments"
+      },
+      {
+        "name": "showers_per_energy_point",
+        "value": "100"
+      },
+      {
+        "name": "batch_sizes",
+        "value": "[1, 16]"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "CaloHadronic",
+        "description": "A point-cloud based generative model that simulates both ECAL and HCAL parts of a hadronic shower."
+      },
+      {
+        "name": "PandoraPFA particle flow algorithm",
+        "description": "state-of-the-art particle flow algorithm used in the ILD standard reconstruction chain"
+      },
+      {
+        "name": "timing_study",
+        "description": "Comparison of shower generation speed between CaloHadronic and Geant4 using different batch sizes."
+      },
+      {
+        "name": "OneCycleLR",
+        "description": "accelerates convergence and improves generalization"
+      },
+      {
+        "name": "PointCountFM",
+        "description": "better captures the distribution of points per layer"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "speed-up over Geant4",
+        "value": "three orders of magnitude",
+        "split": null
+      },
+      {
+        "metric": "generative fidelity",
+        "value": "needs to be further improved",
+        "split": null
+      },
+      {
+        "metric": "Time / Shower [s]",
+        "value": "2.09\u00b10.05",
+        "split": "CPU, Batch Size 1"
+      },
+      {
+        "metric": "Time / Shower [s]",
+        "value": "0.591\u00b10.001",
+        "split": "CPU, Batch Size 1, CaloHadronic"
+      },
+      {
+        "metric": "Time / Shower [s]",
+        "value": "0.7342\u00b10.0006",
+        "split": "CPU, Batch Size 16, CaloHadronic"
+      },
+      {
+        "metric": "Time / Shower [s]",
+        "value": "17.2\u00b10.1",
+        "split": "CPU, Batch Size 1, NFE 29"
+      },
+      {
+        "metric": "Time / Shower [s]",
+        "value": "21.37\u00b10.05",
+        "split": "CPU, Batch Size 16, NFE 29"
+      },
+      {
+        "metric": "Time / Shower [s]",
+        "value": "34.8\u00b10.4",
+        "split": "CPU, Batch Size 1, NFE 59"
+      },
+      {
+        "metric": "Time / Shower [s]",
+        "value": "43.3\u00b10.3",
+        "split": "CPU, Batch Size 16, NFE 59"
+      },
+      {
+        "metric": "Time / Shower [s]",
+        "value": "0.0086\u00b10.0007",
+        "split": "GPU, Batch Size 1, CaloHadronic"
+      }
+    ]
+  }
+}

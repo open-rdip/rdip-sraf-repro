@@ -1,0 +1,212 @@
+{
+  "study_id": "study007",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study007/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:10:56.308572+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 3,
+    "hyperparameters": 15,
+    "datasets": 2,
+    "methods": 10,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "tile coding software",
+        "version": "Chapter 10.1 of Sutton and Barto (2018)"
+      },
+      {
+        "name": "tile coding",
+        "version": null
+      },
+      {
+        "name": "emphatic TD",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      700,
+      0,
+      4
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "nas",
+        "value": "additional hyperparameter"
+      },
+      {
+        "name": "\u03b3",
+        "value": "0.99"
+      },
+      {
+        "name": "i(s)",
+        "value": "1"
+      },
+      {
+        "name": "\u03c4",
+        "value": "0.01"
+      },
+      {
+        "name": "\u03f5",
+        "value": "0.95"
+      },
+      {
+        "name": "\u03b1",
+        "value": "\u039b"
+      },
+      {
+        "name": "temperature",
+        "value": "\u03c4"
+      },
+      {
+        "name": "discount factor",
+        "value": "0.99"
+      },
+      {
+        "name": "reward",
+        "value": "0"
+      },
+      {
+        "name": "behavior policy",
+        "value": "1/7"
+      },
+      {
+        "name": "target policy",
+        "value": "0 to 0.1"
+      },
+      {
+        "name": "features",
+        "value": "same as Section D.2"
+      },
+      {
+        "name": "weight vector",
+        "value": "same as Section D.2"
+      },
+      {
+        "name": "truncation length",
+        "value": "2"
+      },
+      {
+        "name": "n",
+        "value": "0"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CartPole",
+        "version": null
+      },
+      {
+        "name": "Baird\u2019s counterexample",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ETD(0)",
+        "description": "target policy"
+      },
+      {
+        "name": "Algorithm 4",
+        "description": "with different selection of n and its \u03b2-variant"
+      },
+      {
+        "name": "tile coding",
+        "description": "map the four-dimensional observation to a binary vector in R1024"
+      },
+      {
+        "name": "linear function approximation",
+        "description": null
+      },
+      {
+        "name": "softmax policy",
+        "description": null
+      },
+      {
+        "name": "\u03f5-softmax policy",
+        "description": null
+      },
+      {
+        "name": "soft truncation",
+        "description": "Hallak et al. (2016)"
+      },
+      {
+        "name": "Truncated Emphatic TD",
+        "description": "Truncated Emphatic TD methods"
+      },
+      {
+        "name": "naive off-policy expected SARSA without followon trace",
+        "description": null
+      },
+      {
+        "name": "off-policy training",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "progress",
+        "value": "not observed",
+        "split": null
+      },
+      {
+        "metric": "variance",
+        "value": "desired levels",
+        "split": null
+      },
+      {
+        "metric": "convergence",
+        "value": "maintained",
+        "split": null
+      },
+      {
+        "metric": "averaged undiscounted episodic return",
+        "value": "reported",
+        "split": "training process"
+      },
+      {
+        "metric": "undiscounted episodic return",
+        "value": "reported",
+        "split": null
+      },
+      {
+        "metric": "results",
+        "value": "similar",
+        "split": null
+      },
+      {
+        "metric": "variance",
+        "value": "reduced",
+        "split": "n\u2208{2,4}"
+      },
+      {
+        "metric": "evaluation return",
+        "value": "maximizing",
+        "split": null
+      },
+      {
+        "metric": "performance level",
+        "value": "reasonable",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "better",
+        "split": "middle of the training"
+      },
+      {
+        "metric": "performance",
+        "value": "drops",
+        "split": "end of the training"
+      }
+    ]
+  }
+}

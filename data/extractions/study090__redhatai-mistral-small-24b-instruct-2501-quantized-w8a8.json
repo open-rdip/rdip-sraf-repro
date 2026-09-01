@@ -1,0 +1,214 @@
+{
+  "study_id": "study090",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study090/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:21:44.269128+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 1,
+    "methods": 13,
+    "evaluation_results": 17
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "VovNet",
+        "version": null
+      },
+      {
+        "name": "ConvNeXT",
+        "version": null
+      },
+      {
+        "name": "AdamW",
+        "version": null
+      },
+      {
+        "name": "CBGS",
+        "version": null
+      },
+      {
+        "name": "ResNet-50",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "input image resolution",
+        "value": "640 \u00d71600"
+      },
+      {
+        "name": "learning_rate",
+        "value": "2e-4"
+      },
+      {
+        "name": "batch_size",
+        "value": "64"
+      },
+      {
+        "name": "epochs",
+        "value": "24"
+      },
+      {
+        "name": "image size",
+        "value": "256 \u00d7704"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "nuScenes",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Efficient Voxel Pooling",
+        "description": "Utilizes GPU parallelism to assign each frustum feature a CUDA thread for adding to its corresponding BEV grid"
+      },
+      {
+        "name": "Multi-frame Fusion",
+        "description": null
+      },
+      {
+        "name": "BEVDepth",
+        "description": "vanilla BEVDepth"
+      },
+      {
+        "name": "Depth Loss",
+        "description": "Depth Loss"
+      },
+      {
+        "name": "Depth Refinement Module",
+        "description": "Depth Refinement Module"
+      },
+      {
+        "name": "FCOS3D",
+        "description": "FCOS3D"
+      },
+      {
+        "name": "DETR3D",
+        "description": "DETR3D"
+      },
+      {
+        "name": "Camera-aware DepthNet",
+        "description": null
+      },
+      {
+        "name": "Camera-awareness",
+        "description": null
+      },
+      {
+        "name": "Depth Re\ufb01nement Module",
+        "description": null
+      },
+      {
+        "name": "multi-frame",
+        "description": null
+      },
+      {
+        "name": "BCELoss",
+        "description": null
+      },
+      {
+        "name": "L1Loss",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "NDS",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "mAP",
+        "value": "0.282",
+        "split": "val"
+      },
+      {
+        "metric": "NDS",
+        "value": "0.327",
+        "split": "val"
+      },
+      {
+        "metric": "mATE",
+        "value": "0.21",
+        "split": null
+      },
+      {
+        "metric": "mAP",
+        "value": "0.282",
+        "split": "valset"
+      },
+      {
+        "metric": "mATE",
+        "value": "0.768",
+        "split": "valset"
+      },
+      {
+        "metric": "mAOE",
+        "value": "0.698",
+        "split": "valset"
+      },
+      {
+        "metric": "NDS",
+        "value": "0.327",
+        "split": "valset"
+      },
+      {
+        "metric": "mAOE",
+        "value": "0.636",
+        "split": null
+      },
+      {
+        "metric": "nuScenes Detection Score",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "mean Average Precision",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "mean Average Translation Error",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "mean Average Scale Error",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "mean Average Orientation Error",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "mean Average Velocity Error",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "mean Average Attribute Error",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

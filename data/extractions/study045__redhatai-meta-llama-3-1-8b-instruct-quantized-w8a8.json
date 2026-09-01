@@ -1,0 +1,198 @@
+{
+  "study_id": "study045",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study045/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:30:46.237758+00:00",
+  "counts": {
+    "dependencies": 6,
+    "random_seeds": 7,
+    "hyperparameters": 6,
+    "datasets": 6,
+    "methods": 10,
+    "evaluation_results": 9
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PCQM4Mv2",
+        "version": null
+      },
+      {
+        "name": "TorchMD-NET",
+        "version": "open-source code"
+      },
+      {
+        "name": "DFT",
+        "version": null
+      },
+      {
+        "name": "JAX",
+        "version": "2018"
+      },
+      {
+        "name": "Haiku",
+        "version": null
+      },
+      {
+        "name": "Jraph",
+        "version": "2020"
+      }
+    ],
+    "random_seeds": [
+      3,
+      7,
+      0,
+      100,
+      200,
+      300,
+      400
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "noise scale",
+        "value": "string"
+      },
+      {
+        "name": "Gradient step",
+        "value": "thousands"
+      },
+      {
+        "name": "Pre-training data size (PCQM4Mv2)",
+        "value": "141618202224"
+      },
+      {
+        "name": "Training data size (QM9)",
+        "value": "20406080100"
+      },
+      {
+        "name": "hidden layer sizes",
+        "value": "in the MLPs"
+      },
+      {
+        "name": "pre-training",
+        "value": "denoising using the trajectories provided for the IS2RE/IS2RS tasks"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "QM9",
+        "version": null
+      },
+      {
+        "name": "PCQM4Mv2",
+        "version": null
+      },
+      {
+        "name": "OC20",
+        "version": null
+      },
+      {
+        "name": "DES15K",
+        "version": null
+      },
+      {
+        "name": "S2EF",
+        "version": "OC20"
+      },
+      {
+        "name": "IS2RE/IS2RS",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GNS-TAT with Noisy Nodes",
+        "description": "string"
+      },
+      {
+        "name": "GNS with Noisy Nodes",
+        "description": "string"
+      },
+      {
+        "name": "GNS-TAT",
+        "description": "trained from scratch or using pre-trained parameters"
+      },
+      {
+        "name": "denoising in the space of 3D molecular structures",
+        "description": "learning a force field"
+      },
+      {
+        "name": "AttrMask",
+        "description": "masking and predicting atomic numbers"
+      },
+      {
+        "name": "Denoising",
+        "description": "pre-training via denoising"
+      },
+      {
+        "name": "GNS",
+        "description": "GNS"
+      },
+      {
+        "name": "PT",
+        "description": "pre-training"
+      },
+      {
+        "name": "NN",
+        "description": "Noisy Nodes"
+      },
+      {
+        "name": "GNS (130 million parameters)",
+        "description": "trained from scratch"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "string",
+        "value": "string",
+        "split": "string"
+      },
+      {
+        "metric": "MAE",
+        "value": "test",
+        "split": "test"
+      },
+      {
+        "metric": "Test MAE (HOMO)",
+        "value": "32027",
+        "split": "test"
+      },
+      {
+        "metric": "Trajectory energy MAE PT on OC20",
+        "value": "130M",
+        "split": "test"
+      },
+      {
+        "metric": "Test MAE (HOMO) GNS + NN",
+        "value": "10000",
+        "split": "test"
+      },
+      {
+        "metric": "Test MAE (HOMO) GNS-TAT + NN",
+        "value": "32853",
+        "split": "test"
+      },
+      {
+        "metric": "performance",
+        "value": "saturating",
+        "split": "validation"
+      },
+      {
+        "metric": "quality representations",
+        "value": "better",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "outperformed",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "study_id": "study081",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study081/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:11:24.813531+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 1,
+    "methods": 7,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "NVIDIA implementation",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch size",
+        "value": "32"
+      },
+      {
+        "name": "reduction factor",
+        "value": null
+      }
+    ],
+    "datasets": [
+      {
+        "name": "LJ Speech corpus",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Tacotron2",
+        "description": "attention-based TTS system"
+      },
+      {
+        "name": "Mon- treal Forced Aligner",
+        "description": "model only on our limited Indigenous language training data"
+      },
+      {
+        "name": "teacher forcing",
+        "description": null
+      },
+      {
+        "name": "CTC loss function",
+        "description": null
+      },
+      {
+        "name": "FastSpeech2",
+        "description": null
+      },
+      {
+        "name": "Light-Speech model",
+        "description": "Modified base architecture to match the Light-Speech model presented in Luo et al. (2021)"
+      },
+      {
+        "name": "Depthwise separable convolutions",
+        "description": "Replaced the convolutional layers in the encoder, decoder and remaining variance predictors with depthwise separable convolutions"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "root mean square error",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "MUSHRA score",
+        "value": "15m",
+        "split": null
+      }
+    ]
+  }
+}

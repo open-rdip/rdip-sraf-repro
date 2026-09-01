@@ -36,11 +36,15 @@ WHERE {
         ?reprDep      rdip:dependencyName     ?reprName ;
                       rdip:dependencyVersion  ?reprVersion .
         FILTER(?reprVersion != "unspecified")
-        FILTER(
-            LCASE(REPLACE(STR(?depName), "-", "_")) =
-            LCASE(REPLACE(STR(?reprName), "-", "_"))
-        )
     }
+
+    # Match on normalised name (pip vs conda naming) — must be TOP-LEVEL so both
+    # ?depName and ?reprName are in scope (a FILTER inside the reproduction GRAPH
+    # block cannot see ?depName from the original block).
+    FILTER(
+        LCASE(REPLACE(STR(?depName), "-", "_")) =
+        LCASE(REPLACE(STR(?reprName), "-", "_"))
+    )
 
     # Only keep where versions differ
     FILTER(?origVersion != ?reprVersion)

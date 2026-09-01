@@ -1,0 +1,91 @@
+{
+  "study_id": "study083",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study083/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:47:12.626763+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 8,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Python",
+        "version": null
+      },
+      {
+        "name": "Random Forests",
+        "version": null
+      },
+      {
+        "name": "SVM",
+        "version": null
+      },
+      {
+        "name": "XGBoost",
+        "version": null
+      },
+      {
+        "name": "Neural Network",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "LPMC",
+        "version": "Hillel et al., 2018"
+      },
+      {
+        "name": "NTS",
+        "version": "Hagenauer and Helbich, 2017"
+      }
+    ],
+    "methods": [
+      {
+        "name": "Nystr\"om-based KLR",
+        "description": "null"
+      },
+      {
+        "name": "MNL",
+        "description": "null"
+      },
+      {
+        "name": "Momentum",
+        "description": "null"
+      },
+      {
+        "name": "Adam",
+        "description": "null"
+      },
+      {
+        "name": "L-BFGS-B",
+        "description": "null"
+      },
+      {
+        "name": "Gradient Descent",
+        "description": "null"
+      },
+      {
+        "name": "Nystr\u00a8 om method",
+        "description": "approximating the kernel matrix of KLR"
+      },
+      {
+        "name": "Nystr\u00a8 on-KLR models",
+        "description": "optimisation algorithms applicable"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "study_id": "study089",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study089/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:51:26.321049+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 1,
+    "hyperparameters": 0,
+    "datasets": 5,
+    "methods": 17,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "TCDCN",
+        "version": "68"
+      },
+      {
+        "name": "HRNetV2",
+        "version": "69"
+      }
+    ],
+    "random_seeds": [
+      4
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "CASME II",
+        "version": null
+      },
+      {
+        "name": "MER",
+        "version": null
+      },
+      {
+        "name": "MOL",
+        "version": null
+      },
+      {
+        "name": "SAMM",
+        "version": null
+      },
+      {
+        "name": "SMIC",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "MOL",
+        "description": "string"
+      },
+      {
+        "name": "MOL w/o OFE",
+        "description": "string"
+      },
+      {
+        "name": "MOL w/o FLD",
+        "description": "string"
+      },
+      {
+        "name": "MOL w/o OFE&FLD",
+        "description": "string"
+      },
+      {
+        "name": "F5C",
+        "description": "string"
+      },
+      {
+        "name": "CCC",
+        "description": "string"
+      },
+      {
+        "name": "FCC",
+        "description": "string"
+      },
+      {
+        "name": "MOL w/o F5C",
+        "description": "MOL without F5C block"
+      },
+      {
+        "name": "MOL w/o FCC",
+        "description": "MOL without FCC in F5C block"
+      },
+      {
+        "name": "MOL w/o CCC",
+        "description": "MOL without CCC in F5C block"
+      },
+      {
+        "name": "Average EPE",
+        "description": "UnsupFlownet"
+      },
+      {
+        "name": "RAFT",
+        "description": "RAFT"
+      },
+      {
+        "name": "MOL w/o MER&FLD",
+        "description": "MOL"
+      },
+      {
+        "name": "MOL w/o MER",
+        "description": "MOL"
+      },
+      {
+        "name": "MOL w/o MER&OFE",
+        "description": "baseline method for facial landmark detection"
+      },
+      {
+        "name": "TCDCN",
+        "description": "popular facial landmark detection method"
+      },
+      {
+        "name": "HRNetV2",
+        "description": "popular facial landmark detection method"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Acc",
+        "value": "62.90",
+        "split": null
+      },
+      {
+        "metric": "WF1",
+        "value": "62.52",
+        "split": null
+      },
+      {
+        "metric": "1.048",
+        "value": "Average EPE",
+        "split": null
+      },
+      {
+        "metric": "0.465",
+        "value": "RAFT",
+        "split": null
+      },
+      {
+        "metric": "1.145",
+        "value": "MOL w/o MER&FLD",
+        "split": null
+      },
+      {
+        "metric": "0.972",
+        "value": "MOL w/o FLD",
+        "split": null
+      },
+      {
+        "metric": "0.839",
+        "value": "MOL w/o MER",
+        "split": null
+      },
+      {
+        "metric": "0.650",
+        "value": "MOL",
+        "split": null
+      },
+      {
+        "metric": "inter-ocular distance normalized mean error",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "failure rate",
+        "value": "string",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,341 @@
+{
+  "study_id": "study088",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study088/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:50:51.568615+00:00",
+  "counts": {
+    "dependencies": 16,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 8,
+    "methods": 21,
+    "evaluation_results": 16
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "Swin Transformer",
+        "version": null
+      },
+      {
+        "name": "VGG",
+        "version": "52"
+      },
+      {
+        "name": "ResNet",
+        "version": "30"
+      },
+      {
+        "name": "Transformer",
+        "version": "64"
+      },
+      {
+        "name": "GELU",
+        "version": null
+      },
+      {
+        "name": "LayerNorm",
+        "version": null
+      },
+      {
+        "name": "bi-cubic interpolation",
+        "version": null
+      },
+      {
+        "name": "AdamW",
+        "version": null
+      },
+      {
+        "name": "cosine decay learning rate scheduler",
+        "version": null
+      },
+      {
+        "name": "linear warm-up",
+        "version": null
+      },
+      {
+        "name": "UperNet",
+        "version": "mmseg [16]"
+      },
+      {
+        "name": "Swin-T",
+        "version": null
+      },
+      {
+        "name": "DeiT-S",
+        "version": null
+      },
+      {
+        "name": "ResNet-101",
+        "version": null
+      },
+      {
+        "name": "ResNeSt-101",
+        "version": "[78]"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "M",
+        "value": "7"
+      },
+      {
+        "name": "window size",
+        "value": "M= 7"
+      },
+      {
+        "name": "query dimension",
+        "value": "d= 32"
+      },
+      {
+        "name": "expansion layer",
+        "value": "\u03b1= 4"
+      },
+      {
+        "name": "channel number",
+        "value": "C= 96"
+      },
+      {
+        "name": "layer numbers",
+        "value": "2,2,6,2"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning_rate_scheduler",
+        "value": "cosine decay"
+      },
+      {
+        "name": "warm_up_epochs",
+        "value": "20"
+      },
+      {
+        "name": "batch_size",
+        "value": "1024"
+      },
+      {
+        "name": "initial_learning_rate",
+        "value": "0.001"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet-1K",
+        "version": null
+      },
+      {
+        "name": "ADE20K",
+        "version": null
+      },
+      {
+        "name": "ImageNet-22K",
+        "version": null
+      },
+      {
+        "name": "visual modeling",
+        "version": null
+      },
+      {
+        "name": "object detection",
+        "version": null
+      },
+      {
+        "name": "semantic segmentation",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Swin Transformer",
+        "description": "Transformer architectures"
+      },
+      {
+        "name": "Performer",
+        "description": "one of the fastest Transformer architectures"
+      },
+      {
+        "name": "ResNeXt101-64x4d",
+        "description": null
+      },
+      {
+        "name": "HTC framework",
+        "description": "improved"
+      },
+      {
+        "name": "cyclic implementation",
+        "description": "more hardware efficient than naive padding"
+      },
+      {
+        "name": "shifted window approach",
+        "description": "self-attention modules are more efficient than sliding windows"
+      },
+      {
+        "name": "VGG",
+        "description": "null"
+      },
+      {
+        "name": "ResNet",
+        "description": "null"
+      },
+      {
+        "name": "bi-cubic interpolation",
+        "description": null
+      },
+      {
+        "name": "fine-tuning",
+        "description": null
+      },
+      {
+        "name": "ImageNet-1K training",
+        "description": "null"
+      },
+      {
+        "name": "Swin-L",
+        "description": "Swin Transformer with ImageNet-22K pre-training"
+      },
+      {
+        "name": "Swin-T",
+        "description": "Swin Transformer"
+      },
+      {
+        "name": "SETR",
+        "description": "previous best model"
+      },
+      {
+        "name": "Cascade Mask R-CNN",
+        "description": "object detection"
+      },
+      {
+        "name": "UperNet",
+        "description": "semantic segmentation"
+      },
+      {
+        "name": "ResNet-101",
+        "description": "baseline model"
+      },
+      {
+        "name": "ResNeSt-101",
+        "description": "baseline model"
+      },
+      {
+        "name": "MSA in a stage (ms)",
+        "description": "position embedding approach"
+      },
+      {
+        "name": "Swin-S",
+        "description": "null"
+      },
+      {
+        "name": "DeiT-S",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 accuracy",
+        "value": "+2.3%",
+        "split": "ImageNet-1K"
+      },
+      {
+        "metric": "box AP",
+        "value": "51.9",
+        "split": null
+      },
+      {
+        "metric": "mask AP",
+        "value": "45.0",
+        "split": null
+      },
+      {
+        "metric": "speed-up",
+        "value": "13%",
+        "split": null
+      },
+      {
+        "metric": "efficiency",
+        "value": "40.8 \u00d7/2.5\u00d7",
+        "split": null
+      },
+      {
+        "metric": "faster",
+        "value": "4.1/1.5",
+        "split": null
+      },
+      {
+        "metric": "top-1 accuracy",
+        "value": null,
+        "split": "single crop"
+      },
+      {
+        "metric": "top-1 accuracy",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "mIoU",
+        "value": "53.5",
+        "split": "val"
+      },
+      {
+        "metric": "box AP",
+        "value": "2.8",
+        "split": "COCO"
+      },
+      {
+        "metric": "mask AP",
+        "value": "2.2",
+        "split": "COCO"
+      },
+      {
+        "metric": "mIoU",
+        "value": "2.8",
+        "split": "ADE20K"
+      },
+      {
+        "metric": "mIoU",
+        "value": "49.3",
+        "split": null
+      },
+      {
+        "metric": "model size (#param)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "FLOPs",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "FPS",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

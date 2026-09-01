@@ -1,0 +1,37 @@
+# sre_engine/shacl/provenance_shapes.ttl
+# FAIR-R Reproducible R3 — Research Data Provenance.
+# Grounded in the ML Reproducibility Checklist (data, evaluation) + PROV-O.
+
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdip: <https://w3id.org/rdip/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+rdip:EvaluationResultShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:EvaluationResult ;
+    rdfs:label "Reproducible R3: evaluation result completeness" ;
+
+    sh:property [
+        sh:path     rdip:metricName ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING (Reproducible R3): rdip:metricName is missing on the EvaluationResult. Name the reported metric (accuracy, F1, …)." ;
+    ] ;
+
+    sh:property [
+        sh:path     rdip:metricValue ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING (Reproducible R3): rdip:metricValue is missing on the EvaluationResult. Record the reported value to enable result comparison." ;
+    ] .
+
+rdip:ProvenanceActivityShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:ResearchActivity ;
+    rdfs:label "Reproducible R3: data provenance" ;
+    sh:property [
+        sh:path     rdip:generatesDataset ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING (Reproducible R3): no dataset provenance (rdip:generatesDataset). Declare input/output datasets, splits, and preprocessing." ;
+    ] .

@@ -1,0 +1,211 @@
+{
+  "study_id": "study034",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study034/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:33:58.700109+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 3,
+    "methods": 15,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "AdamW",
+        "version": null
+      },
+      {
+        "name": "Mask2Former",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "input_size",
+        "value": "320\u00d7240"
+      },
+      {
+        "name": "\u03bbgeometry",
+        "value": "5.0"
+      },
+      {
+        "name": "\u03bbseg",
+        "value": "25.0"
+      },
+      {
+        "name": "\u03bboccupancy",
+        "value": "50.0,25.0,10.0"
+      },
+      {
+        "name": "batch_size",
+        "value": "8"
+      },
+      {
+        "name": "initial_learning_rate",
+        "value": "10\u22124"
+      },
+      {
+        "name": "learning_rate_decay_factor",
+        "value": "10"
+      },
+      {
+        "name": "learning_rate_decay_iteration",
+        "value": "80k"
+      },
+      {
+        "name": "\u03bbdepth",
+        "value": "2.0"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "10\u22124"
+      },
+      {
+        "name": "batch size",
+        "value": "16"
+      },
+      {
+        "name": "total number of iterations",
+        "value": "160k"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Matterport3D",
+        "version": null
+      },
+      {
+        "name": "3D-Front",
+        "version": null
+      },
+      {
+        "name": "Front-3D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PRQ",
+        "description": "metric proposed in [8]"
+      },
+      {
+        "name": "Uni-3D",
+        "description": "either with single- or multi-scale feature lifting"
+      },
+      {
+        "name": "polynomial-based learning rate scheduling",
+        "description": ""
+      },
+      {
+        "name": "step learning rate schedule",
+        "description": ""
+      },
+      {
+        "name": "marching cubes algorithm",
+        "description": "extract the isosurface from the predicted TDF as meshes and assign each vertex a color based on its semantic class and instance id"
+      },
+      {
+        "name": "Panoptic Quality",
+        "description": "evaluate panoptic segmentation"
+      },
+      {
+        "name": "Depth-aware Panoptic Quality",
+        "description": "evaluates segmentation and depth estimation jointly"
+      },
+      {
+        "name": "3D panoptic reconstruction quality",
+        "description": "evaluate the model performance on 3D scene understanding"
+      },
+      {
+        "name": "Masked Cross Attention",
+        "description": "Segment Query Features \ud835\udc5e! Depth Query Features \ud835\udc5e"
+      },
+      {
+        "name": "Self-Attention",
+        "description": ""
+      },
+      {
+        "name": "Cross-Decoder Query Association",
+        "description": "Decoder Layer 1 Decoder Layer 1Decoder Layer 2 Decoder Layer 2Panoptic Segment Decoder Depth Decoder\u2026\u2026Decoder Layer 9Decoder Layer 9"
+      },
+      {
+        "name": "Multi-scale Feature Lifting",
+        "description": "Following [8], we back-project 2D feature maps PS(F4), PD(F4), along with 2D depth and semantic segmentation map into a 25633D volumetric grid containing the camera frustum using the estimated depth. The features are encoded as a truncated distance field (TDF) along the view direction with truncation \u03c4= 3."
+      },
+      {
+        "name": "nearest neighbor interpolation",
+        "description": "down-sampling the ground truth to the size of predicted depth maps"
+      },
+      {
+        "name": "polynomial-based learning rate scheduler",
+        "description": "(1\u2212i/N)0.9"
+      },
+      {
+        "name": "Mask2Former",
+        "description": "formulated as a mask classification task"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "RMSE",
+        "value": "lower than 5% of the mean depth (2.34)",
+        "split": null
+      },
+      {
+        "metric": "PRQ",
+        "value": "\u223c10 PRQ",
+        "split": null
+      },
+      {
+        "metric": "thing classes",
+        "value": "+1.11",
+        "split": null
+      },
+      {
+        "metric": "stuff classes",
+        "value": "+0.83",
+        "split": null
+      },
+      {
+        "metric": "Panoptic Quality",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Depth-aware Panoptic Quality",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "root mean square error",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "3D panoptic reconstruction quality",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "stuff PRQ",
+        "value": "0.27",
+        "split": null
+      },
+      {
+        "metric": "things",
+        "value": "0.08",
+        "split": null
+      }
+    ]
+  }
+}

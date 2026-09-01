@@ -1,0 +1,33 @@
+{
+  "study_id": "study049",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study049/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:06:18.887928+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 1,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Gy\u00e1rf\u00e1s decomposition",
+        "description": "A method for decomposing graphs where the root bag consists of a single vertex, called the initial vertex, and for every non-root bag, there exists a hook vertex that is adjacent to all vertices in the bag and non-adjacent to all vertices in its strict descendants."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

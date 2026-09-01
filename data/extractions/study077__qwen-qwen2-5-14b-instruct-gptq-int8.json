@@ -1,0 +1,66 @@
+{
+  "study_id": "study077",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study077/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:24:04.897168+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 3,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "GSM8K",
+        "version": null
+      },
+      {
+        "name": "MBPP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "AF LOW",
+        "description": "A novel framework for automated workflow optimization leveraging Monte Carlo Tree Search and code-represented workflows."
+      },
+      {
+        "name": "ScEnsemble",
+        "description": "Ensemble method used for combining solutions"
+      },
+      {
+        "name": "Programmer operator",
+        "description": "Verification step using a programmer operator"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance",
+        "value": "93.1%",
+        "split": "test"
+      },
+      {
+        "metric": "Solve Rate",
+        "value": "94%",
+        "split": "validation"
+      },
+      {
+        "metric": "Score",
+        "value": "0.8591",
+        "split": "test"
+      }
+    ]
+  }
+}

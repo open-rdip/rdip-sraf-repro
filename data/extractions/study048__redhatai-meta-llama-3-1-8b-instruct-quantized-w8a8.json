@@ -1,0 +1,164 @@
+{
+  "study_id": "study048",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study048/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:31:49.667906+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 9,
+    "hyperparameters": 5,
+    "datasets": 10,
+    "methods": 8,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Polak-Ribiere variant of the conjugate gradient algorithm",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      5,
+      4,
+      37,
+      39,
+      75,
+      76,
+      77,
+      0,
+      100
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "RMS gradient tolerance",
+        "value": "0.01"
+      },
+      {
+        "name": "energy change tolerance",
+        "value": "0.1\u01eb"
+      },
+      {
+        "name": "RMS force tolerance",
+        "value": "10\u22124"
+      },
+      {
+        "name": "energy difference tolerance",
+        "value": "10\u22129"
+      },
+      {
+        "name": "\u03b1",
+        "value": "0.40"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Cambridge Cluster Database",
+        "version": "http://brian.ch.cam.ac.uk.II"
+      },
+      {
+        "name": "Lennard-Jones clusters",
+        "version": null
+      },
+      {
+        "name": "Morse clusters",
+        "version": null
+      },
+      {
+        "name": "LJ 38",
+        "version": null
+      },
+      {
+        "name": "LJ 75",
+        "version": null
+      },
+      {
+        "name": "LJ 76",
+        "version": null
+      },
+      {
+        "name": "LJ 77",
+        "version": null
+      },
+      {
+        "name": "LJ 102",
+        "version": null
+      },
+      {
+        "name": "LJ 103",
+        "version": null
+      },
+      {
+        "name": "LJ 104",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "method",
+        "description": "\ufb01rst unbiased algo- rithm to \ufb01nd the global minima based on the Marks decahedron around LJ 75and LJ 102"
+      },
+      {
+        "name": "Monte Carlo",
+        "description": "unbiased algorithm"
+      },
+      {
+        "name": "canonical Monte Carlo simulation",
+        "description": "null"
+      },
+      {
+        "name": "conjugate gradient search",
+        "description": "conjugate gradient search"
+      },
+      {
+        "name": "canonical simulation",
+        "description": "canonical simulation"
+      },
+      {
+        "name": "seeding",
+        "description": "seeding"
+      },
+      {
+        "name": "freezing",
+        "description": "freezing"
+      },
+      {
+        "name": "angular moves",
+        "description": "angular moves"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "success rate",
+        "value": "4 out of 5",
+        "split": "longer unseeded runs"
+      },
+      {
+        "metric": "success rate",
+        "value": "1 out of 1",
+        "split": "short run from the global minimum for LJ 76"
+      },
+      {
+        "metric": "success rate",
+        "value": "1 out of 1",
+        "split": "short runs seeded from the LJ 75 and LJ 77 decahedra"
+      },
+      {
+        "metric": "final energies",
+        "value": "accurate to about six decimal places",
+        "split": null
+      },
+      {
+        "metric": "frequency",
+        "value": "4/100",
+        "split": null
+      }
+    ]
+  }
+}

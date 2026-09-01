@@ -1,0 +1,123 @@
+{
+  "study_id": "study047",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study047/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:05:28.165647+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 2,
+    "methods": 5,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "optimizer",
+        "value": null
+      },
+      {
+        "name": "gradient_clipping_max_L2_norm",
+        "value": "5"
+      },
+      {
+        "name": "training_method",
+        "value": "utterance-level permutation invariant training (uPIT)"
+      },
+      {
+        "name": "epochs",
+        "value": "100"
+      },
+      {
+        "name": "learning_rate_initial",
+        "value": "1e-3"
+      },
+      {
+        "name": "learning_rate_decay_factor",
+        "value": "0.98"
+      },
+      {
+        "name": "learning_rate_decay_interval",
+        "value": "2"
+      },
+      {
+        "name": "early_stopping_patience",
+        "value": "10"
+      },
+      {
+        "name": "gradient_clipping_max_norm",
+        "value": "5"
+      },
+      {
+        "name": "number of filters",
+        "value": "64"
+      },
+      {
+        "name": "number of DPRNN blocks",
+        "value": "6"
+      },
+      {
+        "name": "hidden units in each direction",
+        "value": "128"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Microsoft's internal gender-balanced clean speech collection",
+        "version": null
+      },
+      {
+        "name": "benchmarking dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "maximize_scale_invariant_SNR",
+        "description": "Maximize scale-invariant SNR (SI-SNR)"
+      },
+      {
+        "name": "permutation invariant training (uPIT)",
+        "description": "trained with utterance-level permutation invariant training"
+      },
+      {
+        "name": "DPRNN",
+        "description": "Deep processing recurrent neural network applied to TasNet for speech separation"
+      },
+      {
+        "name": "TasNet",
+        "description": "Time-domain audio separation network with a linear 1-D convolutional encoder, a separator estimating masking matrices, and a linear 1-D transposed convolutional decoder"
+      },
+      {
+        "name": "TCN",
+        "description": "Temporal convolutional network used as a baseline for comparison with DPRNN"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "signal-to-distortion ratio improvement",
+        "value": "SDRi",
+        "split": null
+      },
+      {
+        "metric": "SI-SNR improvement",
+        "value": "SI-SNRi",
+        "split": null
+      },
+      {
+        "metric": "word error rate",
+        "value": "WER",
+        "split": null
+      }
+    ]
+  }
+}

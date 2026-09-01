@@ -1,0 +1,75 @@
+{
+  "study_id": "study042",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study042/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:40:34.248382+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 8,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PBE",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "DressCode",
+        "version": null
+      },
+      {
+        "name": "VITON-HD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DSDM",
+        "description": "Denoising path in D4-VTON 13"
+      },
+      {
+        "name": "DCI-VTON",
+        "description": "exhibits texture squeezing and stretching phenomena"
+      },
+      {
+        "name": "GP-VTON",
+        "description": "mitigates texture squeezing using dynamic gradient truncation but still experiences stretching in the sleeve area"
+      },
+      {
+        "name": "DITP",
+        "description": "effectiveness can be observed in the lower part of Tab. 3"
+      },
+      {
+        "name": "D4-VTON 13",
+        "description": "using DSDM while removing the denoising path"
+      },
+      {
+        "name": "D4-VTON",
+        "description": "a diffusion model to synthesize the try-on result"
+      },
+      {
+        "name": "Differential Information Tracking Path",
+        "description": "to replace a simplistic inpainting path"
+      },
+      {
+        "name": "Gumbel-Softmax",
+        "description": "a differentiable method ensuring exclusive assignment"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

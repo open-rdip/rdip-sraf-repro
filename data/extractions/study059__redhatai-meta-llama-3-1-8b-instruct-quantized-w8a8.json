@@ -1,0 +1,120 @@
+{
+  "study_id": "study059",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study059/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:35:40.906514+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 4,
+    "hyperparameters": 3,
+    "datasets": 7,
+    "methods": 7,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      10,
+      42,
+      3,
+      1
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03bb2",
+        "value": "1.0"
+      },
+      {
+        "name": "K",
+        "value": "3"
+      },
+      {
+        "name": "C",
+        "value": "3"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "R8",
+        "version": null
+      },
+      {
+        "name": "FedSeIT",
+        "version": null
+      },
+      {
+        "name": "FedWeIT",
+        "version": null
+      },
+      {
+        "name": "FedSeIT+DLS",
+        "version": null
+      },
+      {
+        "name": "Text Classi\ufb01cation",
+        "version": null
+      },
+      {
+        "name": "Reuters8",
+        "version": null
+      },
+      {
+        "name": "FedSeIT framework",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "FedSeIT",
+        "description": "FCL setup"
+      },
+      {
+        "name": "FedWeIT",
+        "description": "Weighted additive filter composition performed in the baseline model"
+      },
+      {
+        "name": "Federated Selective Inter-client Transfer",
+        "description": "Fed-SeIT framework"
+      },
+      {
+        "name": "FL",
+        "description": "string"
+      },
+      {
+        "name": "CL",
+        "description": "string"
+      },
+      {
+        "name": "parameter decomposition",
+        "description": "additive decomposition of parameters"
+      },
+      {
+        "name": "server parameter aggregation",
+        "description": "aggregating local base parameters sent from all clients"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "4.4%",
+        "split": "test"
+      },
+      {
+        "metric": "performance gain",
+        "value": "6.8%",
+        "split": "average"
+      },
+      {
+        "metric": "Test Accuracy",
+        "value": "3",
+        "split": "Test"
+      }
+    ]
+  }
+}

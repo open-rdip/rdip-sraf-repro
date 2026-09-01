@@ -1,0 +1,38 @@
+{
+  "study_id": "study058",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study058/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:11:33.083606+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 0,
+    "methods": 1,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number_of_samples_per_generation",
+        "value": "5"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "sentence_generation",
+        "description": "Generate sentences for a given minority group by sampling 5 random sentences from the corresponding set of examples."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

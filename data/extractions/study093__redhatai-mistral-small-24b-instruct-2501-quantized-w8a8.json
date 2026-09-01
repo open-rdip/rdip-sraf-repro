@@ -1,0 +1,125 @@
+{
+  "study_id": "study093",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study093/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:23:16.789136+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 5,
+    "methods": 6,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ResNet50",
+        "version": null
+      },
+      {
+        "name": "PubmedBERT",
+        "version": null
+      },
+      {
+        "name": "AdamW",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "GeForce RTX 3090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning_rate",
+        "value": "1\u00d710\u22124"
+      },
+      {
+        "name": "batch_size",
+        "value": "128"
+      },
+      {
+        "name": "epochs",
+        "value": "100"
+      },
+      {
+        "name": "warmup_epochs",
+        "value": "10"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "VQA-RAD",
+        "version": null
+      },
+      {
+        "name": "SLAKE",
+        "version": null
+      },
+      {
+        "name": "ROCO",
+        "version": null
+      },
+      {
+        "name": "MedICaT",
+        "version": null
+      },
+      {
+        "name": "MIMIC-CXR",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "fusion_module",
+        "description": "4 transformer layers"
+      },
+      {
+        "name": "PMC-CLIP",
+        "description": "A model that maintains pre-trained parameters, including visual encoder, text encoder, and fusion."
+      },
+      {
+        "name": "ResNet50",
+        "description": "Used for the visual encoder."
+      },
+      {
+        "name": "PubmedBERT",
+        "description": "Used for the text encoder."
+      },
+      {
+        "name": "Image-Text Retrieval",
+        "description": "ITR contains both image-to-text(I2T) and text-to-image(T2I) retrieval."
+      },
+      {
+        "name": "Classification",
+        "description": "We \ufb01netune the model for di\ufb00erent downstream tasks that focus on image classi\ufb01cation."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Accuracy",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "AUC",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Recall@K",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "zero-shot evaluation",
+        "value": "reported results",
+        "split": "test"
+      }
+    ]
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "study_id": "study048",
+  "repo_url": "https://github.com/ibm/topography-searcher",
+  "started": "2026-06-10T11:51:07.722973+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "pip": "requirements.txt",
+      "setup": "pyproject.toml"
+    },
+    "depth_note": "root",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "pyproject.toml",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/ibm/topography-searcher",
+    "commit_hash": "78f4d00ab2c12a687f8ec145a59d204fbc4d61a2",
+    "software_license": "MIT"
+  },
+  "lift": {
+    "lifted": {
+      "pip": "requirements.txt"
+    },
+    "triples": 101,
+    "n_sources": 2
+  },
+  "python": {
+    "declared": null,
+    "source": "default",
+    "used": "3.10",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 194.6,
+    "log_tail": "==3.1.2 (from -r /tmp/15889/study048/study048/requirements.txt (line 349))\n  Using cached pyparsing-3.1.2-py3-none-any.whl (103 kB)\nCollecting python-dateutil==2.9.0.post0 (from -r /tmp/15889/study048/study048/requirements.txt (line 352))\n  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)\nCollecting rdkit==2023.9.6 (from -r /tmp/15889/study048/study048/requirements.txt (line 355))\n  Downloading rdkit-2023.9.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.9 MB)\n     \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 34.9/34.9 MB 6.5 MB/s  0:00:05\nCollecting scikit-learn==1.5.0 (from -r /tmp/15889/study048/study048/requirements.txt (line 381))\n  Downloading scikit_learn-1.5.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.3 MB)\n     \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 13.3/13.3 MB 5.7 MB/s  0:00:02\nCollecting scipy==1.13.1 (from -r /tmp/15889/study048/study048/requirements.txt (line 403))\n  Downloading scipy-1.13.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (38.6 MB)\n     \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 38.6/38.6 MB 5.1 MB/s  0:00:07\nCollecting six==1.16.0 (from -r /tmp/15889/study048/study048/requirements.txt (line 429))\n  Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)\nCollecting threadpoolctl==3.5.0 (from -r /tmp/15889/study048/study048/requirements.txt (line 432))\n  Using cached threadpoolctl-3.5.0-py3-none-any.whl (18 kB)\nWould install ase-3.22.1 contourpy-1.2.1 cycler-0.12.1 fonttools-4.53.0 joblib-1.4.2 kiwisolver-1.4.5 matplotlib-3.9.0 networkx-3.3 nptyping-2.5.0 numpy-1.26.4 packaging-24.1 pillow-10.3.0 pyparsing-3.1.2 python-dateutil-2.9.0.post0 rdkit-2023.9.6 scikit-learn-1.5.0 scipy-1.13.1 six-1.16.0 threadpoolctl-3.5.0\n\n$ /tmp/15889/study048/venv/bin/pip install --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study048/study048/requirements.txt\n9))\n  Using cached pillow-10.3.0-cp310-cp310-manylinux_2_28_x86_64.whl (4.5 MB)\nCollecting pyparsing==3.1.2 (from -r /tmp/15889/study048/study048/requirements.txt (line 349))\n  Using cached pyparsing-3.1.2-py3-none-any.whl (103 kB)\nCollecting python-dateutil==2.9.0.post0 (from -r /tmp/15889/study048/study048/requirements.txt (line 352))\n  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)\nCollecting rdkit==2023.9.6 (from -r /tmp/15889/study048/study048/requirements.txt (line 355))\n  Using cached rdkit-2023.9.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.9 MB)\nCollecting scikit-learn==1.5.0 (from -r /tmp/15889/study048/study048/requirements.txt (line 381))\n  Using cached scikit_learn-1.5.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.3 MB)\nCollecting scipy==1.13.1 (from -r /tmp/15889/study048/study048/requirements.txt (line 403))\n  Using cached scipy-1.13.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (38.6 MB)\nCollecting six==1.16.0 (from -r /tmp/15889/study048/study048/requirements.txt (line 429))\n  Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)\nCollecting threadpoolctl==3.5.0 (from -r /tmp/15889/study048/study048/requirements.txt (line 432))\n  Using cached threadpoolctl-3.5.0-py3-none-any.whl (18 kB)\nInstalling collected packages: threadpoolctl, six, pyparsing, pillow, packaging, numpy, networkx, kiwisolver, joblib, fonttools, cycler, scipy, rdkit, python-dateutil, nptyping, contourpy, scikit-learn, matplotlib, ase\n  Attempting uninstall: packaging\n    Found existing installation: packaging 26.2\n    Uninstalling packaging-26.2:\n      Successfully uninstalled packaging-26.2\n\nSuccessfully installed ase-3.22.1 contourpy-1.2.1 cycler-0.12.1 fonttools-4.53.0 joblib-1.4.2 kiwisolver-1.4.5 matplotlib-3.9.0 networkx-3.3 nptyping-2.5.0 numpy-1.26.4 packaging-24.1 pillow-10.3.0 pyparsing-3.1.2 python-dateutil-2.9.0.post0 rdkit-2023.9.6 scikit-learn-1.5.0 scipy-1.13.1 six-1.16.0 threadpoolctl-3.5.0\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 47.29,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 12.5,
+      "Reproducible": 15.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Data provenance (R3)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Record dataset identity, train/val/test splits, preprocessing, and evaluation results.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 204.5,
+  "fair_r_scorer": "graded-v2"
+}

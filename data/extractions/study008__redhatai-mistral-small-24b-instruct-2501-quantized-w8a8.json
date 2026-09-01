@@ -1,0 +1,147 @@
+{
+  "study_id": "study008",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study008/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:08:46.822824+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 9,
+    "methods": 3,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch FSDP",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "micro-batch size",
+        "value": null
+      },
+      {
+        "name": "activation checkpointing",
+        "value": null
+      },
+      {
+        "name": "ZeRO stages",
+        "value": null
+      },
+      {
+        "name": "Training steps",
+        "value": "7,680"
+      },
+      {
+        "name": "Warmup steps",
+        "value": "76"
+      },
+      {
+        "name": "Batch size",
+        "value": "256"
+      },
+      {
+        "name": "Context length",
+        "value": "4,096"
+      },
+      {
+        "name": "Total training tokens",
+        "value": "8 billion"
+      },
+      {
+        "name": "Optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "Learning rate",
+        "value": "4\u00d710\u22125"
+      },
+      {
+        "name": "Learning rate decay",
+        "value": "Cosine to 2\u00d710\u22126"
+      },
+      {
+        "name": "Adam \u03b2",
+        "value": "(0.9, 0.95)"
+      },
+      {
+        "name": "Weight decay",
+        "value": "0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CulturaX",
+        "version": null
+      },
+      {
+        "name": "BOOLQ",
+        "version": null
+      },
+      {
+        "name": "COPA",
+        "version": null
+      },
+      {
+        "name": "HellaSwag",
+        "version": null
+      },
+      {
+        "name": "OpenBookQA",
+        "version": null
+      },
+      {
+        "name": "PIQA",
+        "version": null
+      },
+      {
+        "name": "RACE",
+        "version": null
+      },
+      {
+        "name": "SciTail",
+        "version": null
+      },
+      {
+        "name": "TOXIGEN",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "mixed-precision bfloat16 training",
+        "description": "The forward and backward pass is computed in bfloat16 instead of float32 , as this increases computational efficiency."
+      },
+      {
+        "name": "FlashAttention",
+        "description": "self-attention"
+      },
+      {
+        "name": "RMSNorm",
+        "description": "CUDA kernels"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "macro average",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "training efficiency",
+        "value": "39% faster",
+        "split": null
+      }
+    ]
+  }
+}

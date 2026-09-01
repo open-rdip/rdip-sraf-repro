@@ -1,0 +1,100 @@
+{
+  "study_id": "study041",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study041/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:28:49.007604+00:00",
+  "counts": {
+    "dependencies": 11,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 4,
+    "methods": 1,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Rust",
+        "version": null
+      },
+      {
+        "name": "Regex-Redux",
+        "version": null
+      },
+      {
+        "name": "Alacritty",
+        "version": "v0.15.0-dev"
+      },
+      {
+        "name": "fd",
+        "version": "v9.0.0"
+      },
+      {
+        "name": "grmtools",
+        "version": "v0.13.4"
+      },
+      {
+        "name": "Ripgrep",
+        "version": "v14.1.1"
+      },
+      {
+        "name": "som-rs-ast",
+        "version": "git #35b780"
+      },
+      {
+        "name": "som-rs-bc",
+        "version": "git #35b780"
+      },
+      {
+        "name": "crates.io",
+        "version": null
+      },
+      {
+        "name": "Debian CLBG Rust#2",
+        "version": null
+      },
+      {
+        "name": "Debian CLBG Rust#1",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "memory allocation strategy",
+        "value": "Alloy, Rc<T> , etc."
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Binary Trees",
+        "version": null
+      },
+      {
+        "name": "Regex-Redux",
+        "version": null
+      },
+      {
+        "name": "Ripgrep",
+        "version": null
+      },
+      {
+        "name": "SOM programming language",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GCvs",
+        "description": "compare programs using existing shared ownership approaches"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

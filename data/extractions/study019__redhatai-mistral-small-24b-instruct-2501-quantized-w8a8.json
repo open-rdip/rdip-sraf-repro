@@ -1,0 +1,146 @@
+{
+  "study_id": "study019",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study019/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:18:52.418243+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 5,
+    "methods": 10,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "output strides",
+        "value": "16"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "DUT-OMRON",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "CIFAR-100",
+        "version": null
+      },
+      {
+        "name": "PASCAL VOC12",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Res2Net-50",
+        "description": "A Res2Net-50 with 18w \u00d74s also outperforms the ResNet-50 by 0.93 %in terms of top-1 error with only 69%FLOPs"
+      },
+      {
+        "name": "Res2Net v1b",
+        "description": "The modi\ufb01ed version of Res2Net, namely Res2Net v1b, greatly improve the classi\ufb01cation performance on ImageNet as shown in Table 1"
+      },
+      {
+        "name": "Res2Net",
+        "description": "Res2Net based model"
+      },
+      {
+        "name": "ResNet",
+        "description": "ResNet based model"
+      },
+      {
+        "name": "SimpleBaseline",
+        "description": "key-points estimation method"
+      },
+      {
+        "name": "Grad-CAM",
+        "description": "a technique used to localize the discriminative regions for image classification"
+      },
+      {
+        "name": "ResNeXt",
+        "description": ""
+      },
+      {
+        "name": "DLA",
+        "description": ""
+      },
+      {
+        "name": "Deeplab v3+",
+        "description": "segmentation method"
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "instance segmentation method"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 error",
+        "value": "3.05 %",
+        "split": null
+      },
+      {
+        "metric": "F-measure",
+        "value": "5.2%",
+        "split": null
+      },
+      {
+        "metric": "MAE",
+        "value": "2.1%",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": "70.4",
+        "split": "validation"
+      },
+      {
+        "metric": "AP50",
+        "value": "88.6",
+        "split": "validation"
+      },
+      {
+        "metric": "AP75",
+        "value": "78.3",
+        "split": "validation"
+      },
+      {
+        "metric": "APM",
+        "value": "67.1",
+        "split": "validation"
+      },
+      {
+        "metric": "APL",
+        "value": "77.2",
+        "split": "validation"
+      },
+      {
+        "metric": "Image classification",
+        "value": "consistently performs favourably",
+        "split": null
+      },
+      {
+        "metric": "mean IoU",
+        "value": "1.5 %",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "study_id": "study067",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study067/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:39:26.620255+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 4,
+    "hyperparameters": 0,
+    "datasets": 3,
+    "methods": 8,
+    "evaluation_results": 9
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Planner-Actor-Reporter system",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      5,
+      0,
+      100,
+      20
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "Gridworld",
+        "version": null
+      },
+      {
+        "name": "Sepsis",
+        "version": null
+      },
+      {
+        "name": "Factual and Counterfactual Trajectory",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "r-SSE-ICC",
+        "description": "contribution ratios attributed to all state variables"
+      },
+      {
+        "name": "TCFE",
+        "description": "counterfactual trajectory"
+      },
+      {
+        "name": "tot-ASE",
+        "description": "total agent-specific effect"
+      },
+      {
+        "name": "SSE",
+        "description": "state-specific effect"
+      },
+      {
+        "name": "ASE-SV",
+        "description": "agent-specific effect"
+      },
+      {
+        "name": "r-SSE-ICC method",
+        "description": "string"
+      },
+      {
+        "name": "Planner",
+        "description": "issues an alternative instruction for delivery"
+      },
+      {
+        "name": "Planner-Actor-Reporter system",
+        "description": "implemented using a pre-trained LLM and few-shot learning"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "return",
+        "value": "difference between the returns of the counterfactual trajectories considered for tot-ASE and TCFE",
+        "split": null
+      },
+      {
+        "metric": "percentage composition",
+        "value": "string",
+        "split": "string or null"
+      },
+      {
+        "metric": "Effect ValueTCFE",
+        "value": "-total",
+        "split": null
+      },
+      {
+        "metric": "ASE",
+        "value": "-SSE",
+        "split": null
+      },
+      {
+        "metric": "r-SSE",
+        "value": "-r-SSE",
+        "split": null
+      },
+      {
+        "metric": "\ue22d1-SE",
+        "value": "-\ue22d1-SE",
+        "split": null
+      },
+      {
+        "metric": "\ue22d2-SE",
+        "value": "-\ue22d2-SE",
+        "split": null
+      },
+      {
+        "metric": "Planner-SE",
+        "value": "-Planner-SE",
+        "split": null
+      },
+      {
+        "metric": "variance",
+        "value": "\u22650.01",
+        "split": null
+      }
+    ]
+  }
+}

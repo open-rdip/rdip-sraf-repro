@@ -1,0 +1,142 @@
+{
+  "study_id": "study071",
+  "repo_url": "https://github.com/yuvalkirstain/pickscore",
+  "started": "2026-06-10T13:17:23.808497+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "pip": "requirements.txt",
+      "setup": "setup.py"
+    },
+    "depth_note": "root",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/yuvalkirstain/pickscore",
+    "commit_hash": "f79607ff68609c1e6dfa78cba38afeea4c248df1",
+    "software_license": "MIT"
+  },
+  "lift": {
+    "lifted": {
+      "pip": "requirements.txt"
+    },
+    "triples": 46,
+    "n_sources": 2
+  },
+  "python": {
+    "declared": null,
+    "source": "default",
+    "used": "3.10",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 585.9,
+    "log_tail": "tadata (2.6 kB)\nWould install GitPython-3.1.50 Jinja2-3.1.6 MarkupSafe-3.0.3 PyYAML-6.0.3 Pygments-2.20.0 accelerate-0.18.0.dev0 aiohappyeyeballs-2.6.2 aiohttp-3.14.1 aiosignal-1.4.0 annotated-types-0.7.0 antlr4-python3-runtime-4.9.3 async-timeout-5.0.1 attrs-26.1.0 certifi-2026.5.20 charset-normalizer-3.4.7 click-8.4.1 cloudpickle-3.1.2 datasets-2.10.1 deepspeed-0.8.3 dill-0.3.6 docker-pycreds-0.4.0 filelock-3.29.1 fire-0.4.0 frozenlist-1.8.0 fsspec-2026.4.0 gitdb-4.0.12 hf-xet-1.5.1 hjson-3.1.0 huggingface_hub-0.36.2 hydra-core-1.3.2 idna-3.18 markdown-it-py-2.2.0 mdurl-0.1.2 mpmath-1.3.0 multidict-6.7.1 multiprocess-0.70.14 networkx-3.4.2 ninja-1.13.0 numpy-2.2.6 omegaconf-2.3.0 packaging-26.2 pandas-2.3.3 pathtools-0.1.2 promise-2.3 propcache-0.5.2 protobuf-3.20.3 psutil-7.2.2 py-cpuinfo-9.0.0 pyarrow-24.0.0 pydantic-2.13.4 pydantic_core-2.46.4 python-dateutil-2.9.0.post0 pytz-2026.2 regex-2026.5.9 requests-2.34.2 responses-0.18.0 rich-13.3.2 sentry-sdk-2.62.0 setproctitle-1.3.7 setuptools-81.0.0 shortuuid-1.0.13 six-1.17.0 smmap-5.0.3 submitit-1.4.5 sympy-1.14.0 termcolor-3.3.0 tokenizers-0.13.3 torch-2.12.0+cpu tqdm-4.68.2 transformers-4.27.3 typing-inspection-0.4.2 typing_extensions-4.15.0 tzdata-2026.2 urllib3-2.7.0 wandb-0.12.21 xxhash-3.7.0 yarl-1.24.2\n  Running command git clone --filter=blob:none --quiet https://github.com/huggingface/accelerate.git /tmp/pip-install-fp_xzh4k/accelerate_fb0c247f123648e9adb520eadcdafa08\n  Running command git rev-parse -q --verify 'sha^d1aa558119859c4b205a324afabaecabd9ef375e'\n  Running command git fetch -q https://github.com/huggingface/accelerate.git d1aa558119859c4b205a324afabaecabd9ef375e\n  Running command git checkout -q d1aa558119859c4b205a324afabaecabd9ef375e\n\n$ /tmp/15889/study071/venv/bin/pip install --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study071/study071/requirements.txt\n, pandas, hydra-core, huggingface-hub, GitPython, wandb, transformers, deepspeed, aiohttp, accelerate, datasets\n  Attempting uninstall: setuptools\n    Found existing installation: setuptools 82.0.1\n    Uninstalling setuptools-82.0.1:\n      Successfully uninstalled setuptools-82.0.1\n\nSuccessfully installed Click-8.4.1 GitPython-3.1.50 MarkupSafe-3.0.3 accelerate-0.18.0.dev0 aiohappyeyeballs-2.6.2 aiohttp-3.14.1 aiosignal-1.4.0 annotated-types-0.7.0 antlr4-python3-runtime-4.9.3 async-timeout-5.0.1 attrs-26.1.0 certifi-2026.5.20 charset_normalizer-3.4.7 cloudpickle-3.1.2 datasets-2.10.1 deepspeed-0.8.3 dill-0.3.6 docker-pycreds-0.4.0 filelock-3.29.1 fire-0.4.0 frozenlist-1.8.0 fsspec-2026.4.0 gitdb-4.0.12 hf-xet-1.5.1 hjson-3.1.0 huggingface-hub-0.36.2 hydra-core-1.3.2 idna-3.18 jinja2-3.1.6 markdown-it-py-2.2.0 mdurl-0.1.2 mpmath-1.3.0 multidict-6.7.1 multiprocess-0.70.14 networkx-3.4.2 ninja-1.13.0 numpy-2.2.6 omegaconf-2.3.0 pandas-2.3.3 pathtools-0.1.2 promise-2.3 propcache-0.5.2 protobuf-3.20.3 psutil-7.2.2 py-cpuinfo-9.0.0 pyarrow-24.0.0 pydantic-2.13.4 pydantic-core-2.46.4 pygments-2.20.0 python-dateutil-2.9.0.post0 pytz-2026.2 pyyaml-6.0.3 regex-2026.5.9 requests-2.34.2 responses-0.18.0 rich-13.3.2 sentry-sdk-2.62.0 setproctitle-1.3.7 setuptools-81.0.0 shortuuid-1.0.13 six-1.17.0 smmap-5.0.3 submitit-1.4.5 sympy-1.14.0 termcolor-3.3.0 tokenizers-0.13.3 torch-2.12.0+cpu tqdm-4.68.2 transformers-4.27.3 typing-inspection-0.4.2 typing_extensions-4.15.0 tzdata-2026.2 urllib3-2.7.0 wandb-0.12.21 xxhash-3.7.0 yarl-1.24.2\n  Running command git clone --filter=blob:none --quiet https://github.com/huggingface/accelerate.git /tmp/pip-install-rho1xo3v/accelerate_081a9d6c90d7476a9f22726f0ac5bb2a\n  Running command git rev-parse -q --verify 'sha^d1aa558119859c4b205a324afabaecabd9ef375e'\n  Running command git fetch -q https://github.com/huggingface/accelerate.git d1aa558119859c4b205a324afabaecabd9ef375e\n  Running command git checkout -q d1aa558119859c4b205a324afabaecabd9ef375e\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 51.79,
+    "tier": "fair",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 12.5,
+      "Reproducible": 19.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 587.1,
+  "fair_r_scorer": "graded-v2"
+}

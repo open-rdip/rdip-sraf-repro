@@ -1,0 +1,188 @@
+{
+  "study_id": "study017",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study017/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:15:18.448450+00:00",
+  "counts": {
+    "dependencies": 11,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 7,
+    "methods": 16,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "HistoCartography",
+        "version": null
+      },
+      {
+        "name": "Histolab",
+        "version": null
+      },
+      {
+        "name": "Syntax",
+        "version": null
+      },
+      {
+        "name": "HistomicsTK",
+        "version": null
+      },
+      {
+        "name": "QuPath",
+        "version": null
+      },
+      {
+        "name": "HoVerNet",
+        "version": null
+      },
+      {
+        "name": "PanNuke",
+        "version": null
+      },
+      {
+        "name": "MoNuSac",
+        "version": null
+      },
+      {
+        "name": "DGL",
+        "version": "Wang et al., 2019"
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "Python",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA P100",
+      "cuda_version": null,
+      "cpu_info": "single-core POWER8 processor"
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "PanNuke",
+        "version": "2020"
+      },
+      {
+        "name": "MoNuSac",
+        "version": "2020"
+      },
+      {
+        "name": "histopathology tasks",
+        "version": null
+      },
+      {
+        "name": "BRACS",
+        "version": null
+      },
+      {
+        "name": "BACH",
+        "version": null
+      },
+      {
+        "name": "UZH",
+        "version": null
+      },
+      {
+        "name": "SICAPv2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Gaussian smoothing",
+        "description": "null"
+      },
+      {
+        "name": "Otsu thresholding",
+        "description": "null"
+      },
+      {
+        "name": "SLIC",
+        "description": "null"
+      },
+      {
+        "name": "HoVerNet",
+        "description": "null"
+      },
+      {
+        "name": "Simple Linear Iterative Clustering",
+        "description": "null"
+      },
+      {
+        "name": "GraphGrad-CAM",
+        "description": "gradient-based explainer"
+      },
+      {
+        "name": "GraphGrad-CAM++",
+        "description": "gradient-based explainer"
+      },
+      {
+        "name": "GnnExplainer",
+        "description": "node pruning-based explainer"
+      },
+      {
+        "name": "GraphLRP",
+        "description": "layer-wise relevance propagation explainer"
+      },
+      {
+        "name": "HistoCartography",
+        "description": "histopathology tasks, i.e., stain normalization, tissue detection, tumor classification and segmentation etc."
+      },
+      {
+        "name": "graph neural networks",
+        "description": "representation learning of histopathology images"
+      },
+      {
+        "name": "cell-graph model",
+        "description": null
+      },
+      {
+        "name": "tissue-graph model",
+        "description": null
+      },
+      {
+        "name": "HACT-Net",
+        "description": null
+      },
+      {
+        "name": "SegGini",
+        "description": null
+      },
+      {
+        "name": "GraphGradCAM",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "run-time",
+        "value": "various",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "various",
+        "split": null
+      },
+      {
+        "metric": "weighted-F1 score",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "average Dice score",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

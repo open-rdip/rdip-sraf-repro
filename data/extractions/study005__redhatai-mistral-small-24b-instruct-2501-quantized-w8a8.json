@@ -1,0 +1,151 @@
+{
+  "study_id": "study005",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study005/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:06:21.924880+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 3,
+    "methods": 13,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "AdamW",
+        "version": null
+      },
+      {
+        "name": "Imaginaire",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "CLIP score threshold",
+        "value": "preset"
+      },
+      {
+        "name": "aesthetic score",
+        "value": "preset"
+      },
+      {
+        "name": "shortest side",
+        "value": "64 pixels"
+      },
+      {
+        "name": "crop size",
+        "value": "256\u00d7256"
+      },
+      {
+        "name": "inference resolution",
+        "value": "1024\u00d71024"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.0001"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.01"
+      },
+      {
+        "name": "batch_size",
+        "value": "2048"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "Visual Genome",
+        "version": null
+      },
+      {
+        "name": "MS-COCO",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DALL \u00b7E 2",
+        "description": ""
+      },
+      {
+        "name": "Stable Diffusion",
+        "description": ""
+      },
+      {
+        "name": "eDiff-I",
+        "description": ""
+      },
+      {
+        "name": "CLIP model",
+        "description": "measure the image-text alignment score"
+      },
+      {
+        "name": "aesthetic scorer",
+        "description": "rank the image quality"
+      },
+      {
+        "name": "resize-central crop",
+        "description": "resize images so that the shortest side has the same number of pixels as the input image side"
+      },
+      {
+        "name": "random crop",
+        "description": "crop 256\u00d7256 regions during training and apply it on 1024\u00d71024 resolution during inference"
+      },
+      {
+        "name": "DALL\u00b7E 2",
+        "description": ""
+      },
+      {
+        "name": "our approach",
+        "description": ""
+      },
+      {
+        "name": "CLIP text embeddings",
+        "description": "text embeddings alone typically have the correct foreground object, but lack in terms of composi- tionality, counting, and generating text."
+      },
+      {
+        "name": "T5 text embeddings",
+        "description": "obtain better compositions but are inferior in generating the foreground objects, such as the breeds of dogs."
+      },
+      {
+        "name": "CLIP+T5 text embeddings",
+        "description": "can use the provided attributes from each of the text embeddings."
+      },
+      {
+        "name": "ensemble-of-expert-denoisers",
+        "description": "scheme helps scale the model size without incurring additional computation in the inference time"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "CLIP-FID",
+        "value": "similar performance",
+        "split": "MS-COCO"
+      },
+      {
+        "metric": "CLIP-FID",
+        "value": "better performance",
+        "split": "Visual Genome"
+      }
+    ]
+  }
+}

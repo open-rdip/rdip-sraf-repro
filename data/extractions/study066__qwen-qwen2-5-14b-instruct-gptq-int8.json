@@ -1,0 +1,242 @@
+{
+  "study_id": "study066",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study066/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:16:22.431790+00:00",
+  "counts": {
+    "dependencies": 6,
+    "random_seeds": 0,
+    "hyperparameters": 15,
+    "datasets": 3,
+    "methods": 17,
+    "evaluation_results": 9
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GluonCV",
+        "version": null
+      },
+      {
+        "name": "MXNet",
+        "version": null
+      },
+      {
+        "name": "Detectron2",
+        "version": "[60]"
+      },
+      {
+        "name": "FPN",
+        "version": "[39]"
+      },
+      {
+        "name": "ResNeSt",
+        "version": null
+      },
+      {
+        "name": "ResNet",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "radix",
+        "value": "2"
+      },
+      {
+        "name": "cardinality",
+        "value": "1"
+      },
+      {
+        "name": "network width",
+        "value": "64"
+      },
+      {
+        "name": "batch_size",
+        "value": "4096"
+      },
+      {
+        "name": "mixup_training",
+        "value": "true"
+      },
+      {
+        "name": "auto_augmentation",
+        "value": "true"
+      },
+      {
+        "name": "effective_average_downsampling",
+        "value": "true"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.0001"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "mini_batch_size",
+        "value": "8192"
+      },
+      {
+        "name": "dropout_ratio",
+        "value": "0.2"
+      },
+      {
+        "name": "mini-batch size",
+        "value": "16"
+      },
+      {
+        "name": "learning_rate_schedule",
+        "value": "1x"
+      },
+      {
+        "name": "image_scale_augmentation_short_size",
+        "value": "640 to 800"
+      },
+      {
+        "name": "batch_normalization",
+        "value": "synchronized"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "MS-COCO",
+        "version": "COCO-2017"
+      },
+      {
+        "name": "COCO-2017",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Split-Attention",
+        "description": "Used with the 2s1x64d setting"
+      },
+      {
+        "name": "ResNeSt",
+        "description": "Based on ResNet-D model with Split-Attention block"
+      },
+      {
+        "name": "Mixup training",
+        "description": "Improves accuracy of ResNetD-50"
+      },
+      {
+        "name": "Auto augmentation",
+        "description": "Further improves accuracy"
+      },
+      {
+        "name": "Effective average downsampling",
+        "description": "Applied before 3x3 convolution to avoid extra computational costs"
+      },
+      {
+        "name": "data_sharding",
+        "description": "Evenly partitioning the data across GPUs."
+      },
+      {
+        "name": "mixup_training",
+        "description": "Mix each sample from the current mini-batch with its reversed order sample."
+      },
+      {
+        "name": "batch_normalization",
+        "description": "Used after each convolutional layer before ReLU activation."
+      },
+      {
+        "name": "kaiming_initialization",
+        "description": "Network weights initialization method."
+      },
+      {
+        "name": "cosine_learning_rate_schedule",
+        "description": "Learning rate schedule with the first 5 epochs reserved for warm-up."
+      },
+      {
+        "name": "EfficientNet",
+        "description": "Used for comparison in classification task."
+      },
+      {
+        "name": "SENet",
+        "description": "Used for comparison in classification task."
+      },
+      {
+        "name": "NASNet-A",
+        "description": "Used for comparison in classification task."
+      },
+      {
+        "name": "AmoebaNet",
+        "description": "Used for comparison in classification task."
+      },
+      {
+        "name": "GPipe",
+        "description": "Used for comparison in classification task."
+      },
+      {
+        "name": "Faster-RCNN",
+        "description": "trained with FPN, synchronized batch normalization, and image scale augmentation"
+      },
+      {
+        "name": "Cascade-RCNN",
+        "description": "trained with FPN, synchronized batch normalization, and image scale augmentation"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "inference speed",
+        "value": "measured using a mini-batch of 16",
+        "split": null
+      },
+      {
+        "metric": "number of parameters",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "accuracy trade-off",
+        "value": "despite its advantage in parameters",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "78.31%",
+        "split": null
+      },
+      {
+        "metric": "Throughput (img/sec)",
+        "value": "291.3",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (%)",
+        "value": "83.0",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": null,
+        "split": "validation"
+      },
+      {
+        "metric": "mean average precision",
+        "value": "boosted by around 3%",
+        "split": "validation"
+      },
+      {
+        "metric": "box mAP",
+        "value": "49.2",
+        "split": "test-dev"
+      }
+    ]
+  }
+}

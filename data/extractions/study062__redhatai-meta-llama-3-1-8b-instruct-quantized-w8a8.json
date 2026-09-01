@@ -1,0 +1,134 @@
+{
+  "study_id": "study062",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study062/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:36:43.558288+00:00",
+  "counts": {
+    "dependencies": 7,
+    "random_seeds": 2,
+    "hyperparameters": 5,
+    "datasets": 1,
+    "methods": 9,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "JAX",
+        "version": "[35]"
+      },
+      {
+        "name": "PINNs",
+        "version": null
+      },
+      {
+        "name": "jax.jet",
+        "version": null
+      },
+      {
+        "name": "jet",
+        "version": null
+      },
+      {
+        "name": "Fa\u00e0 di Bruno formula",
+        "version": null
+      },
+      {
+        "name": "TensorFlow",
+        "version": null
+      },
+      {
+        "name": "Python",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      47,
+      35
+    ],
+    "hardware": {
+      "gpu_model": "arbitrary number of GPUs",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03f5",
+        "value": "parameter"
+      },
+      {
+        "name": "batch size",
+        "value": "larger"
+      },
+      {
+        "name": "lr",
+        "value": "Lr(t0,\u03b8)"
+      },
+      {
+        "name": "causality parameter \u03f5",
+        "value": "increasing sequence of values {\u03f5i}k i=1"
+      },
+      {
+        "name": "L",
+        "value": "special temporal residual at t= 0"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Navier-Stokes benchmark",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "gradient descent",
+        "description": "using global gradient signal"
+      },
+      {
+        "name": "causal training algorithm",
+        "description": "proposed re-formulation of the residual and initial conditions loss, the annealing scheme for the \u03f5parameter, and the stopping criterion for terminating the training upon the convergence of the temporal weights wi"
+      },
+      {
+        "name": "time-marching",
+        "description": "strategy for respecting temporal causality"
+      },
+      {
+        "name": "curriculum training",
+        "description": "strategy for respecting temporal causality"
+      },
+      {
+        "name": "Algorithm 1",
+        "description": "not specified"
+      },
+      {
+        "name": "synchronous data-parallelism",
+        "description": "null"
+      },
+      {
+        "name": "Taylor-mode automatic differentiation",
+        "description": "leveraging a truncated Taylor polynomial approximation"
+      },
+      {
+        "name": "weighted residual loss",
+        "description": "Equation 3.2"
+      },
+      {
+        "name": "annealing strategy",
+        "description": "adjusting \u03f5using an increasing sequence of values {\u03f5i}k i=1"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Loss convergence",
+        "value": null,
+        "split": "training"
+      },
+      {
+        "metric": "PDE residual loss",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

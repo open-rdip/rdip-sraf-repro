@@ -1,0 +1,77 @@
+{
+  "study_id": "study092",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study092/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:35:25.387227+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 0,
+    "methods": 3,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "N",
+        "value": "tracklet size"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "TrADe",
+        "description": "Uses a tracking algorithm to identify when successive bounding boxes are of the same individual and groups them as tracklets. An anomaly detection model is then used to select the 'most normal' image of each tracklet."
+      },
+      {
+        "name": "TrADe Re-ID",
+        "description": "live Re-ID approach"
+      },
+      {
+        "name": "Skip",
+        "description": "simpler approach for gallery size reduction"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "F\u2217 1",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Average processing time for the classic Re-ID module",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "F1",
+        "value": "optimal F1",
+        "split": null
+      },
+      {
+        "metric": "FR",
+        "value": "single value",
+        "split": null
+      },
+      {
+        "metric": "TVR",
+        "value": "single value",
+        "split": null
+      }
+    ]
+  }
+}

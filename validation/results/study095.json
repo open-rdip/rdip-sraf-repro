@@ -1,0 +1,150 @@
+{
+  "study_id": "study095",
+  "repo_url": "https://github.com/studio-ousia/bpr",
+  "started": "2026-06-10T15:23:28.822294+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "pip": "requirements.txt",
+      "setup": "pyproject.toml"
+    },
+    "depth_note": "root",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "pyproject.toml",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/studio-ousia/bpr",
+    "commit_hash": "08b70cf4806758223b73b7553df8eeeb5745c8df",
+    "software_license": "LicenseRef-Custom"
+  },
+  "lift": {
+    "lifted": {
+      "pip": "requirements.txt"
+    },
+    "triples": 281,
+    "n_sources": 2
+  },
+  "python": {
+    "declared": null,
+    "source": "default",
+    "used": "3.10",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": false,
+    "build_success": false,
+    "method": "pip-requirements",
+    "stage_failed": "resolve",
+    "duration_s": 59.5,
+    "log_tail": "$ /home/dsai-st125286p/pys/py310/bin/python -m venv /tmp/15889/study095/venv\n\n$ /tmp/15889/study095/venv/bin/pip install --upgrade pip setuptools wheel\nRequirement already satisfied: pip in ./venv/lib/python3.10/site-packages (23.0.1)\nCollecting pip\n  Using cached pip-26.1.2-py3-none-any.whl (1.8 MB)\nRequirement already satisfied: setuptools in ./venv/lib/python3.10/site-packages (79.0.1)\nCollecting setuptools\n  Using cached setuptools-82.0.1-py3-none-any.whl (1.0 MB)\nCollecting wheel\n  Using cached wheel-0.47.0-py3-none-any.whl (32 kB)\nCollecting packaging>=24.0\n  Using cached packaging-26.2-py3-none-any.whl (100 kB)\nInstalling collected packages: setuptools, pip, packaging, wheel\n  Attempting uninstall: setuptools\n    Found existing installation: setuptools 79.0.1\n    Uninstalling setuptools-79.0.1:\n      Successfully uninstalled setuptools-79.0.1\n  Attempting uninstall: pip\n    Found existing installation: pip 23.0.1\n    Uninstalling pip-23.0.1:\n      Successfully uninstalled pip-23.0.1\nSuccessfully installed packaging-26.2 pip-26.1.2 setuptools-82.0.1 wheel-0.47.0\n\n$ /tmp/15889/study095/venv/bin/pip install --dry-run --ignore-installed --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study095/study095/requirements.txt\n\nCollecting certifi==2020.12.5 (from -r /tmp/15889/study095/study095/requirements.txt (line 10))\n  Using cached certifi-2020.12.5-py2.py3-none-any.whl (147 kB)\nCollecting chardet==4.0.0 (from -r /tmp/15889/study095/study095/requirements.txt (line 13))\n  Using cached chardet-4.0.0-py2.py3-none-any.whl (178 kB)\nCollecting click==7.1.2 (from -r /tmp/15889/study095/study095/requirements.txt (line 16))\n  Using cached click-7.1.2-py2.py3-none-any.whl (82 kB)\nCollecting comet-ml==3.2.9 (from -r /tmp/15889/study095/study095/requirements.txt (line 19))\n  Using cached comet_ml-3.2.9-py2.py3-none-any.whl (241 kB)\nCollecting configobj==5.0.6 (from -r /tmp/15889/study095/study095/requirements.txt (line 22))\n  Using cached configobj-5.0.6.tar.gz (33 kB)\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Getting requirements to build wheel: started\n  Getting requirements to build wheel: finished with status 'done'\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nCollecting dulwich==0.20.14 (from -r /tmp/15889/study095/study095/requirements.txt (line 24))\n  Using cached dulwich-0.20.14.tar.gz (389 kB)\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Getting requirements to build wheel: started\n  Getting requirements to build wheel: finished with status 'done'\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nCollecting everett==1.0.3 (from -r /tmp/15889/study095/study095/requirements.txt (line 42))\n  Using cached everett-1.0.3-py2.py3-none-any.whl (31 kB)\nERROR: Could not find a version that satisfies the requirement faiss-cpu==1.6.5 (from versions: 1.7.1.post3, 1.7.2, 1.7.3, 1.7.4, 1.8.0, 1.8.0.post1, 1.9.0, 1.9.0.post1, 1.10.0, 1.11.0, 1.11.0.post1, 1.12.0, 1.13.0, 1.13.1, 1.13.2, 1.14.2)\nERROR: No matching distribution found for faiss-cpu==1.6.5\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 48.04,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 8.75,
+      "Reproducible": 19.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Reusable",
+        "label": "Software licence",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Add a standard (SPDX) software licence to the repository.",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 60.9,
+  "fair_r_scorer": "graded-v2"
+}

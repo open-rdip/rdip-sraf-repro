@@ -1,0 +1,131 @@
+{
+  "study_id": "study017",
+  "repo_url": "https://github.com/biomedsciai/histocartography",
+  "started": "2026-06-09T15:21:41.159939+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "conda": "environment.yml",
+      "pip": "requirements.txt",
+      "setup": "setup.py"
+    },
+    "depth_note": "root",
+    "n_found": 4,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "conda",
+        "rel_path": "environment.yml",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.cfg",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/biomedsciai/histocartography",
+    "commit_hash": "5ec422092adbc2aae2cde3dbcbd4b28dca6685e2",
+    "software_license": "GPL-3.0"
+  },
+  "lift": {
+    "lifted": {
+      "conda": "environment.yml",
+      "pip": "requirements.txt"
+    },
+    "triples": 170,
+    "n_sources": 3
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 65.1,
+    "log_tail": "/tmp/15856/study017/study017/requirements.txt (line 3))\n  Using cached urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)\nCollecting certifi>=2023.5.7 (from requests>=2.19.0->dgl->-r /tmp/15856/study017/study017/requirements.txt (line 3))\n  Using cached certifi-2026.5.20-py3-none-any.whl.metadata (2.5 kB)\nCollecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch->-r /tmp/15856/study017/study017/requirements.txt (line 1))\n  Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)\nCollecting MarkupSafe>=2.0 (from jinja2->torch->-r /tmp/15856/study017/study017/requirements.txt (line 1))\n  Using cached markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)\nWould install ImageIO-2.37.3 Jinja2-3.1.6 MarkupSafe-3.0.3 PyYAML-6.0.3 certifi-2026.5.20 charset-normalizer-3.4.7 contourpy-1.3.3 cuda-bindings-13.3.1 cuda-pathfinder-1.5.5 cuda-toolkit-13.0.2 cycler-0.12.1 dgl-2.1.0 filelock-3.29.1 fonttools-4.63.0 fsspec-2026.4.0 h5py-3.16.0 idna-3.18 joblib-1.5.3 kiwisolver-1.5.0 lazy-loader-0.5 matplotlib-3.10.9 mpmath-1.3.0 narwhals-2.22.1 networkx-3.6.1 numpy-2.4.6 nvidia-cublas-13.1.1.3 nvidia-cuda-cupti-13.0.85 nvidia-cuda-nvrtc-13.0.88 nvidia-cuda-runtime-13.0.96 nvidia-cudnn-cu13-9.20.0.48 nvidia-cufft-12.0.0.61 nvidia-cufile-1.15.1.6 nvidia-curand-10.4.0.35 nvidia-cusolver-12.0.4.66 nvidia-cusparse-12.6.3.3 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.29.7 nvidia-nvjitlink-13.0.88 nvidia-nvshmem-cu13-3.4.5 nvidia-nvtx-13.0.85 opencv-python-4.13.0.92 packaging-26.2 pandas-3.0.3 pillow-12.2.0 psutil-7.2.2 pyparsing-3.3.2 python-dateutil-2.9.0.post0 requests-2.34.2 scikit-image-0.26.0 scikit-learn-1.9.0 scipy-1.17.1 seaborn-0.13.2 setuptools-81.0.0 six-1.17.0 sympy-1.14.0 threadpoolctl-3.6.0 tifffile-2026.6.1 torch-2.12.0 torchdata-0.11.0 torchvision-0.27.0 tqdm-4.68.2 triton-3.7.0 typing_extensions-4.15.0 urllib3-2.7.0\n\n$ /tmp/15856/study017/venv/bin/pip install -r /tmp/15856/study017/study017/requirements.txt\n setuptools, PyYAML, pyparsing, psutil, Pillow, nvidia-nvtx, nvidia-nvshmem-cu13, nvidia-nvjitlink, nvidia-nccl-cu13, nvidia-curand, nvidia-cufile, nvidia-cuda-runtime, nvidia-cuda-nvrtc, nvidia-cuda-cupti, numpy, networkx, narwhals, MarkupSafe, lazy-loader, kiwisolver, joblib, idna, fsspec, fonttools, filelock, cycler, cuda-pathfinder, charset_normalizer, certifi, tifffile, scipy, requests, python-dateutil, opencv-python, nvidia-cusparse, nvidia-cufft, nvidia-cublas, jinja2, imageio, h5py, cuda-bindings, contourpy, scikit-learn, scikit-image, pandas, nvidia-cusolver, nvidia-cudnn-cu13, matplotlib, seaborn, torch, torchvision, torchdata, dgl\n  Attempting uninstall: setuptools\n    Found existing installation: setuptools 82.0.1\n    Uninstalling setuptools-82.0.1:\n      Successfully uninstalled setuptools-82.0.1\n\nSuccessfully installed MarkupSafe-3.0.3 Pillow-12.2.0 PyYAML-6.0.3 certifi-2026.5.20 charset_normalizer-3.4.7 contourpy-1.3.3 cuda-bindings-13.3.1 cuda-pathfinder-1.5.5 cuda-toolkit-13.0.2 cycler-0.12.1 dgl-2.1.0 filelock-3.29.1 fonttools-4.63.0 fsspec-2026.4.0 h5py-3.16.0 idna-3.18 imageio-2.37.3 jinja2-3.1.6 joblib-1.5.3 kiwisolver-1.5.0 lazy-loader-0.5 matplotlib-3.10.9 mpmath-1.3.0 narwhals-2.22.1 networkx-3.6.1 numpy-2.4.6 nvidia-cublas-13.1.1.3 nvidia-cuda-cupti-13.0.85 nvidia-cuda-nvrtc-13.0.88 nvidia-cuda-runtime-13.0.96 nvidia-cudnn-cu13-9.20.0.48 nvidia-cufft-12.0.0.61 nvidia-cufile-1.15.1.6 nvidia-curand-10.4.0.35 nvidia-cusolver-12.0.4.66 nvidia-cusparse-12.6.3.3 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.29.7 nvidia-nvjitlink-13.0.88 nvidia-nvshmem-cu13-3.4.5 nvidia-nvtx-13.0.85 opencv-python-4.13.0.92 pandas-3.0.3 psutil-7.2.2 pyparsing-3.3.2 python-dateutil-2.9.0.post0 requests-2.34.2 scikit-image-0.26.0 scikit-learn-1.9.0 scipy-1.17.1 seaborn-0.13.2 setuptools-81.0.0 six-1.17.0 sympy-1.14.0 threadpoolctl-3.6.0 tifffile-2026.6.1 torch-2.12.0 torchdata-0.11.0 torchvision-0.27.0 tqdm-4.68.2 triton-3.7.0 typing-extensions-4.15.0 urllib3-2.7.0\n",
+    "notes": "environment.yml present but built via pip venv (conda build deferred)."
+  },
+  "fair_r": {
+    "total_score": 27.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 20.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 69.9
+}

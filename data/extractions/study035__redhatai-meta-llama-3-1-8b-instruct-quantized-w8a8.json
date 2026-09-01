@@ -1,0 +1,307 @@
+{
+  "study_id": "study035",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study035/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:25:57.016918+00:00",
+  "counts": {
+    "dependencies": 8,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 15,
+    "methods": 20,
+    "evaluation_results": 14
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "InceptionV3",
+        "version": null
+      },
+      {
+        "name": "FID evaluation code",
+        "version": null
+      },
+      {
+        "name": "CycleGAN",
+        "version": null
+      },
+      {
+        "name": "pix2pix",
+        "version": null
+      },
+      {
+        "name": "GauGAN",
+        "version": null
+      },
+      {
+        "name": "ResBlock",
+        "version": null
+      },
+      {
+        "name": "SPADE",
+        "version": null
+      },
+      {
+        "name": "MUNIT",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Jetson AGX Xavier",
+      "cuda_version": null,
+      "cpu_info": "Nano, 1080Ti, Xeon"
+    },
+    "hyperparameters": [
+      {
+        "name": "batch size",
+        "value": "1"
+      },
+      {
+        "name": "learning rate",
+        "value": "0.0002"
+      },
+      {
+        "name": "population size",
+        "value": "100"
+      },
+      {
+        "name": "number of iterations",
+        "value": "500"
+      },
+      {
+        "name": "parent ratio",
+        "value": "0.25"
+      },
+      {
+        "name": "mutation ratio",
+        "value": "0.5"
+      },
+      {
+        "name": "mutation probability",
+        "value": "0.2"
+      },
+      {
+        "name": "number of channels",
+        "value": "reduced"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "horse \u2192zebra",
+        "version": null
+      },
+      {
+        "name": "edges\u2192shoes",
+        "version": null
+      },
+      {
+        "name": "Cityscapes",
+        "version": null
+      },
+      {
+        "name": "real images",
+        "version": null
+      },
+      {
+        "name": "generated images",
+        "version": null
+      },
+      {
+        "name": "translated test images",
+        "version": null
+      },
+      {
+        "name": "real training+test images",
+        "version": null
+      },
+      {
+        "name": "horse \u2192 zebra",
+        "version": null
+      },
+      {
+        "name": "edges \u2192 shoes",
+        "version": null
+      },
+      {
+        "name": "unpaired conditional GANs",
+        "version": null
+      },
+      {
+        "name": "our pseudo paired training",
+        "version": null
+      },
+      {
+        "name": "horse\u2192zebra",
+        "version": null
+      },
+      {
+        "name": "map\u2192aerial photo",
+        "version": null
+      },
+      {
+        "name": "Pix2pix",
+        "version": null
+      },
+      {
+        "name": "CycleGAN",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GAN Compression",
+        "description": null
+      },
+      {
+        "name": "Fast GAN Compression",
+        "description": null
+      },
+      {
+        "name": "evolutionary algorithm",
+        "description": null
+      },
+      {
+        "name": "brute-force search",
+        "description": null
+      },
+      {
+        "name": "FID score",
+        "description": "calculate the distance between the distribution of feature vectors extracted from real and generated images using an InceptionV3 network"
+      },
+      {
+        "name": "InceptionV3 network",
+        "description": "extract feature vectors from images"
+      },
+      {
+        "name": "CycleGAN",
+        "description": "unpaired image-to-image translation"
+      },
+      {
+        "name": "pix2pix",
+        "description": "paired image-to-image translation"
+      },
+      {
+        "name": "GauGAN",
+        "description": "paired image-to-image translation"
+      },
+      {
+        "name": "ResBlock",
+        "description": "decomposition of layers in the content encoder and decoder"
+      },
+      {
+        "name": "SPADE",
+        "description": "decomposition of modules"
+      },
+      {
+        "name": "MUNIT generator",
+        "description": "decomposition of modules"
+      },
+      {
+        "name": "unpaired training",
+        "description": "requires the model to be strong enough to capture the complicated and ambiguous mapping between the source domain and the target domain"
+      },
+      {
+        "name": "pseudo paired training",
+        "description": "our student model can learn it from the teacher model directly, and can still learn extra information on the real target images from the inherited discriminator"
+      },
+      {
+        "name": "pruning",
+        "description": "Pr.: Pruning"
+      },
+      {
+        "name": "distillation",
+        "description": "Dstl : Distillation"
+      },
+      {
+        "name": "keep discriminator",
+        "description": "Keep D. : in this setting, we inherit the discriminator\u2019s weights from the teacher discriminator"
+      },
+      {
+        "name": "From-scratch Training",
+        "description": null
+      },
+      {
+        "name": "Intermediate Distillation",
+        "description": null
+      },
+      {
+        "name": "Yim et al. [55]",
+        "description": "a distillation method used in recognition networks"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "training time",
+        "value": "8 2080Ti GPUs",
+        "split": null
+      },
+      {
+        "metric": "inference speed",
+        "value": "40FPS",
+        "split": "edge GPU of Jetson Xavier"
+      },
+      {
+        "metric": "acceleration",
+        "value": "less signi\ufb01cant",
+        "split": null
+      },
+      {
+        "metric": "training time acceleration",
+        "value": "1.6-3.7\u00d7",
+        "split": null
+      },
+      {
+        "metric": "search cost reduction",
+        "value": "3.5-12 \u00d7",
+        "split": null
+      },
+      {
+        "metric": "FID",
+        "value": "The FID of our compressed CycleGAN model",
+        "split": null
+      },
+      {
+        "metric": "FID",
+        "value": null,
+        "split": "translated test images to real test images"
+      },
+      {
+        "metric": "FID",
+        "value": null,
+        "split": "translated test images to real training+test images"
+      },
+      {
+        "metric": "speedup",
+        "value": "3.2\u00d7",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "Figure 10 and Figure 11a",
+        "split": null
+      },
+      {
+        "metric": "quality of images",
+        "value": "dramatically",
+        "split": null
+      },
+      {
+        "metric": "mIoU",
+        "value": "42.06",
+        "split": null
+      },
+      {
+        "metric": "LPIPS",
+        "value": "lower",
+        "split": null
+      },
+      {
+        "metric": "FID",
+        "value": "65.48",
+        "split": "test"
+      }
+    ]
+  }
+}

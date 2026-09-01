@@ -1,0 +1,154 @@
+{
+  "study_id": "study046",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study046/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:43:59.325811+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 3,
+    "methods": 8,
+    "evaluation_results": 9
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "MMdetection",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA GeForce GTX2070",
+      "cuda_version": null,
+      "cpu_info": "i7-8700K"
+    },
+    "hyperparameters": [
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.0005"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.0005"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.01"
+      },
+      {
+        "name": "total_epochs",
+        "value": "500"
+      },
+      {
+        "name": "image_size",
+        "value": "320 \u00d7320"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "weld defect dataset",
+        "version": null
+      },
+      {
+        "name": "MS COCO",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": "trainval35k"
+      }
+    ],
+    "methods": [
+      {
+        "name": "EFE module",
+        "description": "extracts feature maps with superior region division and fine-grained information"
+      },
+      {
+        "name": "LF-YOLO",
+        "description": "model for weld defect detection"
+      },
+      {
+        "name": "RMF module",
+        "description": "utilize and ex"
+      },
+      {
+        "name": "MMdetection",
+        "description": "an open source 2D detection toolbox"
+      },
+      {
+        "name": "SSD",
+        "description": null
+      },
+      {
+        "name": "YOLO v3",
+        "description": null
+      },
+      {
+        "name": "Faster-RCNN",
+        "description": null
+      },
+      {
+        "name": "R-FCN",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP 50",
+        "value": "92.9",
+        "split": null
+      },
+      {
+        "metric": "FLOPs",
+        "value": "4.0G",
+        "split": null
+      },
+      {
+        "metric": "Params",
+        "value": "7.3M",
+        "split": null
+      },
+      {
+        "metric": "FPS",
+        "value": "61.5",
+        "split": null
+      },
+      {
+        "metric": "detection results",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "ResNet101",
+        "value": "52.9",
+        "split": null
+      },
+      {
+        "metric": "LF-YOLO",
+        "value": "43.9",
+        "split": null
+      },
+      {
+        "metric": "FLOPs(G)",
+        "value": "243.2",
+        "split": null
+      },
+      {
+        "metric": "Params(M)",
+        "value": "68.9",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "study_id": "study003",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study003/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:05:11.456484+00:00",
+  "counts": {
+    "dependencies": 8,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 6,
+    "methods": 26,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "MMDetection",
+        "version": null
+      },
+      {
+        "name": "GLIP",
+        "version": "tiny"
+      },
+      {
+        "name": "DEF-DETR",
+        "version": null
+      },
+      {
+        "name": "SWIN-TRASFORMER",
+        "version": null
+      },
+      {
+        "name": "RESNET50",
+        "version": null
+      },
+      {
+        "name": "RESNET101",
+        "version": null
+      },
+      {
+        "name": "GROUNDING DION",
+        "version": null
+      },
+      {
+        "name": "YOLOv7-L",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "W",
+        "value": "200"
+      },
+      {
+        "name": "H",
+        "value": "200"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "0.0003"
+      },
+      {
+        "name": "momentum",
+        "value": "0.05"
+      },
+      {
+        "name": "\u03b8b",
+        "value": null
+      },
+      {
+        "name": "\u03b8n",
+        "value": null
+      },
+      {
+        "name": "\u03b8h",
+        "value": null
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CAMO-D",
+        "version": null
+      },
+      {
+        "name": "CAMO",
+        "version": null
+      },
+      {
+        "name": "COD10K-D",
+        "version": null
+      },
+      {
+        "name": "NC4K-D",
+        "version": null
+      },
+      {
+        "name": "COD10K-v2",
+        "version": null
+      },
+      {
+        "name": "NC4K",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "CAFR",
+        "description": "approach that incorporates APG and SFR modules"
+      },
+      {
+        "name": "APG",
+        "description": ""
+      },
+      {
+        "name": "SFR",
+        "description": "module that crops each box to W= 200 and H= 200 from the input samples and randomly positioned on a square canvas"
+      },
+      {
+        "name": "Faster R-CNN",
+        "description": "Detection framework"
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "Segmentation framework"
+      },
+      {
+        "name": "Offline Implementation of SFR",
+        "description": "The offline approach eliminates the need for additional CUDA memory usage, but requires manual pre-processing of data before training. In the offline process, we assume that a batch includes 16 bounding boxes. With this assumption in mind, we gather all the boxes from the entire dataset and randomly shuffle them. We then sequentially select 16 boxes at a time for canvas filling with new label settings. The filling method employed in this offline approach is the same as the one described in the main text for the online approach. Based on this fact, new samples of sizes 2\u00d72,3\u00d73, and 4\u00d74are obtained simultaneously and showcased in Figure 3. These new samples, acquired through the offline process, are subsequently merged with the original images to form a new dataset for training the detection network."
+      },
+      {
+        "name": "AGP",
+        "description": ""
+      },
+      {
+        "name": "AGP-based loss",
+        "description": "L=Lhead (Mh(Mn(Mb(Xi;\u03b8b);\u03b8n);\u03b8h), Y))"
+      },
+      {
+        "name": "contrastive loss",
+        "description": "Lc"
+      },
+      {
+        "name": "GIoU",
+        "description": "Lbbox"
+      },
+      {
+        "name": "focal loss",
+        "description": "Lcls"
+      },
+      {
+        "name": "swin-transformer",
+        "description": "feature extractor"
+      },
+      {
+        "name": "FPN",
+        "description": "feature refinement"
+      },
+      {
+        "name": "SFR module",
+        "description": "reduce the size of the camouflaged object within an image"
+      },
+      {
+        "name": "Mask RCNN",
+        "description": "ResNet50 41 289.97"
+      },
+      {
+        "name": "Faster RCNN",
+        "description": "ResNet50 34 176.54"
+      },
+      {
+        "name": "Large Model SAM",
+        "description": "Vit-T 89 371.98"
+      },
+      {
+        "name": "GDino + CAFR",
+        "description": "Swin-T 165 353.98"
+      },
+      {
+        "name": "SAM",
+        "description": "Vit-L 298 1314.89"
+      },
+      {
+        "name": "DEF-DETR",
+        "description": "Deformable DETR"
+      },
+      {
+        "name": "SWIN-TRASFORMER",
+        "description": "SWIN -TRASFORMER WITH ITS TINY BASE ,AND LARGE PRE -TRAINED MODELS"
+      },
+      {
+        "name": "RESNET50",
+        "description": "RESNET50"
+      },
+      {
+        "name": "RESNET101",
+        "description": "RESNET101"
+      },
+      {
+        "name": "GLIP",
+        "description": "GLIP WITH ITS TINY AND LARGE PRE -TRAINED MODELS"
+      },
+      {
+        "name": "GROUNDING DION",
+        "description": "GROUNDING DION ITS TINY AND BASE PRE-TRAINED MODELS"
+      },
+      {
+        "name": "YOLOv7-L",
+        "description": "YOLOv7-L"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AP50",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "AP75",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "APm",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "APl",
+        "value": "string",
+        "split": null
+      }
+    ]
+  }
+}

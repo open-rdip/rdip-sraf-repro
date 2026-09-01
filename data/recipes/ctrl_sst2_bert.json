@@ -1,0 +1,27 @@
+{
+  "run_command": "python run_glue.py --model_name_or_path bert-base-uncased-sst2 --task_name sst2 --do_eval --output_dir ./results",
+  "setup_steps": [
+    "pip install transformers==4.20.0.dev0",
+    "pip install torch==1.11.0+cu113",
+    "pip install datasets==2.1.0",
+    "pip install tokenizers==0.12.1",
+    "python download_glue_data.py --task_name sst2"
+  ],
+  "requires_dataset": [
+    {
+      "name": "GLUE SST2",
+      "download": "python download_glue_data.py --task_name sst2"
+    }
+  ],
+  "requires_checkpoint": "bert-base-uncased-sst2",
+  "produces_metric": [
+    {
+      "metric": "Accuracy",
+      "dataset": "GLUE SST2"
+    }
+  ],
+  "entry_point": "run_glue.py",
+  "confidence": "high",
+  "study_id": "ctrl_sst2_bert",
+  "repo_url": "https://huggingface.co/JeremiahZ/bert-base-uncased-sst2"
+}

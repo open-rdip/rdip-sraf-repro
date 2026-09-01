@@ -1,0 +1,114 @@
+{
+  "study_id": "study072",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study072/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:21:12.502804+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 3,
+    "methods": 12,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA GTX 4090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b2",
+        "value": "various conditions"
+      },
+      {
+        "name": "P",
+        "value": "increasing the number of linear interpolations"
+      },
+      {
+        "name": "mini-batch size",
+        "value": "32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Food-101",
+        "version": null
+      },
+      {
+        "name": "CIFAR-100",
+        "version": null
+      },
+      {
+        "name": "mini-ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "impact of randomness",
+        "description": "research into the impact of the randomness of synthesized representations within local feature spaces on gradient stochasticity"
+      },
+      {
+        "name": "w-RA&ER",
+        "description": "A method that affects model accuracy"
+      },
+      {
+        "name": "wo-RA&ER",
+        "description": "A method without RA&ER which shows higher accuracy"
+      },
+      {
+        "name": "MobileNetV3-Large",
+        "description": "A lightweight model focused on execution efficiency"
+      },
+      {
+        "name": "tiny-SwinTransformer",
+        "description": "Uses a hierarchical transformer structure and a shifted window mechanism"
+      },
+      {
+        "name": "SynerMix",
+        "description": "A method that includes SynerMix-Intra, adding a branch that closely mirrors the original model."
+      },
+      {
+        "name": "w-RA&ER(M)",
+        "description": "A variant of the model with RA&ER(M)."
+      },
+      {
+        "name": "w-ER",
+        "description": "uses hidden representations with randomness"
+      },
+      {
+        "name": "w-ER(M)",
+        "description": "variant of w-ER"
+      },
+      {
+        "name": "w-ER(MM)",
+        "description": "variant of w-ER"
+      },
+      {
+        "name": "w-RA",
+        "description": "combined with w-ER to mitigate issues"
+      },
+      {
+        "name": "w-RA&ER(MM)",
+        "description": "combination of w-RA and another form of enhanced method (MM)"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "1.22% lower",
+        "split": "validation"
+      },
+      {
+        "metric": "accuracy",
+        "value": "high standard deviations",
+        "split": null
+      }
+    ]
+  }
+}

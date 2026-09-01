@@ -1,0 +1,175 @@
+{
+  "study_id": "study085",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study085/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:48:07.144535+00:00",
+  "counts": {
+    "dependencies": 4,
+    "random_seeds": 2,
+    "hyperparameters": 8,
+    "datasets": 3,
+    "methods": 16,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "RDkit",
+        "version": null
+      },
+      {
+        "name": "gnina",
+        "version": null
+      },
+      {
+        "name": "libmolgrid",
+        "version": "41"
+      },
+      {
+        "name": "RMSprop",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      100,
+      2
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03bbvar",
+        "value": "scales the standard deviations used to sample the latent space"
+      },
+      {
+        "name": "\u03bbbias",
+        "value": "linearly interpolates between prior and posterior distribution parameters"
+      },
+      {
+        "name": "\u03c3",
+        "value": "\u03c3"
+      },
+      {
+        "name": "\u00b5",
+        "value": "\u00b5"
+      },
+      {
+        "name": "learning rate",
+        "value": "1e\u22125"
+      },
+      {
+        "name": "\u03bbrecon",
+        "value": "4.0"
+      },
+      {
+        "name": "\u03bbKL",
+        "value": "0.1"
+      },
+      {
+        "name": "\u03bbsteric",
+        "value": "1.0"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "test set",
+        "version": null
+      },
+      {
+        "name": "CrossDocked2020",
+        "version": null
+      },
+      {
+        "name": "protein-ligand complexes",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "posterior sampling",
+        "description": "sampling from posterior distribution"
+      },
+      {
+        "name": "prior sampling",
+        "description": "sampling from prior distribution"
+      },
+      {
+        "name": "interpolated sampling",
+        "description": "sampling from interpolated distribution"
+      },
+      {
+        "name": "Conditional variational autoencoder (CVAE)",
+        "description": "conditional variational autoencoder (CVAE)"
+      },
+      {
+        "name": "atom typing",
+        "description": "atom typing"
+      },
+      {
+        "name": "atom gridding",
+        "description": "atom gridding"
+      },
+      {
+        "name": "atom fitting",
+        "description": "atom fitting"
+      },
+      {
+        "name": "bond inference",
+        "description": "bond inference"
+      },
+      {
+        "name": "UFF minimization",
+        "description": "null"
+      },
+      {
+        "name": "Vina minimization",
+        "description": "null"
+      },
+      {
+        "name": "CNN scoring functions",
+        "description": "null"
+      },
+      {
+        "name": "atom fitting algorithm",
+        "description": "combines iterative atom detection with gradient descent"
+      },
+      {
+        "name": "ConvReLUConv3DBlock",
+        "description": "3x3x3 ConvReLUConv3DBlock"
+      },
+      {
+        "name": "Conv3DBlock",
+        "description": "2x2x2 A vePool Conv3DBlock"
+      },
+      {
+        "name": "U-Net",
+        "description": "with transposed convolutions and nearest-neighbor upsampling instead of pooling, U-Net skip connections between the convolutional features of the conditional encoder and the decoder"
+      },
+      {
+        "name": "Spectral normalization",
+        "description": "applied to all learnable parameters during training"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "validity",
+        "value": "valid if it consists of a single connected fragment",
+        "split": null
+      },
+      {
+        "metric": "novelty",
+        "value": "not defined",
+        "split": null
+      },
+      {
+        "metric": "uniqueness",
+        "value": "not defined",
+        "split": null
+      }
+    ]
+  }
+}

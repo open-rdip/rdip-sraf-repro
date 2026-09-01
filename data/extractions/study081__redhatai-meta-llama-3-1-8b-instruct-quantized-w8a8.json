@@ -1,0 +1,126 @@
+{
+  "study_id": "study081",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study081/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:46:33.809276+00:00",
+  "counts": {
+    "dependencies": 8,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 3,
+    "methods": 9,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "NVIDIA implementation",
+        "version": null
+      },
+      {
+        "name": "Tacotron2",
+        "version": null
+      },
+      {
+        "name": "FastSpeech2",
+        "version": null
+      },
+      {
+        "name": "Light-Speech",
+        "version": null
+      },
+      {
+        "name": "Pine",
+        "version": "2021"
+      },
+      {
+        "name": "Luo et al.",
+        "version": "2021"
+      },
+      {
+        "name": "Kaiser et al.",
+        "version": "2018"
+      },
+      {
+        "name": "Chien",
+        "version": "2021"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch size",
+        "value": "32"
+      },
+      {
+        "name": "reduction factor",
+        "value": null
+      }
+    ],
+    "datasets": [
+      {
+        "name": "LJ Speech corpus",
+        "version": null
+      },
+      {
+        "name": "Indigenous language training data",
+        "version": null
+      },
+      {
+        "name": "MUSHRA",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Tacotron2",
+        "description": "null"
+      },
+      {
+        "name": "M.Sc. dissertation",
+        "description": "partial fulfillment of the first author\u2019s M.Sc. dissertation at the University of Edinburgh"
+      },
+      {
+        "name": "Mel-cepstral distance measure",
+        "description": "objective speech quality assessment"
+      },
+      {
+        "name": "Gaussian Mixture Models",
+        "description": "Spoken Speaker Identification"
+      },
+      {
+        "name": "guiding the attention",
+        "description": "null"
+      },
+      {
+        "name": "using a CTC loss function",
+        "description": "null"
+      },
+      {
+        "name": "increasing the reduction factor",
+        "description": "null"
+      },
+      {
+        "name": "cross-lingual fine-tuning",
+        "description": null
+      },
+      {
+        "name": "depthwise separable convolutions",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "IDMUSHRA score",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

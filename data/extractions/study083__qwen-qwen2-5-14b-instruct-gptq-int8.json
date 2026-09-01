@@ -1,0 +1,50 @@
+{
+  "study_id": "study083",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study083/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:27:40.036612+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 3,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "LPMC",
+        "version": null
+      },
+      {
+        "name": "NTS",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Nystr\u00f6m-based KLR",
+        "description": "A comprehensive comparison is made with benchmark techniques such as MNL, Random Forests (RF), SVM, Extreme Gradient Boosting (XGBoost), and Neural Network (NN)"
+      },
+      {
+        "name": "Gradient Descent",
+        "description": "Efficiency is assessed alongside Momentum, Adam, and L-BFGS-B optimisation methods"
+      },
+      {
+        "name": "Nystr\u00f6m method",
+        "description": "used for approximating the kernel matrix of KLR"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

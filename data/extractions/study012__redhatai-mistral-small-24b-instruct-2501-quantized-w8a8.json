@@ -1,0 +1,200 @@
+{
+  "study_id": "study012",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study012/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:12:54.496372+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 6,
+    "methods": 12,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ResNet",
+        "version": null
+      },
+      {
+        "name": "ResNeXt",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "scale jitter",
+        "value": "[640, 800]"
+      },
+      {
+        "name": "minibatch size",
+        "value": "32"
+      },
+      {
+        "name": "image crops per GPU",
+        "value": "4"
+      },
+      {
+        "name": "image scale range",
+        "value": "[0.5, 2.0]"
+      },
+      {
+        "name": "training iterations",
+        "value": "65k"
+      },
+      {
+        "name": "number of channels in the semantic branch",
+        "value": "128"
+      },
+      {
+        "name": "learning_rate",
+        "value": "double"
+      },
+      {
+        "name": "batch_size",
+        "value": "halved"
+      },
+      {
+        "name": "output channels per scale",
+        "value": "256"
+      },
+      {
+        "name": "channels in semantic segmentation branch",
+        "value": "128"
+      },
+      {
+        "name": "\u03bbi",
+        "value": "tuned"
+      },
+      {
+        "name": "\u03bbs",
+        "value": "tuned"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "Cityscapes",
+        "version": null
+      },
+      {
+        "name": "COCO Panoptic",
+        "version": null
+      },
+      {
+        "name": "COCO-Stuff",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "COCO Panoptic Segmentation Challenge",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Mask R-CNN",
+        "description": "1 \u00d7 training setting"
+      },
+      {
+        "name": "Panoptic FPN",
+        "description": null
+      },
+      {
+        "name": "ResNet-50 Semantic FPN",
+        "description": ""
+      },
+      {
+        "name": "element-wise sum",
+        "description": ""
+      },
+      {
+        "name": "concatenation",
+        "description": ""
+      },
+      {
+        "name": "color augmentation",
+        "description": null
+      },
+      {
+        "name": "multi-scale inference",
+        "description": null
+      },
+      {
+        "name": "balanced class distribution",
+        "description": null
+      },
+      {
+        "name": "FPN",
+        "description": "Feature Pyramid Network configuration"
+      },
+      {
+        "name": "Post-processing",
+        "description": "Post-processing to resolve overlaps in panoptic segmentation outputs"
+      },
+      {
+        "name": "FPN channels grouped into two sets",
+        "description": "each task uses one of the two features sets as its input"
+      },
+      {
+        "name": "loss re-weighting",
+        "description": "corrected by a simple loss re-weighting between the total instance segmentation loss and the semantic segmentation loss"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AP",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "AP 50",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "AP 75",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "PQ",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "PQS",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "PQT",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "iIoU",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

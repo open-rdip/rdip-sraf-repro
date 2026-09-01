@@ -1,0 +1,181 @@
+{
+  "study_id": "study080",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study080/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:26:04.863630+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 7,
+    "methods": 17,
+    "evaluation_results": 9
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "k",
+        "value": "9"
+      },
+      {
+        "name": "training_steps",
+        "value": "0"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "PASTURE",
+        "version": null
+      },
+      {
+        "name": "ROBOTHOR",
+        "version": null
+      },
+      {
+        "name": "HABITAT (MP3D)",
+        "version": null
+      },
+      {
+        "name": "R OBOTHOR",
+        "version": null
+      },
+      {
+        "name": "H ABI- TAT",
+        "version": null
+      },
+      {
+        "name": "P ASTURE",
+        "version": null
+      },
+      {
+        "name": "LAION-5B",
+        "version": "64"
+      }
+    ],
+    "methods": [
+      {
+        "name": "FBE heuristic exploration",
+        "description": "Exploration strategy used in CoW framework."
+      },
+      {
+        "name": "learnable exploration optimized on HABITAT (MP3D) train scenes",
+        "description": "Learned exploration method trained on HABITAT's MP3D dataset."
+      },
+      {
+        "name": "learned exploration optimized on ROBOTHOR train scenes",
+        "description": "Learned exploration method trained on ROBOTHOR's dataset."
+      },
+      {
+        "name": "CLIP with k=9 referring expressions (CLIP-Ref.)",
+        "description": "Object localization method using CLIP with 9 referring expressions."
+      },
+      {
+        "name": "CLIP with k=9 patches (CLIP-Patch)",
+        "description": "Object localization method using CLIP with 9 patches."
+      },
+      {
+        "name": "CLIP with gradient relevance (CLIP-Grad.)",
+        "description": "Object localization method using CLIP with gradient relevance."
+      },
+      {
+        "name": "MDETR segmentation model (MDETR)",
+        "description": "Object localization method using MDETR segmentation model."
+      },
+      {
+        "name": "OWL-ViT detector (OWL)",
+        "description": "Object localization method using OWL-ViT detector."
+      },
+      {
+        "name": "CoWs",
+        "description": "Method used for benchmarking on PASTURE dataset"
+      },
+      {
+        "name": "post-processing mask predictions",
+        "description": "Using only the center pixel as a representative target for navigation"
+      },
+      {
+        "name": "CoW",
+        "description": "trained for 0 navigation steps"
+      },
+      {
+        "name": "SemanticNav-ZSON",
+        "description": "trained in the target evaluation simulators for 500M steps"
+      },
+      {
+        "name": "EmbCLIP-ZSON",
+        "description": "trained in the target evaluation simulators for 60M steps"
+      },
+      {
+        "name": "FBE",
+        "description": "Fixed exploration method using an object localizer (OWL, B/32, with post-processing)"
+      },
+      {
+        "name": "ROBOTHOR learnable exploration",
+        "description": "Learnable exploration method for ROBOTHOR environment"
+      },
+      {
+        "name": "HABITAT learnable exploration",
+        "description": "Learnable exploration method for HABITAT environment"
+      },
+      {
+        "name": "OWL ViT-B/32",
+        "description": "A specific CoW model variant"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "SUCCESS (SR)",
+        "value": null,
+        "split": "validation"
+      },
+      {
+        "metric": "Success weighted by inverse path length (SPL)",
+        "value": null,
+        "split": "validation"
+      },
+      {
+        "metric": "Average success",
+        "value": "lower than on R OBOTHOR",
+        "split": null
+      },
+      {
+        "metric": "Finding uncommon objects (Uncom.)",
+        "value": "higher rates than more common R OBOTHOR objects",
+        "split": null
+      },
+      {
+        "metric": "Performance with distractor objects (distract)",
+        "value": "hurt performance",
+        "split": null
+      },
+      {
+        "metric": "Natural language specification",
+        "value": "not sufficient to mitigate against the added difficulties",
+        "split": null
+      },
+      {
+        "metric": "MP3D S UCCESS",
+        "value": "4.9",
+        "split": "test"
+      },
+      {
+        "metric": "improvement over EmbCLIP-ZSON R OBOTHOR",
+        "value": "15.6 percentage points",
+        "split": null
+      },
+      {
+        "metric": "S UCCESS",
+        "value": "6 percentage points",
+        "split": null
+      }
+    ]
+  }
+}

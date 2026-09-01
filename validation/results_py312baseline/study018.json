@@ -1,0 +1,131 @@
+{
+  "study_id": "study018",
+  "repo_url": "https://github.com/markson14/WheatDet",
+  "started": "2026-06-09T15:22:52.409441+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "docker/Dockerfile",
+      "pip": "requirements.txt",
+      "setup": "setup.py"
+    },
+    "depth_note": "subdir",
+    "n_found": 4,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      },
+      {
+        "type": "docker",
+        "rel_path": "docker/Dockerfile",
+        "depth": 1
+      },
+      {
+        "type": "docker",
+        "rel_path": "docker/docker-jupyter/Dockerfile",
+        "depth": 2
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/markson14/WheatDet",
+    "commit_hash": "07eca9de61a671f79c1f2a199bd89324772c6cca",
+    "software_license": "MIT"
+  },
+  "lift": {
+    "lifted": {
+      "docker": "docker/Dockerfile",
+      "pip": "requirements.txt"
+    },
+    "triples": 38,
+    "n_sources": 3
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 11.4,
+    "log_tail": "8/study018/requirements.txt (line 4))\n  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)\nCollecting fonttools>=4.22.0 (from matplotlib->-r /tmp/15856/study018/study018/requirements.txt (line 4))\n  Using cached fonttools-4.63.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (118 kB)\nCollecting kiwisolver>=1.3.1 (from matplotlib->-r /tmp/15856/study018/study018/requirements.txt (line 4))\n  Using cached kiwisolver-1.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.1 kB)\nCollecting numpy>=1.23 (from matplotlib->-r /tmp/15856/study018/study018/requirements.txt (line 4))\n  Using cached numpy-2.4.6-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)\nCollecting packaging>=20.0 (from matplotlib->-r /tmp/15856/study018/study018/requirements.txt (line 4))\n  Using cached packaging-26.2-py3-none-any.whl.metadata (3.5 kB)\nCollecting pillow>=8 (from matplotlib->-r /tmp/15856/study018/study018/requirements.txt (line 4))\n  Using cached pillow-12.2.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)\nCollecting pyparsing>=3 (from matplotlib->-r /tmp/15856/study018/study018/requirements.txt (line 4))\n  Using cached pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)\nCollecting python-dateutil>=2.7 (from matplotlib->-r /tmp/15856/study018/study018/requirements.txt (line 4))\n  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)\nCollecting six>=1.5 (from python-dateutil>=2.7->matplotlib->-r /tmp/15856/study018/study018/requirements.txt (line 4))\n  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)\nWould install Cython-3.2.5 PyYAML-6.0.3 contourpy-1.3.3 cycler-0.12.1 fonttools-4.63.0 kiwisolver-1.5.0 matplotlib-3.10.9 ninja-1.13.0 numpy-2.4.6 packaging-26.2 pillow-12.2.0 pyparsing-3.3.2 python-dateutil-2.9.0.post0 six-1.17.0 tqdm-4.68.2 yacs-0.1.8\n\n$ /tmp/15856/study018/venv/bin/pip install -r /tmp/15856/study018/study018/requirements.txt\n2.7 (from matplotlib->-r /tmp/15856/study018/study018/requirements.txt (line 4))\n  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)\nCollecting six>=1.5 (from python-dateutil>=2.7->matplotlib->-r /tmp/15856/study018/study018/requirements.txt (line 4))\n  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)\nUsing cached ninja-1.13.0-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (180 kB)\nDownloading yacs-0.1.8-py3-none-any.whl (14 kB)\nUsing cached cython-3.2.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.4 MB)\nUsing cached matplotlib-3.10.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.8 MB)\nUsing cached tqdm-4.68.2-py3-none-any.whl (78 kB)\nUsing cached contourpy-1.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (362 kB)\nUsing cached cycler-0.12.1-py3-none-any.whl (8.3 kB)\nUsing cached fonttools-4.63.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.0 MB)\nUsing cached kiwisolver-1.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)\nUsing cached numpy-2.4.6-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)\nUsing cached pillow-12.2.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)\nUsing cached pyparsing-3.3.2-py3-none-any.whl (122 kB)\nUsing cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)\nUsing cached six-1.17.0-py2.py3-none-any.whl (11 kB)\nUsing cached pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)\nInstalling collected packages: tqdm, six, PyYAML, pyparsing, pillow, numpy, ninja, kiwisolver, fonttools, cython, cycler, yacs, python-dateutil, contourpy, matplotlib\n\nSuccessfully installed PyYAML-6.0.3 contourpy-1.3.3 cycler-0.12.1 cython-3.2.5 fonttools-4.63.0 kiwisolver-1.5.0 matplotlib-3.10.9 ninja-1.13.0 numpy-2.4.6 pillow-12.2.0 pyparsing-3.3.2 python-dateutil-2.9.0.post0 six-1.17.0 tqdm-4.68.2 yacs-0.1.8\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 27.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 20.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 16.0
+}

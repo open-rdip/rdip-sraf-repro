@@ -1,0 +1,150 @@
+{
+  "study_id": "study082",
+  "repo_url": "https://github.com/anirudh9119/RIMs",
+  "started": "2026-06-10T14:24:16.131590+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "conda": "environment.yml",
+      "setup": "blocks_atari/setup.py"
+    },
+    "depth_note": "root",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "conda",
+        "rel_path": "environment.yml",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "blocks_atari/setup.py",
+        "depth": 1
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/anirudh9119/RIMs",
+    "commit_hash": "aa61773a949c1e3f499d4c05dd77fcd2adbffa19",
+    "software_license": null
+  },
+  "lift": {
+    "lifted": {
+      "conda": "environment.yml"
+    },
+    "triples": 809,
+    "n_sources": 2
+  },
+  "python": {
+    "declared": "3.8",
+    "source": "conda",
+    "used": "3.8",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-setup",
+    "stage_failed": null,
+    "duration_s": 173.0,
+    "log_tail": " kB)\nCollecting six>=1.5 (from python-dateutil>=2.7->matplotlib->a2c-ppo-acktr==0.0.1)\n  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)\nUsing cached matplotlib-3.7.5-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (9.2 MB)\nDownloading pybullet-3.2.7-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (103.2 MB)\n   \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 103.2/103.2 MB 7.8 MB/s eta 0:00:00\nUsing cached cloudpickle-3.1.2-py3-none-any.whl (22 kB)\nUsing cached contourpy-1.1.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (301 kB)\nUsing cached cycler-0.12.1-py3-none-any.whl (8.3 kB)\nUsing cached fonttools-4.57.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.7 MB)\nUsing cached gym_notices-0.1.0-py3-none-any.whl (3.3 kB)\nUsing cached importlib_metadata-8.5.0-py3-none-any.whl (26 kB)\nUsing cached importlib_resources-6.4.5-py3-none-any.whl (36 kB)\nUsing cached kiwisolver-1.4.7-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.2 MB)\nUsing cached numpy-1.24.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.3 MB)\nUsing cached packaging-26.2-py3-none-any.whl (100 kB)\nUsing cached pillow-10.4.0-cp38-cp38-manylinux_2_28_x86_64.whl (4.5 MB)\nUsing cached pyparsing-3.1.4-py3-none-any.whl (104 kB)\nUsing cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)\nUsing cached six-1.17.0-py2.py3-none-any.whl (11 kB)\nUsing cached zipp-3.20.2-py3-none-any.whl (9.2 kB)\nWould install a2c-ppo-acktr-0.0.1 cloudpickle-3.1.2 contourpy-1.1.1 cycler-0.12.1 fonttools-4.57.0 gym-0.26.2 gym-notices-0.1.0 importlib_metadata-8.5.0 importlib_resources-6.4.5 kiwisolver-1.4.7 matplotlib-3.7.5 numpy-1.24.4 packaging-26.2 pillow-10.4.0 pybullet-3.2.7 pyparsing-3.1.4 python-dateutil-2.9.0.post0 six-1.17.0 zipp-3.20.2\n\n$ /tmp/15889/study082/venv/bin/pip install --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu .\n-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.2 MB)\nUsing cached numpy-1.24.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.3 MB)\nUsing cached packaging-26.2-py3-none-any.whl (100 kB)\nUsing cached pillow-10.4.0-cp38-cp38-manylinux_2_28_x86_64.whl (4.5 MB)\nUsing cached pyparsing-3.1.4-py3-none-any.whl (104 kB)\nUsing cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)\nUsing cached six-1.17.0-py2.py3-none-any.whl (11 kB)\nUsing cached zipp-3.20.2-py3-none-any.whl (9.2 kB)\nBuilding wheels for collected packages: a2c-ppo-acktr, gym\n  Building wheel for a2c-ppo-acktr (setup.py): started\n  Building wheel for a2c-ppo-acktr (setup.py): finished with status 'done'\n  Created wheel for a2c-ppo-acktr: filename=a2c_ppo_acktr-0.0.1-py3-none-any.whl size=31778 sha256=e2b62beba374b03b36e02f13b781b745d654eb156c7f0d60ef7385df1d2f86ea\n  Stored in directory: /tmp/pip-ephem-wheel-cache-20z628na/wheels/15/32/16/3a8190fc00426d62fc15776cba3c72309a106bd25fad460636\n  Building wheel for gym (pyproject.toml): started\n  Building wheel for gym (pyproject.toml): finished with status 'done'\n  Created wheel for gym: filename=gym-0.26.2-py3-none-any.whl size=827622 sha256=b1ff292d9628d0e7f16d1a767e1acbf3bdb3e76d4850c81bb341a287dc62e983\n  Stored in directory: /home/dsai-st125286p/.cache/pip/wheels/17/79/65/7afedc162d858b02708a3b8f7a6dd5b1000dcd5b0f894f7cc1\nSuccessfully built a2c-ppo-acktr gym\nInstalling collected packages: pybullet, gym-notices, zipp, six, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, cloudpickle, python-dateutil, importlib-resources, importlib-metadata, contourpy, matplotlib, gym, a2c-ppo-acktr\nSuccessfully installed a2c-ppo-acktr-0.0.1 cloudpickle-3.1.2 contourpy-1.1.1 cycler-0.12.1 fonttools-4.57.0 gym-0.26.2 gym-notices-0.1.0 importlib-metadata-8.5.0 importlib-resources-6.4.5 kiwisolver-1.4.7 matplotlib-3.7.5 numpy-1.24.4 packaging-26.2 pillow-10.4.0 pybullet-3.2.7 pyparsing-3.1.4 python-dateutil-2.9.0.post0 six-1.17.0 zipp-3.20.2\n",
+    "notes": "environment.yml present but built via pip venv (conda build deferred)."
+  },
+  "fair_r": {
+    "total_score": 44.29,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 5.0,
+      "Reproducible": 19.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Software licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Add a standard (SPDX) software licence to the repository.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 174.3,
+  "fair_r_scorer": "graded-v2"
+}

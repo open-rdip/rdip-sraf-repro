@@ -1,0 +1,230 @@
+{
+  "study_id": "study034",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study034/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:56:54.006105+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 3,
+    "methods": 21,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "input_size",
+        "value": "320x240"
+      },
+      {
+        "name": "batch_size",
+        "value": "8"
+      },
+      {
+        "name": "initial_learning_rate",
+        "value": "10^-4"
+      },
+      {
+        "name": "learning_rate_decay_factor",
+        "value": "10"
+      },
+      {
+        "name": "learning_rate_decay_iteration",
+        "value": "80k"
+      },
+      {
+        "name": "lambda_geometry",
+        "value": "5.0"
+      },
+      {
+        "name": "lambda_seg",
+        "value": "25.0"
+      },
+      {
+        "name": "lambda_occupancy_level_643",
+        "value": "50.0"
+      },
+      {
+        "name": "lambda_occupancy_level_1283",
+        "value": "25.0"
+      },
+      {
+        "name": "lambda_occupancy_level_2563",
+        "value": "10.0"
+      },
+      {
+        "name": "\u03bbdepth",
+        "value": "2.0"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "10^-4"
+      },
+      {
+        "name": "batch size",
+        "value": "16"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Matterport3D",
+        "version": "[3]"
+      },
+      {
+        "name": "3D-Front",
+        "version": "[13]"
+      },
+      {
+        "name": "Front-3D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Uni-3D",
+        "description": "A method that surpasses Pano-Re by approximately 10 PRQ in 3D reconstruction."
+      },
+      {
+        "name": "2D segmentation and/or depth estimation",
+        "description": "Replaced with custom results while retaining ResNet-18 backbone"
+      },
+      {
+        "name": "depth-aware panoptic segmentation framework",
+        "description": "Substitutes the 2D network of Pano-Re"
+      },
+      {
+        "name": "Multi-scale Feature Lifting",
+        "description": "Back-projection of multi-scale 2D features fused into U-Net encoders"
+      },
+      {
+        "name": "back-projection",
+        "description": "relies on the depth accuracy"
+      },
+      {
+        "name": "fine-tuning",
+        "description": "Fine-tuning on Matterport3D for 120k iterations with the same polynomial-based learning rate scheduling."
+      },
+      {
+        "name": "training",
+        "description": "Training for another 110k iterations with a step learning rate schedule and batch size 8, initial learning rate 10^-4, decreasing by a factor of 10 at the 80k iteration."
+      },
+      {
+        "name": "inference_procedure",
+        "description": "Inference procedure to evaluate PRQ as described in Section 3.2, where outputs are voxel-based representations as required by the PRQ metric."
+      },
+      {
+        "name": "marching cubes algorithm",
+        "description": "used to extract isosurface from predicted TDF as meshes"
+      },
+      {
+        "name": "Depth-aware Panoptic Quality (DPQ)",
+        "description": "evaluates segmentation and depth estimation jointly"
+      },
+      {
+        "name": "Panoptic Quality (PQ)",
+        "description": "standard metric for evaluating panoptic segmentation"
+      },
+      {
+        "name": "root mean square error (RMSE)",
+        "description": "reported for reference on depth estimation accuracy"
+      },
+      {
+        "name": "3D panoptic reconstruction quality (3D PRQ)",
+        "description": "evaluates model performance on 3D scene understanding"
+      },
+      {
+        "name": "Dual Decoders",
+        "description": "Illustration of the dual decoders for panoptic segmentation and depth estimation. Each decoder takes in its own query embeddings and performs masked cross-attention with image features from the Transformer encoder, where masks are generated from the previous decoder output. A subsequent cross-decoder query association layer enables the communication between segment and depth queries belonging to the same segment, followed by a typical self-attention layer."
+      },
+      {
+        "name": "AdamW optimizer",
+        "description": "Optimizer used for training the 2D network."
+      },
+      {
+        "name": "Polynomial-based learning rate scheduler",
+        "description": "Multiplies the base learning rate with (1-i/N)^0.9."
+      },
+      {
+        "name": "depth information",
+        "description": "used as a distance field embedding"
+      },
+      {
+        "name": "2D features",
+        "description": "mask feature PS(F4) and depth feature PD(F4)"
+      },
+      {
+        "name": "learned 2D queries",
+        "description": "replaced with randomly initialized learnable query embeddings"
+      },
+      {
+        "name": "Transformer-based architecture",
+        "description": "Simultaneously addresses panoptic segmentation and depth estimation"
+      },
+      {
+        "name": "3D network for panoptic reconstruction",
+        "description": "Takes in back-projected multi-scale features and transforms them into 3D segments with query embeddings for the reconstruction output"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "RMSE",
+        "value": "2.34",
+        "split": null
+      },
+      {
+        "metric": "PRQ",
+        "value": "surpasses Pano-Re by \u223c10",
+        "split": null
+      },
+      {
+        "metric": "thing classes",
+        "value": "+1.11",
+        "split": null
+      },
+      {
+        "metric": "stuff classes",
+        "value": "+0.83",
+        "split": null
+      },
+      {
+        "metric": "DPQ",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "PQ",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "3D PRQ",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "stuff PRQ",
+        "value": "0.27",
+        "split": null
+      },
+      {
+        "metric": "things PRQ",
+        "value": "0.08",
+        "split": null
+      },
+      {
+        "metric": "thing PRQ",
+        "value": "0.96",
+        "split": null
+      }
+    ]
+  }
+}

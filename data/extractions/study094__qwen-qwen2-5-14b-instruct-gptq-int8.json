@@ -1,0 +1,77 @@
+{
+  "study_id": "study094",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study094/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:36:25.341329+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 6,
+    "methods": 3,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": "17"
+      },
+      {
+        "name": "LVIS",
+        "version": "7"
+      },
+      {
+        "name": "V3Det",
+        "version": "25"
+      },
+      {
+        "name": "OpenImages",
+        "version": "13"
+      },
+      {
+        "name": "CC3M",
+        "version": "2"
+      },
+      {
+        "name": "SA-1B",
+        "version": "12"
+      }
+    ],
+    "methods": [
+      {
+        "name": "Grounding DINO 1.5",
+        "description": "Model used for common object detection scenarios"
+      },
+      {
+        "name": "Grounding DINO 1.5 Edge",
+        "description": "A model optimized with TensorRT for real-time object detection."
+      },
+      {
+        "name": "Grounding DINO 1.5 Pro",
+        "description": "A model capable of detecting objects in dense scenarios, recognizing both common and specialized terminology, and producing consistent object bounding boxes in video processing."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AP",
+        "value": "45.0",
+        "split": "test"
+      },
+      {
+        "metric": "AP",
+        "value": "36.2",
+        "split": "minival"
+      }
+    ]
+  }
+}

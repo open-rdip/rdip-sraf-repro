@@ -1,0 +1,128 @@
+{
+  "study_id": "study011",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study011/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:37:50.781516+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 1,
+    "methods": 16,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "1080Ti",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "epochs",
+        "value": "200"
+      },
+      {
+        "name": "batch_size",
+        "value": "128"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RepVGG",
+        "description": "fast, simple and practical ConvNets designed for maximum speed on GPU and specialized hardware"
+      },
+      {
+        "name": "DiracNet",
+        "description": "Adopts a well-designed re-parameterization of conv kernels."
+      },
+      {
+        "name": "Trivial Re-param",
+        "description": "A simpler re-parameterization of conv kernels by directly adding an identity kernel to the 3\u00d73 kernel."
+      },
+      {
+        "name": "Asymmetric Conv Block (ACB)",
+        "description": "Another form of structural re-parameterization."
+      },
+      {
+        "name": "Residual Reorg",
+        "description": "Re-organizes each stage in a ResNet-like manner with specific configurations for residual blocks and shortcuts."
+      },
+      {
+        "name": "Autoaugment",
+        "description": "[5]"
+      },
+      {
+        "name": "label smoothing",
+        "description": ""
+      },
+      {
+        "name": "mixup",
+        "description": ""
+      },
+      {
+        "name": "structural re-parameterization technique",
+        "description": "(Table. 6)"
+      },
+      {
+        "name": "structural re-param",
+        "description": "uses the parameters of a structure to parameterize another structure with nonlinear components like training-time BN"
+      },
+      {
+        "name": "DiractNet",
+        "description": "a variant compared in the study"
+      },
+      {
+        "name": "Full-featured reparam",
+        "description": "includes +ReLU in branch"
+      },
+      {
+        "name": "ACB",
+        "description": "another variant compared in the study"
+      },
+      {
+        "name": "identity w/o BN",
+        "description": "removes the BN in identity branch"
+      },
+      {
+        "name": "post-addition BN",
+        "description": "removes the BN layers in the three branches and appends a BN layer after the addition"
+      },
+      {
+        "name": "+ReLU in branches",
+        "description": "inserts ReLU into each branch (after BN and before addition)"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "80%",
+        "split": null
+      },
+      {
+        "metric": "speed",
+        "value": "runs 31% faster",
+        "split": null
+      },
+      {
+        "metric": "Inference speed w/o re-param",
+        "value": "1810",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "72.39%",
+        "split": "test"
+      }
+    ]
+  }
+}

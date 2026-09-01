@@ -1,0 +1,140 @@
+{
+  "study_id": "study005",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study005/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:33:18.858338+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 4,
+    "methods": 13,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "Imaginaire",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.0001"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.01"
+      },
+      {
+        "name": "batch_size",
+        "value": "2048"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "public and proprietary datasets",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "visual genome",
+        "version": null
+      },
+      {
+        "name": "MS-COCO",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DALL \u00b7E 2",
+        "description": "A method used for generating images from detailed captions, compared against in the study."
+      },
+      {
+        "name": "Stable Diffusion",
+        "description": "A method used for generating images from detailed captions, compared against in the study."
+      },
+      {
+        "name": "pretrained CLIP model",
+        "description": "used to measure image-text alignment score"
+      },
+      {
+        "name": "aesthetic scorer",
+        "description": "used to rank image quality"
+      },
+      {
+        "name": "resize-central crop",
+        "description": "applied for training base and SR256 models"
+      },
+      {
+        "name": "random crop",
+        "description": "applied for training SR1024 model"
+      },
+      {
+        "name": "our approach",
+        "description": "model that successfully generates English text on a wide range of samples"
+      },
+      {
+        "name": "DALL\u00b7E 2",
+        "description": "fails at generating text, producing misspellings or no text"
+      },
+      {
+        "name": "CLIP text encoder",
+        "description": "Used in isolation and in combination with T5 encoder"
+      },
+      {
+        "name": "T5 encoder",
+        "description": "Used in isolation and in combination with CLIP text encoder"
+      },
+      {
+        "name": "CLIP text embeddings",
+        "description": "Used for generating images with correct foreground objects"
+      },
+      {
+        "name": "T5 text embeddings",
+        "description": "Used for generating images with better compositionality"
+      },
+      {
+        "name": "eDiff-I",
+        "description": "A model that handles long-range dependencies better and performs better than DALL-E 2 and Stable Diffusion."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "zero-shot text-to-image generation performance",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "CLIP-FID trade-off",
+        "value": "similar performance",
+        "split": "MS-COCO"
+      },
+      {
+        "metric": "CLIP-FID trade-off",
+        "value": "better performance",
+        "split": "Visual Genome"
+      }
+    ]
+  }
+}

@@ -57,11 +57,17 @@ def _save_cache(turtle_str: str, meta: dict):
 def _is_newer(remote: dict, cached: dict) -> bool:
     if not cached:
         return True
-    if remote.get("version_iri") and cached.get("version_iri"):
-        return remote["version_iri"] != cached["version_iri"]
-    if remote.get("version_info") and cached.get("version_info"):
-        return remote["version_info"] != cached["version_info"]
-    return remote["checksum"] != cached.get("checksum", "")
+    # Ground truth: did the ontology content change at all? The checksum catches
+    # edits made WITHOUT bumping versionIRI/versionInfo — which the old
+    # version-first check silently missed.
+    if remote.get("checksum") != cached.get("checksum", ""):
+        return True
+    # Content identical but the declared version moved -> still treat as newer.
+    if remote.get("version_iri") and remote["version_iri"] != cached.get("version_iri"):
+        return True
+    if remote.get("version_info") and remote["version_info"] != cached.get("version_info"):
+        return True
+    return False
 
 def _reload_into_triplestore(turtle_str: str):
     print("[OntologyLoader] Reloading schema graph ...")

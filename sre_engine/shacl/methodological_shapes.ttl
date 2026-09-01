@@ -1,0 +1,27 @@
+# sre_engine/shacl/methodological_shapes.ttl
+# FAIR-R Reproducible R2 — Methodological Decision Transparency.
+# Grounded in the ML Reproducibility Checklist (algorithm, hyperparameters, seeds).
+# Complements randomseed_shapes.ttl (seed-node completeness).
+
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdip: <https://w3id.org/rdip/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+rdip:MethodologicalActivityShape
+    a sh:NodeShape ;
+    sh:targetClass rdip:ResearchActivity ;
+    rdfs:label "Reproducible R2: methodological decision transparency" ;
+
+    sh:property [
+        sh:path     rdip:usedMethod ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING (Reproducible R2): no method/algorithm declared (rdip:usedMethod). Describe the algorithm and analytical decisions." ;
+    ] ;
+
+    sh:property [
+        sh:path     rdip:hasParameter ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message  "WARNING (Reproducible R2): no parameters declared (rdip:hasParameter). Declare hyperparameters and their selection method, and all random seeds." ;
+    ] .

@@ -1,0 +1,195 @@
+{
+  "study_id": "study063",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study063/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:37:41.586508+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 1,
+    "hyperparameters": 2,
+    "datasets": 14,
+    "methods": 11,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "LibriSpeech",
+        "version": null
+      },
+      {
+        "name": "NVIDIA STT model",
+        "version": null
+      },
+      {
+        "name": "FrameBatchASR class",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      4
+    ],
+    "hardware": {
+      "gpu_model": "NVIDIA",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "beam search",
+        "value": "based on the model"
+      },
+      {
+        "name": "temperature scheduling",
+        "value": "based on the model"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "V oxPopuli",
+        "version": null
+      },
+      {
+        "name": "MLS",
+        "version": null
+      },
+      {
+        "name": "VP-10K+FT",
+        "version": null
+      },
+      {
+        "name": "several datasets",
+        "version": null
+      },
+      {
+        "name": "LibriSpeech",
+        "version": null
+      },
+      {
+        "name": "Whisper",
+        "version": null
+      },
+      {
+        "name": "Meanwhile",
+        "version": null
+      },
+      {
+        "name": "Kincaid46",
+        "version": null
+      },
+      {
+        "name": "Fleurs",
+        "version": "Conneau et al., 2022"
+      },
+      {
+        "name": "SpeechStew",
+        "version": null
+      },
+      {
+        "name": "full dataset",
+        "version": null
+      },
+      {
+        "name": "dataset size of 680,000 hours",
+        "version": null
+      },
+      {
+        "name": "54,000 hours",
+        "version": null
+      },
+      {
+        "name": "7,000 hours",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Whisper",
+        "description": "unsupervised pre-training data and fine-tuning"
+      },
+      {
+        "name": "WER",
+        "description": "calculation"
+      },
+      {
+        "name": "text normalizer",
+        "description": "development through iterative manual inspection"
+      },
+      {
+        "name": "Whisper model",
+        "description": "robustness to noise, especially under more natural distribution shifts"
+      },
+      {
+        "name": "NVIDIA STT model",
+        "description": "null"
+      },
+      {
+        "name": "linear fit",
+        "description": "to log-log values"
+      },
+      {
+        "name": "squared correlation",
+        "description": "coefficient"
+      },
+      {
+        "name": "LibriSpeech-trained",
+        "description": "pre-trained and/or fine-tuned on LibriSpeech"
+      },
+      {
+        "name": "NVIDIA STT",
+        "description": "trained on a mixture dataset similar to prior work"
+      },
+      {
+        "name": "jointly training a single model",
+        "description": "on many tasks and languages"
+      },
+      {
+        "name": "Whisper models",
+        "description": "current best"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "BLEU r2",
+        "value": "0.24",
+        "split": null
+      },
+      {
+        "metric": "WER",
+        "value": "50 percent",
+        "split": null
+      },
+      {
+        "metric": "ASR performance",
+        "value": "degrades",
+        "split": null
+      },
+      {
+        "metric": "ASR performance",
+        "value": "performing worse",
+        "split": "pub noise"
+      },
+      {
+        "metric": "accuracy",
+        "value": "80.4%",
+        "split": "upper-bounding accuracy"
+      },
+      {
+        "metric": "accuracy",
+        "value": "80.3%",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "practically zero",
+        "split": "7,000 hours of audio or less"
+      },
+      {
+        "metric": "performance",
+        "value": "roughly log-linear improvement trend",
+        "split": "till 54,000 hours"
+      }
+    ]
+  }
+}

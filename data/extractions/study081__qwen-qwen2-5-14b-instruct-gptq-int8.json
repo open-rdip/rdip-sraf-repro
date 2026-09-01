@@ -1,0 +1,69 @@
+{
+  "study_id": "study081",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study081/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:26:30.596820+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 1,
+    "methods": 5,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "32"
+      },
+      {
+        "name": "reduction factor",
+        "value": "increased"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "LJ Speech corpus",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Tacotron2 model",
+        "description": "trained on incremental partitions of the LJ Speech corpus with reduced batch size"
+      },
+      {
+        "name": "Tacotron2",
+        "description": "A neural TTS system architecture"
+      },
+      {
+        "name": "guiding the attention",
+        "description": "proposed to improve training of the attention network"
+      },
+      {
+        "name": "using a CTC loss function",
+        "description": "to respect the monotonic alignment between text inputs and speech outputs"
+      },
+      {
+        "name": "Light-Speech model",
+        "description": "Modified base architecture to reduce model parameters from 35M to 11.6M using depthwise separable convolutions and matching encoder and decoder convolutional kernel sizes."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "IDMUSHRA score",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

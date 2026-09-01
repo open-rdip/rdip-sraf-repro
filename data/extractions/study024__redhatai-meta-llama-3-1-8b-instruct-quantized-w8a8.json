@@ -1,0 +1,132 @@
+{
+  "study_id": "study024",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study024/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:18:32.005914+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 1,
+    "hyperparameters": 7,
+    "datasets": 0,
+    "methods": 13,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "CPLEX",
+        "version": "39"
+      },
+      {
+        "name": "Gurobi",
+        "version": "40"
+      }
+    ],
+    "random_seeds": [
+      1000
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": "CPU"
+    },
+    "hyperparameters": [
+      {
+        "name": "pump value",
+        "value": "string (not specified)"
+      },
+      {
+        "name": "success probability",
+        "value": "string (not specified)"
+      },
+      {
+        "name": "Tp0",
+        "value": "string"
+      },
+      {
+        "name": "j0",
+        "value": "string"
+      },
+      {
+        "name": "\u03b1",
+        "value": "string"
+      },
+      {
+        "name": "r0",
+        "value": "string"
+      },
+      {
+        "name": "\u03b2",
+        "value": "string"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Langevin DL-CCVM",
+        "description": "string (not specified)"
+      },
+      {
+        "name": "DL-CCVM (physical)",
+        "description": "string (not specified)"
+      },
+      {
+        "name": "MF-CCVM (CPU)",
+        "description": "string (not specified)"
+      },
+      {
+        "name": "MF-CCVM (physical)",
+        "description": "string (not specified)"
+      },
+      {
+        "name": "Langevin",
+        "description": "string"
+      },
+      {
+        "name": "pumped Langevin",
+        "description": "string"
+      },
+      {
+        "name": "DL-CCVM",
+        "description": "string"
+      },
+      {
+        "name": "MF-CCVM",
+        "description": "string"
+      },
+      {
+        "name": "BoxQP",
+        "description": "solving a given BoxQP instance"
+      },
+      {
+        "name": "finding an approximate solution",
+        "description": "correct up to a multiplicative error"
+      },
+      {
+        "name": "QCQP",
+        "description": "quadratic programming"
+      },
+      {
+        "name": "CPLEX",
+        "description": "exact solver"
+      },
+      {
+        "name": "Gurobi",
+        "description": "exact solver"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "wall-clock TTS",
+        "value": "string",
+        "split": null
+      },
+      {
+        "metric": "TTS",
+        "value": "Figure 2",
+        "split": null
+      }
+    ]
+  }
+}

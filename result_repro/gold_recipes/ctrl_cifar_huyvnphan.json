@@ -1,0 +1,25 @@
+{
+  "study_id": "ctrl_cifar_huyvnphan",
+  "repo_url": "https://github.com/huyvnphan/PyTorch_CIFAR10",
+  "run_command": "python eval.py",
+  "setup_steps": [
+    "pip install -q torch torchvision pytorch_lightning requests",
+    "python train.py --download_weights 1",
+    "cat > eval.py <<'PYEOF'\nfrom cifar10_models.resnet import resnet18\nimport torch, torchvision\nimport torchvision.transforms as T\nm = resnet18(pretrained=True)\ndev = 'cuda' if torch.cuda.is_available() else 'cpu'\nm.eval().to(dev)\ntf = T.Compose([T.ToTensor(),\n                T.Normalize((0.4914, 0.4822, 0.4465), (0.2471, 0.2435, 0.2616))])\nds = torchvision.datasets.CIFAR10('./cifar', train=False, download=True, transform=tf)\ndl = torch.utils.data.DataLoader(ds, batch_size=256, num_workers=2)\nc = t = 0\nwith torch.no_grad():\n    for x, y in dl:\n        p = m(x.to(dev)).argmax(1).cpu()\n        c += (p == y).sum().item(); t += y.size(0)\nprint(f\"top-1 accuracy: {100*c/t:.2f}\")\nPYEOF"
+  ],
+  "requires_dataset": [
+    {
+      "name": "CIFAR-10",
+      "download": "auto via torchvision"
+    }
+  ],
+  "requires_checkpoint": "repo state_dicts (python train.py --download_weights 1)",
+  "produces_metric": [
+    {
+      "metric": "top-1 accuracy",
+      "dataset": "CIFAR-10"
+    }
+  ],
+  "entry_point": "eval.py",
+  "confidence": "high"
+}

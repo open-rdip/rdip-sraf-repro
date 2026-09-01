@@ -1,0 +1,24 @@
+{
+  "run_command": "CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --master_port 10001 --nproc_per_node=1 tools/relation_test_net.py --config-file \"checkpoint_dir/config.yml\" TEST.IMS_PER_BATCH 1 MODEL.ROI_RELATION_HEAD.EVALUATE_REL_PROPOSAL False TEST.ALLOW_LOAD_FROM_CACHE True",
+  "setup_steps": [
+    "wget https://shanghaitecheducn-my.sharepoint.com/:u:/g/personal/lirj2_shanghaitech_edu_cn/EQIy64T-EK9Er9y8kVCDaukB79gJwfSsEIbey9g0Xag6lg?e=wkKHJs -O vg_detector.zip",
+    "unzip vg_detector.zip -d detector_model"
+  ],
+  "requires_dataset": [
+    {
+      "name": "VG",
+      "download": null
+    }
+  ],
+  "requires_checkpoint": null,
+  "produces_metric": [
+    {
+      "metric": "mR@50",
+      "dataset": "VG"
+    }
+  ],
+  "entry_point": "tools/relation_test_net.py",
+  "confidence": "high",
+  "study_id": "study021",
+  "repo_url": "https://github.com/jeonjaehyeong/dpl"
+}

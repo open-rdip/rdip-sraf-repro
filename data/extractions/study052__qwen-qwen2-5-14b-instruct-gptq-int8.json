@@ -1,0 +1,151 @@
+{
+  "study_id": "study052",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study052/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:07:52.216565+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 5,
+    "methods": 14,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "XGBoost",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "robust training parameter \u03f5",
+        "value": "0.3"
+      },
+      {
+        "name": "number_of_examples_per_dataset",
+        "value": "100"
+      },
+      {
+        "name": "number_of_trees",
+        "value": "20"
+      },
+      {
+        "name": "number of trees",
+        "value": "same as Kantchelian et al. (2016)"
+      },
+      {
+        "name": "depth",
+        "value": "same as Kantchelian et al. (2016)"
+      },
+      {
+        "name": "step size shrinkage",
+        "value": "same as Kantchelian et al. (2016)"
+      },
+      {
+        "name": "step_size_shrinkage",
+        "value": null
+      }
+    ],
+    "datasets": [
+      {
+        "name": "MNIST",
+        "version": null
+      },
+      {
+        "name": "three_small_datasets",
+        "version": null
+      },
+      {
+        "name": "Fashion-MNIST",
+        "version": null
+      },
+      {
+        "name": "MNIST 2 vs. 6",
+        "version": null
+      },
+      {
+        "name": "other_datasets",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "robust training",
+        "description": "Training method used to increase model's resistance to adversarial attacks."
+      },
+      {
+        "name": "Algorithm_1",
+        "description": "Robust Information Gain Decision Trees"
+      },
+      {
+        "name": "Papernot's_attack",
+        "description": "Adversarial attack used in experiments"
+      },
+      {
+        "name": "Cheng's_attack",
+        "description": "Adversarial attack used in experiments"
+      },
+      {
+        "name": "Kantchelian's_attack",
+        "description": "Adversarial attack used in experiments"
+      },
+      {
+        "name": "Cheng's \u2113\u221eattack",
+        "description": "used to find adversarial examples"
+      },
+      {
+        "name": "robust GBDT model",
+        "description": "embedded in each tree\u2019s building process"
+      },
+      {
+        "name": "adversarial training in Kantchelian et al. (2016)",
+        "description": "adds adversarial examples with respect to the current model at each boosting round"
+      },
+      {
+        "name": "Cheng\u2019s \u2113\u221eattack",
+        "description": "finds adversarial examples in \u2113\u221enorm"
+      },
+      {
+        "name": "Kantchelian\u2019s \u2113\u221eattack",
+        "description": "finds minimum adversarial example in \u2113\u221enorm, handles binary classification problems and small scale models"
+      },
+      {
+        "name": "Kantchelian\u2019s \u21131and \u21132attacks",
+        "description": "finds adversarial examples in \u21131and \u21132norms"
+      },
+      {
+        "name": "Papernot\u2019s attack",
+        "description": "for attacking a single tree only"
+      },
+      {
+        "name": "Algorithm 2",
+        "description": "modi\ufb01cation of the node splitting procedure in XGBoost"
+      },
+      {
+        "name": "natural (undefended) GBDT models",
+        "description": "trained using XGBoost"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "average_\u2113\u221edistortion",
+        "value": "higher_for_robust_trees_than_natural_trees",
+        "split": "test"
+      },
+      {
+        "metric": "average \u2113\u221edistortion",
+        "value": "not specified in text",
+        "split": null
+      }
+    ]
+  }
+}

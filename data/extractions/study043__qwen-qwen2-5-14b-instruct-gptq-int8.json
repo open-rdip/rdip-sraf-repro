@@ -1,0 +1,75 @@
+{
+  "study_id": "study043",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study043/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:02:42.945273+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 2,
+    "methods": 4,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "TITAN V",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning_rate",
+        "value": "10^-4"
+      },
+      {
+        "name": "beta_1",
+        "value": "0.5"
+      },
+      {
+        "name": "beta_2",
+        "value": "0.9"
+      },
+      {
+        "name": "batch_size",
+        "value": "8"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "internal dataset",
+        "version": null
+      },
+      {
+        "name": "VCTK",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RAVE training procedure",
+        "description": "Training for 3M steps, specifically 1.5M steps for each stage, using Adam optimizer with specified hyperparameters."
+      },
+      {
+        "name": "Realtime Audio Variational autoEncoder (RAVE)",
+        "description": "Built for high-quality audio representation learning and faster than real-time synthesis. Uses a multiband decomposition of the raw waveform to decrease the temporal dimensionality of the data."
+      },
+      {
+        "name": "Generator",
+        "description": "Modified version of the generator proposed by Kumar et al. (2019) with alternation of upsampling layers and residual networks, feeding the last hidden layer to three sub-networks: waveform, loudness, and noise synthesizer."
+      },
+      {
+        "name": "Discriminator",
+        "description": "Exact same discriminator as in Kumar et al. (2019), which is a strided convolutional network applied on different scales of the audio signal to prevent artifacts."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

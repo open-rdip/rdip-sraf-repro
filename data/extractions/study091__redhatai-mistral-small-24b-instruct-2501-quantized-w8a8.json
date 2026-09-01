@@ -1,0 +1,62 @@
+{
+  "study_id": "study091",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study091/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:22:15.095751+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 3,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "SonarQube",
+        "version": null
+      },
+      {
+        "name": "VisminnerTD",
+        "version": null
+      },
+      {
+        "name": "GrimoireLab",
+        "version": null
+      },
+      {
+        "name": "Travis CI",
+        "version": "25"
+      },
+      {
+        "name": "Refactoring-Bot",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "TDM Automation Strategy",
+        "description": "A strategy for managing Technical Debt (TD) through identification, monitoring, measurement, and repayment activities using various software tools."
+      },
+      {
+        "name": "Travis CI",
+        "description": "orchestrator and manages the automation process considering several rules"
+      },
+      {
+        "name": "Grimoire Lab",
+        "description": "acts as the gateway in this example, and collects data from repositories"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

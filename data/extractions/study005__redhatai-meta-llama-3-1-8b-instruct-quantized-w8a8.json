@@ -1,0 +1,169 @@
+{
+  "study_id": "study005",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study005/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:10:02.607408+00:00",
+  "counts": {
+    "dependencies": 7,
+    "random_seeds": 1,
+    "hyperparameters": 3,
+    "datasets": 3,
+    "methods": 13,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "CLIP",
+        "version": "pretrained"
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "Imaginaire library",
+        "version": null
+      },
+      {
+        "name": "AdamW",
+        "version": null
+      },
+      {
+        "name": "T5",
+        "version": null
+      },
+      {
+        "name": "DALL-E 2",
+        "version": null
+      },
+      {
+        "name": "Stable Diffusion",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      8
+    ],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning rate",
+        "value": "0.0001"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.01"
+      },
+      {
+        "name": "batch size",
+        "value": "2048"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "Visual Genome",
+        "version": null
+      },
+      {
+        "name": "MS-COCO",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "our approach",
+        "description": null
+      },
+      {
+        "name": "DALL \u00b7E 2",
+        "description": null
+      },
+      {
+        "name": "Stable Diffusion",
+        "description": null
+      },
+      {
+        "name": "resize-central crop",
+        "description": null
+      },
+      {
+        "name": "random crop",
+        "description": null
+      },
+      {
+        "name": "DALL\u00b7E 2",
+        "description": "text-to-image model"
+      },
+      {
+        "name": "T5 encoder",
+        "description": "null"
+      },
+      {
+        "name": "CLIP text encoder",
+        "description": "null"
+      },
+      {
+        "name": "CLIP+T5",
+        "description": "null"
+      },
+      {
+        "name": "T5+CLIP",
+        "description": "null"
+      },
+      {
+        "name": "CLIP-FID",
+        "description": "trade-off curve"
+      },
+      {
+        "name": "ensemble-of-expert-denoisers",
+        "description": "null"
+      },
+      {
+        "name": "random dropout",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "model inference time",
+        "value": "sec",
+        "split": null
+      },
+      {
+        "metric": "feed-forward evaluation time",
+        "value": "sec",
+        "split": null
+      },
+      {
+        "metric": "text generation success",
+        "value": "failed",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "similar",
+        "split": "MS-COCO"
+      },
+      {
+        "metric": "performance",
+        "value": "better",
+        "split": "Visual Genome"
+      },
+      {
+        "metric": "trade-off curves",
+        "value": "much better",
+        "split": "MS-COCO"
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=sraf-lift-one
+#SBATCH --output=logs/lift_one-%j.out
+#SBATCH --error=logs/lift_one-%j.out
+#SBATCH --partition=ASL-cpu
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=8G
+#SBATCH --time=00:30:00
+#
+# FIRST END-TO-END CLUSTER VERIFICATION — CONTAINERLESS.
+# Apptainer is not installed on the compute nodes, so we run the lifter through
+# a conda env (~/envs/sraf) and Oxigraph through the standalone binary (~/bin/oxigraph).
+# Mirrors the local Block 1 test: lift one repo's env files into a named graph.
+# No LLM, no GPU.
+set -euo pipefail
+
+# Slurm copies the batch script to a spool dir, so BASH_SOURCE is useless here.
+# Use the submit dir (you sbatch from the repo root) with a hard fallback.
+REPO_ROOT="${SLURM_SUBMIT_DIR:-${HOME}/rdip-sre}"
+CONDA_ENV="${HOME}/envs/sraf"
+OXIGRAPH_BIN="${HOME}/bin/oxigraph"
+TRIPLESTORE="${HOME}/triplestore"
+SCRATCH="/tmp/${SLURM_JOB_ID:-manual}"
+STUDY_ID="cluster_smoketest"
+mkdir -p "${TRIPLESTORE}" "${SCRATCH}" logs
+
+# --- 1. shallow-clone a known repo (transformers has a Dockerfile subdir) ---
+CLONE="${SCRATCH}/transformers"
+echo "==> Cloning test repo to scratch: ${CLONE}"
+git clone --depth 1 https://github.com/huggingface/transformers.git "${CLONE}"
+REPO_DIR="${CLONE}/docker/transformers-pytorch-gpu"   # Block 1 verified this subdir
+
+# --- 2. start Oxigraph as a background service on 127.0.0.1:7878 ---
+echo "==> Starting Oxigraph (${OXIGRAPH_BIN})"
+"${OXIGRAPH_BIN}" serve --location "${TRIPLESTORE}" --bind 127.0.0.1:7878 &
+OXI_PID=$!
+trap 'kill ${OXI_PID} 2>/dev/null || true' EXIT
+
+echo "==> Waiting for Oxigraph to accept connections"
+for i in $(seq 1 30); do
+  if (exec 3<>/dev/tcp/127.0.0.1/7878) 2>/dev/null; then echo "  up"; break; fi
+  sleep 1
+  [ "$i" -eq 30 ] && { echo "Oxigraph did not start"; exit 1; }
+done
+
+# --- 3. run the lifter inside the conda env ---
+echo "==> Lifting ${STUDY_ID}"
+cd "${REPO_ROOT}"
+OXIGRAPH_HOST=127.0.0.1 OXIGRAPH_PORT=7878 PYTHONPATH="${REPO_ROOT}" \
+  "${CONDA_ENV}/bin/python" lifter/lifter.py \
+      --study-id "${STUDY_ID}" \
+      --repo-dir "${REPO_DIR}" \
+      --skip-ontology-check --overwrite
+
+# --- 4. export the named graph for a durable record ---
+GRAPH_URI="https://w3id.org/rdip/graph/${STUDY_ID}"
+OUT="${TRIPLESTORE}/exports"; mkdir -p "${OUT}"
+echo "==> Exporting <${GRAPH_URI}> to ${OUT}/${STUDY_ID}.ttl"
+curl -s -G 'http://127.0.0.1:7878/store' \
+    --data-urlencode "graph=${GRAPH_URI}" \
+    -H 'Accept: text/turtle' \
+    -o "${OUT}/${STUDY_ID}.ttl" || echo "  (export via curl failed — non-fatal)"
+
+echo "==> rdip: lines in export:"
+grep -c 'rdip:' "${OUT}/${STUDY_ID}.ttl" 2>/dev/null || echo "  (none / file empty)"
+echo "==> SUCCESS if the lifter logged 'Uploaded N triples'. Cluster path proven."

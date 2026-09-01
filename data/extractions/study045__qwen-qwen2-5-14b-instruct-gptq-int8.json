@@ -1,0 +1,174 @@
+{
+  "study_id": "study045",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study045/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:04:07.313446+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 3,
+    "hyperparameters": 1,
+    "datasets": 5,
+    "methods": 9,
+    "evaluation_results": 13
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "JAX",
+        "version": null
+      },
+      {
+        "name": "Haiku",
+        "version": null
+      },
+      {
+        "name": "Jraph",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      3,
+      7,
+      0
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "model_size",
+        "value": "ranging from 10 million to 1.2 billion parameters"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "QM9",
+        "version": null
+      },
+      {
+        "name": "PCQM4Mv2",
+        "version": null
+      },
+      {
+        "name": "OC20",
+        "version": null
+      },
+      {
+        "name": "DES15K",
+        "version": null
+      },
+      {
+        "name": "S2EF",
+        "version": "OC20"
+      }
+    ],
+    "methods": [
+      {
+        "name": "GNS-TAT with Noisy Nodes",
+        "description": "Model variant used for evaluation on QM9"
+      },
+      {
+        "name": "Pre-training",
+        "description": "Performed on PCQM4Mv2 via denoising"
+      },
+      {
+        "name": "TorchMD-NET",
+        "description": "Used for pre-training and achieving SOTA results"
+      },
+      {
+        "name": "GNS-TAT",
+        "description": "Compared with and without pre-training parameters"
+      },
+      {
+        "name": "pre-training neural networks by denoising",
+        "description": "in the space of 3D molecular structures"
+      },
+      {
+        "name": "AttrMask",
+        "description": "Masking and predicting atomic numbers"
+      },
+      {
+        "name": "Noisy Nodes",
+        "description": "Pre-training via denoising"
+      },
+      {
+        "name": "GNS",
+        "description": "null"
+      },
+      {
+        "name": "pre-training via denoising",
+        "description": "using the trajectories provided for the IS2RE/IS2RS tasks"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "test MAE",
+        "value": "reduces as pre-training improves downstream performance",
+        "split": "test"
+      },
+      {
+        "metric": "SOTA",
+        "value": "new",
+        "split": null
+      },
+      {
+        "metric": "Gradient step (thousands)",
+        "value": "5000",
+        "split": null
+      },
+      {
+        "metric": "Trajectory energy MAE",
+        "value": "0.20",
+        "split": "PT on OC20 - 11M"
+      },
+      {
+        "metric": "Trajectory energy MAE",
+        "value": "0.25",
+        "split": "PT on OC20 - 53M"
+      },
+      {
+        "metric": "Trajectory energy MAE",
+        "value": "0.30",
+        "split": "PT on OC20 - 130M"
+      },
+      {
+        "metric": "Trajectory energy MAE",
+        "value": "0.35",
+        "split": "PT on OC20 - 1.2B"
+      },
+      {
+        "metric": "Training data size (QM9)",
+        "value": "20",
+        "split": null
+      },
+      {
+        "metric": "Test MAE (HOMO)",
+        "value": "11355",
+        "split": "No PT or NN"
+      },
+      {
+        "metric": "Test MAE (HOMO)",
+        "value": "25787",
+        "split": "NN PT on PCQM4Mv2 + NN"
+      },
+      {
+        "metric": "Pre-training data size (PCQM4Mv2)",
+        "value": "14",
+        "split": null
+      },
+      {
+        "metric": "Test MAE (HOMO)",
+        "value": "32027102577",
+        "split": "GNS + NN"
+      },
+      {
+        "metric": "Test MAE (HOMO)",
+        "value": "3285321052213",
+        "split": "GNS-TAT + NN"
+      }
+    ]
+  }
+}

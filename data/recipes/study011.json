@@ -1,0 +1,17 @@
+{
+  "run_command": null,
+  "setup_steps": [
+    "conda create -n open-mmlab python=3.8 pytorch==1.10.1 torchvision==0.11.2 cudatoolkit=11.3 -c pytorch -y",
+    "conda activate open-mmlab",
+    "pip install openmim",
+    "mim install -e .",
+    "mim install -e '.[multimodal]'"
+  ],
+  "requires_dataset": [],
+  "requires_checkpoint": null,
+  "produces_metric": [],
+  "entry_point": null,
+  "confidence": "low",
+  "study_id": "study011",
+  "repo_url": "https://github.com/open-mmlab/mmclassification"
+}

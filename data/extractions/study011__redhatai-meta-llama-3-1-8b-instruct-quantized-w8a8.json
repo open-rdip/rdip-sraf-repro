@@ -1,0 +1,186 @@
+{
+  "study_id": "study011",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study011/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:13:03.098214+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 1,
+    "hyperparameters": 5,
+    "datasets": 2,
+    "methods": 22,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "RePr",
+        "version": "[26]"
+      },
+      {
+        "name": "EfficientNet-B0",
+        "version": null
+      },
+      {
+        "name": "RegNetX-3.2GF",
+        "version": null
+      },
+      {
+        "name": "RegNetX-12GF",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      5
+    ],
+    "hardware": {
+      "gpu_model": "1080Ti",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "label smoothing",
+        "value": "string"
+      },
+      {
+        "name": "mixup",
+        "value": "string"
+      },
+      {
+        "name": "batch size",
+        "value": "128"
+      },
+      {
+        "name": "epochs",
+        "value": "120"
+      },
+      {
+        "name": "precision",
+        "value": "fp32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "RepVGG-B0",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RepVGG",
+        "description": "fast, simple and practical ConvNets designed for the maximum speed on GPU and specialized hardware"
+      },
+      {
+        "name": "DiracNet",
+        "description": "a well-designed re-parameterization of conv kernels"
+      },
+      {
+        "name": "Trivial Re-param",
+        "description": "a simpler re-parameterization of conv kernels by directly adding an identity kernel to the 3\u00d73 kernel"
+      },
+      {
+        "name": "Asymmetric Conv Block (ACB)",
+        "description": "a form of structural re-parameterization"
+      },
+      {
+        "name": "Residual Reorg",
+        "description": "a model that builds each stage by re-organizing it in a ResNet-like manner"
+      },
+      {
+        "name": "Autoaugment",
+        "description": "string"
+      },
+      {
+        "name": "Structural Re-parameterization",
+        "description": "string"
+      },
+      {
+        "name": "pruning-based training method",
+        "description": "RePr"
+      },
+      {
+        "name": "RepVGG-B2",
+        "description": "null"
+      },
+      {
+        "name": "RepVGG-A2",
+        "description": "null"
+      },
+      {
+        "name": "RepVGG-B1",
+        "description": "null"
+      },
+      {
+        "name": "RepVGG-B3",
+        "description": "null"
+      },
+      {
+        "name": "structural re-param",
+        "description": "using the params of a structure to parameterize another structure"
+      },
+      {
+        "name": "DiractNet",
+        "description": "merely uses another mathematical expression of conv kernels"
+      },
+      {
+        "name": "Identity",
+        "description": "no description provided"
+      },
+      {
+        "name": "Post-addition BN",
+        "description": "no description provided"
+      },
+      {
+        "name": "Full-featured reparam",
+        "description": "no description provided"
+      },
+      {
+        "name": "+ReLU in branch",
+        "description": "no description provided"
+      },
+      {
+        "name": "ACB",
+        "description": "no description provided"
+      },
+      {
+        "name": "RepVGG-B0",
+        "description": "ordinary plain model"
+      },
+      {
+        "name": "Identity w/o BN",
+        "description": "removes the BN in identity branch"
+      },
+      {
+        "name": "+ReLU in branches",
+        "description": "inserts ReLU into each branch (after BN and before addition)"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Model Acc",
+        "value": "79.38",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "74.5%",
+        "split": null
+      },
+      {
+        "metric": "inference speed w/o re-param",
+        "value": "1810",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "study_id": "study091",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study091/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:34:57.940723+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 3,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "code smells detection",
+        "description": "Study comparing Structure 101, SonarQube, and DV8 for detecting code smells."
+      },
+      {
+        "name": "TD measurement",
+        "description": "Comparison of nine tools for measuring Technical Debt (TD)."
+      },
+      {
+        "name": "TDM Automation Strategy",
+        "description": "Involves activities such as Identification, Monitoring, Measurement, and Repayment of Technical Debt (TD). Software tools like SonarQube, VisminnerTD, Grimoire Lab, Travis CI, and Refactoring-Bot are used."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "high",
+        "split": null
+      }
+    ]
+  }
+}

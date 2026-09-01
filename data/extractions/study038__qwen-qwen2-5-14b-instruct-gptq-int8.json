@@ -1,0 +1,83 @@
+{
+  "study_id": "study038",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study038/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:59:33.682038+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 8,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      100
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "single-cell gene expression dataset",
+        "version": null
+      },
+      {
+        "name": "Morpho-MNIST",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "MMD regularization",
+        "description": "Forces representations to be similar across conditions"
+      },
+      {
+        "name": "trV AE",
+        "description": "A model used for predicting mean and variance for high-dimensional gene expression in Tuft cells."
+      },
+      {
+        "name": "trVAE",
+        "description": "A method demonstrated for out-of-sample style transfer capacity on image datasets and predicting effects of biological perturbation based on high-dimensional structured data."
+      },
+      {
+        "name": "VFAE",
+        "description": "A method similar to trVAE mentioned for comparison."
+      },
+      {
+        "name": "MMD-regularized autoencoder",
+        "description": "A method similar to trVAE mentioned for comparison."
+      },
+      {
+        "name": "CycleGAN",
+        "description": "A method similar to trVAE mentioned for comparison."
+      },
+      {
+        "name": "scGen",
+        "description": "A method similar to trVAE mentioned for comparison."
+      },
+      {
+        "name": "scVI",
+        "description": "A method similar to trVAE mentioned for comparison."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "R2",
+        "value": "Pearson correlation between ground truth and predicted values",
+        "split": null
+      },
+      {
+        "metric": "Pearson's R2",
+        "value": "mean of R2 values estimated using n= 100 random subsamples",
+        "split": null
+      }
+    ]
+  }
+}

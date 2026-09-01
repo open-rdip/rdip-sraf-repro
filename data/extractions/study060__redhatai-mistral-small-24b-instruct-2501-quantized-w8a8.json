@@ -1,0 +1,137 @@
+{
+  "study_id": "study060",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study060/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:54:57.230487+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 3,
+    "methods": 12,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "sampling_rate",
+        "value": "44 kHz"
+      },
+      {
+        "name": "upsampler_parameters",
+        "value": "1B"
+      },
+      {
+        "name": "model_size",
+        "value": "5 billion parameters"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.00015"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.002"
+      },
+      {
+        "name": "batch_size",
+        "value": "32"
+      },
+      {
+        "name": "audio_clip_duration",
+        "value": "3-second"
+      },
+      {
+        "name": "hop_length_bottom",
+        "value": "8"
+      },
+      {
+        "name": "hop_length_middle",
+        "value": "32"
+      },
+      {
+        "name": "hop_length_top",
+        "value": "128"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "songs primarily in English",
+        "version": null
+      },
+      {
+        "name": "MAESTRO",
+        "version": null
+      },
+      {
+        "name": "held-out audio segments",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "VQ-VAE",
+        "description": "decoders to get a fast upsampling of the top level tokens"
+      },
+      {
+        "name": "Transformer upsampling",
+        "description": "steps"
+      },
+      {
+        "name": "Kingma et al., 2016",
+        "description": "model with fast parallel sampling but slow autoregressive likelihood evaluation"
+      },
+      {
+        "name": "Oord et al., 2018",
+        "description": "distill the information from our current model into it"
+      },
+      {
+        "name": "KL divergence",
+        "description": "optimising the sampler by minimising the KL divergence of it from our current model"
+      },
+      {
+        "name": "seq2seq model with lyric conditioning",
+        "description": ""
+      },
+      {
+        "name": "WaveNet",
+        "description": "autoregressive model using a categorical distribution for audio samples"
+      },
+      {
+        "name": "Parallel WaveNet",
+        "description": "uses a mixture of logistics distribution and probability density distillation"
+      },
+      {
+        "name": "ClariNet",
+        "description": "uses a simple Gaussian distribution and has a closed-form loss function"
+      },
+      {
+        "name": "SampleRNN",
+        "description": "uses a multi-scale, hierarchical recurrent neural network with convolutional upsampling"
+      },
+      {
+        "name": "WaveRNN",
+        "description": "uses recurrent neural networks that operate separately on the most significant and the least significant bytes"
+      },
+      {
+        "name": "WaveGlow",
+        "description": "a flow-based model for parallel sample-level audio synthesis"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "spectral convergence",
+        "value": "-8.3",
+        "split": "test"
+      }
+    ]
+  }
+}

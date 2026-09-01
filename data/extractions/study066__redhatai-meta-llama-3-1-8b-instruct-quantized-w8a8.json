@@ -1,0 +1,239 @@
+{
+  "study_id": "study066",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study066/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:39:03.762512+00:00",
+  "counts": {
+    "dependencies": 14,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 2,
+    "methods": 20,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ResNet-D",
+        "version": null
+      },
+      {
+        "name": "ResNeSt-200",
+        "version": null
+      },
+      {
+        "name": "ResNeSt-269",
+        "version": null
+      },
+      {
+        "name": "implementation [1]",
+        "version": null
+      },
+      {
+        "name": "GluonCV",
+        "version": "[19]"
+      },
+      {
+        "name": "MXNet",
+        "version": "[10]"
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "Kaiming Initialization",
+        "version": null
+      },
+      {
+        "name": "Batch Normalization",
+        "version": null
+      },
+      {
+        "name": "ReLU activation",
+        "version": null
+      },
+      {
+        "name": "mixup training",
+        "version": null
+      },
+      {
+        "name": "ResNeSt-50",
+        "version": null
+      },
+      {
+        "name": "ResNeSt 101",
+        "version": null
+      },
+      {
+        "name": "Detectron2",
+        "version": "60"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "radix",
+        "value": "4"
+      },
+      {
+        "name": "cardinality",
+        "value": "4"
+      },
+      {
+        "name": "network width",
+        "value": "2s1x64d"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.0001"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "dropout ratio",
+        "value": "0.2"
+      },
+      {
+        "name": "mini-batch size",
+        "value": "8192"
+      },
+      {
+        "name": "learning rate schedule",
+        "value": "1x"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "COCO-2017",
+        "version": "training set"
+      }
+    ],
+    "methods": [
+      {
+        "name": "Split-Attention",
+        "description": "null"
+      },
+      {
+        "name": "depth-wise convolution",
+        "description": "null"
+      },
+      {
+        "name": "ResNeSt",
+        "description": "based on the ResNet-D model [26]"
+      },
+      {
+        "name": "ResNeSt-50-fast",
+        "description": "employs Split-Attention block"
+      },
+      {
+        "name": "ResNeSt-50",
+        "description": "uses effective average downsampling"
+      },
+      {
+        "name": "ResNeSt-101",
+        "description": "uses effective average downsampling"
+      },
+      {
+        "name": "ResNeSt-200",
+        "description": "uses effective average downsampling"
+      },
+      {
+        "name": "ResNeSt-269",
+        "description": "uses effective average downsampling"
+      },
+      {
+        "name": "ResNetD-50",
+        "description": "uses mixup training"
+      },
+      {
+        "name": "ResNetD-101",
+        "description": "uses mixup training"
+      },
+      {
+        "name": "data sharding",
+        "description": null
+      },
+      {
+        "name": "learned Auto Augmentation policy",
+        "description": null
+      },
+      {
+        "name": "mixup training",
+        "description": null
+      },
+      {
+        "name": "cosine learning rate schedule",
+        "description": null
+      },
+      {
+        "name": "Kaiming Initialization",
+        "description": null
+      },
+      {
+        "name": "Batch Normalization",
+        "description": null
+      },
+      {
+        "name": "ReLU activation",
+        "description": null
+      },
+      {
+        "name": "ResNeSt 101",
+        "description": null
+      },
+      {
+        "name": "Faster-RCNNs",
+        "description": "using Detectron2"
+      },
+      {
+        "name": "Cascade-RCNNs",
+        "description": "using Detectron2"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 accuracy",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "inference speed",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "number of parameters",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "78.31%",
+        "split": null
+      },
+      {
+        "metric": "mean average precision",
+        "value": "3%",
+        "split": null
+      },
+      {
+        "metric": "box mAP",
+        "value": "49.2",
+        "split": null
+      }
+    ]
+  }
+}

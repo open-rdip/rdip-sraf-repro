@@ -1,0 +1,183 @@
+{
+  "study_id": "study025",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study025/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:48:22.715868+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 2,
+    "methods": 13,
+    "evaluation_results": 15
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX A6000",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number_of_training_epochs",
+        "value": "determined using the validation dataset"
+      },
+      {
+        "name": "temperature parameter",
+        "value": "0.05"
+      },
+      {
+        "name": "\u03b20",
+        "value": "2"
+      },
+      {
+        "name": "weights for the three losses",
+        "value": "5,0.2,0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IXI dataset",
+        "version": "43"
+      },
+      {
+        "name": "Learn2Reg Challenge",
+        "version": "13"
+      }
+    ],
+    "methods": [
+      {
+        "name": "V oxelMorph",
+        "description": "with a scaling-and-squaring layer to encourage diffeomorphic registration"
+      },
+      {
+        "name": "TransMorph",
+        "description": "a hybrid deep learning architecture that combines the Transformer structure with convolutional networks"
+      },
+      {
+        "name": "Im2grid",
+        "description": "a method using coordinate translator modules"
+      },
+      {
+        "name": "DMR",
+        "description": "a deep learning based architecture based on the Deformer module"
+      },
+      {
+        "name": "PR-Net++",
+        "description": "a deep learning method that adopts a dual-stream architecture and incorporates correlation layers"
+      },
+      {
+        "name": "cosine similarity",
+        "description": "used in the attention computation, omits magnitude in the computation of similarity"
+      },
+      {
+        "name": "inner product",
+        "description": "used in the attention computation"
+      },
+      {
+        "name": "Voxelmorph (VXM)",
+        "description": "A deep learning method based on a U-Net architecture"
+      },
+      {
+        "name": "Voxelmorph-diff (VXM-diff)",
+        "description": "A variant of Voxelmorph with a scaling-and-squaring layer to encourage diffeomorphic registration"
+      },
+      {
+        "name": "VFA",
+        "description": "Produced fewer folded voxels and smaller folded volumes compared with VXM, TransMorph, DMR."
+      },
+      {
+        "name": "VXM",
+        "description": "Unsupervised registration method with specific performance metrics."
+      },
+      {
+        "name": "feature matching step",
+        "description": "captures the displacement vectors between x and its adjacent candidates"
+      },
+      {
+        "name": "attention computation",
+        "description": "uses a matrix R of size 9x2 (2D) or 27x3 (3D) to store displacement vectors for prioritizing them based on feature similarity"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance",
+        "value": "95% of its peak performance",
+        "split": "validation"
+      },
+      {
+        "metric": "inference time",
+        "value": "0.9 seconds per 15 subjects",
+        "split": "test"
+      },
+      {
+        "metric": "DSC",
+        "value": "0.771\u00b10.030",
+        "split": "T1w atlas to subject registration"
+      },
+      {
+        "metric": "DSC",
+        "value": "0.635\u00b10.043",
+        "split": "T2w to T1w"
+      },
+      {
+        "metric": "mean DSC",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "HD95",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "TRE30",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "SDLogJ",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Dice similarity coefficient (DSC)",
+        "value": "70.726\u00b10.048",
+        "split": "T1w Atlas \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "Number of non-diffeomorphic voxels (ND V oxels)",
+        "value": "19171 \u00b17111",
+        "split": "T1w Atlas \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "Non-diffeomorphic volume (ND V olume)",
+        "value": "7280 \u00b12660",
+        "split": "T1w Atlas \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "Dice similarity coefficient (DSC)",
+        "value": "0.593\u00b10.053",
+        "split": "T2w Subject \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "Number of non-diffeomorphic voxels (ND V oxels)",
+        "value": "711 \u00b11359",
+        "split": "T2w Subject \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "Non-diffeomorphic volume (ND V olume)",
+        "value": "121 \u00b1250",
+        "split": "T2w Subject \u2212\u2192T1w Subject"
+      },
+      {
+        "metric": "TRE",
+        "value": "lowest",
+        "split": "test"
+      }
+    ]
+  }
+}

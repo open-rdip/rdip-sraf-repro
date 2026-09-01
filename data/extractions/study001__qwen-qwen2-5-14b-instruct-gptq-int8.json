@@ -1,0 +1,182 @@
+{
+  "study_id": "study001",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study001/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T01:39:54.805750+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 2,
+    "methods": 22,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GPTQ",
+        "version": null
+      },
+      {
+        "name": "ZeroQuant",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "null",
+      "cuda_version": "null",
+      "cpu_info": "null"
+    },
+    "hyperparameters": [
+      {
+        "name": "activation",
+        "value": "FP16"
+      },
+      {
+        "name": "S",
+        "value": "max(abs(x))"
+      },
+      {
+        "name": "Z",
+        "value": ""
+      },
+      {
+        "name": "kelements",
+        "value": "string"
+      },
+      {
+        "name": "learning rate",
+        "value": "not explicitly stated"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "OPT",
+        "version": null
+      },
+      {
+        "name": "BLOOM (BLM)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "LoRC",
+        "description": "Low-Rank Compression method"
+      },
+      {
+        "name": "GPTQ",
+        "description": "Quantization strategy used for evaluation"
+      },
+      {
+        "name": "FGQ",
+        "description": "Feature Group Quantization, used optionally"
+      },
+      {
+        "name": "round-to-nearest neighborhood (RTN)",
+        "description": "directly applies PTQ on the trained data and follows the procedure detailed in Section A to perform the quantization"
+      },
+      {
+        "name": "symmetric quantization",
+        "description": "used for weight quantization"
+      },
+      {
+        "name": "asymmetric quantization",
+        "description": "used for weight quantization and highlighted as advantageous over symmetric quantization"
+      },
+      {
+        "name": "per-row quantization",
+        "description": "applied for weight quantization"
+      },
+      {
+        "name": "per-token quantization",
+        "description": "applied for activation quantization"
+      },
+      {
+        "name": "fine-grained quantization",
+        "description": "every kelements possess their own scaling factor and/or zero point"
+      },
+      {
+        "name": "block-k quantization",
+        "description": "can be implemented on modern GPUs"
+      },
+      {
+        "name": "GPTQ",
+        "description": "utilized for all models and settings"
+      },
+      {
+        "name": "ZQ-Global",
+        "description": "utilized for all models and settings"
+      },
+      {
+        "name": "ZQ-Local",
+        "description": "applied to OPT-66B and Bloom-176B"
+      },
+      {
+        "name": "ZQ-Local",
+        "description": "An extension mode of ZQ-Global for further GPU requirement reduction and training cost reduction. Treats each linear layer as the subnetwork."
+      },
+      {
+        "name": "GPTQ",
+        "description": "Parameters used for GPTQ are referred to in Appendix B."
+      },
+      {
+        "name": "ZQ-Global",
+        "description": "Parameters used for ZQ-Global are referred to in Appendix B."
+      },
+      {
+        "name": "ZeroQuant",
+        "description": "Hyperparameters such as learning rate and its scheduler were tested."
+      },
+      {
+        "name": "ZQ-Global*",
+        "description": "Optimizes an entire transformer layer"
+      },
+      {
+        "name": "GPTQ",
+        "description": "Originally designed for weight-only quantization"
+      },
+      {
+        "name": "ZQ-Local*",
+        "description": "Quantization-based method"
+      },
+      {
+        "name": "INT8 weight-only quantization",
+        "description": "standard method for reducing memory costs in LLMs, with negligible degradation in accuracy"
+      },
+      {
+        "name": "INT4 weight-only quantization",
+        "description": "results in substantial accuracy degradation (Class-3) for small models, but this effect lessens as the model size increases"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance discrepancy",
+        "value": "none",
+        "split": null
+      },
+      {
+        "metric": "accuracy loss",
+        "value": "less than 0.05",
+        "split": null
+      },
+      {
+        "metric": "PPL degradation",
+        "value": "around 0.3 points",
+        "split": null
+      },
+      {
+        "metric": "performance",
+        "value": "outperforms RTN significantly",
+        "split": null
+      },
+      {
+        "metric": "PPL",
+        "value": "degradation of more than 0.5 PPL points",
+        "split": null
+      }
+    ]
+  }
+}

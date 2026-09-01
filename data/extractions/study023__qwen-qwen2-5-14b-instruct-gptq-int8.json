@@ -1,0 +1,90 @@
+{
+  "study_id": "study023",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study023/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:46:45.899162+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 0,
+    "methods": 5,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "value": "0"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "SR",
+        "description": "Same as DA"
+      },
+      {
+        "name": "GPT-4V",
+        "description": "Direct use as a mobile device operation assistant"
+      },
+      {
+        "name": "Mobile-Agent-v2",
+        "description": "Includes planning agent, reflection agent, and memory unit"
+      },
+      {
+        "name": "knowledge injection",
+        "description": "manually injected operation knowledge to enhance the performance of Mobile-Agent-v2"
+      },
+      {
+        "name": "Mobile-Agent",
+        "description": "A single-agent architecture based on GPT-4V end-to-end screen recognition."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "success rate",
+        "value": "2.7",
+        "split": null
+      },
+      {
+        "metric": "Completion Rate (CR)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Decision Accuracy (DA)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Reflection Accuracy (RA)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "success rate",
+        "value": "55%",
+        "split": "advanced instructions"
+      },
+      {
+        "metric": "average improvement in success rate",
+        "value": "27%",
+        "split": null
+      },
+      {
+        "metric": "completion rate",
+        "value": "100%",
+        "split": "knowledge injection"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "run_command": "export NGPUS=8 && python -m torch.distributed.launch --nproc_per_node=$NGPUS /path_to_maskrcnn_benchmark/tools/test_net.py --config-file \"configs/e2e_mask_rcnn_R_50_FPN_1x.yaml\" TEST.IMS_PER_BATCH 16",
+  "setup_steps": [
+    "cd ~/github/maskrcnn-benchmark",
+    "mkdir -p datasets/coco",
+    "ln -s /path_to_coco_dataset/annotations datasets/coco/annotations",
+    "ln -s /path_to_coco_dataset/train2014 datasets/coco/train2014",
+    "ln -s /path_to_coco_dataset/test2014 datasets/coco/test2014",
+    "ln -s /path_to_coco_dataset/val2014 datasets/coco/val2014"
+  ],
+  "requires_dataset": [
+    {
+      "name": "COCO 2014",
+      "download": null
+    }
+  ],
+  "requires_checkpoint": null,
+  "produces_metric": [
+    {
+      "metric": "mAP",
+      "dataset": "COCO 2014"
+    }
+  ],
+  "entry_point": "/path_to_maskrcnn_benchmark/tools/test_net.py",
+  "confidence": "high",
+  "study_id": "study018",
+  "repo_url": "https://github.com/markson14/WheatDet"
+}

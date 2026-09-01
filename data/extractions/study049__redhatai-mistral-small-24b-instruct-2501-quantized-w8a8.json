@@ -1,0 +1,37 @@
+{
+  "study_id": "study049",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study049/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:47:26.852902+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 2,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Gy\u00e1rf\u00e1s\u2019 path argument",
+        "description": "an abstract notion of a Gy\u00e1rf\u00e1s decomposition"
+      },
+      {
+        "name": "Gy\u00e1rf\u00e1s decomposition",
+        "description": "A recursive procedure that constructs a decomposition of a connected graph G into a tree of bags with a given non-empty subset of vertices A being the root bag."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

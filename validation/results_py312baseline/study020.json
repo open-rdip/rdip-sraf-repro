@@ -1,0 +1,120 @@
+{
+  "study_id": "study020",
+  "repo_url": "https://github.com/yueliukth/csaw-m",
+  "started": "2026-06-09T15:23:16.355468+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "docker/Dockerfile"
+    },
+    "depth_note": "subdir",
+    "n_found": 1,
+    "all": [
+      {
+        "type": "docker",
+        "rel_path": "docker/Dockerfile",
+        "depth": 1
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/yueliukth/csaw-m",
+    "commit_hash": "f137e6344265d03869a7e21d2a434e9355a47cdc",
+    "software_license": null
+  },
+  "lift": {
+    "lifted": {
+      "docker": "docker/Dockerfile"
+    },
+    "triples": 12,
+    "n_sources": 2
+  },
+  "build": {
+    "attempted": false,
+    "resolve_success": null,
+    "build_success": false,
+    "method": "none",
+    "stage_failed": null,
+    "duration_s": 0.0,
+    "log_tail": "",
+    "notes": "No pip/setup artifact to build from (docker/conda-only builds deferred)."
+  },
+  "fair_r": {
+    "total_score": 17.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 10.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reusable",
+        "rda_indicator": "RDA-R1.1-01M",
+        "severity": "critical",
+        "label": "Software license declared",
+        "fix": "Add a software license to your repository and declare rdip:softwareLicense."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 2.1
+}

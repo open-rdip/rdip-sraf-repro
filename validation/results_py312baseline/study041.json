@@ -1,0 +1,131 @@
+{
+  "study_id": "study041",
+  "repo_url": "https://github.com/softdevteam/rustgc_paper_experiment",
+  "started": "2026-06-09T15:32:39.725418+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "Dockerfile",
+      "setup": "pyproject.toml"
+    },
+    "depth_note": "root",
+    "n_found": 3,
+    "all": [
+      {
+        "type": "docker",
+        "rel_path": "Dockerfile.paper",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "pyproject.toml",
+        "depth": 0
+      },
+      {
+        "type": "docker",
+        "rel_path": "Dockerfile",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/softdevteam/rustgc_paper_experiment",
+    "commit_hash": "b52493ee0f0b3f8d9cf497acd4590c08a3c5e530",
+    "software_license": null
+  },
+  "lift": {
+    "lifted": {
+      "docker": "Dockerfile"
+    },
+    "triples": 12,
+    "n_sources": 2
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-setup",
+    "stage_failed": null,
+    "duration_s": 32.4,
+    "log_tail": "tensions>=4.0.0 (from beautifulsoup4->gdown==5.1.0->rustgc_paper_experiment==0.1.0)\n  Using cached typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)\nCollecting MarkupSafe>=2.0 (from jinja2->rustgc_paper_experiment==0.1.0)\n  Using cached markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)\nCollecting charset_normalizer<4,>=2 (from requests[socks]->gdown==5.1.0->rustgc_paper_experiment==0.1.0)\n  Using cached charset_normalizer-3.4.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)\nCollecting idna<4,>=2.5 (from requests[socks]->gdown==5.1.0->rustgc_paper_experiment==0.1.0)\n  Using cached idna-3.18-py3-none-any.whl.metadata (6.1 kB)\nCollecting urllib3<3,>=1.26 (from requests[socks]->gdown==5.1.0->rustgc_paper_experiment==0.1.0)\n  Using cached urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)\nCollecting certifi>=2023.5.7 (from requests[socks]->gdown==5.1.0->rustgc_paper_experiment==0.1.0)\n  Using cached certifi-2026.5.20-py3-none-any.whl.metadata (2.5 kB)\nCollecting PySocks!=1.5.7,>=1.5.6 (from requests[socks]->gdown==5.1.0->rustgc_paper_experiment==0.1.0)\n  Downloading PySocks-1.7.1-py3-none-any.whl.metadata (13 kB)\nWould install Jinja2-3.1.6 MarkupSafe-3.0.3 PySocks-1.7.1 PyYAML-6.0.2 ReBench-1.2.0 beautifulsoup4-4.15.0 certifi-2026.5.20 charset-normalizer-3.4.7 contourpy-1.3.0 cycler-0.12.1 docopt-0.6.2 filelock-3.29.1 fonttools-4.54.1 gdown-5.1.0 humanfriendly-10.0 idna-3.18 invoke-2.2.0 kiwisolver-1.4.7 matplotlib-3.9.2 numpy-2.1.1 packaging-24.1 pandas-2.2.3 pillow-10.4.0 psutil-6.0.0 py-cpuinfo-9.0.0 pykwalify-1.8.0 pyparsing-3.1.4 python-dateutil-2.9.0.post0 pytz-2024.2 requests-2.34.2 ruamel.yaml-0.19.1 rustgc_paper_experiment-0.1.0 scipy-1.14.1 seaborn-0.13.2 six-1.16.0 soupsieve-2.8.4 toml-0.10.2 tqdm-4.66.4 typing_extensions-4.15.0 tzdata-2024.2 urllib3-2.7.0 xvfbwrapper-0.2.23 zstandard-0.25.0\n\n$ /tmp/15856/study041/venv/bin/pip install .\n=aad11f88c11409a8a28cc8997714ecb4494dcc788b847ca95bf637bd0e25279d\n  Stored in directory: /tmp/pip-ephem-wheel-cache-0asz84r6/wheels/82/41/ec/cbda16ba68e2f939b1f5caf6adbbc5c5fb5f74f6040581f8af\n  Building wheel for docopt (pyproject.toml): started\n  Building wheel for docopt (pyproject.toml): finished with status 'done'\n  Created wheel for docopt: filename=docopt-0.6.2-py2.py3-none-any.whl size=13782 sha256=80378bc332efe9208aea29a4e17ea531f74c160a7b29b1b9bf65996771f90ab2\n  Stored in directory: /home/dsai-st125286p/.cache/pip/wheels/1a/bf/a1/4cee4f7678c68c5875ca89eaccf460593539805c3906722228\nSuccessfully built rustgc_paper_experiment docopt\nInstalling collected packages: pytz, py-cpuinfo, docopt, zstandard, xvfbwrapper, urllib3, tzdata, typing-extensions, tqdm, toml, soupsieve, six, ruamel.yaml, PyYAML, PySocks, pyparsing, psutil, pillow, packaging, numpy, MarkupSafe, kiwisolver, invoke, idna, humanfriendly, fonttools, filelock, cycler, charset_normalizer, certifi, scipy, requests, python-dateutil, jinja2, contourpy, beautifulsoup4, pykwalify, pandas, matplotlib, seaborn, ReBench, gdown, rustgc_paper_experiment\n  Attempting uninstall: packaging\n    Found existing installation: packaging 26.2\n    Uninstalling packaging-26.2:\n      Successfully uninstalled packaging-26.2\n\nSuccessfully installed MarkupSafe-3.0.3 PySocks-1.7.1 PyYAML-6.0.2 ReBench-1.2.0 beautifulsoup4-4.15.0 certifi-2026.5.20 charset_normalizer-3.4.7 contourpy-1.3.0 cycler-0.12.1 docopt-0.6.2 filelock-3.29.1 fonttools-4.54.1 gdown-5.1.0 humanfriendly-10.0 idna-3.18 invoke-2.2.0 jinja2-3.1.6 kiwisolver-1.4.7 matplotlib-3.9.2 numpy-2.1.1 packaging-24.1 pandas-2.2.3 pillow-10.4.0 psutil-6.0.0 py-cpuinfo-9.0.0 pykwalify-1.8.0 pyparsing-3.1.4 python-dateutil-2.9.0.post0 pytz-2024.2 requests-2.34.2 ruamel.yaml-0.19.1 rustgc_paper_experiment-0.1.0 scipy-1.14.1 seaborn-0.13.2 six-1.16.0 soupsieve-2.8.4 toml-0.10.2 tqdm-4.66.4 typing-extensions-4.15.0 tzdata-2024.2 urllib3-2.7.0 xvfbwrapper-0.2.23 zstandard-0.25.0\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 17.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 10.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reusable",
+        "rda_indicator": "RDA-R1.1-01M",
+        "severity": "critical",
+        "label": "Software license declared",
+        "fix": "Add a software license to your repository and declare rdip:softwareLicense."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 33.5
+}

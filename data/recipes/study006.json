@@ -1,0 +1,28 @@
+{
+  "run_command": "CUDA_VISIBLE_DEVICES=0 python scripts/plan.py --test_planner MCTS_P --dataset hopper-medium-replay-v2 --exp_name T-1-1 --suffix 1 --initial_width 16 --b_percent 0.5 --n_expand 4 --n_actions 4 --action_percent 0.5 --pw_alpha 0.1 --mcts_itr 100 --depth 5",
+  "setup_steps": [
+    "conda create -n lmap python=3.10 -y",
+    "conda activate lmap",
+    "sudo apt-get install build-essential libglew-dev libglfw3-dev mesa-common-dev libgl1-mesa-dev",
+    "pip install -r requirements.txt",
+    "pip install -e ."
+  ],
+  "requires_dataset": [
+    {
+      "name": "hopper-medium-replay-v2",
+      "download": "wget https://github.com/marc-rigter/1R2R/archive/refs/heads/main.zip -O 1R2R.zip",
+      "unzip": "unzip 1R2R.zip -d 1R2R"
+    }
+  ],
+  "requires_checkpoint": null,
+  "produces_metric": [
+    {
+      "metric": "success rate",
+      "dataset": "hopper-medium-replay-v2"
+    }
+  ],
+  "entry_point": "scripts/plan.py",
+  "confidence": "high",
+  "study_id": "study006",
+  "repo_url": "https://github.com/baitingluo/l-map"
+}

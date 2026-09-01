@@ -1,0 +1,96 @@
+# FAIR-R calibration reference set
+# ---------------------------------
+# Construct-validity ground truth for the FAIR-R rubric (see
+# docs/fair_r_scoring_rubric.md §5 and calibration/run_calibration.py).
+#
+# Each entry pins a study to an EXPECTED band, set from evidence OUTSIDE the
+# rubric. The harness then checks the rubric's computed scores reproduce the
+# expected ordering. `band` is one of: high | mid | low.
+#
+#   study_id : graph id in the KG (https://w3id.org/rdip/graph/<study_id>)
+#   band     : expected band (the ground-truth label)
+#   note     : the external evidence justifying the label
+#
+# ── external ────────────────────────────────────────────────────────────────
+# Artifacts with an INDEPENDENT reproducibility signal — ACM Artifact Review
+# badges ("Artifacts Evaluated — Reusable", "Results Reproduced") or a
+# successful ReScience-C / ML Reproducibility Challenge report. These must be
+# lifted into the KG before they can be scored; until then the harness skips
+# them. POPULATE with verified entries (confirm the badge + repo before adding):
+# 5 exemplary ML reproducibility artifacts (ReScience C — peer-verified to
+# reproduce, each with a Zenodo article DOI, open-licensed code, and declared
+# data). Expected to score at/near the FAIR-R ceiling. Lift via
+# validation/reference_repos.csv, then score; record observed scores in `note`.
+external:
+  - study_id: ref001
+    band: high
+    note: "[Re] Network Deconvolution (Obadage 2025, ReScience C 10#4); article DOI 10.5281/zenodo.15321683"
+    repo_url: https://github.com/lamps-lab/rep-network-deconvolution
+    article_doi: 10.5281/zenodo.15321683
+    data: "ImageNet (Kaggle ILSVRC)"
+  - study_id: ref002
+    band: high
+    note: "Learning with Noisy Labels [Re]visited (Hudovernik 2026, ReScience C 11#2); article DOI 10.5281/zenodo.18401497"
+    repo_url: https://github.com/KlemenVovk/noisy-labels
+    article_doi: 10.5281/zenodo.18401497
+    data: "CIFAR-10/100 (cited)"
+  - study_id: ref003
+    band: high
+    note: "[Re] When Does Label Smoothing Help? (Wagner 2025, ReScience C 10#1); article DOI 10.5281/zenodo.14953654"
+    repo_url: https://github.com/sdwagner/re-labelsmoothing
+    article_doi: 10.5281/zenodo.14953654
+    data: "CIFAR (linked)"
+  - study_id: ref004
+    band: high
+    note: "[Re] BiRT: Bio-inspired Replay in Vision Transformers (Maheshwari 2025, ReScience C 10#2); article DOI 10.5281/zenodo.14964875"
+    repo_url: https://github.com/disha101003/ReScience
+    article_doi: 10.5281/zenodo.14964875
+    data: "CIFAR"
+  - study_id: ref005
+    band: high
+    note: "[Re] Learning Fair Graph Representations via Automated Data Augmentations (Belitsky 2025, ReScience C 10#6); article DOI 10.5281/zenodo.16374814, CODE DOI 10.5281/zenodo.13834566, DATA DOI 10.5281/zenodo.13837423 — strongest FAIR profile (code+data DOIs)"
+    repo_url: https://zenodo.org/records/13834566
+    article_doi: 10.5281/zenodo.16374814
+    code_doi: 10.5281/zenodo.13834566
+    data_doi: 10.5281/zenodo.13837423
+
+# ── internal ────────────────────────────────────────────────────────────────
+# First-pass construct validity drawn from our own 96-repo corpus, banded by
+# documented reproducibility infrastructure (independent of the FAIR-R rubric):
+#   high = random seed declared + requirements + container/build evidence,
+#          high build score, fully buildable;
+#   low  = no seed, no container, lowest build scores, build-only/failed.
+# This tests the core claim — the rubric should separate repos that carry
+# reproducibility infrastructure from those that do not.
+internal:
+  - study_id: study002
+    band: high
+    note: "seed + requirements + Docker, b_score 7, full tier (Kronecker KGE)"
+  - study_id: study003
+    band: high
+    note: "seed + requirements + Docker, b_score 7, full tier (Camouflaged OD)"
+  - study_id: study004
+    band: high
+    note: "seed + requirements + Docker, b_score 7, full tier"
+  - study_id: study006
+    band: high
+    note: "seed + requirements + conda, b_score 6, full tier"
+  - study_id: study015
+    band: high
+    note: "seed + requirements + Docker, b_score 6, full tier"
+
+  - study_id: study056
+    band: low
+    note: "no seed, no Docker, b_score 3, build_only (CaloHadronic)"
+  - study_id: study057
+    band: low
+    note: "no seed, no Docker, b_score 3, build_only (strong lenses)"
+  - study_id: study058
+    band: low
+    note: "no seed, no Docker, b_score 3, build_only (ToxiGen)"
+  - study_id: study060
+    band: low
+    note: "no seed, no Docker, b_score 3, build_only (Jukebox)"
+  - study_id: study061
+    band: low
+    note: "no seed, no Docker, b_score 3, build_only (SocNavBench)"

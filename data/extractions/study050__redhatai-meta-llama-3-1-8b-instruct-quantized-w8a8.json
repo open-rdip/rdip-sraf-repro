@@ -1,0 +1,151 @@
+{
+  "study_id": "study050",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study050/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:32:17.834573+00:00",
+  "counts": {
+    "dependencies": 7,
+    "random_seeds": 2,
+    "hyperparameters": 6,
+    "datasets": 4,
+    "methods": 8,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "OpenAI Gym",
+        "version": null
+      },
+      {
+        "name": "TensorFlow",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "Adam",
+        "version": null
+      },
+      {
+        "name": "DQN",
+        "version": null
+      },
+      {
+        "name": "Q-learning",
+        "version": null
+      },
+      {
+        "name": "Deep Belief Network",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      500,
+      100
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b1",
+        "value": "0.1"
+      },
+      {
+        "name": "\u03b3",
+        "value": "1"
+      },
+      {
+        "name": "learning rate",
+        "value": "0.1"
+      },
+      {
+        "name": "gamma",
+        "value": "1"
+      },
+      {
+        "name": "gradient clipping",
+        "value": "[\u22121,1]"
+      },
+      {
+        "name": "alpha",
+        "value": "0.0001"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Blackjack",
+        "version": null
+      },
+      {
+        "name": "Cartpole",
+        "version": null
+      },
+      {
+        "name": "Taxi",
+        "version": null
+      },
+      {
+        "name": "Taxi environment",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Q-Learning",
+        "description": "null"
+      },
+      {
+        "name": "Forward Simulation",
+        "description": "null"
+      },
+      {
+        "name": "deep Q-Learning",
+        "description": "null"
+      },
+      {
+        "name": "TD",
+        "description": "Temporal Difference"
+      },
+      {
+        "name": "MC",
+        "description": "Monte Carlo"
+      },
+      {
+        "name": "Deep Belief Network (DBN)",
+        "description": null
+      },
+      {
+        "name": "DQN",
+        "description": null
+      },
+      {
+        "name": "vanilla Q-learning",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "similarly",
+        "value": "performed",
+        "split": null
+      },
+      {
+        "metric": "TD",
+        "value": "similarly",
+        "split": null
+      },
+      {
+        "metric": "MC",
+        "value": "similarly",
+        "split": null
+      }
+    ]
+  }
+}

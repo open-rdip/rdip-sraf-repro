@@ -1,0 +1,109 @@
+{
+  "study_id": "study075",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study075/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T06:07:12.786684+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 14,
+    "datasets": 0,
+    "methods": 3,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "Gene 3",
+        "value": "coarse-grained solvent particles"
+      },
+      {
+        "name": "Gene 4",
+        "value": "coarse-grained solvent particles"
+      },
+      {
+        "name": "Gene 5",
+        "value": "nanoparticle volumetric concentration"
+      },
+      {
+        "name": "Gene 6",
+        "value": "nanoparticle domain size"
+      },
+      {
+        "name": "Gene 7",
+        "value": "domain compactness"
+      },
+      {
+        "name": "Gene 8",
+        "value": "spacing between domains"
+      },
+      {
+        "name": "Gene 9",
+        "value": "background scattering intensity"
+      },
+      {
+        "name": "Gene 10",
+        "value": "systems size"
+      },
+      {
+        "name": "micelle size dispersity",
+        "value": "0.05"
+      },
+      {
+        "name": "core-micelle size ratio",
+        "value": "0.25"
+      },
+      {
+        "name": "micelle volume fraction",
+        "value": "0.15"
+      },
+      {
+        "name": "mutation",
+        "value": "randomly changing a gene"
+      },
+      {
+        "name": "combination",
+        "value": "randomly combining different parts of two individuals' gene sets from the previous generation"
+      },
+      {
+        "name": "micelle diameter range",
+        "value": "50 nm \u00b1 1 nm"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "neural network",
+        "description": "ML model linking the gene set to the S(q) and to the P(q)"
+      },
+      {
+        "name": "CREASE",
+        "description": "A workflow that takes the \u2018primary particle\u2019 solution's small angle scattering profile(s) as input and utilizes a genetic algorithm to optimize for the set of genes that possesses a computed scattering profile(s) that most closely matches the input scattering profile(s)."
+      },
+      {
+        "name": "P(q) and S(q) CREASE",
+        "description": "method that inputs the micelle diameter range and micelle size dispersity"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "RDF",
+        "value": "on average relatively precise",
+        "split": null
+      },
+      {
+        "metric": "peak RDF value",
+        "value": "minor differences",
+        "split": null
+      }
+    ]
+  }
+}

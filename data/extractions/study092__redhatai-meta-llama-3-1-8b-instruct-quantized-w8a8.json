@@ -1,0 +1,112 @@
+{
+  "study_id": "study092",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study092/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:52:31.652084+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 1,
+    "hyperparameters": 1,
+    "datasets": 2,
+    "methods": 4,
+    "evaluation_results": 9
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "YOLOv3",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      20
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "N",
+        "value": "different values"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Re-ID",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "TrADe",
+        "description": "uses a tracking algorithm and anomaly detection model"
+      },
+      {
+        "name": "classic Re-ID",
+        "description": "uses object detection to generate a search gallery"
+      },
+      {
+        "name": "baseline",
+        "description": "uses raw videos as search galleries"
+      },
+      {
+        "name": "Skip",
+        "description": "null"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP",
+        "value": "several important metrics",
+        "split": null
+      },
+      {
+        "metric": "F\u2217 1",
+        "value": "several important metrics",
+        "split": null
+      },
+      {
+        "metric": "classic Re-ID execution time",
+        "value": "several important metrics",
+        "split": null
+      },
+      {
+        "metric": "F1",
+        "value": "1",
+        "split": null
+      },
+      {
+        "metric": "FR",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "TVR",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "lower galleries",
+        "value": "than the baseline",
+        "split": null
+      },
+      {
+        "metric": "fewer outliers",
+        "value": "than the baseline",
+        "split": null
+      },
+      {
+        "metric": "processing time",
+        "value": "decrease drastically",
+        "split": null
+      }
+    ]
+  }
+}

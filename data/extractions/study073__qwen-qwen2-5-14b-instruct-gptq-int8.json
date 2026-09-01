@@ -1,0 +1,134 @@
+{
+  "study_id": "study073",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study073/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:22:00.453481+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 10,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX 3090",
+      "cuda_version": null,
+      "cpu_info": "Intel i9-10980XE"
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "YCB-Video",
+        "version": null
+      },
+      {
+        "name": "LINEMOD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "W/o transformer",
+        "description": "replaces the transformer-based architecture by convolutional and linear layers while keeping the similar number of parameters"
+      },
+      {
+        "name": "W/o hierarchical comparison",
+        "description": "compares the rendering and the cropped input trained by pose-conditioned triplet loss without two-level hierarchical comparison"
+      },
+      {
+        "name": "Ours-InfoNCE",
+        "description": "replaces contrast validated pair-wise loss by the InfoNCE loss"
+      },
+      {
+        "name": "Ours",
+        "description": "default version under the model-free (16 reference images) setup"
+      },
+      {
+        "name": "W/o LLM texture augmentation",
+        "description": "removes the LLM-aided texture augmentation for synthetic training"
+      },
+      {
+        "name": "pose estimation",
+        "description": "takes about 1.3 s for one object"
+      },
+      {
+        "name": "pose initialization",
+        "description": "takes 4 ms"
+      },
+      {
+        "name": "refinement",
+        "description": "takes 0.88 s"
+      },
+      {
+        "name": "pose selection",
+        "description": "takes 0.42 s"
+      },
+      {
+        "name": "Model-free",
+        "description": "Comparison against state-of-the-art RGBD methods on YCB-Video and LINEMOD datasets."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AUC of ADD",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "AUC of ADD-S",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "AUC of ADD",
+        "value": null,
+        "split": "YCB-Video"
+      },
+      {
+        "metric": "AUC of ADD-S",
+        "value": null,
+        "split": "YCB-Video"
+      },
+      {
+        "metric": "AUC",
+        "value": "85.00",
+        "split": null
+      },
+      {
+        "metric": "ADD",
+        "value": "60.00",
+        "split": "test"
+      },
+      {
+        "metric": "ADD-S",
+        "value": "65.00",
+        "split": "test"
+      },
+      {
+        "metric": "AUC (%)",
+        "value": "85.00",
+        "split": null
+      },
+      {
+        "metric": "Area under the curve (AUC) of ADD and ADD-S",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Recall of ADD that is less than 0.1 of the object diameter (ADD-0.1d)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "Average recall (AR) of VSD, MSSD and MSPD",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

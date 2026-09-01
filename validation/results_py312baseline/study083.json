@@ -1,0 +1,136 @@
+{
+  "study_id": "study083",
+  "repo_url": "https://github.com/joseangelmartinb/gklr",
+  "started": "2026-06-09T16:07:56.339772+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "conda": "environment.yml",
+      "pip": "docs/requirements.txt",
+      "setup": "pyproject.toml"
+    },
+    "depth_note": "root",
+    "n_found": 5,
+    "all": [
+      {
+        "type": "conda",
+        "rel_path": "environment.yml",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.cfg",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "pyproject.toml",
+        "depth": 0
+      },
+      {
+        "type": "pip",
+        "rel_path": "docs/requirements.txt",
+        "depth": 1
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/joseangelmartinb/gklr",
+    "commit_hash": "845560a634478d0b9786c1cf2cd93b369c67a3c1",
+    "software_license": "MIT"
+  },
+  "lift": {
+    "lifted": {
+      "conda": "environment.yml",
+      "pip": "docs/requirements.txt"
+    },
+    "triples": 195,
+    "n_sources": 3
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 20.9,
+    "log_tail": "cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)\nCollecting six>=1.5 (from python-dateutil>=2.8.2->pandas>=0.16.2->-r /tmp/15856/study083/study083/docs/requirements.txt (line 10))\n  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)\nCollecting charset_normalizer<4,>=2 (from requests>=2.30.0->sphinx>=3.2.1->-r /tmp/15856/study083/study083/docs/requirements.txt (line 6))\n  Using cached charset_normalizer-3.4.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)\nCollecting idna<4,>=2.5 (from requests>=2.30.0->sphinx>=3.2.1->-r /tmp/15856/study083/study083/docs/requirements.txt (line 6))\n  Using cached idna-3.18-py3-none-any.whl.metadata (6.1 kB)\nCollecting urllib3<3,>=1.26 (from requests>=2.30.0->sphinx>=3.2.1->-r /tmp/15856/study083/study083/docs/requirements.txt (line 6))\n  Using cached urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)\nCollecting certifi>=2023.5.7 (from requests>=2.30.0->sphinx>=3.2.1->-r /tmp/15856/study083/study083/docs/requirements.txt (line 6))\n  Using cached certifi-2026.5.20-py3-none-any.whl.metadata (2.5 kB)\nWould install Jinja2-3.1.6 MarkupSafe-3.0.3 Pygments-2.20.0 Pympler-1.1 Sphinx-9.1.0 alabaster-1.0.0 babel-2.18.0 certifi-2026.5.20 charset-normalizer-3.4.7 commonmark-0.9.2 docutils-0.22.4 idna-3.18 imagesize-2.0.0 joblib-1.5.3 narwhals-2.22.1 numpy-2.4.6 packaging-26.2 pandas-3.0.3 python-dateutil-2.9.0.post0 recommonmark-0.7.1 requests-2.34.2 roman-numerals-4.1.0 scikit-learn-1.9.0 scipy-1.17.1 setuptools-82.0.1 setuptools-scm-10.0.5 six-1.17.0 snowballstemmer-3.1.1 sphinx_rtd_theme-3.1.0 sphinxcontrib-applehelp-2.0.0 sphinxcontrib-devhelp-2.0.0 sphinxcontrib-htmlhelp-2.1.0 sphinxcontrib-jquery-4.1 sphinxcontrib-jsmath-1.0.1 sphinxcontrib-qthelp-2.0.0 sphinxcontrib-serializinghtml-2.0.0 threadpoolctl-3.6.0 urllib3-2.7.0 vcs-versioning-1.1.1\n\n$ /tmp/15856/study083/venv/bin/pip install -r /tmp/15856/study083/study083/docs/requirements.txt\n0-py3-none-any.whl (134 kB)\nUsing cached roman_numerals-4.1.0-py3-none-any.whl (7.7 kB)\nUsing cached six-1.17.0-py2.py3-none-any.whl (11 kB)\nUsing cached snowballstemmer-3.1.1-py3-none-any.whl (104 kB)\nUsing cached sphinxcontrib_applehelp-2.0.0-py3-none-any.whl (119 kB)\nUsing cached sphinxcontrib_devhelp-2.0.0-py3-none-any.whl (82 kB)\nUsing cached sphinxcontrib_htmlhelp-2.1.0-py3-none-any.whl (98 kB)\nUsing cached sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl (5.1 kB)\nUsing cached sphinxcontrib_qthelp-2.0.0-py3-none-any.whl (88 kB)\nUsing cached sphinxcontrib_serializinghtml-2.0.0-py3-none-any.whl (92 kB)\nUsing cached threadpoolctl-3.6.0-py3-none-any.whl (18 kB)\nUsing cached vcs_versioning-1.1.1-py3-none-any.whl (79 kB)\nInstalling collected packages: commonmark, vcs-versioning, urllib3, threadpoolctl, sphinxcontrib-serializinghtml, sphinxcontrib-qthelp, sphinxcontrib-jsmath, sphinxcontrib-htmlhelp, sphinxcontrib-devhelp, sphinxcontrib-applehelp, snowballstemmer, six, roman-numerals, pympler, Pygments, numpy, narwhals, MarkupSafe, joblib, imagesize, idna, docutils, charset_normalizer, certifi, babel, alabaster, setuptools-scm, scipy, requests, python-dateutil, Jinja2, sphinx, scikit-learn, pandas, sphinxcontrib-jquery, recommonmark, sphinx_rtd_theme\n\nSuccessfully installed Jinja2-3.1.6 MarkupSafe-3.0.3 Pygments-2.20.0 alabaster-1.0.0 babel-2.18.0 certifi-2026.5.20 charset_normalizer-3.4.7 commonmark-0.9.2 docutils-0.22.4 idna-3.18 imagesize-2.0.0 joblib-1.5.3 narwhals-2.22.1 numpy-2.4.6 pandas-3.0.3 pympler-1.1 python-dateutil-2.9.0.post0 recommonmark-0.7.1 requests-2.34.2 roman-numerals-4.1.0 scikit-learn-1.9.0 scipy-1.17.1 setuptools-scm-10.0.5 six-1.17.0 snowballstemmer-3.1.1 sphinx-9.1.0 sphinx_rtd_theme-3.1.0 sphinxcontrib-applehelp-2.0.0 sphinxcontrib-devhelp-2.0.0 sphinxcontrib-htmlhelp-2.1.0 sphinxcontrib-jquery-4.1 sphinxcontrib-jsmath-1.0.1 sphinxcontrib-qthelp-2.0.0 sphinxcontrib-serializinghtml-2.0.0 threadpoolctl-3.6.0 urllib3-2.7.0 vcs-versioning-1.1.1\n",
+    "notes": "environment.yml present but built via pip venv (conda build deferred)."
+  },
+  "fair_r": {
+    "total_score": 27.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 20.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 27.6
+}

@@ -1,0 +1,127 @@
+{
+  "study_id": "study010",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study010/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:36:58.666245+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 2,
+    "methods": 6,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.05"
+      },
+      {
+        "name": "initial_learning_rate_english",
+        "value": "5e-4 * batchsize 2048"
+      },
+      {
+        "name": "cosine_scheduler_warmup_epochs_english",
+        "value": "2"
+      },
+      {
+        "name": "total_epochs_english",
+        "value": "21"
+      },
+      {
+        "name": "alphabet",
+        "value": "all case-insensitive alphanumerics"
+      },
+      {
+        "name": "max_predict_length_english",
+        "value": "25"
+      },
+      {
+        "name": "initial_learning_rate_chinese",
+        "value": "3e-4 * batchsize 512"
+      },
+      {
+        "name": "cosine_scheduler_warmup_epochs_chinese",
+        "value": "5"
+      },
+      {
+        "name": "total_epochs_chinese",
+        "value": "100"
+      },
+      {
+        "name": "max_predict_length_chinese",
+        "value": "40"
+      },
+      {
+        "name": "window_size",
+        "value": "7x11"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IC13",
+        "version": null
+      },
+      {
+        "name": "IC15",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "[L]6[G]6",
+        "description": "reports the best accuracy"
+      },
+      {
+        "name": "SVTR-T",
+        "description": "smallest one of the SVTR family"
+      },
+      {
+        "name": "SVTR",
+        "description": "A recognizer that captures multi-grained character component features including sub-character, character-level and cross-character clues."
+      },
+      {
+        "name": "patch embedding",
+        "description": "implemented by using two consecutive 3x3 convolutions with stride 2 and batch normalization"
+      },
+      {
+        "name": "global mixing block",
+        "description": "A block that applies layer normalization, multi-head self-attention, and MLP for feature fusion, with shortcut connections."
+      },
+      {
+        "name": "local mixing",
+        "description": "Evaluates correlation among components within a predefined window to encode character morphology features and establish associations between components within a character using self-attention mechanism."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "1.9%",
+        "split": "IC13"
+      },
+      {
+        "metric": "accuracy",
+        "value": "6.6%",
+        "split": "IC15"
+      },
+      {
+        "metric": "word accuracy",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "study_id": "study005",
+  "repo_url": "https://github.com/cross-domain-compositing/cross-domain-compositing",
+  "started": "2026-06-09T15:15:50.110302+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "conda": "environment.yaml",
+      "setup": "setup.py"
+    },
+    "depth_note": "root",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "setup",
+        "rel_path": "setup.py",
+        "depth": 0
+      },
+      {
+        "type": "conda",
+        "rel_path": "environment.yaml",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/cross-domain-compositing/cross-domain-compositing",
+    "commit_hash": "cb7010062aa0d5654283d5bcc0af241c88940821",
+    "software_license": "MIT"
+  },
+  "lift": {
+    "lifted": {
+      "conda": "environment.yaml"
+    },
+    "triples": 165,
+    "n_sources": 2
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-setup",
+    "stage_failed": null,
+    "duration_s": 46.5,
+    "log_tail": "orch->latent-diffusion==0.0.1)\n  Using cached nvidia_nvjitlink-13.0.88-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)\nCollecting nvidia-cuda-nvrtc==13.0.88.* (from cuda-toolkit[cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == \"Linux\"->torch->latent-diffusion==0.0.1)\n  Using cached nvidia_cuda_nvrtc-13.0.88-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)\nCollecting nvidia-nvtx==13.0.85.* (from cuda-toolkit[cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == \"Linux\"->torch->latent-diffusion==0.0.1)\n  Using cached nvidia_nvtx-13.0.85-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl.metadata (1.8 kB)\nCollecting cuda-pathfinder>=1.4.2 (from cuda-bindings<14,>=13.0.3->torch->latent-diffusion==0.0.1)\n  Using cached cuda_pathfinder-1.5.5-py3-none-any.whl.metadata (1.9 kB)\nCollecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch->latent-diffusion==0.0.1)\n  Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)\nCollecting MarkupSafe>=2.0 (from jinja2->torch->latent-diffusion==0.0.1)\n  Using cached markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)\nWould install Jinja2-3.1.6 MarkupSafe-3.0.3 cuda-bindings-13.3.1 cuda-pathfinder-1.5.5 cuda-toolkit-13.0.2 filelock-3.29.1 fsspec-2026.4.0 latent-diffusion-0.0.1 mpmath-1.3.0 networkx-3.6.1 numpy-2.4.6 nvidia-cublas-13.1.1.3 nvidia-cuda-cupti-13.0.85 nvidia-cuda-nvrtc-13.0.88 nvidia-cuda-runtime-13.0.96 nvidia-cudnn-cu13-9.20.0.48 nvidia-cufft-12.0.0.61 nvidia-cufile-1.15.1.6 nvidia-curand-10.4.0.35 nvidia-cusolver-12.0.4.66 nvidia-cusparse-12.6.3.3 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.29.7 nvidia-nvjitlink-13.0.88 nvidia-nvshmem-cu13-3.4.5 nvidia-nvtx-13.0.85 setuptools-81.0.0 sympy-1.14.0 torch-2.12.0 tqdm-4.68.2 triton-3.7.0 typing_extensions-4.15.0\n\n$ /tmp/15856/study005/venv/bin/pip install .\n12-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)\nUsing cached tqdm-4.68.2-py3-none-any.whl (78 kB)\nBuilding wheels for collected packages: latent-diffusion\n  Building wheel for latent-diffusion (pyproject.toml): started\n  Building wheel for latent-diffusion (pyproject.toml): finished with status 'done'\n  Created wheel for latent-diffusion: filename=latent_diffusion-0.0.1-py3-none-any.whl size=1951 sha256=dc47ed59d8060a62132895a2ebfea9af44db30b70d4cfcfbf3ab860e081baf52\n  Stored in directory: /tmp/pip-ephem-wheel-cache-giu2uhiw/wheels/07/e5/71/e040dda2ff245c26f470c3cfbe01f51b64fccfb361736dcf24\nSuccessfully built latent-diffusion\nInstalling collected packages: nvidia-cusparselt-cu13, mpmath, cuda-toolkit, typing-extensions, triton, tqdm, sympy, setuptools, nvidia-nvtx, nvidia-nvshmem-cu13, nvidia-nvjitlink, nvidia-nccl-cu13, nvidia-curand, nvidia-cufile, nvidia-cuda-runtime, nvidia-cuda-nvrtc, nvidia-cuda-cupti, numpy, networkx, MarkupSafe, fsspec, filelock, cuda-pathfinder, nvidia-cusparse, nvidia-cufft, nvidia-cublas, jinja2, cuda-bindings, nvidia-cusolver, nvidia-cudnn-cu13, torch, latent-diffusion\n  Attempting uninstall: setuptools\n    Found existing installation: setuptools 82.0.1\n    Uninstalling setuptools-82.0.1:\n      Successfully uninstalled setuptools-82.0.1\n\nSuccessfully installed MarkupSafe-3.0.3 cuda-bindings-13.3.1 cuda-pathfinder-1.5.5 cuda-toolkit-13.0.2 filelock-3.29.1 fsspec-2026.4.0 jinja2-3.1.6 latent-diffusion-0.0.1 mpmath-1.3.0 networkx-3.6.1 numpy-2.4.6 nvidia-cublas-13.1.1.3 nvidia-cuda-cupti-13.0.85 nvidia-cuda-nvrtc-13.0.88 nvidia-cuda-runtime-13.0.96 nvidia-cudnn-cu13-9.20.0.48 nvidia-cufft-12.0.0.61 nvidia-cufile-1.15.1.6 nvidia-curand-10.4.0.35 nvidia-cusolver-12.0.4.66 nvidia-cusparse-12.6.3.3 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.29.7 nvidia-nvjitlink-13.0.88 nvidia-nvshmem-cu13-3.4.5 nvidia-nvtx-13.0.85 setuptools-81.0.0 sympy-1.14.0 torch-2.12.0 tqdm-4.68.2 triton-3.7.0 typing-extensions-4.15.0\n",
+    "notes": "environment.yml present but built via pip venv (conda build deferred)."
+  },
+  "fair_r": {
+    "total_score": 27.5,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 0.0,
+      "Interoperable": 0.0,
+      "Reusable": 20.0,
+      "Reproducible": 0.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1.1-01M",
+        "severity": "critical",
+        "label": "Data license declared",
+        "fix": "Add a LICENSE file and declare rdip:dataLicense with a SPDX identifier (e.g. CC-BY-4.0)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Image digest pinned",
+        "fix": "Pin your Docker image to a specific digest: FROM image@sha256:<digest>."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "critical",
+        "label": "Random seed declared",
+        "fix": "Declare all random seeds used in training or data splitting as rdip:RandomSeed instances."
+      },
+      {
+        "dimension": "Findable",
+        "rda_indicator": "RDA-F3-01M",
+        "severity": "warning",
+        "label": "Dataset landing page declared",
+        "fix": "Add rdip:datasetLandingPage linking to where your dataset can be accessed."
+      },
+      {
+        "dimension": "Accessible",
+        "rda_indicator": "RDA-A1-01M",
+        "severity": "warning",
+        "label": "Access level declared",
+        "fix": "Declare rdip:accessLevel (open, restricted, or embargoed)."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I1-01M",
+        "severity": "warning",
+        "label": "Method declared",
+        "fix": "Link your ResearchActivity to an rdip:Method instance describing the algorithm used."
+      },
+      {
+        "dimension": "Interoperable",
+        "rda_indicator": "RDA-I2-01M",
+        "severity": "warning",
+        "label": "Workflow language declared",
+        "fix": "Declare rdip:workflowLanguage on your Method (e.g. Python, Snakemake, Nextflow)."
+      },
+      {
+        "dimension": "Reproducible",
+        "rda_indicator": "Novel extension (no RDA equivalent)",
+        "severity": "warning",
+        "label": "Evaluation result linked",
+        "fix": "Link your reported metrics to rdip:EvaluationResult instances with rdip:metricName and rdip:metricValue."
+      }
+    ]
+  },
+  "duration_s": 49.7
+}

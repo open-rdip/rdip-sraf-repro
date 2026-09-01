@@ -1,0 +1,227 @@
+{
+  "study_id": "study055",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study055/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:34:03.045296+00:00",
+  "counts": {
+    "dependencies": 12,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 0,
+    "methods": 20,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GluonTS",
+        "version": "library [ 33]"
+      },
+      {
+        "name": "MLP",
+        "version": null
+      },
+      {
+        "name": "DeepAR",
+        "version": null
+      },
+      {
+        "name": "Transformer",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "pytorch lightning framework",
+        "version": null
+      },
+      {
+        "name": "Adam optimizer",
+        "version": null
+      },
+      {
+        "name": "forecast",
+        "version": null
+      },
+      {
+        "name": "forecTheta",
+        "version": null
+      },
+      {
+        "name": "LSTM",
+        "version": null
+      },
+      {
+        "name": "GRU",
+        "version": null
+      },
+      {
+        "name": "CNN",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": "CPU"
+    },
+    "hyperparameters": [
+      {
+        "name": "MQ loss",
+        "value": "hyperparameter"
+      },
+      {
+        "name": "epochs",
+        "value": "15"
+      },
+      {
+        "name": "learning rate",
+        "value": "0.0005"
+      },
+      {
+        "name": "learning rate annealing",
+        "value": "inverse square root"
+      },
+      {
+        "name": "warm-up period",
+        "value": "400 batches"
+      },
+      {
+        "name": "batch size",
+        "value": "1024"
+      },
+      {
+        "name": "history size",
+        "value": "168 points"
+      },
+      {
+        "name": "prediction size",
+        "value": "48 points"
+      },
+      {
+        "name": "layers",
+        "value": "3"
+      },
+      {
+        "name": "lookback period",
+        "value": "168"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "beta",
+        "value": "0.3"
+      },
+      {
+        "name": "number of layers",
+        "value": "3, 4, 5"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "AQ-NBEATS-FiLM",
+        "description": "similar compute explosion, but clearly better accuracy"
+      },
+      {
+        "name": "AQ-NBEATS-OUT",
+        "description": "compute cost is multiplied by a factor of Qonly for one of the blocks, making it order of magnitude more compute efficient"
+      },
+      {
+        "name": "normalized MQ loss",
+        "description": "may provide improvements, depending on architecture configurations"
+      },
+      {
+        "name": "parametric approach",
+        "description": "assumes a certain PDF for the forecast distribution and involves a forecasting model that produces 5 parameters of this PDF"
+      },
+      {
+        "name": "Gaussian processes",
+        "description": "a viable option for slightly more general modeling"
+      },
+      {
+        "name": "Gaussian mixture model",
+        "description": "handling multi-modality and asymmetry of forecast distribution"
+      },
+      {
+        "name": "normal distribution",
+        "description": "with mean and variance parameters"
+      },
+      {
+        "name": "Student-t distribution",
+        "description": "on top of MLP, DeepAR and Transformer models"
+      },
+      {
+        "name": "AQ-NBEATS",
+        "description": "null"
+      },
+      {
+        "name": "Naive",
+        "description": "seasonal naive method"
+      },
+      {
+        "name": "ARIMA",
+        "description": "null"
+      },
+      {
+        "name": "ES",
+        "description": "null"
+      },
+      {
+        "name": "Theta",
+        "description": "null"
+      },
+      {
+        "name": "Neural models",
+        "description": "null"
+      },
+      {
+        "name": "N-BEATS",
+        "description": "a forecasting architecture"
+      },
+      {
+        "name": "AQ-NBEATS-CAT",
+        "description": "a quantile concatenation scheme"
+      },
+      {
+        "name": "batch size scheduling",
+        "description": "scheduling of batch sizes"
+      },
+      {
+        "name": "learning rate scheduling",
+        "description": "scheduling of learning rates"
+      },
+      {
+        "name": "AQ-ESRNN model",
+        "description": "model architecture with global and time-series specific learnable parameters"
+      },
+      {
+        "name": "ESRNN",
+        "description": "forecasting algorithm"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "better",
+        "split": null
+      },
+      {
+        "metric": "epoch",
+        "value": "5",
+        "split": "train"
+      },
+      {
+        "metric": "training time",
+        "value": "2 days",
+        "split": null
+      }
+    ]
+  }
+}

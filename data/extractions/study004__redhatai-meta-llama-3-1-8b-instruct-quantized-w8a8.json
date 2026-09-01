@@ -1,0 +1,95 @@
+{
+  "study_id": "study004",
+  "backend": "vllm",
+  "model": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study004/ext/redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+  "extracted_at": "2026-06-18T04:09:40.847592+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 3,
+    "methods": 8,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "synthetic dataset",
+        "version": null
+      },
+      {
+        "name": "CIFAR-10",
+        "version": null
+      },
+      {
+        "name": "Synthetic Data",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PAC-Bayesian risk bound",
+        "description": "on neural nets"
+      },
+      {
+        "name": "Neyshabur et al., 2017",
+        "description": ""
+      },
+      {
+        "name": "RMSProp",
+        "description": "sensitive to choice of \u03be"
+      },
+      {
+        "name": "ADAM",
+        "description": "sensitive to choice of \u03be"
+      },
+      {
+        "name": "Tracking \u03bbmin(Hessian )of the loss function",
+        "description": null
+      },
+      {
+        "name": "Comparing performance in the full-batch setting",
+        "description": null
+      },
+      {
+        "name": "Corroborating the full-batch behaviors in the mini-batch setting",
+        "description": null
+      },
+      {
+        "name": "Image Classification on Convolutional Neural Nets",
+        "description": null
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "angular deviation",
+        "value": "KDE",
+        "split": "training"
+      },
+      {
+        "metric": "string",
+        "value": "string",
+        "split": "train"
+      },
+      {
+        "metric": "string",
+        "value": "string",
+        "split": "validation"
+      },
+      {
+        "metric": "string",
+        "value": "string",
+        "split": "test"
+      }
+    ]
+  }
+}

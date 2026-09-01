@@ -1,0 +1,119 @@
+{
+  "study_id": "study031",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study031/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:53:45.963595+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 1,
+    "hyperparameters": 1,
+    "datasets": 3,
+    "methods": 10,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "TensorFlow",
+        "version": "2"
+      },
+      {
+        "name": "Scikit-learn",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      1
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "aspect_ratio",
+        "value": "1:2"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "all datasets",
+        "version": null
+      },
+      {
+        "name": "phytoplankton anomaly dataset",
+        "version": null
+      },
+      {
+        "name": "derived dataset for object detection",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Plankton vs Anomalies",
+        "description": "Experiment comparing plankton to anomalies"
+      },
+      {
+        "name": "Plankton vs Anomalous Plankton",
+        "description": "Experiment comparing plankton to anomalous plankton"
+      },
+      {
+        "name": "Anomalies experiments",
+        "description": "Experiments focusing on anomalies"
+      },
+      {
+        "name": "autoencoder model",
+        "description": "ConvM2-VQVAE1"
+      },
+      {
+        "name": "feature extractor",
+        "description": "HardNet1"
+      },
+      {
+        "name": "autoencoders",
+        "description": "used for phytoplankton parasite detection"
+      },
+      {
+        "name": "autoencoder",
+        "description": "ConvM2-VQVAE1"
+      },
+      {
+        "name": "feature_extractor",
+        "description": "HardNet1"
+      },
+      {
+        "name": "classifier",
+        "description": "Local Outlier Factor one-class classifier"
+      },
+      {
+        "name": "supervised training",
+        "description": "The model is trained in a supervised manner."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "value",
+        "value": "0.72",
+        "split": null
+      },
+      {
+        "metric": "F1 score",
+        "value": "maximal achieved",
+        "split": null
+      },
+      {
+        "metric": "true positive (TP)",
+        "value": null,
+        "split": null
+      },
+      {
+        "metric": "true negative (TN)",
+        "value": null,
+        "split": null
+      }
+    ]
+  }
+}

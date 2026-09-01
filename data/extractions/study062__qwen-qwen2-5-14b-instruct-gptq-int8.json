@@ -1,0 +1,79 @@
+{
+  "study_id": "study062",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study062/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T03:14:00.572591+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 0,
+    "methods": 7,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "jax",
+        "version": null
+      },
+      {
+        "name": "jax.jet",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "larger"
+      },
+      {
+        "name": "training_loss_evaluation_points",
+        "value": "randomly generated"
+      },
+      {
+        "name": "causality parameter \u03f5",
+        "value": "sensitivity noted"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "gradient descent iteration",
+        "description": "Each device updates its own local copy of all trainable model parameters using a global gradient signal broadcasted across all devices."
+      },
+      {
+        "name": "Causal training for PINNs",
+        "description": "Algorithm presenting a general causal training method for Physics-Informed Neural Networks (PINNs). It includes reformulations of residual and initial conditions losses, an annealing scheme for parameter \u03f5, and a stopping criterion based on the convergence of temporal weights wi."
+      },
+      {
+        "name": "causal training strategy",
+        "description": "learning the solution sequentially within separate time-windows, enhancing time-marching approaches."
+      },
+      {
+        "name": "synchronous data-parallelism",
+        "description": "Training across multiple GPUs where each GPU stores an identical copy of all trainable parameters. Batches of training data are split into sub-batches, one for each device."
+      },
+      {
+        "name": "Taylor-mode automatic differentiation",
+        "description": "Employed to accelerate the computation of high-order derivatives using a truncated Taylor polynomial approximation."
+      },
+      {
+        "name": "physics-informed neural network",
+        "description": "training using Algorithm 1"
+      },
+      {
+        "name": "annealing strategy",
+        "description": "adjusting \u03f5 using an increasing sequence of values {\u03f5i}k i=1 to gradually increase the strength with which the PDE residual constraint is enforced"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

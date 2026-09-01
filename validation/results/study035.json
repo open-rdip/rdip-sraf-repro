@@ -1,0 +1,143 @@
+{
+  "study_id": "study035",
+  "repo_url": "https://github.com/mit-han-lab/gan-compression",
+  "started": "2026-06-10T10:40:36.115305+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "conda": "environment.yaml",
+      "pip": "requirements.txt"
+    },
+    "depth_note": "root",
+    "n_found": 2,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "conda",
+        "rel_path": "environment.yaml",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/mit-han-lab/gan-compression",
+    "commit_hash": "111093fc62d459226f052cad5b950c80a3683197",
+    "software_license": "BSD-2-Clause"
+  },
+  "lift": {
+    "lifted": {
+      "conda": "environment.yaml",
+      "pip": "requirements.txt"
+    },
+    "triples": 430,
+    "n_sources": 3
+  },
+  "python": {
+    "declared": "3.8",
+    "source": "conda",
+    "used": "3.8",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": false,
+    "method": "pip-requirements",
+    "stage_failed": "build-install",
+    "duration_s": 369.9,
+    "log_tail": ".0.0-py2.py3-none-any.whl (298 kB)\nUsing cached pycocotools-2.0.7-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (439 kB)\nUsing cached scikit_image-0.19.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (14.0 MB)\nUsing cached imageio-2.9.0-py3-none-any.whl (3.3 MB)\nUsing cached matplotlib-3.5.3-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.3 MB)\nUsing cached networkx-3.1-py3-none-any.whl (2.1 MB)\nUsing cached packaging-26.2-py3-none-any.whl (100 kB)\nUsing cached PyWavelets-1.4.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.9 MB)\nUsing cached setuptools-75.3.4-py3-none-any.whl (1.3 MB)\nUsing cached tifffile-2023.7.10-py3-none-any.whl (220 kB)\nUsing cached wheel-0.45.1-py3-none-any.whl (72 kB)\nUsing cached cycler-0.12.1-py3-none-any.whl (8.3 kB)\nUsing cached fonttools-4.57.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.7 MB)\nUsing cached kiwisolver-1.4.7-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.2 MB)\nUsing cached pyparsing-3.1.4-py3-none-any.whl (104 kB)\nUsing cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)\nWould install Markdown-3.1.1 Pillow-7.0.0 PyWavelets-1.4.1 Werkzeug-1.0.0 absl-py-0.9.0 blessings-1.7 certifi-2019.11.28 cycler-0.12.1 dominate-2.4.0 fonttools-4.57.0 grpcio-1.16.1 imageio-2.9.0 kiwisolver-1.4.7 matplotlib-3.5.3 networkx-3.1 numpy-1.18.1 nvidia-ml-py3-7.352.0 olefile-0.46 opencv-python-4.2.0.32 packaging-26.2 protobuf-3.11.3 psutil-5.7.0 pycocotools-2.0.7 pyparsing-3.1.4 python-dateutil-2.9.0.post0 scikit-image-0.19.3 scipy-1.4.1 setuptools-75.3.4 six-1.14.0 tensorboard-2.0.0 tensorboardX-2.0 tifffile-2023.7.10 torch-1.4.0+cpu torchprofile-0.0.1 torchvision-0.5.0+cpu tqdm-4.42.1 wget-3.2 wheel-0.45.1\n\n$ /tmp/15889/study035/venv/bin/pip install --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study035/study035/requirements.txt\ns)\n        File \"/tmp/15889/study035/venv/lib/python3.8/site-packages/setuptools/_distutils/spawn.py\", line 76, in spawn\n          raise DistutilsExecError(\n      distutils.errors.DistutilsExecError: command '/usr/bin/g++' failed with exit code 1\n      \n      During handling of the above exception, another exception occurred:\n      \n      Traceback (most recent call last):\n        File \"/tmp/pip-install-1ozwvuqe/grpcio_a7af13245ebb4c7cb3e9b3ae6e0d7614/src/python/grpcio/commands.py\", line 301, in build_extensions\n          build_ext.build_ext.build_extensions(self)\n        File \"/tmp/15889/study035/venv/lib/python3.8/site-packages/setuptools/_distutils/command/build_ext.py\", line 476, in build_extensions\n          self._build_extensions_serial()\n        File \"/tmp/15889/study035/venv/lib/python3.8/site-packages/setuptools/_distutils/command/build_ext.py\", line 502, in _build_extensions_serial\n          self.build_extension(ext)\n        File \"/tmp/15889/study035/venv/lib/python3.8/site-packages/setuptools/command/build_ext.py\", line 263, in build_extension\n          _build_ext.build_extension(self, ext)\n        File \"/tmp/15889/study035/venv/lib/python3.8/site-packages/setuptools/_distutils/command/build_ext.py\", line 557, in build_extension\n          objects = self.compiler.compile(\n        File \"/tmp/15889/study035/venv/lib/python3.8/site-packages/setuptools/_distutils/ccompiler.py\", line 606, in compile\n          self._compile(obj, src, ext, cc_args, extra_postargs, pp_opts)\n        File \"/tmp/15889/study035/venv/lib/python3.8/site-packages/setuptools/_distutils/unixccompiler.py\", line 202, in _compile\n          raise CompileError(msg)\n      distutils.errors.CompileError: command '/usr/bin/g++' failed with exit code 1\n      \n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\n  ERROR: Failed building wheel for grpcio\nERROR: Failed to build installable wheels for some pyproject.toml based projects (grpcio)\n",
+    "notes": "environment.yml present but built via pip venv (conda build deferred)."
+  },
+  "fair_r": {
+    "total_score": 51.79,
+    "tier": "fair",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 6.67,
+      "Reusable": 12.5,
+      "Reproducible": 19.5
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 380.4,
+  "fair_r_scorer": "graded-v2"
+}

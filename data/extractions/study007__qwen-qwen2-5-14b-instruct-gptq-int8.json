@@ -1,0 +1,122 @@
+{
+  "study_id": "study007",
+  "backend": "vllm",
+  "model": "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8",
+  "graph_uri": "https://w3id.org/rdip/graph/study007/ext/qwen-qwen2-5-14b-instruct-gptq-int8",
+  "extracted_at": "2026-06-18T02:35:04.538180+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 0,
+    "methods": 9,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "n",
+        "value": "in\ufb01nity"
+      },
+      {
+        "name": "\u03b3",
+        "value": "0.99"
+      },
+      {
+        "name": "i(s)",
+        "value": "1"
+      },
+      {
+        "name": "target policy temperature \u03c4",
+        "value": "0.01"
+      },
+      {
+        "name": "behavior policy \u03f5",
+        "value": "0.95"
+      },
+      {
+        "name": "behavior policy temperature \u03c4",
+        "value": "1"
+      },
+      {
+        "name": "probability of using fixed behavior policy",
+        "value": "0.9"
+      },
+      {
+        "name": "temperature of softmax policy",
+        "value": "1"
+      },
+      {
+        "name": "discount_factor",
+        "value": "0.99"
+      },
+      {
+        "name": "learning_rate",
+        "value": "\u03b1"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Algorithm 4",
+        "description": "Benchmarked with different selections of n and its \u03b2-variant"
+      },
+      {
+        "name": "tile coding",
+        "description": "mapping four-dimensional observation to a binary vector in R1024 using the tile coding software recommended in Chapter 10.1 of Sutton and Barto (2018)"
+      },
+      {
+        "name": "linear function approximation",
+        "description": "applied after mapping observations with tile coding"
+      },
+      {
+        "name": "softmax policy",
+        "description": "used as target policy with temperature \u03c4=0.01"
+      },
+      {
+        "name": "\u03f5-softmax policy",
+        "description": "used as behavior policy with \u03f5=0.95 and temperature \u03c4=1"
+      },
+      {
+        "name": "hard truncation",
+        "description": "compared favorably to soft truncation in empirical results"
+      },
+      {
+        "name": "Truncated Emphatic TD methods",
+        "description": "Used in the CartPole domain, a classical non-synthetic control problem."
+      },
+      {
+        "name": "truncation_length",
+        "description": "n"
+      },
+      {
+        "name": "expected_SARSA",
+        "description": "naive off-policy expected SARSA without follow-on trace"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "averaged undiscounted episodic return",
+        "value": null,
+        "split": "test"
+      },
+      {
+        "metric": "evaluation return",
+        "value": "barely learns anything",
+        "split": "end of the training"
+      },
+      {
+        "metric": "evaluation return",
+        "value": "better performance in the middle of the training but drops near the end",
+        "split": "middle of the training"
+      }
+    ]
+  }
+}

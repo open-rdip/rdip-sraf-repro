@@ -1,0 +1,170 @@
+{
+  "study_id": "study004",
+  "repo_url": "https://github.com/impredicative/irc-url-title-bot",
+  "started": "2026-06-10T08:25:53.040489+00:00",
+  "status": "ok",
+  "stage": null,
+  "artifacts": {
+    "by_type": {
+      "docker": "Dockerfile",
+      "pip": "requirements.txt",
+      "setup": "pyproject.toml"
+    },
+    "depth_note": "root",
+    "n_found": 4,
+    "all": [
+      {
+        "type": "pip",
+        "rel_path": "requirements.txt",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "setup.cfg",
+        "depth": 0
+      },
+      {
+        "type": "setup",
+        "rel_path": "pyproject.toml",
+        "depth": 0
+      },
+      {
+        "type": "docker",
+        "rel_path": "Dockerfile",
+        "depth": 0
+      }
+    ]
+  },
+  "repo_meta": {
+    "identifier": "https://github.com/impredicative/irc-url-title-bot",
+    "commit_hash": "2e8e4b739f1cc9bbb4a069c7476f010eb2115188",
+    "software_license": "GPL-3.0"
+  },
+  "lift": {
+    "lifted": {
+      "docker": "Dockerfile",
+      "pip": "requirements.txt"
+    },
+    "triples": 113,
+    "n_sources": 3
+  },
+  "python": {
+    "declared": "3.9",
+    "source": "dockerfile",
+    "used": "3.9",
+    "ladder_available": true
+  },
+  "build": {
+    "attempted": true,
+    "resolve_success": true,
+    "build_success": true,
+    "method": "pip-requirements",
+    "stage_failed": null,
+    "duration_s": 148.6,
+    "log_tail": "low-9.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.6 kB)\nCollecting platformdirs==2.5.1 (from -r /tmp/15889/study004/study004/requirements.txt (line 31))\n  Using cached platformdirs-2.5.1-py3-none-any.whl.metadata (9.1 kB)\nCollecting pyparsing==3.0.7 (from -r /tmp/15889/study004/study004/requirements.txt (line 33))\n  Using cached pyparsing-3.0.7-py3-none-any.whl.metadata (4.2 kB)\nCollecting ruamel-yaml==0.17.21 (from -r /tmp/15889/study004/study004/requirements.txt (line 35))\n  Using cached ruamel.yaml-0.17.21-py3-none-any.whl.metadata (13 kB)\nCollecting ruamel-yaml-clib==0.2.6 (from -r /tmp/15889/study004/study004/requirements.txt (line 37))\n  Using cached ruamel.yaml.clib-0.2.6-cp39-cp39-manylinux1_x86_64.whl.metadata (2.1 kB)\nCollecting soupsieve==2.3.1 (from -r /tmp/15889/study004/study004/requirements.txt (line 39))\n  Using cached soupsieve-2.3.1-py3-none-any.whl.metadata (5.6 kB)\nCollecting uritools==4.0.0 (from -r /tmp/15889/study004/study004/requirements.txt (line 41))\n  Using cached uritools-4.0.0-py3-none-any.whl.metadata (4.5 kB)\nCollecting urlextract==1.5.0 (from -r /tmp/15889/study004/study004/requirements.txt (line 43))\n  Using cached urlextract-1.5.0-py3-none-any.whl.metadata (5.3 kB)\nCollecting urltitle==0.3.8 (from -r /tmp/15889/study004/study004/requirements.txt (line 45))\n  Using cached urltitle-0.3.8-py3-none-any.whl.metadata (6.7 kB)\nWould install Pillow-9.0.1 beautifulsoup4-4.10.0 cachetools-5.0.0 certifi-2021.10.8 filelock-3.6.0 humanize-4.0.0 idna-3.3 ircstyle-0.1.5 lxml-4.8.0 miniirc-1.6.3 packaging-21.3 pikepdf-5.0.1 platformdirs-2.5.1 pyparsing-3.0.7 ruamel.yaml-0.17.21 ruamel.yaml.clib-0.2.6 soupsieve-2.3.1 uritools-4.0.0 urlextract-1.5.0 urltitle-0.3.8\n\n$ /tmp/15889/study004/venv/bin/pip install --extra-index-url https://download.pytorch.org/whl/cu121 --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cpu -r /tmp/15889/study004/study004/requirements.txt\nnone-any.whl (97 kB)\nUsing cached idna-3.3-py3-none-any.whl (61 kB)\nUsing cached ircstyle-0.1.5-py3-none-any.whl (5.0 kB)\nUsing cached lxml-4.8.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (6.9 MB)\nUsing cached miniirc-1.6.3-py3-none-any.whl (15 kB)\nUsing cached packaging-21.3-py3-none-any.whl (40 kB)\nUsing cached pikepdf-5.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.3 MB)\nUsing cached Pillow-9.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.3 MB)\nUsing cached platformdirs-2.5.1-py3-none-any.whl (14 kB)\nUsing cached pyparsing-3.0.7-py3-none-any.whl (98 kB)\nUsing cached ruamel.yaml-0.17.21-py3-none-any.whl (109 kB)\nUsing cached ruamel.yaml.clib-0.2.6-cp39-cp39-manylinux1_x86_64.whl (539 kB)\nUsing cached soupsieve-2.3.1-py3-none-any.whl (37 kB)\nUsing cached uritools-4.0.0-py3-none-any.whl (10 kB)\nUsing cached urlextract-1.5.0-py3-none-any.whl (20 kB)\nUsing cached urltitle-0.3.8-py3-none-any.whl (37 kB)\nInstalling collected packages: certifi, uritools, soupsieve, ruamel-yaml-clib, pyparsing, platformdirs, pillow, miniirc, lxml, ircstyle, idna, humanize, filelock, cachetools, urlextract, ruamel-yaml, packaging, beautifulsoup4, pikepdf, urltitle\n  Attempting uninstall: packaging\n    Found existing installation: packaging 26.2\n    Uninstalling packaging-26.2:\n      Successfully uninstalled packaging-26.2\n\nSuccessfully installed beautifulsoup4-4.10.0 cachetools-5.0.0 certifi-2021.10.8 filelock-3.6.0 humanize-4.0.0 idna-3.3 ircstyle-0.1.5 lxml-4.8.0 miniirc-1.6.3 packaging-21.3 pikepdf-5.0.1 pillow-9.0.1 platformdirs-2.5.1 pyparsing-3.0.7 ruamel-yaml-0.17.21 ruamel-yaml-clib-0.2.6 soupsieve-2.3.1 uritools-4.0.0 urlextract-1.5.0 urltitle-0.3.8\nERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\nwheel 0.47.0 requires packaging>=24.0, but you have packaging 21.3 which is incompatible.\n",
+    "notes": ""
+  },
+  "fair_r": {
+    "total_score": 40.62,
+    "tier": "poor",
+    "dimension_scores": {
+      "Findable": 7.5,
+      "Accessible": 5.62,
+      "Interoperable": 0.0,
+      "Reusable": 12.5,
+      "Reproducible": 15.0
+    },
+    "recommendations": [
+      {
+        "dimension": "Reusable",
+        "label": "Community standard",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Adopt a community metadata / file-format standard.",
+        "points_available": 7.5
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Data licence",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Declare a machine-readable data licence (SPDX identifier).",
+        "points_available": 5.62
+      },
+      {
+        "dimension": "Findable",
+        "label": "Landing page",
+        "priority": "essential",
+        "level": "absent",
+        "fix": "Link a landing page where the dataset can be accessed.",
+        "points_available": 5.0
+      },
+      {
+        "dimension": "Findable",
+        "label": "Persistent identifier",
+        "priority": "essential",
+        "level": "partial",
+        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
+        "points_available": 2.5
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Method declared",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link the activity to an rdip:Method describing the algorithm used.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Workflow language",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Interoperable",
+        "label": "Related links",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Link related entities (datasets, publications) via typed relations.",
+        "points_available": 6.67
+      },
+      {
+        "dimension": "Accessible",
+        "label": "Access level",
+        "priority": "important",
+        "level": "absent",
+        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
+        "points_available": 3.75
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Computational environment (R1)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Pin the environment: image digest (FROM \u2026@sha256) and exact dependency versions.",
+        "points_available": 6.0
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Methodological transparency (R2)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Data provenance (R3)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Record dataset identity, train/val/test splits, preprocessing, and evaluation results.",
+        "points_available": 4.5
+      }
+    ]
+  },
+  "duration_s": 150.3,
+  "fair_r_scorer": "graded-v2"
+}

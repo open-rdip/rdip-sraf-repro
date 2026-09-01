@@ -1,0 +1,108 @@
+{
+  "study_id": "study050",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study050/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:48:05.267294+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 3,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "OpenAI Gym",
+        "version": null
+      },
+      {
+        "name": "Adam",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b1",
+        "value": "0.1"
+      },
+      {
+        "name": "\u03b3",
+        "value": "1"
+      },
+      {
+        "name": "\u03f5-greedy",
+        "value": null
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.1"
+      },
+      {
+        "name": "gamma",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Blackjack",
+        "version": null
+      },
+      {
+        "name": "Cartpole",
+        "version": null
+      },
+      {
+        "name": "Taxi",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Q-Learning",
+        "description": null
+      },
+      {
+        "name": "Forward Simulation",
+        "description": null
+      },
+      {
+        "name": "deep Q-Learning",
+        "description": null
+      },
+      {
+        "name": "Temporal Difference",
+        "description": ""
+      },
+      {
+        "name": "Monte Carlo",
+        "description": ""
+      },
+      {
+        "name": "\u03f5-greedy",
+        "description": ""
+      },
+      {
+        "name": "Deep Belief Network",
+        "description": "DBN trained using the same hyperparameters"
+      },
+      {
+        "name": "DQN",
+        "description": "DQN used \u03b1= 0.0001,\u03b3= 1for100kepisodes"
+      },
+      {
+        "name": "DBN",
+        "description": "Deep Belief Network"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

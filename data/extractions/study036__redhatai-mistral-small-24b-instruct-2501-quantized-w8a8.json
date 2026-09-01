@@ -1,0 +1,206 @@
+{
+  "study_id": "study036",
+  "backend": "vllm",
+  "model": "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8",
+  "graph_uri": "https://w3id.org/rdip/graph/study036/ext/redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+  "extracted_at": "2026-06-18T05:36:27.139138+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 8,
+    "methods": 11,
+    "evaluation_results": 18
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "T5",
+        "version": "small and base; Raffel et al. 2020"
+      },
+      {
+        "name": "RoBERTa",
+        "version": "Mikolovetal.2013;Liuetal.2019"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "GPQA",
+        "version": null
+      },
+      {
+        "name": "GPQA Diamond",
+        "version": null
+      },
+      {
+        "name": "SQuAD",
+        "version": null
+      },
+      {
+        "name": "NaturalQuestions",
+        "version": null
+      },
+      {
+        "name": "extended set of questions",
+        "version": null
+      },
+      {
+        "name": "main set",
+        "version": null
+      },
+      {
+        "name": "diamond set",
+        "version": null
+      },
+      {
+        "name": "extended set",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "closed-book",
+        "description": "the model doesn\u2019t have runtime access to external information beyond the question, the prompt, and the model\u2019s own parameters"
+      },
+      {
+        "name": "open-book",
+        "description": "the model has access to an internet search tool and internet references returned by the searches"
+      },
+      {
+        "name": "Zero-Shot GPT-4",
+        "description": ""
+      },
+      {
+        "name": "Few-Shot GPT-4",
+        "description": ""
+      },
+      {
+        "name": "Zero-Shot CoT GPT-4",
+        "description": ""
+      },
+      {
+        "name": "Few-Shot CoT GPT-4",
+        "description": ""
+      },
+      {
+        "name": "GPT-4 with search",
+        "description": ""
+      },
+      {
+        "name": "non-expert validator accuracy measurement",
+        "description": "For each question, we have three individuals with expertise in domains different from the question\u2019s domain attempt to answer the question, to the best of their ability."
+      },
+      {
+        "name": "scalable oversight experiments",
+        "description": "a non-expert interacts with an unreliable model to try to achieve accuracy close to that of the expert validators"
+      },
+      {
+        "name": "red teaming",
+        "description": ""
+      },
+      {
+        "name": "sandwiching experiments",
+        "description": ""
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "38%",
+        "split": null
+      },
+      {
+        "metric": "abstention rate",
+        "value": "37.2%",
+        "split": "main set"
+      },
+      {
+        "metric": "31.3",
+        "value": "31.3",
+        "split": null
+      },
+      {
+        "metric": "32",
+        "value": ".1",
+        "split": null
+      },
+      {
+        "metric": "34",
+        "value": ".2",
+        "split": null
+      },
+      {
+        "metric": "38.1",
+        "value": "38.1",
+        "split": null
+      },
+      {
+        "metric": "38",
+        "value": ".1",
+        "split": null
+      },
+      {
+        "metric": "39",
+        "value": ".3",
+        "split": null
+      },
+      {
+        "metric": "35",
+        "value": ".7",
+        "split": null
+      },
+      {
+        "metric": "38.7",
+        "value": "38.7",
+        "split": null
+      },
+      {
+        "metric": "28.2",
+        "value": "28.2",
+        "split": null
+      },
+      {
+        "metric": "28",
+        "value": ".7",
+        "split": null
+      },
+      {
+        "metric": "27",
+        "value": ".6",
+        "split": null
+      },
+      {
+        "metric": "non-expert validator accuracy",
+        "value": "34.1%\u00b12.3%",
+        "split": null
+      },
+      {
+        "metric": "non-expert accuracy",
+        "value": "much lower than non-expert accuracy on the extended set",
+        "split": "main set"
+      },
+      {
+        "metric": "non-expert accuracy",
+        "value": "much lower than non-expert accuracy on the extended set",
+        "split": "diamond set"
+      },
+      {
+        "metric": "non-expert accuracy",
+        "value": "much lower than non-expert accuracy on the extended set",
+        "split": "extended set"
+      },
+      {
+        "metric": "best-performing baseline",
+        "value": "slightly better than non-expert validators on the extended set",
+        "split": null
+      }
+    ]
+  }
+}
