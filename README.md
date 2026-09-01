@@ -61,7 +61,9 @@ python -m result_repro.summarize          # writes result_repro/results/report.m
 ```
 
 Run the positive controls by pointing the same jobs at the validation manifest:
-`--export=ALL,MANIFEST=result_repro/validation_manifest.yaml`.
+```bash
+--export=ALL,MANIFEST=result_repro/validation_manifest.yaml
+```
 
 ## Data & corpus
 
