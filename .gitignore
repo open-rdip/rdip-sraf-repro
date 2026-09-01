@@ -32,3 +32,8 @@ logs/*.log
 *.tmp
 # result-repro generated outputs
 result_repro/results/
+
+# more caches / backups
+.pytest_cache/
+pytest-cache-files-*/
+*.bak
