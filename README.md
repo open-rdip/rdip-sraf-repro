@@ -1,4 +1,4 @@
-# RDIP-SRE — Reproducibility Auditing and Result-Level Reproduction for ML Research
+# RDIP-SRAF — Reproducibility Auditing and Result-Level Reproduction for ML Research
 
 Software artifact behind three papers:
 
@@ -69,4 +69,5 @@ The corpus of 95 ML papers / 96 repositories, the per-study RDIP graphs, and the
 
 ## License
 
-**TODO: add a license file** (e.g., MIT or Apache-2.0). A clear license is required for reuse — and, fittingly, is the strongest predictor of reproducibility in our own study.
+SRAF: [MIT License](https://opensource.org/licenses/MIT)
+Code: [MIT License](https://opensource.org/licenses/MIT)
