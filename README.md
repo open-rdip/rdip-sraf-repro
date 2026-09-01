@@ -69,5 +69,5 @@ The corpus of 95 ML papers / 96 repositories, the per-study RDIP graphs, and the
 
 ## License
 
-SRAF: [MIT License](https://opensource.org/licenses/MIT)
-Code: [MIT License](https://opensource.org/licenses/MIT)
+- SRAF: [MIT License](https://opensource.org/licenses/MIT)
+- Code: [MIT License](https://opensource.org/licenses/MIT)
