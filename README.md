@@ -2,9 +2,9 @@
 
 Software artifact behind three papers:
 
-- **RDIP ontology** — *Enabling FAIR Research Lifecycle Provenance: The RDIP Project-Centric Integration Profile* (TPDL 2026).
-- **SRAF** — *SRAF: An Ontology-Grounded Knowledge Graph Framework for Auditing the Reproducibility of Machine-Learning Research* (IJCKG 2026, main track).
-- **Result-level reproduction** — *From Builds to Numbers: Engine-Driven Result-Level Reproduction of Machine-Learning Papers and a Taxonomy of Failure* (IJCKG 2026, workshop).
+- **RDIP ontology** — *Enabling FAIR Research Lifecycle Provenance: The RDIP Project-Centric Integration Profile* (TPDL 2026). **Accepted**
+- **SRAF** — *SRAF: An Ontology-Grounded Knowledge Graph Framework for Auditing the Reproducibility of Machine-Learning Research* (IJCKG 2026, main track). **Accepted**
+- **Result-level reproduction** — *From Builds to Numbers: Engine-Driven Result-Level Reproduction of Machine-Learning Papers and a Taxonomy of Failure* (IJCKG 2026, workshop). **Submitted**
 
 The pipeline does three things in order: **describe** a study as an RDIP knowledge graph, **measure** its reproducibility with the graded FAIR-R score, and **test** whether it actually reproduces by re-running the code.
 
