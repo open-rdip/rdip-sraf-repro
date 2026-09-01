@@ -1,4 +1,4 @@
-# RDIP-SRAF — Reproducibility Auditing and Result-Level Reproduction for ML Research
+# RDIP-SRAF: Reproducibility Auditing and Result-Level Reproduction for ML Research
 
 Software artifact behind three papers:
 
