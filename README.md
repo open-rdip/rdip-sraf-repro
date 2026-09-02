@@ -68,8 +68,3 @@ Run the positive controls by pointing the same jobs at the validation manifest:
 ## Data & corpus
 
 The corpus of 95 ML papers / 96 repositories, the per-study RDIP graphs, and the human-verified ground truth are archived on Zenodo (`doi:10.5281/zenodo.19919042`). Paper PDFs and cloned repositories are not committed here (see `.gitignore`).
-
-## License
-
-- SRAF: [MIT License](https://opensource.org/licenses/MIT)
-- Code: [MIT License](https://opensource.org/licenses/MIT)
