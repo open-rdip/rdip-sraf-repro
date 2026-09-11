@@ -14,7 +14,12 @@ name: Build and publish the SRAF engine container
 
 on:
   push:
-    branches: [main]
+    # `extension` is the active working branch for the journal extension; `main`
+    # is the default branch. Both build, so the image tracks whichever branch is
+    # current. Note that workflow_dispatch only appears in the Actions UI once
+    # this file exists on the DEFAULT branch — that is a GitHub rule, not a
+    # setting we control.
+    branches: [main, extension]
     paths:
       - 'containers/sraf-engine.Dockerfile'
       - 'requirements.txt'
@@ -47,7 +52,11 @@ jobs:
         with:
           images: ghcr.io/${{ github.repository_owner }}/sraf-engine
           tags: |
+            # `latest` only ever points at the default branch, so a build from
+            # `extension` also gets a branch tag — otherwise nothing pullable by
+            # name exists for it.
             type=raw,value=latest,enable={{is_default_branch}}
+            type=ref,event=branch
             type=ref,event=tag
             type=sha,format=long
 

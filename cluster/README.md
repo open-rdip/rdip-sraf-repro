@@ -73,6 +73,10 @@ cp .env.example .env          # then edit .env: real OPENAI_API_KEY / GOOGLE_API
 mkdir -p ~/images
 singularity pull ~/images/sraf-engine.sif \
     docker://ghcr.io/open-rdip/sraf-engine:latest
+# While work is on the `extension` branch, `latest` tracks `main`; pull the
+# branch tag instead:
+#   singularity pull ~/images/sraf-engine.sif \
+#       docker://ghcr.io/open-rdip/sraf-engine:extension
 # For a reproducible run, pull the digest rather than the tag:
 #   singularity pull ~/images/sraf-engine.sif \
 #       docker://ghcr.io/open-rdip/sraf-engine@sha256:<digest>
