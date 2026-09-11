@@ -1,0 +1,534 @@
+{
+  "summary": {
+    "n_total": 26,
+    "n_recipe_extracted": 13,
+    "n_ran": 0,
+    "n_reproduced": 0,
+    "reproduced_of_ran": null,
+    "status_counts": {
+      "skipped": 9,
+      "run_failed": 17
+    },
+    "blocker_taxonomy": {
+      "SKIP out-of-scale: PPL on BLOOM-176B / OPT-66B, beyond 1x48GB GPU": 1,
+      "recipe had no run command": 4,
+      "placeholder_recipe": 7,
+      "SKIP repo<->paper mismatch: repo is an IRC URL-title bot": 1,
+      "SKIP no claimed number and repo<->paper mismatch (eDiff-I has no public code)": 1,
+      "missing_system_dep:mujoco": 1,
+      "dead_download:404": 1,
+      "SKIP repo<->paper mismatch: repo is the Zenodo platform, not COOS": 1,
+      "missing_dependency:torch": 2,
+      "SKIP no numeric claim captured": 1,
+      "SKIP hardware-bound metric: steps per second (throughput)": 1,
+      "SKIP hardware-bound metric: processing time (seconds)": 1,
+      "missing_file_or_data": 1,
+      "SKIP production A/B metric (Pinterest online gains), not repo-reproducible": 1,
+      "SKIP needs mobile device/emulator + external VLM API": 1,
+      "missing_dependency:pip": 1
+    }
+  },
+  "rows": [
+    {
+      "study_id": "study001",
+      "status": "skipped",
+      "reason": "SKIP out-of-scale: PPL on BLOOM-176B / OPT-66B, beyond 1x48GB GPU",
+      "pairs": []
+    },
+    {
+      "study_id": "study002",
+      "repo_url": "https://github.com/dice-group/dice-embeddings",
+      "claimed": [
+        {
+          "metric": "MRR",
+          "claimed": "0.1",
+          "split": "test",
+          "dataset": "benchmark"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": null,
+      "recipe_confidence": "low",
+      "recipe_source": "extracted",
+      "log_tail": "",
+      "status": "run_failed",
+      "reason": "recipe had no run command"
+    },
+    {
+      "study_id": "study003",
+      "repo_url": "https://github.com/zhimengxin/rcod",
+      "claimed": [
+        {
+          "metric": "S_alpha",
+          "claimed": "77.0",
+          "split": "test",
+          "dataset": "SINet"
+        },
+        {
+          "metric": "S_alpha",
+          "claimed": "81.1",
+          "split": "test",
+          "dataset": "SegMaR"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": "python tools/test.py configs/glip/glip_swin_tiny_cafr.py /path/to/ckpt --eval mAP",
+      "recipe_confidence": "low",
+      "recipe_source": "extracted",
+      "status": "run_failed",
+      "reason": "placeholder_recipe"
+    },
+    {
+      "study_id": "study004",
+      "status": "skipped",
+      "reason": "SKIP repo<->paper mismatch: repo is an IRC URL-title bot",
+      "pairs": []
+    },
+    {
+      "study_id": "study005",
+      "status": "skipped",
+      "reason": "SKIP no claimed number and repo<->paper mismatch (eDiff-I has no public code)",
+      "pairs": []
+    },
+    {
+      "study_id": "study006",
+      "repo_url": "https://github.com/baitingluo/l-map",
+      "claimed": [
+        {
+          "metric": "Average Score",
+          "claimed": "105.74 \u00b1 2.24",
+          "split": "test",
+          "dataset": "Medium-Expert Hopper (Deterministic)"
+        },
+        {
+          "metric": "Average Score",
+          "claimed": "73.90 \u00b1 1.91",
+          "split": "test",
+          "dataset": "Medium Hopper (Deterministic)"
+        },
+        {
+          "metric": "Average Score",
+          "claimed": "91.18 \u00b1 0.56",
+          "split": "test",
+          "dataset": "Medium-Replay Hopper (Deterministic)"
+        },
+        {
+          "metric": "Average Score",
+          "claimed": "106.11 \u00b1 2.16",
+          "split": "test",
+          "dataset": "Medium-Expert-Mod Hopper (Moderate Stochasticity)"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": "CUDA_VISIBLE_DEVICES=0 python scripts/plan.py --test_planner MCTS_P --dataset hopper-medium-replay-v2 --exp_name T-1-1 --suffix 1 --initial_width 16 --b_percent 0.5 --n_expand 4 --n_actions 4 --action_percent 0.5 --pw_alpha 0.1 --mcts_itr 100 --depth 5",
+      "recipe_confidence": "high",
+      "recipe_source": "extracted",
+      "log_tail": "DME to install MuJoCo\n\n    https://github.com/openai/mujoco-py#install-mujoco\n\nWhich can be downloaded from the website\n\n    https://www.roboti.us/index.html\n\nTraceback (most recent call last):\n  File \"/tmp/repro-study006-uqhwzz8k/repo/scripts/plan.py\", line 6, in <module>\n    import latentplan.utils as utils\n  File \"/tmp/repro-study006-uqhwzz8k/repo/latentplan/utils/__init__.py\", line 5, in <module>\n    from .rendering import make_renderer\n  File \"/tmp/repro-study006-uqhwzz8k/repo/latentplan/utils/rendering.py\", line 8, in <module>\n    import mujoco_py as mjc\n  File \"/tmp/repro-study006-uqhwzz8k/repo/.venv/lib/python3.10/site-packages/mujoco_py/__init__.py\", line 2, in <module>\n    from mujoco_py.builder import cymj, ignore_mujoco_warnings, functions, MujocoException\n  File \"/tmp/repro-study006-uqhwzz8k/repo/.venv/lib/python3.10/site-packages/mujoco_py/builder.py\", line 503, in <module>\n    mujoco_path = discover_mujoco()\n  File \"/tmp/repro-study006-uqhwzz8k/repo/.venv/lib/python3.10/site-packages/mujoco_py/utils.py\", line 78, in discover_mujoco\n    raise Exception(message)\nException: \nYou appear to be missing MuJoCo.  We expected to find the file here: /home/dsai-st125286p/.mujoco/mujoco210\n\nThis package only provides python bindings, the library must be installed separately.\n\nPlease follow the instructions on the README to install MuJoCo\n\n    https://github.com/openai/mujoco-py#install-mujoco\n\nWhich can be downloaded from the website\n\n    https://www.roboti.us/index.html\n\n",
+      "status": "run_failed",
+      "reason": "missing_system_dep:mujoco"
+    },
+    {
+      "study_id": "study007",
+      "repo_url": "https://github.com/ShangtongZhang/DeepRL",
+      "claimed": [
+        {
+          "metric": "Average variance",
+          "claimed": "7 * 10^3",
+          "split": "test",
+          "dataset": "Stochastic MuJoCo"
+        },
+        {
+          "metric": "Average variance",
+          "claimed": "1.8 * 10^4",
+          "split": "test",
+          "dataset": "Stochastic MuJoCo"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": null,
+      "recipe_confidence": "low",
+      "recipe_source": "extracted",
+      "log_tail": "",
+      "status": "run_failed",
+      "reason": "recipe had no run command"
+    },
+    {
+      "study_id": "study008",
+      "repo_url": "https://github.com/konstantinjdobler/tight-budget-llm-adaptation",
+      "claimed": [
+        {
+          "metric": "Avg. German test splits",
+          "claimed": "47.2",
+          "split": "test",
+          "dataset": "German test splits (pure bfloat16)"
+        },
+        {
+          "metric": "Avg. German test splits",
+          "claimed": "46.1",
+          "split": "test",
+          "dataset": "German test splits (mixed precision)"
+        },
+        {
+          "metric": "MMLU",
+          "claimed": "59.7",
+          "split": "test",
+          "dataset": "German (pure bfloat16)"
+        },
+        {
+          "metric": "HellaSwag",
+          "claimed": "35.9",
+          "split": "test",
+          "dataset": "German (pure bfloat16)"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": "python eval_de.py --model hf-causal --model_args \"pretrained=/path/to/ckpt\" --device cuda:0 --output_path /path/to/outdir/output.json --csv_path /path/to/outdir/results.csv",
+      "recipe_confidence": "low",
+      "recipe_source": "extracted",
+      "status": "run_failed",
+      "reason": "placeholder_recipe"
+    },
+    {
+      "study_id": "study009",
+      "repo_url": "https://github.com/open-mmlab/mmpose",
+      "claimed": [
+        {
+          "metric": "AP",
+          "claimed": "70.5%",
+          "split": "test-dev",
+          "dataset": "COCO2017"
+        },
+        {
+          "metric": "AP",
+          "claimed": "67.6%",
+          "split": "test",
+          "dataset": "CrowdPose"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": "python tools/test.py configs/wholebody_2d_keypoint/rtmpose/cocktail14/rtmw_cocktail14_256x192.py --checkpoint checkpoints/rtmw_cocktail14_256x192-100e_20231205_154204-100e.pth --eval mAP",
+      "recipe_confidence": "high",
+      "recipe_source": "extracted",
+      "log_tail": "n self._get_build_requires(config_settings, requirements=[])\n        File \"/tmp/pip-build-env-vrdsdaxk/overlay/lib/python3.10/site-packages/setuptools/build_meta.py\", line 301, in _get_build_requires\n          self.run_setup()\n        File \"/tmp/pip-build-env-vrdsdaxk/overlay/lib/python3.10/site-packages/setuptools/build_meta.py\", line 520, in run_setup\n          super().run_setup(setup_script=setup_script)\n        File \"/tmp/pip-build-env-vrdsdaxk/overlay/lib/python3.10/site-packages/setuptools/build_meta.py\", line 317, in run_setup\n          exec(code, locals())  # noqa: S102 # exec is intentional here\n        File \"<string>\", line 11, in <module>\n      ModuleNotFoundError: No module named 'pip'\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nERROR: Failed to build 'chumpy' when getting requirements to build wheel\n--2026-08-25 10:02:12--  https://download.openmmlab.com/mmpose/rtmpose/rtmw_cocktail14_256x192-100e_20231205_154204-100e.pth\nResolving download.openmmlab.com (download.openmmlab.com)... 155.102.13.25, 155.102.13.26, 155.102.13.19, ...\nConnecting to download.openmmlab.com (download.openmmlab.com)|155.102.13.25|:443... connected.\nHTTP request sent, awaiting response... 404 Not Found\n2026-08-25 10:02:18 ERROR 404: Not Found.\n\nTraceback (most recent call last):\n  File \"/tmp/repro-study009-ol6ehjon/repo/tools/test.py\", line 6, in <module>\n    import mmengine\nModuleNotFoundError: No module named 'mmengine'\n",
+      "status": "run_failed",
+      "reason": "dead_download:404"
+    },
+    {
+      "study_id": "study010",
+      "repo_url": "https://github.com/open-mmlab/mmocr",
+      "claimed": [
+        {
+          "metric": "AP",
+          "claimed": "70.5%",
+          "split": "test-dev",
+          "dataset": "COCO2017"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": null,
+      "recipe_confidence": "low",
+      "recipe_source": "extracted",
+      "log_tail": "",
+      "status": "run_failed",
+      "reason": "recipe had no run command"
+    },
+    {
+      "study_id": "study011",
+      "repo_url": "https://github.com/open-mmlab/mmclassification",
+      "claimed": [
+        {
+          "metric": "top-1 accuracy",
+          "claimed": "over 80%",
+          "split": "test",
+          "dataset": "ImageNet "
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": null,
+      "recipe_confidence": "low",
+      "recipe_source": "extracted",
+      "log_tail": "",
+      "status": "run_failed",
+      "reason": "recipe had no run command"
+    },
+    {
+      "study_id": "study012",
+      "repo_url": "https://github.com/open-mmlab/mmsegmentation",
+      "claimed": [
+        {
+          "metric": "PQ",
+          "claimed": "40.9",
+          "split": "test",
+          "dataset": "COCO"
+        },
+        {
+          "metric": "PQ",
+          "claimed": "58.1",
+          "split": "test",
+          "dataset": "Cityscapes"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": "python tools/test.py configs/pspnet/pspnet_r50-d8_512x1024_80k_cityscapes.py /path/to/checkpoint --eval mIoU",
+      "recipe_confidence": "low",
+      "recipe_source": "extracted",
+      "status": "run_failed",
+      "reason": "placeholder_recipe"
+    },
+    {
+      "study_id": "study013",
+      "status": "skipped",
+      "reason": "SKIP repo<->paper mismatch: repo is the Zenodo platform, not COOS",
+      "pairs": []
+    },
+    {
+      "study_id": "study014",
+      "repo_url": "https://github.com/open-mmlab/mmdetection3d",
+      "claimed": [
+        {
+          "metric": "mAP",
+          "claimed": "67.2%",
+          "split": "test",
+          "dataset": "ScanNet"
+        },
+        {
+          "metric": "mAP",
+          "claimed": "60.1%",
+          "split": "test",
+          "dataset": "SUN RGB-D"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": "python tools/test.py configs/second/second_8x8_160e_kitti-3d-3class.py",
+      "recipe_confidence": "high",
+      "recipe_source": "extracted",
+      "log_tail": "/site-packages/setuptools/build_meta.py\", line 481, in get_requires_for_build_editable\n          return self.get_requires_for_build_wheel(config_settings)\n        File \"/tmp/pip-build-env-niwhfc5u/overlay/lib/python3.10/site-packages/setuptools/build_meta.py\", line 333, in get_requires_for_build_wheel\n          return self._get_build_requires(config_settings, requirements=[])\n        File \"/tmp/pip-build-env-niwhfc5u/overlay/lib/python3.10/site-packages/setuptools/build_meta.py\", line 301, in _get_build_requires\n          self.run_setup()\n        File \"/tmp/pip-build-env-niwhfc5u/overlay/lib/python3.10/site-packages/setuptools/build_meta.py\", line 520, in run_setup\n          super().run_setup(setup_script=setup_script)\n        File \"/tmp/pip-build-env-niwhfc5u/overlay/lib/python3.10/site-packages/setuptools/build_meta.py\", line 317, in run_setup\n          exec(code, locals())  # noqa: S102 # exec is intentional here\n        File \"<string>\", line 10, in <module>\n      ModuleNotFoundError: No module named 'torch'\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nERROR: Failed to build 'file:///tmp/repro-study014-z9nwe1dr/repo' when getting requirements to build editable\n/bin/sh: 3: mim: not found\nTraceback (most recent call last):\n  File \"/tmp/repro-study014-z9nwe1dr/repo/tools/test.py\", line 6, in <module>\n    from mmengine.config import Config, ConfigDict, DictAction\nModuleNotFoundError: No module named 'mmengine'\n",
+      "status": "run_failed",
+      "reason": "missing_dependency:torch"
+    },
+    {
+      "study_id": "study015",
+      "status": "skipped",
+      "reason": "SKIP no numeric claim captured",
+      "pairs": []
+    },
+    {
+      "study_id": "study016",
+      "status": "skipped",
+      "reason": "SKIP hardware-bound metric: steps per second (throughput)",
+      "pairs": []
+    },
+    {
+      "study_id": "study017",
+      "status": "skipped",
+      "reason": "SKIP hardware-bound metric: processing time (seconds)",
+      "pairs": []
+    },
+    {
+      "study_id": "study018",
+      "repo_url": "https://github.com/markson14/WheatDet",
+      "claimed": [
+        {
+          "metric": "mAP",
+          "claimed": "41.4",
+          "split": "test-dev",
+          "dataset": "COCO"
+        },
+        {
+          "metric": "mAP",
+          "claimed": "41.7",
+          "split": "test-dev",
+          "dataset": "COCO"
+        },
+        {
+          "metric": "mAP",
+          "claimed": "39.1",
+          "split": "test-dev",
+          "dataset": "COCO"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": "export NGPUS=8 && python -m torch.distributed.launch --nproc_per_node=$NGPUS /path_to_maskrcnn_benchmark/tools/test_net.py --config-file \"configs/e2e_mask_rcnn_R_50_FPN_1x.yaml\" TEST.IMS_PER_BATCH 16",
+      "recipe_confidence": "high",
+      "recipe_source": "extracted",
+      "status": "run_failed",
+      "reason": "placeholder_recipe"
+    },
+    {
+      "study_id": "study019",
+      "repo_url": "https://github.com/Res2Net/mmdetection",
+      "claimed": [
+        {
+          "metric": "top-1 error",
+          "claimed": "20.81",
+          "split": "val",
+          "dataset": "ImageNet"
+        },
+        {
+          "metric": "mAP",
+          "claimed": "39.2",
+          "split": "val",
+          "dataset": "MS COCO"
+        },
+        {
+          "metric": "F-measure",
+          "claimed": "0.884",
+          "split": "test",
+          "dataset": "DUTS"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": "python tools/test.py configs/cascade_rcnn/cascade_rcnn_r50_fpn_1x_coco.py /path/to/ckpt",
+      "recipe_confidence": "low",
+      "recipe_source": "extracted",
+      "status": "run_failed",
+      "reason": "placeholder_recipe"
+    },
+    {
+      "study_id": "study020",
+      "repo_url": "https://github.com/yueliukth/csaw-m",
+      "claimed": [
+        {
+          "metric": "AUC",
+          "claimed": "0.64",
+          "split": "test",
+          "dataset": "CSAW-M"
+        },
+        {
+          "metric": "accuracy",
+          "claimed": "0.45",
+          "split": "test",
+          "dataset": "CSAW-M"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": "./scripts/eval.sh --model_name resnet50 --loss_type multi_hot --img_size 224 --checkpoint_dir ckpt/resnet50_multi_hot_224",
+      "recipe_confidence": "high",
+      "recipe_source": "extracted",
+      "log_tail": "87271\nResolving doi.org (doi.org)... 104.26.5.132, 172.67.69.3, 104.26.4.132, ...\nConnecting to doi.org (doi.org)|104.26.5.132|:443... connected.\nHTTP request sent, awaiting response... 302 Found\nLocation: https://figshare.scilifelab.se/articles/dataset/CSAW-M_An_Ordinal_Classification_Dataset_for_Benchmarking_Mammographic_Masking_of_Cancer/14687271 [following]\n--2026-08-25 10:03:16--  https://figshare.scilifelab.se/articles/dataset/CSAW-M_An_Ordinal_Classification_Dataset_for_Benchmarking_Mammographic_Masking_of_Cancer/14687271\nResolving figshare.scilifelab.se (figshare.scilifelab.se)... 99.80.136.201, 52.19.38.50, 54.171.186.217, ...\nConnecting to figshare.scilifelab.se (figshare.scilifelab.se)|99.80.136.201|:443... connected.\nHTTP request sent, awaiting response... 202 Accepted\nLength: 0 [text/html]\nSaving to: \u2018dataset.zip\u2019\n\n     0K                                                        0.00 =0s\n\n2026-08-25 10:03:17 (0.00 B/s) - \u2018dataset.zip\u2019 saved [0/0]\n\nTraceback (most recent call last):\n  File \"/tmp/repro-study020-qkel_oq_/repo/.venv/bin/unzip\", line 8, in <module>\n    zipfile.ZipFile(zp).extractall(dest)\n  File \"/home/dsai-st125286p/pys/py310/lib/python3.10/zipfile.py\", line 1288, in __init__\n    self._RealGetContents()\n  File \"/home/dsai-st125286p/pys/py310/lib/python3.10/zipfile.py\", line 1355, in _RealGetContents\n    raise BadZipFile(\"File is not a zip file\")\nzipfile.BadZipFile: File is not a zip file\n./scripts/eval.sh: line 4: cd: ../src: No such file or directory\n",
+      "status": "run_failed",
+      "reason": "missing_file_or_data"
+    },
+    {
+      "study_id": "study021",
+      "repo_url": "https://github.com/jeonjaehyeong/dpl",
+      "claimed": [
+        {
+          "metric": "mR@50",
+          "claimed": "18.3",
+          "split": "test",
+          "dataset": "Visual Genome"
+        },
+        {
+          "metric": "mR@100",
+          "claimed": "21.6",
+          "split": "test",
+          "dataset": "Visual Genome"
+        },
+        {
+          "metric": "mR@50",
+          "claimed": "13.6",
+          "split": "test",
+          "dataset": "GQA"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": "CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --master_port 10001 --nproc_per_node=1 tools/relation_test_net.py --config-file \"checkpoint_dir/config.yml\" TEST.IMS_PER_BATCH 1 MODEL.ROI_RELATION_HEAD.EVALUATE_REL_PROPOSAL False TEST.ALLOW_LOAD_FROM_CACHE True",
+      "recipe_confidence": "high",
+      "recipe_source": "extracted",
+      "log_tail": "existing connection to shanghaitecheducn-my.sharepoint.com:443.\nHTTP request sent, awaiting response... 200 OK\nLength: unspecified [text/html]\nSaving to: \u2018vg_detector.zip\u2019\n\n     0K .......... .......... .......... .......... .......... 1.12M\n    50K .......... .......... .......... .......... .......... 2.46M\n   100K .......... .......... .......... .......... ..........  129K\n   150K .......... .......... .......... .......... .......... 28.1M\n   200K .......... .......... .......... .......... .......... 36.8M\n   250K .......... .......... .......... .......... .......... 9.16M\n   300K .......... .......... .......... .......... .......... 20.7M\n   350K .......... .......... .......... .......... .......... 11.3M\n   400K .......... .....                                        138M=0.5s\n\n2026-08-25 10:03:29 (891 KB/s) - \u2018vg_detector.zip\u2019 saved [425791]\n\nTraceback (most recent call last):\n  File \"/tmp/repro-study021-a58vzx89/repo/.venv/bin/unzip\", line 8, in <module>\n    zipfile.ZipFile(zp).extractall(dest)\n  File \"/home/dsai-st125286p/pys/py310/lib/python3.10/zipfile.py\", line 1288, in __init__\n    self._RealGetContents()\n  File \"/home/dsai-st125286p/pys/py310/lib/python3.10/zipfile.py\", line 1355, in _RealGetContents\n    raise BadZipFile(\"File is not a zip file\")\nzipfile.BadZipFile: File is not a zip file\n/tmp/repro-study021-a58vzx89/repo/.venv/bin/python: Error while finding module specification for 'torch.distributed.launch' (ModuleNotFoundError: No module named 'torch')\n",
+      "status": "run_failed",
+      "reason": "missing_dependency:torch"
+    },
+    {
+      "study_id": "study022",
+      "status": "skipped",
+      "reason": "SKIP production A/B metric (Pinterest online gains), not repo-reproducible",
+      "pairs": []
+    },
+    {
+      "study_id": "study023",
+      "status": "skipped",
+      "reason": "SKIP needs mobile device/emulator + external VLM API",
+      "pairs": []
+    },
+    {
+      "study_id": "study024",
+      "repo_url": "https://github.com/1qb-information-technologies/ccvm",
+      "claimed": [
+        {
+          "metric": "objective_value",
+          "claimed": "-1029.5",
+          "split": "test",
+          "dataset": "BoxQP"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": "python examples/ccvm_boxqp_dl.py",
+      "recipe_confidence": "high",
+      "recipe_source": "extracted",
+      "log_tail": "/site-packages (from torch==1.13.1->ccvm-simulators) (11.7.99)\nRequirement already satisfied: nvidia-cudnn-cu11==8.5.0.96 in ./.venv/lib/python3.10/site-packages (from torch==1.13.1->ccvm-simulators) (8.5.0.96)\nRequirement already satisfied: nvidia-cublas-cu11==11.10.3.66 in ./.venv/lib/python3.10/site-packages (from torch==1.13.1->ccvm-simulators) (11.10.3.66)\nRequirement already satisfied: nvidia-cuda-nvrtc-cu11==11.7.99 in ./.venv/lib/python3.10/site-packages (from torch==1.13.1->ccvm-simulators) (11.7.99)\nRequirement already satisfied: wheel in ./.venv/lib/python3.10/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch==1.13.1->ccvm-simulators) (0.48.0)\nRequirement already satisfied: six>=1.5 in ./.venv/lib/python3.10/site-packages (from python-dateutil>=2.7->matplotlib==3.6.3->ccvm-simulators) (1.17.0)\nUsing cached ccvm_simulators-1.0.1-py3-none-any.whl (85 kB)\nInstalling collected packages: ccvm-simulators\nSuccessfully installed ccvm-simulators-1.0.1\n\nTraceback (most recent call last):\n  File \"/tmp/repro-study024-15sc0ok5/repo/examples/ccvm_boxqp_dl.py\", line 16, in <module>\n    solver.parameter_key = {\n  File \"/tmp/repro-study024-15sc0ok5/repo/.venv/lib/python3.10/site-packages/ccvm_simulators/solvers/dl_solver.py\", line 85, in parameter_key\n    raise ValueError(\nValueError: The parameter key is not valid for this solver. Expected keys: {'dt', 'iterations', 'noise_ratio', 'pump'} Given keys: dict_keys(['pump', 'feedback_scale', 'dt', 'iterations', 'noise_ratio'])\n",
+      "status": "run_failed",
+      "reason": "missing_dependency:pip"
+    },
+    {
+      "study_id": "study025",
+      "repo_url": "https://github.com/yihao6/vfa",
+      "claimed": [
+        {
+          "metric": "Dice similarity coefficient (DSC)",
+          "claimed": "mean of 132 labels",
+          "split": "test",
+          "dataset": "T1-weighted MR images"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": "vfa-run evaluate --checkpoint vfa_v0.0.6_lumir --eval_data_configs /path/to/eval_data_configs.json",
+      "recipe_confidence": "high",
+      "recipe_source": "extracted",
+      "status": "run_failed",
+      "reason": "placeholder_recipe"
+    },
+    {
+      "study_id": "study026",
+      "repo_url": "https://github.com/PerdonLiu/CSE-Autoloss",
+      "claimed": [
+        {
+          "metric": "mAP",
+          "claimed": "38.5",
+          "split": "test",
+          "dataset": "COCO"
+        },
+        {
+          "metric": "mAP",
+          "claimed": "37.2",
+          "split": "test",
+          "dataset": "COCO"
+        }
+      ],
+      "obtained": [],
+      "pairs": [],
+      "recipe_command": "python -m torch.distributed.launch --nproc_per_node=$GPUS --master_port=$PORT ./tools/train.py configs/faster_rcnn/faster_rcnn_r50_fpn_giou_1x_coco.py --loss_cls 'Neg(Dot(Mul(Y,Add(1,Sin(Z))),Log(Softmax(X))))' --loss_reg 'Add(1,Neg(Add(Div(I,U),Neg(Div(Add(E,Neg(Add(I,2))),E)))))' --launcher pytorch --checkpoint /path/to/ckpt",
+      "recipe_confidence": "low",
+      "recipe_source": "extracted",
+      "status": "run_failed",
+      "reason": "placeholder_recipe"
+    }
+  ]
+}
