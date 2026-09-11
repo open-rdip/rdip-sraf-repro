@@ -70,7 +70,12 @@ cp .env.example .env          # then edit .env: real OPENAI_API_KEY / GOOGLE_API
 # `singularity build --fakeroot` fails in %post (apt-get needs root). The image
 # is built by CI (.github/workflows/container.yml) and pulled here instead —
 # pulling needs no privileges:
-mkdir -p ~/images
+# Keep the OCI blob cache OFF the home volume: `singularity pull` unpacks and
+# converts layers in $APPTAINER_CACHEDIR (default ~/.apptainer/cache) and will
+# blow the storage quota part-way through, leaving no .sif behind.
+export APPTAINER_CACHEDIR=/tmp/$USER-apptainer
+export APPTAINER_TMPDIR=/tmp/$USER-apptainer
+mkdir -p "$APPTAINER_CACHEDIR" ~/images
 singularity pull ~/images/sraf-engine.sif \
     docker://ghcr.io/open-rdip/sraf-engine:latest
 # While work is on the `extension` branch, `latest` tracks `main`; pull the

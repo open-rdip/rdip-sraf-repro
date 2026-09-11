@@ -22,7 +22,7 @@ on:
     branches: [main, extension]
     paths:
       - 'containers/sraf-engine.Dockerfile'
-      - 'requirements.txt'
+      - 'requirements-engine.txt'
       - '.github/workflows/container.yml'
   workflow_dispatch:
   release:

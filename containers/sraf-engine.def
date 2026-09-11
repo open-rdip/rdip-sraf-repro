@@ -9,7 +9,7 @@ Bootstrap: docker
 From: python:3.12-slim-bookworm
 
 %files
-    requirements.txt /workspace/requirements.txt
+    requirements-engine.txt /workspace/requirements-engine.txt
 
 %post
     apt-get update && apt-get install -y --no-install-recommends \
@@ -21,7 +21,7 @@ From: python:3.12-slim-bookworm
 
     cd /workspace
     pip install --no-cache-dir --upgrade pip
-    pip install --no-cache-dir -r requirements.txt
+    pip install --no-cache-dir -r requirements-engine.txt
 
     # Pre-create directories the engine writes to
     mkdir -p /workspace/logs /workspace/validation/results /workspace/data

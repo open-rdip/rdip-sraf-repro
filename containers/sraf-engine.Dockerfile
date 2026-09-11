@@ -19,10 +19,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /workspace
 
-# Install Python dependencies first — this layer is cached unless requirements.txt changes
-COPY requirements.txt .
+# Engine-only dependencies: requirements.txt pulls sentence-transformers ->
+# torch (~2 GB), which the engine never uses and which makes the image too big
+# to pull under the cluster's home quota. See requirements-engine.txt.
+COPY requirements-engine.txt .
 RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt
+    && pip install --no-cache-dir -r requirements-engine.txt
 
 # Copy the rest of the repo
 COPY . .
