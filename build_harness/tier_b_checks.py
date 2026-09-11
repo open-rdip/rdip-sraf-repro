@@ -225,10 +225,26 @@ def check_documented_entrypoint(docs, repo_dir: Path) -> CheckResult:
                 if RUN_TOKEN.match(line) and EVAL_HINT.search(line):
                     return CheckResult("documented_entrypoint", FULL,
                                        f"{path.name}: {line.strip()[:160]}", {"source": "docs"})
-    scripts = [p for p in repo_dir.rglob("*")
-               if p.is_file() and ".git" not in p.parts
-               and p.suffix in (".py", ".sh") and EVAL_HINT.search(p.stem)]
+    # Filesystem fallback. A project's own CI and unit-test suite is not an
+    # evaluation route for the paper's numbers — microsoft/DeepSpeed matched 330
+    # such files — so exclude test infrastructure and rank shallow, conventional
+    # locations (tools/, scripts/, repo root) above buried ones.
+    EXCLUDE_PARTS = {".git", ".github", "ci", "tests", "test", "testing",
+                     "node_modules", "site-packages", "third_party", "docs"}
+    PREFER_PARTS = ("tools", "scripts", "experiments", "examples")
+    scripts = [
+        q for q in repo_dir.rglob("*")
+        if q.is_file() and q.suffix in (".py", ".sh")
+        and not (EXCLUDE_PARTS & set(q.parts))
+        and not q.stem.startswith("test_") and not q.stem.endswith("_test")
+        and EVAL_HINT.search(q.stem)
+    ]
     if scripts:
+        def rank(q):
+            rel = q.relative_to(repo_dir)
+            return (0 if len(rel.parts) == 1 else
+                    1 if rel.parts[0] in PREFER_PARTS else 2, len(rel.parts))
+        scripts.sort(key=rank)
         rel = scripts[0].relative_to(repo_dir)
         return CheckResult("documented_entrypoint", PARTIAL,
                            f"script present but not documented: {rel}",

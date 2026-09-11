@@ -20,7 +20,8 @@ sys.path.insert(0, str(ROOT / "build_harness"))
 
 from tier_b_checks import (  # noqa: E402
     EVAL_HINT, find_placeholders, check_concrete_run_command,
-    check_data_obtainable, check_repo_matches_paper, run_tier_b,
+    check_data_obtainable, check_documented_entrypoint,
+    check_repo_matches_paper, run_tier_b,
     ABSENT, PARTIAL, FULL,
 )
 
@@ -141,3 +142,31 @@ def test_run_tier_b_is_offline_by_default(tmp_path):
     links = out["checks"]["links_resolve"]
     assert links["detail"]["checked"] is False
     assert out["tier_b_max"] == 10
+
+
+def test_ci_and_unit_tests_are_not_an_evaluation_route(tmp_path):
+    """Regression: microsoft/DeepSpeed matched 330 CI/test files as 'entrypoints'.
+
+    A project's own test suite does not reproduce the paper's numbers.
+    """
+    (tmp_path / "README.md").write_text("# x\n\nNo commands here.\n")
+    for rel in ("ci/test_tests_fetcher.py", "tests/test_model.py",
+                ".github/test_ci.sh", "src/evaluator_test.py"):
+        f = tmp_path / rel
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text("# noise\n")
+    docs = [(tmp_path / "README.md", (tmp_path / "README.md").read_text())]
+    assert check_documented_entrypoint(docs, tmp_path).level == ABSENT
+
+
+def test_real_eval_script_still_found_and_ranked(tmp_path):
+    (tmp_path / "README.md").write_text("# x\n\nNo commands here.\n")
+    for rel in ("tests/test_model.py", "deep/nested/dir/evaluate.py",
+                "tools/test.py"):
+        f = tmp_path / rel
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text("# code\n")
+    docs = [(tmp_path / "README.md", (tmp_path / "README.md").read_text())]
+    r = check_documented_entrypoint(docs, tmp_path)
+    assert r.level == PARTIAL
+    assert "tools/test.py" in r.evidence      # conventional location wins
