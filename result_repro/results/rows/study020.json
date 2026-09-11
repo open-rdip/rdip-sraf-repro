@@ -1,0 +1,26 @@
+{
+  "study_id": "study020",
+  "repo_url": "https://github.com/yueliukth/csaw-m",
+  "claimed": [
+    {
+      "metric": "AUC",
+      "claimed": "0.64",
+      "split": "test",
+      "dataset": "CSAW-M"
+    },
+    {
+      "metric": "accuracy",
+      "claimed": "0.45",
+      "split": "test",
+      "dataset": "CSAW-M"
+    }
+  ],
+  "obtained": [],
+  "pairs": [],
+  "recipe_command": "./scripts/eval.sh --model_name resnet50 --loss_type multi_hot --img_size 224 --checkpoint_dir ckpt/resnet50_multi_hot_224",
+  "recipe_confidence": "high",
+  "recipe_source": "extracted",
+  "log_tail": "87271\nResolving doi.org (doi.org)... 104.26.5.132, 172.67.69.3, 104.26.4.132, ...\nConnecting to doi.org (doi.org)|104.26.5.132|:443... connected.\nHTTP request sent, awaiting response... 302 Found\nLocation: https://figshare.scilifelab.se/articles/dataset/CSAW-M_An_Ordinal_Classification_Dataset_for_Benchmarking_Mammographic_Masking_of_Cancer/14687271 [following]\n--2026-08-25 10:03:16--  https://figshare.scilifelab.se/articles/dataset/CSAW-M_An_Ordinal_Classification_Dataset_for_Benchmarking_Mammographic_Masking_of_Cancer/14687271\nResolving figshare.scilifelab.se (figshare.scilifelab.se)... 99.80.136.201, 52.19.38.50, 54.171.186.217, ...\nConnecting to figshare.scilifelab.se (figshare.scilifelab.se)|99.80.136.201|:443... connected.\nHTTP request sent, awaiting response... 202 Accepted\nLength: 0 [text/html]\nSaving to: \u2018dataset.zip\u2019\n\n     0K                                                        0.00 =0s\n\n2026-08-25 10:03:17 (0.00 B/s) - \u2018dataset.zip\u2019 saved [0/0]\n\nTraceback (most recent call last):\n  File \"/tmp/repro-study020-qkel_oq_/repo/.venv/bin/unzip\", line 8, in <module>\n    zipfile.ZipFile(zp).extractall(dest)\n  File \"/home/dsai-st125286p/pys/py310/lib/python3.10/zipfile.py\", line 1288, in __init__\n    self._RealGetContents()\n  File \"/home/dsai-st125286p/pys/py310/lib/python3.10/zipfile.py\", line 1355, in _RealGetContents\n    raise BadZipFile(\"File is not a zip file\")\nzipfile.BadZipFile: File is not a zip file\n./scripts/eval.sh: line 4: cd: ../src: No such file or directory\n",
+  "status": "run_failed",
+  "reason": "missing_file_or_data"
+}

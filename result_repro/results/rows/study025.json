@@ -1,0 +1,19 @@
+{
+  "study_id": "study025",
+  "repo_url": "https://github.com/yihao6/vfa",
+  "claimed": [
+    {
+      "metric": "Dice similarity coefficient (DSC)",
+      "claimed": "mean of 132 labels",
+      "split": "test",
+      "dataset": "T1-weighted MR images"
+    }
+  ],
+  "obtained": [],
+  "pairs": [],
+  "recipe_command": "vfa-run evaluate --checkpoint vfa_v0.0.6_lumir --eval_data_configs /path/to/eval_data_configs.json",
+  "recipe_confidence": "high",
+  "recipe_source": "extracted",
+  "status": "run_failed",
+  "reason": "placeholder_recipe"
+}

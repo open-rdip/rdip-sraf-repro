@@ -1,0 +1,32 @@
+{
+  "study_id": "study021",
+  "repo_url": "https://github.com/jeonjaehyeong/dpl",
+  "claimed": [
+    {
+      "metric": "mR@50",
+      "claimed": "18.3",
+      "split": "test",
+      "dataset": "Visual Genome"
+    },
+    {
+      "metric": "mR@100",
+      "claimed": "21.6",
+      "split": "test",
+      "dataset": "Visual Genome"
+    },
+    {
+      "metric": "mR@50",
+      "claimed": "13.6",
+      "split": "test",
+      "dataset": "GQA"
+    }
+  ],
+  "obtained": [],
+  "pairs": [],
+  "recipe_command": "CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --master_port 10001 --nproc_per_node=1 tools/relation_test_net.py --config-file \"checkpoint_dir/config.yml\" TEST.IMS_PER_BATCH 1 MODEL.ROI_RELATION_HEAD.EVALUATE_REL_PROPOSAL False TEST.ALLOW_LOAD_FROM_CACHE True",
+  "recipe_confidence": "high",
+  "recipe_source": "extracted",
+  "log_tail": "existing connection to shanghaitecheducn-my.sharepoint.com:443.\nHTTP request sent, awaiting response... 200 OK\nLength: unspecified [text/html]\nSaving to: \u2018vg_detector.zip\u2019\n\n     0K .......... .......... .......... .......... .......... 1.12M\n    50K .......... .......... .......... .......... .......... 2.46M\n   100K .......... .......... .......... .......... ..........  129K\n   150K .......... .......... .......... .......... .......... 28.1M\n   200K .......... .......... .......... .......... .......... 36.8M\n   250K .......... .......... .......... .......... .......... 9.16M\n   300K .......... .......... .......... .......... .......... 20.7M\n   350K .......... .......... .......... .......... .......... 11.3M\n   400K .......... .....                                        138M=0.5s\n\n2026-08-25 10:03:29 (891 KB/s) - \u2018vg_detector.zip\u2019 saved [425791]\n\nTraceback (most recent call last):\n  File \"/tmp/repro-study021-a58vzx89/repo/.venv/bin/unzip\", line 8, in <module>\n    zipfile.ZipFile(zp).extractall(dest)\n  File \"/home/dsai-st125286p/pys/py310/lib/python3.10/zipfile.py\", line 1288, in __init__\n    self._RealGetContents()\n  File \"/home/dsai-st125286p/pys/py310/lib/python3.10/zipfile.py\", line 1355, in _RealGetContents\n    raise BadZipFile(\"File is not a zip file\")\nzipfile.BadZipFile: File is not a zip file\n/tmp/repro-study021-a58vzx89/repo/.venv/bin/python: Error while finding module specification for 'torch.distributed.launch' (ModuleNotFoundError: No module named 'torch')\n",
+  "status": "run_failed",
+  "reason": "missing_dependency:torch"
+}

@@ -1,0 +1,25 @@
+{
+  "study_id": "study003",
+  "repo_url": "https://github.com/zhimengxin/rcod",
+  "claimed": [
+    {
+      "metric": "S_alpha",
+      "claimed": "77.0",
+      "split": "test",
+      "dataset": "SINet"
+    },
+    {
+      "metric": "S_alpha",
+      "claimed": "81.1",
+      "split": "test",
+      "dataset": "SegMaR"
+    }
+  ],
+  "obtained": [],
+  "pairs": [],
+  "recipe_command": "python tools/test.py configs/glip/glip_swin_tiny_cafr.py /path/to/ckpt --eval mAP",
+  "recipe_confidence": "low",
+  "recipe_source": "extracted",
+  "status": "run_failed",
+  "reason": "placeholder_recipe"
+}

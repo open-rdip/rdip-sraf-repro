@@ -1,0 +1,84 @@
+name: Build and publish the SRAF engine container
+
+# The ASL cluster cannot build container images: the account is not listed in
+# /etc/subuid and unprivileged user namespaces are restricted, so
+# `singularity build --fakeroot` fails in %post (which needs root for apt-get).
+# We therefore build here and *pull* on the cluster, which needs no privileges:
+#
+#   singularity pull images/sraf-engine.sif \
+#       docker://ghcr.io/open-rdip/sraf-engine:latest
+#
+# This also produces an immutable digest (sha256:...) for the image — the exact
+# remedy the paper recommends to authors against environment rot. Cite the
+# digest, not the tag.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'containers/sraf-engine.Dockerfile'
+      - 'requirements.txt'
+      - '.github/workflows/container.yml'
+  workflow_dispatch:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Derive tags
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/sraf-engine
+          tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=ref,event=tag
+            type=sha,format=long
+
+      - name: Build and push
+        id: push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: containers/sraf-engine.Dockerfile
+          platforms: linux/amd64      # match the cluster architecture
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          provenance: true
+          sbom: true
+
+      # The digest is the citable artefact. Record it in the run summary so it
+      # can be pasted straight into the paper's availability statement.
+      - name: Report the image digest
+        run: |
+          {
+            echo '## SRAF engine image'
+            echo
+            echo '```'
+            echo 'ghcr.io/${{ github.repository_owner }}/sraf-engine@${{ steps.push.outputs.digest }}'
+            echo '```'
+            echo
+            echo 'Pull on the cluster:'
+            echo
+            echo '```'
+            echo 'singularity pull images/sraf-engine.sif \'
+            echo '  docker://ghcr.io/${{ github.repository_owner }}/sraf-engine@${{ steps.push.outputs.digest }}'
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

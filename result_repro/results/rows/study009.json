@@ -1,0 +1,26 @@
+{
+  "study_id": "study009",
+  "repo_url": "https://github.com/open-mmlab/mmpose",
+  "claimed": [
+    {
+      "metric": "AP",
+      "claimed": "70.5%",
+      "split": "test-dev",
+      "dataset": "COCO2017"
+    },
+    {
+      "metric": "AP",
+      "claimed": "67.6%",
+      "split": "test",
+      "dataset": "CrowdPose"
+    }
+  ],
+  "obtained": [],
+  "pairs": [],
+  "recipe_command": "python tools/test.py configs/wholebody_2d_keypoint/rtmpose/cocktail14/rtmw_cocktail14_256x192.py --checkpoint checkpoints/rtmw_cocktail14_256x192-100e_20231205_154204-100e.pth --eval mAP",
+  "recipe_confidence": "high",
+  "recipe_source": "extracted",
+  "log_tail": "n self._get_build_requires(config_settings, requirements=[])\n        File \"/tmp/pip-build-env-vrdsdaxk/overlay/lib/python3.10/site-packages/setuptools/build_meta.py\", line 301, in _get_build_requires\n          self.run_setup()\n        File \"/tmp/pip-build-env-vrdsdaxk/overlay/lib/python3.10/site-packages/setuptools/build_meta.py\", line 520, in run_setup\n          super().run_setup(setup_script=setup_script)\n        File \"/tmp/pip-build-env-vrdsdaxk/overlay/lib/python3.10/site-packages/setuptools/build_meta.py\", line 317, in run_setup\n          exec(code, locals())  # noqa: S102 # exec is intentional here\n        File \"<string>\", line 11, in <module>\n      ModuleNotFoundError: No module named 'pip'\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nERROR: Failed to build 'chumpy' when getting requirements to build wheel\n--2026-08-25 10:02:12--  https://download.openmmlab.com/mmpose/rtmpose/rtmw_cocktail14_256x192-100e_20231205_154204-100e.pth\nResolving download.openmmlab.com (download.openmmlab.com)... 155.102.13.25, 155.102.13.26, 155.102.13.19, ...\nConnecting to download.openmmlab.com (download.openmmlab.com)|155.102.13.25|:443... connected.\nHTTP request sent, awaiting response... 404 Not Found\n2026-08-25 10:02:18 ERROR 404: Not Found.\n\nTraceback (most recent call last):\n  File \"/tmp/repro-study009-ol6ehjon/repo/tools/test.py\", line 6, in <module>\n    import mmengine\nModuleNotFoundError: No module named 'mmengine'\n",
+  "status": "run_failed",
+  "reason": "dead_download:404"
+}

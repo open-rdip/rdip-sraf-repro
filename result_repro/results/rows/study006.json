@@ -1,0 +1,38 @@
+{
+  "study_id": "study006",
+  "repo_url": "https://github.com/baitingluo/l-map",
+  "claimed": [
+    {
+      "metric": "Average Score",
+      "claimed": "105.74 \u00b1 2.24",
+      "split": "test",
+      "dataset": "Medium-Expert Hopper (Deterministic)"
+    },
+    {
+      "metric": "Average Score",
+      "claimed": "73.90 \u00b1 1.91",
+      "split": "test",
+      "dataset": "Medium Hopper (Deterministic)"
+    },
+    {
+      "metric": "Average Score",
+      "claimed": "91.18 \u00b1 0.56",
+      "split": "test",
+      "dataset": "Medium-Replay Hopper (Deterministic)"
+    },
+    {
+      "metric": "Average Score",
+      "claimed": "106.11 \u00b1 2.16",
+      "split": "test",
+      "dataset": "Medium-Expert-Mod Hopper (Moderate Stochasticity)"
+    }
+  ],
+  "obtained": [],
+  "pairs": [],
+  "recipe_command": "CUDA_VISIBLE_DEVICES=0 python scripts/plan.py --test_planner MCTS_P --dataset hopper-medium-replay-v2 --exp_name T-1-1 --suffix 1 --initial_width 16 --b_percent 0.5 --n_expand 4 --n_actions 4 --action_percent 0.5 --pw_alpha 0.1 --mcts_itr 100 --depth 5",
+  "recipe_confidence": "high",
+  "recipe_source": "extracted",
+  "log_tail": "DME to install MuJoCo\n\n    https://github.com/openai/mujoco-py#install-mujoco\n\nWhich can be downloaded from the website\n\n    https://www.roboti.us/index.html\n\nTraceback (most recent call last):\n  File \"/tmp/repro-study006-uqhwzz8k/repo/scripts/plan.py\", line 6, in <module>\n    import latentplan.utils as utils\n  File \"/tmp/repro-study006-uqhwzz8k/repo/latentplan/utils/__init__.py\", line 5, in <module>\n    from .rendering import make_renderer\n  File \"/tmp/repro-study006-uqhwzz8k/repo/latentplan/utils/rendering.py\", line 8, in <module>\n    import mujoco_py as mjc\n  File \"/tmp/repro-study006-uqhwzz8k/repo/.venv/lib/python3.10/site-packages/mujoco_py/__init__.py\", line 2, in <module>\n    from mujoco_py.builder import cymj, ignore_mujoco_warnings, functions, MujocoException\n  File \"/tmp/repro-study006-uqhwzz8k/repo/.venv/lib/python3.10/site-packages/mujoco_py/builder.py\", line 503, in <module>\n    mujoco_path = discover_mujoco()\n  File \"/tmp/repro-study006-uqhwzz8k/repo/.venv/lib/python3.10/site-packages/mujoco_py/utils.py\", line 78, in discover_mujoco\n    raise Exception(message)\nException: \nYou appear to be missing MuJoCo.  We expected to find the file here: /home/dsai-st125286p/.mujoco/mujoco210\n\nThis package only provides python bindings, the library must be installed separately.\n\nPlease follow the instructions on the README to install MuJoCo\n\n    https://github.com/openai/mujoco-py#install-mujoco\n\nWhich can be downloaded from the website\n\n    https://www.roboti.us/index.html\n\n",
+  "status": "run_failed",
+  "reason": "missing_system_dep:mujoco"
+}

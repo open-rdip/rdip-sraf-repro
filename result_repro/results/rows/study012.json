@@ -1,0 +1,25 @@
+{
+  "study_id": "study012",
+  "repo_url": "https://github.com/open-mmlab/mmsegmentation",
+  "claimed": [
+    {
+      "metric": "PQ",
+      "claimed": "40.9",
+      "split": "test",
+      "dataset": "COCO"
+    },
+    {
+      "metric": "PQ",
+      "claimed": "58.1",
+      "split": "test",
+      "dataset": "Cityscapes"
+    }
+  ],
+  "obtained": [],
+  "pairs": [],
+  "recipe_command": "python tools/test.py configs/pspnet/pspnet_r50-d8_512x1024_80k_cityscapes.py /path/to/checkpoint --eval mIoU",
+  "recipe_confidence": "low",
+  "recipe_source": "extracted",
+  "status": "run_failed",
+  "reason": "placeholder_recipe"
+}

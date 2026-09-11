@@ -1,0 +1,31 @@
+{
+  "study_id": "study018",
+  "repo_url": "https://github.com/markson14/WheatDet",
+  "claimed": [
+    {
+      "metric": "mAP",
+      "claimed": "41.4",
+      "split": "test-dev",
+      "dataset": "COCO"
+    },
+    {
+      "metric": "mAP",
+      "claimed": "41.7",
+      "split": "test-dev",
+      "dataset": "COCO"
+    },
+    {
+      "metric": "mAP",
+      "claimed": "39.1",
+      "split": "test-dev",
+      "dataset": "COCO"
+    }
+  ],
+  "obtained": [],
+  "pairs": [],
+  "recipe_command": "export NGPUS=8 && python -m torch.distributed.launch --nproc_per_node=$NGPUS /path_to_maskrcnn_benchmark/tools/test_net.py --config-file \"configs/e2e_mask_rcnn_R_50_FPN_1x.yaml\" TEST.IMS_PER_BATCH 16",
+  "recipe_confidence": "high",
+  "recipe_source": "extracted",
+  "status": "run_failed",
+  "reason": "placeholder_recipe"
+}

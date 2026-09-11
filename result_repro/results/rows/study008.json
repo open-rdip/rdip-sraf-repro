@@ -1,0 +1,37 @@
+{
+  "study_id": "study008",
+  "repo_url": "https://github.com/konstantinjdobler/tight-budget-llm-adaptation",
+  "claimed": [
+    {
+      "metric": "Avg. German test splits",
+      "claimed": "47.2",
+      "split": "test",
+      "dataset": "German test splits (pure bfloat16)"
+    },
+    {
+      "metric": "Avg. German test splits",
+      "claimed": "46.1",
+      "split": "test",
+      "dataset": "German test splits (mixed precision)"
+    },
+    {
+      "metric": "MMLU",
+      "claimed": "59.7",
+      "split": "test",
+      "dataset": "German (pure bfloat16)"
+    },
+    {
+      "metric": "HellaSwag",
+      "claimed": "35.9",
+      "split": "test",
+      "dataset": "German (pure bfloat16)"
+    }
+  ],
+  "obtained": [],
+  "pairs": [],
+  "recipe_command": "python eval_de.py --model hf-causal --model_args \"pretrained=/path/to/ckpt\" --device cuda:0 --output_path /path/to/outdir/output.json --csv_path /path/to/outdir/results.csv",
+  "recipe_confidence": "low",
+  "recipe_source": "extracted",
+  "status": "run_failed",
+  "reason": "placeholder_recipe"
+}

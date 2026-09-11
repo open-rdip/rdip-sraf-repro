@@ -6,7 +6,7 @@ JSON. Build/resolve outcomes are left untouched.
 
 Requires a running Oxigraph serving the durable triplestore:
   ~/bin/oxigraph serve --location ~/triplestore --bind 127.0.0.1:7878 &
-  cd ~/rdip-sre
+  cd ~/rdip-sraf-repro
   OXIGRAPH_HOST=127.0.0.1 OXIGRAPH_PORT=7878 \
       ~/envs/sraf/bin/python -m build_harness.rescore
 Then re-run analysis/summarize_results and analysis/predictor_analysis.

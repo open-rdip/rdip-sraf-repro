@@ -1,4 +1,4 @@
-# Phase IV predictor analysis — 97 repos
+# Phase IV predictor analysis — 96 repos
 
 ### Logistic regression — outcome: resolve_success
 
@@ -34,3 +34,13 @@
 
 - resolve_success: rho=+0.155, p=0.154  (n=86)
 - build_success: rho=+0.099, p=0.364  (n=86)
+
+### Per-dimension Spearman — FAIR-R dimensions vs outcome (RQ4 diagnosis)
+
+| dimension | rho (resolve) | p | rho (build) | p |
+|---|---:|---:|---:|---:|
+| Accessible | -- | -- | -- | -- |
+| Findable | +0.000 | 1.000 | +0.000 | 1.000 |
+| Interoperable | +0.018 | 0.869 | +0.007 | 0.948 |
+| Reproducible | +0.028 | 0.799 | -0.021 | 0.844 |
+| Reusable | +0.244 | 0.024 * | +0.209 | 0.053 |

@@ -1,0 +1,26 @@
+{
+  "study_id": "study007",
+  "repo_url": "https://github.com/ShangtongZhang/DeepRL",
+  "claimed": [
+    {
+      "metric": "Average variance",
+      "claimed": "7 * 10^3",
+      "split": "test",
+      "dataset": "Stochastic MuJoCo"
+    },
+    {
+      "metric": "Average variance",
+      "claimed": "1.8 * 10^4",
+      "split": "test",
+      "dataset": "Stochastic MuJoCo"
+    }
+  ],
+  "obtained": [],
+  "pairs": [],
+  "recipe_command": null,
+  "recipe_confidence": "low",
+  "recipe_source": "extracted",
+  "log_tail": "",
+  "status": "run_failed",
+  "reason": "recipe had no run command"
+}

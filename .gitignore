@@ -30,8 +30,12 @@ logs/*.log
 *.jpg
 *.pdf
 *.tmp
-# result-repro generated outputs
-result_repro/results/
+# result-repro generated outputs.
+# The per-study rows ARE the evidence behind the failure taxonomy and the paper
+# states they are released, so they must be tracked. Only bulk logs are ignored.
+result_repro/results/*
+!result_repro/results/rows/
+!result_repro/results/summary.json
 
 # more caches / backups
 .pytest_cache/

@@ -14,6 +14,7 @@ Needs pandas, scipy, statsmodels (in requirements.txt).
 """
 from __future__ import annotations
 import glob
+import re
 import json
 import os
 from pathlib import Path
@@ -37,6 +38,10 @@ def load_frame() -> pd.DataFrame:
     rows = []
     for f in sorted(glob.glob(str(RESULTS_DIR / "*.json"))):
         r = json.load(open(f))
+        # Skip non-corpus artefacts (semantic-diff outputs, reference probes);
+        # corpus study ids are exactly study001..study096.
+        if not re.match(r"^study\d{3}$", str(r.get("study_id", "")).strip()):
+            continue
         a = r.get("artifacts", {}) or {}
         by = a.get("by_type", {}) or {}
         b = r.get("build", {}) or {}

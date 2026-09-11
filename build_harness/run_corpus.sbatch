@@ -24,7 +24,7 @@
 #     sbatch --export=ALL,SRAF_FORCE=1 build_harness/run_corpus.sbatch
 set -uo pipefail   # no -e: one bad repo must not abort the whole corpus
 
-REPO_ROOT="${SLURM_SUBMIT_DIR:-${HOME}/rdip-sre}"
+REPO_ROOT="${SLURM_SUBMIT_DIR:-${HOME}/rdip-sraf-repro}"
 CONDA_PY="${HOME}/envs/sraf/bin/python"
 OXIGRAPH_BIN="${HOME}/bin/oxigraph"
 REPO_LIST="${REPO_ROOT}/validation/repo_list.csv"

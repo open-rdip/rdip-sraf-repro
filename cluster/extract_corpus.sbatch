@@ -8,15 +8,19 @@
 #SBATCH --mem=48G
 #SBATCH --time=1-00:00:00
 #
-# Phase II extraction. Cluster policy = 1 running job, so vLLM (GPU, in the
-# Apptainer container) and Oxigraph and the extraction loop all run in THIS one
-# job. Run once per model:
+# Phase II extraction with a LOCAL open-weight model served by vLLM on the GPU.
+# vLLM, Oxigraph and the extraction loop all run in this one job because vLLM
+# serves one model per server — so submit once per model. (The single-job
+# arrangement is not a cluster limit: ASL enforces none. See cluster/README.md.)
+# For hosted API models use cluster/extract_corpus_api.sbatch instead: it needs
+# no GPU and multiplexes several models in one submission.
+# Run once per model:
 #   sbatch --export=ALL,HF_TOKEN=$HF_TOKEN,MODEL=Qwen/Qwen2.5-14B-Instruct-GPTQ-Int8 \
 #          cluster/extract_corpus.sbatch
 # Smoke test first:  add ,SRAF_LIMIT=3
 set -uo pipefail
 
-REPO_ROOT="${SLURM_SUBMIT_DIR:-$HOME/rdip-sre}"
+REPO_ROOT="${SLURM_SUBMIT_DIR:-$HOME/rdip-sraf-repro}"
 MODEL="${MODEL:?set MODEL=<hf repo id>}"
 CONDA_PY="$HOME/envs/sraf/bin/python"
 VLLM_PY="$HOME/envs/vllm/bin/python"          # pip-installed vLLM (CUDA-matched)

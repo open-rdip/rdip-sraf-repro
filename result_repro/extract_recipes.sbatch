@@ -17,7 +17,7 @@
 #   # then phase 2:  sbatch result_repro/run_all.sbatch
 set -uo pipefail
 
-REPO_ROOT="${SLURM_SUBMIT_DIR:-$HOME/rdip-sre}"; cd "$REPO_ROOT"; mkdir -p logs
+REPO_ROOT="${SLURM_SUBMIT_DIR:-$HOME/rdip-sraf-repro}"; cd "$REPO_ROOT"; mkdir -p logs
 CONDA_PY="$HOME/envs/sraf/bin/python"
 VLLM_PY="$HOME/envs/vllm/bin/python"
 MODEL="${MODEL:-RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8}"

@@ -16,15 +16,21 @@ home volume.
 Before running anything, set these to match your cluster. They appear at the
 top of every `.sbatch` file as `#SBATCH` directives — grep for `EDIT-ME`.
 
-| Variable | Value to confirm |
+| Variable | Verified value (ASL, checked 2026-09-11) |
 |---|---|
-| `--account` | your Slurm account/allocation name |
-| `--partition` (CPU jobs) | the CPU node partition (2× EPYC, 512 GB) |
-| `--partition` (GPU jobs) | the AI-node partition (RTX A6000 ×4) |
-| `--gres=gpu:N` | GPU request syntax your cluster uses |
-| `HOME=/home/dsai-st125286` | confirm with `echo $HOME` |
+| `--account` | **Do not set it.** ASL runs no accounting database (`AccountingStorageType=(null)`), so naming an account fails the job with `InvalidAccount`. If `SBATCH_ACCOUNT` is exported in your shell, `unset` it. |
+| `--partition` (CPU jobs) | `ASL-cpu` — a **single** node (`skynetcpu`), 128 CPUs, ~123 GB usable RAM, `OverSubscribe=NO` |
+| `--partition` (GPU jobs) | `ASL-gpu` (cluster default partition), 4× RTX A6000 48 GB |
+| `--gres=gpu:N` | `--gres=gpu:1` (standard syntax) |
+| `HOME` | confirm with `echo $HOME` |
 
-Check available partitions/accounts with `sinfo` and `sacctmgr show assoc user=$USER`.
+**Always pass `--mem` and `--time`.** `DefMemPerNode=UNLIMITED` on ASL-cpu means a job
+that omits `--mem` requests the node's entire memory; with `OverSubscribe=NO` that
+needs the whole machine and will sit in `PENDING` behind every other user. This is the
+usual cause of a job that "hangs in the queue".
+
+`sacctmgr` does not work here (no `slurmdbd`). Inspect limits with `scontrol show
+partition ASL-cpu` and `scontrol show config`.
 
 ---
 
@@ -32,7 +38,7 @@ Check available partitions/accounts with `sinfo` and `sacctmgr show assoc user=$
 
 ```
 /home/dsai-st125286/
-├── rdip-sre/                 # the repo (git clone — done once)
+├── rdip-sraf-repro/           # the repo (git clone — done once)
 │   ├── cluster/              # this directory
 │   └── ...
 ├── images/                   # Apptainer .sif files (built once)
@@ -55,12 +61,27 @@ Run these in order. Each step has a script in this directory.
 ```bash
 # --- on the login node ---
 cd ~
-git clone git@github.com:open-rdip/rdip-sre.git
-cd rdip-sre
+git clone git@github.com:open-rdip/rdip-sraf-repro.git
+cd rdip-sraf-repro
 cp .env.example .env          # then edit .env: real OPENAI_API_KEY / GOOGLE_API_KEY
 
-# Step 3 — build the three Apptainer images (engine, oxigraph, vllm)
-bash cluster/build_images.sh
+# Step 3 — get the engine image. DO NOT build it on the cluster: this account
+# is not in /etc/subuid and unprivileged user namespaces are restricted, so
+# `singularity build --fakeroot` fails in %post (apt-get needs root). The image
+# is built by CI (.github/workflows/container.yml) and pulled here instead —
+# pulling needs no privileges:
+mkdir -p ~/images
+singularity pull ~/images/sraf-engine.sif \
+    docker://ghcr.io/open-rdip/sraf-engine:latest
+# For a reproducible run, pull the digest rather than the tag:
+#   singularity pull ~/images/sraf-engine.sif \
+#       docker://ghcr.io/open-rdip/sraf-engine@sha256:<digest>
+# The digest is printed in the CI run summary and is what the paper should cite.
+#
+# Note on oxigraph and vllm: neither is containerised here. Oxigraph runs as a
+# standalone binary (~/bin/oxigraph). vLLM is pip-installed in ~/envs/vllm
+# because vllm/vllm-openai:latest ships PyTorch for CUDA 12.8 while the GPU
+# node's driver 560.35.03 caps at 12.6.
 
 # Step 4 — cache the 3 models to HF_HOME (~48 GB) via a Slurm job
 sbatch cluster/download_models.sbatch

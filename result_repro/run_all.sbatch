@@ -19,7 +19,7 @@
 #   # smoke-test one:  sbatch --export=ALL,STUDY=study002 result_repro/run_all.sbatch
 set -uo pipefail
 
-REPO_ROOT="${SLURM_SUBMIT_DIR:-$HOME/rdip-sre}"; cd "$REPO_ROOT"; mkdir -p logs
+REPO_ROOT="${SLURM_SUBMIT_DIR:-$HOME/rdip-sraf-repro}"; cd "$REPO_ROOT"; mkdir -p logs
 CONDA_PY="$HOME/envs/sraf/bin/python"
 
 STUDY_ARG=""; [ -n "${STUDY:-}" ] && STUDY_ARG="--study ${STUDY}"

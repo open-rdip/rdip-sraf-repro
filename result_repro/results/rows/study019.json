@@ -1,0 +1,31 @@
+{
+  "study_id": "study019",
+  "repo_url": "https://github.com/Res2Net/mmdetection",
+  "claimed": [
+    {
+      "metric": "top-1 error",
+      "claimed": "20.81",
+      "split": "val",
+      "dataset": "ImageNet"
+    },
+    {
+      "metric": "mAP",
+      "claimed": "39.2",
+      "split": "val",
+      "dataset": "MS COCO"
+    },
+    {
+      "metric": "F-measure",
+      "claimed": "0.884",
+      "split": "test",
+      "dataset": "DUTS"
+    }
+  ],
+  "obtained": [],
+  "pairs": [],
+  "recipe_command": "python tools/test.py configs/cascade_rcnn/cascade_rcnn_r50_fpn_1x_coco.py /path/to/ckpt",
+  "recipe_confidence": "low",
+  "recipe_source": "extracted",
+  "status": "run_failed",
+  "reason": "placeholder_recipe"
+}

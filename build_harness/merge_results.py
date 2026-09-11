@@ -7,7 +7,7 @@ warned about. Run it once after the corpus array finishes.
 
 Usage (on the login node, against a durable Oxigraph you start first):
   ~/bin/oxigraph serve --location ~/triplestore --bind 127.0.0.1:7878 &
-  cd ~/rdip-sre
+  cd ~/rdip-sraf-repro
   OXIGRAPH_HOST=127.0.0.1 OXIGRAPH_PORT=7878 \
       ~/envs/sraf/bin/python -m build_harness.merge_results
 """

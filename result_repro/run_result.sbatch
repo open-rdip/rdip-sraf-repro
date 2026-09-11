@@ -22,7 +22,7 @@
 # only after the repo's data is in place (per its README).
 set -uo pipefail
 
-REPO_ROOT="${SLURM_SUBMIT_DIR:-$HOME/rdip-sre}"
+REPO_ROOT="${SLURM_SUBMIT_DIR:-$HOME/rdip-sraf-repro}"
 STUDY="${STUDY:?set STUDY=studyNNN}"
 CONDA_PY="$HOME/envs/sraf/bin/python"
 MANIFEST="$REPO_ROOT/result_repro/manifest.yaml"

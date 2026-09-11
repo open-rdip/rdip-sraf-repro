@@ -1,0 +1,20 @@
+{
+  "study_id": "study024",
+  "repo_url": "https://github.com/1qb-information-technologies/ccvm",
+  "claimed": [
+    {
+      "metric": "objective_value",
+      "claimed": "-1029.5",
+      "split": "test",
+      "dataset": "BoxQP"
+    }
+  ],
+  "obtained": [],
+  "pairs": [],
+  "recipe_command": "python examples/ccvm_boxqp_dl.py",
+  "recipe_confidence": "high",
+  "recipe_source": "extracted",
+  "log_tail": "/site-packages (from torch==1.13.1->ccvm-simulators) (11.7.99)\nRequirement already satisfied: nvidia-cudnn-cu11==8.5.0.96 in ./.venv/lib/python3.10/site-packages (from torch==1.13.1->ccvm-simulators) (8.5.0.96)\nRequirement already satisfied: nvidia-cublas-cu11==11.10.3.66 in ./.venv/lib/python3.10/site-packages (from torch==1.13.1->ccvm-simulators) (11.10.3.66)\nRequirement already satisfied: nvidia-cuda-nvrtc-cu11==11.7.99 in ./.venv/lib/python3.10/site-packages (from torch==1.13.1->ccvm-simulators) (11.7.99)\nRequirement already satisfied: wheel in ./.venv/lib/python3.10/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch==1.13.1->ccvm-simulators) (0.48.0)\nRequirement already satisfied: six>=1.5 in ./.venv/lib/python3.10/site-packages (from python-dateutil>=2.7->matplotlib==3.6.3->ccvm-simulators) (1.17.0)\nUsing cached ccvm_simulators-1.0.1-py3-none-any.whl (85 kB)\nInstalling collected packages: ccvm-simulators\nSuccessfully installed ccvm-simulators-1.0.1\n\nTraceback (most recent call last):\n  File \"/tmp/repro-study024-15sc0ok5/repo/examples/ccvm_boxqp_dl.py\", line 16, in <module>\n    solver.parameter_key = {\n  File \"/tmp/repro-study024-15sc0ok5/repo/.venv/lib/python3.10/site-packages/ccvm_simulators/solvers/dl_solver.py\", line 85, in parameter_key\n    raise ValueError(\nValueError: The parameter key is not valid for this solver. Expected keys: {'dt', 'iterations', 'noise_ratio', 'pump'} Given keys: dict_keys(['pump', 'feedback_scale', 'dt', 'iterations', 'noise_ratio'])\n",
+  "status": "run_failed",
+  "reason": "missing_dependency:pip"
+}

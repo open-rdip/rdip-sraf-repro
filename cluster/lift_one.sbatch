@@ -16,7 +16,7 @@ set -euo pipefail
 
 # Slurm copies the batch script to a spool dir, so BASH_SOURCE is useless here.
 # Use the submit dir (you sbatch from the repo root) with a hard fallback.
-REPO_ROOT="${SLURM_SUBMIT_DIR:-${HOME}/rdip-sre}"
+REPO_ROOT="${SLURM_SUBMIT_DIR:-${HOME}/rdip-sraf-repro}"
 CONDA_ENV="${HOME}/envs/sraf"
 OXIGRAPH_BIN="${HOME}/bin/oxigraph"
 TRIPLESTORE="${HOME}/triplestore"

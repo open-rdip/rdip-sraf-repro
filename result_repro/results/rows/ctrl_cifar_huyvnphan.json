@@ -1,0 +1,20 @@
+{
+  "study_id": "ctrl_cifar_huyvnphan",
+  "repo_url": "https://github.com/huyvnphan/PyTorch_CIFAR10",
+  "claimed": [
+    {
+      "metric": "top-1 accuracy",
+      "claimed": "93.07",
+      "split": "test",
+      "dataset": "CIFAR-10 (resnet18)"
+    }
+  ],
+  "obtained": [],
+  "pairs": [],
+  "recipe_command": "python eval.py",
+  "recipe_confidence": "high",
+  "recipe_source": "gold",
+  "log_tail": ".2f}\")\nPYEOF\npython eval.py\n\nTraceback (most recent call last):\n  File \"/tmp/repro-ctrl_cifar_huyvnphan-xreln7ar/repo/train.py\", line 10, in <module>\n    from module import CIFAR10Module\n  File \"/tmp/repro-ctrl_cifar_huyvnphan-xreln7ar/repo/module.py\", line 3, in <module>\n    from pytorch_lightning.metrics import Accuracy\nModuleNotFoundError: No module named 'pytorch_lightning.metrics'\nTraceback (most recent call last):\n  File \"/tmp/repro-ctrl_cifar_huyvnphan-xreln7ar/repo/eval.py\", line 4, in <module>\n    m = resnet18(pretrained=True)\n  File \"/tmp/repro-ctrl_cifar_huyvnphan-xreln7ar/repo/cifar10_models/resnet.py\", line 279, in resnet18\n    return _resnet(\n  File \"/tmp/repro-ctrl_cifar_huyvnphan-xreln7ar/repo/cifar10_models/resnet.py\", line 266, in _resnet\n    state_dict = torch.load(\n  File \"/tmp/repro-ctrl_cifar_huyvnphan-xreln7ar/repo/.venv/lib/python3.10/site-packages/torch/serialization.py\", line 1561, in load\n    with _open_file_like(f, \"rb\") as opened_file:\n  File \"/tmp/repro-ctrl_cifar_huyvnphan-xreln7ar/repo/.venv/lib/python3.10/site-packages/torch/serialization.py\", line 795, in _open_file_like\n    return _open_file(name_or_buffer, mode)\n  File \"/tmp/repro-ctrl_cifar_huyvnphan-xreln7ar/repo/.venv/lib/python3.10/site-packages/torch/serialization.py\", line 776, in __init__\n    super().__init__(open(name, mode))  # noqa: SIM115\nFileNotFoundError: [Errno 2] No such file or directory: '/tmp/repro-ctrl_cifar_huyvnphan-xreln7ar/repo/cifar10_models/state_dicts/resnet18.pt'\n",
+  "status": "run_failed",
+  "reason": "missing_dependency:pytorch_lightning.metrics"
+}

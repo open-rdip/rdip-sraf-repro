@@ -11,6 +11,7 @@ Pure stdlib — runs anywhere, including the cluster login node via:
 from __future__ import annotations
 import csv
 import glob
+import re
 import json
 import os
 import statistics as stat
@@ -22,13 +23,25 @@ RESULTS_DIR = Path(os.getenv("SRAF_RESULTS_DIR", REPO_ROOT / "validation" / "res
 OUT_DIR = REPO_ROOT / "analysis"
 
 
+# Corpus study ids are exactly study001..study096. The results dir also holds
+# non-corpus artefacts (semantic-diff outputs like study001_vs_study002.json,
+# and reference/probe entries like ref005.json); including them silently
+# inflated the reported corpus size to 97.
+STUDY_ID_RE = re.compile(r"^study\d{3}$")
+
+
 def _load() -> list[dict]:
     out = []
     for p in sorted(glob.glob(str(RESULTS_DIR / "*.json"))):
         try:
-            out.append(json.load(open(p)))
+            d = json.load(open(p))
         except Exception as e:  # noqa: BLE001
             print(f"  skip {p}: {e}")
+            continue
+        if not STUDY_ID_RE.match(str(d.get("study_id", "")).strip()):
+            print(f"  skip non-corpus result: {p}")
+            continue
+        out.append(d)
     return out
 
 

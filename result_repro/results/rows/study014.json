@@ -1,0 +1,26 @@
+{
+  "study_id": "study014",
+  "repo_url": "https://github.com/open-mmlab/mmdetection3d",
+  "claimed": [
+    {
+      "metric": "mAP",
+      "claimed": "67.2%",
+      "split": "test",
+      "dataset": "ScanNet"
+    },
+    {
+      "metric": "mAP",
+      "claimed": "60.1%",
+      "split": "test",
+      "dataset": "SUN RGB-D"
+    }
+  ],
+  "obtained": [],
+  "pairs": [],
+  "recipe_command": "python tools/test.py configs/second/second_8x8_160e_kitti-3d-3class.py",
+  "recipe_confidence": "high",
+  "recipe_source": "extracted",
+  "log_tail": "/site-packages/setuptools/build_meta.py\", line 481, in get_requires_for_build_editable\n          return self.get_requires_for_build_wheel(config_settings)\n        File \"/tmp/pip-build-env-niwhfc5u/overlay/lib/python3.10/site-packages/setuptools/build_meta.py\", line 333, in get_requires_for_build_wheel\n          return self._get_build_requires(config_settings, requirements=[])\n        File \"/tmp/pip-build-env-niwhfc5u/overlay/lib/python3.10/site-packages/setuptools/build_meta.py\", line 301, in _get_build_requires\n          self.run_setup()\n        File \"/tmp/pip-build-env-niwhfc5u/overlay/lib/python3.10/site-packages/setuptools/build_meta.py\", line 520, in run_setup\n          super().run_setup(setup_script=setup_script)\n        File \"/tmp/pip-build-env-niwhfc5u/overlay/lib/python3.10/site-packages/setuptools/build_meta.py\", line 317, in run_setup\n          exec(code, locals())  # noqa: S102 # exec is intentional here\n        File \"<string>\", line 10, in <module>\n      ModuleNotFoundError: No module named 'torch'\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nERROR: Failed to build 'file:///tmp/repro-study014-z9nwe1dr/repo' when getting requirements to build editable\n/bin/sh: 3: mim: not found\nTraceback (most recent call last):\n  File \"/tmp/repro-study014-z9nwe1dr/repo/tools/test.py\", line 6, in <module>\n    from mmengine.config import Config, ConfigDict, DictAction\nModuleNotFoundError: No module named 'mmengine'\n",
+  "status": "run_failed",
+  "reason": "missing_dependency:torch"
+}

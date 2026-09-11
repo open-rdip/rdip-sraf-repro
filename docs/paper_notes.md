@@ -6,11 +6,22 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
 
 ## Methodological decisions (affect Methods / Limitations sections)
 
-- **Reproducibility is measured as environment reconstruction, not CI.** The
-  AIT Slurm compute nodes have no Docker/Apptainer, so each declared environment
-  is rebuilt in an isolated venv on the cluster. This is *stronger* framing than
-  CI: it directly tests whether the declared metadata suffices to reconstruct the
-  environment. Replace all "CI / continuous integration" language accordingly.
+- **Reproducibility is measured as environment reconstruction, not CI.** Each
+  declared environment is rebuilt in an isolated venv on the cluster. This is
+  *stronger* framing than CI: it directly tests whether the declared metadata
+  suffices to reconstruct the environment. Replace all "CI / continuous
+  integration" language accordingly.
+  - **CORRECTED 2026-09-11.** The original rationale ("AIT Slurm compute nodes
+    have no Docker/Apptainer") is **false**: `ASL-cpu` carries
+    `/usr/bin/singularity`, singularity-ce 4.1.1. The containerless rebuild is a
+    *deliberate methodological choice*, not a consequence of missing tooling —
+    a container would supply the very environment we are testing the metadata's
+    ability to reconstruct, masking the measurement. Lead with that argument in
+    the journal; it holds regardless of what the cluster supports.
+  - Do **not** generalise the vLLM container failure into "no containers". That
+    failure is specific and real: `vllm/vllm-openai:latest` ships PyTorch built
+    for CUDA 12.8 while the GPU node's driver 560.35.03 caps at 12.6. The
+    CPU-side engine container is unaffected.
 
 - **Two-level build outcome.** Each repo yields `resolve_success` (does the
   declared dependency set resolve into a consistent plan — `pip --dry-run`) and
@@ -116,11 +127,28 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
 
 - Storage approved: **200 GB** (not 300). Drove the streaming design: clone to
   node-local scratch -> process -> delete; only triples + results persist.
-- Cluster policy: **max 1 running job, 1 node/job, 7-day max.** Corpus runs as a
-  single sequential, resumable job (not a Slurm array).
+- ~~Cluster policy: max 1 running job, 1 node/job, 7-day max.~~ **CORRECTED
+  2026-09-11 — this was never enforced by Slurm.** Verified directly:
+  `AccountingStorageType=(null)` and `AccountingStorageEnforce=none`, so no
+  association or QOS limits can exist; `MaxArraySize=1001`, `MaxJobCount=10000`;
+  partition `ASL-cpu` reports `MaxTime=UNLIMITED`, `MaxNodes=UNLIMITED`.
+  **Job arrays are available and there is no job-count or wall-time cap.**
+  The single-sequential-job corpus design was therefore self-imposed, not required.
+- The real constraint is *shape*, not policy: `ASL-cpu` is a **single node**
+  (`skynetcpu`, 128 CPUs, ~123 GB usable RAM — note the advertised 512 GB is not
+  what Slurm reports) with `OverSubscribe=NO`. Arrays run, but all tasks contend
+  for that one node, and the lab shares it. Throttle concurrency
+  (`--array=1-50%8`) rather than flooding the queue.
+- `DefMemPerNode=UNLIMITED`: a job omitting `--mem` requests the whole node and
+  will pend indefinitely behind other users. Always pass `--mem` and `--time`.
+- Outbound HTTPS works from both the login node and compute nodes (verified:
+  `api.openai.com` returns HTTP 401, i.e. reached and authenticated-rejected).
+  API-backed extraction can therefore run on the cluster.
 - Containerless runtime: conda env (`~/envs/sraf`, call its python by abs path)
-  + standalone Oxigraph binary (`~/bin/oxigraph` 0.5.8). No Apptainer on the CPU
-  compute node (skynetcpu).
+  + standalone Oxigraph binary (`~/bin/oxigraph` 0.5.8). ~~No Apptainer on the CPU
+  compute node (skynetcpu).~~ **CORRECTED 2026-09-11: singularity-ce 4.1.1 IS
+  installed at `/usr/bin/singularity` on skynetcpu.** `containers/sraf-engine.def`
+  can therefore be built and shipped — see the tool-release task.
 - **GPU node (ASL-gpu / skynet):** 2x RTX A6000 48 GB, **driver 560.35.03 =
   CUDA 12.6 max**. Apptainer IS present here, BUT the `vllm/vllm-openai:latest`
   container ships PyTorch built for CUDA 12.8 -> `torch._C._cuda_init()` fails

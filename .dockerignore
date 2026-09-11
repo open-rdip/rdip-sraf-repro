@@ -1,0 +1,17 @@
+# The Dockerfile does `COPY . .`, so keep history, caches and bulk data out of
+# the image: they bloat it and change the digest for no reason.
+.git
+.github
+.pytest_cache
+**/__pycache__
+**/*.pyc
+.DS_Store
+.env
+data/corpus_pdfs
+validation/results
+result_repro/results
+triplestore
+images
+*.sif
+docs
+Claude outputs
