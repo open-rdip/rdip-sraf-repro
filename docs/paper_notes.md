@@ -492,3 +492,268 @@ build-out, to seed the Semantic Web Journal paper once experiments finish.
   handles clone/env/run/log + the claimed-vs-obtained comparison.
 - Report the build→run→result funnel: resolve% → build% → run% → result-match%.
   Even a partial subset reproducing headline numbers is a strong finding (advisors).
+
+---
+
+# 2026-09-11 — Journal extension (New Generation Computing): findings to reuse
+
+Everything below is computed from data in this repo and is regenerable. Scripts:
+`analysis/criterion_validity.py`, `analysis/taxonomy_restructure.py`,
+`analysis/code_native_criteria.py`. Outputs: the matching `.md` files in
+`analysis/`. Numbers here are the ones to quote in the extension.
+
+## A. The thesis (use this framing, not "we made FAIR-R predictive")
+
+> Reproducibility scores measure how well a study is *described*, not whether it
+> *reproduces*. We show this at two levels over 96 ML repositories, explain the
+> failure mechanically — a FAIR-style rubric is largely invariant on executable
+> artifacts — identify the small set of deterministic signals that do carry
+> information, and turn that into a triage procedure for verification effort.
+
+This is a claim about the FAIR-assessment literature, not only about SRAF. Both
+prior papers become evidence for it. **Do not promise "FAIR-R made predictive"**
+— §C shows re-weighting does not deliver that, and the title would oversell.
+
+## B. Variance audit — the mechanism behind the null result ★ headline
+
+Of FAIR-R's 100 points, **57.8 are identical for all 96 repositories** (9 of 15
+criteria have zero variance): Landing page, Data licence, Access level, Workflow
+language, Related links, Community standard (absent for all 96); Access protocol,
+Commit + versioning (full for all 96); Computational environment R1 (partial for
+all 96). Three more are near-constant (differ on 1–2 repos): Persistent
+identifier, Descriptive metadata, Method declared.
+
+**Only three criteria carry usable variation:** Software licence (7.5 pts),
+Methodological transparency R2 (9.0), Data provenance R3 (9.0).
+
+Consequences to state explicitly:
+- The tight observed distribution (mean 49.41, sd 5.23) is a property of the
+  rubric meeting code repositories, not of repositories being uniformly poor.
+- The aggregate cannot predict because most of its budget is a constant.
+- The dimension-level *Reusable* signal is **entirely** the licence criterion —
+  its rho equals the dimension's exactly; the other two Reusable criteria are
+  invariant.
+
+## C. Statistics hardening (fixes the conference version's fragility)
+
+The conference model fits 8 predictors on n=86 with ~48 events (~6 EPV, below
+the conventional 10) and reports uncorrected p across 8 predictors × 2 outcomes.
+Replacement: Firth penalized logistic regression, penalized likelihood-ratio
+p-values, criteria entering only if their minority level is seen ≥5 times
+(3 predictors, EPV 15–16), Benjamini-Hochberg within each outcome.
+
+- **Software licence survives correction**: q=0.017 (resolve), q=0.028 (build).
+- **Report the tension honestly.** Bivariate Spearman does *not* survive
+  (q=0.14 across six criteria). The multivariable model has more power because
+  it adjusts for R2 and R3. Give both numbers; do not quote only the favourable
+  one.
+- Near-constant predictors (differ on 1–2 repos) are mutually collinear and make
+  penalized likelihood diverge — hence the ≥5 entry rule.
+
+## D. Re-weighting does NOT rescue the instrument
+
+Cross-validated AUC, 10-fold × 20 repeats, weights derived **inside** each
+training fold (so not circular):
+
+| Instrument | resolve | build |
+|---|---:|---:|
+| FAIR-R v1 (aggregate) | 0.584 | 0.555 |
+| Software licence alone | 0.586–0.595 | 0.577 |
+| FAIR-R v2 (re-weighted) | 0.604 | 0.574 |
+| Code-native Tier A (scored) | 0.622 | 0.574 |
+
+All within one sd of each other. **Claim: no weighting of these criteria yields
+a useful predictor; a single deterministic bit does as well as the whole rubric.**
+
+## E. Restructured failure taxonomy (supersedes the workshop's three families)
+
+The workshop's three families are not the same kind of thing: family 1 is
+findings, family 2 is an exclusion criterion (the paper says so itself), family 3
+is measurement error in our harness. Reporting "18 of 26" divides findings by a
+denominator containing exclusions and our own bugs.
+
+Restructured over the 26 buildable repositories:
+
+| Locus | n | What it is |
+|---|---:|---|
+| `artifact` | 16 | genuine failures — a finding |
+| `claim` | 5 | excluded: metric not reproducible by construction |
+| `scope` | 1 | excluded: outside the 1×48GB harness envelope |
+| `harness` | 4 | measurement error (our missing deps) |
+
+**New headline: 16 of 16 genuine artifact failures are documentation or artifact
+gaps.** Placeholder command (7), no run command (4), repo≠paper (3), dead
+download (1), gated dataset (1). Nothing attributable to compute.
+
+Two reassignments out of the workshop's family 1, flagged for the second coder:
+**study001** (176B model — outside harness scope, not a documentation gap) and
+**study015** (no numeric claim — nothing to reproduce against). These move the
+denominator from 18 to 16; do not assert them without adjudication.
+
+Second axis = remedy class, which the workshop discussion already uses without
+naming it: `author-fix` / `extraction-research` / `harness-fix` / `intrinsic`.
+Crossing locus × remedy turns a flat list into guidance on where effort goes.
+
+## F. The bridge — why the instrument could not have worked ★ strongest result
+
+Mapping each artifact failure to the FAIR-R criterion that would have caught it:
+
+| Failure mode | n | FAIR-R coverage |
+|---|---:|---|
+| Placeholder command | 7 | **not in the rubric at all** |
+| No run command | 4 | Reproducible R2, partial only |
+| Repo does not match paper | 3 | Related links — **invariant (absent for all 96)** |
+| Dead download (link rot) | 1 | **not in the rubric at all** |
+| Gated dataset | 1 | Access level — **invariant (absent for all 96)** |
+
+**15 of 16 failures map onto criteria that are either absent from the rubric or
+inside the invariant 57.8 points.** The null result is therefore *structural*,
+derivable rather than merely observed. This is the argument for new criteria
+rather than new weights, and it is the paper's strongest single move.
+
+## G. Code-native criteria
+
+**Tier A** (computable now, from stored artefacts; 9 criteria): licence present,
+Python declared, docker / conda / pip present, >1 env declaration, artefacts at
+root, artefact count, log triples. **9 of 9 vary** (vs 6 of 15 for FAIR-R).
+AUC 0.622 / 0.574 (§D). Honest reading: better than FAIR-R on resolve, *not*
+better than licence-alone on build, and **nothing survives FDR univariately**
+(licence closest, q=0.128). Tier A is a finding — the signal is not in the
+metadata anyone currently collects — but it is not the constructive contribution.
+
+**Tier B** (the constructive contribution; NOT yet computable — each needs a new
+static check in the build harness plus a corpus re-clone):
+
+| Criterion | Check | Evidence |
+|---|---|---|
+| `concrete_run_command` | documented command with no unfilled placeholder | 7/16 failures |
+| `documented_entrypoint` | any documented route to a reported number | 4/16 |
+| `links_resolve` | declared checkpoint/dataset URLs return 200 | 1/16, grows with age |
+| `data_obtainable_without_application` | data not gated behind an application | 1/16 |
+| `repo_matches_paper` | linked repo corresponds to the paper | 3/16 |
+
+15 of 16 observed failures map onto these five, and each is a cheap static test.
+**This is the critical path for the December draft.**
+
+## H. Corrections to published / recorded numbers
+
+- **Corpus is 96, not 97.** `summarize_results.py` and `predictor_analysis.py`
+  globbed `validation/results/*.json` indiscriminately and counted
+  `study001_vs_study002.json` (a WS2 semantic-diff output) as a repository.
+  Symptoms: "97 repos processed", "86/97", "license 81/97 (83.5%)", "commit hash
+  96/97", "1/97 with no env files" — the last two were qualitatively wrong (the
+  phantom row *was* the missing-commit, no-env-file repo). Fixed with a
+  `^study\d{3}$` guard. **Headline percentages divide by 86 (build-attempted) and
+  were never affected**, and `predictor_analysis.py` always read the raw JSONs,
+  so no published coefficient changes.
+- **FAIR-R distribution**: the checked-in `results_summary.csv` was stale (a
+  broken narrow band ~26–34, all 96 "poor"). Correct values from the raw results:
+  mean **49.41**, median 51.79, sd **5.23**, min 26.62, max 56.29; **61 fair /
+  35 poor**. The SRAF paper reports mean 49.6, sd 5.1 — a ~0.2 drift, immaterial,
+  but use the recomputed figures in the extension.
+- **New result the checked-in `predictor_analysis.md` predated**: per-dimension
+  Spearman. Reusable rho=+0.244 (p=0.024, resolve) / +0.209 (p=0.053, build);
+  Findable, Interoperable, Reproducible flat. See §B for why.
+- Workshop paper wording: it calls the cluster "containerless". ASL-cpu carries
+  singularity-ce 4.1.1, so in the extension say **containerless *harness***, and
+  justify it methodologically (a container supplies the environment whose
+  reconstructability we are measuring), never by cluster capability.
+- Two-phase pipeline: justify by **the ablation**, not GPU scarcity. Freezing the
+  recipe between phases is what makes autonomous-vs-gold attribution possible
+  (0/3 vs 2/3). ASL has 4×A6000, so "does not fit on one 48GB GPU" invites the
+  question why two cards were not used.
+
+## I. Threats to validity — applying the instrument to ourselves
+
+Five defects found in our own released artifact during this session, all now
+fixed. Worth a short paragraph: we turned the instrument on our own artifact and
+found the same failure family we found everywhere else — documentation and
+artifact gaps, `author-fix` remedy class.
+
+1. `results_gold.json` / `results_silver.json` did not reproduce Table 5 (gave
+   F1 0.133/0.108 vs the published 0.273/0.226). They were output from a
+   pre-`--match` script version, i.e. the *exact*-match mode, with no `fuzzy` key
+   recorded. The published table is correct and reproduces exactly with
+   `--match both`. **Classifies as: placeholder/undocumented-configuration.**
+2. Eleven stale `rdip-sre` paths in the runbook and sbatch files (repo renamed to
+   `rdip-sraf-repro`). **repo≠paper-link family.**
+3. `cluster/README.md` instructed users to set `--account` on a cluster with no
+   accounting database — any account fails the job with `InvalidAccount`.
+4. No container shipped, although the discussion recommends archived container
+   digests to authors. Now built in CI and published to GHCR.
+5. `result_repro/results/` was gitignored, so the per-study rows behind the
+   taxonomy were **not** released — while the availability statement says they
+   are. Now tracked (rows + summary.json; bulk logs still ignored).
+
+## J. Open decisions
+
+- Ask the SI editors whether one submission may extend **both** the main-track
+  and workshop papers. Changes the structure; get it early.
+- Corpus extension: use a **bounded held-out validation set (~40–50 repos)**, not
+  a general expansion. A redesigned instrument fitted and evaluated on the same
+  96 is circular, so held-out data is *required*, not optional. Also bounded by
+  the 200 GB L-tier quota (900 THB/month; XL is 1,500).
+- Instrument comparison (F-UJI / FAIRshake): pre-specify it as **variance and
+  predictive validity**, never a score bake-off. A higher score is not "better" —
+  that is the thesis. Every outcome is then publishable.
+- Multi-model extraction contradicts the recorded decision "extraction access =
+  local open weights, not an API". Resolve in text: open weights remain the
+  reproducible production path; API models establish an upper bound for the
+  ablation only.
+- Second coder needed for the taxonomy inter-rater study (26 rows in
+  `analysis/taxonomy_coding_sheet.csv`; only the 16 artifact cases need coding,
+  on two axes → two kappa values).
+
+## K. Tier-B checks built — and an unplanned result from validating them
+
+`build_harness/tier_b_checks.py` (+ `run_tier_b_corpus.py`, `tier_b_corpus.sbatch`,
+`tests/test_tier_b_checks.py`, 31 tests passing). Deterministic, evidence-bearing,
+offline by default; graded 0/1/2 to match FAIR-R's `LEVEL_FACTOR`.
+
+**Detector validation.** The placeholder detector reproduces the taxonomy's
+placeholder/concrete split on all 13 recipes that carry a command: precision 1.00,
+recall 1.00. Two regex bugs found and fixed in the process, both the same class —
+`\b` does not match before an underscore, so `/path_to_maskrcnn_benchmark/` and
+`eval_extraction.py` were silently missed. Also: a `$VAR` the same snippet assigns
+(`export NGPUS=8 && ... $NGPUS`) is runnable and must not count as a placeholder.
+
+**The unplanned result (worth a subsection of its own).** Running the checks on
+real clones disagrees with the recipe labels — and the disagreement is signal,
+not error:
+
+| Study | Recipe label | Docs contain (concrete eval / placeholder eval) |
+|---|---|---|
+| study003 | placeholder | **30** / 23 |
+| study012 | placeholder | **4** / 0 |
+| study019 | placeholder | **6** / 3 |
+| study024 | concrete | 0 / 0 |
+
+The recipe classification measures *what the extractor produced*; Tier B measures
+*what the artifact documents*. For study003/012/019 a concrete evaluation command
+**was** documented and the extractor selected a placeholder one instead. For
+study024 the repository documents no command at all, yet a recipe was produced —
+so the extractor inferred it from the file tree rather than the documentation.
+
+**Consequences for the paper:**
+
+1. The "placeholder command" mode (7 of 16 artifact failures) is **not purely an
+   author-side gap**. For at least three of the seven, the remedy class on axis 2
+   is `extraction-research`, not `author-fix`. The restructured taxonomy must be
+   re-scored with this evidence before the numbers are quoted.
+2. This *strengthens* the workshop paper's own conclusion ("execution works;
+   extraction is the bottleneck") and makes it quantitative rather than inferred
+   from the 0/3 vs 2/3 ablation alone.
+3. It gives a capability neither prior paper has: an independent, deterministic
+   measurement of whether the artifact documented a usable command, which lets
+   each failure be attributed to the author or to the extractor **per study**.
+4. Do **not** tune the Tier-B checks to agree with the recipe labels. They are
+   different constructs; forcing agreement would destroy the comparison.
+
+**Next analysis (needs the corpus sweep):** cross-tabulate, over the 26 buildable
+repositories, the recipe outcome against the Tier-B `concrete_run_command` grade.
+The cell that matters is *recipe placeholder × docs concrete* = failures caused by
+extraction, not by the artifact. That number is a headline candidate.
+
+**Caveat to carry:** the checks were designed against this corpus's failure modes,
+so their construct validity on held-out repositories is untested — another reason
+the bounded held-out set in §J is required rather than optional.
