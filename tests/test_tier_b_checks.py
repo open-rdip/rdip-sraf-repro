@@ -206,3 +206,21 @@ def test_genuine_evaluation_commands_still_count(tmp_path, cmd):
     r = check_concrete_run_command([(p, p.read_text())])
     assert r.level == FULL
     assert r.detail["n_eval_concrete"] >= 1
+
+
+@pytest.mark.parametrize("cmd", [
+    "python demo/webcam.py --min-image-size 300",
+    "python demo/predictor.py --input examples/cat.jpg",
+    "python inference.py --image sample.png",
+])
+def test_single_input_demos_are_not_evaluation(tmp_path, cmd):
+    """A demo shows the model runs; it does not regenerate a benchmark number.
+
+    Regression: `demo`, `predict` and `inference` were in EVAL_HINT and admitted
+    webcam demos as "concrete evaluation commands".
+    """
+    p = tmp_path / "README.md"
+    p.write_text(f"# demo\n\n```\n{cmd}\n```\n")
+    r = check_concrete_run_command([(p, p.read_text())])
+    assert r.level != FULL
+    assert r.detail["n_eval_concrete"] == 0

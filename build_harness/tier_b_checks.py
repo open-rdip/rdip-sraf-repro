@@ -62,9 +62,21 @@ RUN_TOKEN = re.compile(
     re.M)
 
 # Commands that indicate an *evaluation / reproduction* route specifically.
+#
+# Scoped deliberately narrowly. The criterion is "does this command reproduce a
+# reported metric", so it must exclude three families that earlier versions of
+# this regex admitted and that each inflated the corpus count:
+#   * unit-test runners  (pytest, tox)          -- handled by NOT_EVAL below
+#   * training commands  (train.py, finetune)   -- handled by NOT_EVAL below
+#   * single-input demos (demo/webcam.py, predict on one image, inference on a
+#     sample) -- excluded here by dropping `demo`, `predict` and `inference`
+#     from the vocabulary. A demo shows the model works; it does not regenerate
+#     a benchmark number.
+# `reproduce` is retained because a script so named is an unusually strong
+# signal, and `benchmark`/`validate` because they name benchmark runs directly.
 EVAL_HINT = re.compile(
-    r"(?<![A-Za-z])(test|eval|evaluate|evaluation|inference|predict|reproduce|"
-    r"benchmark|validate|demo)(?![A-Za-z])", re.I)
+    r"(?<![A-Za-z])(test|eval|evaluate|evaluation|reproduce|"
+    r"benchmark|validate)(?![A-Za-z])", re.I)
 
 # URLs worth checking for liveness: releases, weights, archives, data hosts.
 ASSET_URL = re.compile(
@@ -183,7 +195,8 @@ def check_concrete_run_command(docs) -> CheckResult:
     NOT_EVAL = re.compile(
         r"\b(pytest|unittest|nosetests|tox|coverage|flake8|ruff|mypy|lint)\b"
         r"|(?<![A-Za-z])train(?:_net|_model|er)?\.(?:py|sh)"
-        r"|(?<![A-Za-z])(?:train|finetune|fine_tune|pretrain)(?![A-Za-z])",
+        r"|(?<![A-Za-z])(?:train|finetune|fine_tune|pretrain)(?![A-Za-z])"
+        r"|(?<![A-Za-z])demo(?![A-Za-z])|demo/|/demo_|example[s]?/",
         re.I)
     eval_concrete, eval_placeheld, other_concrete = [], [], []
     for path, text in docs:
