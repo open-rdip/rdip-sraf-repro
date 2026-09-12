@@ -1,0 +1,63 @@
+{
+  "n_doc_files": 5,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 1,
+      "evidence": "evaluation command is placeholder-only \u2014 README.md: python3 copyright_test.py <AE_LIST_PATH> <MODEL_PATH>",
+      "detail": {
+        "n_eval_concrete": 0,
+        "n_eval_placeholder": 1,
+        "n_other_concrete": 5,
+        "placeholders": [
+          "<AE_LIST_PATH>",
+          "<MODEL_PATH>"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python3 copyright_test.py <AE_LIST_PATH> <MODEL_PATH>",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 2,
+      "evidence": "no declared asset URLs to verify",
+      "detail": {
+        "n_urls": 0,
+        "checked": false
+      },
+      "level_name": "full"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 9,
+  "tier_b_max": 10,
+  "study_id": "study086",
+  "repo_url": "https://github.com/hengvt/proflingo",
+  "status": "ok",
+  "duration_s": 4.4
+}

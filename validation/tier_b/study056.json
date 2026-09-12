@@ -1,0 +1,59 @@
+{
+  "n_doc_files": 1,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "README.md: python pion-clouds/scripts/evaluation/eval_checkpoints.py",
+      "detail": {
+        "n_eval_concrete": 3,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 4
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python pion-clouds/scripts/evaluation/eval_checkpoints.py",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 2,
+      "evidence": "no declared asset URLs to verify",
+      "detail": {
+        "n_urls": 0,
+        "checked": false
+      },
+      "level_name": "full"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 10,
+  "tier_b_max": 10,
+  "study_id": "study056",
+  "repo_url": "https://github.com/FLC-QU-hep/CaloHadronic",
+  "status": "ok",
+  "duration_s": 10.6
+}

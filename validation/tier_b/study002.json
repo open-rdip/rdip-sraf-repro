@@ -1,0 +1,69 @@
+{
+  "n_doc_files": 8,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "README.md: python -m pytest -p no:warnings --lf # run only the last failed test",
+      "detail": {
+        "n_eval_concrete": 1,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 12
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python -m pytest -p no:warnings --lf # run only the last failed test",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "8 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 8,
+        "checked": false,
+        "urls": [
+          "https://files.dice-research.org/datasets/dice-embeddings/KGs.zip",
+          "https://raw.githubusercontent.com/DeepGraphLearning/ULTRA/main/ckpts/ultra_3g.pth",
+          "https://raw.githubusercontent.com/DeepGraphLearning/ULTRA/main/ckpts/ultra_4g.pth",
+          "https://raw.githubusercontent.com/DeepGraphLearning/ULTRA/main/ckpts/ultra_50g.pth",
+          "https://raw.githubusercontent.com/yuchengz99/TRIX/7596e14eefefe89e61396205a0550172cadeddb0/entity_prediction.pth",
+          "https://raw.githubusercontent.com/yuchengz99/TRIX/7596e14eefefe89e61396205a0550172cadeddb0/relation_prediction.pth",
+          "https://raw.githubusercontent.com/jw9730/flock/f35103d25a78bdf4075de5c673a51de4979aa4d7/checkpoints/flock_entity.pth",
+          "https://raw.githubusercontent.com/jw9730/flock/f35103d25a78bdf4075de5c673a51de4979aa4d7/checkpoints/flock_relation.pth"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 0.60",
+      "detail": {
+        "checked": true,
+        "score": 0.6
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 9,
+  "tier_b_max": 10,
+  "study_id": "study002",
+  "repo_url": "https://github.com/dice-group/dice-embeddings",
+  "status": "ok",
+  "duration_s": 1.8
+}

@@ -1,0 +1,64 @@
+{
+  "n_doc_files": 8,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 1,
+      "evidence": "commands documented but none reproduces a metric \u2014 README.md: python setup.py install",
+      "detail": {
+        "n_eval_concrete": 0,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 1
+      },
+      "level_name": "partial"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 1,
+      "evidence": "script present but not documented: tools/relation_test_net.py",
+      "detail": {
+        "n_scripts": 17,
+        "source": "filesystem"
+      },
+      "level_name": "partial"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "2 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 2,
+        "checked": false,
+        "urls": [
+          "https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_R_50_FPN_1x.pth",
+          "https://storage.googleapis.com/coco-dataset/external/PASCAL_VOC.zip"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 7,
+  "tier_b_max": 10,
+  "study_id": "study021",
+  "repo_url": "https://github.com/jeonjaehyeong/dpl",
+  "status": "ok",
+  "duration_s": 2.7
+}

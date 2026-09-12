@@ -1,0 +1,71 @@
+{
+  "n_doc_files": 37,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "tracking_train_test.md: CUDA_VISIBLE_DEVICES=-1 python tools/train.py configs/qdtrack/qdtrack_faster-rcnn_r50_fpn_8xb2-4e_mot17halftrain_test-mot17halfval.py",
+      "detail": {
+        "n_eval_concrete": 30,
+        "n_eval_placeholder": 23,
+        "n_other_concrete": 48
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "tracking_train_test.md: CUDA_VISIBLE_DEVICES=-1 python tools/train.py configs/qdtrack/qdtrack_faster-rcnn_r50_fpn_8xb2-4e_mot17halftrain_test-mot17halfval.py",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "27 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 27,
+        "checked": false,
+        "urls": [
+          "https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth",
+          "https://download.openmmlab.com/mmdetection/v3.0/align_detr/align_detr-4scale_r50_8xb2-12e_coco/align_detr-4scale_r50_8xb2-12e_coco_20230914_095734-61f921af.pth",
+          "https://download.openmmlab.com/mmdetection/v3.0/align_detr/align_detr-4scale_r50_8xb2-24e_coco/align_detr-4scale_r50_8xb2-24e_coco_20230919_152414-f4b6cf76.pth",
+          "https://download.openmmlab.com/mmdetection/v3.0/codetr/co_dino_5scale_r50_lsj_8xb2_1x_coco/co_dino_5scale_r50_lsj_8xb2_1x_coco-69a72d67.pth",
+          "https://download.openmmlab.com/mmdetection/v3.0/codetr/co_dino_5scale_r50_1x_coco-7481f903.pth",
+          "https://download.openmmlab.com/mmdetection/v3.0/codetr/co_dino_5scale_lsj_r50_3x_coco-fe5a6829.pth",
+          "https://download.openmmlab.com/mmdetection/v3.0/codetr/co_dino_5scale_swin_large_1x_coco-27c13da4.pth",
+          "https://download.openmmlab.com/mmdetection/v3.0/codetr/co_dino_5scale_lsj_swin_large_1x_coco-3af73af2.pth",
+          "https://download.openmmlab.com/mmdetection/v3.0/codetr/co_dino_5scale_swin_large_3x_coco-d7a6d8af.pth",
+          "https://download.openmmlab.com/mmdetection/v3.0/codetr/co_dino_5scale_swin_large_16e_o365tococo-614254c9.pth"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 9,
+  "tier_b_max": 10,
+  "study_id": "study003",
+  "repo_url": "https://github.com/zhimengxin/rcod",
+  "status": "ok",
+  "duration_s": 3.5
+}

@@ -1,0 +1,59 @@
+{
+  "n_doc_files": 31,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "README.md: python3 test_hermes_mcp.py",
+      "detail": {
+        "n_eval_concrete": 19,
+        "n_eval_placeholder": 2,
+        "n_other_concrete": 27
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python3 test_hermes_mcp.py",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 2,
+      "evidence": "no declared asset URLs to verify",
+      "detail": {
+        "n_urls": 0,
+        "checked": false
+      },
+      "level_name": "full"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 1,
+      "evidence": "README.md: weak title overlap 0.22 \u2014 verify manually",
+      "detail": {
+        "checked": true,
+        "score": 0.222
+      },
+      "level_name": "partial"
+    }
+  },
+  "tier_b_level_sum": 9,
+  "tier_b_max": 10,
+  "study_id": "study023",
+  "repo_url": "https://github.com/modelscope/modelscope-agent",
+  "status": "ok",
+  "duration_s": 4.8
+}

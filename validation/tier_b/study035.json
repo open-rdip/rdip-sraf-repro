@@ -1,0 +1,63 @@
+{
+  "n_doc_files": 3,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "README.md: bash scripts/cycle_gan/horse2zebra/test_full.sh",
+      "detail": {
+        "n_eval_concrete": 11,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 39
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: bash scripts/cycle_gan/horse2zebra/test_full.sh",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "2 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 2,
+        "checked": false,
+        "urls": [
+          "https://github.com/kazuto1011/deeplab-pytorch/releases/download/v1.0/deeplabv2_resnet101_msc-cocostuff164k-100000.pth",
+          "https://github.com/Kitware/CMake/releases/download/v3.21.0-rc2/cmake-3.21.0-rc2-linux-aarch64.sh"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 9,
+  "tier_b_max": 10,
+  "study_id": "study035",
+  "repo_url": "https://github.com/mit-han-lab/gan-compression",
+  "status": "ok",
+  "duration_s": 8.9
+}

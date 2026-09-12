@@ -1,0 +1,63 @@
+{
+  "n_doc_files": 3,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 1,
+      "evidence": "commands documented but none reproduces a metric \u2014 README.md: python scripts/train.py --conf examples/ET-PCQM4MV2.yaml --layernorm-on-vec whitened --job-id pretraining",
+      "detail": {
+        "n_eval_concrete": 0,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 2
+      },
+      "level_name": "partial"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 0,
+      "evidence": "no evaluation route documented or present",
+      "detail": {},
+      "level_name": "absent"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "4 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 4,
+        "checked": false,
+        "urls": [
+          "http://pub.htmd.org/et-qm9.zip",
+          "http://pub.htmd.org/et-md17.zip",
+          "http://pub.htmd.org/et-ani1.zip",
+          "http://pub.htmd.org/t-ani1.zip"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 6,
+  "tier_b_max": 10,
+  "study_id": "study045",
+  "repo_url": "https://github.com/shehzaidi/pre-training-via-denoising",
+  "status": "ok",
+  "duration_s": 7.2
+}

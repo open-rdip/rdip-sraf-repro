@@ -1,0 +1,77 @@
+{
+  "n_doc_files": 1,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 1,
+      "evidence": "evaluation command is placeholder-only \u2014 README.md: python3 validate.py /path/to/imagenet  --model $MODEL -b 128 \\",
+      "detail": {
+        "n_eval_concrete": 0,
+        "n_eval_placeholder": 3,
+        "n_other_concrete": 0,
+        "placeholders": [
+          "$MODEL",
+          "/path/to",
+          "/path/to/",
+          "path/to/"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python3 validate.py /path/to/imagenet  --model $MODEL -b 128 \\",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "12 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 12,
+        "checked": false,
+        "urls": [
+          "https://github.com/sail-sg/inceptionnext/releases/download/model/inceptionnext_atto.pth",
+          "https://github.com/sail-sg/inceptionnext/releases/download/model/inceptionnext_tiny.pth",
+          "https://github.com/sail-sg/inceptionnext/releases/download/model/inceptionnext_small.pth",
+          "https://github.com/sail-sg/inceptionnext/releases/download/model/inceptionnext_base.pth",
+          "https://github.com/sail-sg/inceptionnext/releases/download/model/inceptionnext_base_384.pth",
+          "https://github.com/sail-sg/inceptionnext/releases/download/model/convnext_tiny_k5.pth",
+          "https://github.com/sail-sg/inceptionnext/releases/download/model/convnext_tiny_k3.pth",
+          "https://github.com/sail-sg/inceptionnext/releases/download/model/convnext_tiny_k3_par1_2.pth",
+          "https://github.com/sail-sg/inceptionnext/releases/download/model/convnext_tiny_k3_par3_8.pth",
+          "https://github.com/sail-sg/inceptionnext/releases/download/model/convnext_tiny_k3_par1_4.pth"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 0,
+      "evidence": "no documentation resembles the paper title (best 0.01)",
+      "detail": {
+        "checked": true,
+        "score": 0.009
+      },
+      "level_name": "absent"
+    }
+  },
+  "tier_b_level_sum": 6,
+  "tier_b_max": 10,
+  "study_id": "study049",
+  "repo_url": "https://github.com/sail-sg/inceptionnext",
+  "status": "ok",
+  "duration_s": 1.1
+}

@@ -1,0 +1,71 @@
+{
+  "n_doc_files": 9,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "README.md: python -m applications.dc_ae.demo_dc_ae_model_diffusers model=dc-ae-f32c32-in-1.0-diffusers run_dir=.demo/reconstruction/dc-ae-f32c32-in-1.0-diffusers input_pat",
+      "detail": {
+        "n_eval_concrete": 20,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 43
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python -m applications.dc_ae.demo_dc_ae_model_diffusers model=dc-ae-f32c32-in-1.0-diffusers run_dir=.demo/reconstruction/dc-ae-f32c32-in-1.0-diffusers input_pat",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "37 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 37,
+        "checked": false,
+        "urls": [
+          "https://huggingface.co/han-cai/efficientvit-cls/resolve/main/efficientvit_l1_r224.pt",
+          "https://huggingface.co/han-cai/efficientvit-cls/resolve/main/efficientvit_l2_r224.pt",
+          "https://huggingface.co/han-cai/efficientvit-cls/resolve/main/efficientvit_l2_r256.pt",
+          "https://huggingface.co/han-cai/efficientvit-cls/resolve/main/efficientvit_l2_r288.pt",
+          "https://huggingface.co/han-cai/efficientvit-cls/resolve/main/efficientvit_l2_r320.pt",
+          "https://huggingface.co/han-cai/efficientvit-cls/resolve/main/efficientvit_l2_r384.pt",
+          "https://huggingface.co/han-cai/efficientvit-cls/resolve/main/efficientvit_l3_r224.pt",
+          "https://huggingface.co/han-cai/efficientvit-cls/resolve/main/efficientvit_l3_r256.pt",
+          "https://huggingface.co/han-cai/efficientvit-cls/resolve/main/efficientvit_l3_r288.pt",
+          "https://huggingface.co/han-cai/efficientvit-cls/resolve/main/efficientvit_l3_r320.pt"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 0.88",
+      "detail": {
+        "checked": true,
+        "score": 0.875
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 9,
+  "tier_b_max": 10,
+  "study_id": "study094",
+  "repo_url": "https://github.com/mit-han-lab/efficientvit",
+  "status": "ok",
+  "duration_s": 3.1
+}

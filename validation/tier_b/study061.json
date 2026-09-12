@@ -1,0 +1,63 @@
+{
+  "n_doc_files": 11,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "install.md: PYOPENGL_PLATFORM=egl PYTHONPATH='.' python3 tests/test_socnav.py",
+      "detail": {
+        "n_eval_concrete": 3,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 17
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "install.md: PYOPENGL_PLATFORM=egl PYTHONPATH='.' python3 tests/test_socnav.py",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "2 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 2,
+        "checked": false,
+        "urls": [
+          "http://download.blender.org/release/Blender2.78/blender-2.78a-linux-glibc211-x86_64.tar",
+          "https://download.blender.org/release/Blender2.79/blender-2.79a-linux-glibc219-x86_64.tar"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 9,
+  "tier_b_max": 10,
+  "study_id": "study061",
+  "repo_url": "https://github.com/CMU-TBD/SocNavBench",
+  "status": "ok",
+  "duration_s": 3.6
+}

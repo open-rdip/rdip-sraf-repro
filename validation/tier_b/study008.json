@@ -1,0 +1,64 @@
+{
+  "n_doc_files": 1,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 1,
+      "evidence": "evaluation command is placeholder-only \u2014 README.md: python eval_de.py --model hf-causal --model_args \"pretrained=/path/to/ckpt\" --device cuda:0 --output_path /path/to/outdir/output.json --csv_",
+      "detail": {
+        "n_eval_concrete": 0,
+        "n_eval_placeholder": 1,
+        "n_other_concrete": 6,
+        "placeholders": [
+          "/path/to",
+          "/path/to/",
+          "path/to/"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python eval_de.py --model hf-causal --model_args \"pretrained=/path/to/ckpt\" --device cuda:0 --output_path /path/to/outdir/output.json --csv_path /path/to/outdir",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 2,
+      "evidence": "no declared asset URLs to verify",
+      "detail": {
+        "n_urls": 0,
+        "checked": false
+      },
+      "level_name": "full"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 9,
+  "tier_b_max": 10,
+  "study_id": "study008",
+  "repo_url": "https://github.com/konstantinjdobler/tight-budget-llm-adaptation",
+  "status": "ok",
+  "duration_s": 2.3
+}

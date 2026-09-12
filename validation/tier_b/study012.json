@@ -1,0 +1,71 @@
+{
+  "n_doc_files": 40,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "README.md: sh tools/dist_test.sh \\",
+      "detail": {
+        "n_eval_concrete": 4,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 4
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: sh tools/dist_test.sh \\",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "438 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 438,
+        "checked": false,
+        "urls": [
+          "https://download.openmmlab.com/mmsegmentation/v0.5/ann/ann_r50-d8_512x1024_40k_cityscapes/ann_r50-d8_512x1024_40k_cityscapes_20200605_095211-049fc292.pth",
+          "https://download.openmmlab.com/mmsegmentation/v0.5/ann/ann_r101-d8_512x1024_40k_cityscapes/ann_r101-d8_512x1024_40k_cityscapes_20200605_095243-adf6eece.pth",
+          "https://download.openmmlab.com/mmsegmentation/v0.5/ann/ann_r50-d8_769x769_40k_cityscapes/ann_r50-d8_769x769_40k_cityscapes_20200530_025712-2b46b04d.pth",
+          "https://download.openmmlab.com/mmsegmentation/v0.5/ann/ann_r101-d8_769x769_40k_cityscapes/ann_r101-d8_769x769_40k_cityscapes_20200530_025720-059bff28.pth",
+          "https://download.openmmlab.com/mmsegmentation/v0.5/ann/ann_r50-d8_512x1024_80k_cityscapes/ann_r50-d8_512x1024_80k_cityscapes_20200607_101911-5a9ad545.pth",
+          "https://download.openmmlab.com/mmsegmentation/v0.5/ann/ann_r101-d8_512x1024_80k_cityscapes/ann_r101-d8_512x1024_80k_cityscapes_20200607_013728-aceccc6e.pth",
+          "https://download.openmmlab.com/mmsegmentation/v0.5/ann/ann_r50-d8_769x769_80k_cityscapes/ann_r50-d8_769x769_80k_cityscapes_20200607_044426-cc7ff323.pth",
+          "https://download.openmmlab.com/mmsegmentation/v0.5/ann/ann_r101-d8_769x769_80k_cityscapes/ann_r101-d8_769x769_80k_cityscapes_20200607_013713-a9d4be8d.pth",
+          "https://download.openmmlab.com/mmsegmentation/v0.5/ann/ann_r50-d8_512x512_80k_ade20k/ann_r50-d8_512x512_80k_ade20k_20200615_014818-26f75e11.pth",
+          "https://download.openmmlab.com/mmsegmentation/v0.5/ann/ann_r101-d8_512x512_80k_ade20k/ann_r101-d8_512x512_80k_ade20k_20200615_014818-c0153543.pth"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 0.75",
+      "detail": {
+        "checked": true,
+        "score": 0.75
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 9,
+  "tier_b_max": 10,
+  "study_id": "study012",
+  "repo_url": "https://github.com/open-mmlab/mmsegmentation",
+  "status": "ok",
+  "duration_s": 3.7
+}

@@ -1,0 +1,60 @@
+{
+  "n_doc_files": 14,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 1,
+      "evidence": "commands documented but none reproduces a metric \u2014 README.md: python execute_workflow.py `",
+      "detail": {
+        "n_eval_concrete": 0,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 7
+      },
+      "level_name": "partial"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 1,
+      "evidence": "script present but not documented: examples/workflow_demo_with_tools.py",
+      "detail": {
+        "n_scripts": 10,
+        "source": "filesystem"
+      },
+      "level_name": "partial"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 2,
+      "evidence": "no declared asset URLs to verify",
+      "detail": {
+        "n_urls": 0,
+        "checked": false
+      },
+      "level_name": "full"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 1,
+      "evidence": "README.md: weak title overlap 0.40 \u2014 verify manually",
+      "detail": {
+        "checked": true,
+        "score": 0.4
+      },
+      "level_name": "partial"
+    }
+  },
+  "tier_b_level_sum": 7,
+  "tier_b_max": 10,
+  "study_id": "study077",
+  "repo_url": "https://github.com/evoagentx/evoagentx",
+  "status": "ok",
+  "duration_s": 7.0
+}

@@ -1,0 +1,57 @@
+{
+  "n_doc_files": 1,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 1,
+      "evidence": "commands documented but none reproduces a metric \u2014 README.md: python train.py",
+      "detail": {
+        "n_eval_concrete": 0,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 1
+      },
+      "level_name": "partial"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 0,
+      "evidence": "no evaluation route documented or present",
+      "detail": {},
+      "level_name": "absent"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 2,
+      "evidence": "no declared asset URLs to verify",
+      "detail": {
+        "n_urls": 0,
+        "checked": false
+      },
+      "level_name": "full"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 7,
+  "tier_b_max": 10,
+  "study_id": "study069",
+  "repo_url": "https://github.com/yueliu1999/hsan",
+  "status": "ok",
+  "duration_s": 1.6
+}

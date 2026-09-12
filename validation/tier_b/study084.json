@@ -1,0 +1,72 @@
+{
+  "n_doc_files": 11,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "README.md: python phrase_grounding.py --resume https://pytorch.s3.amazonaws.com/models/multimodal/mdetr/pretrained_resnet101_checkpoint.pth --ema --eval --dataset_config p",
+      "detail": {
+        "n_eval_concrete": 3,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 13
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python phrase_grounding.py --resume https://pytorch.s3.amazonaws.com/models/multimodal/mdetr/pretrained_resnet101_checkpoint.pth --ema --eval --dataset_config p",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "9 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 9,
+        "checked": false,
+        "urls": [
+          "http://images.cocodataset.org/zips/train2014.zip",
+          "http://images.cocodataset.org/zips/val2014.zip",
+          "https://storage.googleapis.com/sfr-pcl-data-research/ALBEF/data.tar",
+          "http://images.cocodataset.org/zips/test2015.zip",
+          "https://cs.stanford.edu/people/rak248/VG_100K_2/images.zip",
+          "https://cs.stanford.edu/people/rak248/VG_100K_2/images2.zip",
+          "https://github.com/BryanPlummer/flickr30k_entities/blob/master/annotations.zip",
+          "https://zenodo.org/record/4729015/files/mdetr_annotations.tar",
+          "https://pytorch.s3.amazonaws.com/models/multimodal/mdetr/pretrained_resnet101_checkpoint.pth"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 0,
+      "evidence": "README.md: ...lickr30k images [here](http://shannon.cs.illinois.edu/DenotationGraph/). You will need to fill out the form to request access before receiving the download link in your e-mail.\n\n```\n# Downlo...",
+      "detail": {
+        "trigger": "fill out the form"
+      },
+      "level_name": "absent"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 1,
+      "evidence": "README.md: weak title overlap 0.33 \u2014 verify manually",
+      "detail": {
+        "checked": true,
+        "score": 0.333
+      },
+      "level_name": "partial"
+    }
+  },
+  "tier_b_level_sum": 6,
+  "tier_b_max": 10,
+  "study_id": "study084",
+  "repo_url": "https://github.com/facebookresearch/multimodal",
+  "status": "ok",
+  "duration_s": 2.0
+}

@@ -1,0 +1,64 @@
+{
+  "n_doc_files": 1,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "README.md: python scripts/test_torch_download.py",
+      "detail": {
+        "n_eval_concrete": 2,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 5
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python scripts/test_torch_download.py",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "3 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 3,
+        "checked": false,
+        "urls": [
+          "https://cow.cs.columbia.edu/downloads/pasture_builds.tar",
+          "https://cow.cs.columbia.edu/downloads/datasets.tar",
+          "https://github.com/facebookresearch/habitat-lab/archive/refs/tags/v0.2.1.tar"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 9,
+  "tier_b_max": 10,
+  "study_id": "study080",
+  "repo_url": "https://github.com/real-stanford/cow",
+  "status": "ok",
+  "duration_s": 1.8
+}

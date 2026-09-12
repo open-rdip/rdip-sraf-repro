@@ -1,0 +1,64 @@
+{
+  "n_doc_files": 2,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "README.md: CUDA_VISIBLE_DEVICES=0 python3 train_valid_test.py --classification_type='tumor_origin' --exec_mode='train' --exp_name='tcga_only_7_1_2'",
+      "detail": {
+        "n_eval_concrete": 7,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 3
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: CUDA_VISIBLE_DEVICES=0 python3 train_valid_test.py --classification_type='tumor_origin' --exec_mode='train' --exp_name='tcga_only_7_1_2'",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "1 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 1,
+        "checked": false,
+        "urls": [
+          "https://www.dropbox.com/scl/fo/y6zv790iw0bozmz63qdq1/AO5SNj8PCqFL5ecNypQswFs?rlkey=htiaghgwaymo4ksfrvwmpwkbc&st=0v8r1myk&dl=0"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 0,
+      "evidence": "README.md: ...clone https://github.com/hms-dbmi/CHIEF.git\ncd CHIEF\n```\n\nDownloading Pre-trained models\nRequest access to the model [weights](https://drive.google.com/drive/folders/1uRv9A1HuTW5m_pJoyMzdN31...",
+      "detail": {
+        "trigger": "Request access"
+      },
+      "level_name": "absent"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 7,
+  "tier_b_max": 10,
+  "study_id": "study027",
+  "repo_url": "https://github.com/hms-dbmi/chief",
+  "status": "ok",
+  "duration_s": 2.4
+}

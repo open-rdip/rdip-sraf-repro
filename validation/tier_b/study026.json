@@ -1,0 +1,72 @@
+{
+  "n_doc_files": 40,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 0,
+      "evidence": "no runnable command found in documentation",
+      "detail": {
+        "n_eval_concrete": 0,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 0
+      },
+      "level_name": "absent"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 1,
+      "evidence": "script present but not documented: tools/robustness_eval.py",
+      "detail": {
+        "n_scripts": 11,
+        "source": "filesystem"
+      },
+      "level_name": "partial"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "249 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 249,
+        "checked": false,
+        "urls": [
+          "http://download.openmmlab.com/mmdetection/v2.0/albu_example/mask_rcnn_r50_fpn_albu_1x_coco/mask_rcnn_r50_fpn_albu_1x_coco_20200208-ab203bcd.pth",
+          "http://download.openmmlab.com/mmdetection/v2.0/atss/atss_r50_fpn_1x_coco/atss_r50_fpn_1x_coco_20200209-985f7bd0.pth",
+          "http://download.openmmlab.com/mmdetection/v2.0/atss/atss_r101_fpn_1x_coco/atss_r101_fpn_1x_20200825-dfcadd6f.pth",
+          "http://download.openmmlab.com/mmdetection/v2.0/carafe/faster_rcnn_r50_fpn_carafe_1x_coco/faster_rcnn_r50_fpn_carafe_1x_coco_bbox_mAP-0.386_20200504_175733-385a75b7.pth",
+          "http://download.openmmlab.com/mmdetection/v2.0/carafe/mask_rcnn_r50_fpn_carafe_1x_coco/mask_rcnn_r50_fpn_carafe_1x_coco_bbox_mAP-0.393__segm_mAP-0.358_20200503_135957-8687f195.pth",
+          "http://download.openmmlab.com/mmdetection/v2.0/cascade_rcnn/cascade_rcnn_r50_caffe_fpn_1x_coco/cascade_rcnn_r50_caffe_fpn_1x_coco_bbox_mAP-0.404_20200504_174853-b857be87.pth",
+          "http://download.openmmlab.com/mmdetection/v2.0/cascade_rcnn/cascade_rcnn_r50_fpn_1x_coco/cascade_rcnn_r50_fpn_1x_coco_20200316-3dc56deb.pth",
+          "http://download.openmmlab.com/mmdetection/v2.0/cascade_rcnn/cascade_rcnn_r50_fpn_20e_coco/cascade_rcnn_r50_fpn_20e_coco_bbox_mAP-0.41_20200504_175131-e9872a90.pth",
+          "http://download.openmmlab.com/mmdetection/v2.0/cascade_rcnn/cascade_rcnn_r101_caffe_fpn_1x_coco/cascade_rcnn_r101_caffe_fpn_1x_coco_bbox_mAP-0.423_20200504_175649-cab8dbd5.pth",
+          "http://download.openmmlab.com/mmdetection/v2.0/cascade_rcnn/cascade_rcnn_r101_fpn_1x_coco/cascade_rcnn_r101_fpn_1x_coco_20200317-0b6a2fbf.pth"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 6,
+  "tier_b_max": 10,
+  "study_id": "study026",
+  "repo_url": "https://github.com/PerdonLiu/CSE-Autoloss",
+  "status": "ok",
+  "duration_s": 6.1
+}

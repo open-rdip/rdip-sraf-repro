@@ -1,0 +1,63 @@
+{
+  "n_doc_files": 1,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "README.md: python scripts_cdc/img2img.py --config configs/stable-diffusion/v1-inference.yaml --ckpt models/ldm/stable-diffusion-v1/sd-v1-4.ckpt --init_img examples/scribbl",
+      "detail": {
+        "n_eval_concrete": 2,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 1
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python scripts_cdc/img2img.py --config configs/stable-diffusion/v1-inference.yaml --ckpt models/ldm/stable-diffusion-v1/sd-v1-4.ckpt --init_img examples/scribbl",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "2 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 2,
+        "checked": false,
+        "urls": [
+          "https://huggingface.co/CompVis/stable-diffusion-v-1-4-original/resolve/main/sd-v1-4.ckpt",
+          "https://huggingface.co/runwayml/stable-diffusion-inpainting/resolve/main/sd-v1-5-inpainting.ckpt"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 1,
+      "evidence": "README.md: weak title overlap 0.38 \u2014 verify manually",
+      "detail": {
+        "checked": true,
+        "score": 0.375
+      },
+      "level_name": "partial"
+    }
+  },
+  "tier_b_level_sum": 8,
+  "tier_b_max": 10,
+  "study_id": "study005",
+  "repo_url": "https://github.com/cross-domain-compositing/cross-domain-compositing",
+  "status": "ok",
+  "duration_s": 2.1
+}

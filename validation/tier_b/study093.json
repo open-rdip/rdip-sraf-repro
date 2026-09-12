@@ -1,0 +1,66 @@
+{
+  "n_doc_files": 3,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 1,
+      "evidence": "evaluation command is placeholder-only \u2014 README.md: torchrun --nproc_per_node=1 src/training/main.py b16_400m_eval <logs-path-to-save> <path-to-pretrained-weights>",
+      "detail": {
+        "n_eval_concrete": 0,
+        "n_eval_placeholder": 1,
+        "n_other_concrete": 0,
+        "placeholders": [
+          "<logs-path-to-save>",
+          "<path-to-pretrained-weights>"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: torchrun --nproc_per_node=1 src/training/main.py b16_400m_eval <logs-path-to-save> <path-to-pretrained-weights>",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "1 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 1,
+        "checked": false,
+        "urls": [
+          "https://dl.fbaipublicfiles.com/MMPT/metaclip/b16_400m.pt"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 0.56",
+      "detail": {
+        "checked": true,
+        "score": 0.556
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 8,
+  "tier_b_max": 10,
+  "study_id": "study093",
+  "repo_url": "https://github.com/mbzuai-oryx/unimed-clip",
+  "status": "ok",
+  "duration_s": 1.7
+}

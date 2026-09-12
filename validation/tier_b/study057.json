@@ -1,0 +1,60 @@
+{
+  "n_doc_files": 2,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 1,
+      "evidence": "commands documented but none reproduces a metric \u2014 README.md: python -m ipykernel install --user --name ssl-legacysurvey --display-name ssl-legacysurvey",
+      "detail": {
+        "n_eval_concrete": 0,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 1
+      },
+      "level_name": "partial"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 1,
+      "evidence": "script present but not documented: scripts/predict.py",
+      "detail": {
+        "n_scripts": 2,
+        "source": "filesystem"
+      },
+      "level_name": "partial"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 2,
+      "evidence": "no declared asset URLs to verify",
+      "detail": {
+        "n_urls": 0,
+        "checked": false
+      },
+      "level_name": "full"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 8,
+  "tier_b_max": 10,
+  "study_id": "study057",
+  "repo_url": "https://github.com/georgestein/ssl-legacysurvey",
+  "status": "ok",
+  "duration_s": 24.1
+}

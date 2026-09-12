@@ -1,0 +1,60 @@
+{
+  "n_doc_files": 40,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 1,
+      "evidence": "commands documented but none reproduces a metric \u2014 README.md: python train.py --actor-model facebook/opt-13b --reward-model facebook/opt-350m --deployment-type single_node",
+      "detail": {
+        "n_eval_concrete": 0,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 15
+      },
+      "level_name": "partial"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 1,
+      "evidence": "script present but not documented: op_builder/inference_core_ops.py",
+      "detail": {
+        "n_scripts": 17,
+        "source": "filesystem"
+      },
+      "level_name": "partial"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 2,
+      "evidence": "no declared asset URLs to verify",
+      "detail": {
+        "n_urls": 0,
+        "checked": false
+      },
+      "level_name": "full"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 1,
+      "evidence": "README.md: weak title overlap 0.36 \u2014 verify manually",
+      "detail": {
+        "checked": true,
+        "score": 0.364
+      },
+      "level_name": "partial"
+    }
+  },
+  "tier_b_level_sum": 7,
+  "tier_b_max": 10,
+  "study_id": "study001",
+  "repo_url": "https://github.com/microsoft/DeepSpeed",
+  "status": "ok",
+  "duration_s": 19.2
+}

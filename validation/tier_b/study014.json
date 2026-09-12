@@ -1,0 +1,77 @@
+{
+  "n_doc_files": 40,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 1,
+      "evidence": "evaluation command is placeholder-only \u2014 README.md: python tools/test.py ${CONFIG_FILE} ${CHECKPOINT_FILE} --format-only --options 'txt_prefix=exps/pointnet2_scannet_results'",
+      "detail": {
+        "n_eval_concrete": 0,
+        "n_eval_placeholder": 1,
+        "n_other_concrete": 11,
+        "placeholders": [
+          "${CHECKPOINT_FILE}",
+          "${CONFIG_FILE}",
+          "{CHECKPOINT_FILE}",
+          "{CONFIG_FILE}"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python tools/test.py ${CONFIG_FILE} ${CHECKPOINT_FILE} --format-only --options 'txt_prefix=exps/pointnet2_scannet_results'",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "115 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 115,
+        "checked": false,
+        "urls": [
+          "https://download.openmmlab.com/mmdetection3d/data/waymo_mmdet3d_after_1x4/waymo_mini.tar",
+          "https://download.openmmlab.com/mmdetection3d/v1.0.0_models/3dssd/3dssd_4x4_kitti-3d-car/3dssd_4x4_kitti-3d-car_20210818_203828-b89c8fc4.pth",
+          "https://download.openmmlab.com/mmdetection3d/v1.0.0_models/centerpoint/centerpoint_01voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus/centerpoint_01voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus_20220810_030004-9061688e.pth",
+          "https://download.openmmlab.com/mmdetection3d/v1.0.0_models/centerpoint/centerpoint_01voxel_second_secfpn_dcn_circlenms_4x8_cyclic_20e_nus/centerpoint_01voxel_second_secfpn_dcn_circlenms_4x8_cyclic_20e_nus_20220810_052355-a6928835.pth",
+          "https://download.openmmlab.com/mmdetection3d/v1.0.0_models/centerpoint/centerpoint_0075voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus/centerpoint_0075voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus_20220810_011659-04cb3a3b.pth",
+          "https://download.openmmlab.com/mmdetection3d/v1.0.0_models/centerpoint/centerpoint_0075voxel_second_secfpn_dcn_circlenms_4x8_cyclic_20e_nus/centerpoint_0075voxel_second_secfpn_dcn_circlenms_4x8_cyclic_20e_nus_20220810_025930-657f67e0.pth",
+          "https://download.openmmlab.com/mmdetection3d/v1.0.0_models/centerpoint/centerpoint_02pillar_second_secfpn_circlenms_4x8_cyclic_20e_nus/centerpoint_02pillar_second_secfpn_circlenms_4x8_cyclic_20e_nus_20220811_031844-191a3822.pth",
+          "https://download.openmmlab.com/mmdetection3d/v1.0.0_models/centerpoint/centerpoint_02pillar_second_secfpn_dcn_4x8_cyclic_20e_nus/centerpoint_02pillar_second_secfpn_dcn_4x8_cyclic_20e_nus_20220811_045458-808e69ad.pth",
+          "https://download.openmmlab.com/mmdetection3d/v1.1.0_models/cylinder3d/cylinder3d_4xb4_3x_semantickitti/cylinder3d_4xb4_3x_semantickitti_20230318_191107-822a8c31.pth",
+          "https://download.openmmlab.com/mmdetection3d/v1.1.0_models/cylinder3d/cylinder3d_8xb2-amp-laser-polar-mix-3x_semantickitti_20230425_144950-372cdf69.pth"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 8,
+  "tier_b_max": 10,
+  "study_id": "study014",
+  "repo_url": "https://github.com/open-mmlab/mmdetection3d",
+  "status": "ok",
+  "duration_s": 2.1
+}

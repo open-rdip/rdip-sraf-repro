@@ -1,0 +1,63 @@
+{
+  "n_doc_files": 8,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "README.md: python tools/train_net.py --config-file \"configs/e2e_mask_rcnn_R_50_FPN_1x.yaml\" SOLVER.IMS_PER_BATCH 2 SOLVER.BASE_LR 0.0025 SOLVER.MAX_ITER 720000 SOLVER.STEP",
+      "detail": {
+        "n_eval_concrete": 3,
+        "n_eval_placeholder": 4,
+        "n_other_concrete": 17
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python /path_to_maskrcnn_benchmark/tools/train_net.py --config-file \"/path/to/config/file.yaml\"",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "2 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 2,
+        "checked": false,
+        "urls": [
+          "https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_R_50_FPN_1x.pth",
+          "https://storage.googleapis.com/coco-dataset/external/PASCAL_VOC.zip"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 0,
+      "evidence": "no documentation resembles the paper title (best 0.18)",
+      "detail": {
+        "checked": true,
+        "score": 0.182
+      },
+      "level_name": "absent"
+    }
+  },
+  "tier_b_level_sum": 7,
+  "tier_b_max": 10,
+  "study_id": "study018",
+  "repo_url": "https://github.com/markson14/WheatDet",
+  "status": "ok",
+  "duration_s": 3.0
+}

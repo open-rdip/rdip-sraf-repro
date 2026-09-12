@@ -1,0 +1,71 @@
+{
+  "n_doc_files": 40,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "README.md: python tools/test.py configs/arcface/resnet50-arcface_8xb32_inshop.py https://download.openmmlab.com/mmclassification/v0/arcface/resnet50-arcface_inshop_2023020",
+      "detail": {
+        "n_eval_concrete": 32,
+        "n_eval_placeholder": 1,
+        "n_other_concrete": 15
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python tools/test.py configs/arcface/resnet50-arcface_8xb32_inshop.py https://download.openmmlab.com/mmclassification/v0/arcface/resnet50-arcface_inshop_2023020",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "246 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 246,
+        "checked": false,
+        "urls": [
+          "https://download.openmmlab.com/mmclassification/v0/arcface/resnet50-arcface_inshop_20230202-b766fe7f.pth",
+          "https://download.openmmlab.com/mmclassification/v0/resnet/resnet50_3rdparty-mill_in21k_20220331-faac000b.pth",
+          "https://download.openmmlab.com/mmselfsup/1.x/barlowtwins/barlowtwins_resnet50_8xb256-coslr-300e_in1k/resnet50_linear-8xb32-coslr-100e_in1k/resnet50_linear-8xb32-coslr-100e_in1k_20220825-52fde35f.pth",
+          "https://download.openmmlab.com/mmselfsup/1.x/barlowtwins/barlowtwins_resnet50_8xb256-coslr-300e_in1k/barlowtwins_resnet50_8xb256-coslr-300e_in1k_20220825-57307488.pth",
+          "https://download.openmmlab.com/mmselfsup/1.x/beit/beit_vit-base-p16_8xb256-amp-coslr-300e_in1k/vit-base-p16_ft-8xb128-coslr-100e_in1k/vit-base-p16_ft-8xb128-coslr-100e_in1k_20221128-0ca393e9.pth",
+          "https://download.openmmlab.com/mmselfsup/1.x/beit/beit_vit-base-p16_8xb256-amp-coslr-300e_in1k/beit_vit-base-p16_8xb256-amp-coslr-300e_in1k_20221128-ab79e626.pth",
+          "https://download.openmmlab.com/mmclassification/v0/beit/beit-base_3rdparty_in1k_20221114-c0a4df23.pth",
+          "https://download.openmmlab.com/mmselfsup/1.x/beitv2/beitv2_vit-base-p16_8xb256-amp-coslr-300e_in1k/vit-base-p16_ft-8xb128-coslr-100e_in1k/vit-base-p16_ft-8xb128-coslr-100e_in1k_20221212-d1c0789e.pth",
+          "https://download.openmmlab.com/mmselfsup/1.x/beitv2/beitv2_vit-base-p16_8xb256-amp-coslr-300e_in1k/beitv2_vit-base-p16_8xb256-amp-coslr-300e_in1k_20221212-a157be30.pth",
+          "https://download.openmmlab.com/mmclassification/v0/beit/beitv2-base_3rdparty_in1k_20221114-73e11905.pth"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 1,
+      "evidence": "README.md: weak title overlap 0.29 \u2014 verify manually",
+      "detail": {
+        "checked": true,
+        "score": 0.286
+      },
+      "level_name": "partial"
+    }
+  },
+  "tier_b_level_sum": 8,
+  "tier_b_max": 10,
+  "study_id": "study011",
+  "repo_url": "https://github.com/open-mmlab/mmclassification",
+  "status": "ok",
+  "duration_s": 2.0
+}

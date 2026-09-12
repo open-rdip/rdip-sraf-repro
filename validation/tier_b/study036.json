@@ -1,0 +1,59 @@
+{
+  "n_doc_files": 6,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "README.md: python inference.py -m gpt-3.5-turbo -d copa  # --num_shot 0 --model_type chat",
+      "detail": {
+        "n_eval_concrete": 16,
+        "n_eval_placeholder": 1,
+        "n_other_concrete": 18
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python inference.py -m gpt-3.5-turbo -d copa  # --num_shot 0 --model_type chat",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 2,
+      "evidence": "no declared asset URLs to verify",
+      "detail": {
+        "n_urls": 0,
+        "checked": false
+      },
+      "level_name": "full"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 0,
+      "evidence": "no documentation resembles the paper title (best 0.17)",
+      "detail": {
+        "checked": true,
+        "score": 0.167
+      },
+      "level_name": "absent"
+    }
+  },
+  "tier_b_level_sum": 8,
+  "tier_b_max": 10,
+  "study_id": "study036",
+  "repo_url": "https://github.com/RUCAIBox/LLMBox",
+  "status": "ok",
+  "duration_s": 4.6
+}

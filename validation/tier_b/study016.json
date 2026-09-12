@@ -1,0 +1,67 @@
+{
+  "n_doc_files": 14,
+  "online": false,
+  "checks": {
+    "concrete_run_command": {
+      "criterion": "concrete_run_command",
+      "level": 2,
+      "evidence": "README.md: PYTHONPATH=. python eval.py",
+      "detail": {
+        "n_eval_concrete": 2,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 16
+      },
+      "level_name": "full"
+    },
+    "documented_entrypoint": {
+      "criterion": "documented_entrypoint",
+      "level": 2,
+      "evidence": "README.md: python agent/torchbeast/polybeast.py --mode test --fixed_world_path /tmp/science/avalon/worlds/viewable_worlds/ --fixed_world_key avalon_worlds__0824_full.tar.g",
+      "detail": {
+        "source": "docs"
+      },
+      "level_name": "full"
+    },
+    "links_resolve": {
+      "criterion": "links_resolve",
+      "level": 1,
+      "evidence": "6 asset URL(s) found; not checked (offline mode)",
+      "detail": {
+        "n_urls": 6,
+        "checked": false,
+        "urls": [
+          "https://avalon-benchmark.s3.us-west-2.amazonaws.com/avalon__all_observations__935781fe-267d-4dcd-9698-714cc891e985.tar",
+          "https://avalon-benchmark.s3.us-west-2.amazonaws.com/avalon__all_actions__935781fe-267d-4dcd-9698-714cc891e985.tar",
+          "https://avalon-benchmark.s3.us-west-2.amazonaws.com/avalon__all_human_inputs__935781fe-267d-4dcd-9698-714cc891e985.tar",
+          "https://avalon-benchmark.s3.us-west-2.amazonaws.com/avalon_worlds__benchmark_evaluation_worlds.tar",
+          "https://avalon-benchmark.s3.us-west-2.amazonaws.com/contest/minival-20221117-03e70547d557.tar",
+          "https://avalon-benchmark.s3.us-west-2.amazonaws.com/contest/public-test-20221117-e3d7079216f4.tar"
+        ]
+      },
+      "level_name": "partial"
+    },
+    "data_obtainable_without_application": {
+      "criterion": "data_obtainable_without_application",
+      "level": 2,
+      "evidence": "no access-gating language found",
+      "detail": {},
+      "level_name": "full"
+    },
+    "repo_matches_paper": {
+      "criterion": "repo_matches_paper",
+      "level": 2,
+      "evidence": "README.md: title overlap 1.00",
+      "detail": {
+        "checked": true,
+        "score": 1.0
+      },
+      "level_name": "full"
+    }
+  },
+  "tier_b_level_sum": 9,
+  "tier_b_max": 10,
+  "study_id": "study016",
+  "repo_url": "https://github.com/avalon-benchmark/avalon",
+  "status": "ok",
+  "duration_s": 4.7
+}
