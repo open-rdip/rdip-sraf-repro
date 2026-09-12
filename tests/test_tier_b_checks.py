@@ -170,3 +170,39 @@ def test_real_eval_script_still_found_and_ranked(tmp_path):
     r = check_documented_entrypoint(docs, tmp_path)
     assert r.level == PARTIAL
     assert "tools/test.py" in r.evidence      # conventional location wins
+
+
+@pytest.mark.parametrize("cmd", [
+    "python -m pytest -p no:warnings --lf",      # EVAL_HINT matches "test" in pytest
+    "python -m unittest discover",
+    "tox -e py311",
+    "python tools/train_net.py --config-file configs/e2e.yaml",
+    "python train.py --epochs 90",
+    "bash scripts/finetune.sh",
+])
+def test_test_runners_and_training_are_not_evaluation(tmp_path, cmd):
+    """Regression: these inflated the "documents a concrete eval command" count.
+
+    A unit-test runner does not reproduce a paper's reported metric, and neither
+    does a training command. The property that matters is that neither ever
+    grades FULL; `tox` additionally is not recognised as a run token at all, so
+    it grades ABSENT rather than PARTIAL, which is equally correct.
+    """
+    p = tmp_path / "README.md"
+    p.write_text(f"# demo\n\n```\n{cmd}\n```\n")
+    r = check_concrete_run_command([(p, p.read_text())])
+    assert r.level != FULL
+    assert r.detail["n_eval_concrete"] == 0
+
+
+@pytest.mark.parametrize("cmd", [
+    "python tools/test.py configs/faster_rcnn_r50.py ckpt.pth --eval bbox",
+    "sh tools/dist_test.sh configs/a.py ckpt.pth 8 --eval mIoU",
+    "python evaluate.py --split test --checkpoint model.pt",
+])
+def test_genuine_evaluation_commands_still_count(tmp_path, cmd):
+    p = tmp_path / "README.md"
+    p.write_text(f"# demo\n\n```\n{cmd}\n```\n")
+    r = check_concrete_run_command([(p, p.read_text())])
+    assert r.level == FULL
+    assert r.detail["n_eval_concrete"] >= 1

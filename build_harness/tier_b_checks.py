@@ -176,6 +176,15 @@ def check_concrete_run_command(docs) -> CheckResult:
     setup = re.compile(r"\b(pip|conda|apt-get|apt|venv|virtualenv|git\s+clone|"
                        r"poetry|npm|brew|wget|curl|unzip|tar)\b|requirements\.txt",
                        re.I)
+    # A project's unit-test runner is not a reproduction of the paper's number,
+    # and `EVAL_HINT` matches the word "test" inside `pytest`. Training commands
+    # are likewise not evaluation. Both inflated the "documents a concrete
+    # evaluation command" count on first measurement; exclude them explicitly.
+    NOT_EVAL = re.compile(
+        r"\b(pytest|unittest|nosetests|tox|coverage|flake8|ruff|mypy|lint)\b"
+        r"|(?<![A-Za-z])train(?:_net|_model|er)?\.(?:py|sh)"
+        r"|(?<![A-Za-z])(?:train|finetune|fine_tune|pretrain)(?![A-Za-z])",
+        re.I)
     eval_concrete, eval_placeheld, other_concrete = [], [], []
     for path, text in docs:
         for block in code_blocks(text):
@@ -186,7 +195,9 @@ def check_concrete_run_command(docs) -> CheckResult:
                 if len(line) < 8 or line.startswith("#"):
                     continue
                 ph = find_placeholders(line)
-                is_eval = bool(EVAL_HINT.search(line)) and not setup.search(line)
+                is_eval = (bool(EVAL_HINT.search(line))
+                           and not setup.search(line)
+                           and not NOT_EVAL.search(line))
                 rec = (path.name, line, ph)
                 if is_eval:
                     (eval_placeheld if ph else eval_concrete).append(rec)
