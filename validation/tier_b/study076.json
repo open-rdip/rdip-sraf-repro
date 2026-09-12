@@ -4,23 +4,21 @@
   "checks": {
     "concrete_run_command": {
       "criterion": "concrete_run_command",
-      "level": 2,
-      "evidence": "README.md: python main_inference.py",
+      "level": 1,
+      "evidence": "commands documented but none reproduces a metric \u2014 README.md: python main_inference.py",
       "detail": {
-        "n_eval_concrete": 1,
+        "n_eval_concrete": 0,
         "n_eval_placeholder": 0,
-        "n_other_concrete": 2
+        "n_other_concrete": 3
       },
-      "level_name": "full"
+      "level_name": "partial"
     },
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
-      "level": 2,
-      "evidence": "README.md: python main_inference.py",
-      "detail": {
-        "source": "docs"
-      },
-      "level_name": "full"
+      "level": 0,
+      "evidence": "no evaluation route documented or present",
+      "detail": {},
+      "level_name": "absent"
     },
     "links_resolve": {
       "criterion": "links_resolve",
@@ -50,7 +48,7 @@
       "level_name": "full"
     }
   },
-  "tier_b_level_sum": 10,
+  "tier_b_level_sum": 7,
   "tier_b_max": 10,
   "study_id": "study076",
   "repo_url": "https://github.com/mcontisc/PIHAM",

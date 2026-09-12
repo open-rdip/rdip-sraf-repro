@@ -5,18 +5,18 @@
     "concrete_run_command": {
       "criterion": "concrete_run_command",
       "level": 2,
-      "evidence": "install.md: python tools/infer.py demo/demo_text_ocr.jpg --det DBNet --rec CRNN --show --print-result",
+      "evidence": "quick_run.md: python tools/test.py configs/textdet/dbnet/dbnet_resnet18_fpnc_1200e_icdar2015.py work_dirs/dbnet_resnet18_fpnc_1200e_icdar2015/epoch_400.pth",
       "detail": {
-        "n_eval_concrete": 20,
+        "n_eval_concrete": 16,
         "n_eval_placeholder": 4,
-        "n_other_concrete": 18
+        "n_other_concrete": 22
       },
       "level_name": "full"
     },
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
       "level": 2,
-      "evidence": "install.md: python tools/infer.py demo/demo_text_ocr.jpg --det DBNet --rec CRNN --show --print-result",
+      "evidence": "quick_run.md: python tools/test.py configs/textdet/dbnet/dbnet_resnet18_fpnc_1200e_icdar2015.py work_dirs/dbnet_resnet18_fpnc_1200e_icdar2015/epoch_400.pth",
       "detail": {
         "source": "docs"
       },
@@ -67,5 +67,5 @@
   "study_id": "study010",
   "repo_url": "https://github.com/open-mmlab/mmocr",
   "status": "ok",
-  "duration_s": 1.6
+  "duration_s": 1.7
 }

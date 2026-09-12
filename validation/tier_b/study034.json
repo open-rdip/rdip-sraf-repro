@@ -4,28 +4,24 @@
   "checks": {
     "concrete_run_command": {
       "criterion": "concrete_run_command",
-      "level": 1,
-      "evidence": "evaluation command is placeholder-only \u2014 README.md: python demo_front3d.py -i <path-to-3d-front-image> -o <path-to-output-dir> -m <path-to-pretrained-model>",
+      "level": 0,
+      "evidence": "no runnable command found in documentation",
       "detail": {
         "n_eval_concrete": 0,
-        "n_eval_placeholder": 1,
-        "n_other_concrete": 0,
-        "placeholders": [
-          "<path-to-3d-front-image>",
-          "<path-to-output-dir>",
-          "<path-to-pretrained-model>"
-        ]
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 0
       },
-      "level_name": "partial"
+      "level_name": "absent"
     },
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
-      "level": 2,
-      "evidence": "README.md: python demo_front3d.py -i <path-to-3d-front-image> -o <path-to-output-dir> -m <path-to-pretrained-model>",
+      "level": 1,
+      "evidence": "script present but not documented: uni_3d/evaluation/dvps_evaluation.py",
       "detail": {
-        "source": "docs"
+        "n_scripts": 3,
+        "source": "filesystem"
       },
-      "level_name": "full"
+      "level_name": "partial"
     },
     "links_resolve": {
       "criterion": "links_resolve",
@@ -55,10 +51,10 @@
       "level_name": "full"
     }
   },
-  "tier_b_level_sum": 9,
+  "tier_b_level_sum": 7,
   "tier_b_max": 10,
   "study_id": "study034",
   "repo_url": "https://github.com/mlpc-ucsd/uni-3d",
   "status": "ok",
-  "duration_s": 2.8
+  "duration_s": 1.7
 }

@@ -5,11 +5,11 @@
     "concrete_run_command": {
       "criterion": "concrete_run_command",
       "level": 2,
-      "evidence": "readme.md: python scripts/run_demo.py --left_file ./assets/left.png --right_file ./assets/right.png --ckpt_dir ./pretrained_models/23-51-11/model_best_bp2.pth --out_dir ./",
+      "evidence": "README.md: python dinov2/run/eval/knn.py \\",
       "detail": {
-        "n_eval_concrete": 26,
+        "n_eval_concrete": 23,
         "n_eval_placeholder": 0,
-        "n_other_concrete": 9
+        "n_other_concrete": 12
       },
       "level_name": "full"
     },
@@ -67,5 +67,5 @@
   "study_id": "study073",
   "repo_url": "https://github.com/NVlabs/FoundationStereo",
   "status": "ok",
-  "duration_s": 14.8
+  "duration_s": 2.3
 }

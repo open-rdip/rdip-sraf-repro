@@ -15,13 +15,10 @@
     },
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
-      "level": 1,
-      "evidence": "script present but not documented: tensorboardX/examples/demo_purge.py",
-      "detail": {
-        "n_scripts": 12,
-        "source": "filesystem"
-      },
-      "level_name": "partial"
+      "level": 0,
+      "evidence": "no evaluation route documented or present",
+      "detail": {},
+      "level_name": "absent"
     },
     "links_resolve": {
       "criterion": "links_resolve",
@@ -51,10 +48,10 @@
       "level_name": "full"
     }
   },
-  "tier_b_level_sum": 8,
+  "tier_b_level_sum": 7,
   "tier_b_max": 10,
   "study_id": "study060",
   "repo_url": "https://github.com/openai/jukebox",
   "status": "ok",
-  "duration_s": 1.3
+  "duration_s": 1.5
 }

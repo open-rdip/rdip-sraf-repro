@@ -5,18 +5,18 @@
     "concrete_run_command": {
       "criterion": "concrete_run_command",
       "level": 2,
-      "evidence": "installation.md: python demo/image_demo.py \\",
+      "evidence": "quick_run.md: python tools/test.py \\",
       "detail": {
-        "n_eval_concrete": 3,
+        "n_eval_concrete": 1,
         "n_eval_placeholder": 8,
-        "n_other_concrete": 11
+        "n_other_concrete": 13
       },
       "level_name": "full"
     },
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
       "level": 2,
-      "evidence": "installation.md: python demo/image_demo.py \\",
+      "evidence": "quick_run.md: python tools/test.py \\",
       "detail": {
         "source": "docs"
       },
@@ -67,5 +67,5 @@
   "study_id": "study009",
   "repo_url": "https://github.com/open-mmlab/mmpose",
   "status": "ok",
-  "duration_s": 2.5
+  "duration_s": 2.4
 }

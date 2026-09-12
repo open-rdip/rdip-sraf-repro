@@ -5,10 +5,10 @@
     "concrete_run_command": {
       "criterion": "concrete_run_command",
       "level": 1,
-      "evidence": "evaluation command is placeholder-only \u2014 README.md: python ${BASE_PATH}/src/modelling/inference/answer_selector.py \\",
+      "evidence": "evaluation command is placeholder-only \u2014 README.md: python ${BASE_PATH}/src/modelling/evaluation/error_model_eval.py \\",
       "detail": {
         "n_eval_concrete": 0,
-        "n_eval_placeholder": 4,
+        "n_eval_placeholder": 3,
         "n_other_concrete": 1,
         "placeholders": [
           "${BASE_PATH}",
@@ -20,7 +20,7 @@
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
       "level": 2,
-      "evidence": "README.md: python ${BASE_PATH}/src/modelling/inference/answer_selector.py \\",
+      "evidence": "README.md: python ${BASE_PATH}/src/modelling/evaluation/error_model_eval.py \\",
       "detail": {
         "source": "docs"
       },
@@ -59,5 +59,5 @@
   "study_id": "study079",
   "repo_url": "https://github.com/ukplab/arxiv2024-lfqa-hallucination",
   "status": "ok",
-  "duration_s": 2.1
+  "duration_s": 2.5
 }

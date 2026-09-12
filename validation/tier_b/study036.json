@@ -4,23 +4,24 @@
   "checks": {
     "concrete_run_command": {
       "criterion": "concrete_run_command",
-      "level": 2,
-      "evidence": "README.md: python inference.py -m gpt-3.5-turbo -d copa  # --num_shot 0 --model_type chat",
+      "level": 1,
+      "evidence": "commands documented but none reproduces a metric \u2014 README.md: bash download.sh",
       "detail": {
-        "n_eval_concrete": 16,
-        "n_eval_placeholder": 1,
-        "n_other_concrete": 18
+        "n_eval_concrete": 0,
+        "n_eval_placeholder": 0,
+        "n_other_concrete": 34
       },
-      "level_name": "full"
+      "level_name": "partial"
     },
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
-      "level": 2,
-      "evidence": "README.md: python inference.py -m gpt-3.5-turbo -d copa  # --num_shot 0 --model_type chat",
+      "level": 1,
+      "evidence": "script present but not documented: test.sh",
       "detail": {
-        "source": "docs"
+        "n_scripts": 2,
+        "source": "filesystem"
       },
-      "level_name": "full"
+      "level_name": "partial"
     },
     "links_resolve": {
       "criterion": "links_resolve",
@@ -50,7 +51,7 @@
       "level_name": "absent"
     }
   },
-  "tier_b_level_sum": 8,
+  "tier_b_level_sum": 6,
   "tier_b_max": 10,
   "study_id": "study036",
   "repo_url": "https://github.com/RUCAIBox/LLMBox",

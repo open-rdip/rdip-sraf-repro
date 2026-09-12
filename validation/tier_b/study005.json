@@ -4,23 +4,24 @@
   "checks": {
     "concrete_run_command": {
       "criterion": "concrete_run_command",
-      "level": 2,
-      "evidence": "README.md: python scripts_cdc/img2img.py --config configs/stable-diffusion/v1-inference.yaml --ckpt models/ldm/stable-diffusion-v1/sd-v1-4.ckpt --init_img examples/scribbl",
+      "level": 1,
+      "evidence": "commands documented but none reproduces a metric \u2014 README.md: python scripts_cdc/img2img.py --config configs/stable-diffusion/v1-inference.yaml --ckpt models/ldm/stable-diffusion-v1/",
       "detail": {
-        "n_eval_concrete": 2,
+        "n_eval_concrete": 0,
         "n_eval_placeholder": 0,
-        "n_other_concrete": 1
+        "n_other_concrete": 3
       },
-      "level_name": "full"
+      "level_name": "partial"
     },
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
-      "level": 2,
-      "evidence": "README.md: python scripts_cdc/img2img.py --config configs/stable-diffusion/v1-inference.yaml --ckpt models/ldm/stable-diffusion-v1/sd-v1-4.ckpt --init_img examples/scribbl",
+      "level": 1,
+      "evidence": "script present but not documented: SVR/train_test_split.py",
       "detail": {
-        "source": "docs"
+        "n_scripts": 3,
+        "source": "filesystem"
       },
-      "level_name": "full"
+      "level_name": "partial"
     },
     "links_resolve": {
       "criterion": "links_resolve",
@@ -54,10 +55,10 @@
       "level_name": "partial"
     }
   },
-  "tier_b_level_sum": 8,
+  "tier_b_level_sum": 6,
   "tier_b_max": 10,
   "study_id": "study005",
   "repo_url": "https://github.com/cross-domain-compositing/cross-domain-compositing",
   "status": "ok",
-  "duration_s": 2.1
+  "duration_s": 2.7
 }

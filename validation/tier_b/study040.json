@@ -15,13 +15,10 @@
     },
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
-      "level": 1,
-      "evidence": "script present but not documented: tsai/inference.py",
-      "detail": {
-        "n_scripts": 1,
-        "source": "filesystem"
-      },
-      "level_name": "partial"
+      "level": 0,
+      "evidence": "no evaluation route documented or present",
+      "detail": {},
+      "level_name": "absent"
     },
     "links_resolve": {
       "criterion": "links_resolve",
@@ -51,10 +48,10 @@
       "level_name": "full"
     }
   },
-  "tier_b_level_sum": 7,
+  "tier_b_level_sum": 6,
   "tier_b_max": 10,
   "study_id": "study040",
   "repo_url": "https://github.com/timeseriesAI/tsai",
   "status": "ok",
-  "duration_s": 6.5
+  "duration_s": 10.4
 }

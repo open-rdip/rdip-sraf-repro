@@ -5,18 +5,18 @@
     "concrete_run_command": {
       "criterion": "concrete_run_command",
       "level": 2,
-      "evidence": "README.md: python -m applications.dc_ae.demo_dc_ae_model_diffusers model=dc-ae-f32c32-in-1.0-diffusers run_dir=.demo/reconstruction/dc-ae-f32c32-in-1.0-diffusers input_pat",
+      "evidence": "README.md: torchrun --nnodes=1 --nproc_per_node=8 -m applications.dc_ae.eval_dc_ae_model dataset=imagenet_512 model=dc-ae-f64c128-in-1.0 run_dir=tmp",
       "detail": {
-        "n_eval_concrete": 19,
+        "n_eval_concrete": 12,
         "n_eval_placeholder": 0,
-        "n_other_concrete": 44
+        "n_other_concrete": 51
       },
       "level_name": "full"
     },
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
       "level": 2,
-      "evidence": "README.md: python -m applications.dc_ae.demo_dc_ae_model_diffusers model=dc-ae-f32c32-in-1.0-diffusers run_dir=.demo/reconstruction/dc-ae-f32c32-in-1.0-diffusers input_pat",
+      "evidence": "README.md: torchrun --nnodes=1 --nproc_per_node=8 -m applications.dc_ae.eval_dc_ae_model dataset=imagenet_512 model=dc-ae-f64c128-in-1.0 run_dir=tmp",
       "detail": {
         "source": "docs"
       },

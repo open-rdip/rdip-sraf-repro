@@ -4,14 +4,18 @@
   "checks": {
     "concrete_run_command": {
       "criterion": "concrete_run_command",
-      "level": 2,
-      "evidence": "README.md: python demo/webcam.py --min-image-size 300 \\",
+      "level": 1,
+      "evidence": "evaluation command is placeholder-only \u2014 README.md: python -m torch.distributed.launch --nproc_per_node=$NGPUS /path_to_maskrcnn_benchmark/tools/test_net.py --config-file \"configs/e2e_mask_rcn",
       "detail": {
-        "n_eval_concrete": 2,
+        "n_eval_concrete": 0,
         "n_eval_placeholder": 1,
-        "n_other_concrete": 18
+        "n_other_concrete": 20,
+        "placeholders": [
+          "$NGPUS",
+          "/path_to_"
+        ]
       },
-      "level_name": "full"
+      "level_name": "partial"
     },
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
@@ -54,10 +58,10 @@
       "level_name": "absent"
     }
   },
-  "tier_b_level_sum": 7,
+  "tier_b_level_sum": 6,
   "tier_b_max": 10,
   "study_id": "study018",
   "repo_url": "https://github.com/markson14/WheatDet",
   "status": "ok",
-  "duration_s": 2.6
+  "duration_s": 7.5
 }

@@ -16,9 +16,9 @@
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
       "level": 1,
-      "evidence": "script present but not documented: op_builder/inference_core_ops.py",
+      "evidence": "script present but not documented: deepspeed/nvme/validate_async_io.py",
       "detail": {
-        "n_scripts": 17,
+        "n_scripts": 4,
         "source": "filesystem"
       },
       "level_name": "partial"
@@ -56,5 +56,5 @@
   "study_id": "study001",
   "repo_url": "https://github.com/microsoft/DeepSpeed",
   "status": "ok",
-  "duration_s": 22.6
+  "duration_s": 19.0
 }

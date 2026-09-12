@@ -5,18 +5,18 @@
     "concrete_run_command": {
       "criterion": "concrete_run_command",
       "level": 2,
-      "evidence": "README.md: python demo.py deep_lesion",
+      "evidence": "README.md: python test.py deep_lesion",
       "detail": {
-        "n_eval_concrete": 5,
+        "n_eval_concrete": 3,
         "n_eval_placeholder": 0,
-        "n_other_concrete": 4
+        "n_other_concrete": 6
       },
       "level_name": "full"
     },
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
       "level": 2,
-      "evidence": "README.md: python demo.py deep_lesion",
+      "evidence": "README.md: python test.py deep_lesion",
       "detail": {
         "source": "docs"
       },
@@ -55,5 +55,5 @@
   "study_id": "study033",
   "repo_url": "https://github.com/ruanyuhui/adn-qsdl",
   "status": "ok",
-  "duration_s": 2.1
+  "duration_s": 1.1
 }
