@@ -4,14 +4,14 @@
   "checks": {
     "concrete_run_command": {
       "criterion": "concrete_run_command",
-      "level": 2,
-      "evidence": "README.md: python -m unittest discover -s test -p \"test_*\" -v",
+      "level": 1,
+      "evidence": "commands documented but none reproduces a metric \u2014 README.md: python -m unittest discover -s test -p \"test_*\" -v",
       "detail": {
-        "n_eval_concrete": 1,
+        "n_eval_concrete": 0,
         "n_eval_placeholder": 0,
-        "n_other_concrete": 0
+        "n_other_concrete": 1
       },
-      "level_name": "full"
+      "level_name": "partial"
     },
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
@@ -50,10 +50,10 @@
       "level_name": "full"
     }
   },
-  "tier_b_level_sum": 10,
+  "tier_b_level_sum": 9,
   "tier_b_max": 10,
   "study_id": "study017",
   "repo_url": "https://github.com/biomedsciai/histocartography",
   "status": "ok",
-  "duration_s": 1.8
+  "duration_s": 1.7
 }

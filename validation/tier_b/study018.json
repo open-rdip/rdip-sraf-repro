@@ -5,11 +5,11 @@
     "concrete_run_command": {
       "criterion": "concrete_run_command",
       "level": 2,
-      "evidence": "README.md: python tools/train_net.py --config-file \"configs/e2e_mask_rcnn_R_50_FPN_1x.yaml\" SOLVER.IMS_PER_BATCH 2 SOLVER.BASE_LR 0.0025 SOLVER.MAX_ITER 720000 SOLVER.STEP",
+      "evidence": "README.md: python demo/webcam.py --min-image-size 300 \\",
       "detail": {
-        "n_eval_concrete": 3,
-        "n_eval_placeholder": 4,
-        "n_other_concrete": 17
+        "n_eval_concrete": 2,
+        "n_eval_placeholder": 1,
+        "n_other_concrete": 18
       },
       "level_name": "full"
     },
@@ -59,5 +59,5 @@
   "study_id": "study018",
   "repo_url": "https://github.com/markson14/WheatDet",
   "status": "ok",
-  "duration_s": 3.0
+  "duration_s": 2.6
 }

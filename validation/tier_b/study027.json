@@ -5,11 +5,11 @@
     "concrete_run_command": {
       "criterion": "concrete_run_command",
       "level": 2,
-      "evidence": "README.md: CUDA_VISIBLE_DEVICES=0 python3 train_valid_test.py --classification_type='tumor_origin' --exec_mode='train' --exp_name='tcga_only_7_1_2'",
+      "evidence": "README.md: CUDA_VISIBLE_DEVICES=0 python3 classification_eval.py --config_path configs/colon.yaml --dataset_name Dataset_PT",
       "detail": {
-        "n_eval_concrete": 7,
+        "n_eval_concrete": 3,
         "n_eval_placeholder": 0,
-        "n_other_concrete": 3
+        "n_other_concrete": 7
       },
       "level_name": "full"
     },
@@ -60,5 +60,5 @@
   "study_id": "study027",
   "repo_url": "https://github.com/hms-dbmi/chief",
   "status": "ok",
-  "duration_s": 2.4
+  "duration_s": 2.7
 }

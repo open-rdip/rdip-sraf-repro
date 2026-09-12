@@ -4,14 +4,14 @@
   "checks": {
     "concrete_run_command": {
       "criterion": "concrete_run_command",
-      "level": 2,
-      "evidence": "README.md: python -m pytest -p no:warnings --lf # run only the last failed test",
+      "level": 1,
+      "evidence": "commands documented but none reproduces a metric \u2014 README.md: python -m pytest -p no:warnings -x # Runs >119 tests leading to > 15 mins",
       "detail": {
-        "n_eval_concrete": 1,
+        "n_eval_concrete": 0,
         "n_eval_placeholder": 0,
-        "n_other_concrete": 12
+        "n_other_concrete": 13
       },
-      "level_name": "full"
+      "level_name": "partial"
     },
     "documented_entrypoint": {
       "criterion": "documented_entrypoint",
@@ -60,10 +60,10 @@
       "level_name": "full"
     }
   },
-  "tier_b_level_sum": 9,
+  "tier_b_level_sum": 8,
   "tier_b_max": 10,
   "study_id": "study002",
   "repo_url": "https://github.com/dice-group/dice-embeddings",
   "status": "ok",
-  "duration_s": 1.8
+  "duration_s": 6.4
 }

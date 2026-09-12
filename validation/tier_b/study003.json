@@ -5,11 +5,11 @@
     "concrete_run_command": {
       "criterion": "concrete_run_command",
       "level": 2,
-      "evidence": "tracking_train_test.md: CUDA_VISIBLE_DEVICES=-1 python tools/train.py configs/qdtrack/qdtrack_faster-rcnn_r50_fpn_8xb2-4e_mot17halftrain_test-mot17halfval.py",
+      "evidence": "tracking_train_test.md: bash tools/slurm_test_tracking.sh \\",
       "detail": {
-        "n_eval_concrete": 30,
+        "n_eval_concrete": 24,
         "n_eval_placeholder": 23,
-        "n_other_concrete": 48
+        "n_other_concrete": 54
       },
       "level_name": "full"
     },
@@ -67,5 +67,5 @@
   "study_id": "study003",
   "repo_url": "https://github.com/zhimengxin/rcod",
   "status": "ok",
-  "duration_s": 3.5
+  "duration_s": 6.8
 }

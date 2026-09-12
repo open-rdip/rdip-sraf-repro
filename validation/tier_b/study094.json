@@ -7,9 +7,9 @@
       "level": 2,
       "evidence": "README.md: python -m applications.dc_ae.demo_dc_ae_model_diffusers model=dc-ae-f32c32-in-1.0-diffusers run_dir=.demo/reconstruction/dc-ae-f32c32-in-1.0-diffusers input_pat",
       "detail": {
-        "n_eval_concrete": 20,
+        "n_eval_concrete": 19,
         "n_eval_placeholder": 0,
-        "n_other_concrete": 43
+        "n_other_concrete": 44
       },
       "level_name": "full"
     },
@@ -67,5 +67,5 @@
   "study_id": "study094",
   "repo_url": "https://github.com/mit-han-lab/efficientvit",
   "status": "ok",
-  "duration_s": 3.1
+  "duration_s": 3.9
 }
