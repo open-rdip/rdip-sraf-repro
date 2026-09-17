@@ -36,6 +36,19 @@ from dataclasses import dataclass, asdict, field
 from difflib import SequenceMatcher
 from pathlib import Path
 
+# Bump this whenever a check's GRADING changes (not when a comment or a helper
+# changes). `run_tier_b_corpus.py` re-runs any study whose stored stamp differs,
+# so a corpus can never silently mix gradings from different rule versions — the
+# failure mode that produced three inconsistent sweeps on 2026-09-12/17.
+#
+#   1  initial five checks
+#   2  eval commands only (a concrete `pip install` no longer passes a repo
+#      whose evaluation command is a placeholder)
+#   3  exclude unit-test runners and training commands
+#   4  exclude single-input demos; CI/test dirs excluded from the filesystem
+#      fallback. Scope frozen -- see docs/paper_notes.md section M.
+RULES_VERSION = 4
+
 ABSENT, PARTIAL, FULL = 0, 1, 2
 LEVEL_NAME = {ABSENT: "absent", PARTIAL: "partial", FULL: "full"}
 
@@ -375,6 +388,7 @@ def run_tier_b(repo_dir: str | Path, paper_title: str | None = None,
         check_repo_matches_paper(docs, paper_title),
     ]
     return {
+        "rules_version": RULES_VERSION,
         "repo_dir": str(repo_dir),
         "n_doc_files": len(docs),
         "online": online,

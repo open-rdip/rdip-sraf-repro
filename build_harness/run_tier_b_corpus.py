@@ -32,7 +32,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "build_harness"))
-from tier_b_checks import run_tier_b  # noqa: E402
+from tier_b_checks import RULES_VERSION, run_tier_b  # noqa: E402
 
 REPO_LIST = ROOT / "validation" / "repo_list.csv"
 OUT_DIR = Path(os.getenv("TIER_B_OUT", ROOT / "validation" / "tier_b"))
@@ -65,8 +65,17 @@ def process(row: dict, online: bool, keep: bool = False) -> dict:
     sid = row["study_id"]
     out_path = OUT_DIR / f"{sid}.json"
     if out_path.exists():
-        print(f"  [skip] {sid} — already done")
-        return json.load(open(out_path))
+        try:
+            prev = json.load(open(out_path))
+        except Exception:
+            prev = {}
+        stamp = prev.get("rules_version")
+        if stamp == RULES_VERSION:
+            print(f"  [skip] {sid} — already done (rules v{stamp})")
+            return prev
+        # Stale grading: the checks have changed since this file was written.
+        # Re-run rather than leaving a corpus that mixes rule versions.
+        print(f"  [stale] {sid} — rules v{stamp} != v{RULES_VERSION}, re-running")
 
     SCRATCH.mkdir(parents=True, exist_ok=True)
     work = Path(tempfile.mkdtemp(prefix=f"{sid}_", dir=SCRATCH))

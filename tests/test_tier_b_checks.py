@@ -224,3 +224,11 @@ def test_single_input_demos_are_not_evaluation(tmp_path, cmd):
     r = check_concrete_run_command([(p, p.read_text())])
     assert r.level != FULL
     assert r.detail["n_eval_concrete"] == 0
+
+
+def test_output_carries_a_rules_version(tmp_path):
+    """A corpus must never silently mix gradings from different rule versions."""
+    from tier_b_checks import RULES_VERSION
+    (tmp_path / "README.md").write_text("# x\n")
+    out = run_tier_b(tmp_path)
+    assert out["rules_version"] == RULES_VERSION
