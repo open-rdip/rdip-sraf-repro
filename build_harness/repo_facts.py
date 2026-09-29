@@ -44,7 +44,10 @@ from collections import OrderedDict
 from pathlib import Path
 
 # Bump when extraction logic changes; consumers re-run on mismatch.
-FACTS_VERSION = 8
+# 9: records now carry sweep provenance (swept_at, host, repo_commit). The
+# facts themselves are unchanged, but a corpus swept on two machines on two
+# dates is two measurements, and nothing in a v8 record says which is which.
+FACTS_VERSION = 9
 
 MAX_FILES = 400
 MAX_BYTES = 300_000

@@ -1,0 +1,33 @@
+{
+  "facts_version": 8,
+  "n_files_read": 39,
+  "datasets": [
+    {
+      "name": "coco",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "main.py:46: parser.add_argument('--datapath', type=str, default='~/datasets', help='Dataset path containing the root dir o"
+    },
+    {
+      "name": "VOC2012",
+      "canonical": "PASCAL VOC",
+      "source_kind": "config",
+      "evidence": "pascal.py:24: self.img_path = os.path.join(datapath, 'VOC2012/JPEGImages/')"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.001",
+      "evidence": "main.py"
+    }
+  ],
+  "metrics": [],
+  "seeds": [],
+  "study_id": "study087",
+  "repo_url": "https://github.com/dahyun-kang/ifsl",
+  "status": "ok",
+  "duration_s": 2.5
+}

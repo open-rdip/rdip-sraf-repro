@@ -1,0 +1,44 @@
+{
+  "facts_version": 8,
+  "n_files_read": 36,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "total_epochs",
+      "canonical": "epochs",
+      "value": "0",
+      "evidence": "utils.py:27"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0",
+      "evidence": "apd_local.py:249"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "F1Score",
+      "canonical": "F1",
+      "signal": "metric_api",
+      "evidence": "local_model.py:84"
+    },
+    {
+      "name": "accuracy_score",
+      "canonical": "Accuracy",
+      "signal": "metric_api",
+      "evidence": "generator.py:211"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "42",
+      "evidence": "data.sh:8"
+    }
+  ],
+  "study_id": "study059",
+  "repo_url": "https://github.com/raipranav/fcl-fedseit",
+  "status": "ok",
+  "duration_s": 1.8
+}

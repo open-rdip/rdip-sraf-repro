@@ -1,0 +1,97 @@
+{
+  "facts_version": 8,
+  "n_files_read": 234,
+  "datasets": [
+    {
+      "name": "c4",
+      "canonical": "C4",
+      "source_kind": "config",
+      "evidence": "eval_TrADe.py:153: c4   = time.reshape(len(dist_mat),1)"
+    },
+    {
+      "name": "voc",
+      "canonical": "PASCAL VOC",
+      "source_kind": "config",
+      "evidence": "voc_annotation.py:5: def convert_voc_annotation(data_path, data_type, anno_path, use_difficult_bbox=True):"
+    },
+    {
+      "name": "coco",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "interface_yolov3_tf_FFPRID.py:47: pb_file         = \"./tracklet/object_detector/pYOLO/yolov3_coco.pb\""
+    },
+    {
+      "name": "imagenet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "make_model.py:50: if pretrain_choice == 'imagenet':"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "80",
+      "evidence": "interface_yolov3_tf_FFPRID.py:51"
+    },
+    {
+      "name": "warmup_iters",
+      "canonical": "warmup",
+      "value": "500",
+      "evidence": "lr_scheduler.py:21"
+    },
+    {
+      "name": "CROP_SIZE",
+      "canonical": "image_size",
+      "value": "227",
+      "evidence": "constants.py:2"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "6",
+      "evidence": "args.py:20"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "5e-4",
+      "evidence": "args.py:28"
+    },
+    {
+      "name": "LEARNING_RATE",
+      "canonical": "learning_rate",
+      "value": "1e-5",
+      "evidence": "unrolled_solver.py:44"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.9",
+      "evidence": "tiny-yolo-4c.cfg:7"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "meanIou",
+      "canonical": "mIoU",
+      "signal": "logged",
+      "evidence": "unrolled_solver.py:256"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "2",
+      "evidence": "plot_utils.py:9"
+    },
+    {
+      "value": "0",
+      "evidence": "simulator.py:354"
+    }
+  ],
+  "study_id": "study092",
+  "repo_url": "https://github.com/luigy-mach/trade",
+  "status": "ok",
+  "duration_s": 12.9
+}

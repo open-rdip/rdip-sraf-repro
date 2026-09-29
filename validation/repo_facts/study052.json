@@ -1,0 +1,40 @@
+{
+  "facts_version": 8,
+  "n_files_read": 32,
+  "datasets": [
+    {
+      "name": "mnist",
+      "canonical": "MNIST",
+      "source_kind": "config",
+      "evidence": "__init__.py:133: from keras.datasets import mnist"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "learning_rate",
+      "canonical": "learning_rate",
+      "value": "1e-3",
+      "evidence": "keras_model.py:67"
+    },
+    {
+      "name": "epochs",
+      "canonical": "epochs",
+      "value": "200",
+      "evidence": "__init__.py:221"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "canonical": "Accuracy",
+      "signal": "eval_config",
+      "evidence": "keras_model.py:123"
+    }
+  ],
+  "seeds": [],
+  "study_id": "study052",
+  "repo_url": "https://github.com/nonparametric-adversarial/nonparametric",
+  "status": "ok",
+  "duration_s": 3.9
+}

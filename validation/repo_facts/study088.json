@@ -1,0 +1,39 @@
+{
+  "facts_version": 8,
+  "n_files_read": 55,
+  "datasets": [
+    {
+      "name": "c4",
+      "canonical": "C4",
+      "source_kind": "config",
+      "evidence": "segformer.py:232: c1, c2, c3, c4 = inputs"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "100",
+      "evidence": "test_patchconvnet.py:46"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.2",
+      "evidence": "test_mlp_mixer.py:18"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.9",
+      "evidence": "van.py:59"
+    }
+  ],
+  "metrics": [],
+  "seeds": [],
+  "study_id": "study088",
+  "repo_url": "https://github.com/DarshanDeshpande/jax-models",
+  "status": "ok",
+  "duration_s": 1.3
+}

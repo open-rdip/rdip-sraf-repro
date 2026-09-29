@@ -1,0 +1,125 @@
+{
+  "facts_version": 8,
+  "n_files_read": 90,
+  "datasets": [
+    {
+      "name": "imagenet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "run_configs_400m.py:37: imagenet_val = None"
+    },
+    {
+      "name": "CIFAR10",
+      "canonical": "CIFAR-10",
+      "source_kind": "config",
+      "evidence": "labels.json:706: \"CIFAR10\": ["
+    },
+    {
+      "name": "CIFAR100",
+      "canonical": "CIFAR-100",
+      "source_kind": "config",
+      "evidence": "labels.json:718: \"CIFAR100\": ["
+    },
+    {
+      "name": "KITTI",
+      "canonical": "KITTI",
+      "source_kind": "config",
+      "evidence": "labels.json:1594: \"KITTI\": ["
+    },
+    {
+      "name": "MNIST",
+      "canonical": "MNIST",
+      "source_kind": "config",
+      "evidence": "labels.json:2302: \"MNIST\": ["
+    },
+    {
+      "name": "SST2",
+      "canonical": "SST-2",
+      "source_kind": "config",
+      "evidence": "labels.json:2426: \"SST2\": ["
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "128",
+      "evidence": "run_configs_400m.py:25"
+    },
+    {
+      "name": "epochs",
+      "canonical": "epochs",
+      "value": "10",
+      "evidence": "run_configs_400m.py:26"
+    },
+    {
+      "name": "warmup",
+      "canonical": "warmup",
+      "value": "2000",
+      "evidence": "run_configs_400m.py:31"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.0004",
+      "evidence": "run_configs_400m.py:91"
+    },
+    {
+      "name": "wd",
+      "canonical": "weight_decay",
+      "value": "0.2",
+      "evidence": "configs.py:40"
+    },
+    {
+      "name": "IMG_SIZE",
+      "canonical": "image_size",
+      "value": "224",
+      "evidence": "constants.py:7"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "f1_score",
+      "canonical": "F1",
+      "signal": "metric_api",
+      "evidence": "eval_zeroshot.py:296"
+    },
+    {
+      "name": "precision_score",
+      "canonical": "Precision",
+      "signal": "metric_api",
+      "evidence": "eval_zeroshot.py:297"
+    },
+    {
+      "name": "recall_score",
+      "canonical": "Recall",
+      "signal": "metric_api",
+      "evidence": "eval_zeroshot.py:298"
+    },
+    {
+      "name": "roc_auc_score",
+      "canonical": "AUROC",
+      "signal": "metric_api",
+      "evidence": "eval_zeroshot.py:350"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "0",
+      "evidence": "run_configs_400m.py:32"
+    },
+    {
+      "value": "1",
+      "evidence": "data.py:400"
+    },
+    {
+      "value": "42",
+      "evidence": "main.py:67"
+    }
+  ],
+  "study_id": "study093",
+  "repo_url": "https://github.com/mbzuai-oryx/unimed-clip",
+  "status": "ok",
+  "duration_s": 2.4
+}

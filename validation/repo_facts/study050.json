@@ -1,0 +1,26 @@
+{
+  "facts_version": 8,
+  "n_files_read": 17,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "learning_rate",
+      "canonical": "learning_rate",
+      "value": "0.1",
+      "evidence": "train_blackjack.py:40"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "16",
+      "evidence": "deep_class.py:238"
+    }
+  ],
+  "metrics": [],
+  "seeds": [],
+  "study_id": "study050",
+  "repo_url": "https://github.com/hmhyau/rl-intention",
+  "status": "ok",
+  "duration_s": 1.4
+}

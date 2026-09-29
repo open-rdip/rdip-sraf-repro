@@ -1,0 +1,25 @@
+{
+  "facts_version": 8,
+  "n_files_read": 11,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [],
+  "metrics": [
+    {
+      "name": "roc_auc_score",
+      "canonical": "AUROC",
+      "signal": "metric_api",
+      "evidence": "vista_ssm_Funcs.py:436"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "1",
+      "evidence": "vista_ssm_Funcs.py:776"
+    }
+  ],
+  "study_id": "study051",
+  "repo_url": "https://github.com/benjaminbrindle/vista_ssm",
+  "status": "ok",
+  "duration_s": 24.9
+}

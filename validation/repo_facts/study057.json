@@ -1,0 +1,76 @@
+{
+  "facts_version": 8,
+  "n_files_read": 38,
+  "datasets": [
+    {
+      "name": "imagenet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "finetune.py:62: help=\"Load from ssl checkpoint, randomly initialize, or use imagenet\","
+    },
+    {
+      "name": "cifar10",
+      "canonical": "CIFAR-10",
+      "source_kind": "config",
+      "evidence": "transforms.py:4: cifar10_normalization,"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "max_epochs",
+      "canonical": "epochs",
+      "value": "1",
+      "evidence": "predict.py"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "32",
+      "evidence": "predict.py"
+    },
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "1",
+      "evidence": "predict.py"
+    },
+    {
+      "name": "learning_rate",
+      "canonical": "learning_rate",
+      "value": "0.03",
+      "evidence": "train_ssl.py"
+    },
+    {
+      "name": "optimizer",
+      "canonical": "optimizer",
+      "value": "SGD",
+      "evidence": "train_ssl.py"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.9",
+      "evidence": "moco2_module.py"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.0001",
+      "evidence": "moco2_module.py"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "F1Score",
+      "canonical": "F1",
+      "signal": "metric_api",
+      "evidence": "finetuning.py:82"
+    }
+  ],
+  "seeds": [],
+  "study_id": "study057",
+  "repo_url": "https://github.com/georgestein/ssl-legacysurvey",
+  "status": "ok",
+  "duration_s": 8.5
+}

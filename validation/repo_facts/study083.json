@@ -1,0 +1,26 @@
+{
+  "facts_version": 8,
+  "n_files_read": 31,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "num_epochs",
+      "canonical": "epochs",
+      "value": "maxiter",
+      "evidence": "optimizer.py:493"
+    },
+    {
+      "name": "learning_rate",
+      "canonical": "learning_rate",
+      "value": "float",
+      "evidence": "optimizer.py:590"
+    }
+  ],
+  "metrics": [],
+  "seeds": [],
+  "study_id": "study083",
+  "repo_url": "https://github.com/joseangelmartinb/gklr",
+  "status": "ok",
+  "duration_s": 1.2
+}

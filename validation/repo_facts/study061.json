@@ -1,0 +1,43 @@
+{
+  "facts_version": 8,
+  "n_files_read": 138,
+  "datasets": [
+    {
+      "name": "vg",
+      "canonical": "Visual Genome",
+      "source_kind": "config",
+      "evidence": "spline_3rd_order.py:70: vg_n1 = goal_config.speed_nk1()[:, :, 0]"
+    },
+    {
+      "name": "sQuad",
+      "canonical": "SQuAD",
+      "source_kind": "config",
+      "evidence": "test_costs.py:71: print(\"%sQuad costs tests passed!%s\" % (color_text[\"green\"], color_text[\"reset\"]))"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "991",
+      "evidence": "user_params.ini:2"
+    },
+    {
+      "value": "999",
+      "evidence": "random_eps_sampler.py:47"
+    },
+    {
+      "value": "1",
+      "evidence": "test_dynamics.py:31"
+    },
+    {
+      "value": "2",
+      "evidence": "test_dynamics.py:121"
+    }
+  ],
+  "study_id": "study061",
+  "repo_url": "https://github.com/CMU-TBD/SocNavBench",
+  "status": "ok",
+  "duration_s": 4.8
+}

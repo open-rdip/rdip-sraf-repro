@@ -1,0 +1,80 @@
+{
+  "facts_version": 8,
+  "n_files_read": 58,
+  "datasets": [
+    {
+      "name": "celeba",
+      "canonical": "CelebA",
+      "source_kind": "config",
+      "evidence": "main_mcj.py:20: parser.add_argument('--config', type=str, default='celeba.yml',  help='Path to the config file')"
+    },
+    {
+      "name": "cifar10",
+      "canonical": "CIFAR-10",
+      "source_kind": "config",
+      "evidence": "ncsn_original.yml:35: #         cifar10"
+    },
+    {
+      "name": "LSUN",
+      "canonical": "LSUN",
+      "source_kind": "config",
+      "evidence": "bedroom.yml:40: dataset: \"LSUN\""
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "16",
+      "evidence": "celeba.yml:2"
+    },
+    {
+      "name": "n_epochs",
+      "canonical": "epochs",
+      "value": "500000",
+      "evidence": "celeba.yml:3"
+    },
+    {
+      "name": "image_size",
+      "canonical": "image_size",
+      "value": "64",
+      "evidence": "celeba.yml:41"
+    },
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "500",
+      "evidence": "celeba.yml:53"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.000",
+      "evidence": "celeba.yml:64"
+    },
+    {
+      "name": "optimizer",
+      "canonical": "optimizer",
+      "value": "Adam",
+      "evidence": "celeba.yml:65"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.0001",
+      "evidence": "celeba.yml:66"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "10000",
+      "evidence": "generate_niid_noise_from_field.py:20"
+    }
+  ],
+  "study_id": "study096",
+  "repo_url": "https://github.com/mengchuangji/ncsnv2_seismic",
+  "status": "ok",
+  "duration_s": 1.6
+}

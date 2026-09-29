@@ -1,0 +1,43 @@
+{
+  "facts_version": 8,
+  "n_files_read": 44,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.0001",
+      "evidence": "train.py"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "8",
+      "evidence": "ET-MD17.yaml:5"
+    },
+    {
+      "name": "num_epochs",
+      "canonical": "epochs",
+      "value": "3000",
+      "evidence": "ET-MD17.yaml:37"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.0",
+      "evidence": "ET-MD17.yaml:57"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "1234",
+      "evidence": "test_equivariance.py:7"
+    }
+  ],
+  "study_id": "study045",
+  "repo_url": "https://github.com/shehzaidi/pre-training-via-denoising",
+  "status": "ok",
+  "duration_s": 8.6
+}

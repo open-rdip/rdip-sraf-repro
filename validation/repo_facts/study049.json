@@ -1,0 +1,52 @@
+{
+  "facts_version": 8,
+  "n_files_read": 21,
+  "datasets": [
+    {
+      "name": "ImageNet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "validate.py:55: parser = argparse.ArgumentParser(description='PyTorch ImageNet Validation')"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "initial_batch_size",
+      "evidence": "validate.py:313"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.9",
+      "evidence": "benchmark.py"
+    },
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "1000",
+      "evidence": "convnext.py:203"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "top1",
+      "canonical": "Top-1 accuracy",
+      "signal": "logged",
+      "evidence": "validate.py:307"
+    },
+    {
+      "name": "top5",
+      "canonical": "Top-5 accuracy",
+      "signal": "logged",
+      "evidence": "validate.py:307"
+    }
+  ],
+  "seeds": [],
+  "study_id": "study049",
+  "repo_url": "https://github.com/sail-sg/inceptionnext",
+  "status": "ok",
+  "duration_s": 1.3
+}

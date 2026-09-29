@@ -1,0 +1,92 @@
+{
+  "facts_version": 8,
+  "n_files_read": 237,
+  "datasets": [
+    {
+      "name": "mnist",
+      "canonical": "MNIST",
+      "source_kind": "config",
+      "evidence": "test_caffe2.py:243: model = model_helper.ModelHelper(name=\"mnist\")"
+    },
+    {
+      "name": "ImageNet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "main_amp.py:32: parser = argparse.ArgumentParser(description='PyTorch ImageNet Training')"
+    },
+    {
+      "name": "cifar-10",
+      "canonical": "CIFAR-10",
+      "source_kind": "config",
+      "evidence": "train_dcgan.py:28: help='Directory of image files.  Default is cifar-10.')"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "bs",
+      "canonical": "batch_size",
+      "value": "1",
+      "evidence": "hparams.py:353"
+    },
+    {
+      "name": "epochs",
+      "canonical": "epochs",
+      "value": "10000",
+      "evidence": "hparams.py:487"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.0003",
+      "evidence": "hparams.py:488"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.0",
+      "evidence": "hparams.py:493"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.9",
+      "evidence": "main_amp.py"
+    },
+    {
+      "name": "crop_size",
+      "canonical": "image_size",
+      "value": "224",
+      "evidence": "main_amp.py:196"
+    },
+    {
+      "name": "iters",
+      "canonical": "iterations",
+      "value": "3",
+      "evidence": "test_multiple_models_optimizers_losses.py:95"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "0",
+      "evidence": "hparams.py:343"
+    },
+    {
+      "value": "42",
+      "evidence": "factored_attention.py:425"
+    },
+    {
+      "value": "13337",
+      "evidence": "test_fp16_optimizer.py:10"
+    },
+    {
+      "value": "9876",
+      "evidence": "test_mixed_adam.py:13"
+    }
+  ],
+  "study_id": "study060",
+  "repo_url": "https://github.com/openai/jukebox",
+  "status": "ok",
+  "duration_s": 2.1
+}

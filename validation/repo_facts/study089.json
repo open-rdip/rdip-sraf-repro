@@ -1,0 +1,47 @@
+{
+  "facts_version": 8,
+  "n_files_read": 29,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "CROP_SIZE",
+      "canonical": "image_size",
+      "value": "128",
+      "evidence": "dataset.py:24"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.0001",
+      "evidence": "main.py"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "32",
+      "evidence": "main.py"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.9",
+      "evidence": "main.py"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "2024",
+      "evidence": "README.md:66"
+    },
+    {
+      "value": "2023",
+      "evidence": "main.py:15"
+    }
+  ],
+  "study_id": "study089",
+  "repo_url": "https://github.com/cyf-cuber/mol",
+  "status": "ok",
+  "duration_s": 1.9
+}

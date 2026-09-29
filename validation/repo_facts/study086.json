@@ -1,0 +1,47 @@
+{
+  "facts_version": 8,
+  "n_files_read": 46,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "learning_rate",
+      "canonical": "learning_rate",
+      "value": "2e-4",
+      "evidence": "finetuning.py:64"
+    },
+    {
+      "name": "optim",
+      "canonical": "optimizer",
+      "value": "paged_adamw_32bit",
+      "evidence": "finetuning.py:68"
+    },
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "0",
+      "evidence": "copyright_test.py:102"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "64",
+      "evidence": "attack.py:56"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "0",
+      "evidence": "proflingo.py:15"
+    },
+    {
+      "value": "42",
+      "evidence": "proflingo.py:60"
+    }
+  ],
+  "study_id": "study086",
+  "repo_url": "https://github.com/hengvt/proflingo",
+  "status": "ok",
+  "duration_s": 2.9
+}

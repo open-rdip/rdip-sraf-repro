@@ -1,0 +1,27 @@
+{
+  "facts_version": 8,
+  "n_files_read": 11,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "learning_rate",
+      "canonical": "learning_rate",
+      "value": "0.5",
+      "evidence": "setting_inference.yaml:32"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy_score",
+      "canonical": "Accuracy",
+      "signal": "metric_api",
+      "evidence": "main_cv.py:260"
+    }
+  ],
+  "seeds": [],
+  "study_id": "study076",
+  "repo_url": "https://github.com/mcontisc/PIHAM",
+  "status": "ok",
+  "duration_s": 2.1
+}

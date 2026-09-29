@@ -1,0 +1,58 @@
+{
+  "facts_version": 8,
+  "n_files_read": 51,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "0.1",
+      "evidence": "self_refine.py:344"
+    },
+    {
+      "name": "BATCH_SIZE",
+      "canonical": "batch_size",
+      "value": "32",
+      "evidence": "question_clustering.py:49"
+    },
+    {
+      "name": "learning_rate",
+      "canonical": "learning_rate",
+      "value": "5.0e-7",
+      "evidence": "config_full.yaml:22"
+    },
+    {
+      "name": "optim",
+      "canonical": "optimizer",
+      "value": "rmsprop",
+      "evidence": "config_full.yaml:29"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "f1_score",
+      "canonical": "F1",
+      "signal": "metric_api",
+      "evidence": "tiger_score.py:128"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "42",
+      "evidence": "README.md:103"
+    },
+    {
+      "value": "0",
+      "evidence": "run_inference.sh:27"
+    },
+    {
+      "value": "28",
+      "evidence": "selfcheck.py:12"
+    }
+  ],
+  "study_id": "study079",
+  "repo_url": "https://github.com/ukplab/arxiv2024-lfqa-hallucination",
+  "status": "ok",
+  "duration_s": 2.2
+}

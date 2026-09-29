@@ -1,0 +1,120 @@
+{
+  "facts_version": 8,
+  "n_files_read": 69,
+  "datasets": [
+    {
+      "name": "Wikitext",
+      "canonical": "WikiText",
+      "source_kind": "config",
+      "evidence": "train_wiki.py:41: parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 RNN/LSTM Language Model')"
+    },
+    {
+      "name": "mnist",
+      "canonical": "MNIST",
+      "source_kind": "config",
+      "evidence": "mnist_seq_data_classify.py:28: def mnist_data(path):"
+    },
+    {
+      "name": "CIFAR10",
+      "canonical": "CIFAR-10",
+      "source_kind": "config",
+      "evidence": "cifar_seq_data_classify.py:32: cifar_trainset = datasets.CIFAR10(root='/home/anirudh/blocks/sparse_relational/data/', train=True, download=Tr"
+    },
+    {
+      "name": "vg",
+      "canonical": "Visual Genome",
+      "source_kind": "config",
+      "evidence": "kfac.py:229: vg_sum = 0"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.001",
+      "evidence": "train_wiki.py"
+    },
+    {
+      "name": "epochs",
+      "canonical": "epochs",
+      "value": "1000",
+      "evidence": "train_wiki.py"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "64",
+      "evidence": "train_wiki.py"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.5",
+      "evidence": "train_wiki.py"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.9",
+      "evidence": "kfac.py:91"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0",
+      "evidence": "kfac.py:95"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "0",
+      "evidence": "run_all.yaml:7"
+    },
+    {
+      "value": "1",
+      "evidence": "run_all.yaml:26"
+    },
+    {
+      "value": "2",
+      "evidence": "run_all.yaml:45"
+    },
+    {
+      "value": "3",
+      "evidence": "run_all.yaml:64"
+    },
+    {
+      "value": "4",
+      "evidence": "run_all.yaml:83"
+    },
+    {
+      "value": "5",
+      "evidence": "run_all.yaml:102"
+    },
+    {
+      "value": "6",
+      "evidence": "run_all.yaml:121"
+    },
+    {
+      "value": "7",
+      "evidence": "run_all.yaml:140"
+    },
+    {
+      "value": "8",
+      "evidence": "run_all.yaml:159"
+    },
+    {
+      "value": "9",
+      "evidence": "run_all.yaml:178"
+    },
+    {
+      "value": "42",
+      "evidence": "splitcross.py:174"
+    }
+  ],
+  "study_id": "study082",
+  "repo_url": "https://github.com/anirudh9119/RIMs",
+  "status": "ok",
+  "duration_s": 1.4
+}

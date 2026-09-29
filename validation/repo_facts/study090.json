@@ -1,0 +1,32 @@
+{
+  "facts_version": 8,
+  "n_files_read": 51,
+  "datasets": [
+    {
+      "name": "nuscenes",
+      "canonical": "nuScenes",
+      "source_kind": "config",
+      "evidence": "gen_info.py:3: from nuscenes.nuscenes import NuScenes"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [],
+  "metrics": [
+    {
+      "name": "bbox",
+      "canonical": "mAP",
+      "signal": "eval_config",
+      "evidence": "det_evaluators.py:64"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "0",
+      "evidence": "test_voxel_pooling.py:17"
+    }
+  ],
+  "study_id": "study090",
+  "repo_url": "https://github.com/megvii-basedetection/bevdepth",
+  "status": "ok",
+  "duration_s": 1.7
+}

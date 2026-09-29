@@ -1,0 +1,63 @@
+{
+  "facts_version": 8,
+  "n_files_read": 47,
+  "datasets": [
+    {
+      "name": "coco",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "train.py:67: is_coco = opt.data.endswith('coco.yaml')"
+    },
+    {
+      "name": "VOC",
+      "canonical": "PASCAL VOC",
+      "source_kind": "config",
+      "evidence": "voc.yaml:1: # PASCAL VOC dataset http://host.robots.ox.ac.uk/pascal/VOC/"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "epochs",
+      "canonical": "epochs",
+      "value": "300",
+      "evidence": "train.py"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "32",
+      "evidence": "test.py:23"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.843",
+      "evidence": "hyp.finetune.yaml:13"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.00036",
+      "evidence": "hyp.finetune.yaml:14"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "COCOeval",
+      "canonical": "mAP",
+      "signal": "metric_api",
+      "evidence": "test.py:262"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "0",
+      "evidence": "torch_utils.py:41"
+    }
+  ],
+  "study_id": "study046",
+  "repo_url": "https://github.com/lmomoy/lf-yolo",
+  "status": "ok",
+  "duration_s": 1.5
+}

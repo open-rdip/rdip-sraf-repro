@@ -1,0 +1,44 @@
+{
+  "facts_version": 8,
+  "n_files_read": 30,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "temp",
+      "evidence": "codegen_completion.py:124"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "average_precision_score",
+      "canonical": "AP",
+      "signal": "metric_api",
+      "evidence": "st_evaluator.py:6"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "42",
+      "evidence": "codegen_completion.py:181"
+    },
+    {
+      "value": "0",
+      "evidence": "README.md:71"
+    },
+    {
+      "value": "88",
+      "evidence": "sample.py:15"
+    },
+    {
+      "value": "888",
+      "evidence": "preprocess.sh:8"
+    }
+  ],
+  "study_id": "study070",
+  "repo_url": "https://github.com/yushi-hu/ic-dst",
+  "status": "ok",
+  "duration_s": 6.4
+}

@@ -1,0 +1,103 @@
+{
+  "facts_version": 8,
+  "n_files_read": 400,
+  "datasets": [
+    {
+      "name": "librispeech",
+      "canonical": "LibriSpeech",
+      "source_kind": "config",
+      "evidence": "pyproject.toml:16: | egs\\/librispeech\\/ASR\\/zipformer"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "int",
+      "evidence": "ali.py:94"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.1",
+      "evidence": "profiler.py:320"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "float",
+      "evidence": "utils.py:1585"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "int",
+      "evidence": "dataset.py:34"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "1e-6",
+      "evidence": "train.py:185"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.1",
+      "evidence": "train.py:198"
+    },
+    {
+      "name": "warmup",
+      "canonical": "warmup",
+      "value": "float",
+      "evidence": "train.py:1003"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "BLEU",
+      "canonical": "BLEU",
+      "signal": "metric_api",
+      "evidence": "utils.py:647"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "20230423",
+      "evidence": "check-onnx-streaming.py:124"
+    },
+    {
+      "value": "20230420",
+      "evidence": "check-onnx.py:115"
+    },
+    {
+      "value": "20211122",
+      "evidence": "test_model.py:68"
+    },
+    {
+      "value": "10",
+      "evidence": "scaling.py:1869"
+    },
+    {
+      "value": "20211105",
+      "evidence": "test_label_smoothing.py:31"
+    },
+    {
+      "value": "20220727",
+      "evidence": "onnx_check.py:234"
+    },
+    {
+      "value": "20230207",
+      "evidence": "onnx_check.py:256"
+    },
+    {
+      "value": "0",
+      "evidence": "export.py:319"
+    }
+  ],
+  "study_id": "study063",
+  "repo_url": "https://github.com/k2-fsa/icefall",
+  "status": "ok",
+  "duration_s": 5.5
+}

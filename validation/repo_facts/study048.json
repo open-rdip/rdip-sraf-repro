@@ -1,0 +1,26 @@
+{
+  "facts_version": 8,
+  "n_files_read": 185,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "100.0",
+      "evidence": "run.py:56"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "1024",
+      "evidence": "generate_data.py:80"
+    }
+  ],
+  "metrics": [],
+  "seeds": [],
+  "study_id": "study048",
+  "repo_url": "https://github.com/ibm/topography-searcher",
+  "status": "ok",
+  "duration_s": 4.2
+}

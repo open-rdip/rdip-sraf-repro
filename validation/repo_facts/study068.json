@@ -1,0 +1,37 @@
+{
+  "facts_version": 8,
+  "n_files_read": 18,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "BATCH_SIZE",
+      "canonical": "batch_size",
+      "value": "20",
+      "evidence": "gan2.py:312"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "1.0e-4",
+      "evidence": "gan2.py:449"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.95",
+      "evidence": "gan2.py:451"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "42",
+      "evidence": "rl_agent_eval.py:24"
+    }
+  ],
+  "study_id": "study068",
+  "repo_url": "https://github.com/apoorvkhattar/RL-Project-2019",
+  "status": "ok",
+  "duration_s": 1.5
+}

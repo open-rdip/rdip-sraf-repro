@@ -1,0 +1,109 @@
+{
+  "facts_version": 8,
+  "n_files_read": 182,
+  "datasets": [
+    {
+      "name": "ImageNet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "ssl_default_config.yaml:63: dataset_path: ImageNet:split=TRAIN"
+    },
+    {
+      "name": "KITTI",
+      "canonical": "KITTI",
+      "source_kind": "config",
+      "evidence": "depthers.py:19: KITTI = \"KITTI\""
+    },
+    {
+      "name": "ADE20K",
+      "canonical": "ADE20K",
+      "source_kind": "config",
+      "evidence": "colormaps.py:6: ADE20K_COLORMAP = ["
+    },
+    {
+      "name": "VOC2012",
+      "canonical": "PASCAL VOC",
+      "source_kind": "config",
+      "evidence": "colormaps.py:315: VOC2012_COLORMAP = ["
+    },
+    {
+      "name": "c4",
+      "canonical": "C4",
+      "source_kind": "config",
+      "evidence": "adapter_modules.py:424: c4 = self.conv4(c3)"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "epochs",
+      "canonical": "epochs",
+      "value": "100",
+      "evidence": "ssl_default_config.yaml:93"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.04",
+      "evidence": "ssl_default_config.yaml:94"
+    },
+    {
+      "name": "base_lr",
+      "canonical": "learning_rate",
+      "value": "0.004",
+      "evidence": "ssl_default_config.yaml:96"
+    },
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "int",
+      "evidence": "metrics.py:78"
+    },
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "0.07",
+      "evidence": "knn.py:91"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "256",
+      "evidence": "knn.py:92"
+    },
+    {
+      "name": "img_size",
+      "canonical": "image_size",
+      "value": "224",
+      "evidence": "vision_transformer.py:48"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.0",
+      "evidence": "msdeformattn_pixel_decoder.py:63"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "top-1",
+      "canonical": "Top-1 accuracy",
+      "signal": "logged",
+      "evidence": "linear.py:294"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "0",
+      "evidence": "run_demo.py:46"
+    },
+    {
+      "value": "31",
+      "evidence": "utils.py:36"
+    }
+  ],
+  "study_id": "study073",
+  "repo_url": "https://github.com/NVlabs/FoundationStereo",
+  "status": "ok",
+  "duration_s": 3.1
+}

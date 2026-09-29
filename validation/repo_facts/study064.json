@@ -1,0 +1,52 @@
+{
+  "facts_version": 8,
+  "n_files_read": 36,
+  "datasets": [
+    {
+      "name": "nuscenes",
+      "canonical": "nuScenes",
+      "source_kind": "config",
+      "evidence": "evaluate.py:96: parser.add_argument('--dataroot', default='./nuscenes', type=str, help='path to the dataset')"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "LR",
+      "canonical": "learning_rate",
+      "value": "3e-4",
+      "evidence": "baseline.yml:24"
+    },
+    {
+      "name": "EPOCHS",
+      "canonical": "epochs",
+      "value": "2",
+      "evidence": "debug_baseline.yml:5"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.0",
+      "evidence": "convolutions.py:78"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "PanopticMetric",
+      "canonical": "PQ",
+      "signal": "metric_api",
+      "evidence": "evaluate.py:8"
+    },
+    {
+      "name": "iou",
+      "canonical": "IoU",
+      "signal": "logged",
+      "evidence": "evaluate.py:86"
+    }
+  ],
+  "seeds": [],
+  "study_id": "study064",
+  "repo_url": "https://github.com/wayveai/fiery",
+  "status": "ok",
+  "duration_s": 1.2
+}

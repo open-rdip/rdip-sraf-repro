@@ -1,0 +1,32 @@
+{
+  "facts_version": 8,
+  "n_files_read": 55,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "min_batch_size",
+      "evidence": "memory.py:44"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.1",
+      "evidence": "atom_fitting.py:49"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.0",
+      "evidence": "atom_fitting.py:51"
+    }
+  ],
+  "metrics": [],
+  "seeds": [],
+  "study_id": "study085",
+  "repo_url": "https://github.com/mattragoza/liGAN",
+  "status": "ok",
+  "duration_s": 2.0
+}

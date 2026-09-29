@@ -1,0 +1,74 @@
+{
+  "facts_version": 8,
+  "n_files_read": 29,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "1",
+      "evidence": "training.py:474"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.001",
+      "evidence": "highLevel_classifier.py:226"
+    },
+    {
+      "name": "optimizer",
+      "canonical": "optimizer",
+      "value": "AdamMini",
+      "evidence": "configs_HCAL.yaml:65"
+    },
+    {
+      "name": "max_iters",
+      "canonical": "iterations",
+      "value": "5000000",
+      "evidence": "configs_HCAL.yaml:66"
+    },
+    {
+      "name": "epochs",
+      "canonical": "epochs",
+      "value": "100",
+      "evidence": "configs_HCAL.yaml:68"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0",
+      "evidence": "configs_HCAL.yaml:81"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "roc_auc_score",
+      "canonical": "AUROC",
+      "signal": "metric_api",
+      "evidence": "clas_utils.py:3"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "42",
+      "evidence": "misc.py:189"
+    },
+    {
+      "value": "45",
+      "evidence": "configs_HCAL.yaml:89"
+    },
+    {
+      "value": "36",
+      "evidence": "configs_sf.yaml:4"
+    },
+    {
+      "value": "455",
+      "evidence": "configs_ECAL.yaml:90"
+    }
+  ],
+  "study_id": "study056",
+  "repo_url": "https://github.com/FLC-QU-hep/CaloHadronic",
+  "status": "ok",
+  "duration_s": 5.0
+}

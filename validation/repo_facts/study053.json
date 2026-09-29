@@ -1,0 +1,38 @@
+{
+  "facts_version": 8,
+  "n_files_read": 27,
+  "datasets": [
+    {
+      "name": "imagenet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "main.py:29: if args.dataset == 'imagenet':"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.0002",
+      "evidence": "run_utils.py"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "32",
+      "evidence": "run_utils.py"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "1",
+      "evidence": "README.md:58"
+    }
+  ],
+  "study_id": "study053",
+  "repo_url": "https://github.com/maxzanella/clip-lora",
+  "status": "ok",
+  "duration_s": 2.7
+}

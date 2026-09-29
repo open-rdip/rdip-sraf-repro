@@ -24,11 +24,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import socket
+import subprocess
 import os
 import shutil
 import sys
 import tempfile
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -40,6 +43,21 @@ from run_tier_b_corpus import clone, load_corpus           # noqa: E402
 OUT_DIR = Path(os.getenv("REPO_FACTS_OUT", ROOT / "validation" / "repo_facts"))
 SCRATCH = Path(os.getenv("SLURM_TMPDIR",
                          f"/tmp/{os.getenv('SLURM_JOB_ID', 'local')}"))
+
+
+def cloned_commit(repo_dir: Path) -> str | None:
+    """The exact commit the shallow clone landed on.
+
+    `git clone --depth 1` takes whatever HEAD is on the day it runs, so two
+    sweeps weeks apart are not the same measurement. Recording the SHA is what
+    lets someone re-clone the state these facts were extracted from.
+    """
+    try:
+        p = subprocess.run(["git", "-C", str(repo_dir), "rev-parse", "HEAD"],
+                           capture_output=True, text=True, timeout=30)
+        return p.stdout.strip() or None
+    except Exception:                                             # noqa: BLE001
+        return None
 
 
 def process(row: dict, keep: bool = False) -> dict:
@@ -70,12 +88,15 @@ def process(row: dict, keep: bool = False) -> dict:
                    "datasets": [], "hyperparameters": [], "metrics": [], "seeds": []}
         else:
             rec = extract_repo_facts(dest)
-            rec.update(study_id=sid, repo_url=row["repo_url"], status="ok")
+            rec.update(study_id=sid, repo_url=row["repo_url"], status="ok",
+                       repo_commit=cloned_commit(dest))
     finally:
         if not keep:
             shutil.rmtree(work, ignore_errors=True)
 
     rec["duration_s"] = round(time.time() - t0, 1)
+    rec["swept_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    rec["host"] = os.getenv("SLURMD_NODENAME") or socket.gethostname()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     json.dump(rec, open(out_path, "w"), indent=2)
 

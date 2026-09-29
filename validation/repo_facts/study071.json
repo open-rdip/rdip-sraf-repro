@@ -1,0 +1,32 @@
+{
+  "facts_version": 8,
+  "n_files_read": 41,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "16",
+      "evidence": "clip.yaml:6"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "auto",
+      "evidence": "deepspeed_accelerator.py:25"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "auto",
+      "evidence": "deepspeed_accelerator.py:26"
+    }
+  ],
+  "metrics": [],
+  "seeds": [],
+  "study_id": "study071",
+  "repo_url": "https://github.com/yuvalkirstain/pickscore",
+  "status": "ok",
+  "duration_s": 1.7
+}

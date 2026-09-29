@@ -1,0 +1,93 @@
+{
+  "facts_version": 8,
+  "n_files_read": 188,
+  "datasets": [
+    {
+      "name": "imagenet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "default.yaml:2: dataset: imagenet"
+    },
+    {
+      "name": "coco",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "pyproject.toml:8: extend_skip = [\".vscode\", \"coco\", \"assets/data\"]"
+    },
+    {
+      "name": "cityscapes",
+      "canonical": "Cityscapes",
+      "source_kind": "config",
+      "evidence": "seg_model_zoo.py:20: \"efficientvit-seg-b0-cityscapes\": ("
+    },
+    {
+      "name": "ade20k",
+      "canonical": "ADE20K",
+      "source_kind": "config",
+      "evidence": "seg_model_zoo.py:52: \"efficientvit-seg-b1-ade20k\": ("
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "image_size",
+      "canonical": "image_size",
+      "value": "512",
+      "evidence": "efficientvit_sam_l0.yaml:6"
+    },
+    {
+      "name": "base_lr",
+      "canonical": "learning_rate",
+      "value": "0.0000008",
+      "evidence": "efficientvit_sam_l0.yaml:9"
+    },
+    {
+      "name": "n_epochs",
+      "canonical": "epochs",
+      "value": "80",
+      "evidence": "default.yaml:14"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.1",
+      "evidence": "default.yaml:26"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0",
+      "evidence": "efficientvit_l1.yaml:31"
+    },
+    {
+      "name": "bs",
+      "canonical": "batch_size",
+      "value": "16",
+      "evidence": "onnx_export.py"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "StructuralSimilarityIndexMeasure",
+      "canonical": "SSIM",
+      "signal": "metric_api",
+      "evidence": "evaluator.py:13"
+    },
+    {
+      "name": "COCOeval",
+      "canonical": "mAP",
+      "signal": "metric_api",
+      "evidence": "sam_eval_utils.py:6"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "0",
+      "evidence": "demo_dc_ae_diffusion_model.py:42"
+    }
+  ],
+  "study_id": "study094",
+  "repo_url": "https://github.com/mit-han-lab/efficientvit",
+  "status": "ok",
+  "duration_s": 4.0
+}

@@ -1,0 +1,62 @@
+{
+  "facts_version": 8,
+  "n_files_read": 400,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "0.1",
+      "evidence": "finance_tool.py:438"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "int",
+      "evidence": "mipro_optimizer.py:1256"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Perplexity",
+      "canonical": "Perplexity",
+      "signal": "metric_api",
+      "evidence": "litellm_model.py:76"
+    },
+    {
+      "name": "f1_score",
+      "canonical": "F1",
+      "signal": "metric_api",
+      "evidence": "real_mm_rag.py:8"
+    },
+    {
+      "name": "acc",
+      "canonical": "Accuracy",
+      "signal": "logged",
+      "evidence": "test_nq.py:77"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "42",
+      "evidence": "tools_images.py:165"
+    },
+    {
+      "value": "43",
+      "evidence": "tools_images.py:240"
+    },
+    {
+      "value": "10",
+      "evidence": "bestprompt_eval.py:87"
+    },
+    {
+      "value": "8",
+      "evidence": "mbpp_textgrad.py:97"
+    }
+  ],
+  "study_id": "study077",
+  "repo_url": "https://github.com/evoagentx/evoagentx",
+  "status": "ok",
+  "duration_s": 5.3
+}

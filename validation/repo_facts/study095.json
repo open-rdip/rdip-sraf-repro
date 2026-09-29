@@ -1,0 +1,32 @@
+{
+  "facts_version": 8,
+  "n_files_read": 16,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "256",
+      "evidence": "build_faiss_index.py"
+    },
+    {
+      "name": "learning_rate",
+      "canonical": "learning_rate",
+      "value": "2e-05",
+      "evidence": "biencoder.py"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.0",
+      "evidence": "biencoder.py"
+    }
+  ],
+  "metrics": [],
+  "seeds": [],
+  "study_id": "study095",
+  "repo_url": "https://github.com/studio-ousia/bpr",
+  "status": "ok",
+  "duration_s": 1.3
+}
