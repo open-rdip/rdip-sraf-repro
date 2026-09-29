@@ -1,0 +1,39 @@
+{
+  "facts_version": 8,
+  "n_files_read": 34,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "num_epochs",
+      "canonical": "epochs",
+      "value": "1000",
+      "evidence": "vfa_ncc.json:3"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "1",
+      "evidence": "vfa_ncc.json:4"
+    },
+    {
+      "name": "LR",
+      "canonical": "learning_rate",
+      "value": "0.0001",
+      "evidence": "vfa_ncc.json:5"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Dice",
+      "canonical": "Dice",
+      "signal": "metric_api",
+      "evidence": "README.md:12"
+    }
+  ],
+  "seeds": [],
+  "study_id": "study025",
+  "repo_url": "https://github.com/yihao6/vfa",
+  "status": "ok",
+  "duration_s": 1.3
+}

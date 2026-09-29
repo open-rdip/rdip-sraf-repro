@@ -1,0 +1,104 @@
+{
+  "facts_version": 8,
+  "n_files_read": 204,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "num_epochs",
+      "canonical": "epochs",
+      "value": "0",
+      "evidence": "kgfm_zero_shot.py:178"
+    },
+    {
+      "name": "optim",
+      "canonical": "optimizer",
+      "value": "Muon",
+      "evidence": "test_regression_muon.py:53"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "1024",
+      "evidence": "test_regression_muon.py:58"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.02",
+      "evidence": "test_regression_muon.py:59"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.25",
+      "evidence": "test_amwa.py:173"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "float",
+      "evidence": "adopt.py:532"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Dice",
+      "canonical": "Dice",
+      "signal": "metric_api",
+      "evidence": "setup.py:91"
+    },
+    {
+      "name": "mean_absolute_error",
+      "canonical": "MAE",
+      "signal": "metric_api",
+      "evidence": "literal_prediction.py:95"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "42",
+      "evidence": "kgfm_inference.py:47"
+    },
+    {
+      "value": "912",
+      "evidence": "test_kgfm_next_inference.py:139"
+    },
+    {
+      "value": "7",
+      "evidence": "test_kgfm_next_inference.py:155"
+    },
+    {
+      "value": "123",
+      "evidence": "test_worker_storage.py:93"
+    },
+    {
+      "value": "14",
+      "evidence": "test_worker_storage.py:114"
+    },
+    {
+      "value": "45",
+      "evidence": "test_kgfm_inference.py:32"
+    },
+    {
+      "value": "17",
+      "evidence": "test_kgfm_inference.py:320"
+    },
+    {
+      "value": "991",
+      "evidence": "test_flock.py:114"
+    },
+    {
+      "value": "4321",
+      "evidence": "test_flock.py:177"
+    },
+    {
+      "value": "100",
+      "evidence": "generate_reference.py:74"
+    }
+  ],
+  "study_id": "study002",
+  "repo_url": "https://github.com/dice-group/dice-embeddings",
+  "status": "ok",
+  "duration_s": 3.1
+}

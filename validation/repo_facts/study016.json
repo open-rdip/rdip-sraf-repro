@@ -1,0 +1,41 @@
+{
+  "facts_version": 8,
+  "n_files_read": 294,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "2.5e-5",
+      "evidence": "rllib_tutorial.sync.py:161"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "32",
+      "evidence": "polybeast_learner.py"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0",
+      "evidence": "polybeast_learner.py"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "0",
+      "evidence": "inspecting_test_worlds.sync.py:73"
+    },
+    {
+      "value": "42",
+      "evidence": "gym_interface_example.sync.py:47"
+    }
+  ],
+  "study_id": "study016",
+  "repo_url": "https://github.com/avalon-benchmark/avalon",
+  "status": "ok",
+  "duration_s": 3.0
+}

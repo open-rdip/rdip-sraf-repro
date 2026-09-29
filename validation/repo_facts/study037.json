@@ -1,0 +1,46 @@
+{
+  "facts_version": 8,
+  "n_files_read": 92,
+  "datasets": [
+    {
+      "name": "C4",
+      "canonical": "C4",
+      "source_kind": "config",
+      "evidence": "cli.py:1913: \"0.7\": \"C3\", \"0.9\": \"C4\", \"1.0\": \"C5\"}"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "128",
+      "evidence": "experiments.py:43"
+    },
+    {
+      "name": "epochs",
+      "canonical": "epochs",
+      "value": "500",
+      "evidence": "experiments.py:44"
+    },
+    {
+      "name": "learning_rate",
+      "canonical": "learning_rate",
+      "value": "generator_lr",
+      "evidence": "trainers.py:373"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "mean_squared_error",
+      "canonical": "MSE",
+      "signal": "metric_api",
+      "evidence": "trainers.py:191"
+    }
+  ],
+  "seeds": [],
+  "study_id": "study037",
+  "repo_url": "https://github.com/brandontrabucco/design-baselines",
+  "status": "ok",
+  "duration_s": 1.7
+}

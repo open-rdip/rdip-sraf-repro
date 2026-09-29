@@ -1,0 +1,93 @@
+{
+  "facts_version": 8,
+  "n_files_read": 64,
+  "datasets": [
+    {
+      "name": "ImageNet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "Base-Front3D-PanopticSegmentation.yaml:5: WEIGHTS: \"detectron2://ImageNetPretrained/torchvision/R-50.pkl\""
+    },
+    {
+      "name": "cityscapes",
+      "canonical": "Cityscapes",
+      "source_kind": "config",
+      "evidence": "dvps_evaluation.py:8: from detectron2.evaluation.cityscapes_evaluation import CityscapesEvaluator"
+    },
+    {
+      "name": "COCO",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "dvps_evaluation.py:15: from detectron2.data.datasets.builtin_meta import COCO_CATEGORIES"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "BASE_LR",
+      "canonical": "learning_rate",
+      "value": "0.0001",
+      "evidence": "Base-Front3D-PanopticSegmentation.yaml:21"
+    },
+    {
+      "name": "WARMUP_ITERS",
+      "canonical": "warmup",
+      "value": "0",
+      "evidence": "Base-Front3D-PanopticSegmentation.yaml:24"
+    },
+    {
+      "name": "WEIGHT_DECAY",
+      "canonical": "weight_decay",
+      "value": "0.05",
+      "evidence": "Base-Front3D-PanopticSegmentation.yaml:25"
+    },
+    {
+      "name": "OPTIMIZER",
+      "canonical": "optimizer",
+      "value": "ADAMW",
+      "evidence": "Base-Front3D-PanopticSegmentation.yaml:26"
+    },
+    {
+      "name": "NUM_CLASSES",
+      "canonical": "num_classes",
+      "value": "13",
+      "evidence": "mask2former_R50_bs16_160k.yaml:8"
+    },
+    {
+      "name": "DROPOUT",
+      "canonical": "dropout",
+      "value": "0.0",
+      "evidence": "mask2former_R50_bs16_160k.yaml:32"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "pq",
+      "canonical": "PQ",
+      "signal": "logged",
+      "evidence": "pq_reconstruction.py:183"
+    },
+    {
+      "name": "sq",
+      "canonical": "SQ",
+      "signal": "logged",
+      "evidence": "pq_reconstruction.py:184"
+    },
+    {
+      "name": "rq",
+      "canonical": "RQ",
+      "signal": "logged",
+      "evidence": "pq_reconstruction.py:185"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "3",
+      "evidence": "test.py:31"
+    }
+  ],
+  "study_id": "study034",
+  "repo_url": "https://github.com/mlpc-ucsd/uni-3d",
+  "status": "ok",
+  "duration_s": 1.9
+}

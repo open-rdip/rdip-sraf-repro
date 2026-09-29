@@ -1,0 +1,27 @@
+{
+  "facts_version": 8,
+  "n_files_read": 393,
+  "datasets": [
+    {
+      "name": "c4",
+      "canonical": "C4",
+      "source_kind": "config",
+      "evidence": "conftest.py:489: {'id': 'c4', 'user_id': users[0]['id']},"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "1",
+      "evidence": "registrations.py:46"
+    }
+  ],
+  "metrics": [],
+  "seeds": [],
+  "study_id": "study013",
+  "repo_url": "https://github.com/zenodo/zenodo",
+  "status": "ok",
+  "duration_s": 2.4
+}

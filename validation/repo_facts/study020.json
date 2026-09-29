@@ -1,0 +1,63 @@
+{
+  "facts_version": 8,
+  "n_files_read": 20,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "n_epochs",
+      "canonical": "epochs",
+      "value": "40",
+      "evidence": "train.sh:15"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "64",
+      "evidence": "params.yaml:25"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.000001",
+      "evidence": "params.yaml:27"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "mean_absolute_error",
+      "canonical": "MAE",
+      "signal": "metric_api",
+      "evidence": "evaluation.py:9"
+    },
+    {
+      "name": "precision_score",
+      "canonical": "Precision",
+      "signal": "metric_api",
+      "evidence": "evaluation.py:10"
+    },
+    {
+      "name": "recall_score",
+      "canonical": "Recall",
+      "signal": "metric_api",
+      "evidence": "evaluation.py:10"
+    },
+    {
+      "name": "f1_score",
+      "canonical": "F1",
+      "signal": "metric_api",
+      "evidence": "evaluation.py:10"
+    },
+    {
+      "name": "roc_auc_score",
+      "canonical": "AUROC",
+      "signal": "metric_api",
+      "evidence": "evaluation.py:11"
+    }
+  ],
+  "seeds": [],
+  "study_id": "study020",
+  "repo_url": "https://github.com/yueliukth/csaw-m",
+  "status": "ok",
+  "duration_s": 1.6
+}

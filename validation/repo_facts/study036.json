@@ -1,0 +1,93 @@
+{
+  "facts_version": 8,
+  "n_files_read": 218,
+  "datasets": [
+    {
+      "name": "c4",
+      "canonical": "C4",
+      "source_kind": "config",
+      "evidence": "gptq.py:83: def get_c4(num_samples, tokenizer, seqlen):"
+    },
+    {
+      "name": "squad",
+      "canonical": "SQuAD",
+      "source_kind": "config",
+      "evidence": "dataset_enum.py:5: \"ifeval\", \"lambada\", \"math\", \"mbpp\", \"mt_bench\", \"nq\", \"quac\", \"real_toxicity_prompts\", \"squad\", \"squad_v2\", \""
+    },
+    {
+      "name": "sst2",
+      "canonical": "SST-2",
+      "source_kind": "config",
+      "evidence": "test_datasets.py:50: \"sst2\": [],"
+    },
+    {
+      "name": "glue",
+      "canonical": "GLUE",
+      "source_kind": "config",
+      "evidence": "qqp.py:20: load_args = (\"nyu-mll/glue\", \"qqp\")"
+    },
+    {
+      "name": "wikitext",
+      "canonical": "WikiText",
+      "source_kind": "config",
+      "evidence": "wikitext_ppl.py:15: load_args = (\"Salesforce/wikitext\", \"wikitext-2-raw-v1\")"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "1",
+      "evidence": "gpu_calculator.py"
+    },
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "1",
+      "evidence": "evol_instruct.py:79"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Perplexity",
+      "canonical": "Perplexity",
+      "signal": "metric_api",
+      "evidence": "README.md:45"
+    },
+    {
+      "name": "rouge_scorer",
+      "canonical": "ROUGE",
+      "signal": "metric_api",
+      "evidence": "self_instruct.py:10"
+    },
+    {
+      "name": "f1_score",
+      "canonical": "F1",
+      "signal": "metric_api",
+      "evidence": "drop_utils.py:66"
+    },
+    {
+      "name": "sentence_bleu",
+      "canonical": "BLEU",
+      "signal": "metric_api",
+      "evidence": "bleu.py:18"
+    },
+    {
+      "name": "Accuracy",
+      "canonical": "Accuracy",
+      "signal": "cli_flag",
+      "evidence": "math.py:36"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "42",
+      "evidence": "gptq.py:122"
+    }
+  ],
+  "study_id": "study036",
+  "repo_url": "https://github.com/RUCAIBox/LLMBox",
+  "status": "ok",
+  "duration_s": 2.0
+}

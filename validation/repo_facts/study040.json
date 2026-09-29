@@ -1,0 +1,68 @@
+{
+  "facts_version": 8,
+  "n_files_read": 109,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "bs",
+      "canonical": "batch_size",
+      "value": "64",
+      "evidence": "inference.py:17"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "cell_dropout",
+      "evidence": "RNN_FCNPlus.py:19"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "mean_squared_error",
+      "canonical": "MSE",
+      "signal": "metric_api",
+      "evidence": "README.md:290"
+    },
+    {
+      "name": "accuracy",
+      "canonical": "Accuracy",
+      "signal": "cli_flag",
+      "evidence": "README.md:206"
+    },
+    {
+      "name": "rmse",
+      "canonical": "RMSE",
+      "signal": "cli_flag",
+      "evidence": "README.md:254"
+    },
+    {
+      "name": "mae",
+      "canonical": "MAE",
+      "signal": "cli_flag",
+      "evidence": "README.md:340"
+    },
+    {
+      "name": "matthews_corrcoef",
+      "canonical": "MCC",
+      "signal": "metric_api",
+      "evidence": "metrics.py:23"
+    },
+    {
+      "name": "average_precision_score",
+      "canonical": "AP",
+      "signal": "metric_api",
+      "evidence": "metrics.py:212"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "0",
+      "evidence": "core.py:899"
+    }
+  ],
+  "study_id": "study040",
+  "repo_url": "https://github.com/timeseriesAI/tsai",
+  "status": "ok",
+  "duration_s": 8.7
+}

@@ -1,0 +1,44 @@
+{
+  "facts_version": 8,
+  "n_files_read": 400,
+  "datasets": [
+    {
+      "name": "vg",
+      "canonical": "Visual Genome",
+      "source_kind": "config",
+      "evidence": "pnpm-lock.yaml:2502: resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcn"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "0.3",
+      "evidence": "agent.yaml:14"
+    },
+    {
+      "name": "num_epochs",
+      "canonical": "epochs",
+      "value": "1",
+      "evidence": "config.yaml:15"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "40",
+      "evidence": "config.yaml:16"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "42",
+      "evidence": "test_memory_snapshot_hot_reload.py:46"
+    }
+  ],
+  "study_id": "study023",
+  "repo_url": "https://github.com/modelscope/modelscope-agent",
+  "status": "ok",
+  "duration_s": 6.5
+}

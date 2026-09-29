@@ -1,0 +1,68 @@
+{
+  "facts_version": 8,
+  "n_files_read": 66,
+  "datasets": [
+    {
+      "name": "voc",
+      "canonical": "PASCAL VOC",
+      "source_kind": "config",
+      "evidence": "__init__.py:177: def voc_ap(rec, prec, use_07_metric=False):"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "image_size",
+      "canonical": "image_size",
+      "value": "64",
+      "evidence": "vitonhd_512.yaml:12"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.0",
+      "evidence": "vitonhd_512.yaml:67"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "2",
+      "evidence": "vitonhd_512.yaml:77"
+    },
+    {
+      "name": "max_epochs",
+      "canonical": "epochs",
+      "value": "60",
+      "evidence": "vitonhd_512.yaml:100"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.0001",
+      "evidence": "dist_model.py:44"
+    },
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "1.",
+      "evidence": "ddpm.py:1160"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "1.e-2",
+      "evidence": "classifier.py:38"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "23",
+      "evidence": "README.md:73"
+    }
+  ],
+  "study_id": "study042",
+  "repo_url": "https://github.com/Jerome-Young/D4-VTON",
+  "status": "ok",
+  "duration_s": 1.7
+}

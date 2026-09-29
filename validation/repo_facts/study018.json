@@ -1,0 +1,94 @@
+{
+  "facts_version": 8,
+  "n_files_read": 229,
+  "datasets": [
+    {
+      "name": "voc",
+      "canonical": "PASCAL VOC",
+      "source_kind": "config",
+      "evidence": "train_net.py:137: default=\"/home/zhangziwei/wheat_det/maskrcnn-benchmark/configs/pascal_voc/e2e_faster_rcnn_R_50_C4_1x_1_gpu_voc"
+    },
+    {
+      "name": "C4",
+      "canonical": "C4",
+      "source_kind": "config",
+      "evidence": "train_net.py:137: default=\"/home/zhangziwei/wheat_det/maskrcnn-benchmark/configs/pascal_voc/e2e_faster_rcnn_R_50_C4_1x_1_gpu_voc"
+    },
+    {
+      "name": "cityscapes",
+      "canonical": "Cityscapes",
+      "source_kind": "config",
+      "evidence": "convert_cityscapes_to_coco.py:38: '--dataset', help=\"cocostuff, cityscapes\", default=None, type=str)"
+    },
+    {
+      "name": "coco",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "convert_cityscapes_to_coco.py:67: def convert_coco_stuff_mat(data_dir, out_dir):"
+    },
+    {
+      "name": "ImageNet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "rpn_R_50_FPN_1x.yaml:3: WEIGHT: \"catalog://ImageNetPretrained/MSRA/R-50\""
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "BASE_LR",
+      "canonical": "learning_rate",
+      "value": "0.02",
+      "evidence": "rpn_R_50_FPN_1x.yaml:21"
+    },
+    {
+      "name": "WEIGHT_DECAY",
+      "canonical": "weight_decay",
+      "value": "0.0001",
+      "evidence": "rpn_R_50_FPN_1x.yaml:22"
+    },
+    {
+      "name": "NUM_CLASSES",
+      "canonical": "num_classes",
+      "value": "2",
+      "evidence": "e2e_keypoint_rcnn_R_50_FPN_1x.yaml:23"
+    },
+    {
+      "name": "MOMENTUM",
+      "canonical": "momentum",
+      "value": "0.9",
+      "evidence": "config.yml:224"
+    },
+    {
+      "name": "WARMUP_ITERS",
+      "canonical": "warmup",
+      "value": "500",
+      "evidence": "config.yml:229"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "3",
+      "evidence": "test_data_samplers.py:60"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "COCOeval",
+      "canonical": "mAP",
+      "signal": "metric_api",
+      "evidence": "coco_eval.py:314"
+    },
+    {
+      "name": "segm",
+      "canonical": "Mask AP",
+      "signal": "logged",
+      "evidence": "coco_eval.py:47"
+    }
+  ],
+  "seeds": [],
+  "study_id": "study018",
+  "repo_url": "https://github.com/markson14/WheatDet",
+  "status": "ok",
+  "duration_s": 3.6
+}

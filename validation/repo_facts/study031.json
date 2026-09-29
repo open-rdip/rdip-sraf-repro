@@ -1,0 +1,56 @@
+{
+  "facts_version": 8,
+  "n_files_read": 98,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "predictionBatchSize",
+      "evidence": "FrameworkEvaluate.py:163"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "mean_squared_error",
+      "canonical": "MSE",
+      "signal": "metric_api",
+      "evidence": "ModelClassificationErrM.py:18"
+    },
+    {
+      "name": "roc_auc_score",
+      "canonical": "AUROC",
+      "signal": "metric_api",
+      "evidence": "ModelClassificationBase.py:27"
+    },
+    {
+      "name": "precision_score",
+      "canonical": "Precision",
+      "signal": "metric_api",
+      "evidence": "ModelClassificationBase.py:27"
+    },
+    {
+      "name": "recall_score",
+      "canonical": "Recall",
+      "signal": "metric_api",
+      "evidence": "ModelClassificationBase.py:27"
+    },
+    {
+      "name": "f1_score",
+      "canonical": "F1",
+      "signal": "metric_api",
+      "evidence": "ModelClassificationBase.py:27"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "42",
+      "evidence": "FrameworkEvaluate_Loop.py:31"
+    }
+  ],
+  "study_id": "study031",
+  "repo_url": "https://github.com/boortel/ae-reconstruction-and-feature-based-ad",
+  "status": "ok",
+  "duration_s": 1.7
+}

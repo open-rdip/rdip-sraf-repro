@@ -1,0 +1,111 @@
+{
+  "facts_version": 8,
+  "n_files_read": 294,
+  "datasets": [
+    {
+      "name": "C4",
+      "canonical": "C4",
+      "source_kind": "config",
+      "evidence": "relation_test_net.py:43: default=\"/private/home/fmassa/github/detectron.pytorch_v2/configs/e2e_faster_rcnn_R_50_C4_1x_caffe2.yaml\","
+    },
+    {
+      "name": "VG",
+      "canonical": "Visual Genome",
+      "source_kind": "config",
+      "evidence": "relation_test_net.py:107: if cfg.GLOBAL_SETTING.DATASET_CHOICE == 'VG':"
+    },
+    {
+      "name": "cityscapes",
+      "canonical": "Cityscapes",
+      "source_kind": "config",
+      "evidence": "convert_cityscapes_to_coco.py:38: '--dataset', help=\"cocostuff, cityscapes\", default=None, type=str)"
+    },
+    {
+      "name": "coco",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "convert_cityscapes_to_coco.py:67: def convert_coco_stuff_mat(data_dir, out_dir):"
+    },
+    {
+      "name": "ImageNet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "e2e_relation_detector_X_101_32_8_FPN_1x.yaml:8: WEIGHT: \"catalog://ImageNetPretrained/FAIR/20171220/X-101-32x8d\""
+    },
+    {
+      "name": "voc",
+      "canonical": "PASCAL VOC",
+      "source_kind": "config",
+      "evidence": "paths_catalog.py:51: \"voc_2007_train\": {"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "NUM_CLASSES",
+      "canonical": "num_classes",
+      "value": "151",
+      "evidence": "e2e_relation_detector_X_101_32_8_FPN_1x.yaml:44"
+    },
+    {
+      "name": "BASE_LR",
+      "canonical": "learning_rate",
+      "value": "0.001",
+      "evidence": "e2e_relation_detector_X_101_32_8_FPN_1x.yaml:63"
+    },
+    {
+      "name": "WEIGHT_DECAY",
+      "canonical": "weight_decay",
+      "value": "0.0001",
+      "evidence": "e2e_relation_detector_X_101_32_8_FPN_1x.yaml:64"
+    },
+    {
+      "name": "MOMENTUM",
+      "canonical": "momentum",
+      "value": "0.9",
+      "evidence": "e2e_relation_detector_X_101_32_8_FPN_1x.yaml:66"
+    },
+    {
+      "name": "WARMUP_ITERS",
+      "canonical": "warmup",
+      "value": "500",
+      "evidence": "e2e_relation_non_graph.yaml:504"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "3",
+      "evidence": "test_data_samplers.py:60"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "COCOeval",
+      "canonical": "mAP",
+      "signal": "metric_api",
+      "evidence": "oi_evaluation.py:12"
+    },
+    {
+      "name": "ap",
+      "canonical": "AP",
+      "signal": "logged",
+      "evidence": "voc_eval.py:33"
+    },
+    {
+      "name": "segm",
+      "canonical": "Mask AP",
+      "signal": "logged",
+      "evidence": "coco_eval.py:48"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "666",
+      "evidence": "relation_train_net.py:45"
+    }
+  ],
+  "study_id": "study021",
+  "repo_url": "https://github.com/jeonjaehyeong/dpl",
+  "status": "ok",
+  "duration_s": 3.9
+}

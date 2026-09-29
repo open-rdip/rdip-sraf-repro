@@ -1,0 +1,133 @@
+{
+  "facts_version": 8,
+  "n_files_read": 400,
+  "datasets": [
+    {
+      "name": "sunrgbd",
+      "canonical": "SUN RGB-D",
+      "source_kind": "config",
+      "evidence": "update_data_coords.py:11: def update_sunrgbd_infos(root_dir, out_dir, pkl_files):"
+    },
+    {
+      "name": "nuscenes",
+      "canonical": "nuScenes",
+      "source_kind": "config",
+      "evidence": "update_data_coords.py:63: def update_nuscenes_or_lyft_infos(root_dir, out_dir, pkl_files):"
+    },
+    {
+      "name": "kitti",
+      "canonical": "KITTI",
+      "source_kind": "config",
+      "evidence": "update_data_coords.py:93: parser.add_argument('dataset', metavar='kitti', help='name of the dataset')"
+    },
+    {
+      "name": "waymo",
+      "canonical": "Waymo",
+      "source_kind": "config",
+      "evidence": "update_data_coords.py:147: elif args.dataset == 'waymo':"
+    },
+    {
+      "name": "scannet",
+      "canonical": "ScanNet",
+      "source_kind": "config",
+      "evidence": "update_data_coords.py:154: elif args.dataset == 'scannet':"
+    },
+    {
+      "name": "coco",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "create_gt_database.py:12: from pycocotools.coco import COCO"
+    },
+    {
+      "name": "imagenet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "smoke.py:17: checkpoint='http://dl.yf.io/dla/models/imagenet/dla34-ba72cf86.pth'"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "NUM_CLASSES",
+      "canonical": "num_classes",
+      "value": "18",
+      "evidence": "convert_votenet_checkpoints.py:90"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "4",
+      "evidence": "3dssd_4xb4_kitti-3d-car.py:86"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.002",
+      "evidence": "3dssd_4xb4_kitti-3d-car.py:98"
+    },
+    {
+      "name": "max_epochs",
+      "canonical": "epochs",
+      "value": "72",
+      "evidence": "smoke_dla34_dlaneck_gn-all_4xb8-6x_kitti-mono3d.py:40"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.",
+      "evidence": "dsvt_voxel032_res-second_secfpn_8xb1-cyclic-12e_waymoD5-3d-3class.py:45"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "bbox",
+      "canonical": "mAP",
+      "signal": "eval_config",
+      "evidence": "hv_PartA2_secfpn_4x8_cyclic_80e_pcdet_kitti-3d-3class.py:306"
+    },
+    {
+      "name": "AP",
+      "canonical": "AP",
+      "signal": "cli_flag",
+      "evidence": "metafile.yml:27"
+    },
+    {
+      "name": "mIoU",
+      "canonical": "mIoU",
+      "signal": "cli_flag",
+      "evidence": "metafile.yml:27"
+    },
+    {
+      "name": "segm",
+      "canonical": "Mask AP",
+      "signal": "eval_config",
+      "evidence": "nuim-instance.py:70"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "8",
+      "evidence": "imvotenet_stage2_8xb16_sunrgbd-3d.py:228"
+    },
+    {
+      "value": "4",
+      "evidence": "groupfree3d_head-L6-O256_4xb8_scannet-seg.py:227"
+    },
+    {
+      "value": "1588147245",
+      "evidence": "minkunet18_w16_torchsparse_8xb2-amp-15e_semantickitti.py:13"
+    },
+    {
+      "value": "0",
+      "evidence": "minkunet18_w32_torchsparse_8xb2-amp-15e_semantickitti.py:27"
+    },
+    {
+      "value": "1",
+      "evidence": "petr_vovnet_gridmask_p4_800x320.py:9"
+    }
+  ],
+  "study_id": "study014",
+  "repo_url": "https://github.com/open-mmlab/mmdetection3d",
+  "status": "ok",
+  "duration_s": 3.2
+}

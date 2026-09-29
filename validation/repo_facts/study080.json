@@ -1,0 +1,32 @@
+{
+  "facts_version": 8,
+  "n_files_read": 89,
+  "datasets": [
+    {
+      "name": "imagenet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "pasture_runner.py:26: default=\"prompt_templates/imagenet_template.json\","
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "3e-4",
+      "evidence": "mixin_ddppo_config.py:33"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "0",
+      "evidence": "habitat_mp3d_runner.py:88"
+    }
+  ],
+  "study_id": "study080",
+  "repo_url": "https://github.com/real-stanford/cow",
+  "status": "ok",
+  "duration_s": 2.4
+}

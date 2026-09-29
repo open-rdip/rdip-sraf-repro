@@ -1,0 +1,94 @@
+{
+  "facts_version": 8,
+  "n_files_read": 45,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "optimizer",
+      "canonical": "optimizer",
+      "value": "Adam",
+      "evidence": "IDH_lgg.yaml:16"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "3.0e-4",
+      "evidence": "IDH_lgg.yaml:18"
+    },
+    {
+      "name": "max_epochs",
+      "canonical": "epochs",
+      "value": "50",
+      "evidence": "IDH_lgg.yaml:19"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "32",
+      "evidence": "IDH_lgg.yaml:29"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.5",
+      "evidence": "train_valid_test.py"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "roc_auc_score",
+      "canonical": "AUROC",
+      "signal": "metric_api",
+      "evidence": "classification_eval.py:6"
+    },
+    {
+      "name": "f1_score",
+      "canonical": "F1",
+      "signal": "metric_api",
+      "evidence": "classification_eval.py:6"
+    },
+    {
+      "name": "precision_score",
+      "canonical": "Precision",
+      "signal": "metric_api",
+      "evidence": "classification_eval.py:6"
+    },
+    {
+      "name": "recall_score",
+      "canonical": "Recall",
+      "signal": "metric_api",
+      "evidence": "classification_eval.py:6"
+    },
+    {
+      "name": "accuracy_score",
+      "canonical": "Accuracy",
+      "signal": "metric_api",
+      "evidence": "classification_eval.py:6"
+    },
+    {
+      "name": "auc",
+      "canonical": "AUC",
+      "signal": "logged",
+      "evidence": "classification_eval.py:49"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "2023",
+      "evidence": "IDH_lgg.yaml:4"
+    },
+    {
+      "value": "7",
+      "evidence": "utils.py:28"
+    },
+    {
+      "value": "1",
+      "evidence": "classification.py:39"
+    }
+  ],
+  "study_id": "study027",
+  "repo_url": "https://github.com/hms-dbmi/chief",
+  "status": "ok",
+  "duration_s": 2.8
+}

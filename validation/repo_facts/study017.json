@@ -1,0 +1,46 @@
+{
+  "facts_version": 8,
+  "n_files_read": 175,
+  "datasets": [
+    {
+      "name": "imagenet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "knn_graph_builder.yml:35: type: imagenet"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.",
+      "evidence": "cg_bracs_cggnn_7_classes_pna.yml:10"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "256",
+      "evidence": "grid_deep_tissue_feature_extractor_noaug.yml:34"
+    },
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "3",
+      "evidence": "cell_graph_explainer.py:50"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Dice",
+      "canonical": "Dice",
+      "signal": "metric_api",
+      "evidence": "test_segmentation_metrics.py:12"
+    }
+  ],
+  "seeds": [],
+  "study_id": "study017",
+  "repo_url": "https://github.com/biomedsciai/histocartography",
+  "status": "ok",
+  "duration_s": 1.8
+}

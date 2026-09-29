@@ -1,0 +1,87 @@
+{
+  "facts_version": 8,
+  "n_files_read": 117,
+  "datasets": [
+    {
+      "name": "imagenet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "autoencoder_kl_32x32x4.yaml:32: target: ldm.data.imagenet.ImageNetSRTrain"
+    },
+    {
+      "name": "lsun",
+      "canonical": "LSUN",
+      "source_kind": "config",
+      "evidence": "lsun_churches-ldm-kl-8.yaml:72: target: ldm.data.lsun.LSUNChurchesTrain"
+    },
+    {
+      "name": "c4",
+      "canonical": "C4",
+      "source_kind": "config",
+      "evidence": "Nets.py:91: self.c4_conv = nn.Conv2d(256, self.channel, (1, 1))"
+    }
+  ],
+  "dataset_mentions_docs_only": [
+    {
+      "name": "celeba",
+      "canonical": "CelebA",
+      "source_kind": "docs",
+      "evidence": "download_models.sh:2: wget -O models/ldm/celeba256/celeba-256.zip https://ommer-lab.com/files/latent-diffusion/celeba.zip"
+    }
+  ],
+  "hyperparameters": [
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "1.",
+      "evidence": "notebook_helpers.py:142"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "10",
+      "evidence": "sample_diffusion.py"
+    },
+    {
+      "name": "image_size",
+      "canonical": "image_size",
+      "value": "64",
+      "evidence": "v1-inference.yaml:12"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.0",
+      "evidence": "v1-inference.yaml:65"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "5e-05",
+      "evidence": "utils.py"
+    },
+    {
+      "name": "epochs",
+      "canonical": "epochs",
+      "value": "400",
+      "evidence": "utils.py"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "1.e-2",
+      "evidence": "classifier.py:38"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "42",
+      "evidence": "README.md:82"
+    }
+  ],
+  "study_id": "study005",
+  "repo_url": "https://github.com/cross-domain-compositing/cross-domain-compositing",
+  "status": "ok",
+  "duration_s": 2.9
+}

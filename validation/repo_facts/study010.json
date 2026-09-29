@@ -1,0 +1,87 @@
+{
+  "facts_version": 8,
+  "n_files_read": 400,
+  "datasets": [
+    {
+      "name": "COCO",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "curvedsyntext_converter.py:57: description='Convert CurvedSynText150k to COCO format')"
+    },
+    {
+      "name": "voc",
+      "canonical": "PASCAL VOC",
+      "source_kind": "config",
+      "evidence": "spts_resnet50_8xb8-200e_totaltext.py:68: lexicon_path='data/totaltext/lexicons/weak_voc_new.txt',"
+    }
+  ],
+  "dataset_mentions_docs_only": [
+    {
+      "name": "ImageNet",
+      "canonical": "ImageNet",
+      "source_kind": "docs",
+      "evidence": "README.md:21: | [PANet](/configs/textdet/panet/panet_resnet18_fpem-ffm_600e_ctw1500.py) |     ImageNet     | CTW1500 Train |"
+    }
+  ],
+  "hyperparameters": [
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "1000",
+      "evidence": "lmdb_converter.py:46"
+    },
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "node_num_classes",
+      "evidence": "sdmgr_novisual_60e_wildreceipt-openset.py:16"
+    },
+    {
+      "name": "Epochs",
+      "canonical": "epochs",
+      "value": "20",
+      "evidence": "metafile.yml:8"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.1",
+      "evidence": "_base_abinet-vision.py:19"
+    },
+    {
+      "name": "num_iters",
+      "canonical": "iterations",
+      "value": "3",
+      "evidence": "_base_abinet.py:6"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.0005",
+      "evidence": "spts_resnet50_8xb8-150e_pretrain-spts.py:13"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "42",
+      "evidence": "default_runtime.py:8"
+    },
+    {
+      "value": "7",
+      "evidence": "test_batch_aug.py:16"
+    },
+    {
+      "value": "0",
+      "evidence": "test_batch_aug.py:67"
+    },
+    {
+      "value": "10",
+      "evidence": "test_batch_aug.py:70"
+    }
+  ],
+  "study_id": "study010",
+  "repo_url": "https://github.com/open-mmlab/mmocr",
+  "status": "ok",
+  "duration_s": 2.9
+}

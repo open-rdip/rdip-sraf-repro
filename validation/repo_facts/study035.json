@@ -1,0 +1,65 @@
+{
+  "facts_version": 8,
+  "n_files_read": 257,
+  "datasets": [
+    {
+      "name": "cityscapes",
+      "canonical": "Cityscapes",
+      "source_kind": "config",
+      "evidence": "get_real_stat.py:48: choices=['aligned', 'single', 'cityscapes', 'coco'],"
+    },
+    {
+      "name": "coco",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "get_real_stat.py:48: choices=['aligned', 'single', 'cityscapes', 'coco'],"
+    }
+  ],
+  "dataset_mentions_docs_only": [
+    {
+      "name": "ImageNet",
+      "canonical": "ImageNet",
+      "source_kind": "docs",
+      "evidence": "datasets.md:11: - `horse2zebra`: 939 horse images and 1177 zebra images downloaded from [ImageNet](http://www.image-net.org) u"
+    }
+  ],
+  "hyperparameters": [
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.0002",
+      "evidence": "train_options.py"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.0001",
+      "evidence": "base_munit_distiller.py"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "1",
+      "evidence": "cycle_gan_model.py:76"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "fid",
+      "canonical": "FID",
+      "signal": "logged",
+      "evidence": "evolution_search.py:159"
+    },
+    {
+      "name": "mIoU",
+      "canonical": "mIoU",
+      "signal": "logged",
+      "evidence": "evolution_search.py:162"
+    }
+  ],
+  "seeds": [],
+  "study_id": "study035",
+  "repo_url": "https://github.com/mit-han-lab/gan-compression",
+  "status": "ok",
+  "duration_s": 3.8
+}

@@ -1,0 +1,32 @@
+{
+  "facts_version": 8,
+  "n_files_read": 68,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.1",
+      "evidence": "train.py:129"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "512",
+      "evidence": "vqvae.py:39"
+    },
+    {
+      "name": "learning_rate",
+      "canonical": "learning_rate",
+      "value": "1e-4",
+      "evidence": "vqvae.py:40"
+    }
+  ],
+  "metrics": [],
+  "seeds": [],
+  "study_id": "study006",
+  "repo_url": "https://github.com/baitingluo/l-map",
+  "status": "ok",
+  "duration_s": 1.6
+}

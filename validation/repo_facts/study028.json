@@ -1,0 +1,72 @@
+{
+  "facts_version": 8,
+  "n_files_read": 10,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "epochs",
+      "canonical": "epochs",
+      "value": "256",
+      "evidence": "run_training.py"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.03",
+      "evidence": "run_training.py"
+    },
+    {
+      "name": "optim",
+      "canonical": "optimizer",
+      "value": "sgd",
+      "evidence": "run_training.py"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "32",
+      "evidence": "run_training.py"
+    },
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "0.2",
+      "evidence": "run_training.py:55"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.00003",
+      "evidence": "run_training.py:57"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.9",
+      "evidence": "run_training.py:58"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "acc",
+      "canonical": "Accuracy",
+      "signal": "logged",
+      "evidence": "run_training.py:161"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "0",
+      "evidence": "README.md:32"
+    },
+    {
+      "value": "42",
+      "evidence": "run_training.py:29"
+    }
+  ],
+  "study_id": "study028",
+  "repo_url": "https://github.com/jun-sato/anatpaste",
+  "status": "ok",
+  "duration_s": 1.6
+}

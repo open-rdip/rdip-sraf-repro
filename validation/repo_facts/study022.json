@@ -1,0 +1,112 @@
+{
+  "facts_version": 8,
+  "n_files_read": 400,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "learning_rate",
+      "canonical": "learning_rate",
+      "value": "5.e-4",
+      "evidence": "DCN_tiny_parquet_tuner_config.yaml:20"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "1024",
+      "evidence": "DCN_tiny_parquet_tuner_config.yaml:21"
+    },
+    {
+      "name": "optimizer",
+      "canonical": "optimizer",
+      "value": "adam",
+      "evidence": "model_config.yaml:21"
+    },
+    {
+      "name": "epochs",
+      "canonical": "epochs",
+      "value": "1",
+      "evidence": "model_config.yaml:38"
+    },
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "1",
+      "evidence": "model_config.yaml:30"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "transformer_dropout",
+      "evidence": "TransAct.py:129"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "AUC",
+      "canonical": "AUC",
+      "signal": "eval_config",
+      "evidence": "model_config.yaml:19"
+    },
+    {
+      "name": "Dice",
+      "canonical": "Dice",
+      "signal": "metric_api",
+      "evidence": "model_config.yaml:28"
+    },
+    {
+      "name": "roc_auc_score",
+      "canonical": "AUROC",
+      "signal": "metric_api",
+      "evidence": "metrics.py:19"
+    },
+    {
+      "name": "accuracy_score",
+      "canonical": "Accuracy",
+      "signal": "metric_api",
+      "evidence": "metrics.py:19"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "20222023",
+      "evidence": "DCN_tiny_parquet_tuner_config.yaml:22"
+    },
+    {
+      "value": "2024",
+      "evidence": "model_config.yaml:40"
+    },
+    {
+      "value": "2019",
+      "evidence": "model_config.yaml:28"
+    },
+    {
+      "value": "20242025",
+      "evidence": "model_config.yaml:45"
+    },
+    {
+      "value": "2022",
+      "evidence": "model_config.yaml:34"
+    },
+    {
+      "value": "2025",
+      "evidence": "model_config.yaml:34"
+    },
+    {
+      "value": "2021",
+      "evidence": "model_config.yaml:41"
+    },
+    {
+      "value": "2023",
+      "evidence": "model_config.yaml:31"
+    },
+    {
+      "value": "1029",
+      "evidence": "torch_utils.py:29"
+    }
+  ],
+  "study_id": "study022",
+  "repo_url": "https://github.com/reczoo/FuxiCTR",
+  "status": "ok",
+  "duration_s": 1.9
+}

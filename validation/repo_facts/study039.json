@@ -1,0 +1,82 @@
+{
+  "facts_version": 8,
+  "n_files_read": 85,
+  "datasets": [
+    {
+      "name": "COCO",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "defaults.py:726: _C.DEMO.DETECTRON2_CFG = \"COCO-Detection/faster_rcnn_R_50_FPN_3x.yaml\""
+    },
+    {
+      "name": "IMAGENET",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "vit_utils.py:17: IMAGENET_DEFAULT_MEAN = (0.485, 0.456, 0.406)"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "BATCH_SIZE",
+      "canonical": "batch_size",
+      "value": "8",
+      "evidence": "baseline.yaml:4"
+    },
+    {
+      "name": "BASE_LR",
+      "canonical": "learning_rate",
+      "value": "0.005",
+      "evidence": "baseline.yaml:19"
+    },
+    {
+      "name": "MOMENTUM",
+      "canonical": "momentum",
+      "value": "0.9",
+      "evidence": "baseline.yaml:24"
+    },
+    {
+      "name": "WEIGHT_DECAY",
+      "canonical": "weight_decay",
+      "value": "1e-4",
+      "evidence": "baseline.yaml:25"
+    },
+    {
+      "name": "NUM_CLASSES",
+      "canonical": "num_classes",
+      "value": "67",
+      "evidence": "baseline.yaml:29"
+    },
+    {
+      "name": "total_epochs",
+      "canonical": "epochs",
+      "value": "0",
+      "evidence": "multigrid.py:205"
+    },
+    {
+      "name": "crop_size",
+      "canonical": "image_size",
+      "value": "224",
+      "evidence": "utils.py:114"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "mAP",
+      "canonical": "mAP",
+      "signal": "logged",
+      "evidence": "train_net.py:312"
+    },
+    {
+      "name": "average_precision_score",
+      "canonical": "AP",
+      "signal": "metric_api",
+      "evidence": "meters.py:11"
+    }
+  ],
+  "seeds": [],
+  "study_id": "study039",
+  "repo_url": "https://github.com/q1xiangchen/vmps",
+  "status": "ok",
+  "duration_s": 1.8
+}

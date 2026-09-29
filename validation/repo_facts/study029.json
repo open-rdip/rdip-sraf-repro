@@ -1,0 +1,59 @@
+{
+  "facts_version": 8,
+  "n_files_read": 34,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.5",
+      "evidence": "gcn2.yaml:11"
+    },
+    {
+      "name": "optim",
+      "canonical": "optimizer",
+      "value": "adam",
+      "evidence": "gcn2.yaml:18"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.01",
+      "evidence": "gcn2.yaml:19"
+    },
+    {
+      "name": "epochs",
+      "canonical": "epochs",
+      "value": "400",
+      "evidence": "gcn2.yaml:20"
+    },
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "int",
+      "evidence": "trainer.py:217"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "32",
+      "evidence": "edit_trainer.py:207"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "12345",
+      "evidence": "data.py:69"
+    },
+    {
+      "value": "1",
+      "evidence": "utils.py:9"
+    }
+  ],
+  "study_id": "study029",
+  "repo_url": "https://github.com/zhimengj0326/gradient_rewiring_editing",
+  "status": "ok",
+  "duration_s": 8.3
+}

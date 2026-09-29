@@ -1,0 +1,80 @@
+{
+  "facts_version": 8,
+  "n_files_read": 296,
+  "datasets": [
+    {
+      "name": "waymo",
+      "canonical": "Waymo",
+      "source_kind": "config",
+      "evidence": "process_wod_data.py:3: from waymo_open_dataset.protos import scenario_pb2"
+    },
+    {
+      "name": "ade",
+      "canonical": "ADE20K",
+      "source_kind": "config",
+      "evidence": "training_nuplan_gump.yaml:16: - agents_ade_objective_level0"
+    },
+    {
+      "name": "NuScenes",
+      "canonical": "nuScenes",
+      "source_kind": "config",
+      "evidence": "base_scenario.py:78: \"Vehicle params for NuScenes scenario has not been implemented yet.\""
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "1.0",
+      "evidence": "gump_nuplan_gptm.yaml:30"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.1",
+      "evidence": "gump_nuplan_gptm.yaml:33"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "float",
+      "evidence": "warmup_cos_lr.py:12"
+    },
+    {
+      "name": "epochs",
+      "canonical": "epochs",
+      "value": "int",
+      "evidence": "warmup_cos_lr.py:14"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "10",
+      "evidence": "alf_test_logsim_environment.py:19"
+    },
+    {
+      "name": "image_size",
+      "canonical": "image_size",
+      "value": "target_width",
+      "evidence": "horizon_raster_feature_builder_v2.py:124"
+    },
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "0",
+      "evidence": "raster_decoder.py:26"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "0",
+      "evidence": "test_wod_model.sh:20"
+    }
+  ],
+  "study_id": "study032",
+  "repo_url": "https://github.com/horizonrobotics/gump",
+  "status": "ok",
+  "duration_s": 3.8
+}

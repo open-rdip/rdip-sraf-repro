@@ -1,0 +1,109 @@
+{
+  "facts_version": 8,
+  "n_files_read": 400,
+  "datasets": [
+    {
+      "name": "coco",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "parse_macaquepose_dataset.py:31: def save_coco_anno(data_annotation,"
+    },
+    {
+      "name": "VOC2012",
+      "canonical": "PASCAL VOC",
+      "source_kind": "config",
+      "evidence": "parse_animalpose_dataset.py:118: image_name = 'VOC2012/JPEGImages/' + data_anno['image'] + '.jpg'"
+    },
+    {
+      "name": "imagenet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "rtmpose-t_8xb256-120e_face6-256x256.py:74: 'rtmdet/cspnext_rsb_pretrain/cspnext-tiny_imagenet_600e-3a2dd350.pth'"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "64",
+      "evidence": "yolox-pose_tiny_4xb64-300e_coco.py:65"
+    },
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "1",
+      "evidence": "py_yolox_pose_s_8xb32_300e_coco.py:72"
+    },
+    {
+      "name": "base_lr",
+      "canonical": "learning_rate",
+      "value": "0.004",
+      "evidence": "py_yolox_pose_s_8xb32_300e_coco.py:223"
+    },
+    {
+      "name": "max_epochs",
+      "canonical": "epochs",
+      "value": "300",
+      "evidence": "py_yolox_pose_s_8xb32_300e_coco.py:224"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.0002",
+      "evidence": "py_yolox_pose_s_8xb32_300e_coco.py:271"
+    },
+    {
+      "name": "warmup",
+      "canonical": "warmup",
+      "value": "linear",
+      "evidence": "demo_b.py:24"
+    },
+    {
+      "name": "img_size",
+      "canonical": "image_size",
+      "value": "224",
+      "evidence": "demo_b.py:59"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.1",
+      "evidence": "demo_b.py:72"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "CocoMetric",
+      "canonical": "mAP",
+      "signal": "metric_api",
+      "evidence": "py_yolox_pose_s_8xb32_300e_coco.py:30"
+    },
+    {
+      "name": "AUC",
+      "canonical": "AUC",
+      "signal": "eval_config",
+      "evidence": "demo_b.py:11"
+    },
+    {
+      "name": "AP",
+      "canonical": "AP",
+      "signal": "cli_flag",
+      "evidence": "rtmpose_ap10k.yml:12"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "2024",
+      "evidence": "rtmw3d-x_8xb32_cocktail14-384x288.py:18"
+    },
+    {
+      "value": "21",
+      "evidence": "rtmpose-m_8xb32-60e_coco-wholebody-face-256x256.py:9"
+    }
+  ],
+  "study_id": "study009",
+  "repo_url": "https://github.com/open-mmlab/mmpose",
+  "status": "ok",
+  "duration_s": 3.9
+}

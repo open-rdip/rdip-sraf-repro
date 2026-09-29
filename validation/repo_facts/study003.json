@@ -1,0 +1,142 @@
+{
+  "facts_version": 8,
+  "n_files_read": 400,
+  "datasets": [
+    {
+      "name": "vg",
+      "canonical": "Visual Genome",
+      "source_kind": "config",
+      "evidence": "grit2odvg.py:158: if anno.endswith('.json') and not anno.endswith('vg.json')"
+    },
+    {
+      "name": "coco",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "remove_cocotrain2017_from_refcoco.py:6: from pycocotools.coco import COCO"
+    },
+    {
+      "name": "voc",
+      "canonical": "PASCAL VOC",
+      "source_kind": "config",
+      "evidence": "pascal_voc.py:10: from mmdet.evaluation import voc_classes"
+    },
+    {
+      "name": "ade20k",
+      "canonical": "ADE20K",
+      "source_kind": "config",
+      "evidence": "ade20k2coco.py:12: from mmdet.datasets.ade20k import ADE20KPanopticDataset"
+    },
+    {
+      "name": "Cityscapes",
+      "canonical": "Cityscapes",
+      "source_kind": "config",
+      "evidence": "cityscapes.py:118: description='Convert Cityscapes annotations to COCO format')"
+    },
+    {
+      "name": "imagenet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "detic_centernet2_swin-b_fpn_4x_lvis_in21k-lvis.py:78: data_root='data/imagenet',"
+    },
+    {
+      "name": "c4",
+      "canonical": "C4",
+      "source_kind": "config",
+      "evidence": "mask_rcnn_r50_caffe_c4_1x_coco.py:12: from .._base_.models.mask_rcnn_r50_caffe_c4 import *"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "iters",
+      "canonical": "iterations",
+      "value": "1000",
+      "evidence": "optimize_anchors.py"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "2",
+      "evidence": "coco_detection.py:23"
+    },
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "68",
+      "evidence": "glip_swin_tiny_cafr.py:53"
+    },
+    {
+      "name": "max_epochs",
+      "canonical": "epochs",
+      "value": "12",
+      "evidence": "grounding_dino_swin-t_cafr.py:197"
+    },
+    {
+      "name": "crop_size",
+      "canonical": "image_size",
+      "value": "image_size_det",
+      "evidence": "detic_centernet2_swin-b_fpn_4x_lvis_in21k-lvis.py:37"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "0.0001",
+      "evidence": "lsj-100e_coco-instance.py:88"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.1",
+      "evidence": "lsj-100e_coco-instance.py:90"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.0002",
+      "evidence": "efficientdet_effb3_bifpn_8xb16-crop896-300e_coco-90cls.py:161"
+    },
+    {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.0",
+      "evidence": "diffusiondet_r50_fpn_500-proposals_1-step_crop-ms-480-800-450k_coco.py:51"
+    },
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "20",
+      "evidence": "co_dino_5scale_r50_lsj_8xb2_1x_coco.py:106"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "COCOeval",
+      "canonical": "mAP",
+      "signal": "metric_api",
+      "evidence": "coco_error_analysis.py:10"
+    },
+    {
+      "name": "PQ",
+      "canonical": "PQ",
+      "signal": "logged",
+      "evidence": "analyze_results.py:306"
+    },
+    {
+      "name": "segm",
+      "canonical": "Mask AP",
+      "signal": "eval_config",
+      "evidence": "xdecoder-tiny_zeroshot_open-vocab-instance_ade20k.py:20"
+    },
+    {
+      "name": "mIoU",
+      "canonical": "mIoU",
+      "signal": "eval_config",
+      "evidence": "refcoco.py:54"
+    }
+  ],
+  "seeds": [],
+  "study_id": "study003",
+  "repo_url": "https://github.com/zhimengxin/rcod",
+  "status": "ok",
+  "duration_s": 4.2
+}

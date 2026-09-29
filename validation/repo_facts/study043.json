@@ -1,0 +1,37 @@
+{
+  "facts_version": 8,
+  "n_files_read": 4,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "1.0",
+      "evidence": "generate.py"
+    },
+    {
+      "name": "max_epochs",
+      "canonical": "epochs",
+      "value": "25000",
+      "evidence": "train.py"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "8",
+      "evidence": "train.py"
+    }
+  ],
+  "metrics": [],
+  "seeds": [
+    {
+      "value": "664",
+      "evidence": "README.md:61"
+    }
+  ],
+  "study_id": "study043",
+  "repo_url": "https://github.com/moiseshorta/rave-latent-diffusion",
+  "status": "ok",
+  "duration_s": 1.1
+}

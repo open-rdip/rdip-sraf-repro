@@ -1,0 +1,26 @@
+{
+  "facts_version": 8,
+  "n_files_read": 400,
+  "datasets": [],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "0",
+      "evidence": "test_jump_forward.py:34"
+    },
+    {
+      "name": "image_size",
+      "canonical": "image_size",
+      "value": "int",
+      "evidence": "janus_pro.py:164"
+    }
+  ],
+  "metrics": [],
+  "seeds": [],
+  "study_id": "study044",
+  "repo_url": "https://github.com/eric-ai-lab/soft-thinking",
+  "status": "ok",
+  "duration_s": 2.6
+}

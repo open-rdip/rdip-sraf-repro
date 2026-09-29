@@ -1,0 +1,150 @@
+{
+  "facts_version": 8,
+  "n_files_read": 400,
+  "datasets": [
+    {
+      "name": "ImageNet",
+      "canonical": "ImageNet",
+      "source_kind": "config",
+      "evidence": "convert_imagenet_subsets.py:9: description='Convert ImageNet subset lists provided by SimCLR into '"
+    },
+    {
+      "name": "CIFAR10",
+      "canonical": "CIFAR-10",
+      "source_kind": "config",
+      "evidence": "publish_model.py:30: '\"CIFAR10\" and others.')"
+    },
+    {
+      "name": "coco",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "flamingo_fewshot_vqa.py:74: data_root='data/coco',"
+    },
+    {
+      "name": "VG",
+      "canonical": "Visual Genome",
+      "source_kind": "config",
+      "evidence": "metafile.yml:6: - VG"
+    },
+    {
+      "name": "cifar100",
+      "canonical": "CIFAR-100",
+      "source_kind": "config",
+      "evidence": "resnet50_8xb16_cifar100.py:3: '../_base_/datasets/cifar100_bs16.py',"
+    },
+    {
+      "name": "voc",
+      "canonical": "PASCAL VOC",
+      "source_kind": "config",
+      "evidence": "vgg16_8xb16_voc.py:2: '../_base_/datasets/voc_bs16.py',"
+    }
+  ],
+  "dataset_mentions_docs_only": [
+    {
+      "name": "ADE20K",
+      "canonical": "ADE20K",
+      "source_kind": "docs",
+      "evidence": "README.md:22: The \"Roaring 20s\" of visual recognition began with the introduction of Vision Transformers (ViTs), which quick"
+    },
+    {
+      "name": "Cityscapes",
+      "canonical": "Cityscapes",
+      "source_kind": "docs",
+      "evidence": "README.md:9: We propose RepMLP, a multi-layer-perceptron-style neural network building block for image recognition, which i"
+    }
+  ],
+  "hyperparameters": [
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "scale",
+      "evidence": "edgenext_to_mmpretrain.py:28"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "128",
+      "evidence": "mixmim_mixmim-base_16xb128-coslr-300e_in1k.py:25"
+    },
+    {
+      "name": "Epochs",
+      "canonical": "epochs",
+      "value": "300",
+      "evidence": "metafile.yml:26"
+    },
+    {
+      "name": "img_size",
+      "canonical": "image_size",
+      "value": "224",
+      "evidence": "eva02-large-p14_headless.py:6"
+    },
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "1000",
+      "evidence": "eva02-base-p14_in1k.py:20"
+    },
+    {
+      "name": "lr",
+      "canonical": "learning_rate",
+      "value": "5e-6",
+      "evidence": "swin-large_8xb8_cub-384px.py:22"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.0005",
+      "evidence": "swin-large_8xb8_cub-384px.py:23"
+    },
+    {
+      "name": "momentum",
+      "canonical": "momentum",
+      "value": "0.001",
+      "evidence": "mocov2_resnet50_8xb32-coslr-200e_in1k.py:12"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Accuracy",
+      "canonical": "Accuracy",
+      "signal": "cli_flag",
+      "evidence": "metafile.yml:36"
+    },
+    {
+      "name": "BLEU",
+      "canonical": "BLEU",
+      "signal": "metric_api",
+      "evidence": "README.md:47"
+    },
+    {
+      "name": "Recall",
+      "canonical": "Recall",
+      "signal": "cli_flag",
+      "evidence": "metafile.yml:30"
+    },
+    {
+      "name": "mAP",
+      "canonical": "mAP",
+      "signal": "cli_flag",
+      "evidence": "metafile.yml:23"
+    }
+  ],
+  "seeds": [
+    {
+      "value": "0",
+      "evidence": "mixmim_mixmim-base_16xb128-coslr-300e_in1k.py:94"
+    },
+    {
+      "value": "2",
+      "evidence": "mff_vit-base-p16_8xb512-amp-coslr-800e_in1k.py:3"
+    },
+    {
+      "value": "42",
+      "evidence": "blip2_8xb32_retrieval.py:82"
+    }
+  ],
+  "study_id": "study011",
+  "repo_url": "https://github.com/open-mmlab/mmclassification",
+  "status": "ok",
+  "duration_s": 3.0
+}

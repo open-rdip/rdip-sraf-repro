@@ -1,0 +1,58 @@
+{
+  "facts_version": 8,
+  "n_files_read": 31,
+  "datasets": [
+    {
+      "name": "CelebA",
+      "canonical": "CelebA",
+      "source_kind": "config",
+      "evidence": "test_facenet.py:14: \"CelebA\": {\"name\": 'celeba', \"gender\": \"Male\", 'attribute': \"Smiling\","
+    },
+    {
+      "name": "MNIST",
+      "canonical": "MNIST",
+      "source_kind": "config",
+      "evidence": "test_ctrVAE.py:17: FASHION_MNIST_CLASS_DICT = {"
+    },
+    {
+      "name": "FashionMNIST",
+      "canonical": "Fashion-MNIST",
+      "source_kind": "config",
+      "evidence": "test_ctrVAE.py:48: \"FashionMNIST\": {\"name\": \"fashion_mnist\", \"source_key\": FASHION_MNIST_CLASS_DICT[0],"
+    }
+  ],
+  "dataset_mentions_docs_only": [],
+  "hyperparameters": [
+    {
+      "name": "n_epochs",
+      "canonical": "epochs",
+      "value": "100",
+      "evidence": "test_api.py:29"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "1024",
+      "evidence": "test_api.py:30"
+    },
+    {
+      "name": "learning_rate",
+      "canonical": "learning_rate",
+      "value": "0.001",
+      "evidence": "monitor_beta.py:64"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "mean_squared_error",
+      "canonical": "MSE",
+      "signal": "metric_api",
+      "evidence": "_losses.py:11"
+    }
+  ],
+  "seeds": [],
+  "study_id": "study038",
+  "repo_url": "https://github.com/theislab/trVAE",
+  "status": "ok",
+  "duration_s": 1.6
+}
