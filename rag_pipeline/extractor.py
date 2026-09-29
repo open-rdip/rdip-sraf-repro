@@ -2,6 +2,7 @@
 
 Backends (selected via config.LLM_BACKEND), all returning the same JSON schema:
   openai   -> OpenAI API (e.g. GPT-4o)             OpenAI-compatible
+  compat   -> any hosted OpenAI-compatible endpoint (SRAF_COMPAT_BASE_URL)
   vllm     -> local vLLM OpenAI server (cluster)   OpenAI-compatible
   llamacpp -> local llama.cpp OpenAI server (Mac)  OpenAI-compatible
   google   -> Google Gemini
@@ -24,7 +25,23 @@ from abc import ABC, abstractmethod
 from config import (
     LLM_BACKEND, LLM_MODEL, LLM_TEMPERATURE, LLM_MAX_TOKENS,
     OPENAI_API_KEY, GOOGLE_API_KEY, VLLM_SERVER_URL, LLAMACPP_SERVER_URL,
+    OPENAI_BASE_URL, COMPAT_BASE_URL, COMPAT_API_KEY, LLM_BUDGET_USD,
 )
+from rag_pipeline.usage_meter import meter, BudgetExceeded
+
+if LLM_BUDGET_USD:
+    meter.configure(budget_usd=LLM_BUDGET_USD)
+
+# Which study the current extraction belongs to, so the meter can attribute
+# cost per study (the input contribution N7 needs). The corpus runner sets it;
+# ad-hoc callers can ignore it.
+_CURRENT_STUDY: str | None = None
+
+
+def set_study(study_id: str | None) -> None:
+    """Attribute subsequent completions to this study in the usage meter."""
+    global _CURRENT_STUDY
+    _CURRENT_STUDY = study_id
 
 # ── Prompt ────────────────────────────────────────────────────────────────────
 
@@ -77,6 +94,10 @@ class Extractor(ABC):
         try:
             raw = self._complete(SYSTEM_PROMPT, EXTRACTION_PROMPT.format(passage=passage))
             return _parse_json(raw)
+        except BudgetExceeded:
+            # Must propagate. Swallowing this would leave the loop calling a paid
+            # endpoint for every remaining chunk with the cap already breached.
+            raise
         except Exception as e:  # noqa: BLE001
             print(f"[Extractor:{self.name}] Error: {e}")
             return {}
@@ -100,14 +121,33 @@ class OpenAICompatExtractor(Extractor):
         return self._client
 
     def _complete(self, system: str, user: str) -> str:
-        resp = self.client.chat.completions.create(
+        kwargs = dict(
             model=self.model,
             messages=[{"role": "system", "content": system},
                       {"role": "user", "content": user}],
             temperature=LLM_TEMPERATURE,
             max_tokens=LLM_MAX_TOKENS,
-            response_format={"type": "json_object"},
         )
+        # Not every OpenAI-compatible provider accepts response_format. Try with
+        # it, and fall back once without rather than losing the extraction; the
+        # prompt already demands bare JSON and _parse_json tolerates fences.
+        try:
+            resp = self.client.chat.completions.create(
+                **kwargs, response_format={"type": "json_object"})
+        except Exception as e:  # noqa: BLE001
+            if "response_format" not in str(e):
+                raise
+            print(f"[Extractor:{self.name}] response_format unsupported — retrying without")
+            resp = self.client.chat.completions.create(**kwargs)
+
+        usage = getattr(resp, "usage", None)
+        if usage is not None:
+            meter.record(
+                self.model,
+                prompt_tokens=getattr(usage, "prompt_tokens", 0) or 0,
+                completion_tokens=getattr(usage, "completion_tokens", 0) or 0,
+                study=_CURRENT_STUDY,
+            )
         return resp.choices[0].message.content
 
 
@@ -130,6 +170,14 @@ class GeminiExtractor(Extractor):
                         max_output_tokens=max(LLM_MAX_TOKENS, 4096),
                     ),
                 )
+                um = getattr(resp, "usage_metadata", None)
+                if um is not None:
+                    meter.record(
+                        self.model,
+                        prompt_tokens=getattr(um, "prompt_token_count", 0) or 0,
+                        completion_tokens=getattr(um, "candidates_token_count", 0) or 0,
+                        study=_CURRENT_STUDY,
+                    )
                 return resp.text
             except Exception as e:  # noqa: BLE001 — handle Gemini rate limits
                 msg = str(e)
@@ -149,7 +197,18 @@ def get_extractor(backend: str | None = None, model: str | None = None) -> Extra
     model = model or LLM_MODEL
 
     if backend == "openai":
-        return OpenAICompatExtractor(None, OPENAI_API_KEY, model, "openai")
+        return OpenAICompatExtractor(OPENAI_BASE_URL, OPENAI_API_KEY, model, "openai")
+    if backend in ("compat", "openai_compat"):
+        # Generic hosted provider: anything serving an OpenAI-compatible chat
+        # endpoint. Point SRAF_COMPAT_BASE_URL / SRAF_COMPAT_API_KEY at it.
+        # Kept provider-agnostic on purpose, so adding a frontier model for N3
+        # never means shipping a new client.
+        if not COMPAT_BASE_URL:
+            raise ValueError(
+                "backend 'openai_compat' needs SRAF_COMPAT_BASE_URL "
+                "(and usually SRAF_COMPAT_API_KEY)")
+        return OpenAICompatExtractor(
+            COMPAT_BASE_URL, COMPAT_API_KEY, model, "compat")
     if backend == "vllm":
         return OpenAICompatExtractor(
             VLLM_SERVER_URL.rstrip("/") + "/v1", "EMPTY", model, "vllm")

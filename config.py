@@ -58,6 +58,18 @@ LLM_MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "2000"))
 # Backend-specific
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
+
+# Frontier / hosted providers for contribution N3. Any provider exposing an
+# OpenAI-compatible chat endpoint is reachable through the generic
+# "openai_compat" backend by setting these two; no provider-specific code.
+OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "") or None
+COMPAT_BASE_URL = os.getenv("SRAF_COMPAT_BASE_URL", "") or None
+COMPAT_API_KEY = os.getenv("SRAF_COMPAT_API_KEY", "")
+
+# Hard spend cap for paid-API runs, in USD. Enforced by rag_pipeline.usage_meter
+# after every completion. 0 or unset means no cap, which is only appropriate for
+# local backends.
+LLM_BUDGET_USD = float(os.getenv("SRAF_BUDGET_USD", "0") or 0)
 LLAMACPP_SERVER_URL = os.getenv("LLAMACPP_SERVER_URL", "http://localhost:8080")
 VLLM_SERVER_URL = os.getenv("VLLM_SERVER_URL", "http://localhost:8000")
 

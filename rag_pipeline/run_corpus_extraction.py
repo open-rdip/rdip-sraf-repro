@@ -25,6 +25,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
 from rag_pipeline.pipeline import run, model_slug   # noqa: E402
+from rag_pipeline.extractor import set_study        # noqa: E402
+from rag_pipeline.usage_meter import meter, BudgetExceeded  # noqa: E402
 from config import LLM_BACKEND, LLM_MODEL           # noqa: E402
 
 REPO_LIST = REPO_ROOT / "validation" / "repo_list.csv"
@@ -80,6 +82,7 @@ def main():
             if limit and processed > limit:
                 print(f"  reached SRAF_LIMIT={limit}")
                 break
+            set_study(sid)
             try:
                 res = run(study_id=sid, pdf_url=pdf, backend=backend, model=model)
                 mark.write_text(json.dumps(res))
@@ -87,10 +90,21 @@ def main():
                       f"(seeds={res.get('seeds_found', 0)}, "
                       f"params={res.get('params_found', 0)}, "
                       f"evals={res.get('evals_found', 0)})")
+            except BudgetExceeded as e:
+                # Abort the whole submission. Continuing to the next study would
+                # keep calling a paid endpoint with the cap already breached,
+                # which is exactly what the cap exists to prevent.
+                print(f"\n  {sid}: ABORTING — {e}")
+                print(meter.summary())
+                raise SystemExit(2)
             except Exception as e:  # noqa: BLE001 — one bad paper must not stop the run
                 print(f"  {sid}: extraction FAILED — {e}")
+            finally:
+                set_study(None)
 
     print(f"\nDone. Processed {processed} (study × model) runs this submission.")
+    print()
+    print(meter.summary())
 
 
 if __name__ == "__main__":

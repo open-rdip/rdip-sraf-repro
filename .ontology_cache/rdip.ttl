@@ -24,12 +24,13 @@
     dc:title        "RDIP: Research Data Intelligence Platform Ontology"@en ;
     dc:description  "A project-centric ontology for representing the full research lifecycle, provenance chains, agent attribution, software environments, hyperparameters, and contextual links between activities, software, datasets and publications. Version 2 adds qualified PROV-O patterns, dataset derivation chains, activity sequencing, evaluation results, software dependency graphs, and reproducibility-critical metadata."@en ;
     dcterms:license <https://opensource.org/licenses/MIT> ;
-    owl:versionInfo "2.0.0" ;
-    owl:versionIRI  <https://w3id.org/rdip/2.0.0/> ;
-    owl:priorVersion <https://w3id.org/rdip/1.0.0/> ;
+    owl:versionInfo "2.1.0" ;
+    owl:versionIRI  <https://w3id.org/rdip/2.1.0/> ;
+    owl:priorVersion <https://w3id.org/rdip/2.0.0/> ;
     vann:preferredNamespacePrefix "rdip" ;
     vann:preferredNamespaceUri    "https://w3id.org/rdip/" ;
     rdfs:comment    "v2.0: added qualified PROV-O associations, wasDerivedFrom chain, activity sequencing (wasInformedBy), EvaluationResult, SoftwareDependency, EnvironmentSpec, RandomSeed." ;
+    rdfs:comment    "v2.1: added ExecutionRecipe and SetupStep — a machine-readable, executable description of how to reproduce a reported result (run command, ordered setup steps, required data and checkpoints, produced metric, extraction confidence). Additive only: no v2.0 term is modified or removed." ;
     owl:imports
         <http://vivoweb.org/ontology/core> ,
         <http://purl.org/ontology/bibo/> ,
@@ -222,6 +223,25 @@ rdip:EvaluationResult
 # No new classes required; rdip:generatesPublication and rdip:citesDataset bridge them.
 
 
+#  SECTION 7 — EXECUTION RECIPES
+#  A machine-readable description of HOW to reproduce a reported result.
+#  Where Sections 3-4 describe the environment a study declares, this section
+#  describes the procedure a reproducer must actually run. The recipe is
+#  extracted metadata, not a hand-written script, so it can be produced for any
+#  study and executed automatically.
+
+rdip:ExecutionRecipe
+    a owl:Class ;
+    rdfs:subClassOf prov:Plan ;
+    rdfs:label   "Execution recipe"@en ;
+    rdfs:comment "An executable procedure that regenerates a reported result: the command to run, the ordered setup steps that must precede it, the datasets and checkpoints it requires, and the metric it produces. Modelled as a prov:Plan because it is the plan an Activity follows, not the activity itself. Attach to an activity with rdip:hasExecutionRecipe. A recipe whose rdip:runCommand still contains an unfilled placeholder is present in form but not executable, and should carry a low rdip:recipeConfidence."@en .
+
+rdip:SetupStep
+    a owl:Class ;
+    rdfs:subClassOf prov:Plan ;
+    rdfs:label   "Setup step"@en ;
+    rdfs:comment "One ordered preparatory action a recipe requires before its run command — downloading a checkpoint, extracting an archive, exporting an environment variable. Modelled as a class rather than a plain literal because ORDER IS SIGNIFICANT and RDF does not preserve the order of repeated properties: a download must precede the extraction that consumes it. Use rdip:stepOrder to state the position and rdip:stepCommand for the shell command."@en .
+
 #################################################################
 #  OBJECT PROPERTIES
 #################################################################
@@ -410,6 +430,36 @@ rdip:generatesResult
     rdfs:range  rdip:EvaluationResult ;
     rdfs:label   "generates result"@en ;
     rdfs:comment "Links a ResearchActivity to an EvaluationResult it produces (e.g. a test-set accuracy, F1 score, RMSE, training loss). Essential for verifying reproduction: a reproducer compares their re-run results against these stored values."@en .
+
+#  OBJECT PROPERTIES — EXECUTION RECIPES
+
+rdip:hasExecutionRecipe
+    a owl:ObjectProperty ;
+    rdfs:domain rdip:ResearchActivity ;
+    rdfs:range  rdip:ExecutionRecipe ;
+    rdfs:label   "has execution recipe"@en ;
+    rdfs:comment "Links a ResearchActivity to the ExecutionRecipe that reproduces its reported result. A convenience shortcut for the fully qualified PROV-O route prov:qualifiedAssociation / prov:hadPlan; use the qualified form when the agent or role also needs to be stated."@en .
+
+rdip:setupStep
+    a owl:ObjectProperty ;
+    rdfs:domain rdip:ExecutionRecipe ;
+    rdfs:range  rdip:SetupStep ;
+    rdfs:label   "setup step"@en ;
+    rdfs:comment "Links a recipe to one preparatory step. Repeated for each step; read the sequence via rdip:stepOrder, since RDF imposes no order on repeated properties."@en .
+
+rdip:requiresDataset
+    a owl:ObjectProperty ;
+    rdfs:domain rdip:ExecutionRecipe ;
+    rdfs:range  dcat:Dataset ;
+    rdfs:label   "requires dataset"@en ;
+    rdfs:comment "A dataset the recipe must have available before it can run. Points at a dcat:Dataset rather than a bare name so the requirement can be resolved to an actual distribution and access level — a dataset released only on application is a reproduction blocker even when the command is perfect."@en .
+
+rdip:producesMetric
+    a owl:ObjectProperty ;
+    rdfs:domain rdip:ExecutionRecipe ;
+    rdfs:range  rdip:EvaluationResult ;
+    rdfs:label   "produces metric"@en ;
+    rdfs:comment "The evaluation result this recipe is expected to regenerate. Ranges over rdip:EvaluationResult so the claimed metric name, value and split are reused from Section 5 rather than duplicated: comparing a re-run against the paper's claim is then a comparison of two EvaluationResult instances."@en .
 
 #  OBJECT PROPERTIES — METHODS & DOCUMENTATION
 
@@ -805,6 +855,50 @@ rdip:workflowUri
 #################################################################
 #  CROSS-VOCABULARY MAPPINGS
 #################################################################
+
+#  DATA PROPERTIES — EXECUTION RECIPES
+
+rdip:runCommand
+    a owl:DatatypeProperty ;
+    rdfs:domain rdip:ExecutionRecipe ;
+    rdfs:range  xsd:string ;
+    rdfs:label   "run command"@en ;
+    rdfs:comment "The shell command that regenerates the reported result, verbatim as the artefact documents it, e.g. 'python tools/test.py configs/faster_rcnn_r50.py ckpt.pth --eval bbox'. Record it unchanged even when it contains an unfilled placeholder such as /path/to/checkpoint, and lower rdip:recipeConfidence instead of inventing a value: a fabricated path turns a detectable documentation gap into a silent wrong answer."@en .
+
+rdip:entryPoint
+    a owl:DatatypeProperty ;
+    rdfs:domain rdip:ExecutionRecipe ;
+    rdfs:range  xsd:string ;
+    rdfs:label   "entry point"@en ;
+    rdfs:comment "The script or module the run command invokes, e.g. 'tools/test.py'. Stated separately from rdip:runCommand so a recipe can be checked against the repository's file tree without parsing the command."@en .
+
+rdip:stepOrder
+    a owl:DatatypeProperty ;
+    rdfs:domain rdip:SetupStep ;
+    rdfs:range  xsd:integer ;
+    rdfs:label   "step order"@en ;
+    rdfs:comment "1-based position of this step in the setup sequence. Required: RDF does not preserve the order of repeated properties, so without it a recipe that downloads an archive and then extracts it cannot be replayed correctly."@en .
+
+rdip:stepCommand
+    a owl:DatatypeProperty ;
+    rdfs:domain rdip:SetupStep ;
+    rdfs:range  xsd:string ;
+    rdfs:label   "step command"@en ;
+    rdfs:comment "The shell command for this setup step, e.g. 'wget https://example.org/model.pth -O checkpoints/model.pth'."@en .
+
+rdip:requiresCheckpoint
+    a owl:DatatypeProperty ;
+    rdfs:domain rdip:ExecutionRecipe ;
+    rdfs:range  xsd:string ;
+    rdfs:label   "requires checkpoint"@en ;
+    rdfs:comment "A pretrained weights file the recipe needs, given as a path or URL. Kept as a literal rather than an entity because checkpoints are frequently published as bare URLs with no landing page or identifier; a dead link here is a common and detectable reproduction blocker."@en .
+
+rdip:recipeConfidence
+    a owl:DatatypeProperty ;
+    rdfs:domain rdip:ExecutionRecipe ;
+    rdfs:range  xsd:string ;
+    rdfs:label   "recipe confidence"@en ;
+    rdfs:comment "The extractor's self-reported confidence that this recipe is executable as recorded: 'high' or 'low'. Load-bearing rather than decorative — it lets a pipeline decline a recipe it cannot run, turning placeholder and missing-command cases into machine-detectable outcomes instead of silent failures."@en .
 
 #  CLASS MAPPINGS — Schema.org equivalences for external consumers
 
