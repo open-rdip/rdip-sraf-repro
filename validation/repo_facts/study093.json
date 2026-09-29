@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 90,
   "datasets": [
     {
@@ -42,6 +42,12 @@
   "dataset_mentions_docs_only": [],
   "hyperparameters": [
     {
+      "name": "IMG_SIZE",
+      "canonical": "image_size",
+      "value": "224",
+      "evidence": "constants.py:7"
+    },
+    {
       "name": "batch_size",
       "canonical": "batch_size",
       "value": "128",
@@ -70,12 +76,6 @@
       "canonical": "weight_decay",
       "value": "0.2",
       "evidence": "configs.py:40"
-    },
-    {
-      "name": "IMG_SIZE",
-      "canonical": "image_size",
-      "value": "224",
-      "evidence": "constants.py:7"
     }
   ],
   "metrics": [
@@ -110,16 +110,19 @@
       "evidence": "run_configs_400m.py:32"
     },
     {
-      "value": "1",
-      "evidence": "data.py:400"
-    },
-    {
       "value": "42",
       "evidence": "main.py:67"
+    },
+    {
+      "value": "1",
+      "evidence": "data.py:400"
     }
   ],
   "study_id": "study093",
   "repo_url": "https://github.com/mbzuai-oryx/unimed-clip",
   "status": "ok",
-  "duration_s": 2.4
+  "repo_commit": "536d1651ab28a68a85af07b0ad1a3c56de34e14c",
+  "duration_s": 2.7,
+  "swept_at": "2026-09-29T15:31:43+00:00",
+  "host": "skynetcpu"
 }

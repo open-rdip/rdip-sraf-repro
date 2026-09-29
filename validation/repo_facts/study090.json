@@ -1,12 +1,12 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 51,
   "datasets": [
     {
       "name": "nuscenes",
       "canonical": "nuScenes",
       "source_kind": "config",
-      "evidence": "gen_info.py:3: from nuscenes.nuscenes import NuScenes"
+      "evidence": "visualize_nusc.py:9: from nuscenes.utils.data_classes import Box, LidarPointCloud"
     }
   ],
   "dataset_mentions_docs_only": [],
@@ -28,5 +28,8 @@
   "study_id": "study090",
   "repo_url": "https://github.com/megvii-basedetection/bevdepth",
   "status": "ok",
-  "duration_s": 1.7
+  "repo_commit": "d78c7b58b10b9ada940462ba83ab24d99cae5833",
+  "duration_s": 2.7,
+  "swept_at": "2026-09-29T15:31:43+00:00",
+  "host": "skynetcpu"
 }

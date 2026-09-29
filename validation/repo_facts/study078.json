@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 49,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -8,11 +8,14 @@
   "seeds": [
     {
       "value": "0",
-      "evidence": "README.md:20"
+      "evidence": "train_pl_torch.py:131"
     }
   ],
   "study_id": "study078",
   "repo_url": "https://github.com/qqqyang/shuffle-qudio",
   "status": "ok",
-  "duration_s": 1.3
+  "repo_commit": "4f1fa4530c431eb9a66ceb6b9fc09907617f6c01",
+  "duration_s": 1.3,
+  "swept_at": "2026-09-29T15:30:42+00:00",
+  "host": "skynetcpu"
 }

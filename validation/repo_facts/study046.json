@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 47,
   "datasets": [
     {
@@ -12,7 +12,7 @@
       "name": "VOC",
       "canonical": "PASCAL VOC",
       "source_kind": "config",
-      "evidence": "voc.yaml:1: # PASCAL VOC dataset http://host.robots.ox.ac.uk/pascal/VOC/"
+      "evidence": "hyp.finetune.yaml:1: # Hyperparameters for VOC finetuning"
     }
   ],
   "dataset_mentions_docs_only": [],
@@ -59,5 +59,8 @@
   "study_id": "study046",
   "repo_url": "https://github.com/lmomoy/lf-yolo",
   "status": "ok",
-  "duration_s": 1.5
+  "repo_commit": "ad0d13f0c08e36706287f82a7e73f82b1c0093f3",
+  "duration_s": 2.8,
+  "swept_at": "2026-09-29T15:28:44+00:00",
+  "host": "skynetcpu"
 }

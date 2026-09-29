@@ -1,18 +1,18 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 400,
   "datasets": [
     {
       "name": "COCO",
       "canonical": "COCO",
       "source_kind": "config",
-      "evidence": "curvedsyntext_converter.py:57: description='Convert CurvedSynText150k to COCO format')"
+      "evidence": "cocotext_converter.py:13: description='Generate training and validation set of COCO Text v2 ')"
     },
     {
       "name": "voc",
       "canonical": "PASCAL VOC",
       "source_kind": "config",
-      "evidence": "spts_resnet50_8xb8-200e_totaltext.py:68: lexicon_path='data/totaltext/lexicons/weak_voc_new.txt',"
+      "evidence": "spts_resnet50_8xb8-200e_icdar2015.py:80: lexicon_mapping=('(.*).jpg', r'new_voc_\\1.txt'),"
     }
   ],
   "dataset_mentions_docs_only": [
@@ -31,34 +31,34 @@
       "evidence": "lmdb_converter.py:46"
     },
     {
-      "name": "num_classes",
-      "canonical": "num_classes",
-      "value": "node_num_classes",
-      "evidence": "sdmgr_novisual_60e_wildreceipt-openset.py:16"
-    },
-    {
-      "name": "Epochs",
-      "canonical": "epochs",
-      "value": "20",
-      "evidence": "metafile.yml:8"
-    },
-    {
-      "name": "dropout",
-      "canonical": "dropout",
-      "value": "0.1",
-      "evidence": "_base_abinet-vision.py:19"
-    },
-    {
       "name": "num_iters",
       "canonical": "iterations",
       "value": "3",
       "evidence": "_base_abinet.py:6"
     },
     {
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.1",
+      "evidence": "_base_abinet.py:13"
+    },
+    {
+      "name": "Epochs",
+      "canonical": "epochs",
+      "value": "20",
+      "evidence": "metafile.yml:7"
+    },
+    {
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "26",
+      "evidence": "_base_sdmgr_novisual.py:1"
+    },
+    {
       "name": "lr",
       "canonical": "learning_rate",
-      "value": "0.0005",
-      "evidence": "spts_resnet50_8xb8-150e_pretrain-spts.py:13"
+      "value": "4e-4",
+      "evidence": "schedule_adamw_cos_6e.py:6"
     }
   ],
   "metrics": [],
@@ -68,20 +68,15 @@
       "evidence": "default_runtime.py:8"
     },
     {
-      "value": "7",
-      "evidence": "test_batch_aug.py:16"
-    },
-    {
-      "value": "0",
-      "evidence": "test_batch_aug.py:67"
-    },
-    {
-      "value": "10",
-      "evidence": "test_batch_aug.py:70"
+      "value": "1",
+      "evidence": "test_textdet_inferencer.py:24"
     }
   ],
   "study_id": "study010",
   "repo_url": "https://github.com/open-mmlab/mmocr",
   "status": "ok",
-  "duration_s": 2.9
+  "repo_commit": "966296f26ac34cf0e96d40ab4a0a94c9a697909a",
+  "duration_s": 3.7,
+  "swept_at": "2026-09-29T15:26:44+00:00",
+  "host": "skynetcpu"
 }

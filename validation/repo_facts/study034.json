@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 64,
   "datasets": [
     {
@@ -51,13 +51,13 @@
       "name": "NUM_CLASSES",
       "canonical": "num_classes",
       "value": "13",
-      "evidence": "mask2former_R50_bs16_160k.yaml:8"
+      "evidence": "mask2former_R50_bs16_120k.yaml:8"
     },
     {
       "name": "DROPOUT",
       "canonical": "dropout",
       "value": "0.0",
-      "evidence": "mask2former_R50_bs16_160k.yaml:32"
+      "evidence": "mask2former_R50_bs16_120k.yaml:32"
     }
   ],
   "metrics": [
@@ -89,5 +89,8 @@
   "study_id": "study034",
   "repo_url": "https://github.com/mlpc-ucsd/uni-3d",
   "status": "ok",
-  "duration_s": 1.9
+  "repo_commit": "436d561d4abc53f98cfe222c0c061401f269f324",
+  "duration_s": 2.1,
+  "swept_at": "2026-09-29T15:28:13+00:00",
+  "host": "skynetcpu"
 }

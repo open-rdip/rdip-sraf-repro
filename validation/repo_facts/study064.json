@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 36,
   "datasets": [
     {
@@ -14,8 +14,8 @@
     {
       "name": "LR",
       "canonical": "learning_rate",
-      "value": "3e-4",
-      "evidence": "baseline.yml:24"
+      "value": "1e-3",
+      "evidence": "single_timeframe.yml:22"
     },
     {
       "name": "EPOCHS",
@@ -48,5 +48,8 @@
   "study_id": "study064",
   "repo_url": "https://github.com/wayveai/fiery",
   "status": "ok",
-  "duration_s": 1.2
+  "repo_commit": "fd03f164935ac172ef6d96117a7a4873abf23919",
+  "duration_s": 1.3,
+  "swept_at": "2026-09-29T15:29:42+00:00",
+  "host": "skynetcpu"
 }

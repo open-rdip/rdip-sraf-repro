@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 38,
   "datasets": [
     {
@@ -20,32 +20,32 @@
     {
       "name": "max_epochs",
       "canonical": "epochs",
-      "value": "1",
-      "evidence": "predict.py"
+      "value": "10",
+      "evidence": "finetune.py"
     },
     {
       "name": "batch_size",
       "canonical": "batch_size",
       "value": "32",
-      "evidence": "predict.py"
+      "evidence": "finetune.py"
+    },
+    {
+      "name": "learning_rate",
+      "canonical": "learning_rate",
+      "value": "0.1",
+      "evidence": "finetune.py"
+    },
+    {
+      "name": "optimizer",
+      "canonical": "optimizer",
+      "value": "Adam",
+      "evidence": "finetune.py"
     },
     {
       "name": "num_classes",
       "canonical": "num_classes",
       "value": "1",
-      "evidence": "predict.py"
-    },
-    {
-      "name": "learning_rate",
-      "canonical": "learning_rate",
-      "value": "0.03",
-      "evidence": "train_ssl.py"
-    },
-    {
-      "name": "optimizer",
-      "canonical": "optimizer",
-      "value": "SGD",
-      "evidence": "train_ssl.py"
+      "evidence": "finetune.py"
     },
     {
       "name": "momentum",
@@ -72,5 +72,8 @@
   "study_id": "study057",
   "repo_url": "https://github.com/georgestein/ssl-legacysurvey",
   "status": "ok",
-  "duration_s": 8.5
+  "repo_commit": "06b250b7b811d63d9b301d436b0827939d9a6091",
+  "duration_s": 9.6,
+  "swept_at": "2026-09-29T15:29:50+00:00",
+  "host": "skynetcpu"
 }

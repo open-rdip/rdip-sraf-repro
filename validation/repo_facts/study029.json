@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 34,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -8,37 +8,37 @@
       "name": "dropout",
       "canonical": "dropout",
       "value": "0.5",
-      "evidence": "gcn2.yaml:11"
+      "evidence": "sage.yaml:11"
     },
     {
       "name": "optim",
       "canonical": "optimizer",
       "value": "adam",
-      "evidence": "gcn2.yaml:18"
+      "evidence": "sage.yaml:14"
     },
     {
       "name": "lr",
       "canonical": "learning_rate",
       "value": "0.01",
-      "evidence": "gcn2.yaml:19"
+      "evidence": "sage.yaml:15"
     },
     {
       "name": "epochs",
       "canonical": "epochs",
-      "value": "400",
-      "evidence": "gcn2.yaml:20"
+      "value": "500",
+      "evidence": "sage.yaml:16"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "128",
+      "evidence": "enn.yaml:3"
     },
     {
       "name": "num_classes",
       "canonical": "num_classes",
       "value": "int",
       "evidence": "trainer.py:217"
-    },
-    {
-      "name": "batch_size",
-      "canonical": "batch_size",
-      "value": "32",
-      "evidence": "edit_trainer.py:207"
     }
   ],
   "metrics": [],
@@ -55,5 +55,8 @@
   "study_id": "study029",
   "repo_url": "https://github.com/zhimengj0326/gradient_rewiring_editing",
   "status": "ok",
-  "duration_s": 8.3
+  "repo_commit": "899134695c291b65f3b5e8e7461e6da4d9607d9d",
+  "duration_s": 7.9,
+  "swept_at": "2026-09-29T15:27:49+00:00",
+  "host": "skynetcpu"
 }

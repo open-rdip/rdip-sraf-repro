@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 229,
   "datasets": [
     {
@@ -30,28 +30,28 @@
       "name": "ImageNet",
       "canonical": "ImageNet",
       "source_kind": "config",
-      "evidence": "rpn_R_50_FPN_1x.yaml:3: WEIGHT: \"catalog://ImageNetPretrained/MSRA/R-50\""
+      "evidence": "e2e_mask_rcnn_R_50_FPN_1x_cocostyle.yaml:3: WEIGHT: \"catalog://ImageNetPretrained/MSRA/R-50\""
     }
   ],
   "dataset_mentions_docs_only": [],
   "hyperparameters": [
     {
+      "name": "NUM_CLASSES",
+      "canonical": "num_classes",
+      "value": "21",
+      "evidence": "e2e_mask_rcnn_R_50_FPN_1x_cocostyle.yaml:23"
+    },
+    {
       "name": "BASE_LR",
       "canonical": "learning_rate",
-      "value": "0.02",
-      "evidence": "rpn_R_50_FPN_1x.yaml:21"
+      "value": "0.01",
+      "evidence": "e2e_mask_rcnn_R_50_FPN_1x_cocostyle.yaml:39"
     },
     {
       "name": "WEIGHT_DECAY",
       "canonical": "weight_decay",
       "value": "0.0001",
-      "evidence": "rpn_R_50_FPN_1x.yaml:22"
-    },
-    {
-      "name": "NUM_CLASSES",
-      "canonical": "num_classes",
-      "value": "2",
-      "evidence": "e2e_keypoint_rcnn_R_50_FPN_1x.yaml:23"
+      "evidence": "e2e_mask_rcnn_R_50_FPN_1x_cocostyle.yaml:40"
     },
     {
       "name": "MOMENTUM",
@@ -90,5 +90,8 @@
   "study_id": "study018",
   "repo_url": "https://github.com/markson14/WheatDet",
   "status": "ok",
-  "duration_s": 3.6
+  "repo_commit": "07eca9de61a671f79c1f2a199bd89324772c6cca",
+  "duration_s": 6.1,
+  "swept_at": "2026-09-29T15:27:17+00:00",
+  "host": "skynetcpu"
 }

@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 68,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -8,7 +8,7 @@
       "name": "weight_decay",
       "canonical": "weight_decay",
       "value": "0.1",
-      "evidence": "train.py:129"
+      "evidence": "trainprior.py:90"
     },
     {
       "name": "batch_size",
@@ -28,5 +28,8 @@
   "study_id": "study006",
   "repo_url": "https://github.com/baitingluo/l-map",
   "status": "ok",
-  "duration_s": 1.6
+  "repo_commit": "1f4379fe3efbb00e94fd4df83852ad5acf88a9cc",
+  "duration_s": 1.6,
+  "swept_at": "2026-09-29T15:26:13+00:00",
+  "host": "skynetcpu"
 }

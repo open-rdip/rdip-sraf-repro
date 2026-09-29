@@ -1,9 +1,15 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 24,
   "datasets": [],
   "dataset_mentions_docs_only": [],
   "hyperparameters": [
+    {
+      "name": "image_size",
+      "canonical": "image_size",
+      "value": "256",
+      "evidence": "dataset.yaml:25"
+    },
     {
       "name": "batch_size",
       "canonical": "batch_size",
@@ -15,12 +21,6 @@
       "canonical": "epochs",
       "value": "70",
       "evidence": "adn.yaml:7"
-    },
-    {
-      "name": "crop_size",
-      "canonical": "image_size",
-      "value": "256",
-      "evidence": "adn.yaml:35"
     },
     {
       "name": "lr",
@@ -40,5 +40,8 @@
   "study_id": "study033",
   "repo_url": "https://github.com/ruanyuhui/adn-qsdl",
   "status": "ok",
-  "duration_s": 1.3
+  "repo_commit": "517891c3731c83eb25653e39885fe58dc001edc9",
+  "duration_s": 1.5,
+  "swept_at": "2026-09-29T15:28:12+00:00",
+  "host": "skynetcpu"
 }

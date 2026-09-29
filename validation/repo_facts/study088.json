@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 55,
   "datasets": [
     {
@@ -14,8 +14,8 @@
     {
       "name": "num_classes",
       "canonical": "num_classes",
-      "value": "100",
-      "evidence": "test_patchconvnet.py:46"
+      "value": "1000",
+      "evidence": "test_pvit.py:19"
     },
     {
       "name": "dropout",
@@ -35,5 +35,8 @@
   "study_id": "study088",
   "repo_url": "https://github.com/DarshanDeshpande/jax-models",
   "status": "ok",
-  "duration_s": 1.3
+  "repo_commit": "0d59f478fa00a456460e1b25d2594464e8861b6e",
+  "duration_s": 1.4,
+  "swept_at": "2026-09-29T15:31:12+00:00",
+  "host": "skynetcpu"
 }

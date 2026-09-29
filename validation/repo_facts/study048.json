@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 185,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -7,8 +7,8 @@
     {
       "name": "temperature",
       "canonical": "temperature",
-      "value": "100.0",
-      "evidence": "run.py:56"
+      "value": "1.0",
+      "evidence": "run.py:85"
     },
     {
       "name": "batch_size",
@@ -22,5 +22,8 @@
   "study_id": "study048",
   "repo_url": "https://github.com/ibm/topography-searcher",
   "status": "ok",
-  "duration_s": 4.2
+  "repo_commit": "78f4d00ab2c12a687f8ec145a59d204fbc4d61a2",
+  "duration_s": 10.1,
+  "swept_at": "2026-09-29T15:28:51+00:00",
+  "host": "skynetcpu"
 }

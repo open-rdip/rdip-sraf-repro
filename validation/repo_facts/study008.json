@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 36,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -14,13 +14,13 @@
       "name": "batch_size",
       "canonical": "batch_size",
       "value": "256",
-      "evidence": "main.yml:10"
+      "evidence": "hindsight.yml:11"
     },
     {
       "name": "weight_decay",
       "canonical": "weight_decay",
       "value": "0.05",
-      "evidence": "main.yml:11"
+      "evidence": "hindsight.yml:12"
     },
     {
       "name": "lr",
@@ -46,5 +46,8 @@
   "study_id": "study008",
   "repo_url": "https://github.com/konstantinjdobler/tight-budget-llm-adaptation",
   "status": "ok",
-  "duration_s": 1.7
+  "repo_commit": "b1dd039f1283ed17a1d2198a4f17f14ccf0e951d",
+  "duration_s": 2.1,
+  "swept_at": "2026-09-29T15:26:13+00:00",
+  "host": "skynetcpu"
 }

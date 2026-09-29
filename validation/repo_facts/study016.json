@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 294,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -11,10 +11,10 @@
       "evidence": "rllib_tutorial.sync.py:161"
     },
     {
-      "name": "batch_size",
+      "name": "batch",
       "canonical": "batch_size",
-      "value": "32",
-      "evidence": "polybeast_learner.py"
+      "value": "Tensor",
+      "evidence": "wandb_lib.py:123"
     },
     {
       "name": "momentum",
@@ -37,5 +37,8 @@
   "study_id": "study016",
   "repo_url": "https://github.com/avalon-benchmark/avalon",
   "status": "ok",
-  "duration_s": 3.0
+  "repo_commit": "1c8f9fecb36e7169bf7c1cffc289f9fa37a5280e",
+  "duration_s": 6.0,
+  "swept_at": "2026-09-29T15:26:47+00:00",
+  "host": "skynetcpu"
 }

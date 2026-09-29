@@ -1,9 +1,21 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 46,
   "datasets": [],
   "dataset_mentions_docs_only": [],
   "hyperparameters": [
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "64",
+      "evidence": "attack.py:56"
+    },
+    {
+      "name": "temperature",
+      "canonical": "temperature",
+      "value": "0",
+      "evidence": "copyright_test.py:102"
+    },
     {
       "name": "learning_rate",
       "canonical": "learning_rate",
@@ -15,25 +27,13 @@
       "canonical": "optimizer",
       "value": "paged_adamw_32bit",
       "evidence": "finetuning.py:68"
-    },
-    {
-      "name": "temperature",
-      "canonical": "temperature",
-      "value": "0",
-      "evidence": "copyright_test.py:102"
-    },
-    {
-      "name": "batch_size",
-      "canonical": "batch_size",
-      "value": "64",
-      "evidence": "attack.py:56"
     }
   ],
   "metrics": [],
   "seeds": [
     {
       "value": "0",
-      "evidence": "proflingo.py:15"
+      "evidence": "attack.py:219"
     },
     {
       "value": "42",
@@ -43,5 +43,8 @@
   "study_id": "study086",
   "repo_url": "https://github.com/hengvt/proflingo",
   "status": "ok",
-  "duration_s": 2.9
+  "repo_commit": "1a0d70a8fa68237e11b6d67823c311b8960ed843",
+  "duration_s": 1.9,
+  "swept_at": "2026-09-29T15:31:13+00:00",
+  "host": "skynetcpu"
 }

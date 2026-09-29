@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 55,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -13,8 +13,8 @@
     {
       "name": "lr",
       "canonical": "learning_rate",
-      "value": "0.1",
-      "evidence": "atom_fitting.py:49"
+      "value": "1e-5",
+      "evidence": "test_training.py:95"
     },
     {
       "name": "weight_decay",
@@ -28,5 +28,8 @@
   "study_id": "study085",
   "repo_url": "https://github.com/mattragoza/liGAN",
   "status": "ok",
-  "duration_s": 2.0
+  "repo_commit": "593ebe6b2dd77394047c98dd440e3e89418e42c1",
+  "duration_s": 2.2,
+  "swept_at": "2026-09-29T15:31:13+00:00",
+  "host": "skynetcpu"
 }

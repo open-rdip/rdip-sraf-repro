@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 400,
   "datasets": [
     {
@@ -26,7 +26,7 @@
       "name": "Ade",
       "canonical": "ADE20K",
       "source_kind": "docs",
-      "evidence": "README.md:244: 22. Guanhua Wang, Heyang Qin, Sam Ade Jacobs, Xiaoxia Wu, Connor Holmes, Zhewei Yao, Samyam Rajbhandari, Olatu"
+      "evidence": "README.zh.md:227: 22. Guanhua Wang, Heyang Qin, Sam Ade Jacobs, Xiaoxia Wu, Connor Holmes, Zhewei Yao, Samyam Rajbhandari, Olatu"
     }
   ],
   "hyperparameters": [
@@ -45,14 +45,14 @@
     {
       "name": "batch_size",
       "canonical": "batch_size",
-      "value": "int",
-      "evidence": "static_cache.py:282"
+      "value": "8",
+      "evidence": "modelingpreln.py:179"
     },
     {
       "name": "lr",
       "canonical": "learning_rate",
       "value": "0.00015",
-      "evidence": "partial_offload_test.py:82"
+      "evidence": "ds_batch_config.json:7"
     },
     {
       "name": "num_classes",
@@ -80,20 +80,43 @@
       "evidence": "bench_multimodal_sp.py:155"
     },
     {
-      "value": "2222",
-      "evidence": "partial_offload_test.py:74"
-    },
-    {
       "value": "123",
       "evidence": "alexnet_model.py:126"
     },
     {
+      "value": "2222",
+      "evidence": "partial_offload_test.py:74"
+    },
+    {
       "value": "42",
       "evidence": "train_zero3.py:115"
+    },
+    {
+      "value": "8197",
+      "evidence": "test_he_opt_cache.py:22"
+    },
+    {
+      "value": "1",
+      "evidence": "test_affine_shard_map.py:209"
+    },
+    {
+      "value": "3",
+      "evidence": "test_affine_shard_map.py:736"
+    },
+    {
+      "value": "1234",
+      "evidence": "test_autotp_uc_checkpoint.py:1585"
+    },
+    {
+      "value": "9000",
+      "evidence": "test_autotp_uc_checkpoint.py:1621"
     }
   ],
   "study_id": "study001",
   "repo_url": "https://github.com/microsoft/DeepSpeed",
   "status": "ok",
-  "duration_s": 19.2
+  "repo_commit": "a80df94b958bf2ccbbd757891ca173fadb7c0b5d",
+  "duration_s": 22.5,
+  "swept_at": "2026-09-29T15:26:33+00:00",
+  "host": "skynetcpu"
 }

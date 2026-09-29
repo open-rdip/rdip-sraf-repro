@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 85,
   "datasets": [
     {
@@ -21,43 +21,43 @@
       "name": "BATCH_SIZE",
       "canonical": "batch_size",
       "value": "8",
-      "evidence": "baseline.yaml:4"
+      "evidence": "baseline_finetune.yaml:4"
     },
     {
       "name": "BASE_LR",
       "canonical": "learning_rate",
       "value": "0.005",
-      "evidence": "baseline.yaml:19"
+      "evidence": "baseline_finetune.yaml:21"
     },
     {
       "name": "MOMENTUM",
       "canonical": "momentum",
       "value": "0.9",
-      "evidence": "baseline.yaml:24"
+      "evidence": "baseline_finetune.yaml:26"
     },
     {
       "name": "WEIGHT_DECAY",
       "canonical": "weight_decay",
       "value": "1e-4",
-      "evidence": "baseline.yaml:25"
+      "evidence": "baseline_finetune.yaml:27"
     },
     {
       "name": "NUM_CLASSES",
       "canonical": "num_classes",
       "value": "67",
-      "evidence": "baseline.yaml:29"
-    },
-    {
-      "name": "total_epochs",
-      "canonical": "epochs",
-      "value": "0",
-      "evidence": "multigrid.py:205"
+      "evidence": "baseline_finetune.yaml:31"
     },
     {
       "name": "crop_size",
       "canonical": "image_size",
       "value": "224",
       "evidence": "utils.py:114"
+    },
+    {
+      "name": "total_epochs",
+      "canonical": "epochs",
+      "value": "0",
+      "evidence": "multigrid.py:205"
     }
   ],
   "metrics": [
@@ -78,5 +78,8 @@
   "study_id": "study039",
   "repo_url": "https://github.com/q1xiangchen/vmps",
   "status": "ok",
-  "duration_s": 1.8
+  "repo_commit": "879ec934a3d4f714ef8f9a66d87a61a758cd58bf",
+  "duration_s": 1.9,
+  "swept_at": "2026-09-29T15:28:13+00:00",
+  "host": "skynetcpu"
 }

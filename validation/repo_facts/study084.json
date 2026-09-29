@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 373,
   "datasets": [
     {
@@ -9,22 +9,16 @@
       "evidence": "convert_weights.py:22: \"model.heads.imagenet.mim_head\": \"loss.mim_loss\","
     },
     {
+      "name": "coco",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "retrieval.yaml:15: train_files: [\"./examples/albef/data_files/coco_train.json\"]"
+    },
+    {
       "name": "vg",
       "canonical": "Visual Genome",
       "source_kind": "config",
       "evidence": "vqa.yaml:14: train_files: [\"./examples/albef/data_files/vqa_train.json\", \"./examples/albef/data_files/vg_qa.json\", \"./examp"
-    },
-    {
-      "name": "coco",
-      "canonical": "COCO",
-      "source_kind": "config",
-      "evidence": "vqa.yaml:17: vqa_root: \"./examples/albef/data_files/coco\""
-    },
-    {
-      "name": "wikitext",
-      "canonical": "WikiText",
-      "source_kind": "config",
-      "evidence": "4.8b.yaml:44: key: wikitext"
     },
     {
       "name": "glue",
@@ -33,16 +27,22 @@
       "evidence": "qnli.yaml:42: key: glue"
     },
     {
-      "name": "sunrgbd",
-      "canonical": "SUN RGB-D",
+      "name": "wikitext",
+      "canonical": "WikiText",
       "source_kind": "config",
-      "evidence": "omnivore.py:40: def _sunrgbd_head(input_dim: int) -> nn.Module:"
+      "evidence": "debug.yaml:42: key: wikitext"
     },
     {
       "name": "c4",
       "canonical": "C4",
       "source_kind": "config",
       "evidence": "test_two_tower.py:42: {\"c3\": nn.Identity(), \"c4\": nn.Identity()},"
+    },
+    {
+      "name": "sunrgbd",
+      "canonical": "SUN RGB-D",
+      "source_kind": "config",
+      "evidence": "train.py:687: \"--sunrgbd-data-path\", type=str, help=\"Root directory path of sunrgbd dataset\""
     }
   ],
   "dataset_mentions_docs_only": [
@@ -58,37 +58,37 @@
       "name": "batch_size",
       "canonical": "batch_size",
       "value": "32",
-      "evidence": "vqa.yaml:19"
+      "evidence": "retrieval.yaml:18"
     },
     {
       "name": "image_size",
       "canonical": "image_size",
       "value": "384",
-      "evidence": "vqa.yaml:24"
+      "evidence": "retrieval.yaml:23"
     },
     {
       "name": "dropout",
       "canonical": "dropout",
       "value": "0.0",
-      "evidence": "vqa.yaml:29"
+      "evidence": "retrieval.yaml:28"
     },
     {
       "name": "weight_decay",
       "canonical": "weight_decay",
       "value": "0.02",
-      "evidence": "vqa.yaml:68"
+      "evidence": "retrieval.yaml:63"
     },
     {
       "name": "lr",
       "canonical": "learning_rate",
-      "value": "2e-5",
-      "evidence": "vqa.yaml:69"
+      "value": "1e-5",
+      "evidence": "retrieval.yaml:64"
     },
     {
       "name": "max_epochs",
       "canonical": "epochs",
-      "value": "8",
-      "evidence": "vqa.yaml:71"
+      "value": "5",
+      "evidence": "retrieval.yaml:66"
     },
     {
       "name": "num_classes",
@@ -103,18 +103,6 @@
       "evidence": "train.py"
     },
     {
-      "name": "max_iters",
-      "canonical": "iterations",
-      "value": "int",
-      "evidence": "utils.py:68"
-    },
-    {
-      "name": "warmup_iters",
-      "canonical": "warmup",
-      "value": "int",
-      "evidence": "utils.py:69"
-    },
-    {
       "name": "temperature",
       "canonical": "temperature",
       "value": "0.07",
@@ -125,6 +113,18 @@
       "canonical": "optimizer",
       "value": "adam",
       "evidence": "args_parse.py"
+    },
+    {
+      "name": "max_iters",
+      "canonical": "iterations",
+      "value": "int",
+      "evidence": "utils.py:68"
+    },
+    {
+      "name": "warmup_iters",
+      "canonical": "warmup",
+      "value": "int",
+      "evidence": "utils.py:69"
     }
   ],
   "metrics": [
@@ -138,11 +138,11 @@
   "seeds": [
     {
       "value": "42",
-      "evidence": "vqa.yaml:7"
+      "evidence": "retrieval.yaml:8"
     },
     {
       "value": "1337",
-      "evidence": "4.8b.yaml:3"
+      "evidence": "900m.yaml:3"
     },
     {
       "value": "1",
@@ -160,5 +160,8 @@
   "study_id": "study084",
   "repo_url": "https://github.com/facebookresearch/multimodal",
   "status": "ok",
-  "duration_s": 3.2
+  "repo_commit": "e54f602d1cb33f8a5deb3540955271c4223f7c9c",
+  "duration_s": 5.0,
+  "swept_at": "2026-09-29T15:31:16+00:00",
+  "host": "skynetcpu"
 }

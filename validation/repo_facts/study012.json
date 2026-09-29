@@ -1,12 +1,18 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 400,
   "datasets": [
     {
       "name": "VOC",
       "canonical": "PASCAL VOC",
       "source_kind": "config",
-      "evidence": "pascal_context.py:40: description='Convert PASCAL VOC annotations to mmsegmentation format')"
+      "evidence": "voc_aug.py:27: description='Convert PASCAL VOC annotations to mmsegmentation format')"
+    },
+    {
+      "name": "COCO",
+      "canonical": "COCO",
+      "source_kind": "config",
+      "evidence": "coco_stuff164k.py:13: COCO_LEN = 123287"
     },
     {
       "name": "Cityscapes",
@@ -15,90 +21,71 @@
       "evidence": "cityscapes.py:17: description='Convert Cityscapes annotations to TrainIds')"
     },
     {
-      "name": "COCO",
-      "canonical": "COCO",
-      "source_kind": "config",
-      "evidence": "coco_stuff10k.py:13: COCO_LEN = 10000"
-    },
-    {
-      "name": "ADE20K",
+      "name": "ade20k",
       "canonical": "ADE20K",
       "source_kind": "config",
-      "evidence": "metafile.yaml:6: - ADE20K"
-    },
-    {
-      "name": "imagenet1k",
-      "canonical": "ImageNet",
-      "source_kind": "config",
-      "evidence": "pidnet-s_2xb6-120k_1024x1024-cityscapes.py:13: checkpoint_file = 'https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/pidnet/pidnet-s_imagenet1k_2023"
+      "evidence": "mask2former_r50_8xb2-160k_ade20k-512x512.py:1: _base_ = ['../_base_/default_runtime.py', '../_base_/datasets/ade20k.py']"
     }
   ],
   "dataset_mentions_docs_only": [
     {
-      "name": "KITTI",
-      "canonical": "KITTI",
+      "name": "ImageNet",
+      "canonical": "ImageNet",
       "source_kind": "docs",
-      "evidence": "README.md:17: We introduce dense vision transformers, an architecture that leverages vision transformers in place of convolu"
+      "evidence": "README.md:17: The \"Roaring 20s\" of visual recognition began with the introduction of Vision Transformers (ViTs), which quick"
+    },
+    {
+      "name": "CIFAR-10",
+      "canonical": "CIFAR-10",
+      "source_kind": "docs",
+      "evidence": "README.md:17: Recent work has made significant progress in improving spatial resolution for pixelwise labeling with Fully Co"
     }
   ],
   "hyperparameters": [
     {
       "name": "num_classes",
       "canonical": "num_classes",
-      "value": "11",
-      "evidence": "unet-s5-d16_fcn_4xb4-160k_hsidrive-192x384.py:20"
+      "value": "150",
+      "evidence": "mask2former_r50_8xb2-160k_ade20k-512x512.py:15"
     },
     {
-      "name": "iters",
-      "canonical": "iterations",
-      "value": "120000",
-      "evidence": "pidnet-s_2xb6-120k_1024x1024-cityscapes.py:85"
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.0",
+      "evidence": "mask2former_r50_8xb2-160k_ade20k-512x512.py:53"
     },
     {
       "name": "batch_size",
       "canonical": "batch_size",
       "value": "1",
       "evidence": "san-vit-b16_voc12aug-640x640.py:26"
+    },
+    {
+      "name": "max_iters",
+      "canonical": "iterations",
+      "value": "60000",
+      "evidence": "san-vit-b16_coco-stuff164k-640x640.py:46"
     }
   ],
   "metrics": [
     {
-      "name": "Dice",
-      "canonical": "Dice",
-      "signal": "metric_api",
-      "evidence": "README.md:35"
-    },
-    {
       "name": "mIoU",
       "canonical": "mIoU",
       "signal": "cli_flag",
-      "evidence": "metafile.yaml:23"
-    },
-    {
-      "name": "mDice",
-      "canonical": "mDice",
-      "signal": "cli_flag",
-      "evidence": "metafile.yaml:48"
-    },
-    {
-      "name": "RMSE",
-      "canonical": "RMSE",
-      "signal": "cli_flag",
-      "evidence": "metafile.yaml:19"
+      "evidence": "metafile.yaml:21"
     }
   ],
   "seeds": [
     {
       "value": "3",
       "evidence": "pytorch2torchscript.py:14"
-    },
-    {
-      "value": "304",
-      "evidence": "pidnet-s_2xb6-120k_1024x1024-cityscapes.py:113"
     }
   ],
   "study_id": "study012",
   "repo_url": "https://github.com/open-mmlab/mmsegmentation",
   "status": "ok",
-  "duration_s": 4.8
+  "repo_commit": "b040e147adfa027bbc071b624bedf0ae84dfc922",
+  "duration_s": 6.9,
+  "swept_at": "2026-09-29T15:26:48+00:00",
+  "host": "skynetcpu"
 }

@@ -1,18 +1,18 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 69,
   "datasets": [
     {
       "name": "Wikitext",
       "canonical": "WikiText",
       "source_kind": "config",
-      "evidence": "train_wiki.py:41: parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 RNN/LSTM Language Model')"
+      "evidence": "train_copying.py:43: parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 RNN/LSTM Language Model')"
     },
     {
       "name": "mnist",
       "canonical": "MNIST",
       "source_kind": "config",
-      "evidence": "mnist_seq_data_classify.py:28: def mnist_data(path):"
+      "evidence": "train_cifar.py:304: def mnist_prep(x, test_upsample=inp_size):"
     },
     {
       "name": "CIFAR10",
@@ -33,25 +33,25 @@
       "name": "lr",
       "canonical": "learning_rate",
       "value": "0.001",
-      "evidence": "train_wiki.py"
+      "evidence": "train_copying.py"
     },
     {
       "name": "epochs",
       "canonical": "epochs",
-      "value": "1000",
-      "evidence": "train_wiki.py"
+      "value": "200",
+      "evidence": "train_copying.py"
     },
     {
       "name": "batch_size",
       "canonical": "batch_size",
       "value": "64",
-      "evidence": "train_wiki.py"
+      "evidence": "train_copying.py"
     },
     {
       "name": "dropout",
       "canonical": "dropout",
       "value": "0.5",
-      "evidence": "train_wiki.py"
+      "evidence": "train_copying.py"
     },
     {
       "name": "momentum",
@@ -70,7 +70,11 @@
   "seeds": [
     {
       "value": "0",
-      "evidence": "run_all.yaml:7"
+      "evidence": "train_copying.py:6"
+    },
+    {
+      "value": "42",
+      "evidence": "splitcross.py:174"
     },
     {
       "value": "1",
@@ -107,14 +111,13 @@
     {
       "value": "9",
       "evidence": "run_all.yaml:178"
-    },
-    {
-      "value": "42",
-      "evidence": "splitcross.py:174"
     }
   ],
   "study_id": "study082",
   "repo_url": "https://github.com/anirudh9119/RIMs",
   "status": "ok",
-  "duration_s": 1.4
+  "repo_commit": "aa61773a949c1e3f499d4c05dd77fcd2adbffa19",
+  "duration_s": 2.1,
+  "swept_at": "2026-09-29T15:31:13+00:00",
+  "host": "skynetcpu"
 }

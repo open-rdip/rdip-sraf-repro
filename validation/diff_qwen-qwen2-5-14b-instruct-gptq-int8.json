@@ -1,0 +1,3503 @@
+[
+  {
+    "study_id": "study001",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "not explicitly stated",
+        "repo": "0.00015",
+        "detail": "ds_batch_config.json:7"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "OPT",
+        "BLOOM (BLM)"
+      ],
+      "metric": [
+        "performance discrepancy",
+        "accuracy loss",
+        "PPL degradation",
+        "performance"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 6,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study002",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": ".01",
+        "repo": "0.02",
+        "detail": "test_regression_muon.py:59"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "optimizer",
+        "paper": "ADAM",
+        "repo": "Muon",
+        "detail": "test_regression_muon.py:53"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "KINSHIP",
+        "UMLS",
+        "WN18RR",
+        "FB15K-237",
+        "YAGO3-10"
+      ],
+      "metric": [
+        "filteredMeanReciprocalRank (MRR)",
+        "hitsatN (H@N)",
+        "Hi@1",
+        "H@3",
+        "H@10"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 10,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study003",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "16",
+        "repo": "2",
+        "detail": "coco_detection.py:23"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "momentum",
+        "paper": "0.05",
+        "repo": "0.0002",
+        "detail": "rtmdet_s_8xb32_300e_coco.py:81"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "RCOD",
+        "COD10K-D",
+        "NC4K-D",
+        "CAMO-D",
+        "COD10K-v2"
+      ],
+      "metric": [
+        "AP50",
+        "AP75",
+        "APm",
+        "APl",
+        "mAP (IoU)",
+        "AP50",
+        "AP75",
+        "APm",
+        "APl",
+        "AP50",
+        "AP75",
+        "APm",
+        "APl"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 18,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study004",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "repo_silent",
+      "hyperparameter": "both_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "synthetic dataset",
+        "Synthetic Data"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 2,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study005",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "dataset_mismatch",
+        "paper": [
+          "COCO",
+          "Visual Genome"
+        ],
+        "repo": [
+          "C4",
+          "ImageNet",
+          "LSUN"
+        ],
+        "detail": "no canonical dataset is named on both sides"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "2048",
+        "repo": "10",
+        "detail": "sample_diffusion.py"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "0.0001",
+        "repo": "5e-05",
+        "detail": "utils.py"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "weight_decay",
+        "paper": "0.01",
+        "repo": "1.e-2",
+        "detail": "classifier.py:38"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "public and proprietary datasets"
+      ],
+      "metric": [
+        "zero-shot text-to-image generation performance",
+        "CLIP-FID trade-off",
+        "CLIP-FID trade-off"
+      ]
+    },
+    "counts": {
+      "conflicts": 4,
+      "unmapped_paper_names": 4,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study006",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "1",
+          "2",
+          "3"
+        ],
+        "repo": [
+          "10"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Stochastic MuJoCo tasks",
+        "Adroit",
+        "AntMaze",
+        "Cloned",
+        "Expert"
+      ],
+      "metric": [
+        "performance",
+        "score",
+        "performance",
+        "average success rate",
+        "success rate",
+        "success rate",
+        "success rate",
+        "success rate",
+        "success rate",
+        "average score",
+        "average score"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 16,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study007",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "averaged undiscounted episodic return",
+        "evaluation return",
+        "evaluation return"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 3,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study008",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "4\u00d710\u22125",
+        "repo": "float",
+        "detail": "get_optimizer.py:6"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "CulturaX",
+        "OSCAR23.01",
+        "AlGhafa-T"
+      ],
+      "metric": [
+        "training speed"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 4,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study009",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "image_size",
+        "paper": "640x640",
+        "repo": "256",
+        "detail": "demo.py:57"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "COCO2017",
+        "CrowdPose"
+      ],
+      "metric": [
+        "APM",
+        "APH"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 4,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study010",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "IC13",
+        "IC15"
+      ],
+      "metric": [
+        "word accuracy"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 3,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study011",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "128",
+        "repo": "32",
+        "detail": "clip_vit-base-p16_zeroshot-cls_cifar100.py:22"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "epochs",
+        "paper": "200",
+        "repo": "100",
+        "detail": "metafile.yml:19"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "speed",
+        "Inference speed w/o re-param"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 2,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study012",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "Accuracy",
+        "paper": "Accuracy",
+        "repo": [
+          "mIoU"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "PQ",
+        "paper": "PQ",
+        "repo": [
+          "mIoU"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "COCO Panoptic"
+      ],
+      "metric": [
+        "compute",
+        "performance"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 3,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study013",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "128",
+        "repo": "1",
+        "detail": "registrations.py:46"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "COOS-7",
+        "COOS",
+        "Training",
+        "Test1",
+        "Test2",
+        "Test3",
+        "Test4",
+        "Training dataset"
+      ],
+      "metric": [
+        "balanced_classification_error",
+        "balanced_classification_error",
+        "balanced_classification_error",
+        "balanced_classification_error"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 12,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study014",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "mAP (0.25)"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 1,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study015",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "both_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {},
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 0,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study016",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "average scores"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 1,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study017",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "repo_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "PanNuke",
+        "MoNuSac",
+        "BRACS",
+        "BACH",
+        "UZH",
+        "SICAPv2"
+      ],
+      "metric": [
+        "Run time for Preprocessing Vahadane Stain Norm",
+        "Run time for Preprocessing Vahadane Stain Norm",
+        "Run time for Preprocessing Vahadane Stain Norm",
+        "Run time for Preprocessing Vahadane Stain Norm",
+        "Run time for Preprocessing Vahadane Stain Norm",
+        "Run time for Preprocessing Macenko Stain Norm",
+        "Run time for Preprocessing Macenko Stain Norm",
+        "Run time for Preprocessing Macenko Stain Norm",
+        "Run time for Preprocessing Macenko Stain Norm",
+        "Run time for Preprocessing Macenko Stain Norm",
+        "Run time for Tissue Mask Detection",
+        "Run time for Tissue Mask Detection",
+        "Run time for Feature Cube Extraction",
+        "Run time for Feature Cube Extraction",
+        "Run time for Feature Cube Extraction",
+        "Run time for Feature Cube Extraction",
+        "Run time for Feature Cube Extraction",
+        "Run time for Cell-Graph Generation",
+        "Run time for Cell-Graph Generation",
+        "Run time for Cell-Graph Generation",
+        "Run time for Tissue-Graph Generation",
+        "Run time for Tissue-Graph Generation",
+        "Run time for Tissue-Graph Generation",
+        "Run time for Tissue-Graph Generation",
+        "Run time for Tissue-Graph Generation",
+        "Run time for MLCell-Graph Model",
+        "Run time for MLCell-Graph Model",
+        "Run time for MLCell-Graph Model",
+        "weighted-F1 score",
+        "average Dice score"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 36,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study018",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "AP",
+        "paper": "AP",
+        "repo": [
+          "Mask AP",
+          "mAP"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "COCO minival"
+      ],
+      "metric": [
+        "Train APbb",
+        "APbb 50",
+        "APbb 75",
+        "APm 50",
+        "APm 75",
+        "AP50",
+        "AP75",
+        "APS",
+        "APM",
+        "APL",
+        "bbox AP",
+        "mask AP",
+        "mAP improvement"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 14,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study019",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "MAE",
+        "paper": "MAE",
+        "repo": [
+          "AP",
+          "Mask AP",
+          "Recall",
+          "mAP"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "mIoU",
+        "paper": "mIoU",
+        "repo": [
+          "AP",
+          "Mask AP",
+          "Recall",
+          "mAP"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "DUT-OMRON",
+        "augmented PASCAL VOC12"
+      ],
+      "metric": [
+        "top-1 error",
+        "Runtime",
+        "F-measure",
+        "AP 50",
+        "AP 75",
+        "AP M",
+        "AP L"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 9,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study020",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "mammograms",
+        "CSAW-M"
+      ],
+      "metric": [
+        "F1-score",
+        "area under the ROC curve (AUC)",
+        "composite endpoint (CEP)",
+        "odds ratio (OR)",
+        "average mean absolute error (AMAE)",
+        "Kendall\u2019s \u03c4b"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 8,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study021",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "GQA"
+      ],
+      "metric": [
+        "R@K",
+        "mR@K",
+        "highest confidence",
+        "suitable predicates",
+        "PredCls",
+        "SGCls",
+        "SGDet",
+        "R@50",
+        "mR@50",
+        "F@50",
+        "F@K"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 12,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study022",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "12000",
+        "repo": "1024",
+        "detail": "DCN_tiny_parquet_tuner_config.yaml:21"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Pinterest Homefeed view log",
+        "FVL",
+        "Pinterest Homefeed view log (FVL)"
+      ],
+      "metric": [
+        "model accuracy"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 4,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study023",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "temperature",
+        "paper": "0",
+        "repo": "0.3",
+        "detail": "test_thinking_effort.py:299"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "success rate",
+        "Completion Rate (CR)",
+        "Decision Accuracy (DA)",
+        "Reflection Accuracy (RA)",
+        "success rate",
+        "average improvement in success rate",
+        "completion rate"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 7,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study024",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "success_probability",
+        "Tmax",
+        "Tpulse",
+        "TTS"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 4,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study025",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "IXI dataset",
+        "Learn2Reg Challenge"
+      ],
+      "metric": [
+        "performance",
+        "inference time",
+        "mean DSC",
+        "HD95",
+        "TRE30",
+        "SDLogJ",
+        "Dice similarity coefficient (DSC)",
+        "Number of non-diffeomorphic voxels (ND V oxels)",
+        "Non-diffeomorphic volume (ND V olume)",
+        "Dice similarity coefficient (DSC)",
+        "Number of non-diffeomorphic voxels (ND V oxels)",
+        "Non-diffeomorphic volume (ND V olume)",
+        "TRE"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 15,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study026",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "AP",
+        "paper": "AP",
+        "repo": [
+          "Mask AP",
+          "mAP"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "BDD"
+      ],
+      "metric": [
+        "wall-clock time",
+        "AP (%)"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 3,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study027",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "epochs",
+        "paper": "32",
+        "repo": "50",
+        "detail": "colon.yaml:20"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "1e-4",
+        "repo": "3.0e-4",
+        "detail": "colon.yaml:19"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "optimizer",
+        "paper": "AdamW",
+        "repo": "Adam",
+        "detail": "colon.yaml:17"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "IEO cohort",
+        "GECCO consortium datasets",
+        "PathoBench dataset",
+        "CPTAC pancreatic ductal adenocarcinoma (PDA) cohort",
+        "PathoBench",
+        "CHIEF pretraining dataset",
+        "DACHS"
+      ],
+      "metric": [
+        "Time",
+        "FLOPs",
+        "AUPRC",
+        "Balanced Accuracy",
+        "F1 Scores"
+      ]
+    },
+    "counts": {
+      "conflicts": 3,
+      "unmapped_paper_names": 12,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study028",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "64",
+        "repo": "32",
+        "detail": "run_training.py"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "AUC",
+        "paper": "AUC",
+        "repo": [
+          "Accuracy"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Chexpert",
+        "officially split validation dataset",
+        "RSNA dataset",
+        "NIH chest radiograph dataset",
+        "Zhanglab",
+        "RSNA"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 6,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study029",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Cora",
+        "arxiv",
+        "Flickr",
+        "A-computers",
+        "ogbn-arxiv",
+        "Reddit",
+        "ogbn-products",
+        "training dataset",
+        "A-photo"
+      ],
+      "metric": [
+        "success rate",
+        "accuracy dropdown",
+        "average accuracy drop",
+        "negative drop in accuracy",
+        "test accuracy drop",
+        "Accuracy (Acc)",
+        "DrawDown (DD)",
+        "Success Rate (SR)",
+        "drawdown",
+        "drawdown"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 19,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study030",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "dataset_mismatch",
+        "paper": [
+          "COCO",
+          "ImageNet"
+        ],
+        "repo": [
+          "Visual Genome"
+        ],
+        "detail": "no canonical dataset is named on both sides"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "repo_silent",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "CrowdPose",
+        "PoseTrack",
+        "PoseTrack 2018",
+        "PoseTrack 2017"
+      ],
+      "metric": [
+        "pose predictions",
+        "AP0.50",
+        "AP0.75",
+        "APEasy",
+        "APMedium",
+        "APHard",
+        "FPS",
+        "time per image",
+        "time per image (V100)",
+        "MOTA",
+        "MOTP",
+        "MOTP"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 16,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study031",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "1"
+        ],
+        "repo": [
+          "42"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "all datasets",
+        "phytoplankton anomaly dataset",
+        "derived dataset for object detection"
+      ],
+      "metric": [
+        "value",
+        "F1 score",
+        "true positive (TP)",
+        "true negative (TN)"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 7,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study032",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "WOMD",
+        "Waymo Open Motion Dataset (WOMD)"
+      ],
+      "metric": [
+        "soft mAP",
+        "Prediction overlap",
+        "Prediction overlap",
+        "minADE",
+        "minFDE",
+        "Miss Rate",
+        "Soft mAP",
+        "miss rate",
+        "prediction overlap rate",
+        "prediction overlap rate",
+        "minADE",
+        "minFDE"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 14,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study033",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "repo_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "SYN",
+        "CL1",
+        "CL2"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 3,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study034",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "RMSE",
+        "paper": "RMSE",
+        "repo": [
+          "PQ",
+          "RQ",
+          "SQ"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Matterport3D",
+        "3D-Front",
+        "Front-3D"
+      ],
+      "metric": [
+        "PRQ",
+        "thing classes",
+        "stuff classes",
+        "DPQ",
+        "3D PRQ",
+        "stuff PRQ",
+        "things PRQ",
+        "thing PRQ"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 11,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study035",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "horse \u2192 zebra",
+        "edges \u2192 shoes",
+        "horse\u2192zebra",
+        "edges\u2192shoes",
+        "map\u2192aerial photo"
+      ],
+      "metric": [
+        "training time",
+        "inference speed",
+        "training acceleration",
+        "search cost reduction",
+        "Fr\u00e9chet Inception Distance (FID)",
+        "Performance",
+        "LPIPS"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 12,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study036",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "GPQA",
+        "GPQA Diamond",
+        "extended set of questions"
+      ],
+      "metric": [
+        "abstention rate",
+        "Validator Accuracy",
+        "Validator Accuracy"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 6,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study037",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "10^-3",
+        "repo": "generator_lr",
+        "detail": "trainers.py:373"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {},
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 0,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study038",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "single-cell gene expression dataset",
+        "Morpho-MNIST"
+      ],
+      "metric": [
+        "R2",
+        "Pearson's R2"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 4,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study039",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Kinetics-400",
+        "Kinetics-600",
+        "FineGym",
+        "HMDB-51",
+        "MPII Cooking 2"
+      ],
+      "metric": [
+        "performance gain",
+        "Top-1 mean average precision",
+        "Top-1 accuracy",
+        "accuracy improvement",
+        "accuracy improvement",
+        "accuracy improvement",
+        "average accuracy improvement"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 12,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study040",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "2021",
+          "42"
+        ],
+        "repo": [
+          "0"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "ILI",
+        "Electricity",
+        "Traffic",
+        "Weather"
+      ],
+      "metric": [
+        "forecasting accuracy"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 5,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study041",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "both_silent",
+      "metric": "both_silent",
+      "dependency": "repo_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Rust libraries on crates.io"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 1,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study042",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "DressCode",
+        "VITON-HD"
+      ],
+      "metric": [
+        "warped garment items",
+        "all metrics"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 4,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study043",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "internal dataset",
+        "VCTK"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 2,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study044",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "COCONUT",
+        "Math500",
+        "AIME 2024",
+        "GSM8K",
+        "GPQA-Diamond",
+        "HumanEval",
+        "MBPPMBPP",
+        "LiveCodeBench"
+      ],
+      "metric": [
+        "correct answers",
+        "generation length",
+        "correct solutions",
+        "token efficiency",
+        "Pass@1"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 13,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study045",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "0",
+          "3",
+          "7"
+        ],
+        "repo": [
+          "1234"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "QM9",
+        "PCQM4Mv2",
+        "OC20",
+        "DES15K",
+        "S2EF"
+      ],
+      "metric": [
+        "test MAE",
+        "SOTA",
+        "Gradient step (thousands)",
+        "Trajectory energy MAE",
+        "Trajectory energy MAE",
+        "Trajectory energy MAE",
+        "Trajectory energy MAE",
+        "Training data size (QM9)",
+        "Test MAE (HOMO)",
+        "Test MAE (HOMO)",
+        "Pre-training data size (PCQM4Mv2)",
+        "Test MAE (HOMO)",
+        "Test MAE (HOMO)"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 18,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study046",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "momentum",
+        "paper": "0.9",
+        "repo": "0.843",
+        "detail": "hyp.finetune.yaml:13"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "weight_decay",
+        "paper": "0.0005",
+        "repo": "0.00036",
+        "detail": "hyp.finetune.yaml:14"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "weld defect dataset",
+        "COCO trainval35k"
+      ],
+      "metric": [
+        "mAP 50",
+        "FLOPs",
+        "Params",
+        "FPS",
+        "mAP 50",
+        "FPS",
+        "FLOPs",
+        "Params",
+        "mAP 50",
+        "FLOPs(G)",
+        "Params(M)"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 13,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study047",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "epochs",
+        "paper": "100",
+        "repo": "10",
+        "detail": "sinkpit_wrapper_test.py:141"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Microsoft's internal gender-balanced clean speech collection",
+        "benchmarking dataset"
+      ],
+      "metric": [
+        "signal-to-distortion ratio improvement",
+        "SI-SNR improvement",
+        "word error rate"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 5,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study048",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Cambridge Cluster Database",
+        "Lennard-Jones clusters"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 2,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study049",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {},
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 0,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study050",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "0.1",
+        "repo": "1e-2",
+        "detail": "tabular_class.py:17"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Taxi"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 1,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study051",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "both_silent",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {},
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 0,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study052",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "three_small_datasets",
+        "MNIST 2 vs. 6",
+        "other_datasets"
+      ],
+      "metric": [
+        "average_\u2113\u221edistortion",
+        "average \u2113\u221edistortion"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 5,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study053",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "3"
+        ],
+        "repo": [
+          "1"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "SUN397",
+        "Aircraft",
+        "EuroSAT",
+        "Stanford-Cars",
+        "Food101",
+        "OxfordPets",
+        "Flower102",
+        "Caltech101",
+        "DTD",
+        "UCF101"
+      ],
+      "metric": [
+        "top-1 accuracy"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 11,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study054",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {},
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 0,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study055",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {},
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 0,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study056",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "speed-up over Geant4",
+        "generative fidelity",
+        "Time / Shower [s]",
+        "Time / Shower [s]",
+        "Time / Shower [s]",
+        "Time / Shower [s]",
+        "Time / Shower [s]",
+        "Time / Shower [s]",
+        "Time / Shower [s]",
+        "Time / Shower [s]"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 10,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study057",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "512",
+        "repo": "32",
+        "detail": "finetune.py"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "DR9"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 1,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study058",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {},
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 0,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study059",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "R8",
+        "five datasets",
+        "Reuters8"
+      ],
+      "metric": [
+        "performance gain",
+        "performance gain",
+        "Task-averaged Test Accuracy (TTA)"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 6,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study060",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "32",
+        "repo": "1",
+        "detail": "hparams.py:353"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "0.00015",
+        "repo": "0.0003",
+        "detail": "hparams.py:488"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "weight_decay",
+        "paper": "0.002",
+        "repo": "0.0",
+        "detail": "hparams.py:493"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "dataset",
+        "MAESTRO",
+        "held-out 3-second audio segments"
+      ],
+      "metric": [
+        "spectral convergence (dB)"
+      ]
+    },
+    "counts": {
+      "conflicts": 3,
+      "unmapped_paper_names": 4,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study061",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "both_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "curated set of 33 episodes"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 1,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study062",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {},
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 0,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study063",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "Accuracy",
+        "paper": "Accuracy",
+        "repo": [
+          "BLEU"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "WER",
+        "paper": "WER",
+        "repo": [
+          "BLEU"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "VoxPopuli",
+        "MLS",
+        "Meanwhile",
+        "Kincaid46",
+        "Fleurs",
+        "Whisper dataset",
+        "Whisper"
+      ],
+      "metric": [
+        "performance",
+        "squared correlation coefficient",
+        "regression coefficient for a linear fit"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 10,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study064",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "3e-4",
+        "repo": "1e-3",
+        "detail": "single_timeframe.yml:22"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Lyft dataset",
+        "Lyft"
+      ],
+      "metric": [
+        "Video Panoptic Quality (VQP)"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 3,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study065",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "both_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "AMI Meeting Corpus",
+        "SNLI dataset"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 2,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study066",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "repo_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "COCO-2017"
+      ],
+      "metric": [
+        "inference speed",
+        "number of parameters",
+        "accuracy trade-off",
+        "Throughput (img/sec)",
+        "Accuracy (%)",
+        "box mAP"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 7,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study067",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "5"
+        ],
+        "repo": [
+          "55969672"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {},
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 0,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study068",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "ShapeNetCore"
+      ],
+      "metric": [
+        "classification accuracy",
+        "Chamfer distance",
+        "Chamfer loss",
+        "GFV loss",
+        "LDis",
+        "classification"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 7,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study069",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "CORA",
+        "CITE",
+        "AMAP",
+        "BAT",
+        "EAT",
+        "UAT"
+      ],
+      "metric": [
+        "loss",
+        "clustering ACC",
+        "NMI",
+        "NMI"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 10,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study070",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "temperature",
+        "paper": "0",
+        "repo": "temp",
+        "detail": "codegen_completion.py:124"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "MultiWOZ 2.1",
+        "MultiWOZ 2.4",
+        "MultiWOZ"
+      ],
+      "metric": [
+        "joint goal accuracy (JGA)",
+        "all-domain JGA",
+        "all-domain JGA",
+        "all-domain JGA",
+        "all-domain JGA",
+        "per-domain JGA",
+        "per-domain JGA",
+        "per-domain JGA",
+        "per-domain JGA",
+        "F1 on slot-value pairs",
+        "JGA",
+        "JGA",
+        "JGA"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 16,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study071",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "3e-6",
+        "repo": "auto",
+        "detail": "deepspeed_accelerator.py:25"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "repo_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Pick-a-Pic",
+        "yuvalkirstain/pickapic_v1",
+        "yuvalkirstain/pickapic_v2"
+      ],
+      "metric": [
+        "Comparison Win Rate",
+        "Percentage of prompts",
+        "percentage of prompts with higher aesthetic score",
+        "percentage of PickScore's choices with higher CLIP-H text-alignment score",
+        "win ratio",
+        "tie ratio",
+        "lose ratio",
+        "Win rate",
+        "Tie rate",
+        "Lose rate",
+        "User preference"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 14,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study072",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "repo_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Food-101",
+        "mini-ImageNet"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 2,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study073",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "AUC",
+        "paper": "AUC",
+        "repo": [
+          "Top-1 accuracy"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "YCB-Video",
+        "LINEMOD"
+      ],
+      "metric": [
+        "AUC of ADD",
+        "AUC of ADD-S",
+        "AUC of ADD",
+        "AUC of ADD-S",
+        "ADD",
+        "ADD-S",
+        "AUC (%)",
+        "Area under the curve (AUC) of ADD and ADD-S",
+        "Recall of ADD that is less than 0.1 of the object diameter (ADD-0.1d)",
+        "Average recall (AR) of VSD, MSSD and MSPD"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 12,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study074",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "both_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {},
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 0,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study075",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "both_silent",
+      "metric": "paper_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "micelle-micelle RDF match"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 1,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study076",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "real-world heterogeneous attributed multilayer network",
+        "synthetic",
+        "real-world",
+        "synthetic datasets"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 4,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study077",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "GSM8K",
+        "MBPP"
+      ],
+      "metric": [
+        "performance",
+        "Solve Rate",
+        "Score"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 5,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study078",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "both_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "approximation error",
+        "communication overhead",
+        "speedup ratio"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 3,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study079",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "16",
+        "repo": "32",
+        "detail": "question_clustering.py:49"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "2e-5",
+        "repo": "5.0e-7",
+        "detail": "config_full.yaml:22"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "HQ2A",
+        "ASQA",
+        "ELI5"
+      ],
+      "metric": [
+        "Tiger-Score",
+        "error scores",
+        "error scores",
+        "quality of generation",
+        "quality of generation",
+        "Error samples",
+        "Error score",
+        "F1 score"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 11,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study080",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "PASTURE",
+        "ROBOTHOR",
+        "HABITAT (MP3D)",
+        "R OBOTHOR",
+        "H ABI- TAT",
+        "P ASTURE",
+        "LAION-5B"
+      ],
+      "metric": [
+        "SUCCESS (SR)",
+        "Success weighted by inverse path length (SPL)",
+        "Average success",
+        "Finding uncommon objects (Uncom.)",
+        "Performance with distractor objects (distract)",
+        "Natural language specification",
+        "MP3D S UCCESS",
+        "improvement over EmbCLIP-ZSON R OBOTHOR",
+        "S UCCESS"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 16,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study081",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "32",
+        "repo": "8",
+        "detail": "synthesize.py:262"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "LJ Speech corpus"
+      ],
+      "metric": [
+        "IDMUSHRA score"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 2,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study082",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "7\u00b710\u22124",
+        "repo": "0.001",
+        "detail": "train_copying.py"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Sequential MNIST Resolution Task"
+      ],
+      "metric": [
+        "Cross Entropy (CE)",
+        "F1 score"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 3,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study083",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "LPMC",
+        "NTS"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 2,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study084",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "512",
+        "repo": "32",
+        "detail": "retrieval.yaml:18"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "NLVR2",
+        "Flickr30K",
+        "Conceptual 12M",
+        "other_dataset",
+        "Conceptual Captions",
+        "SBU Captions",
+        "RefCOCO+"
+      ],
+      "metric": [
+        "dev",
+        "test-P",
+        "TR",
+        "IR",
+        "SNLI-VE",
+        "NLVR2",
+        "VQA"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 14,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study085",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "8",
+        "repo": "min_batch_size",
+        "detail": "memory.py:44"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "protein-ligand complex",
+        "CrossDocked2020"
+      ],
+      "metric": [
+        "validity"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 3,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study086",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "512",
+        "repo": "64",
+        "detail": "attack.py:56"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Llama-2-7b",
+        "240,000 samples",
+        "D"
+      ],
+      "metric": [
+        "TRR",
+        "performance",
+        "TRR (Ours)",
+        "TRR (Ours)",
+        "TRR (Ours)",
+        "TRR (Ours)",
+        "TRR (Ours)",
+        "TRR (Ours)"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 11,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study087",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Pascal-5i",
+        "COCO-20i"
+      ],
+      "metric": [
+        "classification exact ratio",
+        "segmentation mIoU",
+        "ER"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 5,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study088",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "dataset_mismatch",
+        "paper": [
+          "ADE20K",
+          "COCO",
+          "ImageNet"
+        ],
+        "repo": [
+          "C4"
+        ],
+        "detail": "no canonical dataset is named on both sides"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "repo_silent",
+      "metric": "repo_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "not explicitly named but implied to be a segmentation dataset with 25K images"
+      ],
+      "metric": [
+        "top-1 accuracy",
+        "box AP",
+        "mask AP",
+        "speed-up",
+        "efficiency",
+        "speed",
+        "top-1 accuracy",
+        "box AP",
+        "mask AP"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 10,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study089",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "repo_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "CASME II",
+        "SAMM",
+        "SMIC"
+      ],
+      "metric": [
+        "WF1",
+        "EPE",
+        "WF1",
+        "inter-ocular distance normalized mean error",
+        "failure rate"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 8,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study090",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "repo_silent",
+      "metric": "decidable",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "NDS",
+        "mATE",
+        "mAOE",
+        "NDS"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 4,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study091",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "both_silent",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {},
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 0,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study092",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "F1",
+        "paper": "F1",
+        "repo": [
+          "mIoU"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "mAP",
+        "paper": "mAP",
+        "repo": [
+          "mIoU"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "F\u2217 1",
+        "Average processing time for the classic Re-ID module",
+        "FR",
+        "TVR"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 4,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study093",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "epochs",
+        "paper": "100",
+        "repo": "10",
+        "detail": "run_configs_400m.py:26"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "image_size",
+        "paper": "224x224",
+        "repo": "224",
+        "detail": "constants.py:7"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "1e-4",
+        "repo": "0.0004",
+        "detail": "run_configs_400m.py:91"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "AUC",
+        "paper": "AUC",
+        "repo": [
+          "AUROC",
+          "F1",
+          "Precision",
+          "Recall"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "Accuracy",
+        "paper": "Accuracy",
+        "repo": [
+          "AUROC",
+          "F1",
+          "Precision",
+          "Recall"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "MedMINIST",
+        "VQA-RAD",
+        "SLAKE",
+        "ROCO",
+        "MedICaT",
+        "MIMIC-CXR"
+      ],
+      "metric": [
+        "Recall@K"
+      ]
+    },
+    "counts": {
+      "conflicts": 5,
+      "unmapped_paper_names": 7,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study094",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "AP",
+        "paper": "AP",
+        "repo": [
+          "SSIM",
+          "mAP"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "LVIS",
+        "V3Det",
+        "OpenImages",
+        "CC3M",
+        "SA-1B"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 5,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study095",
+    "model_slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "NQ",
+        "TQA",
+        "English Wikipedia",
+        "Wikipedia corpus"
+      ],
+      "metric": [
+        "top-k recall",
+        "exact match (EM) QA accuracy",
+        "index size",
+        "query time",
+        "EM QA accuracy",
+        "Exact match QA accuracy",
+        "Exact match QA accuracy"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 11,
+      "decidable_types": 0
+    }
+  }
+]

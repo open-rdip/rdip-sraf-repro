@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 188,
   "datasets": [
     {
@@ -32,20 +32,20 @@
     {
       "name": "image_size",
       "canonical": "image_size",
-      "value": "512",
-      "evidence": "efficientvit_sam_l0.yaml:6"
-    },
-    {
-      "name": "base_lr",
-      "canonical": "learning_rate",
-      "value": "0.0000008",
-      "evidence": "efficientvit_sam_l0.yaml:9"
+      "value": "1024",
+      "evidence": "default.yaml:10"
     },
     {
       "name": "n_epochs",
       "canonical": "epochs",
       "value": "80",
       "evidence": "default.yaml:14"
+    },
+    {
+      "name": "base_lr",
+      "canonical": "learning_rate",
+      "value": "0.0000004",
+      "evidence": "default.yaml:15"
     },
     {
       "name": "weight_decay",
@@ -57,7 +57,7 @@
       "name": "dropout",
       "canonical": "dropout",
       "value": "0",
-      "evidence": "efficientvit_l1.yaml:31"
+      "evidence": "efficientvit_l3.yaml:31"
     },
     {
       "name": "bs",
@@ -68,16 +68,16 @@
   ],
   "metrics": [
     {
-      "name": "StructuralSimilarityIndexMeasure",
-      "canonical": "SSIM",
-      "signal": "metric_api",
-      "evidence": "evaluator.py:13"
-    },
-    {
       "name": "COCOeval",
       "canonical": "mAP",
       "signal": "metric_api",
       "evidence": "sam_eval_utils.py:6"
+    },
+    {
+      "name": "StructuralSimilarityIndexMeasure",
+      "canonical": "SSIM",
+      "signal": "metric_api",
+      "evidence": "evaluator.py:13"
     }
   ],
   "seeds": [
@@ -89,5 +89,8 @@
   "study_id": "study094",
   "repo_url": "https://github.com/mit-han-lab/efficientvit",
   "status": "ok",
-  "duration_s": 4.0
+  "repo_commit": "de7d7733cc0329f391b33f1f459271562ec27bd5",
+  "duration_s": 22.2,
+  "swept_at": "2026-09-29T15:32:03+00:00",
+  "host": "skynetcpu"
 }

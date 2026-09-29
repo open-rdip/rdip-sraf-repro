@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 31,
   "datasets": [
     {
@@ -26,20 +26,20 @@
     {
       "name": "n_epochs",
       "canonical": "epochs",
-      "value": "100",
-      "evidence": "test_api.py:29"
+      "value": "500",
+      "evidence": "test_facenet.py:25"
     },
     {
       "name": "batch_size",
       "canonical": "batch_size",
-      "value": "1024",
-      "evidence": "test_api.py:30"
+      "value": "512",
+      "evidence": "test_facenet.py:26"
     },
     {
       "name": "learning_rate",
       "canonical": "learning_rate",
       "value": "0.001",
-      "evidence": "monitor_beta.py:64"
+      "evidence": "test_facenet.py:29"
     }
   ],
   "metrics": [
@@ -54,5 +54,8 @@
   "study_id": "study038",
   "repo_url": "https://github.com/theislab/trVAE",
   "status": "ok",
-  "duration_s": 1.6
+  "repo_commit": "6fd87fcd1fc47a6b93579dcb7caac0d1e85ed10e",
+  "duration_s": 2.5,
+  "swept_at": "2026-09-29T15:28:13+00:00",
+  "host": "skynetcpu"
 }

@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 138,
   "datasets": [
     {
@@ -20,16 +20,16 @@
   "metrics": [],
   "seeds": [
     {
-      "value": "991",
-      "evidence": "user_params.ini:2"
-    },
-    {
       "value": "999",
       "evidence": "random_eps_sampler.py:47"
     },
     {
+      "value": "991",
+      "evidence": "user_params.ini:2"
+    },
+    {
       "value": "1",
-      "evidence": "test_dynamics.py:31"
+      "evidence": "test_costs.py:10"
     },
     {
       "value": "2",
@@ -39,5 +39,8 @@
   "study_id": "study061",
   "repo_url": "https://github.com/CMU-TBD/SocNavBench",
   "status": "ok",
-  "duration_s": 4.8
+  "repo_commit": "2724ea85ff22ca61a88ee95285dfc3fa056656c6",
+  "duration_s": 7.9,
+  "swept_at": "2026-09-29T15:29:49+00:00",
+  "host": "skynetcpu"
 }

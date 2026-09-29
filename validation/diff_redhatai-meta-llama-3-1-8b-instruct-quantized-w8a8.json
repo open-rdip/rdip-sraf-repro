@@ -1,0 +1,4527 @@
+[
+  {
+    "study_id": "study001",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "string",
+        "repo": "0.00015",
+        "detail": "ds_batch_config.json:7"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "repo_silent",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "OPT",
+        "BLOOM"
+      ],
+      "metric": [
+        "performance",
+        "performance",
+        "performance",
+        "PPL improvement",
+        "accuracy loss",
+        "PPL degradation",
+        "string",
+        "performance"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 10,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study002",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": ".01",
+        "repo": "0.02",
+        "detail": "test_regression_muon.py:59"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "MRR",
+        "paper": "MRR",
+        "repo": [
+          "Dice",
+          "MAE"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "KINSHIP",
+        "UMLS",
+        "WN18RR",
+        "FB15K-237",
+        "YAGO3-10",
+        "5 EXPERIMENTAL SETUP"
+      ],
+      "metric": [
+        "H@N",
+        "H@1",
+        "H@3",
+        "H@10"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 10,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study003",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "0.0003",
+        "repo": "0.0001",
+        "detail": "maskformer_r50_ms_16xb1_75e_coco.py:217"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "momentum",
+        "paper": "0.05",
+        "repo": "0.0002",
+        "detail": "rtmdet_s_8xb32_300e_coco.py:81"
+      },
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "10",
+          "16"
+        ],
+        "repo": [
+          "0",
+          "42"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "entire dataset",
+        "RCOD",
+        "coco-style",
+        "COD",
+        "COD10K-D",
+        "NC4K-D",
+        "CAMO-D",
+        "CAMO dataset",
+        "COD10K-v2",
+        "NC4K"
+      ],
+      "metric": [
+        "AP50",
+        "AP75",
+        "APm",
+        "APl",
+        "mAP (IoU",
+        "counts of categories",
+        "numbers of training and test images",
+        "FLOPs",
+        "AP50",
+        "AP75",
+        "APm",
+        "APl",
+        "AP50",
+        "AP75",
+        "APm",
+        "APl",
+        "AP50",
+        "AP75",
+        "APm",
+        "APl"
+      ]
+    },
+    "counts": {
+      "conflicts": 3,
+      "unmapped_paper_names": 30,
+      "decidable_types": 4
+    }
+  },
+  {
+    "study_id": "study004",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "repo_silent",
+      "hyperparameter": "both_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "synthetic dataset",
+        "Synthetic Data"
+      ],
+      "metric": [
+        "angular deviation",
+        "string",
+        "string",
+        "string"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 6,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study005",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "dataset_mismatch",
+        "paper": [
+          "COCO",
+          "Visual Genome"
+        ],
+        "repo": [
+          "C4",
+          "ImageNet",
+          "LSUN"
+        ],
+        "detail": "no canonical dataset is named on both sides"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "2048",
+        "repo": "10",
+        "detail": "sample_diffusion.py"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "0.0001",
+        "repo": "5e-05",
+        "detail": "utils.py"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "weight_decay",
+        "paper": "0.01",
+        "repo": "1.e-2",
+        "detail": "classifier.py:38"
+      },
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "8"
+        ],
+        "repo": [
+          "42"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "repo_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "model inference time",
+        "feed-forward evaluation time",
+        "text generation success",
+        "performance",
+        "performance",
+        "trade-off curves"
+      ]
+    },
+    "counts": {
+      "conflicts": 5,
+      "unmapped_paper_names": 6,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study006",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "3"
+        ],
+        "repo": [
+          "10"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Hopper",
+        "Walker2D",
+        "Medium-Replay-High Hopper",
+        "Medium-Expert-Mod Hopper",
+        "Stochastic MuJoCo",
+        "Adroit",
+        "AntMaze",
+        "Umaze",
+        "Medium-Diverse",
+        "Large-Play",
+        "Large-Diverse",
+        "Cloned",
+        "Expert"
+      ],
+      "metric": [
+        "score",
+        "score",
+        "performance",
+        "performance",
+        "performance",
+        "success rate",
+        "success rate",
+        "success rate",
+        "success rate",
+        "success rate",
+        "average score",
+        "average score",
+        "scores"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 26,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study007",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "both_silent",
+      "dependency": "repo_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "CartPole",
+        "Baird\u2019s counterexample"
+      ],
+      "metric": [
+        "progress",
+        "variance",
+        "convergence",
+        "averaged undiscounted episodic return",
+        "undiscounted episodic return",
+        "results",
+        "variance",
+        "evaluation return",
+        "performance level",
+        "performance",
+        "performance"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 13,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study008",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "4\u00d710\u22125",
+        "repo": "float",
+        "detail": "get_optimizer.py:6"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "CulturaX",
+        "OSCAR23.01",
+        "BOOLQ",
+        "COPA",
+        "HellaSwag",
+        "Open-BookQA",
+        "PIQA",
+        "RACE",
+        "SciTail",
+        "TOXIGEN",
+        "OALL",
+        "AlGhafa-T",
+        "Mistral-7B"
+      ],
+      "metric": [
+        "faster",
+        "impossible"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 15,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study009",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "image_size",
+        "paper": "640\u00d7640",
+        "repo": "256",
+        "detail": "demo.py:57"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "COCO2017",
+        "CrowdPose"
+      ],
+      "metric": [
+        "AP gain",
+        "APM",
+        "APH"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 5,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study010",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "2048",
+        "repo": "1000",
+        "detail": "lmdb_converter.py:46"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "epochs",
+        "paper": "21",
+        "repo": "20",
+        "detail": "metafile.yml:7"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "5 10^4",
+        "repo": "4e-4",
+        "detail": "schedule_adamw_cos_6e.py:6"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "IC13",
+        "IC15"
+      ],
+      "metric": [
+        "word accuracy",
+        "correlation",
+        "character morphology feature",
+        "stroke-like feature"
+      ]
+    },
+    "counts": {
+      "conflicts": 3,
+      "unmapped_paper_names": 6,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study011",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "128",
+        "repo": "32",
+        "detail": "clip_vit-base-p16_zeroshot-cls_cifar100.py:22"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "epochs",
+        "paper": "120",
+        "repo": "100",
+        "detail": "metafile.yml:19"
+      },
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "5"
+        ],
+        "repo": [
+          "0",
+          "2",
+          "3",
+          "42",
+          "7"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "RepVGG-B0"
+      ],
+      "metric": [
+        "Model Acc",
+        "inference speed w/o re-param"
+      ]
+    },
+    "counts": {
+      "conflicts": 3,
+      "unmapped_paper_names": 3,
+      "decidable_types": 4
+    }
+  },
+  {
+    "study_id": "study012",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "halved",
+        "repo": "1",
+        "detail": "san-vit-b16_voc12aug-640x640.py:26"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "AP",
+        "paper": "AP",
+        "repo": [
+          "mIoU"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "Accuracy",
+        "paper": "Accuracy",
+        "repo": [
+          "mIoU"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "PQ",
+        "paper": "PQ",
+        "repo": [
+          "mIoU"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "COCO Panoptic",
+        "COCO-Stuff",
+        "Panoptic FPN",
+        "COCO Panoptic Segmentation Challenge"
+      ],
+      "metric": [
+        "AP 50",
+        "AP 75",
+        "PQStand",
+        "PQTht",
+        "efficiency",
+        "results",
+        "PQ margin"
+      ]
+    },
+    "counts": {
+      "conflicts": 4,
+      "unmapped_paper_names": 11,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study013",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "dataset_mismatch",
+        "paper": [
+          "ImageNet"
+        ],
+        "repo": [
+          "C4"
+        ],
+        "detail": "no canonical dataset is named on both sides"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "repo_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "EHRs",
+        "COOS-7",
+        "COOS",
+        "protein localization dataset",
+        "Training",
+        "Test1",
+        "Test2",
+        "Test3",
+        "Test4",
+        "Training dataset"
+      ],
+      "metric": [
+        "balanced classi\ufb01cation error",
+        "balanced classi\ufb01cation error",
+        "balanced classi\ufb01cation error",
+        "balanced classi\ufb01cation error",
+        "balanced classi\ufb01cation error",
+        "performance",
+        "performance",
+        "performance",
+        "performance"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 19,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study014",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "6D object pose estimation dataset",
+        "3D object detection dataset"
+      ],
+      "metric": [
+        "mAP (0.25)",
+        "relative improvement",
+        "mAP (0.25)",
+        "mAP (0.25)",
+        "mAP (0.25)",
+        "mAP (0.25)"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 8,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study015",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "both_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "112575",
+        "B379\u2013B396",
+        "1\u201320",
+        "1\u201330",
+        "1309\u20131331",
+        "405\u2013432",
+        "942\u2013968",
+        "benchmark study",
+        "numerical analysis",
+        "energy-stable discretization",
+        "fully coupled numerical model"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 11,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study016",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "3",
+          "5",
+          "7"
+        ],
+        "repo": [
+          "0",
+          "10000",
+          "2",
+          "42"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "MT-TB",
+        "our benchmark",
+        "MT-TA"
+      ],
+      "metric": [
+        "scores",
+        "scores",
+        "performance",
+        "performance"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 7,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study017",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "repo_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "PanNuke",
+        "MoNuSac",
+        "histopathology tasks",
+        "BRACS",
+        "BACH",
+        "UZH",
+        "SICAPv2"
+      ],
+      "metric": [
+        "run-time",
+        "performance",
+        "weighted-F1 score",
+        "average Dice score"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 11,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study018",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "AP",
+        "paper": "AP",
+        "repo": [
+          "Mask AP",
+          "mAP"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "Accuracy",
+        "paper": "Accuracy",
+        "repo": [
+          "Mask AP",
+          "mAP"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "APbb",
+        "APm",
+        "AP0.5",
+        "AP50",
+        "AP75",
+        "APS",
+        "APL",
+        "AP50",
+        "AP75",
+        "APS",
+        "APL",
+        "mask prediction accuracy",
+        "speed",
+        "FocalLoss",
+        "s/im"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 15,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study019",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "MAE",
+        "paper": "MAE",
+        "repo": [
+          "AP",
+          "Mask AP",
+          "Recall",
+          "mAP"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "mIoU",
+        "paper": "mIoU",
+        "repo": [
+          "AP",
+          "Mask AP",
+          "Recall",
+          "mAP"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "DUT-OMRON",
+        "COCO validation set",
+        "PASCAL VOC12"
+      ],
+      "metric": [
+        "top-1 error",
+        "F-measure",
+        "AP 50",
+        "AP 75",
+        "AP M",
+        "AP L",
+        "classification results"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 10,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study020",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "1e\u22126",
+        "repo": "0.000001",
+        "detail": "params.yaml:27"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "AUC",
+        "paper": "AUC",
+        "repo": [
+          "AUROC",
+          "F1",
+          "MAE",
+          "Precision",
+          "Recall"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "mammograms",
+        "mammography images",
+        "CSAW-M",
+        "interval cancer"
+      ],
+      "metric": [
+        "F1-score",
+        "odds ratio (OR)",
+        "average mean absolute error (AMAE)",
+        "Kendall\u2019s \u03c4b"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 8,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study021",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "GQA",
+        "Motifs",
+        "Motifs+re-weighting",
+        "Motifs+DPL"
+      ],
+      "metric": [
+        "R@K",
+        "mR@K",
+        "confidence",
+        "performance",
+        "biased predictions",
+        "R@50 / 100",
+        "mR@50 / 100",
+        "F@50 / 100",
+        "Result of Training",
+        "F@K",
+        "F@K",
+        "R@K",
+        "R@K",
+        "mR@K",
+        "mR@K"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 19,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study022",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "12000",
+        "repo": "1024",
+        "detail": "DCN_tiny_parquet_tuner_config.yaml:21"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Pinterest Homefeed view log",
+        "FVL",
+        "Pinterest dataset"
+      ],
+      "metric": [
+        "variance of evaluation results"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 4,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study023",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "temperature",
+        "paper": "0",
+        "repo": "0.3",
+        "detail": "test_thinking_effort.py:299"
+      },
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "0",
+          "4"
+        ],
+        "repo": [
+          "42"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Mobile-Agent-v2",
+        "Mobile-Agent"
+      ],
+      "metric": [
+        "effectiveness",
+        "performance",
+        "success rate",
+        "success rate",
+        "success rate",
+        "success rate",
+        "success rate",
+        "success rate",
+        "Rate (CR)",
+        "Decision Accuracy (DA)",
+        "Reflection Accuracy (RA)",
+        "success rate",
+        "success rate",
+        "success rate",
+        "completion rate"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 17,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study024",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "1000"
+        ],
+        "repo": [
+          "1"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "wall-clock TTS",
+        "TTS"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 2,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study025",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "decidable",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "IXI dataset",
+        "Unsupervised T1w MR Atlas to Subject Registration Dataset",
+        "T2-weighted images",
+        "T1-weighted images",
+        "T1w MR",
+        "lung CT",
+        "T1-weighted MR images",
+        "T2-weighted MR images",
+        "atlas",
+        "Learn2Reg Challenge",
+        "Learn2Reg 2022 Challenge"
+      ],
+      "metric": [
+        "seconds per 15 subject",
+        "peak performance",
+        "mean DSC",
+        "HD95",
+        "TRE",
+        "TRE30",
+        "SDLogJ",
+        "Dice similarity coefficient (DSC)",
+        "Dice similarity coefficient (DSC)",
+        "Number of non-diffeomorphic voxels (ND Voxels)",
+        "Number of non-diffeomorphic voxels (ND Voxels)",
+        "Number of non-diffeomorphic volume (ND Volume)",
+        "Number of non-diffeomorphic volume (ND Volume)",
+        "Number of parameters",
+        "Number of floating point operations (FLOPs)",
+        "Number of floating point operations (FLOPs)",
+        "performance",
+        "\u03b2",
+        "TRE"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 30,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study026",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "AP",
+        "paper": "AP",
+        "repo": [
+          "Mask AP",
+          "mAP"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "object detection",
+        "two-stage detectors",
+        "one-stage detectors",
+        "BDD",
+        "different architectures across datasets"
+      ],
+      "metric": [
+        "efficiency",
+        "wall-clock hours",
+        "speedup",
+        "wall-clock days",
+        "AP (%)"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 10,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study027",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "12345",
+          "5",
+          "50"
+        ],
+        "repo": [
+          "1",
+          "2023",
+          "7"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "IEO cohort",
+        "GECCO consortium",
+        "PathoBench",
+        "WSIs",
+        "CPTAC pancreatic ductal adenocarcinoma (PDA) cohort",
+        "WSI",
+        "over 60,000 whole-slide images",
+        "CPTAC",
+        "DACHS",
+        "Kiel",
+        "Bern",
+        "IEO",
+        "Virchow2",
+        "over 1,000 patients"
+      ],
+      "metric": [
+        "inference time",
+        "FLOPs",
+        "hazard ratio",
+        "p-value",
+        "Gini coefficient",
+        "fraction of tiles required to accumulate 50% and 80% of total mass",
+        "top-k mass statistics (top 1, top 2, and top 25)",
+        "AUPRC",
+        "Balanced Accuracy",
+        "F1 Scores"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 24,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study028",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "64",
+        "repo": "32",
+        "detail": "run_training.py"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "0.03, 0.9, and 0.00003",
+        "repo": "0.03",
+        "detail": "run_training.py"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "AUC",
+        "paper": "AUC",
+        "repo": [
+          "Accuracy"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "300",
+          "5"
+        ],
+        "repo": [
+          "0",
+          "42"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "validation dataset",
+        "test dataset",
+        "normal chest radiograph",
+        "Chexpert",
+        "RSNA dataset",
+        "NIH chest radiograph dataset",
+        "officially split validation dataset",
+        "Zhanglab",
+        "RSNA",
+        "Zhanglab dataset"
+      ],
+      "metric": [
+        "performances",
+        "F1-score",
+        "F1-score"
+      ]
+    },
+    "counts": {
+      "conflicts": 4,
+      "unmapped_paper_names": 13,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study029",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "10"
+        ],
+        "repo": [
+          "1",
+          "12345"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "repo_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Cora-ogbn-arxivFlickr",
+        "GCN",
+        "Graph-SAGE",
+        "CoraA-photosogbn-arxivFlickrGCNGraph-SAGE",
+        "training dataset",
+        "test set",
+        "A-computers",
+        "EGNN-GCN",
+        "EGNN-SAGE",
+        "ogbn-arxiv",
+        "GRE+5",
+        "GRE+2",
+        "GRE+3",
+        "Flickr",
+        "Reddit",
+        "ogbn-products",
+        "Vtrain",
+        "Vk train",
+        "A-photo dataset"
+      ],
+      "metric": [
+        "success rate",
+        "test accuracy",
+        "accuracy dropdown",
+        "accuracy drop",
+        "test accuracy drop",
+        "test accuracy drop",
+        "DD",
+        "SR",
+        "training loss",
+        "training loss",
+        "test accuracy drawdown",
+        "drawdown",
+        "success rate of edits"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 32,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study030",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "dataset_mismatch",
+        "paper": [
+          "COCO"
+        ],
+        "repo": [
+          "Visual Genome"
+        ],
+        "detail": "no canonical dataset is named on both sides"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "repo_silent",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "CrowdPose",
+        "val set",
+        "PoseTrack",
+        "thehard subset",
+        "PoseTrack 2018",
+        "PoseTrack 2017"
+      ],
+      "metric": [
+        "AP0.50",
+        "AP0.75",
+        "AP easy",
+        "APmedium",
+        "AP hard",
+        "FPS",
+        "time per image",
+        "MOTA",
+        "FPS",
+        "STAF",
+        "MOTA",
+        "MOTA",
+        "FPS",
+        "MOTA",
+        "MOTA",
+        "MOTA",
+        "FPS",
+        "MOTA",
+        "MOTP",
+        "MOTP"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 26,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study031",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "all plankton species",
+        "Plankton anomaly dataset",
+        "plankton species",
+        "Centrales",
+        "Chaetocero",
+        "derived dataset for object detection based experiment",
+        "Phytoplankton anomaly dataset"
+      ],
+      "metric": [
+        "0.72",
+        "0.75",
+        "0.83",
+        "0.67",
+        "0.53",
+        "0.62",
+        "F1 score"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 14,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study032",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "repo_silent",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "WOMD",
+        "Waymo Open Motion Dataset (WOMD)"
+      ],
+      "metric": [
+        "minADE",
+        "minFDE",
+        "Miss Rate",
+        "Soft mAP",
+        "Prediction overlap rate",
+        "Prediction overlap rate",
+        "prediction overlap rate"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 9,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study033",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "repo_silent",
+      "dependency": "repo_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "SYN",
+        "CL1",
+        "CL2"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 3,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study034",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "10\u22124",
+        "repo": "0.0001",
+        "detail": "Base-Front3D-PanopticSegmentation.yaml:21"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "RMSE",
+        "paper": "RMSE",
+        "repo": [
+          "PQ",
+          "RQ",
+          "SQ"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "1",
+          "4"
+        ],
+        "repo": [
+          "3"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "dataset",
+        "Pano-Re",
+        "PRQ",
+        "3D-Front",
+        "Matterport3D",
+        "Front-3D"
+      ],
+      "metric": [
+        "PRQ",
+        "thing classes",
+        "stuff classes",
+        "PRQ",
+        "PRQ",
+        "PRQ",
+        "PRQ",
+        "PRQ",
+        "DPQ",
+        "3D PRQ",
+        "stuff PRQ",
+        "things",
+        "stuff PRQ"
+      ]
+    },
+    "counts": {
+      "conflicts": 3,
+      "unmapped_paper_names": 19,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study035",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "horse \u2192zebra",
+        "edges\u2192shoes",
+        "real images",
+        "generated images",
+        "translated test images",
+        "real training+test images",
+        "horse \u2192 zebra",
+        "edges \u2192 shoes",
+        "unpaired conditional GANs",
+        "our pseudo paired training",
+        "horse\u2192zebra",
+        "map\u2192aerial photo",
+        "Pix2pix",
+        "CycleGAN"
+      ],
+      "metric": [
+        "training time",
+        "inference speed",
+        "acceleration",
+        "training time acceleration",
+        "search cost reduction",
+        "speedup",
+        "performance",
+        "quality of images",
+        "LPIPS"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 23,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study036",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "10",
+          "20",
+          "5",
+          "8"
+        ],
+        "repo": [
+          "42"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "GPQA",
+        "GPQA Diamond",
+        "GPQA questions",
+        "biology questions",
+        "physics questions",
+        "chemistry questions",
+        "Natural Questions",
+        "unspecified",
+        "extended set",
+        "main set",
+        "diamond set"
+      ],
+      "metric": [
+        "abstention rate"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 12,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study037",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "10\u22123",
+        "repo": "generator_lr",
+        "detail": "trainers.py:373"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "repo_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "D"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 1,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study038",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "benchmark",
+        "real-world",
+        "Tuft cells",
+        "Hpoly.Day10pred",
+        "Hpoly.Day10ac",
+        "gut cells",
+        "Hpoly.Day10pred Hpoly.Day10ac db ef real Hpoly.Day10pred Hpoly.Day10",
+        "single-cell gene expression dataset",
+        "IFN-\u03b2 stimulated",
+        "control peripheral blood",
+        "Morpho-MNIST",
+        "PBMCs",
+        "NK cells",
+        "control",
+        "real stimulated cells",
+        "predicted stimulated cells"
+      ],
+      "metric": [
+        "Pearson correlation",
+        "mean",
+        "variance",
+        "correlation",
+        "performance",
+        "Pearson\u2019s R2",
+        "Pearson\u2019s R2",
+        "R2",
+        "standard deviation"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 25,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study039",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "Accuracy",
+        "paper": "Accuracy",
+        "repo": [
+          "AP",
+          "mAP"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Kinetics-400",
+        "Kinetics-600",
+        "FineGym",
+        "HMDB-51",
+        "MPII Cooking 2"
+      ],
+      "metric": [
+        "performance gain",
+        "slope",
+        "slope",
+        "shift",
+        "aandb",
+        "Top-1 mean average precision",
+        "Top-1 accuracy"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 12,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study040",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "2021"
+        ],
+        "repo": [
+          "0"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "IL",
+        "other",
+        "ILI",
+        "Weather",
+        "Traf\ufb01c",
+        "Electricity",
+        "PatchTST",
+        "Weather96"
+      ],
+      "metric": [
+        "results",
+        "results",
+        "results"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 11,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study041",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "both_silent",
+      "metric": "both_silent",
+      "dependency": "repo_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Binary Trees",
+        "Regex-Redux",
+        "Ripgrep",
+        "SOM programming language"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 4,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study042",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "DressCode",
+        "millions of images",
+        "garment features",
+        "VITON-HD"
+      ],
+      "metric": [
+        "performance",
+        "performance",
+        "improvement",
+        "texture squeezing",
+        "stretching",
+        "metrics evaluated on warped garment items",
+        "metrics",
+        "metrics"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 12,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study043",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "both_silent",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "internal dataset",
+        "VCTK"
+      ],
+      "metric": [
+        "90/10 train/test split",
+        "90/10 train/test split"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 4,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study044",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "AIME 2024",
+        "concept tokens",
+        "Math500",
+        "GSM8K",
+        "GPQA-Diamond",
+        "HumanEval",
+        "MBPPMBPP",
+        "LiveCodeBench"
+      ],
+      "metric": [
+        "token efficiency",
+        "generation length",
+        "generation length",
+        "average generation length",
+        "average generation length for correct solutions",
+        "problems solved",
+        "overall efficiency",
+        "Pass@1",
+        "number of tokens generated for correct solutions"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 17,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study045",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "0",
+          "100",
+          "200",
+          "3",
+          "300",
+          "400",
+          "7"
+        ],
+        "repo": [
+          "1234"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "repo_silent",
+      "dependency": "repo_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "QM9",
+        "PCQM4Mv2",
+        "OC20",
+        "DES15K",
+        "S2EF",
+        "IS2RE/IS2RS"
+      ],
+      "metric": [
+        "string",
+        "Test MAE (HOMO)",
+        "Trajectory energy MAE PT on OC20",
+        "Test MAE (HOMO) GNS + NN",
+        "Test MAE (HOMO) GNS-TAT + NN",
+        "performance",
+        "quality representations",
+        "performance"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 14,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study046",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "epochs",
+        "paper": "500",
+        "repo": "300",
+        "detail": "train.py"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "momentum",
+        "paper": "0.9",
+        "repo": "0.843",
+        "detail": "hyp.finetune.yaml:13"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "weight_decay",
+        "paper": "0.0005",
+        "repo": "0.00036",
+        "detail": "hyp.finetune.yaml:14"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "weld defect dataset",
+        "COCO trainval35k",
+        "COCO test-dev2017"
+      ],
+      "metric": [
+        "mAP 50",
+        "FLOPs",
+        "Params",
+        "FPS",
+        "mAP 50",
+        "mAP 50",
+        "FPS",
+        "FLOPs",
+        "Params",
+        "mAP 50",
+        "FLOPs(G)",
+        "Params(M)"
+      ]
+    },
+    "counts": {
+      "conflicts": 3,
+      "unmapped_paper_names": 15,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study047",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "1e\u22123",
+        "repo": "0.001",
+        "detail": "conf.yml:18"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Microsoft\u2019s internal gender-balanced clean speech collection",
+        "benchmarking dataset",
+        "two-speaker speech separation and recognition dataset"
+      ],
+      "metric": [
+        "SDRi",
+        "SI-SNRi"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 5,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study048",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Cambridge Cluster Database",
+        "Lennard-Jones clusters",
+        "Morse clusters",
+        "LJ 38",
+        "LJ 75",
+        "LJ 76",
+        "LJ 77",
+        "LJ 102",
+        "LJ 103",
+        "LJ 104"
+      ],
+      "metric": [
+        "success rate",
+        "success rate",
+        "success rate",
+        "final energies",
+        "frequency"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 15,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study049",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {},
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 0,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study050",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "0.1",
+        "repo": "1e-2",
+        "detail": "tabular_class.py:17"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Blackjack",
+        "Cartpole",
+        "Taxi",
+        "Taxi environment"
+      ],
+      "metric": [
+        "similarly",
+        "TD",
+        "MC"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 7,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study051",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "30"
+        ],
+        "repo": [
+          "1"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "both_silent",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Y",
+        "large datasets"
+      ],
+      "metric": [
+        "log-likelihood"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 3,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study052",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "100"
+        ],
+        "repo": [
+          "0"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "string",
+        "small and medium binary classification models",
+        "datasets for robust GBDT models",
+        "MNIST 2 vs. 6",
+        "Chang & Lin (2011)"
+      ],
+      "metric": [
+        "accuracy loss",
+        "average \u2113\u221edistortion",
+        "average \u21131distortion",
+        "average \u21132distortion",
+        "test accuracy",
+        "robustness improvement",
+        "\u2113\u221edistortion",
+        "\u21131distortion",
+        "\u21132distortion"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 14,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study053",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "3"
+        ],
+        "repo": [
+          "1"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Vision-Language Models (VLMs)",
+        "CoOp",
+        "StanfordCars",
+        "SUN397",
+        "Aircraft",
+        "EuroSAT",
+        "Stanford-Cars",
+        "Food101",
+        "OxfordPets",
+        "Flower102",
+        "Caltech101",
+        "DTD",
+        "UCF101"
+      ],
+      "metric": [
+        "top-1 accuracy",
+        "performance"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 15,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study054",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "warehouse environment",
+        "narrow corridor",
+        "string"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 3,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study055",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "Accuracy",
+        "paper": "Accuracy",
+        "repo": [
+          "MAE",
+          "MSE"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "epoch",
+        "training time"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 2,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study056",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "1, 16",
+        "repo": "val_batch",
+        "detail": "shower_flow_train.py:109"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "Accuracy",
+        "paper": "Accuracy",
+        "repo": [
+          "AUROC"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "59"
+        ],
+        "repo": [
+          "36",
+          "42",
+          "45",
+          "455"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "\ud835\udf0b+ showers"
+      ],
+      "metric": [
+        "deviations",
+        "degree of agreement",
+        "time / shower [s]",
+        "speed-up"
+      ]
+    },
+    "counts": {
+      "conflicts": 3,
+      "unmapped_paper_names": 5,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study057",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "smaller",
+        "repo": "0.1",
+        "detail": "finetune.py"
+      },
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "12",
+          "2048"
+        ],
+        "repo": [
+          "13579"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "both_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "DR9",
+        "training set",
+        "lens labels",
+        "industry datasets",
+        "sky survey datasets"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 5,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study058",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "repo_silent",
+      "dependency": "repo_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "toxic language detection dataset",
+        "ACL",
+        "EMNLP-IJCNLP",
+        "European Refugee Crisis",
+        "RWJF Discrimination in America",
+        "Twitter",
+        "Dynamically generated datasets",
+        "MTurk workers"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 8,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study059",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "R8",
+        "FedSeIT",
+        "FedWeIT",
+        "FedSeIT+DLS",
+        "Text Classi\ufb01cation",
+        "Reuters8",
+        "FedSeIT framework"
+      ],
+      "metric": [
+        "performance gain",
+        "Test Accuracy"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 9,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study060",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "32",
+        "repo": "1",
+        "detail": "hparams.py:353"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "0.00015",
+        "repo": "0.0003",
+        "detail": "hparams.py:488"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "weight_decay",
+        "paper": "0.002",
+        "repo": "0.0",
+        "detail": "hparams.py:493"
+      },
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "32"
+        ],
+        "repo": [
+          "0",
+          "1",
+          "13337",
+          "18",
+          "42",
+          "9876"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "repo_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "songs primarily in English",
+        "MAESTRO",
+        "raw audio VQ-V AEs"
+      ],
+      "metric": [
+        "musicality",
+        "coherence",
+        "singing",
+        "spectral convergence (dB)",
+        "spectral convergence (dB)",
+        "spectral convergence (dB)"
+      ]
+    },
+    "counts": {
+      "conflicts": 4,
+      "unmapped_paper_names": 9,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study061",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "both_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "SocNavBench",
+        "curated set of 33 episodes"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 2,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study062",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "35",
+          "47"
+        ],
+        "repo": [
+          "3"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Navier-Stokes benchmark"
+      ],
+      "metric": [
+        "Loss convergence",
+        "PDE residual loss"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 3,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study063",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "Accuracy",
+        "paper": "Accuracy",
+        "repo": [
+          "BLEU"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "WER",
+        "paper": "WER",
+        "repo": [
+          "BLEU"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "4"
+        ],
+        "repo": [
+          "0",
+          "10",
+          "1234",
+          "20211105",
+          "20211122",
+          "20211202",
+          "20220216",
+          "20220329",
+          "20220410",
+          "20220727",
+          "20220730",
+          "20220810",
+          "20221011",
+          "20230207",
+          "20230420",
+          "20230423",
+          "42",
+          "666"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "V oxPopuli",
+        "MLS",
+        "VP-10K+FT",
+        "several datasets",
+        "Whisper",
+        "Meanwhile",
+        "Kincaid46",
+        "Fleurs",
+        "SpeechStew",
+        "full dataset",
+        "dataset size of 680,000 hours",
+        "54,000 hours",
+        "7,000 hours"
+      ],
+      "metric": [
+        "BLEU r2",
+        "ASR performance",
+        "ASR performance",
+        "performance",
+        "performance"
+      ]
+    },
+    "counts": {
+      "conflicts": 3,
+      "unmapped_paper_names": 18,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study064",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "3\u00d710\u22124",
+        "repo": "1e-3",
+        "detail": "single_timeframe.yml:22"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Lyft"
+      ],
+      "metric": [
+        "VPQ",
+        "DGED"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 3,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study065",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "both_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "meeting transcript",
+        "AMI Meeting Corpus",
+        "SNLI dataset"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 3,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study066",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "repo_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "COCO-2017"
+      ],
+      "metric": [
+        "top-1 accuracy",
+        "inference speed",
+        "number of parameters",
+        "box mAP"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 5,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study067",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "0",
+          "100",
+          "20",
+          "5"
+        ],
+        "repo": [
+          "55969672"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Gridworld",
+        "Sepsis",
+        "Factual and Counterfactual Trajectory"
+      ],
+      "metric": [
+        "return",
+        "percentage composition",
+        "Effect ValueTCFE",
+        "ASE",
+        "r-SSE",
+        "\ue22d1-SE",
+        "\ue22d2-SE",
+        "Planner-SE",
+        "variance"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 12,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study068",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "2048"
+        ],
+        "repo": [
+          "42"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Pinwas",
+        "scanned point data",
+        "mask information",
+        "point cloud data",
+        "ShapeNetCore"
+      ],
+      "metric": [
+        "Chamfer distance",
+        "classi\ufb01cation accuracy",
+        "performance gain for shape classification",
+        "loss terms",
+        "Chamfer loss",
+        "GFV loss",
+        "performance",
+        "dimension",
+        "alignment",
+        "classi\ufb01cation"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 15,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study069",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "CORA",
+        "CITE",
+        "AMAP",
+        "BAT",
+        "EAT",
+        "UAT"
+      ],
+      "metric": [
+        "Loss",
+        "NMI",
+        "performance",
+        "effectiveness",
+        "discriminative capability"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 11,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study070",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "F1",
+        "paper": "F1",
+        "repo": [
+          "AP"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "repo_silent",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Pile",
+        "MultiWOZ 2.1",
+        "MultiWOZ 2.4",
+        "MultiWOZ",
+        "QA data",
+        "DST data"
+      ],
+      "metric": [
+        "JGA",
+        "JGA",
+        "JGA",
+        "DST results"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 10,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study071",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "128",
+        "repo": "16",
+        "detail": "clip.yaml:6"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "3e-6",
+        "repo": "auto",
+        "detail": "deepspeed_accelerator.py:25"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "repo_silent",
+      "dependency": "repo_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "CLIP-H",
+        "aesthetic scorer",
+        "PickScore",
+        "Pick-a-Pic",
+        "Pick-a-Pic\u2019s dataset"
+      ],
+      "metric": [
+        "Win Rate",
+        "Percentage of instances",
+        "aesthetic score",
+        "CLIP-H text-alignment score",
+        "win ratio",
+        "tie ratio",
+        "lose ratio",
+        "Win/Tie/Lose Ratio",
+        "Preference distribution",
+        "user preferences"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 15,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study072",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "repo_silent",
+      "dependency": "paper_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Food-101",
+        "mini-ImageNet"
+      ],
+      "metric": [
+        "epoch count",
+        "epoch duration"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 4,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study073",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "AUC",
+        "paper": "AUC",
+        "repo": [
+          "Top-1 accuracy"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "Recall",
+        "paper": "Recall",
+        "repo": [
+          "Top-1 accuracy"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "2",
+          "290",
+          "4"
+        ],
+        "repo": [
+          "0",
+          "31"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "YCB-Video",
+        "testing dataset",
+        "YCB-Video dataset",
+        "LINEMOD dataset"
+      ],
+      "metric": [
+        "AUC of ADD",
+        "AUC of ADD-S",
+        "AUC (%)",
+        "AUC (%)",
+        "AUC (%)",
+        "AUC (%)",
+        "AUC (%)",
+        "AUC (%)",
+        "AUC (%)",
+        "AUC (%)",
+        "AUC (%)",
+        "AUC (%)",
+        "AUC (%)",
+        "AUC (%)",
+        "AUC (%)",
+        "AUC (%)",
+        "AUC (%)",
+        "ADD",
+        "ADD-S",
+        "ADD",
+        "ADD-S",
+        "ADD",
+        "ADD-S",
+        "ADD",
+        "ADD-S",
+        "ADD",
+        "ADD-S",
+        "Train data size (log10)",
+        "Area under the curve (AUC) of ADD and ADD-S",
+        "Recall of ADD that is less than 0.1 of the object diameter (ADD-0.1d)",
+        "Average recall (AR) of VSD, MSSD and MSPD metrics"
+      ]
+    },
+    "counts": {
+      "conflicts": 3,
+      "unmapped_paper_names": 35,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study074",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "both_silent",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {},
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 0,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study075",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "both_silent",
+      "metric": "paper_silent",
+      "dependency": "both_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "concentrated micelle solutions",
+        "SAXS and/or SANS scattering profiles",
+        "concentrated micelle solution",
+        "target system",
+        "P(q) and S(q) CREASE",
+        "micelle solutions",
+        "SANS profiles",
+        "scattering profiles"
+      ],
+      "metric": [
+        "scattering intensity",
+        "scattering intensity",
+        "micelle core and shell sizes",
+        "micelle volume fractions",
+        "RDF profiles",
+        "match in micelle-micelle RDF",
+        "peak RDF value",
+        "predicted RDF"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 16,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study076",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "5"
+        ],
+        "repo": [
+          "10"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "repo_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "synthetic and real-world data",
+        "real-world heterogeneous attributed multilayer network",
+        "synthetic",
+        "real-world",
+        "community membership matrices",
+        "synthetic data",
+        "Comparison with existing methods"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 7,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study077",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "six benchmarks",
+        "GSM8K",
+        "MBPP",
+        "test dataset"
+      ],
+      "metric": [
+        "out-performed manually designed methods and existing automated optimization approaches",
+        "outperform stronger ones on the Pareto front of cost-effectiveness",
+        "score",
+        "performance",
+        "cost-effectiveness"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 9,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study078",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "42"
+        ],
+        "repo": [
+          "0",
+          "201"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "both_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "VQEs"
+      ],
+      "metric": [
+        "approximation error",
+        "communication overhead",
+        "speedup ratio"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 4,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study079",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "16",
+        "repo": "32",
+        "detail": "question_clustering.py:49"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "2e-5",
+        "repo": "5.0e-7",
+        "detail": "config_full.yaml:22"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "Precision",
+        "paper": "Precision",
+        "repo": [
+          "F1"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "Recall",
+        "paper": "Recall",
+        "repo": [
+          "F1"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "HQ2A",
+        "ASQA",
+        "ELI5",
+        "BASE-LINE",
+        "ZERO-SHOT",
+        "IMPROVE",
+        "GENERIC",
+        "EIR"
+      ],
+      "metric": [
+        "score",
+        "time",
+        "error scores",
+        "quality of answers",
+        "quality of answers",
+        "fps",
+        "comprehensiveness",
+        "overall answer preference",
+        "Error samples",
+        "Error score",
+        "human answer",
+        "model answer"
+      ]
+    },
+    "counts": {
+      "conflicts": 4,
+      "unmapped_paper_names": 20,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study080",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "HABITAT",
+        "ROBOTHOR",
+        "PASTURE",
+        "P ASTURE",
+        "H ABITAT (MP3D)",
+        "R OBOTHOR",
+        "H ABI- TAT",
+        "MP3D",
+        "LAION-5B"
+      ],
+      "metric": [
+        "Success weighted by the oracle shortest path length and normalized by the actual path length",
+        "SUCCESS (SR)",
+        "Success weighted by inverse path length (SPL)",
+        "success",
+        "success",
+        "success",
+        "performance",
+        "performance",
+        "performance",
+        "performance",
+        "4.9",
+        "4.8",
+        "15.6",
+        "Fraction of Failure Exploration",
+        "success rate (SR)",
+        "performance",
+        "performance"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 26,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study081",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "32",
+        "repo": "8",
+        "detail": "synthesize.py:262"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "LJ Speech corpus",
+        "Indigenous language training data",
+        "MUSHRA"
+      ],
+      "metric": [
+        "IDMUSHRA score"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 4,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study082",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "32",
+        "repo": "64",
+        "detail": "train_copying.py"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "dropout",
+        "paper": "0.1",
+        "repo": "0.5",
+        "detail": "train_copying.py"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "repo_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Sequential MNIST Resolution Task",
+        "Bouncing Balls Environment",
+        "partial observation video prediction task",
+        "environment with 4 balls",
+        "environment with 6-8 balls"
+      ],
+      "metric": [
+        "generalisation",
+        "computation",
+        "test set performance",
+        "performance",
+        "Cross Entropy (CE)",
+        "F1 score"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 11,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study083",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "LPMC",
+        "NTS"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 2,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study084",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "512",
+        "repo": "32",
+        "detail": "retrieval.yaml:18"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "1e\u22124",
+        "repo": "1e-5",
+        "detail": "retrieval.yaml:64"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "momentum",
+        "paper": "0.995",
+        "repo": "0.9",
+        "detail": "train.py"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "decidable",
+      "metric": "paper_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "NLVR2",
+        "Flickr30Kw",
+        "Conceptual 12M",
+        "Conceptual 14.1M",
+        "Conceptual Captions",
+        "SBU Captions",
+        "UNITER",
+        "RefCOCO+",
+        "flickr test",
+        "SNLI-VE",
+        "VQA"
+      ],
+      "metric": [
+        "performance",
+        "performance",
+        "average recall",
+        "#Pre-trainTraining tasks",
+        "TR",
+        "IR",
+        "SNLI-VE",
+        "NLVR2VQA",
+        "Images (\ufb02ickr test)"
+      ]
+    },
+    "counts": {
+      "conflicts": 3,
+      "unmapped_paper_names": 20,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study085",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "1e\u22125",
+        "repo": "1e-5",
+        "detail": "test_training.py:95"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "both_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "test set",
+        "CrossDocked2020",
+        "protein-ligand complexes"
+      ],
+      "metric": [
+        "validity",
+        "novelty",
+        "uniqueness"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 6,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study086",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "batch_size",
+        "paper": "512",
+        "repo": "64",
+        "detail": "attack.py:56"
+      },
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "lower",
+        "repo": "2e-4",
+        "detail": "finetuning.py:64"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "decidable",
+      "metric": "both_silent",
+      "dependency": "paper_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Openchat",
+        "Mistral-7B-v0.1",
+        "Mistral-7B-v0.2",
+        "Llama-2-7b",
+        "Llama-2-7b-chat",
+        "Starling-LM-7B-alpha",
+        "LLAMA -2-7 B",
+        "D"
+      ],
+      "metric": [
+        "time",
+        "time",
+        "time",
+        "TRR",
+        "TRR",
+        "TRR",
+        "effectiveness",
+        "TRRs",
+        "performance",
+        "TRR (Ours)",
+        "TRR (GCG)",
+        "TRR (ARCA)"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 20,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study087",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "10\u22124",
+        "repo": "0.001",
+        "detail": "main.py"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "FS-S",
+        "Pascal-5i",
+        "COCO-20i",
+        "FS-CS"
+      ],
+      "metric": [
+        "classification exact ratio",
+        "segmentation mIoU",
+        "class occurrence and segmentation masks",
+        "ER"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 8,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study088",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "dataset_mismatch",
+        "paper": [
+          "ADE20K",
+          "COCO",
+          "ImageNet"
+        ],
+        "repo": [
+          "C4"
+        ],
+        "detail": "no canonical dataset is named on both sides"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "repo_silent",
+      "metric": "repo_silent",
+      "dependency": "repo_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "ImageNet-22K",
+        "visual modeling",
+        "object detection",
+        "semantic segmentation"
+      ],
+      "metric": [
+        "top-1 accuracy",
+        "box AP",
+        "mask AP",
+        "speed-up",
+        "efficiency",
+        "faster",
+        "top-1 accuracy",
+        "top-1 accuracy",
+        "box AP",
+        "mask AP",
+        "model size (#param)",
+        "FLOPs",
+        "FPS"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 17,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study089",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "4"
+        ],
+        "repo": [
+          "2023",
+          "2024"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "repo_silent",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "CASME II",
+        "MER",
+        "MOL",
+        "SAMM",
+        "SMIC"
+      ],
+      "metric": [
+        "WF1",
+        "1.048",
+        "0.465",
+        "1.145",
+        "0.972",
+        "0.839",
+        "0.650",
+        "inter-ocular distance normalized mean error",
+        "failure rate"
+      ]
+    },
+    "counts": {
+      "conflicts": 1,
+      "unmapped_paper_names": 14,
+      "decidable_types": 1
+    }
+  },
+  {
+    "study_id": "study090",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "repo_silent",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "paper_silent"
+    },
+    "unmapped_paper_names": {
+      "metric": [
+        "NDS",
+        "training time",
+        "pooling operation speedup",
+        "mAP\u2191",
+        "NDS\u2191",
+        "mATE\u2193",
+        "mAOE\u2193",
+        "nuScenes Detection Score (NDS)",
+        "mean Average Precision (mAP)",
+        "mean Average Translation Error (mATE)",
+        "mean Average Scale Error (mASE)",
+        "mean Average Orientation Error (mAOE)",
+        "mean Average Velocity Error (mAVE)",
+        "mean Average Attribute Error (mAAE)"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 14,
+      "decidable_types": 2
+    }
+  },
+  {
+    "study_id": "study091",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "both_silent",
+      "metric": "repo_silent",
+      "dependency": "both_silent",
+      "seed": "both_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Structure 101",
+        "SonarQube",
+        "DV8",
+        "NDepend",
+        "CAST",
+        "CodeMRI",
+        "SQuORE",
+        "SonarGraph"
+      ],
+      "metric": [
+        "TD interest",
+        "extra effort for repaying TD",
+        "security",
+        "maintainability at multiple levels",
+        "architectural analysis",
+        "number of issues generated"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 14,
+      "decidable_types": 0
+    }
+  },
+  {
+    "study_id": "study092",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "F1",
+        "paper": "F1",
+        "repo": [
+          "mIoU"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "mAP",
+        "paper": "mAP",
+        "repo": [
+          "mIoU"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "20"
+        ],
+        "repo": [
+          "0",
+          "2"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "both_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "Re-ID"
+      ],
+      "metric": [
+        "F\u2217 1",
+        "classic Re-ID execution time",
+        "FR",
+        "TVR",
+        "lower galleries",
+        "fewer outliers",
+        "processing time"
+      ]
+    },
+    "counts": {
+      "conflicts": 3,
+      "unmapped_paper_names": 8,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study093",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "hyperparameter_mismatch",
+        "name": "learning_rate",
+        "paper": "1\u00d710\u22124",
+        "repo": "0.0004",
+        "detail": "run_configs_400m.py:91"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "AUC",
+        "paper": "AUC",
+        "repo": [
+          "AUROC",
+          "F1",
+          "Precision",
+          "Recall"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "metric_never_computed",
+        "name": "Accuracy",
+        "paper": "Accuracy",
+        "repo": [
+          "AUROC",
+          "F1",
+          "Precision",
+          "Recall"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "10"
+        ],
+        "repo": [
+          "0",
+          "1",
+          "42"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "paper_silent",
+      "hyperparameter": "decidable",
+      "metric": "decidable",
+      "dependency": "paper_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "MedMINIST",
+        "VQA-RAD",
+        "SLAKE",
+        "ROCO",
+        "MIMIC-CXR"
+      ],
+      "metric": [
+        "Recall@K(K=1,5,10)",
+        "zero-shot evaluation"
+      ]
+    },
+    "counts": {
+      "conflicts": 4,
+      "unmapped_paper_names": 7,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study094",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [
+      {
+        "type": "metric_never_computed",
+        "name": "Accuracy",
+        "paper": "Accuracy",
+        "repo": [
+          "SSIM",
+          "mAP"
+        ],
+        "detail": "claimed metric has no detected computation in the repository"
+      },
+      {
+        "type": "seed_mismatch",
+        "paper": [
+          "4"
+        ],
+        "repo": [
+          "0",
+          "2020",
+          "2147483647",
+          "937162211"
+        ],
+        "detail": "no seed value declared in the paper is set anywhere in the code"
+      }
+    ],
+    "decidability": {
+      "dataset": "decidable",
+      "hyperparameter": "paper_silent",
+      "metric": "decidable",
+      "dependency": "repo_silent",
+      "seed": "decidable"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "LVIS",
+        "V3Det",
+        "OpenImages",
+        "CC3M",
+        "SA-1B",
+        "Dense Object Detection Grounding DINO 1.5 Pro",
+        "video detection results",
+        "image-caption pairs"
+      ],
+      "metric": [
+        "robust performance",
+        "APall",
+        "APall",
+        "APr",
+        "FPS(A100/TensorRT)",
+        "FPS(Orin NX)",
+        "performance",
+        "ability"
+      ]
+    },
+    "counts": {
+      "conflicts": 2,
+      "unmapped_paper_names": 16,
+      "decidable_types": 3
+    }
+  },
+  {
+    "study_id": "study095",
+    "model_slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "diff_version": 1,
+    "status": "ok",
+    "conflicts": [],
+    "decidability": {
+      "dataset": "both_silent",
+      "hyperparameter": "paper_silent",
+      "metric": "both_silent",
+      "dependency": "repo_silent",
+      "seed": "repo_silent"
+    },
+    "unmapped_paper_names": {
+      "dataset": [
+        "NQ",
+        "TQA",
+        "EM QA",
+        "English Wikipedia",
+        "Wikipedia corpus",
+        "RAG"
+      ],
+      "metric": [
+        "top-k recall",
+        "EM QA accuracy",
+        "index size",
+        "query time",
+        "EM QA accuracy",
+        "44.5",
+        "56.1",
+        "48.2",
+        "65.0",
+        "51.4",
+        "67.6",
+        "41.6",
+        "56.8",
+        "49.0",
+        "65.6"
+      ]
+    },
+    "counts": {
+      "conflicts": 0,
+      "unmapped_paper_names": 21,
+      "decidable_types": 0
+    }
+  }
+]

@@ -1,12 +1,12 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 400,
   "datasets": [
     {
       "name": "coco",
       "canonical": "COCO",
       "source_kind": "config",
-      "evidence": "robustness_eval.py:8: def print_coco_results(results):"
+      "evidence": "coco_error_analysis.py:8: from pycocotools.coco import COCO"
     },
     {
       "name": "voc",
@@ -30,7 +30,7 @@
       "name": "imagenet",
       "canonical": "ImageNet",
       "source_kind": "config",
-      "evidence": "__init__.py:2: get_classes, imagenet_det_classes,"
+      "evidence": "class_names.py:16: def imagenet_det_classes():"
     }
   ],
   "dataset_mentions_docs_only": [],
@@ -39,37 +39,37 @@
       "name": "num_classes",
       "canonical": "num_classes",
       "value": "81",
-      "evidence": "cascade_rcnn_r50_caffe_c4_1x.py:50"
+      "evidence": "ssd512_coco.py:20"
     },
     {
       "name": "warmup",
       "canonical": "warmup",
       "value": "linear",
-      "evidence": "cascade_rcnn_r50_caffe_c4_1x.py:223"
+      "evidence": "ssd512_coco.py:115"
     },
     {
       "name": "total_epochs",
       "canonical": "epochs",
-      "value": "12",
-      "evidence": "cascade_rcnn_r50_caffe_c4_1x.py:237"
+      "value": "24",
+      "evidence": "ssd512_coco.py:129"
     },
     {
       "name": "lr",
       "canonical": "learning_rate",
       "value": "0.01",
-      "evidence": "fcos_mstrain_640_800_x101_64x4d_fpn_gn_2x.py:112"
+      "evidence": "fcos_mstrain_640_800_r101_caffe_fpn_gn_2x_4gpu.py:111"
     },
     {
       "name": "momentum",
       "canonical": "momentum",
       "value": "0.9",
-      "evidence": "fcos_mstrain_640_800_x101_64x4d_fpn_gn_2x.py:113"
+      "evidence": "fcos_mstrain_640_800_r101_caffe_fpn_gn_2x_4gpu.py:112"
     },
     {
       "name": "weight_decay",
       "canonical": "weight_decay",
       "value": "0.0001",
-      "evidence": "fcos_mstrain_640_800_x101_64x4d_fpn_gn_2x.py:114"
+      "evidence": "fcos_mstrain_640_800_r101_caffe_fpn_gn_2x_4gpu.py:113"
     },
     {
       "name": "batch_size",
@@ -83,13 +83,13 @@
       "name": "COCOeval",
       "canonical": "mAP",
       "signal": "metric_api",
-      "evidence": "test_robustness.py:14"
+      "evidence": "coco_error_analysis.py:9"
     },
     {
       "name": "segm",
       "canonical": "Mask AP",
       "signal": "eval_config",
-      "evidence": "mask_rcnn_r50_caffe_c4_1x.py:166"
+      "evidence": "cascade_mask_rcnn_x101_32x4d_fpn_1x.py:228"
     },
     {
       "name": "ap",
@@ -108,5 +108,8 @@
   "study_id": "study019",
   "repo_url": "https://github.com/Res2Net/mmdetection",
   "status": "ok",
-  "duration_s": 2.8
+  "repo_commit": "846468125cf7f7b1b37c952e2f9025444d4effbd",
+  "duration_s": 4.1,
+  "swept_at": "2026-09-29T15:27:15+00:00",
+  "host": "skynetcpu"
 }

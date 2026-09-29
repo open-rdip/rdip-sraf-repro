@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 32,
   "datasets": [
     {
@@ -12,16 +12,16 @@
   "dataset_mentions_docs_only": [],
   "hyperparameters": [
     {
-      "name": "learning_rate",
-      "canonical": "learning_rate",
-      "value": "1e-3",
-      "evidence": "keras_model.py:67"
-    },
-    {
       "name": "epochs",
       "canonical": "epochs",
       "value": "200",
       "evidence": "__init__.py:221"
+    },
+    {
+      "name": "learning_rate",
+      "canonical": "learning_rate",
+      "value": "1e-3",
+      "evidence": "keras_model.py:67"
     }
   ],
   "metrics": [
@@ -36,5 +36,8 @@
   "study_id": "study052",
   "repo_url": "https://github.com/nonparametric-adversarial/nonparametric",
   "status": "ok",
-  "duration_s": 3.9
+  "repo_commit": "01b398085631d18516a06717021330504b8d4826",
+  "duration_s": 4.7,
+  "swept_at": "2026-09-29T15:29:15+00:00",
+  "host": "skynetcpu"
 }

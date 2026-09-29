@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 400,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -26,7 +26,7 @@
       "name": "epochs",
       "canonical": "epochs",
       "value": "1",
-      "evidence": "model_config.yaml:38"
+      "evidence": "model_config.yaml:37"
     },
     {
       "name": "temperature",
@@ -37,8 +37,8 @@
     {
       "name": "dropout",
       "canonical": "dropout",
-      "value": "transformer_dropout",
-      "evidence": "TransAct.py:129"
+      "value": "attn_dropout",
+      "evidence": "BST.py:334"
     }
   ],
   "metrics": [
@@ -73,28 +73,28 @@
       "evidence": "DCN_tiny_parquet_tuner_config.yaml:22"
     },
     {
-      "value": "2024",
-      "evidence": "model_config.yaml:40"
+      "value": "2019",
+      "evidence": "model_config.yaml:39"
     },
     {
-      "value": "2019",
-      "evidence": "model_config.yaml:28"
+      "value": "2022",
+      "evidence": "model_config.yaml:35"
     },
     {
       "value": "20242025",
       "evidence": "model_config.yaml:45"
     },
     {
-      "value": "2022",
-      "evidence": "model_config.yaml:34"
+      "value": "2021",
+      "evidence": "model_config.yaml:33"
+    },
+    {
+      "value": "2024",
+      "evidence": "model_config.yaml:40"
     },
     {
       "value": "2025",
       "evidence": "model_config.yaml:34"
-    },
-    {
-      "value": "2021",
-      "evidence": "model_config.yaml:41"
     },
     {
       "value": "2023",
@@ -108,5 +108,8 @@
   "study_id": "study022",
   "repo_url": "https://github.com/reczoo/FuxiCTR",
   "status": "ok",
-  "duration_s": 1.9
+  "repo_commit": "183da1c944ba8930fcdcd54114837c081959d748",
+  "duration_s": 3.2,
+  "swept_at": "2026-09-29T15:27:14+00:00",
+  "host": "skynetcpu"
 }

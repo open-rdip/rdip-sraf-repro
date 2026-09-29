@@ -1,12 +1,12 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 296,
   "datasets": [
     {
       "name": "waymo",
       "canonical": "Waymo",
       "source_kind": "config",
-      "evidence": "process_wod_data.py:3: from waymo_open_dataset.protos import scenario_pb2"
+      "evidence": "offline_sim_agents.py:13: from waymo_open_dataset.wdl_limited.sim_agents_metrics import metrics"
     },
     {
       "name": "ade",
@@ -26,14 +26,14 @@
     {
       "name": "temperature",
       "canonical": "temperature",
-      "value": "1.0",
-      "evidence": "gump_nuplan_gptm.yaml:30"
+      "value": "1.1",
+      "evidence": "gump_wod_gptm.yaml:30"
     },
     {
       "name": "dropout",
       "canonical": "dropout",
       "value": "0.1",
-      "evidence": "gump_nuplan_gptm.yaml:33"
+      "evidence": "gump_wod_gptm.yaml:33"
     },
     {
       "name": "lr",
@@ -76,5 +76,8 @@
   "study_id": "study032",
   "repo_url": "https://github.com/horizonrobotics/gump",
   "status": "ok",
-  "duration_s": 3.8
+  "repo_commit": "bfec7cbfe2d1e8ea0e62374e7577ffcfd96ead1a",
+  "duration_s": 9.9,
+  "swept_at": "2026-09-29T15:27:51+00:00",
+  "host": "skynetcpu"
 }

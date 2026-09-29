@@ -1,27 +1,27 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 21,
   "datasets": [
     {
       "name": "ImageNet",
       "canonical": "ImageNet",
       "source_kind": "config",
-      "evidence": "validate.py:55: parser = argparse.ArgumentParser(description='PyTorch ImageNet Validation')"
+      "evidence": "train.py:105: parser = argparse.ArgumentParser(description='PyTorch ImageNet Training')"
     }
   ],
   "dataset_mentions_docs_only": [],
   "hyperparameters": [
     {
-      "name": "batch_size",
-      "canonical": "batch_size",
-      "value": "initial_batch_size",
-      "evidence": "validate.py:313"
-    },
-    {
       "name": "momentum",
       "canonical": "momentum",
       "value": "0.9",
       "evidence": "benchmark.py"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "initial_batch_size",
+      "evidence": "benchmark.py:520"
     },
     {
       "name": "num_classes",
@@ -48,5 +48,8 @@
   "study_id": "study049",
   "repo_url": "https://github.com/sail-sg/inceptionnext",
   "status": "ok",
-  "duration_s": 1.3
+  "repo_commit": "3f9769c6b3fcf903d1dc2f436eddc6963cacb535",
+  "duration_s": 1.2,
+  "swept_at": "2026-09-29T15:29:12+00:00",
+  "host": "skynetcpu"
 }

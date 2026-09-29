@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 400,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -8,19 +8,33 @@
       "name": "temperature",
       "canonical": "temperature",
       "value": "0",
-      "evidence": "test_jump_forward.py:34"
+      "evidence": "test_httpserver_reuse.py:25"
     },
     {
       "name": "image_size",
       "canonical": "image_size",
       "value": "int",
       "evidence": "janus_pro.py:164"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "int",
+      "evidence": "test_rotary_embedding.py:162"
     }
   ],
   "metrics": [],
-  "seeds": [],
+  "seeds": [
+    {
+      "value": "42",
+      "evidence": "test_cutlass_mla.py:48"
+    }
+  ],
   "study_id": "study044",
   "repo_url": "https://github.com/eric-ai-lab/soft-thinking",
   "status": "ok",
-  "duration_s": 2.6
+  "repo_commit": "b97407c60d5e971da4a4fe76f405d6e236d0ddfa",
+  "duration_s": 4.9,
+  "swept_at": "2026-09-29T15:28:46+00:00",
+  "host": "skynetcpu"
 }

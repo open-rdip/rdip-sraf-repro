@@ -1,12 +1,12 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 400,
   "datasets": [
     {
       "name": "coco",
       "canonical": "COCO",
       "source_kind": "config",
-      "evidence": "parse_macaquepose_dataset.py:31: def save_coco_anno(data_annotation,"
+      "evidence": "keypoints2coco_without_mmdet.py:8: from xtcocotools.coco import COCO"
     },
     {
       "name": "VOC2012",
@@ -24,16 +24,16 @@
   "dataset_mentions_docs_only": [],
   "hyperparameters": [
     {
-      "name": "batch_size",
-      "canonical": "batch_size",
-      "value": "64",
-      "evidence": "yolox-pose_tiny_4xb64-300e_coco.py:65"
-    },
-    {
       "name": "num_classes",
       "canonical": "num_classes",
       "value": "1",
       "evidence": "py_yolox_pose_s_8xb32_300e_coco.py:72"
+    },
+    {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "32",
+      "evidence": "py_yolox_pose_s_8xb32_300e_coco.py:180"
     },
     {
       "name": "base_lr",
@@ -57,19 +57,19 @@
       "name": "warmup",
       "canonical": "warmup",
       "value": "linear",
-      "evidence": "demo_b.py:24"
+      "evidence": "demo.py:22"
     },
     {
       "name": "img_size",
       "canonical": "image_size",
-      "value": "224",
-      "evidence": "demo_b.py:59"
+      "value": "256",
+      "evidence": "demo.py:57"
     },
     {
       "name": "dropout",
       "canonical": "dropout",
       "value": "0.1",
-      "evidence": "demo_b.py:72"
+      "evidence": "demo.py:69"
     }
   ],
   "metrics": [
@@ -83,27 +83,30 @@
       "name": "AUC",
       "canonical": "AUC",
       "signal": "eval_config",
-      "evidence": "demo_b.py:11"
+      "evidence": "demo.py:9"
     },
     {
       "name": "AP",
       "canonical": "AP",
       "signal": "cli_flag",
-      "evidence": "rtmpose_ap10k.yml:12"
+      "evidence": "edpose_coco.yml:19"
     }
   ],
   "seeds": [
     {
       "value": "2024",
-      "evidence": "rtmw3d-x_8xb32_cocktail14-384x288.py:18"
+      "evidence": "rtmw3d-l_8xb64_cocktail14-384x288.py:18"
     },
     {
       "value": "21",
-      "evidence": "rtmpose-m_8xb32-60e_coco-wholebody-face-256x256.py:9"
+      "evidence": "rtmpose-x_8xb32-270e_coco-wholebody-384x288.py:15"
     }
   ],
   "study_id": "study009",
   "repo_url": "https://github.com/open-mmlab/mmpose",
   "status": "ok",
-  "duration_s": 3.9
+  "repo_commit": "759b39c13fea6ba094afc1fa932f51dc1b11cbf9",
+  "duration_s": 7.5,
+  "swept_at": "2026-09-29T15:26:48+00:00",
+  "host": "skynetcpu"
 }

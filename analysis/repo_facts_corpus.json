@@ -1,0 +1,5901 @@
+[
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [
+      {
+        "name": "cifar-10",
+        "canonical": "CIFAR-10",
+        "source_kind": "config",
+        "evidence": "_config.yml:41: - cifar-10.md"
+      },
+      {
+        "name": "squad",
+        "canonical": "SQuAD",
+        "source_kind": "config",
+        "evidence": "run_sanity_check.py:43: def test_squad():"
+      },
+      {
+        "name": "Wikitext",
+        "canonical": "WikiText",
+        "source_kind": "config",
+        "evidence": "train_zero3.py:141: class WikitextDataset(Dataset):"
+      }
+    ],
+    "dataset_mentions_docs_only": [
+      {
+        "name": "Ade",
+        "canonical": "ADE20K",
+        "source_kind": "docs",
+        "evidence": "README.zh.md:227: 22. Guanhua Wang, Heyang Qin, Sam Ade Jacobs, Xiaoxia Wu, Connor Holmes, Zhewei Yao, Samyam Rajbhandari, Olatu"
+      }
+    ],
+    "hyperparameters": [
+      {
+        "name": "warmup",
+        "canonical": "warmup",
+        "value": "10",
+        "evidence": "h2d_d2h_bench.py"
+      },
+      {
+        "name": "iters",
+        "canonical": "iterations",
+        "value": "50",
+        "evidence": "h2d_d2h_bench.py"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "8",
+        "evidence": "modelingpreln.py:179"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.00015",
+        "evidence": "ds_batch_config.json:7"
+      },
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "10",
+        "evidence": "alexnet_model.py:106"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "3e-7",
+        "evidence": "ds_config_z3.json:13"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.1",
+        "evidence": "train_zero3.py"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "bench_multimodal_sp.py:155"
+      },
+      {
+        "value": "123",
+        "evidence": "alexnet_model.py:126"
+      },
+      {
+        "value": "2222",
+        "evidence": "partial_offload_test.py:74"
+      },
+      {
+        "value": "42",
+        "evidence": "train_zero3.py:115"
+      },
+      {
+        "value": "8197",
+        "evidence": "test_he_opt_cache.py:22"
+      },
+      {
+        "value": "1",
+        "evidence": "test_affine_shard_map.py:209"
+      },
+      {
+        "value": "3",
+        "evidence": "test_affine_shard_map.py:736"
+      },
+      {
+        "value": "1234",
+        "evidence": "test_autotp_uc_checkpoint.py:1585"
+      },
+      {
+        "value": "9000",
+        "evidence": "test_autotp_uc_checkpoint.py:1621"
+      }
+    ],
+    "study_id": "study001",
+    "repo_url": "https://github.com/microsoft/DeepSpeed",
+    "status": "ok",
+    "repo_commit": "a80df94b958bf2ccbbd757891ca173fadb7c0b5d",
+    "duration_s": 22.5,
+    "swept_at": "2026-09-29T15:26:33+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 204,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "num_epochs",
+        "canonical": "epochs",
+        "value": "0",
+        "evidence": "kgfm_zero_shot.py:178"
+      },
+      {
+        "name": "optim",
+        "canonical": "optimizer",
+        "value": "Muon",
+        "evidence": "test_regression_muon.py:53"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "1024",
+        "evidence": "test_regression_muon.py:58"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.02",
+        "evidence": "test_regression_muon.py:59"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.25",
+        "evidence": "test_amwa.py:173"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "float",
+        "evidence": "adopt.py:532"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "Dice",
+        "canonical": "Dice",
+        "signal": "metric_api",
+        "evidence": "setup.py:91"
+      },
+      {
+        "name": "mean_absolute_error",
+        "canonical": "MAE",
+        "signal": "metric_api",
+        "evidence": "literal_prediction.py:95"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "kgfm_inference.py:47"
+      },
+      {
+        "value": "991",
+        "evidence": "test_flock.py:114"
+      },
+      {
+        "value": "4321",
+        "evidence": "test_flock.py:177"
+      },
+      {
+        "value": "123",
+        "evidence": "test_flock.py:183"
+      },
+      {
+        "value": "45",
+        "evidence": "test_kgfm_inference.py:32"
+      },
+      {
+        "value": "7",
+        "evidence": "test_kgfm_inference.py:276"
+      },
+      {
+        "value": "17",
+        "evidence": "test_kgfm_inference.py:320"
+      },
+      {
+        "value": "14",
+        "evidence": "test_worker_storage.py:114"
+      },
+      {
+        "value": "912",
+        "evidence": "test_kgfm_next_inference.py:139"
+      },
+      {
+        "value": "100",
+        "evidence": "generate_reference.py:74"
+      }
+    ],
+    "study_id": "study002",
+    "repo_url": "https://github.com/dice-group/dice-embeddings",
+    "status": "ok",
+    "repo_commit": "aa7f00eb14cfffa2369f48e8e03ffb1621f6be62",
+    "duration_s": 5.5,
+    "swept_at": "2026-09-29T15:26:16+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [
+      {
+        "name": "COCO",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "gen_coco_panoptic_test_info.py:9: description='Generate COCO test image information '"
+      },
+      {
+        "name": "voc2007",
+        "canonical": "PASCAL VOC",
+        "source_kind": "config",
+        "evidence": "download_dataset.py:160: voc2007=["
+      },
+      {
+        "name": "ade20k",
+        "canonical": "ADE20K",
+        "source_kind": "config",
+        "evidence": "download_dataset.py:187: ade20k_2016=["
+      },
+      {
+        "name": "vg",
+        "canonical": "Visual Genome",
+        "source_kind": "config",
+        "evidence": "refcoco2odvg.py:129: out_path = osp.join(args.mdetr_anno_dir, filename[:-5] + '_vg.json')"
+      },
+      {
+        "name": "Cityscapes",
+        "canonical": "Cityscapes",
+        "source_kind": "config",
+        "evidence": "cityscapes.py:118: description='Convert Cityscapes annotations to COCO format')"
+      },
+      {
+        "name": "imagenet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "rtmdet_s_8xb32_300e_coco.py:24: checkpoint = 'https://download.openmmlab.com/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-s_imagenet_6"
+      },
+      {
+        "name": "c4",
+        "canonical": "C4",
+        "source_kind": "config",
+        "evidence": "mask_rcnn_r50_caffe_c4_1x_coco.py:12: from .._base_.models.mask_rcnn_r50_caffe_c4 import *"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "iters",
+        "canonical": "iterations",
+        "value": "1000",
+        "evidence": "optimize_anchors.py"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "2",
+        "evidence": "coco_detection.py:23"
+      },
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "80",
+        "evidence": "grounding_dino_swin-t_cafr.py:98"
+      },
+      {
+        "name": "max_epochs",
+        "canonical": "epochs",
+        "value": "12",
+        "evidence": "grounding_dino_swin-t_cafr.py:197"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.1",
+        "evidence": "maskformer_r50_ms_16xb1_75e_coco.py:79"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.0001",
+        "evidence": "maskformer_r50_ms_16xb1_75e_coco.py:217"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.0001",
+        "evidence": "maskformer_r50_ms_16xb1_75e_coco.py:218"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.0002",
+        "evidence": "rtmdet_s_8xb32_300e_coco.py:81"
+      },
+      {
+        "name": "img_size",
+        "canonical": "image_size",
+        "value": "1024",
+        "evidence": "vitdet_mask-rcnn_vit-b-mae_lsj-100e.py:21"
+      },
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "20",
+        "evidence": "co_dino_5scale_r50_lsj_8xb2_1x_coco.py:106"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "COCOeval",
+        "canonical": "mAP",
+        "signal": "metric_api",
+        "evidence": "fuse_results.py:7"
+      },
+      {
+        "name": "PQ",
+        "canonical": "PQ",
+        "signal": "logged",
+        "evidence": "analyze_results.py:306"
+      },
+      {
+        "name": "segm",
+        "canonical": "Mask AP",
+        "signal": "eval_config",
+        "evidence": "cityscapes_instance.py:83"
+      },
+      {
+        "name": "mIoU",
+        "canonical": "mIoU",
+        "signal": "eval_config",
+        "evidence": "refcocog.py:54"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study003",
+    "repo_url": "https://github.com/zhimengxin/rcod",
+    "status": "ok",
+    "repo_commit": "8b9b3b558d7a6b39eebda0d9afbdcc77a26516dd",
+    "duration_s": 6.2,
+    "swept_at": "2026-09-29T15:26:17+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 12,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study004",
+    "repo_url": "https://github.com/impredicative/irc-url-title-bot",
+    "status": "ok",
+    "repo_commit": "2e8e4b739f1cc9bbb4a069c7476f010eb2115188",
+    "duration_s": 1.2,
+    "swept_at": "2026-09-29T15:26:12+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 117,
+    "datasets": [
+      {
+        "name": "imagenet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "cin-ldm-vq-f8.yaml:77: target: ldm.data.imagenet.ImageNetTrain"
+      },
+      {
+        "name": "lsun",
+        "canonical": "LSUN",
+        "source_kind": "config",
+        "evidence": "lsun_bedrooms-ldm-vq-4.yaml:66: target: ldm.data.lsun.LSUNBedroomsTrain"
+      },
+      {
+        "name": "c4",
+        "canonical": "C4",
+        "source_kind": "config",
+        "evidence": "Nets.py:91: self.c4_conv = nn.Conv2d(256, self.channel, (1, 1))"
+      }
+    ],
+    "dataset_mentions_docs_only": [
+      {
+        "name": "celeba",
+        "canonical": "CelebA",
+        "source_kind": "docs",
+        "evidence": "download_models.sh:2: wget -O models/ldm/celeba256/celeba-256.zip https://ommer-lab.com/files/latent-diffusion/celeba.zip"
+      }
+    ],
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "1.",
+        "evidence": "notebook_helpers.py:142"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "10",
+        "evidence": "sample_diffusion.py"
+      },
+      {
+        "name": "image_size",
+        "canonical": "image_size",
+        "value": "32",
+        "evidence": "cin-ldm-vq-f8.yaml:12"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.0",
+        "evidence": "cin-ldm-vq-f8.yaml:62"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "5e-05",
+        "evidence": "utils.py"
+      },
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "400",
+        "evidence": "utils.py"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "1.e-2",
+        "evidence": "classifier.py:38"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "README.md:82"
+      }
+    ],
+    "study_id": "study005",
+    "repo_url": "https://github.com/cross-domain-compositing/cross-domain-compositing",
+    "status": "ok",
+    "repo_commit": "cb7010062aa0d5654283d5bcc0af241c88940821",
+    "duration_s": 3.6,
+    "swept_at": "2026-09-29T15:26:15+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 68,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.1",
+        "evidence": "trainprior.py:90"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "512",
+        "evidence": "vqvae.py:39"
+      },
+      {
+        "name": "learning_rate",
+        "canonical": "learning_rate",
+        "value": "1e-4",
+        "evidence": "vqvae.py:40"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study006",
+    "repo_url": "https://github.com/baitingluo/l-map",
+    "status": "ok",
+    "repo_commit": "1f4379fe3efbb00e94fd4df83852ad5acf88a9cc",
+    "duration_s": 1.6,
+    "swept_at": "2026-09-29T15:26:13+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 40,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "100",
+        "evidence": "examples.py:605"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study007",
+    "repo_url": "https://github.com/ShangtongZhang/DeepRL",
+    "status": "ok",
+    "repo_commit": "c0968b5c046314af09944843cdf06f4100c6bb95",
+    "duration_s": 2.3,
+    "swept_at": "2026-09-29T15:26:13+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 36,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "int",
+        "evidence": "train_fasttext.py:23"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "256",
+        "evidence": "hindsight.yml:11"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.05",
+        "evidence": "hindsight.yml:12"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "float",
+        "evidence": "get_optimizer.py:6"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "perplexity",
+        "canonical": "Perplexity",
+        "signal": "logged",
+        "evidence": "train.py:694"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "train.py:609"
+      }
+    ],
+    "study_id": "study008",
+    "repo_url": "https://github.com/konstantinjdobler/tight-budget-llm-adaptation",
+    "status": "ok",
+    "repo_commit": "b1dd039f1283ed17a1d2198a4f17f14ccf0e951d",
+    "duration_s": 2.1,
+    "swept_at": "2026-09-29T15:26:13+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [
+      {
+        "name": "coco",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "keypoints2coco_without_mmdet.py:8: from xtcocotools.coco import COCO"
+      },
+      {
+        "name": "VOC2012",
+        "canonical": "PASCAL VOC",
+        "source_kind": "config",
+        "evidence": "parse_animalpose_dataset.py:118: image_name = 'VOC2012/JPEGImages/' + data_anno['image'] + '.jpg'"
+      },
+      {
+        "name": "imagenet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "rtmpose-t_8xb256-120e_face6-256x256.py:74: 'rtmdet/cspnext_rsb_pretrain/cspnext-tiny_imagenet_600e-3a2dd350.pth'"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "1",
+        "evidence": "py_yolox_pose_s_8xb32_300e_coco.py:72"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "32",
+        "evidence": "py_yolox_pose_s_8xb32_300e_coco.py:180"
+      },
+      {
+        "name": "base_lr",
+        "canonical": "learning_rate",
+        "value": "0.004",
+        "evidence": "py_yolox_pose_s_8xb32_300e_coco.py:223"
+      },
+      {
+        "name": "max_epochs",
+        "canonical": "epochs",
+        "value": "300",
+        "evidence": "py_yolox_pose_s_8xb32_300e_coco.py:224"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.0002",
+        "evidence": "py_yolox_pose_s_8xb32_300e_coco.py:271"
+      },
+      {
+        "name": "warmup",
+        "canonical": "warmup",
+        "value": "linear",
+        "evidence": "demo.py:22"
+      },
+      {
+        "name": "img_size",
+        "canonical": "image_size",
+        "value": "256",
+        "evidence": "demo.py:57"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.1",
+        "evidence": "demo.py:69"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "CocoMetric",
+        "canonical": "mAP",
+        "signal": "metric_api",
+        "evidence": "py_yolox_pose_s_8xb32_300e_coco.py:30"
+      },
+      {
+        "name": "AUC",
+        "canonical": "AUC",
+        "signal": "eval_config",
+        "evidence": "demo.py:9"
+      },
+      {
+        "name": "AP",
+        "canonical": "AP",
+        "signal": "cli_flag",
+        "evidence": "edpose_coco.yml:19"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "2024",
+        "evidence": "rtmw3d-l_8xb64_cocktail14-384x288.py:18"
+      },
+      {
+        "value": "21",
+        "evidence": "rtmpose-x_8xb32-270e_coco-wholebody-384x288.py:15"
+      }
+    ],
+    "study_id": "study009",
+    "repo_url": "https://github.com/open-mmlab/mmpose",
+    "status": "ok",
+    "repo_commit": "759b39c13fea6ba094afc1fa932f51dc1b11cbf9",
+    "duration_s": 7.5,
+    "swept_at": "2026-09-29T15:26:48+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [
+      {
+        "name": "COCO",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "cocotext_converter.py:13: description='Generate training and validation set of COCO Text v2 ')"
+      },
+      {
+        "name": "voc",
+        "canonical": "PASCAL VOC",
+        "source_kind": "config",
+        "evidence": "spts_resnet50_8xb8-200e_icdar2015.py:80: lexicon_mapping=('(.*).jpg', r'new_voc_\\1.txt'),"
+      }
+    ],
+    "dataset_mentions_docs_only": [
+      {
+        "name": "ImageNet",
+        "canonical": "ImageNet",
+        "source_kind": "docs",
+        "evidence": "README.md:21: | [PANet](/configs/textdet/panet/panet_resnet18_fpem-ffm_600e_ctw1500.py) |     ImageNet     | CTW1500 Train |"
+      }
+    ],
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "1000",
+        "evidence": "lmdb_converter.py:46"
+      },
+      {
+        "name": "num_iters",
+        "canonical": "iterations",
+        "value": "3",
+        "evidence": "_base_abinet.py:6"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.1",
+        "evidence": "_base_abinet.py:13"
+      },
+      {
+        "name": "Epochs",
+        "canonical": "epochs",
+        "value": "20",
+        "evidence": "metafile.yml:7"
+      },
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "26",
+        "evidence": "_base_sdmgr_novisual.py:1"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "4e-4",
+        "evidence": "schedule_adamw_cos_6e.py:6"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "default_runtime.py:8"
+      },
+      {
+        "value": "1",
+        "evidence": "test_textdet_inferencer.py:24"
+      }
+    ],
+    "study_id": "study010",
+    "repo_url": "https://github.com/open-mmlab/mmocr",
+    "status": "ok",
+    "repo_commit": "966296f26ac34cf0e96d40ab4a0a94c9a697909a",
+    "duration_s": 3.7,
+    "swept_at": "2026-09-29T15:26:44+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "convert_imagenet_subsets.py:9: description='Convert ImageNet subset lists provided by SimCLR into '"
+      },
+      {
+        "name": "CIFAR10",
+        "canonical": "CIFAR-10",
+        "source_kind": "config",
+        "evidence": "publish_model.py:30: '\"CIFAR10\" and others.')"
+      },
+      {
+        "name": "CIFAR100",
+        "canonical": "CIFAR-100",
+        "source_kind": "config",
+        "evidence": "clip_vit-base-p16_zeroshot-cls_cifar100.py:25: type='CIFAR100',"
+      },
+      {
+        "name": "coco",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "ofa-base_finetuned_caption.py:2: '../_base_/datasets/coco_caption.py',"
+      },
+      {
+        "name": "VG",
+        "canonical": "Visual Genome",
+        "source_kind": "config",
+        "evidence": "metafile.yml:12: - VG"
+      },
+      {
+        "name": "MNIST",
+        "canonical": "MNIST",
+        "source_kind": "config",
+        "evidence": "lenet5_mnist.py:12: dataset_type = 'MNIST'"
+      },
+      {
+        "name": "voc",
+        "canonical": "PASCAL VOC",
+        "source_kind": "config",
+        "evidence": "resnet101-csra_1xb16_voc07-448px.py:1: _base_ = ['../_base_/datasets/voc_bs16.py', '../_base_/default_runtime.py']"
+      }
+    ],
+    "dataset_mentions_docs_only": [
+      {
+        "name": "ADE20K",
+        "canonical": "ADE20K",
+        "source_kind": "docs",
+        "evidence": "README.md:9: Masked image modeling (MIM) has demonstrated impressive results in self-supervised representation learning by "
+      },
+      {
+        "name": "Cityscapes",
+        "canonical": "Cityscapes",
+        "source_kind": "docs",
+        "evidence": "README.md:9: We propose RepMLP, a multi-layer-perceptron-style neural network building block for image recognition, which i"
+      }
+    ],
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "scale",
+        "evidence": "edgenext_to_mmpretrain.py:28"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "32",
+        "evidence": "clip_vit-base-p16_zeroshot-cls_cifar100.py:22"
+      },
+      {
+        "name": "img_size",
+        "canonical": "image_size",
+        "value": "224",
+        "evidence": "clip_vit-base-p16_zeroshot-cls_cifar100.py:44"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.05",
+        "evidence": "simsiam_resnet50_8xb32-coslr-100e_in1k.py:38"
+      },
+      {
+        "name": "Epochs",
+        "canonical": "epochs",
+        "value": "100",
+        "evidence": "metafile.yml:19"
+      },
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "1000",
+        "evidence": "eva02-tiny-p14_in1k.py:19"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.3",
+        "evidence": "vit-base-p16_32xb128-mae_in1k.py:41"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "vit-base-p16_4xb544-ipu_in1k.py:67"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "BLEU",
+        "canonical": "BLEU",
+        "signal": "metric_api",
+        "evidence": "metafile.yml:68"
+      },
+      {
+        "name": "Accuracy",
+        "canonical": "Accuracy",
+        "signal": "cli_flag",
+        "evidence": "metafile.yml:36"
+      },
+      {
+        "name": "mAP",
+        "canonical": "mAP",
+        "signal": "cli_flag",
+        "evidence": "metafile.yml:23"
+      },
+      {
+        "name": "Recall",
+        "canonical": "Recall",
+        "signal": "cli_flag",
+        "evidence": "metafile.yml:87"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "beitv2_beit-base-p16_8xb256-amp-coslr-1600e_in1k.py:113"
+      },
+      {
+        "value": "2",
+        "evidence": "mff_vit-base-p16_8xb512-amp-coslr-800e_in1k.py:3"
+      },
+      {
+        "value": "42",
+        "evidence": "blip-base_8xb32_ocrvqa.py:75"
+      }
+    ],
+    "study_id": "study011",
+    "repo_url": "https://github.com/open-mmlab/mmclassification",
+    "status": "ok",
+    "repo_commit": "ee7f2e88501f61aa95c742dd5f429f039935ee90",
+    "duration_s": 4.8,
+    "swept_at": "2026-09-29T15:26:45+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [
+      {
+        "name": "VOC",
+        "canonical": "PASCAL VOC",
+        "source_kind": "config",
+        "evidence": "voc_aug.py:27: description='Convert PASCAL VOC annotations to mmsegmentation format')"
+      },
+      {
+        "name": "COCO",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "coco_stuff164k.py:13: COCO_LEN = 123287"
+      },
+      {
+        "name": "Cityscapes",
+        "canonical": "Cityscapes",
+        "source_kind": "config",
+        "evidence": "cityscapes.py:17: description='Convert Cityscapes annotations to TrainIds')"
+      },
+      {
+        "name": "ade20k",
+        "canonical": "ADE20K",
+        "source_kind": "config",
+        "evidence": "mask2former_r50_8xb2-160k_ade20k-512x512.py:1: _base_ = ['../_base_/default_runtime.py', '../_base_/datasets/ade20k.py']"
+      }
+    ],
+    "dataset_mentions_docs_only": [
+      {
+        "name": "ImageNet",
+        "canonical": "ImageNet",
+        "source_kind": "docs",
+        "evidence": "README.md:17: The \"Roaring 20s\" of visual recognition began with the introduction of Vision Transformers (ViTs), which quick"
+      },
+      {
+        "name": "CIFAR-10",
+        "canonical": "CIFAR-10",
+        "source_kind": "docs",
+        "evidence": "README.md:17: Recent work has made significant progress in improving spatial resolution for pixelwise labeling with Fully Co"
+      }
+    ],
+    "hyperparameters": [
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "150",
+        "evidence": "mask2former_r50_8xb2-160k_ade20k-512x512.py:15"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.0",
+        "evidence": "mask2former_r50_8xb2-160k_ade20k-512x512.py:53"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "1",
+        "evidence": "san-vit-b16_voc12aug-640x640.py:26"
+      },
+      {
+        "name": "max_iters",
+        "canonical": "iterations",
+        "value": "60000",
+        "evidence": "san-vit-b16_coco-stuff164k-640x640.py:46"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "mIoU",
+        "canonical": "mIoU",
+        "signal": "cli_flag",
+        "evidence": "metafile.yaml:21"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "3",
+        "evidence": "pytorch2torchscript.py:14"
+      }
+    ],
+    "study_id": "study012",
+    "repo_url": "https://github.com/open-mmlab/mmsegmentation",
+    "status": "ok",
+    "repo_commit": "b040e147adfa027bbc071b624bedf0ae84dfc922",
+    "duration_s": 6.9,
+    "swept_at": "2026-09-29T15:26:48+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 393,
+    "datasets": [
+      {
+        "name": "c4",
+        "canonical": "C4",
+        "source_kind": "config",
+        "evidence": "conftest.py:489: {'id': 'c4', 'user_id': users[0]['id']},"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "1",
+        "evidence": "registrations.py:46"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study013",
+    "repo_url": "https://github.com/zenodo/zenodo",
+    "status": "ok",
+    "repo_commit": "2d0bd3527dcb851613a00391d674be1d004c9459",
+    "duration_s": 3.2,
+    "swept_at": "2026-09-29T15:26:44+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [
+      {
+        "name": "kitti",
+        "canonical": "KITTI",
+        "source_kind": "config",
+        "evidence": "create_data.py:8: from tools.dataset_converters import kitti_converter as kitti"
+      },
+      {
+        "name": "nuscenes",
+        "canonical": "nuScenes",
+        "source_kind": "config",
+        "evidence": "create_data.py:10: from tools.dataset_converters import nuscenes_converter as nuscenes_converter"
+      },
+      {
+        "name": "scannet",
+        "canonical": "ScanNet",
+        "source_kind": "config",
+        "evidence": "create_data.py:118: def scannet_data_prep(root_path, info_prefix, out_dir, workers):"
+      },
+      {
+        "name": "sunrgbd",
+        "canonical": "SUN RGB-D",
+        "source_kind": "config",
+        "evidence": "create_data.py:154: def sunrgbd_data_prep(root_path, info_prefix, out_dir, workers):"
+      },
+      {
+        "name": "waymo",
+        "canonical": "Waymo",
+        "source_kind": "config",
+        "evidence": "create_data.py:171: def waymo_data_prep(root_path,"
+      },
+      {
+        "name": "coco",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "create_gt_database.py:12: from pycocotools.coco import COCO"
+      },
+      {
+        "name": "imagenet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "smoke.py:17: checkpoint='http://dl.yf.io/dla/models/imagenet/dla34-ba72cf86.pth'"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "NUM_CLASSES",
+        "canonical": "num_classes",
+        "value": "18",
+        "evidence": "convert_h3dnet_checkpoints.py:114"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "2",
+        "evidence": "imvotenet_faster-rcnn-r50_fpn_4xb2_sunrgbd-3d.py:36"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.001",
+        "evidence": "point-rcnn_8xb2_kitti-3d-3class.py:96"
+      },
+      {
+        "name": "max_epochs",
+        "canonical": "epochs",
+        "value": "72",
+        "evidence": "smoke_dla34_dlaneck_gn-all_4xb8-6x_kitti-mono3d.py:40"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.",
+        "evidence": "dsvt_voxel032_res-second_secfpn_8xb1-cyclic-12e_waymoD5-3d-3class.py:45"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "bbox",
+        "canonical": "mAP",
+        "signal": "eval_config",
+        "evidence": "imvoxelnet_8xb4_kitti-3d-car.py:146"
+      },
+      {
+        "name": "AP",
+        "canonical": "AP",
+        "signal": "cli_flag",
+        "evidence": "metafile.yml:29"
+      },
+      {
+        "name": "mIoU",
+        "canonical": "mIoU",
+        "signal": "cli_flag",
+        "evidence": "metafile.yml:27"
+      },
+      {
+        "name": "segm",
+        "canonical": "Mask AP",
+        "signal": "eval_config",
+        "evidence": "nuim-instance.py:70"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "8",
+        "evidence": "imvotenet_stage2_8xb16_sunrgbd-3d.py:228"
+      },
+      {
+        "value": "0",
+        "evidence": "minkunet18_w32_torchsparse_8xb2-amp-15e_semantickitti.py:27"
+      },
+      {
+        "value": "1588147245",
+        "evidence": "minkunet18_w16_torchsparse_8xb2-amp-15e_semantickitti.py:13"
+      },
+      {
+        "value": "4",
+        "evidence": "groupfree3d_head-L6-O256_4xb8_scannet-seg.py:227"
+      },
+      {
+        "value": "1",
+        "evidence": "petr_vovnet_gridmask_p4_800x320.py:9"
+      }
+    ],
+    "study_id": "study014",
+    "repo_url": "https://github.com/open-mmlab/mmdetection3d",
+    "status": "ok",
+    "repo_commit": "fe25f7a51d36e3702f961e198894580d83c4387b",
+    "duration_s": 8.2,
+    "swept_at": "2026-09-29T15:26:49+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 16,
+    "datasets": [
+      {
+        "name": "C4",
+        "canonical": "C4",
+        "source_kind": "config",
+        "evidence": "plot_utils.py:461: -4: \"C4\","
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study015",
+    "repo_url": "https://github.com/Yuriyzabegaev/FTHM-Solver",
+    "status": "ok",
+    "repo_commit": "d9b687bffaef6c899bffb0e00a8a0da9ed3d0831",
+    "duration_s": 1.7,
+    "swept_at": "2026-09-29T15:26:42+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 294,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "2.5e-5",
+        "evidence": "rllib_tutorial.sync.py:161"
+      },
+      {
+        "name": "batch",
+        "canonical": "batch_size",
+        "value": "Tensor",
+        "evidence": "wandb_lib.py:123"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0",
+        "evidence": "polybeast_learner.py"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "inspecting_test_worlds.sync.py:73"
+      },
+      {
+        "value": "42",
+        "evidence": "gym_interface_example.sync.py:47"
+      }
+    ],
+    "study_id": "study016",
+    "repo_url": "https://github.com/avalon-benchmark/avalon",
+    "status": "ok",
+    "repo_commit": "1c8f9fecb36e7169bf7c1cffc289f9fa37a5280e",
+    "duration_s": 6.0,
+    "swept_at": "2026-09-29T15:26:47+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 175,
+    "datasets": [
+      {
+        "name": "imagenet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "deep_nuclei_feature_extractor_noaug.yml:31: type: imagenet"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.",
+        "evidence": "tg_bracs_tggnn_7_classes_pna.yml:10"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "256",
+        "evidence": "masked_grid_deep_tissue_feature_extractor.yml:47"
+      },
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "3",
+        "evidence": "cell_graph_explainer.py:50"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "Dice",
+        "canonical": "Dice",
+        "signal": "metric_api",
+        "evidence": "__init__.py:2"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study017",
+    "repo_url": "https://github.com/biomedsciai/histocartography",
+    "status": "ok",
+    "repo_commit": "5ec422092adbc2aae2cde3dbcbd4b28dca6685e2",
+    "duration_s": 3.9,
+    "swept_at": "2026-09-29T15:27:15+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 229,
+    "datasets": [
+      {
+        "name": "voc",
+        "canonical": "PASCAL VOC",
+        "source_kind": "config",
+        "evidence": "train_net.py:137: default=\"/home/zhangziwei/wheat_det/maskrcnn-benchmark/configs/pascal_voc/e2e_faster_rcnn_R_50_C4_1x_1_gpu_voc"
+      },
+      {
+        "name": "C4",
+        "canonical": "C4",
+        "source_kind": "config",
+        "evidence": "train_net.py:137: default=\"/home/zhangziwei/wheat_det/maskrcnn-benchmark/configs/pascal_voc/e2e_faster_rcnn_R_50_C4_1x_1_gpu_voc"
+      },
+      {
+        "name": "cityscapes",
+        "canonical": "Cityscapes",
+        "source_kind": "config",
+        "evidence": "convert_cityscapes_to_coco.py:38: '--dataset', help=\"cocostuff, cityscapes\", default=None, type=str)"
+      },
+      {
+        "name": "coco",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "convert_cityscapes_to_coco.py:67: def convert_coco_stuff_mat(data_dir, out_dir):"
+      },
+      {
+        "name": "ImageNet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "e2e_mask_rcnn_R_50_FPN_1x_cocostyle.yaml:3: WEIGHT: \"catalog://ImageNetPretrained/MSRA/R-50\""
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "NUM_CLASSES",
+        "canonical": "num_classes",
+        "value": "21",
+        "evidence": "e2e_mask_rcnn_R_50_FPN_1x_cocostyle.yaml:23"
+      },
+      {
+        "name": "BASE_LR",
+        "canonical": "learning_rate",
+        "value": "0.01",
+        "evidence": "e2e_mask_rcnn_R_50_FPN_1x_cocostyle.yaml:39"
+      },
+      {
+        "name": "WEIGHT_DECAY",
+        "canonical": "weight_decay",
+        "value": "0.0001",
+        "evidence": "e2e_mask_rcnn_R_50_FPN_1x_cocostyle.yaml:40"
+      },
+      {
+        "name": "MOMENTUM",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "config.yml:224"
+      },
+      {
+        "name": "WARMUP_ITERS",
+        "canonical": "warmup",
+        "value": "500",
+        "evidence": "config.yml:229"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "3",
+        "evidence": "test_data_samplers.py:60"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "COCOeval",
+        "canonical": "mAP",
+        "signal": "metric_api",
+        "evidence": "coco_eval.py:314"
+      },
+      {
+        "name": "segm",
+        "canonical": "Mask AP",
+        "signal": "logged",
+        "evidence": "coco_eval.py:47"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study018",
+    "repo_url": "https://github.com/markson14/WheatDet",
+    "status": "ok",
+    "repo_commit": "07eca9de61a671f79c1f2a199bd89324772c6cca",
+    "duration_s": 6.1,
+    "swept_at": "2026-09-29T15:27:17+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [
+      {
+        "name": "coco",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "coco_error_analysis.py:8: from pycocotools.coco import COCO"
+      },
+      {
+        "name": "voc",
+        "canonical": "PASCAL VOC",
+        "source_kind": "config",
+        "evidence": "robustness_eval.py:115: def get_voc_style_results(filename, prints='mPC', aggregate='benchmark'):"
+      },
+      {
+        "name": "cityscapes",
+        "canonical": "Cityscapes",
+        "source_kind": "config",
+        "evidence": "robustness_eval.py:167: assert dataset in ['coco', 'voc', 'cityscapes']"
+      },
+      {
+        "name": "c4",
+        "canonical": "C4",
+        "source_kind": "config",
+        "evidence": "cascade_rcnn_r50_caffe_c4_1x.py:240: work_dir = './work_dirs/cascade_rcnn_r50_c4_1x'"
+      },
+      {
+        "name": "imagenet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "class_names.py:16: def imagenet_det_classes():"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "81",
+        "evidence": "ssd512_coco.py:20"
+      },
+      {
+        "name": "warmup",
+        "canonical": "warmup",
+        "value": "linear",
+        "evidence": "ssd512_coco.py:115"
+      },
+      {
+        "name": "total_epochs",
+        "canonical": "epochs",
+        "value": "24",
+        "evidence": "ssd512_coco.py:129"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.01",
+        "evidence": "fcos_mstrain_640_800_r101_caffe_fpn_gn_2x_4gpu.py:111"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "fcos_mstrain_640_800_r101_caffe_fpn_gn_2x_4gpu.py:112"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.0001",
+        "evidence": "fcos_mstrain_640_800_r101_caffe_fpn_gn_2x_4gpu.py:113"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "1",
+        "evidence": "flops_counter.py:386"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "COCOeval",
+        "canonical": "mAP",
+        "signal": "metric_api",
+        "evidence": "coco_error_analysis.py:9"
+      },
+      {
+        "name": "segm",
+        "canonical": "Mask AP",
+        "signal": "eval_config",
+        "evidence": "cascade_mask_rcnn_x101_32x4d_fpn_1x.py:228"
+      },
+      {
+        "name": "ap",
+        "canonical": "AP",
+        "signal": "logged",
+        "evidence": "mean_ap.py:368"
+      },
+      {
+        "name": "recall",
+        "canonical": "Recall",
+        "signal": "logged",
+        "evidence": "mean_ap.py:426"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study019",
+    "repo_url": "https://github.com/Res2Net/mmdetection",
+    "status": "ok",
+    "repo_commit": "846468125cf7f7b1b37c952e2f9025444d4effbd",
+    "duration_s": 4.1,
+    "swept_at": "2026-09-29T15:27:15+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 20,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "n_epochs",
+        "canonical": "epochs",
+        "value": "40",
+        "evidence": "train.sh:15"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "64",
+        "evidence": "params.yaml:25"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.000001",
+        "evidence": "params.yaml:27"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "mean_absolute_error",
+        "canonical": "MAE",
+        "signal": "metric_api",
+        "evidence": "evaluation.py:9"
+      },
+      {
+        "name": "precision_score",
+        "canonical": "Precision",
+        "signal": "metric_api",
+        "evidence": "evaluation.py:10"
+      },
+      {
+        "name": "recall_score",
+        "canonical": "Recall",
+        "signal": "metric_api",
+        "evidence": "evaluation.py:10"
+      },
+      {
+        "name": "f1_score",
+        "canonical": "F1",
+        "signal": "metric_api",
+        "evidence": "evaluation.py:10"
+      },
+      {
+        "name": "roc_auc_score",
+        "canonical": "AUROC",
+        "signal": "metric_api",
+        "evidence": "evaluation.py:11"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study020",
+    "repo_url": "https://github.com/yueliukth/csaw-m",
+    "status": "ok",
+    "repo_commit": "f137e6344265d03869a7e21d2a434e9355a47cdc",
+    "duration_s": 1.6,
+    "swept_at": "2026-09-29T15:27:12+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 294,
+    "datasets": [
+      {
+        "name": "VG",
+        "canonical": "Visual Genome",
+        "source_kind": "config",
+        "evidence": "relation_train_net.py:308: if cfg.GLOBAL_SETTING.DATASET_CHOICE == 'VG':"
+      },
+      {
+        "name": "C4",
+        "canonical": "C4",
+        "source_kind": "config",
+        "evidence": "detector_pretest_net.py:31: default=\"/private/home/fmassa/github/detectron.pytorch_v2/configs/e2e_faster_rcnn_R_50_C4_1x_caffe2.yaml\","
+      },
+      {
+        "name": "cityscapes",
+        "canonical": "Cityscapes",
+        "source_kind": "config",
+        "evidence": "convert_cityscapes_to_coco.py:38: '--dataset', help=\"cocostuff, cityscapes\", default=None, type=str)"
+      },
+      {
+        "name": "coco",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "convert_cityscapes_to_coco.py:67: def convert_coco_stuff_mat(data_dir, out_dir):"
+      },
+      {
+        "name": "ImageNet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "e2e_relBGNN_oiv4.yaml:350: WEIGHT: catalog://ImageNetPretrained/FAIR/20171220/X-101-32x8d"
+      },
+      {
+        "name": "voc",
+        "canonical": "PASCAL VOC",
+        "source_kind": "config",
+        "evidence": "paths_catalog.py:51: \"voc_2007_train\": {"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "NUM_CLASSES",
+        "canonical": "num_classes",
+        "value": "58",
+        "evidence": "e2e_relBGNN_oiv4.yaml:109"
+      },
+      {
+        "name": "BASE_LR",
+        "canonical": "learning_rate",
+        "value": "0.008",
+        "evidence": "e2e_relBGNN_oiv4.yaml:355"
+      },
+      {
+        "name": "MOMENTUM",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "e2e_relBGNN_oiv4.yaml:363"
+      },
+      {
+        "name": "WARMUP_ITERS",
+        "canonical": "warmup",
+        "value": "500",
+        "evidence": "e2e_relBGNN_oiv4.yaml:379"
+      },
+      {
+        "name": "WEIGHT_DECAY",
+        "canonical": "weight_decay",
+        "value": "1.0e-05",
+        "evidence": "e2e_relBGNN_oiv4.yaml:381"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "3",
+        "evidence": "test_data_samplers.py:60"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "COCOeval",
+        "canonical": "mAP",
+        "signal": "metric_api",
+        "evidence": "vg_eval.py:10"
+      },
+      {
+        "name": "ap",
+        "canonical": "AP",
+        "signal": "logged",
+        "evidence": "voc_eval.py:33"
+      },
+      {
+        "name": "segm",
+        "canonical": "Mask AP",
+        "signal": "logged",
+        "evidence": "coco_eval.py:48"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "666",
+        "evidence": "relation_train_net.py:45"
+      }
+    ],
+    "study_id": "study021",
+    "repo_url": "https://github.com/jeonjaehyeong/dpl",
+    "status": "ok",
+    "repo_commit": "470e615c5a2eb9019351303502a34ee2e368773c",
+    "duration_s": 5.9,
+    "swept_at": "2026-09-29T15:27:17+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "learning_rate",
+        "canonical": "learning_rate",
+        "value": "5.e-4",
+        "evidence": "DCN_tiny_parquet_tuner_config.yaml:20"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "1024",
+        "evidence": "DCN_tiny_parquet_tuner_config.yaml:21"
+      },
+      {
+        "name": "optimizer",
+        "canonical": "optimizer",
+        "value": "adam",
+        "evidence": "model_config.yaml:21"
+      },
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "1",
+        "evidence": "model_config.yaml:37"
+      },
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "1",
+        "evidence": "model_config.yaml:30"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "attn_dropout",
+        "evidence": "BST.py:334"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "AUC",
+        "canonical": "AUC",
+        "signal": "eval_config",
+        "evidence": "model_config.yaml:19"
+      },
+      {
+        "name": "Dice",
+        "canonical": "Dice",
+        "signal": "metric_api",
+        "evidence": "model_config.yaml:28"
+      },
+      {
+        "name": "roc_auc_score",
+        "canonical": "AUROC",
+        "signal": "metric_api",
+        "evidence": "metrics.py:19"
+      },
+      {
+        "name": "accuracy_score",
+        "canonical": "Accuracy",
+        "signal": "metric_api",
+        "evidence": "metrics.py:19"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "20222023",
+        "evidence": "DCN_tiny_parquet_tuner_config.yaml:22"
+      },
+      {
+        "value": "2019",
+        "evidence": "model_config.yaml:39"
+      },
+      {
+        "value": "2022",
+        "evidence": "model_config.yaml:35"
+      },
+      {
+        "value": "20242025",
+        "evidence": "model_config.yaml:45"
+      },
+      {
+        "value": "2021",
+        "evidence": "model_config.yaml:33"
+      },
+      {
+        "value": "2024",
+        "evidence": "model_config.yaml:40"
+      },
+      {
+        "value": "2025",
+        "evidence": "model_config.yaml:34"
+      },
+      {
+        "value": "2023",
+        "evidence": "model_config.yaml:31"
+      },
+      {
+        "value": "1029",
+        "evidence": "torch_utils.py:29"
+      }
+    ],
+    "study_id": "study022",
+    "repo_url": "https://github.com/reczoo/FuxiCTR",
+    "status": "ok",
+    "repo_commit": "183da1c944ba8930fcdcd54114837c081959d748",
+    "duration_s": 3.2,
+    "swept_at": "2026-09-29T15:27:14+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [
+      {
+        "name": "vg",
+        "canonical": "Visual Genome",
+        "source_kind": "config",
+        "evidence": "pnpm-lock.yaml:2502: resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcn"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "0.3",
+        "evidence": "test_thinking_effort.py:299"
+      },
+      {
+        "name": "num_epochs",
+        "canonical": "epochs",
+        "value": "1",
+        "evidence": "config.yaml:15"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "40",
+        "evidence": "config.yaml:16"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "test_memory_snapshot_hot_reload.py:46"
+      }
+    ],
+    "study_id": "study023",
+    "repo_url": "https://github.com/modelscope/modelscope-agent",
+    "status": "ok",
+    "repo_commit": "a56afcc73f0049ba822af9569fd413a2e90677eb",
+    "duration_s": 10.6,
+    "swept_at": "2026-09-29T15:27:21+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 164,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "1000",
+        "evidence": "ccvm_boxqp_dl.py:12"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "1",
+        "evidence": "boxqp_metadata.py:113"
+      }
+    ],
+    "study_id": "study024",
+    "repo_url": "https://github.com/1qb-information-technologies/ccvm",
+    "status": "ok",
+    "repo_commit": "7e4b4c1d2c630b63d2076d41302f1915adc34803",
+    "duration_s": 2.8,
+    "swept_at": "2026-09-29T15:27:13+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 34,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "num_epochs",
+        "canonical": "epochs",
+        "value": "1000",
+        "evidence": "vfa_mi.json:3"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "1",
+        "evidence": "vfa_mi.json:4"
+      },
+      {
+        "name": "LR",
+        "canonical": "learning_rate",
+        "value": "0.0001",
+        "evidence": "vfa_mi.json:5"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "Dice",
+        "canonical": "Dice",
+        "signal": "metric_api",
+        "evidence": "README.md:12"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study025",
+    "repo_url": "https://github.com/yihao6/vfa",
+    "status": "ok",
+    "repo_commit": "07d933d8396d5f9f8d7e3dac74d8c95b3f8e8314",
+    "duration_s": 1.2,
+    "swept_at": "2026-09-29T15:27:42+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [
+      {
+        "name": "coco",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "coco_error_analysis.py:8: from pycocotools.coco import COCO"
+      },
+      {
+        "name": "voc",
+        "canonical": "PASCAL VOC",
+        "source_kind": "config",
+        "evidence": "robustness_eval.py:111: def get_voc_style_results(filename, prints='mPC', aggregate='benchmark'):"
+      },
+      {
+        "name": "cityscapes",
+        "canonical": "Cityscapes",
+        "source_kind": "config",
+        "evidence": "robustness_eval.py:161: assert dataset in ['coco', 'voc', 'cityscapes']"
+      },
+      {
+        "name": "c4",
+        "canonical": "C4",
+        "source_kind": "config",
+        "evidence": "tridentnet_r50_caffe_1x_coco.py:2: '../_base_/models/faster_rcnn_r50_caffe_c4.py',"
+      }
+    ],
+    "dataset_mentions_docs_only": [
+      {
+        "name": "ImageNet",
+        "canonical": "ImageNet",
+        "source_kind": "docs",
+        "evidence": "README.md:93: 1. The models are trained using a different weight decay, i.e., `weight_decay=5e-5` according to the setting i"
+      }
+    ],
+    "hyperparameters": [
+      {
+        "name": "samples_per_gpu",
+        "canonical": "batch_size",
+        "value": "1",
+        "evidence": "test_robustness.py:269"
+      },
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "80",
+        "evidence": "nas_fcos_fcoshead_r50_caffe_fpn_gn-head_4x4_1x_coco.py:28"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.01",
+        "evidence": "nas_fcos_fcoshead_r50_caffe_fpn_gn-head_4x4_1x_coco.py:99"
+      },
+      {
+        "name": "total_epochs",
+        "canonical": "epochs",
+        "value": "36",
+        "evidence": "mask_rcnn_regnetx-3.2GF_fpn_mstrain_3x_coco.py:63"
+      },
+      {
+        "name": "warmup",
+        "canonical": "warmup",
+        "value": "constant",
+        "evidence": "fcos_r50_caffe_fpn_gn-head_4x4_1x_coco.py:101"
+      },
+      {
+        "name": "img_size",
+        "canonical": "image_size",
+        "value": "550",
+        "evidence": "yolact_r50_1x8_coco.py:4"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "retinanet_r50_fpn_crop640_50e_coco.py:68"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.0001",
+        "evidence": "retinanet_r50_fpn_crop640_50e_coco.py:69"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "COCOeval",
+        "canonical": "mAP",
+        "signal": "metric_api",
+        "evidence": "coco_error_analysis.py:9"
+      },
+      {
+        "name": "segm",
+        "canonical": "Mask AP",
+        "signal": "eval_config",
+        "evidence": "yolact_r50_1x8_coco.py:160"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study026",
+    "repo_url": "https://github.com/PerdonLiu/CSE-Autoloss",
+    "status": "ok",
+    "repo_commit": "b08ec06ca46b74d5615c53ef117ebf77d996ed9f",
+    "duration_s": 2.7,
+    "swept_at": "2026-09-29T15:27:43+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 45,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "optimizer",
+        "canonical": "optimizer",
+        "value": "Adam",
+        "evidence": "colon.yaml:17"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "3.0e-4",
+        "evidence": "colon.yaml:19"
+      },
+      {
+        "name": "max_epochs",
+        "canonical": "epochs",
+        "value": "50",
+        "evidence": "colon.yaml:20"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "32",
+        "evidence": "colon.yaml:30"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.5",
+        "evidence": "train_valid_test.py"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "roc_auc_score",
+        "canonical": "AUROC",
+        "signal": "metric_api",
+        "evidence": "classification_eval.py:6"
+      },
+      {
+        "name": "f1_score",
+        "canonical": "F1",
+        "signal": "metric_api",
+        "evidence": "classification_eval.py:6"
+      },
+      {
+        "name": "precision_score",
+        "canonical": "Precision",
+        "signal": "metric_api",
+        "evidence": "classification_eval.py:6"
+      },
+      {
+        "name": "recall_score",
+        "canonical": "Recall",
+        "signal": "metric_api",
+        "evidence": "classification_eval.py:6"
+      },
+      {
+        "name": "accuracy_score",
+        "canonical": "Accuracy",
+        "signal": "metric_api",
+        "evidence": "classification_eval.py:6"
+      },
+      {
+        "name": "auc",
+        "canonical": "AUC",
+        "signal": "logged",
+        "evidence": "classification_eval.py:50"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "2023",
+        "evidence": "colon.yaml:4"
+      },
+      {
+        "value": "7",
+        "evidence": "utils.py:28"
+      },
+      {
+        "value": "1",
+        "evidence": "classification.py:39"
+      }
+    ],
+    "study_id": "study027",
+    "repo_url": "https://github.com/hms-dbmi/chief",
+    "status": "ok",
+    "repo_commit": "1abed334e674ad2b6ee0430d1ce7d0b566420bb4",
+    "duration_s": 8.2,
+    "swept_at": "2026-09-29T15:27:49+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 10,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "256",
+        "evidence": "run_training.py"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.03",
+        "evidence": "run_training.py"
+      },
+      {
+        "name": "optim",
+        "canonical": "optimizer",
+        "value": "sgd",
+        "evidence": "run_training.py"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "32",
+        "evidence": "run_training.py"
+      },
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "0.2",
+        "evidence": "run_training.py:55"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.00003",
+        "evidence": "run_training.py:57"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "run_training.py:58"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "acc",
+        "canonical": "Accuracy",
+        "signal": "logged",
+        "evidence": "run_training.py:161"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "README.md:32"
+      },
+      {
+        "value": "42",
+        "evidence": "run_training.py:29"
+      }
+    ],
+    "study_id": "study028",
+    "repo_url": "https://github.com/jun-sato/anatpaste",
+    "status": "ok",
+    "repo_commit": "3c49630049cf21e5e54b55588c5598d703a717ce",
+    "duration_s": 1.3,
+    "swept_at": "2026-09-29T15:27:42+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 34,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.5",
+        "evidence": "sage.yaml:11"
+      },
+      {
+        "name": "optim",
+        "canonical": "optimizer",
+        "value": "adam",
+        "evidence": "sage.yaml:14"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.01",
+        "evidence": "sage.yaml:15"
+      },
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "500",
+        "evidence": "sage.yaml:16"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "128",
+        "evidence": "enn.yaml:3"
+      },
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "int",
+        "evidence": "trainer.py:217"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "12345",
+        "evidence": "data.py:69"
+      },
+      {
+        "value": "1",
+        "evidence": "utils.py:9"
+      }
+    ],
+    "study_id": "study029",
+    "repo_url": "https://github.com/zhimengj0326/gradient_rewiring_editing",
+    "status": "ok",
+    "repo_commit": "899134695c291b65f3b5e8e7461e6da4d9607d9d",
+    "duration_s": 7.9,
+    "swept_at": "2026-09-29T15:27:49+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 24,
+    "datasets": [
+      {
+        "name": "vg",
+        "canonical": "Visual Genome",
+        "source_kind": "config",
+        "evidence": "package-lock.json:3331: \"integrity\": \"sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==\""
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study030",
+    "repo_url": "https://github.com/openpifpaf/openpifpafwebdemo",
+    "status": "ok",
+    "repo_commit": "eb109aeb8210b4d1c3cc9a894152c697f7ddc87c",
+    "duration_s": 2.6,
+    "swept_at": "2026-09-29T15:27:43+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 98,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "predictionBatchSize",
+        "evidence": "FrameworkEvaluate_DataGen.py:163"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "mean_squared_error",
+        "canonical": "MSE",
+        "signal": "metric_api",
+        "evidence": "ModelClassificationErrM.py:18"
+      },
+      {
+        "name": "roc_auc_score",
+        "canonical": "AUROC",
+        "signal": "metric_api",
+        "evidence": "ModelClassificationBase.py:27"
+      },
+      {
+        "name": "precision_score",
+        "canonical": "Precision",
+        "signal": "metric_api",
+        "evidence": "ModelClassificationBase.py:27"
+      },
+      {
+        "name": "recall_score",
+        "canonical": "Recall",
+        "signal": "metric_api",
+        "evidence": "ModelClassificationBase.py:27"
+      },
+      {
+        "name": "f1_score",
+        "canonical": "F1",
+        "signal": "metric_api",
+        "evidence": "ModelClassificationBase.py:27"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "FrameworkEvaluate_Loop.py:31"
+      }
+    ],
+    "study_id": "study031",
+    "repo_url": "https://github.com/boortel/ae-reconstruction-and-feature-based-ad",
+    "status": "ok",
+    "repo_commit": "a1aca3da08f57cffe5e070d894bdace64328646d",
+    "duration_s": 3.8,
+    "swept_at": "2026-09-29T15:27:44+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 296,
+    "datasets": [
+      {
+        "name": "waymo",
+        "canonical": "Waymo",
+        "source_kind": "config",
+        "evidence": "offline_sim_agents.py:13: from waymo_open_dataset.wdl_limited.sim_agents_metrics import metrics"
+      },
+      {
+        "name": "ade",
+        "canonical": "ADE20K",
+        "source_kind": "config",
+        "evidence": "training_nuplan_gump.yaml:16: - agents_ade_objective_level0"
+      },
+      {
+        "name": "NuScenes",
+        "canonical": "nuScenes",
+        "source_kind": "config",
+        "evidence": "base_scenario.py:78: \"Vehicle params for NuScenes scenario has not been implemented yet.\""
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "1.1",
+        "evidence": "gump_wod_gptm.yaml:30"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.1",
+        "evidence": "gump_wod_gptm.yaml:33"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "float",
+        "evidence": "warmup_cos_lr.py:12"
+      },
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "int",
+        "evidence": "warmup_cos_lr.py:14"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "10",
+        "evidence": "alf_test_logsim_environment.py:19"
+      },
+      {
+        "name": "image_size",
+        "canonical": "image_size",
+        "value": "target_width",
+        "evidence": "horizon_raster_feature_builder_v2.py:124"
+      },
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "0",
+        "evidence": "raster_decoder.py:26"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "test_wod_model.sh:20"
+      }
+    ],
+    "study_id": "study032",
+    "repo_url": "https://github.com/horizonrobotics/gump",
+    "status": "ok",
+    "repo_commit": "bfec7cbfe2d1e8ea0e62374e7577ffcfd96ead1a",
+    "duration_s": 9.9,
+    "swept_at": "2026-09-29T15:27:51+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 24,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "image_size",
+        "canonical": "image_size",
+        "value": "256",
+        "evidence": "dataset.yaml:25"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "2",
+        "evidence": "adn.yaml:2"
+      },
+      {
+        "name": "num_epochs",
+        "canonical": "epochs",
+        "value": "70",
+        "evidence": "adn.yaml:7"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "1.e-4",
+        "evidence": "adn.yaml:56"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "1.e-4",
+        "evidence": "adn.yaml:59"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study033",
+    "repo_url": "https://github.com/ruanyuhui/adn-qsdl",
+    "status": "ok",
+    "repo_commit": "517891c3731c83eb25653e39885fe58dc001edc9",
+    "duration_s": 1.5,
+    "swept_at": "2026-09-29T15:28:12+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 64,
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "Base-Front3D-PanopticSegmentation.yaml:5: WEIGHTS: \"detectron2://ImageNetPretrained/torchvision/R-50.pkl\""
+      },
+      {
+        "name": "cityscapes",
+        "canonical": "Cityscapes",
+        "source_kind": "config",
+        "evidence": "dvps_evaluation.py:8: from detectron2.evaluation.cityscapes_evaluation import CityscapesEvaluator"
+      },
+      {
+        "name": "COCO",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "dvps_evaluation.py:15: from detectron2.data.datasets.builtin_meta import COCO_CATEGORIES"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "BASE_LR",
+        "canonical": "learning_rate",
+        "value": "0.0001",
+        "evidence": "Base-Front3D-PanopticSegmentation.yaml:21"
+      },
+      {
+        "name": "WARMUP_ITERS",
+        "canonical": "warmup",
+        "value": "0",
+        "evidence": "Base-Front3D-PanopticSegmentation.yaml:24"
+      },
+      {
+        "name": "WEIGHT_DECAY",
+        "canonical": "weight_decay",
+        "value": "0.05",
+        "evidence": "Base-Front3D-PanopticSegmentation.yaml:25"
+      },
+      {
+        "name": "OPTIMIZER",
+        "canonical": "optimizer",
+        "value": "ADAMW",
+        "evidence": "Base-Front3D-PanopticSegmentation.yaml:26"
+      },
+      {
+        "name": "NUM_CLASSES",
+        "canonical": "num_classes",
+        "value": "13",
+        "evidence": "mask2former_R50_bs16_120k.yaml:8"
+      },
+      {
+        "name": "DROPOUT",
+        "canonical": "dropout",
+        "value": "0.0",
+        "evidence": "mask2former_R50_bs16_120k.yaml:32"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "pq",
+        "canonical": "PQ",
+        "signal": "logged",
+        "evidence": "pq_reconstruction.py:183"
+      },
+      {
+        "name": "sq",
+        "canonical": "SQ",
+        "signal": "logged",
+        "evidence": "pq_reconstruction.py:184"
+      },
+      {
+        "name": "rq",
+        "canonical": "RQ",
+        "signal": "logged",
+        "evidence": "pq_reconstruction.py:185"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "3",
+        "evidence": "test.py:31"
+      }
+    ],
+    "study_id": "study034",
+    "repo_url": "https://github.com/mlpc-ucsd/uni-3d",
+    "status": "ok",
+    "repo_commit": "436d561d4abc53f98cfe222c0c061401f269f324",
+    "duration_s": 2.1,
+    "swept_at": "2026-09-29T15:28:13+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 257,
+    "datasets": [
+      {
+        "name": "coco",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "evolution_search.py:18: from metric import get_fid, get_coco_scores, get_cityscapes_mIoU"
+      },
+      {
+        "name": "cityscapes",
+        "canonical": "Cityscapes",
+        "source_kind": "config",
+        "evidence": "evolution_search.py:18: from metric import get_fid, get_coco_scores, get_cityscapes_mIoU"
+      }
+    ],
+    "dataset_mentions_docs_only": [
+      {
+        "name": "ImageNet",
+        "canonical": "ImageNet",
+        "source_kind": "docs",
+        "evidence": "datasets.md:11: - `horse2zebra`: 939 horse images and 1177 zebra images downloaded from [ImageNet](http://www.image-net.org) u"
+      }
+    ],
+    "hyperparameters": [
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.0002",
+        "evidence": "distill_options.py"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "1",
+        "evidence": "__init__.py:23"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.0001",
+        "evidence": "base_munit_distiller.py"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "fid",
+        "canonical": "FID",
+        "signal": "logged",
+        "evidence": "evolution_search.py:159"
+      },
+      {
+        "name": "mIoU",
+        "canonical": "mIoU",
+        "signal": "logged",
+        "evidence": "evolution_search.py:162"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study035",
+    "repo_url": "https://github.com/mit-han-lab/gan-compression",
+    "status": "ok",
+    "repo_commit": "111093fc62d459226f052cad5b950c80a3683197",
+    "duration_s": 4.3,
+    "swept_at": "2026-09-29T15:28:15+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 218,
+    "datasets": [
+      {
+        "name": "squad",
+        "canonical": "SQuAD",
+        "source_kind": "config",
+        "evidence": "dataset_enum.py:5: \"ifeval\", \"lambada\", \"math\", \"mbpp\", \"mt_bench\", \"nq\", \"quac\", \"real_toxicity_prompts\", \"squad\", \"squad_v2\", \""
+      },
+      {
+        "name": "c4",
+        "canonical": "C4",
+        "source_kind": "config",
+        "evidence": "gptq.py:83: def get_c4(num_samples, tokenizer, seqlen):"
+      },
+      {
+        "name": "sst2",
+        "canonical": "SST-2",
+        "source_kind": "config",
+        "evidence": "test_datasets.py:50: \"sst2\": [],"
+      },
+      {
+        "name": "glue",
+        "canonical": "GLUE",
+        "source_kind": "config",
+        "evidence": "wsc.py:37: load_args = (\"super_glue\", \"wsc\")"
+      },
+      {
+        "name": "wikitext",
+        "canonical": "WikiText",
+        "source_kind": "config",
+        "evidence": "wikitext_ppl.py:15: load_args = (\"Salesforce/wikitext\", \"wikitext-2-raw-v1\")"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "1",
+        "evidence": "gpu_calculator.py"
+      },
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "1",
+        "evidence": "evol_instruct.py:79"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "Perplexity",
+        "canonical": "Perplexity",
+        "signal": "metric_api",
+        "evidence": "README.md:45"
+      },
+      {
+        "name": "sentence_bleu",
+        "canonical": "BLEU",
+        "signal": "metric_api",
+        "evidence": "bleu.py:18"
+      },
+      {
+        "name": "f1_score",
+        "canonical": "F1",
+        "signal": "metric_api",
+        "evidence": "drop_utils.py:66"
+      },
+      {
+        "name": "rouge_scorer",
+        "canonical": "ROUGE",
+        "signal": "metric_api",
+        "evidence": "rouge.py:2"
+      },
+      {
+        "name": "Accuracy",
+        "canonical": "Accuracy",
+        "signal": "cli_flag",
+        "evidence": "truthfulqa_mc.py:27"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "dpo.py:143"
+      }
+    ],
+    "study_id": "study036",
+    "repo_url": "https://github.com/RUCAIBox/LLMBox",
+    "status": "ok",
+    "repo_commit": "5a1cfe2ca6d296f2fdc171119012d8fa2cf2fc41",
+    "duration_s": 3.0,
+    "swept_at": "2026-09-29T15:28:14+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 92,
+    "datasets": [
+      {
+        "name": "C4",
+        "canonical": "C4",
+        "source_kind": "config",
+        "evidence": "cli.py:1913: \"0.7\": \"C3\", \"0.9\": \"C4\", \"1.0\": \"C5\"}"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "learning_rate",
+        "canonical": "learning_rate",
+        "value": "generator_lr",
+        "evidence": "trainers.py:373"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "128",
+        "evidence": "relabel_min_ensemble_experiments.py:42"
+      },
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "100",
+        "evidence": "relabel_min_ensemble_experiments.py:43"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "mean_squared_error",
+        "canonical": "MSE",
+        "signal": "metric_api",
+        "evidence": "trainers.py:191"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study037",
+    "repo_url": "https://github.com/brandontrabucco/design-baselines",
+    "status": "ok",
+    "repo_commit": "785dbcfa58107bfcc426257a1c2e69d7f71c3c27",
+    "duration_s": 2.1,
+    "swept_at": "2026-09-29T15:28:13+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 31,
+    "datasets": [
+      {
+        "name": "CelebA",
+        "canonical": "CelebA",
+        "source_kind": "config",
+        "evidence": "test_facenet.py:14: \"CelebA\": {\"name\": 'celeba', \"gender\": \"Male\", 'attribute': \"Smiling\","
+      },
+      {
+        "name": "MNIST",
+        "canonical": "MNIST",
+        "source_kind": "config",
+        "evidence": "test_ctrVAE.py:17: FASHION_MNIST_CLASS_DICT = {"
+      },
+      {
+        "name": "FashionMNIST",
+        "canonical": "Fashion-MNIST",
+        "source_kind": "config",
+        "evidence": "test_ctrVAE.py:48: \"FashionMNIST\": {\"name\": \"fashion_mnist\", \"source_key\": FASHION_MNIST_CLASS_DICT[0],"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "n_epochs",
+        "canonical": "epochs",
+        "value": "500",
+        "evidence": "test_facenet.py:25"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "512",
+        "evidence": "test_facenet.py:26"
+      },
+      {
+        "name": "learning_rate",
+        "canonical": "learning_rate",
+        "value": "0.001",
+        "evidence": "test_facenet.py:29"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "mean_squared_error",
+        "canonical": "MSE",
+        "signal": "metric_api",
+        "evidence": "_losses.py:11"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study038",
+    "repo_url": "https://github.com/theislab/trVAE",
+    "status": "ok",
+    "repo_commit": "6fd87fcd1fc47a6b93579dcb7caac0d1e85ed10e",
+    "duration_s": 2.5,
+    "swept_at": "2026-09-29T15:28:13+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 85,
+    "datasets": [
+      {
+        "name": "COCO",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "defaults.py:726: _C.DEMO.DETECTRON2_CFG = \"COCO-Detection/faster_rcnn_R_50_FPN_3x.yaml\""
+      },
+      {
+        "name": "IMAGENET",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "vit_utils.py:17: IMAGENET_DEFAULT_MEAN = (0.485, 0.456, 0.406)"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "BATCH_SIZE",
+        "canonical": "batch_size",
+        "value": "8",
+        "evidence": "baseline_finetune.yaml:4"
+      },
+      {
+        "name": "BASE_LR",
+        "canonical": "learning_rate",
+        "value": "0.005",
+        "evidence": "baseline_finetune.yaml:21"
+      },
+      {
+        "name": "MOMENTUM",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "baseline_finetune.yaml:26"
+      },
+      {
+        "name": "WEIGHT_DECAY",
+        "canonical": "weight_decay",
+        "value": "1e-4",
+        "evidence": "baseline_finetune.yaml:27"
+      },
+      {
+        "name": "NUM_CLASSES",
+        "canonical": "num_classes",
+        "value": "67",
+        "evidence": "baseline_finetune.yaml:31"
+      },
+      {
+        "name": "crop_size",
+        "canonical": "image_size",
+        "value": "224",
+        "evidence": "utils.py:114"
+      },
+      {
+        "name": "total_epochs",
+        "canonical": "epochs",
+        "value": "0",
+        "evidence": "multigrid.py:205"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "mAP",
+        "canonical": "mAP",
+        "signal": "logged",
+        "evidence": "train_net.py:312"
+      },
+      {
+        "name": "average_precision_score",
+        "canonical": "AP",
+        "signal": "metric_api",
+        "evidence": "meters.py:11"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study039",
+    "repo_url": "https://github.com/q1xiangchen/vmps",
+    "status": "ok",
+    "repo_commit": "879ec934a3d4f714ef8f9a66d87a61a758cd58bf",
+    "duration_s": 1.9,
+    "swept_at": "2026-09-29T15:28:13+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 109,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "bs",
+        "canonical": "batch_size",
+        "value": "64",
+        "evidence": "inference.py:17"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "cell_dropout",
+        "evidence": "RNN_FCNPlus.py:19"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "mean_squared_error",
+        "canonical": "MSE",
+        "signal": "metric_api",
+        "evidence": "README.md:290"
+      },
+      {
+        "name": "accuracy",
+        "canonical": "Accuracy",
+        "signal": "cli_flag",
+        "evidence": "README.md:206"
+      },
+      {
+        "name": "rmse",
+        "canonical": "RMSE",
+        "signal": "cli_flag",
+        "evidence": "README.md:254"
+      },
+      {
+        "name": "mae",
+        "canonical": "MAE",
+        "signal": "cli_flag",
+        "evidence": "README.md:340"
+      },
+      {
+        "name": "matthews_corrcoef",
+        "canonical": "MCC",
+        "signal": "metric_api",
+        "evidence": "metrics.py:23"
+      },
+      {
+        "name": "average_precision_score",
+        "canonical": "AP",
+        "signal": "metric_api",
+        "evidence": "metrics.py:212"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "core.py:899"
+      }
+    ],
+    "study_id": "study040",
+    "repo_url": "https://github.com/timeseriesAI/tsai",
+    "status": "ok",
+    "repo_commit": "bbb61982741d466bfa81669edc0e17f1971980af",
+    "duration_s": 7.9,
+    "swept_at": "2026-09-29T15:28:19+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 19,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study041",
+    "repo_url": "https://github.com/softdevteam/rustgc_paper_experiment",
+    "status": "ok",
+    "repo_commit": "b52493ee0f0b3f8d9cf497acd4590c08a3c5e530",
+    "duration_s": 1.4,
+    "swept_at": "2026-09-29T15:28:42+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 66,
+    "datasets": [
+      {
+        "name": "voc",
+        "canonical": "PASCAL VOC",
+        "source_kind": "config",
+        "evidence": "dist_model.py:400: score = util.voc_ap(recs, precs)"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "image_size",
+        "canonical": "image_size",
+        "value": "64",
+        "evidence": "vitonhd_512.yaml:12"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.0",
+        "evidence": "vitonhd_512.yaml:67"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "2",
+        "evidence": "vitonhd_512.yaml:77"
+      },
+      {
+        "name": "max_epochs",
+        "canonical": "epochs",
+        "value": "60",
+        "evidence": "vitonhd_512.yaml:100"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "lr_g",
+        "evidence": "autoencoder.py:207"
+      },
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "1.",
+        "evidence": "plms.py:70"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "1.e-2",
+        "evidence": "classifier.py:38"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "23",
+        "evidence": "README.md:73"
+      }
+    ],
+    "study_id": "study042",
+    "repo_url": "https://github.com/Jerome-Young/D4-VTON",
+    "status": "ok",
+    "repo_commit": "c01a3b278ef2d334c217819f67f0bb567dc9de0d",
+    "duration_s": 2.3,
+    "swept_at": "2026-09-29T15:28:43+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 4,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "1.0",
+        "evidence": "generate.py"
+      },
+      {
+        "name": "max_epochs",
+        "canonical": "epochs",
+        "value": "25000",
+        "evidence": "train.py"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "8",
+        "evidence": "train.py"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "664",
+        "evidence": "train.py:62"
+      }
+    ],
+    "study_id": "study043",
+    "repo_url": "https://github.com/moiseshorta/rave-latent-diffusion",
+    "status": "ok",
+    "repo_commit": "50751a5fa70e06fdb20a08a704b5637c71f3ed44",
+    "duration_s": 1.0,
+    "swept_at": "2026-09-29T15:28:42+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "0",
+        "evidence": "test_httpserver_reuse.py:25"
+      },
+      {
+        "name": "image_size",
+        "canonical": "image_size",
+        "value": "int",
+        "evidence": "janus_pro.py:164"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "int",
+        "evidence": "test_rotary_embedding.py:162"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "test_cutlass_mla.py:48"
+      }
+    ],
+    "study_id": "study044",
+    "repo_url": "https://github.com/eric-ai-lab/soft-thinking",
+    "status": "ok",
+    "repo_commit": "b97407c60d5e971da4a4fe76f405d6e236d0ddfa",
+    "duration_s": 4.9,
+    "swept_at": "2026-09-29T15:28:46+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 44,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.0001",
+        "evidence": "train.py"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "128",
+        "evidence": "ET-QM9-FT.yaml:5"
+      },
+      {
+        "name": "num_epochs",
+        "canonical": "epochs",
+        "value": "3000",
+        "evidence": "ET-QM9-FT.yaml:40"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.0",
+        "evidence": "ET-QM9-FT.yaml:61"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "1234",
+        "evidence": "test_model.py:44"
+      }
+    ],
+    "study_id": "study045",
+    "repo_url": "https://github.com/shehzaidi/pre-training-via-denoising",
+    "status": "ok",
+    "repo_commit": "2d81667c4daf519a1bfd33f1e1257eefa527db61",
+    "duration_s": 10.8,
+    "swept_at": "2026-09-29T15:28:51+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 47,
+    "datasets": [
+      {
+        "name": "coco",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "train.py:67: is_coco = opt.data.endswith('coco.yaml')"
+      },
+      {
+        "name": "VOC",
+        "canonical": "PASCAL VOC",
+        "source_kind": "config",
+        "evidence": "hyp.finetune.yaml:1: # Hyperparameters for VOC finetuning"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "300",
+        "evidence": "train.py"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "32",
+        "evidence": "test.py:23"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.843",
+        "evidence": "hyp.finetune.yaml:13"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.00036",
+        "evidence": "hyp.finetune.yaml:14"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "COCOeval",
+        "canonical": "mAP",
+        "signal": "metric_api",
+        "evidence": "test.py:262"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "torch_utils.py:41"
+      }
+    ],
+    "study_id": "study046",
+    "repo_url": "https://github.com/lmomoy/lf-yolo",
+    "status": "ok",
+    "repo_commit": "ad0d13f0c08e36706287f82a7e73f82b1c0093f3",
+    "duration_s": 2.8,
+    "swept_at": "2026-09-29T15:28:44+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [
+      {
+        "name": "librispeech",
+        "canonical": "LibriSpeech",
+        "source_kind": "config",
+        "evidence": "librimix_dataset.py:225: data_license = [librispeech_license]"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0",
+        "evidence": "complex_nn.py:136"
+      },
+      {
+        "name": "max_epochs",
+        "canonical": "epochs",
+        "value": "10",
+        "evidence": "sinkpit_wrapper_test.py:141"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "5",
+        "evidence": "loss_functions_test.py:27"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.001",
+        "evidence": "conf.yml:18"
+      },
+      {
+        "name": "optimizer",
+        "canonical": "optimizer",
+        "value": "rmsprop",
+        "evidence": "conf.yml:24"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.00000",
+        "evidence": "conf.yml:26"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "17",
+        "evidence": "train.py:16"
+      }
+    ],
+    "study_id": "study047",
+    "repo_url": "https://github.com/saurjya/asteroid",
+    "status": "ok",
+    "repo_commit": "591781278dbf38deac29dfab93920c67c5e1afb5",
+    "duration_s": 3.2,
+    "swept_at": "2026-09-29T15:28:44+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 185,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "1.0",
+        "evidence": "run.py:85"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "1024",
+        "evidence": "generate_data.py:80"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study048",
+    "repo_url": "https://github.com/ibm/topography-searcher",
+    "status": "ok",
+    "repo_commit": "78f4d00ab2c12a687f8ec145a59d204fbc4d61a2",
+    "duration_s": 10.1,
+    "swept_at": "2026-09-29T15:28:51+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 21,
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "train.py:105: parser = argparse.ArgumentParser(description='PyTorch ImageNet Training')"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "benchmark.py"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "initial_batch_size",
+        "evidence": "benchmark.py:520"
+      },
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "1000",
+        "evidence": "convnext.py:203"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "top1",
+        "canonical": "Top-1 accuracy",
+        "signal": "logged",
+        "evidence": "validate.py:307"
+      },
+      {
+        "name": "top5",
+        "canonical": "Top-5 accuracy",
+        "signal": "logged",
+        "evidence": "validate.py:307"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study049",
+    "repo_url": "https://github.com/sail-sg/inceptionnext",
+    "status": "ok",
+    "repo_commit": "3f9769c6b3fcf903d1dc2f436eddc6963cacb535",
+    "duration_s": 1.2,
+    "swept_at": "2026-09-29T15:29:12+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 17,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "learning_rate",
+        "canonical": "learning_rate",
+        "value": "1e-2",
+        "evidence": "tabular_class.py:17"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "16",
+        "evidence": "deep_class.py:238"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study050",
+    "repo_url": "https://github.com/hmhyau/rl-intention",
+    "status": "ok",
+    "repo_commit": "29c84fd9abaa6149fc170531d0ae904fb23047a4",
+    "duration_s": 1.5,
+    "swept_at": "2026-09-29T15:29:12+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 11,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [
+      {
+        "name": "roc_auc_score",
+        "canonical": "AUROC",
+        "signal": "metric_api",
+        "evidence": "vista_ssm_Funcs.py:436"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "1",
+        "evidence": "vista_ssm_Funcs.py:776"
+      }
+    ],
+    "study_id": "study051",
+    "repo_url": "https://github.com/benjaminbrindle/vista_ssm",
+    "status": "ok",
+    "repo_commit": "d89e45b49e0e0d6937e830cca8d9a3883ecbb348",
+    "duration_s": 29.5,
+    "swept_at": "2026-09-29T15:29:40+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 32,
+    "datasets": [
+      {
+        "name": "mnist",
+        "canonical": "MNIST",
+        "source_kind": "config",
+        "evidence": "__init__.py:133: from keras.datasets import mnist"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "200",
+        "evidence": "__init__.py:221"
+      },
+      {
+        "name": "learning_rate",
+        "canonical": "learning_rate",
+        "value": "1e-3",
+        "evidence": "keras_model.py:67"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "accuracy",
+        "canonical": "Accuracy",
+        "signal": "eval_config",
+        "evidence": "keras_model.py:123"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study052",
+    "repo_url": "https://github.com/nonparametric-adversarial/nonparametric",
+    "status": "ok",
+    "repo_commit": "01b398085631d18516a06717021330504b8d4826",
+    "duration_s": 4.7,
+    "swept_at": "2026-09-29T15:29:15+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 27,
+    "datasets": [
+      {
+        "name": "imagenet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "main.py:29: if args.dataset == 'imagenet':"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.0002",
+        "evidence": "run_utils.py"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "32",
+        "evidence": "run_utils.py"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "1",
+        "evidence": "README.md:58"
+      }
+    ],
+    "study_id": "study053",
+    "repo_url": "https://github.com/maxzanella/clip-lora",
+    "status": "ok",
+    "repo_commit": "ce3701ba370576f082e1295fbd90760961ead724",
+    "duration_s": 4.5,
+    "swept_at": "2026-09-29T15:29:15+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 139,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "Lr",
+        "canonical": "learning_rate",
+        "value": "1.0",
+        "evidence": "physical_params.py:9"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study054",
+    "repo_url": "https://github.com/6lackmitchell/ccbf-control",
+    "status": "ok",
+    "repo_commit": "0895d9e7d64f6d32b534632b60d044c85334ac4e",
+    "duration_s": 18.5,
+    "swept_at": "2026-09-29T15:29:29+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 31,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [
+      {
+        "name": "mse",
+        "canonical": "MSE",
+        "signal": "logged",
+        "evidence": "models.py:64"
+      },
+      {
+        "name": "mae",
+        "canonical": "MAE",
+        "signal": "logged",
+        "evidence": "models.py:68"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "snaive-mhlv.yaml:17"
+      }
+    ],
+    "study_id": "study055",
+    "repo_url": "https://github.com/boreshkinai/any-quantile",
+    "status": "ok",
+    "repo_commit": "d2840c05e66ce52b461b53fdf413173aa54eb47d",
+    "duration_s": 1.4,
+    "swept_at": "2026-09-29T15:29:12+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 29,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "val_batch",
+        "evidence": "shower_flow_train.py:109"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.001",
+        "evidence": "highLevel_classifier.py:226"
+      },
+      {
+        "name": "optimizer",
+        "canonical": "optimizer",
+        "value": "AdamMini",
+        "evidence": "configs_ECAL.yaml:66"
+      },
+      {
+        "name": "max_iters",
+        "canonical": "iterations",
+        "value": "3000000",
+        "evidence": "configs_ECAL.yaml:67"
+      },
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "100",
+        "evidence": "configs_ECAL.yaml:69"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0",
+        "evidence": "configs_ECAL.yaml:82"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "roc_auc_score",
+        "canonical": "AUROC",
+        "signal": "metric_api",
+        "evidence": "highLevel_classifier.py:3"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "shower_flow.py:12"
+      },
+      {
+        "value": "455",
+        "evidence": "configs_ECAL.yaml:90"
+      },
+      {
+        "value": "36",
+        "evidence": "configs_sf.yaml:4"
+      },
+      {
+        "value": "45",
+        "evidence": "configs_HCAL.yaml:89"
+      }
+    ],
+    "study_id": "study056",
+    "repo_url": "https://github.com/FLC-QU-hep/CaloHadronic",
+    "status": "ok",
+    "repo_commit": "50d2468211ff3abbfb176ddbc7ca9dc81989d21a",
+    "duration_s": 11.3,
+    "swept_at": "2026-09-29T15:29:22+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 38,
+    "datasets": [
+      {
+        "name": "imagenet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "finetune.py:62: help=\"Load from ssl checkpoint, randomly initialize, or use imagenet\","
+      },
+      {
+        "name": "cifar10",
+        "canonical": "CIFAR-10",
+        "source_kind": "config",
+        "evidence": "transforms.py:4: cifar10_normalization,"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "max_epochs",
+        "canonical": "epochs",
+        "value": "10",
+        "evidence": "finetune.py"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "32",
+        "evidence": "finetune.py"
+      },
+      {
+        "name": "learning_rate",
+        "canonical": "learning_rate",
+        "value": "0.1",
+        "evidence": "finetune.py"
+      },
+      {
+        "name": "optimizer",
+        "canonical": "optimizer",
+        "value": "Adam",
+        "evidence": "finetune.py"
+      },
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "1",
+        "evidence": "finetune.py"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "moco2_module.py"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.0001",
+        "evidence": "moco2_module.py"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "F1Score",
+        "canonical": "F1",
+        "signal": "metric_api",
+        "evidence": "finetuning.py:82"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study057",
+    "repo_url": "https://github.com/georgestein/ssl-legacysurvey",
+    "status": "ok",
+    "repo_commit": "06b250b7b811d63d9b301d436b0827939d9a6091",
+    "duration_s": 9.6,
+    "swept_at": "2026-09-29T15:29:50+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 12,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "0.9",
+        "evidence": "language_models.py:16"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study058",
+    "repo_url": "https://github.com/microsoft/toxigen",
+    "status": "ok",
+    "repo_commit": "01517e814639e0334c920a3c502036c8158aac87",
+    "duration_s": 1.4,
+    "swept_at": "2026-09-29T15:29:42+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 36,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "total_epochs",
+        "canonical": "epochs",
+        "value": "0",
+        "evidence": "utils.py:27"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0",
+        "evidence": "apd_local.py:249"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "f1_score",
+        "canonical": "F1",
+        "signal": "metric_api",
+        "evidence": "generator.py:210"
+      },
+      {
+        "name": "accuracy_score",
+        "canonical": "Accuracy",
+        "signal": "metric_api",
+        "evidence": "generator.py:211"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "data.sh:8"
+      }
+    ],
+    "study_id": "study059",
+    "repo_url": "https://github.com/raipranav/fcl-fedseit",
+    "status": "ok",
+    "repo_commit": "cec4a7f99a1b071b0078d858b4dff6af101eb3f7",
+    "duration_s": 1.6,
+    "swept_at": "2026-09-29T15:29:42+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 237,
+    "datasets": [
+      {
+        "name": "mnist",
+        "canonical": "MNIST",
+        "source_kind": "config",
+        "evidence": "test_caffe2.py:243: model = model_helper.ModelHelper(name=\"mnist\")"
+      },
+      {
+        "name": "ImageNet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "main_amp.py:32: parser = argparse.ArgumentParser(description='PyTorch ImageNet Training')"
+      },
+      {
+        "name": "cifar-10",
+        "canonical": "CIFAR-10",
+        "source_kind": "config",
+        "evidence": "train_dcgan.py:28: help='Directory of image files.  Default is cifar-10.')"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "bs",
+        "canonical": "batch_size",
+        "value": "1",
+        "evidence": "hparams.py:353"
+      },
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "10000",
+        "evidence": "hparams.py:487"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.0003",
+        "evidence": "hparams.py:488"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.0",
+        "evidence": "hparams.py:493"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "main_amp.py"
+      },
+      {
+        "name": "crop_size",
+        "canonical": "image_size",
+        "value": "224",
+        "evidence": "main_amp.py:196"
+      },
+      {
+        "name": "iters",
+        "canonical": "iterations",
+        "value": "3",
+        "evidence": "test_multiple_models_optimizers_losses.py:95"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "hparams.py:343"
+      },
+      {
+        "value": "42",
+        "evidence": "factored_attention.py:425"
+      },
+      {
+        "value": "13337",
+        "evidence": "test_fp16_optimizer.py:10"
+      },
+      {
+        "value": "9876",
+        "evidence": "test_mixed_adam.py:13"
+      }
+    ],
+    "study_id": "study060",
+    "repo_url": "https://github.com/openai/jukebox",
+    "status": "ok",
+    "repo_commit": "08efbbc1d4ed1a3cef96e08a931944c8b4d63bb3",
+    "duration_s": 3.8,
+    "swept_at": "2026-09-29T15:29:44+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 138,
+    "datasets": [
+      {
+        "name": "vg",
+        "canonical": "Visual Genome",
+        "source_kind": "config",
+        "evidence": "spline_3rd_order.py:70: vg_n1 = goal_config.speed_nk1()[:, :, 0]"
+      },
+      {
+        "name": "sQuad",
+        "canonical": "SQuAD",
+        "source_kind": "config",
+        "evidence": "test_costs.py:71: print(\"%sQuad costs tests passed!%s\" % (color_text[\"green\"], color_text[\"reset\"]))"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "999",
+        "evidence": "random_eps_sampler.py:47"
+      },
+      {
+        "value": "991",
+        "evidence": "user_params.ini:2"
+      },
+      {
+        "value": "1",
+        "evidence": "test_costs.py:10"
+      },
+      {
+        "value": "2",
+        "evidence": "test_dynamics.py:121"
+      }
+    ],
+    "study_id": "study061",
+    "repo_url": "https://github.com/CMU-TBD/SocNavBench",
+    "status": "ok",
+    "repo_commit": "2724ea85ff22ca61a88ee95285dfc3fa056656c6",
+    "duration_s": 7.9,
+    "swept_at": "2026-09-29T15:29:49+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 9,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "3",
+        "evidence": "LPINN.py:40"
+      }
+    ],
+    "study_id": "study062",
+    "repo_url": "https://github.com/rmojgani/LPINNs",
+    "status": "ok",
+    "repo_commit": "431b40e86bdb5fde66536cc72aefc80c047cdc4c",
+    "duration_s": 1.2,
+    "swept_at": "2026-09-29T15:29:42+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [
+      {
+        "name": "librispeech",
+        "canonical": "LibriSpeech",
+        "source_kind": "config",
+        "evidence": "pyproject.toml:16: | egs\\/librispeech\\/ASR\\/zipformer"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "float",
+        "evidence": "utils.py:1585"
+      },
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "int",
+        "evidence": "ali.py:94"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.1",
+        "evidence": "profiler.py:320"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "int",
+        "evidence": "dataset.py:34"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "1e-6",
+        "evidence": "train.py:237"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.1",
+        "evidence": "train.py:198"
+      },
+      {
+        "name": "warmup",
+        "canonical": "warmup",
+        "value": "0.5",
+        "evidence": "conformer.py:1599"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "BLEU",
+        "canonical": "BLEU",
+        "signal": "metric_api",
+        "evidence": "utils.py:647"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "20230423",
+        "evidence": "check-onnx-streaming.py:124"
+      },
+      {
+        "value": "20230420",
+        "evidence": "check-onnx.py:115"
+      },
+      {
+        "value": "20211122",
+        "evidence": "test_model.py:68"
+      },
+      {
+        "value": "10",
+        "evidence": "scaling.py:1869"
+      },
+      {
+        "value": "20220727",
+        "evidence": "onnx_check.py:234"
+      },
+      {
+        "value": "20211105",
+        "evidence": "test_label_smoothing.py:31"
+      }
+    ],
+    "study_id": "study063",
+    "repo_url": "https://github.com/k2-fsa/icefall",
+    "status": "ok",
+    "repo_commit": "3f848bb6d0acc970c9b294a30ca0a04a7c9c78d1",
+    "duration_s": 8.0,
+    "swept_at": "2026-09-29T15:29:49+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 36,
+    "datasets": [
+      {
+        "name": "nuscenes",
+        "canonical": "nuScenes",
+        "source_kind": "config",
+        "evidence": "evaluate.py:96: parser.add_argument('--dataroot', default='./nuscenes', type=str, help='path to the dataset')"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "LR",
+        "canonical": "learning_rate",
+        "value": "1e-3",
+        "evidence": "single_timeframe.yml:22"
+      },
+      {
+        "name": "EPOCHS",
+        "canonical": "epochs",
+        "value": "2",
+        "evidence": "debug_baseline.yml:5"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.0",
+        "evidence": "convolutions.py:78"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "PanopticMetric",
+        "canonical": "PQ",
+        "signal": "metric_api",
+        "evidence": "evaluate.py:8"
+      },
+      {
+        "name": "iou",
+        "canonical": "IoU",
+        "signal": "logged",
+        "evidence": "evaluate.py:86"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study064",
+    "repo_url": "https://github.com/wayveai/fiery",
+    "status": "ok",
+    "repo_commit": "fd03f164935ac172ef6d96117a7a4873abf23919",
+    "duration_s": 1.3,
+    "swept_at": "2026-09-29T15:29:42+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 13,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study065",
+    "repo_url": "https://github.com/AnjanaRita/converse",
+    "status": "ok",
+    "repo_commit": "35613b979f40942856a106f98b6ae26ffefc6df7",
+    "duration_s": 1.5,
+    "swept_at": "2026-09-29T15:30:12+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 4,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study066",
+    "repo_url": "https://github.com/STomoya/ResNeSt",
+    "status": "ok",
+    "repo_commit": "3b2b4f4a73d138bb1e4ff2b8695be4cf950543da",
+    "duration_s": 1.2,
+    "swept_at": "2026-09-29T15:30:12+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 32,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "1e-4",
+        "evidence": "guild.yml:18"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "55969672",
+        "evidence": "guild.yml:11"
+      }
+    ],
+    "study_id": "study067",
+    "repo_url": "https://github.com/stelios30/cf-effect-decomposition",
+    "status": "ok",
+    "repo_commit": "34dbacde507700a0103f68e6e42c6693d5284af6",
+    "duration_s": 1.5,
+    "swept_at": "2026-09-29T15:30:12+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 18,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "1.0e-4",
+        "evidence": "autoencoder (copy).py:259"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.95",
+        "evidence": "autoencoder (copy).py:260"
+      },
+      {
+        "name": "BATCH_SIZE",
+        "canonical": "batch_size",
+        "value": "20",
+        "evidence": "gan2.py:312"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "rl_agent_classes_only.py:30"
+      }
+    ],
+    "study_id": "study068",
+    "repo_url": "https://github.com/apoorvkhattar/RL-Project-2019",
+    "status": "ok",
+    "repo_commit": "876215d20b03b27366460efbb96a8d4598be329a",
+    "duration_s": 1.8,
+    "swept_at": "2026-09-29T15:30:13+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 7,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "400",
+        "evidence": "opt.py"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.001",
+        "evidence": "opt.py"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "accuracy_score",
+        "canonical": "Accuracy",
+        "signal": "metric_api",
+        "evidence": "utils.py:55"
+      },
+      {
+        "name": "f1_score",
+        "canonical": "F1",
+        "signal": "metric_api",
+        "evidence": "utils.py:56"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study069",
+    "repo_url": "https://github.com/yueliu1999/hsan",
+    "status": "ok",
+    "repo_commit": "e9ad59beb3a6afbe16bbc3d8ee046038c06b0932",
+    "duration_s": 1.9,
+    "swept_at": "2026-09-29T15:30:13+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 30,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "temp",
+        "evidence": "codegen_completion.py:124"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "average_precision_score",
+        "canonical": "AP",
+        "signal": "metric_api",
+        "evidence": "st_evaluator.py:6"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "codegen_completion.py:181"
+      },
+      {
+        "value": "0",
+        "evidence": "README.md:71"
+      },
+      {
+        "value": "88",
+        "evidence": "sample.py:15"
+      },
+      {
+        "value": "888",
+        "evidence": "preprocess.sh:8"
+      }
+    ],
+    "study_id": "study070",
+    "repo_url": "https://github.com/yushi-hu/ic-dst",
+    "status": "ok",
+    "repo_commit": "c968321b699a115366167d67b351ffe34996d090",
+    "duration_s": 5.0,
+    "swept_at": "2026-09-29T15:30:16+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 41,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "16",
+        "evidence": "clip.yaml:6"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "auto",
+        "evidence": "deepspeed_accelerator.py:25"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "auto",
+        "evidence": "deepspeed_accelerator.py:26"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study071",
+    "repo_url": "https://github.com/yuvalkirstain/pickscore",
+    "status": "ok",
+    "repo_commit": "f79607ff68609c1e6dfa78cba38afeea4c248df1",
+    "duration_s": 1.2,
+    "swept_at": "2026-09-29T15:30:12+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 4,
+    "datasets": [
+      {
+        "name": "cifar100",
+        "canonical": "CIFAR-100",
+        "source_kind": "config",
+        "evidence": "main.py:10: parser.add_argument('-ds', '--dataset_name', type=str, default='cifar100', help='Dataset Name (default\uff1acifar10"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "bs",
+        "canonical": "batch_size",
+        "value": "128",
+        "evidence": "main.py"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.1",
+        "evidence": "main.py"
+      },
+      {
+        "name": "wd",
+        "canonical": "weight_decay",
+        "value": "0.0005",
+        "evidence": "main.py"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study072",
+    "repo_url": "https://github.com/wxitxy/synermix",
+    "status": "ok",
+    "repo_commit": "e2848d50f1ed876105c26a14656dd9c36312a400",
+    "duration_s": 1.0,
+    "swept_at": "2026-09-29T15:30:12+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 182,
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "ssl_default_config.yaml:63: dataset_path: ImageNet:split=TRAIN"
+      },
+      {
+        "name": "KITTI",
+        "canonical": "KITTI",
+        "source_kind": "config",
+        "evidence": "depthers.py:19: KITTI = \"KITTI\""
+      },
+      {
+        "name": "ADE20K",
+        "canonical": "ADE20K",
+        "source_kind": "config",
+        "evidence": "colormaps.py:6: ADE20K_COLORMAP = ["
+      },
+      {
+        "name": "VOC2012",
+        "canonical": "PASCAL VOC",
+        "source_kind": "config",
+        "evidence": "colormaps.py:315: VOC2012_COLORMAP = ["
+      },
+      {
+        "name": "c4",
+        "canonical": "C4",
+        "source_kind": "config",
+        "evidence": "vit_adapter.py:122: def _add_level_embed(self, c2, c3, c4):"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "100",
+        "evidence": "ssl_default_config.yaml:93"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.04",
+        "evidence": "ssl_default_config.yaml:94"
+      },
+      {
+        "name": "base_lr",
+        "canonical": "learning_rate",
+        "value": "0.004",
+        "evidence": "ssl_default_config.yaml:96"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "int",
+        "evidence": "loaders.py:169"
+      },
+      {
+        "name": "img_size",
+        "canonical": "image_size",
+        "value": "224",
+        "evidence": "vision_transformer.py:48"
+      },
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "0.07",
+        "evidence": "knn.py:91"
+      },
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "int",
+        "evidence": "metrics.py:78"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.0",
+        "evidence": "msdeformattn_pixel_decoder.py:63"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "top-1",
+        "canonical": "Top-1 accuracy",
+        "signal": "logged",
+        "evidence": "linear.py:294"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "run_demo_batch.py:329"
+      },
+      {
+        "value": "31",
+        "evidence": "utils.py:36"
+      }
+    ],
+    "study_id": "study073",
+    "repo_url": "https://github.com/NVlabs/FoundationStereo",
+    "status": "ok",
+    "repo_commit": "6e8806816b533e4d13ddbb95ffa907b797060a62",
+    "duration_s": 6.1,
+    "swept_at": "2026-09-29T15:30:47+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 39,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study074",
+    "repo_url": "https://github.com/mobilellm/droidbot-gpt",
+    "status": "ok",
+    "repo_commit": "478ba219214753c24db12d490f74f23b41677d12",
+    "duration_s": 7.5,
+    "swept_at": "2026-09-29T15:30:48+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 47,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [
+      {
+        "name": "mae",
+        "canonical": "MAE",
+        "signal": "eval_config",
+        "evidence": "nn_util.py:21"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study075",
+    "repo_url": "https://github.com/arthijayaraman-lab/crease_ga",
+    "status": "ok",
+    "repo_commit": "af404f43ea253a53db181d332087e3740dcf5d2b",
+    "duration_s": 11.8,
+    "swept_at": "2026-09-29T15:30:53+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 11,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "learning_rate",
+        "canonical": "learning_rate",
+        "value": "0.5",
+        "evidence": "setting_inference.yaml:32"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "accuracy_score",
+        "canonical": "Accuracy",
+        "signal": "metric_api",
+        "evidence": "main_cv.py:260"
+      }
+    ],
+    "seeds": [],
+    "study_id": "study076",
+    "repo_url": "https://github.com/mcontisc/PIHAM",
+    "status": "ok",
+    "repo_commit": "25fd6ddd6ec0a11f73f42aa661a0c2deffe97a4f",
+    "duration_s": 4.7,
+    "swept_at": "2026-09-29T15:30:45+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 400,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "0.3",
+        "evidence": "crawler_base.py:116"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "int",
+        "evidence": "mipro_optimizer.py:1256"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "Perplexity",
+        "canonical": "Perplexity",
+        "signal": "metric_api",
+        "evidence": "model_configs.py:77"
+      },
+      {
+        "name": "f1_score",
+        "canonical": "F1",
+        "signal": "metric_api",
+        "evidence": "WorfBench.py:6"
+      },
+      {
+        "name": "acc",
+        "canonical": "Accuracy",
+        "signal": "logged",
+        "evidence": "test_nq.py:77"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "tools_images.py:165"
+      },
+      {
+        "value": "43",
+        "evidence": "tools_images.py:240"
+      },
+      {
+        "value": "8",
+        "evidence": "math_textgrad.py:97"
+      },
+      {
+        "value": "10",
+        "evidence": "evoprompt_singleagent.py:161"
+      }
+    ],
+    "study_id": "study077",
+    "repo_url": "https://github.com/evoagentx/evoagentx",
+    "status": "ok",
+    "repo_commit": "d77fd6b9a3e76c8dd83bebe3374c53a3f5d16f54",
+    "duration_s": 9.4,
+    "swept_at": "2026-09-29T15:30:50+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 49,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "train_pl_torch.py:131"
+      }
+    ],
+    "study_id": "study078",
+    "repo_url": "https://github.com/qqqyang/shuffle-qudio",
+    "status": "ok",
+    "repo_commit": "4f1fa4530c431eb9a66ceb6b9fc09907617f6c01",
+    "duration_s": 1.3,
+    "swept_at": "2026-09-29T15:30:42+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 51,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "0.1",
+        "evidence": "self_refine.py:344"
+      },
+      {
+        "name": "BATCH_SIZE",
+        "canonical": "batch_size",
+        "value": "32",
+        "evidence": "question_clustering.py:49"
+      },
+      {
+        "name": "learning_rate",
+        "canonical": "learning_rate",
+        "value": "5.0e-7",
+        "evidence": "config_full.yaml:22"
+      },
+      {
+        "name": "optim",
+        "canonical": "optimizer",
+        "value": "rmsprop",
+        "evidence": "config_full.yaml:29"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "f1_score",
+        "canonical": "F1",
+        "signal": "metric_api",
+        "evidence": "tiger_score.py:128"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "README.md:103"
+      },
+      {
+        "value": "0",
+        "evidence": "run_inference.sh:27"
+      },
+      {
+        "value": "28",
+        "evidence": "selfcheck.py:12"
+      }
+    ],
+    "study_id": "study079",
+    "repo_url": "https://github.com/ukplab/arxiv2024-lfqa-hallucination",
+    "status": "ok",
+    "repo_commit": "4fc6162d569a8df5418df04c08810f4205f1eb37",
+    "duration_s": 5.9,
+    "swept_at": "2026-09-29T15:30:47+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 89,
+    "datasets": [
+      {
+        "name": "imagenet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "pasture_runner.py:26: default=\"prompt_templates/imagenet_template.json\","
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "3e-4",
+        "evidence": "mixin_ddppo_config.py:33"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "habitat_mp3d_runner.py:88"
+      }
+    ],
+    "study_id": "study080",
+    "repo_url": "https://github.com/real-stanford/cow",
+    "status": "ok",
+    "repo_commit": "9f218e939de186cac9d7c28964a3e4ac56599216",
+    "duration_s": 2.4,
+    "swept_at": "2026-09-29T15:30:43+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 67,
+    "datasets": [
+      {
+        "name": "librispeech",
+        "canonical": "LibriSpeech",
+        "source_kind": "config",
+        "evidence": "preprocess.yaml:5: lexicon_path: \"lexicon/librispeech-lexicon.txt\""
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "8",
+        "evidence": "synthesize.py:262"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.5",
+        "evidence": "model.yaml:19"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.0",
+        "evidence": "train.yaml:10"
+      },
+      {
+        "name": "learning_rate",
+        "canonical": "learning_rate",
+        "value": "0.0002",
+        "evidence": "config.json:5"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study081",
+    "repo_url": "https://github.com/roedoejet/fastspeech2",
+    "status": "ok",
+    "repo_commit": "aabe8c26292ecf836979b0e7b1c33cb241f7b77a",
+    "duration_s": 13.9,
+    "swept_at": "2026-09-29T15:31:25+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 69,
+    "datasets": [
+      {
+        "name": "Wikitext",
+        "canonical": "WikiText",
+        "source_kind": "config",
+        "evidence": "train_copying.py:43: parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 RNN/LSTM Language Model')"
+      },
+      {
+        "name": "mnist",
+        "canonical": "MNIST",
+        "source_kind": "config",
+        "evidence": "train_cifar.py:304: def mnist_prep(x, test_upsample=inp_size):"
+      },
+      {
+        "name": "CIFAR10",
+        "canonical": "CIFAR-10",
+        "source_kind": "config",
+        "evidence": "cifar_seq_data_classify.py:32: cifar_trainset = datasets.CIFAR10(root='/home/anirudh/blocks/sparse_relational/data/', train=True, download=Tr"
+      },
+      {
+        "name": "vg",
+        "canonical": "Visual Genome",
+        "source_kind": "config",
+        "evidence": "kfac.py:229: vg_sum = 0"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.001",
+        "evidence": "train_copying.py"
+      },
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "200",
+        "evidence": "train_copying.py"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "64",
+        "evidence": "train_copying.py"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.5",
+        "evidence": "train_copying.py"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "kfac.py:91"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0",
+        "evidence": "kfac.py:95"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "train_copying.py:6"
+      },
+      {
+        "value": "42",
+        "evidence": "splitcross.py:174"
+      },
+      {
+        "value": "1",
+        "evidence": "run_all.yaml:26"
+      },
+      {
+        "value": "2",
+        "evidence": "run_all.yaml:45"
+      },
+      {
+        "value": "3",
+        "evidence": "run_all.yaml:64"
+      },
+      {
+        "value": "4",
+        "evidence": "run_all.yaml:83"
+      },
+      {
+        "value": "5",
+        "evidence": "run_all.yaml:102"
+      },
+      {
+        "value": "6",
+        "evidence": "run_all.yaml:121"
+      },
+      {
+        "value": "7",
+        "evidence": "run_all.yaml:140"
+      },
+      {
+        "value": "8",
+        "evidence": "run_all.yaml:159"
+      },
+      {
+        "value": "9",
+        "evidence": "run_all.yaml:178"
+      }
+    ],
+    "study_id": "study082",
+    "repo_url": "https://github.com/anirudh9119/RIMs",
+    "status": "ok",
+    "repo_commit": "aa61773a949c1e3f499d4c05dd77fcd2adbffa19",
+    "duration_s": 2.1,
+    "swept_at": "2026-09-29T15:31:13+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 31,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "num_epochs",
+        "canonical": "epochs",
+        "value": "maxiter",
+        "evidence": "optimizer.py:493"
+      },
+      {
+        "name": "learning_rate",
+        "canonical": "learning_rate",
+        "value": "float",
+        "evidence": "optimizer.py:590"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study083",
+    "repo_url": "https://github.com/joseangelmartinb/gklr",
+    "status": "ok",
+    "repo_commit": "845560a634478d0b9786c1cf2cd93b369c67a3c1",
+    "duration_s": 1.2,
+    "swept_at": "2026-09-29T15:31:12+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 373,
+    "datasets": [
+      {
+        "name": "imagenet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "convert_weights.py:22: \"model.heads.imagenet.mim_head\": \"loss.mim_loss\","
+      },
+      {
+        "name": "coco",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "retrieval.yaml:15: train_files: [\"./examples/albef/data_files/coco_train.json\"]"
+      },
+      {
+        "name": "vg",
+        "canonical": "Visual Genome",
+        "source_kind": "config",
+        "evidence": "vqa.yaml:14: train_files: [\"./examples/albef/data_files/vqa_train.json\", \"./examples/albef/data_files/vg_qa.json\", \"./examp"
+      },
+      {
+        "name": "glue",
+        "canonical": "GLUE",
+        "source_kind": "config",
+        "evidence": "qnli.yaml:42: key: glue"
+      },
+      {
+        "name": "wikitext",
+        "canonical": "WikiText",
+        "source_kind": "config",
+        "evidence": "debug.yaml:42: key: wikitext"
+      },
+      {
+        "name": "c4",
+        "canonical": "C4",
+        "source_kind": "config",
+        "evidence": "test_two_tower.py:42: {\"c3\": nn.Identity(), \"c4\": nn.Identity()},"
+      },
+      {
+        "name": "sunrgbd",
+        "canonical": "SUN RGB-D",
+        "source_kind": "config",
+        "evidence": "train.py:687: \"--sunrgbd-data-path\", type=str, help=\"Root directory path of sunrgbd dataset\""
+      }
+    ],
+    "dataset_mentions_docs_only": [
+      {
+        "name": "mnist",
+        "canonical": "MNIST",
+        "source_kind": "docs",
+        "evidence": "README.md:35: |         DDPM           |      [Training and Inference](https://github.com/facebookresearch/multimodal/blob/m"
+      }
+    ],
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "32",
+        "evidence": "retrieval.yaml:18"
+      },
+      {
+        "name": "image_size",
+        "canonical": "image_size",
+        "value": "384",
+        "evidence": "retrieval.yaml:23"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.0",
+        "evidence": "retrieval.yaml:28"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.02",
+        "evidence": "retrieval.yaml:63"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "1e-5",
+        "evidence": "retrieval.yaml:64"
+      },
+      {
+        "name": "max_epochs",
+        "canonical": "epochs",
+        "value": "5",
+        "evidence": "retrieval.yaml:66"
+      },
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "2",
+        "evidence": "rendered_sst2.yaml:32"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "train.py"
+      },
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "0.07",
+        "evidence": "args_parse.py"
+      },
+      {
+        "name": "optimizer",
+        "canonical": "optimizer",
+        "value": "adam",
+        "evidence": "args_parse.py"
+      },
+      {
+        "name": "max_iters",
+        "canonical": "iterations",
+        "value": "int",
+        "evidence": "utils.py:68"
+      },
+      {
+        "name": "warmup_iters",
+        "canonical": "warmup",
+        "value": "int",
+        "evidence": "utils.py:69"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "Accuracy",
+        "canonical": "Accuracy",
+        "signal": "cli_flag",
+        "evidence": "model.py:143"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "42",
+        "evidence": "retrieval.yaml:8"
+      },
+      {
+        "value": "1337",
+        "evidence": "900m.yaml:3"
+      },
+      {
+        "value": "1",
+        "evidence": "test_inpainting_transform.py:40"
+      },
+      {
+        "value": "0",
+        "evidence": "test_mae_transform.py:79"
+      },
+      {
+        "value": "1234",
+        "evidence": "test_contrastive_loss_with_temperature.py:76"
+      }
+    ],
+    "study_id": "study084",
+    "repo_url": "https://github.com/facebookresearch/multimodal",
+    "status": "ok",
+    "repo_commit": "e54f602d1cb33f8a5deb3540955271c4223f7c9c",
+    "duration_s": 5.0,
+    "swept_at": "2026-09-29T15:31:16+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 55,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "min_batch_size",
+        "evidence": "memory.py:44"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "1e-5",
+        "evidence": "test_training.py:95"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.0",
+        "evidence": "atom_fitting.py:51"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study085",
+    "repo_url": "https://github.com/mattragoza/liGAN",
+    "status": "ok",
+    "repo_commit": "593ebe6b2dd77394047c98dd440e3e89418e42c1",
+    "duration_s": 2.2,
+    "swept_at": "2026-09-29T15:31:13+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 46,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "64",
+        "evidence": "attack.py:56"
+      },
+      {
+        "name": "temperature",
+        "canonical": "temperature",
+        "value": "0",
+        "evidence": "copyright_test.py:102"
+      },
+      {
+        "name": "learning_rate",
+        "canonical": "learning_rate",
+        "value": "2e-4",
+        "evidence": "finetuning.py:64"
+      },
+      {
+        "name": "optim",
+        "canonical": "optimizer",
+        "value": "paged_adamw_32bit",
+        "evidence": "finetuning.py:68"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "attack.py:219"
+      },
+      {
+        "value": "42",
+        "evidence": "proflingo.py:60"
+      }
+    ],
+    "study_id": "study086",
+    "repo_url": "https://github.com/hengvt/proflingo",
+    "status": "ok",
+    "repo_commit": "1a0d70a8fa68237e11b6d67823c311b8960ed843",
+    "duration_s": 1.9,
+    "swept_at": "2026-09-29T15:31:13+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 39,
+    "datasets": [
+      {
+        "name": "coco",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "main.py:46: parser.add_argument('--datapath', type=str, default='~/datasets', help='Dataset path containing the root dir o"
+      },
+      {
+        "name": "VOC2012",
+        "canonical": "PASCAL VOC",
+        "source_kind": "config",
+        "evidence": "pascal.py:24: self.img_path = os.path.join(datapath, 'VOC2012/JPEGImages/')"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.001",
+        "evidence": "main.py"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study087",
+    "repo_url": "https://github.com/dahyun-kang/ifsl",
+    "status": "ok",
+    "repo_commit": "d0b0c0d1b01c036eaae1470585764d1321ec5336",
+    "duration_s": 2.8,
+    "swept_at": "2026-09-29T15:31:14+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 55,
+    "datasets": [
+      {
+        "name": "c4",
+        "canonical": "C4",
+        "source_kind": "config",
+        "evidence": "segformer.py:232: c1, c2, c3, c4 = inputs"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "1000",
+        "evidence": "test_pvit.py:19"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0.2",
+        "evidence": "test_mlp_mixer.py:18"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "van.py:59"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study088",
+    "repo_url": "https://github.com/DarshanDeshpande/jax-models",
+    "status": "ok",
+    "repo_commit": "0d59f478fa00a456460e1b25d2594464e8861b6e",
+    "duration_s": 1.4,
+    "swept_at": "2026-09-29T15:31:12+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 29,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "CROP_SIZE",
+        "canonical": "image_size",
+        "value": "128",
+        "evidence": "dataset.py:24"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.0001",
+        "evidence": "main.py"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "32",
+        "evidence": "main.py"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "main.py"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "2023",
+        "evidence": "main.py:15"
+      },
+      {
+        "value": "2024",
+        "evidence": "README.md:66"
+      }
+    ],
+    "study_id": "study089",
+    "repo_url": "https://github.com/cyf-cuber/mol",
+    "status": "ok",
+    "repo_commit": "0b830fb10343c693995a29d5868002fa6f148289",
+    "duration_s": 1.3,
+    "swept_at": "2026-09-29T15:31:42+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 51,
+    "datasets": [
+      {
+        "name": "nuscenes",
+        "canonical": "nuScenes",
+        "source_kind": "config",
+        "evidence": "visualize_nusc.py:9: from nuscenes.utils.data_classes import Box, LidarPointCloud"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [
+      {
+        "name": "bbox",
+        "canonical": "mAP",
+        "signal": "eval_config",
+        "evidence": "det_evaluators.py:64"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "test_voxel_pooling.py:17"
+      }
+    ],
+    "study_id": "study090",
+    "repo_url": "https://github.com/megvii-basedetection/bevdepth",
+    "status": "ok",
+    "repo_commit": "d78c7b58b10b9ada940462ba83ab24d99cae5833",
+    "duration_s": 2.7,
+    "swept_at": "2026-09-29T15:31:43+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 7,
+    "datasets": [
+      {
+        "name": "glue",
+        "canonical": "GLUE",
+        "source_kind": "config",
+        "evidence": "studies-and-artifacts.json:1: {\"A1\": {\"name\": \"a-cma / a-cma dqn\", \"type\": \"tool\", \"link\": \"https://hrahmadi71.github.io/a-cma/\", \"input_inf"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study091",
+    "repo_url": "https://github.com/biazottoj/rp-sms-technical-debt-automation",
+    "status": "ok",
+    "repo_commit": "4ff734f9ef2e43fa5e64b1f145f453a9508fbd4f",
+    "duration_s": 1.9,
+    "swept_at": "2026-09-29T15:31:43+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 234,
+    "datasets": [
+      {
+        "name": "c4",
+        "canonical": "C4",
+        "source_kind": "config",
+        "evidence": "run_TrADe.py:125: c4            = time.reshape(-1,1)"
+      },
+      {
+        "name": "voc",
+        "canonical": "PASCAL VOC",
+        "source_kind": "config",
+        "evidence": "voc_annotation.py:5: def convert_voc_annotation(data_path, data_type, anno_path, use_difficult_bbox=True):"
+      },
+      {
+        "name": "coco",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "interface_yolov3_tf_FFPRID.py:47: pb_file         = \"./tracklet/object_detector/pYOLO/yolov3_coco.pb\""
+      },
+      {
+        "name": "imagenet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "make_model.py:50: if pretrain_choice == 'imagenet':"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "80",
+        "evidence": "interface_yolov3_tf_FFPRID.py:51"
+      },
+      {
+        "name": "CROP_SIZE",
+        "canonical": "image_size",
+        "value": "227",
+        "evidence": "constants.py:2"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "6",
+        "evidence": "args.py:20"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "5e-4",
+        "evidence": "args.py:28"
+      },
+      {
+        "name": "warmup_iters",
+        "canonical": "warmup",
+        "value": "500",
+        "evidence": "lr_scheduler.py:21"
+      },
+      {
+        "name": "LEARNING_RATE",
+        "canonical": "learning_rate",
+        "value": "1e-5",
+        "evidence": "unrolled_solver.py:44"
+      },
+      {
+        "name": "momentum",
+        "canonical": "momentum",
+        "value": "0.9",
+        "evidence": "extraction.cfg:8"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "meanIou",
+        "canonical": "mIoU",
+        "signal": "logged",
+        "evidence": "unrolled_solver.py:256"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "2",
+        "evidence": "plot_utils.py:9"
+      },
+      {
+        "value": "0",
+        "evidence": "simulator.py:354"
+      }
+    ],
+    "study_id": "study092",
+    "repo_url": "https://github.com/luigy-mach/trade",
+    "status": "ok",
+    "repo_commit": "a7388cdb141ae4167155cefc50d2484f919f626b",
+    "duration_s": 25.5,
+    "swept_at": "2026-09-29T15:32:06+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 90,
+    "datasets": [
+      {
+        "name": "imagenet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "run_configs_400m.py:37: imagenet_val = None"
+      },
+      {
+        "name": "CIFAR10",
+        "canonical": "CIFAR-10",
+        "source_kind": "config",
+        "evidence": "labels.json:706: \"CIFAR10\": ["
+      },
+      {
+        "name": "CIFAR100",
+        "canonical": "CIFAR-100",
+        "source_kind": "config",
+        "evidence": "labels.json:718: \"CIFAR100\": ["
+      },
+      {
+        "name": "KITTI",
+        "canonical": "KITTI",
+        "source_kind": "config",
+        "evidence": "labels.json:1594: \"KITTI\": ["
+      },
+      {
+        "name": "MNIST",
+        "canonical": "MNIST",
+        "source_kind": "config",
+        "evidence": "labels.json:2302: \"MNIST\": ["
+      },
+      {
+        "name": "SST2",
+        "canonical": "SST-2",
+        "source_kind": "config",
+        "evidence": "labels.json:2426: \"SST2\": ["
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "IMG_SIZE",
+        "canonical": "image_size",
+        "value": "224",
+        "evidence": "constants.py:7"
+      },
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "128",
+        "evidence": "run_configs_400m.py:25"
+      },
+      {
+        "name": "epochs",
+        "canonical": "epochs",
+        "value": "10",
+        "evidence": "run_configs_400m.py:26"
+      },
+      {
+        "name": "warmup",
+        "canonical": "warmup",
+        "value": "2000",
+        "evidence": "run_configs_400m.py:31"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.0004",
+        "evidence": "run_configs_400m.py:91"
+      },
+      {
+        "name": "wd",
+        "canonical": "weight_decay",
+        "value": "0.2",
+        "evidence": "configs.py:40"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "f1_score",
+        "canonical": "F1",
+        "signal": "metric_api",
+        "evidence": "eval_zeroshot.py:296"
+      },
+      {
+        "name": "precision_score",
+        "canonical": "Precision",
+        "signal": "metric_api",
+        "evidence": "eval_zeroshot.py:297"
+      },
+      {
+        "name": "recall_score",
+        "canonical": "Recall",
+        "signal": "metric_api",
+        "evidence": "eval_zeroshot.py:298"
+      },
+      {
+        "name": "roc_auc_score",
+        "canonical": "AUROC",
+        "signal": "metric_api",
+        "evidence": "eval_zeroshot.py:350"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "run_configs_400m.py:32"
+      },
+      {
+        "value": "42",
+        "evidence": "main.py:67"
+      },
+      {
+        "value": "1",
+        "evidence": "data.py:400"
+      }
+    ],
+    "study_id": "study093",
+    "repo_url": "https://github.com/mbzuai-oryx/unimed-clip",
+    "status": "ok",
+    "repo_commit": "536d1651ab28a68a85af07b0ad1a3c56de34e14c",
+    "duration_s": 2.7,
+    "swept_at": "2026-09-29T15:31:43+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 188,
+    "datasets": [
+      {
+        "name": "imagenet",
+        "canonical": "ImageNet",
+        "source_kind": "config",
+        "evidence": "default.yaml:2: dataset: imagenet"
+      },
+      {
+        "name": "coco",
+        "canonical": "COCO",
+        "source_kind": "config",
+        "evidence": "pyproject.toml:8: extend_skip = [\".vscode\", \"coco\", \"assets/data\"]"
+      },
+      {
+        "name": "cityscapes",
+        "canonical": "Cityscapes",
+        "source_kind": "config",
+        "evidence": "seg_model_zoo.py:20: \"efficientvit-seg-b0-cityscapes\": ("
+      },
+      {
+        "name": "ade20k",
+        "canonical": "ADE20K",
+        "source_kind": "config",
+        "evidence": "seg_model_zoo.py:52: \"efficientvit-seg-b1-ade20k\": ("
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "image_size",
+        "canonical": "image_size",
+        "value": "1024",
+        "evidence": "default.yaml:10"
+      },
+      {
+        "name": "n_epochs",
+        "canonical": "epochs",
+        "value": "80",
+        "evidence": "default.yaml:14"
+      },
+      {
+        "name": "base_lr",
+        "canonical": "learning_rate",
+        "value": "0.0000004",
+        "evidence": "default.yaml:15"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.1",
+        "evidence": "default.yaml:26"
+      },
+      {
+        "name": "dropout",
+        "canonical": "dropout",
+        "value": "0",
+        "evidence": "efficientvit_l3.yaml:31"
+      },
+      {
+        "name": "bs",
+        "canonical": "batch_size",
+        "value": "16",
+        "evidence": "onnx_export.py"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "COCOeval",
+        "canonical": "mAP",
+        "signal": "metric_api",
+        "evidence": "sam_eval_utils.py:6"
+      },
+      {
+        "name": "StructuralSimilarityIndexMeasure",
+        "canonical": "SSIM",
+        "signal": "metric_api",
+        "evidence": "evaluator.py:13"
+      }
+    ],
+    "seeds": [
+      {
+        "value": "0",
+        "evidence": "demo_dc_ae_diffusion_model.py:42"
+      }
+    ],
+    "study_id": "study094",
+    "repo_url": "https://github.com/mit-han-lab/efficientvit",
+    "status": "ok",
+    "repo_commit": "de7d7733cc0329f391b33f1f459271562ec27bd5",
+    "duration_s": 22.2,
+    "swept_at": "2026-09-29T15:32:03+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 16,
+    "datasets": [],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "256",
+        "evidence": "build_faiss_index.py"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.0",
+        "evidence": "reader.py:363"
+      },
+      {
+        "name": "learning_rate",
+        "canonical": "learning_rate",
+        "value": "2e-05",
+        "evidence": "biencoder.py"
+      }
+    ],
+    "metrics": [],
+    "seeds": [],
+    "study_id": "study095",
+    "repo_url": "https://github.com/studio-ousia/bpr",
+    "status": "ok",
+    "repo_commit": "08b70cf4806758223b73b7553df8eeeb5745c8df",
+    "duration_s": 1.2,
+    "swept_at": "2026-09-29T15:31:42+00:00",
+    "host": "skynetcpu"
+  },
+  {
+    "facts_version": 9,
+    "n_files_read": 58,
+    "datasets": [
+      {
+        "name": "celeba",
+        "canonical": "CelebA",
+        "source_kind": "config",
+        "evidence": "main_mcj.py:20: parser.add_argument('--config', type=str, default='celeba.yml',  help='Path to the config file')"
+      },
+      {
+        "name": "LSUN",
+        "canonical": "LSUN",
+        "source_kind": "config",
+        "evidence": "church.yml:40: dataset: \"LSUN\""
+      },
+      {
+        "name": "cifar10",
+        "canonical": "CIFAR-10",
+        "source_kind": "config",
+        "evidence": "ncsn_original.yml:35: #         cifar10"
+      }
+    ],
+    "dataset_mentions_docs_only": [],
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "canonical": "batch_size",
+        "value": "32",
+        "evidence": "ffhq.yml:2"
+      },
+      {
+        "name": "n_epochs",
+        "canonical": "epochs",
+        "value": "500000",
+        "evidence": "ffhq.yml:3"
+      },
+      {
+        "name": "image_size",
+        "canonical": "image_size",
+        "value": "256",
+        "evidence": "ffhq.yml:41"
+      },
+      {
+        "name": "num_classes",
+        "canonical": "num_classes",
+        "value": "2311",
+        "evidence": "ffhq.yml:52"
+      },
+      {
+        "name": "weight_decay",
+        "canonical": "weight_decay",
+        "value": "0.000",
+        "evidence": "ffhq.yml:63"
+      },
+      {
+        "name": "optimizer",
+        "canonical": "optimizer",
+        "value": "Adam",
+        "evidence": "ffhq.yml:64"
+      },
+      {
+        "name": "lr",
+        "canonical": "learning_rate",
+        "value": "0.0001",
+        "evidence": "ffhq.yml:65"
+      }
+    ],
+    "metrics": [],
+    "seeds": [
+      {
+        "value": "10000",
+        "evidence": "generate_niid_noise_from_field.py:20"
+      }
+    ],
+    "study_id": "study096",
+    "repo_url": "https://github.com/mengchuangji/ncsnv2_seismic",
+    "status": "ok",
+    "repo_commit": "a866cf5ead3e0ffc2927bfae5e65f2fe62b4f37d",
+    "duration_s": 2.5,
+    "swept_at": "2026-09-29T15:31:43+00:00",
+    "host": "skynetcpu"
+  }
+]

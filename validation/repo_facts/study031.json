@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 98,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -8,7 +8,7 @@
       "name": "batch_size",
       "canonical": "batch_size",
       "value": "predictionBatchSize",
-      "evidence": "FrameworkEvaluate.py:163"
+      "evidence": "FrameworkEvaluate_DataGen.py:163"
     }
   ],
   "metrics": [
@@ -52,5 +52,8 @@
   "study_id": "study031",
   "repo_url": "https://github.com/boortel/ae-reconstruction-and-feature-based-ad",
   "status": "ok",
-  "duration_s": 1.7
+  "repo_commit": "a1aca3da08f57cffe5e070d894bdace64328646d",
+  "duration_s": 3.8,
+  "swept_at": "2026-09-29T15:27:44+00:00",
+  "host": "skynetcpu"
 }

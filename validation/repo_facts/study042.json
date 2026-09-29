@@ -1,12 +1,12 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 66,
   "datasets": [
     {
       "name": "voc",
       "canonical": "PASCAL VOC",
       "source_kind": "config",
-      "evidence": "__init__.py:177: def voc_ap(rec, prec, use_07_metric=False):"
+      "evidence": "dist_model.py:400: score = util.voc_ap(recs, precs)"
     }
   ],
   "dataset_mentions_docs_only": [],
@@ -38,14 +38,14 @@
     {
       "name": "lr",
       "canonical": "learning_rate",
-      "value": "0.0001",
-      "evidence": "dist_model.py:44"
+      "value": "lr_g",
+      "evidence": "autoencoder.py:207"
     },
     {
       "name": "temperature",
       "canonical": "temperature",
       "value": "1.",
-      "evidence": "ddpm.py:1160"
+      "evidence": "plms.py:70"
     },
     {
       "name": "weight_decay",
@@ -64,5 +64,8 @@
   "study_id": "study042",
   "repo_url": "https://github.com/Jerome-Young/D4-VTON",
   "status": "ok",
-  "duration_s": 1.7
+  "repo_commit": "c01a3b278ef2d334c217819f67f0bb567dc9de0d",
+  "duration_s": 2.3,
+  "swept_at": "2026-09-29T15:28:43+00:00",
+  "host": "skynetcpu"
 }

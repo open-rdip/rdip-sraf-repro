@@ -1,36 +1,36 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 400,
   "datasets": [
     {
-      "name": "sunrgbd",
-      "canonical": "SUN RGB-D",
+      "name": "kitti",
+      "canonical": "KITTI",
       "source_kind": "config",
-      "evidence": "update_data_coords.py:11: def update_sunrgbd_infos(root_dir, out_dir, pkl_files):"
+      "evidence": "create_data.py:8: from tools.dataset_converters import kitti_converter as kitti"
     },
     {
       "name": "nuscenes",
       "canonical": "nuScenes",
       "source_kind": "config",
-      "evidence": "update_data_coords.py:63: def update_nuscenes_or_lyft_infos(root_dir, out_dir, pkl_files):"
-    },
-    {
-      "name": "kitti",
-      "canonical": "KITTI",
-      "source_kind": "config",
-      "evidence": "update_data_coords.py:93: parser.add_argument('dataset', metavar='kitti', help='name of the dataset')"
-    },
-    {
-      "name": "waymo",
-      "canonical": "Waymo",
-      "source_kind": "config",
-      "evidence": "update_data_coords.py:147: elif args.dataset == 'waymo':"
+      "evidence": "create_data.py:10: from tools.dataset_converters import nuscenes_converter as nuscenes_converter"
     },
     {
       "name": "scannet",
       "canonical": "ScanNet",
       "source_kind": "config",
-      "evidence": "update_data_coords.py:154: elif args.dataset == 'scannet':"
+      "evidence": "create_data.py:118: def scannet_data_prep(root_path, info_prefix, out_dir, workers):"
+    },
+    {
+      "name": "sunrgbd",
+      "canonical": "SUN RGB-D",
+      "source_kind": "config",
+      "evidence": "create_data.py:154: def sunrgbd_data_prep(root_path, info_prefix, out_dir, workers):"
+    },
+    {
+      "name": "waymo",
+      "canonical": "Waymo",
+      "source_kind": "config",
+      "evidence": "create_data.py:171: def waymo_data_prep(root_path,"
     },
     {
       "name": "coco",
@@ -51,19 +51,19 @@
       "name": "NUM_CLASSES",
       "canonical": "num_classes",
       "value": "18",
-      "evidence": "convert_votenet_checkpoints.py:90"
+      "evidence": "convert_h3dnet_checkpoints.py:114"
     },
     {
       "name": "batch_size",
       "canonical": "batch_size",
-      "value": "4",
-      "evidence": "3dssd_4xb4_kitti-3d-car.py:86"
+      "value": "2",
+      "evidence": "imvotenet_faster-rcnn-r50_fpn_4xb2_sunrgbd-3d.py:36"
     },
     {
       "name": "lr",
       "canonical": "learning_rate",
-      "value": "0.002",
-      "evidence": "3dssd_4xb4_kitti-3d-car.py:98"
+      "value": "0.001",
+      "evidence": "point-rcnn_8xb2_kitti-3d-3class.py:96"
     },
     {
       "name": "max_epochs",
@@ -83,13 +83,13 @@
       "name": "bbox",
       "canonical": "mAP",
       "signal": "eval_config",
-      "evidence": "hv_PartA2_secfpn_4x8_cyclic_80e_pcdet_kitti-3d-3class.py:306"
+      "evidence": "imvoxelnet_8xb4_kitti-3d-car.py:146"
     },
     {
       "name": "AP",
       "canonical": "AP",
       "signal": "cli_flag",
-      "evidence": "metafile.yml:27"
+      "evidence": "metafile.yml:29"
     },
     {
       "name": "mIoU",
@@ -110,16 +110,16 @@
       "evidence": "imvotenet_stage2_8xb16_sunrgbd-3d.py:228"
     },
     {
-      "value": "4",
-      "evidence": "groupfree3d_head-L6-O256_4xb8_scannet-seg.py:227"
+      "value": "0",
+      "evidence": "minkunet18_w32_torchsparse_8xb2-amp-15e_semantickitti.py:27"
     },
     {
       "value": "1588147245",
       "evidence": "minkunet18_w16_torchsparse_8xb2-amp-15e_semantickitti.py:13"
     },
     {
-      "value": "0",
-      "evidence": "minkunet18_w32_torchsparse_8xb2-amp-15e_semantickitti.py:27"
+      "value": "4",
+      "evidence": "groupfree3d_head-L6-O256_4xb8_scannet-seg.py:227"
     },
     {
       "value": "1",
@@ -129,5 +129,8 @@
   "study_id": "study014",
   "repo_url": "https://github.com/open-mmlab/mmdetection3d",
   "status": "ok",
-  "duration_s": 3.2
+  "repo_commit": "fe25f7a51d36e3702f961e198894580d83c4387b",
+  "duration_s": 8.2,
+  "swept_at": "2026-09-29T15:26:49+00:00",
+  "host": "skynetcpu"
 }

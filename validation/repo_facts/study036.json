@@ -1,18 +1,18 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 218,
   "datasets": [
-    {
-      "name": "c4",
-      "canonical": "C4",
-      "source_kind": "config",
-      "evidence": "gptq.py:83: def get_c4(num_samples, tokenizer, seqlen):"
-    },
     {
       "name": "squad",
       "canonical": "SQuAD",
       "source_kind": "config",
       "evidence": "dataset_enum.py:5: \"ifeval\", \"lambada\", \"math\", \"mbpp\", \"mt_bench\", \"nq\", \"quac\", \"real_toxicity_prompts\", \"squad\", \"squad_v2\", \""
+    },
+    {
+      "name": "c4",
+      "canonical": "C4",
+      "source_kind": "config",
+      "evidence": "gptq.py:83: def get_c4(num_samples, tokenizer, seqlen):"
     },
     {
       "name": "sst2",
@@ -24,7 +24,7 @@
       "name": "glue",
       "canonical": "GLUE",
       "source_kind": "config",
-      "evidence": "qqp.py:20: load_args = (\"nyu-mll/glue\", \"qqp\")"
+      "evidence": "wsc.py:37: load_args = (\"super_glue\", \"wsc\")"
     },
     {
       "name": "wikitext",
@@ -56,10 +56,10 @@
       "evidence": "README.md:45"
     },
     {
-      "name": "rouge_scorer",
-      "canonical": "ROUGE",
+      "name": "sentence_bleu",
+      "canonical": "BLEU",
       "signal": "metric_api",
-      "evidence": "self_instruct.py:10"
+      "evidence": "bleu.py:18"
     },
     {
       "name": "f1_score",
@@ -68,26 +68,29 @@
       "evidence": "drop_utils.py:66"
     },
     {
-      "name": "sentence_bleu",
-      "canonical": "BLEU",
+      "name": "rouge_scorer",
+      "canonical": "ROUGE",
       "signal": "metric_api",
-      "evidence": "bleu.py:18"
+      "evidence": "rouge.py:2"
     },
     {
       "name": "Accuracy",
       "canonical": "Accuracy",
       "signal": "cli_flag",
-      "evidence": "math.py:36"
+      "evidence": "truthfulqa_mc.py:27"
     }
   ],
   "seeds": [
     {
       "value": "42",
-      "evidence": "gptq.py:122"
+      "evidence": "dpo.py:143"
     }
   ],
   "study_id": "study036",
   "repo_url": "https://github.com/RUCAIBox/LLMBox",
   "status": "ok",
-  "duration_s": 2.0
+  "repo_commit": "5a1cfe2ca6d296f2fdc171119012d8fa2cf2fc41",
+  "duration_s": 3.0,
+  "swept_at": "2026-09-29T15:28:14+00:00",
+  "host": "skynetcpu"
 }

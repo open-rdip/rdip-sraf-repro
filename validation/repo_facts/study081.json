@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 67,
   "datasets": [
     {
@@ -18,16 +18,16 @@
       "evidence": "synthesize.py:262"
     },
     {
-      "name": "weight_decay",
-      "canonical": "weight_decay",
-      "value": "0.0",
-      "evidence": "train.yaml:10"
-    },
-    {
       "name": "dropout",
       "canonical": "dropout",
       "value": "0.5",
       "evidence": "model.yaml:19"
+    },
+    {
+      "name": "weight_decay",
+      "canonical": "weight_decay",
+      "value": "0.0",
+      "evidence": "train.yaml:10"
     },
     {
       "name": "learning_rate",
@@ -41,5 +41,8 @@
   "study_id": "study081",
   "repo_url": "https://github.com/roedoejet/fastspeech2",
   "status": "ok",
-  "duration_s": 16.9
+  "repo_commit": "aabe8c26292ecf836979b0e7b1c33cb241f7b77a",
+  "duration_s": 13.9,
+  "swept_at": "2026-09-29T15:31:25+00:00",
+  "host": "skynetcpu"
 }

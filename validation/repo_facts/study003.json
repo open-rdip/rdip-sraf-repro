@@ -1,30 +1,30 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 400,
   "datasets": [
     {
-      "name": "vg",
-      "canonical": "Visual Genome",
-      "source_kind": "config",
-      "evidence": "grit2odvg.py:158: if anno.endswith('.json') and not anno.endswith('vg.json')"
-    },
-    {
-      "name": "coco",
+      "name": "COCO",
       "canonical": "COCO",
       "source_kind": "config",
-      "evidence": "remove_cocotrain2017_from_refcoco.py:6: from pycocotools.coco import COCO"
+      "evidence": "gen_coco_panoptic_test_info.py:9: description='Generate COCO test image information '"
     },
     {
-      "name": "voc",
+      "name": "voc2007",
       "canonical": "PASCAL VOC",
       "source_kind": "config",
-      "evidence": "pascal_voc.py:10: from mmdet.evaluation import voc_classes"
+      "evidence": "download_dataset.py:160: voc2007=["
     },
     {
       "name": "ade20k",
       "canonical": "ADE20K",
       "source_kind": "config",
-      "evidence": "ade20k2coco.py:12: from mmdet.datasets.ade20k import ADE20KPanopticDataset"
+      "evidence": "download_dataset.py:187: ade20k_2016=["
+    },
+    {
+      "name": "vg",
+      "canonical": "Visual Genome",
+      "source_kind": "config",
+      "evidence": "refcoco2odvg.py:129: out_path = osp.join(args.mdetr_anno_dir, filename[:-5] + '_vg.json')"
     },
     {
       "name": "Cityscapes",
@@ -36,7 +36,7 @@
       "name": "imagenet",
       "canonical": "ImageNet",
       "source_kind": "config",
-      "evidence": "detic_centernet2_swin-b_fpn_4x_lvis_in21k-lvis.py:78: data_root='data/imagenet',"
+      "evidence": "rtmdet_s_8xb32_300e_coco.py:24: checkpoint = 'https://download.openmmlab.com/mmdetection/v3.0/rtmdet/cspnext_rsb_pretrain/cspnext-s_imagenet_6"
     },
     {
       "name": "c4",
@@ -62,8 +62,8 @@
     {
       "name": "num_classes",
       "canonical": "num_classes",
-      "value": "68",
-      "evidence": "glip_swin_tiny_cafr.py:53"
+      "value": "80",
+      "evidence": "grounding_dino_swin-t_cafr.py:98"
     },
     {
       "name": "max_epochs",
@@ -72,34 +72,34 @@
       "evidence": "grounding_dino_swin-t_cafr.py:197"
     },
     {
-      "name": "crop_size",
-      "canonical": "image_size",
-      "value": "image_size_det",
-      "evidence": "detic_centernet2_swin-b_fpn_4x_lvis_in21k-lvis.py:37"
+      "name": "dropout",
+      "canonical": "dropout",
+      "value": "0.1",
+      "evidence": "maskformer_r50_ms_16xb1_75e_coco.py:79"
     },
     {
       "name": "lr",
       "canonical": "learning_rate",
       "value": "0.0001",
-      "evidence": "lsj-100e_coco-instance.py:88"
+      "evidence": "maskformer_r50_ms_16xb1_75e_coco.py:217"
     },
     {
       "name": "weight_decay",
       "canonical": "weight_decay",
-      "value": "0.1",
-      "evidence": "lsj-100e_coco-instance.py:90"
+      "value": "0.0001",
+      "evidence": "maskformer_r50_ms_16xb1_75e_coco.py:218"
     },
     {
       "name": "momentum",
       "canonical": "momentum",
       "value": "0.0002",
-      "evidence": "efficientdet_effb3_bifpn_8xb16-crop896-300e_coco-90cls.py:161"
+      "evidence": "rtmdet_s_8xb32_300e_coco.py:81"
     },
     {
-      "name": "dropout",
-      "canonical": "dropout",
-      "value": "0.0",
-      "evidence": "diffusiondet_r50_fpn_500-proposals_1-step_crop-ms-480-800-450k_coco.py:51"
+      "name": "img_size",
+      "canonical": "image_size",
+      "value": "1024",
+      "evidence": "vitdet_mask-rcnn_vit-b-mae_lsj-100e.py:21"
     },
     {
       "name": "temperature",
@@ -113,7 +113,7 @@
       "name": "COCOeval",
       "canonical": "mAP",
       "signal": "metric_api",
-      "evidence": "coco_error_analysis.py:10"
+      "evidence": "fuse_results.py:7"
     },
     {
       "name": "PQ",
@@ -125,18 +125,21 @@
       "name": "segm",
       "canonical": "Mask AP",
       "signal": "eval_config",
-      "evidence": "xdecoder-tiny_zeroshot_open-vocab-instance_ade20k.py:20"
+      "evidence": "cityscapes_instance.py:83"
     },
     {
       "name": "mIoU",
       "canonical": "mIoU",
       "signal": "eval_config",
-      "evidence": "refcoco.py:54"
+      "evidence": "refcocog.py:54"
     }
   ],
   "seeds": [],
   "study_id": "study003",
   "repo_url": "https://github.com/zhimengxin/rcod",
   "status": "ok",
-  "duration_s": 4.2
+  "repo_commit": "8b9b3b558d7a6b39eebda0d9afbdcc77a26516dd",
+  "duration_s": 6.2,
+  "swept_at": "2026-09-29T15:26:17+00:00",
+  "host": "skynetcpu"
 }

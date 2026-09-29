@@ -1,12 +1,12 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 234,
   "datasets": [
     {
       "name": "c4",
       "canonical": "C4",
       "source_kind": "config",
-      "evidence": "eval_TrADe.py:153: c4   = time.reshape(len(dist_mat),1)"
+      "evidence": "run_TrADe.py:125: c4            = time.reshape(-1,1)"
     },
     {
       "name": "voc",
@@ -36,12 +36,6 @@
       "evidence": "interface_yolov3_tf_FFPRID.py:51"
     },
     {
-      "name": "warmup_iters",
-      "canonical": "warmup",
-      "value": "500",
-      "evidence": "lr_scheduler.py:21"
-    },
-    {
       "name": "CROP_SIZE",
       "canonical": "image_size",
       "value": "227",
@@ -60,6 +54,12 @@
       "evidence": "args.py:28"
     },
     {
+      "name": "warmup_iters",
+      "canonical": "warmup",
+      "value": "500",
+      "evidence": "lr_scheduler.py:21"
+    },
+    {
       "name": "LEARNING_RATE",
       "canonical": "learning_rate",
       "value": "1e-5",
@@ -69,7 +69,7 @@
       "name": "momentum",
       "canonical": "momentum",
       "value": "0.9",
-      "evidence": "tiny-yolo-4c.cfg:7"
+      "evidence": "extraction.cfg:8"
     }
   ],
   "metrics": [
@@ -93,5 +93,8 @@
   "study_id": "study092",
   "repo_url": "https://github.com/luigy-mach/trade",
   "status": "ok",
-  "duration_s": 12.9
+  "repo_commit": "a7388cdb141ae4167155cefc50d2484f919f626b",
+  "duration_s": 25.5,
+  "swept_at": "2026-09-29T15:32:06+00:00",
+  "host": "skynetcpu"
 }

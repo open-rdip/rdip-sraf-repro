@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 400,
   "datasets": [
     {
@@ -15,7 +15,7 @@
       "name": "temperature",
       "canonical": "temperature",
       "value": "0.3",
-      "evidence": "agent.yaml:14"
+      "evidence": "test_thinking_effort.py:299"
     },
     {
       "name": "num_epochs",
@@ -40,5 +40,8 @@
   "study_id": "study023",
   "repo_url": "https://github.com/modelscope/modelscope-agent",
   "status": "ok",
-  "duration_s": 6.5
+  "repo_commit": "a56afcc73f0049ba822af9569fd413a2e90677eb",
+  "duration_s": 10.6,
+  "swept_at": "2026-09-29T15:27:21+00:00",
+  "host": "skynetcpu"
 }

@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 204,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -61,36 +61,36 @@
       "evidence": "kgfm_inference.py:47"
     },
     {
-      "value": "912",
-      "evidence": "test_kgfm_next_inference.py:139"
-    },
-    {
-      "value": "7",
-      "evidence": "test_kgfm_next_inference.py:155"
-    },
-    {
-      "value": "123",
-      "evidence": "test_worker_storage.py:93"
-    },
-    {
-      "value": "14",
-      "evidence": "test_worker_storage.py:114"
-    },
-    {
-      "value": "45",
-      "evidence": "test_kgfm_inference.py:32"
-    },
-    {
-      "value": "17",
-      "evidence": "test_kgfm_inference.py:320"
-    },
-    {
       "value": "991",
       "evidence": "test_flock.py:114"
     },
     {
       "value": "4321",
       "evidence": "test_flock.py:177"
+    },
+    {
+      "value": "123",
+      "evidence": "test_flock.py:183"
+    },
+    {
+      "value": "45",
+      "evidence": "test_kgfm_inference.py:32"
+    },
+    {
+      "value": "7",
+      "evidence": "test_kgfm_inference.py:276"
+    },
+    {
+      "value": "17",
+      "evidence": "test_kgfm_inference.py:320"
+    },
+    {
+      "value": "14",
+      "evidence": "test_worker_storage.py:114"
+    },
+    {
+      "value": "912",
+      "evidence": "test_kgfm_next_inference.py:139"
     },
     {
       "value": "100",
@@ -100,5 +100,8 @@
   "study_id": "study002",
   "repo_url": "https://github.com/dice-group/dice-embeddings",
   "status": "ok",
-  "duration_s": 3.1
+  "repo_commit": "aa7f00eb14cfffa2369f48e8e03ffb1621f6be62",
+  "duration_s": 5.5,
+  "swept_at": "2026-09-29T15:26:16+00:00",
+  "host": "skynetcpu"
 }

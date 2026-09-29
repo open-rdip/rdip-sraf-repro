@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 17,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -7,8 +7,8 @@
     {
       "name": "learning_rate",
       "canonical": "learning_rate",
-      "value": "0.1",
-      "evidence": "train_blackjack.py:40"
+      "value": "1e-2",
+      "evidence": "tabular_class.py:17"
     },
     {
       "name": "batch_size",
@@ -22,5 +22,8 @@
   "study_id": "study050",
   "repo_url": "https://github.com/hmhyau/rl-intention",
   "status": "ok",
-  "duration_s": 1.4
+  "repo_commit": "29c84fd9abaa6149fc170531d0ae904fb23047a4",
+  "duration_s": 1.5,
+  "swept_at": "2026-09-29T15:29:12+00:00",
+  "host": "skynetcpu"
 }

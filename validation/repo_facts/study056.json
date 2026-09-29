@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 29,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -7,8 +7,8 @@
     {
       "name": "batch_size",
       "canonical": "batch_size",
-      "value": "1",
-      "evidence": "training.py:474"
+      "value": "val_batch",
+      "evidence": "shower_flow_train.py:109"
     },
     {
       "name": "lr",
@@ -20,25 +20,25 @@
       "name": "optimizer",
       "canonical": "optimizer",
       "value": "AdamMini",
-      "evidence": "configs_HCAL.yaml:65"
+      "evidence": "configs_ECAL.yaml:66"
     },
     {
       "name": "max_iters",
       "canonical": "iterations",
-      "value": "5000000",
-      "evidence": "configs_HCAL.yaml:66"
+      "value": "3000000",
+      "evidence": "configs_ECAL.yaml:67"
     },
     {
       "name": "epochs",
       "canonical": "epochs",
       "value": "100",
-      "evidence": "configs_HCAL.yaml:68"
+      "evidence": "configs_ECAL.yaml:69"
     },
     {
       "name": "weight_decay",
       "canonical": "weight_decay",
       "value": "0",
-      "evidence": "configs_HCAL.yaml:81"
+      "evidence": "configs_ECAL.yaml:82"
     }
   ],
   "metrics": [
@@ -46,29 +46,32 @@
       "name": "roc_auc_score",
       "canonical": "AUROC",
       "signal": "metric_api",
-      "evidence": "clas_utils.py:3"
+      "evidence": "highLevel_classifier.py:3"
     }
   ],
   "seeds": [
     {
       "value": "42",
-      "evidence": "misc.py:189"
+      "evidence": "shower_flow.py:12"
     },
     {
-      "value": "45",
-      "evidence": "configs_HCAL.yaml:89"
+      "value": "455",
+      "evidence": "configs_ECAL.yaml:90"
     },
     {
       "value": "36",
       "evidence": "configs_sf.yaml:4"
     },
     {
-      "value": "455",
-      "evidence": "configs_ECAL.yaml:90"
+      "value": "45",
+      "evidence": "configs_HCAL.yaml:89"
     }
   ],
   "study_id": "study056",
   "repo_url": "https://github.com/FLC-QU-hep/CaloHadronic",
   "status": "ok",
-  "duration_s": 5.0
+  "repo_commit": "50d2468211ff3abbfb176ddbc7ca9dc81989d21a",
+  "duration_s": 11.3,
+  "swept_at": "2026-09-29T15:29:22+00:00",
+  "host": "skynetcpu"
 }

@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 182,
   "datasets": [
     {
@@ -30,7 +30,7 @@
       "name": "c4",
       "canonical": "C4",
       "source_kind": "config",
-      "evidence": "adapter_modules.py:424: c4 = self.conv4(c3)"
+      "evidence": "vit_adapter.py:122: def _add_level_embed(self, c2, c3, c4):"
     }
   ],
   "dataset_mentions_docs_only": [],
@@ -54,10 +54,16 @@
       "evidence": "ssl_default_config.yaml:96"
     },
     {
-      "name": "num_classes",
-      "canonical": "num_classes",
+      "name": "batch_size",
+      "canonical": "batch_size",
       "value": "int",
-      "evidence": "metrics.py:78"
+      "evidence": "loaders.py:169"
+    },
+    {
+      "name": "img_size",
+      "canonical": "image_size",
+      "value": "224",
+      "evidence": "vision_transformer.py:48"
     },
     {
       "name": "temperature",
@@ -66,16 +72,10 @@
       "evidence": "knn.py:91"
     },
     {
-      "name": "batch_size",
-      "canonical": "batch_size",
-      "value": "256",
-      "evidence": "knn.py:92"
-    },
-    {
-      "name": "img_size",
-      "canonical": "image_size",
-      "value": "224",
-      "evidence": "vision_transformer.py:48"
+      "name": "num_classes",
+      "canonical": "num_classes",
+      "value": "int",
+      "evidence": "metrics.py:78"
     },
     {
       "name": "dropout",
@@ -95,7 +95,7 @@
   "seeds": [
     {
       "value": "0",
-      "evidence": "run_demo.py:46"
+      "evidence": "run_demo_batch.py:329"
     },
     {
       "value": "31",
@@ -105,5 +105,8 @@
   "study_id": "study073",
   "repo_url": "https://github.com/NVlabs/FoundationStereo",
   "status": "ok",
-  "duration_s": 3.1
+  "repo_commit": "6e8806816b533e4d13ddbb95ffa907b797060a62",
+  "duration_s": 6.1,
+  "swept_at": "2026-09-29T15:30:47+00:00",
+  "host": "skynetcpu"
 }

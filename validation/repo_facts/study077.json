@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 400,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -7,8 +7,8 @@
     {
       "name": "temperature",
       "canonical": "temperature",
-      "value": "0.1",
-      "evidence": "finance_tool.py:438"
+      "value": "0.3",
+      "evidence": "crawler_base.py:116"
     },
     {
       "name": "batch_size",
@@ -22,13 +22,13 @@
       "name": "Perplexity",
       "canonical": "Perplexity",
       "signal": "metric_api",
-      "evidence": "litellm_model.py:76"
+      "evidence": "model_configs.py:77"
     },
     {
       "name": "f1_score",
       "canonical": "F1",
       "signal": "metric_api",
-      "evidence": "real_mm_rag.py:8"
+      "evidence": "WorfBench.py:6"
     },
     {
       "name": "acc",
@@ -47,16 +47,19 @@
       "evidence": "tools_images.py:240"
     },
     {
-      "value": "10",
-      "evidence": "bestprompt_eval.py:87"
+      "value": "8",
+      "evidence": "math_textgrad.py:97"
     },
     {
-      "value": "8",
-      "evidence": "mbpp_textgrad.py:97"
+      "value": "10",
+      "evidence": "evoprompt_singleagent.py:161"
     }
   ],
   "study_id": "study077",
   "repo_url": "https://github.com/evoagentx/evoagentx",
   "status": "ok",
-  "duration_s": 5.3
+  "repo_commit": "d77fd6b9a3e76c8dd83bebe3374c53a3f5d16f54",
+  "duration_s": 9.4,
+  "swept_at": "2026-09-29T15:30:50+00:00",
+  "host": "skynetcpu"
 }

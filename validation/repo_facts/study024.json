@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 164,
   "datasets": [],
   "dataset_mentions_docs_only": [],
@@ -7,8 +7,8 @@
     {
       "name": "batch_size",
       "canonical": "batch_size",
-      "value": "int",
-      "evidence": "solution.py:49"
+      "value": "1000",
+      "evidence": "ccvm_boxqp_dl.py:12"
     }
   ],
   "metrics": [],
@@ -21,5 +21,8 @@
   "study_id": "study024",
   "repo_url": "https://github.com/1qb-information-technologies/ccvm",
   "status": "ok",
-  "duration_s": 2.1
+  "repo_commit": "7e4b4c1d2c630b63d2076d41302f1915adc34803",
+  "duration_s": 2.8,
+  "swept_at": "2026-09-29T15:27:13+00:00",
+  "host": "skynetcpu"
 }

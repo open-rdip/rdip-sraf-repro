@@ -1,5 +1,5 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 400,
   "datasets": [
     {
@@ -18,22 +18,22 @@
       "evidence": "complex_nn.py:136"
     },
     {
-      "name": "batch_size",
-      "canonical": "batch_size",
-      "value": "4",
-      "evidence": "wsj0_mix.py:15"
-    },
-    {
       "name": "max_epochs",
       "canonical": "epochs",
       "value": "10",
       "evidence": "sinkpit_wrapper_test.py:141"
     },
     {
+      "name": "batch_size",
+      "canonical": "batch_size",
+      "value": "5",
+      "evidence": "loss_functions_test.py:27"
+    },
+    {
       "name": "lr",
       "canonical": "learning_rate",
       "value": "0.001",
-      "evidence": "conf.yml:22"
+      "evidence": "conf.yml:18"
     },
     {
       "name": "optimizer",
@@ -58,5 +58,8 @@
   "study_id": "study047",
   "repo_url": "https://github.com/saurjya/asteroid",
   "status": "ok",
-  "duration_s": 2.2
+  "repo_commit": "591781278dbf38deac29dfab93920c67c5e1afb5",
+  "duration_s": 3.2,
+  "swept_at": "2026-09-29T15:28:44+00:00",
+  "host": "skynetcpu"
 }

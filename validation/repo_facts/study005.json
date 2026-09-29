@@ -1,18 +1,18 @@
 {
-  "facts_version": 8,
+  "facts_version": 9,
   "n_files_read": 117,
   "datasets": [
     {
       "name": "imagenet",
       "canonical": "ImageNet",
       "source_kind": "config",
-      "evidence": "autoencoder_kl_32x32x4.yaml:32: target: ldm.data.imagenet.ImageNetSRTrain"
+      "evidence": "cin-ldm-vq-f8.yaml:77: target: ldm.data.imagenet.ImageNetTrain"
     },
     {
       "name": "lsun",
       "canonical": "LSUN",
       "source_kind": "config",
-      "evidence": "lsun_churches-ldm-kl-8.yaml:72: target: ldm.data.lsun.LSUNChurchesTrain"
+      "evidence": "lsun_bedrooms-ldm-vq-4.yaml:66: target: ldm.data.lsun.LSUNBedroomsTrain"
     },
     {
       "name": "c4",
@@ -45,14 +45,14 @@
     {
       "name": "image_size",
       "canonical": "image_size",
-      "value": "64",
-      "evidence": "v1-inference.yaml:12"
+      "value": "32",
+      "evidence": "cin-ldm-vq-f8.yaml:12"
     },
     {
       "name": "dropout",
       "canonical": "dropout",
       "value": "0.0",
-      "evidence": "v1-inference.yaml:65"
+      "evidence": "cin-ldm-vq-f8.yaml:62"
     },
     {
       "name": "lr",
@@ -83,5 +83,8 @@
   "study_id": "study005",
   "repo_url": "https://github.com/cross-domain-compositing/cross-domain-compositing",
   "status": "ok",
-  "duration_s": 2.9
+  "repo_commit": "cb7010062aa0d5654283d5bcc0af241c88940821",
+  "duration_s": 3.6,
+  "swept_at": "2026-09-29T15:26:15+00:00",
+  "host": "skynetcpu"
 }
