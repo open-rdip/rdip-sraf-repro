@@ -39,6 +39,7 @@ import argparse
 import ast
 import json
 import re
+import warnings
 from collections import OrderedDict
 from pathlib import Path
 
@@ -373,7 +374,13 @@ def _argparse_defaults(text: str) -> list[tuple[str, str]]:
     """Read `parser.add_argument('--lr', default=0.1)` pairs without executing."""
     out = []
     try:
-        tree = ast.parse(text)
+        # We parse third-party source, so their invalid escape sequences ("\s"
+        # in a non-raw string) raise SyntaxWarning on Python 3.12+. That is a
+        # property of the repository being audited, not of this sweep, and 96
+        # repositories' worth of it buries the actual output.
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", SyntaxWarning)
+            tree = ast.parse(text)
     except Exception:
         return out
     for node in ast.walk(tree):

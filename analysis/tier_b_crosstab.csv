@@ -1,0 +1,27 @@
+study_id,mode,recipe_status,docs_grade,n_eval_concrete,n_eval_placeholder,evidence
+study001,(excl) out of scale,skipped,partial,0,0,commands documented but none reproduces a metric — README.md: python train.py --actor-model facebook/opt-13b --reward-mo
+study002,no run command,run_failed,partial,0,0,commands documented but none reproduces a metric — README.md: python -m pytest -p no:warnings -x # Runs >119 tests leadi
+study003,placeholder recipe,run_failed,full,12,23,tracking_train_test.md: bash tools/slurm_test_tracking.sh \
+study004,repo != paper,skipped,absent,0,0,no runnable command found in documentation
+study005,repo != paper,skipped,partial,0,0,commands documented but none reproduces a metric — README.md: python scripts_cdc/img2img.py --config configs/stable-diff
+study006,(harness) missing dep,run_failed,full,1,0,README.md: python scripts/plan.py --test_planner MCTS_P --dataset $data --exp_name $name-$round --suffix $i --initial_wi
+study007,no run command,run_failed,absent,0,0,no runnable command found in documentation
+study008,placeholder recipe,run_failed,partial,0,1,"evaluation command is placeholder-only — README.md: python eval_de.py --model hf-causal --model_args ""pretrained=/path/t"
+study009,dead download,run_failed,full,1,8,quick_run.md: python tools/test.py \
+study010,no run command,run_failed,full,16,4,quick_run.md: python tools/test.py configs/textdet/dbnet/dbnet_resnet18_fpnc_1200e_icdar2015.py work_dirs/dbnet_resnet18
+study011,no run command,run_failed,full,31,1,README.md: python tools/test.py configs/arcface/resnet50-arcface_8xb32_inshop.py https://download.openmmlab.com/mmclassi
+study012,placeholder recipe,run_failed,full,4,0,README.md: sh tools/dist_test.sh \
+study013,repo != paper,skipped,absent,0,0,no runnable command found in documentation
+study014,(harness) missing dep,run_failed,partial,0,1,evaluation command is placeholder-only — README.md: python tools/test.py ${CONFIG_FILE} ${CHECKPOINT_FILE} --format-only
+study015,(excl) no claim,skipped,absent,0,0,no runnable command found in documentation
+study016,(excl) hardware metric,skipped,full,2,0,README.md: PYTHONPATH=. python eval.py
+study017,(excl) hardware metric,skipped,partial,0,0,"commands documented but none reproduces a metric — README.md: python -m unittest discover -s test -p ""test_*"" -v"
+study018,placeholder recipe,run_failed,partial,0,1,evaluation command is placeholder-only — README.md: python -m torch.distributed.launch --nproc_per_node=$NGPUS /path_to_
+study019,placeholder recipe,run_failed,full,5,2,GETTING_STARTED.md: python tools/test.py configs/faster_rcnn_r50_fpn_1x.py \
+study020,gated dataset,run_failed,absent,0,0,no runnable command found in documentation
+study021,(harness) missing dep,run_failed,partial,0,0,commands documented but none reproduces a metric — README.md: python setup.py install
+study022,(excl) online metric,skipped,full,2,0,README.md: python run_expid.py --expid DCN_test --gpu 0
+study023,(excl) external device,skipped,full,19,2,README.md: python3 test_hermes_mcp.py
+study024,(harness) missing dep,run_failed,absent,0,0,no runnable command found in documentation
+study025,placeholder recipe,run_failed,absent,0,0,no runnable command found in documentation
+study026,placeholder recipe,run_failed,absent,0,0,no runnable command found in documentation
