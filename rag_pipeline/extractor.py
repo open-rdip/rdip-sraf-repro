@@ -191,21 +191,43 @@ class OpenAICompatExtractor(Extractor):
             return True
         return False
 
+    #: Errors worth waiting out. A rate limit clears; a spent quota does not,
+    #: so QUOTA_MARKERS are excluded and fail immediately rather than sleeping
+    #: four times for nothing.
+    TRANSIENT_MARKERS = ("429", "500", "502", "503", "529",
+                         "rate limit", "rate_limit", "overloaded", "timeout")
+    QUOTA_MARKERS = ("insufficient_quota", "exceeded your current quota",
+                     "billing", "credit balance")
+
     def _complete(self, system: str, user: str) -> str:
-        resp = None
-        for _ in range(4):
+        resp, last_err, shape_changes, waits = None, None, 0, 0
+        while resp is None:
             try:
                 resp = self.client.chat.completions.create(
                     **self._build_kwargs(system, user))
-                break
             except BudgetExceeded:
                 raise
             except Exception as e:  # noqa: BLE001
-                if not self._adapt(str(e)):
+                last_err, msg = e, str(e)
+                low = msg.lower()
+                # 1. A parameter this provider rejects: change shape, retry now.
+                if shape_changes < 4 and self._adapt(msg):
+                    shape_changes += 1
+                    continue
+                # 2. A spent quota or billing problem never clears by waiting.
+                if any(m in low for m in self.QUOTA_MARKERS):
                     raise
-        if resp is None:
-            raise RuntimeError(
-                f"{self.name}: no accepted request shape after adaptation")
+                # 3. A rate limit or a server-side wobble does clear.
+                if waits < 4 and any(m in low for m in self.TRANSIENT_MARKERS):
+                    wait = min(60, 5 * 2 ** waits)
+                    waits += 1
+                    print(f"[Extractor:{self.name}] transient error, waiting "
+                          f"{wait}s (attempt {waits}/4): {msg[:110]}")
+                    time.sleep(wait)
+                    continue
+                raise
+        if resp is None:  # pragma: no cover - loop only exits with a response
+            raise last_err or RuntimeError(f"{self.name}: no response")
 
         usage = getattr(resp, "usage", None)
         if usage is not None:
