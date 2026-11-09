@@ -16,6 +16,7 @@ sentence-transformers==3.0.0
 faiss-cpu==1.8.0
 google-generativeai==0.8.0
 openai>=1.52.0
+anthropic>=0.40.0            # N3: Claude models speak the Messages API, not the OpenAI schema
 numpy<2
 streamlit==1.35.0
 plotly==5.22.0

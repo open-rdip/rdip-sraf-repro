@@ -34,7 +34,11 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "build_harness"))
 from tier_b_checks import RULES_VERSION, run_tier_b  # noqa: E402
 
-REPO_LIST = ROOT / "validation" / "repo_list.csv"
+# The manifest is configurable so a second stratum (the badged contrast group,
+# contribution N10) can be swept with the identical code path without touching
+# the main corpus. Mixing strata into one CSV would silently change every
+# published 96-study number.
+REPO_LIST = Path(os.getenv("SRAF_REPO_LIST", ROOT / "validation" / "repo_list.csv"))
 OUT_DIR = Path(os.getenv("TIER_B_OUT", ROOT / "validation" / "tier_b"))
 SCRATCH = Path(os.getenv("SLURM_TMPDIR",
                          f"/tmp/{os.getenv('SLURM_JOB_ID', 'local')}"))

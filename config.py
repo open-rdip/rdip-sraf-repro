@@ -66,6 +66,17 @@ OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "") or None
 COMPAT_BASE_URL = os.getenv("SRAF_COMPAT_BASE_URL", "") or None
 COMPAT_API_KEY = os.getenv("SRAF_COMPAT_API_KEY", "")
 
+# Anthropic speaks the Messages API rather than the OpenAI chat schema, so it
+# is the one frontier provider in the N3 set that needs its own client. The
+# base URL is settable so a gateway or proxy can be used without code changes.
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+ANTHROPIC_BASE_URL = os.getenv("ANTHROPIC_BASE_URL", "") or None
+
+# xAI serves an OpenAI-compatible endpoint, so it rides the generic client and
+# only needs its own key and base URL rather than a new backend.
+XAI_API_KEY = os.getenv("XAI_API_KEY", "")
+XAI_BASE_URL = os.getenv("XAI_BASE_URL", "https://api.x.ai/v1")
+
 # Hard spend cap for paid-API runs, in USD. Enforced by rag_pipeline.usage_meter
 # after every completion. 0 or unset means no cap, which is only appropriate for
 # local backends.

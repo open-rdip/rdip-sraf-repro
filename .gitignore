@@ -41,3 +41,23 @@ result_repro/results/*
 .pytest_cache/
 pytest-cache-files-*/
 *.bak
+
+# never commit env backups
+.env.bak*
+_to_delete/
+Claude outputs/
+
+# ---------------------------------------------------------------- answer keys
+# These carry the reference decisions the second annotator and the second coder
+# are asked to reproduce. Publishing them would void the agreement study, and
+# this is a public repository. Both are regenerable from committed scripts, so
+# nothing is lost by excluding them:
+#   origin_key.csv            <- evaluation/build_annotation_bundles.py
+#   taxonomy_restructured.md  <- analysis/taxonomy_restructure.py
+# The BLANK artefacts are released and stay tracked: the annotation bundles
+# (no in_ground_truth column) and analysis/taxonomy_coding_sheet.csv.
+evaluation/annotation_round1_key/
+analysis/taxonomy_restructured.md
+
+# Annotator pack archives, rebuilt by build_annotation_bundles.py
+evaluation/*.zip

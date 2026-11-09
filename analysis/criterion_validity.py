@@ -25,14 +25,18 @@ version): Firth penalized logistic regression with penalized likelihood-ratio
 p-values, Benjamini-Hochberg FDR and Bonferroni correction, and cross-validated
 AUC reported alongside p-values.
 
+This file is N1 and is deliberately specific to FAIR-R. The instrument-neutral
+machinery it used to own now lives in `analysis/audit_core.py` and
+`analysis/instruments/`, so that N2 can ask the same question of F-UJI,
+howfairis and the ML Reproducibility Checklist. Nothing about the computation
+changed in that move: the output of this script is byte-identical to the
+version committed before the split, and `tests/test_audit_core.py` pins it.
+
 Usage:  python3 analysis/criterion_validity.py
 """
 from __future__ import annotations
 
-import glob
-import json
-import os
-import re
+import sys
 from collections import defaultdict
 from pathlib import Path
 
@@ -44,184 +48,19 @@ from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import StratifiedKFold
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-RESULTS_DIR = Path(os.getenv("SRAF_RESULTS_DIR", REPO_ROOT / "validation" / "results"))
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from analysis.audit_core import (  # noqa: E402
+    MIN_MINORITY, bh_fdr, firth_logistic, firth_plr_test, minority_count,
+)
+from analysis.instruments.sraf import (  # noqa: E402
+    ALL_CRITERIA, CATALOGUE, CRIT_DIM, LEVEL_FACTOR, RESULTS_DIR, STUDY_ID_RE,
+    build_frame, derive_c_max, load_studies,
+)
+
 OUT_MD = REPO_ROOT / "analysis" / "criterion_validity.md"
 OUT_CSV = REPO_ROOT / "analysis" / "criterion_table.csv"
-
-STUDY_ID_RE = re.compile(r"^study\d{3}$")
-LEVEL_FACTOR = {"absent": 0.0, "partial": 0.5, "full": 1.0}
-
-# A criterion enters a regression only if its minority level is observed at
-# least this many times. Criteria that differ on one or two repositories are
-# numerically separated (and mutually collinear), which makes penalised
-# likelihood diverge; they carry no usable information either way.
-MIN_MINORITY = 5
-
-
-def minority_count(levels: pd.Series) -> int:
-    vc = levels.value_counts()
-    return 0 if len(vc) < 2 else int(vc.iloc[1:].sum())
-
-# The 15 rubric criteria, from dashboard/fair_r_scorer.py (DIMENSIONS).
-CATALOGUE = {
-    "Findable": ["Persistent identifier", "Descriptive metadata", "Landing page"],
-    "Accessible": ["Access protocol", "Data licence", "Access level"],
-    "Interoperable": ["Method declared", "Workflow language", "Related links"],
-    "Reusable": ["Software licence", "Commit + versioning", "Community standard"],
-    "Reproducible": ["Computational environment (R1)",
-                     "Methodological transparency (R2)",
-                     "Data provenance (R3)"],
-}
-CRIT_DIM = {c: d for d, cs in CATALOGUE.items() for c in cs}
-ALL_CRITERIA = [c for cs in CATALOGUE.values() for c in cs]
-
-
-# ---------------------------------------------------------------- data loading
-def load_studies() -> list[dict]:
-    out = []
-    for p in sorted(glob.glob(str(RESULTS_DIR / "*.json"))):
-        try:
-            d = json.load(open(p))
-        except Exception:
-            continue
-        if STUDY_ID_RE.match(str(d.get("study_id", "")).strip()):
-            out.append(d)
-    return out
-
-
-def derive_c_max(studies: list[dict]) -> dict[str, float]:
-    """Recover each criterion's maximum points.
-
-    `recommendations` records only *gaps*, as points_available = c_max - earned.
-    absent  -> earned 0      -> c_max = points_available
-    partial -> earned c_max/2 -> c_max = 2 * points_available
-    A criterion that is never a gap is always full; its c_max is recovered from
-    the dimension arithmetic (dimension_score minus the earned points of its
-    siblings).
-    """
-    c_max: dict[str, float] = {}
-    for d in studies:
-        for r in d["fair_r"].get("recommendations", []):
-            lab, lvl, pa = r["label"], r.get("level"), r.get("points_available")
-            if lab in c_max or pa is None:
-                continue
-            if lvl == "absent":
-                c_max[lab] = float(pa)
-            elif lvl == "partial":
-                c_max[lab] = 2.0 * float(pa)
-
-    # Solve the always-full criteria from the dimension totals.
-    for dim, crits in CATALOGUE.items():
-        unknown = [c for c in crits if c not in c_max]
-        if not unknown:
-            continue
-        residuals = []
-        for d in studies:
-            gaps = {r["label"]: r for r in d["fair_r"].get("recommendations", [])}
-            dim_score = d["fair_r"]["dimension_scores"][dim]
-            known_earned = 0.0
-            ok = True
-            for c in crits:
-                if c in unknown:
-                    continue
-                if c in gaps:
-                    known_earned += c_max[c] * LEVEL_FACTOR[gaps[c].get("level", "absent")]
-                else:
-                    known_earned += c_max[c]
-            if ok:
-                residuals.append(dim_score - known_earned)
-        if residuals and len(unknown) == 1:
-            c_max[unknown[0]] = float(np.median(residuals))
-        else:
-            for c in unknown:
-                c_max[c] = float(np.median(residuals)) / max(len(unknown), 1)
-    return c_max
-
-
-def build_frame(studies: list[dict], c_max: dict[str, float]) -> pd.DataFrame:
-    rows = []
-    for d in studies:
-        gaps = {r["label"]: r for r in d["fair_r"].get("recommendations", [])}
-        b = d.get("build", {}) or {}
-        row = {
-            "study_id": d["study_id"],
-            "fair_r_v1": d["fair_r"].get("total_score"),
-            "resolve_success": b.get("resolve_success"),
-            "build_success": b.get("build_success"),
-        }
-        for c in ALL_CRITERIA:
-            lvl = gaps[c].get("level", "absent") if c in gaps else "full"
-            row[f"crit::{c}"] = c_max.get(c, 0.0) * LEVEL_FACTOR[lvl]
-            row[f"lvl::{c}"] = lvl
-        rows.append(row)
-    return pd.DataFrame(rows)
-
-
-# ------------------------------------------------------------ Firth regression
-def firth_logistic(X: np.ndarray, y: np.ndarray, max_iter: int = 200,
-                   tol: float = 1e-8) -> tuple[np.ndarray, float]:
-    """Firth penalized logistic regression. Returns (beta, penalized loglik).
-
-    Penalized score:  U*(b) = X'(y - p + h*(0.5 - p)),  h = diag hat matrix.
-    Penalized loglik: l(b) + 0.5*log|I(b)|  (Jeffreys prior).
-    """
-    n, k = X.shape
-    beta = np.zeros(k)
-    for _ in range(max_iter):
-        eta = X @ beta
-        p = 1.0 / (1.0 + np.exp(-np.clip(eta, -35, 35)))
-        w = np.clip(p * (1 - p), 1e-10, None)
-        XW = X * w[:, None]
-        I = X.T @ XW
-        try:
-            I_inv = np.linalg.pinv(I)
-            # hat diagonal
-            h = np.einsum("ij,jk,ik->i", X * np.sqrt(w)[:, None], I_inv,
-                          X * np.sqrt(w)[:, None])
-            U = X.T @ (y - p + h * (0.5 - p))
-            step = I_inv @ U
-        except np.linalg.LinAlgError:
-            break
-        # step halving for stability
-        for _s in range(20):
-            new = beta + step
-            eta_n = np.clip(X @ new, -35, 35)
-            if np.all(np.isfinite(eta_n)):
-                break
-            step /= 2.0
-        if np.max(np.abs(step)) < tol:
-            beta = new
-            break
-        beta = new
-    eta = np.clip(X @ beta, -35, 35)
-    p = 1.0 / (1.0 + np.exp(-eta))
-    ll = np.sum(y * np.log(np.clip(p, 1e-12, 1)) + (1 - y) * np.log(np.clip(1 - p, 1e-12, 1)))
-    w = np.clip(p * (1 - p), 1e-10, None)
-    I = X.T @ (X * w[:, None])
-    sign, logdet = np.linalg.slogdet(I)
-    pen_ll = ll + 0.5 * logdet if sign > 0 else ll
-    return beta, pen_ll
-
-
-def firth_plr_test(X: np.ndarray, y: np.ndarray, j: int) -> float:
-    """Penalized likelihood-ratio p-value for dropping column j."""
-    _, ll_full = firth_logistic(X, y)
-    keep = [i for i in range(X.shape[1]) if i != j]
-    _, ll_red = firth_logistic(X[:, keep], y)
-    lr = max(2.0 * (ll_full - ll_red), 0.0)
-    return float(stats.chi2.sf(lr, 1))
-
-
-# ----------------------------------------------------------------- corrections
-def bh_fdr(p: np.ndarray) -> np.ndarray:
-    p = np.asarray(p, dtype=float)
-    n = len(p)
-    order = np.argsort(p)
-    ranked = p[order] * n / (np.arange(n) + 1)
-    ranked = np.minimum.accumulate(ranked[::-1])[::-1]
-    out = np.empty(n)
-    out[order] = np.clip(ranked, 0, 1)
-    return out
 
 
 # ------------------------------------------------------------------------ main

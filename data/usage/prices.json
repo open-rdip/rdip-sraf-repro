@@ -1,1 +1,22 @@
-{}
+{
+  "gemini-3.8-flash": {
+    "prompt_per_mtok": 0.75,
+    "completion_per_mtok": 3.75
+  },
+  "grok-4.7": {
+    "prompt_per_mtok": 2.0,
+    "completion_per_mtok": 6.0
+  },
+  "gpt-5": {
+    "prompt_per_mtok": 1.25,
+    "completion_per_mtok": 10.0
+  },
+  "claude-sonnet-5-5": {
+    "prompt_per_mtok": 2.0,
+    "completion_per_mtok": 10.0
+  },
+  "claude-opus-5-5": {
+    "prompt_per_mtok": 4.0,
+    "completion_per_mtok": 20.0
+  }
+}

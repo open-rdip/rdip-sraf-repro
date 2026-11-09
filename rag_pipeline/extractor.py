@@ -1,11 +1,13 @@
 """LLM extraction of reproducibility metadata — one interface, several backends.
 
 Backends (selected via config.LLM_BACKEND), all returning the same JSON schema:
-  openai   -> OpenAI API (e.g. GPT-4o)             OpenAI-compatible
-  compat   -> any hosted OpenAI-compatible endpoint (SRAF_COMPAT_BASE_URL)
-  vllm     -> local vLLM OpenAI server (cluster)   OpenAI-compatible
-  llamacpp -> local llama.cpp OpenAI server (Mac)  OpenAI-compatible
-  google   -> Google Gemini
+  openai    -> OpenAI API (e.g. GPT-5)              OpenAI-compatible
+  compat    -> any hosted OpenAI-compatible endpoint (SRAF_COMPAT_BASE_URL)
+  xai       -> xAI / Grok                           OpenAI-compatible
+  vllm      -> local vLLM OpenAI server (cluster)   OpenAI-compatible
+  llamacpp  -> local llama.cpp OpenAI server (Mac)  OpenAI-compatible
+  google    -> Google Gemini
+  anthropic -> Anthropic Messages API (its own schema)
 
 The three OpenAI-compatible backends share one implementation pointed at
 different base URLs, which is exactly how vLLM serves the open-weights models —
@@ -26,6 +28,7 @@ from config import (
     LLM_BACKEND, LLM_MODEL, LLM_TEMPERATURE, LLM_MAX_TOKENS,
     OPENAI_API_KEY, GOOGLE_API_KEY, VLLM_SERVER_URL, LLAMACPP_SERVER_URL,
     OPENAI_BASE_URL, COMPAT_BASE_URL, COMPAT_API_KEY, LLM_BUDGET_USD,
+    ANTHROPIC_API_KEY, ANTHROPIC_BASE_URL, XAI_API_KEY, XAI_BASE_URL,
 )
 from rag_pipeline.usage_meter import meter, BudgetExceeded
 
@@ -191,24 +194,120 @@ class GeminiExtractor(Extractor):
         return "{}"
 
 
-def get_extractor(backend: str | None = None, model: str | None = None) -> Extractor:
-    """Build an extractor for the given (or configured) backend."""
+class AnthropicExtractor(Extractor):
+    """Anthropic Messages API.
+
+    The only provider in the N3 set that is not OpenAI-compatible, so it gets
+    its own client rather than being bent into the shared one. Two details
+    matter for extraction quality and are deliberate:
+
+    * `system` is a top-level parameter, not a message with role "system".
+    * The assistant turn is prefilled with "{" so the model continues a JSON
+      object instead of opening with prose. The opening brace is put back on
+      the response before parsing. This removes most of the "here is the JSON"
+      preamble that otherwise has to be stripped heuristically.
+    """
+
+    def __init__(self, model: str, api_key: str, base_url: str | None = None):
+        self.model = model
+        self.api_key = api_key
+        self.base_url = base_url
+        self.name = "anthropic"
+        self._client = None
+
+    @property
+    def client(self):
+        if self._client is None:
+            from anthropic import Anthropic  # lazy: only when actually calling
+            kwargs = {"api_key": self.api_key}
+            if self.base_url:
+                kwargs["base_url"] = self.base_url
+            self._client = Anthropic(**kwargs)
+        return self._client
+
+    def _complete(self, system: str, user: str) -> str:
+        last_err: Exception | None = None
+        for attempt in range(3):
+            try:
+                resp = self.client.messages.create(
+                    model=self.model,
+                    max_tokens=max(LLM_MAX_TOKENS, 4096),
+                    temperature=LLM_TEMPERATURE,
+                    system=system,
+                    messages=[
+                        {"role": "user", "content": user},
+                        {"role": "assistant", "content": "{"},
+                    ],
+                )
+                usage = getattr(resp, "usage", None)
+                if usage is not None:
+                    meter.record(
+                        self.model,
+                        prompt_tokens=getattr(usage, "input_tokens", 0) or 0,
+                        completion_tokens=getattr(usage, "output_tokens", 0) or 0,
+                        study=_CURRENT_STUDY,
+                    )
+                text = "".join(
+                    getattr(b, "text", "") for b in (resp.content or [])
+                    if getattr(b, "type", "") == "text")
+                # Put back the brace the prefill consumed.
+                return "{" + text
+            except BudgetExceeded:
+                raise
+            except Exception as e:  # noqa: BLE001 — retry transient overload
+                last_err = e
+                msg = str(e)
+                transient = any(code in msg for code in ("429", "500", "502", "503", "529"))
+                if transient and attempt < 2:
+                    wait = 5 * (2 ** attempt)
+                    print(f"[Extractor:anthropic] transient error, waiting {wait}s: {msg[:120]}")
+                    time.sleep(wait)
+                    continue
+                raise
+        if last_err:
+            raise last_err
+        return "{}"
+
+
+def get_extractor(backend: str | None = None, model: str | None = None,
+                  base_url: str | None = None,
+                  api_key: str | None = None) -> Extractor:
+    """Build an extractor for the given (or configured) backend.
+
+    `base_url` and `api_key` override whatever the environment supplies. The
+    model registry passes them explicitly so that several hosted providers can
+    run in one process: the module-level COMPAT_* settings are global and can
+    only describe one endpoint at a time.
+    """
     backend = (backend or LLM_BACKEND).lower()
     model = model or LLM_MODEL
 
     if backend == "openai":
-        return OpenAICompatExtractor(OPENAI_BASE_URL, OPENAI_API_KEY, model, "openai")
+        return OpenAICompatExtractor(
+            base_url or OPENAI_BASE_URL, api_key or OPENAI_API_KEY, model, "openai")
     if backend in ("compat", "openai_compat"):
         # Generic hosted provider: anything serving an OpenAI-compatible chat
         # endpoint. Point SRAF_COMPAT_BASE_URL / SRAF_COMPAT_API_KEY at it.
         # Kept provider-agnostic on purpose, so adding a frontier model for N3
         # never means shipping a new client.
-        if not COMPAT_BASE_URL:
+        url = base_url or COMPAT_BASE_URL
+        if not url:
             raise ValueError(
-                "backend 'openai_compat' needs SRAF_COMPAT_BASE_URL "
-                "(and usually SRAF_COMPAT_API_KEY)")
+                "backend 'openai_compat' needs a base_url argument or "
+                "SRAF_COMPAT_BASE_URL (and usually SRAF_COMPAT_API_KEY)")
         return OpenAICompatExtractor(
-            COMPAT_BASE_URL, COMPAT_API_KEY, model, "compat")
+            url, api_key or COMPAT_API_KEY, model, "compat")
+    if backend in ("xai", "grok"):
+        key = api_key or XAI_API_KEY
+        if not key:
+            raise ValueError("backend 'xai' needs XAI_API_KEY")
+        return OpenAICompatExtractor(
+            base_url or XAI_BASE_URL, key, model, "xai")
+    if backend in ("anthropic", "claude"):
+        key = api_key or ANTHROPIC_API_KEY
+        if not key:
+            raise ValueError("backend 'anthropic' needs ANTHROPIC_API_KEY")
+        return AnthropicExtractor(model, key, base_url or ANTHROPIC_BASE_URL)
     if backend == "vllm":
         return OpenAICompatExtractor(
             VLLM_SERVER_URL.rstrip("/") + "/v1", "EMPTY", model, "vllm")
@@ -216,7 +315,8 @@ def get_extractor(backend: str | None = None, model: str | None = None) -> Extra
         return OpenAICompatExtractor(
             LLAMACPP_SERVER_URL.rstrip("/") + "/v1", "EMPTY", model, "llamacpp")
     if backend in ("google", "gemini"):
-        return GeminiExtractor(model, GOOGLE_API_KEY or os.getenv("GOOGLE_API_KEY", ""))
+        return GeminiExtractor(
+            model, api_key or GOOGLE_API_KEY or os.getenv("GOOGLE_API_KEY", ""))
     raise ValueError(f"Unknown LLM backend: {backend!r}")
 
 
@@ -255,11 +355,12 @@ _DEFAULT: Extractor | None = None
 
 
 def extract_metadata(passage: str, backend: str | None = None,
-                     model: str | None = None) -> dict:
+                     model: str | None = None, base_url: str | None = None,
+                     api_key: str | None = None) -> dict:
     """Extract reproducibility metadata from a passage via the chosen backend."""
     global _DEFAULT
-    if backend or model:
-        return get_extractor(backend, model).extract(passage)
+    if backend or model or base_url or api_key:
+        return get_extractor(backend, model, base_url, api_key).extract(passage)
     if _DEFAULT is None:
         _DEFAULT = get_extractor()
     return _DEFAULT.extract(passage)

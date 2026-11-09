@@ -29,7 +29,7 @@ from rag_pipeline.extractor import set_study        # noqa: E402
 from rag_pipeline.usage_meter import meter, BudgetExceeded  # noqa: E402
 from config import LLM_BACKEND, LLM_MODEL           # noqa: E402
 
-REPO_LIST = REPO_ROOT / "validation" / "repo_list.csv"
+REPO_LIST = Path(os.getenv("SRAF_REPO_LIST", REPO_ROOT / "validation" / "repo_list.csv"))
 MARK_DIR = REPO_ROOT / "validation" / "extraction_done"
 
 

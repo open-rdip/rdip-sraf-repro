@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>N9 Annotation Workbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500&display=swap">
+<style>
+:root{--paper:#F3F5F2;--sheet:#fff;--ink:#18201D;--ink2:#56635E;--rule:#D2D9D5;--head:#E7ECE9;
+--ev:#0B6B60;--ev-fill:#C9EAE3;--amber:#9A5700;--amber-fill:#FBE4BE;--ref:#3646A8;--ref-fill:#E2E5FA;
+--good:#11713A;--good-fill:#DDF3E4;--warn:#A3271B;--warn-fill:#FBE3DF;--focus:#2C64D8;
+--fd:"IBM Plex Serif",Georgia,serif;--fb:"IBM Plex Sans",system-ui,sans-serif;--fm:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{background:var(--paper);color:var(--ink);font:15px/1.55 var(--fb);margin:0}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.wrap{padding:0 16px;max-width:1180px;margin:0 auto}
+.bar{position:sticky;top:0;z-index:5;background:var(--sheet);border-bottom:1px solid var(--rule)}
+.bar .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:10px 16px}
+.brand{font-family:var(--fd);font-size:17px;margin-right:auto}
+.brand small{font-family:var(--fm);font-size:12px;color:var(--ink2);margin-left:8px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tab{border:1px solid var(--rule);background:transparent;padding:5px 12px;border-radius:999px;cursor:pointer;font-size:14px}
+.tab[aria-current="page"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.tab:disabled{opacity:.45;cursor:not-allowed}
+.save{font-size:12.5px;color:var(--ink2);font-family:var(--fm)}
+main{padding:22px 0 64px}
+h1,h2,h3{font-family:var(--fd);font-weight:500;margin:0}
+h1{font-size:27px;line-height:1.2}h2{font-size:20px}h3{font-size:16px}
+p{margin:0}
+.eyebrow{font-family:var(--fm);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.panel{background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:16px}
+.prose{display:grid;gap:10px;max-width:70ch}
+.grid{display:grid;gap:16px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:860px){.cols{grid-template-columns:1fr}}
+.btn{border:1px solid var(--rule);background:var(--sheet);padding:8px 16px;border-radius:6px;cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.field{display:grid;gap:4px;margin-bottom:10px}
+.field label{font-size:13px;color:var(--ink2)}
+.field input,.field textarea,.field select{border:1px solid var(--rule);background:var(--paper);border-radius:6px;padding:7px 9px;width:100%}
+.muted{color:var(--ink2);font-size:13.5px}
+.warn{color:var(--warn)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{background:var(--head);font-weight:600;font-size:13px}
+code,.mono{font-family:var(--fm);font-size:.92em}
+.work{display:grid;grid-template-columns:210px 1fr;gap:20px}
+@media(max-width:900px){.work{grid-template-columns:1fr}}
+.rail{position:sticky;top:64px;align-self:start;display:grid;gap:5px;max-height:calc(100vh - 90px);overflow:auto}
+.sbtn{text-align:left;border:1px solid var(--rule);background:var(--sheet);border-radius:6px;padding:6px 9px;cursor:pointer;font-size:13px;display:flex;justify-content:space-between;gap:8px}
+.sbtn[aria-current="true"]{border-color:var(--ink);box-shadow:inset 3px 0 0 var(--ev)}
+.sbtn.done{background:var(--good-fill);border-color:var(--good)}
+.sbtn.locked{opacity:.42;cursor:not-allowed}
+.sbtn b{font-weight:600}.sbtn span{color:var(--ink2);font-family:var(--fm);font-size:11.5px}
+.item{border:1px solid var(--rule);border-left:5px solid var(--rule);border-radius:7px;padding:9px 11px;background:var(--sheet);display:grid;gap:7px;margin-bottom:8px}
+.item.K{border-left-color:var(--good)}
+.item.D{border-left-color:var(--warn)}
+.item.U{border-left-color:var(--amber)}
+.item.set{border-left-color:var(--ev)}
+.item .top{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.tag{font-family:var(--fm);font-size:11px;background:var(--head);border:1px solid var(--rule);border-radius:999px;padding:1px 8px;color:var(--ink2)}
+.txt{flex:1;min-width:220px}
+.kdu{display:flex;gap:6px}
+.kdu button{min-width:58px;padding:4px 7px;border:1.5px solid var(--rule);background:var(--sheet);
+  border-radius:7px;cursor:pointer;display:grid;line-height:1.12;text-align:center;transition:background .08s}
+.kdu button .l{font-weight:700;font-size:15px}
+.kdu button .w{font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2)}
+.kdu button:hover{border-color:var(--ink2);background:var(--head)}
+.kdu button[aria-pressed="true"]{color:#fff;border-color:transparent}
+.kdu button[aria-pressed="true"] .w{color:rgba(255,255,255,.88)}
+.kdu button[data-m="K"][aria-pressed="true"]{background:var(--good)}
+.kdu button[data-m="D"][aria-pressed="true"]{background:var(--warn)}
+.kdu button[data-m="U"][aria-pressed="true"]{background:var(--amber)}
+.kdu button:disabled{opacity:.9;cursor:default}
+.kdu button:disabled:hover{background:var(--sheet);border-color:var(--rule)}
+.kdu button:disabled[aria-pressed="true"]:hover{border-color:transparent}
+.testbar{background:var(--amber);color:#fff;font-size:13px;padding:6px 0}
+.testbar b{font-weight:600}
+.note{border:1px solid var(--rule);background:var(--paper);border-radius:6px;padding:5px 8px;width:100%;font-size:13.5px}
+.fb{border:1px solid var(--rule);border-radius:7px;padding:10px 12px;display:grid;gap:6px;font-size:14px}
+.fb.good{border-color:var(--good);background:var(--good-fill)}
+.fb.bad{border-color:var(--warn);background:var(--warn-fill)}
+.fb .v{font-weight:600}
+.ev{border-left:3px solid var(--ref);background:var(--ref-fill);padding:7px 11px;border-radius:0 6px 6px 0;font-size:14px}
+.stats{display:flex;gap:22px;flex-wrap:wrap;margin:10px 0}
+.stats div{display:grid}.stats b{font-size:22px;font-family:var(--fd)}
+.steps{margin:0;padding-left:20px;display:grid;gap:6px}
+.lock{border:1px solid var(--amber);background:var(--amber-fill);border-radius:7px;padding:12px 14px;display:grid;gap:8px}
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <span class="brand">N9 Annotation Workbook<small id="who"></small></span>
+  <nav class="tabs">
+    <button class="tab" data-go="start">Start</button>
+    <button class="tab" data-go="book" id="tab-book" disabled>Codebook</button>
+    <button class="tab" data-go="screen" id="tab-screen" disabled>Calibration</button>
+    <button class="tab" data-go="work" id="tab-work" disabled>Annotation</button>
+    <button class="tab" data-go="tax" id="tab-tax" disabled>Taxonomy</button>
+    <button class="tab" data-go="finish" id="tab-finish" disabled>Finish</button>
+  </nav>
+  <span class="save" id="saved"></span>
+</div></header>
+
+<div class="testbar" id="testbar" hidden><div class="wrap"><b>Test mode.</b> Every gate is open and nothing here is a real annotation. Remove <code>#unlock</code> from the address to go back to normal.</div></div>
+
+<main class="wrap">
+
+<section class="screen" id="s-start" hidden>
+  <div class="grid" style="max-width:860px">
+    <div class="prose">
+      <p class="eyebrow">Inter-annotator agreement study</p>
+      <h1>Second annotator workbook</h1>
+      <p>You will judge <b>1,627 extracted items</b> across <b>20 machine learning studies</b>, deciding for each whether the paper or its repository actually supports it. There is no calculation and no coding. About eight hours in total, spread over several sessions.</p>
+      <p class="muted">Your work is saved in this browser as you go. You can stop and come back on the same computer and browser, or export a file and continue elsewhere.</p>
+    </div>
+
+    <div class="panel grid">
+      <h3>Who the task is for</h3>
+      <p class="muted">The qualification was set before anyone was approached. Please confirm each line and give the evidence asked for. If you do not meet one of these, say so rather than continuing; that is useful information and costs nothing.</p>
+      <div id="qual"></div>
+    </div>
+
+    <div class="panel grid">
+      <h3>About you</h3>
+      <div class="cols">
+        <div class="field"><label for="fName">Name</label><input id="fName" autocomplete="name"></div>
+        <div class="field"><label for="fAff">Affiliation</label><input id="fAff"></div>
+        <div class="field"><label for="fMail">Email</label><input id="fMail" type="email"></div>
+        <div class="field"><label for="fDate">Date</label><input id="fDate" type="date"></div>
+      </div>
+      <div class="row"><button class="btn primary" id="begin">Begin</button><span class="warn" id="beginMsg"></span></div>
+      <details><summary class="muted">Continue from a saved file</summary>
+        <div class="field" style="margin-top:10px">
+          <label for="restoreFile">Open a saved workbook file (.json)</label>
+          <input type="file" id="restoreFile" accept=".json,application/json">
+          <div class="row"><button class="btn" id="restoreBtn">Restore</button><span class="muted" id="restoreMsg"></span></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="s-book" hidden>
+  <div class="grid" style="max-width:900px">
+    <div class="prose">
+      <p class="eyebrow">Codebook, version 1</p>
+      <h1>The one question you are answering</h1>
+      <p class="panel" style="font-family:var(--fd);font-size:18px">Is this item actually supported by this paper or by its repository?</p>
+    </div>
+    <div class="panel">
+      <table><thead><tr><th style="width:70px">Mark</th><th>Meaning</th></tr></thead><tbody>
+        <tr><td><b>K</b></td><td>Keep. The item is supported by the paper or the repository.</td></tr>
+        <tr><td><b>D</b></td><td>Discard. Not supported, or the value is wrong, or it belongs to other work.</td></tr>
+        <tr><td><b>U</b></td><td>Unsure. You looked and genuinely cannot tell.</td></tr>
+      </tbody></table>
+    </div>
+    <div class="panel grid">
+      <h3>Three rules that decide most rows</h3>
+      <ul class="steps">
+        <li><b>Either source counts.</b> If the paper is silent but <code>requirements.txt</code> declares it, that is K. If the repository is silent but the paper states it, that is K.</li>
+        <li><b>Judge support, not importance.</b> A detail can be trivial and still be K. It is not your job to decide whether the item matters.</li>
+        <li><b>U is a real answer.</b> It is more useful than a guess. Many U marks on one field tells us the definition needs work, which is what this round is for.</li>
+      </ul>
+    </div>
+    <div class="panel grid"><h3>Field by field</h3><div id="fields"></div></div>
+    <div class="panel grid">
+      <h3>Where to look, in order</h3>
+      <ol class="steps">
+        <li>The paper's experimental setup or implementation section, and the appendix.</li>
+        <li>The repository README.</li>
+        <li>Dependency files: <code>requirements.txt</code>, <code>environment.yml</code>, <code>setup.py</code>, <code>Dockerfile</code>.</li>
+        <li>Config files: <code>configs/</code>, <code>*.yaml</code>, <code>*.json</code>.</li>
+        <li>Entry points and their argument parsers: <code>train.py</code>, <code>main.py</code>, <code>run.sh</code>.</li>
+      </ol>
+      <p class="muted">Five minutes of searching is enough. If you have not found it by then it is U, or D for seeds.</p>
+    </div>
+    <div class="lock">
+      <b>Three things that matter</b>
+      <span><b>Work independently.</b> Please do not ask the author which answer is right, and do not open any ground-truth or gold-standard file you come across. The items are deliberately mixed from several sources so you cannot tell which came from where.</span>
+      <span><b>Do not revise earlier studies</b> after your understanding improves. Leave them and mention it. Drift between early and late studies is something we want to see.</span>
+      <span><b>Pace.</b> Twenty to thirty minutes per study. Work in sessions of about an hour, because this gets tiring and tired annotation is noisy annotation.</span>
+    </div>
+    <div class="row"><button class="btn primary" data-go="screen">Go to the calibration</button></div>
+  </div>
+</section>
+
+<section class="screen" id="s-screen" hidden>
+  <div class="grid" style="max-width:900px">
+    <div class="prose">
+      <p class="eyebrow">Calibration</p>
+      <h1>Ten codebook items</h1>
+      <p>Each item below comes with the evidence you would have found. Decide K, D or U from the codebook alone. The codebook's own answer and the reason for it appear as soon as you answer, and your first answer is what gets recorded.</p>
+      <p class="muted">These ten items are training, not a test. There is no pass mark and nothing is blocked by how you do: work all ten, read each explanation, and then start. Your first answers are kept and reported in the paper as a calibration figure, because it shows where the codebook and a careful reader of it first diverged. That is the useful measurement here, and it is about our wording at least as much as about your reading.</p>
+    </div>
+    <div id="screenList" class="grid"></div>
+    <div class="panel" id="screenResult" hidden></div>
+  </div>
+</section>
+
+<section class="screen" id="s-work" hidden>
+  <div class="work">
+    <aside class="rail" id="rail"></aside>
+    <article id="sheet"></article>
+  </div>
+</section>
+
+<section class="screen" id="s-tax" hidden>
+  <div class="grid" style="max-width:940px">
+    <div class="prose">
+      <p class="eyebrow">Second task</p>
+      <h1>The failure taxonomy</h1>
+      <p>Twenty-six repositories built successfully, then an attempt to re-run the experiment and reproduce a number the paper reports failed. Each row gives you the reason our harness recorded. Place each failure on two axes. About two hours.</p>
+    </div>
+    <div class="panel grid">
+      <h3>Axis 1, locus: whose problem is it?</h3>
+      <div id="locusDefs"></div>
+      <h3 style="margin-top:6px">Axis 2, remedy: who could remove it?</h3>
+      <div id="remedyDefs"></div>
+    </div>
+    <div class="lock">
+      <b>Where the boundaries sit</b>
+      <span><b>artifact against claim.</b> Could a different release by the authors have made it reproducible? If yes, artifact. If nothing they published would help, claim.</span>
+      <span><b>harness against scope.</b> Could we have fixed it by improving the harness inside the envelope we declared? If yes, harness. If the study is simply bigger than what we said we would attempt, scope.</span>
+      <span><b>harness against artifact.</b> Who should have supplied the missing piece? The authors, artifact. Our environment regardless, harness.</span>
+    </div>
+    <div class="prose"><h2>Four calibration rows</h2><p class="muted">Answer these first. You will see the reasoning after each one. Your first answer is recorded but this is training, not a second qualification test.</p></div>
+    <div id="calList" class="grid"></div>
+    <div id="taxGate" class="panel" hidden></div>
+    <div id="taxList" class="grid" hidden></div>
+    <div class="row" id="taxNav" hidden><button class="btn primary" data-go="finish">Go to Finish</button></div>
+  </div>
+</section>
+
+<section class="screen" id="s-finish" hidden>
+  <div class="grid" style="max-width:860px">
+    <div class="prose"><p class="eyebrow">Finish</p><h1>Save your file and send it back</h1></div>
+    <div class="stats" id="stats"></div>
+    <p class="warn" id="finishWarn"></p>
+    <div class="panel grid" id="debrief">
+      <h3>Before you send it, four questions</h3>
+      <p class="muted">This is the part that improves the codebook, so please answer even briefly. Annotator feedback is collected and reported as part of the method.</p>
+      <div class="field"><label for="dbHard">Which field was hardest to judge, and why?</label><textarea id="dbHard" class="note" rows="2"></textarea></div>
+      <div class="field"><label for="dbUnclear">Where was the codebook unclear, silent or self-contradictory?</label><textarea id="dbUnclear" class="note" rows="2"></textarea></div>
+      <div class="field"><label for="dbChange">If you could change one rule, which and how?</label><textarea id="dbChange" class="note" rows="2"></textarea></div>
+      <div class="field"><label for="dbConf">Overall, how confident are you in your decisions?</label>
+        <select id="dbConf" class="note">
+          <option value="">choose one</option>
+          <option value="high">High. The codebook covered nearly everything.</option>
+          <option value="mixed">Mixed. Some fields were clear, others were guesswork.</option>
+          <option value="low">Low. I marked U often because the rules did not reach.</option>
+        </select></div>
+    </div>
+    <div class="panel grid">
+      <ol class="steps">
+        <li>Click <b>Save file</b>. It goes to your Downloads folder.</li>
+        <li>Email it back as an attachment.</li>
+      </ol>
+      <div class="row">
+        <button class="btn primary" id="saveFile">Save file</button>
+        <button class="btn" id="copyText">Copy as text</button>
+        <span class="muted" id="finishMsg"></span>
+      </div>
+      <textarea id="outText" rows="5" class="note" readonly></textarea>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script id="DATA" type="application/json">[{"folder":"01_study001","sid":"study001","title":"ZeroQuant-V2: Exploring Post-training Quantization in LLMs from Comprehensive Study to Low Rank Compensation","paper":"https://arxiv.org/abs/2303.08302v3","pdf":"https://arxiv.org/pdf/2303.08302.pdf","repo":"https://github.com/microsoft/DeepSpeed","items":[{"id":"study001-001","f":"dependencies","t":"torchvision  [version: not stated]"},{"id":"study001-002","f":"dependencies","t":"ZeroQuant  [version: not stated]"},{"id":"study001-003","f":"dependencies","t":"ZeroQuant-Local/Global  [version: not stated]"},{"id":"study001-004","f":"dependencies","t":"per-token quantization  [version: not stated]"},{"id":"study001-005","f":"dependencies","t":"GLM-130B  [version: not stated]"},{"id":"study001-006","f":"dependencies","t":"pytorch  [version: not stated]"},{"id":"study001-007","f":"dependencies","t":"torchaudio  [version: not stated]"},{"id":"study001-008","f":"dependencies","t":"ZQ-Global  [version: not stated]"},{"id":"study001-009","f":"dependencies","t":"FGQ  [version: not stated]"},{"id":"study001-010","f":"dependencies","t":"OPT  [version: not stated]"},{"id":"study001-011","f":"dependencies","t":"per-row quantization  [version: not stated]"},{"id":"study001-012","f":"dependencies","t":"OPT-66B  [version: not stated]"},{"id":"study001-013","f":"dependencies","t":"PTQ  [version: not stated]"},{"id":"study001-014","f":"dependencies","t":"DeepSpeed  [version: not stated]"},{"id":"study001-015","f":"dependencies","t":"TensorFlow  [version: not stated]"},{"id":"study001-016","f":"dependencies","t":"RTN  [version: not stated]"},{"id":"study001-017","f":"dependencies","t":"ZQ-Local  [version: not stated]"},{"id":"study001-018","f":"dependencies","t":"BLOOM-176B  [version: not stated]"},{"id":"study001-019","f":"dependencies","t":"BLOOM  [version: not stated]"},{"id":"study001-020","f":"dependencies","t":"GPTQ  [version: not stated]"},{"id":"study001-021","f":"datasets","t":"Wikitext-2  [used]"},{"id":"study001-022","f":"datasets","t":"Calibration Set  [produced]"},{"id":"study001-023","f":"datasets","t":"BLOOM (BLM)"},{"id":"study001-024","f":"datasets","t":"C4  [used]"},{"id":"study001-025","f":"datasets","t":"PTB  [used]"},{"id":"study001-026","f":"datasets","t":"OPT"},{"id":"study001-027","f":"datasets","t":"BLOOM"},{"id":"study001-028","f":"hyperparameters","t":"calibration_samples = 128"},{"id":"study001-029","f":"hyperparameters","t":"weight_bits = 4-bit"},{"id":"study001-030","f":"hyperparameters","t":"learning rate = not stated"},{"id":"study001-031","f":"hyperparameters","t":"activation = FP16"},{"id":"study001-032","f":"hyperparameters","t":"batch_size = 1"},{"id":"study001-033","f":"hyperparameters","t":"Z = not stated"},{"id":"study001-034","f":"hyperparameters","t":"learning rate = not explicitly stated"},{"id":"study001-035","f":"hyperparameters","t":"quantization type = symmetric"},{"id":"study001-036","f":"hyperparameters","t":"S = max(abs(x))"},{"id":"study001-037","f":"hyperparameters","t":"scheduler = not stated"},{"id":"study001-038","f":"hyperparameters","t":"token_length = 2048"},{"id":"study001-039","f":"hyperparameters","t":"learning_rate = 1e-3 to 5e-8"},{"id":"study001-040","f":"hyperparameters","t":"LoRC_dimension_m = 8"},{"id":"study001-041","f":"hyperparameters","t":"kelements = not stated"},{"id":"study001-042","f":"evaluation_results","t":"string = string  [string]"},{"id":"study001-043","f":"evaluation_results","t":"Class-3 = "},{"id":"study001-044","f":"evaluation_results","t":"accuracy = substantial accuracy degradation  [Class-3]"},{"id":"study001-045","f":"evaluation_results","t":"accuracy = minimal accuracy drops  [Class-1]"},{"id":"study001-046","f":"evaluation_results","t":"performance = string  [test]"},{"id":"study001-047","f":"evaluation_results","t":"PPL = degradation of more than 0.5 PPL points"},{"id":"study001-048","f":"evaluation_results","t":"performance = outperforms RTN"},{"id":"study001-049","f":"evaluation_results","t":"PPL = 10.90  [test, BLOOM-176B]"},{"id":"study001-050","f":"evaluation_results","t":"PPL = 10.33  [test, OPT-66B]"},{"id":"study001-051","f":"evaluation_results","t":"accuracy = negligible degradation"},{"id":"study001-052","f":"evaluation_results","t":"PPL improvement = 0.5"},{"id":"study001-053","f":"evaluation_results","t":"performance discrepancy = none"},{"id":"study001-054","f":"evaluation_results","t":"Class-2 = "},{"id":"study001-055","f":"evaluation_results","t":"LoRC = Coarse-grained weight quantization"},{"id":"study001-056","f":"evaluation_results","t":"PPL degradation = around 0.3 points"},{"id":"study001-057","f":"evaluation_results","t":"accuracy = poorly  [\u22656.7B model sizes]"},{"id":"study001-058","f":"evaluation_results","t":"PPL = 0.5"},{"id":"study001-059","f":"evaluation_results","t":"performance = string  [validation]"},{"id":"study001-060","f":"evaluation_results","t":"PPL = 11.02  [test, BLOOM-176B (W4A16 GPTQ)]"},{"id":"study001-061","f":"evaluation_results","t":"accuracy loss = less than 0.05"},{"id":"study001-062","f":"evaluation_results","t":"performance = string  [train]"},{"id":"study001-063","f":"evaluation_results","t":"performance = outperforms RTN significantly"},{"id":"study001-064","f":"environment","t":"gpu: modern GPUs"},{"id":"study001-065","f":"environment","t":"cuda: 12.2.2"},{"id":"study001-066","f":"environment","t":"gpu_model: modern GPUs"},{"id":"study001-067","f":"environment","t":"os: Ubuntu 20.04"},{"id":"study001-068","f":"methods","t":"Low-Rank Compensation (LoRC)"},{"id":"study001-069","f":"methods","t":"per-row quantization"},{"id":"study001-070","f":"methods","t":"Weight and Activation Quantization"},{"id":"study001-071","f":"methods","t":"ZQ-Global*"},{"id":"study001-072","f":"methods","t":"per-token quantization"},{"id":"study001-073","f":"methods","t":"INT8 weight-only quantization"},{"id":"study001-074","f":"methods","t":"FGQ"},{"id":"study001-075","f":"methods","t":"round-to-nearest neighborhood (RTN)"},{"id":"study001-076","f":"methods","t":"INT4 weight-only quantization"},{"id":"study001-077","f":"methods","t":"RTN"},{"id":"study001-078","f":"methods","t":"symmetric quantization"},{"id":"study001-079","f":"methods","t":"ZeroQuant (ZQ-Global)"},{"id":"study001-080","f":"methods","t":"ZQ-Global\u2217"},{"id":"study001-081","f":"methods","t":"ZQ-Local\u2217"},{"id":"study001-082","f":"methods","t":"ZeroQuant"},{"id":"study001-083","f":"methods","t":"fine-grained quantization schemes"},{"id":"study001-084","f":"methods","t":"asymmetric quantization"},{"id":"study001-085","f":"methods","t":"row-wise quantization"},{"id":"study001-086","f":"methods","t":"ZQ-Local"},{"id":"study001-087","f":"methods","t":"W4A8 quantization"},{"id":"study001-088","f":"methods","t":"block-k quantization"},{"id":"study001-089","f":"methods","t":"fine-grained quantization"},{"id":"study001-090","f":"methods","t":"ZQ-Local*"},{"id":"study001-091","f":"methods","t":"GPTQ"},{"id":"study001-092","f":"methods","t":"ZQ-Global"},{"id":"study001-093","f":"methods","t":"LoRC"},{"id":"study001-094","f":"methods","t":"Round-to-nearest (RTN)"},{"id":"study001-095","f":"methods","t":"SGD"},{"id":"study001-096","f":"methods","t":"weight-only quantization"},{"id":"study001-097","f":"methods","t":"PTQ"}]},{"folder":"02_study002","sid":"study002","title":"Kronecker Decomposition for Knowledge Graph Embeddings","paper":"https://arxiv.org/abs/2205.06560v1","pdf":"https://arxiv.org/pdf/2205.06560.pdf","repo":"https://github.com/dice-group/dice-embeddings","items":[{"id":"study002-001","f":"dependencies","t":"ADAM  [version: not stated]"},{"id":"study002-002","f":"dependencies","t":"ruff  [version: 0.0.284]"},{"id":"study002-003","f":"dependencies","t":"pandas  [version: 2.1.0]"},{"id":"study002-004","f":"dependencies","t":"batch normalization  [version: not stated]"},{"id":"study002-005","f":"dependencies","t":"pykeen  [version: 1.10.2]"},{"id":"study002-006","f":"dependencies","t":"dice-embeddings  [version: not stated]"},{"id":"study002-007","f":"dependencies","t":"sphinx-theme  [version: 1.0]"},{"id":"study002-008","f":"dependencies","t":"psutil  [version: 5.9.4]"},{"id":"study002-009","f":"dependencies","t":"Kronecker Decomposition  [version: not stated]"},{"id":"study002-010","f":"dependencies","t":"myst-parser  [version: 2.0.0]"},{"id":"study002-011","f":"dependencies","t":"polars  [version: 0.16.14]"},{"id":"study002-012","f":"dependencies","t":"matplotlib  [version: 3.8.2]"},{"id":"study002-013","f":"dependencies","t":"scikit-learn  [version: 1.2.2]"},{"id":"study002-014","f":"dependencies","t":"pyarrow  [version: 11.0.0]"},{"id":"study002-015","f":"dependencies","t":"numpy  [version: 1.26.4]"},{"id":"study002-016","f":"dependencies","t":"DASK  [version: 2015]"},{"id":"study002-017","f":"dependencies","t":"zstandard  [version: 0.21.0]"},{"id":"study002-018","f":"dependencies","t":"pytest  [version: 7.2.2]"},{"id":"study002-019","f":"dependencies","t":"Ruffinelli et al. 2019  [version: not stated]"},{"id":"study002-020","f":"dependencies","t":"sphinxcontrib-plantuml  [version: 0.27]"},{"id":"study002-021","f":"dependencies","t":"lightning  [version: 2.5.0.post0]"},{"id":"study002-022","f":"dependencies","t":"sphinx  [version: 7.2.6]"},{"id":"study002-023","f":"dependencies","t":"tiktoken  [version: 0.5.1]"},{"id":"study002-024","f":"dependencies","t":"DASK  [version: not stated]"},{"id":"study002-025","f":"dependencies","t":"Mohamed et al. 2019  [version: not stated]"},{"id":"study002-026","f":"dependencies","t":"Kingma and Ba 2014  [version: not stated]"},{"id":"study002-027","f":"dependencies","t":"grid search  [version: not stated]"},{"id":"study002-028","f":"dependencies","t":"PyTorch Lightning  [version: 2019]"},{"id":"study002-029","f":"dependencies","t":"Io\ufb00e and Szegedy 2015  [version: not stated]"},{"id":"study002-030","f":"dependencies","t":"Lacroix et al. 2018  [version: not stated]"},{"id":"study002-031","f":"dependencies","t":"rdflib  [version: 7.0.0]"},{"id":"study002-032","f":"dependencies","t":"PyTorch Lightning  [version: not stated]"},{"id":"study002-033","f":"dependencies","t":"sphinx-autoapi  [version: 3.0.0]"},{"id":"study002-034","f":"dependencies","t":"label smoothing  [version: not stated]"},{"id":"study002-035","f":"dependencies","t":"cross entropy loss function  [version: not stated]"},{"id":"study002-036","f":"dependencies","t":"plantuml-local-client  [version: 1.2022.6]"},{"id":"study002-037","f":"dependencies","t":"torch  [version: 2.5.1]"},{"id":"study002-038","f":"dependencies","t":"sphinx_rtd_theme  [version: 2.0.0]"},{"id":"study002-039","f":"dependencies","t":"label relaxation  [version: not stated]"},{"id":"study002-040","f":"datasets","t":"WN18RR  [used]"},{"id":"study002-041","f":"datasets","t":"KINSHIP  [used]"},{"id":"study002-042","f":"datasets","t":"FB15K-237"},{"id":"study002-043","f":"datasets","t":"YAGO3-10  [used]"},{"id":"study002-044","f":"datasets","t":"5 EXPERIMENTAL SETUP"},{"id":"study002-045","f":"datasets","t":"KINSHIP"},{"id":"study002-046","f":"datasets","t":"NELL-995  [used]"},{"id":"study002-047","f":"datasets","t":"UMLS  [used]"},{"id":"study002-048","f":"datasets","t":"WN18RR"},{"id":"study002-049","f":"datasets","t":"UMLS"},{"id":"study002-050","f":"datasets","t":"YAGO3-10"},{"id":"study002-051","f":"datasets","t":"FB15K-237  [used]"},{"id":"study002-052","f":"hyperparameters","t":"label relaxation = .1,.2"},{"id":"study002-053","f":"hyperparameters","t":"seed = 1"},{"id":"study002-054","f":"hyperparameters","t":"label_smoothing = .1"},{"id":"study002-055","f":"hyperparameters","t":"embedding_size = 200"},{"id":"study002-056","f":"hyperparameters","t":"label smoothing = .1,.2"},{"id":"study002-057","f":"hyperparameters","t":"learning_rate = .01"},{"id":"study002-058","f":"hyperparameters","t":"number_of_epochs = 1000"},{"id":"study002-059","f":"hyperparameters","t":"smoothing_parameter_alpha = 0.1"},{"id":"study002-060","f":"hyperparameters","t":"batch_size = 1024"},{"id":"study002-061","f":"hyperparameters","t":"optimizer = ADAM"},{"id":"study002-062","f":"hyperparameters","t":"grid search values = {4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400}"},{"id":"study002-063","f":"hyperparameters","t":"label_smoothing = /u1D6FC\u2208 {.1,.2}"},{"id":"study002-064","f":"hyperparameters","t":"embedding vector sizes = {4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400}"},{"id":"study002-065","f":"hyperparameters","t":"embedding_vector_size = {4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400}"},{"id":"study002-066","f":"hyperparameters","t":"embedding vector size = large parameter sweep"},{"id":"study002-067","f":"hyperparameters","t":"label relaxation = .1"},{"id":"study002-068","f":"hyperparameters","t":"embedding_sizes = [4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400]"},{"id":"study002-069","f":"random_seeds","t":"1000"},{"id":"study002-070","f":"random_seeds","t":"1"},{"id":"study002-071","f":"evaluation_results","t":"H@1 = "},{"id":"study002-072","f":"evaluation_results","t":"MRR = 0.1  [test, benchmark]"},{"id":"study002-073","f":"evaluation_results","t":"H@N = "},{"id":"study002-074","f":"evaluation_results","t":"H@3 = "},{"id":"study002-075","f":"evaluation_results","t":"Hi@1 = "},{"id":"study002-076","f":"evaluation_results","t":"filteredMeanReciprocalRank (MRR) = "},{"id":"study002-077","f":"evaluation_results","t":"H@10 = "},{"id":"study002-078","f":"evaluation_results","t":"MRR = "},{"id":"study002-079","f":"evaluation_results","t":"MRR =   [test]"},{"id":"study002-080","f":"evaluation_results","t":"hitsatN (H@N) = "},{"id":"study002-081","f":"environment","t":"os: Linux"},{"id":"study002-082","f":"environment","t":"ram: 33 GB"},{"id":"study002-083","f":"methods","t":"label_smoothing"},{"id":"study002-084","f":"methods","t":"KD-Rel-DistMult"},{"id":"study002-085","f":"methods","t":"KD-DistMult"},{"id":"study002-086","f":"methods","t":"KD on tail entities embeddings"},{"id":"study002-087","f":"methods","t":"KD on decompose linear transformation weight matrices"},{"id":"study002-088","f":"methods","t":"Label Relaxation (LR)"},{"id":"study002-089","f":"methods","t":"embedding_vector_size"},{"id":"study002-090","f":"methods","t":"KvsAll"},{"id":"study002-091","f":"methods","t":"1vsAll"},{"id":"study002-092","f":"methods","t":"DistMult"},{"id":"study002-093","f":"methods","t":"grid search"},{"id":"study002-094","f":"methods","t":"Kronecker Decomposition"},{"id":"study002-095","f":"methods","t":"label relaxation"},{"id":"study002-096","f":"methods","t":"KD on entity embeddings"},{"id":"study002-097","f":"methods","t":"Link Prediction"},{"id":"study002-098","f":"methods","t":"Kronecker Decomposition for Relation Embeddings"},{"id":"study002-099","f":"methods","t":"Batch Normalization"},{"id":"study002-100","f":"methods","t":"Kronecker Decomposition for Knowledge Graph Embeddings"},{"id":"study002-101","f":"methods","t":"Label Smoothing (LS)"},{"id":"study002-102","f":"methods","t":"Kronecker Decomposition (KD)"},{"id":"study002-103","f":"methods","t":"KD on relation embeddings"},{"id":"study002-104","f":"methods","t":"1vsAll training strategy"},{"id":"study002-105","f":"methods","t":"KD variation"}]},{"folder":"03_study003","sid":"study003","title":"Toward Realistic Camouflaged Object Detection: Benchmarks and Method","paper":"https://arxiv.org/abs/2501.07297v1","pdf":"https://arxiv.org/pdf/2501.07297.pdf","repo":"https://github.com/zhimengxin/rcod","items":[{"id":"study003-001","f":"dependencies","t":"YOLOv7-L  [version: not stated]"},{"id":"study003-002","f":"dependencies","t":"contrastive loss  [version: not stated]"},{"id":"study003-003","f":"dependencies","t":"FPN  [version: not stated]"},{"id":"study003-004","f":"dependencies","t":"MMDetection  [version: [54]]"},{"id":"study003-005","f":"dependencies","t":"Vit-T  [version: not stated]"},{"id":"study003-006","f":"dependencies","t":"GIoU  [version: not stated]"},{"id":"study003-007","f":"dependencies","t":"swin-transformer  [version: not stated]"},{"id":"study003-008","f":"dependencies","t":"focal loss  [version: not stated]"},{"id":"study003-009","f":"dependencies","t":"Faster RCNN  [version: not stated]"},{"id":"study003-010","f":"dependencies","t":"Swin-T  [version: not stated]"},{"id":"study003-011","f":"dependencies","t":"Swin-L  [version: not stated]"},{"id":"study003-012","f":"dependencies","t":"SWIN-TRASFORMER  [version: not stated]"},{"id":"study003-013","f":"dependencies","t":"Grounding DINO  [version: not stated]"},{"id":"study003-014","f":"dependencies","t":"YOLO-World  [version: not stated]"},{"id":"study003-015","f":"dependencies","t":"Vit-L  [version: not stated]"},{"id":"study003-016","f":"dependencies","t":"CSPDarknet  [version: 3.8]"},{"id":"study003-017","f":"dependencies","t":"GDino + CAFR  [version: Swin-T]"},{"id":"study003-018","f":"dependencies","t":"DEF-DETR  [version: not stated]"},{"id":"study003-019","f":"dependencies","t":"COCO API  [version: [55]]"},{"id":"study003-020","f":"dependencies","t":"LabelMe  [version: not stated]"},{"id":"study003-021","f":"dependencies","t":"GLIP  [version: tiny]"},{"id":"study003-022","f":"dependencies","t":"PyTorch  [version: not stated]"},{"id":"study003-023","f":"dependencies","t":"Mask RCNN  [version: ResNet50]"},{"id":"study003-024","f":"dependencies","t":"MMDetection  [version: not stated]"},{"id":"study003-025","f":"dependencies","t":"GLIP  [version: tiny model [9]]"},{"id":"study003-026","f":"dependencies","t":"RESNET101  [version: not stated]"},{"id":"study003-027","f":"dependencies","t":"GROUNDING DION  [version: not stated]"},{"id":"study003-028","f":"dependencies","t":"SAM  [version: Vit-T]"},{"id":"study003-029","f":"dependencies","t":"GLIP  [version: not stated]"},{"id":"study003-030","f":"dependencies","t":"mmdet  [version: not stated]"},{"id":"study003-031","f":"dependencies","t":"ResNet50  [version: not stated]"},{"id":"study003-032","f":"datasets","t":"CAMO-D  [CAMO dataset [13]]"},{"id":"study003-033","f":"datasets","t":"CAMO  [used]"},{"id":"study003-034","f":"datasets","t":"NC4K-D"},{"id":"study003-035","f":"datasets","t":"CAMO-D  [produced]"},{"id":"study003-036","f":"datasets","t":"NC4K"},{"id":"study003-037","f":"datasets","t":"COD"},{"id":"study003-038","f":"datasets","t":"COD10K-v2"},{"id":"study003-039","f":"datasets","t":"COD10K-D  [produced]"},{"id":"study003-040","f":"datasets","t":"COD10K-D"},{"id":"study003-041","f":"datasets","t":"RCOD"},{"id":"study003-042","f":"datasets","t":"CAMO dataset"},{"id":"study003-043","f":"datasets","t":"NC4K-D  [produced]"},{"id":"study003-044","f":"datasets","t":"COD10K-v2  [used]"},{"id":"study003-045","f":"datasets","t":"CAMO"},{"id":"study003-046","f":"datasets","t":"COD10K-v2  [v2]"},{"id":"study003-047","f":"datasets","t":"COCO  [[55]]"},{"id":"study003-048","f":"datasets","t":"coco-style"},{"id":"study003-049","f":"datasets","t":"entire dataset"},{"id":"study003-050","f":"datasets","t":"CAMO-D"},{"id":"study003-051","f":"datasets","t":"NC4K  [used]"},{"id":"study003-052","f":"hyperparameters","t":"W = 200"},{"id":"study003-053","f":"hyperparameters","t":"adapter_module = two 2-dimensional convolutional layers"},{"id":"study003-054","f":"hyperparameters","t":"\u03b8n = not stated"},{"id":"study003-055","f":"hyperparameters","t":"momentum = 0.05"},{"id":"study003-056","f":"hyperparameters","t":"initial_learning_rate = 0.0003"},{"id":"study003-057","f":"hyperparameters","t":"training_images_COD10K-D = 6000"},{"id":"study003-058","f":"hyperparameters","t":"H = 200"},{"id":"study003-059","f":"hyperparameters","t":"learning_rate = 0.0003"},{"id":"study003-060","f":"hyperparameters","t":"box_crop_width = 200"},{"id":"study003-061","f":"hyperparameters","t":"\u03b8h = not stated"},{"id":"study003-062","f":"hyperparameters","t":"batch_size_SFR_assumption = 16"},{"id":"study003-063","f":"hyperparameters","t":"box_crop_height = 200"},{"id":"study003-064","f":"hyperparameters","t":"test_images_COD10K-D = 4000"},{"id":"study003-065","f":"hyperparameters","t":"batch size = 16"},{"id":"study003-066","f":"hyperparameters","t":"optimizer = AdamW"},{"id":"study003-067","f":"hyperparameters","t":"\u03b8b = not stated"},{"id":"study003-068","f":"random_seeds","t":"16"},{"id":"study003-069","f":"random_seeds","t":"10"},{"id":"study003-070","f":"evaluation_results","t":"APl = "},{"id":"study003-071","f":"evaluation_results","t":"AP75 =   [CAMO-D]"},{"id":"study003-072","f":"evaluation_results","t":"mAP (IoU) = "},{"id":"study003-073","f":"evaluation_results","t":"AP50 = string"},{"id":"study003-074","f":"evaluation_results","t":"mAP = "},{"id":"study003-075","f":"evaluation_results","t":"mAP (IoU = "},{"id":"study003-076","f":"evaluation_results","t":"APl = 4.0  [COD10K-D]"},{"id":"study003-077","f":"evaluation_results","t":"AP50 = "},{"id":"study003-078","f":"evaluation_results","t":"APl = 7.3  [NC4K-D]"},{"id":"study003-079","f":"evaluation_results","t":"FLOPs = 289.97  [\u2193]"},{"id":"study003-080","f":"evaluation_results","t":"AP75 = "},{"id":"study003-081","f":"evaluation_results","t":"mAP = string"},{"id":"study003-082","f":"evaluation_results","t":"APl =   [CAMO-D]"},{"id":"study003-083","f":"evaluation_results","t":"mAP = .50:.05:.95"},{"id":"study003-084","f":"evaluation_results","t":"AP50 = 8.2  [COD10K-D]"},{"id":"study003-085","f":"evaluation_results","t":"APm = medium-sized objects"},{"id":"study003-086","f":"evaluation_results","t":"AP50 = 6.8  [NC4K-D]"},{"id":"study003-087","f":"evaluation_results","t":"APl = large-sized objects"},{"id":"study003-088","f":"evaluation_results","t":"AP75 = .75"},{"id":"study003-089","f":"evaluation_results","t":"APm = 1.7  [NC4K-D]"},{"id":"study003-090","f":"evaluation_results","t":"AP75 = string"},{"id":"study003-091","f":"evaluation_results","t":"S_alpha = 77.0  [test, SINet]"},{"id":"study003-092","f":"evaluation_results","t":"S_alpha = 81.1  [test, SegMaR]"},{"id":"study003-093","f":"evaluation_results","t":"counts of categories = "},{"id":"study003-094","f":"evaluation_results","t":"AP50 = 14.2  [NC4K-D]"},{"id":"study003-095","f":"evaluation_results","t":"mAP = 5.4  [CAMO-D]"},{"id":"study003-096","f":"evaluation_results","t":"AP75 = 2.8  [COD10K-D]"},{"id":"study003-097","f":"evaluation_results","t":"APm = string"},{"id":"study003-098","f":"evaluation_results","t":"APl = string"},{"id":"study003-099","f":"evaluation_results","t":"numbers of training and test images = "},{"id":"study003-100","f":"evaluation_results","t":"AP50 = .50"},{"id":"study003-101","f":"evaluation_results","t":"mAP = 14.2  [NC4K-D]"},{"id":"study003-102","f":"evaluation_results","t":"mAP = 3.8  [COD10K-D]"},{"id":"study003-103","f":"evaluation_results","t":"APm = "},{"id":"study003-104","f":"evaluation_results","t":"APm =   [CAMO-D]"},{"id":"study003-105","f":"evaluation_results","t":"mAP = 6.8  [NC4K-D]"},{"id":"study003-106","f":"evaluation_results","t":"AP50 =   [CAMO-D]"},{"id":"study003-107","f":"evaluation_results","t":"APm = 1.0  [COD10K-D]"},{"id":"study003-108","f":"evaluation_results","t":"AP75 = 6.0  [NC4K-D]"},{"id":"study003-109","f":"environment","t":"os: Ubuntu"},{"id":"study003-110","f":"methods","t":"GDino + CAFR"},{"id":"study003-111","f":"methods","t":"YOLOv7-L"},{"id":"study003-112","f":"methods","t":"AdamW"},{"id":"study003-113","f":"methods","t":"FPN"},{"id":"study003-114","f":"methods","t":"RESNET101"},{"id":"study003-115","f":"methods","t":"Faster R-CNN (ResNet50)"},{"id":"study003-116","f":"methods","t":"GROUNDING DION"},{"id":"study003-117","f":"methods","t":"SFR module"},{"id":"study003-118","f":"methods","t":"APG module"},{"id":"study003-119","f":"methods","t":"SAM"},{"id":"study003-120","f":"methods","t":"AGP-based loss"},{"id":"study003-121","f":"methods","t":"R50"},{"id":"study003-122","f":"methods","t":"AGP"},{"id":"study003-123","f":"methods","t":"GLIP"},{"id":"study003-124","f":"methods","t":"Classification loss Lcls"},{"id":"study003-125","f":"methods","t":"Transformer-based feature extractors"},{"id":"study003-126","f":"methods","t":"offline implementation of SFR"},{"id":"study003-127","f":"methods","t":"R101"},{"id":"study003-128","f":"methods","t":"Faster R-CNN (ResNet101)"},{"id":"study003-129","f":"methods","t":"GLIP+Adapter"},{"id":"study003-130","f":"methods","t":"Sparse Feature Refinement (SFR)"},{"id":"study003-131","f":"methods","t":"DEF-DETR"},{"id":"study003-132","f":"methods","t":"SWIN-TRASFORMER"},{"id":"study003-133","f":"methods","t":"SFR"},{"id":"study003-134","f":"methods","t":"CAFR"},{"id":"study003-135","f":"methods","t":"RESNET50"},{"id":"study003-136","f":"methods","t":"Method Mask RCNN"},{"id":"study003-137","f":"methods","t":"Contrastive loss Lc"},{"id":"study003-138","f":"methods","t":"S WIN"},{"id":"study003-139","f":"methods","t":"ZoomNet"},{"id":"study003-140","f":"methods","t":"PreyNet"},{"id":"study003-141","f":"methods","t":"random shuffle"},{"id":"study003-142","f":"methods","t":"FSEL"},{"id":"study003-143","f":"methods","t":"Mask RCNN"},{"id":"study003-144","f":"methods","t":"contrastive loss"},{"id":"study003-145","f":"methods","t":"Camouflage-Aware Feature Refinement (CAFR)"},{"id":"study003-146","f":"methods","t":"Faster RCNN"},{"id":"study003-147","f":"methods","t":"canvas filling"},{"id":"study003-148","f":"methods","t":"GD INO"},{"id":"study003-149","f":"methods","t":"SINet"},{"id":"study003-150","f":"methods","t":"SegMaR"},{"id":"study003-151","f":"methods","t":"CAFR approach"},{"id":"study003-152","f":"methods","t":"fine-tuning"},{"id":"study003-153","f":"methods","t":"Large Model SAM"},{"id":"study003-154","f":"methods","t":"swin-transformer"},{"id":"study003-155","f":"methods","t":"Localization loss Lbbox"},{"id":"study003-156","f":"methods","t":"AGP module"},{"id":"study003-157","f":"methods","t":"GIoU"},{"id":"study003-158","f":"methods","t":"Faster R-CNN (Swin-L)"},{"id":"study003-159","f":"methods","t":"focal loss"},{"id":"study003-160","f":"methods","t":"Adaptive Gradient Propagation (AGP)"},{"id":"study003-161","f":"methods","t":"DEFORMABLE DETR"},{"id":"study003-162","f":"methods","t":"APG"},{"id":"study003-163","f":"methods","t":"CSPDarknet"}]},{"folder":"04_study005","sid":"study005","title":"eDiff-I: Text-to-Image Diffusion Models with an Ensemble of Expert Denoisers","paper":"https://arxiv.org/abs/2211.01324v5","pdf":"https://arxiv.org/pdf/2211.01324.pdf","repo":"https://github.com/cross-domain-compositing/cross-domain-compositing","items":[{"id":"study005-001","f":"dependencies","t":"torchvision  [version: 0.12.0]"},{"id":"study005-002","f":"dependencies","t":"taming-transformers  [version: master]"},{"id":"study005-003","f":"dependencies","t":"albumentations  [version: 0.4.3]"},{"id":"study005-004","f":"dependencies","t":"PyTorch  [version: not stated]"},{"id":"study005-005","f":"dependencies","t":"torch-fidelity  [version: 0.3.0]"},{"id":"study005-006","f":"dependencies","t":"test-tube  [version: 0.7.5]"},{"id":"study005-007","f":"dependencies","t":"AdamW  [version: not stated]"},{"id":"study005-008","f":"dependencies","t":"streamlit  [version: 0.73.1]"},{"id":"study005-009","f":"dependencies","t":"Imaginaire library  [version: not stated]"},{"id":"study005-010","f":"dependencies","t":"pudb  [version: 2019.2]"},{"id":"study005-011","f":"dependencies","t":"numpy  [version: 1.19.2]"},{"id":"study005-012","f":"dependencies","t":"clip  [version: main]"},{"id":"study005-013","f":"dependencies","t":"diffusers  [version: not stated]"},{"id":"study005-014","f":"dependencies","t":"imageio-ffmpeg  [version: 0.4.2]"},{"id":"study005-015","f":"dependencies","t":"invisible-watermark  [version: not stated]"},{"id":"study005-016","f":"dependencies","t":"kornia  [version: 0.6]"},{"id":"study005-017","f":"dependencies","t":"opencv-python  [version: 4.1.2.30]"},{"id":"study005-018","f":"dependencies","t":"imageio  [version: 2.9.0]"},{"id":"study005-019","f":"dependencies","t":"torchmetrics  [version: 0.6.0]"},{"id":"study005-020","f":"dependencies","t":"einops  [version: 0.3.0]"},{"id":"study005-021","f":"dependencies","t":"CLIP  [version: pretrained]"},{"id":"study005-022","f":"dependencies","t":"T5  [version: not stated]"},{"id":"study005-023","f":"dependencies","t":"Stable Diffusion  [version: not stated]"},{"id":"study005-024","f":"dependencies","t":"Imaginaire  [version: not stated]"},{"id":"study005-025","f":"dependencies","t":"pytorch  [version: 1.11.0]"},{"id":"study005-026","f":"dependencies","t":"DALL-E 2  [version: not stated]"},{"id":"study005-027","f":"dependencies","t":"transformers  [version: 4.19.2]"},{"id":"study005-028","f":"dependencies","t":"pytorch-lightning  [version: 1.4.2]"},{"id":"study005-029","f":"dependencies","t":"omegaconf  [version: 2.1.1]"},{"id":"study005-030","f":"datasets","t":"public and proprietary datasets"},{"id":"study005-031","f":"datasets","t":"COCO"},{"id":"study005-032","f":"datasets","t":"Internal NVIDIA Dataset  [used]"},{"id":"study005-033","f":"datasets","t":"MS-COCO 2014  [used]"},{"id":"study005-034","f":"datasets","t":"visual genome"},{"id":"study005-035","f":"datasets","t":"MS-COCO"},{"id":"study005-036","f":"datasets","t":"Visual Genome  [used]"},{"id":"study005-037","f":"hyperparameters","t":"CLIP score threshold = preset"},{"id":"study005-038","f":"hyperparameters","t":"inference resolution = 1024\u00d71024"},{"id":"study005-039","f":"hyperparameters","t":"learning_rate = 0.0001"},{"id":"study005-040","f":"hyperparameters","t":"optimizer = AdamW"},{"id":"study005-041","f":"hyperparameters","t":"batch_size = 2048"},{"id":"study005-042","f":"hyperparameters","t":"shortest side = 64 pixels"},{"id":"study005-043","f":"hyperparameters","t":"weight_decay = 0.01"},{"id":"study005-044","f":"hyperparameters","t":"crop size = 256\u00d7256"},{"id":"study005-045","f":"hyperparameters","t":"aesthetic score = preset"},{"id":"study005-046","f":"hyperparameters","t":"classifier-free guidance sweep = 0 to 10.0"},{"id":"study005-047","f":"random_seeds","t":"8"},{"id":"study005-048","f":"evaluation_results","t":"text generation success = failed"},{"id":"study005-049","f":"evaluation_results","t":"trade-off curves = much better  [MS-COCO]"},{"id":"study005-050","f":"evaluation_results","t":"feed-forward evaluation time = sec"},{"id":"study005-051","f":"evaluation_results","t":"performance = similar  [MS-COCO]"},{"id":"study005-052","f":"evaluation_results","t":"CLIP-FID = similar performance  [MS-COCO]"},{"id":"study005-053","f":"evaluation_results","t":"CLIP-FID = better performance  [Visual Genome]"},{"id":"study005-054","f":"evaluation_results","t":"model inference time = sec"},{"id":"study005-055","f":"evaluation_results","t":"CLIP-FID trade-off = better performance  [Visual Genome]"},{"id":"study005-056","f":"evaluation_results","t":"zero-shot text-to-image generation performance =   [test]"},{"id":"study005-057","f":"evaluation_results","t":"performance = better  [Visual Genome]"},{"id":"study005-058","f":"evaluation_results","t":"CLIP-FID trade-off = similar performance  [MS-COCO]"},{"id":"study005-059","f":"environment","t":"gpu_model: NVIDIA A100"},{"id":"study005-060","f":"environment","t":"os: Linux"},{"id":"study005-061","f":"environment","t":"gpu: NVIDIA A100"},{"id":"study005-062","f":"environment","t":"cuda: 11.3"},{"id":"study005-063","f":"methods","t":"CLIP+T5"},{"id":"study005-064","f":"methods","t":"eDiff-I"},{"id":"study005-065","f":"methods","t":"T5 text embeddings"},{"id":"study005-066","f":"methods","t":"random crop"},{"id":"study005-067","f":"methods","t":"CLIP text embeddings"},{"id":"study005-068","f":"methods","t":"CLIP model"},{"id":"study005-069","f":"methods","t":"T5+CLIP"},{"id":"study005-070","f":"methods","t":"Classifier-free guidance"},{"id":"study005-071","f":"methods","t":"CLIP text encoder"},{"id":"study005-072","f":"methods","t":"our approach"},{"id":"study005-073","f":"methods","t":"aesthetic scorer"},{"id":"study005-074","f":"methods","t":"CLIP-FID"},{"id":"study005-075","f":"methods","t":"Ensemble of Expert Denoisers"},{"id":"study005-076","f":"methods","t":"random dropout"},{"id":"study005-077","f":"methods","t":"CLIP+T5 text embeddings"},{"id":"study005-078","f":"methods","t":"Paint-with-Words"},{"id":"study005-079","f":"methods","t":"pretrained CLIP model"},{"id":"study005-080","f":"methods","t":"DALL \u00b7E 2"},{"id":"study005-081","f":"methods","t":"Binary-tree-based branching strategy"},{"id":"study005-082","f":"methods","t":"T5 encoder"},{"id":"study005-083","f":"methods","t":"Stable Diffusion"},{"id":"study005-084","f":"methods","t":"resize-central crop"}]},{"folder":"05_study006","sid":"study006","title":"Scalable Decision-Making in Stochastic Environments through Learned Temporal Abstraction","paper":"https://arxiv.org/abs/2502.21186v2","pdf":"https://arxiv.org/pdf/2502.21186.pdf","repo":"https://github.com/baitingluo/l-map","items":[{"id":"study006-001","f":"dependencies","t":"mjrl  [version: 3871d93763d3b49c4741e6daeaebbc605fe140dc]"},{"id":"study006-002","f":"dependencies","t":"scikit-image  [version: 0.17.2]"},{"id":"study006-003","f":"dependencies","t":"gitpython  [version: not stated]"},{"id":"study006-004","f":"dependencies","t":"wandb  [version: not stated]"},{"id":"study006-005","f":"dependencies","t":"dm_control  [version: not stated]"},{"id":"study006-006","f":"dependencies","t":"CompILE  [version: 2019]"},{"id":"study006-007","f":"dependencies","t":"mujoco-py  [version: 2.1.2.14]"},{"id":"study006-008","f":"dependencies","t":"OPAL  [version: 2021]"},{"id":"study006-009","f":"dependencies","t":"scikit-video  [version: 1.1.11]"},{"id":"study006-010","f":"dependencies","t":"einops  [version: not stated]"},{"id":"study006-011","f":"dependencies","t":"RPL  [version: 2019]"},{"id":"study006-012","f":"dependencies","t":"d4rl  [version: c3dd04da02acbf4de6cbaa1141deb4f958f03ca9]"},{"id":"study006-013","f":"dependencies","t":"typed-argument-parser  [version: not stated]"},{"id":"study006-014","f":"dependencies","t":"PRISE  [version: 2024]"},{"id":"study006-015","f":"dependencies","t":"torch  [version: 1.12.0+cu116]"},{"id":"study006-016","f":"dependencies","t":"MuJoCo  [version: not stated]"},{"id":"study006-017","f":"dependencies","t":"numpy  [version: 1.23.2]"},{"id":"study006-018","f":"dependencies","t":"gym  [version: 0.18.0]"},{"id":"study006-019","f":"dependencies","t":"matplotlib  [version: 3.3.4]"},{"id":"study006-020","f":"dependencies","t":"ACT  [version: 2023]"},{"id":"study006-021","f":"datasets","t":"Stochastic MuJoCo"},{"id":"study006-022","f":"datasets","t":"Medium-Replay-High Hopper"},{"id":"study006-023","f":"datasets","t":"Medium-Diverse"},{"id":"study006-024","f":"datasets","t":"Adroit"},{"id":"study006-025","f":"datasets","t":"Walker2D"},{"id":"study006-026","f":"datasets","t":"Large-Play"},{"id":"study006-027","f":"datasets","t":"Umaze"},{"id":"study006-028","f":"datasets","t":"Medium-Expert-Mod Hopper"},{"id":"study006-029","f":"datasets","t":"D4RL MuJoCo  [used]"},{"id":"study006-030","f":"datasets","t":"Large-Diverse"},{"id":"study006-031","f":"datasets","t":"Cloned"},{"id":"study006-032","f":"datasets","t":"Stochastic MuJoCo tasks"},{"id":"study006-033","f":"datasets","t":"Adroit tasks"},{"id":"study006-034","f":"datasets","t":"Adroit hand manipulation tasks  [used]"},{"id":"study006-035","f":"datasets","t":"Stochastic MuJoCo  [used]"},{"id":"study006-036","f":"datasets","t":"Hopper"},{"id":"study006-037","f":"datasets","t":"Expert"},{"id":"study006-038","f":"datasets","t":"AntMaze"},{"id":"study006-039","f":"hyperparameters","t":"planning horizon in raw action space for Adroit tasks = 15"},{"id":"study006-040","f":"hyperparameters","t":"B = 4"},{"id":"study006-041","f":"hyperparameters","t":"MCTS iterations = 100"},{"id":"study006-042","f":"hyperparameters","t":"macro action length = 3"},{"id":"study006-043","f":"hyperparameters","t":"planning horizon in raw action space for gym locomotion tasks = 9"},{"id":"study006-044","f":"hyperparameters","t":"alpha = 0.1"},{"id":"study006-045","f":"hyperparameters","t":"planning horizon = 9"},{"id":"study006-046","f":"hyperparameters","t":"horizon = 15"},{"id":"study006-047","f":"hyperparameters","t":"epsilon = 1"},{"id":"study006-048","f":"hyperparameters","t":"gamma = 0.99"},{"id":"study006-049","f":"hyperparameters","t":"M = 16"},{"id":"study006-050","f":"hyperparameters","t":"planning horizon = 9 for gym locomotion tasks and 15 for Adroit tasks"},{"id":"study006-051","f":"hyperparameters","t":"N = 4"},{"id":"study006-052","f":"hyperparameters","t":"lambda = 0.5"},{"id":"study006-053","f":"hyperparameters","t":"control_rate = 10 Hz"},{"id":"study006-054","f":"random_seeds","t":"3"},{"id":"study006-055","f":"random_seeds","t":"2"},{"id":"study006-056","f":"random_seeds","t":"1"},{"id":"study006-057","f":"random_seeds","t":"15"},{"id":"study006-058","f":"evaluation_results","t":"success rate = 83.33%  [all environments]"},{"id":"study006-059","f":"evaluation_results","t":"Average Score = 91.18 \u00b1 0.56  [test, Medium-Replay Hopper (Deterministic)]"},{"id":"study006-060","f":"evaluation_results","t":"scores =   [Pen and Relocate environments]"},{"id":"study006-061","f":"evaluation_results","t":"performance = highest  [Walker2D]"},{"id":"study006-062","f":"evaluation_results","t":"Average Score = 73.90 \u00b1 1.91  [test, Medium Hopper (Deterministic)]"},{"id":"study006-063","f":"evaluation_results","t":"performance = competitive or superior"},{"id":"study006-064","f":"evaluation_results","t":"success rate = 83.33%"},{"id":"study006-065","f":"evaluation_results","t":"average score = 51.40"},{"id":"study006-066","f":"evaluation_results","t":"average score = 18.79  [non-expert]"},{"id":"study006-067","f":"evaluation_results","t":"success rate = 78.33%  [Large-Play]"},{"id":"study006-068","f":"evaluation_results","t":"score = higher  [Medium-Expert-Mod Hopper]"},{"id":"study006-069","f":"evaluation_results","t":"average success rate = 83.33%  [all AntMaze environments]"},{"id":"study006-070","f":"evaluation_results","t":"score = higher  [Medium-Replay-High Hopper]"},{"id":"study006-071","f":"evaluation_results","t":"Average Score = 105.74 \u00b1 2.24  [test, Medium-Expert Hopper (Deterministic)]"},{"id":"study006-072","f":"evaluation_results","t":"performance = highest  [Hopper]"},{"id":"study006-073","f":"evaluation_results","t":"average score = 18.79  [non-expert datasets]"},{"id":"study006-074","f":"evaluation_results","t":"success rate = 93.33%  [Umaze environment]"},{"id":"study006-075","f":"evaluation_results","t":"success rate = 93.33%"},{"id":"study006-076","f":"evaluation_results","t":"score = higher"},{"id":"study006-077","f":"evaluation_results","t":"success rates = 93.33%"},{"id":"study006-078","f":"evaluation_results","t":"score = higher  [Medium-Replay-High Hopper dataset]"},{"id":"study006-079","f":"evaluation_results","t":"success rate = 81.67%  [Large-Diverse]"},{"id":"study006-080","f":"evaluation_results","t":"success rate = 81.67%  [Large-Diverse environment]"},{"id":"study006-081","f":"evaluation_results","t":"Average Score = 106.11 \u00b1 2.16  [test, Medium-Expert-Mod Hopper (Moderate Stochasticity)]"},{"id":"study006-082","f":"evaluation_results","t":"success rate = 88.33%  [Medium-Diverse environment]"},{"id":"study006-083","f":"evaluation_results","t":"success rate = 93.33%  [Umaze]"},{"id":"study006-084","f":"evaluation_results","t":"performance = outperforms  [Medium-Expert-Mod Hopper dataset]"},{"id":"study006-085","f":"evaluation_results","t":"success rate = 78.33%  [Large-Play environment]"},{"id":"study006-086","f":"evaluation_results","t":"success rate = 88.33%  [Medium-Diverse]"},{"id":"study006-087","f":"evaluation_results","t":"performance = highest"},{"id":"study006-088","f":"environment","t":"cuda: 11.6"},{"id":"study006-089","f":"methods","t":"CQL"},{"id":"study006-090","f":"methods","t":"Implicit Q-Learning (IQL)"},{"id":"study006-091","f":"methods","t":"Monte Carlo Tree Search (MCTS)"},{"id":"study006-092","f":"methods","t":"CompILE"},{"id":"study006-093","f":"methods","t":"Vector Quantized Variational Autoencoder (VQ-VAE)"},{"id":"study006-094","f":"methods","t":"Behavior Cloning (BC)"},{"id":"study006-095","f":"methods","t":"Conservative Q-Learning (CQL)"},{"id":"study006-096","f":"methods","t":"PRISE"},{"id":"study006-097","f":"methods","t":"Conservative Q-Learning"},{"id":"study006-098","f":"methods","t":"Polling Control Mode"},{"id":"study006-099","f":"methods","t":"1R2R"},{"id":"study006-100","f":"methods","t":"ACT"},{"id":"study006-101","f":"methods","t":"BC"},{"id":"study006-102","f":"methods","t":"TT (+Q)"},{"id":"study006-103","f":"methods","t":"Implicit Q-Learning"},{"id":"study006-104","f":"methods","t":"Progressive Widening"},{"id":"study006-105","f":"methods","t":"TAP"},{"id":"study006-106","f":"methods","t":"RPL"},{"id":"study006-107","f":"methods","t":"L-MAP"},{"id":"study006-108","f":"methods","t":"Latent Macro Action Planner (L-MAP)"},{"id":"study006-109","f":"methods","t":"TT"},{"id":"study006-110","f":"methods","t":"MCTS"},{"id":"study006-111","f":"methods","t":"IQL"},{"id":"study006-112","f":"methods","t":"OPAL"}]},{"folder":"06_study008","sid":"study008","title":"Language Adaptation on a Tight Academic Compute Budget: Tokenizer Swapping Works and Pure bfloat16 Is Enough","paper":"https://arxiv.org/abs/2408.15793v1","pdf":"https://arxiv.org/pdf/2408.15793.pdf","repo":"https://github.com/konstantinjdobler/tight-budget-llm-adaptation","items":[{"id":"study008-001","f":"dependencies","t":"AdamW  [version: not stated]"},{"id":"study008-002","f":"dependencies","t":"PyTorch FSDP  [version: not stated]"},{"id":"study008-003","f":"dependencies","t":"github  [version: https://github.com/konstantinjdobler/tight-budget-llm-adaptation]"},{"id":"study008-004","f":"dependencies","t":"FlashAttention  [version: (Dao, 2023)]"},{"id":"study008-005","f":"dependencies","t":"RMSNorm  [version: (Dao, 2023)]"},{"id":"study008-006","f":"dependencies","t":"PyTorch  [version: FSDP (Zhao et al., 2023)]"},{"id":"study008-007","f":"dependencies","t":"torch  [version: not stated]"},{"id":"study008-008","f":"dependencies","t":"Mistral-7B  [version: v0.1]"},{"id":"study008-009","f":"dependencies","t":"Nvidia H100 GPUs  [version: not stated]"},{"id":"study008-010","f":"datasets","t":"BOOLQ"},{"id":"study008-011","f":"datasets","t":"RACE"},{"id":"study008-012","f":"datasets","t":"ARC  [used]"},{"id":"study008-013","f":"datasets","t":"OSCAR23.01  [used]"},{"id":"study008-014","f":"datasets","t":"PAWS-X  [used]"},{"id":"study008-015","f":"datasets","t":"LAMBADA  [used]"},{"id":"study008-016","f":"datasets","t":"CulturaX"},{"id":"study008-017","f":"datasets","t":"CulturaX  [used]"},{"id":"study008-018","f":"datasets","t":"TruthfulQA  [used]"},{"id":"study008-019","f":"datasets","t":"HellaSwag  [used]"},{"id":"study008-020","f":"datasets","t":"AlGhafa-T"},{"id":"study008-021","f":"datasets","t":"TOXIGEN"},{"id":"study008-022","f":"datasets","t":"Mistral-7B"},{"id":"study008-023","f":"datasets","t":"AlGhafa-T  [used]"},{"id":"study008-024","f":"datasets","t":"OALL"},{"id":"study008-025","f":"datasets","t":"SciTail"},{"id":"study008-026","f":"datasets","t":"PIQA"},{"id":"study008-027","f":"datasets","t":"COPA"},{"id":"study008-028","f":"datasets","t":"HellaSwag"},{"id":"study008-029","f":"datasets","t":"MMLU  [used]"},{"id":"study008-030","f":"datasets","t":"Open-BookQA"},{"id":"study008-031","f":"datasets","t":"OSCAR23.01"},{"id":"study008-032","f":"datasets","t":"CulturaX  [(Nguyen et al., 2024)]"},{"id":"study008-033","f":"hyperparameters","t":"Optimizer = AdamW"},{"id":"study008-034","f":"hyperparameters","t":"learning_rate = 4e-5"},{"id":"study008-035","f":"hyperparameters","t":"training_steps = 7680"},{"id":"study008-036","f":"hyperparameters","t":"ZeRO stages = not stated"},{"id":"study008-037","f":"hyperparameters","t":"micro-batch size = string or different ZeRO stages"},{"id":"study008-038","f":"hyperparameters","t":"batch_size = 256"},{"id":"study008-039","f":"hyperparameters","t":"total_training_tokens = 8 billion"},{"id":"study008-040","f":"hyperparameters","t":"weight_decay = 0.05"},{"id":"study008-041","f":"hyperparameters","t":"context_length = 4096"},{"id":"study008-042","f":"hyperparameters","t":"Context length = 4,096"},{"id":"study008-043","f":"hyperparameters","t":"Adam \u03b2 = (0.9, 0.95)"},{"id":"study008-044","f":"hyperparameters","t":"attention_masks = adjusted to prevent cross-document"},{"id":"study008-045","f":"hyperparameters","t":"Learning rate decay = Cosine to 2\u00d710\u22126"},{"id":"study008-046","f":"hyperparameters","t":"tokenizer = swapping"},{"id":"study008-047","f":"hyperparameters","t":"training_precision = pure bfloat16"},{"id":"study008-048","f":"hyperparameters","t":"warmup_steps = 76"},{"id":"study008-049","f":"hyperparameters","t":"micro-batch size = not stated"},{"id":"study008-050","f":"hyperparameters","t":"Learning rate = 4\u00d710\u22125"},{"id":"study008-051","f":"hyperparameters","t":"Training steps = 7,680"},{"id":"study008-052","f":"hyperparameters","t":"activation checkpointing = string or different ZeRO stages"},{"id":"study008-053","f":"hyperparameters","t":"activation checkpointing = not stated"},{"id":"study008-054","f":"hyperparameters","t":"learning_rate_schedule = infinite learning rate schedule (Ibrahim et al., 2024)"},{"id":"study008-055","f":"evaluation_results","t":"Avg. German test splits = 46.1  [test, German test splits (mixed precision)]"},{"id":"study008-056","f":"evaluation_results","t":"faster = 39%  [experiments]"},{"id":"study008-057","f":"evaluation_results","t":"macro average = "},{"id":"study008-058","f":"evaluation_results","t":"training efficiency = 39% faster"},{"id":"study008-059","f":"evaluation_results","t":"HellaSwag = 35.9  [test, German (pure bfloat16)]"},{"id":"study008-060","f":"evaluation_results","t":"Avg. German test splits = 47.2  [test, German test splits (pure bfloat16)]"},{"id":"study008-061","f":"evaluation_results","t":"MMLU = 59.7  [test, German (pure bfloat16)]"},{"id":"study008-062","f":"evaluation_results","t":"impossible = due to out-of-memory errors  [single 80GB GPU]"},{"id":"study008-063","f":"evaluation_results","t":"training speed = 39% faster"},{"id":"study008-064","f":"environment","t":"os: Ubuntu 22.04"},{"id":"study008-065","f":"environment","t":"cuda: 12.1.1"},{"id":"study008-066","f":"environment","t":"gpu: Nvidia A100 80GB"},{"id":"study008-067","f":"environment","t":"gpu_model: Nvidia A100 80GB, Nvidia A100 40GB, H100 80GB, A6000 48GB"},{"id":"study008-068","f":"environment","t":"gpu_model: Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB"},{"id":"study008-069","f":"methods","t":"Experimental Setup"},{"id":"study008-070","f":"methods","t":"Continued Pretraining"},{"id":"study008-071","f":"methods","t":"bfloat16 representation"},{"id":"study008-072","f":"methods","t":"infinite learning rate schedule"},{"id":"study008-073","f":"methods","t":"bfloat16"},{"id":"study008-074","f":"methods","t":"Pure bfloat16 training"},{"id":"study008-075","f":"methods","t":"mixed-precision training"},{"id":"study008-076","f":"methods","t":"Tokenizer Swapping"},{"id":"study008-077","f":"methods","t":"macro average"},{"id":"study008-078","f":"methods","t":"mixed-precision bfloat16 training"},{"id":"study008-079","f":"methods","t":"FlashAttention self-attention"},{"id":"study008-080","f":"methods","t":"FlashAttention"},{"id":"study008-081","f":"methods","t":"mixed-precision bfloat16"},{"id":"study008-082","f":"methods","t":"adjusted attention masks"},{"id":"study008-083","f":"methods","t":"RMSNorm CUDA kernels"},{"id":"study008-084","f":"methods","t":"RMSNorm"},{"id":"study008-085","f":"methods","t":"Embedding Initialization"},{"id":"study008-086","f":"methods","t":"pure bfloat16"},{"id":"study008-087","f":"methods","t":"PyTorch FSDP"}]},{"folder":"07_study009","sid":"study009","title":"HigherHRNet: Scale-Aware Representation Learning for Bottom-Up Human Pose Estimation","paper":"https://arxiv.org/abs/1908.10357v3","pdf":"https://arxiv.org/pdf/1908.10357.pdf","repo":"https://github.com/open-mmlab/mmpose","items":[{"id":"study009-001","f":"dependencies","t":"pytorch  [version: not stated]"},{"id":"study009-002","f":"dependencies","t":"HigherHRNet  [version: not stated]"},{"id":"study009-003","f":"dependencies","t":"mmpose  [version: not stated]"},{"id":"study009-004","f":"datasets","t":"COCO2017  [val]"},{"id":"study009-005","f":"datasets","t":"COCO2017"},{"id":"study009-006","f":"datasets","t":"COCO  [used]"},{"id":"study009-007","f":"datasets","t":"CrowdPose  [20,000 images, containing about 80,000 persons]"},{"id":"study009-008","f":"datasets","t":"CrowdPose  [used]"},{"id":"study009-009","f":"datasets","t":"COCO"},{"id":"study009-010","f":"datasets","t":"COCO2017  [used]"},{"id":"study009-011","f":"datasets","t":"CrowdPose"},{"id":"study009-012","f":"hyperparameters","t":"extra_residual_blocks = 4"},{"id":"study009-013","f":"hyperparameters","t":"backbone = HRNet-W40"},{"id":"study009-014","f":"hyperparameters","t":"crop size = 640x640"},{"id":"study009-015","f":"hyperparameters","t":"training image size = 640x640"},{"id":"study009-016","f":"hyperparameters","t":"image_size = 640\u00d7640"},{"id":"study009-017","f":"hyperparameters","t":"training_image_size = 512, 640, 768"},{"id":"study009-018","f":"hyperparameters","t":"deconvolution_kernel_size = 4x4"},{"id":"study009-019","f":"hyperparameters","t":"deconvolution_module_count = 1"},{"id":"study009-020","f":"hyperparameters","t":"training image size = 640"},{"id":"study009-021","f":"hyperparameters","t":"crop size = 640\u00d7640"},{"id":"study009-022","f":"hyperparameters","t":"backbone = HRNet-W32, HRNet-W40, HRNet-W48"},{"id":"study009-023","f":"hyperparameters","t":"feature stride = 1"},{"id":"study009-024","f":"hyperparameters","t":"C = 48"},{"id":"study009-025","f":"hyperparameters","t":"C = 32"},{"id":"study009-026","f":"hyperparameters","t":"number of cascaded deconvolution modules = 1"},{"id":"study009-027","f":"evaluation_results","t":"AP = 67.6%  [test, CrowdPose]"},{"id":"study009-028","f":"evaluation_results","t":"APH = 1.5  [test]"},{"id":"study009-029","f":"evaluation_results","t":"APM = 57.1"},{"id":"study009-030","f":"evaluation_results","t":"APH = +1.5  [test]"},{"id":"study009-031","f":"evaluation_results","t":"AP = 66.3  [val]"},{"id":"study009-032","f":"evaluation_results","t":"APH = 1.5"},{"id":"study009-033","f":"evaluation_results","t":"AP = 1.4  [test]"},{"id":"study009-034","f":"evaluation_results","t":"AP =   [test]"},{"id":"study009-035","f":"evaluation_results","t":"AP = 70.5%  [test-dev, COCO2017]"},{"id":"study009-036","f":"evaluation_results","t":"AP = 66.3  [validation]"},{"id":"study009-037","f":"evaluation_results","t":"APM = +1.8  [test]"},{"id":"study009-038","f":"evaluation_results","t":"APM = 1.8  [test]"},{"id":"study009-039","f":"evaluation_results","t":"AP = 64.4"},{"id":"study009-040","f":"evaluation_results","t":"AP = 66.5"},{"id":"study009-041","f":"evaluation_results","t":"AP =   [validation]"},{"id":"study009-042","f":"evaluation_results","t":"AP gain = 1.6"},{"id":"study009-043","f":"evaluation_results","t":"AP = 1.4  [training]"},{"id":"study009-044","f":"environment","t":"cuda: 12.1.1"},{"id":"study009-045","f":"environment","t":"os: Ubuntu 22.04"},{"id":"study009-046","f":"methods","t":"Deconvolution Module"},{"id":"study009-047","f":"methods","t":"SPPE"},{"id":"study009-048","f":"methods","t":"extra residual blocks"},{"id":"study009-049","f":"methods","t":"Multi-Resolution Heatmap Aggregation"},{"id":"study009-050","f":"methods","t":"MSR"},{"id":"study009-051","f":"methods","t":"na \u00a8\u0131ve top-down methods"},{"id":"study009-052","f":"methods","t":"global re\ufb01nement of top-down method"},{"id":"study009-053","f":"methods","t":"HRNet"},{"id":"study009-054","f":"methods","t":"training_with_larger_image_size"},{"id":"study009-055","f":"methods","t":"HigherHRNet-W48"},{"id":"study009-056","f":"methods","t":"feature concat."},{"id":"study009-057","f":"methods","t":"adding_extra_residual_blocks"},{"id":"study009-058","f":"methods","t":"Associative Embedding"},{"id":"study009-059","f":"methods","t":"res. blocks"},{"id":"study009-060","f":"methods","t":"HigherHRNet"},{"id":"study009-061","f":"methods","t":"HRNet with deconvolution module"},{"id":"study009-062","f":"methods","t":"heatmap_aggregation_strategy"},{"id":"study009-063","f":"methods","t":"Multi-Resolution Supervision"}]},{"folder":"08_study013","sid":"study013","title":"The Cells Out of Sample (COOS) dataset and benchmarks for measuring out-of-sample generalization of image classifiers","paper":"https://arxiv.org/abs/1906.07282v3","pdf":"https://arxiv.org/pdf/1906.07282.pdf","repo":"https://github.com/zenodo/zenodo","items":[{"id":"study013-001","f":"dependencies","t":"Python  [version: variety]"},{"id":"study013-002","f":"dependencies","t":"elasticsearch  [version: 7.0.5]"},{"id":"study013-003","f":"dependencies","t":"celery  [version: 4.1.1]"},{"id":"study013-004","f":"dependencies","t":"Scikit-Learn  [version: not stated]"},{"id":"study013-005","f":"dependencies","t":"VGG16  [version: pre-trained]"},{"id":"study013-006","f":"dependencies","t":"Python  [version: not stated]"},{"id":"study013-007","f":"dependencies","t":"Scikit-Learn  [version: [25]]"},{"id":"study013-008","f":"dependencies","t":"alembic  [version: 1.0.8]"},{"id":"study013-009","f":"dependencies","t":"Nvidia  [version: not stated]"},{"id":"study013-010","f":"dependencies","t":"amqp  [version: 2.4.2]"},{"id":"study013-011","f":"dependencies","t":"YeastSpotter  [version: not stated]"},{"id":"study013-012","f":"datasets","t":"COOS-7"},{"id":"study013-013","f":"datasets","t":"Test4"},{"id":"study013-014","f":"datasets","t":"Test2"},{"id":"study013-015","f":"datasets","t":"Test3  [used]"},{"id":"study013-016","f":"datasets","t":"Training"},{"id":"study013-017","f":"datasets","t":"Test2  [used]"},{"id":"study013-018","f":"datasets","t":"Test1  [used]"},{"id":"study013-019","f":"datasets","t":"Test3"},{"id":"study013-020","f":"datasets","t":"ImageNet"},{"id":"study013-021","f":"datasets","t":"Test4  [used]"},{"id":"study013-022","f":"datasets","t":"ImageNet  [used]"},{"id":"study013-023","f":"datasets","t":"Training dataset"},{"id":"study013-024","f":"datasets","t":"EHRs"},{"id":"study013-025","f":"datasets","t":"Raw microscopy images  [produced]"},{"id":"study013-026","f":"datasets","t":"COOS"},{"id":"study013-027","f":"datasets","t":"Test1"},{"id":"study013-028","f":"datasets","t":"Training  [used]"},{"id":"study013-029","f":"datasets","t":"CIFAR  [used]"},{"id":"study013-030","f":"datasets","t":"COOS-7  [produced]"},{"id":"study013-031","f":"datasets","t":"protein localization dataset"},{"id":"study013-032","f":"hyperparameters","t":"num_classes = 7"},{"id":"study013-033","f":"hyperparameters","t":"total_images = 132,209"},{"id":"study013-034","f":"hyperparameters","t":"number_of_estimators = 2, 4, 8, 16"},{"id":"study013-035","f":"hyperparameters","t":"image_size = 64x64"},{"id":"study013-036","f":"hyperparameters","t":"bit_depth = 16-bit"},{"id":"study013-037","f":"hyperparameters","t":"batch_size = 128"},{"id":"study013-038","f":"evaluation_results","t":"balanced_classification_error = 1.1%  [Test2]"},{"id":"study013-039","f":"evaluation_results","t":"accuracy = 0.990  [test, Test1]"},{"id":"study013-040","f":"evaluation_results","t":"performance = best  [80% of Training dataset]"},{"id":"study013-041","f":"evaluation_results","t":"balanced classi\ufb01cation error = 1.1%  [Test2]"},{"id":"study013-042","f":"evaluation_results","t":"balanced_classification_error = lowest_error_value_not_specified  [Test3]"},{"id":"study013-043","f":"evaluation_results","t":"performance = outperform  [classic unsupervised feature representation methods for cancer cell morphology]"},{"id":"study013-044","f":"evaluation_results","t":"performance = best  [overall performing layers]"},{"id":"study013-045","f":"evaluation_results","t":"balanced_classification_error = 1.1%  [Test1]"},{"id":"study013-046","f":"evaluation_results","t":"balanced classi\ufb01cation error = 6.8%"},{"id":"study013-047","f":"evaluation_results","t":"balanced classi\ufb01cation error = fully-supervised CNN  [Test4]"},{"id":"study013-048","f":"evaluation_results","t":"performance = best  [20% of Training dataset]"},{"id":"study013-049","f":"evaluation_results","t":"balanced classi\ufb01cation error = 1.1%  [Test1]"},{"id":"study013-050","f":"evaluation_results","t":"balanced classi\ufb01cation error = fully-supervised CNN  [Test3]"},{"id":"study013-051","f":"evaluation_results","t":"accuracy = 0.979  [test, Test3]"},{"id":"study013-052","f":"evaluation_results","t":"balanced classification error = 1.1%  [test]"},{"id":"study013-053","f":"evaluation_results","t":"balanced_classification_error = lowest_error_value_not_specified  [Test4]"},{"id":"study013-054","f":"environment","t":"gpu_model: Nvidia GPU"},{"id":"study013-055","f":"environment","t":"os: Linux"},{"id":"study013-056","f":"methods","t":"multivariate image analysis"},{"id":"study013-057","f":"methods","t":"strati\ufb01cation"},{"id":"study013-058","f":"methods","t":"cross-validation"},{"id":"study013-059","f":"methods","t":"predictive modeling"},{"id":"study013-060","f":"methods","t":"deep learning model"},{"id":"study013-061","f":"methods","t":"Classi\ufb01cation Baselines for COOS-7"},{"id":"study013-062","f":"methods","t":"PCI"},{"id":"study013-063","f":"methods","t":"Transferred neural network features"},{"id":"study013-064","f":"methods","t":"methods development"},{"id":"study013-065","f":"methods","t":"Classi\ufb01cation Baselines"},{"id":"study013-066","f":"methods","t":"YeastSpotter segmentation"},{"id":"study013-067","f":"methods","t":"deep learning models"},{"id":"study013-068","f":"methods","t":"VGG16"},{"id":"study013-069","f":"methods","t":"feature robustness"},{"id":"study013-070","f":"methods","t":"fully-supervised CNN"},{"id":"study013-071","f":"methods","t":"feature_representation_method"},{"id":"study013-072","f":"methods","t":"5-fold cross-validation"},{"id":"study013-073","f":"methods","t":"Supervised deep CNN"},{"id":"study013-074","f":"methods","t":"stochastic gene expression"},{"id":"study013-075","f":"methods","t":"logistic regression"},{"id":"study013-076","f":"methods","t":"protein localization classification"},{"id":"study013-077","f":"methods","t":"Self-supervised CNN"},{"id":"study013-078","f":"methods","t":"classi\ufb01cation"},{"id":"study013-079","f":"methods","t":"illumination correction"}]},{"folder":"09_study015","sid":"study015","title":"A block preconditioner for thermo-poromechanics with frictional deformation of fractures","paper":"https://arxiv.org/abs/2505.04247v1","pdf":"https://arxiv.org/pdf/2505.04247.pdf","repo":"https://github.com/Yuriyzabegaev/FTHM-Solver","items":[{"id":"study015-001","f":"dependencies","t":"PETSc/TAO  [version: 3.19]"},{"id":"study015-002","f":"dependencies","t":"porepy-petsc  [version: not stated]"},{"id":"study015-003","f":"dependencies","t":"hypre  [version: not stated]"},{"id":"study015-004","f":"dependencies","t":"pandas  [version: not stated]"},{"id":"study015-005","f":"datasets","t":"Numerical experiments of fluid injection into fractured porous media  [produced]"},{"id":"study015-006","f":"hyperparameters","t":"friction_coefficients = wide range"},{"id":"study015-007","f":"hyperparameters","t":"Pecl\u00e9t_number = wide range"},{"id":"study015-008","f":"evaluation_results","t":"405\u2013432 = 405\u2013432"},{"id":"study015-009","f":"evaluation_results","t":"fully coupled numerical model = 114122  [December 2021]"},{"id":"study015-010","f":"evaluation_results","t":"numerical analysis = 2024"},{"id":"study015-011","f":"evaluation_results","t":"1\u201320 = 1\u201320"},{"id":"study015-012","f":"evaluation_results","t":"energy-stable discretization = 110984"},{"id":"study015-013","f":"evaluation_results","t":"B379\u2013B396 = B379\u2013B396"},{"id":"study015-014","f":"evaluation_results","t":"1\u201330 = 1\u201330"},{"id":"study015-015","f":"evaluation_results","t":"942\u2013968 = 942\u2013968"},{"id":"study015-016","f":"evaluation_results","t":"benchmark study = 114693"},{"id":"study015-017","f":"evaluation_results","t":"112575 = 112575"},{"id":"study015-018","f":"evaluation_results","t":"1309\u20131331 = 1309\u20131331"},{"id":"study015-019","f":"methods","t":"two-stage preconditioner"},{"id":"study015-020","f":"methods","t":"algebraic multigrid approach"},{"id":"study015-021","f":"methods","t":"A new algebraic multigrid approach for Stokes problems"},{"id":"study015-022","f":"methods","t":"stable cell-centered finite volume discretization"},{"id":"study015-023","f":"methods","t":"Unified approach to discretization"},{"id":"study015-024","f":"methods","t":"discretization approaches"},{"id":"study015-025","f":"methods","t":"discrete fracture methodology"},{"id":"study015-026","f":"methods","t":"block preconditioner for non-isothermal flow in porous media"},{"id":"study015-027","f":"methods","t":"Hydraulic conductivity"},{"id":"study015-028","f":"methods","t":"PorePy"},{"id":"study015-029","f":"methods","t":"Constrained pressure-temperature residual (CPTR) preconditioner"},{"id":"study015-030","f":"methods","t":"energy-stable discretization"},{"id":"study015-031","f":"methods","t":"Constrained pressure-temperature residual (CPTR) preconditioner performance for large-scale thermal CO$$_2$$ injection simulation"},{"id":"study015-032","f":"methods","t":"Constrained Residual Acceleration of Conjugate Residual Methods"},{"id":"study015-033","f":"methods","t":"Scalable Multigrid Reduction Framework"},{"id":"study015-034","f":"methods","t":"Gmsh"},{"id":"study015-035","f":"methods","t":"Constrained Pressure Residual (CPR)"},{"id":"study015-036","f":"methods","t":"Finite volume discretization for poroelastic media with fractures modeled by contact mechanics"},{"id":"study015-037","f":"methods","t":"System-AMG approach"},{"id":"study015-038","f":"methods","t":"Porepy: An open-source software for simulation of multiphysics processes in fractured porous media"},{"id":"study015-039","f":"methods","t":"Flexible and rigorous numerical modelling of multiphysics processes in fractured porous media using PorePy"},{"id":"study015-040","f":"methods","t":"fully coupled numerical model"},{"id":"study015-041","f":"methods","t":"numerical simulator"},{"id":"study015-042","f":"methods","t":"System-AMG approaches"},{"id":"study015-043","f":"methods","t":"Discrete fracture-matrix (DFM) modeling"},{"id":"study015-044","f":"methods","t":"block preconditioner"},{"id":"study015-045","f":"methods","t":"System-AMG approaches for industrial fully and adaptive implicit oil reservoir simulations"},{"id":"study015-046","f":"methods","t":"Fluids"},{"id":"study015-047","f":"methods","t":"Incomplete Gaussian Elimination"},{"id":"study015-048","f":"methods","t":"Convergence of iterative coupling for coupled flow and geomechanics"},{"id":"study015-049","f":"methods","t":"Constrained pressure-temperature residual (CPTR) preconditioner performance for large-scale thermal CO2 injection simulation"},{"id":"study015-050","f":"methods","t":"Block-partitioned solvers for coupled poromechanics: A unified framework"},{"id":"study015-051","f":"methods","t":"Constrained Residual Acceleration"},{"id":"study015-052","f":"methods","t":"Numerical solution of saddle point problems"},{"id":"study015-053","f":"methods","t":"Finite Volume Framework"},{"id":"study015-054","f":"methods","t":"Incomplete Gaussian Elimination as a Preconditioning for Generalized Conjugate Gradient Acceleration"},{"id":"study015-055","f":"methods","t":"mixed-dimensional poromechanical model"},{"id":"study015-056","f":"methods","t":"Multigrid smoothers"},{"id":"study015-057","f":"methods","t":"An efficient preconditioner for mixed-dimensional contact poromechanics based on the fixed stress splitting scheme"},{"id":"study015-058","f":"methods","t":"multipoint flux approximations"},{"id":"study015-059","f":"methods","t":"gradient discretization"},{"id":"study015-060","f":"methods","t":"A block preconditioner for non-isothermal flow in porous media"},{"id":"study015-061","f":"methods","t":"Fixed-stress approximation"},{"id":"study015-062","f":"methods","t":"Multigrid smoothers for ultraparallel computing"}]},{"folder":"10_study017","sid":"study017","title":"HistoCartography: A Toolkit for Graph Analytics in Digital Pathology","paper":"https://arxiv.org/abs/2107.10073v1","pdf":"https://arxiv.org/pdf/2107.10073.pdf","repo":"https://github.com/biomedsciai/histocartography","items":[{"id":"study017-001","f":"dependencies","t":"Syntax  [version: not stated]"},{"id":"study017-002","f":"dependencies","t":"numpy  [version: not stated]"},{"id":"study017-003","f":"dependencies","t":"DGL  [version: 0.5.3]"},{"id":"study017-004","f":"dependencies","t":"scikit-image  [version: not stated]"},{"id":"study017-005","f":"dependencies","t":"PyTorch  [version: not stated]"},{"id":"study017-006","f":"dependencies","t":"torch  [version: 1.8.1]"},{"id":"study017-007","f":"dependencies","t":"dgl  [version: not stated]"},{"id":"study017-008","f":"dependencies","t":"QuPath  [version: not stated]"},{"id":"study017-009","f":"dependencies","t":"torch  [version: not stated]"},{"id":"study017-010","f":"dependencies","t":"HoVerNet  [version: not stated]"},{"id":"study017-011","f":"dependencies","t":"opencv-python  [version: not stated]"},{"id":"study017-012","f":"dependencies","t":"PyTorch  [version: 1.0.0]"},{"id":"study017-013","f":"dependencies","t":"HistomicsTK  [version: not stated]"},{"id":"study017-014","f":"dependencies","t":"PanNuke  [version: not stated]"},{"id":"study017-015","f":"dependencies","t":"MoNuSac  [version: not stated]"},{"id":"study017-016","f":"dependencies","t":"torch  [version: 1.9.0]"},{"id":"study017-017","f":"dependencies","t":"DGL  [version: Wang et al., 2019]"},{"id":"study017-018","f":"dependencies","t":"Histolab  [version: not stated]"},{"id":"study017-019","f":"dependencies","t":"numpy  [version: 1.21.2]"},{"id":"study017-020","f":"dependencies","t":"HistoCartography  [version: not stated]"},{"id":"study017-021","f":"dependencies","t":"Python  [version: not stated]"},{"id":"study017-022","f":"datasets","t":"histopathology tasks"},{"id":"study017-023","f":"datasets","t":"RoI  [used]"},{"id":"study017-024","f":"datasets","t":"BACH"},{"id":"study017-025","f":"datasets","t":"SICAPv2"},{"id":"study017-026","f":"datasets","t":"WSI  [used]"},{"id":"study017-027","f":"datasets","t":"BRACS  [used]"},{"id":"study017-028","f":"datasets","t":"MoNuSac"},{"id":"study017-029","f":"datasets","t":"UZH"},{"id":"study017-030","f":"datasets","t":"TCGA-BRCA  [used]"},{"id":"study017-031","f":"datasets","t":"PanNuke  [2020]"},{"id":"study017-032","f":"datasets","t":"BRACS"},{"id":"study017-033","f":"datasets","t":"PanNuke"},{"id":"study017-034","f":"datasets","t":"MoNuSac  [2020]"},{"id":"study017-035","f":"hyperparameters","t":"image_size = 1000^2"},{"id":"study017-036","f":"hyperparameters","t":"image_size = 2500^2"},{"id":"study017-037","f":"hyperparameters","t":"k = 5"},{"id":"study017-038","f":"hyperparameters","t":"image_size = 5000^2"},{"id":"study017-039","f":"evaluation_results","t":"Run time for Preprocessing Vahadane Stain Norm = 6.46  [WSI Size 1000]"},{"id":"study017-040","f":"evaluation_results","t":"run-time = "},{"id":"study017-041","f":"evaluation_results","t":"average Dice score = "},{"id":"study017-042","f":"evaluation_results","t":"Run time for Preprocessing Macenko Stain Norm = 11.19  [WSI Size 25000]"},{"id":"study017-043","f":"evaluation_results","t":"Run time for Feature Cube Extraction = 11.77  [WSI Size 27500]"},{"id":"study017-044","f":"evaluation_results","t":"Run time for MLCell-Graph Model = 0.040  [WSI Size 25000]"},{"id":"study017-045","f":"evaluation_results","t":"Run time for Preprocessing Vahadane Stain Norm = 1.77  [Tumor RoI]"},{"id":"study017-046","f":"evaluation_results","t":"Run time for Tissue-Graph Generation = 83.66  [WSI Size 25000]"},{"id":"study017-047","f":"evaluation_results","t":"Processing Time = 0.80  [test, Tumor]"},{"id":"study017-048","f":"evaluation_results","t":"Run time for Preprocessing Macenko Stain Norm = 32.37  [WSI Size 27500]"},{"id":"study017-049","f":"evaluation_results","t":"Run time for Cell-Graph Generation = 50.26  [WSI Size 25000]"},{"id":"study017-050","f":"evaluation_results","t":"Processing Time = 186.10  [test, WSI]"},{"id":"study017-051","f":"evaluation_results","t":"Run time for Cell-Graph Generation = 13.33  [WSI Size 1000]"},{"id":"study017-052","f":"evaluation_results","t":"Run time for Preprocessing Vahadane Stain Norm = 186.10  [WSI Size 11000]"},{"id":"study017-053","f":"evaluation_results","t":"Run time for Tissue-Graph Generation = 93.26  [WSI Size 27500]"},{"id":"study017-054","f":"evaluation_results","t":"Run time for Tissue-Graph Generation = 276.71  [WSI Size 11000]"},{"id":"study017-055","f":"evaluation_results","t":"Run time for Preprocessing Vahadane Stain Norm = 68.27  [WSI Size 27500]"},{"id":"study017-056","f":"evaluation_results","t":"Run time for Preprocessing Macenko Stain Norm = 0.80  [Tumor RoI]"},{"id":"study017-057","f":"evaluation_results","t":"Run time for MLCell-Graph Model = 0.028  [Tumor RoI]"},{"id":"study017-058","f":"evaluation_results","t":"performance = various"},{"id":"study017-059","f":"evaluation_results","t":"Run time for Preprocessing Vahadane Stain Norm = 29.03  [WSI Size 25000]"},{"id":"study017-060","f":"evaluation_results","t":"Run time for Feature Cube Extraction = 0.24  [Tumor RoI]"},{"id":"study017-061","f":"evaluation_results","t":"Processing Time = 1.77  [test, Tumor]"},{"id":"study017-062","f":"evaluation_results","t":"Run time for Tissue-Graph Generation = 21.30  [WSI Size 1000]"},{"id":"study017-063","f":"evaluation_results","t":"Run time for MLCell-Graph Model = 0.033  [WSI Size 1000]"},{"id":"study017-064","f":"evaluation_results","t":"Run time for Cell-Graph Generation = 2.51  [Tumor RoI]"},{"id":"study017-065","f":"evaluation_results","t":"Run time for Preprocessing Macenko Stain Norm = 81.72  [WSI Size 11000]"},{"id":"study017-066","f":"evaluation_results","t":"weighted-F1 score = "},{"id":"study017-067","f":"evaluation_results","t":"Run time for Feature Cube Extraction = 30.21  [WSI Size 11000]"},{"id":"study017-068","f":"evaluation_results","t":"run-time = various"},{"id":"study017-069","f":"evaluation_results","t":"Run time for Tissue Mask Detection = 8.09  [WSI Size 11000]"},{"id":"study017-070","f":"evaluation_results","t":"Run time for Feature Cube Extraction = 5.92  [WSI Size 25000]"},{"id":"study017-071","f":"evaluation_results","t":"Run time for Feature Cube Extraction = 1.61  [WSI Size 1000]"},{"id":"study017-072","f":"evaluation_results","t":"performance = "},{"id":"study017-073","f":"evaluation_results","t":"Run time for Tissue Mask Detection = 1.04  [WSI Size 25000]"},{"id":"study017-074","f":"evaluation_results","t":"Run time for Tissue-Graph Generation = 4.14  [Tumor RoI]"},{"id":"study017-075","f":"evaluation_results","t":"Run time for Preprocessing Macenko Stain Norm = 2.86  [WSI Size 1000]"},{"id":"study017-076","f":"environment","t":"cpu_info: single-core POWER8 processor"},{"id":"study017-077","f":"environment","t":"gpu_model: NVIDIA P100"},{"id":"study017-078","f":"environment","t":"gpu: NVIDIA P100"},{"id":"study017-079","f":"environment","t":"ram: single-core POWER8 processor"},{"id":"study017-080","f":"methods","t":"Macenko Stain Norm"},{"id":"study017-081","f":"methods","t":"HACT-Net"},{"id":"study017-082","f":"methods","t":"post-hoc feature attribution methods"},{"id":"study017-083","f":"methods","t":"GraphGrad-CAM++"},{"id":"study017-084","f":"methods","t":"RAG Graph Building"},{"id":"study017-085","f":"methods","t":"k-NN Graph Building"},{"id":"study017-086","f":"methods","t":"MLCell-Graph Model"},{"id":"study017-087","f":"methods","t":"Deep Feature Extraction"},{"id":"study017-088","f":"methods","t":"Gaussian smoothing"},{"id":"study017-089","f":"methods","t":"GraphLRP"},{"id":"study017-090","f":"methods","t":"graph neural networks"},{"id":"study017-091","f":"methods","t":"SegGini"},{"id":"study017-092","f":"methods","t":"Nuclei Concepts"},{"id":"study017-093","f":"methods","t":"Tissue-Graph Model"},{"id":"study017-094","f":"methods","t":"Macenko Normalization"},{"id":"study017-095","f":"methods","t":"Simple Linear Iterative Clustering (SLIC)"},{"id":"study017-096","f":"methods","t":"Tissue Mask Detection"},{"id":"study017-097","f":"methods","t":"Vahadane Stain Norm"},{"id":"study017-098","f":"methods","t":"Feature Cube Extraction"},{"id":"study017-099","f":"methods","t":"SLIC"},{"id":"study017-100","f":"methods","t":"HACT Model"},{"id":"study017-101","f":"methods","t":"Vahadane Normalization"},{"id":"study017-102","f":"methods","t":"Tissue Graph (TG) Construction"},{"id":"study017-103","f":"methods","t":"Otsu thresholding"},{"id":"study017-104","f":"methods","t":"cell-graph model"},{"id":"study017-105","f":"methods","t":"Nuclei Detection"},{"id":"study017-106","f":"methods","t":"Simple Linear Iterative Clustering"},{"id":"study017-107","f":"methods","t":"Tissue Component Detection"},{"id":"study017-108","f":"methods","t":"HistoCartography"},{"id":"study017-109","f":"methods","t":"GnnExplainer"},{"id":"study017-110","f":"methods","t":"Cell Graph (CG) Construction"},{"id":"study017-111","f":"methods","t":"HoVerNet"},{"id":"study017-112","f":"methods","t":"GraphGrad-CAM"}]},{"folder":"11_study020","sid":"study020","title":"CSAW-M: An Ordinal Classification Dataset for Benchmarking Mammographic Masking of Cancer","paper":"https://arxiv.org/abs/2112.01330v1","pdf":"https://arxiv.org/pdf/2112.01330.pdf","repo":"https://github.com/yueliukth/csaw-m","items":[{"id":"study020-001","f":"dependencies","t":"Libra  [version: 10]"},{"id":"study020-002","f":"dependencies","t":"ImageNet-pretrained weights  [version: not stated]"},{"id":"study020-003","f":"dependencies","t":"ResNet-34  [version: not stated]"},{"id":"study020-004","f":"dependencies","t":"Libra  [version: not stated]"},{"id":"study020-005","f":"dependencies","t":"Adam  [version: not stated]"},{"id":"study020-006","f":"dependencies","t":"ImageNet  [version: 14]"},{"id":"study020-007","f":"dependencies","t":"Adam optimizer  [version: 29]"},{"id":"study020-008","f":"dependencies","t":"Python  [version: not stated]"},{"id":"study020-009","f":"dependencies","t":"PyTorch  [version: not stated]"},{"id":"study020-010","f":"dependencies","t":"CSAW-M_Annotation_Tool  [version: not stated]"},{"id":"study020-011","f":"datasets","t":"CSAW-M"},{"id":"study020-012","f":"datasets","t":"CSAW-M  [produced]"},{"id":"study020-013","f":"datasets","t":"mammograms"},{"id":"study020-014","f":"datasets","t":"mammography images"},{"id":"study020-015","f":"datasets","t":"interval cancer"},{"id":"study020-016","f":"datasets","t":"CSAW  [used]"},{"id":"study020-017","f":"hyperparameters","t":"data augmentation = 10 degrees, and small random brightness and contrast jittering"},{"id":"study020-018","f":"hyperparameters","t":"learning_rate = 1e-4"},{"id":"study020-019","f":"hyperparameters","t":"data_augmentation = small random brightness and contrast jittering"},{"id":"study020-020","f":"hyperparameters","t":"backbone = ResNet-34"},{"id":"study020-021","f":"hyperparameters","t":"learning rate = 1e\u22126"},{"id":"study020-022","f":"hyperparameters","t":"batch_size = 64"},{"id":"study020-023","f":"hyperparameters","t":"jittering = small random brightness and contrast"},{"id":"study020-024","f":"hyperparameters","t":"learning_rate = 1e-6"},{"id":"study020-025","f":"hyperparameters","t":"num_epochs = 30"},{"id":"study020-026","f":"hyperparameters","t":"batch_size = 16"},{"id":"study020-027","f":"random_seeds","t":"5"},{"id":"study020-028","f":"evaluation_results","t":"area under the ROC curve (AUC) = "},{"id":"study020-029","f":"evaluation_results","t":"F1-score = "},{"id":"study020-030","f":"evaluation_results","t":"AUC = 0.64  [test, CSAW-M]"},{"id":"study020-031","f":"evaluation_results","t":"AUC = string  [individual cancer types]"},{"id":"study020-032","f":"evaluation_results","t":"accuracy = 0.45  [test, CSAW-M]"},{"id":"study020-033","f":"evaluation_results","t":"composite endpoint (CEP) = "},{"id":"study020-034","f":"evaluation_results","t":"odds ratio (OR) = string"},{"id":"study020-035","f":"evaluation_results","t":"odds ratio (OR) = "},{"id":"study020-036","f":"evaluation_results","t":"average mean absolute error (AMAE) = "},{"id":"study020-037","f":"evaluation_results","t":"AUC = string  [composite endpoint (CEP)]"},{"id":"study020-038","f":"evaluation_results","t":"F1-score = string  [test]"},{"id":"study020-039","f":"evaluation_results","t":"AUC = "},{"id":"study020-040","f":"evaluation_results","t":"odds ratio = "},{"id":"study020-041","f":"evaluation_results","t":"Kendall\u2019s \u03c4b = "},{"id":"study020-042","f":"environment","t":"gpu: NVIDIA GeForce RTX 2080 Ti"},{"id":"study020-043","f":"environment","t":"cuda: 11.0"},{"id":"study020-044","f":"environment","t":"os: Ubuntu 18.04"},{"id":"study020-045","f":"methods","t":"CSAW-M"},{"id":"study020-046","f":"methods","t":"dense area"},{"id":"study020-047","f":"methods","t":"Adam optimizer"},{"id":"study020-048","f":"methods","t":"random horizontal and vertical flipping"},{"id":"study020-049","f":"methods","t":"odds ratio (OR)"},{"id":"study020-050","f":"methods","t":"Task 2"},{"id":"study020-051","f":"methods","t":"small random brightness and contrast jittering"},{"id":"study020-052","f":"methods","t":"Ordinal Classification"},{"id":"study020-053","f":"methods","t":"ResNet34 multi-hot"},{"id":"study020-054","f":"methods","t":"odds ratio computation"},{"id":"study020-055","f":"methods","t":"area under the ROC curve (AUC)"},{"id":"study020-056","f":"methods","t":"AUC"},{"id":"study020-057","f":"methods","t":"Majority Voting"},{"id":"study020-058","f":"methods","t":"ImageNet-pretrained weights"},{"id":"study020-059","f":"methods","t":"F1-score"},{"id":"study020-060","f":"methods","t":"random rotation"},{"id":"study020-061","f":"methods","t":"Task 1"},{"id":"study020-062","f":"methods","t":"ResNet34 one-hot"},{"id":"study020-063","f":"methods","t":"percent density"},{"id":"study020-064","f":"methods","t":"Deep Learning Regression"},{"id":"study020-065","f":"methods","t":"data augmentation"},{"id":"study020-066","f":"methods","t":"conversion of discrete masking predictions"},{"id":"study020-067","f":"methods","t":"5-fold cross-validation"},{"id":"study020-068","f":"methods","t":"odds ratio"}]},{"folder":"12_study022","sid":"study022","title":"TransAct: Transformer-based Realtime User Action Model for Recommendation at Pinterest","paper":"https://arxiv.org/abs/2306.00248v1","pdf":"https://arxiv.org/pdf/2306.00248.pdf","repo":"https://github.com/reczoo/FuxiCTR","items":[{"id":"study022-001","f":"dependencies","t":"NVIDIA/cuCollections  [version: not stated]"},{"id":"study022-002","f":"dependencies","t":"PyTorch  [version: not stated]"},{"id":"study022-003","f":"dependencies","t":"cuCollections  [version: 8]"},{"id":"study022-004","f":"dependencies","t":"CUDA Graphs  [version: not stated]"},{"id":"study022-005","f":"dependencies","t":"Pinnability  [version: not stated]"},{"id":"study022-006","f":"dependencies","t":"CUDA  [version: 9]"},{"id":"study022-007","f":"dependencies","t":"cuCollections  [version: not stated]"},{"id":"study022-008","f":"dependencies","t":"Kafka  [version: not stated]"},{"id":"study022-009","f":"dependencies","t":"polars  [version: 1.0.0]"},{"id":"study022-010","f":"dependencies","t":"TensorFlow  [version: not stated]"},{"id":"study022-011","f":"dependencies","t":"CNN  [version: not stated]"},{"id":"study022-012","f":"dependencies","t":"RockDB  [version: not stated]"},{"id":"study022-013","f":"dependencies","t":"transformer  [version: not stated]"},{"id":"study022-014","f":"dependencies","t":"Flink  [version: not stated]"},{"id":"study022-015","f":"dependencies","t":"RNN  [version: not stated]"},{"id":"study022-016","f":"dependencies","t":"nvFuser  [version: not stated]"},{"id":"study022-017","f":"dependencies","t":"nvFuser  [version: 7]"},{"id":"study022-018","f":"dependencies","t":"FuxiCTR  [version: not stated]"},{"id":"study022-019","f":"dependencies","t":"TransAct  [version: not stated]"},{"id":"study022-020","f":"datasets","t":"FVL"},{"id":"study022-021","f":"datasets","t":"Pinterest dataset"},{"id":"study022-022","f":"datasets","t":"Pinterest Homefeed view log (FVL)"},{"id":"study022-023","f":"datasets","t":"Pinterest Homefeed Dataset  [used]"},{"id":"study022-024","f":"datasets","t":"Pinterest\u2019s internal training data"},{"id":"study022-025","f":"datasets","t":"Pinterest Homefeed view log  [three weeks]"},{"id":"study022-026","f":"datasets","t":"Pinterest Homefeed view log  [three weeks of data]"},{"id":"study022-027","f":"datasets","t":"Pinterest Homefeed view log"},{"id":"study022-028","f":"hyperparameters","t":"hidden_units = 256"},{"id":"study022-029","f":"hyperparameters","t":"w_repin = 100"},{"id":"study022-030","f":"hyperparameters","t":"number of heads = 1"},{"id":"study022-031","f":"hyperparameters","t":"encoder_layers = 2"},{"id":"study022-032","f":"hyperparameters","t":"dropout rate = 0.1"},{"id":"study022-033","f":"hyperparameters","t":"label weight matrix \ud835\udc40 = empirically determined"},{"id":"study022-034","f":"hyperparameters","t":"heads = 1"},{"id":"study022-035","f":"hyperparameters","t":"number of encoder layers = 2"},{"id":"study022-036","f":"hyperparameters","t":"number of transformer blocks = 2"},{"id":"study022-037","f":"hyperparameters","t":"num_layers = 2"},{"id":"study022-038","f":"hyperparameters","t":"downsampling ratio = fixed ratio"},{"id":"study022-039","f":"hyperparameters","t":"realtime user sequence length = 100"},{"id":"study022-040","f":"hyperparameters","t":"num_heads = 4"},{"id":"study022-041","f":"hyperparameters","t":"action embedding dimension = 32"},{"id":"study022-042","f":"hyperparameters","t":"sequence_length = 100"},{"id":"study022-043","f":"hyperparameters","t":"dimension of action embedding = 32"},{"id":"study022-044","f":"hyperparameters","t":"user sequence length = 100"},{"id":"study022-045","f":"hyperparameters","t":"dimension of feed forward network = 32"},{"id":"study022-046","f":"hyperparameters","t":"feed forward network dimension = 32"},{"id":"study022-047","f":"hyperparameters","t":"sequence_aggregation_architecture = transformer-based"},{"id":"study022-048","f":"hyperparameters","t":"transformer blocks = 2"},{"id":"study022-049","f":"hyperparameters","t":"user-dependent weight \ud835\udc64\ud835\udc62 = determined by user attributes"},{"id":"study022-050","f":"hyperparameters","t":"dimension of hidden layer = 32"},{"id":"study022-051","f":"hyperparameters","t":"learning rate = 0.0048"},{"id":"study022-052","f":"hyperparameters","t":"early fusion method = concat"},{"id":"study022-053","f":"hyperparameters","t":"batch size = 12000"},{"id":"study022-054","f":"hyperparameters","t":"w_click = 100"},{"id":"study022-055","f":"hyperparameters","t":"sampling ratio = statistical distribution and importance"},{"id":"study022-056","f":"evaluation_results","t":"REPIN_GAINS = 5.2%  [test, Pinterest Homefeed Dataset]"},{"id":"study022-057","f":"evaluation_results","t":"CLICK_GAINS = 2.4%  [test, Pinterest Homefeed Dataset]"},{"id":"study022-058","f":"evaluation_results","t":"variance of evaluation results = reduced"},{"id":"study022-059","f":"evaluation_results","t":"model accuracy =   [third week]"},{"id":"study022-060","f":"environment","t":"gpu_model: GPU"},{"id":"study022-061","f":"environment","t":"cuda_version: 9"},{"id":"study022-062","f":"methods","t":"concat"},{"id":"study022-063","f":"methods","t":"Custom Embedding Lookup"},{"id":"study022-064","f":"methods","t":"PinSage embedding"},{"id":"study022-065","f":"methods","t":"Combined memory copies"},{"id":"study022-066","f":"methods","t":"early fusion"},{"id":"study022-067","f":"methods","t":"Fuse CUDA kernels"},{"id":"study022-068","f":"methods","t":"Flink"},{"id":"study022-069","f":"methods","t":"Larger batches for GPU inference"},{"id":"study022-070","f":"methods","t":"random_time_window_mask"},{"id":"study022-071","f":"methods","t":"Kafka"},{"id":"study022-072","f":"methods","t":"Utilize CUDA graphs"},{"id":"study022-073","f":"methods","t":"Rockstore"},{"id":"study022-074","f":"methods","t":"sequence_aggregation_model"},{"id":"study022-075","f":"methods","t":"standard transformer encoder"},{"id":"study022-076","f":"methods","t":"End-to-end sequential modeling"},{"id":"study022-077","f":"methods","t":"Adam optimizer"},{"id":"study022-078","f":"methods","t":"weighted cross-entropy loss"},{"id":"study022-079","f":"methods","t":"Pinnability"},{"id":"study022-080","f":"methods","t":"CUDA Graphs"},{"id":"study022-081","f":"methods","t":"Kernel Fusion"},{"id":"study022-082","f":"methods","t":"Form larger batches"},{"id":"study022-083","f":"methods","t":"transformer encoder"},{"id":"study022-084","f":"methods","t":"Hybrid cache"},{"id":"study022-085","f":"methods","t":"transformer"},{"id":"study022-086","f":"methods","t":"TransAct"},{"id":"study022-087","f":"methods","t":"Custom consolidated embedding lookup module"},{"id":"study022-088","f":"methods","t":"Memory Copy Combination"},{"id":"study022-089","f":"methods","t":"Combine memory copies"},{"id":"study022-090","f":"methods","t":"Hybrid ranking approach"},{"id":"study022-091","f":"methods","t":"baseline models"},{"id":"study022-092","f":"methods","t":"scatter-gather architecture"},{"id":"study022-093","f":"methods","t":"Pinnability with TransAct"},{"id":"study022-094","f":"methods","t":"early_fusion_method"},{"id":"study022-095","f":"methods","t":"feed forward network"}]}]</script>
+<script id="SCREEN" type="application/json">[
+ {
+  "id": "s01",
+  "f": "dependencies",
+  "t": "TensorFlow  [version: not stated]",
+  "key": "D",
+  "ev": "The only occurrence of TensorFlow in the paper is the sentence \"Unlike TensorFlow-based approaches, our implementation avoids graph compilation.\" It appears in no dependency file and is never imported.",
+  "why": "Software that appears only as a comparison system that was not run is <b>D</b>. The codebook uses this exact sentence as its example."
+ },
+ {
+  "id": "s02",
+  "f": "dependencies",
+  "t": "scikit-learn  [version: not stated]",
+  "key": "K",
+  "ev": "The paper never mentions scikit-learn. <span class=\"mono\">requirements.txt</span> contains the line <span class=\"mono\">scikit-learn</span> with no version pin.",
+  "why": "Either source counts, so a dependency declared only in a dependency file is <b>K</b>. An unstated version does not change that: the item is the dependency, and \u201cno version given\u201d is a true fact about it."
+ },
+ {
+  "id": "s03",
+  "f": "dependencies",
+  "t": "attention mechanism  [version: not stated]",
+  "key": "D",
+  "ev": "The paper describes an attention mechanism in its method section. There is no package, import or dependency entry by that name.",
+  "why": "Rows that name a technique rather than a piece of software are <b>D</b>. Several of these were produced by an automatic extractor and are wrong by construction."
+ },
+ {
+  "id": "s04",
+  "f": "datasets",
+  "t": "CIFAR-10",
+  "key": "K",
+  "ev": "The paper's tables report results on \"cifar10\" throughout, in lower case and without the hyphen. The data loader is <span class=\"mono\">datasets/cifar10.py</span>.",
+  "why": "Spelling variants are the same dataset, so CIFAR-10 and cifar10 are one item and this is <b>K</b>. CIFAR-10 and CIFAR-100 would not be, and neither would ImageNet-1k and ImageNet-21k."
+ },
+ {
+  "id": "s05",
+  "f": "hyperparameters",
+  "t": "learning_rate = 0.1",
+  "key": "D",
+  "ev": "The experimental setup section states \"we train with a learning rate of 0.01\". The config file in the repository has <span class=\"mono\">lr: 0.01</span>.",
+  "why": "The value matters. Right name with wrong value is <b>D</b>, and the correct value goes in the note."
+ },
+ {
+  "id": "s06",
+  "f": "hyperparameters",
+  "t": "optimizer = not stated",
+  "key": "K",
+  "ev": "The paper says the model is trained with Adam but gives no further settings. <span class=\"mono\">train.py</span> has <span class=\"mono\">--optimizer</span> in its argument parser.",
+  "why": "A value of <code>not stated</code> is still <b>K</b> when the hyperparameter itself is real. The optimiser is a genuine choice the authors made."
+ },
+ {
+  "id": "s07",
+  "f": "random_seeds",
+  "t": "seed = 42",
+  "key": "D",
+  "ev": "You search the repository for seed, manual_seed, random_state and np.random. Nothing sets a seed anywhere, and the paper does not mention one. PyTorch's own default is not set explicitly.",
+  "why": "Be strict on seeds. If you cannot find the exact number it is <b>D</b>, not U, and an untraceable library default does not count. This field is where fabrication shows up."
+ },
+ {
+  "id": "s08",
+  "f": "evaluation_results",
+  "t": "accuracy = 76.1  [dataset: ImageNet, split: val]",
+  "key": "D",
+  "ev": "Table 3 lists 76.1 on the row for ResNet-50, with a citation marker [12] beside it. The authors' own method is on a different row at 78.4.",
+  "why": "A number copied from another paper for comparison is <b>D</b>. A value with a citation marker beside it in a results table belongs to the cited paper, not this one."
+ },
+ {
+  "id": "s09",
+  "f": "evaluation_results",
+  "t": "F1 = 0.83  [dataset: CoNLL-2003, split: train]",
+  "key": "K",
+  "ev": "Table 2 reports the authors' own F1 of 0.83 on CoNLL-2003, measured on the test split. The row label in the extracted item says train.",
+  "why": "If the metric and value are right but the bracketed split or dataset label is wrong, mark <b>K</b> and note the correction. Do not discard a correct result over a label."
+ },
+ {
+  "id": "s10",
+  "f": "environment",
+  "t": "cuda: 11.3",
+  "key": "K",
+  "ev": "The paper gives no hardware details at all. The Dockerfile's first line is <span class=\"mono\">FROM nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04</span>.",
+  "why": "Anything concrete is <b>K</b>, and either source counts, so a CUDA version found only in the repository supports the row. A vague phrase such as <code>gpu: modern GPUs</code> would have been <b>D</b>."
+ }
+]</script>
+<script id="N6ROWS" type="application/json">[{"sid":"study001","repo":"https://github.com/microsoft/DeepSpeed","title":"ZeroQuant-V2: Exploring Post-training Quantization in LLMs from Comprehensive Study to Low Rank Compensation","reason":"SKIP out-of-scale: PPL on BLOOM-176B / OPT-66B, beyond 1x48GB GPU"},{"sid":"study002","repo":"https://github.com/dice-group/dice-embeddings","title":"Kronecker Decomposition for Knowledge Graph Embeddings","reason":"recipe had no run command"},{"sid":"study003","repo":"https://github.com/zhimengxin/rcod","title":"Toward Realistic Camouflaged Object Detection: Benchmarks and Method","reason":"placeholder_recipe"},{"sid":"study004","repo":"https://github.com/impredicative/irc-url-title-bot","title":"A Study of the Mathematics of Deep Learning","reason":"SKIP repo<->paper mismatch: repo is an IRC URL-title bot"},{"sid":"study005","repo":"https://github.com/cross-domain-compositing/cross-domain-compositing","title":"eDiff-I: Text-to-Image Diffusion Models with an Ensemble of Expert Denoisers","reason":"SKIP no claimed number and repo<->paper mismatch (eDiff-I has no public code)"},{"sid":"study006","repo":"https://github.com/baitingluo/l-map","title":"Scalable Decision-Making in Stochastic Environments through Learned Temporal Abstraction","reason":"missing_system_dep:mujoco"},{"sid":"study007","repo":"https://github.com/ShangtongZhang/DeepRL","title":"Truncated Emphatic Temporal Difference Methods for Prediction and Control","reason":"recipe had no run command"},{"sid":"study008","repo":"https://github.com/konstantinjdobler/tight-budget-llm-adaptation","title":"Language Adaptation on a Tight Academic Compute Budget: Tokenizer Swapping Works and Pure bfloat16 Is Enough","reason":"placeholder_recipe"},{"sid":"study009","repo":"https://github.com/open-mmlab/mmpose","title":"HigherHRNet: Scale-Aware Representation Learning for Bottom-Up Human Pose Estimation","reason":"dead_download:404"},{"sid":"study010","repo":"https://github.com/open-mmlab/mmocr","title":"SVTR: Scene Text Recognition with a Single Visual Model","reason":"recipe had no run command"},{"sid":"study011","repo":"https://github.com/open-mmlab/mmclassification","title":"RepVGG: Making VGG-style ConvNets Great Again","reason":"recipe had no run command"},{"sid":"study012","repo":"https://github.com/open-mmlab/mmsegmentation","title":"Panoptic Feature Pyramid Networks","reason":"placeholder_recipe"},{"sid":"study013","repo":"https://github.com/zenodo/zenodo","title":"The Cells Out of Sample (COOS) dataset and benchmarks for measuring out-of-sample generalization of image classifiers","reason":"SKIP repo<->paper mismatch: repo is the Zenodo platform, not COOS"},{"sid":"study014","repo":"https://github.com/open-mmlab/mmdetection3d","title":"H3DNet: 3D Object Detection Using Hybrid Geometric Primitives","reason":"missing_dependency:torch"},{"sid":"study015","repo":"https://github.com/Yuriyzabegaev/FTHM-Solver","title":"A block preconditioner for thermo-poromechanics with frictional deformation of fractures","reason":"SKIP no numeric claim captured"},{"sid":"study016","repo":"https://github.com/avalon-benchmark/avalon","title":"Avalon: A Benchmark for RL Generalization Using Procedurally Generated Worlds","reason":"SKIP hardware-bound metric: steps per second (throughput)"},{"sid":"study017","repo":"https://github.com/biomedsciai/histocartography","title":"HistoCartography: A Toolkit for Graph Analytics in Digital Pathology","reason":"SKIP hardware-bound metric: processing time (seconds)"},{"sid":"study018","repo":"https://github.com/markson14/WheatDet","title":"RetinaMask: Learning to predict masks improves state-of-the-art single-shot detection for free","reason":"placeholder_recipe"},{"sid":"study019","repo":"https://github.com/Res2Net/mmdetection","title":"Res2Net: A New Multi-scale Backbone Architecture","reason":"placeholder_recipe"},{"sid":"study020","repo":"https://github.com/yueliukth/csaw-m","title":"CSAW-M: An Ordinal Classification Dataset for Benchmarking Mammographic Masking of Cancer","reason":"missing_file_or_data"},{"sid":"study021","repo":"https://github.com/jeonjaehyeong/dpl","title":"Semantic Diversity-aware Prototype-based Learning for Unbiased Scene Graph Generation","reason":"missing_dependency:torch"},{"sid":"study022","repo":"https://github.com/reczoo/FuxiCTR","title":"TransAct: Transformer-based Realtime User Action Model for Recommendation at Pinterest","reason":"SKIP production A/B metric (Pinterest online gains), not repo-reproducible"},{"sid":"study023","repo":"https://github.com/modelscope/modelscope-agent","title":"Mobile-Agent-v2: Mobile Device Operation Assistant with Effective Navigation via Multi-Agent Collaboration","reason":"SKIP needs mobile device/emulator + external VLM API"},{"sid":"study024","repo":"https://github.com/1qb-information-technologies/ccvm","title":"Non-convex Quadratic Programming Using Coherent Optical Networks","reason":"missing_dependency:pip"},{"sid":"study025","repo":"https://github.com/yihao6/vfa","title":"Vector Field Attention for Deformable Image Registration","reason":"placeholder_recipe"},{"sid":"study026","repo":"https://github.com/PerdonLiu/CSE-Autoloss","title":"Loss Function Discovery for Object Detection via Convergence-Simulation Driven Search","reason":"placeholder_recipe"}]</script>
+<script id="N6CAL" type="application/json">[
+ {"id":"c1","reason":"recipe had no run command",
+  "ctx":"The repository clones and builds. Its README describes the method but gives no command for running the experiment, and there is no shell script or documented entry point.",
+  "locus":"artifact","remedy":"author-fix",
+  "why":"A different release would have fixed this: the authors could have written the command down. The experiment is reproducible in principle, so the obstacle sits in what was published. That makes it <b>artifact</b>, and the people who can remove it are the authors."},
+ {"id":"c2","reason":"metric is throughput on the authors' private 8xA100 cluster",
+  "ctx":"The paper reports samples per second measured on hardware the authors describe as their internal cluster. The code runs, but the number is a property of that machine.",
+  "locus":"claim","remedy":"intrinsic",
+  "why":"Nothing the authors could publish would let someone else measure this number. The obstacle is in the nature of the claim, not in the artifact, so it is <b>claim</b> and <b>intrinsic</b>."},
+ {"id":"c3","reason":"missing_system_dep:mujoco",
+  "ctx":"The code imports a Python package that needs the MuJoCo binary. The repository declares the Python package correctly. Our container image does not have the binary installed.",
+  "locus":"harness","remedy":"harness-fix",
+  "why":"The authors declared what they depend on. Our environment was missing something it should have had, so this is measurement error on our side. <b>harness</b> and <b>harness-fix</b>."},
+ {"id":"c4","reason":"SKIP out-of-scale: model is 176B, beyond the 1x48GB GPU declared for this study",
+  "ctx":"The experiment requires far more memory than the hardware the study declared in advance that it would use. The repository is complete and the claim is an ordinary benchmark number.",
+  "locus":"scope","remedy":"intrinsic",
+  "why":"Nothing is wrong with the artifact and nothing is broken in the harness. The study is simply larger than the envelope we said we would attempt, which is <b>scope</b>. No change by anyone brings it inside that envelope, so <b>intrinsic</b>."}
+]
+</script>
+<script>
+(function(){
+"use strict";
+const STUDIES = JSON.parse(document.getElementById('DATA').textContent);
+const SCREEN  = JSON.parse(document.getElementById('SCREEN').textContent);
+const N6ROWS  = JSON.parse(document.getElementById('N6ROWS').textContent);
+const N6CAL   = JSON.parse(document.getElementById('N6CAL').textContent);
+const LOCUS = [
+ ['artifact','The obstacle is in what the authors released. A different release would have removed it.'],
+ ['claim','The number cannot be re-measured by anyone, and no change to the artifact would help.'],
+ ['harness','The obstacle is ours. Our environment was missing something it should have had.'],
+ ['scope','The study falls outside the operating envelope we declared in advance.']];
+const REMEDY = [
+ ['author-fix','The authors could remove it by changing what they publish.'],
+ ['extraction-research','Better automated extraction could work around it without the authors acting.'],
+ ['harness-fix','We could remove it by improving our own tooling or environment.'],
+ ['intrinsic','Nobody can remove it. It is in the nature of the claim or the scale of the work.']];
+const ROUND1 = 3, VERSION = "n9-workbook-1.4";
+const CODEBOOK_VERSION = "1";
+const CODEBOOK_N6_VERSION = "1";
+const SAMPLE = { file:"evaluation/annotation_round1/SAMPLE.json", seed:20261009,
+                 fixed_at:"2026-10-09", tier:"gold", n_studies:12, n_items:1127,
+                 note:"Gold tier taken in full. The 8 silver studies were cut on 9 Nov 2026 to fit the annotation budget; the cut is by tier, not by draw." };
+const $ = s => document.querySelector(s);
+const el = (t,a,...k) => { const n=document.createElement(t);
+  for(const p in (a||{})){ const v=a[p];
+    if(v===null||v===false||v===undefined) continue;
+    if(p==='class')n.className=v; else if(p==='html')n.innerHTML=v;
+    else if(p.startsWith('on'))n.addEventListener(p.slice(2),v);
+    else n.setAttribute(p, v===true ? (p.startsWith('aria-')?'true':'') : v);}
+  for(const c of k.flat()) if(c!==null&&c!==undefined&&c!==false) n.append(c.nodeType?c:document.createTextNode(c));
+  return n; };
+const today = () => new Date().toISOString().slice(0,10);
+const KDU = [['K','keep'],['D','discard'],['U','unsure']];
+function kduGroup(current, pick, disabled){
+  const g = el('div',{class:'kdu'});
+  KDU.forEach(([m,word]) => g.append(el('button',{
+    'data-m':m, 'aria-pressed': current===m ? 'true' : 'false', 'aria-label':word, title:word,
+    disabled: disabled||null, onclick:()=>pick(m)},
+    el('span',{class:'l'},m), el('span',{class:'w'},word))));
+  return g;
+}
+let UNLOCKED = location.hash.toLowerCase().includes('unlock');
+
+const QUAL = [
+ ["ml","At least three years of hands-on experimental machine learning work at postgraduate level or above.","Years, and where"],
+ ["pub","Has authored or co-authored at least one peer-reviewed paper reporting an empirical machine learning experiment.","DOI, ORCID or title"],
+ ["repo","Has trained and evaluated a model from a public code repository.","Repository, framework and task"],
+ ["eng","Reads academic English well enough to read a machine learning paper unaided.","Leave blank"],
+ ["ind","No contribution to this project's ontology, extractor, corpus, scoring instrument or codebook, and has not seen its verified ground-truth files.","Leave blank"]];
+
+const FIELDS = [
+ ["dependencies","Software the work needs in order to run.",
+  ["<b>Keep</b> a library, framework or tool the code imports, that a dependency file declares, or that the paper names as part of the implementation.",
+   "<b>Discard</b> software appearing only as prior work or as a comparison system that was not run. “Unlike TensorFlow-based approaches” is not a dependency on TensorFlow.",
+   "<b>Discard</b> rows naming a technique rather than a piece of software.",
+   "If the row says <code>not stated</code> and you find no version anywhere, it is still <b>K</b>. “No version given” is a true fact about the dependency. If the row claims a version you cannot find, mark <b>D</b> and put the correct one in the note."]],
+ ["datasets","Data the work trains or evaluates on.",
+  ["<b>Keep</b> a dataset the paper reports results on, or that the code loads.",
+   "<b>Discard</b> a dataset mentioned only as context, only in related work, or only as something the authors say they did not use.",
+   "Spelling variants are the same dataset: CIFAR-10 and cifar10 are one item. CIFAR-10 and CIFAR-100 are not, and ImageNet-1k and ImageNet-21k are not."]],
+ ["hyperparameters","A setting chosen before or during training that controls the procedure.",
+  ["<b>Keep</b> learning rate, batch size, epochs, optimiser, weight decay, dropout, temperature, beam width, layer count when it was a choice.",
+   "<b>Discard</b> anything that is an output rather than a setting. Accuracy is not a hyperparameter.",
+   "<b>The value matters.</b> Right name with wrong value is <b>D</b>, and write the correct value in the note. A value of <code>not stated</code> is still <b>K</b> if the hyperparameter is real. A range is a valid value."]],
+ ["random_seeds","A seed value actually set in the work.",
+  ["<b>Keep</b> a concrete seed in the code or in the paper.",
+   "<b>Discard</b> a seed you cannot find, and a seed that is only an untraceable library default.",
+   "<b>Be strict here.</b> One extractor claimed seeds in fifty-two of ninety-five studies where another claimed nine, so this field is where fabrication shows up. If you cannot find the exact number it is <b>D</b>, not U."]],
+ ["evaluation_results","A number this paper reports as a result of its own experiments.",
+  ["<b>Keep</b> a metric and value the authors obtained themselves, including ablations and their own reruns of baselines.",
+   "<b>Discard</b> a number copied from another paper for comparison. A number with a citation marker beside it in a results table belongs to the cited paper.",
+   "<b>Discard</b> a metric name with no value, or a value that does not match the paper.",
+   "If the metric and value are right but the bracketed split or dataset is wrong, mark <b>K</b> and note the correction."]],
+ ["environment","Facts about the machine: operating system, GPU model, CUDA version, RAM, device count.",
+  ["<b>Keep</b> anything concrete, such as <code>gpu: NVIDIA A100</code> or <code>cuda: 11.3</code>.",
+   "<b>Discard</b> vague statements carrying no information, such as <code>gpu: modern GPUs</code>."]],
+ ["methods","Named techniques this work uses or contributes.",
+  ["<b>Keep</b> the paper's own contributed method, and any named method the authors actually implemented or ran.",
+   "<b>Discard</b> methods appearing only in related work, only as background, or only as a citation.",
+   "This field has the loosest boundary, so when a method is named but you cannot tell whether the authors ran it, use <b>U</b>."]]];
+
+// ---------- state ----------
+let S = null, view = 'start', cur = 0, tick = null, mark = Date.now();
+const KEY = w => 'n9wb::' + (w.email||w.name||'anon').toLowerCase().replace(/\s+/g,'');
+
+function blank(who){
+  const st = {v:VERSION, who, qual:{}, started:new Date().toISOString(),
+    screen:{}, round:1, items:{}, add:{}, secs:{}, sessions:[],
+    tax:{cal:{}, rows:{}},
+    debrief:{hardest:'',unclear:'',change:'',confidence:''}};
+  STUDIES.forEach(s => { st.add[s.sid]=''; st.secs[s.sid]=0;
+    s.items.forEach(i => st.items[i.id] = {d:'', n:''}); });
+  N6ROWS.forEach(r => st.tax.rows[r.sid] = {locus:'', remedy:'', mismatch:false, note:''});
+  return st;
+}
+function persist(){ if(!S) return; try{ localStorage.setItem(KEY(S.who), JSON.stringify(S)); }catch(e){}
+  $('#saved').textContent = 'saved ' + new Date().toLocaleTimeString(); }
+function load(who){ try{ const r=localStorage.getItem(KEY(who)); return r?JSON.parse(r):null; }catch(e){ return null; } }
+
+// ---------- screening ----------
+const sPassed = () => SCREEN.filter(q => (S.screen[q.id]||{}).first === q.key).length;
+const sDone   = () => SCREEN.every(q => (S.screen[q.id]||{}).first);
+const gateOK  = () => UNLOCKED || sDone();
+
+function renderScreen(){
+  const host = $('#screenList'); host.replaceChildren();
+  SCREEN.forEach((q,n) => {
+    const r = S.screen[q.id] || (S.screen[q.id] = {first:'', pick:''});
+    const box = el('div',{class:'panel grid'});
+    box.append(el('div',{class:'row'}, el('span',{class:'tag'}, 'item ' + (n+1)), el('span',{class:'tag'}, q.f)));
+    box.append(el('p',{html:'<b>Row:</b> <span class="mono">'+q.t+'</span>'}));
+    box.append(el('div',{class:'ev',html:'<b>What you found.</b> '+q.ev}));
+    const kdu = kduGroup(r.pick, m=>{ r.pick=m; if(!r.first){ r.first=m; } persist(); renderScreen(); }, !!r.first);
+    box.append(el('div',{class:'row'}, kdu, r.first? null : el('span',{class:'muted'},'Your first answer is the one recorded.')));
+    if(r.first){
+      const ok = r.first === q.key;
+      box.append(el('div',{class:'fb '+(ok?'good':'bad')},
+        el('p',{class:'v'}, ok ? '✓ Correct' : '✗ The codebook gives ' + q.key),
+        el('p',{html:q.why})));
+    }
+    host.append(box);
+  });
+  const res = $('#screenResult');
+  if(sDone()){
+    const sc = sPassed();
+    res.hidden = false; res.className = 'panel';
+    res.replaceChildren(
+      el('h3',null, 'Calibration: ' + sc + ' of ' + SCREEN.length + ' matched the codebook before feedback'),
+      el('p',{class:'muted'}, 'This is recorded in your file exactly as answered and is reported in the paper as a calibration figure. It is not a pass mark and nothing is withheld on the strength of it. Where your first answer differed from the codebook, read the explanation again before you start, and if the wording still seems wrong to you say so in the debrief at the end: a disagreement here is usually our fault, not yours.'),
+      el('div',{class:'row'}, el('button',{class:'btn primary', onclick:()=>go('work')},'Start the annotation')));
+  } else { res.hidden = true; }
+  updateTabs();
+}
+
+// ---------- annotation ----------
+const unlocked = i => UNLOCKED || i < ROUND1 || S.round >= 2;
+const studyDone = s => s.items.every(i => S.items[i.id].d);
+const studyCount = s => s.items.filter(i => S.items[i.id].d).length;
+
+function renderRail(){
+  const r = $('#rail'); r.replaceChildren();
+  r.append(el('p',{class:'eyebrow'}, S.round === 1 ? 'Round 1, three studies' : 'All twenty studies'));
+  STUDIES.forEach((s,i) => {
+    const lock = !unlocked(i), done = studyDone(s);
+    r.append(el('button',{class:'sbtn'+(done?' done':'')+(lock?' locked':''), 'aria-current': i===cur ? 'true' : 'false',
+      disabled: lock, onclick:()=>{ stopTimer(); cur=i; startTimer(); renderWork(); }},
+      el('b',null, String(i+1).padStart(2,'0')+' '+s.sid),
+      el('span',null, studyCount(s)+'/'+s.items.length)));
+  });
+}
+
+function renderWork(){
+  renderRail();
+  const s = STUDIES[cur], host = $('#sheet'); host.replaceChildren();
+  host.append(el('div',{class:'prose',style:'margin-bottom:14px'},
+    el('p',{class:'eyebrow'}, 'Study ' + (cur+1) + ' of ' + (S.round===1?ROUND1:STUDIES.length) + ' · ' + s.sid),
+    el('h1',null, s.title),
+    el('p',{class:'row'},
+      el('a',{class:'btn',href:s.pdf,target:'_blank',rel:'noopener'},'Open the PDF'),
+      el('a',{class:'btn',href:s.repo,target:'_blank',rel:'noopener'},'Open the repository'),
+      el('span',{class:'muted'}, s.items.length + ' items'))));
+
+  let field = null;
+  s.items.forEach(it => {
+    if(it.f !== field){ field = it.f; host.append(el('h3',{style:'margin:16px 0 7px'}, field)); }
+    const r = S.items[it.id];
+    const box = el('div',{class:'item'+(r.d?' '+r.d:'')});
+    const kdu = kduGroup(r.d, m=>{ r.d = (r.d===m ? '' : m); persist(); renderWork(); }, false);
+    box.append(el('div',{class:'top'},
+      el('span',{class:'tag'}, it.id.split('-')[1]),
+      el('span',{class:'txt mono'}, it.t), kdu));
+    box.append(el('input',{class:'note', placeholder:'note, optional. Required when a D needs the correct value.',
+      value:r.n, oninput:e=>{ r.n = e.target.value; persist(); }}));
+    host.append(box);
+  });
+
+  host.append(el('div',{class:'panel grid',style:'margin-top:18px'},
+    el('h3',null,'Anything the rows missed'),
+    el('p',{class:'muted'},'Real items no row covers. One per line, as: field · item · where you found it. Add what a careful reader would expect to be there, not every detail you can think of.'),
+    el('textarea',{class:'note',rows:'4',value:S.add[s.sid],
+      oninput:e=>{ S.add[s.sid]=e.target.value; persist(); }})));
+
+  const nav = el('div',{class:'row',style:'margin-top:16px'});
+  if(cur>0) nav.append(el('button',{class:'btn',onclick:()=>{stopTimer();cur--;startTimer();renderWork();}},'Previous'));
+  const last = S.round===1 ? ROUND1-1 : STUDIES.length-1;
+  if(cur<last) nav.append(el('button',{class:'btn primary',onclick:()=>{stopTimer();cur++;startTimer();renderWork();}},'Next study'));
+  else nav.append(el('button',{class:'btn primary',
+    onclick:()=>go(n9Complete()?'tax':'finish')},
+    n9Complete()?'All studies done, start the taxonomy':'Go to Finish'));
+  host.append(nav);
+
+  if(S.round===1 && cur===ROUND1-1){
+    host.append(el('div',{class:'lock',style:'margin-top:14px'},
+      el('b',null,'Stop after these three'),
+      el('span',null,'Please send the file back now rather than continuing. We compare, find where the definitions were ambiguous, fix the codebook together, and only then do the remaining seventeen. If a definition is unclear we would rather find out after three studies than after twenty.'),
+      el('div',{class:'row'},
+        el('button',{class:'btn primary',onclick:()=>go('finish')},'Save and send'),
+        el('button',{class:'btn',onclick:()=>{
+          if(confirm('Only do this once the first author has confirmed that round 1 was received and the codebook is settled.')){
+            S.round=2; S.round2_at=new Date().toISOString(); persist(); renderWork(); }
+        }},'Round 1 was reviewed, unlock the rest'))));
+  }
+}
+
+function openSession(){ S.sessions = S.sessions || [];
+  const last = S.sessions[S.sessions.length-1];
+  if(!last || last.end) S.sessions.push({start:new Date().toISOString(), end:null}); }
+function closeSession(){ const last=(S.sessions||[])[S.sessions.length-1];
+  if(last && !last.end){ last.end = new Date().toISOString(); persist(); } }
+function startTimer(){ mark=Date.now(); stopTimer(); openSession();
+  tick = setInterval(()=>{ const s=STUDIES[cur]; if(!s) return;
+    S.secs[s.sid] = (S.secs[s.sid]||0) + Math.round((Date.now()-mark)/1000); mark=Date.now(); persist(); }, 15000); }
+function stopTimer(){ if(tick){ const s=STUDIES[cur];
+  if(s) S.secs[s.sid]=(S.secs[s.sid]||0)+Math.round((Date.now()-mark)/1000);
+  clearInterval(tick); tick=null; closeSession(); persist(); } }
+
+// ---------- N6 taxonomy ----------
+const n9Complete = () => UNLOCKED || (S.round >= 2 && STUDIES.every(studyDone));
+const calDone = () => UNLOCKED || N6CAL.every(c => (S.tax.cal[c.id]||{}).l && (S.tax.cal[c.id]||{}).r);
+const calScore = () => N6CAL.filter(c => { const a=S.tax.cal[c.id]||{};
+  return a.l===c.locus && a.r===c.remedy; }).length;
+const taxCount = () => N6ROWS.filter(r => S.tax.rows[r.sid].locus && S.tax.rows[r.sid].remedy).length;
+
+function defList(host, defs){ const h=$(host); h.replaceChildren();
+  defs.forEach(([k,t]) => h.append(el('p',{style:'margin:3px 0'},
+    el('code',null,k), ' ', el('span',{class:'muted'}, t)))); }
+
+function sel(value, opts, on){
+  const n = el('select',{class:'note'}, el('option',{value:''},'choose'));
+  opts.forEach(([k]) => n.append(el('option',{value:k, selected: value===k||null}, k)));
+  n.append(el('option',{value:'unsure', selected: value==='unsure'||null},'unsure'));
+  n.onchange = e => on(e.target.value);
+  return n;
+}
+
+function renderTax(){
+  defList('#locusDefs', LOCUS); defList('#remedyDefs', REMEDY);
+  const host=$('#calList'); host.replaceChildren();
+  N6CAL.forEach((c,n) => {
+    const a = S.tax.cal[c.id] || (S.tax.cal[c.id]={l:'',r:'',first:null});
+    const box = el('div',{class:'panel grid'});
+    box.append(el('div',{class:'row'}, el('span',{class:'tag'},'calibration '+(n+1))));
+    box.append(el('p',{html:'<b>Recorded reason:</b> <span class="mono">'+c.reason+'</span>'}));
+    box.append(el('div',{class:'ev',html:'<b>What you found.</b> '+c.ctx}));
+    const locked = !!a.first;
+    const row = el('div',{class:'cols'});
+    const l = sel(a.l, LOCUS, v=>{ a.l=v; if(a.l&&a.r&&!a.first) a.first={l:a.l,r:a.r}; persist(); renderTax(); });
+    const r = sel(a.r, REMEDY, v=>{ a.r=v; if(a.l&&a.r&&!a.first) a.first={l:a.l,r:a.r}; persist(); renderTax(); });
+    if(locked){ l.disabled=true; r.disabled=true; }
+    row.append(el('div',{class:'field'}, el('label',null,'locus'), l),
+               el('div',{class:'field'}, el('label',null,'remedy'), r));
+    box.append(row);
+    if(a.first){
+      const ok = a.first.l===c.locus && a.first.r===c.remedy;
+      box.append(el('div',{class:'fb '+(ok?'good':'bad')},
+        el('p',{class:'v'}, ok ? '\u2713 That matches the codebook'
+          : '\u2717 The codebook gives ' + c.locus + ' and ' + c.remedy),
+        el('p',{html:c.why})));
+    }
+    host.append(box);
+  });
+
+  const gate=$('#taxGate'), list=$('#taxList'), nav=$('#taxNav');
+  if(!calDone()){ gate.hidden=false; list.hidden=true; nav.hidden=true;
+    gate.replaceChildren(el('p',{class:'muted'},'Answer all four calibration rows to unlock the twenty-six.'));
+    return; }
+  gate.hidden=false;
+  gate.replaceChildren(el('p',null, el('b',null,'Calibration: '+calScore()+' of '+N6CAL.length+' matched.'),
+    ' ', el('span',{class:'muted'},'This is training, so it does not gate anything. The score is recorded.')));
+  list.hidden=false; nav.hidden=false;
+  list.replaceChildren();
+  N6ROWS.forEach((r,n) => {
+    const a = S.tax.rows[r.sid];
+    const box = el('div',{class:'item'+(a.locus&&a.remedy?' set':'')});
+    box.append(el('div',{class:'top'},
+      el('span',{class:'tag'}, String(n+1).padStart(2,'0')+' '+r.sid),
+      el('span',{class:'txt'}, r.title),
+      r.repo ? el('a',{class:'btn',href:r.repo,target:'_blank',rel:'noopener',style:'padding:3px 10px;font-size:13px'},'repository') : null));
+    box.append(el('p',{class:'mono',style:'font-size:13px'}, 'recorded reason: ' + r.reason));
+    const row = el('div',{class:'cols'});
+    row.append(el('div',{class:'field'}, el('label',null,'locus'),
+                 sel(a.locus, LOCUS, v=>{ a.locus=v; persist(); renderTax(); })),
+               el('div',{class:'field'}, el('label',null,'remedy'),
+                 sel(a.remedy, REMEDY, v=>{ a.remedy=v; persist(); renderTax(); })));
+    box.append(row);
+    const cb = el('input',{type:'checkbox', checked:a.mismatch||null,
+      onchange:e=>{ a.mismatch=e.target.checked; persist(); }});
+    box.append(el('label',{class:'row',style:'font-size:13.5px'}, cb,
+      'The recorded reason does not match what I can see. Say what you found in the note.'));
+    box.append(el('input',{class:'note', placeholder:'note, and required when the remedy does not follow from the locus',
+      value:a.note, oninput:e=>{ a.note=e.target.value; persist(); }}));
+    list.append(box);
+  });
+}
+
+// ---------- export ----------
+function exportObj(){
+  return { tool:'n9-annotation-workbook', tool_version:VERSION,
+    provenance:{ codebook_version:CODEBOOK_VERSION, codebook_n6_version:CODEBOOK_N6_VERSION, sample:SAMPLE,
+      round1_batch_size:ROUND1,
+      note:'Codebook and sample were committed before annotation began. The ten calibration items are training with recorded first answers; there is no pass mark and nothing was gated on the score.' },
+    test_mode: UNLOCKED || undefined,
+    annotator:S.who, qualification:S.qual, started:S.started,
+    sessions:S.sessions||[], debrief:S.debrief||{},
+    exported:new Date().toISOString(), round:S.round, round2_unlocked_at:S.round2_at||null,
+    calibration_n9:{ n_items:SCREEN.length, score:sPassed(), complete:sDone(), gated:false,
+      answers:SCREEN.map(q=>({id:q.id, field:q.f, first_answer:(S.screen[q.id]||{}).first||'', key:q.key, matched:(S.screen[q.id]||{}).first===q.key})) },
+    taxonomy: { n_rows:N6ROWS.length, unlocked:n9Complete(),
+      calibration:{ score:calScore(), n:N6CAL.length,
+        answers:N6CAL.map(c=>({id:c.id, first:(S.tax.cal[c.id]||{}).first||null,
+          key:{locus:c.locus, remedy:c.remedy}})) },
+      rows: N6ROWS.map(r => ({ study_id:r.sid, repo:r.repo, recorded_reason:r.reason,
+        coder2_locus:S.tax.rows[r.sid].locus, coder2_remedy:S.tax.rows[r.sid].remedy,
+        reason_mismatch:!!S.tax.rows[r.sid].mismatch, coder2_notes:S.tax.rows[r.sid].note })) },
+    studies: STUDIES.map(s => ({ study_id:s.sid, title:s.title, repo:s.repo, seconds:S.secs[s.sid]||0,
+      additions:S.add[s.sid]||'',
+      items: s.items.map(i => ({ item_id:i.id, field:i.f, item:i.t,
+        decision:S.items[i.id].d, note:S.items[i.id].n })) })) };
+}
+function renderFinish(){
+  const total = STUDIES.reduce((a,s)=>a+s.items.length,0);
+  const scope = STUDIES.filter((s,i)=>unlocked(i));
+  const done = scope.reduce((a,s)=>a+studyCount(s),0);
+  const uns  = scope.reduce((a,s)=>a+s.items.filter(i=>S.items[i.id].d==='U').length,0);
+  const mins = Math.round(Object.values(S.secs).reduce((a,b)=>a+b,0)/60);
+  $('#stats').replaceChildren(
+    el('div',null, el('b',null, done+'/'+scope.reduce((a,s)=>a+s.items.length,0)), el('span',{class:'muted'},'items decided in scope')),
+    el('div',null, el('b',null, String(uns)), el('span',{class:'muted'},'marked Unsure')),
+    el('div',null, el('b',null, sPassed()+'/'+SCREEN.length), el('span',{class:'muted'},'calibration score')),
+    el('div',null, el('b',null, mins+' min'), el('span',{class:'muted'},'active time')),
+    n9Complete() ? el('div',null, el('b',null, taxCount()+'/'+N6ROWS.length),
+      el('span',{class:'muted'},'taxonomy rows coded')) : null);
+  const miss = scope.map((s,i)=> studyDone(s)?null:(i+1)).filter(Boolean);
+  $('#finishWarn').textContent = miss.length ? 'Not every item is decided in study '+miss.join(', ')+'. You can still save and continue later.' : '';
+  const map = {dbHard:'hardest', dbUnclear:'unclear', dbChange:'change', dbConf:'confidence'};
+  for(const id in map){ const n=$('#'+id); if(!n) continue;
+    n.value = (S.debrief||{})[map[id]] || '';
+    n.oninput = n.onchange = e => { S.debrief[map[id]] = e.target.value; persist(); refreshOut(); }; }
+  refreshOut();
+}
+function refreshOut(){ $('#outText').value = JSON.stringify(exportObj(), null, 1); }
+function fileName(){ return 'n9_annotations_' + (S.who.name||'annotator').replace(/[^\w]+/g,'_').toLowerCase() + '_' + today() + '.json'; }
+
+// ---------- shell ----------
+function updateTabs(){
+  $('#tab-book').disabled   = !S;
+  $('#tab-screen').disabled = !S;
+  $('#tab-work').disabled   = !S || !gateOK();
+  $('#tab-tax').disabled    = !S || !n9Complete();
+  $('#tab-finish').disabled = !S;
+  document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-current', t.dataset.go===view ? 'page':'false'));
+}
+function go(v){
+  if(v==='work' && !gateOK()) v = 'screen';
+  if(v==='tax'  && !n9Complete()) v = 'work';
+  if(view==='work') stopTimer();
+  view = v;
+  ['start','book','screen','work','tax','finish'].forEach(n => $('#s-'+n).hidden = (n!==v));
+  if(v==='tax') renderTax();
+  if(v==='screen') renderScreen();
+  if(v==='work'){ startTimer(); renderWork(); }
+  if(v==='finish') renderFinish();
+  updateTabs();
+  window.scrollTo(0,0);
+}
+
+function renderQual(){
+  const host = $('#qual'); host.replaceChildren();
+  QUAL.forEach(([k,text,ev]) => {
+    const box = el('div',{class:'panel',style:'margin-bottom:9px;background:var(--paper)'});
+    const cb = el('input',{type:'checkbox',id:'q-'+k});
+    box.append(el('label',{class:'row',for:'q-'+k,style:'align-items:flex-start'}, cb, el('span',null,text)));
+    if(ev!=='Leave blank') box.append(el('input',{class:'note',id:'qe-'+k,placeholder:ev,style:'margin-top:7px'}));
+    host.append(box);
+  });
+}
+function readQual(){
+  const out = {};
+  QUAL.forEach(([k,text,ev]) => { out[k] = { statement:text, confirmed: !!$('#q-'+k)?.checked,
+    evidence: ev==='Leave blank' ? '' : ($('#qe-'+k)?.value||'') }; });
+  return out;
+}
+function renderFields(){
+  const host = $('#fields'); host.replaceChildren();
+  FIELDS.forEach(([n,lead,pts]) => {
+    const d = el('details',{style:'border-top:1px solid var(--rule);padding:9px 0'});
+    d.append(el('summary',null, el('b',null,n), ' — ', lead));
+    const ul = el('ul',{class:'steps',style:'margin-top:8px'});
+    pts.forEach(p => ul.append(el('li',{html:p})));
+    d.append(ul); host.append(d);
+  });
+}
+
+$('#begin').addEventListener('click', () => {
+  const who = { name:$('#fName').value.trim() || (UNLOCKED?'Test user':''),
+                affiliation:$('#fAff').value.trim(),
+                email:$('#fMail').value.trim() || (UNLOCKED?'test@example.invalid':''),
+                date:$('#fDate').value || today() };
+  if(!who.name || !who.email){ $('#beginMsg').textContent = 'Name and email are needed.'; return; }
+  const q = readQual();
+  const unmet = Object.entries(q).filter(([,v]) => !v.confirmed).map(([k])=>k);
+  if(!UNLOCKED && unmet.length && !confirm('You have not confirmed every line of the qualification. You can continue and we will record that, but please tell the first author. Continue?')) return;
+  S = load(who) || blank(who);
+  S.who = who; S.qual = q;
+  $('#who').textContent = who.name;
+  persist(); go('book');
+});
+$('#restoreBtn').addEventListener('click', () => {
+  const f = $('#restoreFile').files[0];
+  if(!f){ $('#restoreMsg').textContent='Choose a file first.'; return; }
+  const rd = new FileReader();
+  rd.onload = () => { try{
+    const o = JSON.parse(rd.result);
+    S = blank(o.annotator||{name:'restored',email:'restored'});
+    S.who = o.annotator||S.who; S.qual = o.qualification||{}; S.round = o.round||1;
+    S.started = o.started||S.started; S.round2_at = o.round2_unlocked_at||null;
+    S.sessions = o.sessions||[]; S.debrief = o.debrief||S.debrief;
+    const t = o.taxonomy||{};
+    (t.calibration?.answers||[]).forEach(a => { if(a.first) S.tax.cal[a.id]={l:a.first.l,r:a.first.r,first:a.first}; });
+    (t.rows||[]).forEach(r => { if(S.tax.rows[r.study_id]) S.tax.rows[r.study_id] =
+      {locus:r.coder2_locus||'', remedy:r.coder2_remedy||'', mismatch:!!r.reason_mismatch, note:r.coder2_notes||''}; });
+    ((o.calibration_n9||o.screening||{}).answers||[]).forEach(a => S.screen[a.id] = {first:a.first_answer, pick:a.first_answer});
+    (o.studies||[]).forEach(st => { S.secs[st.study_id]=st.seconds||0; S.add[st.study_id]=st.additions||'';
+      (st.items||[]).forEach(i => { if(S.items[i.item_id]) S.items[i.item_id] = {d:i.decision||'', n:i.note||''}; }); });
+    $('#who').textContent = S.who.name||''; persist();
+    $('#restoreMsg').textContent = 'Restored.'; go(gateOK()?'work':'screen');
+  }catch(e){ $('#restoreMsg').textContent = 'Could not read that file.'; } };
+  rd.readAsText(f);
+});
+$('#saveFile').addEventListener('click', () => {
+  const b = new Blob([JSON.stringify(exportObj(),null,1)], {type:'application/json'});
+  const a = el('a',{href:URL.createObjectURL(b), download:fileName()}); document.body.append(a); a.click(); a.remove();
+  $('#finishMsg').textContent = 'Saved to your Downloads folder.';
+});
+$('#copyText').addEventListener('click', async () => {
+  try{ await navigator.clipboard.writeText($('#outText').value); $('#finishMsg').textContent='Copied.'; }
+  catch(e){ $('#outText').select(); $('#finishMsg').textContent='Press Ctrl+C or Cmd+C to copy.'; }
+});
+document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => { if(!b.disabled) go(b.dataset.go); }));
+window.addEventListener('beforeunload', stopTimer);
+
+function applyUnlock(){ UNLOCKED = location.hash.toLowerCase().includes('unlock');
+  $('#testbar').hidden = !UNLOCKED;
+  if(S){ updateTabs(); go(view); } }
+window.addEventListener('hashchange', applyUnlock);
+
+$('#fDate').value = today();
+renderQual(); renderFields(); applyUnlock(); updateTabs(); go('start');
+})();
+</script>
+</body>
+</html>
