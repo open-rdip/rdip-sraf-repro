@@ -1,0 +1,29 @@
+{"ts": "2026-11-09T22:53:11", "event": "sweep_start", "models": ["gemini-flash", "grok", "gpt5", "sonnet", "opus"], "limit": 3, "budget": 35.0}
+{"ts": "2026-11-09T22:54:04", "event": "study_failed", "model": "gemini-flash", "study": "study001", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:04", "event": "study_failed", "model": "gemini-flash", "study": "study002", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:04", "event": "study_failed", "model": "gemini-flash", "study": "study003", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:04", "event": "model_complete", "model": "gemini-flash", "slug": "gemini-3-8-flash", "done": 0, "failed": 3, "skipped": 0, "spend_usd": 0.0001}
+{"ts": "2026-11-09T22:54:05", "event": "study_failed", "model": "grok", "study": "study001", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:05", "event": "study_failed", "model": "grok", "study": "study002", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:05", "event": "study_failed", "model": "grok", "study": "study003", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:05", "event": "model_complete", "model": "grok", "slug": "grok-4-7", "done": 0, "failed": 3, "skipped": 0, "spend_usd": 0.0052}
+{"ts": "2026-11-09T22:54:06", "event": "study_failed", "model": "gpt5", "study": "study001", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:06", "event": "study_failed", "model": "gpt5", "study": "study002", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:06", "event": "study_failed", "model": "gpt5", "study": "study003", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:06", "event": "model_complete", "model": "gpt5", "slug": "gpt-5", "done": 0, "failed": 3, "skipped": 0, "spend_usd": 0.0021}
+{"ts": "2026-11-09T22:54:07", "event": "study_failed", "model": "sonnet", "study": "study001", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:07", "event": "study_failed", "model": "sonnet", "study": "study002", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:07", "event": "study_failed", "model": "sonnet", "study": "study003", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:07", "event": "model_complete", "model": "sonnet", "slug": "claude-sonnet-5-5", "done": 0, "failed": 3, "skipped": 0, "spend_usd": 0.0002}
+{"ts": "2026-11-09T22:54:08", "event": "study_failed", "model": "opus", "study": "study001", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:08", "event": "study_failed", "model": "opus", "study": "study002", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:08", "event": "study_failed", "model": "opus", "study": "study003", "error": "pyarrow requires NumPy 2.0 or newer, found 1.26.4"}
+{"ts": "2026-11-09T22:54:08", "event": "model_complete", "model": "opus", "slug": "claude-opus-5-5", "done": 0, "failed": 3, "skipped": 0, "spend_usd": 0.0003}
+{"ts": "2026-11-09T23:01:04", "event": "sweep_start", "models": ["gemini-flash", "grok", "gpt5", "sonnet", "opus"], "limit": 3, "budget": 35.0}
+{"ts": "2026-11-09T23:05:13", "event": "model_complete", "model": "gemini-flash", "slug": "gemini-3-8-flash", "done": 3, "failed": 0, "skipped": 0, "spend_usd": 0.0342}
+{"ts": "2026-11-09T23:16:40", "event": "model_complete", "model": "grok", "slug": "grok-4-7", "done": 3, "failed": 0, "skipped": 0, "spend_usd": 0.1384}
+{"ts": "2026-11-09T23:23:01", "event": "model_complete", "model": "gpt5", "slug": "gpt-5", "done": 3, "failed": 0, "skipped": 0, "spend_usd": 0.4047}
+{"ts": "2026-11-09T23:24:32", "event": "model_complete", "model": "sonnet", "slug": "claude-sonnet-5-5", "done": 3, "failed": 0, "skipped": 0, "spend_usd": 0.1523}
+{"ts": "2026-11-09T23:26:28", "event": "model_complete", "model": "opus", "slug": "claude-opus-5-5", "done": 3, "failed": 0, "skipped": 0, "spend_usd": 0.3325}
+{"ts": "2026-11-09T23:36:00", "event": "sweep_start", "models": ["gpt5"], "limit": 3, "budget": 35.0}
+{"ts": "2026-11-09T23:40:29", "event": "model_complete", "model": "gpt5", "slug": "gpt-5", "done": 3, "failed": 0, "skipped": 0, "spend_usd": 0.6471}

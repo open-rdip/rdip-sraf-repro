@@ -1,0 +1,154 @@
+{
+  "study_id": "study001",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study001/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T16:02:35.073568+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 0,
+    "methods": 21,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "activation",
+        "value": "FP16"
+      },
+      {
+        "name": "block-size",
+        "value": "256"
+      },
+      {
+        "name": "low-rank dimension m",
+        "value": "8"
+      },
+      {
+        "name": "low-rank matrices precision",
+        "value": "INT8"
+      },
+      {
+        "name": "S",
+        "value": "max(abs(x))"
+      },
+      {
+        "name": "quantization format",
+        "value": "W4A8"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "LoRC",
+        "description": "A supplementary feature to existing quantization methodologies approximating error using low-rank matrices"
+      },
+      {
+        "name": "RTN",
+        "description": "Quantization methodology"
+      },
+      {
+        "name": "GPTQ",
+        "description": "Quantization strategy utilized for experiments"
+      },
+      {
+        "name": "ZeroQuant-Local/Global",
+        "description": "Quantization methodology"
+      },
+      {
+        "name": "FGQ",
+        "description": "Fine-grained quantization"
+      },
+      {
+        "name": "ZeroQuant",
+        "description": "Lightweight optimization-based method that updates model weights during quantization, requiring a small portion of training data and limited training time for INT4 weight quantization."
+      },
+      {
+        "name": "round-to-nearest neighborhood (RTN)",
+        "description": "Baseline method that directly applies post-training quantization (PTQ) on the trained data."
+      },
+      {
+        "name": "post-training quantization",
+        "description": "Quantization technique where Class-1 represents optimal-loss"
+      },
+      {
+        "name": "symmetric quantization",
+        "description": "Quantization method used to gauge quantization sensitivity"
+      },
+      {
+        "name": "asymmetric quantization",
+        "description": "Quantization method that outperforms the symmetric approach in accuracy due to superior utilization of the quantization range"
+      },
+      {
+        "name": "per-row quantization",
+        "description": "Quantization scheme implemented for weight quantization"
+      },
+      {
+        "name": "per-token quantization",
+        "description": "Quantization scheme implemented for activation quantization"
+      },
+      {
+        "name": "INT8 weight-only quantization",
+        "description": "Weight-only quantization (symmetric or asymmetric) replacing FP16 weight with INT8 weight to reduce memory usage with negligible accuracy loss"
+      },
+      {
+        "name": "INT4 weight-only quantization",
+        "description": "Low-precision weight-only quantization method"
+      },
+      {
+        "name": "PTQ",
+        "description": "Post-training quantization evaluated alongside row-wise quantization for weight-only and weight-and-activation quantization."
+      },
+      {
+        "name": "row-wise quantization",
+        "description": "A quantization scheme where achieving Class-1 quantization error is challenging."
+      },
+      {
+        "name": "fine-grained quantization",
+        "description": "A quantization scheme (also referred to as block-k quantization) where every k elements possess their own scaling factor and/or zero point."
+      },
+      {
+        "name": "ZQ-Global",
+        "description": "An existing optimization-based method utilized for all models and settings to further enhance accuracy."
+      },
+      {
+        "name": "ZQ-Local",
+        "description": "An optimization-based method applied specifically to OPT-66B and Bloom-176B models."
+      },
+      {
+        "name": "ZQ-Global\u2217",
+        "description": "Optimizes a larger subnetwork/an entire transformer layer to solve the non-linear quadratic problem"
+      },
+      {
+        "name": "ZQ-Local\u2217",
+        "description": "Light-weight optimization-based quantization method"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "PPL improvement",
+        "value": "about 0.5",
+        "split": null
+      },
+      {
+        "metric": "accuracy loss",
+        "value": "less than 0.05",
+        "split": null
+      },
+      {
+        "metric": "PPL degradation",
+        "value": "around 0.3 points",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "study_id": "study003",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study003/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T16:05:13.633138+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 7,
+    "methods": 27,
+    "evaluation_results": 18
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "MMDetection",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "W",
+        "value": "200"
+      },
+      {
+        "name": "H",
+        "value": "200"
+      },
+      {
+        "name": "boxes in a batch",
+        "value": "16"
+      },
+      {
+        "name": "bounding boxes per batch",
+        "value": "16"
+      },
+      {
+        "name": "sample sizes",
+        "value": "2\u00d72, 3\u00d73, and 4\u00d74"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "0.0003"
+      },
+      {
+        "name": "momentum",
+        "value": "0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "RCOD",
+        "version": null
+      },
+      {
+        "name": "CAMO",
+        "version": null
+      },
+      {
+        "name": "CAMO-D",
+        "version": null
+      },
+      {
+        "name": "COD10K-D",
+        "version": null
+      },
+      {
+        "name": "NC4K-D",
+        "version": null
+      },
+      {
+        "name": "COD10K",
+        "version": "v2"
+      },
+      {
+        "name": "NC4K",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "CAFR",
+        "description": "Proposed approach that incorporates APG and SFR modules for the RCOD task"
+      },
+      {
+        "name": "Adaptive Gradient Propagation Module",
+        "description": "APG/AGP module for forward, backward, forward & fusion gradient restriction and combination"
+      },
+      {
+        "name": "Sparse Feature Refinement Module",
+        "description": "SFR module where each box is cropped to W=200 and H=200 from input samples and randomly positioned on a square canvas"
+      },
+      {
+        "name": "Offline Implementation of SFR",
+        "description": "Pre-processes data before training by randomly shuffling all bounding boxes from the dataset, selecting 16 boxes at a time for canvas filling to generate samples of sizes 2\u00d72, 3\u00d73, and 4\u00d74, and merging them with original images."
+      },
+      {
+        "name": "Online approach",
+        "description": "Directly processes input data to obtain scaled-down data during batch generation."
+      },
+      {
+        "name": "SFR",
+        "description": "Component evaluated within the CAFR framework"
+      },
+      {
+        "name": "APG",
+        "description": "Component evaluated within the CAFR framework"
+      },
+      {
+        "name": "GLIP tiny model",
+        "description": "Pre-trained large model used as a feature extractor."
+      },
+      {
+        "name": "GLIP+Adapter",
+        "description": "An adapter module composed of two 2-dimensional convolutional layers placed immediately after the feature extractor of the GLIP tiny model."
+      },
+      {
+        "name": "AGP",
+        "description": "Proposed method designed to address adapter adaptation issues and prevent the model from getting trapped in suboptimal solutions or forgetting prior knowledge on camouflaged object detection tasks."
+      },
+      {
+        "name": "AGP-based loss",
+        "description": "Expressed as L=Lhead (Mh(Mn(Mb(Xi;\u03b8b);\u03b8n);\u03b8h), Y)) to control the size of parameters participating in training"
+      },
+      {
+        "name": "RCOD",
+        "description": "Adopts contrastive loss, GIoU as localization loss Lbbox, and focal loss as classification loss Lcls"
+      },
+      {
+        "name": "Sparse Feature Refinement Module (SFR)",
+        "description": "Reduces the size of the camouflaged object within an image to optimize the efficiency of the self-attention mechanism"
+      },
+      {
+        "name": "swin-transformer",
+        "description": "Utilized as the feature extractor to capture long-range correlation by calculating similarities between image patches"
+      },
+      {
+        "name": "FPN",
+        "description": "Utilized for feature refinement"
+      },
+      {
+        "name": "GIoU",
+        "description": "Adopted as localization loss Lbbox"
+      },
+      {
+        "name": "focal loss",
+        "description": "Adopted as classification loss Lcls"
+      },
+      {
+        "name": "Mask RCNN",
+        "description": "Object detection model evaluated with ResNet50 backbone"
+      },
+      {
+        "name": "Faster RCNN",
+        "description": "Object detection model evaluated with ResNet50 backbone"
+      },
+      {
+        "name": "SAM",
+        "description": "Large model evaluated with Vit-T and Vit-L backbones"
+      },
+      {
+        "name": "GDino + CAFR",
+        "description": "Model evaluated with Swin-T and Swin-L backbones"
+      },
+      {
+        "name": "Deformable DETR",
+        "description": "Def-DETR detection method"
+      },
+      {
+        "name": "ResNet50",
+        "description": "R50 backbone network"
+      },
+      {
+        "name": "ResNet101",
+        "description": "R101 backbone network"
+      },
+      {
+        "name": "GLIP",
+        "description": "GLIP with tiny and large pre-trained models"
+      },
+      {
+        "name": "Grounding DINO",
+        "description": "GDINO with tiny and base pre-trained models"
+      },
+      {
+        "name": "YOLOv7-L",
+        "description": "Generic detection method with CSPDarknet backbone"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Mask RCNN Par (M)",
+        "value": "41",
+        "split": null
+      },
+      {
+        "metric": "Mask RCNN FLOPs (G)",
+        "value": "289.97",
+        "split": null
+      },
+      {
+        "metric": "Faster RCNN Par (M)",
+        "value": "34",
+        "split": null
+      },
+      {
+        "metric": "Faster RCNN FLOPs (G)",
+        "value": "176.54",
+        "split": null
+      },
+      {
+        "metric": "SAM Par (M)",
+        "value": "89",
+        "split": null
+      },
+      {
+        "metric": "SAM FLOPs (G)",
+        "value": "371.98",
+        "split": null
+      },
+      {
+        "metric": "GDino + CAFR Par (M)",
+        "value": "165",
+        "split": null
+      },
+      {
+        "metric": "COD10K-D mAP",
+        "value": "3.8",
+        "split": null
+      },
+      {
+        "metric": "COD10K-D AP50",
+        "value": "8.2",
+        "split": null
+      },
+      {
+        "metric": "COD10K-D AP75",
+        "value": "2.8",
+        "split": null
+      },
+      {
+        "metric": "COD10K-D APm",
+        "value": "1.0",
+        "split": null
+      },
+      {
+        "metric": "COD10K-D APl",
+        "value": "4.0",
+        "split": null
+      },
+      {
+        "metric": "NC4K-D mAP",
+        "value": "6.8",
+        "split": null
+      },
+      {
+        "metric": "NC4K-D AP50",
+        "value": "14.2",
+        "split": null
+      },
+      {
+        "metric": "NC4K-D AP75",
+        "value": "6.0",
+        "split": null
+      },
+      {
+        "metric": "NC4K-D APm",
+        "value": "1.7",
+        "split": null
+      },
+      {
+        "metric": "NC4K-D APl",
+        "value": "7.3",
+        "split": null
+      },
+      {
+        "metric": "CAMO-D mAP",
+        "value": "5.4",
+        "split": null
+      }
+    ]
+  }
+}

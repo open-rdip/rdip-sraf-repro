@@ -1,0 +1,218 @@
+{
+  "study_id": "study002",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study002/ext/gpt-5",
+  "extracted_at": "2026-11-09T16:38:40.847402+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 1,
+    "hyperparameters": 16,
+    "datasets": 5,
+    "methods": 23,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch Lightning",
+        "version": null
+      },
+      {
+        "name": "DASK",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      1
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "label_smoothing",
+        "value": "{0.1, 0.2}"
+      },
+      {
+        "name": "label_relaxation",
+        "value": "{0.1, 0.2}"
+      },
+      {
+        "name": "epochs",
+        "value": "1000"
+      },
+      {
+        "name": "embedding_vector_size",
+        "value": "sweep"
+      },
+      {
+        "name": "regularization",
+        "value": null
+      },
+      {
+        "name": "num_models",
+        "value": "3"
+      },
+      {
+        "name": "num_configurations",
+        "value": "21"
+      },
+      {
+        "name": "training_strategy",
+        "value": "1vsAll"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "loss_function",
+        "value": "cross entropy"
+      },
+      {
+        "name": "batch_normalization",
+        "value": "applied"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.01"
+      },
+      {
+        "name": "batch_size",
+        "value": "1024"
+      },
+      {
+        "name": "embedding_vector_sizes_grid",
+        "value": "{4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400}"
+      },
+      {
+        "name": "label_smoothing_C",
+        "value": "{0.1,0.2}"
+      },
+      {
+        "name": "label_relaxation_C",
+        "value": "{0.1,0.2}"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "KINSHIP",
+        "version": null
+      },
+      {
+        "name": "UMLS",
+        "version": null
+      },
+      {
+        "name": "WN18RR",
+        "version": null
+      },
+      {
+        "name": "FB15K-237",
+        "version": null
+      },
+      {
+        "name": "YAGO3-10",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "grid search",
+        "description": "Explored multiple configurations including label smoothing/relaxation values and embedding sizes."
+      },
+      {
+        "name": "label smoothing",
+        "description": "Applied with epsilon in {0.1, 0.2} to produce softened targets with 0 < y < 1."
+      },
+      {
+        "name": "label relaxation",
+        "description": "Evaluated with relaxation parameter values {0.1, 0.2} during training and testing."
+      },
+      {
+        "name": "Kronecker Decomposition for compressed embeddings",
+        "description": "Learned compressed embeddings and analyzed impact, especially as embedding size increases."
+      },
+      {
+        "name": "no explicit regularization",
+        "description": "Did not use L1, L2, or Dropout to isolate effects of label smoothing and relaxation."
+      },
+      {
+        "name": "evaluation protocol",
+        "description": "Used filtered Mean Reciprocal Rank (MRR) and Hits@N for link prediction."
+      },
+      {
+        "name": "KD-DistMult",
+        "description": "Applies Kronecker Decomposition to the DistMult scoring function by reshaping a d^2-dimensional vector into a d-by-d matrix and computing a matrix-vector product to score triples."
+      },
+      {
+        "name": "Kronecker Decomposition on embeddings and weights",
+        "description": "Applies KD to embedding vectors and to decompose linear transformation weight matrices in feed-forward and convolutional embedding models during training."
+      },
+      {
+        "name": "1vsAll training strategy",
+        "description": "Trains by contrasting each positive triple against all entities to compute the loss."
+      },
+      {
+        "name": "Adam optimizer with cross-entropy loss",
+        "description": "Models are optimized with Adam minimizing cross-entropy loss."
+      },
+      {
+        "name": "Batch normalization",
+        "description": "Applied during training to improve numerical stability and convergence."
+      },
+      {
+        "name": "Grid search over embedding sizes",
+        "description": "Embedding dimension selected via grid search over specified candidate sizes."
+      },
+      {
+        "name": "Label smoothing and label relaxation",
+        "description": "Uses softened target values with C in {0.1, 0.2}."
+      },
+      {
+        "name": "Kronecker Decomposition (KD) for KGE",
+        "description": "Apply Kronecker Decomposition during training to compress embedding matrices in knowledge graph embedding models, reducing the number of explicitly stored parameters while retaining expressiveness and encouraging parameter reuse by capturing interactions within an embedding vector without additional parameters."
+      },
+      {
+        "name": "Kronecker Decompression for Knowledge Graph Embeddings",
+        "description": "A technique for learning compressed KGE by using Kronecker operations on embedding matrices to achieve significant parameter efficiency with at most a mild cost to predictive accuracy."
+      },
+      {
+        "name": "DistMult scoring function",
+        "description": "A parametrized scoring function that maps a triple (h, r, t) to a scalar, which is then mapped to the unit interval using the sigmoid/logistic function and interpreted as the likelihood that the triple is true."
+      },
+      {
+        "name": "DistMult",
+        "description": "A multiplicative knowledge graph embedding model used for link prediction; argued to be less expressive than its Kronecker Decomposition (KD) variation."
+      },
+      {
+        "name": "Kronecker Decomposition (KD) for embeddings",
+        "description": "Decomposes embeddings to incorporate interactions without additional parameters; interactions within an embedding vector increase with dimension and may encourage feature reuse and reduce parameter redundancy; involves computing scores via decompressed embeddings and can be applied to many multiplicative KGE models; may introduce computational bottlenecks due to KD complexity."
+      },
+      {
+        "name": "KD-Rel-DistMult",
+        "description": "Applies Kronecker Decomposition to relation embeddings in DistMult with scoring h \u25e6 (r \u2297 r) \u00b7 t; yields parameter gain of (d \u2212 \u221ad) \u00d7 |R| while keeping triple scoring on 3 d-dimensional vectors."
+      },
+      {
+        "name": "Layer normalization",
+        "description": "Normalization technique suggested for numerical stability to reduce dependence of gradients on embedding scale and improve gradient flow."
+      },
+      {
+        "name": "Filtered ranking with MRR and Hits@N",
+        "description": "Evaluates link prediction by computing filtered ranks for each test triple and reporting Mean Reciprocal Rank and Hits@1/3/10."
+      },
+      {
+        "name": "1-vs-All / K-vs-All scoring",
+        "description": "For each test triple (h, r, t), computes scores for all candidate tails (h, r, x) over the entity set and derives filtered rankings."
+      },
+      {
+        "name": "Hardware-agnostic KGE framework",
+        "description": "Custom framework built on PyTorch Lightning and DASK for hyperparameter optimization, training, and evaluation, with provided scripts and pretrained models."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

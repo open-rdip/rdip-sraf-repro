@@ -115,6 +115,15 @@ class OpenAICompatExtractor(Extractor):
         self.model = model
         self.name = name
         self._client = None
+        # Capabilities discovered from the provider's own 400s on the first
+        # call, then reused. The N3 set spans five providers and two model
+        # generations, and the newer OpenAI models reject parameters the older
+        # ones require, so the shape of a valid request is not knowable from
+        # the model name alone.
+        self._token_param = "max_tokens"
+        self._accepts_temperature = True
+        self._accepts_response_format = True
+        self._accepts_reasoning_effort = True
 
     @property
     def client(self):
@@ -123,25 +132,80 @@ class OpenAICompatExtractor(Extractor):
             self._client = OpenAI(base_url=self.base_url, api_key=self.api_key)
         return self._client
 
+    #: Reasoning models count reasoning tokens against max_completion_tokens,
+    #: so the output budget is whatever deliberation leaves behind. At
+    #: LLM_MAX_TOKENS=2000 gpt-5 averaged 1760 completion tokens per call and
+    #: returned empty arrays for every field after `methods`: it ran out of
+    #: allowance mid-object. Extraction is not a task that benefits from long
+    #: deliberation, so we ask for low effort and give the budget headroom.
+    REASONING_TOKEN_FLOOR = 16000
+
+    def _build_kwargs(self, system: str, user: str) -> dict:
+        reasoning = self._token_param == "max_completion_tokens"
+        budget = (max(LLM_MAX_TOKENS, self.REASONING_TOKEN_FLOOR)
+                  if reasoning else LLM_MAX_TOKENS)
+        kwargs = {
+            "model": self.model,
+            "messages": [{"role": "system", "content": system},
+                         {"role": "user", "content": user}],
+            self._token_param: budget,
+        }
+        if reasoning and self._accepts_reasoning_effort:
+            kwargs["reasoning_effort"] = "low"
+        if self._accepts_temperature:
+            kwargs["temperature"] = LLM_TEMPERATURE
+        if self._accepts_response_format:
+            kwargs["response_format"] = {"type": "json_object"}
+        return kwargs
+
+    def _adapt(self, err: str) -> bool:
+        """Drop or rename one parameter the provider just rejected.
+
+        Returns True if something changed and the call is worth retrying. Each
+        adaptation is announced, because two of them change what the request
+        means rather than just its spelling: losing response_format weakens the
+        JSON guarantee, and losing temperature means the completion samples at
+        the provider default instead of at LLM_TEMPERATURE. Silent degradation
+        here would put an unrecorded difference between the models N3 compares.
+        """
+        if "max_completion_tokens" in err and self._token_param == "max_tokens":
+            self._token_param = "max_completion_tokens"
+            print(f"[Extractor:{self.name}] uses max_completion_tokens, switching")
+            return True
+        if "response_format" in err and self._accepts_response_format:
+            self._accepts_response_format = False
+            print(f"[Extractor:{self.name}] response_format unsupported, "
+                  "retrying without it (prompt still demands bare JSON)")
+            return True
+        if "reasoning_effort" in err and self._accepts_reasoning_effort:
+            self._accepts_reasoning_effort = False
+            print(f"[Extractor:{self.name}] reasoning_effort unsupported, "
+                  "retrying without it")
+            return True
+        if "temperature" in err and self._accepts_temperature:
+            self._accepts_temperature = False
+            print(f"[Extractor:{self.name}] WARNING: this model rejects "
+                  f"temperature, so these completions run at the provider "
+                  f"default rather than at LLM_TEMPERATURE={LLM_TEMPERATURE}. "
+                  "Report this asymmetry.")
+            return True
+        return False
+
     def _complete(self, system: str, user: str) -> str:
-        kwargs = dict(
-            model=self.model,
-            messages=[{"role": "system", "content": system},
-                      {"role": "user", "content": user}],
-            temperature=LLM_TEMPERATURE,
-            max_tokens=LLM_MAX_TOKENS,
-        )
-        # Not every OpenAI-compatible provider accepts response_format. Try with
-        # it, and fall back once without rather than losing the extraction; the
-        # prompt already demands bare JSON and _parse_json tolerates fences.
-        try:
-            resp = self.client.chat.completions.create(
-                **kwargs, response_format={"type": "json_object"})
-        except Exception as e:  # noqa: BLE001
-            if "response_format" not in str(e):
+        resp = None
+        for _ in range(4):
+            try:
+                resp = self.client.chat.completions.create(
+                    **self._build_kwargs(system, user))
+                break
+            except BudgetExceeded:
                 raise
-            print(f"[Extractor:{self.name}] response_format unsupported — retrying without")
-            resp = self.client.chat.completions.create(**kwargs)
+            except Exception as e:  # noqa: BLE001
+                if not self._adapt(str(e)):
+                    raise
+        if resp is None:
+            raise RuntimeError(
+                f"{self.name}: no accepted request shape after adaptation")
 
         usage = getattr(resp, "usage", None)
         if usage is not None:
@@ -208,12 +272,17 @@ class AnthropicExtractor(Extractor):
       preamble that otherwise has to be stripped heuristically.
     """
 
+    #: Set once, the first time a completion runs on an SDK with no sampling
+    #: control, so the warning is printed per process rather than per call.
+    _warned_no_temperature = False
+
     def __init__(self, model: str, api_key: str, base_url: str | None = None):
         self.model = model
         self.api_key = api_key
         self.base_url = base_url
         self.name = "anthropic"
         self._client = None
+        self._accepts_temperature = False
 
     @property
     def client(self):
@@ -223,21 +292,56 @@ class AnthropicExtractor(Extractor):
             if self.base_url:
                 kwargs["base_url"] = self.base_url
             self._client = Anthropic(**kwargs)
+            self._accepts_temperature = self._probe_temperature(self._client)
         return self._client
+
+    @staticmethod
+    def _probe_temperature(client) -> bool:
+        """Does this SDK's messages.create accept a temperature argument?
+
+        Checked by signature inspection, not by making a call, so it costs
+        nothing. The answer matters beyond convenience: every other backend in
+        this registry is pinned to LLM_TEMPERATURE (0.0), and if Anthropic
+        cannot be, its passes sample at the provider default while the others
+        do not. That asymmetry is reported rather than absorbed, so it is
+        recorded here instead of being worked around silently.
+
+        As of anthropic 2.x, messages.create exposes neither temperature nor
+        top_p nor top_k, and output_config carries only `effort` and `format`.
+        There is no sampling control to set.
+        """
+        import inspect
+        try:
+            params = inspect.signature(client.messages.create).parameters
+        except (TypeError, ValueError):
+            return False
+        return "temperature" in params
 
     def _complete(self, system: str, user: str) -> str:
         last_err: Exception | None = None
         for attempt in range(3):
             try:
-                resp = self.client.messages.create(
+                call = dict(
                     model=self.model,
                     max_tokens=max(LLM_MAX_TOKENS, 4096),
-                    temperature=LLM_TEMPERATURE,
                     system=system,
-                    messages=[
-                        {"role": "user", "content": user},
-                        {"role": "assistant", "content": "{"},
-                    ],
+                )
+                if self._accepts_temperature:
+                    call["temperature"] = LLM_TEMPERATURE
+                elif not AnthropicExtractor._warned_no_temperature:
+                    AnthropicExtractor._warned_no_temperature = True
+                    print("[extractor] WARNING: this anthropic SDK exposes no "
+                          "sampling control, so these completions run at the "
+                          "provider default rather than at "
+                          f"LLM_TEMPERATURE={LLM_TEMPERATURE}. Every other "
+                          "backend is pinned. Report this asymmetry.")
+                # No assistant prefill. Models of this generation reject it
+                # ("This model does not support assistant message prefill"),
+                # and _parse_json already tolerates fences and preamble, which
+                # is what the prefill was avoiding rather than requiring.
+                resp = self.client.messages.create(
+                    **call,
+                    messages=[{"role": "user", "content": user}],
                 )
                 usage = getattr(resp, "usage", None)
                 if usage is not None:
@@ -250,8 +354,7 @@ class AnthropicExtractor(Extractor):
                 text = "".join(
                     getattr(b, "text", "") for b in (resp.content or [])
                     if getattr(b, "type", "") == "text")
-                # Put back the brace the prefill consumed.
-                return "{" + text
+                return text
             except BudgetExceeded:
                 raise
             except Exception as e:  # noqa: BLE001 — retry transient overload

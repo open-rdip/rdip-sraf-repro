@@ -1,0 +1,340 @@
+{
+  "study_id": "study003",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study003/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T16:24:32.243657+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 7,
+    "methods": 32,
+    "evaluation_results": 19
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "MMDetection",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "box crop width (W) in SFR module",
+        "value": "200"
+      },
+      {
+        "name": "box crop height (H) in SFR module",
+        "value": "200"
+      },
+      {
+        "name": "number of boxes in a batch (SFR module illustration)",
+        "value": "16"
+      },
+      {
+        "name": "mAP IoU thresholds",
+        "value": ".50:.05:.95"
+      },
+      {
+        "name": "AP50 IoU threshold",
+        "value": ".50"
+      },
+      {
+        "name": "AP75 IoU threshold",
+        "value": ".75"
+      },
+      {
+        "name": "bounding boxes per batch (offline SFR assumption)",
+        "value": "16"
+      },
+      {
+        "name": "boxes selected sequentially per canvas filling (offline SFR)",
+        "value": "16"
+      },
+      {
+        "name": "new sample sizes (offline SFR)",
+        "value": "2\u00d72, 3\u00d73, 4\u00d74"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "0.0003"
+      },
+      {
+        "name": "momentum",
+        "value": "0.05"
+      },
+      {
+        "name": "number of random seed groups per model",
+        "value": "10"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "RCOD",
+        "version": null
+      },
+      {
+        "name": "COD10K-D",
+        "version": null
+      },
+      {
+        "name": "NC4K-D",
+        "version": null
+      },
+      {
+        "name": "CAMO-D",
+        "version": null
+      },
+      {
+        "name": "CAMO",
+        "version": null
+      },
+      {
+        "name": "COD10K-v2",
+        "version": null
+      },
+      {
+        "name": "NC4K",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "CAFR",
+        "description": "Proposed approach for the RCOD task that incorporates the APG (Adaptive Gradient Propagation) and SFR (Sparse Feature Refinement) modules, with a Swin Transformer backbone, text encoder, neck, deep fusion, and localization, classification and word-region contrastive losses."
+      },
+      {
+        "name": "Sparse Feature Refinement (SFR) module",
+        "description": "Within an input batch, each box is cropped to 200x200 and randomly positioned on a square canvas to generate new samples; x1, x2 and x4 denote obtaining 1, 2 and 4 new samples."
+      },
+      {
+        "name": "Adaptive Gradient Propagation (AGP) module",
+        "description": "Module involving gradient restriction and combination, with forward and backward passes and fusion, applied to input samples (X, Y) and generated samples (X', Y')."
+      },
+      {
+        "name": "SINet",
+        "description": "Segmentation method with ResNet50 backbone, S\u03b1/mIoU 77.0 in Table III"
+      },
+      {
+        "name": "SegMaR",
+        "description": "Segmentation method with ResNet50 backbone, S\u03b1/mIoU 81.1 in Table III"
+      },
+      {
+        "name": "PreyNet",
+        "description": "Segmentation method with ResNet50 backbone, S\u03b1/mIoU 81.0 in Table III"
+      },
+      {
+        "name": "ZoomNet",
+        "description": "Segmentation method with ResNet50 backbone, S\u03b1/mIoU 83.5 in Table III"
+      },
+      {
+        "name": "FSEL",
+        "description": "Segmentation method with ResNet50 backbone, S\u03b1/mIoU 87.3 in Table III"
+      },
+      {
+        "name": "Faster R-CNN",
+        "description": "Detection framework evaluated with ResNet50, ResNet101 and Swin-L backbones; selected for fair FLOPs comparison against segmentation"
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "Segmentation framework selected for fair FLOPs comparison against Faster R-CNN"
+      },
+      {
+        "name": "COCO-style evaluation",
+        "description": "Accuracy assessed using mAP (IoU .50:.05:.95), AP50, AP75, APm (medium objects) and APl (large objects)"
+      },
+      {
+        "name": "Online SFR implementation",
+        "description": "Directly processes input data to obtain scaled-down data within a batch; flexible and convenient but requires additional GPU usage because new images are generated in a batch."
+      },
+      {
+        "name": "Offline SFR implementation",
+        "description": "Requires no additional CUDA memory but needs manual pre-processing before training. All boxes from the entire dataset are gathered and randomly shuffled, then 16 boxes at a time are sequentially selected for canvas filling with new label settings, using the same filling method as the online approach. New samples of sizes 2\u00d72, 3\u00d73 and 4\u00d74 are obtained simultaneously and merged with the original images to form a new dataset for training the detection network."
+      },
+      {
+        "name": "Random seed averaging",
+        "description": "10 groups of random seeds are trained for each model and the average performance is reported as the final result for robust evaluation, due to the limited number of samples per class in RCOD data."
+      },
+      {
+        "name": "GLIP+Adapter",
+        "description": "An adapter module composed of two 2-dimensional convolutional layers inserted immediately after the feature extractor of the GLIP tiny model, fine-tuned for the COD task. It fails to adapt to COD and forgets the prior knowledge of the large model."
+      },
+      {
+        "name": "GLIP tiny",
+        "description": "Pre-trained GLIP (tiny) model whose feature extractor is used as the base; serves as the comparison baseline for the GLIP+Adapter variant."
+      },
+      {
+        "name": "AGP",
+        "description": "Method proposed by the authors to address the problem that discrepancy parameters and structural differences between GLIP and GLIP with an adapter impede direct adaptation of pre-trained weights."
+      },
+      {
+        "name": "AGP-based loss",
+        "description": "Loss expressed as L=Lhead(Mh(Mn(Mb(Xi;\u03b8b);\u03b8n);\u03b8h),Y), where M(\u00b7) represents a learnable function; a factor controls the size of parameters that can participate in training."
+      },
+      {
+        "name": "RCOD",
+        "description": "Camouflaged object detection framework that adopts [49] as the contrastive loss Lc, GIoU [50] as the localization loss Lbbox, and focal loss [51] as the classification loss Lcls."
+      },
+      {
+        "name": "Swin-transformer",
+        "description": "Self-attention-based feature extractor [10] used by current large object detection models to capture long-range correlation by computing similarities between image patches."
+      },
+      {
+        "name": "FPN",
+        "description": "Feature Pyramid Network [52] used for feature refinement in current large object detection models."
+      },
+      {
+        "name": "Mask RCNN",
+        "description": "Detection method with ResNet50 backbone, listed with values 41 and 289.97 in the comparison table"
+      },
+      {
+        "name": "Faster RCNN",
+        "description": "Detection method with ResNet50 backbone, listed with values 34 and 176.54 in the comparison table"
+      },
+      {
+        "name": "SAM",
+        "description": "Large model with Vit-T backbone (values 89 and 371.98) and Vit-L backbone (values 298 and 1314.89)"
+      },
+      {
+        "name": "GDino + CAFR",
+        "description": "Grounding DINO with CAFR using Swin-T backbone (values 165 and 353.98) and Swin-L backbone (values 222 and 524.68)"
+      },
+      {
+        "name": "Segmentation",
+        "description": "Requires the image encoder to analyze the entire image for each sample at inference, and the mask decoder computes the value of each pixel to generate the segmentation mask, leading to higher computational complexity."
+      },
+      {
+        "name": "Detection",
+        "description": "Identifies objects within the image and generates bounding boxes; computational load lies mainly in feature extraction and analysis by the feature extraction network."
+      },
+      {
+        "name": "YOLOv7-L",
+        "description": "Generic detection method with CSPDarknet backbone."
+      },
+      {
+        "name": "Deformable DETR",
+        "description": "Detection method (Def-DETR) evaluated in Table IV."
+      },
+      {
+        "name": "ResNet50/ResNet101",
+        "description": "Backbones (R50 and R101) used by detection methods."
+      },
+      {
+        "name": "GLIP",
+        "description": "Detection method with tiny and large pre-trained models."
+      },
+      {
+        "name": "Grounding DINO",
+        "description": "Detection method (GD-ino) with tiny and base pre-trained models."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "S\u03b1/mIoU (SINet, ResNet50)",
+        "value": "77.0",
+        "split": null
+      },
+      {
+        "metric": "S\u03b1/mIoU (SegMaR, ResNet50)",
+        "value": "81.1",
+        "split": null
+      },
+      {
+        "metric": "S\u03b1/mIoU (PreyNet, ResNet50)",
+        "value": "81.0",
+        "split": null
+      },
+      {
+        "metric": "S\u03b1/mIoU (ZoomNet, ResNet50)",
+        "value": "83.5",
+        "split": null
+      },
+      {
+        "metric": "S\u03b1/mIoU (FSEL, ResNet50)",
+        "value": "87.3",
+        "split": null
+      },
+      {
+        "metric": "S\u03b1/mIoU (Faster R-CNN, ResNet50)",
+        "value": "95.7",
+        "split": null
+      },
+      {
+        "metric": "S\u03b1/mIoU (Faster R-CNN, ResNet101)",
+        "value": "96.1",
+        "split": null
+      },
+      {
+        "metric": "S\u03b1/mIoU (Faster R-CNN, Swin-L)",
+        "value": "99.1",
+        "split": null
+      },
+      {
+        "metric": "mAP (YOLOv7-L, COD10K-D)",
+        "value": "3.8",
+        "split": null
+      },
+      {
+        "metric": "AP50 (YOLOv7-L, COD10K-D)",
+        "value": "8.2",
+        "split": null
+      },
+      {
+        "metric": "AP75 (YOLOv7-L, COD10K-D)",
+        "value": "2.8",
+        "split": null
+      },
+      {
+        "metric": "APm (YOLOv7-L, COD10K-D)",
+        "value": "1.0",
+        "split": null
+      },
+      {
+        "metric": "APl (YOLOv7-L, COD10K-D)",
+        "value": "4.0",
+        "split": null
+      },
+      {
+        "metric": "mAP (YOLOv7-L, NC4K-D)",
+        "value": "6.8",
+        "split": null
+      },
+      {
+        "metric": "AP50 (YOLOv7-L, NC4K-D)",
+        "value": "14.2",
+        "split": null
+      },
+      {
+        "metric": "AP75 (YOLOv7-L, NC4K-D)",
+        "value": "6.0",
+        "split": null
+      },
+      {
+        "metric": "APm (YOLOv7-L, NC4K-D)",
+        "value": "1.7",
+        "split": null
+      },
+      {
+        "metric": "APl (YOLOv7-L, NC4K-D)",
+        "value": "7.3",
+        "split": null
+      },
+      {
+        "metric": "mAP (YOLOv7-L, CAMO-D)",
+        "value": "5.4",
+        "split": null
+      }
+    ]
+  }
+}

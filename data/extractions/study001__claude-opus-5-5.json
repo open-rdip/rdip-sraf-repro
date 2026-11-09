@@ -1,0 +1,210 @@
+{
+  "study_id": "study001",
+  "backend": "anthropic",
+  "model": "claude-opus-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study001/ext/claude-opus-5-5",
+  "extracted_at": "2026-11-09T16:25:08.596340+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 0,
+    "methods": 30,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "weight bit-width",
+        "value": "4-bit, 3-bit, 2-bit"
+      },
+      {
+        "name": "activation precision",
+        "value": "FP16"
+      },
+      {
+        "name": "fine-grained quantization block size",
+        "value": "256"
+      },
+      {
+        "name": "low-rank dimension m",
+        "value": "8"
+      },
+      {
+        "name": "low-rank matrices precision",
+        "value": "INT8"
+      },
+      {
+        "name": "3m/2h",
+        "value": "\u22640.016"
+      },
+      {
+        "name": "weight quantization granularity",
+        "value": "per-row"
+      },
+      {
+        "name": "activation quantization granularity",
+        "value": "per-token"
+      },
+      {
+        "name": "weight precision",
+        "value": "INT8"
+      },
+      {
+        "name": "tiling size",
+        "value": "128 by 128"
+      },
+      {
+        "name": "quantization bit-width",
+        "value": "W4A8"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "LoRC",
+        "description": "Low-rank compensation that approximates the quantization error E with two low-rank matrices U and V (E=UV); a supplementary feature to existing quantization methods that can be integrated with FGQ. Low-rank matrices quantized to INT8 with rank m=8."
+      },
+      {
+        "name": "GPTQ",
+        "description": "Quantization strategy used as the base method for LoRC experiments."
+      },
+      {
+        "name": "RTN",
+        "description": "Round-to-nearest quantization method that LoRC can supplement."
+      },
+      {
+        "name": "ZeroQuant-Local/Global",
+        "description": "Existing quantization methodologies that LoRC can supplement."
+      },
+      {
+        "name": "FGQ",
+        "description": "Fine-grained quantization (block-size 256), evaluated with and without LoRC."
+      },
+      {
+        "name": "Coarse-grained weight quantization",
+        "description": "Per-row weight quantization."
+      },
+      {
+        "name": "W4asymA16 quantization",
+        "description": "4-bit asymmetric weight quantization with FP16 activations, evaluated on the OPT model family with LoRC."
+      },
+      {
+        "name": "INT4 weight-only quantization",
+        "description": "Quantizing model weights to 4-bit integers; causes substantial accuracy degradation for small models, lessening as model size increases"
+      },
+      {
+        "name": "INT8 activation quantization",
+        "description": "Quantizing activations to 8-bit integers; minimal accuracy drops for small models but greater drops for larger models; BLOOM shows no divergence up to 176B whereas OPT performs poorly from >=6.7B"
+      },
+      {
+        "name": "ZeroQuant",
+        "description": "Lightweight optimization-based post-training quantization method that updates model weights during quantization; efficient in GPU resources, time cost, and data usage for INT4 weight quantization"
+      },
+      {
+        "name": "Round-to-nearest (RTN)",
+        "description": "Straightforward baseline that directly applies post-training quantization on the trained data; for symmetric quantization, scale S=max(abs(x))"
+      },
+      {
+        "name": "Symmetric quantization",
+        "description": "Quantization scheme used to gauge quantization sensitivity; underperforms asymmetric quantization at INT4."
+      },
+      {
+        "name": "Asymmetric quantization",
+        "description": "Quantization scheme that makes better use of the quantization range; outperforms symmetric quantization in accuracy at INT4."
+      },
+      {
+        "name": "Per-row quantization",
+        "description": "Applied to weight quantization [12]."
+      },
+      {
+        "name": "Per-token quantization",
+        "description": "Applied to activation quantization [36]."
+      },
+      {
+        "name": "Weight-only quantization",
+        "description": "Post-training quantization of weights only (INT8 or INT4), evaluated on OPT and BLOOM models; INT8 weights can replace FP16 weights to reduce memory usage."
+      },
+      {
+        "name": "Post-training quantization sensitivity classes",
+        "description": "Quantization sensitivity (accuracy loss) categorized into classes, with sensitivity increasing as the class number ascends; Class-1 is the optimal-loss post-training quantization (loss less than 0.05)."
+      },
+      {
+        "name": "Fine-grained quantization (block-k quantization)",
+        "description": "Quantization scheme where every k elements possess their own scaling factor and/or zero point, significantly reducing quantization error; implementable on modern GPUs since streaming multiprocessors process tiles of data."
+      },
+      {
+        "name": "PTQ",
+        "description": "Post-training quantization, used with row-wise quantization; achieving Class-1 quantization error is challenging for weight-only and weight-and-activation quantization."
+      },
+      {
+        "name": "Row-wise quantization",
+        "description": "Quantization granularity where each row shares a scaling factor; combined with PTQ."
+      },
+      {
+        "name": "ZQ-Global",
+        "description": "Optimization-based quantization method applied on top of fine-grained quantization for all models and settings."
+      },
+      {
+        "name": "ZQ-Local",
+        "description": "Optimization-based quantization method applied to OPT-66B and Bloom-176B."
+      },
+      {
+        "name": "INT8 weight quantization",
+        "description": "Weight quantization to 8-bit integers; using a smaller model with INT8 weights is generally more advantageous than a twice-as-large model with INT4 weights."
+      },
+      {
+        "name": "INT4 weight quantization",
+        "description": "Weight quantization to 4-bit integers."
+      },
+      {
+        "name": "Weight-and-activation quantization",
+        "description": "Quantization applied to both weights and activations"
+      },
+      {
+        "name": "ZQ-Global*",
+        "description": "ZeroQuant variant that optimizes an entire transformer layer (larger subnetwork) during light-weight optimization-based quantization"
+      },
+      {
+        "name": "ZQ-Local*",
+        "description": "ZeroQuant variant using local light-weight optimization-based quantization with fewer trainable parameters per step"
+      },
+      {
+        "name": "W4A8 quantization",
+        "description": "Weight and activation quantization with 4-bit weights and 8-bit activations"
+      },
+      {
+        "name": "INT8 weight-only quantization",
+        "description": "Quantizing LLM weights to INT8 while keeping activations in higher precision; proposed as a standard method for reducing memory costs in LLMs with negligible accuracy degradation."
+      },
+      {
+        "name": "Sensitivity analysis (Class-3 categorization)",
+        "description": "Groups quantization outcomes by degradation level. Class-3 means a degradation of more than 0.5 PPL points; all models larger than 10B fall into Class-3."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "PPL improvement",
+        "value": "about 0.5",
+        "split": null
+      },
+      {
+        "metric": "Accuracy loss (INT8 weight-only quantization, symmetric or asymmetric)",
+        "value": "less than 0.05",
+        "split": null
+      },
+      {
+        "metric": "PPL degradation (BLOOM-176B, Class-2)",
+        "value": "around 0.3",
+        "split": null
+      }
+    ]
+  }
+}

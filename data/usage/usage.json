@@ -1,3 +1,114 @@
 {
-  "models": {}
+  "models": {
+    "gemini-3.8-flash": {
+      "calls": 23,
+      "prompt_tokens": 14621,
+      "completion_tokens": 6183,
+      "per_study": {
+        "study001": {
+          "calls": 7,
+          "prompt": 4301,
+          "completion": 1958
+        },
+        "study002": {
+          "calls": 5,
+          "prompt": 4734,
+          "completion": 1516
+        },
+        "study003": {
+          "calls": 9,
+          "prompt": 5546,
+          "completion": 2699
+        }
+      }
+    },
+    "grok-4.7": {
+      "calls": 23,
+      "prompt_tokens": 43013,
+      "completion_tokens": 8736,
+      "per_study": {
+        "study001": {
+          "calls": 7,
+          "prompt": 13024,
+          "completion": 2852
+        },
+        "study002": {
+          "calls": 5,
+          "prompt": 10745,
+          "completion": 1950
+        },
+        "study003": {
+          "calls": 9,
+          "prompt": 16676,
+          "completion": 3924
+        }
+      }
+    },
+    "gpt-5": {
+      "calls": 43,
+      "prompt_tokens": 27947,
+      "completion_tokens": 61212,
+      "per_study": {
+        "study001": {
+          "calls": 14,
+          "prompt": 8424,
+          "completion": 20501
+        },
+        "study002": {
+          "calls": 10,
+          "prompt": 8904,
+          "completion": 13658
+        },
+        "study003": {
+          "calls": 18,
+          "prompt": 10590,
+          "completion": 26847
+        }
+      }
+    },
+    "claude-sonnet-5-5": {
+      "calls": 22,
+      "prompt_tokens": 21840,
+      "completion_tokens": 10863,
+      "per_study": {
+        "study001": {
+          "calls": 7,
+          "prompt": 6523,
+          "completion": 3514
+        },
+        "study002": {
+          "calls": 5,
+          "prompt": 6954,
+          "completion": 2777
+        },
+        "study003": {
+          "calls": 9,
+          "prompt": 8321,
+          "completion": 4563
+        }
+      }
+    },
+    "claude-opus-5-5": {
+      "calls": 22,
+      "prompt_tokens": 21840,
+      "completion_tokens": 12258,
+      "per_study": {
+        "study001": {
+          "calls": 7,
+          "prompt": 6523,
+          "completion": 3631
+        },
+        "study002": {
+          "calls": 5,
+          "prompt": 6954,
+          "completion": 2803
+        },
+        "study003": {
+          "calls": 9,
+          "prompt": 8321,
+          "completion": 5815
+        }
+      }
+    }
+  }
 }

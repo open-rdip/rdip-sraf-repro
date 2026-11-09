@@ -11,6 +11,12 @@ tqdm==4.66.4
 pytest==8.2.0
 docker==7.0.0
 datasets==2.19.0
+# datasets has only a loose lower bound on pyarrow, so pip takes the newest,
+# and pyarrow >=16 requires NumPy 2. numpy is pinned <2 because faiss-cpu
+# 1.8.0 is built against NumPy 1.x. Without this cap the two pins collide and
+# every extraction fails with "pyarrow requires NumPy 2.0 or newer" as soon as
+# sentence-transformers imports datasets in its trainer module.
+pyarrow<16
 pypdf==4.0.0
 sentence-transformers==3.0.0
 faiss-cpu==1.8.0

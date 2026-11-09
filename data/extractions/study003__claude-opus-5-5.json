@@ -1,0 +1,423 @@
+{
+  "study_id": "study003",
+  "backend": "anthropic",
+  "model": "claude-opus-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study003/ext/claude-opus-5-5",
+  "extracted_at": "2026-11-09T16:26:28.350887+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 15,
+    "datasets": 8,
+    "methods": 41,
+    "evaluation_results": 26
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "MMDetection",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "SFR crop width (W)",
+        "value": "200"
+      },
+      {
+        "name": "SFR crop height (H)",
+        "value": "200"
+      },
+      {
+        "name": "boxes per batch (SFR illustration)",
+        "value": "16"
+      },
+      {
+        "name": "mAP IoU thresholds",
+        "value": ".50:.05:.95"
+      },
+      {
+        "name": "AP50 IoU threshold",
+        "value": ".50"
+      },
+      {
+        "name": "AP75 IoU threshold",
+        "value": ".75"
+      },
+      {
+        "name": "bounding boxes per batch (offline SFR)",
+        "value": "16"
+      },
+      {
+        "name": "canvas grid sizes for new samples",
+        "value": "2\u00d72, 3\u00d73, 4\u00d74"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "0.0003"
+      },
+      {
+        "name": "momentum",
+        "value": "0.05"
+      },
+      {
+        "name": "number of random seed groups",
+        "value": "10"
+      },
+      {
+        "name": "number of training images (COD10K-v2)",
+        "value": "6000"
+      },
+      {
+        "name": "number of testing images (COD10K-v2)",
+        "value": "4000"
+      },
+      {
+        "name": "number of annotated classes",
+        "value": "68"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "RCOD",
+        "version": null
+      },
+      {
+        "name": "COD10K-D",
+        "version": null
+      },
+      {
+        "name": "NC4K-D",
+        "version": null
+      },
+      {
+        "name": "CAMO-D",
+        "version": null
+      },
+      {
+        "name": "CAMO",
+        "version": null
+      },
+      {
+        "name": "COD10K-v2",
+        "version": "v2"
+      },
+      {
+        "name": "NC4K",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "CAFR",
+        "description": "Proposed approach for the RCOD task that incorporates Adaptive Gradient Propagation (AGP) and Sparse Feature Refinement (SFR) modules, built on a Swin Transformer-based visual feature extractor, a text encoder, and deep fusion, trained with localization, classification and word-region contrastive losses."
+      },
+      {
+        "name": "Adaptive Gradient Propagation (AGP) module",
+        "description": "Module that applies gradient restriction during forward and backward passes to adaptively fine-tune the Transformer-based feature extraction process."
+      },
+      {
+        "name": "Sparse Feature Refinement (SFR) module",
+        "description": "Module that crops each box in an input batch to 200x200 and randomly positions the crops on a square canvas to generate new samples (X', Y'), with x1, x2 and x4 denoting 1, 2 or 4 new samples."
+      },
+      {
+        "name": "RCOD",
+        "description": "Proposed task of extracting camouflaged objects that closely resemble their backgrounds."
+      },
+      {
+        "name": "SINet",
+        "description": "Segmentation-based camouflaged object detection method with ResNet50 backbone"
+      },
+      {
+        "name": "SegMaR",
+        "description": "Segmentation-based camouflaged object detection method with ResNet50 backbone"
+      },
+      {
+        "name": "PreyNet",
+        "description": "Segmentation-based camouflaged object detection method with ResNet50 backbone"
+      },
+      {
+        "name": "ZoomNet",
+        "description": "Segmentation-based camouflaged object detection method with ResNet50 backbone"
+      },
+      {
+        "name": "FSEL",
+        "description": "Segmentation-based camouflaged object detection method with ResNet50 backbone"
+      },
+      {
+        "name": "Faster R-CNN",
+        "description": "Detection framework evaluated with ResNet50, ResNet101, and Swin-L backbones for camouflaged object detection; used for FLOPs comparison against segmentation"
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "Segmentation framework used for FLOPs comparison against the Faster R-CNN detection framework"
+      },
+      {
+        "name": "Online Implementation of SFR",
+        "description": "Directly processes input data within a batch to obtain scaled-down data, offering flexibility and convenience but requiring additional GPU usage because new images are generated in each batch."
+      },
+      {
+        "name": "Offline Implementation of SFR",
+        "description": "Pre-processes data before training without extra CUDA memory: all bounding boxes from the entire dataset are gathered and randomly shuffled, then 16 boxes are sequentially selected at a time for canvas filling with new label settings, using the same filling method as the online approach. This produces new samples of sizes 2\u00d72, 3\u00d73, and 4\u00d74, which are merged with the original images to form a new training dataset for the detection network."
+      },
+      {
+        "name": "SFR",
+        "description": "Component of CAFR; its impact is investigated in ablation studies."
+      },
+      {
+        "name": "APG",
+        "description": "Component of CAFR; its impact is investigated in ablation studies."
+      },
+      {
+        "name": "Multi-seed averaging",
+        "description": "Each model is trained with 10 groups of random seeds and the average performance is reported, due to the limited number of samples per class in RCOD data."
+      },
+      {
+        "name": "GLIP",
+        "description": "GLIP tiny model used as a pre-trained large model and feature extractor for the camouflaged object detection (COD) task"
+      },
+      {
+        "name": "GLIP+Adapter",
+        "description": "An adapter module of two 2-dimensional convolutional layers placed immediately after the feature extractor of the GLIP tiny model and fine-tuned; it fails to adapt to the COD task and forgets the large model's prior knowledge"
+      },
+      {
+        "name": "Final layer fine-tuning",
+        "description": "Fine-tuning the final layer parameters of the feature extractor; found to struggle to capture easily confused features because the foreground and background of camouflaged objects are extremely similar"
+      },
+      {
+        "name": "AGP",
+        "description": "Proposed method to address the failure of adapter-based and final-layer fine-tuning for adapting pre-trained GLIP to COD tasks"
+      },
+      {
+        "name": "AGP-based loss",
+        "description": "Loss expressed as L = Lhead(Mh(Mn(Mb(Xi;\u03b8b);\u03b8n);\u03b8h), Y), where M(\u00b7) are learnable functions for backbone, neck, and head, with a factor controlling the size of parameters that can participate in training"
+      },
+      {
+        "name": "Contrastive loss",
+        "description": "Contrastive loss Lc adopted from reference [49]"
+      },
+      {
+        "name": "GIoU loss",
+        "description": "Generalized IoU used as the localization loss Lbbox"
+      },
+      {
+        "name": "Focal loss",
+        "description": "Used as the classification loss Lcls"
+      },
+      {
+        "name": "Swin Transformer",
+        "description": "Self-attention-based feature extractor used by current large object detection models"
+      },
+      {
+        "name": "FPN",
+        "description": "Feature Pyramid Network used for feature refinement"
+      },
+      {
+        "name": "Mask RCNN",
+        "description": "Detection baseline with ResNet50 backbone; table values 41 and 289.97 (column meanings not stated in passage)"
+      },
+      {
+        "name": "Faster RCNN",
+        "description": "Detection baseline with ResNet50 backbone; table values 34 and 176.54 (column meanings not stated in passage)"
+      },
+      {
+        "name": "SAM (ViT-T)",
+        "description": "Large model with ViT-T backbone; table values 89 and 371.98 (column meanings not stated in passage)"
+      },
+      {
+        "name": "GDino + CAFR (Swin-T)",
+        "description": "Grounding DINO combined with CAFR, Swin-T backbone; table values 165 and 353.98 (column meanings not stated in passage)"
+      },
+      {
+        "name": "SAM (ViT-L)",
+        "description": "Large model with ViT-L backbone; table values 298 and 1314.89 (column meanings not stated in passage)"
+      },
+      {
+        "name": "GDino + CAFR (Swin-L)",
+        "description": "Grounding DINO combined with CAFR, Swin-L backbone; table values 222 and 524.68 (column meanings not stated in passage)"
+      },
+      {
+        "name": "COD dataset annotation",
+        "description": "Existing camouflaged object detection datasets are enriched with bounding boxes and class labels. One annotated dataset has 37 categories, split into 2863 training images and 1227 test images. CAMO-D combines 1000 training and 250 test images from CAMO, removes controversial images, and annotates 1241 images with 43 classes, randomly split into 744 training and 497 test images."
+      },
+      {
+        "name": "SAM",
+        "description": "Large segmentation model with ViT-T (tiny Vision Transformer) backbone; 89M parameters, 371.98 GFLOPs"
+      },
+      {
+        "name": "GDino + CAFR",
+        "description": "Grounding DINO combined with CAFR using a Swin-T (tiny Swin Transformer) backbone; 165M parameters"
+      },
+      {
+        "name": "Annotation scheme",
+        "description": "Box annotations derived from object pixels, with inaccurate boxes (e.g., an object split into two boxes) removed or corrected. Class annotations come from COD10K-v2 categories (68 valid classes) and are provided manually for the other datasets. NC4K-D is built from 4121 clearer images selected from NC4K."
+      },
+      {
+        "name": "Deformable DETR",
+        "description": "Detection method (Def-DETR) evaluated on the camouflaged object detection datasets"
+      },
+      {
+        "name": "ResNet50",
+        "description": "Backbone (R50)"
+      },
+      {
+        "name": "ResNet101",
+        "description": "Backbone (R101)"
+      },
+      {
+        "name": "Grounding DINO",
+        "description": "Detection method (GDINO) with tiny and base pre-trained models"
+      },
+      {
+        "name": "YOLOv7-L",
+        "description": "Generic detection method using a CSPDarknet backbone"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "S\u03b1/mIoU (SINet, ResNet50)",
+        "value": "77.0",
+        "split": null
+      },
+      {
+        "metric": "S\u03b1/mIoU (SegMaR, ResNet50)",
+        "value": "81.1",
+        "split": null
+      },
+      {
+        "metric": "S\u03b1/mIoU (PreyNet, ResNet50)",
+        "value": "81.0",
+        "split": null
+      },
+      {
+        "metric": "S\u03b1/mIoU (ZoomNet, ResNet50)",
+        "value": "83.5",
+        "split": null
+      },
+      {
+        "metric": "S\u03b1/mIoU (FSEL, ResNet50)",
+        "value": "87.3",
+        "split": null
+      },
+      {
+        "metric": "S\u03b1/mIoU (Faster R-CNN, ResNet50)",
+        "value": "95.7",
+        "split": null
+      },
+      {
+        "metric": "S\u03b1/mIoU (Faster R-CNN, ResNet101)",
+        "value": "96.1",
+        "split": null
+      },
+      {
+        "metric": "S\u03b1/mIoU (Faster R-CNN, Swin-L)",
+        "value": "99.1",
+        "split": null
+      },
+      {
+        "metric": "Parameters (M) - Mask RCNN",
+        "value": "41",
+        "split": null
+      },
+      {
+        "metric": "FLOPs (G) - Mask RCNN",
+        "value": "289.97",
+        "split": null
+      },
+      {
+        "metric": "Parameters (M) - Faster RCNN",
+        "value": "34",
+        "split": null
+      },
+      {
+        "metric": "FLOPs (G) - Faster RCNN",
+        "value": "176.54",
+        "split": null
+      },
+      {
+        "metric": "Parameters (M) - SAM",
+        "value": "89",
+        "split": null
+      },
+      {
+        "metric": "FLOPs (G) - SAM",
+        "value": "371.98",
+        "split": null
+      },
+      {
+        "metric": "Parameters (M) - GDino + CAFR",
+        "value": "165",
+        "split": null
+      },
+      {
+        "metric": "YOLOv7-L mAP (COD10K-D)",
+        "value": "3.8",
+        "split": null
+      },
+      {
+        "metric": "YOLOv7-L AP50 (COD10K-D)",
+        "value": "8.2",
+        "split": null
+      },
+      {
+        "metric": "YOLOv7-L AP75 (COD10K-D)",
+        "value": "2.8",
+        "split": null
+      },
+      {
+        "metric": "YOLOv7-L APm (COD10K-D)",
+        "value": "1.0",
+        "split": null
+      },
+      {
+        "metric": "YOLOv7-L APl (COD10K-D)",
+        "value": "4.0",
+        "split": null
+      },
+      {
+        "metric": "YOLOv7-L mAP (NC4K-D)",
+        "value": "6.8",
+        "split": null
+      },
+      {
+        "metric": "YOLOv7-L AP50 (NC4K-D)",
+        "value": "14.2",
+        "split": null
+      },
+      {
+        "metric": "YOLOv7-L AP75 (NC4K-D)",
+        "value": "6.0",
+        "split": null
+      },
+      {
+        "metric": "YOLOv7-L APm (NC4K-D)",
+        "value": "1.7",
+        "split": null
+      },
+      {
+        "metric": "YOLOv7-L APl (NC4K-D)",
+        "value": "7.3",
+        "split": null
+      },
+      {
+        "metric": "YOLOv7-L mAP (CAMO-D)",
+        "value": "5.4",
+        "split": null
+      }
+    ]
+  }
+}

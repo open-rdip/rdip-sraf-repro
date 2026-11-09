@@ -1,0 +1,211 @@
+{
+  "study_id": "study001",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study001/ext/grok-4-7",
+  "extracted_at": "2026-11-09T16:09:39.204233+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 14,
+    "datasets": 0,
+    "methods": 26,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "weight_bitwidth",
+        "value": "4-bit, 3-bit, and 2-bit"
+      },
+      {
+        "name": "activation",
+        "value": "FP16"
+      },
+      {
+        "name": "block_size",
+        "value": "256"
+      },
+      {
+        "name": "low_rank_dimension",
+        "value": "8"
+      },
+      {
+        "name": "low_rank_matrix_precision",
+        "value": "INT8"
+      },
+      {
+        "name": "quantization_scheme",
+        "value": "W4asymA16"
+      },
+      {
+        "name": "3m/2h",
+        "value": "\u22640.016"
+      },
+      {
+        "name": "S",
+        "value": "max(abs(x))"
+      },
+      {
+        "name": "weight quantization",
+        "value": "INT4"
+      },
+      {
+        "name": "activation quantization",
+        "value": "INT8"
+      },
+      {
+        "name": "tiling_size",
+        "value": "128 by 128"
+      },
+      {
+        "name": "weight_precision",
+        "value": "INT8"
+      },
+      {
+        "name": "original_precision",
+        "value": "FP16"
+      },
+      {
+        "name": "quantization",
+        "value": "W4A8"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "LoRC",
+        "description": "Supplementary feature to existing quantization methods, integrated with FGQ; approximates \u00ca=\u00dbV\u0302 using two low-rank matrices with dimension m=8, quantized to INT8 (also compared as FP16)."
+      },
+      {
+        "name": "GPTQ",
+        "description": "Quantization strategy used for the LoRC experiments."
+      },
+      {
+        "name": "RTN",
+        "description": "Existing quantization methodology to which LoRC can be applied as a supplementary feature."
+      },
+      {
+        "name": "ZeroQuant-Local/Global",
+        "description": "Existing quantization methodology with which LoRC can be integrated."
+      },
+      {
+        "name": "FGQ",
+        "description": "Fine-grained quantization method seamlessly integrated with LoRC; results included with and without FGQ."
+      },
+      {
+        "name": "coarse-grained weight quantization",
+        "description": "Per-row weight quantization setting in Table 7."
+      },
+      {
+        "name": "fine-grained quantization",
+        "description": "Quantization with block-size 256 in Table 7."
+      },
+      {
+        "name": "ZeroQuant",
+        "description": "Lightweight optimization-based quantization method that updates model weights during quantization using a small portion of training data and limited training time; effective and efficient in GPU resources, time cost, and data usage for INT4 weight quantization. Variants are a focus of this work."
+      },
+      {
+        "name": "PTQ",
+        "description": "Post-training quantization applied directly by RTN on the trained data."
+      },
+      {
+        "name": "symmetric quantization",
+        "description": "Symmetric quantization with scale S set to max(abs(x))."
+      },
+      {
+        "name": "INT4 weight-only quantization",
+        "description": "Weight-only INT4 quantization causing substantial accuracy degradation for small models (Class-3) that lessens as model size increases (Class-2)."
+      },
+      {
+        "name": "INT8 activation",
+        "description": "INT8 activation quantization with minimal accuracy drops for small models (Class-1) and greater drops for larger models (Class-3); BLOOM shows no divergence up to 176B, while OPT performs poorly from model sizes of 6.7B and above."
+      },
+      {
+        "name": "asymmetric quantization",
+        "description": "Used to gauge quantization sensitivity and shown to outperform symmetric quantization for INT4 by better utilizing the quantization range."
+      },
+      {
+        "name": "per-row quantization",
+        "description": "Implemented for weight quantization."
+      },
+      {
+        "name": "per-token quantization",
+        "description": "Implemented for activation quantization."
+      },
+      {
+        "name": "post-training quantization",
+        "description": "Class-1 is favored as the optimal-loss post-training quantization because lower quantization sensitivity (accuracy loss) is preferred."
+      },
+      {
+        "name": "weight-only quantization",
+        "description": "INT8 and INT4 weight-only quantization evaluated on OPT and BLOOM models; FP16 weights can be replaced with INT8 weights for generation tasks to reduce memory usage."
+      },
+      {
+        "name": "row-wise quantization",
+        "description": "Quantization scheme used with PTQ for which Class-1 quantization error is challenging."
+      },
+      {
+        "name": "weight-and-activation quantization",
+        "description": "Quantization of weights and activations; Class-1 quantization error is challenging under PTQ and row-wise quantization."
+      },
+      {
+        "name": "block-k quantization",
+        "description": "Fine-grained quantization implementable on modern GPUs, whose streaming multiprocessors process tiles of data (e.g., 128 by 128 tiling size) for matrix computation."
+      },
+      {
+        "name": "ZQ-Global",
+        "description": "Existing optimization-based method utilized for all models and settings on top of fine-grained quantization to further enhance accuracy."
+      },
+      {
+        "name": "ZQ-Local",
+        "description": "Optimization-based method applied to OPT-66B and Bloom-176B."
+      },
+      {
+        "name": "ZQ-Global\u2217",
+        "description": "Optimizes a larger subnetwork and an entire transformer layer"
+      },
+      {
+        "name": "ZQ-Local\u2217",
+        "description": "Quantization-based method; generally outperformed by ZQ-Global\u2217 except on the two largest models"
+      },
+      {
+        "name": "INT8 weight-only quantization",
+        "description": "Standard method for reducing memory costs in LLMs, with negligible degradation in accuracy."
+      },
+      {
+        "name": "Sensitivity Analysis",
+        "description": "Findings on quantization sensitivity across model sizes and families, including OPT Layer Norm weights and biases of all 1s and 0s (except OPT-350M) and dead neurons in early layers of OPT-66B."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "PPL improvement",
+        "value": "about 0.5",
+        "split": null
+      },
+      {
+        "metric": "accuracy loss",
+        "value": "less than 0.05",
+        "split": null
+      },
+      {
+        "metric": "PPL degradation",
+        "value": "around 0.3 points",
+        "split": null
+      },
+      {
+        "metric": "PPL",
+        "value": "degradation of more than 0.5 points",
+        "split": null
+      }
+    ]
+  }
+}

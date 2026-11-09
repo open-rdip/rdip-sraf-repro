@@ -1,0 +1,186 @@
+{
+  "study_id": "study002",
+  "backend": "anthropic",
+  "model": "claude-opus-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study002/ext/claude-opus-5-5",
+  "extracted_at": "2026-11-09T16:25:36.967786+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 1,
+    "hyperparameters": 12,
+    "datasets": 5,
+    "methods": 19,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch Lightning",
+        "version": null
+      },
+      {
+        "name": "DASK",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      1
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "alpha (label smoothing / label relaxation)",
+        "value": "{.1, .2}"
+      },
+      {
+        "name": "epochs",
+        "value": "1000"
+      },
+      {
+        "name": "explicit regularization",
+        "value": "none (no L1, L2, or Dropout)"
+      },
+      {
+        "name": "number of unique configurations",
+        "value": "21"
+      },
+      {
+        "name": "training strategy",
+        "value": "1vsAll"
+      },
+      {
+        "name": "optimizer",
+        "value": "ADAM"
+      },
+      {
+        "name": "loss function",
+        "value": "cross entropy"
+      },
+      {
+        "name": "normalization",
+        "value": "batch normalization"
+      },
+      {
+        "name": "learning rate",
+        "value": ".01"
+      },
+      {
+        "name": "batch size",
+        "value": "1024"
+      },
+      {
+        "name": "embedding vector size (grid search)",
+        "value": "{4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400}"
+      },
+      {
+        "name": "label smoothing/label relaxation alpha",
+        "value": "{.1,.2}"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "KINSHIP",
+        "version": null
+      },
+      {
+        "name": "UMLS",
+        "version": null
+      },
+      {
+        "name": "WN18RR",
+        "version": null
+      },
+      {
+        "name": "FB15K-237",
+        "version": null
+      },
+      {
+        "name": "YAGO3-10",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Label smoothing",
+        "description": "Training with softened target values (0 < y < 1) controlled by alpha in {.1, .2}"
+      },
+      {
+        "name": "Label relaxation",
+        "description": "Training with softened target values controlled by alpha in {.1, .2}, compared against label smoothing"
+      },
+      {
+        "name": "Kronecker Decomposition",
+        "description": "Learning compressed embeddings for knowledge graph embedding models, evaluated across a large sweep of embedding vector sizes"
+      },
+      {
+        "name": "Grid search",
+        "description": "Hyperparameter selection via grid search over configurations, including embedding vector size"
+      },
+      {
+        "name": "Kronecker Decomposition (KD)",
+        "description": "Kronecker decomposition applied to knowledge graph embeddings (entity/relation embedding vectors) to reduce parameters; can also decompose linear transformation weight matrices in feed-forward and convolutional embedding models during training."
+      },
+      {
+        "name": "KD-DistMult",
+        "description": "DistMult scoring with KD applied: sum over i of R((h\u2297h)\u2218(r\u2297r))_i \u00b7 t, where R(\u00b7) reshapes a d^2-dimensional vector into a d by d matrix; avoids applying KD on tail entity embeddings to reduce runtime and memory in 1vsAll/KvsAll training."
+      },
+      {
+        "name": "1vsAll training strategy",
+        "description": "Training strategy that considers all entities to compute the loss for a single prediction."
+      },
+      {
+        "name": "Batch normalization",
+        "description": "Applied to facilitate numerical stability and accelerate convergence during training."
+      },
+      {
+        "name": "Label smoothing / label relaxation",
+        "description": "Training with softened target values 0 < y < 1, with alpha in {.1,.2}."
+      },
+      {
+        "name": "Knowledge Graph Embedding (KGE)",
+        "description": "Parametrized scoring function mapping an input triple (h,r,t) to a scalar, normalized via sigmoid/logistic function to represent the likelihood that the triple is true; parameters include an entity embedding matrix E in R^{|E|xd} and a relation embedding matrix R in R^{|R|xd}"
+      },
+      {
+        "name": "DistMult",
+        "description": "Example KGE scoring function used as a base model to which Kronecker decomposition can be applied"
+      },
+      {
+        "name": "Kronecker Decomposition (KD) of embeddings",
+        "description": "Entity and relation embeddings E and R are stored as compressed embeddings; for a triple (h,r,t) the compressed embeddings are retrieved, decompressed via the Kronecker product, and a triple score is computed. This incorporates additional feature interactions without extra parameters and can be applied to many multiplicative KGE models."
+      },
+      {
+        "name": "KD-Rel-DistMult",
+        "description": "Kronecker decomposition applied only to relation embeddings of DistMult: score(h,r,t) = h \u2218 (r \u2297 r) \u00b7 t, where h,t \u2208 R^d and r \u2208 R^\u221ad. Parameter gain is (d \u2212 \u221ad) \u00d7 |R|; scores are still computed from three d-dimensional embedding vectors."
+      },
+      {
+        "name": "Batch normalization / Layer normalization",
+        "description": "Optionally applied for numerical stability to reduce the dependence of gradients on the scale of embedding vectors and improve gradient flow (Ba et al. 2016; Ioffe and Szegedy 2015)."
+      },
+      {
+        "name": "Kronecker Decomposition of Embeddings for 1vsAll",
+        "description": "Applying KD on entity embeddings under the 1vsAll training setting, motivated by KGs containing more entities than relations, giving a larger potential parameter gain."
+      },
+      {
+        "name": "1vsAll / KvsAll training",
+        "description": "For each test triple (h,r,t), scores of (h,r,x) triples for all entities x in E are computed to obtain the filtered rank of the triple containing t"
+      },
+      {
+        "name": "Filtered Mean Reciprocal Rank (MRR)",
+        "description": "Average over test triples of the reciprocal of the filtered rank of the true tail entity"
+      },
+      {
+        "name": "Hits@N (H@1, H@3, H@10)",
+        "description": "Standard link prediction metrics measuring the proportion of test triples ranked within the top N"
+      },
+      {
+        "name": "Hardware-agnostic knowledge graph embedding framework",
+        "description": "Framework built on PyTorch Lightning and DASK, released with hyperparameter optimization, training and evaluation scripts along with pretrained models"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

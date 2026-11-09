@@ -1,0 +1,142 @@
+{
+  "study_id": "study002",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study002/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T16:03:18.148138+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 1,
+    "hyperparameters": 6,
+    "datasets": 5,
+    "methods": 14,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch Lightning",
+        "version": null
+      },
+      {
+        "name": "DASK",
+        "version": null
+      }
+    ],
+    "random_seeds": [
+      1
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "alpha (label smoothing and label relaxation)",
+        "value": "{.1, .2}"
+      },
+      {
+        "name": "epochs",
+        "value": "1000"
+      },
+      {
+        "name": "learning rate",
+        "value": ".01"
+      },
+      {
+        "name": "batch size",
+        "value": "1024"
+      },
+      {
+        "name": "embedding vector sizes",
+        "value": "{4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400}"
+      },
+      {
+        "name": "\u03b1 (label smoothing and label relaxation)",
+        "value": "{.1,.2}"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "KINSHIP",
+        "version": null
+      },
+      {
+        "name": "UMLS",
+        "version": null
+      },
+      {
+        "name": "WN18RR",
+        "version": null
+      },
+      {
+        "name": "FB15K-237",
+        "version": null
+      },
+      {
+        "name": "YAGO3-10",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "label smoothing",
+        "description": "Training models with softened target values (0 < y(i) < 1) without explicit regularization."
+      },
+      {
+        "name": "label relaxation",
+        "description": "Training models with softened target values (0 < y(i) < 1) without explicit regularization."
+      },
+      {
+        "name": "Kronecker Decomposition",
+        "description": "Method for learning compressed embeddings across varied embedding vector sizes."
+      },
+      {
+        "name": "grid search",
+        "description": "Parameter sweep over embedding vector sizes and configurations."
+      },
+      {
+        "name": "KD",
+        "description": "Kronecker Decomposition applied on entity embeddings, relation embeddings, or linear transformation weight matrices"
+      },
+      {
+        "name": "KD-DistMult",
+        "description": "Formulation where KD is applied as KD-DistMult(h,r,t) = sum_i R((h\u2297h) \u25e6 (r\u2297r))_i \u00b7 t"
+      },
+      {
+        "name": "1vsAll training strategy",
+        "description": "Training strategy requiring considering all entities to compute an incurred loss for a single prediction"
+      },
+      {
+        "name": "ADAM optimizer",
+        "description": "Optimization algorithm used to train models"
+      },
+      {
+        "name": "cross entropy loss",
+        "description": "Loss function minimized during model training"
+      },
+      {
+        "name": "batch normalization",
+        "description": "Technique applied to facilitate numerical stability and accelerate convergence during training"
+      },
+      {
+        "name": "DistMult",
+        "description": "A knowledge graph embedding model designed as a parametrized scoring function that maps an input triple (h,r,t) to a scalar value."
+      },
+      {
+        "name": "KD-Rel-DistMult",
+        "description": "Kronecker Decomposition applied on relation embeddings of DistMult, defined as KD-Rel-DistMult(h,r,t) = h \u25e6 (r \u2297 r) \u00b7 t."
+      },
+      {
+        "name": "batch normalisation",
+        "description": "Applied for numerical stability to reduce the dependence of gradients on the scale of embedding vectors."
+      },
+      {
+        "name": "layer normalization",
+        "description": "Applied for numerical stability to reduce the dependence of gradients on the scale of embedding vectors."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

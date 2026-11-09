@@ -1,0 +1,214 @@
+{
+  "study_id": "study001",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study001/ext/gpt-5",
+  "extracted_at": "2026-11-09T16:37:38.512011+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 19,
+    "datasets": 0,
+    "methods": 23,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "activation_dtype",
+        "value": "FP16"
+      },
+      {
+        "name": "weight_bits",
+        "value": "4"
+      },
+      {
+        "name": "low_rank_dimension_m",
+        "value": "8"
+      },
+      {
+        "name": "low_rank_matrix_precision",
+        "value": "INT8"
+      },
+      {
+        "name": "quantization_strategy",
+        "value": "GPTQ"
+      },
+      {
+        "name": "coarse_grained_scheme",
+        "value": "per-row"
+      },
+      {
+        "name": "fine_grained_block_size",
+        "value": "256"
+      },
+      {
+        "name": "quant_config",
+        "value": "W4asymA16"
+      },
+      {
+        "name": "weight_quantization_bitwidth",
+        "value": "INT4"
+      },
+      {
+        "name": "activation_quantization_bitwidth",
+        "value": "INT8"
+      },
+      {
+        "name": "quantization_scheme",
+        "value": "symmetric"
+      },
+      {
+        "name": "scaling_factor_S",
+        "value": "max(abs(x))"
+      },
+      {
+        "name": "weight_quantization_precision",
+        "value": "INT8"
+      },
+      {
+        "name": "weight_quantization_scheme",
+        "value": "symmetric"
+      },
+      {
+        "name": "quantization_target",
+        "value": "weight-only"
+      },
+      {
+        "name": "weight_quantization_granularity",
+        "value": "per-row"
+      },
+      {
+        "name": "activation_quantization_granularity",
+        "value": "per-token"
+      },
+      {
+        "name": "subnetwork_definition",
+        "value": "linear layer (for ZQ-Local)"
+      },
+      {
+        "name": "quantization",
+        "value": "W4A8"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "LoRC",
+        "description": "A supplementary feature to existing quantization methodologies; uses two low-rank matrices (\u00db and V\u0302) which can be quantized to 8-bit without performance discrepancy; evaluated under coarse-grained (per-row) and fine-grained (block-size 256) settings with activation FP16 and 2-4 bit weights."
+      },
+      {
+        "name": "RTN",
+        "description": "An existing quantization methodology referenced as compatible with LoRC."
+      },
+      {
+        "name": "GPTQ",
+        "description": "Quantization strategy utilized in the experiments with LoRC."
+      },
+      {
+        "name": "ZeroQuant-Local/Global",
+        "description": "Existing quantization methodologies referenced as compatible with LoRC."
+      },
+      {
+        "name": "FGQ",
+        "description": "Fine-grained quantization method that can be seamlessly integrated with LoRC; results reported with and without FGQ."
+      },
+      {
+        "name": "ZeroQuant",
+        "description": "Lightweight optimization-based post-training quantization method updating model weights during quantization; effective and efficient for INT4 weight quantization with low GPU, time, and data cost."
+      },
+      {
+        "name": "RTN (Round-To-Nearest)",
+        "description": "Baseline post-training quantization applying round-to-nearest; procedure follows Section A to perform quantization."
+      },
+      {
+        "name": "Symmetric quantization",
+        "description": "Uses scaling factor S = max(abs(x)) and a zero-point Z (not specified in the passage)."
+      },
+      {
+        "name": "Asymmetric quantization",
+        "description": "Applied for both weight-only quantization and sensitivity evaluation; shows advantage over symmetric, especially for INT4."
+      },
+      {
+        "name": "Per-row weight quantization",
+        "description": "Quantization granularity where weights are quantized per row."
+      },
+      {
+        "name": "Per-token activation quantization",
+        "description": "Quantization granularity where activations are quantized per token."
+      },
+      {
+        "name": "Weight-only quantization (INT8)",
+        "description": "Replacing FP16 weights with INT8 weights; yields negligible accuracy loss (Class-1)."
+      },
+      {
+        "name": "Weight-only quantization (INT4)",
+        "description": "Lower precision weight quantization where asymmetric outperforms symmetric; larger models generally tolerate INT4 better."
+      },
+      {
+        "name": "PTQ",
+        "description": "With PTQ and row-wise quantization, achieving Class-1 quantization error is challenging for both weight-only and weight-and-activation quantization."
+      },
+      {
+        "name": "Row-wise quantization",
+        "description": "Row-wise quantization under PTQ makes achieving Class-1 quantization error challenging for weight-only and weight-and-activation quantization."
+      },
+      {
+        "name": "Fine-grained quantization",
+        "description": "Every k elements possess their own scaling factor and/or zero point, which can significantly reduce quantization error; in the extreme case, per-element scaling can precisely recover the original FP16 number."
+      },
+      {
+        "name": "Block-k quantization",
+        "description": "A fine-grained scheme where blocks of k elements share scaling factors; implementable on modern GPUs whose streaming multiprocessors process tiles of data (e.g., 128 by 128) for matrix computation."
+      },
+      {
+        "name": "ZQ-Global",
+        "description": "An optimization-based method utilized for all models and settings to further enhance accuracy after fine-grained quantization."
+      },
+      {
+        "name": "ZQ-Local",
+        "description": "Applied to OPT-66B and Bloom-176B to further enhance accuracy after fine-grained quantization."
+      },
+      {
+        "name": "ZQ-Global*",
+        "description": "A ZeroQuant variant that optimizes an entire transformer layer (a larger subnetwork) and generally outperforms GPTQ and ZQ-Local* except on the largest models (OPT-66B, Bloom-176B)."
+      },
+      {
+        "name": "ZQ-Local*",
+        "description": "A ZeroQuant variant that performs local optimization; generally outperformed by ZQ-Global* except on the two largest models."
+      },
+      {
+        "name": "INT8 weight-only quantization",
+        "description": "Used to reduce memory costs in LLMs with negligible degradation in accuracy."
+      },
+      {
+        "name": "INT4 weight-only quantization",
+        "description": "For small models results in substantial accuracy degradation (Class-3)."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "PPL improvement",
+        "value": "about 0.5",
+        "split": null
+      },
+      {
+        "metric": "accuracy loss",
+        "value": "less than 0.05",
+        "split": null
+      },
+      {
+        "metric": "PPL degradation",
+        "value": "around 0.3 points",
+        "split": null
+      }
+    ]
+  }
+}
