@@ -43,6 +43,14 @@ VPORT=8000; OPORT=7878
 mkdir -p "$REPO_ROOT/logs" "$TRIPLESTORE"
 cd "$REPO_ROOT"
 
+# The usage meter writes $SRAF_USAGE_DIR/usage.json. Left at its default that
+# is data/usage/usage.json, the same tracked file the Mac writes, so every
+# cluster run dirties it and the next `git pull` refuses to start. Giving the
+# cluster its own subdirectory keeps both machines' meter data in git and
+# removes the collision entirely.
+export SRAF_USAGE_DIR="$REPO_ROOT/data/usage/cluster"
+mkdir -p "$SRAF_USAGE_DIR"
+
 # --- 0. resolve the checkpoint from the registry -----------------------------
 MODEL="$(PYTHONPATH="$REPO_ROOT" "$CONDA_PY" -c \
   "from rag_pipeline.model_registry import REGISTRY; import sys;

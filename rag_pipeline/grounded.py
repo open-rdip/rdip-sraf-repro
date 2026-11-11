@@ -364,10 +364,17 @@ def main() -> int:
                     help="retrieve passages and report counts, make no API calls")
     args = ap.parse_args()
 
-    from rag_pipeline.model_registry import resolve
+    from rag_pipeline.model_registry import resolve, seed_prices
     from rag_pipeline.usage_meter import meter
 
     specs = resolve(args.models)
+    # The meter counts tokens for a model it has no price for, but cannot
+    # charge them against the cap, so an unpriced model silently disables the
+    # budget guard. run_n3_frontier seeds before any call; this did not, and
+    # only stayed capped because prices.json already carried the frontier
+    # models from the N3 sweep. The locally served models are not in there at
+    # all, so without this they would record as unpriced rather than $0.00.
+    seed_prices(meter, specs)
     rows = _rows_for(args.tier)
     if args.limit:
         rows = rows[:args.limit]
