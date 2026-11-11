@@ -204,3 +204,60 @@ def test_unscored_misses_are_not_reported_as_fabrication():
     tot = summarise(legacy)["total"]
     assert tot.get("miss_unscored") == 1
     assert tot.get("miss_unsupported", 0) == 0
+
+
+# ── whitespace-insensitive matching ─────────────────────────────────────────
+
+_PDF_DAMAGED = (
+    "Wetrainedthemodelfor1000epochswithalearningrateof.01 on the train split. "
+    "ZQ-Local* yields superior results across all settings."
+)
+
+
+def test_pdf_collapsed_spaces_are_not_counted_as_misquoting():
+    """The smoke run's dominant failure mode. PDF extraction drops word
+    boundaries; a model that restores one space is quoting correctly and must
+    not be scored as unfaithful."""
+    from rag_pipeline.grounded import span_found, span_found_loose
+    ev = "Wetrainedthemodelfor1000epochswithalearningrateof .01"
+    assert not span_found(ev, _PDF_DAMAGED)
+    assert span_found_loose(ev, _PDF_DAMAGED)
+
+
+def test_missing_space_in_the_other_direction_also_matches():
+    from rag_pipeline.grounded import span_found, span_found_loose
+    ev = "ZQ-Local*yields superior results"
+    assert not span_found(ev, _PDF_DAMAGED)
+    assert span_found_loose(ev, _PDF_DAMAGED)
+
+
+def test_loose_match_does_not_rescue_invention():
+    """Ignoring whitespace must not turn a fabricated quote into a hit."""
+    from rag_pipeline.grounded import span_found_loose
+    assert not span_found_loose("we used sixteen TPU v4 pods", _PDF_DAMAGED)
+
+
+def test_loose_is_strictly_weaker_than_exact():
+    """Anything the exact check finds, the loose check must also find."""
+    from rag_pipeline.grounded import span_found, span_found_loose
+    for ev in ["on the train split", "yields superior results", "ZQ-Local*"]:
+        assert span_found(ev, _PDF_DAMAGED)
+        assert span_found_loose(ev, _PDF_DAMAGED)
+
+
+def test_whitespace_only_misses_get_their_own_bucket():
+    """A whitespace-damaged quote must not land in paraphrase or unsupported,
+    and must not be silently folded into the strict span count either."""
+    from rag_pipeline.grounded import verify, summarise
+    ex = {"hyperparameters": [
+        {"name": "lr", "value": ".01",
+         "evidence": "Wetrainedthemodelfor1000epochswithalearningrateof .01"},
+    ]}
+    recs = verify(ex, _PDF_DAMAGED)
+    assert recs[0]["span_found"] is False
+    assert recs[0]["span_loose"] is True
+    tot = summarise(recs)["total"]
+    assert tot.get("miss_whitespace_only") == 1
+    assert tot.get("miss_paraphrase", 0) == 0
+    assert tot.get("miss_unsupported", 0) == 0
+    assert tot["span_found"] == 0 and tot["span_any"] == 1

@@ -109,6 +109,28 @@ def _flat(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip().lower()
 
 
+def _nospace(s: str) -> str:
+    """`_flat` with whitespace removed entirely.
+
+    PDF text extraction routinely drops or inserts word boundaries, so a
+    passage can read "Wetrainedthemodelfor1000epochs". A model copying that
+    faithfully still fails an exact match if it restores a single space, and
+    a model copying correctly from a well-extracted passage fails if the
+    extractor dropped one. Whitespace in this corpus is an artifact of the
+    PDF layer, not a property of the text, so comparing without it measures
+    quoting fidelity rather than extraction noise.
+    """
+    return re.sub(r"\s+", "", _flat(s))
+
+
+def span_found_loose(evidence: str, passage: str) -> bool:
+    """Whitespace-insensitive span match. Strictly weaker than `span_found`:
+    anything the exact check finds, this finds too, so it is only ever
+    computed for items the exact check missed."""
+    e = _nospace(evidence)
+    return bool(e) and e in _nospace(passage)
+
+
 def span_found(evidence: str, passage: str) -> bool:
     e = _flat(evidence)
     return bool(e) and e in _flat(passage)
@@ -203,7 +225,9 @@ def verify(extraction: dict, passage: str) -> list[dict]:
                 "value_in_span": value_in_span(val, ev),
             }
             if not found and rec["has_evidence"]:
-                # Only for misses: tells paraphrase apart from invention.
+                # Only for misses. First ask whether the miss is nothing but
+                # PDF whitespace damage, then how close the nearest text is.
+                rec["span_loose"] = span_found_loose(ev, passage)
                 lo, tr = fuzzy_span(ev, passage)
                 rec["fuzzy_longest"] = lo
                 rec["fuzzy_token_recall"] = tr
@@ -220,10 +244,17 @@ def summarise(records: list[dict]) -> dict:
         c["span_found"] += bool(r["span_found"])
         c["value_in_span"] += bool(r["value_in_span"])
         c["grounded"] += bool(r["span_found"] and r["value_in_span"])
+        c["span_any"] += bool(r["span_found"] or r.get("span_loose"))
         # Classify every span miss, so a low span rate can be read rather than
         # merely reported. Thresholds are deliberately blunt: the point is to
         # separate three obviously different populations, not to score them.
         if not r["span_found"] and r.get("has_evidence"):
+            if r.get("span_loose"):
+                # Matches once whitespace is ignored: a quoting success the
+                # exact check cannot see. Counted apart so the strict number
+                # stays reported but is not mistaken for infidelity.
+                c["miss_whitespace_only"] += 1
+                continue
             if "fuzzy_token_recall" not in r:
                 # Written before fuzzy scoring existed. Must NOT fall through
                 # to "unsupported": that would read as measured fabrication
@@ -328,10 +359,17 @@ def run_study(study_id: str, pdf_url: str, spec, dry_run: bool = False) -> dict:
         set_study(None)
 
     os.makedirs(OUT_DIR, exist_ok=True)
+    # `passages` is stored so every check in this file can be recomputed
+    # later without re-running the model or re-retrieving. Verification rules
+    # change (the whitespace-insensitive match was added after the first four
+    # models had already run) and without the source text a re-score means
+    # reproducing retrieval exactly, which is a dependency the artifact should
+    # not have. Costs roughly 18 KB per file.
     out = {"study_id": study_id, "model": spec.key, "slug": slug,
            "n_passages": len(passages), "n_passages_ok": len(raw_items),
            "failures": failures, "records": records,
-           "summary": summarise(records), "raw": raw_items}
+           "summary": summarise(records), "raw": raw_items,
+           "passages": passages}
     with open(os.path.join(OUT_DIR, f"{study_id}__{slug}.json"), "w",
               encoding="utf-8") as fh:
         json.dump(out, fh, indent=1)
