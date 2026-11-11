@@ -12,10 +12,7 @@
    "evidence": "A block preconditioner for thermo-poromechanics with frictional deformation of fractures",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study015",
-   "slug": "claude-opus-5-5",
-   "passage_index": 0
+   "value_in_span": true
   }
  ],
  "summary": {
@@ -25,7 +22,8 @@
     "has_evidence": 1,
     "span_found": 1,
     "value_in_span": 1,
-    "grounded": 1
+    "grounded": 1,
+    "span_any": 1
    }
   },
   "total": {
@@ -33,7 +31,8 @@
    "has_evidence": 1,
    "span_found": 1,
    "value_in_span": 1,
-   "grounded": 1
+   "grounded": 1,
+   "span_any": 1
   }
  },
  "raw": [
@@ -102,5 +101,12 @@
     "evaluation_results": []
    }
   }
+ ],
+ "passages": [
+  "porous media: A review of conceptual models and discretization approaches. Transp. Porous Media. , 130(1):215\u2013236, 2019. [23] I. Stefansson, J. Varela, E. Keilegavlen, and I. Berre. Flexible and rigorous numerical modelling of multiphysics processes in fractured porous media using PorePy. Results Appl. Math. , 21:100428, February 2024. [24] R. L. Berge, I. Berre, E. Keilegavlen, J.M. Nordbotten, and B. Wohlmuth. Finite volume discretization for poroelastic media with fractures modeled by contact mechanics. Int. J. Numer. Methods Eng. , 121(4):644\u2013663, February 2020. [25] E. Keilegavlen, R. Berge, A. Fumagalli, M. Starnoni, I Stefansson, J. Varela, and I. Berre. Porepy: An open-source software for simulation of multiphysics processes in fractured porous media. Comput. Geosci. , 25:243\u2013265, 2021. 18 A block preconditioner for thermo-poromechanics with frictional deformation of fractures A P REPRINT [26] Y . Zabegaev, I. Berre, E. Keilegavlen, and K. Kumar. An efficient preconditioner for mixed-dimensional contact poromechanics based on the fixed stress splitting scheme, 2025. Version Number: 1. [27] J.A. White, N. Castelletto, and H.A. Tchelepi. Block-partitioned solvers for coupled poromechanics: A unified framework. Comput. Methods Appl. Mech. Eng. , 303:55\u201374, May 2016. [28] A. Mikeli \u00b4c and M.F. Wheeler. Convergence of iterative coupling for coupled flow and geomechanics. Comput.",
+  "Osei-Kuffuor, and H.A. Tchelepi. A two-stage preconditioner for multiphase poromechanics in reservoir simulation. Comput. Methods Appl. Mech. Eng. , 357:112575, December 2019. [48] Q.M. Bui, D. Osei-Kuffuor, N. Castelletto, and J.A. White. A Scalable Multigrid Reduction Framework for Multiphase Poromechanics of Heterogeneous Media. SISC , 42(2):B379\u2013B396, January 2020. 19 A block preconditioner for thermo-poromechanics with frictional deformation of fractures A P REPRINT [49] A. Novikov, I. Saifullin, H. Hajibeygi, and D. V oskov. A Finite V olume Framework for the Fully Implicit Thermal-Hydro-Mechanical-Compositional Modeling in Geo-Energy Applications. In ECMOR 2024 , pages 1\u201320, Oslo, Norway\u201e 2024. European Association of Geoscientists & Engineers. [50] R.W. Zimmerman and G.S. Bodvarsson. Hydraulic conductivity of rock fractures. Transport Porous Med. , 23:1\u201330, 1996. [51] C. Geuzaine and J.-F. Remacle. Gmsh: A 3-d finite element mesh generator with built-in pre- and post-processing facilities. Int. J. Numer. Methods Eng. , 79(11):1309\u20131331, 2009. [52] I. Aavatsmark. An introduction to multipoint flux approximations for quadrilateral grids. Comput. Geosci. , 6:405\u2013432, 2002. [53] J.M. Nordbotten. Stable cell-centered finite volume discretization for biot equations. SIAM J. Numer. Anal. , 54(2):942\u2013968, 2016. [54] J.M. Nordbotten, W.M. Boon, A. Fumagalli, and E. Keilegavlen. Unified approach to discretization of flow in fractured porous",
+  "Methods Fluids , 95(2):193\u2013214, February 2023. [34] Y . Notay. A new algebraic multigrid approach for Stokes problems. Numer. Math. , 132(1):51\u201384, January 2016. [35] M. Benzi, G.H. Golub, and J Liesen. Numerical solution of saddle point problems. Acta Numer. , 14:1\u2013137, May 2005. [36] J. R. Wallis. Incomplete Gaussian Elimination as a Preconditioning for Generalized Conjugate Gradient Acceler- ation. In SPE Reservoir Simulation Symposium , pages SPE\u201312265\u2013MS, San Francisco, California, November 1983. SPE. [37] J.R. Wallis, R.P. Kendall, and T.E. Little. Constrained Residual Acceleration of Conjugate Residual Methods. In SPE Reservoir Simulation Symposium , pages SPE\u201313536\u2013MS, Dallas, Texas, February 1985. SPE. [38] T. Roy, T.B. J\u00f6nsth\u00f6vel, C. Lemon, and A.J. Wathen. A block preconditioner for non-isothermal flow in porous media. J. Comput. Phys. , 395:636\u2013652, October 2019. [39] M.A. Cremon, J. Franc, and F.P. Hamon. Constrained pressure-temperature residual (CPTR) preconditioner performance for large-scale thermal CO$$_2$$ injection simulation. Comput. Geosci. , May 2024. [40] A.H. Baker, R.D. Falgout, T.V . Kolev, and U.M. Yang. Multigrid smoothers for ultraparallel computing. SISC , 33(5):2864\u20132887, 2011. [41] S. Gries. System-AMG approaches for industrial fully and adaptive implicit oil reservoir simulations . PhD thesis, Universit\u00e4t zu K\u00f6ln, 2015. [42] M.A. Cremon, N. Castelletto, and",
+  "J. Numer. Anal. , 54(2):942\u2013968, 2016. [54] J.M. Nordbotten, W.M. Boon, A. Fumagalli, and E. Keilegavlen. Unified approach to discretization of flow in fractured porous media. Comput. Geosci. , 23:225\u2013237, 2019. [55] K. Ito and K. Kunisch. Semi\u2013smooth newton methods for variational inequalities of the first kind. ESAIM: Math. Model. Numer. Anal. , 37(1):41\u201362, 2003. [56] X. Hu, E. Keilegavlen, and J.M. Nordbotten. Effective Preconditioners for Mixed-Dimensional Scalar Elliptic Problems. Water Resour. Res. , 59(1):e2022WR032985, January 2023. [57] T. Roy, T.B. J\u00f6nsth\u00f6vel, C. Lemon, and A.J. Wathen. A Constrained Pressure-Temperature Residual (CPTR) Method for Non-Isothermal Multiphase Flow in Porous Media. SISC , 42(4):B1014\u2013B1040, January 2020. [58] I. Stefansson. Line search algorithm for multiphysics problems with fracture deformation. InterPore Journal , 1(3):IPJ271124\u20137, November 2024. [59] F. Kong, Y . Wang, D.R. Gaston, C.J. Permann, A.E. Slaughter, A.D. Lindsay, M.D. DeHart, and R.C. Martineau. A highly parallel multilevel newton\u2013krylov\u2013schwarz method with subspace-based coarsening and partition- based balancing for the multigroup neutron transport equation on three-dimensional unstructured meshes. SISC , 42(5):C193\u2013C220, 2020. [60] Y . Zabegaev, E. Keilegavlen, and I. Berre. Runscripts for the manuscript \u201cA block preconditioner for thermo- poromechanics with frictional deformation of fractures\u201d, 2025. [61] L.D. Dalcin, R.R. Paz, P.A.",
+  "fractured high-enthalpy geothermal systems with advanced discrete fracture methodology. Adv. Water Resour. , 154:103985, 2021. [17] Y . Wang, D. V oskov, M. Khait, and D Bruhn. An efficient numerical simulator for geothermal simulation: A benchmark study. Appl. Energy , 264:114693, 2020. [18] K. Brenner, J. Hennicker, R. Masson, and P. Samier. Gradient discretization of hybrid-dimensional darcy flow in fractured porous media with discontinuous pressures at matrix\u2013fracture interfaces. IMA J. Numer. Anal. , 37(3):1551\u20131585, 09 2016. [19] F. Bonaldi, J. Droniou, and R. Masson. Numerical analysis of a mixed-dimensional poromechanical model with frictionless contact at matrix\u2013fracture interfaces. Math. Comput. , 2024. [20] F. Bonaldi, J. Droniou, R Masson, and A Pasteau. Energy-stable discretization of two-phase flows in deformable porous media with frictional contact at matrix\u2013fracture interfaces. J. Comput. Phys. , 455:110984, 2022. [21] I. Stefansson, I. Berre, and E. Keilegavlen. A fully coupled numerical model of thermo-hydro-mechanical processes and fracture contact mechanics in porous media. Comput. Methods Appl. Mech. Eng. , 386:114122, December 2021. [22] I. Berre, F. Doster, and E. Keilegavlen. Flow in fractured porous media: A review of conceptual models and discretization approaches. Transp. Porous Media. , 130(1):215\u2013236, 2019. [23] I. Stefansson, J. Varela, E. Keilegavlen, and I."
  ]
 }

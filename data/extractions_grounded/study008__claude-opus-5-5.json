@@ -12,10 +12,7 @@
    "evidence": "the most common training setup is bfloat16 mixed-precision training",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -23,10 +20,7 @@
    "evidence": "whether mixed- precision training is necessary for continued pretraining",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -34,10 +28,7 @@
    "evidence": "a master copy of the model weights and the optimizer states are stored in float32",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 0
+   "value_in_span": false
   },
   {
    "field": "dependencies",
@@ -45,10 +36,7 @@
    "evidence": "parallel training with PyTorch FSDP (Zhao et al., 2023)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -56,10 +44,7 @@
    "evidence": "We use the FlashAttention self-attention and RMSNorm CUDA kernels (Dao, 2023).",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -67,10 +52,7 @@
    "evidence": "We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -78,10 +60,7 @@
    "evidence": "We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -89,10 +68,7 @@
    "evidence": "We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -100,10 +76,7 @@
    "evidence": "We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -111,10 +84,7 @@
    "evidence": "We use either two or four Nvidia A100 80GB",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -122,10 +92,7 @@
    "evidence": "We conduct an additional hindsight study using pure bfloat16 and tokenizer swapping",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -133,10 +100,7 @@
    "evidence": "by using an infinite learning rate schedule following Ibrahim et al. (2024)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -144,10 +108,7 @@
    "evidence": "We use training data from CulturaX (Nguyen et al., 2024)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -155,10 +116,7 @@
    "evidence": "instead of OSCAR23.01",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -166,10 +124,7 @@
    "evidence": "parallel training with PyTorch FSDP (Zhao et al., 2023)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -177,10 +132,7 @@
    "evidence": "such as micro-batch size, activation checkpointing, or different ZeRO (Rajbhandari et al., 2019) stages",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -188,10 +140,7 @@
    "evidence": "different ZeRO (Rajbhandari et al., 2019) stages",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -199,10 +148,7 @@
    "evidence": "We use the FlashAttention self-attention and RMSNorm CUDA kernels",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -210,10 +156,7 @@
    "evidence": "We use the FlashAttention self-attention and RMSNorm CUDA kernels",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -221,10 +164,7 @@
    "evidence": "using pure bfloat16 and tokenizer swapping",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -232,10 +172,7 @@
    "evidence": "by using an infinite learning rate schedule following Ibrahim et al. (2024)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -243,10 +180,7 @@
    "evidence": "adjusted attention masks to prevent cross- document",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -254,10 +188,7 @@
    "evidence": "BOOLQ (Clark et al., 2019)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -265,10 +196,7 @@
    "evidence": "COPA (Roem- mele et al., 2011)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -276,10 +204,7 @@
    "evidence": "HellaSwag (Zellers et al., 2019)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -287,10 +212,7 @@
    "evidence": "Open- BookQA (Mihaylov et al., 2018)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -298,10 +220,7 @@
    "evidence": "PIQA (Bisk et al., 2020)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -309,10 +228,7 @@
    "evidence": "RACE (Lai et al., 2017)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -320,10 +236,7 @@
    "evidence": "SciTail (Welbl et al., 2017)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -331,10 +244,7 @@
    "evidence": "TOXI- GEN (Hartvigsen et al., 2022)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -342,10 +252,7 @@
    "evidence": "counting the benchmarks in AlGhafa-T individually",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -353,10 +260,7 @@
    "evidence": "We report a macro average as in OALL (Elfilali et al., 2024)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -364,10 +268,7 @@
    "evidence": "For bfloat16 , we always",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -375,10 +276,7 @@
    "evidence": "Histogram of absolute individual parameter weight values of Mistral-7B",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -386,10 +284,7 @@
    "evidence": "separately highlighting RMS- Norm and non-RMSNorm weights",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -397,10 +292,7 @@
    "evidence": "Training steps 7,680 15,360",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -408,10 +300,7 @@
    "evidence": "Training steps 7,680 15,360",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -419,10 +308,7 @@
    "evidence": "Warmup steps 76 153",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -430,10 +316,7 @@
    "evidence": "Warmup steps 76 153",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -441,10 +324,7 @@
    "evidence": "Batch size 256 512",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -452,10 +332,7 @@
    "evidence": "Batch size 256 512",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -463,10 +340,7 @@
    "evidence": "Context length 4,096 8,192",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -474,10 +348,7 @@
    "evidence": "Context length 4,096 8,192",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -485,10 +356,7 @@
    "evidence": "Total training tokens 8 billion 64 billion",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -496,10 +364,7 @@
    "evidence": "Total training tokens 8 billion 64 billion",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -507,10 +372,7 @@
    "evidence": "Optimizer AdamW AdamW",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -518,10 +380,7 @@
    "evidence": "Learning rate 4\u00d710\u221252\u00d710\u22125",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -529,10 +388,7 @@
    "evidence": "Learning rate 4\u00d710\u221252\u00d710\u22125",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -540,10 +396,7 @@
    "evidence": "Learning rate decay Cosine to 2\u00d710\u22126Cosine to 2\u00d710\u22126",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -551,10 +404,7 @@
    "evidence": "Adam \u03b2 (0.9, 0.95) (0.9, 0.95)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -562,10 +412,7 @@
    "evidence": "Weight decay 0.05 0.05",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -573,10 +420,7 @@
    "evidence": "even very small update values will not disappear in pure bfloat16 training",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -584,10 +428,7 @@
    "evidence": "Case study: Mistral-7B.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -595,10 +436,7 @@
    "evidence": "the RMSNorm weight values are much larger than other weights",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -606,10 +444,7 @@
    "evidence": "even very small update values will not disappear in pure bfloat16 training",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -617,10 +452,7 @@
    "evidence": "Hyperparameters Ours (Main) LeoLM",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -628,10 +460,7 @@
    "evidence": "Optimizer AdamW AdamW",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -639,10 +468,7 @@
    "evidence": "in our experiments with two 80GB GPUs",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -650,10 +476,7 @@
    "evidence": "With access to only a single 80GB GPU",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -661,10 +484,7 @@
    "evidence": "optimizer states are stored in float32",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -672,10 +492,7 @@
    "evidence": "we extensively analyze the viability of pure bfloat16 training",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -683,10 +500,7 @@
    "evidence": "39% faster than mixed-precision bfloat16 training",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -694,10 +508,7 @@
    "evidence": "smaller batch sizes and activation check- pointing",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 5
+   "value_in_span": false
   },
   {
    "field": "evaluation_results",
@@ -705,10 +516,7 @@
    "evidence": "pure bfloat16 was 39% faster than mixed-precision bfloat16 training",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "claude-opus-5-5",
-   "passage_index": 5
+   "value_in_span": true
   }
  ],
  "summary": {
@@ -718,42 +526,48 @@
     "has_evidence": 23,
     "span_found": 23,
     "value_in_span": 21,
-    "grounded": 21
+    "grounded": 21,
+    "span_any": 23
    },
    "dependencies": {
     "n": 2,
     "has_evidence": 2,
     "span_found": 2,
     "value_in_span": 2,
-    "grounded": 2
+    "grounded": 2,
+    "span_any": 2
    },
    "hardware": {
     "n": 6,
     "has_evidence": 6,
     "span_found": 6,
     "value_in_span": 6,
-    "grounded": 6
+    "grounded": 6,
+    "span_any": 6
    },
    "hyperparameters": {
     "n": 21,
     "has_evidence": 21,
     "span_found": 21,
     "value_in_span": 21,
-    "grounded": 21
+    "grounded": 21,
+    "span_any": 21
    },
    "datasets": {
     "n": 11,
     "has_evidence": 11,
     "span_found": 11,
     "value_in_span": 11,
-    "grounded": 11
+    "grounded": 11,
+    "span_any": 11
    },
    "evaluation_results": {
     "n": 1,
     "has_evidence": 1,
     "span_found": 1,
     "value_in_span": 1,
-    "grounded": 1
+    "grounded": 1,
+    "span_any": 1
    }
   },
   "total": {
@@ -761,7 +575,8 @@
    "has_evidence": 64,
    "span_found": 64,
    "value_in_span": 62,
-   "grounded": 62
+   "grounded": 62,
+   "span_any": 64
   }
  },
  "raw": [
@@ -1150,5 +965,13 @@
     ]
    }
   }
+ ],
+ "passages": [
+  "experimental setup in Section 3 and present the results in Section 4. We discuss related work in Section 5 and the limitations of this study in Section 6. We publish our code and model checkpoints under https://github.com/ konstantinjdobler/tight-budget-llm-adaptation . 2. Background: Precision Types One of our main research questions is whether mixed- precision training is necessary for continued pretraining.Sign Exponent Mantissa SEEEEEEEEEMMMMMMM float328 bits 23bits ...MMM SEEEEEEEEEMMMMMMM bfloat168 bits 7bits Figure 1: Illustration of the memory layout of float32 and bfloat16 , based on Garc\u00eda-Nava et al. (2022). In this section, we provide a short introduction to mixed- precision bfloat16 training. The educated reader is encour- aged to skip ahead to Section 3. Nowadays, the most common training setup is bfloat16 mixed-precision training.3In mixed-precision training, the forward and backward pass is computed in bfloat16 in- stead of float32 , as this increases computational efficiency. However, bfloat16 has less precision than float32 due to its memory layout with fewer mantissa bits (as illustrated in Figure 1). Hence, a master copy of the model weights and the optimizer states are stored in float32 and used during the optimizer step to offset this reduced precision, at the cost of increased memory usage. In",
+  "tight academic compute budget setting. We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs for parallel training with PyTorch FSDP (Zhao et al., 2023). Depending on the number of available GPUs and training precision, we adjust efficiency settings, such as micro-batch size, activation checkpointing, or different ZeRO (Rajbhandari et al., 2019) stages of Py- Torch FSDP as needed to fit the available GPU memory. We use the FlashAttention self-attention and RMSNorm CUDA kernels (Dao, 2023). 3.2. Hindsight Study We conduct an additional hindsight study using pure bfloat16 and tokenizer swapping based on the findings from our main experiments for further analysis. We addi- tionally make the following changes to our original training recipe: (i) We use training data from CulturaX (Nguyen et al., 2024) instead of OSCAR23.01, as CulturaX has ad- vanced cleaning and deduplication steps already applied. (ii) We additionally target Arabic alongside German to evalu- ate language adaptation when the target language has not had a significant share during the base model\u2019s pretrain- ing. (iii) We integrate (continued) training improvements by using an infinite learning rate schedule following Ibrahim et al. (2024) and adjusted attention masks to prevent cross- document",
+  "2018b), BOOLQ (Clark et al., 2019), COPA (Roem- mele et al., 2011), HellaSwag (Zellers et al., 2019), Open- BookQA (Mihaylov et al., 2018), PIQA (Bisk et al., 2020), RACE (Lai et al., 2017), SciTail (Welbl et al., 2017), TOXI- GEN (Hartvigsen et al., 2022). We report a macro average as in OALL (Elfilali et al., 2024) counting the benchmarks in AlGhafa-T individually. We provide further details in Appendix D.",
+  "we have base numbers represented by the first term s\u00d72e\u2212127that are powers of two over the entire representable range of the datatype (e.g., 2,\u22122, ...64,\u221264, ...) and \u201cfractional\u201d numbers represented by the second term s\u00d72e\u2212127\u00d72\u2212mthat add a fraction of that power of two until the next power of two is reached. Note that we always have the same amount of fractions between any two powers of two. For bfloat16 , we always 3Recently, the fp8type supported by Nvidia H100 GPUs has also gained popularity, but we leave this for future work. The problems we illustrate for bfloat16 are expected to be exacerbated forfp8. 2 Language Adaptation on a Tight Academic Compute Budget 10\u25a14010\u25a13910\u25a13810\u25a13710\u25a13610\u25a135101103105107109 RMSNorm Parameters Other Parameters 10\u25a11010\u25a1710\u25a1410\u25a11110 Absolute Values of Mistral-7B Weights (log-spaced bins)Frequency (log) Figure 2: Histogram of absolute individual parameter weight values of Mistral-7B, separately highlighting RMS- Norm and non-RMSNorm weights. have 128 = 27fractions, since we have 7 mantissa bits. Therefore, bfloat16 will have very low precision for very large numbers. We have to cover the space between 256 and 512 with the same number of fractions as for the space between 2 and 4. This means that we can only represent 128 floating point numbers",
+  "bfloat16 numerics is 0.05/128\u22480.00039 . As a side note: the same effect exists for training in float32 , but only when u < W/ 223for 23 mantissa bits in float32 . Arguably, this is not a problem in practice. Case study: Mistral-7B. In Figure 2, we plot the absolute values of Mistral-7B\u2019s weights. We see that most weight values are relatively small, which is good, as even very small update values will not disappear in pure bfloat16 training. However, when considering the average values of RMSNorm weights and other weights separately, we observe that the RMSNorm weight values are much larger than other weights. This means that small updates to their weights during training in pure bfloat16 are more likely to disappear. We evaluate and discuss this in Section 4.1. 3. Experimental Setup We now describe the experimental setup of our main experi- ments and hindsight study.Hyperparameters Ours (Main) LeoLM Training steps 7,680 15,360 Warmup steps 76 153 Batch size 256 512 Context length 4,096 8,192 Total training tokens 8 billion 64 billion Optimizer AdamW AdamW Learning rate 4\u00d710\u221252\u00d710\u22125 Learning rate decay Cosine to 2\u00d710\u22126Cosine to 2\u00d710\u22126 Adam \u03b2 (0.9, 0.95) (0.9, 0.95) Weight decay 0.05 0.05 Table 1: Hyperparameters",
+  "optimizer states are stored in float32 and used during the optimizer step to offset this reduced precision, at the cost of increased memory usage. In settings with constrained access to GPUs, such as our tight academic budget setting, this additional memory cost can force the use of smaller batch sizes and activation check- pointing, which result in significantly lower training effi- ciency. For example, in our experiments with two 80GB GPUs, pure bfloat16 was 39% faster than mixed-precision bfloat16 training. With access to only a single 80GB GPU, mixed precision proved impossible due to out-of-memory errors. Therefore, we extensively analyze the viability of pure bfloat16 training for language adaptation in the tight academic compute budget setting. The Numerics of bfloat16 .Let us take a closer look at how floating point numbers are encoded. The formula for the actual value of a floating point number nis: n=s\u00d72e\u2212127+s\u00d72e\u2212127\u00d72\u2212m where sis the sign ( \u22121or1),eis the number encoded by the exponent bits, and mis the number encoded by the mantissa bits. An intuitive model of this is that we have base numbers represented by the first term s\u00d72e\u2212127that are powers of two over the entire representable range of the datatype (e.g., 2,\u22122, ...64,\u221264,"
  ]
 }

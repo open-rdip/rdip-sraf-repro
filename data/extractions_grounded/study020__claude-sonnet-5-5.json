@@ -12,10 +12,7 @@
    "evidence": "we used a batch size of 64",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -23,10 +20,7 @@
    "evidence": "trained on 632 \u00d7512 images",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -34,10 +28,7 @@
    "evidence": "We used a learning rate of1e\u22126",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -45,10 +36,7 @@
    "evidence": "random rotation of 10 degrees",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -56,10 +44,7 @@
    "evidence": "We used 5-fold cross-validation to determine the stopping iteration",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -67,10 +52,7 @@
    "evidence": "Both are initialized with ImageNet-pretrained weights [ 14].",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -78,10 +60,7 @@
    "evidence": "using the Adam optimizer [ 29]",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -89,10 +68,7 @@
    "evidence": "the multi-hot encoding for datapoint xiwith ordinal label li",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 0
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -100,10 +76,7 @@
    "evidence": "applied random horizontal and vertical flipping, random rotation of 10 degrees",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 0
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -111,10 +84,7 @@
    "evidence": "We used 5-fold cross-validation to determine the stopping iteration",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -122,10 +92,7 @@
    "evidence": "Both are initialized with ImageNet-pretrained weights [ 14].",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 0
+   "value_in_span": false
   },
   {
    "field": "datasets",
@@ -133,10 +100,7 @@
    "evidence": "empirically analyze CSAW-M",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -144,10 +108,7 @@
    "evidence": "Both use ResNet-34 [27] as the backbone.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 1
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -155,10 +116,7 @@
    "evidence": "ResNet34 one-hot\u2013 This model uses a standard approach for categorical classification, where each class is treated independently.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -166,10 +124,7 @@
    "evidence": "Masking levels are predicted independently using standard softmax and cross-entropy loss to predict one-hot encodings.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -177,10 +132,7 @@
    "evidence": "ResNet34 multi-hot\u2013 This model accounts for the ordinal relation between masking levels usingmulti-hotencodings",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -188,10 +140,7 @@
    "evidence": "we useF1-score\u2013 a common metric to assess the performance in information retrieval",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -199,10 +148,7 @@
    "evidence": "We measure performance using area under the ROC curve (AUC) for individual cancer types",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -210,10 +156,7 @@
    "evidence": "We also calculate theodds ratio(OR), a measurement often used in clinical studies.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 2
+   "value_in_span": false
   },
   {
    "field": "hyperparameters",
@@ -221,10 +164,7 @@
    "evidence": "10 degrees, and small random brightness and contrast jittering as data augmentation.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -232,10 +172,7 @@
    "evidence": "We used 5-fold cross-validation to determine the stopping iteration",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -243,10 +180,7 @@
    "evidence": "The principal task of CSAW-M is to model the median expert opinion of masking potential level in the range [1-8].",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -254,10 +188,7 @@
    "evidence": "We used 5-fold cross-validation to determine the stopping iteration",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -265,10 +196,7 @@
    "evidence": "small random brightness and contrast jittering as data augmentation",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -276,10 +204,7 @@
    "evidence": "Task 1: Ordinal classification of masking potential.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -287,10 +212,7 @@
    "evidence": "computed using Libra [ 10]",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -298,10 +220,7 @@
    "evidence": "model predictions are divided into groups gi. Here, groups correspond to quartiles of the model predictions",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 4
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -309,10 +228,7 @@
    "evidence": "We compare our baseline models withdense areaandpercent densitycomputed using Libra [ 10]",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 4
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -320,10 +236,7 @@
    "evidence": "We compute a continuous score as the weighted average of probabilities that an input belongs to each masking level.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study020",
-   "slug": "claude-sonnet-5-5",
-   "passage_index": 4
+   "value_in_span": false
   }
  ],
  "summary": {
@@ -333,28 +246,32 @@
     "has_evidence": 7,
     "span_found": 7,
     "value_in_span": 7,
-    "grounded": 7
+    "grounded": 7,
+    "span_any": 7
    },
    "datasets": {
     "n": 3,
     "has_evidence": 3,
     "span_found": 3,
     "value_in_span": 3,
-    "grounded": 3
+    "grounded": 3,
+    "span_any": 3
    },
    "methods": {
     "n": 18,
     "has_evidence": 18,
     "span_found": 18,
     "value_in_span": 10,
-    "grounded": 10
+    "grounded": 10,
+    "span_any": 18
    },
    "dependencies": {
     "n": 1,
     "has_evidence": 1,
     "span_found": 1,
     "value_in_span": 1,
-    "grounded": 1
+    "grounded": 1,
+    "span_any": 1
    }
   },
   "total": {
@@ -362,7 +279,8 @@
    "has_evidence": 29,
    "span_found": 29,
    "value_in_span": 21,
-   "grounded": 21
+   "grounded": 21,
+   "span_any": 29
   }
  },
  "raw": [
@@ -564,5 +482,12 @@
     "evaluation_results": []
    }
   }
+ ],
+ "passages": [
+  "/ 5 / 5 5 / 65464 / 8 / 7 7 / 66887 / 5 / 5 7 / 77886 / 4 / 5 (a)Experts and models(b)Experts and models(c)Experts and models(d)Outlier expert,(e)Experts(f)Models over-(g)Models under-(h)Models under- agree. agree. agree. possible error. disagree. estimate masking. estimate masking. estimate masking. Figure 4: Agreement and disagreement amongst experts and models. Eight mammograms are shown, along with labels as follows: GT / experts 1-5 / one-hot / multi-hot. equivalent to solving K\u22121 independent binary classifications, each class being a superset of the previous. For an ordinal classification problem with Kclasses, the multi-hot encoding for datapoint xiwith ordinal label li\u2208 {1, ..., K} is defined as {y1 i, y2 i, ..., yK\u22121 i}where for eachk\u2208 {1, ..., K\u22121},yk i=1{l i> k}where1{.}denotes the indicator function. For both models, we used a batch size of 64 and trained on 632 \u00d7512 images using the Adam optimizer [ 29]. Both are initialized with ImageNet-pretrained weights [ 14]. We used a learning rate of1e\u22126 and applied random horizontal and vertical flipping, random rotation of 10 degrees, and small random brightness and contrast jittering as data augmentation. We used 5-fold cross-validation to determine the stopping iteration, which we used in",
+  "3 Experiments We conducted experiments using simple models to(1)empirically analyze CSAW-M, and(2)serve as baselines for future work. We evaluated performance of these models for prediction of masking potential, as well as for the indirect clinical tasks of correlating masking potential estimates with the two clinical endpoints of interval cancers and large invasive cancers. Baseline models.We trained two baseline models to predict masking potential from mammography images. Both use ResNet-34 [27] as the backbone. \u2022ResNet34 one-hot\u2013 This model uses a standard approach for categorical classification, where each class is treated independently. Masking levels are predicted independently using standard softmax and cross-entropy loss to predict one-hot encodings. \u2022ResNet34 multi-hot\u2013 This model accounts for the ordinal relation between masking levels usingmulti-hotencodings [ 28]. Training a model with multi-hot encoding could be seen as multi-label classification, where the task of classifying an item into Kordinal classes is 6 2 / 22322 / 2 / 2 4 / 44544 / 4 / 4 8 / 88487 / 8 / 8 4 / 41842 / 2 / 3 8 / 83885 / 5 / 5 5 / 65464 / 8 / 7 7 / 66887 / 5 / 5 7 / 77886 / 4 / 5",
+  "at identifying low- and high-masking mammograms. From a clinical perspective, these levels are most interesting because they represent cases the experts are most and least confident about. Participants with high-masking images can bee.g. offered additional screening. We consider the two lowest masking levels (1 and 2) together aslow-masking levels, and the two highest ones (7 and 8) ashigh-masking levels. This choice was based on feedback from the experts. To assess how the models perform at identifying images in thesetailmasking levels, we useF1-score\u2013 a common metric to assess the performance in information retrieval. Task 2: Identification of interval and large invasive cancers.A secondary task of high clinical relevance is to measure the correlation between predicted masking estimates and certain cancers. In particular, we consider how masking potential can predictinterval cancersandlarge invasive cancers without being explicitly trained for these tasks. We measure performance using area under the ROC curve (AUC) for individual cancer types and for thecomposite endpoint(CEP) containing both types. We also calculate theodds ratio(OR), a measurement often used in clinical studies. The odds ratio is simply the ratio of the odds of an event occurring in one group to the odds of it occurring in another group. To compute it,",
+  "10 degrees, and small random brightness and contrast jittering as data augmentation. We used 5-fold cross-validation to determine the stopping iteration, which we used in the final training run using all the training data. Task 1: Ordinal classification of masking potential.The principal task of CSAW-M is to model the median expert opinion of masking potential level in the range [1-8]. Recall that the expert labels in CSAW-M are ordinally related, implying that a prediction confusing level 1 with level 8 is worse than one confusing level 1 with 2. We consider two metrics widely used to evaluate ordinal classification, (1)average mean absolute error (AMAE) which measures the average distance of predicted classes w.r.t. the true classes and is robust to class imbalance [ 30], and(2)Kendall\u2019s \u03c4b[31] which measures the correlation of two rankings based on the number of concordant and discordant pairs. Kendall\u2019s \u03c4b ranges from -1 (perfect inverse correlation) to 1 (perfect correlation), and 0 indicates no correlation. The metrics described above consider performance over all masking levels. In addition, we consider model performance at identifying low- and high-masking mammograms. From a clinical perspective, these levels are most interesting because they represent cases the experts are most and least",
+  "simply the ratio of the odds of an event occurring in one group to the odds of it occurring in another group. To compute it, model predictions are divided into groups gi. Here, groups correspond to quartiles of the model predictions, so i\u2208 {1,2,3,4} . For screening participants in group gi, the odds of having interval cancer is computed as Oi=IC i/\u02dcICi, where ICiis the number of participants fromgiwith interval cancer, and \u02dcICiis the number without. The odds ratio is then computed relative to a reference group, in this case the reference is the first quartile g1, asORi=O i/O1. Note that OR 1= 1for all models. If a masking estimate is a good predictor of interval cancer it will show strong odds ratios in the top quartiles and exhibit monotonically increasing odds ratios. We compare our baseline models withdense areaandpercent densitycomputed using Libra [ 10]. This was done because density is known to be correlated with the clinical endpoints. For a fair comparison, it was necessary to convert the discrete masking predictions from our models to continuous values. We compute a continuous score as the weighted average of probabilities that an input belongs to each masking level. Refer to Appendix"
  ]
 }

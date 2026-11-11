@@ -1,0 +1,883 @@
+{
+ "study_id": "study001",
+ "model": "mistral",
+ "slug": "redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+ "n_passages": 7,
+ "n_passages_ok": 7,
+ "failures": [],
+ "records": [
+  {
+   "field": "dependencies",
+   "value": "LoRC",
+   "evidence": "LoRC can be viewed as a supplementary feature to existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global, and can be seamlessly integrated with FGQ.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "dependencies",
+   "value": "RTN",
+   "evidence": "LoRC can be viewed as a supplementary feature to existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global, and can be seamlessly integrated with FGQ.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "dependencies",
+   "value": "GPTQ",
+   "evidence": "LoRC can be viewed as a supplementary feature to existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global, and can be seamlessly integrated with FGQ.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "dependencies",
+   "value": "ZeroQuant-Local/Global",
+   "evidence": "LoRC can be viewed as a supplementary feature to existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global, and can be seamlessly integrated with FGQ.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "dependencies",
+   "value": "FGQ",
+   "evidence": "LoRC can be viewed as a supplementary feature to existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global, and can be seamlessly integrated with FGQ.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "OPT",
+   "evidence": "We have conducted experiments to evaluate the performance of LoRC on both OPT and BLOOM",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "BLOOM",
+   "evidence": "We have conducted experiments to evaluate the performance of LoRC on both OPT and BLOOM",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "To gain a comprehensive understanding of LoRC, we utilize the GPTQ quantization strategy.",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.562,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "methods",
+   "value": "LoRC",
+   "evidence": "To gain a comprehensive understanding of LoRC, we utilize the GPTQ quantization strategy.",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.562,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.016",
+   "evidence": "number 3m/2h\u22640.016.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "8",
+   "evidence": "the two low-rank matrices for LoRC in Table 7 are INT8 with a low-rank dimension of m= 8.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "dependencies",
+   "value": "GPTQ",
+   "evidence": "GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective and efficient",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "dependencies",
+   "value": "ZeroQuant",
+   "evidence": "GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective and efficient",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "hardware",
+   "value": "GPU",
+   "evidence": "GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective and efficient in terms of GPU resources",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "hyperparameters",
+   "value": "max(abs(x))",
+   "evidence": "we set S=max(abs(x))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "hyperparameters",
+   "value": null,
+   "evidence": "we set S=max(abs(x))andZ=",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective and efficient",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "ZeroQuant",
+   "evidence": "GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective and efficient",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "RTN",
+   "evidence": "RTNdirectly applies PTQ on the trained data",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "negligible degradation",
+   "evidence": "with negligible degradation in accuracy",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "substantial accuracy degradation",
+   "evidence": "INT4 weight-only quantization for small models results in substantial accuracy degradation ( Class-3)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "minimal accuracy drops",
+   "evidence": "INT8 activation results in minimal accuracy drops for small models ( Class-1)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "greater drops",
+   "evidence": "larger models exhibit greater drops ( Class-3)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "no divergence issues",
+   "evidence": "BLOOM shows no divergence issues up to a model size of 176B",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "poorly",
+   "evidence": "OPT performs poorly from \u22656.7B model sizes",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "per-row quantization",
+   "evidence": "we implement per-row quantization [ 12] for weight quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "per-token quantization",
+   "evidence": "per-token quantization for activation [36]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.5",
+   "evidence": "PPL improvement is about 0.5",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "less than 0.05",
+   "evidence": "INT8 weight-only quantization, either symmetric or asymmetric, results in negligible accuracy loss (less than 0.05, i.e., Class-1)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.3",
+   "evidence": "BLOOM-176B shows PPL degradation (around 0.3 points)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "dependencies",
+   "value": "GPTQ",
+   "evidence": "we utilize GPTQ",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "dependencies",
+   "value": "ZQ-Global",
+   "evidence": "we utilize ZQ-Global",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.55,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "dependencies",
+   "value": "ZQ-Local",
+   "evidence": "apply ZQ-Local",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "hardware",
+   "value": "modern GPUs",
+   "evidence": "block-k quantization can be implemented on modern GPUs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "PTQ",
+   "evidence": "With PTQ and row-wise quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "fine-grained quantization",
+   "evidence": "the implementation of finer-grained quantization schemes",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false
+  },
+  {
+   "field": "methods",
+   "value": "block-k quantization",
+   "evidence": "block-k quantization can be implemented on modern GPUs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "hyperparameters",
+   "value": "null",
+   "evidence": "learning rate and its scheduler",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Local",
+   "evidence": "ZQ-Local is an extension mode of ZQ-Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Global",
+   "evidence": "ZQ-Local is an extension mode of ZQ-Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "parameters used for GPTQ",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "null",
+   "evidence": "The evaluation results of different PTQ methods on OPT and BLOOM (BLM)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Global\u2217",
+   "evidence": "ZQ-Global\u2217optimizes a larger subnetwork.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "GPTQ only optimizes a single linear layer.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Local\u2217",
+   "evidence": "ZQ-Local\u2217yields superior results",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.719,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "methods",
+   "value": "RTN",
+   "evidence": "The three light-weight optimization-based methods outperform RTN significantly",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "Class-2",
+   "evidence": "The evaluation results for existing methods using W4A8 quantization are presented in Table 3.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false
+  },
+  {
+   "field": "evaluation_results",
+   "value": "Class-3",
+   "evidence": "The evaluation results for existing methods using W4A8 quantization are presented in Table 3.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false
+  },
+  {
+   "field": "methods",
+   "value": "INT8 weight-only quantization",
+   "evidence": "INT8 weight-only quantization can serve as a standard method for reducing memory costs in LLMs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "INT4 weight-only quantization",
+   "evidence": "INT4 weight-only quantization for small models results in substantial accuracy degradation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.5",
+   "evidence": "all fall into Class-3, indicating a degradation of more than 0.5 PPL points",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "176B",
+   "evidence": "BLOOM does not exhibit divergence issues even up to a model size of 176B",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.7B",
+   "evidence": "OPT displays very poor performance from a model size of 6.7B",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "dependencies": {
+    "n": 10,
+    "has_evidence": 10,
+    "span_found": 9,
+    "value_in_span": 10,
+    "grounded": 9,
+    "span_any": 9,
+    "miss_paraphrase": 1
+   },
+   "datasets": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2,
+    "span_any": 2
+   },
+   "methods": {
+    "n": 19,
+    "has_evidence": 19,
+    "span_found": 16,
+    "value_in_span": 18,
+    "grounded": 15,
+    "span_any": 16,
+    "miss_paraphrase": 2,
+    "miss_near_verbatim": 1
+   },
+   "evaluation_results": {
+    "n": 17,
+    "has_evidence": 17,
+    "span_found": 17,
+    "value_in_span": 14,
+    "grounded": 14,
+    "span_any": 17
+   },
+   "hardware": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2,
+    "span_any": 2
+   },
+   "hyperparameters": {
+    "n": 3,
+    "has_evidence": 3,
+    "span_found": 3,
+    "value_in_span": 1,
+    "grounded": 1,
+    "span_any": 3
+   }
+  },
+  "total": {
+   "n": 53,
+   "has_evidence": 53,
+   "span_found": 49,
+   "value_in_span": 47,
+   "grounded": 43,
+   "span_any": 49,
+   "miss_paraphrase": 3,
+   "miss_near_verbatim": 1
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "LoRC",
+      "evidence": "LoRC can be viewed as a supplementary feature to existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global, and can be seamlessly integrated with FGQ."
+     },
+     {
+      "name": "RTN",
+      "evidence": "LoRC can be viewed as a supplementary feature to existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global, and can be seamlessly integrated with FGQ."
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "LoRC can be viewed as a supplementary feature to existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global, and can be seamlessly integrated with FGQ."
+     },
+     {
+      "name": "ZeroQuant-Local/Global",
+      "evidence": "LoRC can be viewed as a supplementary feature to existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global, and can be seamlessly integrated with FGQ."
+     },
+     {
+      "name": "FGQ",
+      "evidence": "LoRC can be viewed as a supplementary feature to existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global, and can be seamlessly integrated with FGQ."
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "OPT",
+      "evidence": "We have conducted experiments to evaluate the performance of LoRC on both OPT and BLOOM"
+     },
+     {
+      "name": "BLOOM",
+      "evidence": "We have conducted experiments to evaluate the performance of LoRC on both OPT and BLOOM"
+     }
+    ],
+    "methods": [
+     {
+      "name": "GPTQ",
+      "evidence": "To gain a comprehensive understanding of LoRC, we utilize the GPTQ quantization strategy."
+     },
+     {
+      "name": "LoRC",
+      "evidence": "To gain a comprehensive understanding of LoRC, we utilize the GPTQ quantization strategy."
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "number 3m/2h",
+      "value": "0.016",
+      "split": null,
+      "evidence": "number 3m/2h\u22640.016."
+     },
+     {
+      "metric": "m",
+      "value": "8",
+      "split": null,
+      "evidence": "the two low-rank matrices for LoRC in Table 7 are INT8 with a low-rank dimension of m= 8."
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "GPTQ",
+      "version": null,
+      "evidence": "GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective and efficient"
+     },
+     {
+      "name": "ZeroQuant",
+      "version": null,
+      "evidence": "GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective and efficient"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "GPU",
+      "evidence": "GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective and efficient in terms of GPU resources"
+     }
+    ],
+    "hyperparameters": [
+     {
+      "name": "S",
+      "value": "max(abs(x))",
+      "evidence": "we set S=max(abs(x))"
+     },
+     {
+      "name": "Z",
+      "value": null,
+      "evidence": "we set S=max(abs(x))andZ="
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "GPTQ",
+      "evidence": "GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective and efficient"
+     },
+     {
+      "name": "ZeroQuant",
+      "evidence": "GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective and efficient"
+     },
+     {
+      "name": "RTN",
+      "evidence": "RTNdirectly applies PTQ on the trained data"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "accuracy",
+      "value": "negligible degradation",
+      "split": null,
+      "evidence": "with negligible degradation in accuracy"
+     },
+     {
+      "metric": "accuracy",
+      "value": "substantial accuracy degradation",
+      "split": "Class-3",
+      "evidence": "INT4 weight-only quantization for small models results in substantial accuracy degradation ( Class-3)"
+     },
+     {
+      "metric": "accuracy",
+      "value": "minimal accuracy drops",
+      "split": "Class-1",
+      "evidence": "INT8 activation results in minimal accuracy drops for small models ( Class-1)"
+     },
+     {
+      "metric": "accuracy",
+      "value": "greater drops",
+      "split": "Class-3",
+      "evidence": "larger models exhibit greater drops ( Class-3)"
+     },
+     {
+      "metric": "divergence",
+      "value": "no divergence issues",
+      "split": null,
+      "evidence": "BLOOM shows no divergence issues up to a model size of 176B"
+     },
+     {
+      "metric": "divergence",
+      "value": "poorly",
+      "split": null,
+      "evidence": "OPT performs poorly from \u22656.7B model sizes"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "per-row quantization",
+      "evidence": "we implement per-row quantization [ 12] for weight quantization"
+     },
+     {
+      "name": "per-token quantization",
+      "evidence": "per-token quantization for activation [36]"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "PPL",
+      "value": "0.5",
+      "split": null,
+      "evidence": "PPL improvement is about 0.5"
+     },
+     {
+      "metric": "accuracy loss",
+      "value": "less than 0.05",
+      "split": null,
+      "evidence": "INT8 weight-only quantization, either symmetric or asymmetric, results in negligible accuracy loss (less than 0.05, i.e., Class-1)"
+     },
+     {
+      "metric": "PPL",
+      "value": "0.3",
+      "split": null,
+      "evidence": "BLOOM-176B shows PPL degradation (around 0.3 points)"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "GPTQ",
+      "version": null,
+      "evidence": "we utilize GPTQ"
+     },
+     {
+      "name": "ZQ-Global",
+      "version": null,
+      "evidence": "we utilize ZQ-Global"
+     },
+     {
+      "name": "ZQ-Local",
+      "version": null,
+      "evidence": "apply ZQ-Local"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "modern GPUs",
+      "evidence": "block-k quantization can be implemented on modern GPUs"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "PTQ",
+      "evidence": "With PTQ and row-wise quantization"
+     },
+     {
+      "name": "fine-grained quantization",
+      "evidence": "the implementation of finer-grained quantization schemes"
+     },
+     {
+      "name": "block-k quantization",
+      "evidence": "block-k quantization can be implemented on modern GPUs"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "learning rate",
+      "value": "null",
+      "evidence": "learning rate and its scheduler"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "ZQ-Local",
+      "evidence": "ZQ-Local is an extension mode of ZQ-Global"
+     },
+     {
+      "name": "ZQ-Global",
+      "evidence": "ZQ-Local is an extension mode of ZQ-Global"
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "parameters used for GPTQ"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "null",
+      "value": "null",
+      "split": "null",
+      "evidence": "The evaluation results of different PTQ methods on OPT and BLOOM (BLM)"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "ZQ-Global\u2217",
+      "evidence": "ZQ-Global\u2217optimizes a larger subnetwork."
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "GPTQ only optimizes a single linear layer."
+     },
+     {
+      "name": "ZQ-Local\u2217",
+      "evidence": "ZQ-Local\u2217yields superior results"
+     },
+     {
+      "name": "RTN",
+      "evidence": "The three light-weight optimization-based methods outperform RTN significantly"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "W4A8",
+      "value": "Class-2",
+      "split": null,
+      "evidence": "The evaluation results for existing methods using W4A8 quantization are presented in Table 3."
+     },
+     {
+      "metric": "W4A8",
+      "value": "Class-3",
+      "split": null,
+      "evidence": "The evaluation results for existing methods using W4A8 quantization are presented in Table 3."
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 6,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "INT8 weight-only quantization",
+      "evidence": "INT8 weight-only quantization can serve as a standard method for reducing memory costs in LLMs"
+     },
+     {
+      "name": "INT4 weight-only quantization",
+      "evidence": "INT4 weight-only quantization for small models results in substantial accuracy degradation"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "PPL",
+      "value": "0.5",
+      "split": null,
+      "evidence": "all fall into Class-3, indicating a degradation of more than 0.5 PPL points"
+     },
+     {
+      "metric": "PPL",
+      "value": "176B",
+      "split": null,
+      "evidence": "BLOOM does not exhibit divergence issues even up to a model size of 176B"
+     },
+     {
+      "metric": "PPL",
+      "value": "6.7B",
+      "split": null,
+      "evidence": "OPT displays very poor performance from a model size of 6.7B"
+     }
+    ]
+   }
+  }
+ ],
+ "passages": [
+  "number 3m/2h\u22640.016. Significantly, LoRC can be viewed as a supplementary feature to existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global, and can be seamlessly integrated with FGQ. We have conducted experiments to evaluate the performance of LoRC on both OPT and BLOOM, applying 4-bit, 3-bit, and 2-bit weights by setting the activation to FP16.5Based on the discoveries in the preceding sections, we utilize the GPTQ quantization strategy. To gain a comprehensive understanding of LoRC, we include the results with and without the application of FGQ. The datasets and hyperparameters are consistent with those detailed in earlier sections. Evaluation Results. The findings are showcased in Table 7, split into two sections: coarse-grained weight quantization (per-row) and fine-grained quantization (block-size 256). Notably, we observe that the two low-rank matrices, \u02c6Uand\u02c6V, can be quantized to 8-bit without any performance discrepancy (Table 8). Thus, the two low-rank matrices for LoRC in Table 7 are INT8 with a low-rank dimension of m= 8. Table 8: Results of W4asymA16 quantization with LoRC approximating \u02c6E=\u02c6U\u02c6Von OPT model family. \u02c6Uand \u02c6Vcan be represented with FP16 or INT8, of which the performance are represented below. There is hardly any difference between FP16 and INT8. LoRC Coarse-grained weight quantization",
+  "with negligible degradation in accuracy. (2)INT4 weight-only quantization for small models results in substantial accuracy degradation ( Class-3), but this effect lessens as the model size increases ( Class-2).(3)Contrary to (2), INT8 activation results in minimal accuracy drops for small models ( Class-1) but larger models exhibit greater drops ( Class-3). (4)With INT8 activation, BLOOM shows no divergence issues up to a model size of 176B, whereas OPT performs poorly from \u22656.7B model sizes. 4Are existing quantization methods optimally harnessing the po- tential to minimize LLMs sizes? Numerous lightweight optimization-based methods have been proposed, which update the model weights during quantization. These methods such as [ 36,12,35], unlike quantization-aware training, only require a small portion of the training data and a limited training time. Particularly, GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective and efficient in terms of GPU resources, time cost, and data usage for INT4 weight quantization.2In this work, we focus on the variants of GPTQ and ZeroQuant as well as the most straightforward baseline, round-to-nearest neighborhood (RTN). RTNdirectly applies PTQ on the trained data and follows the procedure detailed in Section A to perform the quantization. Specifically, for symmetric quantization, we set S=max(abs(x))andZ=",
+  "PPL improvement is about 0.5 (see Table 2). The sensitivity (or loss) incrementally increases as the class number ascends. From a practical standpoint, we favor lower quantization sensitivity (accuracy loss), making Class-1 the optimal-loss post-training quantization. We employ both symmetric and asymmetric quantization to gauge the quantization sensitivity and highlight the advantage of asymmetric quantization. Particularly, we implement per-row quantization [ 12] for weight quantization and per-token quantization for activation [36]. Robustness of Weight-only Quantization for Large Models. The results of weight-only quantization in OPT and BLOOM models are summarized in Table 2. INT8 weight-only quantization, either symmetric or asymmetric, results in negligible accuracy loss (less than 0.05, i.e., Class-1). Consequently, for tasks oriented towards generation, FP16 weight can simply be replaced with INT8 weight to reduce memory usage. For INT4 quantization, the asymmetric method outperforms the symmetric approach in accuracy, attributable to its superior utilization of the quantization range. Interestingly, larger models exhibit better tolerance to low-precision quantization (i.e., INT4) than smaller models, with a few exceptions such as OPT-66B.1 Particularly, BLOOM-176B shows PPL degradation (around 0.3 points) in Class-2, which could explain why the large GLM-130B [ 39] can operate with INT4 weight-only quantization out of the box",
+  "4.1 Fine-grained Quantization and Its Evaluation With PTQ and row-wise quantization, achieving Class-1 quantization error is challenging for both weight-only and weight-and-activation quantization. Generally, utilizing a smaller model with INT8 weight is more advantageous than employing a model that is twice as large with INT4 weight. One potential solution to this issue is the implementation of finer-grained quantization schemes [ 5], where every kelements possess their own scaling factor and/or zero point. This approach can significantly reduce quantization error. In the extreme case, where every single element has its own scaling factor, the original FP16 number can be precisely recovered. Importantly, block-k quantization can be implemented on modern GPUs, one of the most prevalent deep learning architectures, since the compute unit (streaming multiprocessor) of GPUs processes tiles of data (e.g., 128 by 128 tiling size) for matrix computation. Although fine-grained quantization can substantially narrow the gap between the quantized tensor and its floating-point counterpart, the application of RTN still results in a non-trivial accuracy gap. Consequently, we build upon fine-grained quantization by employing existing optimization-based methods to further enhance accuracy. Specifically, we utilize GPTQ and ZQ-Global for all models and settings and apply ZQ-Local to OPT-66B and Bloom-176B. For the",
+  "cost. ZQ-Local is an extension mode of ZQ-Global for further GPU requirement reduction and training cost reduction. Particularly, instead of using each transformer layer as the subnetwork, we treat each linear layer as the subnetwork. This method can be viewed as an iterative first-order optimization method (e.g., SGD) to solve min \u02c6W\u2225Wx\u2212\u02c6Wx\u22252 2. Experimental Setup. We compare the four methods mentioned above on weight-only and weight-and- activation quantization. As weight quantization is always static (i.e., it does not change during inference), there is virtually no system performance difference between symmetric and asymmetric quantization.3We use asymmetric quantization for better accuracy, and the conclusions would hold similarly for symmetric quantization. For parameters used for GPTQ, ZQ-Local, and ZQ-Global, please refer to Appendix B. An interesting finding for ZeroQuant is that the hyperparameters (e.g., learning rate and its scheduler) provided 2We tested the method proposed by [35] but did not find it better than others for INT4 weight quantization. 3The bias term (a.k.a., the zero point) can be simply fused into the previous activation quantization kernel [36]. 5 Table 3: The evaluation results of different PTQ methods on OPT and BLOOM (BLM) with asymmmetric quantization on weight or (and) activation. See more details",
+  "to solve the non-linear quadratic problem and ZQ-Global\u2217optimizes a larger subnetwork. The inferior performance of ZQ-Global\u2217compared to GPTQ for larger models is unexpected since ZQ-Global\u2217optimizes an entire transformer layer while GPTQ only optimizes a single linear layer. A plausible explanation is that larger models are more sensitive to weight updates, necessitating more advanced fine-tuning methods. Evaluation of Weight and Activation Quantization. The evaluation results for existing methods using W4A8 quantization are presented in Table 3. The three light-weight optimization-based methods outperform RTN significantly, underscoring their efficacy. However, all of the results fall into either Class-2 orClass-3. This suggests that for certain applications, it might be more beneficial to use smaller models with fewer parameters rather than larger, quantized models. Among quantization-based methods, ZQ-Global\u2217and ZQ-Local\u2217generally outperform GPTQ, which is anticipated given that GPTQ was originally designed for weight-only quantization. ZQ-Global\u2217performs better than ZQ-Local\u2217in most cases except for the two largest models, OPT-66B and Bloom-176B, despite having larger trainable parameters in one step. This again signifies the need for a more suitable and advanced optimization method for large language models (LLMs). Finding 2 on Comparisons. (1) GPTQ typically performs better for weight-only quantization, while ZeroQuant (including both ZQ-Global\u2217and ZQ-Local\u2217) yields superior results",
+  "is smaller and the activation dynamic range is also narrower than larger models [ 36]. It should be 1[12] discovered that OPT-66B has a high proportion of dead neurons in the early layers, which might influence the compression capability. We also identify another potential reason: the Layer Norm of the OPT-family is not well trained (except OPT-350M), with the weight and the bias being all 1\u2019s and 0\u2019s, respectively. 4 noted that for models larger than 10B, all fall into Class-3, indicating a degradation of more than 0.5 PPL points. The last two rows of Table 2 show that different model families exhibit significantly different behaviors. BLOOM does not exhibit divergence issues even up to a model size of 176B, whereas OPT displays very poor performance from a model size of 6.7B (larger models with INT8 activation have even worse PPL). This could again be attributed to the Layer Norm issue within the OPT-family1. Findings 1 on Sensitivity Analysis. (1) INT8 weight-only quantization can serve as a standard method for reducing memory costs in LLMs, with negligible degradation in accuracy. (2)INT4 weight-only quantization for small models results in substantial accuracy degradation ( Class-3), but this effect lessens as the model"
+ ]
+}

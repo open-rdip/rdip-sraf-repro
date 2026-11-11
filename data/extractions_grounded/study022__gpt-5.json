@@ -12,10 +12,7 @@
    "evidence": "the CUDA kernel launch overhead.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -23,10 +20,7 @@
    "evidence": "We retrain Pinnability from scratch twice per week.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -34,10 +28,7 @@
    "evidence": "the batch size during online serving is small",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -45,10 +36,7 @@
    "evidence": "Pinnability with TransAct is 65 times more computationally complex",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -56,10 +44,7 @@
    "evidence": "GPU model inference allows us to serve Pinnability with TransAct at neutral latency and cost6.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -67,10 +52,7 @@
    "evidence": "We retrain Pinnability from scratch twice per week.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "evaluation_results",
@@ -78,10 +60,7 @@
    "evidence": "is 65 times more computationally complex compared to its predecessors in terms of floating point operations.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "evaluation_results",
@@ -89,10 +68,7 @@
    "evidence": "at neutral latency and cost6.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -100,10 +76,7 @@
    "evidence": "nvFuser7but",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -111,10 +84,7 @@
    "evidence": "cuCollections8to",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -122,10 +92,7 @@
    "evidence": "Fuse CUDA kernels.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -133,10 +100,7 @@
    "evidence": "leverage standard deep learning compilers such as nvFuser7",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 1
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -144,10 +108,7 @@
    "evidence": "leveraging cuCollections8to support hash tables for the raw ids on GPUs",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 1
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -155,10 +116,7 @@
    "evidence": "implementing a custom consolidated embedding lookup module",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -166,10 +124,7 @@
    "evidence": "Combine memory copies.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -177,10 +132,7 @@
    "evidence": "CUDA Graphs9to com- pletely eliminate",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -188,10 +140,7 @@
    "evidence": "Flink10consumes",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -199,10 +148,7 @@
    "evidence": "Kafka11streams",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -210,10 +156,7 @@
    "evidence": "https://github.com/NVIDIA/cuCollections",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -221,10 +164,7 @@
    "evidence": "Rock- store [ 3]",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -232,10 +172,7 @@
    "evidence": "Pinterest Homefeed view log",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -243,10 +180,7 @@
    "evidence": "CUDA Graphs9to com- pletely eliminate",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -254,10 +188,7 @@
    "evidence": "3.4.3 Realtime Feature Processing.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -265,10 +196,7 @@
    "evidence": "A/B experiment results",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -276,10 +204,7 @@
    "evidence": "TransAct. We compare TransAct",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -287,10 +212,7 @@
    "evidence": "CUDA Graphs capture the model inference process as a static graph",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -298,10 +220,7 @@
    "evidence": "Combine memory copies.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -309,10 +228,7 @@
    "evidence": "Form larger batches.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -320,10 +236,7 @@
    "evidence": "Utilize CUDA graphs.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -331,10 +244,7 @@
    "evidence": "we implemented a hybrid cache that uses both DRAM and SSD.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -342,10 +252,7 @@
    "evidence": "The implementation is done using PyTorch.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -353,10 +260,7 @@
    "evidence": "10https://flink.apache.org/",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -364,10 +268,7 @@
    "evidence": "11https://kafka.apache.org/4.2",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -375,10 +276,7 @@
    "evidence": "|\ud835\udc46|= 100and",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -386,10 +284,7 @@
    "evidence": "dimension of action embedding \ud835\udc51\ud835\udc4e\ud835\udc50\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b =32.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -397,10 +292,7 @@
    "evidence": "composed of 2 transformer blocks",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -408,10 +300,7 @@
    "evidence": "default dropout rate of 0.1.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -419,10 +308,7 @@
    "evidence": "has a dimension of \ud835\udc51\u210e\ud835\udc56\ud835\udc51\ud835\udc51\ud835\udc52\ud835\udc5b =32",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -430,10 +316,7 @@
    "evidence": "positional encoding is not used.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -441,10 +324,7 @@
    "evidence": "We use an Adam [14] optimizer",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -452,10 +332,7 @@
    "evidence": "warm-up phase of 5000 steps",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -463,10 +340,7 @@
    "evidence": "increasing to 0.0048",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -474,10 +348,7 @@
    "evidence": "reduced through cosine annealing.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -485,10 +356,7 @@
    "evidence": "The batch size is 12000.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -496,10 +364,7 @@
    "evidence": "with a learning rate scheduler.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -507,10 +372,7 @@
    "evidence": "randomly sampled from FVL",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -518,10 +380,7 @@
    "evidence": "a transformer encoder composed of 2 transformer blocks",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -529,10 +388,7 @@
    "evidence": "We use an Adam [14] optimizer",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -540,10 +396,7 @@
    "evidence": "with a learning rate scheduler.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -551,10 +404,7 @@
    "evidence": "reduced through cosine annealing.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -562,10 +412,7 @@
    "evidence": "realtime-batch hybrid model",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -573,10 +420,7 @@
    "evidence": "a weighted cross-entropy loss",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -584,10 +428,7 @@
    "evidence": "\ud835\udc64\ud835\udc62=\ud835\udc64state\u00d7\ud835\udc64location\u00d7\ud835\udc64gender",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -595,10 +436,7 @@
    "evidence": "if\ud835\udc74is a diagonal matrix",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -606,10 +444,7 @@
    "evidence": "selecting empirically determined label weights \ud835\udc74",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -617,10 +452,7 @@
    "evidence": "a weighted cross-entropy loss",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -628,10 +460,7 @@
    "evidence": "standard multi-head binary cross entropy loss",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -639,10 +468,7 @@
    "evidence": "label weight matrix \ud835\udc74",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -650,10 +476,7 @@
    "evidence": "each training example is weighted by a user-dependent weight\ud835\udc64\ud835\udc62",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 5
+   "value_in_span": false
   },
   {
    "field": "datasets",
@@ -661,10 +484,7 @@
    "evidence": "Pinterest Homefeed view log (FVL)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 6
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -672,10 +492,7 @@
    "evidence": "Pinterest dataset.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 6
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -683,10 +500,7 @@
    "evidence": "trained on the first two weeks of FVL and evaluated on the third week.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 6
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -694,10 +508,7 @@
    "evidence": "we employ downsampling on the negative samples",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 6
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -705,10 +516,7 @@
    "evidence": "realtime-batch hybrid model",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 6
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -716,10 +524,7 @@
    "evidence": "TransAct.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 6
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -727,10 +532,7 @@
    "evidence": "We choose concat as our early fusion method",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 7
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -738,10 +540,7 @@
    "evidence": "standard transformer encoder with 2 encoder layers",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 7
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -749,10 +548,7 @@
    "evidence": "and one head.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 7
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -760,10 +556,7 @@
    "evidence": "Positional encoding is not used here",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 7
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -771,10 +564,7 @@
    "evidence": "We choose concat as our early fusion method",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 7
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -782,10 +572,7 @@
    "evidence": "choose transformer-based architectures.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 7
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -793,10 +580,7 @@
    "evidence": "We employed the standard transformer encoder",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 7
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -804,10 +588,7 @@
    "evidence": "3.3.4 Random Time Window Mask.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "gpt-5",
-   "passage_index": 7
+   "value_in_span": true
   }
  ],
  "summary": {
@@ -817,35 +598,40 @@
     "has_evidence": 12,
     "span_found": 12,
     "value_in_span": 12,
-    "grounded": 12
+    "grounded": 12,
+    "span_any": 12
    },
    "hyperparameters": {
     "n": 22,
     "has_evidence": 22,
     "span_found": 22,
     "value_in_span": 22,
-    "grounded": 22
+    "grounded": 22,
+    "span_any": 22
    },
    "methods": {
     "n": 33,
     "has_evidence": 33,
     "span_found": 33,
     "value_in_span": 27,
-    "grounded": 27
+    "grounded": 27,
+    "span_any": 33
    },
    "evaluation_results": {
     "n": 2,
     "has_evidence": 2,
     "span_found": 2,
     "value_in_span": 2,
-    "grounded": 2
+    "grounded": 2,
+    "span_any": 2
    },
    "datasets": {
     "n": 4,
     "has_evidence": 4,
     "span_found": 4,
     "value_in_span": 4,
-    "grounded": 4
+    "grounded": 4,
+    "span_any": 4
    }
   },
   "total": {
@@ -853,7 +639,8 @@
    "has_evidence": 73,
    "span_found": 73,
    "value_in_span": 67,
-   "grounded": 67
+   "grounded": 67,
+   "span_any": 73
   }
  },
  "raw": [
@@ -1308,5 +1095,15 @@
     "evaluation_results": []
    }
   }
+ ],
+ "passages": [
+  "can become stale in a matter of days, leading to less accurate predictions. We retrain Pinnability from scratch twice per week. We find that this retraining frequency is essential to ensure a consistent engagement rate and still maintain a manageable training cost. We will dive into the importance of retraining in Section 4.4.3.3.4.2 GPU serving. Pinnability with TransAct is 65 times more computationally complex compared to its predecessors in terms of floating point operations. Without any breakthroughs in model inference, our model serving cost and latency would increase by the same scale. GPU model inference allows us to serve Pinnability with TransAct at neutral latency and cost6. The main challenge to serve Pinnability on GPUs is the CUDA kernel launch overhead. The CPU cost of launching operations on the GPU is very high, but it is often overshadowed by the prolonged GPU computation time. However, this is problematic for Pinnabil- ity GPU model serving in two ways. First, Pinnability and recom- mender models in general process hundreds of features, which means that there is a large number of CUDA kernels. Second, the batch size during online serving is small and hence each CUDA kernel requires little computation. With a large",
+  "large number of CUDA kernels. Second, the batch size during online serving is small and hence each CUDA kernel requires little computation. With a large number of small CUDA kernels, the launching overhead is much more expensive than the actual computation. We solved the technical challenge through the following optimizations: Fuse CUDA kernels. An effective approach is to fuse operations as much as possible. We leverage standard deep learning compilers such as nvFuser7but often found human intervention is needed for many of the remaining operations. One example is our embedding table lookup module, which consists of two computation steps: raw id to table index lookup and table index to embedding lookup. This is repeated hundreds of times due to the large number of features. We significantly reduce the number of operations by leveraging cuCollections8to support hash tables for the raw ids on GPUs and implementing a custom consolidated embedding lookup module to merge the lookup for multiple features into one lookup. As a result, we reduced hundreds of operations related to sparse features into one. Combine memory copies. For every inference, hundreds of features are copied from the CPU to the GPU memory as individ- ual tensors. The overhead of",
+  "graphs. We relied on CUDA Graphs9to com- pletely eliminate the remaining small operations overhead. CUDA Graphs capture the model inference process as a static graph of 6For more details about model effiency, see Appendix C. 7https://pytorch.org/blog/introducing-nvfuser-a-deep-learning-compiler-for- pytorch/ 8https://github.com/NVIDIA/cuCollections 9https://developer.nvidia.com/blog/cuda-graphs/ KDD \u201923, August 6\u201310, 2023, Long Beach, CA, USA Xia et al. operations instead of individually scheduled ones, allowing the computation to be executed as a single unit without any kernel launching overheads. 3.4.3 Realtime Feature Processing. When a user takes an action, a realtime feature processing application based on Flink10consumes user action Kafka11streams generated from front-end events. It validates each action record, detects and combines duplicates, and manages any time discrepancies from multiple data sources. The application then materializes the features and stores them in Rock- store [ 3]. At serving time, each Homefeed logging/serving request triggers the processor to convert sequence features into a format that can be utilized by the model. 4 EXPERIMENT In this section, we will present extensive offline and online A/B experiment results of TransAct. We compare TransAct with baseline models using Pinterest\u2019s internal training data. 4.1 Experiment Setup 4.1.1 Dataset. We construct the offline training dataset from three weeks of Pinterest Homefeed view log",
+  "Combine memory copies. For every inference, hundreds of features are copied from the CPU to the GPU memory as individ- ual tensors. The overhead of scheduling hundreds of tensor copies becomes the bottleneck. To decrease the number of tensor copy operations, we combine multiple tensors into one continuous buffer before transferring them from CPU to GPU. This approach reduces the scheduling overhead of transferring hundreds of tensors indi- vidually to transferring one tensor. Form larger batches. For CPU-based inference, smaller batches are preferred to increase parallelism and reduce latency. However, for GPU-based inference, larger batches are more efficient [ 29]. This led us to re-evaluate our distributed system setup. Initially, we used a scatter-gather architecture to split requests into small batches and run them in parallel on multiple leaf nodes for better latency. However, this setup did not work well with GPU-based inference. Instead, we use the larger batches in the original requests directly. To compensate for the loss of cache capacity, we implemented a hybrid cache that uses both DRAM and SSD. Utilize CUDA graphs. We relied on CUDA Graphs9to com- pletely eliminate the remaining small operations overhead. CUDA Graphs capture the model inference process as a static graph",
+  "action types, required by TransAct. Furthermore, they are incompatible with our proposal of realtime-batch hybrid model, which requires both realtime and batch user features. And they cannot be tested in online A/B experiments. 4.1.2 Hyperparameters. Realtime user sequence length is |\ud835\udc46|= 100and the dimension of action embedding \ud835\udc51\ud835\udc4e\ud835\udc50\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b =32. The encoded sequence feature is passed through a transformer encoder composed of 2 transformer blocks, with a default dropout rate of 0.1. The feed forward network in the transformer encoder layer has a dimension of \ud835\udc51\u210e\ud835\udc56\ud835\udc51\ud835\udc51\ud835\udc52\ud835\udc5b =32, and positional encoding is not used. The implementation is done using PyTorch. We use an Adam [14] optimizer with a learning rate scheduler. The learning rate begins with a warm-up phase of 5000 steps, gradually increasing to 0.0048, and finally reduced through cosine annealing. The batch size is 12000. 10https://flink.apache.org/ 11https://kafka.apache.org/4.2 Offline Experiment 4.2.1 Metrics. The offline evaluation data, unlike training data, is randomly sampled from FVL to represent the true distribution of the real-world traffic. With this sampling strategy, the offline evaluation data is representative of the entire population, reducing the variance of evaluation results. In addition to sampling bias, we also eliminate position bias in offline evaluation data. Position bias refers to",
+  "action head in \ud835\udc6f. The loss function of Pinnability is a weighted cross-entropy loss, designed to optimize for multi-label classifica- tion tasks. We formulate the loss function as: L=\ud835\udc64\ud835\udc62\u2211\ufe01 \u210e\u2208\ud835\udc3b{\u2212\ud835\udc64\u210e[\ud835\udc66\u210elog\ud835\udc53(\ud835\udc99)\u210e+(1\u2212\ud835\udc66\u210e)(1\u2212log\ud835\udc53(\ud835\udc99)\u210e)]}(1) where\ud835\udc53(\ud835\udc99)\u2208( 0,1)\ud835\udc3b, and\ud835\udc53(\ud835\udc99)\u210eis the output probability of head \u210e.\ud835\udc66\u210e\u2208{0,1}is the ground truth on head \u210e. A weight\ud835\udc64\u210eis applied on the cross entropy of each head\u2019s output \ud835\udc53(\ud835\udc99)\u210e.\ud835\udc64\u210eis calculated using the ground truth \ud835\udc9aand a label weight matrix \ud835\udc74\u2208R|\ud835\udc3b|\u2217|\ud835\udc3b|as follows: \ud835\udc64\u210e=\u2211\ufe01 \ud835\udc4e\u2208\ud835\udc3b\ud835\udc74\u210e,\ud835\udc4e\u00d7\ud835\udc66\ud835\udc4e (2) The label weight matrix \ud835\udc74acts as a controlling factor for the contribution of each action to the loss term of each head3. Note that if\ud835\udc74is a diagonal matrix, Eq (1)reduces to a standard multi-head binary cross entropy loss. But selecting empirically determined label weights \ud835\udc74improves performance considerably. In addition, each training example is weighted by a user-dependent weight\ud835\udc64\ud835\udc62, which is determined by user attributes, such as the user state4, gender and location. We compute \ud835\udc64\ud835\udc62by multiplying user state weight, user gender weight, and user location weight: \ud835\udc64\ud835\udc62=\ud835\udc64state\u00d7\ud835\udc64location\u00d7\ud835\udc64gender . These weights are adjusted based on specific business needs. 3.2 Realtime User Action Sequence Features User\u2019s past action history is naturally a variable length feature \u2013 different users have different amounts of past actions on the platform. Although a longer",
+  "models using Pinterest\u2019s internal training data. 4.1 Experiment Setup 4.1.1 Dataset. We construct the offline training dataset from three weeks of Pinterest Homefeed view log (FVL). The model is trained on the first two weeks of FVL and evaluated on the third week. The training data is sampled based on user state and labels. For example, we design the sampling ratio for different label actions based on their statistical distribution and importance. In addition, since users only engage with a small portion of pins shown on their Homefeed page, most of the training samples are negative samples. To balance the highly skewed dataset and improve model accuracy, we employ downsampling on the negative samples and set a fixed ratio between the positive and negative samples. Our training dataset contains 3 billion training instances of 177 million users and 720 million pins. In this paper, we conduct all experiments with the Pinterest dataset. We do not use public datasets as they lack the necessary realtime user action sequence metadata features, such as item em- beddings and action types, required by TransAct. Furthermore, they are incompatible with our proposal of realtime-batch hybrid model, which requires both realtime and batch user features. And",
+  "the candidate pin\u2019s PinSage embedding with user action features. We choose concat as our early fusion method based on the offline experiment results. The resulting sequence feature with early fusion is a 2-d matrix \ud835\udc7c\u2208R|\ud835\udc46|\u00d7\ud835\udc51, where\ud835\udc51=(\ud835\udc51\ud835\udc4e\ud835\udc50\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b+2\ud835\udc51\ud835\udc43\ud835\udc56\ud835\udc5b\ud835\udc46\ud835\udc4e\ud835\udc54\ud835\udc52) 3.3.3 Sequence Aggregation Model. With the user action sequence feature \ud835\udc7cprepared, the next challenge is to efficiently aggregate all the information in the user action sequence to represent the user\u2019s short-term preference. Some popular model architectures for sequential modeling in the industry include CNN[ 40], RNN [ 25] and recently transformer [ 33], etc. We experimented with different sequence aggregation architectures and choose transformer-based architectures. We employed the standard transformer encoder with 2 encoder layers and one head. The hidden dimension of feed for- ward network is denoted as \ud835\udc51\u210e\ud835\udc56\ud835\udc51\ud835\udc51\ud835\udc52\ud835\udc5b . Positional encoding is not used here because our offline experiment showed that position information is ineffective5. 3.3.4 Random Time Window Mask. Training on all recent actions of a user can lead to a rabbit hole effect, where the model recom- mends content similar to the user\u2019s recent engagements. This hurts the diversity of users\u2019 Homefeeds, which is harmful to long-term user retention. To address this issue, we use the timestamps of the user"
  ]
 }

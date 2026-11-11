@@ -1,0 +1,994 @@
+{
+ "study_id": "study009",
+ "model": "mistral",
+ "slug": "redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+ "n_passages": 5,
+ "n_passages_ok": 5,
+ "failures": [],
+ "records": [
+  {
+   "field": "datasets",
+   "value": "COCO2017",
+   "evidence": "COCO2017 val dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet",
+   "evidence": "HigherHRNet \u2713 \u2713 66.360.874.0 (d)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "HRNet",
+   "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.3",
+   "evidence": "HigherHRNet \u2713 \u2713 66.360.874.0 (d)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.9",
+   "evidence": "HigherHRNet \u2713 \u2713 \u2713 66.961.075.7 (e)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "67.1",
+   "evidence": "HigherHRNet \u2713 \u2713 \u2713 \u2713 67.161.576.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "57.1",
+   "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "61.0",
+   "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.5",
+   "evidence": "performance decreases to 66.5AP from 66.9AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.9",
+   "evidence": "performance decreases to 66.5AP from 66.9AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "+0.1",
+   "evidence": "improvement for medium person is marginal ( +0.1AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "-0.8",
+   "evidence": "there is a large drop in the performance of large person ( \u22120.8AP)",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.515,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "datasets",
+   "value": "COCO",
+   "evidence": "Therefore, we only use one deconvolution module by default for the COCO dataset.",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.575,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "methods",
+   "value": "HRNet",
+   "evidence": "HRNet (Figure 3 (a)) achieves a baseline of 64.4AP.",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.804,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.4",
+   "evidence": "HRNet (Figure 3 (a)) achieves a baseline of 64.4AP.",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.804,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.0",
+   "evidence": "By adding one deconvolution module, the model achieves 66.0AP which is 1.6AP better",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.807,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "-0.8",
+   "evidence": "in the performance of large person ( \u22120.8AP)",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.773,
+   "fuzzy_token_recall": 0.8
+  },
+  {
+   "field": "hyperparameters",
+   "value": "512",
+   "evidence": "Training size AP APMAPL 512 67.1 61.5 76.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "hyperparameters",
+   "value": "640",
+   "evidence": "Training size AP APMAPL 640 68.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.571,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "768",
+   "evidence": "Training size AP APMAPL 768 68.5 64.9 73.8",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.571,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "HRNet-W32",
+   "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "hyperparameters",
+   "value": "HRNet-W40",
+   "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "hyperparameters",
+   "value": "HRNet-W48",
+   "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "hyperparameters",
+   "value": "4",
+   "evidence": "We add 4 residual blocks in the deconvolution module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "COCO2017",
+   "evidence": "on COCO2017 val dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "heatmap aggregation strategy",
+   "evidence": "applying heatmap aggregation strategy achieves 66.9AP",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.623,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "methods",
+   "value": "predicting at lower resolution",
+   "evidence": "the performance of large person is even marginally better than predicting at lower resolution",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.957,
+   "fuzzy_token_recall": 0.909
+  },
+  {
+   "field": "evaluation_results",
+   "value": "67.1",
+   "evidence": "our best model achieves 67.1AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.9",
+   "evidence": "applying heatmap aggregation strategy achieves 66.9AP",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.623,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.3",
+   "evidence": "Figure 3 (c) ( 66.3AP) that only uses the highest resolution heatmaps",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.768,
+   "fuzzy_token_recall": 0.889
+  },
+  {
+   "field": "evaluation_results",
+   "value": "68.5",
+   "evidence": "Training size AP APMAPL 512 67.1 61.5 76.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.3",
+   "evidence": "Training size AP APMAPL 640 68.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.571,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "75.3",
+   "evidence": "Training size AP APMAPL 640 68.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.571,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "68.5",
+   "evidence": "Training size AP APMAPL 768 68.5 64.9 73.8",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.571,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.9",
+   "evidence": "Training size AP APMAPL 768 68.5 64.9 73.8",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.571,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "73.8",
+   "evidence": "Training size AP APMAPL 768 68.5 64.9 73.8",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.571,
+   "fuzzy_token_recall": 1.0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "68.5",
+   "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.3",
+   "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "75.3",
+   "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "69.2",
+   "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.9",
+   "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "75.9",
+   "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "69.9",
+   "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "65.4",
+   "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "76.4",
+   "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "hyperparameters",
+   "value": "640\u00d7640",
+   "evidence": "Training with larger image size. A natural question is can training with larger input size further improve perfor- mance? To answer this question, we train HigherHRNet with 640\u00d7640 and768\u00d7768",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "CrowdPose",
+   "evidence": "The CrowdPose [24] dataset consists of 20,000 images, containing about 80,000 persons.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet",
+   "evidence": "To answer this question, we train HigherHRNet with 640\u00d7640 and768\u00d7768",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.4",
+   "evidence": "there is a signi\ufb01cant gain of 1.4AP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "dependencies",
+   "value": "HigherHRNet-W48",
+   "evidence": "HigherHRNet-W48",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "hyperparameters",
+   "value": "640\u00d7640",
+   "evidence": "crop size of 640\u00d7640",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "CrowdPose",
+   "evidence": "CrowdPose train and val set",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "COCO",
+   "evidence": "All training parameters follow COCO exactly",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.651,
+   "fuzzy_token_recall": 0.833
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.6",
+   "evidence": "by a large margin of 6.6 AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.6",
+   "evidence": "by a healthy margin of 1.6 AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.8",
+   "evidence": "APM(+1.8 AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.5",
+   "evidence": "APH (+1.5 AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.5",
+   "evidence": "by 0.5 in APH",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "datasets": {
+    "n": 5,
+    "has_evidence": 5,
+    "span_found": 4,
+    "value_in_span": 5,
+    "grounded": 4,
+    "span_any": 4,
+    "miss_paraphrase": 1
+   },
+   "methods": {
+    "n": 7,
+    "has_evidence": 7,
+    "span_found": 3,
+    "value_in_span": 7,
+    "grounded": 3,
+    "span_any": 3,
+    "miss_near_verbatim": 4
+   },
+   "evaluation_results": {
+    "n": 36,
+    "has_evidence": 36,
+    "span_found": 25,
+    "value_in_span": 33,
+    "grounded": 24,
+    "span_any": 25,
+    "miss_paraphrase": 6,
+    "miss_near_verbatim": 5
+   },
+   "hyperparameters": {
+    "n": 9,
+    "has_evidence": 9,
+    "span_found": 7,
+    "value_in_span": 9,
+    "grounded": 7,
+    "span_any": 7,
+    "miss_paraphrase": 2
+   },
+   "dependencies": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 1,
+    "value_in_span": 1,
+    "grounded": 1,
+    "span_any": 1
+   }
+  },
+  "total": {
+   "n": 58,
+   "has_evidence": 58,
+   "span_found": 40,
+   "value_in_span": 55,
+   "grounded": 39,
+   "span_any": 40,
+   "miss_paraphrase": 9,
+   "miss_near_verbatim": 9
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COCO2017",
+      "version": null,
+      "evidence": "COCO2017 val dataset"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HigherHRNet",
+      "evidence": "HigherHRNet \u2713 \u2713 66.360.874.0 (d)"
+     },
+     {
+      "name": "HRNet",
+      "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP",
+      "value": "66.3",
+      "split": null,
+      "evidence": "HigherHRNet \u2713 \u2713 66.360.874.0 (d)"
+     },
+     {
+      "metric": "AP",
+      "value": "66.9",
+      "split": null,
+      "evidence": "HigherHRNet \u2713 \u2713 \u2713 66.961.075.7 (e)"
+     },
+     {
+      "metric": "AP",
+      "value": "67.1",
+      "split": null,
+      "evidence": "HigherHRNet \u2713 \u2713 \u2713 \u2713 67.161.576.1"
+     },
+     {
+      "metric": "APM",
+      "value": "57.1",
+      "split": null,
+      "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet"
+     },
+     {
+      "metric": "APM",
+      "value": "61.0",
+      "split": null,
+      "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet"
+     },
+     {
+      "metric": "AP",
+      "value": "66.5",
+      "split": null,
+      "evidence": "performance decreases to 66.5AP from 66.9AP"
+     },
+     {
+      "metric": "AP",
+      "value": "66.9",
+      "split": null,
+      "evidence": "performance decreases to 66.5AP from 66.9AP"
+     },
+     {
+      "metric": "AP",
+      "value": "+0.1",
+      "split": null,
+      "evidence": "improvement for medium person is marginal ( +0.1AP)"
+     },
+     {
+      "metric": "AP",
+      "value": "-0.8",
+      "split": null,
+      "evidence": "there is a large drop in the performance of large person ( \u22120.8AP)"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COCO",
+      "version": null,
+      "evidence": "Therefore, we only use one deconvolution module by default for the COCO dataset."
+     }
+    ],
+    "methods": [
+     {
+      "name": "HRNet",
+      "evidence": "HRNet (Figure 3 (a)) achieves a baseline of 64.4AP."
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP",
+      "value": "64.4",
+      "split": null,
+      "evidence": "HRNet (Figure 3 (a)) achieves a baseline of 64.4AP."
+     },
+     {
+      "metric": "AP",
+      "value": "66.0",
+      "split": null,
+      "evidence": "By adding one deconvolution module, the model achieves 66.0AP which is 1.6AP better"
+     },
+     {
+      "metric": "AP",
+      "value": "-0.8",
+      "split": null,
+      "evidence": "in the performance of large person ( \u22120.8AP)"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "training image size",
+      "value": "512",
+      "evidence": "Training size AP APMAPL 512 67.1 61.5 76.1"
+     },
+     {
+      "name": "training image size",
+      "value": "640",
+      "evidence": "Training size AP APMAPL 640 68.5 64.3 75.3"
+     },
+     {
+      "name": "training image size",
+      "value": "768",
+      "evidence": "Training size AP APMAPL 768 68.5 64.9 73.8"
+     },
+     {
+      "name": "backbone",
+      "value": "HRNet-W32",
+      "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3"
+     },
+     {
+      "name": "backbone",
+      "value": "HRNet-W40",
+      "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9"
+     },
+     {
+      "name": "backbone",
+      "value": "HRNet-W48",
+      "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4"
+     },
+     {
+      "name": "residual blocks",
+      "value": "4",
+      "evidence": "We add 4 residual blocks in the deconvolution module"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "COCO2017",
+      "version": null,
+      "evidence": "on COCO2017 val dataset"
+     }
+    ],
+    "methods": [
+     {
+      "name": "heatmap aggregation strategy",
+      "evidence": "applying heatmap aggregation strategy achieves 66.9AP"
+     },
+     {
+      "name": "predicting at lower resolution",
+      "evidence": "the performance of large person is even marginally better than predicting at lower resolution"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP",
+      "value": "67.1",
+      "split": null,
+      "evidence": "our best model achieves 67.1AP"
+     },
+     {
+      "metric": "AP",
+      "value": "66.9",
+      "split": null,
+      "evidence": "applying heatmap aggregation strategy achieves 66.9AP"
+     },
+     {
+      "metric": "AP",
+      "value": "66.3",
+      "split": null,
+      "evidence": "Figure 3 (c) ( 66.3AP) that only uses the highest resolution heatmaps"
+     },
+     {
+      "metric": "AP",
+      "value": "68.5",
+      "split": null,
+      "evidence": "Training size AP APMAPL 512 67.1 61.5 76.1"
+     },
+     {
+      "metric": "AP",
+      "value": "64.3",
+      "split": null,
+      "evidence": "Training size AP APMAPL 640 68.5 64.3 75.3"
+     },
+     {
+      "metric": "AP",
+      "value": "75.3",
+      "split": null,
+      "evidence": "Training size AP APMAPL 640 68.5 64.3 75.3"
+     },
+     {
+      "metric": "AP",
+      "value": "68.5",
+      "split": null,
+      "evidence": "Training size AP APMAPL 768 68.5 64.9 73.8"
+     },
+     {
+      "metric": "AP",
+      "value": "64.9",
+      "split": null,
+      "evidence": "Training size AP APMAPL 768 68.5 64.9 73.8"
+     },
+     {
+      "metric": "AP",
+      "value": "73.8",
+      "split": null,
+      "evidence": "Training size AP APMAPL 768 68.5 64.9 73.8"
+     },
+     {
+      "metric": "AP",
+      "value": "68.5",
+      "split": null,
+      "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3"
+     },
+     {
+      "metric": "APMAPL",
+      "value": "64.3",
+      "split": null,
+      "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3"
+     },
+     {
+      "metric": "AP",
+      "value": "75.3",
+      "split": null,
+      "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3"
+     },
+     {
+      "metric": "AP",
+      "value": "69.2",
+      "split": null,
+      "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9"
+     },
+     {
+      "metric": "APMAPL",
+      "value": "64.9",
+      "split": null,
+      "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9"
+     },
+     {
+      "metric": "AP",
+      "value": "75.9",
+      "split": null,
+      "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9"
+     },
+     {
+      "metric": "AP",
+      "value": "69.9",
+      "split": null,
+      "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4"
+     },
+     {
+      "metric": "APMAPL",
+      "value": "65.4",
+      "split": null,
+      "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4"
+     },
+     {
+      "metric": "AP",
+      "value": "76.4",
+      "split": null,
+      "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "image_size",
+      "value": "640\u00d7640",
+      "evidence": "Training with larger image size. A natural question is can training with larger input size further improve perfor- mance? To answer this question, we train HigherHRNet with 640\u00d7640 and768\u00d7768"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "CrowdPose",
+      "version": null,
+      "evidence": "The CrowdPose [24] dataset consists of 20,000 images, containing about 80,000 persons."
+     }
+    ],
+    "methods": [
+     {
+      "name": "HigherHRNet",
+      "evidence": "To answer this question, we train HigherHRNet with 640\u00d7640 and768\u00d7768"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP",
+      "value": "1.4",
+      "split": null,
+      "evidence": "there is a signi\ufb01cant gain of 1.4AP."
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "HigherHRNet-W48",
+      "version": null,
+      "evidence": "HigherHRNet-W48"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "crop size",
+      "value": "640\u00d7640",
+      "evidence": "crop size of 640\u00d7640"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "CrowdPose",
+      "version": null,
+      "evidence": "CrowdPose train and val set"
+     }
+    ],
+    "methods": [
+     {
+      "name": "COCO",
+      "evidence": "All training parameters follow COCO exactly"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP",
+      "value": "6.6",
+      "split": null,
+      "evidence": "by a large margin of 6.6 AP"
+     },
+     {
+      "metric": "AP",
+      "value": "1.6",
+      "split": null,
+      "evidence": "by a healthy margin of 1.6 AP"
+     },
+     {
+      "metric": "APM",
+      "value": "1.8",
+      "split": null,
+      "evidence": "APM(+1.8 AP)"
+     },
+     {
+      "metric": "APH",
+      "value": "1.5",
+      "split": null,
+      "evidence": "APH (+1.5 AP)"
+     },
+     {
+      "metric": "APH",
+      "value": "0.5",
+      "split": null,
+      "evidence": "by 0.5 in APH"
+     }
+    ]
+   }
+  }
+ ],
+ "passages": [
+  "HigherHRNet \u2713 \u2713 66.360.874.0 (d) HigherHRNet \u2713 \u2713 \u2713 66.961.075.7 (e) HigherHRNet \u2713 \u2713 \u2713 \u2713 67.161.576.1 Table 4. Ablation study of HigherHRNet\u2019s components on COCO2017 val dataset. MSR: multi-resolution supervision. feature concat.: feature concatenation. res. blocks: residual blocks. improvement comes from medium persons, where APMis improved from 57.1for HRNet to 61.0for HigherHRNet. These results show that HigherHRNet performs much better with small scales thanks to its higher resolution heatmaps. We also \ufb01nd the AP for large person pose does no drop. This is mainly because we also use smaller resolu- tion heatmaps for prediction. It demonstrates that 1) mak- ing prediction at higher resolution is bene\ufb01cial to bottom-up pose estimation and 2) scale-aware prediction is important. If we add a sequence of two deconvolution modules after HRNet to generate feature maps that is of the same resolu- tion as the input image, we observe that the performance decreases to 66.5AP from 66.9AP for adding only one de- convolution module. The improvement for medium person is marginal ( +0.1AP) but there is a large drop in the per- formance of large person ( \u22120.8AP). We hypothesize this is because the misalignment between feature map scale and object scales. Larger resolution",
+  "in the per- formance of large person ( \u22120.8AP). We hypothesize this is because the misalignment between feature map scale and object scales. Larger resolution feature maps (feature stride = 1) are good for detecting keypoints from even smaller persons but the small persons in COCO are not considered for pose estimation. Therefore, we only use one deconvo- lution module by default for the COCO dataset. But we would like to point out that the number of cascaded decon- volution modules should be dependent on datasets and we will validate this on more datasets in our future work. HigherHRNet gain breakdown. To better understand the gain of the proposed components, we perform detailed ablation studies on each individual component. Figure 3 il-lustrates all the architectures of our experiments. Results are shown in Table 4. Effect of deconvolution module. We perform ablation study on the effect of adding deconvolution module to gener- ate higher resolution heatmaps. For a fair comparison, we only use the highest resolution feature maps to gener- ate heatmaps for prediction (Figure 3 (b)). HRNet (Fig- ure 3 (a)) achieves a baseline of 64.4AP. By adding one de- convolution module, the model achieves 66.0AP which is 1.6AP better",
+  "for inference (Figure 3 (d)). Compared with Fig- 7 Training size AP APMAPL 512 67.1 61.5 76.1 640 68.5 64.3 75.3 768 68.5 64.9 73.8 Table 5. Ablation study of HigherHRNet with different training image size on COCO2017 val dataset. Backbone #Params GFLOPs AP APMAPL HRNet-W32 28.6 47.868.5 64.3 75.3 HRNet-W40 44.5 110.769.2 64.9 75.9 HRNet-W48 63.8 154.369.9 65.4 76.4 Table 6. Ablation study of HigherHRNet with different backbone onCOCO2017 val dataset. ure 3 (c) ( 66.3AP) that only uses the highest resolu- tion heatmaps for inference, applying heatmap aggrega- tion strategy achieves 66.9AP. Comparing method (d) and (e), the gain of heatmap aggregation comes from large person ( +1.7AP). And the performance of large person is even marginally better than predicting at lower resolu- tion (method (a)). It means that predicting heatmaps using heatmap aggregation strategy is truly scale-aware. Effect of extra residual blocks. We add 4 residual blocks in the deconvolution module and our best model achieves 67.1AP. Adding residual blocks can further re\ufb01ne the fea- ture maps and it increases AP for both medium and large persons equally. Training with larger image size. A natural question is can training with larger input size further improve perfor- mance?",
+  "both medium and large persons equally. Training with larger image size. A natural question is can training with larger input size further improve perfor- mance? To answer this question, we train HigherHRNet with 640\u00d7640 and768\u00d7768 and results are shown in Table 5, all three models are tested using the training im- age size. We \ufb01nd that by increasing training image size to640, there is a signi\ufb01cant gain of 1.4AP. Most of the gain comes from medium person while the performance of large person degrades slightly. When we further change the training image size to 768, the overall AP does not change anymore. We observe a marginal improvement in medium person along with large degradation in large person. Larger backbone. In previous experiments, we use HRNet-W32 (1/4 resolution feature map has 32 channels) as backbone. We perform experiments with larger back- bones HRNet-W40 and HRNet-W48. Results are shown in Table 6. We \ufb01nd using larger backbone consistently im- proves performance for both medium and large person. 4.3. CrowdPose The CrowdPose [24] dataset consists of 20,000 images, containing about 80,000 persons. The training, validation and testing subset are split in proportional to 5:1:4. Crowd- Pose has more crowded scenes than the COCO",
+  "We train our best HigherHRNet-W48 model on the CrowdPose train and val setand report performance on the testset. All training pa- rameters follow COCO exactly and we use a crop size of 640\u00d7640for both training and testing. Results are shown in Table 7. Our HigherHRNet out- performs na \u00a8\u0131ve top-down methods by a large margin of 6.6 AP. HigherHRNet also outperforms the previous best method [24] (which performs a global re\ufb01nement of top- down method [15]) by a healthy margin of 1.6 AP and most of the gain comes from APM(+1.8 AP) and APH (+1.5 AP), which contains images with the most crowd. Even without multi-scale test, HigherHRNet outperforms SPPE [24] by 0.5 in APH."
+ ]
+}

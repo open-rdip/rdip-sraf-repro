@@ -1,0 +1,562 @@
+{
+ "study_id": "study013",
+ "model": "mistral",
+ "slug": "redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+ "n_passages": 7,
+ "n_passages_ok": 7,
+ "failures": [],
+ "records": [
+  {
+   "field": "datasets",
+   "value": "COOS-7",
+   "evidence": "We focused on the value of COOS-7",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "protein localization classi\ufb01cation",
+   "evidence": "Here, we structured our dataset to be a protein localization classi\ufb01cation problem",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "COOS",
+   "evidence": "COOS is the most extensive microscopy image dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "classification",
+   "evidence": "3 Classi\ufb01cation Baselines for COOS-7",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "hardware",
+   "value": "Nvidia",
+   "evidence": "This work was partially performed on a GPU donated by Nvidia.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "COOS-7",
+   "evidence": "Description of datasets provided in COOS-7",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "Training",
+   "evidence": "Images Training Images from 4 independent plates for each class 41,456",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "Test1",
+   "evidence": "Test1Randomly held-out images from the same plates in training dataset10,364",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "Test2",
+   "evidence": "Test2Images from the same plates, but different wells than training dataset17,021",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "Test3",
+   "evidence": "Test3Images from 2 independent plates for each class, reproduced on different days than training dataset32,596",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "Test4",
+   "evidence": "Test4Images from 1 plate for each class, reproduced on different day and imaged under different microscope than training dataset30,772",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "classi\ufb01cation",
+   "evidence": "In our classi\ufb01cation setting, all methods must be trained",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "dependencies",
+   "value": "Scikit-Learn",
+   "evidence": "All classi\ufb01ers were implemented in Python with Scikit-Learn",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "Training dataset",
+   "evidence": "selected the classi\ufb01er with the best performance on a 5-fold cross-validation of the Training dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "Test1",
+   "evidence": "Test1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "Test2",
+   "evidence": "Test2",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "Test3",
+   "evidence": "Test3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "Test4",
+   "evidence": "Test4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "5-fold cross-validation",
+   "evidence": "selected the classi\ufb01er with the best performance on a 5-fold cross-validation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "deep learning models",
+   "evidence": "Features from our deep learning models",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "logistic regression",
+   "evidence": "logistic regression classi\ufb01ers",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "fully-supervised CNN",
+   "evidence": "the fully-supervised CNN",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "classi\ufb01cation models that weigh features",
+   "evidence": "classi\ufb01cation models that weigh features",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.1%",
+   "evidence": "Features from our deep learning models had as little as 1.1% error",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.8%",
+   "evidence": "logistic regression classi\ufb01ers built on classic computer vision features achieved 6.8% error",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "dependencies",
+   "value": "VGG16",
+   "evidence": "We used a pre-trained VGG16 model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "hyperparameters",
+   "value": "128",
+   "evidence": "size of 128 on 80% of the Training dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "datasets",
+   "value": "ImageNet",
+   "evidence": "pretrained CNNs on ImageNet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "VGG16",
+   "evidence": "We used a pre-trained VGG16 model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  },
+  {
+   "field": "methods",
+   "value": "PCI",
+   "evidence": "features learned from a self-supervised method designed for microscopy images (abbreviated as PCI)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "datasets": {
+    "n": 14,
+    "has_evidence": 14,
+    "span_found": 14,
+    "value_in_span": 14,
+    "grounded": 14,
+    "span_any": 14
+   },
+   "methods": {
+    "n": 10,
+    "has_evidence": 10,
+    "span_found": 10,
+    "value_in_span": 10,
+    "grounded": 10,
+    "span_any": 10
+   },
+   "hardware": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 1,
+    "value_in_span": 1,
+    "grounded": 1,
+    "span_any": 1
+   },
+   "dependencies": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2,
+    "span_any": 2
+   },
+   "evaluation_results": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2,
+    "span_any": 2
+   },
+   "hyperparameters": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 1,
+    "value_in_span": 1,
+    "grounded": 1,
+    "span_any": 1
+   }
+  },
+  "total": {
+   "n": 30,
+   "has_evidence": 30,
+   "span_found": 30,
+   "value_in_span": 30,
+   "grounded": 30,
+   "span_any": 30
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COOS-7",
+      "version": null,
+      "evidence": "We focused on the value of COOS-7"
+     }
+    ],
+    "methods": [
+     {
+      "name": "protein localization classi\ufb01cation",
+      "evidence": "Here, we structured our dataset to be a protein localization classi\ufb01cation problem"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COOS",
+      "version": null,
+      "evidence": "COOS is the most extensive microscopy image dataset"
+     }
+    ],
+    "methods": [
+     {
+      "name": "classification",
+      "evidence": "3 Classi\ufb01cation Baselines for COOS-7"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "Nvidia",
+      "evidence": "This work was partially performed on a GPU donated by Nvidia."
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COOS-7",
+      "version": null,
+      "evidence": "Description of datasets provided in COOS-7"
+     },
+     {
+      "name": "Training",
+      "version": null,
+      "evidence": "Images Training Images from 4 independent plates for each class 41,456"
+     },
+     {
+      "name": "Test1",
+      "version": null,
+      "evidence": "Test1Randomly held-out images from the same plates in training dataset10,364"
+     },
+     {
+      "name": "Test2",
+      "version": null,
+      "evidence": "Test2Images from the same plates, but different wells than training dataset17,021"
+     },
+     {
+      "name": "Test3",
+      "version": null,
+      "evidence": "Test3Images from 2 independent plates for each class, reproduced on different days than training dataset32,596"
+     },
+     {
+      "name": "Test4",
+      "version": null,
+      "evidence": "Test4Images from 1 plate for each class, reproduced on different day and imaged under different microscope than training dataset30,772"
+     }
+    ],
+    "methods": [
+     {
+      "name": "classi\ufb01cation",
+      "evidence": "In our classi\ufb01cation setting, all methods must be trained"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "Scikit-Learn",
+      "version": null,
+      "evidence": "All classi\ufb01ers were implemented in Python with Scikit-Learn"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "Training dataset",
+      "version": null,
+      "evidence": "selected the classi\ufb01er with the best performance on a 5-fold cross-validation of the Training dataset"
+     },
+     {
+      "name": "Test1",
+      "version": null,
+      "evidence": "Test1"
+     },
+     {
+      "name": "Test2",
+      "version": null,
+      "evidence": "Test2"
+     },
+     {
+      "name": "Test3",
+      "version": null,
+      "evidence": "Test3"
+     },
+     {
+      "name": "Test4",
+      "version": null,
+      "evidence": "Test4"
+     }
+    ],
+    "methods": [
+     {
+      "name": "5-fold cross-validation",
+      "evidence": "selected the classi\ufb01er with the best performance on a 5-fold cross-validation"
+     },
+     {
+      "name": "deep learning models",
+      "evidence": "Features from our deep learning models"
+     },
+     {
+      "name": "logistic regression",
+      "evidence": "logistic regression classi\ufb01ers"
+     },
+     {
+      "name": "fully-supervised CNN",
+      "evidence": "the fully-supervised CNN"
+     },
+     {
+      "name": "classi\ufb01cation models that weigh features",
+      "evidence": "classi\ufb01cation models that weigh features"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "balanced classi\ufb01cation error",
+      "value": "1.1%",
+      "split": null,
+      "evidence": "Features from our deep learning models had as little as 1.1% error"
+     },
+     {
+      "metric": "balanced classi\ufb01cation error",
+      "value": "6.8%",
+      "split": null,
+      "evidence": "logistic regression classi\ufb01ers built on classic computer vision features achieved 6.8% error"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 6,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "VGG16",
+      "version": null,
+      "evidence": "We used a pre-trained VGG16 model"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "batch_size",
+      "value": "128",
+      "evidence": "size of 128 on 80% of the Training dataset"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "ImageNet",
+      "version": null,
+      "evidence": "pretrained CNNs on ImageNet"
+     }
+    ],
+    "methods": [
+     {
+      "name": "VGG16",
+      "evidence": "We used a pre-trained VGG16 model"
+     },
+     {
+      "name": "PCI",
+      "evidence": "features learned from a self-supervised method designed for microscopy images (abbreviated as PCI)"
+     }
+    ],
+    "evaluation_results": []
+   }
+  }
+ ],
+ "passages": [
+  "structural MRI studies. Journal of neuroscience methods , 230:37\u201350, jun 2014. [7]Kenneth Jung and Nigam H. Shah. Implications of non-stationarity on predictive modeling using EHRs. Journal of Biomedical Informatics , 58:168\u2013174, Dec 2015. [8]Bret Nestor, Matthew B. A. McDermott, Willie Boag, Gabriela Berner, Tristan Naumann, Michael C. Hughes, Anna Goldenberg, and Marzyeh Ghassemi. Feature Robustness in Non-stationary Health Records: Caveats to Deployable Model Performance in Common Clinical Machine Learning Tasks. arXiv Preprint , Aug 2019. [9]Arjun Raj and Alexander van Oudenaarden. Nature, Nurture, or Chance: Stochastic Gene Expression and Its Consequences. Cell, 135(2):216\u2013226, Oct 2008. [10] Berend Snijder and Lucas Pelkmans. Origins of regulated cell-to-cell variability. Nature Reviews Molecular Cell Biology , 12(2):119\u2013125, Feb 2011. [11] L Shamir. Assessing the ef\ufb01cacy of low-level image content descriptors for computer-based \ufb02uorescence microscopy image analysis. Journal of microscopy , 243(3):284\u201392, Sep 2011. [12] S Singh, M-A Bray, T R Jones, and A E Carpenter. Pipeline for illumination correction of images for high-throughput microscopy. Journal of microscopy , 256(3):231\u20136, Dec 2014. [13] Tony J. Collins, Jarkko Ylanko, Fei Geng, and David W. Andrews. A Versatile Cell Death Screening Assay Using Dye-Stained Cells and Multivariate Image Analysis. Assay and Drug Development Technologies ,",
+  "in a more realistic biological imaging setting, especially with the inclusion of even more visually similar classes. We plan to examine this problem by releasing further datasets in the future, which will include more ambiguous classes and a greater range of experimental variability. Finally, while we focused on the value of COOS-7 for methods development in this manuscript, \ufb01nding methods that improve the out-of-sample generalization baselines in this work will have practical implications for biologists working with microscopy images. Classifying protein localization is a major problem in cell biology, as a protein\u2019s localization strongly relates with its function [ 26]. Among other applications, accurately classifying protein localization in cells under stress or drug treatments can lead to identi\ufb01cation of the key proteins that drive disease [ 27]. Since these classi\ufb01ers are usually intended to automate the labeling of new data, out-of-sample generalization is essential. Here, we structured our dataset to be a protein localization classi\ufb01cation problem: although proteins can have the same localization, we speci\ufb01cally chose proteins that were distinct examples of different protein localizations. We therefore expect improvements to our baselines to yield methods for more robust and generalizable prediction of protein localization, meaning that methodological work on this",
+  "randomized plate arrangements and the replication of experiments over time, directly enabling strati\ufb01cation of the dataset by multiple kinds of covariate shifts. Our test sets encompass covariate shifts not typically seen in other datasets: few microscopy datasets replicate experiments at different sites/microscopes. To our knowledge, COOS is the most extensive microscopy image dataset for measuring generalization under covariate shifts to date. Compared to other datasets in computer vision, COOS resembles those used for studying domain adaptation [ 20]. Unlike these datasets, the test datasets in COOS should not be considered as being from a different domain than the training dataset: the datasets encompass natural variation in cells that would be dif\ufb01cult or impossible to control for in a realistic deployment situation. Our dataset is more similar to that of [ 1] in that we show that even in-domain generalization is challenging. Compared to the natural images in their dataset, we consider our cell images to be simpler. In addition, we provide multiple test datasets with controlled and known covariate shifts. 3 Classi\ufb01cation Baselines for COOS-7 3.1 Baselines from a wide range of classi\ufb01ers To provide baselines for out-of-sample generalization on COOS-7, we extracted features and built classi\ufb01ers using a variety",
+  "We therefore expect improvements to our baselines to yield methods for more robust and generalizable prediction of protein localization, meaning that methodological work on this dataset will contribute to a more robust and generalizable understanding of protein biology. 7 5 Acknowledgements Alex X. Lu is funded by a pre-doctoral award from NSERC. Amy X. Lu is funded by a Master\u2019s award from NSERC. Alan M. Moses holds a Tier II Canada Research Chair. Wiebke Schormann and David W. Andrews are funded by CIHR Foundation Grant FDN143312. David W. Andrews holds a Tier 1 Canada Research Chair in Membrane Biogenesis. Maryzeh Ghassemi is funded in part by Microsoft Research, a CIFAR AI Chair at the Vector Institute, a Canada Research Council Chair, and an NSERC Discovery Grant. This work was partially performed on a GPU donated by Nvidia. References [1]Benjamin Recht, Rebecca Roelofs, Ludwig Schmidt, and Vaishaal Shankar. Do ImageNet Classi\ufb01ers Generalize to ImageNet? ICML , May 2019. [2]John R. Zech, Marcus A. Badgeley, Manway Liu, Anthony B. Costa, Joseph J. Titano, and Eric Karl Oermann. Variable generalization performance of a deep learning model to detect pneumonia in chest radiographs: A cross-sectional study. PLOS Medicine , 15(11):e1002683, Nov 2018. [3]Mark-Anthony Bray,",
+  "more suspectible to environmental effects than interior wells [ 15]. For Test3, we chose the two chronologically latest experiments, to emphasize potential non-stationarities over time (in most classes, the Test3 experiments differ from the Training dataset by a gap of months.) In our classi\ufb01cation setting, all methods must be trained and optimized using the Training dataset exclusively, and their performance evaluated on each of the four test datasets. As shown in Table 1, 3 Table 2: Description of datasets provided in COOS-7 Dataset Description Images Training Images from 4 independent plates for each class 41,456 Test1Randomly held-out images from the same plates in training dataset10,364 Test2Images from the same plates, but different wells than training dataset17,021 Test3Images from 2 independent plates for each class, reproduced on different days than training dataset32,596 Test4Images from 1 plate for each class, reproduced on different day and imaged under different microscope than training dataset30,772 while the morphology of cells and contrast of images may differ in the test datasets relative to the training datasets, their underlying classes are still visibly distinct and identi\ufb01able. 2.3 Related Work Covariate shifts caused by differences in plate, well, and instruments are widely acknowledged as an issue in microscopy",
+  "2, 4, 8, 16}), and selected the classi\ufb01er with the best performance on a 5-fold cross-validation of the Training dataset. All classi\ufb01ers were implemented in Python with Scikit-Learn [25]. We report the performance of all classi\ufb01ers on all datasets in Table 3. We report the balanced classi\ufb01cation error, to control for differences in class balance from dataset to dataset. The best results for each feature representation method on each test dataset are bolded. 3.2 All classi\ufb01ers drop in performance on out-of-sample data with larger covariate shifts All methods we tried performed well on the test datasets most similar to the Training dataset, Test1 and Test2. Features from our deep learning models had as little as 1.1% error on these datasets, but even logistic regression classi\ufb01ers built on classic computer vision features achieved 6.8% error or lower. However, when attempting to generalize to the test datasets with larger covariate shifts, Test3 and Test4, all classi\ufb01ers had large drops in performance (although the fully-supervised CNN achieved the lowest error on these datasets.) We observed that all classi\ufb01ers failed to generalize regardless of the complexity of the classi\ufb01cation model. The texture features bene\ufb01ted more from classi\ufb01cation models that weigh features (e.g. logistic regression",
+  "size of 128 on 80% of the Training dataset, and chose the iteration (at intervals of 500) with the best performance on the remaining 20% (strati\ufb01ed to preserve percentage of samples per class). We report end-to-end performance, and we also extracted features from the last fully-connected layer of our trained model for building further classi\ufb01ers. Third, we extracted features from pretrained CNNs on ImageNet (abbreviated as VGG16), which has been shown to outperform classic unsupervised feature representation methods for cancer cell morphology [ 23]. We used a pre-trained VGG16 model, as this was the best-performing previously- reported model that would accept 64x64 images. We converted and rescaled the \ufb01rst channel of our images to 8-bit RGB. Contrary to the results of Pawlowski et al., we observed that including features from the second channel decreased performance, so we did not include models with these features in our \ufb01nal baselines. We extracted features from all layers (max-pooling convolutional layers), but only report benchmarks for the top 3 overall performing layers. Fourth, we extracted features learned from a self-supervised method designed for microscopy images (abbreviated as PCI), which has achieved unsupervised state-of-the-art results in classifying protein localization for 64x64 images of yeast cells"
+ ]
+}
