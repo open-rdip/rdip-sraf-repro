@@ -280,11 +280,11 @@ def summarise(records: list[dict]) -> dict:
 def _passages(study_id: str, pdf_url: str, top_k: int = 3) -> list[str]:
     """Retrieved passages for one study, reusing the production retrieval.
 
-    Imported lazily: rag_pipeline.pipeline pulls in the triplestore client at
-    module load, and this module must stay importable for its unit tests on a
-    machine with no graph store.
+    Imported from rag_pipeline.retrieval, not rag_pipeline.pipeline: the
+    latter pulls in the triplestore client at module load, and nothing in the
+    grounded path writes a triple.
     """
-    from rag_pipeline.pipeline import RETRIEVAL_QUERIES, download_pdf
+    from rag_pipeline.retrieval import RETRIEVAL_QUERIES, download_pdf
     from rag_pipeline.chunker import load_paper
     from rag_pipeline.embedder import EmbeddingStore
 

@@ -261,3 +261,35 @@ def test_whitespace_only_misses_get_their_own_bucket():
     assert tot.get("miss_paraphrase", 0) == 0
     assert tot.get("miss_unsupported", 0) == 0
     assert tot["span_found"] == 0 and tot["span_any"] == 1
+
+
+def test_the_verification_path_does_not_need_the_triplestore():
+    """Regression. `analysis.rescore_grounded` only re-reads JSON and redoes
+    string comparisons, yet it failed with ModuleNotFoundError: SPARQLWrapper
+    because the retrieval helpers lived in `rag_pipeline.pipeline`, which
+    imports the graph client at module load. They now live in
+    `rag_pipeline.retrieval`. If anything drags that dependency back in, the
+    re-scorer breaks again on any machine without a SPARQL stack.
+    """
+    import subprocess
+    import sys
+    code = (
+        "import sys;"
+        "import rag_pipeline.retrieval as r;"
+        "assert len(r.RETRIEVAL_QUERIES) == 6;"
+        "assert callable(r.download_pdf);"
+        "bad = [m for m in sys.modules if 'SPARQL' in m or 'triplestore' in m];"
+        "assert not bad, bad;"
+        "print('clean')"
+    )
+    out = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True)
+    assert out.returncode == 0, out.stderr
+    assert "clean" in out.stdout
+
+
+def test_pipeline_still_re_exports_for_existing_callers():
+    """The move must not break anything that already imported from pipeline."""
+    import rag_pipeline.retrieval as r
+    import inspect
+    src = inspect.getsource(r)
+    assert "RETRIEVAL_QUERIES" in src and "def download_pdf" in src

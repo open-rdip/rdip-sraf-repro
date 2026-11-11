@@ -31,39 +31,10 @@ def model_slug(model: str | None) -> str:
     return re.sub(r"-+", "-",
                   re.sub(r"[^a-z0-9]+", "-", (model or "default").lower())).strip("-")
 
-# Queries designed to surface reproducibility-critical passages
-RETRIEVAL_QUERIES = [
-    "random seed stochastic reproducibility initialization numpy torch",
-    "GPU hardware CUDA device A100 V100 RTX compute",
-    "software framework version PyTorch TensorFlow Python library",
-    "learning rate batch size optimizer hyperparameter training",
-    "dataset split training validation test benchmark evaluation",
-    "hardware server CPU memory compute infrastructure",
-]
-
-
-def download_pdf(pdf_url: str, study_id: str) -> str:
-    """
-    Download a paper PDF to the local data/papers directory.
-    Returns the local file path. Skips download if already present.
-    """
-    papers_dir = Path(__file__).parent.parent / "data" / "papers"
-    papers_dir.mkdir(parents=True, exist_ok=True)
-
-    dest = papers_dir / f"{study_id}.pdf"
-    if dest.exists():
-        print(f"[Pipeline] PDF already downloaded: {dest.name}")
-        return str(dest)
-
-    print(f"[Pipeline] Downloading PDF for {study_id} ...")
-    r = requests.get(pdf_url, timeout=30)
-    r.raise_for_status()
-
-    with open(dest, "wb") as f:
-        f.write(r.content)
-
-    print(f"[Pipeline] Saved to {dest}")
-    return str(dest)
+# RETRIEVAL_QUERIES and download_pdf moved to rag_pipeline.retrieval so the
+# grounded pilot and the re-scorer can use them without the triplestore
+# client. Re-exported here so existing imports keep working.
+from rag_pipeline.retrieval import RETRIEVAL_QUERIES, download_pdf  # noqa: E402,F401
 
 
 def run(study_id: str,
