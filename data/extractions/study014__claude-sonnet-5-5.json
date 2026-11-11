@@ -1,0 +1,95 @@
+{
+  "study_id": "study014",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study014/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:36:22.923406+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 4,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "ScanNet",
+        "version": null
+      },
+      {
+        "name": "SUN RGB-D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "H3DNet",
+        "description": "3D object detection network consisting of three modules: (1) computes dense pointwise descriptors and uses them to predict geometric primitives and their latent features; (2) converts the geometric primitives into object proposals; (3) a further module that refines the proposals (not detailed in the passage). It defines a parametric distance function that evaluates the distance between an object bounding box and geometric primitives."
+      },
+      {
+        "name": "Keypoint-based/geometric primitive regression",
+        "description": "Regression of multiple types of geometric primitives (e.g., bounding box center, bounding box face centers) and their associated features from different regions of the input point cloud, motivated by keypoint-based pose regression for 6D object pose estimation. An overcomplete set of primitive constraints tolerates outliers in predicted primitives (e.g., using robust functions) and reduces the influence of individual prediction errors."
+      },
+      {
+        "name": "Parametric distance function",
+        "description": "Function that evaluates the distance between an object bounding box and the predicted primitives; its local minimums correspond to object proposals. It allows continuous optimization of object bounding boxes and generation of high-quality proposals from imprecise initial ones."
+      },
+      {
+        "name": "Proposal classification and refinement module",
+        "description": "Final module that classifies each object proposal as detected or not, and predicts an offset vector of geometric parameters and a semantic label for each detected object. It aggregates latent features associated with the geometric primitives of each proposal and handles a varying number of primitives."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP (0.25)",
+        "value": "67.2%",
+        "split": null
+      },
+      {
+        "metric": "mAP (0.25) on SUN RGB-D",
+        "value": "60.1%",
+        "split": null
+      },
+      {
+        "metric": "mAP on window category (H3DNet)",
+        "value": "51.9",
+        "split": null
+      },
+      {
+        "metric": "mAP on door category (H3DNet)",
+        "value": "61.0",
+        "split": null
+      },
+      {
+        "metric": "mAP on shower-curtain category (H3DNet)",
+        "value": "75.3",
+        "split": null
+      },
+      {
+        "metric": "mAP on window category (prior state-of-the-art)",
+        "value": "38.1",
+        "split": null
+      },
+      {
+        "metric": "mAP on door category (prior state-of-the-art)",
+        "value": "47.3",
+        "split": null
+      },
+      {
+        "metric": "mAP on shower-curtain category (prior state-of-the-art)",
+        "value": "57.1",
+        "split": null
+      }
+    ]
+  }
+}

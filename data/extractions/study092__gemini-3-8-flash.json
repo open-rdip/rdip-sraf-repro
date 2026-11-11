@@ -1,0 +1,63 @@
+{
+  "study_id": "study092",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study092/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:35:45.838449+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 1,
+    "methods": 5,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "maximum length of the tracklet (N)",
+        "value": "1"
+      },
+      {
+        "name": "N",
+        "value": "20"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "TrADe",
+        "description": "Uses a tracking algorithm to identify when successive bounding boxes are of the same individual and group them as tracklets, followed by an anomaly detection model to select the most normal image of each tracklet."
+      },
+      {
+        "name": "baseline",
+        "description": "Uses object detection to generate a search gallery, and classic Re-ID to find the query in the gallery."
+      },
+      {
+        "name": "Skip",
+        "description": "A gallery size reduction approach that runs the YOLOv3 object detector once every N frames, matching TrADe's gallery size."
+      },
+      {
+        "name": "YOLOv3",
+        "description": "Object detector used in the Skip approach."
+      },
+      {
+        "name": "live Re-ID",
+        "description": "uses raw videos as search galleries instead of manually cropped"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

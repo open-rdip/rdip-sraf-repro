@@ -1,0 +1,77 @@
+{
+  "study_id": "study077",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study077/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:23:39.537745+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 7,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "GSM8K",
+        "version": null
+      },
+      {
+        "name": "MBPP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "AFLOW",
+        "description": "A novel framework for automated workflow optimization that formulates the automated workflow optimization problem and leverages Monte Carlo Tree Search and code-represented workflows to navigate the search space of possible workflows efficiently."
+      },
+      {
+        "name": "Monte Carlo Tree Search",
+        "description": "Search method used by AFLOW to navigate the vast search space of possible workflows efficiently."
+      },
+      {
+        "name": "code-represented workflows",
+        "description": "Workflow representation used by AFLOW to navigate the search space of possible workflows."
+      },
+      {
+        "name": "operators",
+        "description": "Human-designed effort introduced to enhance search efficiency so AFLOW discovers better workflows more efficiently."
+      },
+      {
+        "name": "custom",
+        "description": "Operator invoked with MATH_SOLVE_PROMPT to produce a solution; custom prompts were modified for formatting the final answer and for reasoning and checking step by step."
+      },
+      {
+        "name": "ScEnsemble",
+        "description": "Ensemble operator (sc_ensemble) applied to solutions; added as a workflow modification."
+      },
+      {
+        "name": "Programmer",
+        "description": "Operator used as a verification or review step on the problem and final solution analysis."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance",
+        "value": "93.1%",
+        "split": null
+      },
+      {
+        "metric": "Score",
+        "value": "0.8591",
+        "split": null
+      }
+    ]
+  }
+}

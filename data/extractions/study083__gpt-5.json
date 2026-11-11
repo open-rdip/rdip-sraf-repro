@@ -1,0 +1,94 @@
+{
+  "study_id": "study083",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study083/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:21:56.348696+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 14,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "LPMC",
+        "version": null
+      },
+      {
+        "name": "NTS",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Nystr\u00f6m-based KLR",
+        "description": "Comprehensive comparison and analysis of accuracy and computational complexity for transport mode choice."
+      },
+      {
+        "name": "Nystr\u00f6m method for KLR",
+        "description": "Approximates the kernel matrix of KLR and discusses associated error bounds."
+      },
+      {
+        "name": "Specialised training loss and gradient for Nystr\u00f6m method-KLR",
+        "description": "Computation of the training loss function and its gradient is specialised for tailored optimisation."
+      },
+      {
+        "name": "Gradient Descent",
+        "description": "Assessed as an optimisation method for the proposed Nystr\u00f6m KLR model."
+      },
+      {
+        "name": "Momentum",
+        "description": "Assessed as an optimisation method for the proposed Nystr\u00f6m KLR model."
+      },
+      {
+        "name": "Adam",
+        "description": "Assessed as an optimisation method for the proposed Nystr\u00f6m KLR model."
+      },
+      {
+        "name": "L-BFGS-B",
+        "description": "Assessed as an optimisation method for the proposed Nystr\u00f6m KLR model."
+      },
+      {
+        "name": "MNL",
+        "description": "Benchmark technique for transport mode choice used for comparison."
+      },
+      {
+        "name": "Random Forests (RF)",
+        "description": "Benchmark technique for transport mode choice used for comparison."
+      },
+      {
+        "name": "SVM",
+        "description": "Benchmark technique for transport mode choice used for comparison."
+      },
+      {
+        "name": "Extreme Gradient Boosting (XGBoost)",
+        "description": "Benchmark technique for transport mode choice used for comparison."
+      },
+      {
+        "name": "Neural Network (NN)",
+        "description": "Benchmark technique for transport mode choice used for comparison."
+      },
+      {
+        "name": "Nystr\u00f6m method",
+        "description": "Strategy for approximating the kernel matrix of KLR using the Nystr\u00f6m method and discussing error bounds in this approximation."
+      },
+      {
+        "name": "Nystr\u00f6m-KLR optimisation algorithms",
+        "description": "Formulation of optimisation algorithms applicable to Nystr\u00f6m-KLR models."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

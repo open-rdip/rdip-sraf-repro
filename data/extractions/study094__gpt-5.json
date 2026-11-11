@@ -1,0 +1,103 @@
+{
+  "study_id": "study094",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study094/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:31:04.161849+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 7,
+    "methods": 5,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "TensorRT",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "A100 GPU; NVIDIA Orin NX",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "input_size",
+        "value": "640 \u00d7 640"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "LVIS",
+        "version": null
+      },
+      {
+        "name": "V3Det",
+        "version": null
+      },
+      {
+        "name": "OpenImages",
+        "version": null
+      },
+      {
+        "name": "CC3M",
+        "version": null
+      },
+      {
+        "name": "SA-1B",
+        "version": null
+      },
+      {
+        "name": "LVIS-minival",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Grounding DINO 1.5",
+        "description": "A model used to visualize detection results in real-world scenarios across multiple datasets."
+      },
+      {
+        "name": "Grounding DINO 1.5 Pro",
+        "description": "Demonstrated robust common object detection, accurately detecting objects in monochromatic and blurry images."
+      },
+      {
+        "name": "Grounding DINO 1.5 Edge",
+        "description": "Zero-shot open-set object detector evaluated on COCO and LVIS-minival; optimized with TensorRT for deployment on NVIDIA Orin NX"
+      },
+      {
+        "name": "Grounding DINO",
+        "description": "Baseline model used for side-by-side comparison with Grounding DINO 1.5 Pro."
+      },
+      {
+        "name": "Long Caption Grounding",
+        "description": "Technique/task focusing on grounding each noun phrase from long, detailed captions to visual elements within an image to achieve deeper image understanding."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AP",
+        "value": "45.0",
+        "split": null
+      },
+      {
+        "metric": "FPS (NVIDIA Orin NX)",
+        "value": "over 10 FPS",
+        "split": null
+      }
+    ]
+  }
+}

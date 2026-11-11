@@ -1,0 +1,249 @@
+{
+  "study_id": "study012",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study012/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:35:48.600378+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 20,
+    "datasets": 8,
+    "methods": 25,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "COCO training setting",
+        "value": "default Mask R-CNN 1\u00d7 training setting [23]"
+      },
+      {
+        "name": "scale jitter (shorter image side) on COCO",
+        "value": "[640, 800]"
+      },
+      {
+        "name": "number of stuff classes (semantic segmentation, COCO)",
+        "value": "53"
+      },
+      {
+        "name": "number of 'other' classes for thing classes (COCO)",
+        "value": "1 (covering all 80 thing classes)"
+      },
+      {
+        "name": "Cityscapes minibatch size",
+        "value": "32 random crops"
+      },
+      {
+        "name": "Cityscapes crop size",
+        "value": "512\u00d71024"
+      },
+      {
+        "name": "Cityscapes crops per GPU",
+        "value": "4"
+      },
+      {
+        "name": "Cityscapes random scaling range",
+        "value": "0.5 to 2.0\u00d7"
+      },
+      {
+        "name": "Cityscapes training iterations",
+        "value": "65k"
+      },
+      {
+        "name": "number of channels in semantic branch",
+        "value": "128"
+      },
+      {
+        "name": "learning rate (2017 COCO-Stuff competition entry)",
+        "value": "double the Cityscapes schedule learning rate"
+      },
+      {
+        "name": "batch size (2017 COCO-Stuff competition entry)",
+        "value": "half the Cityscapes schedule batch size"
+      },
+      {
+        "name": "conv layers per upsampling module (early design)",
+        "value": "two 3\u00d73 conv layers with ReLU before bilinear upscaling"
+      },
+      {
+        "name": "feature combination in semantic branch (early design)",
+        "value": "concatenated instead of summed"
+      },
+      {
+        "name": "FPN output channels per scale",
+        "value": "256"
+      },
+      {
+        "name": "semantic segmentation branch channels",
+        "value": "128"
+      },
+      {
+        "name": "backbone",
+        "value": "ResNet-101"
+      },
+      {
+        "name": "FPN channel grouping (Table 3d variant)",
+        "value": "two sets, each task uses one set as input"
+      },
+      {
+        "name": "\u03bbi",
+        "value": "tuned (weight on total instance segmentation loss Lc+Lb+Lm); value not stated"
+      },
+      {
+        "name": "\u03bbs",
+        "value": "tuned (weight on semantic segmentation loss Ls); value not stated"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "Cityscapes",
+        "version": null
+      },
+      {
+        "name": "COCO Panoptic",
+        "version": null
+      },
+      {
+        "name": "COCO Stuff",
+        "version": null
+      },
+      {
+        "name": "COCO-Stuff",
+        "version": "2017 challenge"
+      },
+      {
+        "name": "COCO Panoptic (stuff annotations)",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "COCO Panoptic Segmentation",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Panoptic FPN",
+        "description": "Panoptic segmentation model whose predictions are evaluated with PQ after post-processing merging of the semantic and instance branch outputs"
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "Default 1\u00d7 training setting used for COCO training with scale jitter"
+      },
+      {
+        "name": "PQ (panoptic quality)",
+        "description": "Default panoptic segmentation metric capturing both recognition and segmentation quality, treating stuff and thing categories uniformly"
+      },
+      {
+        "name": "PQSt and PQTh",
+        "description": "Metrics reporting stuff and thing performance separately"
+      },
+      {
+        "name": "AP (average precision)",
+        "description": "Primary instance segmentation metric, averaged over categories and IoU thresholds; AP50 and AP75 are supplementary metrics"
+      },
+      {
+        "name": "iIoU (instance-level IoU)",
+        "description": "Metric used on Cityscapes"
+      },
+      {
+        "name": "Semantic FPN",
+        "description": "ResNet-50 Semantic FPN with a dense-pixel labelling semantic segmentation branch built on FPN features; the number of channels in the semantic branch is varied."
+      },
+      {
+        "name": "Feature aggregation comparison",
+        "description": "Element-wise sum compared with concatenation for aggregating feature maps from different FPN levels; accuracy is comparable, but summation is more efficient."
+      },
+      {
+        "name": "Multi-task training",
+        "description": "Joint training of the semantic segmentation branch and the Mask R-CNN instance segmentation branch in a single unified network."
+      },
+      {
+        "name": "Semantic segmentation branch",
+        "description": "Semantic branch with upsampling modules; the early COCO-Stuff design used two 3\u00d73 conv layers and ReLU before bilinear upscaling to the final resolution and concatenated features rather than summing them."
+      },
+      {
+        "name": "Color augmentation",
+        "description": "Color augmentation [40] used when training the competition entry."
+      },
+      {
+        "name": "Class distribution balancing at test time",
+        "description": "Test-time balancing of the class distribution used in the competition entry."
+      },
+      {
+        "name": "Multi-scale inference",
+        "description": "Multi-scale inference used at test time for the competition entry."
+      },
+      {
+        "name": "Semantic-segmentation-specific training schedule",
+        "description": "Schedule similar to the Cityscapes schedule but with double learning rate and halved batch size."
+      },
+      {
+        "name": "Ablations of semantic segmentation branch",
+        "description": "Ablation experiments analyzing the proposed semantic segmentation branch (Figure 3) using stuff annotations from the COCO Panoptic dataset."
+      },
+      {
+        "name": "Fixed channel-wise affine transformation",
+        "description": "Replaces batch norm (BN) during fine-tuning, as is typical."
+      },
+      {
+        "name": "Panoptic inference post-processing",
+        "description": "Post-processing from [30] to resolve overlaps: (1) resolve overlaps between instances based on confidence scores, (2) resolve overlaps between instance and semantic segmentation outputs in favor of instances, (3) remove stuff regions labeled 'other' or under a given area threshold."
+      },
+      {
+        "name": "Two separate networks",
+        "description": "Baseline in which separate networks are trained for the instance and semantic tasks, compared against Panoptic FPN (ResNet-50 each, matched against Panoptic FPN with ResNet-101 for equal compute)."
+      },
+      {
+        "name": "Combined loss",
+        "description": "Default strategy that combines the instance and semantic losses together during each gradient update."
+      },
+      {
+        "name": "Alternating loss",
+        "description": "Alternative strategy that alternates the instance and semantic losses on each iteration, which could allow different augmentation strategies for the two tasks."
+      },
+      {
+        "name": "Grouped FPN channels",
+        "description": "Ablation architecture where FPN channels are grouped into two sets and each task uses one of the sets."
+      },
+      {
+        "name": "Grouped FPN channels multi-task architecture",
+        "description": "Architecture where FPN channels are grouped into two sets and each task uses one of the two feature sets as its input (Table 3d)"
+      },
+      {
+        "name": "Panoptic segmentation approach from [1]",
+        "description": "Existing panoptic segmentation method on Cityscapes used as a comparison baseline (Table 4b)"
+      },
+      {
+        "name": "Loss re-weighting for joint instance and semantic segmentation",
+        "description": "Final loss L=\u03bbi(Lc+Lb+Lm)+\u03bbsLs, where the instance segmentation loss and semantic segmentation loss are re-weighted via \u03bbi and \u03bbs to handle different scales and normalization; allows a single model comparable to two separate task-specific models at about half the compute."
+      },
+      {
+        "name": "FPN-based semantic segmentation",
+        "description": "Semantic segmentation predicted using Feature Pyramid Network as a simple single-network baseline performing both instance and semantic segmentation, compatible with Mask R-CNN; much lighter than a dilation-8 network, ~2x more efficient than the symmetric encoder-decoder, and roughly equivalent to a dilation-16 network while producing 4x higher resolution output."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "PQ margin over [1] on Cityscapes",
+        "value": "4.3 points",
+        "split": null
+      }
+    ]
+  }
+}

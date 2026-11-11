@@ -1,0 +1,139 @@
+{
+  "study_id": "study044",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study044/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:49:48.220868+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 7,
+    "methods": 15,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "entropy threshold \u03c4",
+        "value": null
+      },
+      {
+        "name": "required number of consecutive confident steps k",
+        "value": null
+      },
+      {
+        "name": "top-n tokens for average embedding strategy (ablation)",
+        "value": "5"
+      },
+      {
+        "name": "n (total number of samples)",
+        "value": "16"
+      },
+      {
+        "name": "k (number of samples selected for Pass@k)",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "AIME 2024",
+        "version": null
+      },
+      {
+        "name": "LiveCodeBench",
+        "version": null
+      },
+      {
+        "name": "Math500",
+        "version": null
+      },
+      {
+        "name": "GSM8K",
+        "version": null
+      },
+      {
+        "name": "GPQA-Diamond",
+        "version": null
+      },
+      {
+        "name": "HumanEval",
+        "version": null
+      },
+      {
+        "name": "MBPP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Soft Thinking",
+        "description": "Reasoning approach that integrates path exploration across consecutive concept tokens, using token probability distributions at each intermediate reasoning step to enhance reasoning flexibility and depth."
+      },
+      {
+        "name": "COCONUT-TF",
+        "description": "Training-free COCONUT, which directly feeds the previous hidden state as the next input; used as a baseline in the ablation on concept token strategies."
+      },
+      {
+        "name": "Cold Stop",
+        "description": "Mechanism in Soft Thinking whose impact is assessed in the ablation study."
+      },
+      {
+        "name": "QwQ-32B",
+        "description": "Model used for thinking experiments on AIME 2024 and LiveCodeBench."
+      },
+      {
+        "name": "Entropy-based confidence measure",
+        "description": "Uses entropy of the concept token's probability distribution as an uncertainty signal; low entropy ('cold') indicates the model is confident in its prediction."
+      },
+      {
+        "name": "COCONUT",
+        "description": "Training-free approach that directly feeds the previous hidden state as the next input embedding; fails entirely, producing no correct answers and always reaching the maximum generation length."
+      },
+      {
+        "name": "Average embedding",
+        "description": "Takes the mean of the top-n token embeddings (n=5 for ablation); performs marginally better than COCONUT, yielding a small number of correct solutions but still producing extremely long output."
+      },
+      {
+        "name": "Discrete CoT (standard CoT)",
+        "description": "Replaces each summation over tokens p(tj|\u00b7) with sampling a single token, discarding probability mass from all other paths."
+      },
+      {
+        "name": "Continuous expansion",
+        "description": "Approximates p(y|x) as p(y|x, ct1, ct2, ..., ctm) using concept tokens across all m steps."
+      },
+      {
+        "name": "CoT",
+        "description": "Standard chain-of-thought reasoning, used as a baseline for comparison with Soft Thinking with Cold Stop."
+      },
+      {
+        "name": "Standard CoT Thinking",
+        "description": "Baseline that employs explicit step-by-step reasoning."
+      },
+      {
+        "name": "Standard Greedy CoT Thinking",
+        "description": "Baseline that utilizes greedy decoding at each step of the reasoning process."
+      },
+      {
+        "name": "Pass@1",
+        "description": "Metric for accuracy of generated answers, computed as Pass@k = 1 - C(n-c, k)/C(n, k), where n is total samples, c is correct samples, and k is samples selected (k=1), so Pass@1 = c/n."
+      },
+      {
+        "name": "Generated token count for correct solutions",
+        "description": "Metric for reasoning efficiency, reporting the number of tokens generated specifically for correct solutions."
+      },
+      {
+        "name": "DeepSeek models",
+        "description": "Models trained via supervised distillation, used to evaluate Soft Thinking (Qwen and LLaMA architectures, 32B and 70B scales)."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

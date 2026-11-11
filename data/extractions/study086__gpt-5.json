@@ -1,0 +1,284 @@
+{
+  "study_id": "study086",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study086/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:24:55.621900+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 1,
+    "methods": 18,
+    "evaluation_results": 28
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A10G",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "attack_steps",
+        "value": "256"
+      },
+      {
+        "name": "batch_size",
+        "value": "512"
+      },
+      {
+        "name": "attempts_per_input_if_sampling",
+        "value": "3"
+      },
+      {
+        "name": "targeted_modules",
+        "value": "q_proj, k_proj"
+      },
+      {
+        "name": "learning_rate",
+        "value": "lower"
+      },
+      {
+        "name": "lr_scheduler",
+        "value": "linear"
+      },
+      {
+        "name": "num_training_samples",
+        "value": "240000"
+      },
+      {
+        "name": "fine_tuned_layers",
+        "value": "as many layers as possible"
+      },
+      {
+        "name": "prompt_template",
+        "value": "Zero-shot"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "question dataset D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Universal Prompt Optimization (GCG)",
+        "description": "Used GCG's Universal Prompt Optimization; treated Llama-2-7b with two prompt templates as two different models and ran the attack on both simultaneously."
+      },
+      {
+        "name": "Simultaneous dual-template attack",
+        "description": "Ran the attack concurrently on two instances of Llama-2-7b, each with a different prompt template."
+      },
+      {
+        "name": "Model verification",
+        "description": "For each local model, generated outputs using the repository's suggested prompt template; otherwise used the model\u2019s default template or FastChat\u2019s corresponding template; for models without templates, used FastChat\u2019s zero-shot prompt. Default generation strategy was used; if sampling was involved, made three attempts per input and considered success if at least one attempt met the criterion."
+      },
+      {
+        "name": "GCG baseline",
+        "description": "Baseline query generation using GCG."
+      },
+      {
+        "name": "ARCA baseline",
+        "description": "Baseline query generation using ARCA."
+      },
+      {
+        "name": "Fine-tuning with radical hyperparameters",
+        "description": "Model was fine-tuned with radical hyperparameters to maximize model change."
+      },
+      {
+        "name": "LOESS smoothing",
+        "description": "Smoothed the TRR curve using LOESS for analysis."
+      },
+      {
+        "name": "Modified evaluation queries",
+        "description": "Queries used for evaluations were modified as described in Section VI-A.3."
+      },
+      {
+        "name": "TRR (Ours)",
+        "description": "TRR (Ours)"
+      },
+      {
+        "name": "GCG",
+        "description": "GCG"
+      },
+      {
+        "name": "ARCA",
+        "description": "ARCA"
+      },
+      {
+        "name": "ProFLingo",
+        "description": "A black-box fingerprinting-based copyright protection scheme for large language models that does not modify the training process or require additional processing, enabling application to already released and more complex models."
+      },
+      {
+        "name": "Our method",
+        "description": "Generates queries using two prompt templates simultaneously with more constraints than GCG; achieves better performance and maintains TRR stability across prompt template changes; tested on models derived from Llama-2-7b and Mistral-7B-v0.1."
+      },
+      {
+        "name": "ProFLingo fine-tuning",
+        "description": "Fine-tuned as many layers as possible with a relatively high learning rate of 2e-4 on 240,000 samples."
+      },
+      {
+        "name": "TRR evaluation by keyword check",
+        "description": "Evaluates TRR by checking whether the target keyword is present in the first sentence (ending with a period)."
+      },
+      {
+        "name": "Model selection",
+        "description": "Selected two original models (Llama-2-7b and Mistral-7B-v0.1), eight fine-tuned positive suspect models per original model, eight unrelated negative suspect models, and three similar same-family models to assess TRRs."
+      },
+      {
+        "name": "Question dataset construction",
+        "description": "Constructed a dataset D consisting of N=50 arbitrary common-sense questions with corresponding targets."
+      },
+      {
+        "name": "Adversarial examples extraction",
+        "description": "Generated queries using two prompt templates: one modified from the zero-shot prompt template of FastChat and another modified from the default template of Alpaca, with placeholders [question] for the user\u2019s prompt and [answer] for the model\u2019s completion."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "query_generation_time (our method on Llama-2-7b with single NVIDIA A10G GPU)",
+        "value": "approximately 1.5 hours",
+        "split": null
+      },
+      {
+        "metric": "query_generation_time (GCG)",
+        "value": "approximately 2.5 hours",
+        "split": null
+      },
+      {
+        "metric": "query_generation_time (ARCA)",
+        "value": "approximately 3 hours",
+        "split": null
+      },
+      {
+        "metric": "TRR",
+        "value": "0.24",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours)",
+        "value": "0.18",
+        "split": null
+      },
+      {
+        "metric": "Difference (Ours)",
+        "value": "0.14\u2191",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG)",
+        "value": "0.22",
+        "split": null
+      },
+      {
+        "metric": "Difference (GCG)",
+        "value": "0.06",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA)",
+        "value": "0.16",
+        "split": null
+      },
+      {
+        "metric": "Difference (ARCA)",
+        "value": "0.06",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours) - Zero-shot",
+        "value": "0.98",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG) - Zero-shot",
+        "value": "0.96",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA) - Zero-shot",
+        "value": "0.94",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours) - Alpaca",
+        "value": "0.98",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG) - Alpaca",
+        "value": "0.90",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA) - Alpaca",
+        "value": "0.64",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours) - Fine-tuning1",
+        "value": "0.96",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG) - Fine-tuning1",
+        "value": "0.96",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA) - Fine-tuning1",
+        "value": "0.70",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours) - ChatGPT",
+        "value": "0.92",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG) - ChatGPT",
+        "value": "0.92",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA) - ChatGPT",
+        "value": "0.54",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours) - Tigerbot",
+        "value": "0.98",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG) - Tigerbot",
+        "value": "0.92",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA) - Tigerbot",
+        "value": "0.70",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours) - Dolly V2",
+        "value": "0.92",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG) - Dolly V2",
+        "value": "0.90",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA) - Dolly V2",
+        "value": "0.66",
+        "split": null
+      }
+    ]
+  }
+}

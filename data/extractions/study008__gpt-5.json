@@ -1,0 +1,282 @@
+{
+  "study_id": "study008",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study008/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:10:06.602453+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 29,
+    "datasets": 10,
+    "methods": 19,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch FSDP",
+        "version": null
+      },
+      {
+        "name": "FlashAttention",
+        "version": null
+      },
+      {
+        "name": "RMSNorm CUDA kernels",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia A100 80GB; A100 40GB; H100 80GB; A6000 48GB (2 or 4 GPUs)",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "micro_batch_size",
+        "value": "adjusted based on number of GPUs and precision"
+      },
+      {
+        "name": "activation_checkpointing",
+        "value": "enabled as needed to fit memory"
+      },
+      {
+        "name": "ZeRO_stage",
+        "value": "varied (different ZeRO stages of PyTorch FSDP)"
+      },
+      {
+        "name": "training_precision",
+        "value": "bfloat16 (hindsight study)"
+      },
+      {
+        "name": "tokenizer_swapping",
+        "value": "enabled (hindsight study)"
+      },
+      {
+        "name": "learning_rate_schedule",
+        "value": "infinite (Ibrahim et al., 2024; hindsight study)"
+      },
+      {
+        "name": "attention_masks",
+        "value": "adjusted to prevent cross-document (hindsight study)"
+      },
+      {
+        "name": "target_languages",
+        "value": "Arabic, German (hindsight study)"
+      },
+      {
+        "name": "Training steps (Ours)",
+        "value": "7,680"
+      },
+      {
+        "name": "Training steps (LeoLM)",
+        "value": "15,360"
+      },
+      {
+        "name": "Warmup steps (Ours)",
+        "value": "76"
+      },
+      {
+        "name": "Warmup steps (LeoLM)",
+        "value": "153"
+      },
+      {
+        "name": "Batch size (Ours)",
+        "value": "256"
+      },
+      {
+        "name": "Batch size (LeoLM)",
+        "value": "512"
+      },
+      {
+        "name": "Context length (Ours)",
+        "value": "4,096"
+      },
+      {
+        "name": "Context length (LeoLM)",
+        "value": "8,192"
+      },
+      {
+        "name": "Total training tokens (Ours)",
+        "value": "8 billion"
+      },
+      {
+        "name": "Total training tokens (LeoLM)",
+        "value": "64 billion"
+      },
+      {
+        "name": "Optimizer (Ours)",
+        "value": "AdamW"
+      },
+      {
+        "name": "Optimizer (LeoLM)",
+        "value": "AdamW"
+      },
+      {
+        "name": "Learning rate (Ours)",
+        "value": "4\u00d710\u22125"
+      },
+      {
+        "name": "Learning rate (LeoLM)",
+        "value": "2\u00d710\u22125"
+      },
+      {
+        "name": "Learning rate decay (Ours)",
+        "value": "Cosine to 2\u00d710\u22126"
+      },
+      {
+        "name": "Learning rate decay (LeoLM)",
+        "value": "Cosine to 2\u00d710\u22126"
+      },
+      {
+        "name": "Adam \u03b2 (Ours)",
+        "value": "(0.9, 0.95)"
+      },
+      {
+        "name": "Adam \u03b2 (LeoLM)",
+        "value": "(0.9, 0.95)"
+      },
+      {
+        "name": "Weight decay (Ours)",
+        "value": "0.05"
+      },
+      {
+        "name": "Weight decay (LeoLM)",
+        "value": "0.05"
+      },
+      {
+        "name": "optimizer_state_dtype",
+        "value": "float32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CulturaX",
+        "version": null
+      },
+      {
+        "name": "OSCAR",
+        "version": "23.01"
+      },
+      {
+        "name": "BOOLQ",
+        "version": null
+      },
+      {
+        "name": "COPA",
+        "version": null
+      },
+      {
+        "name": "HellaSwag",
+        "version": null
+      },
+      {
+        "name": "OpenBookQA",
+        "version": null
+      },
+      {
+        "name": "PIQA",
+        "version": null
+      },
+      {
+        "name": "RACE",
+        "version": null
+      },
+      {
+        "name": "SciTail",
+        "version": null
+      },
+      {
+        "name": "TOXIGEN",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Mixed-precision bfloat16 training",
+        "description": "Compute forward and backward passes in bfloat16 instead of float32 to increase computational efficiency."
+      },
+      {
+        "name": "Float32 master weights and optimizer states",
+        "description": "Store a master copy of model weights and optimizer states in float32 and use them during the optimizer step to offset the reduced precision of bfloat16."
+      },
+      {
+        "name": "Parallel training with PyTorch FSDP",
+        "description": "Training across 2 or 4 GPUs using PyTorch Fully Sharded Data Parallel"
+      },
+      {
+        "name": "ZeRO stages within PyTorch FSDP",
+        "description": "Adjust different ZeRO sharding stages to fit GPU memory constraints"
+      },
+      {
+        "name": "FlashAttention",
+        "description": "Use FlashAttention self-attention CUDA kernels for efficient attention computation"
+      },
+      {
+        "name": "RMSNorm CUDA kernels",
+        "description": "Use RMSNorm CUDA kernels to accelerate normalization"
+      },
+      {
+        "name": "Activation checkpointing",
+        "description": "Enable activation checkpointing to reduce memory footprint during training"
+      },
+      {
+        "name": "Tokenizer swapping",
+        "description": "Swap tokenizer during continued training for analysis in hindsight study"
+      },
+      {
+        "name": "Infinite learning rate schedule",
+        "description": "Apply infinite LR schedule following Ibrahim et al. (2024) during continued training"
+      },
+      {
+        "name": "Adjusted attention masks",
+        "description": "Modify attention masks to prevent cross-document attention"
+      },
+      {
+        "name": "Language adaptation",
+        "description": "Extend targets to include Arabic alongside German to evaluate adaptation"
+      },
+      {
+        "name": "Macro average (as in OALL)",
+        "description": "Report a macro average counting the benchmarks in AlGhafa-T individually."
+      },
+      {
+        "name": "AdamW optimizer",
+        "description": "Used as the optimizer for training."
+      },
+      {
+        "name": "Cosine learning rate decay to 2\u00d710\u22126",
+        "description": "Cosine schedule decaying the learning rate to 2\u00d710\u22126."
+      },
+      {
+        "name": "bfloat16 training",
+        "description": "Training performed in pure bfloat16; effects on small weight updates discussed."
+      },
+      {
+        "name": "RMSNorm",
+        "description": "Model component whose weight magnitudes were analyzed separately."
+      },
+      {
+        "name": "Mistral-7B case study",
+        "description": "Analyzed absolute weight values of Mistral-7B to assess susceptibility of small updates to disappearance in bfloat16."
+      },
+      {
+        "name": "pure bfloat16 training",
+        "description": "Train the model using bfloat16 for computations without mixed-precision; optimizer states maintained separately."
+      },
+      {
+        "name": "optimizer states in float32",
+        "description": "Store optimizer states in float32 and use them during the optimizer step to compensate for reduced precision."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "training speed",
+        "value": "39% faster than mixed-precision bfloat16",
+        "split": null
+      }
+    ]
+  }
+}

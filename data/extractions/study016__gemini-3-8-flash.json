@@ -1,0 +1,75 @@
+{
+  "study_id": "study016",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study016/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:16:21.683644+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 1,
+    "methods": 8,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "discrete latents",
+        "value": "without discrete latents"
+      },
+      {
+        "name": "mixed precision training",
+        "value": "without mixed precision training"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Avalon",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "IMPALA",
+        "description": "Baseline algorithm on which many other SOTA algorithms are based"
+      },
+      {
+        "name": "PPO",
+        "description": "Baseline algorithm on which many other SOTA algorithms are based"
+      },
+      {
+        "name": "DreamerV2",
+        "description": "Representative model-based baseline used without discrete latents and without mixed precision training"
+      },
+      {
+        "name": "Bayesian optimization",
+        "description": "Used in combination with Natural Evolution Strategies for hyper-parameter tuning"
+      },
+      {
+        "name": "Natural Evolution Strategies (NES)",
+        "description": "Used in combination with Bayesian optimization for hyper-parameter tuning"
+      },
+      {
+        "name": "Difficulty curriculum",
+        "description": "A simple form of Automated Curriculum Learning where the maximum difficulty of future generated worlds for a task is increased slightly when the agent succeeds, and decreased slightly when it fails."
+      },
+      {
+        "name": "MT-TB",
+        "description": "training agents on basic tasks"
+      },
+      {
+        "name": "MT-TA",
+        "description": "training agents on all 20 tasks"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

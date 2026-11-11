@@ -1,0 +1,282 @@
+{
+  "study_id": "study086",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study086/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:29:09.124600+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 1,
+    "methods": 13,
+    "evaluation_results": 34
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A10G",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "steps",
+        "value": "256"
+      },
+      {
+        "name": "batch size",
+        "value": "512"
+      },
+      {
+        "name": "sampling attempts",
+        "value": "3"
+      },
+      {
+        "name": "fine-tuning samples",
+        "value": "240,000"
+      },
+      {
+        "name": "learning rate",
+        "value": "2e-4"
+      },
+      {
+        "name": "N",
+        "value": "50"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "question dataset D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Universal Prompt Optimization (GCG)",
+        "description": "Utilized feature of GCG treating Llama-2-7b with two templates as two different models and running attack on both simultaneously"
+      },
+      {
+        "name": "ARCA",
+        "description": "Baseline method compared for query generation time"
+      },
+      {
+        "name": "Model verification",
+        "description": "Generates output using suggested prompt templates, default templates, or FastChat zero-shot prompts with model's default generation strategy"
+      },
+      {
+        "name": "ProFLingo",
+        "description": "Technique whose effectiveness is evaluated against fine-tuning attacks"
+      },
+      {
+        "name": "LOESS",
+        "description": "Smoothing method applied to the TRR curve across fine-tuning samples"
+      },
+      {
+        "name": "Ours",
+        "description": "Proposed method to assess fine-tuned models using queries generated from the original model and recording TRRs"
+      },
+      {
+        "name": "GCG",
+        "description": "Baseline comparison method evaluated for TRR and Difference"
+      },
+      {
+        "name": "our method",
+        "description": "Generates queries across at least two prompt templates simultaneously to serve as fingerprints robust to template changes"
+      },
+      {
+        "name": "Full Fine-tuning",
+        "description": "Fine-tuning technique used for derived models"
+      },
+      {
+        "name": "PEFT",
+        "description": "Parameter-efficient fine-tuning technique used for derived models"
+      },
+      {
+        "name": "RLHF",
+        "description": "Reinforcement learning from human feedback fine-tuning technique"
+      },
+      {
+        "name": "RLAIF",
+        "description": "Reinforcement learning from AI feedback fine-tuning technique"
+      },
+      {
+        "name": "Adversarial examples extraction",
+        "description": "Query generation method utilizing modified prompt templates from FastChat and Alpaca"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "query generation time (our method)",
+        "value": "approximately 1.5 hours",
+        "split": null
+      },
+      {
+        "metric": "query generation time (GCG)",
+        "value": "approximately 2.5 hours",
+        "split": null
+      },
+      {
+        "metric": "query generation time (ARCA)",
+        "value": "approximately 3 hours",
+        "split": null
+      },
+      {
+        "metric": "lowest TRR",
+        "value": "0.24",
+        "split": null
+      },
+      {
+        "metric": "TRR (initial)",
+        "value": "0.96",
+        "split": null
+      },
+      {
+        "metric": "TRR (after fine-tuning on 800 samples)",
+        "value": "0.62",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours) - Llama-2-7b-chat",
+        "value": "0.18",
+        "split": null
+      },
+      {
+        "metric": "Difference (Ours) - Llama-2-7b-chat",
+        "value": "0.14\u2191",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG) - Llama-2-7b-chat",
+        "value": "0.22",
+        "split": null
+      },
+      {
+        "metric": "Difference (GCG) - Llama-2-7b-chat",
+        "value": "0.06",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA) - Llama-2-7b-chat",
+        "value": "0.16",
+        "split": null
+      },
+      {
+        "metric": "Difference (ARCA) - Llama-2-7b-chat",
+        "value": "0.06",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours) - Vicuna-7b-v1.5",
+        "value": "0.58",
+        "split": null
+      },
+      {
+        "metric": "Difference (Ours) - Vicuna-7b-v1.5",
+        "value": "0.54\u2191",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG) - Vicuna-7b-v1.5",
+        "value": "0.68",
+        "split": null
+      },
+      {
+        "metric": "Difference (GCG) - Vicuna-7b-v1.5",
+        "value": "0.52\u2191",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours) (Zero-shot)",
+        "value": "0.98",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG) (Zero-shot)",
+        "value": "0.96",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA) (Zero-shot)",
+        "value": "0.94",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours) (Alpaca)",
+        "value": "0.98",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG) (Alpaca)",
+        "value": "0.90",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA) (Alpaca)",
+        "value": "0.64",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours) (Fine-tuning)",
+        "value": "0.96",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG) (Fine-tuning)",
+        "value": "0.96",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA) (Fine-tuning)",
+        "value": "0.70",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours) (ChatGPT)",
+        "value": "0.92",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG) (ChatGPT)",
+        "value": "0.92",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA) (ChatGPT)",
+        "value": "0.54",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours) (Tigerbot)",
+        "value": "0.98",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG) (Tigerbot)",
+        "value": "0.92",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA) (Tigerbot)",
+        "value": "0.70",
+        "split": null
+      },
+      {
+        "metric": "TRR (Ours) (Dolly V2)",
+        "value": "0.92",
+        "split": null
+      },
+      {
+        "metric": "TRR (GCG) (Dolly V2)",
+        "value": "0.90",
+        "split": null
+      },
+      {
+        "metric": "TRR (ARCA) (Dolly V2)",
+        "value": "0.66",
+        "split": null
+      }
+    ]
+  }
+}

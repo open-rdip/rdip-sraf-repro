@@ -1,0 +1,49 @@
+{
+  "study_id": "study078",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study078/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:20:38.188827+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 5,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "QUantum DIstributed Optimization (QUDIO)",
+        "description": "A novel distributed-VQA scheme in a lazy communication manner."
+      },
+      {
+        "name": "Shuffle-QUDIO",
+        "description": "A quantum distributed optimization framework where, for every local worker, the local Hamiltonian terms are randomly shuffled and sampled without replacement according to the worker\u2019s rank before each iteration."
+      },
+      {
+        "name": "QUDIO",
+        "description": "A distributed quantum optimization method for training VQEs"
+      },
+      {
+        "name": "VQE",
+        "description": "Variational Quantum Eigensolver"
+      },
+      {
+        "name": "parameter-shift rule",
+        "description": "Used by each processor to estimate the gradient g(t,w) i"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

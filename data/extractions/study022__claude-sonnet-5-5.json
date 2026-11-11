@@ -1,0 +1,242 @@
+{
+  "study_id": "study022",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study022/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:39:33.173215+00:00",
+  "counts": {
+    "dependencies": 7,
+    "random_seeds": 0,
+    "hyperparameters": 19,
+    "datasets": 3,
+    "methods": 22,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "nvFuser",
+        "version": null
+      },
+      {
+        "name": "cuCollections",
+        "version": null
+      },
+      {
+        "name": "CUDA Graphs",
+        "version": null
+      },
+      {
+        "name": "Flink",
+        "version": null
+      },
+      {
+        "name": "Kafka",
+        "version": null
+      },
+      {
+        "name": "Rockstore",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "retraining frequency",
+        "value": "twice per week"
+      },
+      {
+        "name": "realtime user sequence length |S|",
+        "value": "100"
+      },
+      {
+        "name": "action embedding dimension d_action",
+        "value": "32"
+      },
+      {
+        "name": "number of transformer blocks in transformer encoder",
+        "value": "2"
+      },
+      {
+        "name": "dropout rate",
+        "value": "0.1"
+      },
+      {
+        "name": "feed forward network hidden dimension d_hidden",
+        "value": "32"
+      },
+      {
+        "name": "positional encoding",
+        "value": "not used"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning rate warm-up steps",
+        "value": "5000"
+      },
+      {
+        "name": "peak learning rate",
+        "value": "0.0048"
+      },
+      {
+        "name": "learning rate decay",
+        "value": "cosine annealing"
+      },
+      {
+        "name": "batch size",
+        "value": "12000"
+      },
+      {
+        "name": "training data duration",
+        "value": "first two weeks of FVL"
+      },
+      {
+        "name": "evaluation data duration",
+        "value": "third week of FVL"
+      },
+      {
+        "name": "negative sample downsampling",
+        "value": "fixed ratio between positive and negative samples (exact ratio not stated)"
+      },
+      {
+        "name": "transformer encoder layers",
+        "value": "2"
+      },
+      {
+        "name": "transformer attention heads",
+        "value": "1"
+      },
+      {
+        "name": "early fusion method",
+        "value": "concat"
+      },
+      {
+        "name": "sequence feature dimension d",
+        "value": "d_action + 2*d_PinSage"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pinterest Homefeed view log (internal offline training dataset, three weeks)",
+        "version": null
+      },
+      {
+        "name": "FVL",
+        "version": null
+      },
+      {
+        "name": "Pinterest Homefeed view log (FVL)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Pinnability retraining from scratch",
+        "description": "Pinnability is retrained from scratch twice per week to ensure consistent engagement rate while keeping training cost manageable."
+      },
+      {
+        "name": "GPU serving of Pinnability with TransAct",
+        "description": "GPU model inference is used to serve Pinnability with TransAct (65 times more computationally complex in FLOPs than predecessors) at neutral latency and cost; the main challenge is CUDA kernel launch overhead due to hundreds of features (many CUDA kernels) and small online serving batch sizes."
+      },
+      {
+        "name": "Fuse CUDA kernels",
+        "description": "Fuse operations as much as possible to reduce the number of small CUDA kernels and their launch overhead during online serving; uses deep learning compilers such as nvFuser, with human intervention for remaining operations."
+      },
+      {
+        "name": "Consolidated embedding table lookup",
+        "description": "Uses cuCollections to support GPU hash tables for raw id to table index lookup, and a custom consolidated embedding lookup module that merges lookups for multiple features into one, reducing hundreds of sparse-feature operations to one."
+      },
+      {
+        "name": "Combine memory copies",
+        "description": "Reduce overhead of copying hundreds of features individually as tensors from CPU to GPU memory for every inference."
+      },
+      {
+        "name": "CUDA Graphs",
+        "description": "Captures the model inference process as a static graph of operations instead of individually scheduled ones, so computation executes as a single unit without kernel launch overhead, eliminating remaining small-operation overhead."
+      },
+      {
+        "name": "Realtime Feature Processing",
+        "description": "Flink-based application consuming user action Kafka streams from front-end events; validates each action record, detects and combines duplicates, manages time discrepancies across data sources, materializes features and stores them in Rockstore; at serving time each Homefeed logging/serving request triggers conversion of sequence features into a model-usable format."
+      },
+      {
+        "name": "TransAct",
+        "description": "Model evaluated offline and in online A/B experiments against baseline models using Pinterest's internal training data."
+      },
+      {
+        "name": "Form larger batches",
+        "description": "Use the larger batches in the original requests directly for GPU-based inference instead of a scatter-gather architecture that splits requests into small batches run in parallel on multiple leaf nodes; a hybrid DRAM and SSD cache is used to compensate for the loss of cache capacity."
+      },
+      {
+        "name": "Utilize CUDA graphs",
+        "description": "Use CUDA Graphs to capture the model inference process as a static graph, eliminating the remaining small operations overhead."
+      },
+      {
+        "name": "Realtime-batch hybrid model",
+        "description": "Proposed model that uses both realtime and batch user features."
+      },
+      {
+        "name": "Offline evaluation sampling",
+        "description": "Offline evaluation data is randomly sampled from FVL to represent the true distribution of real-world traffic, and position bias is eliminated."
+      },
+      {
+        "name": "Adam optimizer with learning rate scheduler",
+        "description": "Adam optimizer with warm-up of 5000 steps up to 0.0048, followed by cosine annealing."
+      },
+      {
+        "name": "Pinnability weighted cross-entropy loss",
+        "description": "Weighted multi-label, multi-head cross-entropy loss over action heads H, where each head's cross-entropy term is weighted by w_h and the total is scaled by a user-dependent weight w_u. f(x)_h is the output probability of head h and y_h in {0,1} is the ground truth for head h."
+      },
+      {
+        "name": "Label weight matrix",
+        "description": "Per-head weight w_h = sum over a in H of M_{h,a} * y_a, with label weight matrix M in R^{|H|x|H|} controlling each action's contribution to each head's loss. If M is diagonal, the loss reduces to standard multi-head binary cross entropy. Empirically determined label weights M improve performance considerably."
+      },
+      {
+        "name": "User-dependent example weighting",
+        "description": "Each training example is weighted by w_u = w_state \u00d7 w_location \u00d7 w_gender, based on user attributes (user state, gender, location); weights are adjusted according to business needs."
+      },
+      {
+        "name": "Realtime User Action Sequence Features",
+        "description": "Features built from a user's past action history, which is variable-length because users differ in the number of past actions on the platform."
+      },
+      {
+        "name": "Negative downsampling",
+        "description": "Downsampling of negative samples with a fixed positive-to-negative ratio to balance the highly skewed dataset and improve model accuracy"
+      },
+      {
+        "name": "Label-based and user-state-based sampling",
+        "description": "Training data sampled based on user state and labels, with sampling ratios for different label actions designed from their statistical distribution and importance"
+      },
+      {
+        "name": "Early fusion (concat)",
+        "description": "Concatenates the candidate pin's PinSage embedding with user action features, yielding a 2-d sequence feature matrix U in R^{|S|\u00d7d} with d = d_action + 2*d_PinSage; chosen based on offline experiment results."
+      },
+      {
+        "name": "Sequence aggregation with transformer",
+        "description": "Standard transformer encoder with 2 encoder layers and one head, used to aggregate the user action sequence into a representation of short-term preference; no positional encoding because offline experiments showed position information to be ineffective. CNN and RNN architectures were also considered."
+      },
+      {
+        "name": "Random time window mask",
+        "description": "Uses timestamps of user actions to mask the sequence during training, to avoid the rabbit hole effect (recommending content similar to recent engagements), which hurts Homefeed diversity and long-term user retention."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "computational complexity (FLOPs) relative to predecessors",
+        "value": "65 times",
+        "split": null
+      }
+    ]
+  }
+}

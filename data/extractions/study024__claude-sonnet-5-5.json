@@ -1,0 +1,161 @@
+{
+  "study_id": "study024",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study024/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:40:14.921449+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 1,
+    "methods": 22,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "pump field p(t) for Langevin, pumped Langevin, and DL-CCVM solvers",
+        "value": "p(t) = (t/T)p0 (linear schedule)"
+      },
+      {
+        "name": "pump field p(t) for MF-CCVM",
+        "value": "p(t) = (t/T)p0 + 1 + j(t)"
+      },
+      {
+        "name": "measurement strength j(t)",
+        "value": "j0 exp(-\u03b1 t/T)"
+      },
+      {
+        "name": "injected noise r(t) for DL-CCVM",
+        "value": "r0 exp(-\u03b2 t/T)"
+      },
+      {
+        "name": "optimality threshold",
+        "value": "within 0.1% of the global optimal value"
+      },
+      {
+        "name": "Tpulse",
+        "value": "10 picoseconds"
+      },
+      {
+        "name": "number of trials per BoxQP instance for estimating Ps",
+        "value": "1000"
+      },
+      {
+        "name": "optimality gap for time-to-solution (TTS)",
+        "value": "0.1%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "BoxQP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Langevin",
+        "description": "Classical solver implemented on a conventional digital device (CPU); wall-clock TTS computed from CPU time"
+      },
+      {
+        "name": "DL-CCVM (CPU)",
+        "description": "DL-CCVM implemented on a conventional digital device; wall-clock TTS computed from CPU time"
+      },
+      {
+        "name": "DL-CCVM (physical)",
+        "description": "Optics-based CCVM implementation; wall-clock TTS calculated using the parameters of the corresponding physical device"
+      },
+      {
+        "name": "MF-CCVM (CPU)",
+        "description": "MF-CCVM implemented on a conventional digital device; wall-clock TTS computed from CPU time"
+      },
+      {
+        "name": "MF-CCVM (physical)",
+        "description": "Optics-based CCVM implementation; wall-clock TTS calculated using the parameters of the corresponding physical device"
+      },
+      {
+        "name": "Amplitude clamping",
+        "description": "Post-processing step performed on a classical computer at the end of the evolution; clamped amplitudes ci are converted to problem variables via xi = 1/2(ci/s + 1) to implement the box constraint 0 \u2264 xi \u2264 1"
+      },
+      {
+        "name": "Parameter tuning",
+        "description": "System parameters, including the pump value, are optimized for the highest success probability; ranges are shown in Table I"
+      },
+      {
+        "name": "Langevin solver",
+        "description": "One of four solvers benchmarked; uses a linear pump field schedule p(t) = (t/T)p0."
+      },
+      {
+        "name": "Pumped Langevin solver",
+        "description": "One of four solvers benchmarked; uses a linear pump field schedule p(t) = (t/T)p0."
+      },
+      {
+        "name": "DL-CCVM",
+        "description": "Solver with linear pump field schedule and injected noise r(t) = r0 exp(-\u03b2t/T); benchmarked with an optics-based implementation for estimated physical TTS."
+      },
+      {
+        "name": "MF-CCVM",
+        "description": "Solver with pump field p(t) = (t/T)p0 + 1 + j(t) to compensate for measurement loss and background loss, and measurement strength j(t) = j0 exp(-\u03b1t/T) programmed according to the required noise in the stochastic process; benchmarked with an optics-based implementation for estimated physical TTS."
+      },
+      {
+        "name": "Wall-clock TTS",
+        "description": "Time-to-solution for solving instances on a GPU, reported for all four solvers (Figure 3)."
+      },
+      {
+        "name": "Estimated physical TTS",
+        "description": "Benchmark comparison of estimated physical time-to-solution for optics-based implementations of DL-CCVM and MF-CCVM (Figure 4)."
+      },
+      {
+        "name": "Interquartile range reporting",
+        "description": "Shaded regions show the 25th to 75th percentiles of solved problem instances, with solid curves showing the median."
+      },
+      {
+        "name": "Time-to-solution (TTS) / R99",
+        "description": "Benchmarking metric where Ps is the success probability of a single trial, estimated by solving each BoxQP instance 1000 times and counting how often the global maximum was found; TTS is reported for approximate solutions within a multiplicative gap of the optimal value."
+      },
+      {
+        "name": "Tmax estimation",
+        "description": "Estimated physical time for a single trial on the physical device, computed as Tmax = niter \u00b7 N \u00b7 Tpulse, where Tpulse is the time delay between two individual pulses within the cavity."
+      },
+      {
+        "name": "DL-CCVM (optics-based implementation)",
+        "description": "Optics-based implementation of the DL-CCVM solver, benchmarked on estimated physical time-to-solution (TTS); described as much more power efficient than digital counterparts."
+      },
+      {
+        "name": "MF-CCVM (optics-based implementation)",
+        "description": "Optics-based implementation of the MF-CCVM solver, benchmarked on estimated physical time-to-solution (TTS)."
+      },
+      {
+        "name": "Digital (electronic) implementations of four solvers from Section II",
+        "description": "Four solvers implemented on conventional digital devices, compared against optics-based CCVMs in TTS."
+      },
+      {
+        "name": "QCQP solver",
+        "description": "Quadratically constrained quadratic programming solver, a general heuristic solver for quadratic programming problems, used as a benchmark baseline."
+      },
+      {
+        "name": "CPLEX",
+        "description": "Exact solver whose TTS depends heavily on problem density."
+      },
+      {
+        "name": "Gurobi",
+        "description": "Exact solver whose TTS depends heavily on problem density."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Wall-clock TTS (optics-based CCVM vs. CPU digital solvers)",
+        "value": "estimated TTS values for optics-based CCVM solvers are more than three orders of magnitude lower than CPU wall-clock TTS values for conventional digital solvers",
+        "split": null
+      }
+    ]
+  }
+}

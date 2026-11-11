@@ -1,0 +1,1288 @@
+{
+ "study_id": "study017",
+ "model": "gpt5",
+ "slug": "gpt-5",
+ "n_passages": 6,
+ "n_passages_ok": 6,
+ "failures": [],
+ "records": [
+  {
+   "field": "dependencies",
+   "value": "torch",
+   "evidence": "torch.Tensor (Paszke et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "dependencies",
+   "value": "DGLGraph",
+   "evidence": "DGLGraph (Wang et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Vahadane Stain Norm",
+   "evidence": "Vahadane Stain Norm",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Macenko Stain Norm",
+   "evidence": "Macenko Stain Norm",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Tissue Mask Detection",
+   "evidence": "Tissue Mask Detection",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Nuclei Detection",
+   "evidence": "Nuclei Detection",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Nuclei Concepts",
+   "evidence": "Nuclei Concepts",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Tissue Component Detection",
+   "evidence": "Tissue Component Detection",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Deep Feature Extraction",
+   "evidence": "Deep Feature Extraction",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Feature Cube Extraction",
+   "evidence": "Feature Cube Extraction",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "k-NN Graph Building",
+   "evidence": "k-NN Graph Building",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "RAG Graph Building",
+   "evidence": "RAG Graph Building",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "MLCell-Graph Model",
+   "evidence": "MLCell-Graph Model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Tissue-Graph Model",
+   "evidence": "Tissue-Graph Model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "HACT Model",
+   "evidence": "HACT Model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GnnExplainer",
+   "evidence": "GnnExplainer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM",
+   "evidence": "GraphGrad-CAM",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM++",
+   "evidence": "GraphGrad-CAM++",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GraphLRP",
+   "evidence": "GraphLRP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Tissue Detection",
+   "evidence": "Tissue Detection: A WSI usually includes",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "dependencies",
+   "value": "HistoCartography",
+   "evidence": "HistoCartography",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "Histolab",
+   "evidence": "Histolab",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "Syntax",
+   "evidence": "Syntax",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "HistomicsTK",
+   "evidence": "HistomicsTK",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "QuPath",
+   "evidence": "QuPath",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "HoVerNet",
+   "evidence": "HoVerNet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "PanNuke",
+   "evidence": "PanNuke",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "MoNuSac",
+   "evidence": "MoNuSac",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Gaussian smoothing",
+   "evidence": "Gaussian smoothing",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Otsu thresholding",
+   "evidence": "Otsu thresholding",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Nuclei detection",
+   "evidence": "Nuclei detection",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "HoVerNet model",
+   "evidence": "HoVerNet model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Simple Linear Iterative Clustering (SLIC)",
+   "evidence": "Simple Linear Iterative Clustering (SLIC)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "hierarchical merging using color similarity",
+   "evidence": "hierarchically merged using color simi- larity",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "unsupervised super-pixel based approach",
+   "evidence": "unsupervised super- pixel based approach",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "DGL",
+   "evidence": "implemented using DGL (Wang et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "dependencies",
+   "value": "PyTorch",
+   "evidence": "built around PyTorch.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM",
+   "evidence": "GraphGrad-CAM (Sel- varaju et al., 2017; Pope et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM++",
+   "evidence": "GraphGrad-CAM++ (Chattopadhay et al., 2018; Jaume et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GnnExplainer",
+   "evidence": "GnnExplainer (Ying et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphLRP",
+   "evidence": "GraphLRP (Schwarzenberg et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "pipeline runner",
+   "evidence": "HistoCartography in- cludes a pipeline runner.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hardware",
+   "value": "single-core POWER8 processor",
+   "evidence": "single-core POWER8 processor",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "NVIDIA P100 GPU",
+   "evidence": "NVIDIA P100 GPU",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Vahadane Stain Norm",
+   "evidence": "Vahadane Stain Norm",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Macenko Stain Norm",
+   "evidence": "Macenko Stain Norm",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Tissue Mask Detection",
+   "evidence": "Tissue Mask Detection",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Feature Cube Extraction",
+   "evidence": "Feature Cube Extraction",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Cell-Graph Generation",
+   "evidence": "Cell-Graph Generation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Tissue-Graph Generation",
+   "evidence": "Tissue-Graph Generation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "MLCell-Graph Model",
+   "evidence": "MLCell-Graph Model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.77",
+   "evidence": "Vahadane Stain Norm 1.77",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.80",
+   "evidence": "Macenko Stain Norm 0.80",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.04",
+   "evidence": "Tissue Mask Detection - - - 1.04",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.24",
+   "evidence": "Feature Cube Extraction 0.24",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "2.51",
+   "evidence": "Cell-Graph Generation 2.51",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "4.14",
+   "evidence": "Tissue-Graph Generation 4.14",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.028",
+   "evidence": "MLCell-Graph Model 0.028",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "dependencies",
+   "value": "python",
+   "evidence": "As the library is built on python",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "dependencies",
+   "value": "HistoCartography",
+   "evidence": "HistoCartography , the \ufb01rst open source library",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "post-hoc feature attribution methods",
+   "evidence": "post-hoc feature attribution methods",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "cell-graph model",
+   "evidence": "cell-graph model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "Slic superpixels",
+   "evidence": "Slic superpixels compared to state-of-the-art superpixel methods.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "graph neural networks",
+   "evidence": "graph neural networks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "BRACS",
+   "evidence": "BRACS (Pati et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "BACH",
+   "evidence": "BACH (Aresta et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "UZH",
+   "evidence": "UZH (Zhong et al., 2017)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "SICAPv2",
+   "evidence": "SICAPv2 (Silva- Rodr\u00b4 \u0131guez et al., 2020)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "HistoCartography",
+   "evidence": "HistoCartography",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "cell-graph model",
+   "evidence": "cell-graph model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "tissue-graph model",
+   "evidence": "tissue-graph model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "HACT-Net",
+   "evidence": "HACT-Net (Pati et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "SegGini",
+   "evidence": "SegGini (Anklin et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "GraphGradCAM",
+   "evidence": "GraphGradCAM",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gpt-5",
+   "passage_index": 5
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "dependencies": {
+    "n": 12,
+    "has_evidence": 12,
+    "span_found": 12,
+    "value_in_span": 12,
+    "grounded": 12
+   },
+   "methods": {
+    "n": 47,
+    "has_evidence": 47,
+    "span_found": 47,
+    "value_in_span": 45,
+    "grounded": 45
+   },
+   "datasets": {
+    "n": 6,
+    "has_evidence": 6,
+    "span_found": 6,
+    "value_in_span": 6,
+    "grounded": 6
+   },
+   "hardware": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   },
+   "evaluation_results": {
+    "n": 7,
+    "has_evidence": 7,
+    "span_found": 7,
+    "value_in_span": 7,
+    "grounded": 7
+   }
+  },
+  "total": {
+   "n": 74,
+   "has_evidence": 74,
+   "span_found": 74,
+   "value_in_span": 72,
+   "grounded": 72
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "torch",
+      "version": null,
+      "evidence": "torch.Tensor (Paszke et al., 2019)"
+     },
+     {
+      "name": "DGLGraph",
+      "version": null,
+      "evidence": "DGLGraph (Wang et al., 2019)"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Vahadane Stain Norm",
+      "evidence": "Vahadane Stain Norm"
+     },
+     {
+      "name": "Macenko Stain Norm",
+      "evidence": "Macenko Stain Norm"
+     },
+     {
+      "name": "Tissue Mask Detection",
+      "evidence": "Tissue Mask Detection"
+     },
+     {
+      "name": "Nuclei Detection",
+      "evidence": "Nuclei Detection"
+     },
+     {
+      "name": "Nuclei Concepts",
+      "evidence": "Nuclei Concepts"
+     },
+     {
+      "name": "Tissue Component Detection",
+      "evidence": "Tissue Component Detection"
+     },
+     {
+      "name": "Deep Feature Extraction",
+      "evidence": "Deep Feature Extraction"
+     },
+     {
+      "name": "Feature Cube Extraction",
+      "evidence": "Feature Cube Extraction"
+     },
+     {
+      "name": "k-NN Graph Building",
+      "evidence": "k-NN Graph Building"
+     },
+     {
+      "name": "RAG Graph Building",
+      "evidence": "RAG Graph Building"
+     },
+     {
+      "name": "MLCell-Graph Model",
+      "evidence": "MLCell-Graph Model"
+     },
+     {
+      "name": "Tissue-Graph Model",
+      "evidence": "Tissue-Graph Model"
+     },
+     {
+      "name": "HACT Model",
+      "evidence": "HACT Model"
+     },
+     {
+      "name": "GnnExplainer",
+      "evidence": "GnnExplainer"
+     },
+     {
+      "name": "GraphGrad-CAM",
+      "evidence": "GraphGrad-CAM"
+     },
+     {
+      "name": "GraphGrad-CAM++",
+      "evidence": "GraphGrad-CAM++"
+     },
+     {
+      "name": "GraphLRP",
+      "evidence": "GraphLRP"
+     },
+     {
+      "name": "Tissue Detection",
+      "evidence": "Tissue Detection: A WSI usually includes"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "HistoCartography",
+      "version": null,
+      "evidence": "HistoCartography"
+     },
+     {
+      "name": "Histolab",
+      "version": null,
+      "evidence": "Histolab"
+     },
+     {
+      "name": "Syntax",
+      "version": null,
+      "evidence": "Syntax"
+     },
+     {
+      "name": "HistomicsTK",
+      "version": null,
+      "evidence": "HistomicsTK"
+     },
+     {
+      "name": "QuPath",
+      "version": null,
+      "evidence": "QuPath"
+     },
+     {
+      "name": "HoVerNet",
+      "version": null,
+      "evidence": "HoVerNet"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "PanNuke",
+      "version": null,
+      "evidence": "PanNuke"
+     },
+     {
+      "name": "MoNuSac",
+      "version": null,
+      "evidence": "MoNuSac"
+     }
+    ],
+    "methods": [
+     {
+      "name": "Gaussian smoothing",
+      "evidence": "Gaussian smoothing"
+     },
+     {
+      "name": "Otsu thresholding",
+      "evidence": "Otsu thresholding"
+     },
+     {
+      "name": "Nuclei detection",
+      "evidence": "Nuclei detection"
+     },
+     {
+      "name": "HoVerNet model",
+      "evidence": "HoVerNet model"
+     },
+     {
+      "name": "Simple Linear Iterative Clustering (SLIC)",
+      "evidence": "Simple Linear Iterative Clustering (SLIC)"
+     },
+     {
+      "name": "hierarchical merging using color similarity",
+      "evidence": "hierarchically merged using color simi- larity"
+     },
+     {
+      "name": "unsupervised super-pixel based approach",
+      "evidence": "unsupervised super- pixel based approach"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "DGL",
+      "version": null,
+      "evidence": "implemented using DGL (Wang et al., 2019)"
+     },
+     {
+      "name": "PyTorch",
+      "version": null,
+      "evidence": "built around PyTorch."
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "GraphGrad-CAM",
+      "evidence": "GraphGrad-CAM (Sel- varaju et al., 2017; Pope et al., 2019)"
+     },
+     {
+      "name": "GraphGrad-CAM++",
+      "evidence": "GraphGrad-CAM++ (Chattopadhay et al., 2018; Jaume et al., 2021)"
+     },
+     {
+      "name": "GnnExplainer",
+      "evidence": "GnnExplainer (Ying et al., 2019)"
+     },
+     {
+      "name": "GraphLRP",
+      "evidence": "GraphLRP (Schwarzenberg et al., 2019)"
+     },
+     {
+      "name": "pipeline runner",
+      "evidence": "HistoCartography in- cludes a pipeline runner."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "cpu_info",
+      "value": "single-core POWER8 processor",
+      "evidence": "single-core POWER8 processor"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "NVIDIA P100 GPU",
+      "evidence": "NVIDIA P100 GPU"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Vahadane Stain Norm",
+      "evidence": "Vahadane Stain Norm"
+     },
+     {
+      "name": "Macenko Stain Norm",
+      "evidence": "Macenko Stain Norm"
+     },
+     {
+      "name": "Tissue Mask Detection",
+      "evidence": "Tissue Mask Detection"
+     },
+     {
+      "name": "Feature Cube Extraction",
+      "evidence": "Feature Cube Extraction"
+     },
+     {
+      "name": "Cell-Graph Generation",
+      "evidence": "Cell-Graph Generation"
+     },
+     {
+      "name": "Tissue-Graph Generation",
+      "evidence": "Tissue-Graph Generation"
+     },
+     {
+      "name": "MLCell-Graph Model",
+      "evidence": "MLCell-Graph Model"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "run time (s)",
+      "value": "1.77",
+      "split": null,
+      "evidence": "Vahadane Stain Norm 1.77"
+     },
+     {
+      "metric": "run time (s)",
+      "value": "0.80",
+      "split": null,
+      "evidence": "Macenko Stain Norm 0.80"
+     },
+     {
+      "metric": "run time (s)",
+      "value": "1.04",
+      "split": null,
+      "evidence": "Tissue Mask Detection - - - 1.04"
+     },
+     {
+      "metric": "run time (s)",
+      "value": "0.24",
+      "split": null,
+      "evidence": "Feature Cube Extraction 0.24"
+     },
+     {
+      "metric": "run time (s)",
+      "value": "2.51",
+      "split": null,
+      "evidence": "Cell-Graph Generation 2.51"
+     },
+     {
+      "metric": "run time (s)",
+      "value": "4.14",
+      "split": null,
+      "evidence": "Tissue-Graph Generation 4.14"
+     },
+     {
+      "metric": "run time (s)",
+      "value": "0.028",
+      "split": null,
+      "evidence": "MLCell-Graph Model 0.028"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "python",
+      "version": null,
+      "evidence": "As the library is built on python"
+     },
+     {
+      "name": "HistoCartography",
+      "version": null,
+      "evidence": "HistoCartography , the \ufb01rst open source library"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "post-hoc feature attribution methods",
+      "evidence": "post-hoc feature attribution methods"
+     },
+     {
+      "name": "cell-graph model",
+      "evidence": "cell-graph model"
+     },
+     {
+      "name": "Slic superpixels",
+      "evidence": "Slic superpixels compared to state-of-the-art superpixel methods."
+     },
+     {
+      "name": "graph neural networks",
+      "evidence": "graph neural networks"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "BRACS",
+      "version": null,
+      "evidence": "BRACS (Pati et al., 2021)"
+     },
+     {
+      "name": "BACH",
+      "version": null,
+      "evidence": "BACH (Aresta et al., 2019)"
+     },
+     {
+      "name": "UZH",
+      "version": null,
+      "evidence": "UZH (Zhong et al., 2017)"
+     },
+     {
+      "name": "SICAPv2",
+      "version": null,
+      "evidence": "SICAPv2 (Silva- Rodr\u00b4 \u0131guez et al., 2020)"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HistoCartography",
+      "evidence": "HistoCartography"
+     },
+     {
+      "name": "cell-graph model",
+      "evidence": "cell-graph model"
+     },
+     {
+      "name": "tissue-graph model",
+      "evidence": "tissue-graph model"
+     },
+     {
+      "name": "HACT-Net",
+      "evidence": "HACT-Net (Pati et al., 2021)"
+     },
+     {
+      "name": "SegGini",
+      "evidence": "SegGini (Anklin et al., 2021)"
+     },
+     {
+      "name": "GraphGradCAM",
+      "evidence": "GraphGradCAM"
+     }
+    ],
+    "evaluation_results": []
+   }
+  }
+ ]
+}

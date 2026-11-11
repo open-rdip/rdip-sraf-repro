@@ -1,0 +1,148 @@
+{
+  "study_id": "study057",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study057/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:01:18.122966+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 1,
+    "methods": 12,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Faiss",
+        "version": null
+      },
+      {
+        "name": "NumPy",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "mag z",
+        "value": "<20"
+      },
+      {
+        "name": "number of most similar images",
+        "value": "999"
+      },
+      {
+        "name": "r-band magnitude range",
+        "value": "0.5"
+      },
+      {
+        "name": "epochs",
+        "value": "40"
+      },
+      {
+        "name": "batch size",
+        "value": "512"
+      },
+      {
+        "name": "optimizer",
+        "value": "SGD"
+      },
+      {
+        "name": "learning rate (classification head)",
+        "value": "0.01"
+      },
+      {
+        "name": "learning rate (remaining network parameters)",
+        "value": "0.001"
+      },
+      {
+        "name": "loss function",
+        "value": "binary cross-entropy"
+      },
+      {
+        "name": "minibatch size",
+        "value": "\u223c128 images"
+      },
+      {
+        "name": "encoder output dimension",
+        "value": "2048"
+      },
+      {
+        "name": "queue length (K)",
+        "value": "262,144"
+      },
+      {
+        "name": "representation vector dimension",
+        "value": "2048"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "DR9",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "random selection of nonlenses",
+        "description": "Selecting nonlens samples randomly from the full dataset, excluding those with a lensing galaxy near the central galaxy and those flagged as lenses in other data sets but hard to distinguish visually in DR9 imaging."
+      },
+      {
+        "name": "linear model",
+        "description": "Initial linear model used to predict labels for training and validation nonlenses to identify and visually remove contamination."
+      },
+      {
+        "name": "cosine similarity calculation",
+        "description": "Calculating cosine similarity using Faiss without compression techniques on CPU and GPU."
+      },
+      {
+        "name": "linear classification",
+        "description": "perform linear classification directly on the self-supervised representations"
+      },
+      {
+        "name": "fine-tuning",
+        "description": "fine-tune the self-supervised model"
+      },
+      {
+        "name": "oversampling",
+        "description": "oversampled lenses during fine-tuning to ensure a nonzero average number of lenses in each batch"
+      },
+      {
+        "name": "data augmentation",
+        "description": "augmented images at each training epoch with jitter/crop, random rotations, Gaussian noise, and Gaussian blur"
+      },
+      {
+        "name": "minibatch gradient descent",
+        "description": "Optimization method utilized due to memory constraints introduced by large CNN models and image dimensionality."
+      },
+      {
+        "name": "linear classifier",
+        "description": "Classifier trained with a single large batch that can handle a high degree of class imbalance."
+      },
+      {
+        "name": "Fine-tuned Self-supervised Classification",
+        "description": "Attaching a fully connected layer to the 2048-dimensional output of the self-supervised encoder CNN and fine-tuning the network in a supervised setup using lens labels, applying a smaller learning rate to update the CNN encoder parameters and a larger learning rate on the linear classification head initialized randomly."
+      },
+      {
+        "name": "ResNet50",
+        "description": "Standard encoder network architecture whose convolutional kernels and pooling layers produce a 2048-dimensional representation vector."
+      },
+      {
+        "name": "self-supervised pretraining",
+        "description": "Pretraining approach that generates differing views of each image using a succession of image augmentations reflecting symmetries, uncertainties, or noise."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

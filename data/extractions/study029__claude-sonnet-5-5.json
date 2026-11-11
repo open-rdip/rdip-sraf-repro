@@ -1,0 +1,217 @@
+{
+  "study_id": "study029",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study029/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:42:54.719793+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 7,
+    "methods": 16,
+    "evaluation_results": 17
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03bb",
+        "value": "varied in hyperparameter study (specific values not stated)"
+      },
+      {
+        "name": "K (number of disjoint sub-training sets)",
+        "value": null
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Cora",
+        "version": null
+      },
+      {
+        "name": "A-photo",
+        "version": null
+      },
+      {
+        "name": "ogbn-arxiv",
+        "version": null
+      },
+      {
+        "name": "Flickr",
+        "version": null
+      },
+      {
+        "name": "A-computers",
+        "version": null
+      },
+      {
+        "name": "Reddit",
+        "version": null
+      },
+      {
+        "name": "ogbn-products",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GRE",
+        "description": "Proposed editing method compared in single edit and sequential edit settings; achieves on-par performance in the sequential edit setting"
+      },
+      {
+        "name": "GRE+",
+        "description": "Variant of the proposed method that achieves a better trade-off between success rate and test accuracy dropdown than GRE"
+      },
+      {
+        "name": "GCN",
+        "description": "GNN architecture used as base model for editing experiments"
+      },
+      {
+        "name": "GraphSAGE",
+        "description": "GNN architecture used as base model for editing experiments"
+      },
+      {
+        "name": "Pareto front trade-off analysis",
+        "description": "Pareto front curves plotted by assigning different hyperparameters to compare success rate (SR) versus test accuracy dropdown in the independent editing setting"
+      },
+      {
+        "name": "Vanilla model editing",
+        "description": "Standard model editing, which decreases the target loss but significantly increases training loss, especially for GCN and GraphSAGE compared with MLP, and so causes a high accuracy drop on node classification."
+      },
+      {
+        "name": "GD",
+        "description": "Basic gradient descent editor for model editing; performs well on MLP due to low gradient discrepancy"
+      },
+      {
+        "name": "ENN",
+        "description": "Editor baseline that performs markedly worse than GD when applied to GNNs"
+      },
+      {
+        "name": "EGNN",
+        "description": "Model architecture compatible with GRE and GRE+, evaluated with GCN and SAGE backbones (EGNN-GCN, EGNN-SAGE)"
+      },
+      {
+        "name": "Sequential editing",
+        "description": "Select a sequence of nodes from the validation set that were misclassified during training and iteratively correct the model's predictions for them, measuring drawdown and success rate of edits"
+      },
+      {
+        "name": "Hyperparameter study of \u03bb",
+        "description": "Sensitivity analysis searching \u03bb over {0.0, 0.1, 1.0, 10.0, 50.0} across a variety of GNN architectures and graph datasets, showing test accuracy drop remains relatively stable"
+      },
+      {
+        "name": "Batch editing",
+        "description": "All batched samples are edited simultaneously in one editing process."
+      },
+      {
+        "name": "GCN with GD editor",
+        "description": "Model editing of a GCN backbone using the GD editor, evaluated after a single edit on four large-scale datasets."
+      },
+      {
+        "name": "Accuracy (Acc)",
+        "description": "Accuracy on the test dataset, used to evaluate effectiveness after model editing."
+      },
+      {
+        "name": "DrawDown (DD)",
+        "description": "Mean absolute difference in test accuracy before and after model editing; lower values indicate better editor locality."
+      },
+      {
+        "name": "Success Rate (SR)",
+        "description": "Proportion of edits in which the editor successfully amends the model's prediction."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Average accuracy drop, GRE on A-computers with EGNN-GCN",
+        "value": "4.62%",
+        "split": null
+      },
+      {
+        "metric": "Average accuracy drop, GRE+ on A-computers with EGNN-GCN",
+        "value": "0.51%",
+        "split": null
+      },
+      {
+        "metric": "Average accuracy drop, GD on A-computers with EGNN-GCN",
+        "value": "0.73%",
+        "split": null
+      },
+      {
+        "metric": "Acc (GCN GD, Flickr)",
+        "value": "13.95\u00b111.00",
+        "split": "test"
+      },
+      {
+        "metric": "DD (GCN GD, Flickr)",
+        "value": "37.25\u00b110.20",
+        "split": "test"
+      },
+      {
+        "metric": "SR (GCN GD, Flickr)",
+        "value": "1.00",
+        "split": null
+      },
+      {
+        "metric": "Acc (GCN GD, Reddit)",
+        "value": "75.20\u00b112.30",
+        "split": "test"
+      },
+      {
+        "metric": "DD (GCN GD, Reddit)",
+        "value": "20.32\u00b111.30",
+        "split": "test"
+      },
+      {
+        "metric": "SR (GCN GD, Reddit)",
+        "value": "1.00",
+        "split": null
+      },
+      {
+        "metric": "Acc (GCN GD, ogbn-arxiv)",
+        "value": "23.71\u00b116.90",
+        "split": "test"
+      },
+      {
+        "metric": "DD (GCN GD, ogbn-arxiv)",
+        "value": "46.50\u00b114.90",
+        "split": "test"
+      },
+      {
+        "metric": "SR (GCN GD, ogbn-arxiv)",
+        "value": "1.00",
+        "split": null
+      },
+      {
+        "metric": "Acc (GCN GD, ogbn-products)",
+        "value": "53.29\u00b10.94",
+        "split": "test"
+      },
+      {
+        "metric": "DD (GCN GD, ogbn-products)",
+        "value": "20.71\u00b10.94",
+        "split": "test"
+      },
+      {
+        "metric": "drawdown of GRE+ for GCN on A-photo (single edit setting)",
+        "value": "43.87%",
+        "split": "test"
+      },
+      {
+        "metric": "drawdown of GRE+ for GCN on A-photo (sequential edit setting)",
+        "value": "65%",
+        "split": "test"
+      },
+      {
+        "metric": "drawdown of GRE+ over GRE for GCN on A-photo (single edit setting)",
+        "value": "24.52%",
+        "split": "test"
+      }
+    ]
+  }
+}

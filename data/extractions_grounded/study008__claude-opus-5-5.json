@@ -1,0 +1,1154 @@
+{
+ "study_id": "study008",
+ "model": "opus",
+ "slug": "claude-opus-5-5",
+ "n_passages": 6,
+ "n_passages_ok": 6,
+ "failures": [],
+ "records": [
+  {
+   "field": "methods",
+   "value": "bfloat16 mixed-precision training",
+   "evidence": "the most common training setup is bfloat16 mixed-precision training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "continued pretraining",
+   "evidence": "whether mixed- precision training is necessary for continued pretraining",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "float32 master copy of weights and optimizer states",
+   "evidence": "a master copy of the model weights and the optimizer states are stored in float32",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "dependencies",
+   "value": "PyTorch FSDP",
+   "evidence": "parallel training with PyTorch FSDP (Zhao et al., 2023)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "FlashAttention",
+   "evidence": "We use the FlashAttention self-attention and RMSNorm CUDA kernels (Dao, 2023).",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "Nvidia A100 80GB",
+   "evidence": "We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "A100 40GB",
+   "evidence": "We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "H100 80GB",
+   "evidence": "We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "A6000 48GB",
+   "evidence": "We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "two or four",
+   "evidence": "We use either two or four Nvidia A100 80GB",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "pure bfloat16",
+   "evidence": "We conduct an additional hindsight study using pure bfloat16 and tokenizer swapping",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "infinite learning rate schedule",
+   "evidence": "by using an infinite learning rate schedule following Ibrahim et al. (2024)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "CulturaX",
+   "evidence": "We use training data from CulturaX (Nguyen et al., 2024)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "OSCAR",
+   "evidence": "instead of OSCAR23.01",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "PyTorch FSDP",
+   "evidence": "parallel training with PyTorch FSDP (Zhao et al., 2023)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "activation checkpointing",
+   "evidence": "such as micro-batch size, activation checkpointing, or different ZeRO (Rajbhandari et al., 2019) stages",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ZeRO",
+   "evidence": "different ZeRO (Rajbhandari et al., 2019) stages",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "FlashAttention",
+   "evidence": "We use the FlashAttention self-attention and RMSNorm CUDA kernels",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "RMSNorm",
+   "evidence": "We use the FlashAttention self-attention and RMSNorm CUDA kernels",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "tokenizer swapping",
+   "evidence": "using pure bfloat16 and tokenizer swapping",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "infinite learning rate schedule",
+   "evidence": "by using an infinite learning rate schedule following Ibrahim et al. (2024)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "adjusted attention masks",
+   "evidence": "adjusted attention masks to prevent cross- document",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "BOOLQ",
+   "evidence": "BOOLQ (Clark et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "COPA",
+   "evidence": "COPA (Roem- mele et al., 2011)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "HellaSwag",
+   "evidence": "HellaSwag (Zellers et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "Open- BookQA",
+   "evidence": "Open- BookQA (Mihaylov et al., 2018)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "PIQA",
+   "evidence": "PIQA (Bisk et al., 2020)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "RACE",
+   "evidence": "RACE (Lai et al., 2017)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "SciTail",
+   "evidence": "SciTail (Welbl et al., 2017)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "TOXI- GEN",
+   "evidence": "TOXI- GEN (Hartvigsen et al., 2022)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "AlGhafa-T",
+   "evidence": "counting the benchmarks in AlGhafa-T individually",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "macro average",
+   "evidence": "We report a macro average as in OALL (Elfilali et al., 2024)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "bfloat16",
+   "evidence": "For bfloat16 , we always",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Mistral-7B",
+   "evidence": "Histogram of absolute individual parameter weight values of Mistral-7B",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "RMSNorm",
+   "evidence": "separately highlighting RMS- Norm and non-RMSNorm weights",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "7,680",
+   "evidence": "Training steps 7,680 15,360",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "15,360",
+   "evidence": "Training steps 7,680 15,360",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "76",
+   "evidence": "Warmup steps 76 153",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "153",
+   "evidence": "Warmup steps 76 153",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "256",
+   "evidence": "Batch size 256 512",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "512",
+   "evidence": "Batch size 256 512",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "4,096",
+   "evidence": "Context length 4,096 8,192",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "8,192",
+   "evidence": "Context length 4,096 8,192",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "8 billion",
+   "evidence": "Total training tokens 8 billion 64 billion",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "64 billion",
+   "evidence": "Total training tokens 8 billion 64 billion",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "AdamW",
+   "evidence": "Optimizer AdamW AdamW",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "4\u00d710\u22125",
+   "evidence": "Learning rate 4\u00d710\u221252\u00d710\u22125",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "2\u00d710\u22125",
+   "evidence": "Learning rate 4\u00d710\u221252\u00d710\u22125",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "Cosine to 2\u00d710\u22126",
+   "evidence": "Learning rate decay Cosine to 2\u00d710\u22126Cosine to 2\u00d710\u22126",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "(0.9, 0.95)",
+   "evidence": "Adam \u03b2 (0.9, 0.95) (0.9, 0.95)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "0.05",
+   "evidence": "Weight decay 0.05 0.05",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "bfloat16",
+   "evidence": "even very small update values will not disappear in pure bfloat16 training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "Mistral-7B",
+   "evidence": "Case study: Mistral-7B.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "RMSNorm",
+   "evidence": "the RMSNorm weight values are much larger than other weights",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "pure bfloat16 training",
+   "evidence": "even very small update values will not disappear in pure bfloat16 training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "LeoLM",
+   "evidence": "Hyperparameters Ours (Main) LeoLM",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "AdamW",
+   "evidence": "Optimizer AdamW AdamW",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hardware",
+   "value": "two 80GB GPUs",
+   "evidence": "in our experiments with two 80GB GPUs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "hardware",
+   "value": "single 80GB GPU",
+   "evidence": "With access to only a single 80GB GPU",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "hyperparameters",
+   "value": "float32",
+   "evidence": "optimizer states are stored in float32",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "pure bfloat16 training",
+   "evidence": "we extensively analyze the viability of pure bfloat16 training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "mixed-precision bfloat16 training",
+   "evidence": "39% faster than mixed-precision bfloat16 training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "activation checkpointing",
+   "evidence": "smaller batch sizes and activation check- pointing",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "39%",
+   "evidence": "pure bfloat16 was 39% faster than mixed-precision bfloat16 training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "methods": {
+    "n": 23,
+    "has_evidence": 23,
+    "span_found": 23,
+    "value_in_span": 21,
+    "grounded": 21
+   },
+   "dependencies": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   },
+   "hardware": {
+    "n": 6,
+    "has_evidence": 6,
+    "span_found": 6,
+    "value_in_span": 6,
+    "grounded": 6
+   },
+   "hyperparameters": {
+    "n": 21,
+    "has_evidence": 21,
+    "span_found": 21,
+    "value_in_span": 21,
+    "grounded": 21
+   },
+   "datasets": {
+    "n": 11,
+    "has_evidence": 11,
+    "span_found": 11,
+    "value_in_span": 11,
+    "grounded": 11
+   },
+   "evaluation_results": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 1,
+    "value_in_span": 1,
+    "grounded": 1
+   }
+  },
+  "total": {
+   "n": 64,
+   "has_evidence": 64,
+   "span_found": 64,
+   "value_in_span": 62,
+   "grounded": 62
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "bfloat16 mixed-precision training",
+      "evidence": "the most common training setup is bfloat16 mixed-precision training"
+     },
+     {
+      "name": "continued pretraining",
+      "evidence": "whether mixed- precision training is necessary for continued pretraining"
+     },
+     {
+      "name": "float32 master copy of weights and optimizer states",
+      "evidence": "a master copy of the model weights and the optimizer states are stored in float32"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "PyTorch FSDP",
+      "version": null,
+      "evidence": "parallel training with PyTorch FSDP (Zhao et al., 2023)"
+     },
+     {
+      "name": "FlashAttention",
+      "version": null,
+      "evidence": "We use the FlashAttention self-attention and RMSNorm CUDA kernels (Dao, 2023)."
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "Nvidia A100 80GB",
+      "evidence": "We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "A100 40GB",
+      "evidence": "We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "H100 80GB",
+      "evidence": "We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "A6000 48GB",
+      "evidence": "We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs"
+     }
+    ],
+    "hyperparameters": [
+     {
+      "name": "number of GPUs",
+      "value": "two or four",
+      "evidence": "We use either two or four Nvidia A100 80GB"
+     },
+     {
+      "name": "training precision",
+      "value": "pure bfloat16",
+      "evidence": "We conduct an additional hindsight study using pure bfloat16 and tokenizer swapping"
+     },
+     {
+      "name": "learning rate schedule",
+      "value": "infinite learning rate schedule",
+      "evidence": "by using an infinite learning rate schedule following Ibrahim et al. (2024)"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "CulturaX",
+      "version": null,
+      "evidence": "We use training data from CulturaX (Nguyen et al., 2024)"
+     },
+     {
+      "name": "OSCAR",
+      "version": "23.01",
+      "evidence": "instead of OSCAR23.01"
+     }
+    ],
+    "methods": [
+     {
+      "name": "PyTorch FSDP",
+      "evidence": "parallel training with PyTorch FSDP (Zhao et al., 2023)"
+     },
+     {
+      "name": "activation checkpointing",
+      "evidence": "such as micro-batch size, activation checkpointing, or different ZeRO (Rajbhandari et al., 2019) stages"
+     },
+     {
+      "name": "ZeRO",
+      "evidence": "different ZeRO (Rajbhandari et al., 2019) stages"
+     },
+     {
+      "name": "FlashAttention",
+      "evidence": "We use the FlashAttention self-attention and RMSNorm CUDA kernels"
+     },
+     {
+      "name": "RMSNorm",
+      "evidence": "We use the FlashAttention self-attention and RMSNorm CUDA kernels"
+     },
+     {
+      "name": "tokenizer swapping",
+      "evidence": "using pure bfloat16 and tokenizer swapping"
+     },
+     {
+      "name": "infinite learning rate schedule",
+      "evidence": "by using an infinite learning rate schedule following Ibrahim et al. (2024)"
+     },
+     {
+      "name": "adjusted attention masks",
+      "evidence": "adjusted attention masks to prevent cross- document"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "BOOLQ",
+      "version": null,
+      "evidence": "BOOLQ (Clark et al., 2019)"
+     },
+     {
+      "name": "COPA",
+      "version": null,
+      "evidence": "COPA (Roem- mele et al., 2011)"
+     },
+     {
+      "name": "HellaSwag",
+      "version": null,
+      "evidence": "HellaSwag (Zellers et al., 2019)"
+     },
+     {
+      "name": "Open- BookQA",
+      "version": null,
+      "evidence": "Open- BookQA (Mihaylov et al., 2018)"
+     },
+     {
+      "name": "PIQA",
+      "version": null,
+      "evidence": "PIQA (Bisk et al., 2020)"
+     },
+     {
+      "name": "RACE",
+      "version": null,
+      "evidence": "RACE (Lai et al., 2017)"
+     },
+     {
+      "name": "SciTail",
+      "version": null,
+      "evidence": "SciTail (Welbl et al., 2017)"
+     },
+     {
+      "name": "TOXI- GEN",
+      "version": null,
+      "evidence": "TOXI- GEN (Hartvigsen et al., 2022)"
+     },
+     {
+      "name": "AlGhafa-T",
+      "version": null,
+      "evidence": "counting the benchmarks in AlGhafa-T individually"
+     }
+    ],
+    "methods": [
+     {
+      "name": "macro average",
+      "evidence": "We report a macro average as in OALL (Elfilali et al., 2024)"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "bfloat16",
+      "evidence": "For bfloat16 , we always"
+     },
+     {
+      "name": "Mistral-7B",
+      "evidence": "Histogram of absolute individual parameter weight values of Mistral-7B"
+     },
+     {
+      "name": "RMSNorm",
+      "evidence": "separately highlighting RMS- Norm and non-RMSNorm weights"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "Training steps",
+      "value": "7,680",
+      "evidence": "Training steps 7,680 15,360"
+     },
+     {
+      "name": "Training steps (LeoLM)",
+      "value": "15,360",
+      "evidence": "Training steps 7,680 15,360"
+     },
+     {
+      "name": "Warmup steps",
+      "value": "76",
+      "evidence": "Warmup steps 76 153"
+     },
+     {
+      "name": "Warmup steps (LeoLM)",
+      "value": "153",
+      "evidence": "Warmup steps 76 153"
+     },
+     {
+      "name": "Batch size",
+      "value": "256",
+      "evidence": "Batch size 256 512"
+     },
+     {
+      "name": "Batch size (LeoLM)",
+      "value": "512",
+      "evidence": "Batch size 256 512"
+     },
+     {
+      "name": "Context length",
+      "value": "4,096",
+      "evidence": "Context length 4,096 8,192"
+     },
+     {
+      "name": "Context length (LeoLM)",
+      "value": "8,192",
+      "evidence": "Context length 4,096 8,192"
+     },
+     {
+      "name": "Total training tokens",
+      "value": "8 billion",
+      "evidence": "Total training tokens 8 billion 64 billion"
+     },
+     {
+      "name": "Total training tokens (LeoLM)",
+      "value": "64 billion",
+      "evidence": "Total training tokens 8 billion 64 billion"
+     },
+     {
+      "name": "Optimizer",
+      "value": "AdamW",
+      "evidence": "Optimizer AdamW AdamW"
+     },
+     {
+      "name": "Learning rate",
+      "value": "4\u00d710\u22125",
+      "evidence": "Learning rate 4\u00d710\u221252\u00d710\u22125"
+     },
+     {
+      "name": "Learning rate (LeoLM)",
+      "value": "2\u00d710\u22125",
+      "evidence": "Learning rate 4\u00d710\u221252\u00d710\u22125"
+     },
+     {
+      "name": "Learning rate decay",
+      "value": "Cosine to 2\u00d710\u22126",
+      "evidence": "Learning rate decay Cosine to 2\u00d710\u22126Cosine to 2\u00d710\u22126"
+     },
+     {
+      "name": "Adam \u03b2",
+      "value": "(0.9, 0.95)",
+      "evidence": "Adam \u03b2 (0.9, 0.95) (0.9, 0.95)"
+     },
+     {
+      "name": "Weight decay",
+      "value": "0.05",
+      "evidence": "Weight decay 0.05 0.05"
+     },
+     {
+      "name": "Numeric precision",
+      "value": "bfloat16",
+      "evidence": "even very small update values will not disappear in pure bfloat16 training"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Mistral-7B",
+      "evidence": "Case study: Mistral-7B."
+     },
+     {
+      "name": "RMSNorm",
+      "evidence": "the RMSNorm weight values are much larger than other weights"
+     },
+     {
+      "name": "pure bfloat16 training",
+      "evidence": "even very small update values will not disappear in pure bfloat16 training"
+     },
+     {
+      "name": "LeoLM",
+      "evidence": "Hyperparameters Ours (Main) LeoLM"
+     },
+     {
+      "name": "AdamW",
+      "evidence": "Optimizer AdamW AdamW"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "two 80GB GPUs",
+      "evidence": "in our experiments with two 80GB GPUs"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "single 80GB GPU",
+      "evidence": "With access to only a single 80GB GPU"
+     }
+    ],
+    "hyperparameters": [
+     {
+      "name": "optimizer state precision",
+      "value": "float32",
+      "evidence": "optimizer states are stored in float32"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "pure bfloat16 training",
+      "evidence": "we extensively analyze the viability of pure bfloat16 training"
+     },
+     {
+      "name": "mixed-precision bfloat16 training",
+      "evidence": "39% faster than mixed-precision bfloat16 training"
+     },
+     {
+      "name": "activation checkpointing",
+      "evidence": "smaller batch sizes and activation check- pointing"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "training speedup of pure bfloat16 over mixed-precision bfloat16",
+      "value": "39%",
+      "split": null,
+      "evidence": "pure bfloat16 was 39% faster than mixed-precision bfloat16 training"
+     }
+    ]
+   }
+  }
+ ]
+}

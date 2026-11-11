@@ -1,0 +1,49 @@
+{
+  "study_id": "study049",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study049/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:51:28.986489+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 5,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Non-copying transduction",
+        "description": "Transduction without the copying operation (blowing up every vertex into a bounded size clique); the paper proves the class of all paths can be obtained from any class with unbounded shrubdepth using a non-copying transduction."
+      },
+      {
+        "name": "Gy\u00e1rf\u00e1s decomposition",
+        "description": "A decomposition of a graph into bags forming a tree: the root bag consists of a single initial vertex; adjacent vertices lie in bags where one is an ancestor of the other; for every bag B, the subgraph induced by B and all its descendants is connected; every non-root bag B has a hook h(B) in its parent bag that is adjacent to all vertices of B and non-adjacent to all vertices in strict descendants of B. For a disconnected graph, it is the union of decompositions of the connected components."
+      },
+      {
+        "name": "Gy\u00e1rf\u00e1s decomposition construction",
+        "description": "Every graph has a Gy\u00e1rf\u00e1s decomposition, which can be efficiently computed; the proof closely follows the construction of Gy\u00e1rf\u00e1s presented in [15]."
+      },
+      {
+        "name": "Simple interpretation of (colored) graphs",
+        "description": "A first-order formula defines a simple interpretation I of (colored) graphs in (colored) graphs, where the domain formula is a tautology, E(x,y) := (x\u2260y)\u2227(\u03c6(x,y)\u2228\u03c6(y,x)), and, if the target structure is colored, Pi(x) := Pi(x)."
+      },
+      {
+        "name": "Simple equivalence",
+        "description": "A simple equivalence of two classes C and D of (colored) graphs is a pair (\u03c6, \u03c8) of first-order formulas such that I_\u03c6 is a bijection from C to D with inverse mapping I_\u03c8, i.e. I_\u03c8 \u25e6 I_\u03c6 is the identity on C. It is a very strong form of transduction equivalence."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

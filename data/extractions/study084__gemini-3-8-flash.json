@@ -1,0 +1,351 @@
+{
+  "study_id": "study084",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study084/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:27:00.466666+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 21,
+    "datasets": 9,
+    "methods": 16,
+    "evaluation_results": 27
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "k",
+        "value": "16"
+      },
+      {
+        "name": "epochs",
+        "value": "30"
+      },
+      {
+        "name": "batch size",
+        "value": "512"
+      },
+      {
+        "name": "number of GPUs",
+        "value": "8"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.02"
+      },
+      {
+        "name": "warm-up learning rate",
+        "value": "1e\u22124"
+      },
+      {
+        "name": "warm-up iterations",
+        "value": "1000"
+      },
+      {
+        "name": "final learning rate",
+        "value": "1e\u22125"
+      },
+      {
+        "name": "learning rate schedule",
+        "value": "cosine schedule"
+      },
+      {
+        "name": "pre-training image resolution",
+        "value": "256\u00d7256"
+      },
+      {
+        "name": "fine-tuning image resolution",
+        "value": "384\u00d7384"
+      },
+      {
+        "name": "momentum parameter",
+        "value": "0.995"
+      },
+      {
+        "name": "queue size",
+        "value": "65,536"
+      },
+      {
+        "name": "distillation weight \u03b1 ramp-up range",
+        "value": "0 to 0.4"
+      },
+      {
+        "name": "distillation weight \u03b1 ramp-up duration",
+        "value": "1st epoch"
+      },
+      {
+        "name": "\u03b1",
+        "value": "0.4"
+      },
+      {
+        "name": "random token replacement",
+        "value": "10%"
+      },
+      {
+        "name": "unchanged token replacement",
+        "value": "10%"
+      },
+      {
+        "name": "[MASK] token replacement",
+        "value": "80%"
+      },
+      {
+        "name": "pre-train epochs with TA",
+        "value": "1"
+      },
+      {
+        "name": "pre-train images",
+        "value": "4M"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NLVR2",
+        "version": null
+      },
+      {
+        "name": "VQA",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "Flickr30K",
+        "version": null
+      },
+      {
+        "name": "Conceptual 12M",
+        "version": null
+      },
+      {
+        "name": "Conceptual Captions",
+        "version": null
+      },
+      {
+        "name": "SBU Captions",
+        "version": null
+      },
+      {
+        "name": "Visual Genome",
+        "version": null
+      },
+      {
+        "name": "RefCOCO+",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "text-assignment (TA) pre-training",
+        "description": "Pre-training the model for image-pair"
+      },
+      {
+        "name": "parameter sharing",
+        "description": "Strategies for sharing parameters across multimodal blocks: sharing all parameters, sharing only cross-attention (CA) layers, or no sharing"
+      },
+      {
+        "name": "hard negative mining",
+        "description": "Mining hard negatives to validate its effect"
+      },
+      {
+        "name": "ALBEF",
+        "description": "Vision-language model that grounds objects, attributes, and relationships"
+      },
+      {
+        "name": "Grad-CAM",
+        "description": "Visualization method to interpret model grounding and decision making"
+      },
+      {
+        "name": "BERT base",
+        "description": "text encoder with 123.7M parameters"
+      },
+      {
+        "name": "ViT-B/16",
+        "description": "vision encoder with 85.8M parameters"
+      },
+      {
+        "name": "AdamW",
+        "description": "optimizer used for training"
+      },
+      {
+        "name": "RandAugment",
+        "description": "data augmentation method applied during pre-training"
+      },
+      {
+        "name": "image-text contrastive learning",
+        "description": "learning objective using a queue size of 65,536"
+      },
+      {
+        "name": "ITC MoD loss",
+        "description": "Image-Text Contrastive Momentum Distillation loss combining original ITC loss and KL-divergence between model predictions and soft pseudo-targets."
+      },
+      {
+        "name": "MLM MoD loss",
+        "description": "Masked Language Modeling Momentum Distillation loss combining original MLM loss and KL-divergence between predictions and momentum model pseudo-targets."
+      },
+      {
+        "name": "MoD",
+        "description": "Momentum Distillation where the final loss is a weighted combination of the original task loss and the KL-divergence between the model prediction and pseudo-targets."
+      },
+      {
+        "name": "contrastive hard negative mining",
+        "description": "Proposed pre-training method"
+      },
+      {
+        "name": "momentum distillation",
+        "description": "Proposed pre-training method"
+      },
+      {
+        "name": "MLM+ITM",
+        "description": "Baseline pre-training tasks consisting of masked language modeling and image-text matching"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "w/ TA share all",
+        "value": "82.13",
+        "split": "dev"
+      },
+      {
+        "metric": "w/ TA share CA",
+        "value": "82.55",
+        "split": "dev"
+      },
+      {
+        "metric": "w/ TA no share",
+        "value": "81.93",
+        "split": "dev"
+      },
+      {
+        "metric": "w/o TA share all",
+        "value": "80.52",
+        "split": "dev"
+      },
+      {
+        "metric": "w/o TA share CA",
+        "value": "80.28",
+        "split": "dev"
+      },
+      {
+        "metric": "w/o TA no share",
+        "value": "77.84",
+        "split": "dev"
+      },
+      {
+        "metric": "w/ TA share all",
+        "value": "82.36",
+        "split": "test-P"
+      },
+      {
+        "metric": "w/ TA share CA",
+        "value": "83.14",
+        "split": "test-P"
+      },
+      {
+        "metric": "w/ TA no share",
+        "value": "82.85",
+        "split": "test-P"
+      },
+      {
+        "metric": "w/o TA share all",
+        "value": "81.29",
+        "split": "test-P"
+      },
+      {
+        "metric": "w/o TA share CA",
+        "value": "80.45",
+        "split": "test-P"
+      },
+      {
+        "metric": "w/o TA no share",
+        "value": "77.58",
+        "split": "test-P"
+      },
+      {
+        "metric": "TR (sitc)",
+        "value": "97.30",
+        "split": "test"
+      },
+      {
+        "metric": "TR (w/ hard negs, k=16)",
+        "value": "98.60",
+        "split": "test"
+      },
+      {
+        "metric": "TR (w/ hard negs, k=128)",
+        "value": "98.57",
+        "split": "test"
+      },
+      {
+        "metric": "TR (w/ hard negs, k=256)",
+        "value": "98.57",
+        "split": "test"
+      },
+      {
+        "metric": "TR (w/o hard negs, k=128)",
+        "value": "98.22",
+        "split": "test"
+      },
+      {
+        "metric": "IR (sitc)",
+        "value": "90.95",
+        "split": "test"
+      },
+      {
+        "metric": "IR (w/ hard negs, k=16)",
+        "value": "93.64",
+        "split": "test"
+      },
+      {
+        "metric": "IR (w/ hard negs, k=128)",
+        "value": "93.99",
+        "split": "test"
+      },
+      {
+        "metric": "IR (w/ hard negs, k=256)",
+        "value": "93.95",
+        "split": "test"
+      },
+      {
+        "metric": "IR (w/o hard negs, k=128)",
+        "value": "93.68",
+        "split": "test"
+      },
+      {
+        "metric": "TR",
+        "value": "93.96",
+        "split": "flickr test"
+      },
+      {
+        "metric": "IR",
+        "value": "88.55",
+        "split": "flickr test"
+      },
+      {
+        "metric": "SNLI-VE",
+        "value": "77.06",
+        "split": "test"
+      },
+      {
+        "metric": "NLVR2",
+        "value": "77.51",
+        "split": "test-P"
+      },
+      {
+        "metric": "VQA",
+        "value": "71.40",
+        "split": "test-dev"
+      }
+    ]
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "study_id": "study080",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study080/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:20:28.363395+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 8,
+    "methods": 27,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "OWL",
+        "version": "B/32"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "action_space",
+        "value": "{MOVEFORWARD, ROTATE RIGHT, ROTATE LEFT, STOP}"
+      },
+      {
+        "name": "move_step_meters",
+        "value": "0.25"
+      },
+      {
+        "name": "rotation_degrees",
+        "value": "30"
+      },
+      {
+        "name": "clip_k_referring_expressions",
+        "value": "9"
+      },
+      {
+        "name": "clip_k_patches",
+        "value": "9"
+      },
+      {
+        "name": "default_exploration_strategy",
+        "value": "FBE"
+      },
+      {
+        "name": "zero_shot_fraction_on_ROBOTHOR_subset",
+        "value": "0.25"
+      },
+      {
+        "name": "seen_category_fraction",
+        "value": "0.75"
+      },
+      {
+        "name": "training_steps_CoW_navigation",
+        "value": "0"
+      },
+      {
+        "name": "training_steps_SemanticNav-ZSON",
+        "value": "500M"
+      },
+      {
+        "name": "training_steps_EmbCLIP-ZSON",
+        "value": "60M"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "HABITAT (MP3D) train scenes",
+        "version": null
+      },
+      {
+        "name": "ROBOTHOR train scenes",
+        "version": null
+      },
+      {
+        "name": "ROBOTHOR",
+        "version": null
+      },
+      {
+        "name": "PASTURE",
+        "version": null
+      },
+      {
+        "name": "HABITAT",
+        "version": null
+      },
+      {
+        "name": "HABITAT (MP3D)",
+        "version": null
+      },
+      {
+        "name": "ROBOTHOR (subset)",
+        "version": null
+      },
+      {
+        "name": "LAION-5B",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "FBE heuristic exploration",
+        "description": "Heuristic exploration strategy used as the default in the CoW framework."
+      },
+      {
+        "name": "Learned exploration (HABITAT MP3D)",
+        "description": "Exploration policy learned/optimized on HABITAT (MP3D) train scenes."
+      },
+      {
+        "name": "Learned exploration (ROBOTHOR)",
+        "description": "Exploration policy learned/optimized on ROBOTHOR train scenes."
+      },
+      {
+        "name": "CLIP-Ref.",
+        "description": "Object localization using CLIP with k=9 referring expressions."
+      },
+      {
+        "name": "CLIP-Patch",
+        "description": "Object localization using CLIP with k=9 image patches."
+      },
+      {
+        "name": "CLIP-Grad.",
+        "description": "Object localization using CLIP with gradient-based relevance."
+      },
+      {
+        "name": "MDETR",
+        "description": "Object localization using the MDETR segmentation model."
+      },
+      {
+        "name": "OWL-ViT",
+        "description": "Object localization using the OWL-ViT open-vocabulary detector."
+      },
+      {
+        "name": "SPL metric",
+        "description": "Success weighted by oracle shortest path length and normalized by actual path length; success additionally requires target visibility in ROBOTHOR and PASTURE, unlike HABITAT 2021 challenge."
+      },
+      {
+        "name": "Embodiment: LoCoBot",
+        "description": "Agent platform is a LoCoBot with discrete actions and specified motion primitives."
+      },
+      {
+        "name": "CoWs",
+        "description": "Zero-shot object discovery and navigation approach evaluated on PASTURE for L-ZSON, with stronger performance on uncommon objects and lower average success on PASTURE than on ROBOTHOR."
+      },
+      {
+        "name": "Post-processing using center pixel",
+        "description": "Mask predictions are post-processed by using only the center pixel as a representative target for navigation, which helps overall performance."
+      },
+      {
+        "name": "ViT-B/16 vs ViT-B/32 architectures",
+        "description": "Architectures using more compute (ViT-B/16) often perform comparably or worse than ViT-B/32, particularly for CLIP-based models."
+      },
+      {
+        "name": "CLIP models",
+        "description": "CLIP-based vision-language models (indicated in the original table) often underperform when using higher-compute variants (e.g., ViT-B/16) compared to ViT-B/32."
+      },
+      {
+        "name": "Tasks with distractor objects",
+        "description": "PASTURE tasks that include distractor objects reduce performance, and natural language specification alone does not mitigate the difficulty."
+      },
+      {
+        "name": "Supervised baseline",
+        "description": "A supervised baseline significantly outperforms CoWs on ROBOTHOR but does not support PASTURE tasks out-of-the-box."
+      },
+      {
+        "name": "CoW",
+        "description": "Evaluated across HABITAT, ROBOTHOR, and PASTURE; trained for 0 navigation steps; 1/4 of evaluations are zero-shot on ROBOTHOR (subset) and 3/4 on categories seen during training."
+      },
+      {
+        "name": "SemanticNav-ZSON",
+        "description": "Trained in the target evaluation simulators for 500M steps; reports superior performance in MP3D SUCCESS relative to CoW baselines."
+      },
+      {
+        "name": "EmbCLIP-ZSON",
+        "description": "Trained in the target evaluation simulators for 60M steps; CoW improves over EmbCLIP-ZSON on ROBOTHOR by 15.6 percentage points."
+      },
+      {
+        "name": "FBE",
+        "description": "Exploration method used in most experiments and found to perform best across evaluated settings."
+      },
+      {
+        "name": "OWL object localizer (B/32) with post-processing",
+        "description": "A fixed object localizer configuration used for ablations, specified as OWL, B/32, with post-processing (\u25b3)."
+      },
+      {
+        "name": "RoboTHOR learnable exploration",
+        "description": "A learnable exploration policy trained in the RoboTHOR domain; performs well but below FBE."
+      },
+      {
+        "name": "HABITAT learnable exploration",
+        "description": "A learnable exploration policy trained in the HABITAT domain; performs worse when transferred to other domains such as RoboTHOR or PASTURE."
+      },
+      {
+        "name": "CoW baseline",
+        "description": "An open-vocabulary object localization baseline that can use appearance and spatial descriptions; shown to perform relatively well on uncommon objects and can leverage OWL ViT-B/32 with post-post processing."
+      },
+      {
+        "name": "OWL ViT-B/32",
+        "description": "An open-vocabulary vision transformer model variant (B/32) used within CoW for object localization."
+      },
+      {
+        "name": "CLIP retrieval",
+        "description": "Using CLIP retrieval results on LAION-5B to visualize and analyze recognition of uncommon object categories."
+      },
+      {
+        "name": "Post-post processing",
+        "description": "An additional processing step applied to the OWL ViT-B/32 CoW method that yields improved SUCCESS rates."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "SUCCESS",
+        "value": "~6 percentage points improvement",
+        "split": null
+      }
+    ]
+  }
+}

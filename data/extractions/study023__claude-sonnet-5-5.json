@@ -1,0 +1,157 @@
+{
+  "study_id": "study023",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study023/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:39:55.597778+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 1,
+    "methods": 13,
+    "evaluation_results": 13
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "value": "0"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Mobile-Eval",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GPT-4V direct use",
+        "description": "Using GPT-4V directly, bypassing the agent architecture, for end-to-end mobile device operation; found to be almost infeasible."
+      },
+      {
+        "name": "GPT-4V with agent architecture",
+        "description": "GPT-4V combined with the agent architecture; the most effective configuration for operational capabilities."
+      },
+      {
+        "name": "Mobile-Agent-v2",
+        "description": "Multi-agent framework consisting of a planning agent, a reflection agent, a decision agent, and a memory unit for mobile device operation."
+      },
+      {
+        "name": "Ablation study",
+        "description": "Ablation of the planning agent, reflection agent, and memory unit from Mobile-Agent-v2; removing the planning agent had the most significant impact, and removing the reflection agent or memory unit also reduced performance."
+      },
+      {
+        "name": "Single-step task evaluation",
+        "description": "Tasks modified so each step functions as a single-step task, evaluating only SR (the same as DA)."
+      },
+      {
+        "name": "Knowledge injection",
+        "description": "Manually written operation knowledge/tutorials injected into Mobile-Agent-v2 to mitigate limitations in the agent's operation capability and improve performance."
+      },
+      {
+        "name": "Single-step instruction evaluation",
+        "description": "All instructions were converted to single-step forms and the success rate (same as decision accuracy) of each single-step task was evaluated."
+      },
+      {
+        "name": "Completion Rate (CR)",
+        "description": "Proportion of correct steps out of the ground truth operations performed by the agent."
+      },
+      {
+        "name": "Decision Accuracy (DA)",
+        "description": "Accuracy of the decision agent's decisions; proportion of correct decisions out of all decisions."
+      },
+      {
+        "name": "Reflection Accuracy (RA)",
+        "description": "Accuracy of the reflection agent's reflections; proportion of correct reflections out of all reflections."
+      },
+      {
+        "name": "Mobile-Agent",
+        "description": "Baseline; a single-agent architecture based on GPT-4V end-to-end screen recognition. The seed for GPT-4V invocation is fixed and temperature set to 0 to avoid randomness."
+      },
+      {
+        "name": "Analysis of Operation Sequence Length",
+        "description": "Analysis of positions of erroneous or ineffective operations within failed instructions in English scenarios, dividing relative sequence positions into three equal parts."
+      },
+      {
+        "name": "Memory unit",
+        "description": "Records positions of critical UI elements to aid localization for the next sub-task, and stores chat content needed for the task so the decision agent can retrieve it for search purposes."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "SR&DA (Basic) - GPT-4V w/o agent",
+        "value": "2.7",
+        "split": null
+      },
+      {
+        "metric": "SR&DA (Advanced) - GPT-4V w/o agent",
+        "value": "0.9",
+        "split": null
+      },
+      {
+        "metric": "SR&DA (Basic) - Gemini-1.5-Pro",
+        "value": "38.2",
+        "split": null
+      },
+      {
+        "metric": "SR&DA (Advanced) - Gemini-1.5-Pro",
+        "value": "29.8",
+        "split": null
+      },
+      {
+        "metric": "SR&DA (Basic) - Qwen-VL-Max",
+        "value": "42.1",
+        "split": null
+      },
+      {
+        "metric": "SR&DA (Advanced) - Qwen-VL-Max",
+        "value": "33.6",
+        "split": null
+      },
+      {
+        "metric": "SR&DA (Basic) - GPT-4V",
+        "value": "92.7",
+        "split": null
+      },
+      {
+        "metric": "SR&DA (Advanced) - GPT-4V",
+        "value": "83.5",
+        "split": null
+      },
+      {
+        "metric": "Success rate (advanced instructions, Mobile-Agent-v2)",
+        "value": "55%",
+        "split": null
+      },
+      {
+        "metric": "Success rate (advanced instructions, Mobile-Agent)",
+        "value": "20%",
+        "split": null
+      },
+      {
+        "metric": "Average success rate improvement of Mobile-Agent-v2 over Mobile-Agent (English scenario)",
+        "value": "27%",
+        "split": null
+      },
+      {
+        "metric": "Completion rate (with knowledge injection)",
+        "value": "100%",
+        "split": null
+      },
+      {
+        "metric": "Accuracy of Mobile-Agent-v2 on Mobile-Eval",
+        "value": "99%",
+        "split": null
+      }
+    ]
+  }
+}

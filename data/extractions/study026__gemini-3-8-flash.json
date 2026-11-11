@@ -1,0 +1,104 @@
+{
+  "study_id": "study026",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study026/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:28:11.866554+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 2,
+    "methods": 9,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "loss candidates per generation (vanilla evolution search)",
+        "value": "around 1000"
+      },
+      {
+        "name": "individuals per generation (CSE-Autoloss)",
+        "value": "about 10"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "VOC",
+        "version": null
+      },
+      {
+        "name": "BDD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "CSE-Autoloss",
+        "description": "A convergence-simulation driven evolutionary search pipeline for loss function search on object detection"
+      },
+      {
+        "name": "vanilla evolution search",
+        "description": "Baseline evolutionary search evaluating around 1000 loss candidates per generation"
+      },
+      {
+        "name": "FCOS",
+        "description": "Object detector used to compare the behaviors of CSE-Autoloss and vanilla evolution search"
+      },
+      {
+        "name": "Random search",
+        "description": "Search algorithm evaluated on Faster R-CNN classification branch"
+      },
+      {
+        "name": "Evolution search",
+        "description": "Vanilla evolutionary search algorithm for loss search"
+      },
+      {
+        "name": "Faster R-CNN",
+        "description": "Object detector used to evaluate efficiency of search algorithms and transferability across datasets"
+      },
+      {
+        "name": "CSE-Autoloss-A",
+        "description": "Searched loss combination applied to two-stage detectors including Faster R-CNN R50, Faster R-CNN R101, Cascade R-CNN R50, and Mask R-CNN R50."
+      },
+      {
+        "name": "CSE-Autoloss-B",
+        "description": "Searched loss combination applied to ATSS."
+      },
+      {
+        "name": "progressive convergence-simulation modules",
+        "description": "Modules used during loss searching for Faster R-CNN classification branch that filter out 99% of loss candidates."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AP (%)",
+        "value": "37.8",
+        "split": null
+      },
+      {
+        "metric": "AP improvement over baseline",
+        "value": "1.1%",
+        "split": null
+      },
+      {
+        "metric": "AP improvement from Bounded IoU loss to GIoU loss",
+        "value": "0.2%",
+        "split": null
+      },
+      {
+        "metric": "loss candidates filtered out",
+        "value": "99%",
+        "split": null
+      }
+    ]
+  }
+}

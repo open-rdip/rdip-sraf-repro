@@ -1,0 +1,722 @@
+{
+ "study_id": "study013",
+ "model": "opus",
+ "slug": "claude-opus-5-5",
+ "n_passages": 7,
+ "n_passages_ok": 7,
+ "failures": [],
+ "records": [
+  {
+   "field": "datasets",
+   "value": "COOS-7",
+   "evidence": "while we focused on the value of COOS-7 for methods development in this manuscript",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "COOS",
+   "evidence": "COOS is the most extensive microscopy image dataset for measuring generalization under covariate shifts to date",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "COOS-7",
+   "evidence": "To provide baselines for out-of-sample generalization on COOS-7, we extracted features",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "COOS-7",
+   "evidence": "Table 2: Description of datasets provided in COOS-7",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "COOS-7 Training",
+   "evidence": "Training Images from 4 independent plates for each class 41,456",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "COOS-7 Test1",
+   "evidence": "Test1Randomly held-out images from the same plates in training dataset10,364",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "COOS-7 Test2",
+   "evidence": "Test2Images from the same plates, but different wells than training dataset17,021",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "COOS-7 Test3",
+   "evidence": "Test3Images from 2 independent plates for each class, reproduced on different days than training dataset32,596",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "COOS-7 Test4",
+   "evidence": "Test4Images from 1 plate for each class, reproduced on different day and imaged under different microscope than training dataset30,772",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "dependencies",
+   "value": "Python",
+   "evidence": "All classi\ufb01ers were implemented in Python with Scikit-Learn [25].",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "dependencies",
+   "value": "Scikit-Learn",
+   "evidence": "All classi\ufb01ers were implemented in Python with Scikit-Learn [25].",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "hyperparameters",
+   "value": "5",
+   "evidence": "selected the classi\ufb01er with the best performance on a 5-fold cross-validation of the Training dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "Training dataset",
+   "evidence": "a 5-fold cross-validation of the Training dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "Test1",
+   "evidence": "test datasets most similar to the Training dataset, Test1 and Test2",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "Test2",
+   "evidence": "test datasets most similar to the Training dataset, Test1 and Test2",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "Test3",
+   "evidence": "the test datasets with larger covariate shifts, Test3 and Test4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "Test4",
+   "evidence": "the test datasets with larger covariate shifts, Test3 and Test4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "5-fold cross-validation",
+   "evidence": "5-fold cross-validation of the Training dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "logistic regression",
+   "evidence": "logistic regression classi\ufb01ers built on classic computer vision features",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "fully-supervised CNN",
+   "evidence": "the fully-supervised CNN achieved the lowest error on these datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "balanced classification error",
+   "evidence": "We report the balanced classi\ufb01cation error",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.1%",
+   "evidence": "Features from our deep learning models had as little as 1.1% error on these datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.8% error or lower",
+   "evidence": "logistic regression classi\ufb01ers built on classic computer vision features achieved 6.8% error or lower",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "hyperparameters",
+   "value": "128",
+   "evidence": "size of 128 on 80% of the Training dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "hyperparameters",
+   "value": "80%",
+   "evidence": "size of 128 on 80% of the Training dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "hyperparameters",
+   "value": "20%",
+   "evidence": "the best performance on the remaining 20%",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "hyperparameters",
+   "value": "500",
+   "evidence": "chose the iteration (at intervals of 500) with the best performance",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "hyperparameters",
+   "value": "64x64",
+   "evidence": "the best-performing previously- reported model that would accept 64x64 images",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "hyperparameters",
+   "value": "8-bit RGB",
+   "evidence": "We converted and rescaled the \ufb01rst channel of our images to 8-bit RGB.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "Training dataset",
+   "evidence": "size of 128 on 80% of the Training dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "ImageNet",
+   "evidence": "we extracted features from pretrained CNNs on ImageNet (abbreviated as VGG16)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "stratified train/validation split",
+   "evidence": "strati\ufb01ed to preserve percentage of samples per class",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "feature extraction from last fully-connected layer",
+   "evidence": "we also extracted features from the last fully-connected layer of our trained model for building further classi\ufb01ers",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "VGG16",
+   "evidence": "We used a pre-trained VGG16 model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "layer-wise feature extraction",
+   "evidence": "We extracted features from all layers (max-pooling convolutional layers), but only report benchmarks for the top 3 overall performing layers.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "PCI",
+   "evidence": "we extracted features learned from a self-supervised method designed for microscopy images (abbreviated as PCI)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "datasets": {
+    "n": 16,
+    "has_evidence": 16,
+    "span_found": 16,
+    "value_in_span": 11,
+    "grounded": 11
+   },
+   "dependencies": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   },
+   "hyperparameters": {
+    "n": 7,
+    "has_evidence": 7,
+    "span_found": 7,
+    "value_in_span": 7,
+    "grounded": 7
+   },
+   "methods": {
+    "n": 9,
+    "has_evidence": 9,
+    "span_found": 9,
+    "value_in_span": 6,
+    "grounded": 6
+   },
+   "evaluation_results": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   }
+  },
+  "total": {
+   "n": 36,
+   "has_evidence": 36,
+   "span_found": 36,
+   "value_in_span": 28,
+   "grounded": 28
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COOS-7",
+      "version": null,
+      "evidence": "while we focused on the value of COOS-7 for methods development in this manuscript"
+     }
+    ],
+    "methods": [],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COOS",
+      "version": null,
+      "evidence": "COOS is the most extensive microscopy image dataset for measuring generalization under covariate shifts to date"
+     },
+     {
+      "name": "COOS-7",
+      "version": null,
+      "evidence": "To provide baselines for out-of-sample generalization on COOS-7, we extracted features"
+     }
+    ],
+    "methods": [],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COOS-7",
+      "version": null,
+      "evidence": "Table 2: Description of datasets provided in COOS-7"
+     },
+     {
+      "name": "COOS-7 Training",
+      "version": null,
+      "evidence": "Training Images from 4 independent plates for each class 41,456"
+     },
+     {
+      "name": "COOS-7 Test1",
+      "version": null,
+      "evidence": "Test1Randomly held-out images from the same plates in training dataset10,364"
+     },
+     {
+      "name": "COOS-7 Test2",
+      "version": null,
+      "evidence": "Test2Images from the same plates, but different wells than training dataset17,021"
+     },
+     {
+      "name": "COOS-7 Test3",
+      "version": null,
+      "evidence": "Test3Images from 2 independent plates for each class, reproduced on different days than training dataset32,596"
+     },
+     {
+      "name": "COOS-7 Test4",
+      "version": null,
+      "evidence": "Test4Images from 1 plate for each class, reproduced on different day and imaged under different microscope than training dataset30,772"
+     }
+    ],
+    "methods": [],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "Python",
+      "version": null,
+      "evidence": "All classi\ufb01ers were implemented in Python with Scikit-Learn [25]."
+     },
+     {
+      "name": "Scikit-Learn",
+      "version": null,
+      "evidence": "All classi\ufb01ers were implemented in Python with Scikit-Learn [25]."
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "cross-validation folds",
+      "value": "5",
+      "evidence": "selected the classi\ufb01er with the best performance on a 5-fold cross-validation of the Training dataset"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "Training dataset",
+      "version": null,
+      "evidence": "a 5-fold cross-validation of the Training dataset"
+     },
+     {
+      "name": "Test1",
+      "version": null,
+      "evidence": "test datasets most similar to the Training dataset, Test1 and Test2"
+     },
+     {
+      "name": "Test2",
+      "version": null,
+      "evidence": "test datasets most similar to the Training dataset, Test1 and Test2"
+     },
+     {
+      "name": "Test3",
+      "version": null,
+      "evidence": "the test datasets with larger covariate shifts, Test3 and Test4"
+     },
+     {
+      "name": "Test4",
+      "version": null,
+      "evidence": "the test datasets with larger covariate shifts, Test3 and Test4"
+     }
+    ],
+    "methods": [
+     {
+      "name": "5-fold cross-validation",
+      "evidence": "5-fold cross-validation of the Training dataset"
+     },
+     {
+      "name": "logistic regression",
+      "evidence": "logistic regression classi\ufb01ers built on classic computer vision features"
+     },
+     {
+      "name": "fully-supervised CNN",
+      "evidence": "the fully-supervised CNN achieved the lowest error on these datasets"
+     },
+     {
+      "name": "balanced classification error",
+      "evidence": "We report the balanced classi\ufb01cation error"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "error",
+      "value": "1.1%",
+      "split": "Test1 and Test2",
+      "evidence": "Features from our deep learning models had as little as 1.1% error on these datasets"
+     },
+     {
+      "metric": "error",
+      "value": "6.8% error or lower",
+      "split": "Test1 and Test2",
+      "evidence": "logistic regression classi\ufb01ers built on classic computer vision features achieved 6.8% error or lower"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 6,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "batch size",
+      "value": "128",
+      "evidence": "size of 128 on 80% of the Training dataset"
+     },
+     {
+      "name": "training split",
+      "value": "80%",
+      "evidence": "size of 128 on 80% of the Training dataset"
+     },
+     {
+      "name": "validation split",
+      "value": "20%",
+      "evidence": "the best performance on the remaining 20%"
+     },
+     {
+      "name": "checkpoint selection interval",
+      "value": "500",
+      "evidence": "chose the iteration (at intervals of 500) with the best performance"
+     },
+     {
+      "name": "input image size",
+      "value": "64x64",
+      "evidence": "the best-performing previously- reported model that would accept 64x64 images"
+     },
+     {
+      "name": "image conversion",
+      "value": "8-bit RGB",
+      "evidence": "We converted and rescaled the \ufb01rst channel of our images to 8-bit RGB."
+     }
+    ],
+    "datasets": [
+     {
+      "name": "Training dataset",
+      "version": null,
+      "evidence": "size of 128 on 80% of the Training dataset"
+     },
+     {
+      "name": "ImageNet",
+      "version": null,
+      "evidence": "we extracted features from pretrained CNNs on ImageNet (abbreviated as VGG16)"
+     }
+    ],
+    "methods": [
+     {
+      "name": "stratified train/validation split",
+      "evidence": "strati\ufb01ed to preserve percentage of samples per class"
+     },
+     {
+      "name": "feature extraction from last fully-connected layer",
+      "evidence": "we also extracted features from the last fully-connected layer of our trained model for building further classi\ufb01ers"
+     },
+     {
+      "name": "VGG16",
+      "evidence": "We used a pre-trained VGG16 model"
+     },
+     {
+      "name": "layer-wise feature extraction",
+      "evidence": "We extracted features from all layers (max-pooling convolutional layers), but only report benchmarks for the top 3 overall performing layers."
+     },
+     {
+      "name": "PCI",
+      "evidence": "we extracted features learned from a self-supervised method designed for microscopy images (abbreviated as PCI)"
+     }
+    ],
+    "evaluation_results": []
+   }
+  }
+ ]
+}

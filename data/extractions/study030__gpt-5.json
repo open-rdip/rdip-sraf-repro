@@ -1,0 +1,356 @@
+{
+  "study_id": "study030",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study030/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:34:29.220064+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 40,
+    "datasets": 6,
+    "methods": 25,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "synthetic_camera_shift_max",
+        "value": "30 px"
+      },
+      {
+        "name": "image_pair_interval_choices",
+        "value": "4, 8, 12 frames"
+      },
+      {
+        "name": "negative_pair_replacement_prob",
+        "value": "20%"
+      },
+      {
+        "name": "optimizer",
+        "value": "SGD with Nesterov"
+      },
+      {
+        "name": "nesterov_momentum",
+        "value": "0.95"
+      },
+      {
+        "name": "batch_size",
+        "value": "32"
+      },
+      {
+        "name": "weight_decay",
+        "value": "1e-5"
+      },
+      {
+        "name": "learning_rate_warmup",
+        "value": "exponential warmup for 1 epoch from 1e-3 of target LR"
+      },
+      {
+        "name": "learning_rate_decay",
+        "value": "exponential decay over 10 epochs by factor 10 at specified epochs"
+      },
+      {
+        "name": "ema_decay",
+        "value": "1e-2"
+      },
+      {
+        "name": "resnet_initialization",
+        "value": "ImageNet pretrained"
+      },
+      {
+        "name": "shufflenetv2_initialization",
+        "value": "random"
+      },
+      {
+        "name": "epochs",
+        "value": "50"
+      },
+      {
+        "name": "batches_per_epoch",
+        "value": "4994"
+      },
+      {
+        "name": "update_frequency",
+        "value": "SGD step every 2 batches"
+      },
+      {
+        "name": "dataset_alternation",
+        "value": "alternate datasets every batch"
+      },
+      {
+        "name": "synthetic_shift_max",
+        "value": "30px"
+      },
+      {
+        "name": "initialization",
+        "value": "pretrained single-image pose backbone"
+      },
+      {
+        "name": "batch_composition",
+        "value": "PoseTrack pairs alternated with COCO single images"
+      },
+      {
+        "name": "image_longer_edge",
+        "value": "801 px"
+      },
+      {
+        "name": "single_forward_pass",
+        "value": "true"
+      },
+      {
+        "name": "horizontal_flipping",
+        "value": "false"
+      },
+      {
+        "name": "multi_scale_evaluation",
+        "value": "false"
+      },
+      {
+        "name": "crowd_index_threshold_for_visuals",
+        "value": "0.8"
+      },
+      {
+        "name": "backbone_type",
+        "value": "ResNet or ShuffleNetV2"
+      },
+      {
+        "name": "input_max_pool_removed",
+        "value": "true"
+      },
+      {
+        "name": "output_stride",
+        "value": "16"
+      },
+      {
+        "name": "features_per_location",
+        "value": "2048"
+      },
+      {
+        "name": "spatial_convolution",
+        "value": "5x5 depth-wise (replacing 3x3)"
+      },
+      {
+        "name": "head_network",
+        "value": "1x1 convolution followed by sub-pixel convolution (x2 upsampling)"
+      },
+      {
+        "name": "ShuffleNetV2K16_stage_outputs",
+        "value": "24, 348, 696, 1392, 1392"
+      },
+      {
+        "name": "ShuffleNetV2K16_block_repeats",
+        "value": "1, 4, 8, 4, 1"
+      },
+      {
+        "name": "ShuffleNetV2K30_stage_outputs",
+        "value": "32, 512, 1024, 2048, 2048"
+      },
+      {
+        "name": "ShuffleNetV2K30_block_repeats",
+        "value": "1, 8, 16, 6, 1"
+      },
+      {
+        "name": "ema_decay_constant",
+        "value": "10\u22122"
+      },
+      {
+        "name": "epochs_crowdpose",
+        "value": "300"
+      },
+      {
+        "name": "target_learning_rate_crowdpose",
+        "value": "10\u22125"
+      },
+      {
+        "name": "lr_decay_epochs_crowdpose",
+        "value": "250, 280"
+      },
+      {
+        "name": "target_learning_rate_coco",
+        "value": "10\u22124"
+      },
+      {
+        "name": "lr_decay_epochs_coco",
+        "value": "130, 140"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CrowdPose",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "PoseTrack",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "COCO keypoint task",
+        "version": "2017 test-dev"
+      },
+      {
+        "name": "COCO keypoint annotations",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Image pair augmentation",
+        "description": "Add synthetic camera shift up to 30 px; form pairs with random intervals of 4, 8, or 12 frames; in 20% of pairs replace one image with a random image to create negative samples for tracking."
+      },
+      {
+        "name": "Single-image training regimen",
+        "description": "Train backbones with SGD with Nesterov momentum 0.95, batch size 32, weight decay 1e-5; learning rate exponentially warmed up for one epoch from 1e-3 of target, and exponentially decayed over 10 epochs by factor 10 at specified epochs."
+      },
+      {
+        "name": "Model averaging (EMA)",
+        "description": "At each optimization step, update an exponentially weighted version of model parameters with decay constant 1e-2 to obtain stable models for validation."
+      },
+      {
+        "name": "Backbone initialization strategy",
+        "description": "Use ImageNet-pretrained weights for ResNet backbones; train ShuffleNetV2 from random initialization."
+      },
+      {
+        "name": "Alternating multi-task training",
+        "description": "Alternate between PoseTrack pair batches and COCO single-image batches; apply losses to corresponding head networks."
+      },
+      {
+        "name": "Gradient update schedule",
+        "description": "Perform one SGD step every two batches while alternating datasets each batch."
+      },
+      {
+        "name": "Synthetic pairing via shifts",
+        "description": "Convert single images to tracked image pairs using synthetic shifts of up to 30px."
+      },
+      {
+        "name": "Initialization from single-image backbone",
+        "description": "Start training from a trained single-image pose backbone."
+      },
+      {
+        "name": "Bottom-up pose estimation",
+        "description": "Evaluated as a single forward pass on rescaled images with longer edge 801 px, without horizontal flipping or multi-scale evaluation; compared to field-based and associative embedding approaches."
+      },
+      {
+        "name": "ResNet backbone without input max-pooling",
+        "description": "Standard ResNet models used with the input max-pooling operation removed to preserve spatial information; stride 16 and 2048 features at each output location."
+      },
+      {
+        "name": "ShuffleNetV2K16 backbone",
+        "description": "Custom ShuffleNetV2 configuration with stage outputs 24, 348, 696, 1392, 1392 and block repeats 1, 4, 8, 4, 1; spatial convolutions are depth-wise 5x5."
+      },
+      {
+        "name": "ShuffleNetV2K30 backbone",
+        "description": "Custom ShuffleNetV2 configuration with stage outputs 32, 512, 1024, 2048, 2048 and block repeats 1, 8, 16, 6, 1; spatial convolutions are depth-wise 5x5."
+      },
+      {
+        "name": "Multi-head network with sub-pixel upsampling",
+        "description": "Each head is a single 1x1 convolution followed by a sub-pixel convolution to double the spatial resolution."
+      },
+      {
+        "name": "Exponential moving average (EMA) of parameters",
+        "description": "At each optimization step, update an exponentially weighted version of the model parameters with a decay constant of 10\u22122."
+      },
+      {
+        "name": "Multi-task alternating-batch training",
+        "description": "During tracking training, keep single-image pose estimation on COCO as an auxiliary task and train on PoseTrack 2018 and COCO simultaneously by alternating the two tasks between batches."
+      },
+      {
+        "name": "Backbone for tracking",
+        "description": "Use the Shuf\ufb02eNetV2k30 backbone for all tracking experiments."
+      },
+      {
+        "name": "OpenPifPaf",
+        "description": "Ours; method evaluated on PoseTrack leaderboards"
+      },
+      {
+        "name": "STAF",
+        "description": "Method reported in comparison table"
+      },
+      {
+        "name": "MIPAL",
+        "description": "Method reported in comparison table"
+      },
+      {
+        "name": "MSRA/FlowTrack",
+        "description": "Method reported in comparison table"
+      },
+      {
+        "name": "HRNet",
+        "description": "Method reported in comparison table"
+      },
+      {
+        "name": "LightTrack",
+        "description": "Method reported in comparison table"
+      },
+      {
+        "name": "KeyTrack",
+        "description": "Method reported in comparison table"
+      },
+      {
+        "name": "DetTrack (offline)",
+        "description": "Offline method reported in comparison table"
+      },
+      {
+        "name": "TCAF",
+        "description": "Multiple temporal connections (TCAF) form a single tracked pose"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "FPS",
+        "value": "13.7 FPS",
+        "split": null
+      },
+      {
+        "metric": "average time per image (GTX1080Ti)",
+        "value": "152 ms",
+        "split": null
+      },
+      {
+        "metric": "average time per image (V100)",
+        "value": "63 ms",
+        "split": null
+      },
+      {
+        "metric": "MOTA",
+        "value": "61.7",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": "71.9",
+        "split": null
+      },
+      {
+        "metric": "MOTP",
+        "value": "84.5",
+        "split": null
+      },
+      {
+        "metric": "precision",
+        "value": "84.1",
+        "split": null
+      },
+      {
+        "metric": "recall",
+        "value": "77.7",
+        "split": null
+      }
+    ]
+  }
+}

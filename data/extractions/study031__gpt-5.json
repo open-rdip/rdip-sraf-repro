@@ -1,0 +1,162 @@
+{
+  "study_id": "study031",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study031/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:35:17.360044+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 14,
+    "datasets": 3,
+    "methods": 11,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "TensorFlow",
+        "version": "2"
+      },
+      {
+        "name": "Scikit-learn",
+        "version": null
+      },
+      {
+        "name": "Label Studio",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "string or null",
+      "cuda_version": "string or null",
+      "cpu_info": "string or null"
+    },
+    "hyperparameters": [
+      {
+        "name": "resize_to_multiple_of",
+        "value": "32"
+      },
+      {
+        "name": "aspect_ratio_by_class",
+        "value": "1:4 for five classes; 1:1 for three classes; 1:2 for one class"
+      },
+      {
+        "name": "aspect_ratio_all_classes_experiment",
+        "value": "1:2"
+      },
+      {
+        "name": "split_train",
+        "value": "70%"
+      },
+      {
+        "name": "split_validation",
+        "value": "10%"
+      },
+      {
+        "name": "split_test",
+        "value": "20%"
+      },
+      {
+        "name": "training_mode",
+        "value": "supervised"
+      },
+      {
+        "name": "train_val_exclude_clean_samples",
+        "value": "true"
+      },
+      {
+        "name": "test_balanced_anomalies_and_clean",
+        "value": "true"
+      },
+      {
+        "name": "augmentation_horizontal_flip_prob",
+        "value": "30%"
+      },
+      {
+        "name": "augmentation_vertical_flip_prob",
+        "value": "30%"
+      },
+      {
+        "name": "augmentation_random_brightness_prob",
+        "value": "10%"
+      },
+      {
+        "name": "augmentation_random_contrast_prob",
+        "value": "10%"
+      },
+      {
+        "name": "augmentation_random_saturation_prob",
+        "value": "10%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Plankton anomaly dataset",
+        "version": null
+      },
+      {
+        "name": "Derived dataset for object detection experiment",
+        "version": null
+      },
+      {
+        "name": "Phytoplankton anomaly dataset (Ut\u00f6 IFCB)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Autoencoders",
+        "description": "Towards Phytoplankton Parasite Detection Using Autoencoders"
+      },
+      {
+        "name": "ROC curve",
+        "description": "Specificity plotted on the x-axis and recall on the y-axis for each threshold; each point corresponds to one threshold setting."
+      },
+      {
+        "name": "Autoencoder ConvM2-VQVAE1 + HardNet1 + one-class classifier",
+        "description": "Optimal anomaly detection combination selected by maximal F1 score across five autoencoder types, six pairs of convolutional layers, six feature extractors, and four classifiers evaluated on all plankton species."
+      },
+      {
+        "name": "Autoencoder-based anomaly detection",
+        "description": "Autoencoders were used to detect anomalies/parasites in phytoplankton images across nine classes."
+      },
+      {
+        "name": "ConvM2-VQVAE1",
+        "description": "Autoencoder model used for anomaly detection on plankton species data."
+      },
+      {
+        "name": "HardNet1",
+        "description": "Feature extractor used in conjunction with the autoencoder and classifier."
+      },
+      {
+        "name": "Local Outlier Factor",
+        "description": "One-class classifier used for anomaly detection."
+      },
+      {
+        "name": "Autoencoder experiment",
+        "description": "Autoencoder-based approach for parasite detection; evaluated against ground truth labels (details not specified in the passage)."
+      },
+      {
+        "name": "Object detection experiment",
+        "description": "Supervised training with splits of 70% train, 10% validation, 20% test; training/validation exclude clean samples; test set balanced between anomalies and clean images; inputs resized to dimensions that are multiples of 32 while preserving class-specific aspect ratios (1:4, 1:1, 1:2); augmentations include horizontal and vertical flips (30% probability) and random brightness, contrast, and saturation adjustments (10% probability)."
+      },
+      {
+        "name": "Autoencoder-based experiments",
+        "description": "Experiments using autoencoders as described in the chapter."
+      },
+      {
+        "name": "Object detection-based experiments",
+        "description": "Experiments using object detection methods as described in the chapter."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "F1 score",
+        "value": "0.75",
+        "split": null
+      }
+    ]
+  }
+}

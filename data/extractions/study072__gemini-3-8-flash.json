@@ -1,0 +1,120 @@
+{
+  "study_id": "study072",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study072/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:16:31.305686+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 3,
+    "methods": 13,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA GTX 4090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "mini-batch size",
+        "value": "32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Food-101",
+        "version": null
+      },
+      {
+        "name": "CIFAR-100",
+        "version": null
+      },
+      {
+        "name": "mini-ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "MobileNetV3-Large",
+        "description": "a lightweight model focused on execution efficiency, with weaker feature extraction capabilities compared to the other two models"
+      },
+      {
+        "name": "tiny-SwinTransformer",
+        "description": "uses a hierarchical transformer structure and a shifted window mechanism to deliver superior feature extraction capabilities"
+      },
+      {
+        "name": "SynerMix",
+        "description": "A method tailored for tasks involving classification components"
+      },
+      {
+        "name": "SynerMix-Intra",
+        "description": "A method variant that adds a branch that closely mirrors the original model to markedly accelerate model convergence"
+      },
+      {
+        "name": "ResNet-101",
+        "description": "Base model evaluated on Food-101"
+      },
+      {
+        "name": "wo-RA&ER",
+        "description": "trains directly using images"
+      },
+      {
+        "name": "w-ER",
+        "description": "method that converges more slowly than wo-RA&ER, exhibiting slow and unstable convergence mitigated when combined with w-RA"
+      },
+      {
+        "name": "w-ER(M)",
+        "description": "variant of w-ER"
+      },
+      {
+        "name": "w-ER(MM)",
+        "description": "variant of w-ER"
+      },
+      {
+        "name": "w-RA",
+        "description": "method combined with w-ER to mitigate slow and unstable convergence"
+      },
+      {
+        "name": "ResNet-34",
+        "description": "model evaluated on CIFAR-100"
+      },
+      {
+        "name": "w-RA&ER(M)",
+        "description": "Combined method integrating RA and ER(M)"
+      },
+      {
+        "name": "w-RA&ER(MM)",
+        "description": "Combined method integrating RA and ER(MM)"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "1.22% lower",
+        "split": null
+      },
+      {
+        "metric": "epoch duration of wo-RA&ER",
+        "value": "roughly 290 seconds",
+        "split": null
+      },
+      {
+        "metric": "training time of w-RA&ER(M)",
+        "value": "about 570 seconds per epoch",
+        "split": null
+      },
+      {
+        "metric": "drop in accuracy",
+        "value": "0.41%",
+        "split": "validation"
+      }
+    ]
+  }
+}

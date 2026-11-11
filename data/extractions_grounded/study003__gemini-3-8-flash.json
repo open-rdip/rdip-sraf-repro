@@ -1,0 +1,1578 @@
+{
+ "study_id": "study003",
+ "model": "gemini-flash",
+ "slug": "gemini-3-8-flash",
+ "n_passages": 9,
+ "n_passages_ok": 9,
+ "failures": [],
+ "records": [
+  {
+   "field": "hyperparameters",
+   "value": "200",
+   "evidence": "each box is cropped to W= 200 andH= 200",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "200",
+   "evidence": "each box is cropped to W= 200 andH= 200",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "16",
+   "evidence": "It is assumed that there are 16 boxes in a batch for showcasing the SFR module.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "CAFR",
+   "evidence": "our proposed CAFR approach that incorporates APG and SFR modules.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Adaptive Gradient Propagation Module",
+   "evidence": "Adaptive Gradient Propagation Module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Sparse Feature Refinement Module",
+   "evidence": "Sparse Feature Refinement Module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Swim Transformer Block",
+   "evidence": "Swim Transformer Block",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "SINet",
+   "evidence": "Segmentation SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "SegMaR",
+   "evidence": "SegMaR [4] ResNet50 81.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "PreyNet",
+   "evidence": "PreyNet [20] ResNet50 81.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ZoomNet",
+   "evidence": "ZoomNet [21] ResNet50 83.5",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "FSEL",
+   "evidence": "FSEL [22] ResNet50 87.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Faster R-CNN",
+   "evidence": "Detection Faster R-CNN ResNet50 95.7",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Mask R-CNN",
+   "evidence": "segmentation (Mask R-CNN) frameworks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "77.0",
+   "evidence": "SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "81.1",
+   "evidence": "SegMaR [4] ResNet50 81.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "81.0",
+   "evidence": "PreyNet [20] ResNet50 81.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "83.5",
+   "evidence": "ZoomNet [21] ResNet50 83.5",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "87.3",
+   "evidence": "FSEL [22] ResNet50 87.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "95.7",
+   "evidence": "Faster R-CNN ResNet50 95.7",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "96.1",
+   "evidence": "Faster R-CNN ResNet101 96.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "99.1",
+   "evidence": "Faster R-CNN Swin-L 99.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "16",
+   "evidence": "select 16 boxes at a time",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "SFR",
+   "evidence": "Offline Implementation of SFR",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "dependencies",
+   "value": "MMDetection",
+   "evidence": "Our code is deployed under the MMDetection [54] frame- work.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "AdamW",
+   "evidence": "we employ the AdamW optimizer with an initial learning rate of 0.0003 and a momentum of 0.05.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "0.0003",
+   "evidence": "initial learning rate of 0.0003",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "0.05",
+   "evidence": "momentum of 0.05",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "RCOD",
+   "evidence": "samples for each class of RCOD data",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "CAFR",
+   "evidence": "experimental settings of our proposed CAFR.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "SFR",
+   "evidence": "components between SFR and APG",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "APG",
+   "evidence": "components between SFR and APG",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "adapter module",
+   "evidence": "we introduce an adapter module composed of two 2-dimensional convolutional layers immediately after the feature extractor",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "GLIP tiny model",
+   "evidence": "feature extractor from the GLIP tiny model [9]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "GLIP+Adapter",
+   "evidence": "compared with the GLIP model, GLIP+Adapter fails to adapt to the COD task",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "AGP",
+   "evidence": "To address the mentioned issue, we propose the AGP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "RCOD",
+   "evidence": "In RCOD, we adopt [49] as our contrastive loss Lc",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "GIoU",
+   "evidence": "GIoU [50] as our Localization lossLbbox",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "focal loss",
+   "evidence": "focal loss [51] as our classification loss Lcls.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "swin-transformer",
+   "evidence": "utilize the swin-transformer [10] as the feature extractor",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "FPN",
+   "evidence": "FPN [52] for feature refinement.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "SFR module",
+   "evidence": "we propose the SFR module, which serves to reduce the size of the camouflaged object within an image.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "CAMO",
+   "evidence": "original camouflaged CAMO dataset [13]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "CAMO- D",
+   "evidence": "Regarding the CAMO- D dataset, we combine 1000 training images",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "COD10K-D",
+   "evidence": "our newly created COD10K-D, NC4K-D, and CAMO- D datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K-D",
+   "evidence": "our newly created COD10K-D, NC4K-D, and CAMO- D datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "Mask RCNN",
+   "evidence": "Method Mask RCNN [56]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "Faster RCNN",
+   "evidence": "Faster RCNN [17]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "SAM",
+   "evidence": "Large Model SAM [57]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "GDino + CAFR",
+   "evidence": "GDino + CAFR Swin-T",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "CAMO-D",
+   "evidence": "from the CAMO-D dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "COD10K",
+   "evidence": "the COD10K-v2 dataset offers comprehensive category annota- tions",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K-D",
+   "evidence": "Moving on to NC4K-D",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K",
+   "evidence": "from the NC4K dataset [12]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "Mask RCNN",
+   "evidence": "Mask RCNN [56]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "Faster RCNN",
+   "evidence": "Faster RCNN [17]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "SAM",
+   "evidence": "SAM [57]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "GDino + CAFR",
+   "evidence": "GDino + CAFR",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "41",
+   "evidence": "Mask RCNN [56] ResNet50 41",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "289.97",
+   "evidence": "Mask RCNN [56] ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "34",
+   "evidence": "Faster RCNN [17] ResNet50 34",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "176.54",
+   "evidence": "Faster RCNN [17] ResNet50 34 176.54",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "89",
+   "evidence": "SAM [57] Vit-T 89",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "371.98",
+   "evidence": "SAM [57] Vit-T 89 371.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "165",
+   "evidence": "GDino + CAFR Swin-T 165",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "COD10K-D",
+   "evidence": "PREFORMANCE OF VARIOUS DETECTION METHODS ON COD10K-D, NC4K-D, AND CAMO-D DATASETS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K-D",
+   "evidence": "PREFORMANCE OF VARIOUS DETECTION METHODS ON COD10K-D, NC4K-D, AND CAMO-D DATASETS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "datasets",
+   "value": "CAMO-D",
+   "evidence": "PREFORMANCE OF VARIOUS DETECTION METHODS ON COD10K-D, NC4K-D, AND CAMO-D DATASETS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "DEF-DETR",
+   "evidence": "DEF-DETR ISDEFORMABLE DETR",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "DEFORMABLE DETR",
+   "evidence": "DEF-DETR ISDEFORMABLE DETR",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "SWIN -TRASFORMER",
+   "evidence": "S WIN REPRESENTS SWIN -TRASFORMER",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "RESNET50",
+   "evidence": "R50 AND R101 ARE RESNET50AND RSENET101",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "RSENET101",
+   "evidence": "R50 AND R101 ARE RESNET50AND RSENET101",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "GLIP",
+   "evidence": "GLIP WITH ITS TINY AND LARGE PRE -TRAINED MODELS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "GROUNDING DION",
+   "evidence": "GD INO IS GROUNDING DION ITS TINY AND BASE PRE-TRAINED MODELS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "YOLOv7-L",
+   "evidence": "Generic Methods YOLOv7-L [15] CSPDarknet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "CSPDarknet",
+   "evidence": "Generic Methods YOLOv7-L [15] CSPDarknet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "3.8",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "8.2",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "2.8",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.0",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "4.0",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.8",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "14.2",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.0",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.7",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "7.3",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "5.4",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 8
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "hyperparameters": {
+    "n": 7,
+    "has_evidence": 7,
+    "span_found": 7,
+    "value_in_span": 7,
+    "grounded": 7
+   },
+   "methods": {
+    "n": 42,
+    "has_evidence": 42,
+    "span_found": 42,
+    "value_in_span": 42,
+    "grounded": 42
+   },
+   "evaluation_results": {
+    "n": 26,
+    "has_evidence": 26,
+    "span_found": 26,
+    "value_in_span": 26,
+    "grounded": 26
+   },
+   "dependencies": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 1,
+    "value_in_span": 1,
+    "grounded": 1
+   },
+   "datasets": {
+    "n": 12,
+    "has_evidence": 12,
+    "span_found": 12,
+    "value_in_span": 12,
+    "grounded": 12
+   }
+  },
+  "total": {
+   "n": 88,
+   "has_evidence": 88,
+   "span_found": 88,
+   "value_in_span": 88,
+   "grounded": 88
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "W",
+      "value": "200",
+      "evidence": "each box is cropped to W= 200 andH= 200"
+     },
+     {
+      "name": "H",
+      "value": "200",
+      "evidence": "each box is cropped to W= 200 andH= 200"
+     },
+     {
+      "name": "boxes in a batch",
+      "value": "16",
+      "evidence": "It is assumed that there are 16 boxes in a batch for showcasing the SFR module."
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "CAFR",
+      "evidence": "our proposed CAFR approach that incorporates APG and SFR modules."
+     },
+     {
+      "name": "Adaptive Gradient Propagation Module",
+      "evidence": "Adaptive Gradient Propagation Module"
+     },
+     {
+      "name": "Sparse Feature Refinement Module",
+      "evidence": "Sparse Feature Refinement Module"
+     },
+     {
+      "name": "Swim Transformer Block",
+      "evidence": "Swim Transformer Block"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "SINet",
+      "evidence": "Segmentation SINet [11] ResNet50 77.0"
+     },
+     {
+      "name": "SegMaR",
+      "evidence": "SegMaR [4] ResNet50 81.1"
+     },
+     {
+      "name": "PreyNet",
+      "evidence": "PreyNet [20] ResNet50 81.0"
+     },
+     {
+      "name": "ZoomNet",
+      "evidence": "ZoomNet [21] ResNet50 83.5"
+     },
+     {
+      "name": "FSEL",
+      "evidence": "FSEL [22] ResNet50 87.3"
+     },
+     {
+      "name": "Faster R-CNN",
+      "evidence": "Detection Faster R-CNN ResNet50 95.7"
+     },
+     {
+      "name": "Mask R-CNN",
+      "evidence": "segmentation (Mask R-CNN) frameworks"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "77.0",
+      "split": null,
+      "evidence": "SINet [11] ResNet50 77.0"
+     },
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "81.1",
+      "split": null,
+      "evidence": "SegMaR [4] ResNet50 81.1"
+     },
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "81.0",
+      "split": null,
+      "evidence": "PreyNet [20] ResNet50 81.0"
+     },
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "83.5",
+      "split": null,
+      "evidence": "ZoomNet [21] ResNet50 83.5"
+     },
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "87.3",
+      "split": null,
+      "evidence": "FSEL [22] ResNet50 87.3"
+     },
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "95.7",
+      "split": null,
+      "evidence": "Faster R-CNN ResNet50 95.7"
+     },
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "96.1",
+      "split": null,
+      "evidence": "Faster R-CNN ResNet101 96.1"
+     },
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "99.1",
+      "split": null,
+      "evidence": "Faster R-CNN Swin-L 99.1"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "boxes per selection",
+      "value": "16",
+      "evidence": "select 16 boxes at a time"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "SFR",
+      "evidence": "Offline Implementation of SFR"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "MMDetection",
+      "version": null,
+      "evidence": "Our code is deployed under the MMDetection [54] frame- work."
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "optimizer",
+      "value": "AdamW",
+      "evidence": "we employ the AdamW optimizer with an initial learning rate of 0.0003 and a momentum of 0.05."
+     },
+     {
+      "name": "initial learning rate",
+      "value": "0.0003",
+      "evidence": "initial learning rate of 0.0003"
+     },
+     {
+      "name": "momentum",
+      "value": "0.05",
+      "evidence": "momentum of 0.05"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "RCOD",
+      "version": null,
+      "evidence": "samples for each class of RCOD data"
+     }
+    ],
+    "methods": [
+     {
+      "name": "CAFR",
+      "evidence": "experimental settings of our proposed CAFR."
+     },
+     {
+      "name": "SFR",
+      "evidence": "components between SFR and APG"
+     },
+     {
+      "name": "APG",
+      "evidence": "components between SFR and APG"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "adapter module",
+      "evidence": "we introduce an adapter module composed of two 2-dimensional convolutional layers immediately after the feature extractor"
+     },
+     {
+      "name": "GLIP tiny model",
+      "evidence": "feature extractor from the GLIP tiny model [9]"
+     },
+     {
+      "name": "GLIP+Adapter",
+      "evidence": "compared with the GLIP model, GLIP+Adapter fails to adapt to the COD task"
+     },
+     {
+      "name": "AGP",
+      "evidence": "To address the mentioned issue, we propose the AGP."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "RCOD",
+      "evidence": "In RCOD, we adopt [49] as our contrastive loss Lc"
+     },
+     {
+      "name": "GIoU",
+      "evidence": "GIoU [50] as our Localization lossLbbox"
+     },
+     {
+      "name": "focal loss",
+      "evidence": "focal loss [51] as our classification loss Lcls."
+     },
+     {
+      "name": "swin-transformer",
+      "evidence": "utilize the swin-transformer [10] as the feature extractor"
+     },
+     {
+      "name": "FPN",
+      "evidence": "FPN [52] for feature refinement."
+     },
+     {
+      "name": "SFR module",
+      "evidence": "we propose the SFR module, which serves to reduce the size of the camouflaged object within an image."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 6,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "CAMO",
+      "version": null,
+      "evidence": "original camouflaged CAMO dataset [13]"
+     },
+     {
+      "name": "CAMO- D",
+      "version": null,
+      "evidence": "Regarding the CAMO- D dataset, we combine 1000 training images"
+     },
+     {
+      "name": "COD10K-D",
+      "version": null,
+      "evidence": "our newly created COD10K-D, NC4K-D, and CAMO- D datasets"
+     },
+     {
+      "name": "NC4K-D",
+      "version": null,
+      "evidence": "our newly created COD10K-D, NC4K-D, and CAMO- D datasets"
+     }
+    ],
+    "methods": [
+     {
+      "name": "Mask RCNN",
+      "evidence": "Method Mask RCNN [56]"
+     },
+     {
+      "name": "Faster RCNN",
+      "evidence": "Faster RCNN [17]"
+     },
+     {
+      "name": "SAM",
+      "evidence": "Large Model SAM [57]"
+     },
+     {
+      "name": "GDino + CAFR",
+      "evidence": "GDino + CAFR Swin-T"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 7,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "CAMO-D",
+      "version": null,
+      "evidence": "from the CAMO-D dataset"
+     },
+     {
+      "name": "COD10K",
+      "version": "v2",
+      "evidence": "the COD10K-v2 dataset offers comprehensive category annota- tions"
+     },
+     {
+      "name": "NC4K-D",
+      "version": null,
+      "evidence": "Moving on to NC4K-D"
+     },
+     {
+      "name": "NC4K",
+      "version": null,
+      "evidence": "from the NC4K dataset [12]"
+     }
+    ],
+    "methods": [
+     {
+      "name": "Mask RCNN",
+      "evidence": "Mask RCNN [56]"
+     },
+     {
+      "name": "Faster RCNN",
+      "evidence": "Faster RCNN [17]"
+     },
+     {
+      "name": "SAM",
+      "evidence": "SAM [57]"
+     },
+     {
+      "name": "GDino + CAFR",
+      "evidence": "GDino + CAFR"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "Par (M)",
+      "value": "41",
+      "split": null,
+      "evidence": "Mask RCNN [56] ResNet50 41"
+     },
+     {
+      "metric": "FLOPs (G)",
+      "value": "289.97",
+      "split": null,
+      "evidence": "Mask RCNN [56] ResNet50 41 289.97"
+     },
+     {
+      "metric": "Par (M)",
+      "value": "34",
+      "split": null,
+      "evidence": "Faster RCNN [17] ResNet50 34"
+     },
+     {
+      "metric": "FLOPs (G)",
+      "value": "176.54",
+      "split": null,
+      "evidence": "Faster RCNN [17] ResNet50 34 176.54"
+     },
+     {
+      "metric": "Par (M)",
+      "value": "89",
+      "split": null,
+      "evidence": "SAM [57] Vit-T 89"
+     },
+     {
+      "metric": "FLOPs (G)",
+      "value": "371.98",
+      "split": null,
+      "evidence": "SAM [57] Vit-T 89 371.98"
+     },
+     {
+      "metric": "Par (M)",
+      "value": "165",
+      "split": null,
+      "evidence": "GDino + CAFR Swin-T 165"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 8,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COD10K-D",
+      "version": null,
+      "evidence": "PREFORMANCE OF VARIOUS DETECTION METHODS ON COD10K-D, NC4K-D, AND CAMO-D DATASETS"
+     },
+     {
+      "name": "NC4K-D",
+      "version": null,
+      "evidence": "PREFORMANCE OF VARIOUS DETECTION METHODS ON COD10K-D, NC4K-D, AND CAMO-D DATASETS"
+     },
+     {
+      "name": "CAMO-D",
+      "version": null,
+      "evidence": "PREFORMANCE OF VARIOUS DETECTION METHODS ON COD10K-D, NC4K-D, AND CAMO-D DATASETS"
+     }
+    ],
+    "methods": [
+     {
+      "name": "DEF-DETR",
+      "evidence": "DEF-DETR ISDEFORMABLE DETR"
+     },
+     {
+      "name": "DEFORMABLE DETR",
+      "evidence": "DEF-DETR ISDEFORMABLE DETR"
+     },
+     {
+      "name": "SWIN -TRASFORMER",
+      "evidence": "S WIN REPRESENTS SWIN -TRASFORMER"
+     },
+     {
+      "name": "RESNET50",
+      "evidence": "R50 AND R101 ARE RESNET50AND RSENET101"
+     },
+     {
+      "name": "RSENET101",
+      "evidence": "R50 AND R101 ARE RESNET50AND RSENET101"
+     },
+     {
+      "name": "GLIP",
+      "evidence": "GLIP WITH ITS TINY AND LARGE PRE -TRAINED MODELS"
+     },
+     {
+      "name": "GROUNDING DION",
+      "evidence": "GD INO IS GROUNDING DION ITS TINY AND BASE PRE-TRAINED MODELS"
+     },
+     {
+      "name": "YOLOv7-L",
+      "evidence": "Generic Methods YOLOv7-L [15] CSPDarknet"
+     },
+     {
+      "name": "CSPDarknet",
+      "evidence": "Generic Methods YOLOv7-L [15] CSPDarknet"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "mAP",
+      "value": "3.8",
+      "split": "COD10K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "AP50",
+      "value": "8.2",
+      "split": "COD10K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "AP75",
+      "value": "2.8",
+      "split": "COD10K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "APm",
+      "value": "1.0",
+      "split": "COD10K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "APl",
+      "value": "4.0",
+      "split": "COD10K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "mAP",
+      "value": "6.8",
+      "split": "NC4K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "AP50",
+      "value": "14.2",
+      "split": "NC4K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "AP75",
+      "value": "6.0",
+      "split": "NC4K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "APm",
+      "value": "1.7",
+      "split": "NC4K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "APl",
+      "value": "7.3",
+      "split": "NC4K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "mAP",
+      "value": "5.4",
+      "split": "CAMO-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     }
+    ]
+   }
+  }
+ ]
+}

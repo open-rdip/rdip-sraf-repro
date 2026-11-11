@@ -1,0 +1,86 @@
+{
+  "study_id": "study083",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study083/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:25:45.560910+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 12,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "LPMC",
+        "version": null
+      },
+      {
+        "name": "NTS",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Nystr\u00f6m-based KLR",
+        "description": "Kernel logistic regression model using Nystr\u00f6m method for kernel matrix approximation with specialised training loss function and gradient computation"
+      },
+      {
+        "name": "MNL",
+        "description": "Multinomial logit benchmark technique for transport mode choice"
+      },
+      {
+        "name": "Random Forests (RF)",
+        "description": "Benchmark technique for transport mode choice"
+      },
+      {
+        "name": "SVM",
+        "description": "Support vector machine benchmark technique for transport mode choice"
+      },
+      {
+        "name": "Extreme Gradient Boosting (XGBoost)",
+        "description": "Benchmark technique for transport mode choice"
+      },
+      {
+        "name": "Neural Network (NN)",
+        "description": "Benchmark technique for transport mode choice"
+      },
+      {
+        "name": "Gradient descent",
+        "description": "Optimisation method assessed for the proposed Nystr\u00f6m KLR model"
+      },
+      {
+        "name": "Momentum",
+        "description": "Optimisation method assessed for the proposed Nystr\u00f6m KLR model"
+      },
+      {
+        "name": "Adam",
+        "description": "Optimisation method assessed for the proposed Nystr\u00f6m KLR model"
+      },
+      {
+        "name": "L-BFGS-B",
+        "description": "Optimisation method assessed for the proposed Nystr\u00f6m KLR model"
+      },
+      {
+        "name": "Nystr\u00a8 om method",
+        "description": "Strategy for approximating the kernel matrix of KLR"
+      },
+      {
+        "name": "Nystr\u00a8 on-KLR",
+        "description": "Kernel logistic regression model formulated with optimisation algorithms using Nystr\u00f6m approximation"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

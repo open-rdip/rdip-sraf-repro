@@ -1,0 +1,348 @@
+{
+  "study_id": "study034",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study034/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:39:15.884168+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 25,
+    "datasets": 3,
+    "methods": 26,
+    "evaluation_results": 20
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "Matterport3D fine-tuning iterations (2D)",
+        "value": "120k"
+      },
+      {
+        "name": "input size",
+        "value": "320\u00d7240"
+      },
+      {
+        "name": "\u03bbgeometry",
+        "value": "5.0"
+      },
+      {
+        "name": "\u03bbseg",
+        "value": "25.0"
+      },
+      {
+        "name": "\u03bboccupancy",
+        "value": "50 .0, 25.0, 10.0 for level 643, 1283, 2563"
+      },
+      {
+        "name": "training iterations",
+        "value": "110k"
+      },
+      {
+        "name": "batch size",
+        "value": "8"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "10\u22124"
+      },
+      {
+        "name": "learning rate decay factor",
+        "value": "10"
+      },
+      {
+        "name": "learning rate decay iteration",
+        "value": "80k"
+      },
+      {
+        "name": "Matterport3D training iterations (network)",
+        "value": "100k"
+      },
+      {
+        "name": "Matterport3D learning rate",
+        "value": "10\u22124"
+      },
+      {
+        "name": "Matterport3D learning rate decay iteration",
+        "value": "80k"
+      },
+      {
+        "name": "depth threshold \u03bb",
+        "value": "{0.1, 0.25, 0.5}"
+      },
+      {
+        "name": "number of decoder layers",
+        "value": "9"
+      },
+      {
+        "name": "volumetric grid size",
+        "value": "256^3"
+      },
+      {
+        "name": "truncation \u03c4",
+        "value": "3"
+      },
+      {
+        "name": "\u03bbdepth",
+        "value": "2.0"
+      },
+      {
+        "name": "down-sample scale factor",
+        "value": "1/4"
+      },
+      {
+        "name": "polynomial learning rate scheduler power",
+        "value": "0.9"
+      },
+      {
+        "name": "training iterations (Front-3D)",
+        "value": "160k"
+      },
+      {
+        "name": "original image size",
+        "value": "320\u00d7240"
+      },
+      {
+        "name": "random scale range",
+        "value": "0.5 to 2.0"
+      },
+      {
+        "name": "crop size",
+        "value": "240\u00d7240"
+      },
+      {
+        "name": "fine-tuning iterations (Matterport3D)",
+        "value": "120k"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "3D-Front",
+        "version": null
+      },
+      {
+        "name": "Matterport3D",
+        "version": null
+      },
+      {
+        "name": "Front-3D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Uni-3D",
+        "description": "Proposed system with single- or multi-scale feature lifting able to accurately generate instance geometry and scene layouts."
+      },
+      {
+        "name": "Pano-Re",
+        "description": "Baseline framework able to accurately generate instance geometry and scene layouts."
+      },
+      {
+        "name": "Mesh R-CNN",
+        "description": "Baseline method that tends to generate noisy reconstructed shapes."
+      },
+      {
+        "name": "Total3D",
+        "description": "Baseline method that predicts shape-based instance category priors, resulting in inconsistency between shapes and 2D observations."
+      },
+      {
+        "name": "ResNet-18",
+        "description": "Backbone feature extractor"
+      },
+      {
+        "name": "depth-aware panoptic segmentation framework",
+        "description": "2D network substituting Pano-Re's 2D network"
+      },
+      {
+        "name": "Multi-scale Feature Lifting",
+        "description": "Back-projection of multi-scale 2D features and fusing them into U-Net encoders to leverage richer semantics"
+      },
+      {
+        "name": "U-Net encoders",
+        "description": "Encoders used to fuse back-projected multi-scale 2D features"
+      },
+      {
+        "name": "semantic segmentation",
+        "description": "Used in 3D to solve segmentation tasks."
+      },
+      {
+        "name": "back-projection",
+        "description": "A technique relying on depth accuracy to project 2D information into 3D."
+      },
+      {
+        "name": "3D panoptic reconstruction network",
+        "description": "Loads and freezes weights of the 2D network, trained with voxel-based representations evaluated via PRQ metric."
+      },
+      {
+        "name": "marching cubes algorithm",
+        "description": "Extracts the isosurface from the predicted TDF as meshes and assigns each vertex a color."
+      },
+      {
+        "name": "Dual decoders",
+        "description": "Dual decoders for panoptic segmentation and depth estimation using masked cross-attention, cross-decoder query association, and self-attention layers."
+      },
+      {
+        "name": "Cross-decoder query association",
+        "description": "Layer enabling communication between segment and depth queries belonging to the same segment."
+      },
+      {
+        "name": "3D generative U-Net",
+        "description": "Generative U-Net used for 3D scene reconstruction processing features encoded in a volumetric grid."
+      },
+      {
+        "name": "AdamW optimizer",
+        "description": "Used to optimize the 2D network"
+      },
+      {
+        "name": "Nearest neighbor interpolation",
+        "description": "Down-samples the ground truth to 1/4 of original image size to match predicted depth maps"
+      },
+      {
+        "name": "Polynomial-based learning rate scheduler",
+        "description": "Multiplies base learning rate by (1\u2212i/N)^0.9"
+      },
+      {
+        "name": "Data augmentation",
+        "description": "Random scaling from 0.5 to 2.0 of original size (320x240), fixed-size crop to 240x240, and color augmentations"
+      },
+      {
+        "name": "depth DF embedding",
+        "description": "Regarding the depth as a distance field embedding incorporated into the 3D network"
+      },
+      {
+        "name": "learned 2D queries",
+        "description": "Learned 2D queries qS i affecting object instances in 3D"
+      },
+      {
+        "name": "2D features ablation",
+        "description": "Ablating the model by removing 2D features (mask feature PS(F4) and depth feature PD(F4)) or replacing learned 2D queries with randomly initialized learnable query embeddings"
+      },
+      {
+        "name": "2D segmentation masks as priors",
+        "description": "Using 2D semantic segmentation maps as priors (equivalent to instance propagation) back-projected to improve 3D results"
+      },
+      {
+        "name": "Transformer-based architecture",
+        "description": "Simultaneously addresses panoptic segmentation and depth estimation."
+      },
+      {
+        "name": "3D network for panoptic reconstruction",
+        "description": "Takes in back-projected multi-scale features and transforms them into 3D segments with query embeddings for reconstruction output."
+      },
+      {
+        "name": "Mask2Former",
+        "description": "Formulates panoptic segmentation as a mask classification task by partitioning an image into N regions represented by binary masks."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "RMSE",
+        "value": "lower than 5%of the mean depth (2.34)",
+        "split": null
+      },
+      {
+        "metric": "PRQ improvement over Pano-Re",
+        "value": "\u223c10 PRQ",
+        "split": null
+      },
+      {
+        "metric": "PRQ boost",
+        "value": "+2.9",
+        "split": null
+      },
+      {
+        "metric": "PRQ margin",
+        "value": "+6.48",
+        "split": null
+      },
+      {
+        "metric": "PRQ increase in thing classes",
+        "value": "+1.11",
+        "split": null
+      },
+      {
+        "metric": "PRQ increase in stuff classes",
+        "value": "+0.83",
+        "split": null
+      },
+      {
+        "metric": "PRQ drop on thing classes without 2D features (with 2D queries)",
+        "value": "1.68",
+        "split": null
+      },
+      {
+        "metric": "PRQ drop on thing classes without 2D features (without 2D queries)",
+        "value": "2.38",
+        "split": null
+      },
+      {
+        "metric": "PRQ drop on stuff classes without 2D features (with 2D queries)",
+        "value": "2.45",
+        "split": null
+      },
+      {
+        "metric": "PRQ drop on stuff classes without 2D features (without 2D queries)",
+        "value": "2.30",
+        "split": null
+      },
+      {
+        "metric": "PRQ gain for stuff classes with ground truth depth",
+        "value": "0.54",
+        "split": null
+      },
+      {
+        "metric": "stuff PRQ improvement (depth DF embedding)",
+        "value": "0.27",
+        "split": null
+      },
+      {
+        "metric": "stuff PRQ influence (depth feature)",
+        "value": "0.51",
+        "split": null
+      },
+      {
+        "metric": "things PRQ influence (depth feature)",
+        "value": "0.08",
+        "split": null
+      },
+      {
+        "metric": "stuff PRQ dip (without learned 2D queries, with 2D features)",
+        "value": "0.15",
+        "split": null
+      },
+      {
+        "metric": "thing classes PRQ drop (without learned 2D queries, with 2D features)",
+        "value": "0.96",
+        "split": null
+      },
+      {
+        "metric": "thing PRQ drop (without learned 2D queries, without 2D features)",
+        "value": "1.66",
+        "split": null
+      },
+      {
+        "metric": "increase in thing classes",
+        "value": "+1.11",
+        "split": null
+      },
+      {
+        "metric": "increase in stuff classes",
+        "value": "+0.83",
+        "split": null
+      },
+      {
+        "metric": "performance gain",
+        "value": "0.33 PRQ",
+        "split": null
+      }
+    ]
+  }
+}

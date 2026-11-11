@@ -1,0 +1,135 @@
+{
+  "study_id": "study041",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study041/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:48:46.688103+00:00",
+  "counts": {
+    "dependencies": 6,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 10,
+    "methods": 10,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Alacritty",
+        "version": "v0.15.0-dev"
+      },
+      {
+        "name": "fd",
+        "version": "v9.0.0"
+      },
+      {
+        "name": "grmtools",
+        "version": "v0.13.4"
+      },
+      {
+        "name": "Ripgrep",
+        "version": "v14.1.1"
+      },
+      {
+        "name": "som-rs-ast",
+        "version": "git #35b780"
+      },
+      {
+        "name": "som-rs-bc",
+        "version": "git #35b780"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "Binary Trees (Debian CLBG Rust #2)",
+        "version": null
+      },
+      {
+        "name": "Regex-Redux (Debian CLBG Rust #1)",
+        "version": null
+      },
+      {
+        "name": "Alacritty",
+        "version": "v0.15.0-dev"
+      },
+      {
+        "name": "fd",
+        "version": "v9.0.0"
+      },
+      {
+        "name": "grmtools",
+        "version": "v0.13.4"
+      },
+      {
+        "name": "Ripgrep",
+        "version": "v14.1.1"
+      },
+      {
+        "name": "som-rs-ast",
+        "version": "git #35b780"
+      },
+      {
+        "name": "som-rs-bc",
+        "version": "git #35b780"
+      },
+      {
+        "name": "Binary Trees",
+        "version": "Debian CLBG Rust#2"
+      },
+      {
+        "name": "Regex-Redux",
+        "version": "Debian CLBG Rust#1"
+      }
+    ],
+    "methods": [
+      {
+        "name": "Binary Trees",
+        "description": "Heap allocation microbenchmark (1 benchmark)"
+      },
+      {
+        "name": "Regex-Redux",
+        "description": "Regular expression matching (1 benchmark)"
+      },
+      {
+        "name": "Alacritty",
+        "description": "Terminal emulator (10 benchmarks)"
+      },
+      {
+        "name": "fd",
+        "description": "Unix find replacement (7 benchmarks)"
+      },
+      {
+        "name": "grmtools",
+        "description": "Lexer / parser library (4 benchmarks)"
+      },
+      {
+        "name": "Ripgrep",
+        "description": "Fast grep replacement (13 benchmarks)"
+      },
+      {
+        "name": "som-rs-ast",
+        "description": "SOM AST VM (26 benchmarks)"
+      },
+      {
+        "name": "som-rs-bc",
+        "description": "SOM bytecode VM (26 benchmarks)"
+      },
+      {
+        "name": "Benchmark suite construction",
+        "description": "Searched roughly the 100 most popular Rust libraries on crates.io for crates using reference-counted shared ownership (e.g. Rc<T>) as candidates, and altered them to use different memory allocation strategies (Alloy, Rc<T>, etc.)."
+      },
+      {
+        "name": "Experiment EGCvs",
+        "description": "Compares programs using existing shared ownership approaches against garbage collection in Rust (Alloy)."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

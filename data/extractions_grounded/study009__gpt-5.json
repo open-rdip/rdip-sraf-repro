@@ -1,0 +1,1177 @@
+{
+ "study_id": "study009",
+ "model": "gpt5",
+ "slug": "gpt-5",
+ "n_passages": 5,
+ "n_passages_ok": 5,
+ "failures": [],
+ "records": [
+  {
+   "field": "datasets",
+   "value": "COCO2017 val dataset",
+   "evidence": "COCO2017 val dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet",
+   "evidence": "HigherHRNet performs much better",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "HRNet",
+   "evidence": "57.1for HRNet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "57.1",
+   "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "61.0",
+   "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.5",
+   "evidence": "decreases to 66.5AP from 66.9AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.9",
+   "evidence": "from 66.9AP for adding only one de- convolution module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "1",
+   "evidence": "feature stride = 1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "one",
+   "evidence": "only use one deconvo- lution module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "COCO",
+   "evidence": "the COCO dataset.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "HRNet",
+   "evidence": "HRNet (Fig- ure 3 (a)) achieves",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet",
+   "evidence": "HigherHRNet gain breakdown.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "deconvolution module",
+   "evidence": "deconvolution module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.4AP",
+   "evidence": "achieves a baseline of 64.4AP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.0AP",
+   "evidence": "the model achieves 66.0AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "\u22120.8AP",
+   "evidence": "\u22120.8AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.6AP",
+   "evidence": "which is 1.6AP better",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "512",
+   "evidence": "512 67.1 61.5 76.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "640",
+   "evidence": "640 68.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "768",
+   "evidence": "768 68.5 64.9 73.8",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "4",
+   "evidence": "We add 4 residual blocks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "COCO2017 val dataset",
+   "evidence": "COCO2017 val dataset.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet",
+   "evidence": "HigherHRNet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "heatmap aggregation strategy",
+   "evidence": "heatmap aggrega- tion strategy achieves 66.9AP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "67.1",
+   "evidence": "our best model achieves 67.1AP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.3",
+   "evidence": "( 66.3AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.9",
+   "evidence": "achieves 66.9AP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "67.1",
+   "evidence": "512 67.1 61.5 76.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "61.5",
+   "evidence": "512 67.1 61.5 76.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "76.1",
+   "evidence": "512 67.1 61.5 76.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "68.5",
+   "evidence": "640 68.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.3",
+   "evidence": "640 68.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "75.3",
+   "evidence": "640 68.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "68.5",
+   "evidence": "768 68.5 64.9 73.8",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.9",
+   "evidence": "768 68.5 64.9 73.8",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "73.8",
+   "evidence": "768 68.5 64.9 73.8",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "68.5",
+   "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.3",
+   "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "75.3",
+   "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "69.2",
+   "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.9",
+   "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "75.9",
+   "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "69.9",
+   "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "65.4",
+   "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "76.4",
+   "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "640\u00d7640",
+   "evidence": "640\u00d7640",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "768\u00d7768",
+   "evidence": "768\u00d7768",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "HRNet-W32",
+   "evidence": "HRNet-W32",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "HRNet-W40",
+   "evidence": "HRNet-W40",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "HRNet-W48",
+   "evidence": "HRNet-W48",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "CrowdPose",
+   "evidence": "The CrowdPose [24] dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet",
+   "evidence": "HigherHRNet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.4",
+   "evidence": "gain of 1.4AP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "640\u00d7640",
+   "evidence": "crop size of 640\u00d7640",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "CrowdPose",
+   "evidence": "CrowdPose train and val set",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet-W48",
+   "evidence": "HigherHRNet-W48",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet",
+   "evidence": "Our HigherHRNet out- performs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "SPPE",
+   "evidence": "SPPE [24]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "top- down method [15]",
+   "evidence": "top- down method [15]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.6",
+   "evidence": "a large margin of 6.6 AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.6",
+   "evidence": "by a healthy margin of 1.6 AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "+1.8",
+   "evidence": "APM(+1.8 AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "+1.5",
+   "evidence": "APH (+1.5 AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.5",
+   "evidence": "by 0.5 in APH",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "gpt-5",
+   "passage_index": 4
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "datasets": {
+    "n": 5,
+    "has_evidence": 5,
+    "span_found": 5,
+    "value_in_span": 5,
+    "grounded": 5
+   },
+   "methods": {
+    "n": 12,
+    "has_evidence": 12,
+    "span_found": 12,
+    "value_in_span": 11,
+    "grounded": 11
+   },
+   "evaluation_results": {
+    "n": 35,
+    "has_evidence": 35,
+    "span_found": 35,
+    "value_in_span": 35,
+    "grounded": 35
+   },
+   "hyperparameters": {
+    "n": 12,
+    "has_evidence": 12,
+    "span_found": 12,
+    "value_in_span": 12,
+    "grounded": 12
+   }
+  },
+  "total": {
+   "n": 64,
+   "has_evidence": 64,
+   "span_found": 64,
+   "value_in_span": 63,
+   "grounded": 63
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COCO2017 val dataset",
+      "version": null,
+      "evidence": "COCO2017 val dataset"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HigherHRNet",
+      "evidence": "HigherHRNet performs much better"
+     },
+     {
+      "name": "HRNet",
+      "evidence": "57.1for HRNet"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "APM",
+      "value": "57.1",
+      "split": "medium",
+      "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet."
+     },
+     {
+      "metric": "APM",
+      "value": "61.0",
+      "split": "medium",
+      "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet."
+     },
+     {
+      "metric": "AP",
+      "value": "66.5",
+      "split": null,
+      "evidence": "decreases to 66.5AP from 66.9AP"
+     },
+     {
+      "metric": "AP",
+      "value": "66.9",
+      "split": null,
+      "evidence": "from 66.9AP for adding only one de- convolution module"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "feature stride",
+      "value": "1",
+      "evidence": "feature stride = 1"
+     },
+     {
+      "name": "number of deconvolution modules",
+      "value": "one",
+      "evidence": "only use one deconvo- lution module"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "COCO",
+      "version": null,
+      "evidence": "the COCO dataset."
+     }
+    ],
+    "methods": [
+     {
+      "name": "HRNet",
+      "evidence": "HRNet (Fig- ure 3 (a)) achieves"
+     },
+     {
+      "name": "HigherHRNet",
+      "evidence": "HigherHRNet gain breakdown."
+     },
+     {
+      "name": "deconvolution module",
+      "evidence": "deconvolution module"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP",
+      "value": "64.4AP",
+      "split": null,
+      "evidence": "achieves a baseline of 64.4AP."
+     },
+     {
+      "metric": "AP",
+      "value": "66.0AP",
+      "split": null,
+      "evidence": "the model achieves 66.0AP"
+     },
+     {
+      "metric": "AP",
+      "value": "\u22120.8AP",
+      "split": null,
+      "evidence": "\u22120.8AP"
+     },
+     {
+      "metric": "AP",
+      "value": "1.6AP",
+      "split": null,
+      "evidence": "which is 1.6AP better"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "training image size",
+      "value": "512",
+      "evidence": "512 67.1 61.5 76.1"
+     },
+     {
+      "name": "training image size",
+      "value": "640",
+      "evidence": "640 68.5 64.3 75.3"
+     },
+     {
+      "name": "training image size",
+      "value": "768",
+      "evidence": "768 68.5 64.9 73.8"
+     },
+     {
+      "name": "residual blocks",
+      "value": "4",
+      "evidence": "We add 4 residual blocks"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "COCO2017 val dataset",
+      "version": null,
+      "evidence": "COCO2017 val dataset."
+     }
+    ],
+    "methods": [
+     {
+      "name": "HigherHRNet",
+      "evidence": "HigherHRNet"
+     },
+     {
+      "name": "heatmap aggregation strategy",
+      "evidence": "heatmap aggrega- tion strategy achieves 66.9AP."
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP",
+      "value": "67.1",
+      "split": null,
+      "evidence": "our best model achieves 67.1AP."
+     },
+     {
+      "metric": "AP",
+      "value": "66.3",
+      "split": null,
+      "evidence": "( 66.3AP)"
+     },
+     {
+      "metric": "AP",
+      "value": "66.9",
+      "split": null,
+      "evidence": "achieves 66.9AP."
+     },
+     {
+      "metric": "AP",
+      "value": "67.1",
+      "split": null,
+      "evidence": "512 67.1 61.5 76.1"
+     },
+     {
+      "metric": "APM",
+      "value": "61.5",
+      "split": null,
+      "evidence": "512 67.1 61.5 76.1"
+     },
+     {
+      "metric": "APL",
+      "value": "76.1",
+      "split": null,
+      "evidence": "512 67.1 61.5 76.1"
+     },
+     {
+      "metric": "AP",
+      "value": "68.5",
+      "split": null,
+      "evidence": "640 68.5 64.3 75.3"
+     },
+     {
+      "metric": "APM",
+      "value": "64.3",
+      "split": null,
+      "evidence": "640 68.5 64.3 75.3"
+     },
+     {
+      "metric": "APL",
+      "value": "75.3",
+      "split": null,
+      "evidence": "640 68.5 64.3 75.3"
+     },
+     {
+      "metric": "AP",
+      "value": "68.5",
+      "split": null,
+      "evidence": "768 68.5 64.9 73.8"
+     },
+     {
+      "metric": "APM",
+      "value": "64.9",
+      "split": null,
+      "evidence": "768 68.5 64.9 73.8"
+     },
+     {
+      "metric": "APL",
+      "value": "73.8",
+      "split": null,
+      "evidence": "768 68.5 64.9 73.8"
+     },
+     {
+      "metric": "AP",
+      "value": "68.5",
+      "split": null,
+      "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3"
+     },
+     {
+      "metric": "APM",
+      "value": "64.3",
+      "split": null,
+      "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3"
+     },
+     {
+      "metric": "APL",
+      "value": "75.3",
+      "split": null,
+      "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3"
+     },
+     {
+      "metric": "AP",
+      "value": "69.2",
+      "split": null,
+      "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9"
+     },
+     {
+      "metric": "APM",
+      "value": "64.9",
+      "split": null,
+      "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9"
+     },
+     {
+      "metric": "APL",
+      "value": "75.9",
+      "split": null,
+      "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9"
+     },
+     {
+      "metric": "AP",
+      "value": "69.9",
+      "split": null,
+      "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4"
+     },
+     {
+      "metric": "APM",
+      "value": "65.4",
+      "split": null,
+      "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4"
+     },
+     {
+      "metric": "APL",
+      "value": "76.4",
+      "split": null,
+      "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "training_image_size",
+      "value": "640\u00d7640",
+      "evidence": "640\u00d7640"
+     },
+     {
+      "name": "training_image_size",
+      "value": "768\u00d7768",
+      "evidence": "768\u00d7768"
+     },
+     {
+      "name": "backbone",
+      "value": "HRNet-W32",
+      "evidence": "HRNet-W32"
+     },
+     {
+      "name": "backbone",
+      "value": "HRNet-W40",
+      "evidence": "HRNet-W40"
+     },
+     {
+      "name": "backbone",
+      "value": "HRNet-W48",
+      "evidence": "HRNet-W48"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "CrowdPose",
+      "version": null,
+      "evidence": "The CrowdPose [24] dataset"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HigherHRNet",
+      "evidence": "HigherHRNet"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP",
+      "value": "1.4",
+      "split": null,
+      "evidence": "gain of 1.4AP."
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "crop size",
+      "value": "640\u00d7640",
+      "evidence": "crop size of 640\u00d7640"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "CrowdPose",
+      "version": null,
+      "evidence": "CrowdPose train and val set"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HigherHRNet-W48",
+      "evidence": "HigherHRNet-W48"
+     },
+     {
+      "name": "HigherHRNet",
+      "evidence": "Our HigherHRNet out- performs"
+     },
+     {
+      "name": "SPPE",
+      "evidence": "SPPE [24]"
+     },
+     {
+      "name": "top- down method [15]",
+      "evidence": "top- down method [15]"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP",
+      "value": "6.6",
+      "split": null,
+      "evidence": "a large margin of 6.6 AP"
+     },
+     {
+      "metric": "AP",
+      "value": "1.6",
+      "split": null,
+      "evidence": "by a healthy margin of 1.6 AP"
+     },
+     {
+      "metric": "APM",
+      "value": "+1.8",
+      "split": null,
+      "evidence": "APM(+1.8 AP)"
+     },
+     {
+      "metric": "APH",
+      "value": "+1.5",
+      "split": null,
+      "evidence": "APH (+1.5 AP)"
+     },
+     {
+      "metric": "APH",
+      "value": "0.5",
+      "split": null,
+      "evidence": "by 0.5 in APH"
+     }
+    ]
+   }
+  }
+ ]
+}

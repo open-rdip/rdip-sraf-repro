@@ -1,0 +1,138 @@
+{
+  "study_id": "study031",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study031/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:34:55.176578+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 5,
+    "methods": 10,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "TensorFlow",
+        "version": "2"
+      },
+      {
+        "name": "Scikit-learn",
+        "version": null
+      },
+      {
+        "name": "Label Studio",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "aspect ratio (overall experiment)",
+        "value": "1:2"
+      },
+      {
+        "name": "image resize constraint",
+        "value": "multiples of 32"
+      },
+      {
+        "name": "train split ratio",
+        "value": "70%"
+      },
+      {
+        "name": "validation split ratio",
+        "value": "10%"
+      },
+      {
+        "name": "test split ratio",
+        "value": "20%"
+      },
+      {
+        "name": "horizontal and vertical flip probability",
+        "value": "30%"
+      },
+      {
+        "name": "random brightness, contrast, and saturation adjustment probability",
+        "value": "10%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "phytoplankton anomaly dataset",
+        "version": null
+      },
+      {
+        "name": "dataset published in [48]",
+        "version": null
+      },
+      {
+        "name": "unpublished 2021 Ut\u00f6 data",
+        "version": null
+      },
+      {
+        "name": "Derived dataset for object detection based experiment",
+        "version": null
+      },
+      {
+        "name": "Ut\u00f6 data collected between February\u2013August 2021",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Autoencoders",
+        "description": "Used towards phytoplankton parasite detection"
+      },
+      {
+        "name": "ConvM2-VQVAE1",
+        "description": "Autoencoder model used in the anomaly detection framework"
+      },
+      {
+        "name": "HardNet1",
+        "description": "Feature extractor used in combination with the autoencoder model"
+      },
+      {
+        "name": "Local Outlier Factor",
+        "description": "one-class classifier"
+      },
+      {
+        "name": "Supervised object detection",
+        "description": "The model is trained in a supervised manner on training and validation sets containing anomalies and tested on a balanced set of anomalies and clean images."
+      },
+      {
+        "name": "Data augmentation",
+        "description": "Applied horizontal and vertical flip with 30% probability, and random brightness, contrast, and saturation adjustment with 10% probability."
+      },
+      {
+        "name": "Sample resizing",
+        "description": "Samples were resized as multiples of 32 with respect to the major aspect ratio of each class (1:4, 1:1, 1:2), choosing 1:2 across all classes."
+      },
+      {
+        "name": "autoencoder based experiments",
+        "description": "Autoencoder based experiments mentioned for experiments and results."
+      },
+      {
+        "name": "object detection based experiments",
+        "description": "Object detection based experiments mentioned for experiments and results."
+      },
+      {
+        "name": "Manual expert annotation",
+        "description": "Putative parasite infection images were manually annotated by experts using phytoplankton data from nine classes collected between February\u2013August 2021."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "F1 score",
+        "value": "0.75",
+        "split": null
+      }
+    ]
+  }
+}

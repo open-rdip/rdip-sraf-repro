@@ -1,0 +1,163 @@
+{
+  "study_id": "study089",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study089/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:32:59.350781+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 3,
+    "methods": 24,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of input frames",
+        "value": "8"
+      },
+      {
+        "name": "failure threshold",
+        "value": "10%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CASME II",
+        "version": null
+      },
+      {
+        "name": "SAMM",
+        "version": null
+      },
+      {
+        "name": "SMIC",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "fully-connected convolution (FCC)",
+        "description": "one of two main operations in the F5C block"
+      },
+      {
+        "name": "channel correspondence convolution (CCC)",
+        "description": "one of two main operations in the F5C block"
+      },
+      {
+        "name": "MOL",
+        "description": "proposed method evaluated with auxiliary tasks, F5C block, and feature fusion strategy"
+      },
+      {
+        "name": "MOL w/o F5C",
+        "description": "MOL variant without F5C block"
+      },
+      {
+        "name": "MOL w/o CCC",
+        "description": "MOL variant without channel correspondence convolution"
+      },
+      {
+        "name": "MOL w/o FCC",
+        "description": "MOL variant without fully-connected convolution"
+      },
+      {
+        "name": "MOL w/o OFE",
+        "description": "MOL variant removing the optical flow estimation module"
+      },
+      {
+        "name": "MOL w/o FLD",
+        "description": "MOL variant removing the facial landmark detection module"
+      },
+      {
+        "name": "MOL w/o OFE&FLD",
+        "description": "MOL variant removing both optical flow estimation and facial landmark detection modules"
+      },
+      {
+        "name": "Optical Flow Estimation (OFE)",
+        "description": "Auxiliary task in MOL for learning facial subtle motions."
+      },
+      {
+        "name": "Facial Landmark Detection (FLD)",
+        "description": "Auxiliary task in MOL for learning facial subtle motions."
+      },
+      {
+        "name": "F5C Block",
+        "description": "A block in MOL composed of transformer-style FCC and graph-style CCC components."
+      },
+      {
+        "name": "FCC",
+        "description": "Transformer-style component in F5C block that maintains global receptive field."
+      },
+      {
+        "name": "CCC",
+        "description": "Graph-style component in F5C block."
+      },
+      {
+        "name": "UnsupFlownet",
+        "description": "Optical flow estimation method used for comparison"
+      },
+      {
+        "name": "RAFT",
+        "description": "Optical flow estimation method used for comparison"
+      },
+      {
+        "name": "MOL w/o MER&FLD",
+        "description": "MOL ablation variant without MER and FLD"
+      },
+      {
+        "name": "MOL w/o MER",
+        "description": "MOL ablation variant without MER"
+      },
+      {
+        "name": "concatenation",
+        "description": "Feature fusion strategy used to preserve sub-action clips"
+      },
+      {
+        "name": "element-wise addition",
+        "description": "Feature fusion strategy of frame features"
+      },
+      {
+        "name": "element-wise subtraction",
+        "description": "Feature fusion strategy of frame features"
+      },
+      {
+        "name": "MOL w/o MER&OFE",
+        "description": "Baseline method which only achieves the facial landmark detection task without the MER and optical flow estimation modules"
+      },
+      {
+        "name": "TCDCN",
+        "description": "Popular facial landmark detection method used for comparison"
+      },
+      {
+        "name": "HRNetV2",
+        "description": "Popular facial landmark detection method used for comparison"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Acc",
+        "value": "62.90",
+        "split": null
+      },
+      {
+        "metric": "WF1",
+        "value": "62.52",
+        "split": null
+      },
+      {
+        "metric": "Average EPE",
+        "value": "1.048",
+        "split": null
+      }
+    ]
+  }
+}

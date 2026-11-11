@@ -1,0 +1,99 @@
+{
+  "study_id": "study038",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study038/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:44:01.009409+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 5,
+    "methods": 11,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "random subsamples (n)",
+        "value": "100"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "single-cell gene expression dataset consisting of 7,217 IFN- \u03b2stimulated and 6,359 control peripheral blood",
+        "version": null
+      },
+      {
+        "name": "Morpho-MNIST",
+        "version": null
+      },
+      {
+        "name": "MNIST",
+        "version": null
+      },
+      {
+        "name": "CelebA",
+        "version": null
+      },
+      {
+        "name": "peripheral blood mononuclear cells (PBMCs)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "trV AE",
+        "description": "A model incorporating MMD regularization that forces representations to be similar across conditions"
+      },
+      {
+        "name": "trVAE",
+        "description": "Predicts mean and variance for high-dimensional gene expression across multiple conditions and cell types"
+      },
+      {
+        "name": "CVAE",
+        "description": "Conditional variational autoencoder with MMD regularization on the bottleneck layer"
+      },
+      {
+        "name": "UMAP",
+        "description": "Visualization of conditions and cell type for gut cells"
+      },
+      {
+        "name": "VFAE",
+        "description": "Variational Fair Autoencoder baseline"
+      },
+      {
+        "name": "MMD-regularized autoencoder",
+        "description": "Autoencoder regularized with Maximum Mean Discrepancy"
+      },
+      {
+        "name": "CycleGAN",
+        "description": "Generative adversarial network for image-to-image translation"
+      },
+      {
+        "name": "scGen",
+        "description": "a V AE combined with vector arithmetics"
+      },
+      {
+        "name": "scVI",
+        "description": "a CV AE with a negative binomial output distribution"
+      },
+      {
+        "name": "vanilla CVAE",
+        "description": "Conditional variational autoencoder yielding representations in the first layer following the bottleneck that vary strongly across categorical conditions"
+      },
+      {
+        "name": "MMD regularization",
+        "description": "Regularization applied to the representations in the first layer following the bottleneck to force them to be similar across categorical conditions"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "study_id": "study040",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study040/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:48:35.541899+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 5,
+    "datasets": 4,
+    "methods": 12,
+    "evaluation_results": 26
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      2021
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "L",
+        "value": "{3,4,5}"
+      },
+      {
+        "name": "D",
+        "value": "{128,256}"
+      },
+      {
+        "name": "F",
+        "value": "2D"
+      },
+      {
+        "name": "default maximum epochs (Electricity and Traffic, ablation experiments)",
+        "value": "20"
+      },
+      {
+        "name": "default maximum epochs (original setting, Electricity and Traffic)",
+        "value": "100"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ILI",
+        "version": null
+      },
+      {
+        "name": "Electricity",
+        "version": null
+      },
+      {
+        "name": "Traffic",
+        "version": null
+      },
+      {
+        "name": "Weather",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Hyper-parameter grid search over model layers and dimension",
+        "description": "Examines 6 combinations of L={3,4,5} and model dimension D={128,256}, with the feed-forward inner-layer dimension F=2D; MSE scores of these combinations are compared across datasets (Figure 5)."
+      },
+      {
+        "name": "PatchTST/42",
+        "description": "Supervised PatchTST model with look-back window Lin, used for multivariate long-term forecasting"
+      },
+      {
+        "name": "Original (TST)",
+        "description": "Original time series Transformer model (Zerveas et al., 2021) with neither patching nor channel-independence"
+      },
+      {
+        "name": "Patching with channel-independence",
+        "description": "Ablation configuration combining patching and channel-independence, which achieves the best results, especially on larger datasets (Weather, Traffic, Electricity)"
+      },
+      {
+        "name": "Channel-independent model (no patching)",
+        "description": "Ablation variant with channel-independence but without patching"
+      },
+      {
+        "name": "Instance normalization",
+        "description": "Normalization technique used in many time series models to improve forecasting performance"
+      },
+      {
+        "name": "PatchTST",
+        "description": "Supervised PatchTST model for multivariate long-term forecasting, evaluated with instance normalization (+in) and without instance normalization (-in)"
+      },
+      {
+        "name": "Transfer learning",
+        "description": "Pre-training PatchTST on the Electricity dataset and then transferring to 6 other datasets (fine-tuning)"
+      },
+      {
+        "name": "Robustness analysis with different random seeds",
+        "description": "Training the supervised PatchTST model with different random seeds to examine the robustness of results, compared against the fixed seed 2021 used in the main results"
+      },
+      {
+        "name": "PatchTST/64",
+        "description": "PatchTST variant with input length 64, trained with and without instance normalization in an ablation study"
+      },
+      {
+        "name": "Self-supervised PatchTST",
+        "description": "Self-supervised representation learning version of PatchTST evaluated on multivariate forecasting (full benchmark in Table 12, extended version of Table 4)"
+      },
+      {
+        "name": "Patching and channel independence",
+        "description": "Design components of PatchTST identified as the main source of improvement"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "MSE (Weather, horizon 96, column 1 under PatchTST: P+CI)",
+        "value": "0.152",
+        "split": null
+      },
+      {
+        "metric": "MAE (Weather, horizon 96, column 1 under PatchTST: P+CI)",
+        "value": "0.199",
+        "split": null
+      },
+      {
+        "metric": "MSE (Weather, horizon 96, column 2 under PatchTST: CI)",
+        "value": "0.164",
+        "split": null
+      },
+      {
+        "metric": "MAE (Weather, horizon 96, column 2 under PatchTST: CI)",
+        "value": "0.213",
+        "split": null
+      },
+      {
+        "metric": "MSE (Weather, horizon 96, column 3 under PatchTST: P)",
+        "value": "0.168",
+        "split": null
+      },
+      {
+        "metric": "MAE (Weather, horizon 96, column 3 under PatchTST: P)",
+        "value": "0.223",
+        "split": null
+      },
+      {
+        "metric": "MSE (Weather, horizon 96, FEDformer column 4)",
+        "value": "0.177",
+        "split": null
+      },
+      {
+        "metric": "MAE (Weather, horizon 96, FEDformer column 4)",
+        "value": "0.236",
+        "split": null
+      },
+      {
+        "metric": "MSE (Weather, horizon 96, column 5 Original)",
+        "value": "0.238",
+        "split": null
+      },
+      {
+        "metric": "MAE (Weather, horizon 96, column 5 Original)",
+        "value": "0.314",
+        "split": null
+      },
+      {
+        "metric": "MSE (Weather, horizon 192, column 1)",
+        "value": "0.197",
+        "split": null
+      },
+      {
+        "metric": "MAE (Weather, horizon 192, column 1)",
+        "value": "0.243",
+        "split": null
+      },
+      {
+        "metric": "MSE (Weather, horizon 192, column 2)",
+        "value": "0.205",
+        "split": null
+      },
+      {
+        "metric": "MAE (Weather, horizon 192, column 2)",
+        "value": "0.250",
+        "split": null
+      },
+      {
+        "metric": "MSE (Weather, horizon 192, column 3)",
+        "value": "0.213",
+        "split": null
+      },
+      {
+        "metric": "MAE (Weather, horizon 192, column 3)",
+        "value": "0.262",
+        "split": null
+      },
+      {
+        "metric": "MSE (Weather, horizon 192, column 4)",
+        "value": "0.221",
+        "split": null
+      },
+      {
+        "metric": "MAE (Weather, horizon 192, column 4)",
+        "value": "0.270",
+        "split": null
+      },
+      {
+        "metric": "MSE (Weather, horizon 192, column 5)",
+        "value": "0.275",
+        "split": null
+      },
+      {
+        "metric": "MAE (Weather, horizon 192, column 5)",
+        "value": "0.329",
+        "split": null
+      },
+      {
+        "metric": "MSE (Weather, horizon 336, column 1)",
+        "value": "0.249",
+        "split": null
+      },
+      {
+        "metric": "MAE (Weather, horizon 336, column 1)",
+        "value": "0.283",
+        "split": null
+      },
+      {
+        "metric": "MSE (Weather, horizon 336, column 2)",
+        "value": "0.255",
+        "split": null
+      },
+      {
+        "metric": "MAE (Weather, horizon 336, column 2)",
+        "value": "0.289",
+        "split": null
+      },
+      {
+        "metric": "MSE (Weather, horizon 336, column 3)",
+        "value": "0.266",
+        "split": null
+      },
+      {
+        "metric": "MAE (Weather, horizon 336, column 3)",
+        "value": "0.300",
+        "split": null
+      }
+    ]
+  }
+}

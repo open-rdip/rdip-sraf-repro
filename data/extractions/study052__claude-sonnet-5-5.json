@@ -1,0 +1,162 @@
+{
+  "study_id": "study052",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study052/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:52:30.658205+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 3,
+    "methods": 16,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "XGBoost",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "robust training parameter \u03f5 (MNIST)",
+        "value": "0.3"
+      },
+      {
+        "name": "number of test examples attacked per dataset",
+        "value": "100 (or the whole test set)"
+      },
+      {
+        "name": "attack success rate target",
+        "value": "100%"
+      },
+      {
+        "name": "number of trees (robust GBDT, MNIST, accuracy loss noted)",
+        "value": "20"
+      },
+      {
+        "name": "number of trees",
+        "value": "same as Kantchelian et al. (2016)"
+      },
+      {
+        "name": "depth",
+        "value": "same as Kantchelian et al. (2016)"
+      },
+      {
+        "name": "step size shrinkage",
+        "value": "same as Kantchelian et al. (2016)"
+      },
+      {
+        "name": "number of test examples (MNIST 2 vs. 6)",
+        "value": "100"
+      },
+      {
+        "name": "number of examples for robustness evaluation (small datasets)",
+        "value": "100"
+      },
+      {
+        "name": "number of examples for robustness evaluation (large or medium datasets)",
+        "value": "5000"
+      },
+      {
+        "name": "number of examples for robustness evaluation (MNIST 2 vs. 6)",
+        "value": "100"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "MNIST",
+        "version": null
+      },
+      {
+        "name": "Fashion-MNIST",
+        "version": null
+      },
+      {
+        "name": "MNIST 2 vs. 6",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Cheng's \u2113\u221e attack",
+        "description": "Attack used to measure the distortion needed to fool a model"
+      },
+      {
+        "name": "Robust training",
+        "description": "Training with robust training parameter \u03f5=0.3 for MNIST; greatly increases the distortion needed to fool a model with less than 1% accuracy loss"
+      },
+      {
+        "name": "Random forest models",
+        "description": "Framework also tested on random forest models; results reported in Section G of the appendix"
+      },
+      {
+        "name": "Robust Information Gain Decision Trees",
+        "description": "Robust information gain based decision trees trained using Algorithm 1, compared against classical natural decision trees"
+      },
+      {
+        "name": "Untargeted adversarial attacks",
+        "description": "Only correctly classified images are attacked; attacks proceed until 100% attack success rate and robustness is measured by the distortion of the adversarial examples"
+      },
+      {
+        "name": "Papernot's attack",
+        "description": "Attack used to evaluate average \u2113\u221e distortion of adversarial examples"
+      },
+      {
+        "name": "Cheng's attack (\u2113\u221e version)",
+        "description": "Attack used to evaluate average \u2113\u221e distortion of adversarial examples"
+      },
+      {
+        "name": "Kantchelian's attack (\u2113\u221e, \u21131 and \u21132 versions)",
+        "description": "\u2113\u221e version used in Table 2; \u21131 and \u21132 distortions reported in Table 4 in the appendix"
+      },
+      {
+        "name": "Robust GBDT",
+        "description": "Gradient boosted decision tree model with robust training embedded in each tree's building process, creating robust trees from the very first boosting step."
+      },
+      {
+        "name": "Adversarial training (Kantchelian et al., 2016)",
+        "description": "Adds adversarial examples with respect to the current model at each boosting round, so adversarial examples from later rounds are learned only by part of the model."
+      },
+      {
+        "name": "Models with k trees",
+        "description": "Models with k trees are the first k trees from a single boosting run of K (K\u2265k) trees."
+      },
+      {
+        "name": "Kantchelian's \u2113\u221e attack",
+        "description": "MILP-based attack that finds the minimum adversarial example in \u2113\u221e norm; only handles binary classification and small-scale models."
+      },
+      {
+        "name": "Kantchelian's \u21131 and \u21132 attacks",
+        "description": "Attacks whose \u21131 and \u21132 distortions are reported in Table 5 in the appendix."
+      },
+      {
+        "name": "Natural GBDT",
+        "description": "Standard gradient boosted decision tree models used as the baseline."
+      },
+      {
+        "name": "Algorithm 2 (robust GBDT)",
+        "description": "Robust decision tree ensemble implemented by modifying the node splitting procedure in XGBoost; the modification only affects computation of scores for selecting the best split and is compatible with other XGBoost features."
+      },
+      {
+        "name": "Natural (undefended) GBDT",
+        "description": "Standard GBDT models trained with XGBoost as undefended baselines."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy loss with robust training",
+        "value": "less than 1%",
+        "split": null
+      }
+    ]
+  }
+}

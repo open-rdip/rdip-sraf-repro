@@ -1,0 +1,370 @@
+{
+  "study_id": "study009",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study009/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:34:25.428444+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 3,
+    "methods": 16,
+    "evaluation_results": 46
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "feature stride (larger resolution feature maps)",
+        "value": "1"
+      },
+      {
+        "name": "number of deconvolution modules (COCO default)",
+        "value": "1"
+      },
+      {
+        "name": "training image size (Table 5 ablation)",
+        "value": "512, 640, 768"
+      },
+      {
+        "name": "extra residual blocks in deconvolution module",
+        "value": "4"
+      },
+      {
+        "name": "backbone (Table 6 ablation)",
+        "value": "HRNet-W32, HRNet-W40, HRNet-W48"
+      },
+      {
+        "name": "training image size",
+        "value": "640\u00d7640"
+      },
+      {
+        "name": "backbone",
+        "value": "HRNet-W32 (1/4 resolution feature map has 32 channels)"
+      },
+      {
+        "name": "crop size (training and testing)",
+        "value": "640\u00d7640"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO2017",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "CrowdPose",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "HigherHRNet",
+        "description": "Bottom-up pose estimation model that makes predictions on higher-resolution heatmaps and also uses smaller-resolution heatmaps, which makes the prediction scale-aware"
+      },
+      {
+        "name": "MSR (multi-resolution supervision)",
+        "description": "Component ablated in Table 4"
+      },
+      {
+        "name": "Feature concatenation",
+        "description": "Component ablated in Table 4"
+      },
+      {
+        "name": "Residual blocks",
+        "description": "Component ablated in Table 4"
+      },
+      {
+        "name": "Deconvolution module after HRNet",
+        "description": "One deconvolution module generates higher-resolution feature maps; a sequence of two generates feature maps at the input image resolution"
+      },
+      {
+        "name": "Deconvolution module",
+        "description": "Added to HRNet to generate higher resolution heatmaps; for fair comparison only the highest resolution feature maps are used to generate heatmaps for prediction (Figure 3 (b)). Number of cascaded deconvolution modules should depend on dataset; one used by default for COCO."
+      },
+      {
+        "name": "HRNet",
+        "description": "Baseline architecture (Figure 3 (a)) used in the ablation study."
+      },
+      {
+        "name": "Heatmap aggregation",
+        "description": "Inference strategy that aggregates heatmaps across resolutions; gain comes mainly from large persons, making prediction scale-aware"
+      },
+      {
+        "name": "Extra residual blocks",
+        "description": "4 residual blocks added in the deconvolution module to refine feature maps, improving AP for medium and large persons"
+      },
+      {
+        "name": "Highest-resolution heatmap inference only",
+        "description": "Method (c) in Figure 3, which uses only the highest resolution heatmaps for inference"
+      },
+      {
+        "name": "Training with larger image size",
+        "description": "Ablation of training input size (512, 640, 768) to test whether larger input improves performance"
+      },
+      {
+        "name": "Larger backbone",
+        "description": "HRNet-W40 and HRNet-W48 compared against HRNet-W32 as backbone; larger backbones consistently improve performance for both medium and large persons."
+      },
+      {
+        "name": "HigherHRNet-W48",
+        "description": "Best HigherHRNet model, trained on the CrowdPose train and val sets with training parameters following COCO exactly, and evaluated on the test set."
+      },
+      {
+        "name": "Na\u00efve top-down methods",
+        "description": "Baseline methods that HigherHRNet outperforms by 6.6 AP."
+      },
+      {
+        "name": "SPPE [24]",
+        "description": "Previous best method, which performs a global refinement of a top-down method [15]."
+      },
+      {
+        "name": "Multi-scale test",
+        "description": "Test-time multi-scale evaluation; HigherHRNet without it still outperforms SPPE [24] by 0.5 in APH."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AP (HigherHRNet, ablation row with two checkmarks)",
+        "value": "66.3",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (HigherHRNet, ablation row with two checkmarks)",
+        "value": "60.8",
+        "split": "validation"
+      },
+      {
+        "metric": "APL (HigherHRNet, ablation row with two checkmarks)",
+        "value": "74.0",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (HigherHRNet, ablation row (d))",
+        "value": "66.9",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (HigherHRNet, ablation row (d))",
+        "value": "61.0",
+        "split": "validation"
+      },
+      {
+        "metric": "APL (HigherHRNet, ablation row (d))",
+        "value": "75.7",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (HigherHRNet, ablation row (e))",
+        "value": "67.1",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (HigherHRNet, ablation row (e))",
+        "value": "61.5",
+        "split": "validation"
+      },
+      {
+        "metric": "APL (HigherHRNet, ablation row (e))",
+        "value": "76.1",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (HRNet)",
+        "value": "57.1",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (HRNet with two deconvolution modules)",
+        "value": "66.5",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (HRNet with one deconvolution module)",
+        "value": "66.9",
+        "split": "validation"
+      },
+      {
+        "metric": "APM change (two vs one deconvolution module)",
+        "value": "+0.1",
+        "split": "validation"
+      },
+      {
+        "metric": "APL change (two vs one deconvolution module)",
+        "value": "-0.8",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (HRNet baseline)",
+        "value": "64.4",
+        "split": null
+      },
+      {
+        "metric": "AP (HRNet with one deconvolution module)",
+        "value": "66.0",
+        "split": null
+      },
+      {
+        "metric": "AP gain from adding one deconvolution module",
+        "value": "1.6",
+        "split": null
+      },
+      {
+        "metric": "AP change for large person (with more deconvolution/higher resolution)",
+        "value": "-0.8",
+        "split": null
+      },
+      {
+        "metric": "AP (training size 512)",
+        "value": "67.1",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (training size 512)",
+        "value": "61.5",
+        "split": "validation"
+      },
+      {
+        "metric": "APL (training size 512)",
+        "value": "76.1",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (training size 640)",
+        "value": "68.5",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (training size 640)",
+        "value": "64.3",
+        "split": "validation"
+      },
+      {
+        "metric": "APL (training size 640)",
+        "value": "75.3",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (training size 768)",
+        "value": "68.5",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (training size 768)",
+        "value": "64.9",
+        "split": "validation"
+      },
+      {
+        "metric": "APL (training size 768)",
+        "value": "73.8",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (HRNet-W32)",
+        "value": "68.5",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (HRNet-W32)",
+        "value": "64.3",
+        "split": "validation"
+      },
+      {
+        "metric": "APL (HRNet-W32)",
+        "value": "75.3",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (HRNet-W40)",
+        "value": "69.2",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (HRNet-W40)",
+        "value": "64.9",
+        "split": "validation"
+      },
+      {
+        "metric": "APL (HRNet-W40)",
+        "value": "75.9",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (HRNet-W48)",
+        "value": "69.9",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (HRNet-W48)",
+        "value": "65.4",
+        "split": "validation"
+      },
+      {
+        "metric": "APL (HRNet-W48)",
+        "value": "76.4",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (method (c), highest resolution heatmaps only)",
+        "value": "66.3",
+        "split": null
+      },
+      {
+        "metric": "AP (with heatmap aggregation)",
+        "value": "66.9",
+        "split": null
+      },
+      {
+        "metric": "AP gain for large person from heatmap aggregation (method (d) vs (e))",
+        "value": "+1.7",
+        "split": null
+      },
+      {
+        "metric": "AP (best model with 4 extra residual blocks)",
+        "value": "67.1",
+        "split": null
+      },
+      {
+        "metric": "AP gain (640\u00d7640 vs. smaller training size)",
+        "value": "1.4",
+        "split": null
+      },
+      {
+        "metric": "AP improvement over na\u00efve top-down methods",
+        "value": "6.6",
+        "split": "test"
+      },
+      {
+        "metric": "AP improvement over previous best method [24]",
+        "value": "1.6",
+        "split": "test"
+      },
+      {
+        "metric": "APM improvement over previous best method [24]",
+        "value": "1.8",
+        "split": "test"
+      },
+      {
+        "metric": "APH improvement over previous best method [24]",
+        "value": "1.5",
+        "split": "test"
+      },
+      {
+        "metric": "APH improvement over SPPE [24] without multi-scale test",
+        "value": "0.5",
+        "split": "test"
+      }
+    ]
+  }
+}

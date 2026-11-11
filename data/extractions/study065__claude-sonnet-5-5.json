@@ -1,0 +1,112 @@
+{
+  "study_id": "study065",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study065/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:57:26.177091+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 3,
+    "methods": 11,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "RoBERTa",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "topic boundary threshold",
+        "value": "sim_i < \u00b5_s \u2212 \u03c3_s (\u00b5_s and \u03c3_s are the mean and variance of the sequence of block similarities)"
+      },
+      {
+        "name": "block pooling operation",
+        "value": "block-wise max pooling"
+      },
+      {
+        "name": "similarity measure",
+        "value": "cosine similarity between adjacent blocks"
+      },
+      {
+        "name": "L (number of layers)",
+        "value": "12"
+      },
+      {
+        "name": "H (hidden layer size)",
+        "value": "768"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "AMI Meeting Corpus",
+        "version": null
+      },
+      {
+        "name": "SNLI",
+        "version": null
+      },
+      {
+        "name": "five large English-language corpora (RoBERTa pre-training data, over 160GB uncompressed text)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Modified TextTiling with BERT embeddings",
+        "description": "Unsupervised topic segmentation approach that modifies TextTiling (Hearst, 1997) by replacing the word-frequency-based similarity score with a similarity score based on BERT embeddings."
+      },
+      {
+        "name": "BERT utterance embedding",
+        "description": "Compute BERT embeddings for every utterance S_i of the meeting transcript."
+      },
+      {
+        "name": "Block-wise max pooling",
+        "description": "Divide the meeting corpus into blocks of utterances {S_i,...,S_k} and apply block-wise max pooling to extract an embedding R_i for each block."
+      },
+      {
+        "name": "Adjacent block cosine similarity",
+        "description": "Compute cosine similarity sim_i between adjacent blocks R_i and R_{i+1}, representing the semantic similarity between two blocks separated at utterance S_i."
+      },
+      {
+        "name": "Threshold-based topic boundary detection",
+        "description": "Derive topic boundaries as pairs of adjacent blocks whose similarity sim_i is lower than a threshold, giving topic changes T = {i in [0,M] | sim_i < \u00b5_s \u2212 \u03c3_s}."
+      },
+      {
+        "name": "Sentence-BERT",
+        "description": "Pre-trained model (Reimers and Gurevych, 2019) trained on the SNLI dataset; fixed size sentence embeddings are extracted using a mean over all the output vectors, similar to the method used for BERT."
+      },
+      {
+        "name": "Max pooling",
+        "description": "Max pooling operation applied repeatedly to an utterance to filter out words with limited semantic value (e.g., 'uh, I mean') and extract words with high semantic value; intended to make the extraction architecture robust to noisy speech data such as ASR mis-transcriptions, disfluencies and turn-taking."
+      },
+      {
+        "name": "Sequence labelling segmentation with supervised classifier",
+        "description": "Given a valid sentence embedding, a supervised classifier is trained to perform sequence labelling for segmentation, for example using TCNs (Zhang and Zhou, 2019)."
+      },
+      {
+        "name": "Topic segmentation model",
+        "description": "Model consisting of (i) a sentence representation model to extract semantic similarity between sentences and (ii) a segmentation scheme that uses semantic similarity variations over time to detect topic changes. Input is an ASR meeting transcript of M utterances; output is a binary label sequence indicating whether each utterance starts a new topic segment."
+      },
+      {
+        "name": "RoBERTa",
+        "description": "Pre-training configuration of BERT trained with the Masked Language Modelling objective on five large English-language corpora totaling over 160GB of uncompressed text; used to extract fixed features from the pre-trained model without additional fine-tuning to compute semantic similarity."
+      },
+      {
+        "name": "Fixed feature extraction from pre-trained model",
+        "description": "Extract a fixed-size vector via max pooling of the second to last layer of the pre-trained model without additional fine-tuning; a sentence of N words results in an N*H embedding vector."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

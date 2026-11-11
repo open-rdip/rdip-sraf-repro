@@ -1,0 +1,203 @@
+{
+  "study_id": "study039",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study039/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:45:17.137478+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 5,
+    "methods": 21,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.005"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.0001"
+      },
+      {
+        "name": "decay_strategy",
+        "value": "step decay or cosine decay with a warm-up"
+      },
+      {
+        "name": "number_of_sampled_video_frames",
+        "value": "follows original papers"
+      },
+      {
+        "name": "additional_frame_for_motion_prompt_alignment",
+        "value": "1"
+      },
+      {
+        "name": "lambda",
+        "value": "0"
+      },
+      {
+        "name": "regularization penalty \u03bb",
+        "value": "2.5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Kinetics-400",
+        "version": null
+      },
+      {
+        "name": "Kinetics-600",
+        "version": null
+      },
+      {
+        "name": "FineGym",
+        "version": null
+      },
+      {
+        "name": "HMDB-51",
+        "version": "split 1"
+      },
+      {
+        "name": "MPII Cooking 2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Fine-tuning pretrained models",
+        "description": "Fine-tune models pretrained on Kinetics-400 or Kinetics-600 as baseline."
+      },
+      {
+        "name": "Optimizer with momentum",
+        "description": "Use an optimizer configured with momentum 0.9."
+      },
+      {
+        "name": "Learning rate schedule",
+        "description": "Apply step decay or cosine decay with a warm-up for learning rate scheduling."
+      },
+      {
+        "name": "Additional frame for alignment",
+        "description": "Add one extra frame so motion prompts match the length of input video frames."
+      },
+      {
+        "name": "Regularization on motion prompts",
+        "description": "Apply a regularization term (lambda) to remove unnecessary motion details and smooth attention maps."
+      },
+      {
+        "name": "Learnable slope and shift",
+        "description": "Train learnable slope and shift parameters (a and b) analyzed over fine-tuning epochs."
+      },
+      {
+        "name": "Learnable slope and shift (a and b)",
+        "description": "Learns parameters a and b to control consideration of negative motions and transition smoothness in frame differencing maps; on FineGym learned values were a=11.04 and b=-0.59."
+      },
+      {
+        "name": "Motion prompts",
+        "description": "Fine-tuning TimeSformer with motion prompts to guide attention to motion signals."
+      },
+      {
+        "name": "Frame differencing maps",
+        "description": "Represents motion by differencing frames; a and b modulate inclusion of negative motions and transition steepness."
+      },
+      {
+        "name": "TimeSformer fine-tuning (pretrained on Kinetics-600)",
+        "description": "Uses a TimeSformer backbone pretrained on Kinetics-600 and fine-tuned on FineGym with motion prompts."
+      },
+      {
+        "name": "SlowFast (slow-only stream)",
+        "description": "Adding motion prompts into the slow-only stream for evaluation."
+      },
+      {
+        "name": "SlowFast (fast-only stream)",
+        "description": "Adding motion prompts into the fast-only stream; results in a steeper slope compared to slow-only."
+      },
+      {
+        "name": "SlowFast (slow and fast streams)",
+        "description": "Adding motion prompts into both slow and fast streams for evaluation."
+      },
+      {
+        "name": "TimeSformer backbone",
+        "description": "Used as a backbone; top performers' learned a and b visualized across datasets."
+      },
+      {
+        "name": "C2D backbone",
+        "description": "Used as a backbone in evaluations."
+      },
+      {
+        "name": "I3D backbone",
+        "description": "Used as a backbone in evaluations."
+      },
+      {
+        "name": "X3D backbone",
+        "description": "Used as a backbone in evaluations."
+      },
+      {
+        "name": "VMPs",
+        "description": "Method showing consistent improvements across recent action recognition backbones; benefits depend on the backbone\u2019s ability to handle motion."
+      },
+      {
+        "name": "attention variation regularization",
+        "description": "Regularization term that reduces noise in generated attention maps, producing smoother and cleaner maps that highlight motion regions, capture potential movements from the previous frame, and attend to background scenes affected by camera motions."
+      },
+      {
+        "name": "motion prompt layer",
+        "description": "A layer integrated into the TimeSformer backbone that leverages regularized attention to improve action recognition performance on HMDB-51."
+      },
+      {
+        "name": "Visual Motion Prompts (VMPs)",
+        "description": "Approach guided by two learnable parameters that highlights visual contents of interest while capturing short-term dynamics; shows consistent improvements across recent action recognition backbones."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance gain",
+        "value": "0.8%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 mean average precision",
+        "value": "3.9% improvement (SlowFast backbone) on MPII Cooking 2",
+        "split": null
+      },
+      {
+        "metric": "Top-1 accuracy",
+        "value": "0.8% increase (TimeSformer backbone) on FineGym",
+        "split": null
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "1.5%",
+        "split": "split 1"
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "1.2%",
+        "split": "split 2"
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "0.7%",
+        "split": "split 3"
+      },
+      {
+        "metric": "performance gain",
+        "value": "1.1%",
+        "split": "average"
+      }
+    ]
+  }
+}

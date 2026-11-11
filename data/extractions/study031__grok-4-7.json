@@ -1,0 +1,198 @@
+{
+  "study_id": "study031",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study031/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:41:20.150348+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 6,
+    "methods": 22,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "TensorFlow",
+        "version": "2"
+      },
+      {
+        "name": "Scikit-learn",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "resize_multiple",
+        "value": "32"
+      },
+      {
+        "name": "class_aspect_ratio_1_to_4",
+        "value": "five classes"
+      },
+      {
+        "name": "class_aspect_ratio_1_to_1",
+        "value": "three classes"
+      },
+      {
+        "name": "class_aspect_ratio_1_to_2",
+        "value": "one class"
+      },
+      {
+        "name": "all_classes_aspect_ratio",
+        "value": "1:2"
+      },
+      {
+        "name": "train_split_ratio",
+        "value": "70%"
+      },
+      {
+        "name": "validation_split_ratio",
+        "value": "10%"
+      },
+      {
+        "name": "test_split_ratio",
+        "value": "20%"
+      },
+      {
+        "name": "horizontal_and_vertical_flip_probability",
+        "value": "30%"
+      },
+      {
+        "name": "random_brightness_contrast_saturation_adjustment_probability",
+        "value": "10%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "phytoplankton anomaly dataset",
+        "version": null
+      },
+      {
+        "name": "dataset published in [48]",
+        "version": null
+      },
+      {
+        "name": "unpublished 2021 Ut\u00f6 data",
+        "version": null
+      },
+      {
+        "name": "Plankton anomaly dataset",
+        "version": null
+      },
+      {
+        "name": "annotated dataset",
+        "version": null
+      },
+      {
+        "name": "derived dataset for object detection based experiment",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Autoencoders",
+        "description": "Phytoplankton parasite detection using autoencoders"
+      },
+      {
+        "name": "Plankton vs Anomalies",
+        "description": "Experiment results with respect to individual plankton species, reported in supplementary material"
+      },
+      {
+        "name": "Plankton vs Anomalous Plankton",
+        "description": "Experiment results with respect to individual plankton species, reported in supplementary material"
+      },
+      {
+        "name": "Anomalies",
+        "description": "Experiment results with respect to individual plankton species, reported in supplementary material"
+      },
+      {
+        "name": "ROC curve",
+        "description": "Specificity is plotted on the x-axis and recall on the y-axis for each threshold step; each point of the ROC curve corresponds to one threshold setting."
+      },
+      {
+        "name": "Autoencoder-based approach",
+        "description": "Framework with five autoencoder types, six pairs of convolutional layers, six feature extractors and four classifiers; results split into the optimal combination of model, feature extractor and classifier trained on all datasets, and optimal results per plankton species."
+      },
+      {
+        "name": "Optimal model selection",
+        "description": "The optimal combination of autoencoder model, convolutional layers, feature extractor and one-class classifier was determined based on the maximal achieved F1 score, analyzing all model combinations over the experiment with all plankton species."
+      },
+      {
+        "name": "ConvM2-VQVAE1 with HardNet1",
+        "description": "Best anomaly detection results were achieved with the autoencoder ConvM2-VQVAE1 and HardNet1 as a feature extractor."
+      },
+      {
+        "name": "classifier",
+        "description": "Annotated images used to train the classifier; phytoplankton anomaly dataset derived from those images using OK samples from the dataset published in [48] and NOK samples from the unpublished 2021 Ut\u00f6 data"
+      },
+      {
+        "name": "Label Studio",
+        "description": "Free version of Label Studio used as the annotation tool; annotated dataset provided in both COCO and YOLO format"
+      },
+      {
+        "name": "ConvM2-VQVAE1",
+        "description": "autoencoder"
+      },
+      {
+        "name": "HardNet1",
+        "description": "feature extractor"
+      },
+      {
+        "name": "Local Outlier Factor",
+        "description": "one-class classifier"
+      },
+      {
+        "name": "sample resizing",
+        "description": "All samples were resized with respect to the major aspect ratio of each class (1:4 by five classes, 1:1 by three classes, and 1:2 by one class), using multiples of 32; aspect ratio 1:2 was used as a compromise for the experiment over all classes."
+      },
+      {
+        "name": "supervised object detection",
+        "description": "For the object detection experiment, the model is trained in a supervised manner."
+      },
+      {
+        "name": "data augmentation",
+        "description": "Horizontal and vertical flip with probability 30%, and random brightness, contrast, and saturation adjustment with probability 10%."
+      },
+      {
+        "name": "autoencoder comparison",
+        "description": "Results of the autoencoder and object detection experiments are compared by evaluating predictions against ground truth labels using true positive and true negative definitions."
+      },
+      {
+        "name": "Imaging FlowCytobot",
+        "description": "Natural Baltic Sea phytoplankton communities are continuously imaged with an Imaging FlowCytobot deployed at Ut\u00f6 Atmospheric and Marine Research Station (59\u00b046.84' N, 21\u00b022.13' E), connected to a flow-through system receiving water from a ~5 m deep inlet 250 m offshore; takes a 5 ml sample nearly every 20 minutes and triggers on chlorophyll a detection."
+      },
+      {
+        "name": "near real-time classification",
+        "description": "Phytoplankton data from the Ut\u00f6 IFCB can be classified near real-time into 50 different classes."
+      },
+      {
+        "name": "manual expert annotation",
+        "description": "Putative parasite infection images were manually annotated by experts using Ut\u00f6 data collected between February\u2013August 2021 from nine classes selected for importance during spring or summer blooms in the Baltic Sea."
+      },
+      {
+        "name": "autoencoder",
+        "description": "Autoencoder based experiments."
+      },
+      {
+        "name": "object detection",
+        "description": "Object detection based experiments."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "F1",
+        "value": "0.75",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "study_id": "study092",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study092/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:29:58.969865+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 1,
+    "methods": 9,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "YOLOv3",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "maximum tracklet length (N)",
+        "value": "varied"
+      },
+      {
+        "name": "N",
+        "value": "20"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Baseline: object detection + classic Re-ID",
+        "description": "Uses object detection to generate a search gallery and classic Re-ID to find the query in the gallery."
+      },
+      {
+        "name": "TrADe",
+        "description": "Applies a tracking algorithm to group successive bounding boxes of the same individual into tracklets, then uses an anomaly detection model to select the most normal image of each tracklet to form a cleaner gallery."
+      },
+      {
+        "name": "TrADe Re-ID",
+        "description": "A live person Re-Identification method that uses tracklets up to a maximum length N and includes an anomaly detection component to reduce gallery size; evaluated against baseline and Skip approaches."
+      },
+      {
+        "name": "Baseline (N=1)",
+        "description": "Limit case baseline where the maximum tracklet length N is set to one."
+      },
+      {
+        "name": "Skip",
+        "description": "A gallery size reduction approach that runs the YOLOv3 object detector once every N frames to match TrADe's gallery size and isolate the effect of TrADe's anomaly detection."
+      },
+      {
+        "name": "F*_1 optimal F1 configuration",
+        "description": "Selects the Re-ID threshold \u03b2 that maximizes F1 across all possible \u03b2; single FR and TVR values reported correspond to this optimal F1 threshold."
+      },
+      {
+        "name": "BoT",
+        "description": "For BoT, the FR (Finding Rate) starts decreasing when N is above 20."
+      },
+      {
+        "name": "classic Re-ID module",
+        "description": "Processing time appears to decrease drastically as the size of the tracklet N increases, due to smaller galleries; the time decreasing effect is less pronounced when N exceeds 20 because most images in the gallery can already fit in a single batch for GPU processing."
+      },
+      {
+        "name": "live Re-ID",
+        "description": "Uses raw videos as search galleries instead of manually cropped."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "FR (Finding Rate)",
+        "value": "Starts decreasing for BoT when N is above 20",
+        "split": null
+      },
+      {
+        "metric": "classic Re-ID processing time",
+        "value": "Decreases drastically as N increases; effect less pronounced when N exceeds 20",
+        "split": null
+      }
+    ]
+  }
+}

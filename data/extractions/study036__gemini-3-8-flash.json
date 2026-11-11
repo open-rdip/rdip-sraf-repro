@@ -1,0 +1,275 @@
+{
+  "study_id": "study036",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study036/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:42:46.113414+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 7,
+    "methods": 19,
+    "evaluation_results": 27
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "training/validation split",
+        "value": "80%/20%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "GPQA",
+        "version": null
+      },
+      {
+        "name": "GPQA Diamond",
+        "version": null
+      },
+      {
+        "name": "SQuAD",
+        "version": null
+      },
+      {
+        "name": "Natural Questions",
+        "version": null
+      },
+      {
+        "name": "extended set",
+        "version": null
+      },
+      {
+        "name": "main set",
+        "version": null
+      },
+      {
+        "name": "diamond set",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "closed-book",
+        "description": "where the model doesn't have runtime access to external information beyond the question, the prompt, and the model's own parameters"
+      },
+      {
+        "name": "open-book",
+        "description": "where we give a model access to an internet search tool and internet references returned by the searches"
+      },
+      {
+        "name": "Llama-2-70B-chat",
+        "description": "baseline foundation model"
+      },
+      {
+        "name": "GPT-3.5-turbo-16k",
+        "description": "baseline foundation model"
+      },
+      {
+        "name": "GPT-4",
+        "description": "baseline foundation model"
+      },
+      {
+        "name": "few-shot chain-of-thought prompting",
+        "description": "Prompting technique evaluated on GPT-4 across multiple domain subsets."
+      },
+      {
+        "name": "self-ask",
+        "description": "Structured framework for multi-hop Q&A for language models with access to internet search tools."
+      },
+      {
+        "name": "backoff strategy",
+        "description": "Strategy where the system backs off to use the few-shot CoT answer whenever the search model abstains from answering."
+      },
+      {
+        "name": "GPT-4\u2013based baseline",
+        "description": "Strongest baseline model evaluating the dataset"
+      },
+      {
+        "name": "Zero-Shot GPT-4",
+        "description": "Zero-shot baseline evaluation of GPT-4"
+      },
+      {
+        "name": "Few-Shot GPT-4",
+        "description": "Few-shot baseline evaluation of GPT-4"
+      },
+      {
+        "name": "Zero-Shot CoT GPT-4",
+        "description": "Zero-shot chain-of-thought baseline evaluation of GPT-4"
+      },
+      {
+        "name": "Few-Shot CoT GPT-4",
+        "description": "Few-shot chain-of-thought baseline evaluation of GPT-4"
+      },
+      {
+        "name": "GPT-4 with search",
+        "description": "GPT-4 baseline evaluation augmented with search"
+      },
+      {
+        "name": "T5 answer-only baseline",
+        "description": "Fine-tuning T5 models (-small and -base) for a span-identification task to select correct answer labels solely from answer options"
+      },
+      {
+        "name": "Continuous bag-of-words classifier with RoBERTa embeddings",
+        "description": "Single-layer continuous bag-of-words classifier trained on answer choices to test for lexical generalization"
+      },
+      {
+        "name": "scalable oversight experiments",
+        "description": "Experiments where a non-expert interacts with an unreliable model to try to achieve accuracy close to that of expert validators."
+      },
+      {
+        "name": "red teaming",
+        "description": "Using language models to help elicit undesirable or unsafe behaviors."
+      },
+      {
+        "name": "sandwiching experiments",
+        "description": "Testing non-experts on their ability to determine ground truth answers through interacting with a model."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "few-shot chain-of-thought accuracy",
+        "value": "between 38% and 40%",
+        "split": null
+      },
+      {
+        "metric": "biology accuracy",
+        "value": "58.1%",
+        "split": null
+      },
+      {
+        "metric": "physics accuracy",
+        "value": "37.0%",
+        "split": null
+      },
+      {
+        "metric": "chemistry accuracy",
+        "value": "31.8%",
+        "split": null
+      },
+      {
+        "metric": "accuracy (GPT-4 with search)",
+        "value": "39.4%",
+        "split": null
+      },
+      {
+        "metric": "abstention rate (GPT-4 with search)",
+        "value": "37.2%",
+        "split": null
+      },
+      {
+        "metric": "abstention rate (few-shot CoT GPT-4)",
+        "value": "4.0%",
+        "split": null
+      },
+      {
+        "metric": "estimated objectivity",
+        "value": "74%",
+        "split": null
+      },
+      {
+        "metric": "accuracy (non-experts)",
+        "value": "34%",
+        "split": null
+      },
+      {
+        "metric": "accuracy (GPT-4\u2013based baseline)",
+        "value": "39%",
+        "split": null
+      },
+      {
+        "metric": "Zero-Shot GPT-4 accuracy",
+        "value": "31.3",
+        "split": "full"
+      },
+      {
+        "metric": "Zero-Shot GPT-4 accuracy",
+        "value": "32.1",
+        "split": "main"
+      },
+      {
+        "metric": "Zero-Shot GPT-4 accuracy",
+        "value": "34.2",
+        "split": "diamond"
+      },
+      {
+        "metric": "Few-Shot GPT-4 accuracy",
+        "value": "38.1",
+        "split": "full"
+      },
+      {
+        "metric": "Few-Shot GPT-4 accuracy",
+        "value": "38.1",
+        "split": "main"
+      },
+      {
+        "metric": "Few-Shot GPT-4 accuracy",
+        "value": "39.3",
+        "split": "diamond"
+      },
+      {
+        "metric": "Zero-Shot CoT GPT-4 accuracy",
+        "value": "38.1",
+        "split": "full"
+      },
+      {
+        "metric": "Zero-Shot CoT GPT-4 accuracy",
+        "value": "39.5",
+        "split": "main"
+      },
+      {
+        "metric": "Zero-Shot CoT GPT-4 accuracy",
+        "value": "35.7",
+        "split": "diamond"
+      },
+      {
+        "metric": "Few-Shot CoT GPT-4 accuracy",
+        "value": "38.7",
+        "split": "full"
+      },
+      {
+        "metric": "Few-Shot CoT GPT-4 accuracy",
+        "value": "39.7",
+        "split": "main"
+      },
+      {
+        "metric": "Few-Shot CoT GPT-4 accuracy",
+        "value": "38.8",
+        "split": "diamond"
+      },
+      {
+        "metric": "GPT-4 with search accuracy",
+        "value": "28.2",
+        "split": "full"
+      },
+      {
+        "metric": "GPT-4 with search accuracy",
+        "value": "28.7",
+        "split": "main"
+      },
+      {
+        "metric": "GPT-4 with search accuracy",
+        "value": "27.6",
+        "split": "diamond"
+      },
+      {
+        "metric": "T5 accuracy",
+        "value": "<= 25%",
+        "split": "validation"
+      },
+      {
+        "metric": "average non-expert validator accuracy",
+        "value": "34.1%\u00b12.3%",
+        "split": null
+      }
+    ]
+  }
+}

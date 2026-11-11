@@ -1,0 +1,525 @@
+{
+ "study_id": "study015",
+ "model": "gpt5",
+ "slug": "gpt-5",
+ "n_passages": 5,
+ "n_passages_ok": 5,
+ "failures": [],
+ "records": [
+  {
+   "field": "dependencies",
+   "value": "PorePy",
+   "evidence": "using PorePy.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "block preconditioner",
+   "evidence": "A block preconditioner for thermo-poromechanics",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "fixed stress splitting scheme",
+   "evidence": "based on the fixed stress splitting scheme",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Block-partitioned solvers",
+   "evidence": "Block-partitioned solvers for coupled poromechanics",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Finite volume discretization",
+   "evidence": "Finite volume discretization for poroelastic media",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "iterative coupling",
+   "evidence": "Convergence of iterative coupling for coupled flow and geomechanics.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "dependencies",
+   "value": "Gmsh",
+   "evidence": "Gmsh: A 3-d finite element mesh generator",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "two-stage preconditioner for multiphase poromechanics",
+   "evidence": "A two-stage preconditioner for multiphase poromechanics in reservoir simulation.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "A Scalable Multigrid Reduction Framework for Multiphase Poromechanics of Heterogeneous Media",
+   "evidence": "A Scalable Multigrid Reduction Framework for Multiphase Poromechanics of Heterogeneous Media.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "block preconditioner for thermo-poromechanics with frictional deformation of fractures",
+   "evidence": "A block preconditioner for thermo-poromechanics with frictional deformation of fractures",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Finite V olume Framework for the Fully Implicit Thermal-Hydro-Mechanical-Compositional Modeling",
+   "evidence": "A Finite V olume Framework for the Fully Implicit Thermal-Hydro-Mechanical-Compositional Modeling in Geo-Energy Applications.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "multipoint flux approximations for quadrilateral grids",
+   "evidence": "multipoint flux approximations for quadrilateral grids.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Stable cell-centered finite volume discretization for biot equations",
+   "evidence": "Stable cell-centered finite volume discretization for biot equations.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Unified approach to discretization of flow in fractured porous",
+   "evidence": "Unified approach to discretization of flow in fractured porous",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "algebraic multigrid approach for Stokes problems",
+   "evidence": "A new algebraic multigrid approach for Stokes problems.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Incomplete Gaussian Elimination as a Preconditioning for Generalized Conjugate Gradient Acceler- ation",
+   "evidence": "Incomplete Gaussian Elimination as a Preconditioning for Generalized Conjugate Gradient Acceler- ation.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Constrained Residual Acceleration of Conjugate Residual Methods",
+   "evidence": "Constrained Residual Acceleration of Conjugate Residual Methods.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "block preconditioner for non-isothermal flow in porous media",
+   "evidence": "A block preconditioner for non-isothermal flow in porous media.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Constrained pressure-temperature residual (CPTR) preconditioner",
+   "evidence": "Constrained pressure-temperature residual (CPTR) preconditioner performance for large-scale thermal CO$$_2$$ injection simulation.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Multigrid smoothers",
+   "evidence": "Multigrid smoothers for ultraparallel computing.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "System-AMG approaches",
+   "evidence": "System-AMG approaches for industrial fully and adaptive implicit oil reservoir simulations .",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Unified approach to discretization of flow in fractured porous media",
+   "evidence": "Unified approach to discretization of flow in fractured porous media.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Semi\u2013smooth newton methods for variational inequalities of the first kind",
+   "evidence": "Semi\u2013smooth newton methods for variational inequalities of the first kind.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Effective Preconditioners for Mixed-Dimensional Scalar Elliptic Problems",
+   "evidence": "Effective Preconditioners for Mixed-Dimensional Scalar Elliptic Problems.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Constrained Pressure-Temperature Residual (CPTR) Method",
+   "evidence": "A Constrained Pressure-Temperature Residual (CPTR) Method for Non-Isothermal Multiphase Flow in Porous Media.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Line search algorithm for multiphysics problems with fracture deformation",
+   "evidence": "Line search algorithm for multiphysics problems with fracture deformation.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "multilevel newton\u2013krylov\u2013schwarz method",
+   "evidence": "multilevel newton\u2013krylov\u2013schwarz method",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "block preconditioner for thermo- poromechanics with frictional deformation of fractures",
+   "evidence": "\u201cA block preconditioner for thermo- poromechanics with frictional deformation of fractures\u201d",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gpt-5",
+   "passage_index": 3
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "dependencies": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   },
+   "methods": {
+    "n": 26,
+    "has_evidence": 26,
+    "span_found": 26,
+    "value_in_span": 26,
+    "grounded": 26
+   }
+  },
+  "total": {
+   "n": 28,
+   "has_evidence": 28,
+   "span_found": 28,
+   "value_in_span": 28,
+   "grounded": 28
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "PorePy",
+      "version": null,
+      "evidence": "using PorePy."
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "block preconditioner",
+      "evidence": "A block preconditioner for thermo-poromechanics"
+     },
+     {
+      "name": "fixed stress splitting scheme",
+      "evidence": "based on the fixed stress splitting scheme"
+     },
+     {
+      "name": "Block-partitioned solvers",
+      "evidence": "Block-partitioned solvers for coupled poromechanics"
+     },
+     {
+      "name": "Finite volume discretization",
+      "evidence": "Finite volume discretization for poroelastic media"
+     },
+     {
+      "name": "iterative coupling",
+      "evidence": "Convergence of iterative coupling for coupled flow and geomechanics."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "Gmsh",
+      "version": null,
+      "evidence": "Gmsh: A 3-d finite element mesh generator"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "two-stage preconditioner for multiphase poromechanics",
+      "evidence": "A two-stage preconditioner for multiphase poromechanics in reservoir simulation."
+     },
+     {
+      "name": "A Scalable Multigrid Reduction Framework for Multiphase Poromechanics of Heterogeneous Media",
+      "evidence": "A Scalable Multigrid Reduction Framework for Multiphase Poromechanics of Heterogeneous Media."
+     },
+     {
+      "name": "block preconditioner for thermo-poromechanics with frictional deformation of fractures",
+      "evidence": "A block preconditioner for thermo-poromechanics with frictional deformation of fractures"
+     },
+     {
+      "name": "Finite V olume Framework for the Fully Implicit Thermal-Hydro-Mechanical-Compositional Modeling",
+      "evidence": "A Finite V olume Framework for the Fully Implicit Thermal-Hydro-Mechanical-Compositional Modeling in Geo-Energy Applications."
+     },
+     {
+      "name": "multipoint flux approximations for quadrilateral grids",
+      "evidence": "multipoint flux approximations for quadrilateral grids."
+     },
+     {
+      "name": "Stable cell-centered finite volume discretization for biot equations",
+      "evidence": "Stable cell-centered finite volume discretization for biot equations."
+     },
+     {
+      "name": "Unified approach to discretization of flow in fractured porous",
+      "evidence": "Unified approach to discretization of flow in fractured porous"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "algebraic multigrid approach for Stokes problems",
+      "evidence": "A new algebraic multigrid approach for Stokes problems."
+     },
+     {
+      "name": "Incomplete Gaussian Elimination as a Preconditioning for Generalized Conjugate Gradient Acceler- ation",
+      "evidence": "Incomplete Gaussian Elimination as a Preconditioning for Generalized Conjugate Gradient Acceler- ation."
+     },
+     {
+      "name": "Constrained Residual Acceleration of Conjugate Residual Methods",
+      "evidence": "Constrained Residual Acceleration of Conjugate Residual Methods."
+     },
+     {
+      "name": "block preconditioner for non-isothermal flow in porous media",
+      "evidence": "A block preconditioner for non-isothermal flow in porous media."
+     },
+     {
+      "name": "Constrained pressure-temperature residual (CPTR) preconditioner",
+      "evidence": "Constrained pressure-temperature residual (CPTR) preconditioner performance for large-scale thermal CO$$_2$$ injection simulation."
+     },
+     {
+      "name": "Multigrid smoothers",
+      "evidence": "Multigrid smoothers for ultraparallel computing."
+     },
+     {
+      "name": "System-AMG approaches",
+      "evidence": "System-AMG approaches for industrial fully and adaptive implicit oil reservoir simulations ."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Unified approach to discretization of flow in fractured porous media",
+      "evidence": "Unified approach to discretization of flow in fractured porous media."
+     },
+     {
+      "name": "Semi\u2013smooth newton methods for variational inequalities of the first kind",
+      "evidence": "Semi\u2013smooth newton methods for variational inequalities of the first kind."
+     },
+     {
+      "name": "Effective Preconditioners for Mixed-Dimensional Scalar Elliptic Problems",
+      "evidence": "Effective Preconditioners for Mixed-Dimensional Scalar Elliptic Problems."
+     },
+     {
+      "name": "Constrained Pressure-Temperature Residual (CPTR) Method",
+      "evidence": "A Constrained Pressure-Temperature Residual (CPTR) Method for Non-Isothermal Multiphase Flow in Porous Media."
+     },
+     {
+      "name": "Line search algorithm for multiphysics problems with fracture deformation",
+      "evidence": "Line search algorithm for multiphysics problems with fracture deformation."
+     },
+     {
+      "name": "multilevel newton\u2013krylov\u2013schwarz method",
+      "evidence": "multilevel newton\u2013krylov\u2013schwarz method"
+     },
+     {
+      "name": "block preconditioner for thermo- poromechanics with frictional deformation of fractures",
+      "evidence": "\u201cA block preconditioner for thermo- poromechanics with frictional deformation of fractures\u201d"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [],
+    "evaluation_results": []
+   }
+  }
+ ]
+}

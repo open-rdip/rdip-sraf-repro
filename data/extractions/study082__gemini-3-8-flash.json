@@ -1,0 +1,163 @@
+{
+  "study_id": "study082",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study082/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:25:25.864931+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 3,
+    "methods": 17,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "training resolution",
+        "value": "14x14"
+      },
+      {
+        "name": "trials",
+        "value": "3"
+      },
+      {
+        "name": "Optimizer",
+        "value": "Adam(Kingma & Ba, 2014)"
+      },
+      {
+        "name": "learning rate",
+        "value": "7\u00b710\u22124"
+      },
+      {
+        "name": "batch size",
+        "value": "64"
+      },
+      {
+        "name": "Input keys",
+        "value": "64"
+      },
+      {
+        "name": "Input Values",
+        "value": "Size of individual RIM * 4"
+      },
+      {
+        "name": "Input Heads",
+        "value": "4"
+      },
+      {
+        "name": "Input Dropout",
+        "value": "0.1"
+      },
+      {
+        "name": "Communication keys",
+        "value": "32"
+      },
+      {
+        "name": "Communication Values",
+        "value": "32"
+      },
+      {
+        "name": "Communication heads",
+        "value": "4"
+      },
+      {
+        "name": "Communication Dropout",
+        "value": "0.1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Sequential MNIST Resolution Task",
+        "version": null
+      },
+      {
+        "name": "MNIST",
+        "version": null
+      },
+      {
+        "name": "bouncing balls",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RIM",
+        "description": "Modular computation units with individual default dynamics and sparse information flow, operating selectively based on relevance to improve robustness against noise and out-of-distribution observations."
+      },
+      {
+        "name": "RIMs",
+        "description": "Recurrent Independent Mechanisms where individual RIMs specialize on simple sub-problems with modular parameterization"
+      },
+      {
+        "name": "LSTM / RNN",
+        "description": "Recurrent model discussed in comparison of modular memory properties"
+      },
+      {
+        "name": "Relational RNN",
+        "description": "Recurrent model discussed in comparison of modular memory properties"
+      },
+      {
+        "name": "Neural Turing Machine (NTM)",
+        "description": "Recurrent model with modular memory"
+      },
+      {
+        "name": "SAB",
+        "description": "Recurrent model discussed in comparison of modular memory properties"
+      },
+      {
+        "name": "IndRNN",
+        "description": "Recurrent model discussed in comparison of modular memory properties"
+      },
+      {
+        "name": "Consciousness Prior",
+        "description": "An inductive bias based on a sparse graphical model describing interactions between high-level variables, where each factor involves few variables capturing an independent mechanism, using attention to select a subset of high-level variables to interact during inference."
+      },
+      {
+        "name": "Recurrent Entity Networks (EnTNet)",
+        "description": "A set of separate recurrent models whose hidden states store memory slots, which are either fixed by gates or modified via a simple RNN-style update."
+      },
+      {
+        "name": "LSTM",
+        "description": "baseline model whose performance degraded when sequence length changed"
+      },
+      {
+        "name": "Transformers",
+        "description": "baseline model"
+      },
+      {
+        "name": "EntNet",
+        "description": "baseline model"
+      },
+      {
+        "name": "RMC",
+        "description": "baseline model"
+      },
+      {
+        "name": "DNC",
+        "description": "baseline model"
+      },
+      {
+        "name": "multi-headed key-value attention",
+        "description": "Layer added on the output representation of concatenated RIMs."
+      },
+      {
+        "name": "LSTMs",
+        "description": "Baseline model used for predicting ball dynamics and video prediction"
+      },
+      {
+        "name": "TTO",
+        "description": "Time travelling oracle upper bound baseline, that does not model the dynamics, and has access to true dynamics"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

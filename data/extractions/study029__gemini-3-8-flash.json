@@ -1,0 +1,203 @@
+{
+  "study_id": "study029",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study029/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:32:28.430108+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 8,
+    "methods": 15,
+    "evaluation_results": 15
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03bb",
+        "value": "{0.0,0.1,1.0,10.0,50.0}"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Cora",
+        "version": null
+      },
+      {
+        "name": "A-photos",
+        "version": null
+      },
+      {
+        "name": "ogbn-arxiv",
+        "version": null
+      },
+      {
+        "name": "Flickr",
+        "version": null
+      },
+      {
+        "name": "A-computers",
+        "version": null
+      },
+      {
+        "name": "Reddit",
+        "version": null
+      },
+      {
+        "name": "ogbn-products",
+        "version": null
+      },
+      {
+        "name": "A-photo",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GRE",
+        "description": "baseline graph editing method"
+      },
+      {
+        "name": "GRE+",
+        "description": "proposed method achieving better trade-off results compared to GRE"
+      },
+      {
+        "name": "GCN",
+        "description": "GNN architecture used in the evaluation"
+      },
+      {
+        "name": "GraphSAGE",
+        "description": "GNN architecture used in the evaluation"
+      },
+      {
+        "name": "gradient rewiring",
+        "description": "facilitates target sample correction while preserving the training loss"
+      },
+      {
+        "name": "ENN",
+        "description": "editor applied to GNNs"
+      },
+      {
+        "name": "GD",
+        "description": "basic editor that performs well in MLP"
+      },
+      {
+        "name": "EGNN-GCN",
+        "description": "model architecture evaluated with editors on A-computers dataset"
+      },
+      {
+        "name": "EGNN-SAGE",
+        "description": "model architecture demonstrating superior performance with GRE+"
+      },
+      {
+        "name": "GRE+5",
+        "description": "method with 5 training subsets"
+      },
+      {
+        "name": "GRE+2",
+        "description": "comparison method/setting"
+      },
+      {
+        "name": "GRE+3",
+        "description": "comparison method/setting"
+      },
+      {
+        "name": "batch editing",
+        "description": "all batched samples are edited simultaneously in one editing process"
+      },
+      {
+        "name": "GCNGD",
+        "description": "editor method evaluated on graph datasets"
+      },
+      {
+        "name": "MLP",
+        "description": "backbone model"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "average accuracy drop",
+        "value": "4.62%",
+        "split": null
+      },
+      {
+        "metric": "decrease in accuracy",
+        "value": "0.73%",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (Acc) Flickr",
+        "value": "13.95\u00b111.00",
+        "split": "test"
+      },
+      {
+        "metric": "DrawDown (DD) Flickr",
+        "value": "37.25\u00b110.20",
+        "split": "test"
+      },
+      {
+        "metric": "Success Rate (SR) Flickr",
+        "value": "1.00",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (Acc) Reddit",
+        "value": "75.20\u00b112.30",
+        "split": "test"
+      },
+      {
+        "metric": "DrawDown (DD) Reddit",
+        "value": "20.32\u00b111.30",
+        "split": "test"
+      },
+      {
+        "metric": "Success Rate (SR) Reddit",
+        "value": "1.00",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (Acc) ogbn-arxiv",
+        "value": "23.71\u00b116.90",
+        "split": "test"
+      },
+      {
+        "metric": "DrawDown (DD) ogbn-arxiv",
+        "value": "46.50\u00b114.90",
+        "split": "test"
+      },
+      {
+        "metric": "Success Rate (SR) ogbn-arxiv",
+        "value": "1.00",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (Acc) ogbn-products",
+        "value": "53.29\u00b10.94",
+        "split": "test"
+      },
+      {
+        "metric": "DrawDown (DD) ogbn-products",
+        "value": "20.71\u00b10.94",
+        "split": "test"
+      },
+      {
+        "metric": "drawdown",
+        "value": "43.87%",
+        "split": "test"
+      },
+      {
+        "metric": "drawdown over GRE",
+        "value": "24.52%",
+        "split": "test"
+      }
+    ]
+  }
+}

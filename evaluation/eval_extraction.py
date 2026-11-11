@@ -71,8 +71,18 @@ def _canon_value(x) -> str:
 
 
 def _norm(s) -> str:
-    """Lowercase, drop parentheticals, strip punctuation, collapse whitespace."""
-    s = _s(s)
+    """Lowercase, drop parentheticals, strip punctuation, collapse whitespace.
+
+    Greek letters and sub/superscripts are spelled out FIRST. Stripping them as
+    punctuation turned "Sa" (S-alpha, written with the Greek letter) into "s",
+    which could never match a reference that writes "S_alpha", and that alone
+    was producing F1 = 0.000 on evaluation_results.
+    """
+    try:
+        from evaluation.value_norm import translit
+    except ModuleNotFoundError:                      # pragma: no cover
+        from value_norm import translit
+    s = translit(_s(s))
     s = re.sub(r"\(.*?\)", " ", s)
     s = re.sub(r"[^a-z0-9]+", " ", s)
     return re.sub(r"\s+", " ", s).strip()

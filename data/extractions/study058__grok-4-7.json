@@ -1,0 +1,66 @@
+{
+  "study_id": "study058",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study058/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:39:23.166081+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 0,
+    "methods": 3,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "example_sentences_per_prompt",
+        "value": "5"
+      },
+      {
+        "name": "example_prefix",
+        "value": "\u2013"
+      },
+      {
+        "name": "example_suffix",
+        "value": "\\n"
+      },
+      {
+        "name": "generation_stop_condition",
+        "value": "newline character"
+      },
+      {
+        "name": "mturk_workers_selected",
+        "value": "156"
+      },
+      {
+        "name": "mturk_workers_participated",
+        "value": "51"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "minority-group sentence generation",
+        "description": "Sample 5 random sentences from the corresponding set of examples, join them into one string with each example preceded by a hyphen and ending with a newline, append an extra hyphen so the LLM continues in the same style, and stop GPT-3 generation at the next newline. Use a new randomly selected set of 5 sentences for each generated sentence."
+      },
+      {
+        "name": "language model selection",
+        "description": "GPT-3 is used to generate statements. In principle the methods can be used with any model that generates realistic text, such as GPT-Neo, GPT-J, or Turing-NLG."
+      },
+      {
+        "name": "MTurk worker selection",
+        "description": "For human validation, select 156 MTurk workers with prior experience annotating toxic language (Sap et al., 2020). 51 of these workers participated."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

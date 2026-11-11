@@ -1,0 +1,190 @@
+{
+  "study_id": "study022",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study022/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:23:48.366191+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 15,
+    "datasets": 3,
+    "methods": 17,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "nvFuser",
+        "version": null
+      },
+      {
+        "name": "cuCollections",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "retraining frequency",
+        "value": "twice per week"
+      },
+      {
+        "name": "realtime user sequence length |\ud835\udc46|",
+        "value": "100"
+      },
+      {
+        "name": "dimension of action embedding \ud835\udc51\ud835\udc4e\ud835\udc50\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b",
+        "value": "32"
+      },
+      {
+        "name": "transformer blocks",
+        "value": "2"
+      },
+      {
+        "name": "dropout rate",
+        "value": "0.1"
+      },
+      {
+        "name": "feed forward network dimension \ud835\udc51\u210e\ud835\udc56\ud835\udc51\ud835\udc51\ud835\udc52\ud835\udc5b",
+        "value": "32"
+      },
+      {
+        "name": "positional encoding",
+        "value": "not used"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "warm-up phase steps",
+        "value": "5000"
+      },
+      {
+        "name": "learning rate",
+        "value": "0.0048"
+      },
+      {
+        "name": "learning rate scheduler",
+        "value": "cosine annealing"
+      },
+      {
+        "name": "batch size",
+        "value": "12000"
+      },
+      {
+        "name": "encoder layers",
+        "value": "2"
+      },
+      {
+        "name": "attention heads",
+        "value": "1"
+      },
+      {
+        "name": "sequence feature dimension d",
+        "value": "\ud835\udc51\ud835\udc4e\ud835\udc50\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b+2\ud835\udc51\ud835\udc43\ud835\udc56\ud835\udc5b\ud835\udc46\ud835\udc4e\ud835\udc54\ud835\udc52"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pinterest Homefeed view log",
+        "version": null
+      },
+      {
+        "name": "FVL",
+        "version": null
+      },
+      {
+        "name": "Pinterest Homefeed view log (FVL)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Pinnability",
+        "description": "Recommender model retrained from scratch twice per week"
+      },
+      {
+        "name": "TransAct",
+        "description": "Feature or model component integrated with Pinnability, increasing computational complexity by 65 times in floating point operations"
+      },
+      {
+        "name": "GPU serving",
+        "description": "GPU model inference used to serve Pinnability with TransAct at neutral latency and cost"
+      },
+      {
+        "name": "Fuse CUDA kernels",
+        "description": "Fuses operations as much as possible using deep learning compilers such as nvFuser and custom implementations."
+      },
+      {
+        "name": "Custom consolidated embedding lookup module",
+        "description": "Merges raw ID to table index and table index to embedding lookup for multiple features into one lookup, leveraging cuCollections to support hash tables for raw IDs on GPUs."
+      },
+      {
+        "name": "Combine memory copies",
+        "description": "Mitigates overhead from copying hundreds of feature tensors individually from CPU to GPU memory for every inference."
+      },
+      {
+        "name": "CUDA Graphs",
+        "description": "Captures the model inference process as a static graph of operations instead of individually scheduled ones, allowing computation to be executed as a single unit without kernel launching overheads."
+      },
+      {
+        "name": "Realtime Feature Processing",
+        "description": "Consumes user action Kafka streams using Flink, validates action records, detects and combines duplicates, manages time discrepancies, and materializes features into Rockstore."
+      },
+      {
+        "name": "Form larger batches",
+        "description": "Uses larger batches in the original requests directly for GPU-based inference instead of splitting requests into small batches via scatter-gather architecture."
+      },
+      {
+        "name": "Hybrid cache",
+        "description": "Implements a cache that uses both DRAM and SSD to compensate for the loss of cache capacity."
+      },
+      {
+        "name": "realtime-batch hybrid model",
+        "description": "A model that requires both realtime and batch user features."
+      },
+      {
+        "name": "transformer encoder",
+        "description": "Composed of 2 transformer blocks without positional encoding, applied to the encoded sequence feature."
+      },
+      {
+        "name": "Pinnability weighted cross-entropy loss",
+        "description": "A weighted cross-entropy loss designed for multi-label classification tasks incorporating a label weight matrix M to weight each action head's contribution and a user-dependent weight wu based on user state, location, and gender"
+      },
+      {
+        "name": "Negative downsampling",
+        "description": "Downsampling on negative samples with a fixed ratio between positive and negative samples to balance the skewed dataset"
+      },
+      {
+        "name": "concat early fusion",
+        "description": "Concatenation of candidate pin's PinSage embedding with user action features to produce sequence feature matrix"
+      },
+      {
+        "name": "transformer-based sequence aggregation",
+        "description": "Standard transformer encoder with 2 layers and 1 head without positional encoding to aggregate user action sequences"
+      },
+      {
+        "name": "Random Time Window Mask",
+        "description": "Masking technique using timestamps of user actions to prevent the rabbit hole effect and maintain diversity"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "computational complexity in terms of floating point operations",
+        "value": "65 times more computationally complex compared to its predecessors",
+        "split": null
+      }
+    ]
+  }
+}

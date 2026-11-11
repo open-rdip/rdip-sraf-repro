@@ -1,0 +1,395 @@
+{
+  "study_id": "study084",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study084/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:23:04.022398+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 30,
+    "datasets": 10,
+    "methods": 27,
+    "evaluation_results": 19
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "k",
+        "value": "16"
+      },
+      {
+        "name": "hard negative mining",
+        "value": "with"
+      },
+      {
+        "name": "top-k filtering",
+        "value": "used sitc to filter top-k candidates during inference"
+      },
+      {
+        "name": "pretrain_epochs",
+        "value": "30"
+      },
+      {
+        "name": "batch_size",
+        "value": "512"
+      },
+      {
+        "name": "num_gpus",
+        "value": "8"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.02"
+      },
+      {
+        "name": "lr_warmup_target",
+        "value": "1e-4"
+      },
+      {
+        "name": "lr_warmup_iterations",
+        "value": "1000"
+      },
+      {
+        "name": "lr_min_after_cosine_decay",
+        "value": "1e-5"
+      },
+      {
+        "name": "lr_schedule",
+        "value": "cosine"
+      },
+      {
+        "name": "pretrain_image_resolution",
+        "value": "256x256"
+      },
+      {
+        "name": "augmentation",
+        "value": "RandAugment"
+      },
+      {
+        "name": "finetune_image_resolution",
+        "value": "384x384"
+      },
+      {
+        "name": "momentum_parameter",
+        "value": "0.995"
+      },
+      {
+        "name": "contrastive_queue_size",
+        "value": "65536"
+      },
+      {
+        "name": "distillation_weight_alpha_start",
+        "value": "0"
+      },
+      {
+        "name": "distillation_weight_alpha_end",
+        "value": "0.4"
+      },
+      {
+        "name": "distillation_weight_alpha_ramp_epochs",
+        "value": "1"
+      },
+      {
+        "name": "alpha",
+        "value": "0.4"
+      },
+      {
+        "name": "mask_random_tokens",
+        "value": "10%"
+      },
+      {
+        "name": "mask_unchanged_tokens",
+        "value": "10%"
+      },
+      {
+        "name": "mask_mask_tokens",
+        "value": "80%"
+      },
+      {
+        "name": "total_unique_images",
+        "value": "4.0M"
+      },
+      {
+        "name": "total_image_text_pairs",
+        "value": "5.1M"
+      },
+      {
+        "name": "pretrain_images",
+        "value": "4M"
+      },
+      {
+        "name": "classification_classes",
+        "value": "3"
+      },
+      {
+        "name": "fine_tuning_supervision",
+        "value": "image-text only"
+      },
+      {
+        "name": "inference_heatmaps",
+        "value": "Grad-CAM extended; used to rank detected proposals from [53]"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NLVR2",
+        "version": null
+      },
+      {
+        "name": "Flickr30K",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "VQA",
+        "version": null
+      },
+      {
+        "name": "Conceptual 12M",
+        "version": null
+      },
+      {
+        "name": "Conceptual Captions",
+        "version": null
+      },
+      {
+        "name": "SBU Captions",
+        "version": null
+      },
+      {
+        "name": "Visual Genome",
+        "version": null
+      },
+      {
+        "name": "RefCOCO+",
+        "version": null
+      },
+      {
+        "name": "SNLI-VE",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Text-Assignment (TA) pre-training",
+        "description": "Pre-training strategy for image-pair modeling that improves downstream NLVR2 performance."
+      },
+      {
+        "name": "Parameter sharing: share all",
+        "description": "Both multimodal blocks share all parameters."
+      },
+      {
+        "name": "Parameter sharing: share cross-attention (CA) layers",
+        "description": "Only the cross-attention layers are shared between the two multimodal blocks."
+      },
+      {
+        "name": "Parameter sharing: no sharing",
+        "description": "No parameters are shared between the two multimodal blocks."
+      },
+      {
+        "name": "Hard negative mining",
+        "description": "Training strategy evaluated in the ablation (referred to as being in the last column)."
+      },
+      {
+        "name": "ALBEF",
+        "description": "Model whose Grad-CAM visualizations are reported and align with human attention"
+      },
+      {
+        "name": "Grad-CAM",
+        "description": "Used for visualizations in VQA and COCO, including per-word grounding"
+      },
+      {
+        "name": "sitm",
+        "description": "Image-text matching score; gradients are acquired by maximizing this score and it is used for ranking"
+      },
+      {
+        "name": "sitc",
+        "description": "Used to filter top-k candidates during inference for image-text retrieval"
+      },
+      {
+        "name": "TA",
+        "description": "Ablation on NLVR2 compares performance with and without TA"
+      },
+      {
+        "name": "Image-text contrastive learning with momentum encoder and queue",
+        "description": "Uses a momentum model (momentum=0.995) and a queue of size 65,536 for image-text contrastive learning."
+      },
+      {
+        "name": "Cosine learning rate schedule with warmup",
+        "description": "Learning rate warmed up to 1e-4 in the first 1000 iterations, then decayed to 1e-5 following a cosine schedule."
+      },
+      {
+        "name": "RandAugment",
+        "description": "RandAugment is applied to images during pre-training."
+      },
+      {
+        "name": "Positional encoding interpolation",
+        "description": "Interpolates the positional encoding of image patches during fine-tuning when increasing resolution from 256x256 to 384x384."
+      },
+      {
+        "name": "Distillation with ramped alpha",
+        "description": "Distillation weight alpha is linearly ramped from 0 to 0.4 within the first epoch."
+      },
+      {
+        "name": "ITC MoD loss",
+        "description": "Momentum Distillation for image-text contrastive learning combining the original ITC loss with KL divergences to momentum model pseudo-targets: L_mod_itc = (1\u2212\u03b1) L_itc + \u03b1/2 E[ KL(q_i2t || p_i2t) + KL(q_t2i || p_t2i) ]."
+      },
+      {
+        "name": "MLM MoD loss",
+        "description": "Momentum Distillation for masked language modeling combining the original MLM loss with KL divergence to momentum model pseudo-targets for masked tokens: L_mod_mlm = (1\u2212\u03b1) L_mlm + \u03b1 E[ KL(q_msk || p_msk) ]."
+      },
+      {
+        "name": "Downstream task MoD loss",
+        "description": "For each downstream task, final loss is a weighted combination of the task\u2019s original loss and the KL-divergence between the model\u2019s prediction and the pseudo-targets; weight \u03b1 is set to 0.4."
+      },
+      {
+        "name": "Pseudo-targets via momentum model with BERT-style masking",
+        "description": "Pseudo-target distributions are produced by a momentum model; masking follows BERT-style replacements: 10% random tokens, 10% unchanged, and 80% [MASK]."
+      },
+      {
+        "name": "Image-Text Contrastive Learning (ITC)",
+        "description": "Contrastive learning objective between image and text representations to improve alignment."
+      },
+      {
+        "name": "Contrastive Hard Negative Mining",
+        "description": "Sampling and emphasizing hard negatives during contrastive training."
+      },
+      {
+        "name": "Momentum Distillation",
+        "description": "Distillation using a momentum-updated teacher to stabilize and improve training."
+      },
+      {
+        "name": "Baseline Pre-training (MLM + ITM)",
+        "description": "Masked Language Modeling and Image-Text Matching pre-training objectives."
+      },
+      {
+        "name": "Three-way Classification Head",
+        "description": "A fully-connected layer on the [CLS] representation predicts assignment to first image, second image, or none."
+      },
+      {
+        "name": "Weakly-supervised Visual Grounding",
+        "description": "Fine-tuning on RefCOCO+ using only image-text supervision without bounding boxes, following image-text retrieval strategy."
+      },
+      {
+        "name": "Grad-CAM-based Inference for Grounding",
+        "description": "Extended Grad-CAM to produce heatmaps and rank detected proposals from an external detector [53]."
+      },
+      {
+        "name": "TA Pre-training",
+        "description": "Pre-trained with TA for 1 epoch using 4M images."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy (w/ TA, share all) on NLVR2",
+        "value": "82.13",
+        "split": "validation"
+      },
+      {
+        "metric": "accuracy (w/ TA, share CA) on NLVR2",
+        "value": "82.55",
+        "split": "validation"
+      },
+      {
+        "metric": "accuracy (w/ TA, no share) on NLVR2",
+        "value": "81.93",
+        "split": "validation"
+      },
+      {
+        "metric": "accuracy (w/o TA, share all) on NLVR2",
+        "value": "80.52",
+        "split": "validation"
+      },
+      {
+        "metric": "accuracy (w/o TA, share CA) on NLVR2",
+        "value": "80.28",
+        "split": "validation"
+      },
+      {
+        "metric": "accuracy (w/o TA, no share) on NLVR2",
+        "value": "77.84",
+        "split": "validation"
+      },
+      {
+        "metric": "accuracy (w/ TA, share all) on NLVR2",
+        "value": "82.36",
+        "split": "test"
+      },
+      {
+        "metric": "accuracy (w/ TA, share CA) on NLVR2",
+        "value": "83.14",
+        "split": "test"
+      },
+      {
+        "metric": "accuracy (w/ TA, no share) on NLVR2",
+        "value": "82.85",
+        "split": "test"
+      },
+      {
+        "metric": "accuracy (w/o TA, share all) on NLVR2",
+        "value": "81.29",
+        "split": "test"
+      },
+      {
+        "metric": "accuracy (w/o TA, share CA) on NLVR2",
+        "value": "80.45",
+        "split": "test"
+      },
+      {
+        "metric": "accuracy (w/o TA, no share) on NLVR2",
+        "value": "77.58",
+        "split": "test"
+      },
+      {
+        "metric": "TR",
+        "value": "97.30",
+        "split": "test"
+      },
+      {
+        "metric": "IR",
+        "value": "90.95",
+        "split": "test"
+      },
+      {
+        "metric": "TR",
+        "value": "93.96",
+        "split": "flickr test"
+      },
+      {
+        "metric": "IR",
+        "value": "88.55",
+        "split": null
+      },
+      {
+        "metric": "SNLI-VE",
+        "value": "77.06",
+        "split": "test"
+      },
+      {
+        "metric": "NLVR2",
+        "value": "77.51",
+        "split": "test-P"
+      },
+      {
+        "metric": "VQA",
+        "value": "71.40",
+        "split": "test-dev"
+      }
+    ]
+  }
+}

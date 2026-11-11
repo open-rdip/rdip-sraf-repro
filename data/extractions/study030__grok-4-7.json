@@ -1,0 +1,464 @@
+{
+  "study_id": "study030",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study030/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:38:55.683323+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 36,
+    "datasets": 8,
+    "methods": 24,
+    "evaluation_results": 32
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "two V100 GPUs",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "synthetic_camera_shift_maximum",
+        "value": "30 px"
+      },
+      {
+        "name": "image_pair_frame_interval",
+        "value": "4, 8 and 12"
+      },
+      {
+        "name": "negative_sample_image_replacement_rate",
+        "value": "20%"
+      },
+      {
+        "name": "nesterov_momentum",
+        "value": "0.95"
+      },
+      {
+        "name": "batch_size",
+        "value": "32"
+      },
+      {
+        "name": "weight_decay",
+        "value": "10\u22125"
+      },
+      {
+        "name": "learning_rate_warmup_epochs",
+        "value": "1"
+      },
+      {
+        "name": "learning_rate_warmup_start",
+        "value": "10\u22123 of its target value"
+      },
+      {
+        "name": "learning_rate_decay_epochs",
+        "value": "10"
+      },
+      {
+        "name": "learning_rate_decay_factor",
+        "value": "10"
+      },
+      {
+        "name": "model_averaging_decay_constant",
+        "value": "10\u22122"
+      },
+      {
+        "name": "optimizer",
+        "value": "SGD"
+      },
+      {
+        "name": "synthetic_shift_max",
+        "value": "30px"
+      },
+      {
+        "name": "epochs",
+        "value": "50"
+      },
+      {
+        "name": "batches_per_epoch",
+        "value": "4994"
+      },
+      {
+        "name": "dataset_alternation",
+        "value": "every batch"
+      },
+      {
+        "name": "sgd_step_frequency",
+        "value": "every two batches"
+      },
+      {
+        "name": "training_time_per_epoch",
+        "value": "55 minutes"
+      },
+      {
+        "name": "longer_edge",
+        "value": "801 px"
+      },
+      {
+        "name": "horizontal_flipping",
+        "value": "without"
+      },
+      {
+        "name": "multi_scale_evaluation",
+        "value": "without"
+      },
+      {
+        "name": "forward_pass",
+        "value": "single"
+      },
+      {
+        "name": "crowd_index",
+        "value": "larger than 0.8"
+      },
+      {
+        "name": "stride_input_to_output_feature_map",
+        "value": "16"
+      },
+      {
+        "name": "features_per_location",
+        "value": "2048"
+      },
+      {
+        "name": "ShuffleNetV2K16_output_features_block_repeats",
+        "value": "24 (1), 348 (4), 696 (8), 1392 (4), 1392 (1)"
+      },
+      {
+        "name": "ShuffleNetV2K30_output_features_block_repeats",
+        "value": "32 (1), 512 (8), 1024 (16), 2048 (6), 2048 (1)"
+      },
+      {
+        "name": "spatial_convolution_kernel",
+        "value": "5\u00d75"
+      },
+      {
+        "name": "head_convolution",
+        "value": "1\u00d71"
+      },
+      {
+        "name": "exponentially_weighted_parameters_decay_constant",
+        "value": "10\u22122"
+      },
+      {
+        "name": "crowdpose_epochs",
+        "value": "300"
+      },
+      {
+        "name": "crowdpose_target_learning_rate",
+        "value": "10\u22125"
+      },
+      {
+        "name": "crowdpose_learning_rate_decay_epochs",
+        "value": "250 and 280"
+      },
+      {
+        "name": "coco_target_learning_rate",
+        "value": "10\u22124"
+      },
+      {
+        "name": "coco_learning_rate_decay_epochs",
+        "value": "130 and 140"
+      },
+      {
+        "name": "shufflenetv2k16_epochs",
+        "value": "150"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CrowdPose",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "PoseTrack",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "COCO keypoint",
+        "version": "2017"
+      },
+      {
+        "name": "hard subset",
+        "version": null
+      },
+      {
+        "name": "PoseTrack 2017",
+        "version": null
+      },
+      {
+        "name": "PoseTrack 2018",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "synthetic camera shift",
+        "description": "A small synthetic camera shift of maximum 30 px is added between image pairs to increase inter-frame variations."
+      },
+      {
+        "name": "random frame interval pairing",
+        "description": "Image pairs are formed with a random interval of 4, 8 and 12 frames to further increase variation."
+      },
+      {
+        "name": "negative sample replacement",
+        "description": "In 20% of image pairs, one image is replaced with a random image to provide more negative samples for tracking."
+      },
+      {
+        "name": "Single-Image Training",
+        "description": "ResNet backbones use ImageNet pretrained models; ShuffleNetV2 models are trained from random initializations."
+      },
+      {
+        "name": "SGD with Nesterov momentum",
+        "description": "SGD optimizer with Nesterov momentum of 0.95, batch size of 32 and weight decay of 10\u22125."
+      },
+      {
+        "name": "exponential learning rate warmup",
+        "description": "Learning rate is exponentially warmed up for one epoch from 10\u22123 of its target value."
+      },
+      {
+        "name": "exponential learning rate decay",
+        "description": "At certain epochs, the learning rate is exponentially decayed over 10 epochs by a factor of 10."
+      },
+      {
+        "name": "model averaging",
+        "description": "An exponentially weighted version of the model parameters is updated at each optimization step with decay constant 10\u22122 to extract stable models for validation."
+      },
+      {
+        "name": "OpenPifPaf",
+        "description": "Predictions illustrated on the CrowdPose val set with crowd-index hard."
+      },
+      {
+        "name": "alternating multi-task training",
+        "description": "Alternate two tasks between batches: one batch uses pairs of images from PoseTrack with losses on the corresponding head networks, and the next batch uses single images from COCO with losses on the other head networks."
+      },
+      {
+        "name": "synthetic tracked pairs",
+        "description": "COCO single-image pose estimation is converted from single images to pairs of tracked images via synthetic shifts of up to 30px."
+      },
+      {
+        "name": "fine-tuning from single-image backbone",
+        "description": "Starting from a trained single-image pose backbone, train on both datasets with SGD using the same configuration as for single images, performing an SGD step only every two batches."
+      },
+      {
+        "name": "single forward pass",
+        "description": "Evaluate a single forward pass without horizontal flipping and without multi-scale evaluation"
+      },
+      {
+        "name": "image rescaling",
+        "description": "Evaluate on rescaled images where the longer edge is 801 px, the same image size used for tracking"
+      },
+      {
+        "name": "bottom-up",
+        "description": "Bottom-up method compared on the COCO keypoint task with field-based methods and associative embedding methods"
+      },
+      {
+        "name": "ResNet base network",
+        "description": "Standard ResNet models with the input max-pooling operation removed and no additional modifications; stride from input image to output feature map is 16 with 2048 features at each location."
+      },
+      {
+        "name": "ShuffleNetV2K16",
+        "description": "Custom ShuffleNetV2 configuration using standard building blocks, with output features (block repeats) of 24 (1), 348 (4), 696 (8), 1392 (4), 1392 (1); spatial 3\u00d73 convolutions replaced with 5\u00d75 depth-wise convolutions."
+      },
+      {
+        "name": "ShuffleNetV2K30",
+        "description": "Custom ShuffleNetV2 configuration using standard building blocks, with output features (block repeats) of 32 (1), 512 (8), 1024 (16), 2048 (6), 2048 (1); spatial 3\u00d73 convolutions replaced with 5\u00d75 depth-wise convolutions."
+      },
+      {
+        "name": "head network",
+        "description": "A single 1\u00d71 convolution followed by a sub-pixel convolution to double the spatial resolution."
+      },
+      {
+        "name": "exponentially weighted model parameters",
+        "description": "At each optimization step, an exponentially weighted version of the model parameters is updated with a decay constant of 10\u22122."
+      },
+      {
+        "name": "CrowdPose training",
+        "description": "On CrowdPose, a smaller dataset than COCO, training runs for 300 epochs with target learning rate 10\u22125 decayed at epochs 250 and 280."
+      },
+      {
+        "name": "COCO training",
+        "description": "On COCO, target learning rate is 10\u22124 with decay at epochs 130 and 140; no additional datasets beyond COCO keypoint annotations are used. Training 150 epochs of ShuffleNetV2K16 on two V100 takes approximately 37 hours."
+      },
+      {
+        "name": "PoseTrack tracking with COCO auxiliary task",
+        "description": "ShuffleNetV2k30 backbone is used for all tracking experiments. Single-image pose estimation on COCO is kept as an auxiliary task and trained simultaneously with PoseTrack by alternating the two tasks between batches, because pose annotations are similar but not identical."
+      },
+      {
+        "name": "TCAF",
+        "description": "Multiple temporal connections that form a single tracked pose, completing poses through time even when a pose is partitioned by occlusion in the current frame."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "FPS",
+        "value": "13.7",
+        "split": null
+      },
+      {
+        "metric": "average time per image (GTX1080Ti)",
+        "value": "152 ms",
+        "split": null
+      },
+      {
+        "metric": "average time per image (V100)",
+        "value": "63 ms",
+        "split": null
+      },
+      {
+        "metric": "OpenPifPaf MOTA (PoseTrack 2017)",
+        "value": "61.7",
+        "split": null
+      },
+      {
+        "metric": "OpenPifPaf FPS (PoseTrack 2017)",
+        "value": "12.2",
+        "split": null
+      },
+      {
+        "metric": "OpenPifPaf AP (PoseTrack 2017)",
+        "value": "71.9",
+        "split": null
+      },
+      {
+        "metric": "STAF MOTA (PoseTrack 2017)",
+        "value": "53.8",
+        "split": null
+      },
+      {
+        "metric": "STAF FPS (PoseTrack 2017)",
+        "value": "3",
+        "split": null
+      },
+      {
+        "metric": "STAF AP (PoseTrack 2017)",
+        "value": "70.3",
+        "split": null
+      },
+      {
+        "metric": "MIPAL MOTA (PoseTrack 2017)",
+        "value": "54.5",
+        "split": null
+      },
+      {
+        "metric": "MIPAL AP (PoseTrack 2017)",
+        "value": "68.8",
+        "split": null
+      },
+      {
+        "metric": "MSRA/FlowTrack MOTA (PoseTrack 2017)",
+        "value": "57.8",
+        "split": null
+      },
+      {
+        "metric": "MSRA/FlowTrack FPS (PoseTrack 2017)",
+        "value": "0.7",
+        "split": null
+      },
+      {
+        "metric": "MSRA/FlowTrack AP (PoseTrack 2017)",
+        "value": "74.6",
+        "split": null
+      },
+      {
+        "metric": "HRNet MOTA (PoseTrack 2017)",
+        "value": "57.9",
+        "split": null
+      },
+      {
+        "metric": "HRNet AP (PoseTrack 2017)",
+        "value": "74.9",
+        "split": null
+      },
+      {
+        "metric": "LightTrack MOTA (PoseTrack 2017)",
+        "value": "58.0",
+        "split": null
+      },
+      {
+        "metric": "LightTrack AP (PoseTrack 2017)",
+        "value": "66.6",
+        "split": null
+      },
+      {
+        "metric": "OpenPifPaf MOTP (PoseTrack 2017)",
+        "value": "84.5",
+        "split": null
+      },
+      {
+        "metric": "OpenPifPaf precision (PoseTrack 2017)",
+        "value": "84.1",
+        "split": null
+      },
+      {
+        "metric": "OpenPifPaf recall (PoseTrack 2017)",
+        "value": "77.7",
+        "split": null
+      },
+      {
+        "metric": "OpenPifPaf MOTA (b)",
+        "value": "60.6",
+        "split": null
+      },
+      {
+        "metric": "OpenPifPaf FPS (b)",
+        "value": "12.2",
+        "split": null
+      },
+      {
+        "metric": "OpenPifPaf AP (b)",
+        "value": "71.5",
+        "split": null
+      },
+      {
+        "metric": "KeyTrack MOTA (b)",
+        "value": "61.2",
+        "split": null
+      },
+      {
+        "metric": "KeyTrack FPS (b)",
+        "value": "1.0",
+        "split": null
+      },
+      {
+        "metric": "KeyTrack AP (b)",
+        "value": "74.0",
+        "split": null
+      },
+      {
+        "metric": "DetTrack MOTA (b)",
+        "value": "64.1",
+        "split": null
+      },
+      {
+        "metric": "DetTrack AP (b)",
+        "value": "74.1",
+        "split": null
+      },
+      {
+        "metric": "OpenPifPaf MOTP (PoseTrack 2018)",
+        "value": "84.9",
+        "split": null
+      },
+      {
+        "metric": "OpenPifPaf precision (PoseTrack 2018)",
+        "value": "84.4",
+        "split": null
+      },
+      {
+        "metric": "OpenPifPaf recall (PoseTrack 2018)",
+        "value": "78.3",
+        "split": null
+      }
+    ]
+  }
+}

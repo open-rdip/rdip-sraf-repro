@@ -1,0 +1,232 @@
+{
+  "study_id": "study080",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study080/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:04:28.178848+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 6,
+    "methods": 29,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "move action step size",
+        "value": "0.25m"
+      },
+      {
+        "name": "rotation angle",
+        "value": "30\u25e6"
+      },
+      {
+        "name": "k (CLIP-Ref. referring expressions)",
+        "value": "9"
+      },
+      {
+        "name": "k (CLIP-Patch patches)",
+        "value": "9"
+      },
+      {
+        "name": "success distance threshold (STOP within target object)",
+        "value": "1.0m"
+      },
+      {
+        "name": "CoW training steps",
+        "value": "0"
+      },
+      {
+        "name": "SemanticNav-ZSON training steps",
+        "value": "500M"
+      },
+      {
+        "name": "EmbCLIP-ZSON training steps",
+        "value": "60M"
+      },
+      {
+        "name": "object localizer model",
+        "value": "OWL, B/32"
+      },
+      {
+        "name": "object localizer post-processing",
+        "value": "enabled (\u25b3)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "HABITAT (MP3D)",
+        "version": null
+      },
+      {
+        "name": "ROBOTHOR",
+        "version": null
+      },
+      {
+        "name": "PASTURE",
+        "version": null
+      },
+      {
+        "name": "HABITAT",
+        "version": "2021 challenge"
+      },
+      {
+        "name": "MP3D",
+        "version": null
+      },
+      {
+        "name": "LAION-5B",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "SPL (success weighted by inverse path length)",
+        "description": "Success weighted by the oracle shortest path length and normalized by the actual path length; measures success efficiency of the agent. In ROBOTHOR and PASTURE the target must additionally be visible for success, which is not the case in HABITAT."
+      },
+      {
+        "name": "LoCoBot embodiment",
+        "description": "Agent with discrete actions MOVEFORWARD, ROTATERIGHT, ROTATELEFT, STOP; move advances 0.25m, rotation pivots camera by 30\u25e6."
+      },
+      {
+        "name": "CoW (CLIP on Wheels) baselines",
+        "description": "Zero-shot object navigation framework combining an exploration policy with an object localization module."
+      },
+      {
+        "name": "FBE",
+        "description": "Heuristic frontier-based exploration; default CoW exploration strategy."
+      },
+      {
+        "name": "Learned exploration (HABITAT/MP3D)",
+        "description": "Learnable exploration policy optimized on HABITAT (MP3D) train scenes; ablated despite requiring simulation training."
+      },
+      {
+        "name": "Learned exploration (ROBOTHOR)",
+        "description": "Learned exploration policy optimized on ROBOTHOR train scenes; ablated despite requiring simulation training."
+      },
+      {
+        "name": "CLIP-Ref.",
+        "description": "CLIP object localization with k=9 referring expressions."
+      },
+      {
+        "name": "CLIP-Patch",
+        "description": "CLIP object localization with k=9 patches."
+      },
+      {
+        "name": "CLIP-Grad.",
+        "description": "CLIP object localization using gradient relevance."
+      },
+      {
+        "name": "MDETR",
+        "description": "MDETR segmentation model for object localization."
+      },
+      {
+        "name": "OWL",
+        "description": "OWL-ViT detector for object localization."
+      },
+      {
+        "name": "CoW baselines",
+        "description": "Baselines for language-based zero-shot object navigation (L-ZSON) evaluated on PASTURE"
+      },
+      {
+        "name": "Success (SR)",
+        "description": "Fraction of episodes where the agent executes STOP within 1.0m of the target object"
+      },
+      {
+        "name": "Success weighted by inverse path length (SPL)",
+        "description": "Success weighted by the oracle shortest path length and normalized by the actual path length"
+      },
+      {
+        "name": "CoWs",
+        "description": "CLIP on Wheels; zero-shot language-driven object navigation (L-ZSON) benchmarked on PASTURE and ROBOTHOR"
+      },
+      {
+        "name": "Center-pixel mask post-processing",
+        "description": "Post-processing mask predictions by using only the center pixel as a representative target for navigation"
+      },
+      {
+        "name": "CLIP",
+        "description": "CLIP models used as architectures in CoWs, with ViT-B/16 and ViT-B/32 variants compared"
+      },
+      {
+        "name": "OWL-ViT",
+        "description": "OWL-ViT models used in CoWs, which perform best among the benchmarked models"
+      },
+      {
+        "name": "Supervised baseline",
+        "description": "A supervised baseline that significantly outperforms CoWs on ROBOTHOR but cannot support PASTURE tasks out-of-the-box"
+      },
+      {
+        "name": "CoW",
+        "description": "CLIP on Wheels; zero-shot object navigation model trained for 0 navigation steps, combining object localization and exploration methods"
+      },
+      {
+        "name": "SemanticNav-ZSON",
+        "description": "Competitor model trained in the target evaluation simulators for 500M steps"
+      },
+      {
+        "name": "EmbCLIP-ZSON",
+        "description": "Competitor model trained in the target evaluation simulators for 60M steps"
+      },
+      {
+        "name": "ROBOTHOR learnable exploration",
+        "description": "Learned exploration policy trained on ROBOTHOR, compared against FBE with a fixed OWL B/32 object localizer with post-processing"
+      },
+      {
+        "name": "HABITAT learnable exploration",
+        "description": "Learned exploration policy trained on HABITAT, compared against FBE; performs worse when transferred to other domains (e.g., ROBOTHOR or PASTURE)"
+      },
+      {
+        "name": "OWL, B/32 with post-processing",
+        "description": "Object localizer fixed for the exploration ablation and used in the failure analysis"
+      },
+      {
+        "name": "Failure analysis",
+        "description": "Categorizes failures into exploration failures, object localization failures, and planning failures; exploration and localization errors occur at similar ratios, with more localization failures in the presence of distractors"
+      },
+      {
+        "name": "CoW (CLIP on Wheels)",
+        "description": "Zero-shot object navigation baselines that use open-vocabulary models for object localization; evaluated on common and uncommon objects and with appearance and spatial descriptions."
+      },
+      {
+        "name": "OWL ViT-B/32 CoW with post-post processing",
+        "description": "CoW variant using the OWL ViT-B/32 object localization module with post-post processing, which finds uncommon objects at about 6 percentage points higher success than common ROBOTHOR objects."
+      },
+      {
+        "name": "CLIP retrieval on LAION-5B",
+        "description": "Visualization of CLIP retrieval results on LAION-5B for the uncommon object categories, used to examine whether uncommon objects are represented in open-vocabulary datasets (Appx. E)."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Success (unspecified column in Table 1, last two values)",
+        "value": "27.4",
+        "split": null
+      },
+      {
+        "metric": "SUCCESS (CoW vs. competitor)",
+        "value": "4.9 for CoW vs. 4.8 for the competitor",
+        "split": null
+      },
+      {
+        "metric": "Improvement over EmbCLIP-ZSON on ROBOTHOR",
+        "value": "15.6 percentage points",
+        "split": null
+      },
+      {
+        "metric": "Success rate (SR) difference, uncommon vs. common ROBOTHOR objects (OWL ViT-B/32 CoW with post-post processing)",
+        "value": "~6 percentage points higher for uncommon objects",
+        "split": null
+      }
+    ]
+  }
+}

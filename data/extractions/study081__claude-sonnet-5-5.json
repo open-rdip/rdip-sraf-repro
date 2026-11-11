@@ -1,0 +1,95 @@
+{
+  "study_id": "study081",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study081/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:04:45.886659+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 1,
+    "methods": 10,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch size",
+        "value": "32"
+      },
+      {
+        "name": "encoder and decoder convolutional kernel sizes",
+        "value": "matched with Luo et al. (2021)"
+      },
+      {
+        "name": "number of model parameters (original implementation of Chien (2021))",
+        "value": "35M"
+      },
+      {
+        "name": "number of model parameters (modified LightSpeech-style model)",
+        "value": "11.6M"
+      },
+      {
+        "name": "number of model parameters (original FastSpeech2)",
+        "value": "27M"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "LJ Speech",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Tacotron2",
+        "description": "Attention-based neural TTS model; five Tacotron2 models were trained on incremental partitions of the LJ Speech corpus using the NVIDIA implementation with default hyperparameters apart from a reduced batch size, to investigate the effects of differing amounts of data on the attention network."
+      },
+      {
+        "name": "Non-attentive model trained from forced alignments",
+        "description": "Non-attentive TTS model trained from forced alignments (Perez-Gonzalez-de-Martos et al., 2021), submitted to Blizzard Challenge 2021; found to be among the most natural and intelligible despite using only 5 hours of speech."
+      },
+      {
+        "name": "Montreal Forced Aligner",
+        "description": "Forced alignment model trained only on the limited Indigenous language training data to produce alignments of sufficient quality for neural TTS training"
+      },
+      {
+        "name": "Training from scratch",
+        "description": "Neural TTS systems trained from scratch on limited target-language data, rather than pre-training on a high-resource language and fine-tuning on the target language"
+      },
+      {
+        "name": "Guided attention",
+        "description": "Proposals to improve attention network training by guiding the attention to respect the monotonic alignment between text inputs and speech outputs."
+      },
+      {
+        "name": "CTC loss for attention training",
+        "description": "Using a CTC loss function to respect the monotonic alignment between text inputs and speech outputs."
+      },
+      {
+        "name": "Reduction factor",
+        "description": "Applies dropout to the autoregressive frames so the model relies more on the attention network than on teacher forcing inputs, possibly at the risk of compromising synthesis quality."
+      },
+      {
+        "name": "FastSpeech2",
+        "description": "Mentioned (Ren et al.) but the passage is truncated, so no description is given."
+      },
+      {
+        "name": "FastSpeech2 (modified, LightSpeech-style)",
+        "description": "Base architecture modified to match the LightSpeech model of Luo et al. (2021): energy adaptor removed, convolutional layers in the encoder, decoder and remaining variance predictors replaced with depthwise separable convolutions (Kaiser et al., 2018), and encoder/decoder convolutional kernel sizes matched with Luo et al. (2021). Reduced parameters from 35M to 11.6M without noticeable change in voice quality and sped up training."
+      },
+      {
+        "name": "MUSHRA survey comparison",
+        "description": "Survey with MUSHRA questions comparing Tacotron2 (TT2) and FastSpeech2 (FS2) models trained with constrained amounts of data (15m, 30m, 1hr, 3hr, 5hr, 10hr, Full), with reference recordings of natural speech (Ref)."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

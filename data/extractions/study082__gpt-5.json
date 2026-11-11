@@ -1,0 +1,163 @@
+{
+  "study_id": "study082",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study082/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:21:43.574631+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 3,
+    "methods": 17,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "training_resolution",
+        "value": "14x14"
+      },
+      {
+        "name": "num_trials",
+        "value": "3"
+      },
+      {
+        "name": "Optimizer",
+        "value": "Adam(Kingma & Ba, 2014)"
+      },
+      {
+        "name": "learning rate",
+        "value": "7\u00b710\u22124"
+      },
+      {
+        "name": "batch size",
+        "value": "64"
+      },
+      {
+        "name": "Input keys",
+        "value": "64"
+      },
+      {
+        "name": "Input Values",
+        "value": "Size of individual RIM * 4"
+      },
+      {
+        "name": "Input Heads",
+        "value": "4"
+      },
+      {
+        "name": "Input Dropout",
+        "value": "0.1"
+      },
+      {
+        "name": "Communication keys",
+        "value": "32"
+      },
+      {
+        "name": "Communication Values",
+        "value": "32"
+      },
+      {
+        "name": "Communication heads",
+        "value": "4"
+      },
+      {
+        "name": "Communication Dropout",
+        "value": "0.1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Sequential MNIST Resolution Task",
+        "version": null
+      },
+      {
+        "name": "Bouncing Balls Environment",
+        "version": null
+      },
+      {
+        "name": "bouncing balls",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Top-down bias",
+        "description": "Units matching an internal model of an object or process are pre-activated by higher brain areas, giving them an advantage during competition and focusing resources on potentially relevant inputs."
+      },
+      {
+        "name": "Sparse Information Flow",
+        "description": "Each RIM\u2019s dynamics should be influenced only by relevant RIMs; in noisy or distracting settings, many RIMs remain dormant, improving robustness to out-of-distribution or distractor observations compared to a single homogeneous network."
+      },
+      {
+        "name": "Modular Computation Flow and Modular Parameterization",
+        "description": "Each RIM has its own default dynamics in the absence of interaction; specialization on simpler sub-problems reduces total parameters, speeds computation, and can improve generalization."
+      },
+      {
+        "name": "Recurrent Independent Mechanisms (RIMs)",
+        "description": "Uses modules (corresponding to factors) which dynamically select which variables (instances) they apply to, with modules activated sparsely and communicating sparsely (only a few variables, i.e., heads, involved for each); performs well on long sequences."
+      },
+      {
+        "name": "Consciousness Prior",
+        "description": "An inductive bias of a sparse graphical model describing the interactions between high-level variables, each factor involving few variables and capturing an independent mechanism, and using attention to select only a subset of high-level variables to interact together at any particular time during inference; motivates in RIMs the use of sparsely activated and communicating modules."
+      },
+      {
+        "name": "Recurrent Entity Networks (EnTNet)",
+        "description": "A set of separate recurrent models whose hidden states store the memory slots; these hidden states are either fixed by the gates, or modified through a simple RNN-style update."
+      },
+      {
+        "name": "RIMs",
+        "description": "Model reported as robust to changes in sequence length (via image resolution), outperforming baselines and specializing over temporal patterns and objects."
+      },
+      {
+        "name": "LSTM",
+        "description": "Baseline model whose performance degraded more severely when sequence length changed."
+      },
+      {
+        "name": "Transformers",
+        "description": "Baseline model outperformed by RIMs."
+      },
+      {
+        "name": "EntNet",
+        "description": "Baseline model outperformed by RIMs."
+      },
+      {
+        "name": "RMC",
+        "description": "Baseline model outperformed by RIMs."
+      },
+      {
+        "name": "DNC",
+        "description": "Baseline model outperformed by RIMs."
+      },
+      {
+        "name": "RIMs input gating via null vector",
+        "description": "Append a vector of zeros to the input; activate the RIMs that pay least attention to the null input in input attention."
+      },
+      {
+        "name": "Concatenated RIM outputs",
+        "description": "Concatenate representations of different RIMs for policy learning in RL or next-step prediction in bouncing balls and other experiments."
+      },
+      {
+        "name": "Output multi-headed key-value attention",
+        "description": "Add an additional layer of multi-headed key-value attention on the concatenated output representations."
+      },
+      {
+        "name": "RMC (Santoro et al., 2018)",
+        "description": "Baseline model compared to RIMs on a partial observation video prediction task, evaluated with F1 score."
+      },
+      {
+        "name": "TTO",
+        "description": "Time travelling oracle upper bound baseline that does not model dynamics and has access to true dynamics."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,956 @@
+{
+ "study_id": "study017",
+ "model": "sonnet",
+ "slug": "claude-sonnet-5-5",
+ "n_passages": 6,
+ "n_passages_ok": 6,
+ "failures": [],
+ "records": [
+  {
+   "field": "dependencies",
+   "value": "np.array",
+   "evidence": "np.array (Harris et al., 2020)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "dependencies",
+   "value": "torch.Tensor",
+   "evidence": "torch.Tensor (Paszke et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "dependencies",
+   "value": "DGLGraph",
+   "evidence": "DGLGraph (Wang et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Vahadane Stain Norm",
+   "evidence": "Vahadane Stain Norm",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Macenko Stain Norm",
+   "evidence": "Macenko Stain Norm",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Tissue Mask Detection",
+   "evidence": "Tissue Mask Detection",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Nuclei Detection",
+   "evidence": "Nuclei Detection",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Deep Feature Extraction",
+   "evidence": "Deep Feature Extraction",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "k-NN Graph Building",
+   "evidence": "k-NN Graph Building",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "RAG Graph Building",
+   "evidence": "RAG Graph Building",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Cell-Graph Model",
+   "evidence": "Cell-Graph Model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Tissue-Graph Model",
+   "evidence": "Tissue-Graph Model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "HACT Model",
+   "evidence": "HACT Model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GnnExplainer",
+   "evidence": "GnnExplainer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM",
+   "evidence": "GraphGrad-CAM",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM++",
+   "evidence": "GraphGrad-CAM++",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GraphLRP",
+   "evidence": "GraphLRP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Gaussian smoothing",
+   "evidence": "iteratively applies Gaussian smoothing",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "PanNuke",
+   "evidence": "trained on PanNuke (Gamper et al., 2020)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "MoNuSac",
+   "evidence": "MoNuSac (Ruchika et al., 2020) datasets for nuclei segmentation and classi\ufb01cation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Gaussian smoothing and Otsu thresholding tissue detection",
+   "evidence": "iteratively applies Gaussian smoothing and Otsu thresholding until the mean of non-tissue pixels is below a threshold",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "HoVerNet",
+   "evidence": "two checkpoints for the state-of-the-art HoVerNet model (Graham et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Simple Linear Iterative Clustering (SLIC)",
+   "evidence": "Simple Linear Iterative Clustering (SLIC) (Achanta et al., 2012) algorithm",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Hierarchical superpixel merging",
+   "evidence": "neighboring superpixels are hierarchically merged using color simi- larity",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "DGL",
+   "evidence": "All the graph modules are implemented using DGL (Wang et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "dependencies",
+   "value": "PyTorch",
+   "evidence": "a state-of-the-art library for GNNs built around PyTorch",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM",
+   "evidence": "GraphGrad-CAM (Sel- varaju et al., 2017; Pope et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM++",
+   "evidence": "GraphGrad-CAM++ (Chattopadhay et al., 2018; Jaume et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GnnExplainer",
+   "evidence": "a node pruning-based explainer ( GnnExplainer (Ying et al., 2019))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphLRP",
+   "evidence": "a layer-wise relevance propagation explainer ( GraphLRP (Schwarzenberg et al., 2019))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hardware",
+   "value": "single-core POWER8 processor",
+   "evidence": "a single-core POWER8 processor and a NVIDIA P100 GPU",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "NVIDIA P100",
+   "evidence": "a single-core POWER8 processor and a NVIDIA P100 GPU",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Vahadane Stain Norm",
+   "evidence": "Vahadane Stain Norm 1.77 6 .46 29 .03 30.67 68 .27 186 .10",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Macenko Stain Norm",
+   "evidence": "Macenko Stain Norm 0.80 2 .86 11 .19 15.98 32 .37 81 .72",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Tissue Mask Detection",
+   "evidence": "Tissue Mask Detection - - - 1.04 2 .11 8 .09",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Feature Cube Extraction",
+   "evidence": "Feature Cube Extraction 0.24 1 .61 5 .92 5.83 11 .77 30 .21",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Cell-Graph Generation",
+   "evidence": "Cell-Graph Generation 2.51 13 .33 50 .26 - - -",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Tissue-Graph Generation",
+   "evidence": "Tissue-Graph Generation 4.14 21 .30 83 .66 39.18 93 .26 276 .71",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "dependencies",
+   "value": "python",
+   "evidence": "As the library is built on python",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "post-hoc feature attribution",
+   "evidence": "applying post-hoc feature attribution methods on trained cell-graph model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "node-level saliency maps",
+   "evidence": "node- level saliency maps by applying post-hoc feature attribution methods",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "BRACS",
+   "evidence": "Classi\ufb01cation is performed on BRACS (Pati et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "BACH",
+   "evidence": "BACH (Aresta et al., 2019) datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "UZH",
+   "evidence": "images from UZH (Zhong et al., 2017)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "SICAPv2",
+   "evidence": "SICAPv2 (Silva- Rodr\u00b4 \u0131guez et al., 2020)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "HistoCartography",
+   "evidence": "Table 3 benchmarks the performance of HistoCartography",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "cell-graph model",
+   "evidence": "cell-graph model, tissue-graph model, and HACT-Net",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "tissue-graph model",
+   "evidence": "cell-graph model, tissue-graph model, and HACT-Net",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "HACT-Net",
+   "evidence": "HACT-Net (Pati et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "SegGini",
+   "evidence": "Segmentation is performed using SegGini (Anklin et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "GraphGradCAM",
+   "evidence": "outcome of GraphGradCAM module in HistoCartography",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "44.3\u00b12.0",
+   "evidence": "4 44 .3\u00b12.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.0\u00b13.1",
+   "evidence": "4 66 .0\u00b13.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "dependencies": {
+    "n": 6,
+    "has_evidence": 6,
+    "span_found": 6,
+    "value_in_span": 6,
+    "grounded": 6
+   },
+   "methods": {
+    "n": 37,
+    "has_evidence": 37,
+    "span_found": 37,
+    "value_in_span": 34,
+    "grounded": 34
+   },
+   "datasets": {
+    "n": 6,
+    "has_evidence": 6,
+    "span_found": 6,
+    "value_in_span": 6,
+    "grounded": 6
+   },
+   "hardware": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   },
+   "evaluation_results": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 0,
+    "grounded": 0
+   }
+  },
+  "total": {
+   "n": 53,
+   "has_evidence": 53,
+   "span_found": 53,
+   "value_in_span": 48,
+   "grounded": 48
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "np.array",
+      "version": null,
+      "evidence": "np.array (Harris et al., 2020)"
+     },
+     {
+      "name": "torch.Tensor",
+      "version": null,
+      "evidence": "torch.Tensor (Paszke et al., 2019)"
+     },
+     {
+      "name": "DGLGraph",
+      "version": null,
+      "evidence": "DGLGraph (Wang et al., 2019)"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Vahadane Stain Norm",
+      "evidence": "Vahadane Stain Norm"
+     },
+     {
+      "name": "Macenko Stain Norm",
+      "evidence": "Macenko Stain Norm"
+     },
+     {
+      "name": "Tissue Mask Detection",
+      "evidence": "Tissue Mask Detection"
+     },
+     {
+      "name": "Nuclei Detection",
+      "evidence": "Nuclei Detection"
+     },
+     {
+      "name": "Deep Feature Extraction",
+      "evidence": "Deep Feature Extraction"
+     },
+     {
+      "name": "k-NN Graph Building",
+      "evidence": "k-NN Graph Building"
+     },
+     {
+      "name": "RAG Graph Building",
+      "evidence": "RAG Graph Building"
+     },
+     {
+      "name": "Cell-Graph Model",
+      "evidence": "Cell-Graph Model"
+     },
+     {
+      "name": "Tissue-Graph Model",
+      "evidence": "Tissue-Graph Model"
+     },
+     {
+      "name": "HACT Model",
+      "evidence": "HACT Model"
+     },
+     {
+      "name": "GnnExplainer",
+      "evidence": "GnnExplainer"
+     },
+     {
+      "name": "GraphGrad-CAM",
+      "evidence": "GraphGrad-CAM"
+     },
+     {
+      "name": "GraphGrad-CAM++",
+      "evidence": "GraphGrad-CAM++"
+     },
+     {
+      "name": "GraphLRP",
+      "evidence": "GraphLRP"
+     },
+     {
+      "name": "Gaussian smoothing",
+      "evidence": "iteratively applies Gaussian smoothing"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "PanNuke",
+      "version": null,
+      "evidence": "trained on PanNuke (Gamper et al., 2020)"
+     },
+     {
+      "name": "MoNuSac",
+      "version": null,
+      "evidence": "MoNuSac (Ruchika et al., 2020) datasets for nuclei segmentation and classi\ufb01cation"
+     }
+    ],
+    "methods": [
+     {
+      "name": "Gaussian smoothing and Otsu thresholding tissue detection",
+      "evidence": "iteratively applies Gaussian smoothing and Otsu thresholding until the mean of non-tissue pixels is below a threshold"
+     },
+     {
+      "name": "HoVerNet",
+      "evidence": "two checkpoints for the state-of-the-art HoVerNet model (Graham et al., 2019)"
+     },
+     {
+      "name": "Simple Linear Iterative Clustering (SLIC)",
+      "evidence": "Simple Linear Iterative Clustering (SLIC) (Achanta et al., 2012) algorithm"
+     },
+     {
+      "name": "Hierarchical superpixel merging",
+      "evidence": "neighboring superpixels are hierarchically merged using color simi- larity"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "DGL",
+      "version": null,
+      "evidence": "All the graph modules are implemented using DGL (Wang et al., 2019)"
+     },
+     {
+      "name": "PyTorch",
+      "version": null,
+      "evidence": "a state-of-the-art library for GNNs built around PyTorch"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "GraphGrad-CAM",
+      "evidence": "GraphGrad-CAM (Sel- varaju et al., 2017; Pope et al., 2019)"
+     },
+     {
+      "name": "GraphGrad-CAM++",
+      "evidence": "GraphGrad-CAM++ (Chattopadhay et al., 2018; Jaume et al., 2021)"
+     },
+     {
+      "name": "GnnExplainer",
+      "evidence": "a node pruning-based explainer ( GnnExplainer (Ying et al., 2019))"
+     },
+     {
+      "name": "GraphLRP",
+      "evidence": "a layer-wise relevance propagation explainer ( GraphLRP (Schwarzenberg et al., 2019))"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "cpu_info",
+      "value": "single-core POWER8 processor",
+      "evidence": "a single-core POWER8 processor and a NVIDIA P100 GPU"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "NVIDIA P100",
+      "evidence": "a single-core POWER8 processor and a NVIDIA P100 GPU"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Vahadane Stain Norm",
+      "evidence": "Vahadane Stain Norm 1.77 6 .46 29 .03 30.67 68 .27 186 .10"
+     },
+     {
+      "name": "Macenko Stain Norm",
+      "evidence": "Macenko Stain Norm 0.80 2 .86 11 .19 15.98 32 .37 81 .72"
+     },
+     {
+      "name": "Tissue Mask Detection",
+      "evidence": "Tissue Mask Detection - - - 1.04 2 .11 8 .09"
+     },
+     {
+      "name": "Feature Cube Extraction",
+      "evidence": "Feature Cube Extraction 0.24 1 .61 5 .92 5.83 11 .77 30 .21"
+     },
+     {
+      "name": "Cell-Graph Generation",
+      "evidence": "Cell-Graph Generation 2.51 13 .33 50 .26 - - -"
+     },
+     {
+      "name": "Tissue-Graph Generation",
+      "evidence": "Tissue-Graph Generation 4.14 21 .30 83 .66 39.18 93 .26 276 .71"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "python",
+      "version": null,
+      "evidence": "As the library is built on python"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "post-hoc feature attribution",
+      "evidence": "applying post-hoc feature attribution methods on trained cell-graph model"
+     },
+     {
+      "name": "node-level saliency maps",
+      "evidence": "node- level saliency maps by applying post-hoc feature attribution methods"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "BRACS",
+      "version": null,
+      "evidence": "Classi\ufb01cation is performed on BRACS (Pati et al., 2021)"
+     },
+     {
+      "name": "BACH",
+      "version": null,
+      "evidence": "BACH (Aresta et al., 2019) datasets"
+     },
+     {
+      "name": "UZH",
+      "version": null,
+      "evidence": "images from UZH (Zhong et al., 2017)"
+     },
+     {
+      "name": "SICAPv2",
+      "version": null,
+      "evidence": "SICAPv2 (Silva- Rodr\u00b4 \u0131guez et al., 2020)"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HistoCartography",
+      "evidence": "Table 3 benchmarks the performance of HistoCartography"
+     },
+     {
+      "name": "cell-graph model",
+      "evidence": "cell-graph model, tissue-graph model, and HACT-Net"
+     },
+     {
+      "name": "tissue-graph model",
+      "evidence": "cell-graph model, tissue-graph model, and HACT-Net"
+     },
+     {
+      "name": "HACT-Net",
+      "evidence": "HACT-Net (Pati et al., 2021)"
+     },
+     {
+      "name": "SegGini",
+      "evidence": "Segmentation is performed using SegGini (Anklin et al., 2021)"
+     },
+     {
+      "name": "GraphGradCAM",
+      "evidence": "outcome of GraphGradCAM module in HistoCartography"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "weighted-F1 score",
+      "value": "44.3\u00b12.0",
+      "split": null,
+      "evidence": "4 44 .3\u00b12.0"
+     },
+     {
+      "metric": "weighted-F1 score",
+      "value": "66.0\u00b13.1",
+      "split": null,
+      "evidence": "4 66 .0\u00b13.1"
+     }
+    ]
+   }
+  }
+ ]
+}

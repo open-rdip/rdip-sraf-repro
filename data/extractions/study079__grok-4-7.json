@@ -1,0 +1,246 @@
+{
+  "study_id": "study079",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study079/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:28:28.320599+00:00",
+  "counts": {
+    "dependencies": 10,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 3,
+    "methods": 21,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "LLaMA-13B-chat",
+        "version": null
+      },
+      {
+        "name": "LLaMA2-13B",
+        "version": null
+      },
+      {
+        "name": "LLaMA2-13B-chat",
+        "version": null
+      },
+      {
+        "name": "TigerScore",
+        "version": null
+      },
+      {
+        "name": "LLaMA-7B",
+        "version": null
+      },
+      {
+        "name": "VLLM",
+        "version": null
+      },
+      {
+        "name": "LLaMA3-8B-Instruct",
+        "version": null
+      },
+      {
+        "name": "Mistral-7B-Instruct-v0.3",
+        "version": "v0.3"
+      },
+      {
+        "name": "LLaMA2-7B-chat",
+        "version": null
+      },
+      {
+        "name": "Mistral-7B-Instruct",
+        "version": "v0.1"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100 Tensor Core GPU, 80GB VRAM",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "support_score_Yes",
+        "value": "1.0"
+      },
+      {
+        "name": "support_score_No",
+        "value": "0.0"
+      },
+      {
+        "name": "support_score_N/A",
+        "value": "0.5"
+      },
+      {
+        "name": "batch_size",
+        "value": "16"
+      },
+      {
+        "name": "warmup_ratio",
+        "value": "0.1"
+      },
+      {
+        "name": "learning_rate",
+        "value": "2e-5"
+      },
+      {
+        "name": "num_epochs",
+        "value": "5"
+      },
+      {
+        "name": "beta",
+        "value": "0.1"
+      },
+      {
+        "name": "max_length",
+        "value": "1024"
+      },
+      {
+        "name": "r",
+        "value": "256"
+      },
+      {
+        "name": "alpha",
+        "value": "128"
+      },
+      {
+        "name": "lora_dropout",
+        "value": "0.05"
+      },
+      {
+        "name": "epochs",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "HQ2A",
+        "version": null
+      },
+      {
+        "name": "ASQA",
+        "version": null
+      },
+      {
+        "name": "ELI5",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "sentence support scoring",
+        "description": "LLaMA-13B-chat checks whether the ith sentence in the original answer is supported by sampled answer Sn and maps Yes/No/N/A to 1.0/0.0/0.5; consistency is the mean of those scores over N samples."
+      },
+      {
+        "name": "LoRA fine-tuning",
+        "description": "LoRA fine-tuning of the LLaMA2-13B-chat refinement model on preference data from HQ2A."
+      },
+      {
+        "name": "ERROR-INFORMED REFINEMENT",
+        "description": "Approach used to refine answers on HQ2A, ASQA, and ELI5."
+      },
+      {
+        "name": "TigerScore evaluation",
+        "description": "Evaluation of refined answers with TigerScore (LLaMA-7B) using the VLLM inference library."
+      },
+      {
+        "name": "DPO",
+        "description": "Training language models with DPO using collected preference annotations."
+      },
+      {
+        "name": "DPO-aligned refinement",
+        "description": "Answers refined with the DPO-aligned model; does not outperform the vanilla refinement model in reducing the overall number of error samples, but achieves the best error scores on ASQA and ELI5, suggesting DPO optimization corrects major errors to some extent."
+      },
+      {
+        "name": "vanilla refinement",
+        "description": "Vanilla refinement model compared with the DPO-aligned refinement model on reducing error samples."
+      },
+      {
+        "name": "ZERO-SHOT",
+        "description": "Zero-shot prompting (direct prompting) used to generate answers."
+      },
+      {
+        "name": "IMPROVE",
+        "description": "Coarse-grained feedback; refining without detailed feedback."
+      },
+      {
+        "name": "GENERIC",
+        "description": "Coarse-grained feedback used to refine answers."
+      },
+      {
+        "name": "EIR",
+        "description": "Fine-grained feedback used to refine answers."
+      },
+      {
+        "name": "BASELINE",
+        "description": "Original answers from the dataset."
+      },
+      {
+        "name": "LLaMA3-8B-Instruct refinement",
+        "description": "Used as the refinement model (Table 9) for zero-shot prompting and coarse- and fine-grained feedback refinement."
+      },
+      {
+        "name": "Mistral-7B-Instruct-v0.3 refinement",
+        "description": "Used respectively (Table 10) for zero-shot prompting and coarse- and fine-grained feedback refinement."
+      },
+      {
+        "name": "preference dataset",
+        "description": "HQ2A is modeled as a preference dataset where every question has a chosen and a rejected response selected by expert annotators based on the given evaluation criteria."
+      },
+      {
+        "name": "LoRA",
+        "description": "Train Llama2-13B-chat on the preference dataset using LoRA due to compute limitations."
+      },
+      {
+        "name": "zero-shot prompt",
+        "description": "Zero-shot prompt for LLaMA2-13B-chat to refine long-form answers with error feedback from the error detection model."
+      },
+      {
+        "name": "coarse-grained feedback",
+        "description": "Coarse-grained feedback baseline compared against fine-grained feedback from the EIR error detection model."
+      },
+      {
+        "name": "Error-informed feedback",
+        "description": "Approach used to refine answers, evaluated by human annotators on comprehensiveness and overall answer preference."
+      },
+      {
+        "name": "expert error annotation",
+        "description": "For every question, experts see a human-written and model-generated LFQA answer in randomized order, select the evaluation layer, highlight the error span in the question or answer, and give justifications with web references where applicable. After annotating all evaluation criteria, experts judge the better answer and mark it, giving reasons for their preference."
+      },
+      {
+        "name": "sentence-level annotation transformation",
+        "description": "Expert annotations for completeness are transformed to sentence-level annotations for training the feedback model."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "error samples reduction",
+        "value": "~2%",
+        "split": null
+      },
+      {
+        "metric": "error score reduction",
+        "value": "~\u039427%",
+        "split": null
+      },
+      {
+        "metric": "F1 improvement",
+        "value": "~4% on average",
+        "split": null
+      },
+      {
+        "metric": "comprehensiveness annotator agreement",
+        "value": "strong agreement",
+        "split": null
+      },
+      {
+        "metric": "overall answer preference annotator agreement",
+        "value": "weak agreement",
+        "split": null
+      }
+    ]
+  }
+}

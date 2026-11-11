@@ -1,0 +1,162 @@
+{
+  "study_id": "study052",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study052/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:56:03.199468+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 3,
+    "methods": 18,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "XGBoost",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "epsilon",
+        "value": "0.3"
+      },
+      {
+        "name": "number_of_trees",
+        "value": "20"
+      },
+      {
+        "name": "tree_depth",
+        "value": "same as Kantchelian et al. (2016); increased for some datasets in robust GBDT models"
+      },
+      {
+        "name": "step_size_shrinkage",
+        "value": "same as Kantchelian et al. (2016)"
+      },
+      {
+        "name": "attack_evaluation_subset_size_MNIST_2_vs_6",
+        "value": "100 examples"
+      },
+      {
+        "name": "attack_targets",
+        "value": "only correctly classified images"
+      },
+      {
+        "name": "number of trees",
+        "value": "same as Kantchelian et al. (2016)"
+      },
+      {
+        "name": "depth",
+        "value": "same as Kantchelian et al. (2016)"
+      },
+      {
+        "name": "step size shrinkage",
+        "value": "same as Kantchelian et al. (2016)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "MNIST",
+        "version": null
+      },
+      {
+        "name": "Fashion-MNIST",
+        "version": null
+      },
+      {
+        "name": "MNIST 2 vs. 6",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Robust training",
+        "description": "Robust training with parameter epsilon = 0.3 for MNIST."
+      },
+      {
+        "name": "Cheng\u2019s \u2113\u221e attack",
+        "description": "Evaluation using Cheng\u2019s L-infinity adversarial attack."
+      },
+      {
+        "name": "Random forest models",
+        "description": "Framework also tested on random forest models; results in Section G of the appendix."
+      },
+      {
+        "name": "Robust Information Gain Decision Trees",
+        "description": "Decision trees trained using a robust information gain criterion (Algorithm 1) to improve robustness against untargeted adversarial attacks."
+      },
+      {
+        "name": "Natural Decision Trees",
+        "description": "Standard (non-robust) decision trees used as a baseline for comparison."
+      },
+      {
+        "name": "Papernot\u2019s attack",
+        "description": "An untargeted adversarial attack applied to evaluate robustness; attacks continue until 100% success on correctly classified images."
+      },
+      {
+        "name": "Cheng\u2019s attack (\u2113\u221e version)",
+        "description": "An \u2113\u221e adversarial attack variant used to compute average distortion required for successful attacks."
+      },
+      {
+        "name": "Kantchelian\u2019s attacks (\u21131, \u21132, \u2113\u221e versions)",
+        "description": "Adversarial attacks in \u21131, \u21132, and \u2113\u221e norms used to measure required distortion for successful attacks."
+      },
+      {
+        "name": "Robust GBDT training",
+        "description": "Robust training is embedded in each tree\u2019s building process, creating robust trees from the first step of boosting."
+      },
+      {
+        "name": "Kantchelian et al. (2016) adversarial training",
+        "description": "Adversarial examples with respect to the current model are added at each boosting round, so later-stage adversarial examples are only learned by part of the model, leaving early non-robust trees as potential weaknesses."
+      },
+      {
+        "name": "GBDT with k trees from a single boosting run",
+        "description": "Models with k trees are formed by taking the first k trees from a single boosting run of K trees (K \u2265 k)."
+      },
+      {
+        "name": "Natural GBDT",
+        "description": "Gradient-boosted decision trees trained with standard settings; number of trees matches robust model for comparison."
+      },
+      {
+        "name": "Robust GBDT",
+        "description": "Gradient-boosted decision trees trained for robustness; same number of trees as natural model, with increased tree depth on some datasets."
+      },
+      {
+        "name": "Kantchelian\u2019s \u2113\u221e attack",
+        "description": "Finds the minimum adversarial example in \u2113\u221e norm; applicable to small and medium binary classification models."
+      },
+      {
+        "name": "Kantchelian\u2019s \u21131 attack",
+        "description": "Finds adversarial examples in \u21131 norm; results presented in Table 5 (appendix); limited to binary and small-scale models due to MILP formulation."
+      },
+      {
+        "name": "Kantchelian\u2019s \u21132 attack",
+        "description": "Finds adversarial examples in \u21132 norm; results presented in Table 5 (appendix); limited to binary and small-scale models due to MILP formulation."
+      },
+      {
+        "name": "Robust GBDT (modified XGBoost split scoring)",
+        "description": "Implements Algorithm 2 by modifying XGBoost's node splitting to change how split scores are computed, creating an ensemble of robust decision trees; evaluated under untargeted adversarial attacks."
+      },
+      {
+        "name": "Natural (undefended) GBDT",
+        "description": "Standard XGBoost-trained gradient-boosted decision trees without robustness modifications; used as a baseline."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy loss",
+        "value": "less than 1%",
+        "split": null
+      }
+    ]
+  }
+}

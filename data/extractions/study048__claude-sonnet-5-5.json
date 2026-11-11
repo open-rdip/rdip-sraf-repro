@@ -1,0 +1,182 @@
+{
+  "study_id": "study048",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study048/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:51:13.796810+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 1,
+    "methods": 17,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of separate Monte Carlo runs",
+        "value": "seven"
+      },
+      {
+        "name": "number of longer unseeded runs",
+        "value": "five"
+      },
+      {
+        "name": "reduced temperature (canonical Monte Carlo simulation)",
+        "value": "0.8"
+      },
+      {
+        "name": "RMS gradient tolerance (conjugate gradient search)",
+        "value": "0.01 in reduced units"
+      },
+      {
+        "name": "energy change tolerance between consecutive steps (conjugate gradient search)",
+        "value": "0.1\u01eb"
+      },
+      {
+        "name": "RMS gradient tolerance (initially tried, found unsatisfactory for clusters with more than about 60 atoms)",
+        "value": "0.1"
+      },
+      {
+        "name": "RMS force tolerance (reoptimization of lowest energy structures)",
+        "value": "10^-4"
+      },
+      {
+        "name": "energy difference tolerance (reoptimization of lowest energy structures)",
+        "value": "10^-9"
+      },
+      {
+        "name": "target acceptance ratio for angular moves",
+        "value": "0.5"
+      },
+      {
+        "name": "alpha (fraction of lowest pair energy triggering angular move)",
+        "value": "converged generally to between 0.40 and 0 (text truncated)"
+      },
+      {
+        "name": "Monte Carlo run length",
+        "value": "5000 steps"
+      },
+      {
+        "name": "number of Monte Carlo runs (LJ75 decahedral test)",
+        "value": "100"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Cambridge Cluster Database",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Basin-hopping (energy transformation)",
+        "description": "Transforms the potential energy surface using E~(X) = min{E(X)}, where X is the 3N-dimensional vector of nuclear coordinates and min denotes a local energy minimization started from X. The transformation does not change the global minimum or the relative energies of local minima. It is guided by energy landscape work indicating that efficient global minimum location needs large potential energy gradients and low transition state energies or rearrangement barriers."
+      },
+      {
+        "name": "Master equation approach for dynamics",
+        "description": "Analysis of model energy landscapes with a master equation approach for the dynamics, used to identify landscape features that enable efficient location of the global minimum."
+      },
+      {
+        "name": "Unbiased Monte Carlo global optimization",
+        "description": "Monte Carlo runs started from initial random configurations (unbiased algorithm), conducted at a temperature that was not systematically optimized."
+      },
+      {
+        "name": "Seeded (biased) starting configurations",
+        "description": "Starting from seeds with decahedral, icosahedral or fcc morphologies; noted as an effective biasing short-cut but not used in the present paper."
+      },
+      {
+        "name": "Morse cluster test",
+        "description": "A more stringent and general test of global optimization using Morse clusters, which show different structural behaviour as a function of the range of the potential; short range gives a rugged potential energy surface."
+      },
+      {
+        "name": "Lennard-Jones cluster global optimization",
+        "description": "Global minima of LJ clusters for N\u2264110 (Table I lists point group, energy/\u03b5 and references)."
+      },
+      {
+        "name": "Monte Carlo global minimization (unbiased algorithm)",
+        "description": "Monte Carlo runs with a fixed total number of searches used to locate global minima of Lennard-Jones (LJ) clusters; includes longer unseeded runs and shorter runs seeded from global minima of neighboring cluster sizes (e.g., N=37 and 39 for LJ38; LJ76 for LJ75; LJ75 and LJ77 decahedra for LJ76)."
+      },
+      {
+        "name": "Polak-Ribiere conjugate gradient",
+        "description": "Variant of the conjugate gradient algorithm used for energy minimization starting from the nuclear coordinates X."
+      },
+      {
+        "name": "Basin-hopping energy transformation",
+        "description": "The energy at any point in configuration space is assigned to that of the local minimum obtained by geometry optimization, mapping the PES onto interpenetrating staircases with plateaus (basins of attraction) corresponding to configurations that lead to the same minimum."
+      },
+      {
+        "name": "Canonical Monte Carlo simulation",
+        "description": "Exploration of the transformed energy landscape E~(X) at a constant reduced temperature of 0.8, where at each step all coordinates were displaced."
+      },
+      {
+        "name": "Conjugate gradient search",
+        "description": "Geometry optimization requiring RMS gradient below 0.01 in reduced units and energy change below 0.1\u01eb between consecutive steps."
+      },
+      {
+        "name": "Canonical simulation",
+        "description": "Simulation during which the lowest energy structures were saved and later reoptimized with tighter tolerances (10^-4 RMS force, 10^-9 energy difference)."
+      },
+      {
+        "name": "Seeding",
+        "description": "Additional technique employed in the calculations; no details given in the passage."
+      },
+      {
+        "name": "Freezing",
+        "description": "Additional technique employed in the calculations; no details given in the passage."
+      },
+      {
+        "name": "Angular moves",
+        "description": "Move applied to an atom with all other atoms fixed when its highest pair energy rises above a fraction alpha of the lowest pair energy; alpha is adjusted to give an acceptance ratio of 0.5."
+      },
+      {
+        "name": "Pair energy per atom",
+        "description": "E(i) = 4\u01eb\u2211_{j\u2260i}[(\u03c3/r_ij)^12 \u2212 (\u03c3/r_ij)^6], with total energy E = 1/2 \u2211_i E(i)."
+      },
+      {
+        "name": "Monte Carlo runs (unbiased global optimization)",
+        "description": "Unbiased Monte Carlo global minimum search for Lennard-Jones clusters (LJ75\u2013LJ77, LJ102\u2013LJ104), with long runs and short runs seeded from the global minima or decahedra of neighbouring cluster sizes. Success requires an initial geometry within the decahedral catchment area; otherwise runs produce the lowest icosahedral minimum."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "LJ38 truncated octahedron found in longer unseeded runs",
+        "value": "four out of five",
+        "split": null
+      },
+      {
+        "metric": "LJ38 first success (average Monte Carlo steps)",
+        "value": "within a thousand",
+        "split": null
+      },
+      {
+        "metric": "LJ75 global minimum found in longer Monte Carlo runs",
+        "value": "one",
+        "split": null
+      },
+      {
+        "metric": "Final energy accuracy",
+        "value": "about six decimal places",
+        "split": null
+      },
+      {
+        "metric": "Angular move acceptance ratio",
+        "value": "0.5",
+        "split": null
+      },
+      {
+        "metric": "Success frequency for finding LJ75 decahedral global minimum",
+        "value": "4 out of 100 Monte Carlo runs of 5000 steps each",
+        "split": null
+      }
+    ]
+  }
+}

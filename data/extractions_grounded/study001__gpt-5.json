@@ -1,0 +1,1217 @@
+{
+ "study_id": "study001",
+ "model": "gpt5",
+ "slug": "gpt-5",
+ "n_passages": 7,
+ "n_passages_ok": 7,
+ "failures": [],
+ "records": [
+  {
+   "field": "hyperparameters",
+   "value": "4-bit",
+   "evidence": "applying 4-bit, 3-bit, and 2-bit weights",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "3-bit",
+   "evidence": "applying 4-bit, 3-bit, and 2-bit weights",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "2-bit",
+   "evidence": "applying 4-bit, 3-bit, and 2-bit weights",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "FP16",
+   "evidence": "activation to FP16.5Based",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "GPTQ",
+   "evidence": "utilize the GPTQ quantization strategy.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "per-row",
+   "evidence": "coarse-grained weight quantization (per-row)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "256",
+   "evidence": "fine-grained quantization (block-size 256)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "INT8",
+   "evidence": "two low-rank matrices for LoRC in Table 7 are INT8",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "8",
+   "evidence": "low-rank dimension of m= 8.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "W4asymA16",
+   "evidence": "Results of W4asymA16 quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "LoRC",
+   "evidence": "LoRC can be viewed as a supplementary feature",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "RTN",
+   "evidence": "such as RTN, GPTQ, and ZeroQuant-Local/Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "utilize the GPTQ quantization strategy.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "ZeroQuant-Local/Global",
+   "evidence": "ZeroQuant-Local/Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "FGQ",
+   "evidence": "integrated with FGQ.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "coarse-grained weight quantization",
+   "evidence": "coarse-grained weight quantization (per-row)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "fine-grained quantization",
+   "evidence": "fine-grained quantization (block-size 256)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "max(abs(x))",
+   "evidence": "we set S=max(abs(x))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "INT4 weight-only quantization",
+   "evidence": "INT4 weight-only quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "INT8 activation",
+   "evidence": "INT8 activation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "GPTQ [ 12]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ZeroQuant",
+   "evidence": "ZeroQuant [ 36]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "round-to-nearest neighborhood (RTN)",
+   "evidence": "round-to-nearest neighborhood (RTN)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "PTQ",
+   "evidence": "applies PTQ",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "quantization-aware training",
+   "evidence": "quantization-aware training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "symmetric quantization",
+   "evidence": "symmetric quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "INT8",
+   "evidence": "INT8 weight-only quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "INT4",
+   "evidence": "For INT4 quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "symmetric",
+   "evidence": "either symmetric or asymmetric",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "asymmetric",
+   "evidence": "either symmetric or asymmetric",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "per-row",
+   "evidence": "per-row quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "per-token",
+   "evidence": "per-token quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "symmetric quantization",
+   "evidence": "symmetric",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "asymmetric quantization",
+   "evidence": "asymmetric",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "per-row quantization",
+   "evidence": "per-row quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "per-token quantization",
+   "evidence": "per-token quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "weight-only quantization",
+   "evidence": "weight-only quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "about 0.5",
+   "evidence": "PPL improvement is about 0.5",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "less than 0.05",
+   "evidence": "accuracy loss (less than 0.05",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "around 0.3 points",
+   "evidence": "PPL degradation (around 0.3 points)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "PTQ",
+   "evidence": "With PTQ and row-wise quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "row-wise quantization",
+   "evidence": "With PTQ and row-wise quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "weight-only quantization",
+   "evidence": "for both weight-only and weight-and-activation quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "weight-and-activation quantization",
+   "evidence": "for both weight-only and weight-and-activation quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "finer-grained quantization",
+   "evidence": "finer-grained quantization schemes",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "block-k quantization",
+   "evidence": "block-k quantization can be implemented on modern GPUs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "RTN",
+   "evidence": "the application of RTN still results in a non-trivial accuracy gap",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "we utilize GPTQ and ZQ-Global for all models",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Global",
+   "evidence": "we utilize GPTQ and ZQ-Global for all models",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Local",
+   "evidence": "and apply ZQ-Local to OPT-66B and Bloom-176B.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Local",
+   "evidence": "ZQ-Local is an extension mode of ZQ-Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Global",
+   "evidence": "ZQ-Local is an extension mode of ZQ-Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "SGD",
+   "evidence": "(e.g., SGD)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "For parameters used for GPTQ, ZQ-Local, and ZQ-Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "ZeroQuant",
+   "evidence": "ZeroQuant",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "asymmetric quantization",
+   "evidence": "We use asymmetric quantization for better accuracy",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "symmetric quantization",
+   "evidence": "symmetric quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "weight-only quantization",
+   "evidence": "on weight-only and weight-and- activation quantization.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "weight-and- activation quantization",
+   "evidence": "weight-and- activation quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "weight quantization",
+   "evidence": "As weight quantization is always static",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "activation quantization",
+   "evidence": "activation quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "W4A8",
+   "evidence": "W4A8 quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "GPTQ",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "ZeroQuant",
+   "evidence": "ZeroQuant",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Global\u2217",
+   "evidence": "ZQ-Global\u2217",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Local\u2217",
+   "evidence": "ZQ-Local\u2217",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "RTN",
+   "evidence": "RTN",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "INT8 weight-only quantization",
+   "evidence": "(1) INT8 weight-only quantization can serve as a standard method for reducing memory costs in LLMs, with negligible degradation in accuracy.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "INT4 weight-only quantization",
+   "evidence": "(2)INT4 weight-only quantization for small models results in substantial accuracy degradation ( Class-3), but this effect lessens as the model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "evaluation_results",
+   "value": "more than 0.5",
+   "evidence": "degradation of more than 0.5 PPL points.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gpt-5",
+   "passage_index": 6
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "hyperparameters": {
+    "n": 18,
+    "has_evidence": 18,
+    "span_found": 18,
+    "value_in_span": 18,
+    "grounded": 18
+   },
+   "methods": {
+    "n": 48,
+    "has_evidence": 48,
+    "span_found": 48,
+    "value_in_span": 44,
+    "grounded": 44
+   },
+   "evaluation_results": {
+    "n": 4,
+    "has_evidence": 4,
+    "span_found": 4,
+    "value_in_span": 4,
+    "grounded": 4
+   }
+  },
+  "total": {
+   "n": 70,
+   "has_evidence": 70,
+   "span_found": 70,
+   "value_in_span": 66,
+   "grounded": 66
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "weights_precision",
+      "value": "4-bit",
+      "evidence": "applying 4-bit, 3-bit, and 2-bit weights"
+     },
+     {
+      "name": "weights_precision",
+      "value": "3-bit",
+      "evidence": "applying 4-bit, 3-bit, and 2-bit weights"
+     },
+     {
+      "name": "weights_precision",
+      "value": "2-bit",
+      "evidence": "applying 4-bit, 3-bit, and 2-bit weights"
+     },
+     {
+      "name": "activation_precision",
+      "value": "FP16",
+      "evidence": "activation to FP16.5Based"
+     },
+     {
+      "name": "quantization_strategy",
+      "value": "GPTQ",
+      "evidence": "utilize the GPTQ quantization strategy."
+     },
+     {
+      "name": "quantization_granularity",
+      "value": "per-row",
+      "evidence": "coarse-grained weight quantization (per-row)"
+     },
+     {
+      "name": "quantization_block_size",
+      "value": "256",
+      "evidence": "fine-grained quantization (block-size 256)"
+     },
+     {
+      "name": "low_rank_matrices_precision",
+      "value": "INT8",
+      "evidence": "two low-rank matrices for LoRC in Table 7 are INT8"
+     },
+     {
+      "name": "low_rank_dimension",
+      "value": "8",
+      "evidence": "low-rank dimension of m= 8."
+     },
+     {
+      "name": "quantization_scheme",
+      "value": "W4asymA16",
+      "evidence": "Results of W4asymA16 quantization"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "LoRC",
+      "evidence": "LoRC can be viewed as a supplementary feature"
+     },
+     {
+      "name": "RTN",
+      "evidence": "such as RTN, GPTQ, and ZeroQuant-Local/Global"
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "utilize the GPTQ quantization strategy."
+     },
+     {
+      "name": "ZeroQuant-Local/Global",
+      "evidence": "ZeroQuant-Local/Global"
+     },
+     {
+      "name": "FGQ",
+      "evidence": "integrated with FGQ."
+     },
+     {
+      "name": "coarse-grained weight quantization",
+      "evidence": "coarse-grained weight quantization (per-row)"
+     },
+     {
+      "name": "fine-grained quantization",
+      "evidence": "fine-grained quantization (block-size 256)"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "S",
+      "value": "max(abs(x))",
+      "evidence": "we set S=max(abs(x))"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "INT4 weight-only quantization",
+      "evidence": "INT4 weight-only quantization"
+     },
+     {
+      "name": "INT8 activation",
+      "evidence": "INT8 activation"
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "GPTQ [ 12]"
+     },
+     {
+      "name": "ZeroQuant",
+      "evidence": "ZeroQuant [ 36]"
+     },
+     {
+      "name": "round-to-nearest neighborhood (RTN)",
+      "evidence": "round-to-nearest neighborhood (RTN)"
+     },
+     {
+      "name": "PTQ",
+      "evidence": "applies PTQ"
+     },
+     {
+      "name": "quantization-aware training",
+      "evidence": "quantization-aware training"
+     },
+     {
+      "name": "symmetric quantization",
+      "evidence": "symmetric quantization"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "quantization_weight_precision",
+      "value": "INT8",
+      "evidence": "INT8 weight-only quantization"
+     },
+     {
+      "name": "quantization_weight_precision",
+      "value": "INT4",
+      "evidence": "For INT4 quantization"
+     },
+     {
+      "name": "quantization_scheme",
+      "value": "symmetric",
+      "evidence": "either symmetric or asymmetric"
+     },
+     {
+      "name": "quantization_scheme",
+      "value": "asymmetric",
+      "evidence": "either symmetric or asymmetric"
+     },
+     {
+      "name": "weight_quantization_granularity",
+      "value": "per-row",
+      "evidence": "per-row quantization"
+     },
+     {
+      "name": "activation_quantization_granularity",
+      "value": "per-token",
+      "evidence": "per-token quantization"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "symmetric quantization",
+      "evidence": "symmetric"
+     },
+     {
+      "name": "asymmetric quantization",
+      "evidence": "asymmetric"
+     },
+     {
+      "name": "per-row quantization",
+      "evidence": "per-row quantization"
+     },
+     {
+      "name": "per-token quantization",
+      "evidence": "per-token quantization"
+     },
+     {
+      "name": "weight-only quantization",
+      "evidence": "weight-only quantization"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "PPL improvement",
+      "value": "about 0.5",
+      "split": null,
+      "evidence": "PPL improvement is about 0.5"
+     },
+     {
+      "metric": "accuracy loss",
+      "value": "less than 0.05",
+      "split": null,
+      "evidence": "accuracy loss (less than 0.05"
+     },
+     {
+      "metric": "PPL degradation",
+      "value": "around 0.3 points",
+      "split": null,
+      "evidence": "PPL degradation (around 0.3 points)"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "PTQ",
+      "evidence": "With PTQ and row-wise quantization"
+     },
+     {
+      "name": "row-wise quantization",
+      "evidence": "With PTQ and row-wise quantization"
+     },
+     {
+      "name": "weight-only quantization",
+      "evidence": "for both weight-only and weight-and-activation quantization"
+     },
+     {
+      "name": "weight-and-activation quantization",
+      "evidence": "for both weight-only and weight-and-activation quantization"
+     },
+     {
+      "name": "finer-grained quantization",
+      "evidence": "finer-grained quantization schemes"
+     },
+     {
+      "name": "block-k quantization",
+      "evidence": "block-k quantization can be implemented on modern GPUs"
+     },
+     {
+      "name": "RTN",
+      "evidence": "the application of RTN still results in a non-trivial accuracy gap"
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "we utilize GPTQ and ZQ-Global for all models"
+     },
+     {
+      "name": "ZQ-Global",
+      "evidence": "we utilize GPTQ and ZQ-Global for all models"
+     },
+     {
+      "name": "ZQ-Local",
+      "evidence": "and apply ZQ-Local to OPT-66B and Bloom-176B."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "ZQ-Local",
+      "evidence": "ZQ-Local is an extension mode of ZQ-Global"
+     },
+     {
+      "name": "ZQ-Global",
+      "evidence": "ZQ-Local is an extension mode of ZQ-Global"
+     },
+     {
+      "name": "SGD",
+      "evidence": "(e.g., SGD)"
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "For parameters used for GPTQ, ZQ-Local, and ZQ-Global"
+     },
+     {
+      "name": "ZeroQuant",
+      "evidence": "ZeroQuant"
+     },
+     {
+      "name": "asymmetric quantization",
+      "evidence": "We use asymmetric quantization for better accuracy"
+     },
+     {
+      "name": "symmetric quantization",
+      "evidence": "symmetric quantization"
+     },
+     {
+      "name": "weight-only quantization",
+      "evidence": "on weight-only and weight-and- activation quantization."
+     },
+     {
+      "name": "weight-and- activation quantization",
+      "evidence": "weight-and- activation quantization"
+     },
+     {
+      "name": "weight quantization",
+      "evidence": "As weight quantization is always static"
+     },
+     {
+      "name": "activation quantization",
+      "evidence": "activation quantization"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "quantization_scheme",
+      "value": "W4A8",
+      "evidence": "W4A8 quantization"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "GPTQ",
+      "evidence": "GPTQ"
+     },
+     {
+      "name": "ZeroQuant",
+      "evidence": "ZeroQuant"
+     },
+     {
+      "name": "ZQ-Global\u2217",
+      "evidence": "ZQ-Global\u2217"
+     },
+     {
+      "name": "ZQ-Local\u2217",
+      "evidence": "ZQ-Local\u2217"
+     },
+     {
+      "name": "RTN",
+      "evidence": "RTN"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 6,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "INT8 weight-only quantization",
+      "evidence": "(1) INT8 weight-only quantization can serve as a standard method for reducing memory costs in LLMs, with negligible degradation in accuracy."
+     },
+     {
+      "name": "INT4 weight-only quantization",
+      "evidence": "(2)INT4 weight-only quantization for small models results in substantial accuracy degradation ( Class-3), but this effect lessens as the model"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "PPL",
+      "value": "more than 0.5",
+      "split": null,
+      "evidence": "degradation of more than 0.5 PPL points."
+     }
+    ]
+   }
+  }
+ ]
+}

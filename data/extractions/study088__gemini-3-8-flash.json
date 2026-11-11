@@ -1,0 +1,331 @@
+{
+  "study_id": "study088",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study088/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:31:57.644463+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 19,
+    "datasets": 5,
+    "methods": 32,
+    "evaluation_results": 14
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "mmseg",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "M",
+        "value": "7"
+      },
+      {
+        "name": "window size (M)",
+        "value": "7"
+      },
+      {
+        "name": "query dimension of each head (d)",
+        "value": "32"
+      },
+      {
+        "name": "expansion layer of each MLP (\u03b1)",
+        "value": "4"
+      },
+      {
+        "name": "Swin-T C",
+        "value": "96"
+      },
+      {
+        "name": "Swin-T layer numbers",
+        "value": "{2,2,6,2}"
+      },
+      {
+        "name": "Swin-S C",
+        "value": "96"
+      },
+      {
+        "name": "Swin-S layer numbers",
+        "value": "{2,2,18,2}"
+      },
+      {
+        "name": "Swin-B C",
+        "value": "128"
+      },
+      {
+        "name": "Swin-B layer numbers",
+        "value": "{2,2,18,2}"
+      },
+      {
+        "name": "Swin-L C",
+        "value": "192"
+      },
+      {
+        "name": "Swin-L layer numbers",
+        "value": "{2,2,18,2}"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "epochs",
+        "value": "300"
+      },
+      {
+        "name": "learning rate scheduler",
+        "value": "cosine decay"
+      },
+      {
+        "name": "linear warm-up epochs",
+        "value": "20"
+      },
+      {
+        "name": "batch size",
+        "value": "1024"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "0.001"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet-1K",
+        "version": null
+      },
+      {
+        "name": "ADE20K",
+        "version": null
+      },
+      {
+        "name": "ImageNet-22K",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "shifted window based self-attention computation",
+        "description": "proposed self-attention computation mechanism"
+      },
+      {
+        "name": "Swin Transformer",
+        "description": "proposed Transformer architecture"
+      },
+      {
+        "name": "Swin-T",
+        "description": "variant of the Swin Transformer architecture"
+      },
+      {
+        "name": "Performer",
+        "description": "fast Transformer architecture used for comparison"
+      },
+      {
+        "name": "UperNet",
+        "description": "Framework used for semantic segmentation experiments on ADE20K."
+      },
+      {
+        "name": "Cascade Mask R-CNN",
+        "description": "Object detection and instance segmentation framework used to evaluate model capacity."
+      },
+      {
+        "name": "ResNeXt101-64x4d",
+        "description": "Baseline model built with Cudnn functions having similar model size, FLOPs, and latency to Swin Transformer."
+      },
+      {
+        "name": "HTC",
+        "description": "An improved framework used as a higher baseline for detection accuracy."
+      },
+      {
+        "name": "DeiT-S",
+        "description": "Baseline vision transformer compared using the Cascade Mask R-CNN framework."
+      },
+      {
+        "name": "Self-attention in non-overlapped windows (W-MSA)",
+        "description": "Computes self-attention within local, non-overlapping windows arranged to evenly partition the image."
+      },
+      {
+        "name": "Shifted window partitioning",
+        "description": "Alternates between two partitioning configurations in consecutive Swin Transformer blocks to introduce cross-window connections while maintaining computational efficiency."
+      },
+      {
+        "name": "cyclic implementation",
+        "description": "A hardware-efficient self-attention computation implementation compared to naive padding, bringing speed-ups particularly for deeper stages."
+      },
+      {
+        "name": "shifted window approach",
+        "description": "A self-attention computation approach that is more efficient than sliding windows."
+      },
+      {
+        "name": "Swin Transformer block",
+        "description": "A Transformer block that replaces the standard multi-head self-attention module with a module based on shifted windows, followed by a 2-layer MLP with GELU non-linearity, with LayerNorm applied before each module and residual connections applied after."
+      },
+      {
+        "name": "Shifted Window based Self-Attention",
+        "description": "A self-attention mechanism designed to avoid quadratic complexity by computing self-attention within non-overlapped windows rather than globally across all tokens."
+      },
+      {
+        "name": "bi-cubic interpolation",
+        "description": "Used to initialize a model for fine-tuning with a different window size using learnt relative position bias in pre-training"
+      },
+      {
+        "name": "Swin-B",
+        "description": "Base model variant with model size and computation complexity similar to ViT-B/DeiT-B"
+      },
+      {
+        "name": "Swin-S",
+        "description": "Model variant of about 0.5\u00d7 the model size and computational complexity of Swin-B, similar to ResNet-101"
+      },
+      {
+        "name": "Swin-L",
+        "description": "Model variant of about 2\u00d7 the model size and computational complexity of Swin-B"
+      },
+      {
+        "name": "AdamW",
+        "description": "Optimizer employed for model training"
+      },
+      {
+        "name": "cosine decay learning rate scheduler",
+        "description": "Learning rate scheduler using 20 epochs of linear warm-up"
+      },
+      {
+        "name": "cyclic-shift",
+        "description": "Ensures the number of batched windows remains the same as regular window partitioning for efficient computation with low latency."
+      },
+      {
+        "name": "Relative position bias",
+        "description": "Adds a relative position bias B \u2208 R^{M^2 \times M^2} to each head in computing self-attention similarity: Attention(Q, K, V) = SoftMax(QK^T / \u221ad + B)V, parameterized via a smaller-sized bias matrix \u0302B \u2208 R^{(2M-1) \times (2M-1)}."
+      },
+      {
+        "name": "bottom-right padding",
+        "description": "Employed on the feature map if needed to make the window size (M, M) divisible by the feature map size (h, w)."
+      },
+      {
+        "name": "ResNet-101",
+        "description": "Baseline convolutional network architecture"
+      },
+      {
+        "name": "ResNeSt-101",
+        "description": "Baseline network architecture"
+      },
+      {
+        "name": "SETR",
+        "description": "Baseline transformer model for semantic segmentation"
+      },
+      {
+        "name": "shifted windows approach",
+        "description": "Window partitioning mechanism with shifting across layers."
+      },
+      {
+        "name": "w/o shifting",
+        "description": "All self-attention modules adopt regular window partitioning, without shifting."
+      },
+      {
+        "name": "abs. pos.",
+        "description": "Absolute position embedding term of ViT."
+      },
+      {
+        "name": "rel. pos.",
+        "description": "Default settings with an additional relative position bias term."
+      },
+      {
+        "name": "app.",
+        "description": "The first scaled dot-product term in Eq. (4)."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 accuracy",
+        "value": "+2.3%",
+        "split": null
+      },
+      {
+        "metric": "semantic segmentation",
+        "value": "49.3",
+        "split": "validation"
+      },
+      {
+        "metric": "semantic segmentation",
+        "value": "62.8",
+        "split": "test"
+      },
+      {
+        "metric": "box AP",
+        "value": "51.9",
+        "split": null
+      },
+      {
+        "metric": "mask AP",
+        "value": "45.0",
+        "split": null
+      },
+      {
+        "metric": "speed-up on Swin-T",
+        "value": "13%",
+        "split": null
+      },
+      {
+        "metric": "speed-up on Swin-S",
+        "value": "18%",
+        "split": null
+      },
+      {
+        "metric": "speed-up on Swin-B",
+        "value": "18%",
+        "split": null
+      },
+      {
+        "metric": "speed-up over sliding windows (naive/kernel) for Swin-T",
+        "value": "4.1/1.5",
+        "split": null
+      },
+      {
+        "metric": "speed-up over sliding windows (naive/kernel) for Swin-S",
+        "value": "4.0/1.5",
+        "split": null
+      },
+      {
+        "metric": "speed-up over sliding windows (naive/kernel) for Swin-B",
+        "value": "3.6/1.5",
+        "split": null
+      },
+      {
+        "metric": "mIoU",
+        "value": "53.5",
+        "split": "validation"
+      },
+      {
+        "metric": "mIoU",
+        "value": "49.3",
+        "split": null
+      },
+      {
+        "metric": "mIoU",
+        "value": "53.5",
+        "split": "val"
+      }
+    ]
+  }
+}

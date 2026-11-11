@@ -1,0 +1,54 @@
+{
+  "study_id": "study074",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study074/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:16:06.839617+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 5,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "ChatGPT",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "DroidBot-GPT two-step text input handling",
+        "description": "When the LLM model chooses to edit in a text box, DroidBot-GPT sends another prompt ended with \"What should I enter to the view with the text '<text content>'? Just return the text and nothing else.\" after which DroidBot-GPT types in the response. If ChatGPT returns a sentence instead of a choice, DroidBot-GPT extracts the first choice it contains. Example action sequence for the task \"set the sleep time noise to 5 minutes\": start the app 'Noice', click view 'Sleep Timer' (Screen (a)), click view with text '5m' (Screen (b))."
+      },
+      {
+        "name": "Prompt synthesis",
+        "description": "The prompt includes the task, GUI elements with their action choices, the action history to avoid repetition, and the output requirement (whether a single choice or a typed sentence)."
+      },
+      {
+        "name": "DroidBot-GPT",
+        "description": "Fetches the state of an Android app, describes it in natural language, combines state, action history, and task into a prompt, sends it to ChatGPT to obtain the next action, and executes the operations on the phone."
+      },
+      {
+        "name": "GUI-to-natural-language conversion",
+        "description": "Extracts all user-visible GUI elements and their properties and converts them into concise natural language sentences for GPT processing, generating prompts that start with 'A view <name> that can ...'."
+      },
+      {
+        "name": "ChatGPT-based action selection",
+        "description": "Uses ChatGPT to generate the next action from a prompt containing the GUI state description, action history, and user-defined task."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

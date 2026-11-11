@@ -6,6 +6,6 @@
 - PDF: https://arxiv.org/pdf/1908.10357.pdf
 - Repository: https://github.com/open-mmlab/mmpose
 
-63 items to judge in `annotate.csv`.
+189 items to judge in `annotate.csv`.
 
 Read the paper and the repository, then mark every row K, D or U. Put anything you find that is not listed into `additions.csv`.

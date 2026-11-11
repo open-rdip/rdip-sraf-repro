@@ -1,0 +1,225 @@
+{
+  "study_id": "study071",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study071/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:15:41.307125+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 1,
+    "methods": 18,
+    "evaluation_results": 17
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of candidate generations",
+        "value": "100"
+      },
+      {
+        "name": "classifier-free guidance scale",
+        "value": "9"
+      },
+      {
+        "name": "training steps",
+        "value": "4,000"
+      },
+      {
+        "name": "learning rate",
+        "value": "3e-6"
+      },
+      {
+        "name": "total batch size",
+        "value": "128"
+      },
+      {
+        "name": "warmup period",
+        "value": "500 steps"
+      },
+      {
+        "name": "learning rate schedule",
+        "value": "linearly decaying"
+      },
+      {
+        "name": "guidance scale",
+        "value": "9"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pick-a-Pic",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PickScore",
+        "description": "A scoring function used to select preferred images from a set of generated images that are aesthetic and aligned with the prompt."
+      },
+      {
+        "name": "CLIP-H",
+        "description": "A baseline scoring function used for image selection."
+      },
+      {
+        "name": "Aesthetics",
+        "description": "An aesthetic scoring function used as a baseline to score and select images."
+      },
+      {
+        "name": "aesthetic scorer",
+        "description": "A scorer used to evaluate the aesthetic quality of images"
+      },
+      {
+        "name": "Stable Diffusion XL (Alpha variant)",
+        "description": "Generative model evaluated under varying classifier-free guidance scales."
+      },
+      {
+        "name": "Pick-a-Pic model selection and evaluation",
+        "description": "Evaluation methodology leveraging human preference judgments to compute win, tie, and lose ratios across different model configurations."
+      },
+      {
+        "name": "Annotation strategy",
+        "description": "2 images, with ties annotation option evaluated for user engagement and inter-rater agreement"
+      },
+      {
+        "name": "User ID anonymization",
+        "description": "Anonymizing user IDs to ensure privacy"
+      },
+      {
+        "name": "Preprocessing filtering",
+        "description": "Filtering prompts containing NSFW phrases and interactions from banned users"
+      },
+      {
+        "name": "CLIP-H finetuning",
+        "description": "Finetuning CLIP-H on the Pick-a-Pic dataset"
+      },
+      {
+        "name": "Preference objective (Lpref)",
+        "description": "Minimizing the KL-divergence between preference labels and softmax-normalized scores of paired examples"
+      },
+      {
+        "name": "Prompt-frequency loss weighting",
+        "description": "Applying a weighted average when reducing the loss across batch examples, weighted inversely proportional to prompt frequency"
+      },
+      {
+        "name": "Dreamlike Photoreal",
+        "description": "Backbone text-to-image generation model (version 2.0)"
+      },
+      {
+        "name": "Stable Diffusion",
+        "description": "Backbone text-to-image generation model (version 2.1)"
+      },
+      {
+        "name": "Random",
+        "description": "Random classifier baseline"
+      },
+      {
+        "name": "Human Expert",
+        "description": "Human expert evaluations with explicit tie selection"
+      },
+      {
+        "name": "ImageReward",
+        "description": "Model from concurrent work used as a comparison baseline"
+      },
+      {
+        "name": "HPS",
+        "description": "Model from concurrent work used as a comparison baseline"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Human Win Rate (PickScore vs Random Seed +Null Template)",
+        "value": "71.4",
+        "split": null
+      },
+      {
+        "metric": "Human Win Rate (PickScore vs Random Seed +Random Template)",
+        "value": "82.0",
+        "split": null
+      },
+      {
+        "metric": "Human Win Rate (PickScore vs Aesthetics)",
+        "value": "85.1",
+        "split": null
+      },
+      {
+        "metric": "Human Win Rate (PickScore vs CLIP-H)",
+        "value": "71.3",
+        "split": null
+      },
+      {
+        "metric": "Percentage of prompts where PickScore selects an image with a higher aesthetic score than CLIP-H",
+        "value": "68.5%",
+        "split": null
+      },
+      {
+        "metric": "prompts where PickScore selects an image with a higher aesthetic score",
+        "value": "68.5%",
+        "split": null
+      },
+      {
+        "metric": "PickScore choices with a higher CLIP-H text-alignment score than images chosen by aesthetic scorer",
+        "value": "90.5%",
+        "split": null
+      },
+      {
+        "metric": "Preference distribution (Dreamlike Photoreal 2.0 vs. Stable Diffusion 2.1)",
+        "value": "53.5%",
+        "split": null
+      },
+      {
+        "metric": "Preference distribution (Stable Diffusion 2.1 vs. Dreamlike Photoreal 2.0)",
+        "value": "35.2%",
+        "split": null
+      },
+      {
+        "metric": "Preference distribution (Tie)",
+        "value": "11.2%",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (Random)",
+        "value": "56.8",
+        "split": "test"
+      },
+      {
+        "metric": "Accuracy (Human Expert)",
+        "value": "68.0",
+        "split": "test"
+      },
+      {
+        "metric": "Accuracy (Aesthetics)",
+        "value": "56.8",
+        "split": "test"
+      },
+      {
+        "metric": "Accuracy (CLIP-H)",
+        "value": "60.8",
+        "split": "test"
+      },
+      {
+        "metric": "Accuracy (ImageReward)",
+        "value": "61.1",
+        "split": "test"
+      },
+      {
+        "metric": "Accuracy (HPS)",
+        "value": "66.7",
+        "split": "test"
+      },
+      {
+        "metric": "Accuracy (PickScore)",
+        "value": "70.5",
+        "split": "test"
+      }
+    ]
+  }
+}

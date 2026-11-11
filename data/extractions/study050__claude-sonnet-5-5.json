@@ -1,0 +1,180 @@
+{
+  "study_id": "study050",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study050/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:51:49.358086+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 19,
+    "datasets": 5,
+    "methods": 12,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "OpenAI Gym",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b1",
+        "value": "0.1"
+      },
+      {
+        "name": "\u03b3",
+        "value": "1"
+      },
+      {
+        "name": "training episodes",
+        "value": "500k"
+      },
+      {
+        "name": "exploration strategy",
+        "value": "\u03f5-greedy during training"
+      },
+      {
+        "name": "\u03b1 (cartpole agent and DBN)",
+        "value": "0.0001"
+      },
+      {
+        "name": "\u03b3 (cartpole agent and DBN)",
+        "value": "1"
+      },
+      {
+        "name": "\u03b1 (Taxi Q-learning agent)",
+        "value": "0.4"
+      },
+      {
+        "name": "\u03b3 (Taxi Q-learning agent)",
+        "value": "1"
+      },
+      {
+        "name": "\u03b1 (Taxi DQN)",
+        "value": "0.0001"
+      },
+      {
+        "name": "\u03b3 (Taxi DQN)",
+        "value": "1"
+      },
+      {
+        "name": "training episodes (Taxi DQN)",
+        "value": "100k"
+      },
+      {
+        "name": "state representation (Taxi Q-learning)",
+        "value": "4-tuple: car x and y location, passenger location and destination"
+      },
+      {
+        "name": "state-space discretization bins (cartpole)",
+        "value": "(3,3,6,3)"
+      },
+      {
+        "name": "learning rate \u03b1 (vanilla Q-learning)",
+        "value": "0.1"
+      },
+      {
+        "name": "discount factor \u03b3 (vanilla Q-learning)",
+        "value": "1"
+      },
+      {
+        "name": "optimizer (DQN)",
+        "value": "Adam"
+      },
+      {
+        "name": "gradient clipping (DQN)",
+        "value": "[\u22121,1]"
+      },
+      {
+        "name": "learning rate \u03b1 (DQN)",
+        "value": "0.0001"
+      },
+      {
+        "name": "discount factor \u03b3 (DQN)",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Blackjack",
+        "version": null
+      },
+      {
+        "name": "Cartpole",
+        "version": null
+      },
+      {
+        "name": "Taxi",
+        "version": null
+      },
+      {
+        "name": "Blackjack (simplified, infinite shoe, hit/stick only, no blackjacks)",
+        "version": null
+      },
+      {
+        "name": "Taxi environment",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Belief maps",
+        "description": "Visualisations of belief maps for actions (e.g., stick, hit in Blackjack) used to extract an intuitive local interpretation of the RL agent's intention"
+      },
+      {
+        "name": "Q-Learning",
+        "description": "Q-learning agent evaluated on environments, with belief map visualisation for Cartpole"
+      },
+      {
+        "name": "Deep Q-Learning",
+        "description": "Deep Q-learning agent evaluated on Cartpole, with belief map visualisation"
+      },
+      {
+        "name": "Forward Simulation",
+        "description": "Forward simulation [33] used for trajectory visualisation for Q-learning and deep Q-learning in Cartpole"
+      },
+      {
+        "name": "Temporal Difference (TD)",
+        "description": "TD-based RL approach to which the technique is applied; findings reported in the main text."
+      },
+      {
+        "name": "Monte Carlo (MC)",
+        "description": "MC-based RL approach to which the technique is applied; results in supplementary material; performed similarly to table-based Q-learning."
+      },
+      {
+        "name": "\u03f5-greedy",
+        "description": "Exploration algorithm always used by RL agents during training."
+      },
+      {
+        "name": "Table-based Q-learning",
+        "description": "Tabular Q-learning agent trained on simplified blackjack; Monte-Carlo learning performed similarly."
+      },
+      {
+        "name": "Deep Belief Network (DBN)",
+        "description": "Deep network that generates the belief map, trained using the same hyperparameters as the cartpole agent"
+      },
+      {
+        "name": "DQN",
+        "description": "Deep Q-Network agent trained on Taxi for 100k episodes to investigate learnt agent intention"
+      },
+      {
+        "name": "Vanilla Q-learning",
+        "description": "Tabular Q-learning agent on discretized Cartpole state space, trained until reasonably stable, used to investigate agent intention"
+      },
+      {
+        "name": "State-space discretization",
+        "description": "Cartpole continuous 4-tuple state space \u27e8x,\u1e8b,\u03b8,\u03b8\u0307\u27e9 discretized into bins for like-with-like comparison across learning approaches"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

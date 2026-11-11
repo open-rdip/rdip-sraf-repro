@@ -1,0 +1,175 @@
+{
+  "study_id": "study068",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study068/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:11:37.808690+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 1,
+    "methods": 22,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "MATLAB",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia GTX Titan Xp",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "num_points_sampled",
+        "value": "2048"
+      },
+      {
+        "name": "batch_size",
+        "value": "50"
+      },
+      {
+        "name": "num_points",
+        "value": "2048"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ShapeNetCore",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RL-GAN-Net",
+        "description": "Reinforcement learning GAN-based shape completion pipeline used as quick preprocessing for captured real 3D data; the RL agent often finds correct semantic categories in the latent space, enabling completion of partial and noisy point clouds and reducing performance losses in downstream networks."
+      },
+      {
+        "name": "AE",
+        "description": "Autoencoder used for shape completion, compared alongside RL-GAN-Net in terms of completed shapes."
+      },
+      {
+        "name": "PointNet",
+        "description": "Point cloud classification network used to evaluate classification accuracy on completed point clouds versus incomplete inputs, showing improved accuracy with completed inputs."
+      },
+      {
+        "name": "Vanilla RL-GAN-Net",
+        "description": "Baseline RL-GAN-Net whose RL agent is mainly limited to finding correct semantic categories in the latent space."
+      },
+      {
+        "name": "Hybrid approach",
+        "description": "A hybrid method that overcomes the limitation of the vanilla RL-GAN-Net's agent being limited to semantic category discovery in the latent space."
+      },
+      {
+        "name": "Dai et al. method",
+        "description": "Comparison target with reported 32^3 and 128^3 resolution results; their distance-based results were converted for comparison against RL-GAN-Net."
+      },
+      {
+        "name": "AE (Autoencoder) baseline",
+        "description": "Autoencoder-only method used as a baseline for point cloud completion and comparison of Chamfer distance."
+      },
+      {
+        "name": "Hybrid RL-GAN-Net",
+        "description": "Hybrid variant of RL-GAN-Net evaluated for point cloud completion using Chamfer distance."
+      },
+      {
+        "name": "RL agent for GFV denoising",
+        "description": "Reinforcement learning agent that produces clean GFV from observation of noisy GFV by creating an appropriate z-vector."
+      },
+      {
+        "name": "Encoder-decoder (Voxel 32^3)",
+        "description": "Volume-based encoder-decoder network producing smoother results due to volume accumulation, but limited in resolution and washing out local details."
+      },
+      {
+        "name": "Patch-based synthesis (128^3 resolution)",
+        "description": "Higher-resolution volumetric synthesis approach that still recovers limited details compared to the proposed method."
+      },
+      {
+        "name": "MATLAB isosurface",
+        "description": "Surface representation method used by prior work for visualization before uniform sampling of points."
+      },
+      {
+        "name": "Dai et al. [7]",
+        "description": "Used an encoder-decoder network in 323voxel space followed by an analytic patch-based completion in 1283resolution. Results of both resolutions are available as distance function format, converted to a surface representation using the MATLAB function isosurface, and uniformly sampled 2048 points."
+      },
+      {
+        "name": "Chamfer loss (L_CH)",
+        "description": "Used as a reward/metric for shape comparison; increases with larger amounts of missing data; when used alone as reward it was not very efficient."
+      },
+      {
+        "name": "GFV loss (L_GFV)",
+        "description": "A feature-vector-based loss; increases with more missing data; when used alone, it enables the controller to find the correct semantic shape category though details may be mismatched."
+      },
+      {
+        "name": "Discriminator loss (L_D)",
+        "description": "Remains almost constant since the pretrained generator synthesizes according to the learned distribution given the latent input z."
+      },
+      {
+        "name": "GFV loss",
+        "description": "Alone, it enables the controller to find the correct semantic shape category from partial data."
+      },
+      {
+        "name": "Chamfer loss",
+        "description": "Improves alignment of the completed shape with the desired shape when combined with GFV loss."
+      },
+      {
+        "name": "Discriminator loss",
+        "description": "Essential for creating a realistic shape; used alone, it yields reasonable but unrelated shapes since the reward only encourages realism."
+      },
+      {
+        "name": "RL agent to control GAN",
+        "description": "Requires the combination of GFV, Chamfer, and discriminator losses to deduce correct control of the GAN."
+      },
+      {
+        "name": "AE (Autoencoder)",
+        "description": "Autoencoder whose results are selected when the shape is judged more reasonable by a trained discriminator."
+      },
+      {
+        "name": "Vanilla approach",
+        "description": "Baseline approach that is comparable to the hybrid approach in classification performance."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "average action time",
+        "value": "1.295",
+        "split": null
+      },
+      {
+        "metric": "Chamfer distance (input point cloud, 70% missing)",
+        "value": "16% of the diagonal of the shape",
+        "split": null
+      },
+      {
+        "metric": "Chamfer distance (AE reconstruction, 70% missing)",
+        "value": "less than 9% of the distances",
+        "split": null
+      },
+      {
+        "metric": "Chamfer distance (vanilla RL-GAN-Net reconstruction, 70% missing)",
+        "value": "less than 9% of the distances",
+        "split": null
+      },
+      {
+        "metric": "Chamfer distance (hybrid RL-GAN-Net reconstruction, 70% missing)",
+        "value": "less than 9% of the distances",
+        "split": null
+      },
+      {
+        "metric": "running time",
+        "value": "324 seconds for a batch of 50 shapes",
+        "split": null
+      }
+    ]
+  }
+}

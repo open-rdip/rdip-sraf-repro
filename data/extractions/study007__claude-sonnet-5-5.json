@@ -1,0 +1,233 @@
+{
+  "study_id": "study007",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study007/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:33:24.090138+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 29,
+    "datasets": 2,
+    "methods": 18,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "n",
+        "value": "treated as an additional hyperparameter (truncation length); n=\u221e makes Algorithm 4 a straightforward extension of ETD(0) to the control setting"
+      },
+      {
+        "name": "\u03b2",
+        "value": "\u03b2-variant of Algorithm 4 (cf. (9)); no specific value stated"
+      },
+      {
+        "name": "radius of the ball for projection",
+        "value": "infinity (projection is an identity mapping)"
+      },
+      {
+        "name": "\u03c0(dashed|s)",
+        "value": "0 (target policy in the original Baird's counterexample)"
+      },
+      {
+        "name": "tile coding feature dimension",
+        "value": "1024"
+      },
+      {
+        "name": "gamma",
+        "value": "0.99"
+      },
+      {
+        "name": "i(s)",
+        "value": "1"
+      },
+      {
+        "name": "target policy softmax temperature tau",
+        "value": "0.01"
+      },
+      {
+        "name": "behavior policy epsilon",
+        "value": "0.95"
+      },
+      {
+        "name": "behavior policy softmax temperature tau",
+        "value": "1"
+      },
+      {
+        "name": "evaluation frequency",
+        "value": "every 5\u00d710^3 steps"
+      },
+      {
+        "name": "evaluation episodes",
+        "value": "10"
+      },
+      {
+        "name": "\u03c0(dashed|s) (target policy probability of dashed action)",
+        "value": "{0, 0.02, 0.04, 0.06, 0.08, 0.1}"
+      },
+      {
+        "name": "suggested n (Lemma 3)",
+        "value": "around 700"
+      },
+      {
+        "name": "behavior policy mixture probability (same as prediction-setting behavior policy)",
+        "value": "0.9"
+      },
+      {
+        "name": "behavior policy mixture probability (softmax policy)",
+        "value": "0.1"
+      },
+      {
+        "name": "softmax policy temperature (mixture component)",
+        "value": "1"
+      },
+      {
+        "name": "n (truncation steps) values with reduced variance",
+        "value": "{2, 4}"
+      },
+      {
+        "name": "CartPole reward per time step",
+        "value": "+1"
+      },
+      {
+        "name": "CartPole maximum episode length",
+        "value": "1000 steps"
+      },
+      {
+        "name": "discount factor \u03b3",
+        "value": "0.99"
+      },
+      {
+        "name": "behavior policy \u03bc(solid|s)",
+        "value": "1/7"
+      },
+      {
+        "name": "behavior policy \u03bc(dashed|s)",
+        "value": "6/7"
+      },
+      {
+        "name": "target policy \u03c0(dashed|s) range",
+        "value": "0 to 0.1"
+      },
+      {
+        "name": "reward",
+        "value": "0"
+      },
+      {
+        "name": "initial state distribution",
+        "value": "uniform over all seven states"
+      },
+      {
+        "name": "function approximation",
+        "value": "linear"
+      },
+      {
+        "name": "truncation length n",
+        "value": "\u221e (no truncation), 0, 2, 4 compared"
+      },
+      {
+        "name": "learning rate \u03b1",
+        "value": "tuned from \u039b_\u03b1, maximizing the evaluation return at the end of training"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Baird's counterexample",
+        "version": null
+      },
+      {
+        "name": "CartPole",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ETD(0)",
+        "description": "Emphatic temporal difference learning; fails with the target policy \u03c0(dashed|s)=0 in Baird's counterexample"
+      },
+      {
+        "name": "Algorithm 4",
+        "description": "Control-setting algorithm benchmarked with different selections of n and a \u03b2-variant; with an infinite projection radius and n=\u221e it becomes a straightforward extension of ETD(0) to control"
+      },
+      {
+        "name": "Truncation",
+        "description": "Truncating traces with parameter n to reduce variance while maintaining convergence; not guaranteed to always work, but promising in prediction-setting experiments"
+      },
+      {
+        "name": "\u03b2-variant",
+        "description": "Variant of Algorithm 4 (cf. (9)) benchmarked in the control setting with a fixed behavior policy"
+      },
+      {
+        "name": "Tile coding",
+        "description": "Maps the four-dimensional observation (velocity, acceleration, angular velocity, angular acceleration) to a binary vector in R^1024, using the tile coding software recommended in Chapter 10.1 of Sutton and Barto (2018), followed by linear function approximation"
+      },
+      {
+        "name": "\u03b2-variant of Algorithm 4",
+        "description": "Variant of Algorithm 4 (cf. (9)) benchmarked with the same hyperparameter tuning protocol as in Baird's counterexample"
+      },
+      {
+        "name": "Target policy",
+        "description": "Softmax policy with temperature tau=0.01"
+      },
+      {
+        "name": "Behavior policy",
+        "description": "epsilon-softmax policy with epsilon=0.95 and tau=1: with probability 0.95 selects an action by a uniformly random policy, with probability 0.05 by a softmax policy with temperature 1"
+      },
+      {
+        "name": "hard truncation of importance sampling trace (F_{t,n})",
+        "description": "Truncation that guarantees the trace F_{t,n} is always bounded, enabling finite sample analysis for both prediction and control; compared empirically against the soft truncation of Hallak et al. (2016)"
+      },
+      {
+        "name": "soft truncation (Hallak et al., 2016)",
+        "description": "Baseline trace using decay factor \u03b2; may be unstable since the trace depends on all history and requires \u03b2\u03c1max<1, which needs a small \u03b2"
+      },
+      {
+        "name": "Lemma 3 analytical computation of n",
+        "description": "Analytically computes the desired truncation length n, which is conservative to cope with all possible MDPs; n is recommended to be treated as an additional hyperparameter in computational experiments"
+      },
+      {
+        "name": "Mixture behavior policy",
+        "description": "At each time step, with probability 0.9 uses the same behavior policy as in the prediction setting; with probability 0.1 uses a softmax policy with temperature 1, as in Zhang et al. (2021b). This reduces off-policyness and variance for n in {2,4}."
+      },
+      {
+        "name": "Truncated Emphatic TD",
+        "description": "Truncated Emphatic TD methods evaluated in the CartPole control domain."
+      },
+      {
+        "name": "prediction setting",
+        "description": "Off-policy prediction on Baird's counterexample with fixed behavior policy \u03bc and various target policies \u03c0, using linear function approximation"
+      },
+      {
+        "name": "control with a fixed behavior policy",
+        "description": "Control setting on Baird's counterexample with a fixed behavior policy"
+      },
+      {
+        "name": "control with a changing behavior policy",
+        "description": "Control setting on Baird's counterexample with a changing behavior policy"
+      },
+      {
+        "name": "Truncated followon trace",
+        "description": "Off-policy expected SARSA with a followon trace truncated at length n, used to stabilize off-policy training"
+      },
+      {
+        "name": "Naive off-policy expected SARSA",
+        "description": "Off-policy expected SARSA without followon trace (n=0)"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "maximum importance ratio \u03c1max (for \u03c0(dashed|s)=0.02)",
+        "value": "6.86",
+        "split": null
+      }
+    ]
+  }
+}

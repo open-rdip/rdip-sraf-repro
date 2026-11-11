@@ -1,0 +1,283 @@
+{
+  "study_id": "study008",
+  "backend": "anthropic",
+  "model": "claude-opus-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study008/ext/claude-opus-5-5",
+  "extracted_at": "2026-11-10T00:12:25.273820+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 26,
+    "datasets": 11,
+    "methods": 21,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch FSDP",
+        "version": null
+      },
+      {
+        "name": "FlashAttention",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB (two or four GPUs)",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "training precision (hindsight study)",
+        "value": "pure bfloat16"
+      },
+      {
+        "name": "learning rate schedule (hindsight study)",
+        "value": "infinite learning rate schedule"
+      },
+      {
+        "name": "number of GPUs",
+        "value": "two or four"
+      },
+      {
+        "name": "Training steps (Ours Main)",
+        "value": "7,680"
+      },
+      {
+        "name": "Training steps (LeoLM)",
+        "value": "15,360"
+      },
+      {
+        "name": "Warmup steps (Ours Main)",
+        "value": "76"
+      },
+      {
+        "name": "Warmup steps (LeoLM)",
+        "value": "153"
+      },
+      {
+        "name": "Batch size (Ours Main)",
+        "value": "256"
+      },
+      {
+        "name": "Batch size (LeoLM)",
+        "value": "512"
+      },
+      {
+        "name": "Context length (Ours Main)",
+        "value": "4,096"
+      },
+      {
+        "name": "Context length (LeoLM)",
+        "value": "8,192"
+      },
+      {
+        "name": "Total training tokens (Ours Main)",
+        "value": "8 billion"
+      },
+      {
+        "name": "Total training tokens (LeoLM)",
+        "value": "64 billion"
+      },
+      {
+        "name": "Optimizer (Ours Main)",
+        "value": "AdamW"
+      },
+      {
+        "name": "Optimizer (LeoLM)",
+        "value": "AdamW"
+      },
+      {
+        "name": "Learning rate (Ours Main)",
+        "value": "4\u00d710\u22125"
+      },
+      {
+        "name": "Learning rate (LeoLM)",
+        "value": "2\u00d710\u22125"
+      },
+      {
+        "name": "Learning rate decay (Ours Main)",
+        "value": "Cosine to 2\u00d710\u22126"
+      },
+      {
+        "name": "Learning rate decay (LeoLM)",
+        "value": "Cosine to 2\u00d710\u22126"
+      },
+      {
+        "name": "Adam \u03b2 (Ours Main)",
+        "value": "(0.9, 0.95)"
+      },
+      {
+        "name": "Adam \u03b2 (LeoLM)",
+        "value": "(0.9, 0.95)"
+      },
+      {
+        "name": "Weight decay (Ours Main)",
+        "value": "0.05"
+      },
+      {
+        "name": "Weight decay (LeoLM)",
+        "value": "0.05"
+      },
+      {
+        "name": "Numeric precision",
+        "value": "bfloat16"
+      },
+      {
+        "name": "training precision",
+        "value": "pure bfloat16"
+      },
+      {
+        "name": "optimizer state precision (mixed-precision setting)",
+        "value": "float32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CulturaX",
+        "version": null
+      },
+      {
+        "name": "OSCAR",
+        "version": "23.01"
+      },
+      {
+        "name": "BOOLQ",
+        "version": null
+      },
+      {
+        "name": "COPA",
+        "version": null
+      },
+      {
+        "name": "HellaSwag",
+        "version": null
+      },
+      {
+        "name": "OpenBookQA",
+        "version": null
+      },
+      {
+        "name": "PIQA",
+        "version": null
+      },
+      {
+        "name": "RACE",
+        "version": null
+      },
+      {
+        "name": "SciTail",
+        "version": null
+      },
+      {
+        "name": "TOXIGEN",
+        "version": null
+      },
+      {
+        "name": "AlGhafa-T",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "bfloat16 mixed-precision training",
+        "description": "Forward and backward passes are computed in bfloat16 instead of float32 for computational efficiency, while a master copy of model weights and optimizer states is stored in float32 and used during the optimizer step to offset reduced precision, at the cost of increased memory usage."
+      },
+      {
+        "name": "continued pretraining",
+        "description": "Further pretraining of an existing LLM under a tight compute budget; the study investigates whether mixed-precision training is necessary for it."
+      },
+      {
+        "name": "PyTorch FSDP",
+        "description": "Fully Sharded Data Parallel training across multiple GPUs, with ZeRO stages, micro-batch size and activation checkpointing adjusted to fit GPU memory"
+      },
+      {
+        "name": "ZeRO",
+        "description": "Memory optimization stages (Rajbhandari et al., 2019) used within PyTorch FSDP as needed"
+      },
+      {
+        "name": "Activation checkpointing",
+        "description": "Used as needed to reduce GPU memory consumption"
+      },
+      {
+        "name": "FlashAttention",
+        "description": "FlashAttention self-attention and RMSNorm CUDA kernels (Dao, 2023)"
+      },
+      {
+        "name": "Tokenizer swapping",
+        "description": "Replacing the base model tokenizer for language adaptation, used in the hindsight study"
+      },
+      {
+        "name": "Language adaptation",
+        "description": "Continued pretraining to adapt the base model to German and Arabic"
+      },
+      {
+        "name": "Infinite learning rate schedule",
+        "description": "Learning rate schedule following Ibrahim et al. (2024) for continued training"
+      },
+      {
+        "name": "Cross-document attention masking",
+        "description": "Adjusted attention masks to prevent cross-document attention"
+      },
+      {
+        "name": "Macro average",
+        "description": "Reported score is a macro average across benchmarks, following OALL (Elfilali et al., 2024), with each benchmark in AlGhafa-T counted individually"
+      },
+      {
+        "name": "bfloat16",
+        "description": "Floating point datatype with 7 mantissa bits, giving 128 = 2^7 fractions between any two consecutive powers of two. Values are a power-of-two base term s\u00d72^(e\u2212127) plus a fractional term s\u00d72^(e\u2212127)\u00d72^(\u2212m), so precision is very low for large numbers."
+      },
+      {
+        "name": "fp8",
+        "description": "8-bit floating point type supported by Nvidia H100 GPUs. Left for future work; the precision problems described for bfloat16 are expected to be worse for fp8."
+      },
+      {
+        "name": "RMSNorm",
+        "description": "Normalization layer whose parameter weights are highlighted separately from other parameters in a histogram of absolute Mistral-7B weight values."
+      },
+      {
+        "name": "Mistral-7B",
+        "description": "Pretrained language model whose absolute individual parameter weight values are analyzed in a log-spaced histogram."
+      },
+      {
+        "name": "Pure bfloat16 training",
+        "description": "Training entirely in bfloat16 numerics, where small weight updates relative to weight magnitude can disappear due to limited mantissa bits (e.g., threshold 0.05/128\u22480.00039); the same effect exists in float32 only when u < W/2^23."
+      },
+      {
+        "name": "Mistral-7B weight magnitude case study",
+        "description": "Analysis of absolute weight values of Mistral-7B showing RMSNorm weights are much larger than other weights, making their small updates more likely to vanish in pure bfloat16 training."
+      },
+      {
+        "name": "AdamW",
+        "description": "Optimizer used for training, with \u03b2=(0.9, 0.95) and weight decay 0.05."
+      },
+      {
+        "name": "LeoLM",
+        "description": "Reference training configuration compared against the main experiments in a hindsight study."
+      },
+      {
+        "name": "Mixed-precision bfloat16 training",
+        "description": "bfloat16 training in which optimizer states are stored in float32 and used during the optimizer step to offset the reduced precision, at the cost of increased memory usage."
+      },
+      {
+        "name": "bfloat16 floating point encoding analysis",
+        "description": "Analysis of floating point numerics using n = s\u00d72^(e\u2212127) + s\u00d72^(e\u2212127)\u00d72^(\u2212m), where s is the sign, e is the number encoded by the exponent bits, and m is the number encoded by the mantissa bits."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Training speed of pure bfloat16 relative to mixed-precision bfloat16 (two 80GB GPUs)",
+        "value": "39% faster",
+        "split": null
+      },
+      {
+        "metric": "Mixed-precision feasibility on a single 80GB GPU",
+        "value": "impossible due to out-of-memory errors",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "study_id": "study060",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study060/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:44:08.494672+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 21,
+    "datasets": 2,
+    "methods": 28,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "training duration",
+        "value": "twice as long as the previous models"
+      },
+      {
+        "name": "initial_sample_length",
+        "value": "one minute"
+      },
+      {
+        "name": "independent_samples_per_one_minute_extension",
+        "value": "4"
+      },
+      {
+        "name": "completions_at_three_minutes",
+        "value": "16"
+      },
+      {
+        "name": "sampling_rate",
+        "value": "22 kHz"
+      },
+      {
+        "name": "upsampler_parameters",
+        "value": "1B"
+      },
+      {
+        "name": "top_level_prior_parameters",
+        "value": "1B"
+      },
+      {
+        "name": "model_size",
+        "value": "5 billion parameters"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.00015"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.002"
+      },
+      {
+        "name": "upsampler_training",
+        "value": "128 V100s for 2 weeks"
+      },
+      {
+        "name": "top_level_prior_training",
+        "value": "512 V100s for 4 weeks"
+      },
+      {
+        "name": "lyrics_conditioning_training",
+        "value": "512 V100s for 2 weeks"
+      },
+      {
+        "name": "vq_vae_sample_rate",
+        "value": "22 kHz"
+      },
+      {
+        "name": "batch_size",
+        "value": "32"
+      },
+      {
+        "name": "audio_clip_duration",
+        "value": "3 seconds"
+      },
+      {
+        "name": "sample_rate",
+        "value": "44 kHz"
+      },
+      {
+        "name": "hop_length_bottom",
+        "value": "8"
+      },
+      {
+        "name": "hop_length_middle",
+        "value": "32"
+      },
+      {
+        "name": "hop_length_top",
+        "value": "128"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "MAESTRO",
+        "version": null
+      },
+      {
+        "name": "songs with genre and artist labels",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "human-in-the-loop co-composition",
+        "description": "At the top level only, the model generates multiple samples, a person picks a favorite after listening to a rough VQ-VAE decoding, and the model then continues generating multiple samples that continue the favorite."
+      },
+      {
+        "name": "VQ-VAE decoding",
+        "description": "VQ-VAE decoders are used for fast upsampling of top-level tokens to hear a very rough sense of what the model generates."
+      },
+      {
+        "name": "Transformer upsampling",
+        "description": "Faster generation and Transformer upsampling steps are described as improvements to the co-composition process."
+      },
+      {
+        "name": "distillation into a parallel sampler",
+        "description": "Information from the current model, which has fast parallel likelihood evaluation but slow autoregressive sampling, is distilled into a model with fast parallel sampling but slow autoregressive likelihood evaluation (Kingma et al., 2016; Oord et al., 2018) by generating samples from the parallel sampler, evaluating likelihood and entropy with the parallel likelihood evaluator, and optimizing the sampler by minimizing KL divergence from the current model."
+      },
+      {
+        "name": "hierarchical VQ-VAE",
+        "description": "raw audio hierarchical VQ-VAE (Razavi et al., 2019); generally difficult to push information to higher levels; middle and top-level reconstructions do not capture much, possibly because higher-level codes collapsed before the bottom level reconstructed the audio well"
+      },
+      {
+        "name": "residual bottom layers",
+        "description": "bottom layers explicitly model residuals, which pushed more information to the top"
+      },
+      {
+        "name": "separate autoencoders",
+        "description": "separate autoencoders found to be cleaner and more effective"
+      },
+      {
+        "name": "Full tree",
+        "description": "Generate multiple continuations from the same segment, starting with a one-minute sample and independently sampling four times per one-minute extension, producing 16 completions by the three minute mark via ancestral sampling."
+      },
+      {
+        "name": "Ancestral sampling",
+        "description": "Branching tree of continuations exploring different possibilities obtained by ancestral sampling from the same initial segment."
+      },
+      {
+        "name": "Jukebox conditioning",
+        "description": "Condition on various styles, lyrics, and raw audio."
+      },
+      {
+        "name": "Novel styles",
+        "description": "Generate songs in an unusual genre typically not associated with an artist."
+      },
+      {
+        "name": "VQ-VAE",
+        "description": "44 kHz VQ-VAE used with 1B parameter upsamplers to improve fidelity over 22 kHz sampling with small upsamplers"
+      },
+      {
+        "name": "seq2seq lyric conditioning",
+        "description": "Seq2seq model trained with lyric conditioning on songs primarily in English to make singing intelligible and controllable"
+      },
+      {
+        "name": "Jukebox",
+        "description": "Final model using the fidelity, capacity, and lyric-conditioning improvements"
+      },
+      {
+        "name": "WaveNet",
+        "description": "Autoregressive model conditioned on acoustic features or spectrograms that uses a categorical distribution for audio samples, introducing quantization noise and making sampling slow."
+      },
+      {
+        "name": "Parallel WaveNet",
+        "description": "Uses a mixture of logistics distribution and probability density distillation to learn a parallel feed-forward network from a pre-trained autoregressive model for faster high-fidelity audio sampling."
+      },
+      {
+        "name": "ClariNet",
+        "description": "Uses a simple Gaussian distribution with a closed-form loss function, eliminating the need for Monte-Carlo sampling, while achieving similar audio quality."
+      },
+      {
+        "name": "SampleRNN",
+        "description": "Multi-scale hierarchical recurrent neural network with convolutional upsampling to model long-range complex structures."
+      },
+      {
+        "name": "WaveRNN",
+        "description": "Recurrent neural networks that operate separately on the most significant and least significant bytes, deployable on mobile devices with audio quality comparable to WaveNet."
+      },
+      {
+        "name": "WaveGlow",
+        "description": "Flow-based model for parallel sample-level audio synthesis trained with maximum-likelihood estimation, avoiding a two-stage training process."
+      },
+      {
+        "name": "upsamplers",
+        "description": "Upsamplers with one billion parameters trained on 128 V100s for 2 weeks"
+      },
+      {
+        "name": "top-level prior",
+        "description": "Top-level prior with 5 billion parameters trained on 512 V100s for 4 weeks"
+      },
+      {
+        "name": "Adam",
+        "description": "Optimizer with learning rate 0.00015 and weight decay of 0.002"
+      },
+      {
+        "name": "lyrics conditioning",
+        "description": "Reuse the prior and add a small encoder, then train on 512 V100s for 2 weeks"
+      },
+      {
+        "name": "Opus codec",
+        "description": "Baseline that encodes audio at constant bitrates comparable to the VQ-VAE; fails to capture higher frequencies and adds noticeable artifacts at the highest level of compression."
+      },
+      {
+        "name": "spectral convergence",
+        "description": "Measures the amount of spectral error relative to signal (Sturmel & Daudet, 2011); reported as test error and proxy for reconstruction fidelity, averaged in decibels."
+      },
+      {
+        "name": "spectral loss ablation",
+        "description": "Top-level codes are generally difficult to train well without spectral loss; reconstructions may lose some to most information."
+      },
+      {
+        "name": "single hierarchical autoencoder",
+        "description": "Comparison using a single hierarchical autoencoder instead of the multi-level setup; top-level codes are difficult to train well and reconstructions may lose information."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Spectral convergence (dB), ablation: None",
+        "value": "\u22128.3",
+        "split": "test"
+      },
+      {
+        "metric": "Spectral convergence (dB), ablation: Without spectral loss",
+        "value": "\u22126.3",
+        "split": "test"
+      },
+      {
+        "metric": "Spectral convergence (dB), ablation: With single autoencoder",
+        "value": "2.9",
+        "split": "test"
+      }
+    ]
+  }
+}

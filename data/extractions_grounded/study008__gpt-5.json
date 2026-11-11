@@ -1,0 +1,933 @@
+{
+ "study_id": "study008",
+ "model": "gpt5",
+ "slug": "gpt-5",
+ "n_passages": 6,
+ "n_passages_ok": 6,
+ "failures": [],
+ "records": [
+  {
+   "field": "methods",
+   "value": "bfloat16 mixed-precision training",
+   "evidence": "the most common training setup is bfloat16 mixed-precision training.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "mixed-precision training",
+   "evidence": "In mixed-precision training, the forward and backward pass is computed in bfloat16",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "dependencies",
+   "value": "PyTorch FSDP",
+   "evidence": "PyTorch FSDP (Zhao et al., 2023)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "FlashAttention",
+   "evidence": "FlashAttention self-attention",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "RMSNorm CUDA kernels",
+   "evidence": "RMSNorm CUDA kernels",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "ZeRO",
+   "evidence": "ZeRO (Rajbhandari et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "A100 80GB",
+   "evidence": "A100 80GB",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "A100 40GB",
+   "evidence": "A100 40GB",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "H100 80GB",
+   "evidence": "H100 80GB",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "A6000 48GB",
+   "evidence": "A6000 48GB",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "pure bfloat16",
+   "evidence": "pure bfloat16",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "CulturaX",
+   "evidence": "CulturaX (Nguyen et al., 2024)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "OSCAR",
+   "evidence": "OSCAR23.01",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "parallel training with PyTorch FSDP",
+   "evidence": "parallel training with PyTorch FSDP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "FlashAttention self-attention",
+   "evidence": "FlashAttention self-attention",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "RMSNorm CUDA kernels",
+   "evidence": "RMSNorm CUDA kernels",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ZeRO stages",
+   "evidence": "different ZeRO (Rajbhandari et al., 2019) stages",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "tokenizer swapping",
+   "evidence": "tokenizer swapping",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "infinite learning rate schedule",
+   "evidence": "infinite learning rate schedule",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "adjusted attention masks",
+   "evidence": "adjusted attention masks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "BOOLQ",
+   "evidence": "BOOLQ (Clark et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "COPA",
+   "evidence": "COPA (Roem- mele et al., 2011)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "HellaSwag",
+   "evidence": "HellaSwag (Zellers et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "Open- BookQA",
+   "evidence": "Open- BookQA (Mihaylov et al., 2018)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "PIQA",
+   "evidence": "PIQA (Bisk et al., 2020)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "RACE",
+   "evidence": "RACE (Lai et al., 2017)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "SciTail",
+   "evidence": "SciTail (Welbl et al., 2017)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "TOXI- GEN",
+   "evidence": "TOXI- GEN (Hartvigsen et al., 2022)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "macro average",
+   "evidence": "We report a macro average as in OALL",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hardware",
+   "value": "Nvidia H100 GPUs",
+   "evidence": "Nvidia H100 GPUs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "bfloat16",
+   "evidence": "For bfloat16 , we always",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "fp8",
+   "evidence": "fp8type supported by Nvidia H100 GPUs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "RMSNorm",
+   "evidence": "RMSNorm Parameters",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Mistral-7B",
+   "evidence": "Mistral-7B",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "7,680",
+   "evidence": "Training steps 7,680",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "76",
+   "evidence": "Warmup steps 76",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "256",
+   "evidence": "Batch size 256",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "4,096",
+   "evidence": "Context length 4,096",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "8 billion",
+   "evidence": "Total training tokens 8 billion",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "AdamW",
+   "evidence": "Optimizer AdamW",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "4\u00d710\u22125",
+   "evidence": "Learning rate 4\u00d710\u22125",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "Cosine to 2\u00d710\u22126",
+   "evidence": "Learning rate decay Cosine to 2\u00d710\u22126",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "(0.9, 0.95)",
+   "evidence": "Adam \u03b2 (0.9, 0.95)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "0.05",
+   "evidence": "Weight decay 0.05",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "AdamW",
+   "evidence": "Optimizer AdamW",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "Cosine learning rate decay",
+   "evidence": "Learning rate decay Cosine to 2\u00d710\u22126",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "pure bfloat16 training",
+   "evidence": "pure bfloat16 was 39% faster than mixed-precision bfloat16 training.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "mixed-precision bfloat16 training",
+   "evidence": "pure bfloat16 was 39% faster than mixed-precision bfloat16 training.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "activation check- pointing",
+   "evidence": "activation check- pointing",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "39% faster",
+   "evidence": "pure bfloat16 was 39% faster than mixed-precision bfloat16 training.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "gpt-5",
+   "passage_index": 5
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "methods": {
+    "n": 19,
+    "has_evidence": 19,
+    "span_found": 19,
+    "value_in_span": 16,
+    "grounded": 16
+   },
+   "dependencies": {
+    "n": 4,
+    "has_evidence": 4,
+    "span_found": 4,
+    "value_in_span": 4,
+    "grounded": 4
+   },
+   "hardware": {
+    "n": 5,
+    "has_evidence": 5,
+    "span_found": 5,
+    "value_in_span": 5,
+    "grounded": 5
+   },
+   "hyperparameters": {
+    "n": 11,
+    "has_evidence": 11,
+    "span_found": 11,
+    "value_in_span": 11,
+    "grounded": 11
+   },
+   "datasets": {
+    "n": 10,
+    "has_evidence": 10,
+    "span_found": 10,
+    "value_in_span": 10,
+    "grounded": 10
+   },
+   "evaluation_results": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 1,
+    "value_in_span": 1,
+    "grounded": 1
+   }
+  },
+  "total": {
+   "n": 50,
+   "has_evidence": 50,
+   "span_found": 50,
+   "value_in_span": 47,
+   "grounded": 47
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "bfloat16 mixed-precision training",
+      "evidence": "the most common training setup is bfloat16 mixed-precision training."
+     },
+     {
+      "name": "mixed-precision training",
+      "evidence": "In mixed-precision training, the forward and backward pass is computed in bfloat16"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "PyTorch FSDP",
+      "version": null,
+      "evidence": "PyTorch FSDP (Zhao et al., 2023)"
+     },
+     {
+      "name": "FlashAttention",
+      "version": null,
+      "evidence": "FlashAttention self-attention"
+     },
+     {
+      "name": "RMSNorm CUDA kernels",
+      "version": null,
+      "evidence": "RMSNorm CUDA kernels"
+     },
+     {
+      "name": "ZeRO",
+      "version": null,
+      "evidence": "ZeRO (Rajbhandari et al., 2019)"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "A100 80GB",
+      "evidence": "A100 80GB"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "A100 40GB",
+      "evidence": "A100 40GB"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "H100 80GB",
+      "evidence": "H100 80GB"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "A6000 48GB",
+      "evidence": "A6000 48GB"
+     }
+    ],
+    "hyperparameters": [
+     {
+      "name": "precision",
+      "value": "pure bfloat16",
+      "evidence": "pure bfloat16"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "CulturaX",
+      "version": null,
+      "evidence": "CulturaX (Nguyen et al., 2024)"
+     },
+     {
+      "name": "OSCAR",
+      "version": "23.01",
+      "evidence": "OSCAR23.01"
+     }
+    ],
+    "methods": [
+     {
+      "name": "parallel training with PyTorch FSDP",
+      "evidence": "parallel training with PyTorch FSDP"
+     },
+     {
+      "name": "FlashAttention self-attention",
+      "evidence": "FlashAttention self-attention"
+     },
+     {
+      "name": "RMSNorm CUDA kernels",
+      "evidence": "RMSNorm CUDA kernels"
+     },
+     {
+      "name": "ZeRO stages",
+      "evidence": "different ZeRO (Rajbhandari et al., 2019) stages"
+     },
+     {
+      "name": "tokenizer swapping",
+      "evidence": "tokenizer swapping"
+     },
+     {
+      "name": "infinite learning rate schedule",
+      "evidence": "infinite learning rate schedule"
+     },
+     {
+      "name": "adjusted attention masks",
+      "evidence": "adjusted attention masks"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "BOOLQ",
+      "version": null,
+      "evidence": "BOOLQ (Clark et al., 2019)"
+     },
+     {
+      "name": "COPA",
+      "version": null,
+      "evidence": "COPA (Roem- mele et al., 2011)"
+     },
+     {
+      "name": "HellaSwag",
+      "version": null,
+      "evidence": "HellaSwag (Zellers et al., 2019)"
+     },
+     {
+      "name": "Open- BookQA",
+      "version": null,
+      "evidence": "Open- BookQA (Mihaylov et al., 2018)"
+     },
+     {
+      "name": "PIQA",
+      "version": null,
+      "evidence": "PIQA (Bisk et al., 2020)"
+     },
+     {
+      "name": "RACE",
+      "version": null,
+      "evidence": "RACE (Lai et al., 2017)"
+     },
+     {
+      "name": "SciTail",
+      "version": null,
+      "evidence": "SciTail (Welbl et al., 2017)"
+     },
+     {
+      "name": "TOXI- GEN",
+      "version": null,
+      "evidence": "TOXI- GEN (Hartvigsen et al., 2022)"
+     }
+    ],
+    "methods": [
+     {
+      "name": "macro average",
+      "evidence": "We report a macro average as in OALL"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "Nvidia H100 GPUs",
+      "evidence": "Nvidia H100 GPUs"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "bfloat16",
+      "evidence": "For bfloat16 , we always"
+     },
+     {
+      "name": "fp8",
+      "evidence": "fp8type supported by Nvidia H100 GPUs"
+     },
+     {
+      "name": "RMSNorm",
+      "evidence": "RMSNorm Parameters"
+     },
+     {
+      "name": "Mistral-7B",
+      "evidence": "Mistral-7B"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "Training steps",
+      "value": "7,680",
+      "evidence": "Training steps 7,680"
+     },
+     {
+      "name": "Warmup steps",
+      "value": "76",
+      "evidence": "Warmup steps 76"
+     },
+     {
+      "name": "Batch size",
+      "value": "256",
+      "evidence": "Batch size 256"
+     },
+     {
+      "name": "Context length",
+      "value": "4,096",
+      "evidence": "Context length 4,096"
+     },
+     {
+      "name": "Total training tokens",
+      "value": "8 billion",
+      "evidence": "Total training tokens 8 billion"
+     },
+     {
+      "name": "Optimizer",
+      "value": "AdamW",
+      "evidence": "Optimizer AdamW"
+     },
+     {
+      "name": "Learning rate",
+      "value": "4\u00d710\u22125",
+      "evidence": "Learning rate 4\u00d710\u22125"
+     },
+     {
+      "name": "Learning rate decay",
+      "value": "Cosine to 2\u00d710\u22126",
+      "evidence": "Learning rate decay Cosine to 2\u00d710\u22126"
+     },
+     {
+      "name": "Adam \u03b2",
+      "value": "(0.9, 0.95)",
+      "evidence": "Adam \u03b2 (0.9, 0.95)"
+     },
+     {
+      "name": "Weight decay",
+      "value": "0.05",
+      "evidence": "Weight decay 0.05"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "AdamW",
+      "evidence": "Optimizer AdamW"
+     },
+     {
+      "name": "Cosine learning rate decay",
+      "evidence": "Learning rate decay Cosine to 2\u00d710\u22126"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "pure bfloat16 training",
+      "evidence": "pure bfloat16 was 39% faster than mixed-precision bfloat16 training."
+     },
+     {
+      "name": "mixed-precision bfloat16 training",
+      "evidence": "pure bfloat16 was 39% faster than mixed-precision bfloat16 training."
+     },
+     {
+      "name": "activation check- pointing",
+      "evidence": "activation check- pointing"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "speed",
+      "value": "39% faster",
+      "split": null,
+      "evidence": "pure bfloat16 was 39% faster than mixed-precision bfloat16 training."
+     }
+    ]
+   }
+  }
+ ]
+}

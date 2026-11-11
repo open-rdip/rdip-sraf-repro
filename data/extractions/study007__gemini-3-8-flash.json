@@ -1,0 +1,187 @@
+{
+  "study_id": "study007",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study007/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:07:31.228791+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 23,
+    "datasets": 2,
+    "methods": 14,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03c0(dashed|s)",
+        "value": "0"
+      },
+      {
+        "name": "radius of the ball for projection",
+        "value": "in\ufb01nity"
+      },
+      {
+        "name": "n",
+        "value": "\u221e"
+      },
+      {
+        "name": "\u03b3",
+        "value": "0.99"
+      },
+      {
+        "name": "i(s)",
+        "value": "1"
+      },
+      {
+        "name": "target policy temperature \u03c4",
+        "value": "0.01"
+      },
+      {
+        "name": "behavior policy \u03f5",
+        "value": "0.95"
+      },
+      {
+        "name": "behavior policy temperature \u03c4",
+        "value": "1"
+      },
+      {
+        "name": "evaluation frequency",
+        "value": "5 \u00d7103 steps"
+      },
+      {
+        "name": "evaluation episodes",
+        "value": "10"
+      },
+      {
+        "name": "\u03c1max",
+        "value": "6.86"
+      },
+      {
+        "name": "suggested n",
+        "value": "around 700"
+      },
+      {
+        "name": "softmax policy temperature",
+        "value": "1"
+      },
+      {
+        "name": "behavior policy mixture probability (prediction setting policy)",
+        "value": "0.9"
+      },
+      {
+        "name": "behavior policy mixture probability (softmax policy)",
+        "value": "0.1"
+      },
+      {
+        "name": "maximum steps per episode",
+        "value": "1000"
+      },
+      {
+        "name": "step reward",
+        "value": "+1"
+      },
+      {
+        "name": "discount factor (\u03b3)",
+        "value": "0.99"
+      },
+      {
+        "name": "reward",
+        "value": "0"
+      },
+      {
+        "name": "\u00b5(solid|s)",
+        "value": "1 7"
+      },
+      {
+        "name": "\u00b5(dashed|s)",
+        "value": "6 7"
+      },
+      {
+        "name": "learning rate \u03b1",
+        "value": "tuned from \u039b \u03b1"
+      },
+      {
+        "name": "truncation length n",
+        "value": "\u221e"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CartPole",
+        "version": null
+      },
+      {
+        "name": "Baird\u2019s counterexample",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ETD(0)",
+        "description": "Off-policy learning method whose implementation serves as an extension to the control setting when n=\u221e"
+      },
+      {
+        "name": "Algorithm 4",
+        "description": "Algorithm benchmarked in the control setting with a fixed behavior policy, tested with different selections of n and its \u03b2-variant"
+      },
+      {
+        "name": "truncation",
+        "description": "An approach in the prediction setting aimed at reducing variance to desired levels while maintaining convergence"
+      },
+      {
+        "name": "tile coding",
+        "description": "maps four-dimensional observation to a binary vector in R1024, followed by linear function approximation"
+      },
+      {
+        "name": "\u03b2-variant of Algorithm 4",
+        "description": "variant of Algorithm 4"
+      },
+      {
+        "name": "softmax policy",
+        "description": "target policy with temperature \u03c4= 0.01"
+      },
+      {
+        "name": "\u03f5-softmax policy",
+        "description": "behavior policy with \u03f5= 0.95 and \u03c4= 1"
+      },
+      {
+        "name": "hard truncation",
+        "description": "Ensures Ft,n is always bounded and enables finite sample analysis for both prediction and control settings"
+      },
+      {
+        "name": "soft truncation",
+        "description": "Method from Hallak et al. (2016) used for comparison"
+      },
+      {
+        "name": "Truncated Emphatic TD",
+        "description": "Reinforcement learning methods evaluated in the CartPole control domain."
+      },
+      {
+        "name": "mixture policy",
+        "description": "Behavior policy combining the prediction setting behavior policy (with probability 0.9) and a softmax policy with temperature 1 (with probability 0.1)."
+      },
+      {
+        "name": "truncated emphatic TD methods",
+        "description": "Methods evaluated focusing on the effect of n across prediction and control settings."
+      },
+      {
+        "name": "linear function approximation",
+        "description": "Linear function approximation where features and weight vector initialization follow Section D.2."
+      },
+      {
+        "name": "naive off-policy expected SARSA without followon trace",
+        "description": "Corresponds to setting truncation length n = 0"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "study_id": "study045",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study045/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:49:59.962846+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 7,
+    "methods": 15,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Jraph",
+        "version": null
+      },
+      {
+        "name": "JAX",
+        "version": null
+      },
+      {
+        "name": "Haiku",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "noise_scale",
+        "value": "tuned on HOMO target during pre-training and fine-tuning; kept fixed for all other targets"
+      },
+      {
+        "name": "atom_type_masking",
+        "value": "enabled during pre-training"
+      },
+      {
+        "name": "atom_type_prediction",
+        "value": "enabled during pre-training"
+      },
+      {
+        "name": "separate_model_per_target",
+        "value": "true (12 targets on QM9)"
+      },
+      {
+        "name": "pre_training",
+        "value": "on PCQM4Mv2 via denoising"
+      },
+      {
+        "name": "initialization",
+        "value": "random initialization versus pre-trained parameters"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "QM9",
+        "version": null
+      },
+      {
+        "name": "PCQM4Mv2",
+        "version": null
+      },
+      {
+        "name": "OC20 S2EF",
+        "version": null
+      },
+      {
+        "name": "DES15K",
+        "version": null
+      },
+      {
+        "name": "OC20",
+        "version": null
+      },
+      {
+        "name": "OC20 IS2RE",
+        "version": null
+      },
+      {
+        "name": "OC20 IS2RS",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GNS-TAT with Noisy Nodes",
+        "description": "Model variant evaluated on QM9; compared using random initialization and pre-trained parameters."
+      },
+      {
+        "name": "GNS with Noisy Nodes",
+        "description": "Baseline model variant for comparison on QM9."
+      },
+      {
+        "name": "Pre-training via denoising on PCQM4Mv2",
+        "description": "Pre-train model with denoising; atom type masking and prediction used during pre-training."
+      },
+      {
+        "name": "Fine-tuning separate model per target",
+        "description": "Fine-tune a separate model for each of the 12 QM9 targets using a single pre-trained model."
+      },
+      {
+        "name": "Pre-training on HOMO and LUMO targets",
+        "description": "Model is pre-trained on HOMO and LUMO targets in QM9 to boost performance and achieve state-of-the-art results."
+      },
+      {
+        "name": "TorchMD-NET",
+        "description": "Experiments run using Th\u00f6lke & De Fabritiis (2022) open-source code; reported runs yielded slightly worse results than the published ones."
+      },
+      {
+        "name": "GNS-TAT",
+        "description": "Model evaluated with and without pre-trained parameters; pre-training improves downstream test MAE across dataset sizes on QM9 HOMO."
+      },
+      {
+        "name": "Noisy Nodes",
+        "description": "Regularization technique used with GNS-TAT; evaluated when trained from scratch and with pre-trained parameters."
+      },
+      {
+        "name": "GNS",
+        "description": "Baseline model; effect of varying amount of pre-training data assessed while fixing downstream dataset size."
+      },
+      {
+        "name": "Denoising pre-training in 3D molecular structures",
+        "description": "Pre-training neural networks by denoising in the space of 3D molecular structures, which is shown to be equivalent to learning a force field and used to improve downstream molecular property prediction tasks."
+      },
+      {
+        "name": "AttrMask (2D-based)",
+        "description": "Pretraining task that masks and predicts atomic numbers using 2D molecular representations."
+      },
+      {
+        "name": "Pre-training via denoising",
+        "description": "Denoising-based pretraining using structures obtained from relatively cheap methods such as DFT."
+      },
+      {
+        "name": "Self-supervised pre-training on structures",
+        "description": "Pre-training uses only unlabeled molecular structures to avoid test set contamination, with PCQM4Mv2 used as the source of structures."
+      },
+      {
+        "name": "Model scaling by increasing MLP hidden layer sizes",
+        "description": "Model size is scaled up by increasing the hidden layer sizes in the MLPs."
+      },
+      {
+        "name": "Training from scratch",
+        "description": "A 130 million parameter GNS model is trained from scratch for comparison."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

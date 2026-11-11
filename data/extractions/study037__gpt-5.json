@@ -1,0 +1,106 @@
+{
+  "study_id": "study037",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study037/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:43:08.119823+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 0,
+    "methods": 10,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "conservative_objective_model",
+        "value": "neural network"
+      },
+      {
+        "name": "hidden_layers",
+        "value": "2"
+      },
+      {
+        "name": "hidden_layer_size",
+        "value": "2048"
+      },
+      {
+        "name": "activation",
+        "value": "leaky ReLU"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "optimizer_learning_rate",
+        "value": "1e-3"
+      },
+      {
+        "name": "gradient_ascent_steps_for_mu",
+        "value": "50"
+      },
+      {
+        "name": "gradient_ascent_learning_rate_continuous",
+        "value": "0.05"
+      },
+      {
+        "name": "gradient_ascent_learning_rate_discrete",
+        "value": "2.0"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Gradient ascent on learned conservative model",
+        "description": "Find x* via gradient ascent on the learned conservative model f\u0302\u03b8 using fewer than T ascent steps; the bound includes an additional offset dependent on the Lipschitz constant L\u0302 and the distance between x* and optimized solutions x_T for other data points x0 in D."
+      },
+      {
+        "name": "Conservative Objective Models for Offline MBO",
+        "description": "A conservative modeling approach ensuring the estimated value of x* does not overestimate its true value by incorporating an offset based on L\u0302 and distances to solutions obtained from other data points."
+      },
+      {
+        "name": "Conservative objective model",
+        "description": "Modeled as a neural network with two hidden layers of size 2048 each and leaky ReLU activations."
+      },
+      {
+        "name": "Training with Adam optimizer",
+        "description": "The conservative objective model is trained using Adam with a learning rate of 1e-3."
+      },
+      {
+        "name": "Gradient ascent sampling for mu(x)",
+        "description": "Compute samples using 50 gradient ascent steps starting from a given dataset design x0, with learning rate 0.05 for continuous tasks and 2.0 for discrete tasks."
+      },
+      {
+        "name": "Conservative training (inspired by Conservative Q-Learning)",
+        "description": "Trains the model f\u0302\u03b8 by performing gradient descent on \u03b8 with a conservative objective (referenced as Equation 7) to lower-bound the true function, building on analysis from Conservative Q-Learning."
+      },
+      {
+        "name": "Neural Tangent Kernel (NTK) model",
+        "description": "Assumes the learned function operates under the NTK model; defines the kernel G_f(x_i, x_j) = \u2207_\u03b8 f\u0302\u03b8(x_i)^T \u2207_\u03b8 f\u0302\u03b8(x_j)."
+      },
+      {
+        "name": "Gaussian conditional distribution for analysis",
+        "description": "Defines a conditional distribution D(x\u2032|x) as a Gaussian N(x\u2032|x, \u03c3^2) centered at x for analysis."
+      },
+      {
+        "name": "Gradient descent optimization",
+        "description": "Optimizes \u03b8 via gradient descent with iterations k = 1, 2, ... to train f\u0302\u03b8; parameters at step k are \u03b8_k and the corresponding conservative model is f\u0302^k_\u03b8."
+      },
+      {
+        "name": "Lipschitz assumptions",
+        "description": "Assumes the true function f(x) is L-Lipschitz and the learned function f\u0302\u03b8(x) is L\u0302-Lipschitz with L\u0302 sufficiently larger than L."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

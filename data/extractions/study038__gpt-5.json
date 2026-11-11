@@ -1,0 +1,110 @@
+{
+  "study_id": "study038",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study038/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:43:48.957951+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 4,
+    "methods": 16,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "H.poly.Day10 infection",
+        "version": null
+      },
+      {
+        "name": "single-cell gene expression dataset of IFN-\u03b2 stimulated and control peripheral blood",
+        "version": null
+      },
+      {
+        "name": "Morpho-MNIST",
+        "version": null
+      },
+      {
+        "name": "Peripheral blood mononuclear cells (PBMCs)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "MMD regularization",
+        "description": "Regularization that forces learned representations to be similar across conditions."
+      },
+      {
+        "name": "trV AE",
+        "description": "Resulting model incorporating MMD regularization, reported to outperform existing approaches on benchmark and real-world datasets."
+      },
+      {
+        "name": "trVAE",
+        "description": "A model used to predict mean and variance of high-dimensional gene expression in Tuft cells under multiple conditions; outperforms other models in correlation with ground truth and can be trained holding out each of eight cell types."
+      },
+      {
+        "name": "CVAE with MMD regularization",
+        "description": "A conditional VAE variant where MMD regularization on the bottleneck layer was applied; it did not improve performance."
+      },
+      {
+        "name": "UMAP",
+        "description": "Used to visualize conditions and cell types for gut cells."
+      },
+      {
+        "name": "Random subsampling (n=100)",
+        "description": "Used to estimate the mean and standard deviation of Pearson R2 values by creating 100 random subsamples for each model/cell type."
+      },
+      {
+        "name": "Pearson R2 comparison",
+        "description": "Compared R2 between real and predicted cells for mean and variance of gene expression across different models."
+      },
+      {
+        "name": "Distribution comparison of Defa24",
+        "description": "Compared expression distributions of Defa24 across control, real stimulated, and predicted cells for different models."
+      },
+      {
+        "name": "VFAE",
+        "description": "Variational Fair Autoencoder referenced as a related method."
+      },
+      {
+        "name": "MMD-regularized autoencoder",
+        "description": "Autoencoder variant with maximum mean discrepancy regularization referenced as a related method."
+      },
+      {
+        "name": "CycleGAN",
+        "description": "Cycle-consistent generative adversarial network referenced as a related method for style transfer."
+      },
+      {
+        "name": "scGen",
+        "description": "A variational autoencoder combined with vector arithmetics for biological perturbation prediction."
+      },
+      {
+        "name": "scVI",
+        "description": "A conditional variational autoencoder (CVAE) with a negative binomial output distribution for single-cell data."
+      },
+      {
+        "name": "CVAE (vanilla)",
+        "description": "Baseline conditional variational autoencoder without MMD regularization; used for comparison of representation stability across categorical conditions."
+      },
+      {
+        "name": "Differential expression analysis",
+        "description": "Identified top 10 differentially expressed genes for NK cells; used to highlight genes in mean/variance plots."
+      },
+      {
+        "name": "R2 evaluation with random subsampling",
+        "description": "Compared R2 values for mean and variance of gene expression between real and predicted cells across models; means estimated using n=100 random subsamples with error bars showing standard deviation."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

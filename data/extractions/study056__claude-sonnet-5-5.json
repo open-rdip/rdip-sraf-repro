@@ -1,0 +1,176 @@
+{
+  "study_id": "study056",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study056/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:54:06.983830+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 1,
+    "methods": 14,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100 GPU 80GB",
+      "cuda_version": null,
+      "cpu_info": "AMD EPYC 7402 CPU (single core used for timing)"
+    },
+    "hyperparameters": [
+      {
+        "name": "NFE",
+        "value": "59"
+      },
+      {
+        "name": "NFE (number of function evaluations) for sampling, ECal edm-diffusion and HCal edm-diffusion",
+        "value": "59"
+      },
+      {
+        "name": "incident energy range (timing study)",
+        "value": "10 to 90 GeV in 10 GeV increments"
+      },
+      {
+        "name": "showers per energy point (timing study)",
+        "value": "100"
+      },
+      {
+        "name": "number of runs (timing study)",
+        "value": "3"
+      },
+      {
+        "name": "batch sizes (timing study)",
+        "value": "1 and 16"
+      },
+      {
+        "name": "NFE (timing study)",
+        "value": "1, 29, 59"
+      },
+      {
+        "name": "cell energy cut",
+        "value": "~10^-2 MeV"
+      },
+      {
+        "name": "cell size ECal",
+        "value": "5x5 mm^2"
+      },
+      {
+        "name": "cell size HCal",
+        "value": "30x30 mm^2"
+      },
+      {
+        "name": "learning rate scheduler (fine-tuning)",
+        "value": "OneCycleLR"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Geant4 simulated \u03c0+ showers (ILD electromagnetic and hadronic calorimeters)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "CaloHadronic",
+        "description": "Point-cloud based generative model using transformer-based diffusion modules that simultaneously simulates the ECal and HCal parts of a hadronic shower; used as a fast surrogate for Geant4"
+      },
+      {
+        "name": "Geant4",
+        "description": "Reference full detector simulation against which CaloHadronic speed is compared"
+      },
+      {
+        "name": "Pandora Particle Flow",
+        "description": "Particle flow reconstruction algorithm used to reconstruct hadronic showers, for which sub-shower track fidelity is important"
+      },
+      {
+        "name": "Classifier test",
+        "description": "Classifier-based evaluation of generative fidelity, indicating that fidelity needs further improvement, especially for fine-grained track-like structures in the HCal"
+      },
+      {
+        "name": "ECal edm-diffusion",
+        "description": "Transformer-based diffusion model for ECal calorimeter shower generation; smaller than the HCal model; sampled with 59 NFE"
+      },
+      {
+        "name": "HCal edm-diffusion",
+        "description": "Transformer-based diffusion model for HCal calorimeter shower generation; sampled with 59 NFE and computationally more expensive than the ECal model"
+      },
+      {
+        "name": "Pandora Particle Flow (PandoraPFA)",
+        "description": "State-of-the-art particle flow algorithm used in the ILD standard reconstruction chain to individually reconstruct each particle in an event, used to interface the fast calorimeter shower model with reconstruction; simulated hits come from Geant4 or the generative model"
+      },
+      {
+        "name": "Sequential conditioning of several generative models",
+        "description": "Strategy of sequentially conditioning several generative models, suggested as potentially applicable to other complex generative simulation tasks beyond calorimeters."
+      },
+      {
+        "name": "Timing study",
+        "description": "Comparison of shower generation speed of CaloHadronic with Geant4, computed from three runs with incident energies 10-90 GeV in 10 GeV steps and 100 showers per energy point, on a single AMD EPYC 7402 CPU core and an NVIDIA A100 80GB GPU, reporting mean and standard deviation of time per shower for various NFE and batch sizes."
+      },
+      {
+        "name": "PointCountFM",
+        "description": "Model predicting the number of points per layer, which captures the per-layer point distribution better than the diffusion model"
+      },
+      {
+        "name": "Layer point-count calibration",
+        "description": "Post-processing step after reversing preprocessing: the number of points per layer from PointCountFM is used and the CaloHadronic generated points are assigned to the corresponding layers"
+      },
+      {
+        "name": "Projection to calorimeter grid",
+        "description": "Final point cloud showers are projected back to a regular grid with cell size equal to the ILD calorimeters (5x5 mm^2 ECal, 30x30 mm^2 HCal)"
+      },
+      {
+        "name": "Cell energy cut",
+        "description": "Cut at ~10^-2 MeV applied to all showers for shower observables and scores, since below this threshold sensor response is indistinguishable from electronic noise"
+      },
+      {
+        "name": "OneCycleLR",
+        "description": "Learning rate schedule used during fine-tuning, reported to accelerate convergence and improve generalization"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Time per shower, Geant4, CPU (1 core)",
+        "value": "2.09\u00b10.05 s",
+        "split": null
+      },
+      {
+        "metric": "Time per shower, CaloHadronic, CPU, NFE 1, batch size 1",
+        "value": "0.591\u00b10.001 s (speed-up \u00d73.5)",
+        "split": null
+      },
+      {
+        "metric": "Time per shower, CaloHadronic, CPU, NFE 1, batch size 16",
+        "value": "0.7342\u00b10.0006 s (speed-up \u00d72.8)",
+        "split": null
+      },
+      {
+        "metric": "Time per shower, CaloHadronic, CPU, NFE 29, batch size 1",
+        "value": "17.2\u00b10.1 s",
+        "split": null
+      },
+      {
+        "metric": "Time per shower, CaloHadronic, CPU, NFE 29, batch size 16",
+        "value": "21.37\u00b10.05 s",
+        "split": null
+      },
+      {
+        "metric": "Time per shower, CaloHadronic, CPU, NFE 59, batch size 1",
+        "value": "34.8\u00b10.4 s",
+        "split": null
+      },
+      {
+        "metric": "Time per shower, CaloHadronic, CPU, NFE 59, batch size 16",
+        "value": "43.3\u00b10.3 s",
+        "split": null
+      },
+      {
+        "metric": "Time per shower, CaloHadronic, GPU, NFE 1, batch size 1",
+        "value": "0.0086\u00b10.0007 s (speed-up \u00d7243)",
+        "split": null
+      }
+    ]
+  }
+}

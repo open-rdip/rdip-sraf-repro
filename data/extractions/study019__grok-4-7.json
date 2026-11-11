@@ -1,0 +1,186 @@
+{
+  "study_id": "study019",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study019/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:04:04.705934+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 5,
+    "methods": 11,
+    "evaluation_results": 14
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "s",
+        "value": "4"
+      },
+      {
+        "name": "width_scale",
+        "value": "18w\u00d74s"
+      },
+      {
+        "name": "input_size",
+        "value": "224\u00d7224"
+      },
+      {
+        "name": "output_stride_training",
+        "value": "16"
+      },
+      {
+        "name": "output_stride_evaluation",
+        "value": "16"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "DUT-OMRON",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "CIFAR-100",
+        "version": null
+      },
+      {
+        "name": "augmented PASCAL VOC12",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Res2Net",
+        "description": "Multi-scale module with hierarchical connections; feature splits are computed sequentially; typical setting s=4"
+      },
+      {
+        "name": "Res2Net-50",
+        "description": "Res2Net-50 variant with 18w\u00d74s that outperforms ResNet-50 in top-1 error at 69% FLOPs"
+      },
+      {
+        "name": "ResNet v1d",
+        "description": "Modifications followed to alter Res2Net"
+      },
+      {
+        "name": "CutMix",
+        "description": "Data augmentation technique used when training the modified Res2Net"
+      },
+      {
+        "name": "Res2Net v1b",
+        "description": "Modified Res2Net following ResNet v1d and trained with CutMix; evaluated on ImageNet classification and downstream tasks"
+      },
+      {
+        "name": "SimpleBaseline",
+        "description": "Key-points estimation method in which the backbone is replaced with the proposed Res2Net."
+      },
+      {
+        "name": "ResNet-50",
+        "description": "Backbone network used as a counterpart for salient object detection and key-points estimation comparisons."
+      },
+      {
+        "name": "Grad-CAM",
+        "description": "Used to visualize class activation mapping (CAM) to localize discriminative regions for image classification"
+      },
+      {
+        "name": "Deeplab v3+",
+        "description": "Semantic segmentation method; implementations remain the same as Deeplab v3+ except the backbone is replaced with ResNet and the proposed Res2Net."
+      },
+      {
+        "name": "ResNet",
+        "description": "Backbone network used as the counterpart to Res2Net within the Deeplab v3+ segmentation setup."
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "Instance segmentation method combining object detection and semantic segmentation."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 error gain over ResNet-50",
+        "value": "3.05%",
+        "split": null
+      },
+      {
+        "metric": "top-1 error improvement over ResNet-50",
+        "value": "0.93%",
+        "split": null
+      },
+      {
+        "metric": "FLOPs relative to ResNet-50",
+        "value": "69%",
+        "split": null
+      },
+      {
+        "metric": "F-measure improvement (Res2Net vs ResNet)",
+        "value": "5.2%",
+        "split": null
+      },
+      {
+        "metric": "MAE improvement (Res2Net vs ResNet)",
+        "value": "2.1%",
+        "split": null
+      },
+      {
+        "metric": "ResNet-50 AP",
+        "value": "70.4",
+        "split": "validation"
+      },
+      {
+        "metric": "ResNet-50 AP50",
+        "value": "88.6",
+        "split": "validation"
+      },
+      {
+        "metric": "ResNet-50 AP75",
+        "value": "78.3",
+        "split": "validation"
+      },
+      {
+        "metric": "ResNet-50 APM",
+        "value": "67.1",
+        "split": "validation"
+      },
+      {
+        "metric": "ResNet-50 APL",
+        "value": "77.2",
+        "split": "validation"
+      },
+      {
+        "metric": "Res2Net-50 AP",
+        "value": "71.5",
+        "split": "validation"
+      },
+      {
+        "metric": "Res2Net-50 AP50",
+        "value": "89.0",
+        "split": "validation"
+      },
+      {
+        "metric": "mean IoU (Res2Net-50 vs counterpart)",
+        "value": "1.5%",
+        "split": null
+      },
+      {
+        "metric": "mean IoU (Res2Net-101 vs counterpart)",
+        "value": "1.2%",
+        "split": null
+      }
+    ]
+  }
+}

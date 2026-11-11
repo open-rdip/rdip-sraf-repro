@@ -1,0 +1,99 @@
+{
+  "study_id": "study051",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study051/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:26:22.597529+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 0,
+    "methods": 14,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Python",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of initializations",
+        "value": "30"
+      },
+      {
+        "name": "\u03b5",
+        "value": "0.1"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "parameter vectorization",
+        "description": "Each parameter set \u02c6\u03b8i for time series i is vectorized into a single vector."
+      },
+      {
+        "name": "k-means clustering initialization",
+        "description": "k-means clustering is performed over all \u02c6\u03b8i, returning centers and proportions of class membership, which are converted to the parameter set \u0398(0) for initialization by reversing the vectorization process."
+      },
+      {
+        "name": "LGSSM",
+        "description": "Linear Gaussian state-space model whose parameter count relative to the number of time observations affects suitability of the k-means initialization strategy."
+      },
+      {
+        "name": "LGSSM fitting",
+        "description": "A predetermined number of initializations are generated and LGSSMs are fit from each initialization for each time series."
+      },
+      {
+        "name": "k-means initialization",
+        "description": "k-means is used only to determine an initialization for VISTA; the only parameter varying among initializations is A(0)_k, following the initialization method in [55] so that as much of the signal as possible is described by latent-variable evolution rather than noise."
+      },
+      {
+        "name": "VISTA",
+        "description": "VISTA develops the model parameters further than the k-means initialization."
+      },
+      {
+        "name": "EM algorithm",
+        "description": "Terminal parameter values for a single LGSSM for time series i are given by the EM algorithm."
+      },
+      {
+        "name": "log-likelihood model selection",
+        "description": "The LGSSM with the largest log-likelihood, computed as log p(Yi|\u03b8i), is chosen for each time series, yielding parameters \u03b8\u0302i which are then vectorized."
+      },
+      {
+        "name": "mixture LGSSM clustering",
+        "description": "Previous clustering approach implemented in Python, building from the EM implementation introduced in [55]."
+      },
+      {
+        "name": "EM",
+        "description": "Expectation-maximization implementation from [55]; the prior implementation assumes identical numbers of time samples and precomputes quantities in parallel to form arrays of sizes N\u00d7M\u00d7T\u00d7d, N\u00d7M\u00d7T\u00d7d\u00d7d, and N\u00d7M\u00d7T\u22121\u00d7d\u00d7d for linear-algebra updates, whereas the present implementation avoids those large arrays."
+      },
+      {
+        "name": "online parallel summation",
+        "description": "Sums in (14) are computed online in parallel over all time series, avoiding large arrays of sizes N\u00d7M\u00d7T\u00d7d, N\u00d7M\u00d7T\u00d7d\u00d7d, and N\u00d7M\u00d7T\u22121\u00d7d\u00d7d that risk memory issues on large datasets."
+      },
+      {
+        "name": "Kalman filter",
+        "description": "Run during the summing process for each time series i, in much the same manner as [55], with modifications so that parameters are a function of the timestep due to discretization."
+      },
+      {
+        "name": "RTS smoother",
+        "description": "Run with the Kalman filter during summing to compute x-hat_{i,l}^{k|j}, Omega_{i,l}^k, and Omega_{i,l}^{k,k-1} for each time series i."
+      },
+      {
+        "name": "log-space cluster posterior",
+        "description": "Before summing, compute pi-tilde^{(s)}_{l|Y_i} for all time series and clusters by calculating log(p(Y_i|theta^{(s)}_u) pi^{(s)}_u) for each cluster u and time series i, storing an N\u00d7M array, then applying the exponential to avoid overflow."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

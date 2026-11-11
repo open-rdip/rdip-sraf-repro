@@ -1,0 +1,219 @@
+{
+  "study_id": "study026",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study026/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:41:08.813346+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 2,
+    "methods": 21,
+    "evaluation_results": 15
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "evolution population size (classification branch)",
+        "value": "10^4"
+      },
+      {
+        "name": "evolution population size (regression branch)",
+        "value": "10^3"
+      },
+      {
+        "name": "vanilla evolution search loss candidates evaluated per generation",
+        "value": "around 1000"
+      },
+      {
+        "name": "CSE-Autoloss individuals evaluated per generation",
+        "value": "about 10"
+      },
+      {
+        "name": "top-performing losses plotted per generation (vanilla evolutionary search, Figure 4)",
+        "value": "100"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "VOC",
+        "version": null
+      },
+      {
+        "name": "BDD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "FL + DIoU",
+        "description": "Focal loss combined with DIoU loss baseline"
+      },
+      {
+        "name": "FL + CIoU",
+        "description": "Focal loss combined with CIoU loss baseline"
+      },
+      {
+        "name": "GHM",
+        "description": "Gradient harmonizing mechanism loss (Li et al., 2019a) baseline"
+      },
+      {
+        "name": "FL + CSE-Autoloss-B reg",
+        "description": "Focal loss for classification with regression loss discovered by CSE-Autoloss-B"
+      },
+      {
+        "name": "CSE-Autoloss-B cls + GIoU",
+        "description": "Classification loss discovered by CSE-Autoloss-B combined with GIoU regression loss"
+      },
+      {
+        "name": "CSE-Autoloss-B",
+        "description": "Loss combination (classification and regression branches) discovered by CSE-Autoloss-B"
+      },
+      {
+        "name": "Random search",
+        "description": "Search algorithm compared against evolution search and CSE-Autoloss; much worse than evolution search"
+      },
+      {
+        "name": "Vanilla evolution search",
+        "description": "Evolution search over a sparse action space; requires hundreds of wall-clock hours on a server with 8 GPUs"
+      },
+      {
+        "name": "CSE-Autoloss",
+        "description": "Evolution-based loss search with convergence-simulation modules; speeds up search by 20x and finds well-performing loss combinations in around 1.5 wall-clock days"
+      },
+      {
+        "name": "FCOS",
+        "description": "One-stage object detector used for comparing the behaviors of CSE-Autoloss and vanilla evolution search."
+      },
+      {
+        "name": "Convergence-simulation modules",
+        "description": "Components of CSE-Autoloss that improve search efficiency."
+      },
+      {
+        "name": "CSE-Autoloss-A",
+        "description": "CSE-Autoloss variant that achieves the best performance compared with other loss combinations by a large margin"
+      },
+      {
+        "name": "Evolution search",
+        "description": "Baseline (vanilla) evolutionary loss search algorithm, searching the classification branch with GIoU in the other branch, for Faster R-CNN"
+      },
+      {
+        "name": "Faster R-CNN R50",
+        "description": "Detector used for best-searched loss transferability evaluation on VOC and BDD"
+      },
+      {
+        "name": "FCOS R50",
+        "description": "One-stage detector with ResNet-50 backbone used to evaluate generalization of the searched loss."
+      },
+      {
+        "name": "Faster R-CNN R101",
+        "description": "Two-stage detector with ResNet-101 backbone to which CSE-Autoloss-A is applied."
+      },
+      {
+        "name": "Cascade R-CNN R50",
+        "description": "Two-stage detector (Cai & Vasconcelos, 2018) to which CSE-Autoloss-A is applied."
+      },
+      {
+        "name": "Mask R-CNN R50",
+        "description": "Two-stage model (He et al., 2017) where only the classification and regression branches are replaced with CSE-Autoloss-A."
+      },
+      {
+        "name": "ATSS",
+        "description": "One-stage detector (Zhang et al., 2020) to which CSE-Autoloss-B is applied."
+      },
+      {
+        "name": "Bounded IoU loss",
+        "description": "Hand-crafted regression loss mentioned as a comparison point for expert-designed loss improvement."
+      },
+      {
+        "name": "GIoU loss",
+        "description": "Hand-crafted regression loss that yielded 0.2% AP improvement over Bounded IoU loss."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Performance (FL + DIoU)",
+        "value": "38.7 (-0.1)",
+        "split": null
+      },
+      {
+        "metric": "Performance (FL + CIoU)",
+        "value": "38.8 (+0.0)",
+        "split": null
+      },
+      {
+        "metric": "Performance (GHM)",
+        "value": "38.6 (-0.2)",
+        "split": null
+      },
+      {
+        "metric": "Performance (FL + CSE-Autoloss-B reg)",
+        "value": "39.1 (+0.3)",
+        "split": null
+      },
+      {
+        "metric": "Performance (CSE-Autoloss-B cls + GIoU)",
+        "value": "39.4 (+0.6)",
+        "split": null
+      },
+      {
+        "metric": "Performance (CSE-Autoloss-B)",
+        "value": "39.6 (+0.8)",
+        "split": null
+      },
+      {
+        "metric": "Search speedup of CSE-Autoloss over vanilla evolution search",
+        "value": "20x",
+        "split": null
+      },
+      {
+        "metric": "CSE-Autoloss search time",
+        "value": "around 1.5 wall-clock days",
+        "split": null
+      },
+      {
+        "metric": "AP (%) - Random search (Classification branch searched, GIoU other branch, 1\u00d710^4 evaluated losses, 8\u00d710^3 wall-clock hours)",
+        "value": "37.8",
+        "split": null
+      },
+      {
+        "metric": "AP (%) - Evolution search (Classification branch searched, GIoU other branch, 5\u00d710^3 evaluated losses, 5\u00d710^2 wall-clock hours)",
+        "value": "38.2",
+        "split": null
+      },
+      {
+        "metric": "AP (%) - CSE-Autoloss (Classification branch searched, GIoU other branch, 50 evaluated losses, 26 wall-clock hours)",
+        "value": "38.2",
+        "split": null
+      },
+      {
+        "metric": "AP (%) - CSE-Autoloss (Regression branch searched, CE other branch, 15 evaluated losses, 8 wall-clock hours)",
+        "value": "37.9",
+        "split": null
+      },
+      {
+        "metric": "AP improvement over baseline (Faster R-CNN R50, CSE-Autoloss-A)",
+        "value": "1.1%",
+        "split": null
+      },
+      {
+        "metric": "AP improvement from Bounded IoU loss to GIoU loss",
+        "value": "0.2%",
+        "split": null
+      },
+      {
+        "metric": "Loss candidates filtered by convergence-simulation modules",
+        "value": "99%",
+        "split": null
+      }
+    ]
+  }
+}

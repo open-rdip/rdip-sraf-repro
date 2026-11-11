@@ -1,0 +1,167 @@
+{
+  "study_id": "study047",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study047/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:51:48.142476+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 22,
+    "datasets": 1,
+    "methods": 11,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "gradient_clipping_max_l2_norm",
+        "value": "5"
+      },
+      {
+        "name": "epochs",
+        "value": "100"
+      },
+      {
+        "name": "segment_length_seconds",
+        "value": "4"
+      },
+      {
+        "name": "learning_rate_initial",
+        "value": "1e\u22123"
+      },
+      {
+        "name": "learning_rate_decay",
+        "value": "0.98"
+      },
+      {
+        "name": "lr_decay_every_epochs",
+        "value": "2"
+      },
+      {
+        "name": "early_stopping_patience_epochs",
+        "value": "10"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "training_objective",
+        "value": "uPIT"
+      },
+      {
+        "name": "room_height_range_m",
+        "value": "2-5"
+      },
+      {
+        "name": "reverberation_time_T60_range_s",
+        "value": "0.1-0.5"
+      },
+      {
+        "name": "speech_mixture_SNR_range_dB",
+        "value": "-5 to 5"
+      },
+      {
+        "name": "overlap_ratio",
+        "value": "50% on average"
+      },
+      {
+        "name": "noise_SNR_range_dB",
+        "value": "10-20"
+      },
+      {
+        "name": "speaker_and_microphone_locations",
+        "value": "randomly sampled"
+      },
+      {
+        "name": "target_signal",
+        "value": "reverberant clean speech for both speakers"
+      },
+      {
+        "name": "encoder_decoder_num_filters",
+        "value": "64"
+      },
+      {
+        "name": "num_dprnn_blocks",
+        "value": "6"
+      },
+      {
+        "name": "intra_chunk_rnn_type",
+        "value": "BLSTM"
+      },
+      {
+        "name": "inter_chunk_rnn_type",
+        "value": "BLSTM"
+      },
+      {
+        "name": "rnn_hidden_units_per_direction",
+        "value": "128"
+      },
+      {
+        "name": "chunk_size_rule",
+        "value": "K \u2248 \u221a2L (defined empirically from training set)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Microsoft\u2019s internal gender-balanced clean speech collection (44 speakers)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Utterance-level Permutation Invariant Training (uPIT)",
+        "description": "Models are trained with uPIT to maximize scale-invariant SNR (SI-SNR)."
+      },
+      {
+        "name": "Gradient clipping",
+        "description": "Gradient clipping with a maximum L2-norm of 5 is applied for all experiments."
+      },
+      {
+        "name": "Signal fidelity evaluation",
+        "description": "Effectiveness measured by signal-to-distortion ratio improvement (SDRi) and SI-SNR improvement (SI-SNRi)."
+      },
+      {
+        "name": "Speech recognition evaluation",
+        "description": "Speech recognition accuracy measured by word error rate (WER) on both separated speakers."
+      },
+      {
+        "name": "Synthetic reverberant mixture generation",
+        "description": "Room height sampled between 2 and 5 meters; T60 sampled between 0.1 and 0.5 s; speaker and single microphone locations randomly sampled; two reverberated signals rescaled to SNR between -5 and 5 dB and shifted to 50% average overlap; mixture further corrupted by random isotropic noise at SNR between 10 and 20 dB."
+      },
+      {
+        "name": "Adam optimizer",
+        "description": "Adam is used as the optimizer."
+      },
+      {
+        "name": "Learning rate schedule",
+        "description": "Learning rate initialized to 1e\u22123 and decays by 0.98 every two epochs."
+      },
+      {
+        "name": "Early stopping",
+        "description": "Training stops if no best model is found on the validation set for 10 consecutive epochs."
+      },
+      {
+        "name": "TasNet",
+        "description": "Time-domain audio separation network with a linear 1-D convolutional encoder, a separator estimating C masking matrices for C target sources, and a linear 1-D transposed convolutional decoder; encoder/decoder as in [4] with 64 filters."
+      },
+      {
+        "name": "DPRNN",
+        "description": "Deep dual-path RNN used as the separator with 6 blocks; employs BLSTM as intra- and inter-chunk RNNs with 128 hidden units per direction; chunk size K set empirically with K \u2248 \u221a2L."
+      },
+      {
+        "name": "TCN",
+        "description": "Optimally configured temporal convolutional network baseline as described in [4] for comparison."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

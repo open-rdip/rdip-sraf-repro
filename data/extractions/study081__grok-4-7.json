@@ -1,0 +1,92 @@
+{
+  "study_id": "study081",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study081/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:34:29.884382+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 2,
+    "methods": 11,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "NVIDIA Tacotron2 implementation",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch size",
+        "value": "32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "LJ Speech",
+        "version": null
+      },
+      {
+        "name": "Indigenous language training data",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Tacotron2",
+        "description": "Five attention-based Tacotron2 models trained on incremental partitions of the LJ Speech corpus using the NVIDIA implementation with default hyperparameters except a reduced batch size of 32."
+      },
+      {
+        "name": "forced alignment",
+        "description": "Non-attentive forced-alignment targets used instead of learning an internal attention alignment, described as enabling more time- and data-efficient training than attention-based Tacotron2."
+      },
+      {
+        "name": "Montreal Forced Aligner",
+        "description": "trained only on limited Indigenous language training data to obtain forced alignments of sufficient quality for more data-efficient neural TTS training from scratch"
+      },
+      {
+        "name": "attention guidance",
+        "description": "Proposal to improve training of the attention network."
+      },
+      {
+        "name": "CTC loss",
+        "description": "Loss function used to respect the monotonic alignment between text inputs and speech outputs."
+      },
+      {
+        "name": "reduction factor",
+        "description": "Applies dropout to the autoregressive frames so the model relies more on the attention network than the teacher forcing inputs, possibly at the risk of compromising synthesis quality."
+      },
+      {
+        "name": "LightSpeech-matched architecture",
+        "description": "Modified the base architecture to match the LightSpeech model presented in Luo et al. (2021), motivated by training and inference efficiency and the risk of overfitting a large model to limited data."
+      },
+      {
+        "name": "energy adaptor removal",
+        "description": "Removed the energy adaptor."
+      },
+      {
+        "name": "depthwise separable convolutions",
+        "description": "Replaced convolutional layers in the encoder, decoder, and remaining variance predictors with depthwise separable convolutions (Kaiser et al., 2018) and matched encoder and decoder convolutional kernel sizes with Luo et al. (2021). Reduced parameters from 35M in the Chien (2021) implementation (original FastSpeech2 slightly smaller at 27M) to 11.6M without noticeable change in voice quality."
+      },
+      {
+        "name": "cross-lingual fine-tuning",
+        "description": "Language embeddings used for supplementary cross-lingual fine-tuning experiments; not reported in this paper (see Pine 2021)."
+      },
+      {
+        "name": "MUSHRA",
+        "description": "Survey comparing Tacotron2 (TT2) and FastSpeech2 (FS2) models with constrained training data amounts (FS2: 15m, 30m, 1hr, 3hr, 5hr, 10hr, Full; TT2: 10hr, Full). Ref refers to reference recordings of natural speech."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

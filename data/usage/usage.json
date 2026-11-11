@@ -1,112 +1,1982 @@
 {
   "models": {
     "gemini-3.8-flash": {
-      "calls": 23,
-      "prompt_tokens": 14621,
-      "completion_tokens": 6183,
+      "calls": 613,
+      "prompt_tokens": 389181,
+      "completion_tokens": 175588,
       "per_study": {
         "study001": {
-          "calls": 7,
-          "prompt": 4301,
-          "completion": 1958
+          "calls": 14,
+          "prompt": 9708,
+          "completion": 3935
         },
         "study002": {
-          "calls": 5,
-          "prompt": 4734,
-          "completion": 1516
+          "calls": 10,
+          "prompt": 10258,
+          "completion": 3221
         },
         "study003": {
-          "calls": 9,
-          "prompt": 5546,
-          "completion": 2699
+          "calls": 18,
+          "prompt": 12514,
+          "completion": 6977
+        },
+        "study004": {
+          "calls": 4,
+          "prompt": 2094,
+          "completion": 402
+        },
+        "study005": {
+          "calls": 12,
+          "prompt": 8010,
+          "completion": 3222
+        },
+        "study006": {
+          "calls": 14,
+          "prompt": 9586,
+          "completion": 5208
+        },
+        "study007": {
+          "calls": 6,
+          "prompt": 3640,
+          "completion": 1839
+        },
+        "study008": {
+          "calls": 12,
+          "prompt": 8378,
+          "completion": 3813
+        },
+        "study009": {
+          "calls": 10,
+          "prompt": 6918,
+          "completion": 4350
+        },
+        "study010": {
+          "calls": 5,
+          "prompt": 2861,
+          "completion": 1451
+        },
+        "study011": {
+          "calls": 6,
+          "prompt": 3796,
+          "completion": 3077
+        },
+        "study012": {
+          "calls": 7,
+          "prompt": 4155,
+          "completion": 1716
+        },
+        "study013": {
+          "calls": 14,
+          "prompt": 9662,
+          "completion": 1991
+        },
+        "study014": {
+          "calls": 3,
+          "prompt": 1801,
+          "completion": 775
+        },
+        "study015": {
+          "calls": 10,
+          "prompt": 8786,
+          "completion": 823
+        },
+        "study016": {
+          "calls": 4,
+          "prompt": 2163,
+          "completion": 743
+        },
+        "study017": {
+          "calls": 12,
+          "prompt": 9106,
+          "completion": 4734
+        },
+        "study018": {
+          "calls": 6,
+          "prompt": 4251,
+          "completion": 3753
+        },
+        "study019": {
+          "calls": 5,
+          "prompt": 3194,
+          "completion": 1657
+        },
+        "study020": {
+          "calls": 10,
+          "prompt": 6874,
+          "completion": 2023
+        },
+        "study021": {
+          "calls": 7,
+          "prompt": 4272,
+          "completion": 2045
+        },
+        "study022": {
+          "calls": 16,
+          "prompt": 10848,
+          "completion": 3684
+        },
+        "study023": {
+          "calls": 5,
+          "prompt": 2935,
+          "completion": 1219
+        },
+        "study024": {
+          "calls": 4,
+          "prompt": 2402,
+          "completion": 1130
+        },
+        "study025": {
+          "calls": 7,
+          "prompt": 4248,
+          "completion": 2348
+        },
+        "study026": {
+          "calls": 5,
+          "prompt": 3029,
+          "completion": 1085
+        },
+        "study027": {
+          "calls": 10,
+          "prompt": 6172,
+          "completion": 3994
+        },
+        "study028": {
+          "calls": 6,
+          "prompt": 3653,
+          "completion": 1543
+        },
+        "study029": {
+          "calls": 7,
+          "prompt": 4097,
+          "completion": 2061
+        },
+        "study030": {
+          "calls": 6,
+          "prompt": 3849,
+          "completion": 2895
+        },
+        "study031": {
+          "calls": 6,
+          "prompt": 3484,
+          "completion": 1223
+        },
+        "study032": {
+          "calls": 5,
+          "prompt": 3115,
+          "completion": 1751
+        },
+        "study033": {
+          "calls": 7,
+          "prompt": 4331,
+          "completion": 2624
+        },
+        "study034": {
+          "calls": 10,
+          "prompt": 6248,
+          "completion": 3509
+        },
+        "study035": {
+          "calls": 8,
+          "prompt": 4799,
+          "completion": 2604
+        },
+        "study036": {
+          "calls": 7,
+          "prompt": 5155,
+          "completion": 2449
+        },
+        "study037": {
+          "calls": 3,
+          "prompt": 1707,
+          "completion": 591
+        },
+        "study038": {
+          "calls": 5,
+          "prompt": 3040,
+          "completion": 883
+        },
+        "study039": {
+          "calls": 5,
+          "prompt": 2887,
+          "completion": 1791
+        },
+        "study040": {
+          "calls": 4,
+          "prompt": 2375,
+          "completion": 993
+        },
+        "study041": {
+          "calls": 2,
+          "prompt": 1140,
+          "completion": 408
+        },
+        "study042": {
+          "calls": 5,
+          "prompt": 3144,
+          "completion": 1031
+        },
+        "study043": {
+          "calls": 4,
+          "prompt": 2309,
+          "completion": 1356
+        },
+        "study044": {
+          "calls": 6,
+          "prompt": 3472,
+          "completion": 1257
+        },
+        "study045": {
+          "calls": 6,
+          "prompt": 3742,
+          "completion": 1671
+        },
+        "study046": {
+          "calls": 5,
+          "prompt": 3234,
+          "completion": 3011
+        },
+        "study047": {
+          "calls": 3,
+          "prompt": 1661,
+          "completion": 853
+        },
+        "study048": {
+          "calls": 6,
+          "prompt": 3538,
+          "completion": 1095
+        },
+        "study049": {
+          "calls": 4,
+          "prompt": 2809,
+          "completion": 567
+        },
+        "study050": {
+          "calls": 5,
+          "prompt": 2943,
+          "completion": 1364
+        },
+        "study051": {
+          "calls": 5,
+          "prompt": 2848,
+          "completion": 866
+        },
+        "study052": {
+          "calls": 5,
+          "prompt": 2752,
+          "completion": 1519
+        },
+        "study053": {
+          "calls": 5,
+          "prompt": 2874,
+          "completion": 1047
+        },
+        "study054": {
+          "calls": 5,
+          "prompt": 3573,
+          "completion": 765
+        },
+        "study055": {
+          "calls": 7,
+          "prompt": 3960,
+          "completion": 1776
+        },
+        "study056": {
+          "calls": 5,
+          "prompt": 3430,
+          "completion": 1700
+        },
+        "study057": {
+          "calls": 6,
+          "prompt": 3474,
+          "completion": 1309
+        },
+        "study058": {
+          "calls": 6,
+          "prompt": 3904,
+          "completion": 600
+        },
+        "study059": {
+          "calls": 7,
+          "prompt": 4022,
+          "completion": 1471
+        },
+        "study060": {
+          "calls": 7,
+          "prompt": 4066,
+          "completion": 1877
+        },
+        "study061": {
+          "calls": 4,
+          "prompt": 2304,
+          "completion": 987
+        },
+        "study062": {
+          "calls": 7,
+          "prompt": 3973,
+          "completion": 1267
+        },
+        "study063": {
+          "calls": 8,
+          "prompt": 4660,
+          "completion": 1248
+        },
+        "study064": {
+          "calls": 3,
+          "prompt": 1792,
+          "completion": 954
+        },
+        "study065": {
+          "calls": 4,
+          "prompt": 2478,
+          "completion": 853
+        },
+        "study066": {
+          "calls": 5,
+          "prompt": 3401,
+          "completion": 2576
+        },
+        "study067": {
+          "calls": 7,
+          "prompt": 4178,
+          "completion": 1188
+        },
+        "study068": {
+          "calls": 8,
+          "prompt": 4551,
+          "completion": 1980
+        },
+        "study069": {
+          "calls": 5,
+          "prompt": 3010,
+          "completion": 1236
+        },
+        "study070": {
+          "calls": 5,
+          "prompt": 3503,
+          "completion": 3811
+        },
+        "study071": {
+          "calls": 7,
+          "prompt": 4219,
+          "completion": 2316
+        },
+        "study072": {
+          "calls": 5,
+          "prompt": 2760,
+          "completion": 1175
+        },
+        "study073": {
+          "calls": 5,
+          "prompt": 3198,
+          "completion": 1120
+        },
+        "study074": {
+          "calls": 3,
+          "prompt": 1562,
+          "completion": 425
+        },
+        "study075": {
+          "calls": 8,
+          "prompt": 4903,
+          "completion": 1462
+        },
+        "study076": {
+          "calls": 7,
+          "prompt": 3836,
+          "completion": 1097
+        },
+        "study077": {
+          "calls": 4,
+          "prompt": 2400,
+          "completion": 736
+        },
+        "study078": {
+          "calls": 3,
+          "prompt": 1610,
+          "completion": 404
+        },
+        "study079": {
+          "calls": 10,
+          "prompt": 6303,
+          "completion": 1862
+        },
+        "study080": {
+          "calls": 6,
+          "prompt": 3792,
+          "completion": 1823
+        },
+        "study081": {
+          "calls": 5,
+          "prompt": 2890,
+          "completion": 846
+        },
+        "study082": {
+          "calls": 7,
+          "prompt": 4226,
+          "completion": 1514
+        },
+        "study083": {
+          "calls": 2,
+          "prompt": 1012,
+          "completion": 639
+        },
+        "study084": {
+          "calls": 5,
+          "prompt": 3246,
+          "completion": 2694
+        },
+        "study085": {
+          "calls": 6,
+          "prompt": 3570,
+          "completion": 1504
+        },
+        "study086": {
+          "calls": 7,
+          "prompt": 4398,
+          "completion": 2573
+        },
+        "study087": {
+          "calls": 4,
+          "prompt": 2398,
+          "completion": 1086
+        },
+        "study088": {
+          "calls": 10,
+          "prompt": 6333,
+          "completion": 3936
+        },
+        "study089": {
+          "calls": 5,
+          "prompt": 3012,
+          "completion": 2082
+        },
+        "study090": {
+          "calls": 4,
+          "prompt": 2818,
+          "completion": 2931
+        },
+        "study091": {
+          "calls": 7,
+          "prompt": 4037,
+          "completion": 884
+        },
+        "study092": {
+          "calls": 4,
+          "prompt": 2221,
+          "completion": 639
+        },
+        "study093": {
+          "calls": 3,
+          "prompt": 1787,
+          "completion": 951
+        },
+        "study094": {
+          "calls": 5,
+          "prompt": 3065,
+          "completion": 1478
+        },
+        "study095": {
+          "calls": 4,
+          "prompt": 2399,
+          "completion": 1626
         }
       }
     },
     "grok-4.7": {
-      "calls": 23,
-      "prompt_tokens": 43013,
-      "completion_tokens": 8736,
+      "calls": 574,
+      "prompt_tokens": 1076025,
+      "completion_tokens": 211098,
       "per_study": {
         "study001": {
-          "calls": 7,
-          "prompt": 13024,
-          "completion": 2852
+          "calls": 14,
+          "prompt": 27049,
+          "completion": 5725
         },
         "study002": {
-          "calls": 5,
-          "prompt": 10745,
-          "completion": 1950
+          "calls": 10,
+          "prompt": 22205,
+          "completion": 4119
         },
         "study003": {
-          "calls": 9,
-          "prompt": 16676,
-          "completion": 3924
+          "calls": 18,
+          "prompt": 34639,
+          "completion": 9157
+        },
+        "study011": {
+          "calls": 6,
+          "prompt": 11170,
+          "completion": 3544
+        },
+        "study012": {
+          "calls": 7,
+          "prompt": 12853,
+          "completion": 2218
+        },
+        "study013": {
+          "calls": 14,
+          "prompt": 26859,
+          "completion": 3302
+        },
+        "study014": {
+          "calls": 3,
+          "prompt": 5532,
+          "completion": 924
+        },
+        "study015": {
+          "calls": 10,
+          "prompt": 20751,
+          "completion": 566
+        },
+        "study016": {
+          "calls": 4,
+          "prompt": 7152,
+          "completion": 913
+        },
+        "study017": {
+          "calls": 12,
+          "prompt": 23742,
+          "completion": 6452
+        },
+        "study018": {
+          "calls": 6,
+          "prompt": 11568,
+          "completion": 3788
+        },
+        "study019": {
+          "calls": 5,
+          "prompt": 9320,
+          "completion": 1629
+        },
+        "study020": {
+          "calls": 10,
+          "prompt": 19229,
+          "completion": 3105
+        },
+        "study021": {
+          "calls": 7,
+          "prompt": 12984,
+          "completion": 2502
+        },
+        "study022": {
+          "calls": 16,
+          "prompt": 30670,
+          "completion": 5269
+        },
+        "study023": {
+          "calls": 5,
+          "prompt": 9179,
+          "completion": 1721
+        },
+        "study024": {
+          "calls": 4,
+          "prompt": 7394,
+          "completion": 1568
+        },
+        "study025": {
+          "calls": 7,
+          "prompt": 12910,
+          "completion": 2117
+        },
+        "study026": {
+          "calls": 5,
+          "prompt": 9201,
+          "completion": 2098
+        },
+        "study027": {
+          "calls": 10,
+          "prompt": 18605,
+          "completion": 5149
+        },
+        "study028": {
+          "calls": 6,
+          "prompt": 11079,
+          "completion": 2620
+        },
+        "study029": {
+          "calls": 7,
+          "prompt": 12814,
+          "completion": 2547
+        },
+        "study030": {
+          "calls": 6,
+          "prompt": 11220,
+          "completion": 3661
+        },
+        "study031": {
+          "calls": 6,
+          "prompt": 10897,
+          "completion": 2007
+        },
+        "study032": {
+          "calls": 5,
+          "prompt": 9300,
+          "completion": 2076
+        },
+        "study033": {
+          "calls": 7,
+          "prompt": 13063,
+          "completion": 3231
+        },
+        "study034": {
+          "calls": 10,
+          "prompt": 18694,
+          "completion": 4567
+        },
+        "study035": {
+          "calls": 8,
+          "prompt": 14713,
+          "completion": 4588
+        },
+        "study036": {
+          "calls": 7,
+          "prompt": 13804,
+          "completion": 3771
+        },
+        "study037": {
+          "calls": 3,
+          "prompt": 5453,
+          "completion": 889
+        },
+        "study038": {
+          "calls": 5,
+          "prompt": 9249,
+          "completion": 1342
+        },
+        "study039": {
+          "calls": 5,
+          "prompt": 9123,
+          "completion": 2061
+        },
+        "study040": {
+          "calls": 4,
+          "prompt": 7254,
+          "completion": 1573
+        },
+        "study041": {
+          "calls": 2,
+          "prompt": 3614,
+          "completion": 696
+        },
+        "study042": {
+          "calls": 5,
+          "prompt": 9397,
+          "completion": 1645
+        },
+        "study043": {
+          "calls": 4,
+          "prompt": 7272,
+          "completion": 1390
+        },
+        "study044": {
+          "calls": 6,
+          "prompt": 10936,
+          "completion": 1543
+        },
+        "study045": {
+          "calls": 6,
+          "prompt": 11130,
+          "completion": 1762
+        },
+        "study046": {
+          "calls": 5,
+          "prompt": 9378,
+          "completion": 2646
+        },
+        "study047": {
+          "calls": 3,
+          "prompt": 5400,
+          "completion": 1090
+        },
+        "study048": {
+          "calls": 6,
+          "prompt": 10983,
+          "completion": 1931
+        },
+        "study049": {
+          "calls": 4,
+          "prompt": 7815,
+          "completion": 681
+        },
+        "study050": {
+          "calls": 5,
+          "prompt": 9180,
+          "completion": 1578
+        },
+        "study051": {
+          "calls": 5,
+          "prompt": 9102,
+          "completion": 1554
+        },
+        "study052": {
+          "calls": 5,
+          "prompt": 8968,
+          "completion": 1747
+        },
+        "study053": {
+          "calls": 5,
+          "prompt": 9068,
+          "completion": 1320
+        },
+        "study054": {
+          "calls": 5,
+          "prompt": 9815,
+          "completion": 1302
+        },
+        "study055": {
+          "calls": 7,
+          "prompt": 12680,
+          "completion": 2292
+        },
+        "study056": {
+          "calls": 5,
+          "prompt": 9617,
+          "completion": 2142
+        },
+        "study057": {
+          "calls": 6,
+          "prompt": 10915,
+          "completion": 1956
+        },
+        "study058": {
+          "calls": 6,
+          "prompt": 11283,
+          "completion": 785
+        },
+        "study059": {
+          "calls": 7,
+          "prompt": 12760,
+          "completion": 2247
+        },
+        "study060": {
+          "calls": 7,
+          "prompt": 12784,
+          "completion": 2535
+        },
+        "study061": {
+          "calls": 4,
+          "prompt": 7294,
+          "completion": 1356
+        },
+        "study062": {
+          "calls": 7,
+          "prompt": 12693,
+          "completion": 1757
+        },
+        "study063": {
+          "calls": 8,
+          "prompt": 14607,
+          "completion": 2126
+        },
+        "study064": {
+          "calls": 3,
+          "prompt": 5508,
+          "completion": 1198
+        },
+        "study065": {
+          "calls": 4,
+          "prompt": 7433,
+          "completion": 1030
+        },
+        "study066": {
+          "calls": 5,
+          "prompt": 9475,
+          "completion": 2875
+        },
+        "study067": {
+          "calls": 7,
+          "prompt": 12884,
+          "completion": 1902
+        },
+        "study068": {
+          "calls": 8,
+          "prompt": 14505,
+          "completion": 2738
+        },
+        "study069": {
+          "calls": 5,
+          "prompt": 9226,
+          "completion": 1503
+        },
+        "study070": {
+          "calls": 5,
+          "prompt": 9569,
+          "completion": 4553
+        },
+        "study071": {
+          "calls": 7,
+          "prompt": 12907,
+          "completion": 2588
+        },
+        "study072": {
+          "calls": 5,
+          "prompt": 8989,
+          "completion": 1643
+        },
+        "study073": {
+          "calls": 5,
+          "prompt": 9335,
+          "completion": 1989
+        },
+        "study074": {
+          "calls": 3,
+          "prompt": 5322,
+          "completion": 629
+        },
+        "study075": {
+          "calls": 8,
+          "prompt": 14871,
+          "completion": 2508
+        },
+        "study076": {
+          "calls": 7,
+          "prompt": 12608,
+          "completion": 1468
+        },
+        "study077": {
+          "calls": 4,
+          "prompt": 7348,
+          "completion": 1025
+        },
+        "study078": {
+          "calls": 3,
+          "prompt": 5361,
+          "completion": 568
+        },
+        "study079": {
+          "calls": 10,
+          "prompt": 18751,
+          "completion": 2383
+        },
+        "study080": {
+          "calls": 6,
+          "prompt": 11279,
+          "completion": 2106
+        },
+        "study081": {
+          "calls": 5,
+          "prompt": 9093,
+          "completion": 1135
+        },
+        "study082": {
+          "calls": 7,
+          "prompt": 12911,
+          "completion": 1728
+        },
+        "study083": {
+          "calls": 2,
+          "prompt": 3506,
+          "completion": 556
+        },
+        "study084": {
+          "calls": 5,
+          "prompt": 9396,
+          "completion": 3156
+        },
+        "study085": {
+          "calls": 6,
+          "prompt": 11044,
+          "completion": 2402
+        },
+        "study086": {
+          "calls": 7,
+          "prompt": 13066,
+          "completion": 3529
+        },
+        "study087": {
+          "calls": 4,
+          "prompt": 7367,
+          "completion": 1479
+        },
+        "study088": {
+          "calls": 10,
+          "prompt": 18727,
+          "completion": 4514
+        },
+        "study089": {
+          "calls": 5,
+          "prompt": 9218,
+          "completion": 2286
+        },
+        "study090": {
+          "calls": 4,
+          "prompt": 7668,
+          "completion": 2980
+        },
+        "study091": {
+          "calls": 7,
+          "prompt": 12737,
+          "completion": 968
+        },
+        "study092": {
+          "calls": 4,
+          "prompt": 7226,
+          "completion": 928
+        },
+        "study093": {
+          "calls": 3,
+          "prompt": 5485,
+          "completion": 989
+        },
+        "study094": {
+          "calls": 5,
+          "prompt": 9290,
+          "completion": 1436
+        },
+        "study095": {
+          "calls": 4,
+          "prompt": 7340,
+          "completion": 1919
+        },
+        "study005": {
+          "calls": 6,
+          "prompt": 11840,
+          "completion": 1911
+        },
+        "study006": {
+          "calls": 7,
+          "prompt": 13953,
+          "completion": 2501
+        },
+        "study008": {
+          "calls": 6,
+          "prompt": 11911,
+          "completion": 2212
+        },
+        "study009": {
+          "calls": 5,
+          "prompt": 9942,
+          "completion": 2873
         }
       }
     },
     "gpt-5": {
-      "calls": 43,
-      "prompt_tokens": 27947,
-      "completion_tokens": 61212,
+      "calls": 633,
+      "prompt_tokens": 389215,
+      "completion_tokens": 648796,
       "per_study": {
         "study001": {
-          "calls": 14,
-          "prompt": 8424,
-          "completion": 20501
+          "calls": 21,
+          "prompt": 13742,
+          "completion": 29807
         },
         "study002": {
-          "calls": 10,
-          "prompt": 8904,
-          "completion": 13658
+          "calls": 15,
+          "prompt": 14146,
+          "completion": 21015
         },
         "study003": {
-          "calls": 18,
-          "prompt": 10590,
-          "completion": 26847
+          "calls": 27,
+          "prompt": 17307,
+          "completion": 40617
+        },
+        "study004": {
+          "calls": 4,
+          "prompt": 2001,
+          "completion": 1715
+        },
+        "study005": {
+          "calls": 12,
+          "prompt": 7768,
+          "completion": 12579
+        },
+        "study006": {
+          "calls": 14,
+          "prompt": 9300,
+          "completion": 16728
+        },
+        "study007": {
+          "calls": 6,
+          "prompt": 3558,
+          "completion": 6434
+        },
+        "study008": {
+          "calls": 12,
+          "prompt": 7902,
+          "completion": 11812
+        },
+        "study009": {
+          "calls": 10,
+          "prompt": 6620,
+          "completion": 18136
+        },
+        "study010": {
+          "calls": 5,
+          "prompt": 2770,
+          "completion": 4695
+        },
+        "study011": {
+          "calls": 6,
+          "prompt": 3564,
+          "completion": 8187
+        },
+        "study012": {
+          "calls": 7,
+          "prompt": 4019,
+          "completion": 6153
+        },
+        "study013": {
+          "calls": 14,
+          "prompt": 9398,
+          "completion": 11463
+        },
+        "study014": {
+          "calls": 3,
+          "prompt": 1747,
+          "completion": 2839
+        },
+        "study015": {
+          "calls": 10,
+          "prompt": 8202,
+          "completion": 10532
+        },
+        "study016": {
+          "calls": 4,
+          "prompt": 2104,
+          "completion": 2662
+        },
+        "study017": {
+          "calls": 12,
+          "prompt": 8694,
+          "completion": 16566
+        },
+        "study018": {
+          "calls": 6,
+          "prompt": 3957,
+          "completion": 11073
+        },
+        "study019": {
+          "calls": 5,
+          "prompt": 3025,
+          "completion": 5152
+        },
+        "study020": {
+          "calls": 10,
+          "prompt": 6616,
+          "completion": 9691
+        },
+        "study021": {
+          "calls": 7,
+          "prompt": 4141,
+          "completion": 6844
+        },
+        "study022": {
+          "calls": 16,
+          "prompt": 10896,
+          "completion": 17412
+        },
+        "study023": {
+          "calls": 5,
+          "prompt": 2806,
+          "completion": 4386
+        },
+        "study024": {
+          "calls": 4,
+          "prompt": 2366,
+          "completion": 3908
+        },
+        "study025": {
+          "calls": 7,
+          "prompt": 4075,
+          "completion": 8487
+        },
+        "study026": {
+          "calls": 5,
+          "prompt": 2920,
+          "completion": 5270
+        },
+        "study027": {
+          "calls": 10,
+          "prompt": 5948,
+          "completion": 13451
+        },
+        "study028": {
+          "calls": 6,
+          "prompt": 3539,
+          "completion": 5635
+        },
+        "study029": {
+          "calls": 7,
+          "prompt": 3964,
+          "completion": 7823
+        },
+        "study030": {
+          "calls": 6,
+          "prompt": 3623,
+          "completion": 9045
+        },
+        "study031": {
+          "calls": 6,
+          "prompt": 3364,
+          "completion": 4319
+        },
+        "study032": {
+          "calls": 5,
+          "prompt": 2984,
+          "completion": 5445
+        },
+        "study033": {
+          "calls": 7,
+          "prompt": 4214,
+          "completion": 6887
+        },
+        "study034": {
+          "calls": 10,
+          "prompt": 6031,
+          "completion": 10290
+        },
+        "study035": {
+          "calls": 8,
+          "prompt": 4666,
+          "completion": 9956
+        },
+        "study036": {
+          "calls": 7,
+          "prompt": 4949,
+          "completion": 7576
+        },
+        "study037": {
+          "calls": 3,
+          "prompt": 1669,
+          "completion": 1988
+        },
+        "study038": {
+          "calls": 5,
+          "prompt": 2947,
+          "completion": 3809
+        },
+        "study039": {
+          "calls": 5,
+          "prompt": 2814,
+          "completion": 5117
+        },
+        "study040": {
+          "calls": 4,
+          "prompt": 2230,
+          "completion": 4469
+        },
+        "study041": {
+          "calls": 2,
+          "prompt": 1081,
+          "completion": 2839
+        },
+        "study042": {
+          "calls": 5,
+          "prompt": 3078,
+          "completion": 4043
+        },
+        "study043": {
+          "calls": 4,
+          "prompt": 2248,
+          "completion": 3347
+        },
+        "study044": {
+          "calls": 6,
+          "prompt": 3363,
+          "completion": 3932
+        },
+        "study045": {
+          "calls": 6,
+          "prompt": 3526,
+          "completion": 5306
+        },
+        "study046": {
+          "calls": 5,
+          "prompt": 3046,
+          "completion": 6998
+        },
+        "study047": {
+          "calls": 3,
+          "prompt": 1617,
+          "completion": 3377
+        },
+        "study048": {
+          "calls": 6,
+          "prompt": 3433,
+          "completion": 5574
+        },
+        "study049": {
+          "calls": 4,
+          "prompt": 2766,
+          "completion": 1833
+        },
+        "study050": {
+          "calls": 5,
+          "prompt": 2873,
+          "completion": 4864
+        },
+        "study051": {
+          "calls": 5,
+          "prompt": 2767,
+          "completion": 3006
+        },
+        "study052": {
+          "calls": 5,
+          "prompt": 2707,
+          "completion": 4433
+        },
+        "study053": {
+          "calls": 5,
+          "prompt": 2752,
+          "completion": 3176
+        },
+        "study054": {
+          "calls": 5,
+          "prompt": 3501,
+          "completion": 3742
+        },
+        "study055": {
+          "calls": 7,
+          "prompt": 3848,
+          "completion": 5859
+        },
+        "study056": {
+          "calls": 5,
+          "prompt": 3349,
+          "completion": 4832
+        },
+        "study057": {
+          "calls": 6,
+          "prompt": 3384,
+          "completion": 6434
+        },
+        "study058": {
+          "calls": 6,
+          "prompt": 3730,
+          "completion": 2895
+        },
+        "study059": {
+          "calls": 7,
+          "prompt": 3934,
+          "completion": 4791
+        },
+        "study060": {
+          "calls": 7,
+          "prompt": 3944,
+          "completion": 6373
+        },
+        "study061": {
+          "calls": 4,
+          "prompt": 2232,
+          "completion": 3647
+        },
+        "study062": {
+          "calls": 7,
+          "prompt": 3872,
+          "completion": 4154
+        },
+        "study063": {
+          "calls": 8,
+          "prompt": 4503,
+          "completion": 6626
+        },
+        "study064": {
+          "calls": 3,
+          "prompt": 1715,
+          "completion": 2489
+        },
+        "study065": {
+          "calls": 4,
+          "prompt": 2410,
+          "completion": 2435
+        },
+        "study066": {
+          "calls": 5,
+          "prompt": 3152,
+          "completion": 8378
+        },
+        "study067": {
+          "calls": 7,
+          "prompt": 4051,
+          "completion": 5297
+        },
+        "study068": {
+          "calls": 8,
+          "prompt": 4414,
+          "completion": 7297
+        },
+        "study069": {
+          "calls": 5,
+          "prompt": 2925,
+          "completion": 4346
+        },
+        "study070": {
+          "calls": 5,
+          "prompt": 3248,
+          "completion": 7761
+        },
+        "study071": {
+          "calls": 7,
+          "prompt": 4066,
+          "completion": 7279
+        },
+        "study072": {
+          "calls": 5,
+          "prompt": 2661,
+          "completion": 4408
+        },
+        "study073": {
+          "calls": 5,
+          "prompt": 3016,
+          "completion": 4352
+        },
+        "study074": {
+          "calls": 3,
+          "prompt": 1522,
+          "completion": 1709
+        },
+        "study075": {
+          "calls": 8,
+          "prompt": 4706,
+          "completion": 4588
+        },
+        "study076": {
+          "calls": 7,
+          "prompt": 3786,
+          "completion": 3303
+        },
+        "study077": {
+          "calls": 4,
+          "prompt": 2280,
+          "completion": 2708
+        },
+        "study078": {
+          "calls": 3,
+          "prompt": 1557,
+          "completion": 1321
+        },
+        "study079": {
+          "calls": 10,
+          "prompt": 6341,
+          "completion": 6775
+        },
+        "study080": {
+          "calls": 6,
+          "prompt": 3686,
+          "completion": 5553
+        },
+        "study081": {
+          "calls": 5,
+          "prompt": 2782,
+          "completion": 3774
+        },
+        "study082": {
+          "calls": 7,
+          "prompt": 4141,
+          "completion": 3917
+        },
+        "study083": {
+          "calls": 2,
+          "prompt": 979,
+          "completion": 1230
+        },
+        "study084": {
+          "calls": 5,
+          "prompt": 3067,
+          "completion": 8651
+        },
+        "study085": {
+          "calls": 6,
+          "prompt": 3495,
+          "completion": 5315
+        },
+        "study086": {
+          "calls": 7,
+          "prompt": 4215,
+          "completion": 7750
+        },
+        "study087": {
+          "calls": 4,
+          "prompt": 2285,
+          "completion": 3871
+        },
+        "study088": {
+          "calls": 10,
+          "prompt": 6061,
+          "completion": 11398
+        },
+        "study089": {
+          "calls": 5,
+          "prompt": 2864,
+          "completion": 5553
+        },
+        "study090": {
+          "calls": 4,
+          "prompt": 2624,
+          "completion": 6493
+        },
+        "study091": {
+          "calls": 7,
+          "prompt": 3886,
+          "completion": 4671
+        },
+        "study092": {
+          "calls": 4,
+          "prompt": 2159,
+          "completion": 2624
+        },
+        "study093": {
+          "calls": 3,
+          "prompt": 1706,
+          "completion": 2360
+        },
+        "study094": {
+          "calls": 5,
+          "prompt": 2950,
+          "completion": 3791
+        },
+        "study095": {
+          "calls": 4,
+          "prompt": 2296,
+          "completion": 5139
         }
       }
     },
     "claude-sonnet-5-5": {
-      "calls": 22,
-      "prompt_tokens": 21840,
-      "completion_tokens": 10863,
+      "calls": 612,
+      "prompt_tokens": 572375,
+      "completion_tokens": 322038,
       "per_study": {
         "study001": {
-          "calls": 7,
-          "prompt": 6523,
-          "completion": 3514
+          "calls": 14,
+          "prompt": 14600,
+          "completion": 8101
         },
         "study002": {
-          "calls": 5,
-          "prompt": 6954,
-          "completion": 2777
+          "calls": 10,
+          "prompt": 15018,
+          "completion": 9028
         },
         "study003": {
-          "calls": 9,
-          "prompt": 8321,
-          "completion": 4563
+          "calls": 18,
+          "prompt": 18640,
+          "completion": 13078
+        },
+        "study004": {
+          "calls": 4,
+          "prompt": 2793,
+          "completion": 864
+        },
+        "study005": {
+          "calls": 12,
+          "prompt": 11682,
+          "completion": 6733
+        },
+        "study006": {
+          "calls": 14,
+          "prompt": 14580,
+          "completion": 8135
+        },
+        "study007": {
+          "calls": 6,
+          "prompt": 5284,
+          "completion": 2855
+        },
+        "study008": {
+          "calls": 12,
+          "prompt": 11730,
+          "completion": 7533
+        },
+        "study009": {
+          "calls": 10,
+          "prompt": 9794,
+          "completion": 10199
+        },
+        "study010": {
+          "calls": 5,
+          "prompt": 4226,
+          "completion": 2404
+        },
+        "study011": {
+          "calls": 6,
+          "prompt": 5298,
+          "completion": 4435
+        },
+        "study012": {
+          "calls": 7,
+          "prompt": 6158,
+          "completion": 3391
+        },
+        "study013": {
+          "calls": 14,
+          "prompt": 14428,
+          "completion": 4585
+        },
+        "study014": {
+          "calls": 3,
+          "prompt": 2615,
+          "completion": 1267
+        },
+        "study015": {
+          "calls": 10,
+          "prompt": 12184,
+          "completion": 1578
+        },
+        "study016": {
+          "calls": 4,
+          "prompt": 3228,
+          "completion": 1091
+        },
+        "study017": {
+          "calls": 12,
+          "prompt": 13042,
+          "completion": 6717
+        },
+        "study018": {
+          "calls": 6,
+          "prompt": 5737,
+          "completion": 6430
+        },
+        "study019": {
+          "calls": 5,
+          "prompt": 4643,
+          "completion": 2340
+        },
+        "study020": {
+          "calls": 10,
+          "prompt": 9950,
+          "completion": 3793
+        },
+        "study021": {
+          "calls": 7,
+          "prompt": 6328,
+          "completion": 3088
+        },
+        "study022": {
+          "calls": 16,
+          "prompt": 16566,
+          "completion": 7029
+        },
+        "study023": {
+          "calls": 5,
+          "prompt": 4578,
+          "completion": 2637
+        },
+        "study024": {
+          "calls": 4,
+          "prompt": 3521,
+          "completion": 2221
+        },
+        "study025": {
+          "calls": 7,
+          "prompt": 6284,
+          "completion": 3722
+        },
+        "study026": {
+          "calls": 5,
+          "prompt": 4509,
+          "completion": 3110
+        },
+        "study027": {
+          "calls": 10,
+          "prompt": 9311,
+          "completion": 6865
+        },
+        "study028": {
+          "calls": 6,
+          "prompt": 5528,
+          "completion": 2917
+        },
+        "study029": {
+          "calls": 7,
+          "prompt": 6173,
+          "completion": 3665
+        },
+        "study030": {
+          "calls": 6,
+          "prompt": 5366,
+          "completion": 4555
+        },
+        "study031": {
+          "calls": 6,
+          "prompt": 5119,
+          "completion": 2624
+        },
+        "study032": {
+          "calls": 5,
+          "prompt": 4594,
+          "completion": 2935
+        },
+        "study033": {
+          "calls": 7,
+          "prompt": 6494,
+          "completion": 4558
+        },
+        "study034": {
+          "calls": 10,
+          "prompt": 9133,
+          "completion": 5816
+        },
+        "study035": {
+          "calls": 8,
+          "prompt": 7178,
+          "completion": 4527
+        },
+        "study036": {
+          "calls": 7,
+          "prompt": 7868,
+          "completion": 5804
+        },
+        "study037": {
+          "calls": 3,
+          "prompt": 2513,
+          "completion": 1283
+        },
+        "study038": {
+          "calls": 5,
+          "prompt": 4546,
+          "completion": 1937
+        },
+        "study039": {
+          "calls": 5,
+          "prompt": 4295,
+          "completion": 2557
+        },
+        "study040": {
+          "calls": 4,
+          "prompt": 3303,
+          "completion": 2397
+        },
+        "study041": {
+          "calls": 2,
+          "prompt": 1726,
+          "completion": 1048
+        },
+        "study042": {
+          "calls": 5,
+          "prompt": 4842,
+          "completion": 2128
+        },
+        "study043": {
+          "calls": 4,
+          "prompt": 3395,
+          "completion": 1936
+        },
+        "study044": {
+          "calls": 6,
+          "prompt": 5300,
+          "completion": 2458
+        },
+        "study045": {
+          "calls": 6,
+          "prompt": 5396,
+          "completion": 2413
+        },
+        "study046": {
+          "calls": 5,
+          "prompt": 4629,
+          "completion": 3400
+        },
+        "study047": {
+          "calls": 3,
+          "prompt": 2460,
+          "completion": 1401
+        },
+        "study048": {
+          "calls": 6,
+          "prompt": 5193,
+          "completion": 2655
+        },
+        "study049": {
+          "calls": 4,
+          "prompt": 4192,
+          "completion": 1299
+        },
+        "study050": {
+          "calls": 5,
+          "prompt": 4362,
+          "completion": 2124
+        },
+        "study051": {
+          "calls": 5,
+          "prompt": 4084,
+          "completion": 2018
+        },
+        "study052": {
+          "calls": 5,
+          "prompt": 4088,
+          "completion": 2262
+        },
+        "study053": {
+          "calls": 5,
+          "prompt": 4249,
+          "completion": 1718
+        },
+        "study054": {
+          "calls": 5,
+          "prompt": 5133,
+          "completion": 2550
+        },
+        "study055": {
+          "calls": 7,
+          "prompt": 5969,
+          "completion": 3096
+        },
+        "study056": {
+          "calls": 5,
+          "prompt": 5237,
+          "completion": 2571
+        },
+        "study057": {
+          "calls": 6,
+          "prompt": 5153,
+          "completion": 2730
+        },
+        "study058": {
+          "calls": 6,
+          "prompt": 5741,
+          "completion": 986
+        },
+        "study059": {
+          "calls": 7,
+          "prompt": 6216,
+          "completion": 2799
+        },
+        "study060": {
+          "calls": 7,
+          "prompt": 6046,
+          "completion": 3373
+        },
+        "study061": {
+          "calls": 4,
+          "prompt": 3557,
+          "completion": 1929
+        },
+        "study062": {
+          "calls": 7,
+          "prompt": 6013,
+          "completion": 2473
+        },
+        "study063": {
+          "calls": 8,
+          "prompt": 6908,
+          "completion": 3527
+        },
+        "study064": {
+          "calls": 3,
+          "prompt": 2547,
+          "completion": 1449
+        },
+        "study065": {
+          "calls": 4,
+          "prompt": 3638,
+          "completion": 1596
+        },
+        "study066": {
+          "calls": 5,
+          "prompt": 4736,
+          "completion": 4390
+        },
+        "study067": {
+          "calls": 7,
+          "prompt": 6144,
+          "completion": 2363
+        },
+        "study068": {
+          "calls": 8,
+          "prompt": 6717,
+          "completion": 3402
+        },
+        "study069": {
+          "calls": 5,
+          "prompt": 4439,
+          "completion": 2125
+        },
+        "study070": {
+          "calls": 5,
+          "prompt": 4726,
+          "completion": 7070
+        },
+        "study071": {
+          "calls": 7,
+          "prompt": 6262,
+          "completion": 3561
+        },
+        "study072": {
+          "calls": 5,
+          "prompt": 4163,
+          "completion": 2209
+        },
+        "study073": {
+          "calls": 5,
+          "prompt": 4582,
+          "completion": 2068
+        },
+        "study074": {
+          "calls": 3,
+          "prompt": 2285,
+          "completion": 862
+        },
+        "study075": {
+          "calls": 8,
+          "prompt": 7252,
+          "completion": 3160
+        },
+        "study076": {
+          "calls": 7,
+          "prompt": 5829,
+          "completion": 2100
+        },
+        "study077": {
+          "calls": 4,
+          "prompt": 3644,
+          "completion": 1379
+        },
+        "study078": {
+          "calls": 3,
+          "prompt": 2448,
+          "completion": 950
+        },
+        "study079": {
+          "calls": 10,
+          "prompt": 9572,
+          "completion": 3292
+        },
+        "study080": {
+          "calls": 6,
+          "prompt": 5689,
+          "completion": 3057
+        },
+        "study081": {
+          "calls": 5,
+          "prompt": 4306,
+          "completion": 1619
+        },
+        "study082": {
+          "calls": 7,
+          "prompt": 6242,
+          "completion": 2661
+        },
+        "study083": {
+          "calls": 2,
+          "prompt": 1534,
+          "completion": 751
+        },
+        "study084": {
+          "calls": 5,
+          "prompt": 4554,
+          "completion": 5871
+        },
+        "study085": {
+          "calls": 6,
+          "prompt": 5357,
+          "completion": 3044
+        },
+        "study086": {
+          "calls": 7,
+          "prompt": 6353,
+          "completion": 4976
+        },
+        "study087": {
+          "calls": 4,
+          "prompt": 3424,
+          "completion": 1852
+        },
+        "study088": {
+          "calls": 10,
+          "prompt": 9011,
+          "completion": 6812
+        },
+        "study089": {
+          "calls": 5,
+          "prompt": 4442,
+          "completion": 3077
+        },
+        "study090": {
+          "calls": 4,
+          "prompt": 3984,
+          "completion": 5809
+        },
+        "study091": {
+          "calls": 7,
+          "prompt": 5857,
+          "completion": 2021
+        },
+        "study092": {
+          "calls": 4,
+          "prompt": 3274,
+          "completion": 1392
+        },
+        "study093": {
+          "calls": 3,
+          "prompt": 2622,
+          "completion": 1347
+        },
+        "study094": {
+          "calls": 5,
+          "prompt": 4579,
+          "completion": 1708
+        },
+        "study095": {
+          "calls": 4,
+          "prompt": 3395,
+          "completion": 2358
         }
       }
     },
     "claude-opus-5-5": {
-      "calls": 22,
-      "prompt_tokens": 21840,
-      "completion_tokens": 12258,
+      "calls": 153,
+      "prompt_tokens": 162256,
+      "completion_tokens": 95357,
       "per_study": {
         "study001": {
-          "calls": 7,
-          "prompt": 6523,
-          "completion": 3631
+          "calls": 14,
+          "prompt": 14600,
+          "completion": 9490
         },
         "study002": {
-          "calls": 5,
-          "prompt": 6954,
-          "completion": 2803
+          "calls": 10,
+          "prompt": 15018,
+          "completion": 7847
         },
         "study003": {
-          "calls": 9,
-          "prompt": 8321,
-          "completion": 5815
+          "calls": 18,
+          "prompt": 18640,
+          "completion": 13322
+        },
+        "study005": {
+          "calls": 12,
+          "prompt": 11682,
+          "completion": 6433
+        },
+        "study006": {
+          "calls": 14,
+          "prompt": 14580,
+          "completion": 7999
+        },
+        "study008": {
+          "calls": 12,
+          "prompt": 11730,
+          "completion": 8317
+        },
+        "study009": {
+          "calls": 10,
+          "prompt": 9794,
+          "completion": 9931
+        },
+        "study013": {
+          "calls": 14,
+          "prompt": 14428,
+          "completion": 5404
+        },
+        "study015": {
+          "calls": 10,
+          "prompt": 12184,
+          "completion": 2040
+        },
+        "study017": {
+          "calls": 12,
+          "prompt": 13042,
+          "completion": 10978
+        },
+        "study020": {
+          "calls": 10,
+          "prompt": 9950,
+          "completion": 5145
+        },
+        "study022": {
+          "calls": 16,
+          "prompt": 16566,
+          "completion": 8442
         }
       }
     }

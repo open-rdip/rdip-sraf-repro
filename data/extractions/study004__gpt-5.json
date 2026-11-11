@@ -1,0 +1,67 @@
+{
+  "study_id": "study004",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study004/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:05:39.459149+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 2,
+    "methods": 6,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "image_size",
+        "value": "12\u00d712"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CIFAR-10",
+        "version": null
+      },
+      {
+        "name": "Synthetic Data",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Noise resilience guarantee for a certain class of neural nets",
+        "description": "A noise resilience guarantee for a certain class of neural nets"
+      },
+      {
+        "name": "PAC-Bayesian risk bound on neural nets",
+        "description": "A PAC-Bayesian risk bound on neural nets"
+      },
+      {
+        "name": "Experimental comparison of our bounds with Neyshabur et al., 2017",
+        "description": "Experimental comparison of the authors' bounds with Neyshabur et al., 2017"
+      },
+      {
+        "name": "Experimental observations about the geometry of neural net\u2019s training path in weight space",
+        "description": "Experimental observations about the geometry of the neural net\u2019s training path in weight space"
+      },
+      {
+        "name": "PAC-Bayesian Risk Bounds for Neural Nets",
+        "description": "Section discussing PAC-Bayesian risk bounds applied to neural networks."
+      },
+      {
+        "name": "Reformulation of the PAC-Bayesian risk bound",
+        "description": "Reformulation of the PAC-Bayesian risk bound on neural nets from Neyshabur et al., 2017."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

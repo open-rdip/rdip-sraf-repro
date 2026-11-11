@@ -1,0 +1,873 @@
+{
+  "tier": "gold",
+  "strict": false,
+  "models": [
+    "claude-opus-5-5",
+    "claude-sonnet-5-5",
+    "gemini-3-8-flash",
+    "gpt-5",
+    "grok-4-7",
+    "qwen-qwen2-5-14b-instruct-gptq-int8",
+    "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+    "redhatai-mistral-small-24b-instruct-2501-quantized-w8a8"
+  ],
+  "tables": [
+    {
+      "tier": "gold",
+      "strict": false,
+      "fuzzy": true,
+      "models": [
+        "claude-opus-5-5",
+        "claude-sonnet-5-5",
+        "gemini-3-8-flash",
+        "gpt-5",
+        "grok-4-7",
+        "qwen-qwen2-5-14b-instruct-gptq-int8",
+        "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+        "redhatai-mistral-small-24b-instruct-2501-quantized-w8a8"
+      ],
+      "reports": {
+        "claude-opus-5-5": {
+          "n_studies": 12,
+          "per_field": {
+            "software": {
+              "tp": 10,
+              "fp": 16,
+              "fn": 84,
+              "precision": 0.385,
+              "recall": 0.106,
+              "f1": 0.167,
+              "support": 94,
+              "na": false
+            },
+            "datasets": {
+              "tp": 30,
+              "fp": 36,
+              "fn": 21,
+              "precision": 0.455,
+              "recall": 0.588,
+              "f1": 0.513,
+              "support": 51,
+              "na": false
+            },
+            "methods": {
+              "tp": 30,
+              "fp": 232,
+              "fn": 19,
+              "precision": 0.115,
+              "recall": 0.612,
+              "f1": 0.193,
+              "support": 49,
+              "na": false
+            },
+            "parameters": {
+              "tp": 19,
+              "fp": 105,
+              "fn": 35,
+              "precision": 0.153,
+              "recall": 0.352,
+              "f1": 0.213,
+              "support": 54,
+              "na": false
+            },
+            "random_seeds": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0,
+              "na": true
+            },
+            "evaluation_results": {
+              "tp": 2,
+              "fp": 131,
+              "fn": 23,
+              "precision": 0.015,
+              "recall": 0.08,
+              "f1": 0.025,
+              "support": 25,
+              "na": false
+            },
+            "environment": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 7,
+              "precision": 1.0,
+              "recall": 0.3,
+              "f1": 0.462,
+              "support": 10,
+              "na": false
+            }
+          },
+          "headline_micro": {
+            "tp": 84,
+            "fp": 504,
+            "fn": 105,
+            "precision": 0.143,
+            "recall": 0.444,
+            "f1": 0.216
+          },
+          "repo_micro": {
+            "tp": 10,
+            "fp": 17,
+            "fn": 84,
+            "precision": 0.37,
+            "recall": 0.106,
+            "f1": 0.165
+          },
+          "overall_micro": {
+            "tp": 94,
+            "fp": 521,
+            "fn": 189,
+            "precision": 0.153,
+            "recall": 0.332,
+            "f1": 0.209
+          },
+          "macro_f1": 0.203,
+          "model": "claude-opus-5-5",
+          "tier": "gold",
+          "strict": false,
+          "fuzzy": true,
+          "skipped": []
+        },
+        "claude-sonnet-5-5": {
+          "n_studies": 12,
+          "per_field": {
+            "software": {
+              "tp": 9,
+              "fp": 14,
+              "fn": 85,
+              "precision": 0.391,
+              "recall": 0.096,
+              "f1": 0.154,
+              "support": 94,
+              "na": false
+            },
+            "datasets": {
+              "tp": 31,
+              "fp": 32,
+              "fn": 20,
+              "precision": 0.492,
+              "recall": 0.608,
+              "f1": 0.544,
+              "support": 51,
+              "na": false
+            },
+            "methods": {
+              "tp": 27,
+              "fp": 199,
+              "fn": 22,
+              "precision": 0.119,
+              "recall": 0.551,
+              "f1": 0.196,
+              "support": 49,
+              "na": false
+            },
+            "parameters": {
+              "tp": 18,
+              "fp": 110,
+              "fn": 36,
+              "precision": 0.141,
+              "recall": 0.333,
+              "f1": 0.198,
+              "support": 54,
+              "na": false
+            },
+            "random_seeds": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0,
+              "na": true
+            },
+            "evaluation_results": {
+              "tp": 2,
+              "fp": 84,
+              "fn": 23,
+              "precision": 0.023,
+              "recall": 0.08,
+              "f1": 0.036,
+              "support": 25,
+              "na": false
+            },
+            "environment": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 7,
+              "precision": 1.0,
+              "recall": 0.3,
+              "f1": 0.462,
+              "support": 10,
+              "na": false
+            }
+          },
+          "headline_micro": {
+            "tp": 81,
+            "fp": 425,
+            "fn": 108,
+            "precision": 0.16,
+            "recall": 0.429,
+            "f1": 0.233
+          },
+          "repo_micro": {
+            "tp": 9,
+            "fp": 15,
+            "fn": 85,
+            "precision": 0.375,
+            "recall": 0.096,
+            "f1": 0.153
+          },
+          "overall_micro": {
+            "tp": 90,
+            "fp": 440,
+            "fn": 193,
+            "precision": 0.17,
+            "recall": 0.318,
+            "f1": 0.221
+          },
+          "macro_f1": 0.218,
+          "model": "claude-sonnet-5-5",
+          "tier": "gold",
+          "strict": false,
+          "fuzzy": true,
+          "skipped": []
+        },
+        "gemini-3-8-flash": {
+          "n_studies": 12,
+          "per_field": {
+            "software": {
+              "tp": 8,
+              "fp": 6,
+              "fn": 86,
+              "precision": 0.571,
+              "recall": 0.085,
+              "f1": 0.148,
+              "support": 94,
+              "na": false
+            },
+            "datasets": {
+              "tp": 31,
+              "fp": 27,
+              "fn": 20,
+              "precision": 0.534,
+              "recall": 0.608,
+              "f1": 0.569,
+              "support": 51,
+              "na": false
+            },
+            "methods": {
+              "tp": 23,
+              "fp": 150,
+              "fn": 26,
+              "precision": 0.133,
+              "recall": 0.469,
+              "f1": 0.207,
+              "support": 49,
+              "na": false
+            },
+            "parameters": {
+              "tp": 16,
+              "fp": 70,
+              "fn": 38,
+              "precision": 0.186,
+              "recall": 0.296,
+              "f1": 0.229,
+              "support": 54,
+              "na": false
+            },
+            "random_seeds": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0,
+              "na": true
+            },
+            "evaluation_results": {
+              "tp": 0,
+              "fp": 79,
+              "fn": 25,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 25,
+              "na": false
+            },
+            "environment": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 7,
+              "precision": 1.0,
+              "recall": 0.3,
+              "f1": 0.462,
+              "support": 10,
+              "na": false
+            }
+          },
+          "headline_micro": {
+            "tp": 73,
+            "fp": 326,
+            "fn": 116,
+            "precision": 0.183,
+            "recall": 0.386,
+            "f1": 0.248
+          },
+          "repo_micro": {
+            "tp": 8,
+            "fp": 7,
+            "fn": 86,
+            "precision": 0.533,
+            "recall": 0.085,
+            "f1": 0.147
+          },
+          "overall_micro": {
+            "tp": 81,
+            "fp": 333,
+            "fn": 202,
+            "precision": 0.196,
+            "recall": 0.286,
+            "f1": 0.232
+          },
+          "macro_f1": 0.245,
+          "model": "gemini-3-8-flash",
+          "tier": "gold",
+          "strict": false,
+          "fuzzy": true,
+          "skipped": []
+        },
+        "gpt-5": {
+          "n_studies": 12,
+          "per_field": {
+            "software": {
+              "tp": 10,
+              "fp": 16,
+              "fn": 84,
+              "precision": 0.385,
+              "recall": 0.106,
+              "f1": 0.167,
+              "support": 94,
+              "na": false
+            },
+            "datasets": {
+              "tp": 29,
+              "fp": 36,
+              "fn": 22,
+              "precision": 0.446,
+              "recall": 0.569,
+              "f1": 0.5,
+              "support": 51,
+              "na": false
+            },
+            "methods": {
+              "tp": 29,
+              "fp": 251,
+              "fn": 20,
+              "precision": 0.104,
+              "recall": 0.592,
+              "f1": 0.176,
+              "support": 49,
+              "na": false
+            },
+            "parameters": {
+              "tp": 18,
+              "fp": 133,
+              "fn": 36,
+              "precision": 0.119,
+              "recall": 0.333,
+              "f1": 0.176,
+              "support": 54,
+              "na": false
+            },
+            "random_seeds": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0,
+              "na": true
+            },
+            "evaluation_results": {
+              "tp": 1,
+              "fp": 40,
+              "fn": 24,
+              "precision": 0.024,
+              "recall": 0.04,
+              "f1": 0.03,
+              "support": 25,
+              "na": false
+            },
+            "environment": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 7,
+              "precision": 1.0,
+              "recall": 0.3,
+              "f1": 0.462,
+              "support": 10,
+              "na": false
+            }
+          },
+          "headline_micro": {
+            "tp": 80,
+            "fp": 460,
+            "fn": 109,
+            "precision": 0.148,
+            "recall": 0.423,
+            "f1": 0.219
+          },
+          "repo_micro": {
+            "tp": 10,
+            "fp": 17,
+            "fn": 84,
+            "precision": 0.37,
+            "recall": 0.106,
+            "f1": 0.165
+          },
+          "overall_micro": {
+            "tp": 90,
+            "fp": 477,
+            "fn": 193,
+            "precision": 0.159,
+            "recall": 0.318,
+            "f1": 0.212
+          },
+          "macro_f1": 0.215,
+          "model": "gpt-5",
+          "tier": "gold",
+          "strict": false,
+          "fuzzy": true,
+          "skipped": []
+        },
+        "grok-4-7": {
+          "n_studies": 12,
+          "per_field": {
+            "software": {
+              "tp": 5,
+              "fp": 12,
+              "fn": 89,
+              "precision": 0.294,
+              "recall": 0.053,
+              "f1": 0.09,
+              "support": 94,
+              "na": false
+            },
+            "datasets": {
+              "tp": 21,
+              "fp": 13,
+              "fn": 30,
+              "precision": 0.618,
+              "recall": 0.412,
+              "f1": 0.494,
+              "support": 51,
+              "na": false
+            },
+            "methods": {
+              "tp": 17,
+              "fp": 156,
+              "fn": 32,
+              "precision": 0.098,
+              "recall": 0.347,
+              "f1": 0.153,
+              "support": 49,
+              "na": false
+            },
+            "parameters": {
+              "tp": 9,
+              "fp": 70,
+              "fn": 45,
+              "precision": 0.114,
+              "recall": 0.167,
+              "f1": 0.135,
+              "support": 54,
+              "na": false
+            },
+            "random_seeds": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0,
+              "na": true
+            },
+            "evaluation_results": {
+              "tp": 2,
+              "fp": 65,
+              "fn": 23,
+              "precision": 0.03,
+              "recall": 0.08,
+              "f1": 0.043,
+              "support": 25,
+              "na": false
+            },
+            "environment": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 9,
+              "precision": 1.0,
+              "recall": 0.1,
+              "f1": 0.182,
+              "support": 10,
+              "na": false
+            }
+          },
+          "headline_micro": {
+            "tp": 50,
+            "fp": 304,
+            "fn": 139,
+            "precision": 0.141,
+            "recall": 0.265,
+            "f1": 0.184
+          },
+          "repo_micro": {
+            "tp": 5,
+            "fp": 13,
+            "fn": 89,
+            "precision": 0.278,
+            "recall": 0.053,
+            "f1": 0.089
+          },
+          "overall_micro": {
+            "tp": 55,
+            "fp": 317,
+            "fn": 228,
+            "precision": 0.148,
+            "recall": 0.194,
+            "f1": 0.168
+          },
+          "macro_f1": 0.132,
+          "model": "grok-4-7",
+          "tier": "gold",
+          "strict": false,
+          "fuzzy": true,
+          "skipped": []
+        },
+        "qwen-qwen2-5-14b-instruct-gptq-int8": {
+          "n_studies": 12,
+          "per_field": {
+            "software": {
+              "tp": 8,
+              "fp": 10,
+              "fn": 86,
+              "precision": 0.444,
+              "recall": 0.085,
+              "f1": 0.143,
+              "support": 94,
+              "na": false
+            },
+            "datasets": {
+              "tp": 27,
+              "fp": 19,
+              "fn": 24,
+              "precision": 0.587,
+              "recall": 0.529,
+              "f1": 0.557,
+              "support": 51,
+              "na": false
+            },
+            "methods": {
+              "tp": 16,
+              "fp": 159,
+              "fn": 33,
+              "precision": 0.091,
+              "recall": 0.327,
+              "f1": 0.143,
+              "support": 49,
+              "na": false
+            },
+            "parameters": {
+              "tp": 17,
+              "fp": 47,
+              "fn": 37,
+              "precision": 0.266,
+              "recall": 0.315,
+              "f1": 0.288,
+              "support": 54,
+              "na": false
+            },
+            "random_seeds": {
+              "tp": 0,
+              "fp": 4,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0,
+              "na": true
+            },
+            "evaluation_results": {
+              "tp": 0,
+              "fp": 88,
+              "fn": 25,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 25,
+              "na": false
+            },
+            "environment": {
+              "tp": 3,
+              "fp": 1,
+              "fn": 7,
+              "precision": 0.75,
+              "recall": 0.3,
+              "f1": 0.429,
+              "support": 10,
+              "na": false
+            }
+          },
+          "headline_micro": {
+            "tp": 63,
+            "fp": 314,
+            "fn": 126,
+            "precision": 0.167,
+            "recall": 0.333,
+            "f1": 0.223
+          },
+          "repo_micro": {
+            "tp": 8,
+            "fp": 14,
+            "fn": 86,
+            "precision": 0.364,
+            "recall": 0.085,
+            "f1": 0.138
+          },
+          "overall_micro": {
+            "tp": 71,
+            "fp": 328,
+            "fn": 212,
+            "precision": 0.178,
+            "recall": 0.251,
+            "f1": 0.208
+          },
+          "macro_f1": 0.233,
+          "model": "qwen-qwen2-5-14b-instruct-gptq-int8",
+          "tier": "gold",
+          "strict": false,
+          "fuzzy": true,
+          "skipped": []
+        },
+        "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8": {
+          "n_studies": 12,
+          "per_field": {
+            "software": {
+              "tp": 16,
+              "fp": 86,
+              "fn": 78,
+              "precision": 0.157,
+              "recall": 0.17,
+              "f1": 0.163,
+              "support": 94,
+              "na": false
+            },
+            "datasets": {
+              "tp": 32,
+              "fp": 44,
+              "fn": 19,
+              "precision": 0.421,
+              "recall": 0.627,
+              "f1": 0.504,
+              "support": 51,
+              "na": false
+            },
+            "methods": {
+              "tp": 19,
+              "fp": 169,
+              "fn": 30,
+              "precision": 0.101,
+              "recall": 0.388,
+              "f1": 0.16,
+              "support": 49,
+              "na": false
+            },
+            "parameters": {
+              "tp": 16,
+              "fp": 34,
+              "fn": 38,
+              "precision": 0.32,
+              "recall": 0.296,
+              "f1": 0.308,
+              "support": 54,
+              "na": false
+            },
+            "random_seeds": {
+              "tp": 0,
+              "fp": 7,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0,
+              "na": true
+            },
+            "evaluation_results": {
+              "tp": 0,
+              "fp": 101,
+              "fn": 25,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 25,
+              "na": false
+            },
+            "environment": {
+              "tp": 3,
+              "fp": 3,
+              "fn": 7,
+              "precision": 0.5,
+              "recall": 0.3,
+              "f1": 0.375,
+              "support": 10,
+              "na": false
+            }
+          },
+          "headline_micro": {
+            "tp": 70,
+            "fp": 351,
+            "fn": 119,
+            "precision": 0.166,
+            "recall": 0.37,
+            "f1": 0.23
+          },
+          "repo_micro": {
+            "tp": 16,
+            "fp": 93,
+            "fn": 78,
+            "precision": 0.147,
+            "recall": 0.17,
+            "f1": 0.158
+          },
+          "overall_micro": {
+            "tp": 86,
+            "fp": 444,
+            "fn": 197,
+            "precision": 0.162,
+            "recall": 0.304,
+            "f1": 0.212
+          },
+          "macro_f1": 0.234,
+          "model": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+          "tier": "gold",
+          "strict": false,
+          "fuzzy": true,
+          "skipped": []
+        },
+        "redhatai-mistral-small-24b-instruct-2501-quantized-w8a8": {
+          "n_studies": 12,
+          "per_field": {
+            "software": {
+              "tp": 11,
+              "fp": 18,
+              "fn": 83,
+              "precision": 0.379,
+              "recall": 0.117,
+              "f1": 0.179,
+              "support": 94,
+              "na": false
+            },
+            "datasets": {
+              "tp": 29,
+              "fp": 26,
+              "fn": 22,
+              "precision": 0.527,
+              "recall": 0.569,
+              "f1": 0.547,
+              "support": 51,
+              "na": false
+            },
+            "methods": {
+              "tp": 19,
+              "fp": 127,
+              "fn": 30,
+              "precision": 0.13,
+              "recall": 0.388,
+              "f1": 0.195,
+              "support": 49,
+              "na": false
+            },
+            "parameters": {
+              "tp": 16,
+              "fp": 41,
+              "fn": 38,
+              "precision": 0.281,
+              "recall": 0.296,
+              "f1": 0.288,
+              "support": 54,
+              "na": false
+            },
+            "random_seeds": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0,
+              "na": true
+            },
+            "evaluation_results": {
+              "tp": 0,
+              "fp": 40,
+              "fn": 25,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 25,
+              "na": false
+            },
+            "environment": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 7,
+              "precision": 1.0,
+              "recall": 0.3,
+              "f1": 0.462,
+              "support": 10,
+              "na": false
+            }
+          },
+          "headline_micro": {
+            "tp": 67,
+            "fp": 234,
+            "fn": 122,
+            "precision": 0.223,
+            "recall": 0.354,
+            "f1": 0.273
+          },
+          "repo_micro": {
+            "tp": 11,
+            "fp": 20,
+            "fn": 83,
+            "precision": 0.355,
+            "recall": 0.117,
+            "f1": 0.176
+          },
+          "overall_micro": {
+            "tp": 78,
+            "fp": 254,
+            "fn": 205,
+            "precision": 0.235,
+            "recall": 0.276,
+            "f1": 0.254
+          },
+          "macro_f1": 0.275,
+          "model": "redhatai-mistral-small-24b-instruct-2501-quantized-w8a8",
+          "tier": "gold",
+          "strict": false,
+          "fuzzy": true,
+          "skipped": []
+        }
+      }
+    }
+  ]
+}

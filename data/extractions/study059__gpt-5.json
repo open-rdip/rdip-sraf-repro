@@ -1,0 +1,141 @@
+{
+  "study_id": "study059",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study059/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:03:32.981510+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 2,
+    "methods": 11,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "lambda2",
+        "value": "1.0"
+      },
+      {
+        "name": "K",
+        "value": "3"
+      },
+      {
+        "name": "C",
+        "value": "3"
+      },
+      {
+        "name": "\u03bb2",
+        "value": "1.0"
+      },
+      {
+        "name": "rounds",
+        "value": "10"
+      },
+      {
+        "name": "epochs_per_round",
+        "value": "50"
+      },
+      {
+        "name": "number_of_runs",
+        "value": "3"
+      },
+      {
+        "name": "task_ordering_seed_count",
+        "value": "3"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "R8",
+        "version": null
+      },
+      {
+        "name": "Reuters8",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "FedSeIT",
+        "description": "In FCL setup, alignment and relevance of foreign tasks parameters at each client (for all the tasks at each model training round) minimise inter-client interference and improve inter-client transfer learning without the dense-layer-sharing."
+      },
+      {
+        "name": "FedWeIT (baseline)",
+        "description": "Baseline model that performs weighted additive filter composition to create composite convolution filters."
+      },
+      {
+        "name": "Global parameter aggregation (\u03b8G)",
+        "description": "Server transmits a globally aggregated parameter \u03b8G to all participating clients for inter-client knowledge transfer in the next training round (r+1)."
+      },
+      {
+        "name": "FedSeIT+DLS",
+        "description": "A variant of FedSeIT that uses exclusive dense layer parameters at the local client to boost domain-alignment and identification of relevant foreign parameters."
+      },
+      {
+        "name": "FedWeIT",
+        "description": "Baseline approach compared against FedSeIT in federated continual learning for text classification."
+      },
+      {
+        "name": "Federated Selective Inter-client Transfer (Fed-SeIT)",
+        "description": "A framework for federated continual learning that minimizes inter-client interference and communication cost while maximizing inter-client knowledge transfer by decomposing each client's model parameters into: (1) dense local base parameters B_t^c capturing task-generic knowledge across the client's task sequence, (2) sparse task-adaptive parameters A_t^c capturing task-specific knowledge for each task, and (3) sparse mask parameters m_t^c enabling selective utilization of global knowledge. For each client, B_t^c is randomly initialized once before training on the first task and then shared throughout."
+      },
+      {
+        "name": "SIT",
+        "description": "Selection mechanism that chooses relevant and domain-aligned foreign parameters from historical tasks of foreign clients; controlled by window-size K indicating the number of foreign parameters considered."
+      },
+      {
+        "name": "DLS",
+        "description": "Dense-layer-sharing applied within FedSeIT; found inferior to using exclusive dense layer parameters at local clients."
+      },
+      {
+        "name": "Augmented-learning",
+        "description": "Learning setup where selected foreign parameters are incorporated to improve local client performance in continual learning."
+      },
+      {
+        "name": "Parameter decomposition with masked global base and task-adaptive additive components",
+        "description": "For each client c and task t, model parameters are decomposed as \u03b8_c^t = B_c^t \u2299 m_c^t + A_c^t, where B_c^t is a local base parameter initialized from the global parameter \u03b8_G received from the server, m_c^t is a mask that selectively utilizes global knowledge and restricts inter-client interference, and A_c^t captures task-specific knowledge."
+      },
+      {
+        "name": "Global server aggregation of local base parameters",
+        "description": "A global server maintains a global parameter \u03b8_G that accumulates task-generic knowledge by aggregating local base parameters sent from all clients, enabling inter-client knowledge transfer across task sequences."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Average improvement over FedSeIT+DLS (across five datasets) at lambda2=1.0",
+        "value": "4.4%",
+        "split": null
+      },
+      {
+        "metric": "Average improvement over FedSeIT+DLS (across five datasets) at lambda2=0.1",
+        "value": "19.1%",
+        "split": null
+      },
+      {
+        "metric": "Average gain over FedWeIT in text classification (across five datasets)",
+        "value": "12.4%",
+        "split": null
+      },
+      {
+        "metric": "performance gain FedSeIT vs FedWeIT at \u03bb2=1.0",
+        "value": "6.8%",
+        "split": null
+      },
+      {
+        "metric": "performance gain FedSeIT vs FedWeIT at \u03bb2=0.1",
+        "value": "12.5%",
+        "split": null
+      }
+    ]
+  }
+}

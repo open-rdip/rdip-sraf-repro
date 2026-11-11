@@ -1,0 +1,135 @@
+{
+  "study_id": "study093",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study093/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:30:24.879106+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 6,
+    "methods": 11,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "GeForce RTX 3090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1\u00d710\u22124"
+      },
+      {
+        "name": "batch_size",
+        "value": "128"
+      },
+      {
+        "name": "epochs",
+        "value": "100"
+      },
+      {
+        "name": "warmup_epochs",
+        "value": "10"
+      },
+      {
+        "name": "image_resize",
+        "value": "224 \u00d7224"
+      },
+      {
+        "name": "fusion_transformer_layers",
+        "value": "4"
+      },
+      {
+        "name": "answer_prompt_vectors",
+        "value": "10"
+      },
+      {
+        "name": "question_prompt_vectors",
+        "value": "10"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "MedMINIST",
+        "version": null
+      },
+      {
+        "name": "VQA-RAD",
+        "version": null
+      },
+      {
+        "name": "SLAKE",
+        "version": null
+      },
+      {
+        "name": "ROCO",
+        "version": null
+      },
+      {
+        "name": "MedICaT",
+        "version": null
+      },
+      {
+        "name": "MIMIC-CXR",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ResNet50 visual encoder",
+        "description": "ResNet50 used as the visual encoder; trained from scratch during pre-training."
+      },
+      {
+        "name": "PubmedBERT text encoder",
+        "description": "Text encoder initialized from PubmedBERT during pre-training."
+      },
+      {
+        "name": "Fusion module",
+        "description": "Fusion module composed of 4 transformer layers; trained from scratch."
+      },
+      {
+        "name": "AdamW optimization",
+        "description": "Training performed using AdamW optimizer with specified learning rate and schedule (warm-up for first 10 epochs)."
+      },
+      {
+        "name": "Image preprocessing",
+        "description": "Each image is resized to 224 \u00d7224 before input."
+      },
+      {
+        "name": "PMC-CLIP adaptation for VQA",
+        "description": "Image and question are fed into PMC-CLIP; the fusion module output embedding is used to compute similarity with each answer candidate encoded by the text encoder; most pre-trained parameters (visual encoder, text encoder, fusion) are maintained; 10 learnable answer and 10 learnable question prompt vectors are used in the text encoder."
+      },
+      {
+        "name": "Visual encoder",
+        "description": "ResNet50 used as visual encoder."
+      },
+      {
+        "name": "Text encoder",
+        "description": "PubMedBERT used as text encoder."
+      },
+      {
+        "name": "PMC-CLIP",
+        "description": "Trained on different datasets and evaluated on the ROCO test set; duplication with ROCO was explicitly removed, making results resemble zero-shot evaluation."
+      },
+      {
+        "name": "Image-Text Retrieval (ITR)",
+        "description": "Includes image-to-text (I2T) and text-to-image (T2I) retrieval; evaluation samples 2,000 image-text pairs from the ROCO test set following prior work."
+      },
+      {
+        "name": "Classification",
+        "description": "Model is finetuned for image classification tasks; MedMINIST contains 12 tasks covering primary biomedical imaging modalities."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

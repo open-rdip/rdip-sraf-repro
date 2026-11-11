@@ -1,0 +1,182 @@
+{
+  "study_id": "study090",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study090/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:33:56.014642+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 1,
+    "methods": 15,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "input image resolution",
+        "value": "640 \u00d71600"
+      },
+      {
+        "name": "Resolution",
+        "value": "900\u00d71600"
+      },
+      {
+        "name": "learning rate",
+        "value": "2e-4"
+      },
+      {
+        "name": "batch size",
+        "value": "64"
+      },
+      {
+        "name": "epochs (ablation study)",
+        "value": "24"
+      },
+      {
+        "name": "epochs (with CBGS)",
+        "value": "20"
+      },
+      {
+        "name": "feature stride",
+        "value": "16"
+      },
+      {
+        "name": "image backbone",
+        "value": "ResNet-50"
+      },
+      {
+        "name": "image size",
+        "value": "256 \u00d7 704"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "nuScenes",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "BEVDepth",
+        "description": "Uses pretrained VovNet or ConvNeXt as backbone."
+      },
+      {
+        "name": "Efficient Voxel Pooling",
+        "description": "Utilizes parallelism of GPU by assigning each frustum feature a CUDA thread to add the feature to its corresponding BEV grid."
+      },
+      {
+        "name": "Multi-frame Fusion",
+        "description": "Helps better detect objects and endows model."
+      },
+      {
+        "name": "Depth Refinement Module",
+        "description": "Module that refines depth using convolution kernels to make features along the depth axis more compact and reduce false response."
+      },
+      {
+        "name": "DepthNet",
+        "description": "Depth estimation network that incorporates camera parameters."
+      },
+      {
+        "name": "BCELoss",
+        "description": "Binary cross-entropy loss used for depth supervision."
+      },
+      {
+        "name": "L1Loss",
+        "description": "L1 loss used for depth supervision."
+      },
+      {
+        "name": "FCOS3D",
+        "description": "Baseline 3D object detection method."
+      },
+      {
+        "name": "DETR3D",
+        "description": "Baseline 3D object detection method."
+      },
+      {
+        "name": "image data augmentations",
+        "description": "Includes random cropping, random scaling, random flipping, and random rotation."
+      },
+      {
+        "name": "BEV data augmentations",
+        "description": "Includes random scaling, random flipping, and random rotation."
+      },
+      {
+        "name": "AdamW",
+        "description": "Optimizer used for training."
+      },
+      {
+        "name": "CBGS",
+        "description": "Class-balanced grouping and sampling strategy."
+      },
+      {
+        "name": "Camera-aware DepthNet",
+        "description": "Depth network placed at the feature level with stride 16."
+      },
+      {
+        "name": "ResNet-50",
+        "description": "image backbone"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP",
+        "value": "0.323",
+        "split": "val"
+      },
+      {
+        "metric": "mATE",
+        "value": "0.706",
+        "split": "val"
+      },
+      {
+        "metric": "mAOE",
+        "value": "0.608",
+        "split": "val"
+      },
+      {
+        "metric": "NDS",
+        "value": "0.372",
+        "split": "val"
+      },
+      {
+        "metric": "mAP",
+        "value": "28.2%",
+        "split": null
+      },
+      {
+        "metric": "NDS",
+        "value": "32.7%",
+        "split": null
+      },
+      {
+        "metric": "mAP",
+        "value": "0.282",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE",
+        "value": "0.768",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE",
+        "value": "0.698",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS",
+        "value": "0.327",
+        "split": "validation"
+      }
+    ]
+  }
+}

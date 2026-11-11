@@ -1,0 +1,191 @@
+{
+  "study_id": "study026",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study026/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:22:43.852478+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 2,
+    "methods": 19,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "evolution population (classification)",
+        "value": "104"
+      },
+      {
+        "name": "evolution population (regression)",
+        "value": "103"
+      },
+      {
+        "name": "vanilla_evolution_search_loss_candidates_per_generation",
+        "value": "around 1000"
+      },
+      {
+        "name": "CSE-Autoloss_individuals",
+        "value": "about 10"
+      },
+      {
+        "name": "top_well_performed_losses_plotted_per_generation",
+        "value": "100"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "VOC",
+        "version": null
+      },
+      {
+        "name": "BDD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "random search",
+        "description": "Search algorithm compared for efficiency against vanilla evolution search and CSE-Autoloss."
+      },
+      {
+        "name": "vanilla evolution search",
+        "description": "Evolution search that outperforms random search but, due to high action-space sparsity, requires hundreds of wall-clock hours on a server with 8 GPUs."
+      },
+      {
+        "name": "CSE-Autoloss",
+        "description": "Search method that uses convergence-simulation modules to speed up search by 20x and discovers well-performing loss combinations in around 1.5 wall-clock days."
+      },
+      {
+        "name": "FL + DIoU",
+        "description": "Focal loss combined with DIoU."
+      },
+      {
+        "name": "FL + CIoU",
+        "description": "Focal loss combined with CIoU."
+      },
+      {
+        "name": "GHM",
+        "description": "Gradient harmonizing mechanism loss (Li et al., 2019a)."
+      },
+      {
+        "name": "FL + CSE-Autoloss-B reg",
+        "description": "Focal loss with CSE-Autoloss-B applied to the regression branch."
+      },
+      {
+        "name": "CSE-Autoloss-B cls + GIoU",
+        "description": "CSE-Autoloss-B classification branch combined with GIoU."
+      },
+      {
+        "name": "CSE-Autoloss-B",
+        "description": "Full CSE-Autoloss-B loss combination."
+      },
+      {
+        "name": "FCOS",
+        "description": "detector used to compare the behaviors of CSE-Autoloss and vanilla evolution search"
+      },
+      {
+        "name": "two-stage and one-stage detector search",
+        "description": "search experiments conducted on both two-stage detectors and one-stage detectors, with best-searched loss functions validated on different architectures across datasets"
+      },
+      {
+        "name": "CSE-Autoloss-A",
+        "description": "Loss combination that achieves the best performance compared with other loss combinations by a large margin."
+      },
+      {
+        "name": "Convergence-simulation modules",
+        "description": "Modules that improve search efficiency and reduce the number of evaluated loss candidates relative to vanilla evolution search."
+      },
+      {
+        "name": "Evolution search",
+        "description": "Vanilla evolution search used as a baseline search algorithm for loss combinations."
+      },
+      {
+        "name": "Focal loss",
+        "description": "Loss compared against CSE-Autoloss in the FCOS visualization."
+      },
+      {
+        "name": "GIoU",
+        "description": "Loss used as the other branch when searching the classification branch."
+      },
+      {
+        "name": "CE",
+        "description": "Loss used as the other branch when searching the regression branch."
+      },
+      {
+        "name": "Faster R-CNN",
+        "description": "Detector (R50) used for search-efficiency comparison and loss-transferability evaluation on VOC and BDD."
+      },
+      {
+        "name": "progressive convergence-simulation modules",
+        "description": "Modules used when searching for the Faster R-CNN classification branch that filter out 99% of loss candidates and enhance search efficiency."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "FL + DIoU",
+        "value": "38.7\u22120.1",
+        "split": null
+      },
+      {
+        "metric": "FL + CIoU",
+        "value": "38.8+0.0",
+        "split": null
+      },
+      {
+        "metric": "GHM",
+        "value": "38.6\u22120.2",
+        "split": null
+      },
+      {
+        "metric": "FL + CSE-Autoloss-B reg",
+        "value": "39.1+0.3",
+        "split": null
+      },
+      {
+        "metric": "CSE-Autoloss-B cls + GIoU",
+        "value": "39.4+0.6",
+        "split": null
+      },
+      {
+        "metric": "CSE-Autoloss-B",
+        "value": "39.6+0.8",
+        "split": null
+      },
+      {
+        "metric": "AP (%)",
+        "value": "37.8",
+        "split": null
+      },
+      {
+        "metric": "#Evaluated loss",
+        "value": "1\u00d7104",
+        "split": null
+      },
+      {
+        "metric": "Wall-clock hours",
+        "value": "8\u00d7103",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": "1.1% improvement over baseline (CSE-Autoloss-A on Faster R-CNN R50)",
+        "split": null
+      },
+      {
+        "metric": "loss candidates filtered",
+        "value": "99%",
+        "split": null
+      }
+    ]
+  }
+}

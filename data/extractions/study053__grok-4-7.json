@@ -1,0 +1,143 @@
+{
+  "study_id": "study053",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study053/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:29:36.348845+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 12,
+    "methods": 12,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "single GPU of 24 Gb",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "input_prompt",
+        "value": "a photo of a [kth class name]"
+      },
+      {
+        "name": "lora_module_position",
+        "value": "every levels of both encoders"
+      },
+      {
+        "name": "coop_learnable_tokens",
+        "value": "4"
+      },
+      {
+        "name": "coop_learnable_tokens_alt",
+        "value": "16"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "StanfordCars",
+        "version": null
+      },
+      {
+        "name": "SUN397",
+        "version": null
+      },
+      {
+        "name": "Aircraft",
+        "version": null
+      },
+      {
+        "name": "EuroSAT",
+        "version": null
+      },
+      {
+        "name": "Stanford-Cars",
+        "version": null
+      },
+      {
+        "name": "Food101",
+        "version": null
+      },
+      {
+        "name": "OxfordPets",
+        "version": null
+      },
+      {
+        "name": "Flower102",
+        "version": null
+      },
+      {
+        "name": "Caltech101",
+        "version": null
+      },
+      {
+        "name": "DTD",
+        "version": null
+      },
+      {
+        "name": "UCF101",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "LoRA matrix positioning",
+        "description": "Positioning low-rank matrices only on the half last levels (Up), the first half levels (Bottom), or at every level (All) using LoRA modules"
+      },
+      {
+        "name": "few-shot VLM adaptation",
+        "description": "Few-shot adaptation of Vision-Language Models using fixed hyper-parameters, compared against prompt- and adapter-based methods"
+      },
+      {
+        "name": "CoOp",
+        "description": "text-only prompt tuning"
+      },
+      {
+        "name": "LoRA",
+        "description": "Adapting value or output attention matrices (Wv and Wo) was the best strategy among four attention matrices; adding LoRA modules across all layers was more effective than lower-half (bottom) or upper-half (up) placement"
+      },
+      {
+        "name": "AdaLoRA",
+        "description": "Allocating a larger rank to the middle and last layers rather than the first ones"
+      },
+      {
+        "name": "Prompt tuning (P)",
+        "description": "Soft prompt tuning optimizes text-input tokens, which can be extended to intermediate layers; with a transformer-based architecture, learnable tokens can also be inserted in vision models. Includes tuning additional intermediate tokens under the prompt-tuning category."
+      },
+      {
+        "name": "Adapters (A)",
+        "description": "Updates a set of additional parameters."
+      },
+      {
+        "name": "CLIP-LoRA",
+        "description": "LoRA modules positioned at every level of both encoders; input prompt set to a photo of a [kth class name] without complex initial manual prompting."
+      },
+      {
+        "name": "Few-shot learning",
+        "description": "Follows the setting of previous work [63] for few-shot visual classification."
+      },
+      {
+        "name": "CoOp (4)",
+        "description": "Prompt-based method with 4 learnable tokens."
+      },
+      {
+        "name": "CoOp (16)",
+        "description": "Prompt-based method with 16 learnable tokens."
+      },
+      {
+        "name": "CoCoOp",
+        "description": "Prompt-based comparative method."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "study_id": "study076",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study076/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:03:01.921951+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 3,
+    "methods": 10,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "Zcaste (number of caste categories)",
+        "value": "14"
+      },
+      {
+        "name": "Zreligion (number of religion categories)",
+        "value": "3"
+      },
+      {
+        "name": "number of communities K search range",
+        "value": "[1,10]"
+      },
+      {
+        "name": "cross-validation folds",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Indian village social support network (heterogeneous attributed multilayer network, six binary directed layers, collected in 2013 through surveys)",
+        "version": null
+      },
+      {
+        "name": "synthetic data used in the section Comparison with existing methods in a homogeneous scenario",
+        "version": null
+      },
+      {
+        "name": "real-world heterogeneous attributed multilayer village network (7 layers; attributes: caste, religion, years of education)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PIHAM",
+        "description": "A versatile and scalable probabilistic generative model for inference in attributed multilayer networks. It adapts to any combination of input data types and relies on automatic differentiation, so practitioners only select the desired probabilistic model and a set of variable transformation functions, while inference is performed automatically (a 'black box' method)."
+      },
+      {
+        "name": "Gaussian-to-Dirichlet parameter transformation",
+        "description": "Transforms the parameters of a Gaussian distribution into those of a Dirichlet distribution, which operates in a positive domain and enforces normalization on a simplex."
+      },
+      {
+        "name": "Automatic differentiation-based inference",
+        "description": "Inference process that is flexible and scalable, relying on automatic differentiation and avoiding the need for explicit derivations."
+      },
+      {
+        "name": "Cross-validation",
+        "description": "Model selection routine used to determine the optimal combination of layers and attributes."
+      },
+      {
+        "name": "Softmax community membership transformation",
+        "description": "f(\u00b7) is chosen as the softmax function, applied to every row of the community membership matrices (U, V), yielding positive values normalized to one and so making the communities interpretable."
+      },
+      {
+        "name": "Distribution-dependent link function g(\u00b7)",
+        "description": "g(\u00b7) varies with the distribution type (Table 1): logistic for Bernoulli with parameter space [0,1], exponential for Poisson with parameter space (0,\u221e), and a transformation for Gaussian with parameter space R. Latent variables are transformed individually (Eq. 6 and Eq. 7) rather than using a single link function for \u03bb\u2113ij and \u03c0ix, which gave more stable results without numerical over- or under-flow."
+      },
+      {
+        "name": "LM technique with Dirichlet distributions",
+        "description": "Transforms posterior distributions of the inferred node memberships from real-space into the simplex space, giving a more straightforward interpretation of mixed-memberships."
+      },
+      {
+        "name": "Overlap and \u03c32 analysis",
+        "description": "Overlap measures the overlap between every pair of distributions, and \u03c32 is the variance of the barycenter distribution; both are used to check that inferred node memberships align with the decreasing degree of true mixed-membership."
+      },
+      {
+        "name": "Heterogeneous attributed multilayer network model likelihood (Eq. 2 and Eq. 4)",
+        "description": "Likelihood customized to data types: Bernoulli distributions for binary layers A_\u2113 (\u2113 in 1..6), Gaussian distributions for distance layer A7, Categorical distributions for caste (X\u00b71) and religion (X\u00b72) attributes, and Poisson distribution for years of education covariate (X\u00b73)."
+      },
+      {
+        "name": "5-fold cross-validation for model selection",
+        "description": "Used to determine the number of communities K in the range [1,10], since true parameters and node memberships are unknown."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

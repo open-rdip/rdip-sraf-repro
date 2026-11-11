@@ -1,0 +1,164 @@
+{
+  "study_id": "study005",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study005/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:05:14.104290+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 3,
+    "methods": 18,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Imaginaire",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100 GPU",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "dataset_size",
+        "value": "about one billion text-image pairs"
+      },
+      {
+        "name": "minimum_shortest_side_base_model",
+        "value": "> 64 pixels"
+      },
+      {
+        "name": "minimum_shortest_side_SR256",
+        "value": "> 256 pixels"
+      },
+      {
+        "name": "minimum_shortest_side_SR1024",
+        "value": "> 1024 pixels"
+      },
+      {
+        "name": "crop_size_SR1024_training",
+        "value": "256\u00d7256"
+      },
+      {
+        "name": "resolution_SR1024_inference",
+        "value": "1024\u00d71024"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning rate",
+        "value": "0.0001"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.01"
+      },
+      {
+        "name": "batch size",
+        "value": "2048"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "Visual Genome",
+        "version": null
+      },
+      {
+        "name": "MS-COCO",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DALL \u00b7E 2",
+        "description": "Baseline image generation model compared on long detailed captions."
+      },
+      {
+        "name": "Stable Diffusion",
+        "description": "Baseline image generation model compared on long detailed captions."
+      },
+      {
+        "name": "eDiff-I",
+        "description": "Diffusion model evaluated for inference time under an increasing number of experts."
+      },
+      {
+        "name": "heavy filtering",
+        "description": "Filtering training data using a pretrained CLIP model to measure image-text alignment score and an aesthetic scorer to rank image quality, removing pairs failing preset thresholds"
+      },
+      {
+        "name": "resize-central crop",
+        "description": "Resizing images so that the shortest side has the same number of pixels as the input image side, followed by a central crop, used for training the base and SR256 models"
+      },
+      {
+        "name": "random crop",
+        "description": "Randomly cropping 256\u00d7256 regions during training and applying on 1024\u00d71024 resolution during inference for the SR1024 model"
+      },
+      {
+        "name": "DALL\u00b7E 2",
+        "description": "Baseline model compared against that produces misspellings or fails at generating text"
+      },
+      {
+        "name": "Ours",
+        "description": "Proposed approach that succeeds in generating target English text on a wide range of samples"
+      },
+      {
+        "name": "AdamW",
+        "description": "Optimizer used for training base and super-resolution diffusion models"
+      },
+      {
+        "name": "CLIP text encoder",
+        "description": "Text encoder used for caption representation and dataset filtering"
+      },
+      {
+        "name": "T5 encoder",
+        "description": "Language model encoder used for descriptive caption representation"
+      },
+      {
+        "name": "base diffusion model",
+        "description": "Base diffusion model trained using 256 NVIDIA A100 GPUs"
+      },
+      {
+        "name": "super-resolution diffusion models",
+        "description": "Super-resolution diffusion models trained using 128 NVIDIA A100 GPUs each"
+      },
+      {
+        "name": "CLIP text embeddings",
+        "description": "Text embeddings used for image generation that capture correct foreground objects but lack compositionality, counting, and text generation capabilities."
+      },
+      {
+        "name": "T5 text embeddings",
+        "description": "Text embeddings used for image generation that obtain better compositions but are inferior in generating foreground objects."
+      },
+      {
+        "name": "CLIP+T5 text embeddings",
+        "description": "Combination of T5 and CLIP text embeddings to utilize attributes from both embeddings for improved image generation."
+      },
+      {
+        "name": "ensemble-of-expert-denoisers scheme",
+        "description": "Helps scale the model size without incurring additional computation in the inference time."
+      },
+      {
+        "name": "random dropout",
+        "description": "Performed independently on the individual text embeddings (CLIP and T5) during training."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

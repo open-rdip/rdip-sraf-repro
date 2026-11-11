@@ -1,0 +1,1204 @@
+{
+ "study_id": "study006",
+ "model": "grok",
+ "slug": "grok-4-7",
+ "n_passages": 7,
+ "n_passages_ok": 7,
+ "failures": [],
+ "records": [
+  {
+   "field": "hyperparameters",
+   "value": "15",
+   "evidence": "and 15 for Adroit tasks. These horizons",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "approximately 10 Hz",
+   "evidence": "a control rate of approximately 10 Hz",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "3",
+   "evidence": "experiments with 3 different training seeds",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "20",
+   "evidence": "each seed is evaluated for 20 episodes",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "Adroit",
+   "evidence": "15 for Adroit tasks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "Stochastic MuJoCo",
+   "evidence": "On the Stochastic MuJoCo tasks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "Hopper",
+   "evidence": "both the Hopper and Walker2D environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "Walker2D",
+   "evidence": "the Hopper and Walker2D environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "Medium-Replay-High Hopper",
+   "evidence": "the Medium-Replay-High Hopper dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "Medium-Expert-Mod Hopper",
+   "evidence": "the Medium-Expert-Mod Hopper dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "TT",
+   "evidence": "model-based baselines, TAP and TT",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "TAP",
+   "evidence": "model-based baselines, TAP and TT",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "L-MAP",
+   "evidence": "L-MAP consistently outperforms the model-based baselines",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "1R2R",
+   "evidence": "When compared to 1R2R",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "CQL",
+   "evidence": "model-free methods, CQL and IQL",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "IQL",
+   "evidence": "CQL and IQL",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "L-MAP",
+   "evidence": "we introduced the Latent Macro Action Planner (L-MAP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "VQ-V AE",
+   "evidence": "within the VQ-V AE framework",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "state-conditioned VQ-V AE",
+   "evidence": "learned with a state-conditioned VQ-V AE",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "3",
+   "evidence": "we set our macro action length to 3.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "9",
+   "evidence": "The planning horizon in the raw action space is set to 9 for gym locomotion tasks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "15",
+   "evidence": "The planning horizon in the raw action space is set to 9 for gym locomotion tasks and 15 for Adroit tasks.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "Stochastic MuJoCo",
+   "evidence": "We evaluate L-MAP on Stochastic MuJoCo tasks (Rigter et al., 2023)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "Adroit",
+   "evidence": "We then test L-MAP on Adroit",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "AntMaze",
+   "evidence": "we evaluate L-MAP on AntMaze",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "gym locomotion tasks",
+   "evidence": "set to 9 for gym locomotion tasks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Conservative Q-Learning",
+   "evidence": "Conservative Q- Learning (CQL; Kumar et al. (2020))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Implicit Q-Learning",
+   "evidence": "Implicit Q-Learning (IQL; Kostrikov et al. (2022))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "L-MAP",
+   "evidence": "We evaluate L-MAP on Stochastic MuJoCo tasks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "TT",
+   "evidence": "similar performance to TT",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "TAP",
+   "evidence": "those used in TT and TAP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "AntMaze",
+   "evidence": "across all AntMaze environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "Large-Play",
+   "evidence": "Large-Play and Large-Diverse environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "Large-Diverse",
+   "evidence": "Large-Play and Large-Diverse environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "Umaze",
+   "evidence": "Umaze and Medium-Diverse",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "Medium-Diverse",
+   "evidence": "Umaze and Medium-Diverse",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "TAP",
+   "evidence": "Similar to TAP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "goal positions in observation space",
+   "evidence": "integrates goal positions into the observation space",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "IQL critic",
+   "evidence": "using the IQL critic for value estimation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "L-MAP",
+   "evidence": "L-MAP leverages Monte Carlo planning",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Monte Carlo planning",
+   "evidence": "L-MAP leverages Monte Carlo planning",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Q-network",
+   "evidence": "sampling with a separate Q-network",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "TT (+Q)",
+   "evidence": "as required by TT (+Q)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "83.33%",
+   "evidence": "average success rate of 83.33% across all AntMaze environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "84.00%",
+   "evidence": "average success rate of 83.33% across all AntMaze environments, which is comparable to the 84.00% average of TT (+Q)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "78.33%",
+   "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "81.67%",
+   "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.7%",
+   "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "60.0%",
+   "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "93.33%",
+   "evidence": "Umaze and Medium-Diverse, L-MAP still performs exceptionally well with success rates of 93.33% and 88.33% in these settings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "88.33%",
+   "evidence": "Umaze and Medium-Diverse, L-MAP still performs exceptionally well with success rates of 93.33% and 88.33% in these settings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "93.33%",
+   "evidence": "success rates of 93.33% and 88.33% in these settings.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "88.33%",
+   "evidence": "success rates of 93.33% and 88.33% in these settings.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "Cloned",
+   "evidence": "For the Cloned dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "Expert",
+   "evidence": "In the Expert dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "non-expert datasets",
+   "evidence": "18.79 across non-expert datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "IQL",
+   "evidence": "Although IQL leads in the Pen task",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "CQL",
+   "evidence": "CQL leads in the Hammer and Relocate tasks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "L-MAP",
+   "evidence": "L-MAP maintains competitive results",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "TT",
+   "evidence": "surpassing TT and BC in most environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "BC",
+   "evidence": "Behavior Cloning (BC)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "1R2R",
+   "evidence": "the original 1R2R method",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "51.40",
+   "evidence": "the highest average score of 51.40 across all datasets and environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "18.79",
+   "evidence": "18.79 across non-expert datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "MCTS",
+   "evidence": "Illustration of our MCTS process for macro-level planning.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "UCT",
+   "evidence": "selects actions using the UCT policy",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "progressive widening",
+   "evidence": "we use progressive widening to extend MCTS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "hyperparameters": {
+    "n": 7,
+    "has_evidence": 7,
+    "span_found": 7,
+    "value_in_span": 7,
+    "grounded": 7
+   },
+   "datasets": {
+    "n": 18,
+    "has_evidence": 18,
+    "span_found": 18,
+    "value_in_span": 18,
+    "grounded": 18
+   },
+   "methods": {
+    "n": 30,
+    "has_evidence": 30,
+    "span_found": 30,
+    "value_in_span": 28,
+    "grounded": 28
+   },
+   "evaluation_results": {
+    "n": 12,
+    "has_evidence": 12,
+    "span_found": 12,
+    "value_in_span": 12,
+    "grounded": 12
+   }
+  },
+  "total": {
+   "n": 67,
+   "has_evidence": 67,
+   "span_found": 67,
+   "value_in_span": 65,
+   "grounded": 65
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "horizon",
+      "value": "15",
+      "evidence": "and 15 for Adroit tasks. These horizons"
+     },
+     {
+      "name": "control rate",
+      "value": "approximately 10 Hz",
+      "evidence": "a control rate of approximately 10 Hz"
+     },
+     {
+      "name": "training seeds",
+      "value": "3",
+      "evidence": "experiments with 3 different training seeds"
+     },
+     {
+      "name": "evaluation episodes",
+      "value": "20",
+      "evidence": "each seed is evaluated for 20 episodes"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "Adroit",
+      "version": null,
+      "evidence": "15 for Adroit tasks"
+     },
+     {
+      "name": "Stochastic MuJoCo",
+      "version": null,
+      "evidence": "On the Stochastic MuJoCo tasks"
+     },
+     {
+      "name": "Hopper",
+      "version": null,
+      "evidence": "both the Hopper and Walker2D environments"
+     },
+     {
+      "name": "Walker2D",
+      "version": null,
+      "evidence": "the Hopper and Walker2D environments"
+     },
+     {
+      "name": "Medium-Replay-High Hopper",
+      "version": null,
+      "evidence": "the Medium-Replay-High Hopper dataset"
+     },
+     {
+      "name": "Medium-Expert-Mod Hopper",
+      "version": null,
+      "evidence": "the Medium-Expert-Mod Hopper dataset"
+     }
+    ],
+    "methods": [
+     {
+      "name": "TT",
+      "evidence": "model-based baselines, TAP and TT"
+     },
+     {
+      "name": "TAP",
+      "evidence": "model-based baselines, TAP and TT"
+     },
+     {
+      "name": "L-MAP",
+      "evidence": "L-MAP consistently outperforms the model-based baselines"
+     },
+     {
+      "name": "1R2R",
+      "evidence": "When compared to 1R2R"
+     },
+     {
+      "name": "CQL",
+      "evidence": "model-free methods, CQL and IQL"
+     },
+     {
+      "name": "IQL",
+      "evidence": "CQL and IQL"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "L-MAP",
+      "evidence": "we introduced the Latent Macro Action Planner (L-MAP)"
+     },
+     {
+      "name": "VQ-V AE",
+      "evidence": "within the VQ-V AE framework"
+     },
+     {
+      "name": "state-conditioned VQ-V AE",
+      "evidence": "learned with a state-conditioned VQ-V AE"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "macro action length",
+      "value": "3",
+      "evidence": "we set our macro action length to 3."
+     },
+     {
+      "name": "planning horizon (gym locomotion tasks)",
+      "value": "9",
+      "evidence": "The planning horizon in the raw action space is set to 9 for gym locomotion tasks"
+     },
+     {
+      "name": "planning horizon (Adroit tasks)",
+      "value": "15",
+      "evidence": "The planning horizon in the raw action space is set to 9 for gym locomotion tasks and 15 for Adroit tasks."
+     }
+    ],
+    "datasets": [
+     {
+      "name": "Stochastic MuJoCo",
+      "version": null,
+      "evidence": "We evaluate L-MAP on Stochastic MuJoCo tasks (Rigter et al., 2023)"
+     },
+     {
+      "name": "Adroit",
+      "version": null,
+      "evidence": "We then test L-MAP on Adroit"
+     },
+     {
+      "name": "AntMaze",
+      "version": null,
+      "evidence": "we evaluate L-MAP on AntMaze"
+     },
+     {
+      "name": "gym locomotion tasks",
+      "version": null,
+      "evidence": "set to 9 for gym locomotion tasks"
+     }
+    ],
+    "methods": [
+     {
+      "name": "Conservative Q-Learning",
+      "evidence": "Conservative Q- Learning (CQL; Kumar et al. (2020))"
+     },
+     {
+      "name": "Implicit Q-Learning",
+      "evidence": "Implicit Q-Learning (IQL; Kostrikov et al. (2022))"
+     },
+     {
+      "name": "L-MAP",
+      "evidence": "We evaluate L-MAP on Stochastic MuJoCo tasks"
+     },
+     {
+      "name": "TT",
+      "evidence": "similar performance to TT"
+     },
+     {
+      "name": "TAP",
+      "evidence": "those used in TT and TAP."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "AntMaze",
+      "version": null,
+      "evidence": "across all AntMaze environments"
+     },
+     {
+      "name": "Large-Play",
+      "version": null,
+      "evidence": "Large-Play and Large-Diverse environments"
+     },
+     {
+      "name": "Large-Diverse",
+      "version": null,
+      "evidence": "Large-Play and Large-Diverse environments"
+     },
+     {
+      "name": "Umaze",
+      "version": null,
+      "evidence": "Umaze and Medium-Diverse"
+     },
+     {
+      "name": "Medium-Diverse",
+      "version": null,
+      "evidence": "Umaze and Medium-Diverse"
+     }
+    ],
+    "methods": [
+     {
+      "name": "TAP",
+      "evidence": "Similar to TAP"
+     },
+     {
+      "name": "goal positions in observation space",
+      "evidence": "integrates goal positions into the observation space"
+     },
+     {
+      "name": "IQL critic",
+      "evidence": "using the IQL critic for value estimation"
+     },
+     {
+      "name": "L-MAP",
+      "evidence": "L-MAP leverages Monte Carlo planning"
+     },
+     {
+      "name": "Monte Carlo planning",
+      "evidence": "L-MAP leverages Monte Carlo planning"
+     },
+     {
+      "name": "Q-network",
+      "evidence": "sampling with a separate Q-network"
+     },
+     {
+      "name": "TT (+Q)",
+      "evidence": "as required by TT (+Q)"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "success rate",
+      "value": "83.33%",
+      "split": "all AntMaze environments",
+      "evidence": "average success rate of 83.33% across all AntMaze environments"
+     },
+     {
+      "metric": "success rate",
+      "value": "84.00%",
+      "split": "all AntMaze environments",
+      "evidence": "average success rate of 83.33% across all AntMaze environments, which is comparable to the 84.00% average of TT (+Q)"
+     },
+     {
+      "metric": "success rate",
+      "value": "78.33%",
+      "split": "Large-Play",
+      "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%"
+     },
+     {
+      "metric": "success rate",
+      "value": "81.67%",
+      "split": "Large-Diverse",
+      "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%"
+     },
+     {
+      "metric": "success rate",
+      "value": "66.7%",
+      "split": "Large-Play",
+      "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%"
+     },
+     {
+      "metric": "success rate",
+      "value": "60.0%",
+      "split": "Large-Diverse",
+      "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%"
+     },
+     {
+      "metric": "success rate",
+      "value": "93.33%",
+      "split": "Umaze",
+      "evidence": "Umaze and Medium-Diverse, L-MAP still performs exceptionally well with success rates of 93.33% and 88.33% in these settings"
+     },
+     {
+      "metric": "success rate",
+      "value": "88.33%",
+      "split": "Medium-Diverse",
+      "evidence": "Umaze and Medium-Diverse, L-MAP still performs exceptionally well with success rates of 93.33% and 88.33% in these settings"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [],
+    "evaluation_results": [
+     {
+      "metric": "success rate",
+      "value": "93.33%",
+      "split": null,
+      "evidence": "success rates of 93.33% and 88.33% in these settings."
+     },
+     {
+      "metric": "success rate",
+      "value": "88.33%",
+      "split": null,
+      "evidence": "success rates of 93.33% and 88.33% in these settings."
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "Cloned",
+      "version": null,
+      "evidence": "For the Cloned dataset"
+     },
+     {
+      "name": "Expert",
+      "version": null,
+      "evidence": "In the Expert dataset"
+     },
+     {
+      "name": "non-expert datasets",
+      "version": null,
+      "evidence": "18.79 across non-expert datasets"
+     }
+    ],
+    "methods": [
+     {
+      "name": "IQL",
+      "evidence": "Although IQL leads in the Pen task"
+     },
+     {
+      "name": "CQL",
+      "evidence": "CQL leads in the Hammer and Relocate tasks"
+     },
+     {
+      "name": "L-MAP",
+      "evidence": "L-MAP maintains competitive results"
+     },
+     {
+      "name": "TT",
+      "evidence": "surpassing TT and BC in most environments"
+     },
+     {
+      "name": "BC",
+      "evidence": "Behavior Cloning (BC)"
+     },
+     {
+      "name": "1R2R",
+      "evidence": "the original 1R2R method"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "average score",
+      "value": "51.40",
+      "split": "all datasets and environments",
+      "evidence": "the highest average score of 51.40 across all datasets and environments"
+     },
+     {
+      "metric": "average score",
+      "value": "18.79",
+      "split": "non-expert datasets",
+      "evidence": "18.79 across non-expert datasets"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 6,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "MCTS",
+      "evidence": "Illustration of our MCTS process for macro-level planning."
+     },
+     {
+      "name": "UCT",
+      "evidence": "selects actions using the UCT policy"
+     },
+     {
+      "name": "progressive widening",
+      "evidence": "we use progressive widening to extend MCTS"
+     }
+    ],
+    "evaluation_results": []
+   }
+  }
+ ]
+}

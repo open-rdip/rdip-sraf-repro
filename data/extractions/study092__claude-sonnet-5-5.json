@@ -1,0 +1,95 @@
+{
+  "study_id": "study092",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study092/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:09:52.462832+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 1,
+    "methods": 12,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "N (maximum tracklet length)",
+        "value": "varied; specific values not stated"
+      },
+      {
+        "name": "N (maximum tracklet length) for baseline [3]",
+        "value": "1"
+      },
+      {
+        "name": "N (tracklet size)",
+        "value": "20"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Live Re-ID",
+        "description": "Re-identification problem that uses raw videos as search galleries instead of manually cropped full-body images"
+      },
+      {
+        "name": "Baseline live Re-ID [3]",
+        "description": "Uses object detection to generate a search gallery and classic Re-ID to find the query in the gallery; produces galleries that are too large and contain outlier images that do not represent human bodies"
+      },
+      {
+        "name": "TrADe",
+        "description": "Uses a tracking algorithm to group successive bounding boxes of the same individual into tracklets, then uses an anomaly detection model to select the 'most normal' image of each tracklet, generating smaller galleries with fewer outliers than the baseline"
+      },
+      {
+        "name": "F*1",
+        "description": "Optimal configuration for F1: the highest F1 value among all possible Re-ID thresholds \u03b2; F*1 of 1 means a Re-ID threshold exists at which the live Re-ID pipeline works perfectly. Single values of FR and TVR are reported at the optimal F1 threshold."
+      },
+      {
+        "name": "TrADe Re-ID",
+        "description": "Approach for live Re-ID using tracklets and an anomaly detection component, with maximum tracklet length N; compared against the baseline in [3], which is the limit case N=1."
+      },
+      {
+        "name": "Skip",
+        "description": "Simpler gallery size reduction approach that runs the YOLOv3 object detector once every N frames, where N is the maximum tracklet size for TrADe, producing galleries of the same size as TrADe to assess the impact of TrADe's anomaly detection component."
+      },
+      {
+        "name": "YOLOv3",
+        "description": "Object detector used in the Skip approach."
+      },
+      {
+        "name": "Baseline",
+        "description": "Baseline approach to which TrADe is compared; generates larger galleries with more outliers."
+      },
+      {
+        "name": "Shared-layer architecture (future work)",
+        "description": "Proposed idea of building a single architecture sharing generic first layers among the four deep-learning-based modules of the pipeline to speed it up."
+      },
+      {
+        "name": "Multi-image tracklet selection (future work)",
+        "description": "Proposed idea of considering several complementary good-quality images per tracklet, representing different poses of a person, instead of a single image."
+      },
+      {
+        "name": "BoT",
+        "description": "Re-ID method whose Finding Rate (FR) starts decreasing when tracklet size N is above 20, due to the label switching problem with long tracklets."
+      },
+      {
+        "name": "Classic Re-ID module",
+        "description": "Re-ID processing step whose processing time decreases drastically as tracklet size N increases, since the gallery becomes smaller and fewer images need to be processed; the effect is less pronounced above N=20 because most gallery images fit in a single GPU batch."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

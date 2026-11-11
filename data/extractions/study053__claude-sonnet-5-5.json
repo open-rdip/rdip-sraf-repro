@@ -1,0 +1,157 @@
+{
+  "study_id": "study053",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study053/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:52:48.805189+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 12,
+    "methods": 12,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "M",
+        "value": "hyper-parameter denoting the number of trainable context vectors (v_1^k, ..., v_M^k) in CoOp; no numeric value given"
+      },
+      {
+        "name": "GPU memory",
+        "value": "24 Gb (single GPU)"
+      },
+      {
+        "name": "input prompt",
+        "value": "a photo of a [kth class name], k = 1, ..., K"
+      },
+      {
+        "name": "LoRA module placement",
+        "value": "every level of both encoders"
+      },
+      {
+        "name": "CoOp (4) learnable tokens",
+        "value": "4"
+      },
+      {
+        "name": "CoOp (16) learnable tokens",
+        "value": "16"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Food-101",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "StanfordCars",
+        "version": null
+      },
+      {
+        "name": "SUN397",
+        "version": null
+      },
+      {
+        "name": "Aircraft",
+        "version": null
+      },
+      {
+        "name": "EuroSAT",
+        "version": null
+      },
+      {
+        "name": "Food101",
+        "version": null
+      },
+      {
+        "name": "OxfordPets",
+        "version": null
+      },
+      {
+        "name": "Flower102",
+        "version": null
+      },
+      {
+        "name": "Caltech101",
+        "version": null
+      },
+      {
+        "name": "DTD",
+        "version": null
+      },
+      {
+        "name": "UCF101",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "LoRA",
+        "description": "Low-rank adaptation modules used for few-shot adaptation of Vision-Language Models, with low-rank matrices placed at different levels: only the last half of levels (Up), only the first half (Bottom), or at every level (All)."
+      },
+      {
+        "name": "CoOp",
+        "description": "Text-only prompt tuning method, cited as a baseline that is outperformed by approaches augmenting performance beyond text-only prompt tuning"
+      },
+      {
+        "name": "LoRA module placement",
+        "description": "Comparison of placing LoRA modules on the lower half (bottom), the upper half (up), or across all layers; no clear winner between bottom and up, while adding LoRA modules across all layers was found more effective"
+      },
+      {
+        "name": "AdaLoRA",
+        "description": "Method that dynamically adjusts matrix rank; in LLMs it allocates larger rank to the middle and last layers rather than the first ones, yielding better results"
+      },
+      {
+        "name": "Prompt tuning (P)",
+        "description": "Optimizes text-input tokens (soft prompts), which can be extended to intermediate layers and inserted in vision transformer models; includes methods tuning additional intermediate tokens"
+      },
+      {
+        "name": "Adapters (A)",
+        "description": "Updates a set of additional parameters rather than the prompts to adapt VLMs"
+      },
+      {
+        "name": "CoOp (context optimization)",
+        "description": "Constructs text input c_k as continuous trainable vectors: c_k = (v_1^k, ..., v_M^k, [class_k])"
+      },
+      {
+        "name": "CLIP-LoRA",
+        "description": "Applies LoRA modules at every level of both CLIP encoders, using a fixed simple prompt 'a photo of a [kth class name]' across all datasets and experiments, with hyper-parameters kept fixed."
+      },
+      {
+        "name": "CoOp (4)",
+        "description": "Prompt-based method with 4 learnable tokens."
+      },
+      {
+        "name": "CoOp (16)",
+        "description": "Prompt-based method with 16 learnable tokens."
+      },
+      {
+        "name": "CoCoOp",
+        "description": "Prompt-based comparative method."
+      },
+      {
+        "name": "Few-shot learning",
+        "description": "Few-shot visual classification benchmark following the setting of previous work [63] across 10 fine-grained datasets plus ImageNet."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 accuracy",
+        "value": "averaged over 3 random seeds",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,1229 @@
+{
+ "study_id": "study001",
+ "model": "opus",
+ "slug": "claude-opus-5-5",
+ "n_passages": 7,
+ "n_passages_ok": 7,
+ "failures": [],
+ "records": [
+  {
+   "field": "hyperparameters",
+   "value": "4-bit, 3-bit, 2-bit",
+   "evidence": "applying 4-bit, 3-bit, and 2-bit weights",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "FP16",
+   "evidence": "by setting the activation to FP16",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "256",
+   "evidence": "fine-grained quantization (block-size 256)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "8",
+   "evidence": "with a low-rank dimension of m= 8",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "INT8",
+   "evidence": "the two low-rank matrices for LoRC in Table 7 are INT8",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "\u22640.016",
+   "evidence": "number 3m/2h\u22640.016",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "LoRC",
+   "evidence": "LoRC can be viewed as a supplementary feature to existing quantization methodologies",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "RTN",
+   "evidence": "existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "we utilize the GPTQ quantization strategy",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "ZeroQuant-Local/Global",
+   "evidence": "existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "FGQ",
+   "evidence": "can be seamlessly integrated with FGQ",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "INT4",
+   "evidence": "INT4 weight-only quantization for small models results in substantial accuracy degradation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "INT8",
+   "evidence": "INT8 activation results in minimal accuracy drops for small models",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "max(abs(x))",
+   "evidence": "for symmetric quantization, we set S=max(abs(x))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "Particularly, GPTQ [ 12] and ZeroQuant [ 36]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ZeroQuant",
+   "evidence": "Particularly, GPTQ [ 12] and ZeroQuant [ 36]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "round-to-nearest neighborhood (RTN)",
+   "evidence": "the most straightforward baseline, round-to-nearest neighborhood (RTN)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "PTQ",
+   "evidence": "RTNdirectly applies PTQ on the trained data",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "INT4 weight-only quantization",
+   "evidence": "INT4 weight-only quantization for small models results in substantial accuracy degradation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "symmetric quantization",
+   "evidence": "for symmetric quantization, we set S=max(abs(x))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "INT8",
+   "evidence": "INT8 weight-only quantization, either symmetric or asymmetric",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "INT4",
+   "evidence": "For INT4 quantization, the asymmetric method outperforms the symmetric approach in accuracy",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "FP16",
+   "evidence": "FP16 weight can simply be replaced with INT8 weight to reduce memory usage",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "post-training quantization",
+   "evidence": "making Class-1 the optimal-loss post-training quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "symmetric quantization",
+   "evidence": "We employ both symmetric and asymmetric quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "asymmetric quantization",
+   "evidence": "We employ both symmetric and asymmetric quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "per-row quantization",
+   "evidence": "we implement per-row quantization [ 12] for weight quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "per-token quantization",
+   "evidence": "per-token quantization for activation [36]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "weight-only quantization",
+   "evidence": "Robustness of Weight-only Quantization for Large Models",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "OPT",
+   "evidence": "The results of weight-only quantization in OPT and BLOOM models",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "BLOOM",
+   "evidence": "The results of weight-only quantization in OPT and BLOOM models",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "OPT-66B",
+   "evidence": "with a few exceptions such as OPT-66B",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "BLOOM-176B",
+   "evidence": "BLOOM-176B shows PPL degradation (around 0.3 points) in Class-2",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GLM-130B",
+   "evidence": "the large GLM-130B [ 39] can operate with INT4 weight-only quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "about 0.5",
+   "evidence": "PPL improvement is about 0.5 (see Table 2)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "less than 0.05",
+   "evidence": "results in negligible accuracy loss (less than 0.05, i.e., Class-1)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "around 0.3 points",
+   "evidence": "BLOOM-176B shows PPL degradation (around 0.3 points) in Class-2",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "128 by 128",
+   "evidence": "128 by 128 tiling size",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "PTQ",
+   "evidence": "With PTQ and row-wise quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "row-wise quantization",
+   "evidence": "With PTQ and row-wise quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "fine-grained quantization",
+   "evidence": "Fine-grained Quantization and Its Evaluation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "block-k quantization",
+   "evidence": "block-k quantization can be implemented on modern GPUs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "RTN",
+   "evidence": "the application of RTN still results in a non-trivial accuracy gap",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "we utilize GPTQ and ZQ-Global for all models and settings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Global",
+   "evidence": "we utilize GPTQ and ZQ-Global for all models and settings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Local",
+   "evidence": "apply ZQ-Local to OPT-66B and Bloom-176B",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "OPT-66B",
+   "evidence": "apply ZQ-Local to OPT-66B and Bloom-176B",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Bloom-176B",
+   "evidence": "apply ZQ-Local to OPT-66B and Bloom-176B",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "INT8 weight quantization",
+   "evidence": "utilizing a smaller model with INT8 weight",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "INT4 weight quantization",
+   "evidence": "a model that is twice as large with INT4 weight",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Local",
+   "evidence": "ZQ-Local is an extension mode of ZQ-Global for further GPU requirement reduction and training cost reduction.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Global",
+   "evidence": "ZQ-Local is an extension mode of ZQ-Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "For parameters used for GPTQ, ZQ-Local, and ZQ-Global, please refer to Appendix B.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "ZeroQuant",
+   "evidence": "An interesting finding for ZeroQuant is that the hyperparameters",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "asymmetric quantization",
+   "evidence": "We use asymmetric quantization for better accuracy",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "SGD",
+   "evidence": "iterative first-order optimization method (e.g., SGD)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "weight-only and weight-and-activation quantization",
+   "evidence": "We compare the four methods mentioned above on weight-only and weight-and- activation quantization.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "INT4 weight quantization",
+   "evidence": "did not find it better than others for INT4 weight quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "W4A8",
+   "evidence": "The evaluation results for existing methods using W4A8 quantization are presented in Table 3.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Global\u2217",
+   "evidence": "ZQ-Global\u2217optimizes an entire transformer layer while GPTQ only optimizes a single linear layer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "GPTQ was originally designed for weight-only quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "RTN",
+   "evidence": "The three light-weight optimization-based methods outperform RTN significantly",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Local\u2217",
+   "evidence": "ZQ-Global\u2217and ZQ-Local\u2217generally outperform GPTQ",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "ZeroQuant",
+   "evidence": "ZeroQuant (including both ZQ-Global\u2217and ZQ-Local\u2217) yields superior results",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "OPT-66B",
+   "evidence": "the two largest models, OPT-66B and Bloom-176B",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "Bloom-176B",
+   "evidence": "the two largest models, OPT-66B and Bloom-176B",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "INT8 weight-only quantization",
+   "evidence": "INT8 weight-only quantization can serve as a standard method for reducing memory costs in LLMs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "INT4 weight-only quantization",
+   "evidence": "INT4 weight-only quantization for small models results in substantial accuracy degradation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "INT8 activation quantization",
+   "evidence": "larger models with INT8 activation have even worse PPL",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "Sensitivity Analysis",
+   "evidence": "Findings 1 on Sensitivity Analysis.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "evaluation_results",
+   "value": "more than 0.5",
+   "evidence": "indicating a degradation of more than 0.5 PPL points",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "hyperparameters": {
+    "n": 14,
+    "has_evidence": 14,
+    "span_found": 14,
+    "value_in_span": 13,
+    "grounded": 13
+   },
+   "methods": {
+    "n": 53,
+    "has_evidence": 53,
+    "span_found": 53,
+    "value_in_span": 49,
+    "grounded": 49
+   },
+   "evaluation_results": {
+    "n": 4,
+    "has_evidence": 4,
+    "span_found": 4,
+    "value_in_span": 4,
+    "grounded": 4
+   }
+  },
+  "total": {
+   "n": 71,
+   "has_evidence": 71,
+   "span_found": 71,
+   "value_in_span": 66,
+   "grounded": 66
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "weight bit-width",
+      "value": "4-bit, 3-bit, 2-bit",
+      "evidence": "applying 4-bit, 3-bit, and 2-bit weights"
+     },
+     {
+      "name": "activation precision",
+      "value": "FP16",
+      "evidence": "by setting the activation to FP16"
+     },
+     {
+      "name": "fine-grained quantization block size",
+      "value": "256",
+      "evidence": "fine-grained quantization (block-size 256)"
+     },
+     {
+      "name": "LoRC low-rank dimension m",
+      "value": "8",
+      "evidence": "with a low-rank dimension of m= 8"
+     },
+     {
+      "name": "LoRC low-rank matrices precision",
+      "value": "INT8",
+      "evidence": "the two low-rank matrices for LoRC in Table 7 are INT8"
+     },
+     {
+      "name": "3m/2h ratio",
+      "value": "\u22640.016",
+      "evidence": "number 3m/2h\u22640.016"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "LoRC",
+      "evidence": "LoRC can be viewed as a supplementary feature to existing quantization methodologies"
+     },
+     {
+      "name": "RTN",
+      "evidence": "existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global"
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "we utilize the GPTQ quantization strategy"
+     },
+     {
+      "name": "ZeroQuant-Local/Global",
+      "evidence": "existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global"
+     },
+     {
+      "name": "FGQ",
+      "evidence": "can be seamlessly integrated with FGQ"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "weight quantization precision",
+      "value": "INT4",
+      "evidence": "INT4 weight-only quantization for small models results in substantial accuracy degradation"
+     },
+     {
+      "name": "activation quantization precision",
+      "value": "INT8",
+      "evidence": "INT8 activation results in minimal accuracy drops for small models"
+     },
+     {
+      "name": "symmetric quantization scale S",
+      "value": "max(abs(x))",
+      "evidence": "for symmetric quantization, we set S=max(abs(x))"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "GPTQ",
+      "evidence": "Particularly, GPTQ [ 12] and ZeroQuant [ 36]"
+     },
+     {
+      "name": "ZeroQuant",
+      "evidence": "Particularly, GPTQ [ 12] and ZeroQuant [ 36]"
+     },
+     {
+      "name": "round-to-nearest neighborhood (RTN)",
+      "evidence": "the most straightforward baseline, round-to-nearest neighborhood (RTN)"
+     },
+     {
+      "name": "PTQ",
+      "evidence": "RTNdirectly applies PTQ on the trained data"
+     },
+     {
+      "name": "INT4 weight-only quantization",
+      "evidence": "INT4 weight-only quantization for small models results in substantial accuracy degradation"
+     },
+     {
+      "name": "symmetric quantization",
+      "evidence": "for symmetric quantization, we set S=max(abs(x))"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "weight quantization precision",
+      "value": "INT8",
+      "evidence": "INT8 weight-only quantization, either symmetric or asymmetric"
+     },
+     {
+      "name": "weight quantization precision",
+      "value": "INT4",
+      "evidence": "For INT4 quantization, the asymmetric method outperforms the symmetric approach in accuracy"
+     },
+     {
+      "name": "baseline weight precision",
+      "value": "FP16",
+      "evidence": "FP16 weight can simply be replaced with INT8 weight to reduce memory usage"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "post-training quantization",
+      "evidence": "making Class-1 the optimal-loss post-training quantization"
+     },
+     {
+      "name": "symmetric quantization",
+      "evidence": "We employ both symmetric and asymmetric quantization"
+     },
+     {
+      "name": "asymmetric quantization",
+      "evidence": "We employ both symmetric and asymmetric quantization"
+     },
+     {
+      "name": "per-row quantization",
+      "evidence": "we implement per-row quantization [ 12] for weight quantization"
+     },
+     {
+      "name": "per-token quantization",
+      "evidence": "per-token quantization for activation [36]"
+     },
+     {
+      "name": "weight-only quantization",
+      "evidence": "Robustness of Weight-only Quantization for Large Models"
+     },
+     {
+      "name": "OPT",
+      "evidence": "The results of weight-only quantization in OPT and BLOOM models"
+     },
+     {
+      "name": "BLOOM",
+      "evidence": "The results of weight-only quantization in OPT and BLOOM models"
+     },
+     {
+      "name": "OPT-66B",
+      "evidence": "with a few exceptions such as OPT-66B"
+     },
+     {
+      "name": "BLOOM-176B",
+      "evidence": "BLOOM-176B shows PPL degradation (around 0.3 points) in Class-2"
+     },
+     {
+      "name": "GLM-130B",
+      "evidence": "the large GLM-130B [ 39] can operate with INT4 weight-only quantization"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "PPL improvement",
+      "value": "about 0.5",
+      "split": null,
+      "evidence": "PPL improvement is about 0.5 (see Table 2)"
+     },
+     {
+      "metric": "accuracy loss (INT8 weight-only)",
+      "value": "less than 0.05",
+      "split": null,
+      "evidence": "results in negligible accuracy loss (less than 0.05, i.e., Class-1)"
+     },
+     {
+      "metric": "PPL degradation (BLOOM-176B)",
+      "value": "around 0.3 points",
+      "split": null,
+      "evidence": "BLOOM-176B shows PPL degradation (around 0.3 points) in Class-2"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "tiling size",
+      "value": "128 by 128",
+      "evidence": "128 by 128 tiling size"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "PTQ",
+      "evidence": "With PTQ and row-wise quantization"
+     },
+     {
+      "name": "row-wise quantization",
+      "evidence": "With PTQ and row-wise quantization"
+     },
+     {
+      "name": "fine-grained quantization",
+      "evidence": "Fine-grained Quantization and Its Evaluation"
+     },
+     {
+      "name": "block-k quantization",
+      "evidence": "block-k quantization can be implemented on modern GPUs"
+     },
+     {
+      "name": "RTN",
+      "evidence": "the application of RTN still results in a non-trivial accuracy gap"
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "we utilize GPTQ and ZQ-Global for all models and settings"
+     },
+     {
+      "name": "ZQ-Global",
+      "evidence": "we utilize GPTQ and ZQ-Global for all models and settings"
+     },
+     {
+      "name": "ZQ-Local",
+      "evidence": "apply ZQ-Local to OPT-66B and Bloom-176B"
+     },
+     {
+      "name": "OPT-66B",
+      "evidence": "apply ZQ-Local to OPT-66B and Bloom-176B"
+     },
+     {
+      "name": "Bloom-176B",
+      "evidence": "apply ZQ-Local to OPT-66B and Bloom-176B"
+     },
+     {
+      "name": "INT8 weight quantization",
+      "evidence": "utilizing a smaller model with INT8 weight"
+     },
+     {
+      "name": "INT4 weight quantization",
+      "evidence": "a model that is twice as large with INT4 weight"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "ZQ-Local",
+      "evidence": "ZQ-Local is an extension mode of ZQ-Global for further GPU requirement reduction and training cost reduction."
+     },
+     {
+      "name": "ZQ-Global",
+      "evidence": "ZQ-Local is an extension mode of ZQ-Global"
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "For parameters used for GPTQ, ZQ-Local, and ZQ-Global, please refer to Appendix B."
+     },
+     {
+      "name": "ZeroQuant",
+      "evidence": "An interesting finding for ZeroQuant is that the hyperparameters"
+     },
+     {
+      "name": "asymmetric quantization",
+      "evidence": "We use asymmetric quantization for better accuracy"
+     },
+     {
+      "name": "SGD",
+      "evidence": "iterative first-order optimization method (e.g., SGD)"
+     },
+     {
+      "name": "weight-only and weight-and-activation quantization",
+      "evidence": "We compare the four methods mentioned above on weight-only and weight-and- activation quantization."
+     },
+     {
+      "name": "INT4 weight quantization",
+      "evidence": "did not find it better than others for INT4 weight quantization"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "quantization bit-width",
+      "value": "W4A8",
+      "evidence": "The evaluation results for existing methods using W4A8 quantization are presented in Table 3."
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "ZQ-Global\u2217",
+      "evidence": "ZQ-Global\u2217optimizes an entire transformer layer while GPTQ only optimizes a single linear layer"
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "GPTQ was originally designed for weight-only quantization"
+     },
+     {
+      "name": "RTN",
+      "evidence": "The three light-weight optimization-based methods outperform RTN significantly"
+     },
+     {
+      "name": "ZQ-Local\u2217",
+      "evidence": "ZQ-Global\u2217and ZQ-Local\u2217generally outperform GPTQ"
+     },
+     {
+      "name": "ZeroQuant",
+      "evidence": "ZeroQuant (including both ZQ-Global\u2217and ZQ-Local\u2217) yields superior results"
+     },
+     {
+      "name": "OPT-66B",
+      "evidence": "the two largest models, OPT-66B and Bloom-176B"
+     },
+     {
+      "name": "Bloom-176B",
+      "evidence": "the two largest models, OPT-66B and Bloom-176B"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 6,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "INT8 weight-only quantization",
+      "evidence": "INT8 weight-only quantization can serve as a standard method for reducing memory costs in LLMs"
+     },
+     {
+      "name": "INT4 weight-only quantization",
+      "evidence": "INT4 weight-only quantization for small models results in substantial accuracy degradation"
+     },
+     {
+      "name": "INT8 activation quantization",
+      "evidence": "larger models with INT8 activation have even worse PPL"
+     },
+     {
+      "name": "Sensitivity Analysis",
+      "evidence": "Findings 1 on Sensitivity Analysis."
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "PPL degradation",
+      "value": "more than 0.5",
+      "split": null,
+      "evidence": "indicating a degradation of more than 0.5 PPL points"
+     }
+    ]
+   }
+  }
+ ]
+}

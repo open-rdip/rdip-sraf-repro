@@ -1,0 +1,322 @@
+{
+  "study_id": "study017",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study017/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:17:49.530557+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 6,
+    "methods": 21,
+    "evaluation_results": 34
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "DGL",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "python",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA P100",
+      "cuda_version": null,
+      "cpu_info": "single-core POWER8 processor"
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "PanNuke",
+        "version": null
+      },
+      {
+        "name": "MoNuSac",
+        "version": null
+      },
+      {
+        "name": "BRACS",
+        "version": null
+      },
+      {
+        "name": "BACH",
+        "version": null
+      },
+      {
+        "name": "UZH",
+        "version": null
+      },
+      {
+        "name": "SICAPv2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Tissue Detection",
+        "description": "Iteratively applies Gaussian smoothing to identify tissue regions in a WSI to confine analysis and reduce computational effort."
+      },
+      {
+        "name": "Tissue detector",
+        "description": "Iteratively applies Gaussian smoothing and Otsu thresholding until the mean of non-tissue pixels is below a threshold."
+      },
+      {
+        "name": "Nuclei detection",
+        "description": "Segments and locates nuclei in H&E images using checkpoints for the HoVerNet model trained on PanNuke and MoNuSac datasets."
+      },
+      {
+        "name": "Tissue Component Detection",
+        "description": "Unsupervised superpixel-based approach where tissue is oversegmented into homogeneous superpixels using Simple Linear Iterative Clustering (SLIC) and neighboring superpixels are hierarchically merged using color similarity."
+      },
+      {
+        "name": "GraphGrad-CAM",
+        "description": "Gradient-based post-hoc feature attribution graph explainer that generates node-level saliency maps to highlight node-wise contribution towards an output task."
+      },
+      {
+        "name": "GraphGrad-CAM++",
+        "description": "Gradient-based post-hoc feature attribution graph explainer that generates node-level saliency maps."
+      },
+      {
+        "name": "GnnExplainer",
+        "description": "Node pruning-based post-hoc feature attribution graph explainer."
+      },
+      {
+        "name": "GraphLRP",
+        "description": "Layer-wise relevance propagation post-hoc feature attribution graph explainer."
+      },
+      {
+        "name": "HistoCartography",
+        "description": "Tool for histopathology tasks including stain normalization, tissue detection, tumor classification, and segmentation"
+      },
+      {
+        "name": "Vahadane Stain Norm",
+        "description": "Preprocessing module for stain normalization"
+      },
+      {
+        "name": "Macenko Stain Norm",
+        "description": "Preprocessing module for stain normalization"
+      },
+      {
+        "name": "Tissue Mask Detection",
+        "description": "Preprocessing module for detecting tissue masks"
+      },
+      {
+        "name": "Feature Cube Extraction",
+        "description": "Preprocessing module for extracting feature cubes"
+      },
+      {
+        "name": "Cell-Graph Generation",
+        "description": "Module for generating cell graphs"
+      },
+      {
+        "name": "Tissue-Graph Generation",
+        "description": "Module for generating tissue graphs"
+      },
+      {
+        "name": "Cell-Graph Model",
+        "description": "Machine learning module operating on cell graphs"
+      },
+      {
+        "name": "post-hoc feature attribution methods",
+        "description": "Applied on trained cell-graph model to render per-image explanations in terms of node-level saliency maps"
+      },
+      {
+        "name": "tissue-graph model",
+        "description": "Entity-graph model used for breast tumor classification"
+      },
+      {
+        "name": "HACT-Net",
+        "description": "Hierarchical model used to characterize breast tumors"
+      },
+      {
+        "name": "SegGini",
+        "description": "Method used to delineate Gleason patterns in prostate cancer images"
+      },
+      {
+        "name": "GraphGradCAM",
+        "description": "Module in HistoCartography to interpret a cell-graph model via post-hoc feature attribution rendering node-level saliency maps"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Run time - Vahadane Stain Norm (Tumor RoI 1000^2)",
+        "value": "1.77",
+        "split": null
+      },
+      {
+        "metric": "Run time - Vahadane Stain Norm (Tumor RoI 2500^2)",
+        "value": "6 .46",
+        "split": null
+      },
+      {
+        "metric": "Run time - Vahadane Stain Norm (Tumor RoI 5000^2)",
+        "value": "29 .03",
+        "split": null
+      },
+      {
+        "metric": "Run time - Vahadane Stain Norm (WSI 5000^2)",
+        "value": "30.67",
+        "split": null
+      },
+      {
+        "metric": "Run time - Vahadane Stain Norm (WSI 7500^2)",
+        "value": "68 .27",
+        "split": null
+      },
+      {
+        "metric": "Run time - Vahadane Stain Norm (WSI 11000^2)",
+        "value": "186 .10",
+        "split": null
+      },
+      {
+        "metric": "Run time - Macenko Stain Norm (Tumor RoI 1000^2)",
+        "value": "0.80",
+        "split": null
+      },
+      {
+        "metric": "Run time - Macenko Stain Norm (Tumor RoI 2500^2)",
+        "value": "2 .86",
+        "split": null
+      },
+      {
+        "metric": "Run time - Macenko Stain Norm (Tumor RoI 5000^2)",
+        "value": "11 .19",
+        "split": null
+      },
+      {
+        "metric": "Run time - Macenko Stain Norm (WSI 5000^2)",
+        "value": "15.98",
+        "split": null
+      },
+      {
+        "metric": "Run time - Macenko Stain Norm (WSI 7500^2)",
+        "value": "32 .37",
+        "split": null
+      },
+      {
+        "metric": "Run time - Macenko Stain Norm (WSI 11000^2)",
+        "value": "81 .72",
+        "split": null
+      },
+      {
+        "metric": "Run time - Tissue Mask Detection (WSI 5000^2)",
+        "value": "1.04",
+        "split": null
+      },
+      {
+        "metric": "Run time - Tissue Mask Detection (WSI 7500^2)",
+        "value": "2 .11",
+        "split": null
+      },
+      {
+        "metric": "Run time - Tissue Mask Detection (WSI 11000^2)",
+        "value": "8 .09",
+        "split": null
+      },
+      {
+        "metric": "Run time - Feature Cube Extraction (Tumor RoI 1000^2)",
+        "value": "0.24",
+        "split": null
+      },
+      {
+        "metric": "Run time - Feature Cube Extraction (Tumor RoI 2500^2)",
+        "value": "1 .61",
+        "split": null
+      },
+      {
+        "metric": "Run time - Feature Cube Extraction (Tumor RoI 5000^2)",
+        "value": "5 .92",
+        "split": null
+      },
+      {
+        "metric": "Run time - Feature Cube Extraction (WSI 5000^2)",
+        "value": "5.83",
+        "split": null
+      },
+      {
+        "metric": "Run time - Feature Cube Extraction (WSI 7500^2)",
+        "value": "11 .77",
+        "split": null
+      },
+      {
+        "metric": "Run time - Feature Cube Extraction (WSI 11000^2)",
+        "value": "30 .21",
+        "split": null
+      },
+      {
+        "metric": "Run time - Cell-Graph Generation (Tumor RoI 1000^2)",
+        "value": "2.51",
+        "split": null
+      },
+      {
+        "metric": "Run time - Cell-Graph Generation (Tumor RoI 2500^2)",
+        "value": "13 .33",
+        "split": null
+      },
+      {
+        "metric": "Run time - Cell-Graph Generation (Tumor RoI 5000^2)",
+        "value": "50 .26",
+        "split": null
+      },
+      {
+        "metric": "Run time - Tissue-Graph Generation (Tumor RoI 1000^2)",
+        "value": "4.14",
+        "split": null
+      },
+      {
+        "metric": "Run time - Tissue-Graph Generation (Tumor RoI 2500^2)",
+        "value": "21 .30",
+        "split": null
+      },
+      {
+        "metric": "Run time - Tissue-Graph Generation (Tumor RoI 5000^2)",
+        "value": "83 .66",
+        "split": null
+      },
+      {
+        "metric": "Run time - Tissue-Graph Generation (WSI 5000^2)",
+        "value": "39.18",
+        "split": null
+      },
+      {
+        "metric": "Run time - Tissue-Graph Generation (WSI 7500^2)",
+        "value": "93 .26",
+        "split": null
+      },
+      {
+        "metric": "Run time - Tissue-Graph Generation (WSI 11000^2)",
+        "value": "276 .71",
+        "split": null
+      },
+      {
+        "metric": "Run time - Cell-Graph Model (Tumor RoI 1000^2)",
+        "value": "0.028",
+        "split": null
+      },
+      {
+        "metric": "Run time - Cell-Graph Model (Tumor RoI 2500^2)",
+        "value": "0 .033",
+        "split": null
+      },
+      {
+        "metric": "Run time - Cell-Graph Model (Tumor RoI 5000^2)",
+        "value": "0 .040",
+        "split": null
+      },
+      {
+        "metric": "average Dice score",
+        "value": "44 .3\u00b12.0",
+        "split": null
+      }
+    ]
+  }
+}

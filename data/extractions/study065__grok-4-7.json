@@ -1,0 +1,104 @@
+{
+  "study_id": "study065",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study065/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:54:14.426543+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 2,
+    "methods": 11,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "BERT",
+        "version": null
+      },
+      {
+        "name": "Sentence-BERT",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "topic_boundary_threshold",
+        "value": "sim_i < mu_s - sigma_s"
+      },
+      {
+        "name": "L",
+        "value": "12"
+      },
+      {
+        "name": "H",
+        "value": "768"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "AMI Meeting Corpus",
+        "version": null
+      },
+      {
+        "name": "SNLI",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Modified TextTiling",
+        "description": "Completely unsupervised topic segmentation that does not require labeled training data; a modified version of TextTiling (Hearst, 1997) that detects topic changes with a similarity score based on BERT embeddings rather than word frequencies."
+      },
+      {
+        "name": "BERT block-wise topic boundary detection",
+        "description": "Compute BERT embeddings for every utterance of the meeting transcript; divide the meeting corpus into blocks of utterances and perform block-wise max pooling to extract a block embedding; compute cosine similarity between adjacent blocks; derive topic boundaries as pairs of adjacent blocks whose similarity is lower than the mean minus the variance of the sequence of block similarities."
+      },
+      {
+        "name": "Sentence-BERT mean pooling",
+        "description": "Pre-trained Sentence-BERT on SNLI; fixed-size sentence embeddings extracted as the mean over all output vectors, similar to the BERT method."
+      },
+      {
+        "name": "Max pooling",
+        "description": "Repeated max pooling over an utterance to keep words with high semantic value and filter limited-semantic tokens, intended to be robust to noisy speech, ASR errors, disfluencies, and turn-taking."
+      },
+      {
+        "name": "Sequence labelling",
+        "description": "Supervised classifier trained on sentence embeddings for sequence labelling, for example using TCNs."
+      },
+      {
+        "name": "topic segmentation",
+        "description": "Given an ASR meeting transcript of utterances with a reference topic segmentation, predict a binary label sequence indicating whether each utterance is the start of a new topic segment."
+      },
+      {
+        "name": "sentence representation",
+        "description": "Extract semantic similarity between sentences; two approaches are experimented with, the first being a pre-trained model."
+      },
+      {
+        "name": "segmentation scheme",
+        "description": "Employs semantic similarity variations over time to detect topic changes."
+      },
+      {
+        "name": "RoBERTa",
+        "description": "Pre-training configuration of BERT trained with the Masked Language Modelling objective on five large English-language corpora totaling over 160GB of uncompressed text; fixed features are extracted from the pre-trained model without additional fine-tuning."
+      },
+      {
+        "name": "fixed feature extraction",
+        "description": "Extract fixed features from the pre-trained model without additional fine-tuning by max pooling the second to last layer into a fixed sized vector."
+      },
+      {
+        "name": "RoBERTa sentence embedding",
+        "description": "RoBERTa with L layers and hidden size H maps a sentence of N words to an N*H embedding; the second to last layer is used because weights closer to the last layer carry more semantic information."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

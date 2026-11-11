@@ -30,6 +30,7 @@ import csv
 import hashlib
 import json
 import os
+import sys
 import random
 from datetime import datetime, timezone
 
@@ -39,9 +40,14 @@ EXTRACT = os.path.join(ROOT, "data", "extractions")
 RESULTS = os.path.join(ROOT, "validation", "results")
 REPO_LIST = os.path.join(ROOT, "validation", "repo_list.csv")
 OUT = os.path.join(ROOT, "evaluation", "annotation_round1")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 SAMPLE_SEED = 20261009          # recorded, and fixed before annotation starts
-N_SILVER = 8                    # gold tier is taken in full
+# 0 since 10 Nov 2026. The original draw took 12 gold studies plus 8 silver;
+# the silver tier was cut to fit the annotation budget (paper_notes Z.1), and
+# this regeneration applies that cut at the source rather than downstream.
+# The original 20-study draw is preserved in SAMPLE.v1.json.
+N_SILVER = 0                    # gold tier is taken in full
 CALIBRATION_N = 3
 
 # ground-truth entity key -> field name used in the bundle
@@ -95,26 +101,35 @@ def _clean(v):
 def render(field: str, item) -> str:
     """Human-readable one-line form of a candidate item."""
     if not isinstance(item, dict):
-        return _s(item)
+        # A bare value. Seeds arrive this way from the extraction schema
+        # (`"random_seeds": [integer]`) and must render like the gold dicts.
+        return f"seed = {_s(item)}" if field == "random_seeds" else _s(item)
     if field == "dependencies":
         ver = _clean(item.get("version"))
         name = _s(item.get("name"))
         return f"{name}  [version: {ver or 'not stated'}]"
     if field == "datasets":
+        # Only `version`. The gold schema carries `role` and the model schema
+        # carries `version`, so falling back to role made every gold dataset
+        # render as "NAME  [used]" and every model dataset as "NAME", which
+        # can never match. See the note above render().
         name = _s(item.get("name"))
-        extra = _clean(item.get("version")) or _clean(item.get("role"))
+        extra = _clean(item.get("version"))
         return f"{name}" + (f"  [{extra}]" if extra else "")
     if field == "hyperparameters":
         return f"{_s(item.get('name'))} = {_clean(item.get('value')) or 'not stated'}"
     if field == "random_seeds":
+        # Models emit bare integers; the gold schema emits {name, source,
+        # value}. Both collapse to "seed = N" so the two sides are comparable.
+        # The scope suffix is dropped because only gold can ever supply it.
         val = _s(item.get("value")) or _s(item.get("seed")) or _s(item.get("name"))
-        where = _s(item.get("scope")) or _s(item.get("context"))
-        return f"seed = {val}" + (f"  [{where}]" if where else "")
+        return f"seed = {val}"
     if field == "evaluation_results":
         parts = [f"{_s(item.get('metric'))} = {_s(item.get('value'))}"]
         split = _s(item.get("split"))
         ds = _s(item.get("dataset"))
-        tail = ", ".join(p for p in (split, ds) if p)
+        # `dataset` is gold-only, so including it guarantees a mismatch.
+        tail = split
         if tail:
             parts.append(f"[{tail}]")
         return "  ".join(parts)
@@ -123,12 +138,58 @@ def render(field: str, item) -> str:
     return json.dumps(item, ensure_ascii=False)
 
 
-def canon(field: str, rendered: str) -> str:
-    """Dedup key. Deliberately loose: near-duplicates collapse into one row."""
-    key = rendered.lower()
+def _squash(s: str) -> str:
+    key = s.lower()
     for ch in "_-/\\ \t":
         key = key.replace(ch, "")
-    return f"{field}::{key}"
+    return key
+
+
+def canon(field: str, rendered: str) -> str:
+    """Dedup and match key, parsed back out of the rendered form.
+
+    Field-aware because an item's identity differs by field. A dataset is a
+    name; a hyperparameter is a name AND a value, so both must normalise or
+    `learning_rate = 1e-4` and `learning_rate = 0.0001` stay two facts. See
+    evaluation/value_norm.py for why the normalisation is deliberately
+    conservative.
+    """
+    # Works whether this file is imported as evaluation.build_annotation_bundles
+    # or run directly as a script, which the runbook does.
+    try:
+        from evaluation.value_norm import norm_param_name, norm_value
+    except ModuleNotFoundError:                      # pragma: no cover
+        from value_norm import norm_param_name, norm_value
+
+    r = rendered.strip()
+    if field == "hyperparameters" and " = " in r:
+        name, _, val = r.partition(" = ")
+        return f"{field}::{norm_param_name(name)}={norm_value(val, hint=name)}"
+    if field == "random_seeds" and " = " in r:
+        _, _, val = r.partition(" = ")
+        return f"{field}::seed={norm_value(val)}"
+    if field == "evaluation_results" and " = " in r:
+        metric, _, rest = r.partition(" = ")
+        val, _, tail = rest.partition("  [")
+        tail = tail.rstrip("]")
+        key = f"{_squash(metric)}={norm_value(val)}"
+        return f"{field}::{key}" + (f"[{_squash(tail)}]" if tail else "")
+    if field == "environment" and ": " in r:
+        k, _, v = r.partition(": ")
+        return f"{field}::{_squash(k)}={norm_value(v, hint=k)}"
+    return f"{field}::{_squash(r)}"
+
+
+#: The gold schema and the extraction schema name the same facts differently
+#: (gold: gpu/cuda/ram/os, models: gpu_model/cuda_version/cpu_info). Without
+#: this map "gpu: A100" and "gpu_model: A100" are two different candidates.
+_ENV_KEY_ALIASES = {
+    "gpu_model": "gpu", "gpu": "gpu",
+    "cuda_version": "cuda", "cuda": "cuda",
+    "cpu_info": "cpu", "cpu": "cpu", "processor": "cpu",
+    "os_version": "os", "os": "os",
+    "ram": "ram", "memory": "ram",
+}
 
 
 def environment_items(blob):
@@ -136,6 +197,7 @@ def environment_items(blob):
     out = []
     if isinstance(blob, dict):
         for k, v in blob.items():
+            k = _ENV_KEY_ALIASES.get(str(k).strip().lower(), k)
             val = _s(v)
             if _clean(val):
                 out.append(f"{k}: {val}")

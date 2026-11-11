@@ -1,0 +1,205 @@
+{
+  "study_id": "study017",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study017/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:37:11.100188+00:00",
+  "counts": {
+    "dependencies": 6,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 6,
+    "methods": 30,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "np.array (NumPy)",
+        "version": "Harris et al., 2020"
+      },
+      {
+        "name": "torch.Tensor (PyTorch)",
+        "version": "Paszke et al., 2019"
+      },
+      {
+        "name": "DGLGraph (DGL)",
+        "version": "Wang et al., 2019"
+      },
+      {
+        "name": "HistoCartography",
+        "version": null
+      },
+      {
+        "name": "DGL",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA P100",
+      "cuda_version": null,
+      "cpu_info": "single-core POWER8 processor"
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "PanNuke",
+        "version": null
+      },
+      {
+        "name": "MoNuSac",
+        "version": null
+      },
+      {
+        "name": "BRACS",
+        "version": null
+      },
+      {
+        "name": "BACH",
+        "version": null
+      },
+      {
+        "name": "UZH",
+        "version": null
+      },
+      {
+        "name": "SICAPv2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Vahadane Stain Norm",
+        "description": "Preprocessing module taking an image I and outputting a normalized image I"
+      },
+      {
+        "name": "Macenko Stain Norm",
+        "description": "Preprocessing module taking an image I and outputting a normalized image I"
+      },
+      {
+        "name": "Tissue Mask Detection",
+        "description": "Preprocessing module taking an image I and outputting a mask M"
+      },
+      {
+        "name": "Nuclei Detection",
+        "description": "Preprocessing module taking an image I and outputting a mask M"
+      },
+      {
+        "name": "Nuclei Concepts",
+        "description": "Preprocessing module taking an image I and mask M and outputting a mask M"
+      },
+      {
+        "name": "Tissue Component Detection",
+        "description": "Preprocessing module taking an image I and outputting a mask M"
+      },
+      {
+        "name": "Deep Feature Extraction",
+        "description": "Preprocessing module taking an image I and mask M and outputting features X"
+      },
+      {
+        "name": "Feature Cube Extraction",
+        "description": "Preprocessing module taking an image I and outputting features X"
+      },
+      {
+        "name": "k-NN Graph Building",
+        "description": "Preprocessing module taking features X and mask M and outputting a graph G"
+      },
+      {
+        "name": "RAG Graph Building",
+        "description": "Preprocessing module taking features X and mask M and outputting a graph G"
+      },
+      {
+        "name": "Cell-Graph Model",
+        "description": "ML model taking a graph G and outputting predictions P"
+      },
+      {
+        "name": "Tissue-Graph Model",
+        "description": "ML model taking a graph G and outputting predictions P"
+      },
+      {
+        "name": "HACT Model",
+        "description": "ML model taking graphs G,G and features X and outputting predictions P"
+      },
+      {
+        "name": "GnnExplainer",
+        "description": "Explainer taking a graph G and outputting importance scores S"
+      },
+      {
+        "name": "GraphGrad-CAM",
+        "description": "Explainer taking a graph G and outputting importance scores S"
+      },
+      {
+        "name": "GraphGrad-CAM++",
+        "description": "Explainer taking a graph G and outputting importance scores S"
+      },
+      {
+        "name": "GraphLRP",
+        "description": "Explainer taking a graph G and outputting importance scores S"
+      },
+      {
+        "name": "Tissue Detection",
+        "description": "Identifies tissue regions in a WSI to confine analysis and reduce computational effort; the HistoCartography tissue detector iteratively applies Gaussian smoothing"
+      },
+      {
+        "name": "Tissue detector (HistoCartography)",
+        "description": "Iteratively applies Gaussian smoothing and Otsu thresholding until the mean of non-tissue pixels is below a threshold"
+      },
+      {
+        "name": "HoVerNet",
+        "description": "State-of-the-art model for nuclei segmentation and classification; HistoCartography integrates two checkpoints trained on PanNuke and MoNuSac"
+      },
+      {
+        "name": "Simple Linear Iterative Clustering (SLIC)",
+        "description": "Oversegments tissue into homogeneous superpixels as the first step of the unsupervised superpixel-based tissue component detection"
+      },
+      {
+        "name": "Hierarchical superpixel merging",
+        "description": "Merges neighboring superpixels hierarchically using color similarity to denote meaningful tissue regions such as epithelium and stroma"
+      },
+      {
+        "name": "Pipeline Runner",
+        "description": "Utility for defining a series of pipeline steps with loading and saving utilities to reduce boilerplate code"
+      },
+      {
+        "name": "Cell-Graph Generation",
+        "description": "Preprocessing module that generates cell graphs from histology images"
+      },
+      {
+        "name": "Tissue-Graph Generation",
+        "description": "Preprocessing module that generates tissue graphs from histology images"
+      },
+      {
+        "name": "post-hoc feature attribution",
+        "description": "Applied to a trained cell-graph model to render per-image explanations as node-level saliency maps, so that the model can be interpreted by characterizing the important nuclei highlighted in each image."
+      },
+      {
+        "name": "HistoCartography",
+        "description": "Open source Python library for graph analytics in computational pathology, covering graph representation, learning, and explainability."
+      },
+      {
+        "name": "HACT-Net",
+        "description": "Hierarchical cell-to-tissue graph network used to classify breast tumors (Pati et al., 2021)"
+      },
+      {
+        "name": "SegGini",
+        "description": "Segmentation method (Anklin et al., 2021) used to delineate Gleason patterns in prostate cancer images from UZH and SICAPv2, measured by average Dice score"
+      },
+      {
+        "name": "GraphGradCAM",
+        "description": "Module in HistoCartography that renders per-image explanations as node-level saliency maps by applying post-hoc feature attribution methods on trained cell-graph models"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Dice score (average), SegGini on UZH TMA (9.6\u00d710^6, 40\u00d7), as given in table fragment",
+        "value": "66.0\u00b13.1",
+        "split": null
+      }
+    ]
+  }
+}

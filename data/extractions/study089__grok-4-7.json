@@ -1,0 +1,241 @@
+{
+  "study_id": "study089",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study089/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:54:32.818927+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 3,
+    "methods": 25,
+    "evaluation_results": 17
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of F5C blocks",
+        "value": "1"
+      },
+      {
+        "name": "number of classes",
+        "value": "5"
+      },
+      {
+        "name": "number of input frames",
+        "value": "8"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CASME II",
+        "version": null
+      },
+      {
+        "name": "SAMM",
+        "version": null
+      },
+      {
+        "name": "SMIC",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "FCC",
+        "description": "fully-connected convolution"
+      },
+      {
+        "name": "CCC",
+        "description": "channel correspondence convolution"
+      },
+      {
+        "name": "F5C",
+        "description": "block that includes fully-connected convolution (FCC) and channel correspondence convolution (CCC)"
+      },
+      {
+        "name": "MOL",
+        "description": "method evaluated with ablation variants on MER"
+      },
+      {
+        "name": "MOL w/o F5C",
+        "description": "MOL variant without F5C"
+      },
+      {
+        "name": "MOL w/o CCC",
+        "description": "MOL variant without channel correspondence convolution"
+      },
+      {
+        "name": "MOL w/o FCC",
+        "description": "MOL variant without fully-connected convolution"
+      },
+      {
+        "name": "MOL w/o OFE",
+        "description": "MOL with the optical flow estimation module removed"
+      },
+      {
+        "name": "MOL w/o FLD",
+        "description": "MOL with the facial landmark detection module removed"
+      },
+      {
+        "name": "MOL w/o OFE&FLD",
+        "description": "MOL with both the optical flow estimation and facial landmark detection modules removed"
+      },
+      {
+        "name": "OFE",
+        "description": "optical flow estimation auxiliary task module"
+      },
+      {
+        "name": "FLD",
+        "description": "facial landmark detection auxiliary task module"
+      },
+      {
+        "name": "UnsupFlownet",
+        "description": "Compared method reporting Average EPE."
+      },
+      {
+        "name": "RAFT",
+        "description": "Compared method reporting Average EPE."
+      },
+      {
+        "name": "MOL w/o MER&FLD",
+        "description": "MOL ablation without MER and FLD."
+      },
+      {
+        "name": "MOL w/o MER",
+        "description": "MOL ablation without MER."
+      },
+      {
+        "name": "element-wise addition",
+        "description": "Feature fusion strategy of frame features; performance becomes much worse than concatenation."
+      },
+      {
+        "name": "element-wise subtraction",
+        "description": "Feature fusion strategy of frame features; performance becomes much worse than concatenation."
+      },
+      {
+        "name": "concatenation",
+        "description": "Feature fusion of frame features that better preserves sub-action clips than element-wise addition or subtraction."
+      },
+      {
+        "name": "optical flow estimation",
+        "description": "Auxiliary task providing correlated knowledge to alleviate data scarcity."
+      },
+      {
+        "name": "facial landmark detection",
+        "description": "Auxiliary task providing correlated knowledge to alleviate data scarcity."
+      },
+      {
+        "name": "cross-dataset evaluation",
+        "description": "CASME II and SAMM used respectively as the training set, with SMIC used as the test set."
+      },
+      {
+        "name": "MOL w/o MER&OFE",
+        "description": "Baseline that only performs facial landmark detection, without the MER and optical flow estimation modules."
+      },
+      {
+        "name": "TCDCN",
+        "description": "Popular facial landmark detection method compared using released code."
+      },
+      {
+        "name": "HRNetV2",
+        "description": "Popular facial landmark detection method compared using released code."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Acc (MOL w/o F5C)",
+        "value": "62.90",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL w/o F5C)",
+        "value": "62.52",
+        "split": null
+      },
+      {
+        "metric": "Acc (MOL w/o CCC)",
+        "value": "76.86",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL w/o CCC)",
+        "value": "74.44",
+        "split": null
+      },
+      {
+        "metric": "Acc (MOL w/o FCC)",
+        "value": "65.45",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL w/o FCC)",
+        "value": "63.19",
+        "split": null
+      },
+      {
+        "metric": "Acc (MOL)",
+        "value": "79.23",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL)",
+        "value": "75.85",
+        "split": null
+      },
+      {
+        "metric": "Acc (Number of F5C=1)",
+        "value": "79.23",
+        "split": null
+      },
+      {
+        "metric": "WF1 (Number of F5C=1)",
+        "value": "75.85",
+        "split": null
+      },
+      {
+        "metric": "Acc (Number of F5C=2)",
+        "value": "78.68",
+        "split": null
+      },
+      {
+        "metric": "WF1 (Number of F5C=2)",
+        "value": "73.46",
+        "split": null
+      },
+      {
+        "metric": "Acc (Number of F5C=3)",
+        "value": "78.27",
+        "split": null
+      },
+      {
+        "metric": "WF1 (Number of F5C=3)",
+        "value": "73.22",
+        "split": null
+      },
+      {
+        "metric": "Acc",
+        "value": "62.90",
+        "split": null
+      },
+      {
+        "metric": "WF1",
+        "value": "62.52",
+        "split": null
+      },
+      {
+        "metric": "Average EPE",
+        "value": "1.048",
+        "split": null
+      }
+    ]
+  }
+}

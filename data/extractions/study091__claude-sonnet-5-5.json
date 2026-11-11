@@ -1,0 +1,136 @@
+{
+  "study_id": "study091",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study091/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:09:36.916079+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 20,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "SonarQube",
+        "version": null
+      },
+      {
+        "name": "VisminerTD",
+        "version": null
+      },
+      {
+        "name": "Grimoire Lab",
+        "version": null
+      },
+      {
+        "name": "Travis CI",
+        "version": null
+      },
+      {
+        "name": "RefactoringBot",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Level IV (academic studies)",
+        "description": "Automation artifacts evaluated during academic studies, i.e., besides their application in an academic study, their correctness and efficiency were analyzed; 11% (14/121) of artifacts."
+      },
+      {
+        "name": "Level V (industrial studies)",
+        "description": "Automation artifacts evaluated in an industrial context; 20% (26/121) of artifacts."
+      },
+      {
+        "name": "Level VI (industrial applications)",
+        "description": "Automation artifacts used by companies during software development; 8% (11/121) of artifacts."
+      },
+      {
+        "name": "Level II (examples)",
+        "description": "Automation artifacts used or just proposed in a study but not evaluated; (70/121) of the total."
+      },
+      {
+        "name": "piranha",
+        "description": "Tool that refactors source code to remove stale feature flags based on flag names and types, sending the results as pull requests in GitHub."
+      },
+      {
+        "name": "FixMe",
+        "description": "Bot built on the Probot Framework that integrates with GitHub, identifies self-admitted technical debt (SATD) in code comments, and generates issues each time source code is committed."
+      },
+      {
+        "name": "Scripts (automation artifact)",
+        "description": "Automation artifacts that are easy to configure and execute but developed for a specific context, so they are not configurable, which limits flexibility."
+      },
+      {
+        "name": "Bots (automation artifact)",
+        "description": "Automation artifacts similar to scripts that run in the background and are triggered automatically when certain actions happen; they account for nearly 3% (4/121) of the identified automation artifacts."
+      },
+      {
+        "name": "TDM Automation Strategy",
+        "description": "Refers to how technical debt management (TDM) automation should be addressed in software development; a complete strategy must cover the choice of automation artifacts, their integration, and the management of the automated solution."
+      },
+      {
+        "name": "TDM Automation Orchestrator",
+        "description": "A software responsible for managing the TDM Automation Artifacts in the strategy, implementing rules without requiring developer intervention."
+      },
+      {
+        "name": "TDM Automation Rule",
+        "description": "Defines when the automation happens and which TDM Automation Software is used."
+      },
+      {
+        "name": "Systematic Mapping Study (SMS)",
+        "description": "Study cataloging existing automation artifacts/tools for technical debt (TD) management, with research questions RQ1-RQ3 covering available automation artifacts, their scope, and how they are used within TDM activities."
+      },
+      {
+        "name": "Pilot study",
+        "description": "Preliminary study used to calibrate the search string, validate which type of information can be used to answer the RQs, and ensure relevance to the TD community."
+      },
+      {
+        "name": "Search string calibration",
+        "description": "After the pilot study, the terms \"replication package\" and \"supplementary material\" were added to the search string because authors sometimes make automation artifacts available through replication packages."
+      },
+      {
+        "name": "Identification",
+        "description": "SonarQube is used to identify Technical Debt items."
+      },
+      {
+        "name": "Monitoring",
+        "description": "Identification information is fed into VisminerTD to monitor TD through a dashboard."
+      },
+      {
+        "name": "Measurement",
+        "description": "SonarQube is applied to estimate the cost of paying back the TD."
+      },
+      {
+        "name": "Repayment",
+        "description": "RefactoringBot is used to pay back the TD items identified by SonarQube."
+      },
+      {
+        "name": "Travis CI as orchestrator",
+        "description": "Travis CI manages the automation process according to several rules, acting as the orchestrator in the authors' conceptualization."
+      },
+      {
+        "name": "GrimoireLab as gateway",
+        "description": "GrimoireLab collects data from repositories (e.g., GitHub) for use with automation artifacts that take source code as input (e.g., static code analysis)."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Proportion of automation artifacts that are bots",
+        "value": "nearly 3% (4/121)",
+        "split": null
+      }
+    ]
+  }
+}

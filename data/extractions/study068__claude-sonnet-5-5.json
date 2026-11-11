@@ -1,0 +1,189 @@
+{
+  "study_id": "study068",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study068/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:58:51.994727+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 1,
+    "methods": 23,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "MATLAB",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": "[32]"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia GTX Titan Xp",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of uniformly sampled points",
+        "value": "2048"
+      },
+      {
+        "name": "voxel resolution (encoder-decoder network)",
+        "value": "32^3"
+      },
+      {
+        "name": "patch-based synthesis resolution",
+        "value": "128^3"
+      },
+      {
+        "name": "voxel grid resolution (encoder-decoder network of Dai et al. [7])",
+        "value": "32^3"
+      },
+      {
+        "name": "voxel grid resolution (patch-based completion of Dai et al. [7])",
+        "value": "128^3"
+      },
+      {
+        "name": "number of uniformly sampled points from surface",
+        "value": "2048"
+      },
+      {
+        "name": "batch size (running time comparison)",
+        "value": "50 shapes"
+      },
+      {
+        "name": "number of points",
+        "value": "2048"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ShapeNetCore",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RL-GAN-Net",
+        "description": "Shape completion pipeline using a reinforcement learning agent that finds the correct semantic category in the latent space; used as quick preprocessing of partial, noisy captured 3D data before other point cloud processing tasks."
+      },
+      {
+        "name": "Hybrid approach",
+        "description": "Approach that overcomes the limitation of the vanilla RL-GAN-Net, where the RL agent mainly finds the correct semantic categories in the latent space."
+      },
+      {
+        "name": "PointNet",
+        "description": "Point cloud classification network used to evaluate classification accuracy on completed point clouds versus incomplete inputs."
+      },
+      {
+        "name": "AE",
+        "description": "Autoencoder used as a baseline for shape completion, compared with RL-GAN-Net."
+      },
+      {
+        "name": "Dai et al.",
+        "description": "Baseline shape completion method compared against RL-GAN-Net at 32^3 and 128^3 resolution results."
+      },
+      {
+        "name": "AE only",
+        "description": "Baseline method using only an autoencoder for shape completion, cited as [1]."
+      },
+      {
+        "name": "Chamfer distance",
+        "description": "Metric used to compare completed shapes against the ground-truth point cloud, reported as a percentage of the shape diagonal."
+      },
+      {
+        "name": "MATLAB isosurface",
+        "description": "Function used to convert the volumetric representation to a surface, followed by uniform sampling of 2048 points for comparison"
+      },
+      {
+        "name": "Voxel 32^3 encoder-decoder network",
+        "description": "Baseline encoder-decoder network operating on 32^3 voxels; smoother results than AE but limited resolution and washes out local details"
+      },
+      {
+        "name": "Patch-based synthesis at 128^3",
+        "description": "Baseline refinement of voxel results at 128^3 resolution; recovers limited details"
+      },
+      {
+        "name": "Classification of completed shapes",
+        "description": "Compares classification accuracy of Pin and shapes completed by AE and RL-GAN-Net as an alternative measure of semantic shape completion performance"
+      },
+      {
+        "name": "Dai et al. [7]",
+        "description": "Encoder-decoder network in 32^3 voxel space followed by an analytic patch-based completion at 128^3 resolution; outputs distance function format"
+      },
+      {
+        "name": "Classification accuracy [34]",
+        "description": "Performance gain for shape classification (higher is better)"
+      },
+      {
+        "name": "Chamfer loss (LCH)",
+        "description": "Chamfer distance-based reward term used to compare two shapes; not very efficient when used alone"
+      },
+      {
+        "name": "GFV loss (LGFV)",
+        "description": "Global feature vector loss used as reward; alone it enables the controller to find the correct semantic shape category, although details are often mismatched"
+      },
+      {
+        "name": "Discriminator loss (LD)",
+        "description": "Loss term that stays almost constant because the pre-trained generator synthesizes according to the learned distribution given the z input"
+      },
+      {
+        "name": "Reward loss combination ablation",
+        "description": "Tested different combinations of loss functions for the reward, with sample results shown in Fig. 8 with one shape per category"
+      },
+      {
+        "name": "GFV loss",
+        "description": "Loss used alone, it enables the controller to find the correct semantic shape category from partial data, though details are often mismatched; it uses a latent space representation that reduces dimension and boosts GAN performance."
+      },
+      {
+        "name": "Chamfer loss",
+        "description": "Loss that only shows its power when combined with GFV loss; the completed shape aligns better with the desired shape when the two are combined."
+      },
+      {
+        "name": "Discriminator loss",
+        "description": "Loss essential for creating a realistic shape; used alone, the RL agent creates a reasonable but unrelated shape because the reward only encourages realism."
+      },
+      {
+        "name": "RL agent controlling GAN",
+        "description": "Reinforcement learning agent/controller that deduces the correct control of a GAN for shape completion from partial data, using all three loss terms (GFV, Chamfer, discriminator) as reward."
+      },
+      {
+        "name": "Reward function analysis",
+        "description": "Analysis of the effects of three loss terms, including Chamfer loss L_CH and GFV loss, on generated point clouds with different amounts of missing data."
+      },
+      {
+        "name": "Data preprocessing",
+        "description": "Shapes are translated to be centered at the origin and scaled so that bounding box diagonals are of unit length; experiments use the four categories with the most shapes (cars, airplanes, chairs, desks), totaling 26,829 shapes"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Chamfer distance of input point cloud with 70% of points missing (as % of shape diagonal)",
+        "value": "up to 16%",
+        "split": null
+      },
+      {
+        "metric": "Chamfer distance of reconstructed shapes (AE, vanilla RL-GAN-Net, hybrid RL-GAN-Net) with 70% of points missing (as % of shape diagonal)",
+        "value": "less than 9%",
+        "split": null
+      },
+      {
+        "metric": "Average RL agent action time to produce the z-vector",
+        "value": "approximately 1 millisecond",
+        "split": null
+      },
+      {
+        "metric": "running time of competing approach for a batch of 50 shapes",
+        "value": "324 seconds",
+        "split": null
+      }
+    ]
+  }
+}

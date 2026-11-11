@@ -1,0 +1,218 @@
+{
+  "study_id": "study028",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study028/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:31:12.749258+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 18,
+    "datasets": 6,
+    "methods": 20,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX 3090 24 GB",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning_rate_schedule",
+        "value": "cycle cosine annealing schedule"
+      },
+      {
+        "name": "epochs",
+        "value": "256"
+      },
+      {
+        "name": "checkpoint_selection",
+        "value": "save weights when validation AUC is highest; load best weights to evaluate on test dataset"
+      },
+      {
+        "name": "pixel_value_uniform_range",
+        "value": "[0.59, 1]"
+      },
+      {
+        "name": "gaussian_blur_radius_uniform_range",
+        "value": "[0, 15]"
+      },
+      {
+        "name": "loss_function",
+        "value": "cross entropy"
+      },
+      {
+        "name": "label_original_image",
+        "value": "0"
+      },
+      {
+        "name": "label_augmented_image",
+        "value": "1"
+      },
+      {
+        "name": "batch_size",
+        "value": "64"
+      },
+      {
+        "name": "optimizer",
+        "value": "SGD"
+      },
+      {
+        "name": "initial_learning_rate",
+        "value": "0.03"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.00003"
+      },
+      {
+        "name": "lr_schedule",
+        "value": "cycle cosine annealing"
+      },
+      {
+        "name": "backbone",
+        "value": "ResNet18"
+      },
+      {
+        "name": "projection_head",
+        "value": "three fully connected layers"
+      },
+      {
+        "name": "threshold",
+        "value": "0.067"
+      },
+      {
+        "name": "ensemble_size",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Chexpert",
+        "version": null
+      },
+      {
+        "name": "officially split validation dataset",
+        "version": null
+      },
+      {
+        "name": "RSNA Pneumonia Detection Challenge dataset (subset of NIH chest radiograph dataset)",
+        "version": null
+      },
+      {
+        "name": "Zhanglab",
+        "version": null
+      },
+      {
+        "name": "RSNA",
+        "version": null
+      },
+      {
+        "name": "Zhanglab dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "fAnoGAN",
+        "description": "Unsupervised anomaly detection for medical images using encoder-decoder-discriminator; trained on normal images and detects anomalies via increased reconstruction errors."
+      },
+      {
+        "name": "Ganomaly",
+        "description": "GAN-based UAD employing adversarial, contextual, and encoder losses; demonstrated accurate anomaly detection on several datasets including X-ray security-screening."
+      },
+      {
+        "name": "CutPaste",
+        "description": "One-class classifier with self-supervised learning for industrial anomaly detection, using a pretext task that extracts a region from a normal image and pastes it back."
+      },
+      {
+        "name": "AnatPaste augmentation",
+        "description": "Generates an anomalous image by combining a normal chest radiograph (Xnormal) and a patch (Xpatch) using an anatomical mask (Xmask): Xanomaly = Xnormal*(1 - Xmask) + Xpatch*Xmask. Pixel values of the blurred region are sampled from Uniform[0.59, 1], and the Gaussian blur radius is sampled from Uniform[0, 15]. Element-wise operations (sum and multiplication) are applied within the segmented lung region."
+      },
+      {
+        "name": "Lung segmentation (Algorithm 1)",
+        "description": "Initialize threshold t for lung region. Step 1: Equalize local image histogram using CLAHE. Step 2: Binarize the histogram-equalized image using Otsu\u2019s thresholding. Step 3: Apply (procedure unspecified in the passage)."
+      },
+      {
+        "name": "Training objective",
+        "description": "Binary classification with cross-entropy loss over N normal images: L = (1/N) * sum_i [ Lce(f(X_i), 0) + Lce(f(Aug(X_i)), 1) ], where Aug denotes AnatPaste and f is a CNN producing binary predictions."
+      },
+      {
+        "name": "Grad-CAM",
+        "description": "Used the last convolutional layer\u2019s feature map of the pretext model to compute gradients and generate visualizations highlighting regions contributing to predictions in chest radiographs."
+      },
+      {
+        "name": "AnatPaste",
+        "description": "Evaluated abnormality detection by disease on the CheXpert dataset; showed relatively high accuracy particularly for Pleural Effusion compared to supervised baselines."
+      },
+      {
+        "name": "Random sampling for validation",
+        "description": "Selected 300 images per disease and 300 normal images at random to validate performance."
+      },
+      {
+        "name": "One-class classifier with ResNet18 feature extractor",
+        "description": "Use a one-class classifier leveraging ResNet18 as the backbone for feature extraction."
+      },
+      {
+        "name": "Projection head",
+        "description": "Three fully connected layers are added to the backbone as the projection head."
+      },
+      {
+        "name": "SGD optimization",
+        "description": "Train with SGD optimizer using learning rate 0.03, momentum 0.9, and weight decay 0.00003."
+      },
+      {
+        "name": "Cycle cosine annealing schedule",
+        "description": "Learning rate is scheduled with a cycle cosine annealing scheduler."
+      },
+      {
+        "name": "Training protocol",
+        "description": "Train for 256 epochs with batch size 64."
+      },
+      {
+        "name": "AnatPaste ensemble",
+        "description": "Ensemble of five AnatPaste models used to improve accuracy across datasets."
+      },
+      {
+        "name": "Anomaly score prediction",
+        "description": "Computes an anomaly score per image and applies a threshold of 0.067 based on the best F1-score to separate normal and abnormal labels."
+      },
+      {
+        "name": "ROC analysis",
+        "description": "Receiver operating characteristic curves used to compare methods on multiple datasets."
+      },
+      {
+        "name": "CutPaste-Scar",
+        "description": "Variant of the CutPaste algorithm reported to have the best accuracy in the original study; used as a baseline with identical settings to the proposed model except augmentation."
+      },
+      {
+        "name": "SALAD",
+        "description": "Contemporary anomaly detection method; evaluated on the Zhanglab dataset with results taken from the original paper due to unavailable code."
+      },
+      {
+        "name": "SQUID",
+        "description": "Contemporary anomaly detection method; evaluated on the Zhanglab dataset with results taken from the original paper due to unavailable code."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AUC",
+        "value": "approximately 93%",
+        "split": null
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "0.7%",
+        "split": null
+      }
+    ]
+  }
+}

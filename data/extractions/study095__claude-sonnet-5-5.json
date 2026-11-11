@@ -1,0 +1,201 @@
+{
+  "study_id": "study095",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study095/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:10:42.182522+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 3,
+    "methods": 17,
+    "evaluation_results": 12
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Faiss",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia V100",
+      "cuda_version": null,
+      "cpu_info": "two Intel Xeon E5-2698 v4 CPUs"
+    },
+    "hyperparameters": [
+      {
+        "name": "PQ code size",
+        "value": "8 bits"
+      },
+      {
+        "name": "PQ dimension/subvector configuration",
+        "value": "96"
+      },
+      {
+        "name": "candidate passages (top-k)",
+        "value": "1000"
+      },
+      {
+        "name": "LSH number of bits per passage",
+        "value": "768"
+      },
+      {
+        "name": "PQ number of centroids",
+        "value": "96"
+      },
+      {
+        "name": "l (number of candidates)",
+        "value": "1000"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NQ",
+        "version": null
+      },
+      {
+        "name": "TQA",
+        "version": null
+      },
+      {
+        "name": "English Wikipedia (pre-processed corpus from DPR website, 21M passages)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "BPR",
+        "description": "Model evaluated with top-k recall, retrieval efficiency (index size and query time), and exact match QA accuracy by combining with a reader; trained using the same method as DPR; reduces index size from 65GB to 2GB."
+      },
+      {
+        "name": "DPR",
+        "description": "Baseline dense passage retriever (Karpukhin et al., 2020) with a BERT-based reader; experimental setup follows it."
+      },
+      {
+        "name": "Product Quantization (PQ)",
+        "description": "Passage index compression with code size configured as 96 and 8 bits; index built using Faiss."
+      },
+      {
+        "name": "ELECTRA-large reader",
+        "description": "Improved reader based on ELECTRA-large (Clark et al., 2020) used instead of BERT-base in the BPR model; outperforms all compared models except FiD (large)."
+      },
+      {
+        "name": "BERT-base reader",
+        "description": "Baseline reader used in the BPR model before being replaced with ELECTRA-large."
+      },
+      {
+        "name": "Fusion-in-Decoder (FiD) large",
+        "description": "State-of-the-art comparison model that outperforms the improved BPR model and has more than twice as many parameters."
+      },
+      {
+        "name": "DPR with linear scan",
+        "description": "Primary baseline using DPR with exhaustive linear scan search"
+      },
+      {
+        "name": "DPR with HNSW",
+        "description": "Primary baseline using DPR with Hierarchical Navigable Small World graphs, a multi-layer structure of hierarchical proximity graphs (Malkov and Yashunin, 2020), following Karpukhin et al. (2020)"
+      },
+      {
+        "name": "LSH",
+        "description": "Simple locality sensitive hashing (Neyshabur and Srebro, 2015) applied post-hoc as quantization to the DPR passage index"
+      },
+      {
+        "name": "PQ",
+        "description": "Product quantization (J\u00e9gou et al., 2011) applied post-hoc as quantization to the DPR passage index"
+      },
+      {
+        "name": "DPR+HNSW",
+        "description": "DPR with HNSW index; faster than BPR but requires 151GB of storage"
+      },
+      {
+        "name": "RAG",
+        "description": "Retrieval-augmented generation baseline using BART-large (406M params)"
+      },
+      {
+        "name": "FiD (base)",
+        "description": "Fusion-in-Decoder with T5-base (220M params)"
+      },
+      {
+        "name": "FiD (large)",
+        "description": "Fusion-in-Decoder with T5-large (770M params)"
+      },
+      {
+        "name": "BPR with BERT-base",
+        "description": "BPR reader pipeline using BERT-base pretrained model (110M params)"
+      },
+      {
+        "name": "BPR with ELECTRA-large",
+        "description": "BPR reader pipeline using ELECTRA-large pretrained model (335M params)"
+      },
+      {
+        "name": "Ablation study",
+        "description": "Disabling reranking degrades performance; disabling candidate generation (treating all passages as candidates) gives the same performance as using only..."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Index size (BPR)",
+        "value": "2GB",
+        "split": null
+      },
+      {
+        "metric": "Index size (DPR)",
+        "value": "65GB",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) - RAG",
+        "value": "44.5",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) - RAG",
+        "value": "56.1",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) - FiD (base)",
+        "value": "48.2",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) - FiD (base)",
+        "value": "65.0",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) - FiD (large)",
+        "value": "51.4",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) - FiD (large)",
+        "value": "67.6",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) - BPR (l=1000, BERT-base)",
+        "value": "41.6",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) - BPR (l=1000, BERT-base)",
+        "value": "56.8",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) - BPR (l=1000, ELECTRA-large)",
+        "value": "49.0",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) - BPR (l=1000, ELECTRA-large)",
+        "value": "65.6",
+        "split": null
+      }
+    ]
+  }
+}

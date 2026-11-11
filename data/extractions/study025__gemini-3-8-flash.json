@@ -1,0 +1,209 @@
+{
+  "study_id": "study025",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study025/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:27:02.977317+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 2,
+    "methods": 16,
+    "evaluation_results": 12
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "FreeSurfer",
+        "version": null
+      },
+      {
+        "name": "SAMSEG",
+        "version": null
+      },
+      {
+        "name": "neurite",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX A6000",
+      "cuda_version": null,
+      "cpu_info": "CPU at 2.61GHz"
+    },
+    "hyperparameters": [
+      {
+        "name": "parameter count",
+        "value": "6.2 million"
+      },
+      {
+        "name": "search window",
+        "value": "3\u00d73\u00d73"
+      },
+      {
+        "name": "temperature parameter in the attention computation",
+        "value": "0.05"
+      },
+      {
+        "name": "\u03b20",
+        "value": "0"
+      },
+      {
+        "name": "weights for the three losses",
+        "value": "5, 0.2, 0.05"
+      },
+      {
+        "name": "number of epochs",
+        "value": "selected based on the best validation accuracy"
+      },
+      {
+        "name": "size of matrix R (2D)",
+        "value": "9\u00d72"
+      },
+      {
+        "name": "size of matrix R (3D)",
+        "value": "27\u00d73"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IXI dataset",
+        "version": null
+      },
+      {
+        "name": "Learn2Reg Challenge",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "VoxelMorph",
+        "description": "scaling-and- squaring layer to encourage diffeomorphic registration"
+      },
+      {
+        "name": "TransMorph",
+        "description": "A hybrid deep learning architecture that combines the Transformer structure with convolutional networks"
+      },
+      {
+        "name": "Im2grid",
+        "description": "our previous method using coordinate translator modules"
+      },
+      {
+        "name": "DMR",
+        "description": "A deep learning based architecture based on the Deformer module"
+      },
+      {
+        "name": "PR-Net++",
+        "description": "A deep learning method that adopts a dual- stream architecture and incorporates correlation layers"
+      },
+      {
+        "name": "cosine similarity",
+        "description": "Used as the similarity measure in attention computation, omitting magnitude in the computation of similarity."
+      },
+      {
+        "name": "inner product",
+        "description": "Used as the similarity in attention computation."
+      },
+      {
+        "name": "high-capacity VXM",
+        "description": "VXM model with doubled number of feature channels across all convolutional layers, increasing parameter count to 6.2 million."
+      },
+      {
+        "name": "VXM-diff",
+        "description": "Baseline registration model with fewer parameters due to a relatively small number of feature channels."
+      },
+      {
+        "name": "VFA",
+        "description": null
+      },
+      {
+        "name": "Voxelmorph (VXM)",
+        "description": "A deep learning method based on a U-Net architecture"
+      },
+      {
+        "name": "Voxelmorph-diff (VXM-diff)",
+        "description": "A variant of VoxelMorph with a scaling-and- squaring layer to encourage diffeomorphic registration"
+      },
+      {
+        "name": "VXM",
+        "description": "Unsupervised registration algorithm"
+      },
+      {
+        "name": "SLANT",
+        "description": "Segmentation method used to segment 132 labels"
+      },
+      {
+        "name": "TRE loss",
+        "description": "computed from \u03d5 at locations where automatically generated keypoints were provided by the challenge"
+      },
+      {
+        "name": "attention-based displacement estimation",
+        "description": "Computes a weighted sum of displacement vectors stored in value matrix R using soft attention maps to retrieve floating-point relative candidate displacements based on feature similarity."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "inference time on GPU",
+        "value": "0.9seconds per 15 subject",
+        "split": "test"
+      },
+      {
+        "metric": "inference time on CPU",
+        "value": "65.9seconds",
+        "split": "test"
+      },
+      {
+        "metric": "DSC (T1w atlas to subject registration)",
+        "value": "0.771\u00b10.030",
+        "split": null
+      },
+      {
+        "metric": "DSC (T2w to T1w)",
+        "value": "0.635\u00b10.043",
+        "split": null
+      },
+      {
+        "metric": "Common Language Effect Size (CLES)",
+        "value": "0.9652",
+        "split": null
+      },
+      {
+        "metric": "T1w Atlas \u2212\u2192 T1w Subject DSC (VXM)",
+        "value": "0.726\u00b10.048",
+        "split": null
+      },
+      {
+        "metric": "T1w Atlas \u2212\u2192 T1w Subject ND Voxels (VXM)",
+        "value": "19171 \u00b17111 (0.24%)",
+        "split": null
+      },
+      {
+        "metric": "T1w Atlas \u2212\u2192 T1w Subject ND Volume (VXM)",
+        "value": "7280 \u00b12660 (0 .09%)",
+        "split": null
+      },
+      {
+        "metric": "T2w Subject \u2212\u2192 T1w Subject DSC (VXM)",
+        "value": "0.593\u00b10.053",
+        "split": null
+      },
+      {
+        "metric": "T2w Subject \u2212\u2192 T1w Subject ND Voxels (VXM)",
+        "value": "711 \u00b11359 (0.01%)",
+        "split": null
+      },
+      {
+        "metric": "T2w Subject \u2212\u2192 T1w Subject ND Volume (VXM)",
+        "value": "121 \u00b1250 ( <0.01%)",
+        "split": null
+      },
+      {
+        "metric": "Number of Parameters (VXM)",
+        "value": "0.3M",
+        "split": null
+      }
+    ]
+  }
+}

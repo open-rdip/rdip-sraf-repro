@@ -1,0 +1,78 @@
+{
+  "study_id": "study054",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study054/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:31:19.758523+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 0,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "r",
+        "value": "> 0"
+      },
+      {
+        "name": "responsive robots",
+        "value": "3"
+      },
+      {
+        "name": "non-responsive agents",
+        "value": "6"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Consolidated control barrier function (C-CBF)",
+        "description": "A candidate that smoothly synthesizes multiple candidate CBFs into one consolidated control barrier function H with constituent gains k."
+      },
+      {
+        "name": "Parameter adaptation law",
+        "description": "A parameter adaptation law which renders the candidate C-CBF valid for safe control design."
+      },
+      {
+        "name": "finite-difference approximation of Q-dot",
+        "description": "In practice the rank of N(L^T g) is observed to be constant, and Q-dot is approximated numerically using finite-difference methods."
+      },
+      {
+        "name": "centralized CBF-QP controller",
+        "description": "The centralized CBF-QP controller (8) is replaced by u*_Ac = arg min_{u_Ac in U_Ac} (1/2)||u_Ac - u0_Ac||^2 subject to a + b u_Ac >= 0, where a = L_F H + alpha_H(H) and b = L_G H[i in Ac]."
+      },
+      {
+        "name": "decentralized CBF-QP controller",
+        "description": "In the presence of non-communicative agents, the decentralized CBF-QP controller (7) is replaced by u*_i = arg min_{u_i in U_i} (1/2)||u_i - u0_i||^2 subject to a constraint (passage truncated at s.t.)."
+      },
+      {
+        "name": "C-CBF controller",
+        "description": "Demonstrated on a decentralized multi-robot goal-reaching problem in a warehouse, with 3 non-communicative but responsive robots traversing a narrow corridor intersected by a passageway occupied by 6 non-responsive agents."
+      },
+      {
+        "name": "dynamic extension of the kinematic bicycle model",
+        "description": "Each robot is modeled by a dynamic extension of the kinematic bicycle model from [31, Ch. 2], with states x_i, y_i, psi_i, beta_i, v_i and dynamics driven by omega_i and a_i."
+      },
+      {
+        "name": "Control Barrier Function",
+        "description": "h defining S is a CBF if there exists a class K\u221e function \u03b1 such that LGh(x) = 0 implies LFh(x) + \u03b1(h(x)) > 0. With unbounded control authority U = R^M, a sufficient condition is LGh(x) \u2260 0 for all x in S, though this does not generally hold for multiple CBF constraints."
+      },
+      {
+        "name": "Decentralized CBF controller",
+        "description": "Agents compute inputs from local information. For agent i with c > 1 candidate CBFs, u*_i minimizes (1/2)||u_i - u0_i||^2 subject to a_{s,i} + b_{s,i} u_i \u2265 0 for all s in [1..c], where a_{s,i} = L_{f_i} h_s + \u03b1_s(h_s) and b_{s,i} = L_{g_i} h_s. This program is not guaranteed to be feasible or to preserve inter-agent safety."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

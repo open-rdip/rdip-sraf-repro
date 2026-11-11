@@ -40,6 +40,31 @@ if LLM_BUDGET_USD:
 # ad-hoc callers can ignore it.
 _CURRENT_STUDY: str | None = None
 
+#: A dropped network is the single most likely interruption to a long sweep and
+#: none of the providers' errors for it contain an HTTP status code, so matching
+#: on codes alone silently turns a brief outage into a run of failed studies.
+#: Each of these clears by waiting.
+NETWORK_MARKERS = (
+    "connection error", "connection refused", "connection reset",
+    "connection aborted", "apiconnectionerror", "remote end closed",
+    "nodename nor servname", "temporary failure in name resolution",
+    "name or service not known", "network is unreachable",
+    "failed to establish a new connection", "read timed out", "timeout",
+)
+#: Server-side conditions that also clear by waiting.
+TRANSIENT_CODES = ("429", "500", "502", "503", "529",
+                   "rate limit", "rate_limit", "overloaded", "unavailable")
+
+
+#: Seconds before a single request is abandoned. Generous enough for a long
+#: grounded generation, short enough that one hung call cannot eat an hour.
+REQUEST_TIMEOUT_S = float(os.getenv("SRAF_REQUEST_TIMEOUT", "180"))
+
+
+def is_transient(msg: str) -> bool:
+    low = msg.lower()
+    return any(m in low for m in NETWORK_MARKERS + TRANSIENT_CODES)
+
 
 def set_study(study_id: str | None) -> None:
     """Attribute subsequent completions to this study in the usage meter."""
@@ -129,7 +154,12 @@ class OpenAICompatExtractor(Extractor):
     def client(self):
         if self._client is None:
             from openai import OpenAI  # lazy: only needed when actually calling
-            self._client = OpenAI(base_url=self.base_url, api_key=self.api_key)
+            # An explicit timeout, and max_retries=0 because this class does
+            # its own transient handling. Left to the defaults the SDK waits
+            # 600s per request and retries twice, which compounds with our
+            # four waits into roughly an hour on a single hung call.
+            self._client = OpenAI(base_url=self.base_url, api_key=self.api_key,
+                                  timeout=REQUEST_TIMEOUT_S, max_retries=0)
         return self._client
 
     #: Reasoning models count reasoning tokens against max_completion_tokens,
@@ -194,8 +224,6 @@ class OpenAICompatExtractor(Extractor):
     #: Errors worth waiting out. A rate limit clears; a spent quota does not,
     #: so QUOTA_MARKERS are excluded and fail immediately rather than sleeping
     #: four times for nothing.
-    TRANSIENT_MARKERS = ("429", "500", "502", "503", "529",
-                         "rate limit", "rate_limit", "overloaded", "timeout")
     QUOTA_MARKERS = ("insufficient_quota", "exceeded your current quota",
                      "billing", "credit balance")
 
@@ -218,7 +246,7 @@ class OpenAICompatExtractor(Extractor):
                 if any(m in low for m in self.QUOTA_MARKERS):
                     raise
                 # 3. A rate limit or a server-side wobble does clear.
-                if waits < 4 and any(m in low for m in self.TRANSIENT_MARKERS):
+                if waits < 4 and is_transient(msg):
                     wait = min(60, 5 * 2 ** waits)
                     waits += 1
                     print(f"[Extractor:{self.name}] transient error, waiting "
@@ -250,10 +278,11 @@ class GeminiExtractor(Extractor):
         import google.generativeai as genai  # lazy
         genai.configure(api_key=self.api_key)
         model = genai.GenerativeModel(self.model, system_instruction=system)
-        for attempt in range(3):
+        for attempt in range(5):
             try:
                 resp = model.generate_content(
                     user,
+                    request_options={"timeout": REQUEST_TIMEOUT_S},
                     generation_config=genai.GenerationConfig(
                         temperature=LLM_TEMPERATURE,
                         max_output_tokens=max(LLM_MAX_TOKENS, 4096),
@@ -270,7 +299,7 @@ class GeminiExtractor(Extractor):
                 return resp.text
             except Exception as e:  # noqa: BLE001 — handle Gemini rate limits
                 msg = str(e)
-                if "429" in msg and attempt < 2:
+                if is_transient(msg) and attempt < 4:
                     m = re.search(r"seconds:\s*(\d+)", msg)
                     wait = (int(m.group(1)) + 5) if m else 30
                     print(f"[Extractor:gemini] rate limited — waiting {wait}s")
@@ -313,6 +342,8 @@ class AnthropicExtractor(Extractor):
             kwargs = {"api_key": self.api_key}
             if self.base_url:
                 kwargs["base_url"] = self.base_url
+            kwargs["timeout"] = REQUEST_TIMEOUT_S
+            kwargs["max_retries"] = 0        # this class retries transients
             self._client = Anthropic(**kwargs)
             self._accepts_temperature = self._probe_temperature(self._client)
         return self._client
@@ -341,7 +372,7 @@ class AnthropicExtractor(Extractor):
 
     def _complete(self, system: str, user: str) -> str:
         last_err: Exception | None = None
-        for attempt in range(3):
+        for attempt in range(5):
             try:
                 call = dict(
                     model=self.model,
@@ -382,8 +413,9 @@ class AnthropicExtractor(Extractor):
             except Exception as e:  # noqa: BLE001 — retry transient overload
                 last_err = e
                 msg = str(e)
-                transient = any(code in msg for code in ("429", "500", "502", "503", "529"))
-                if transient and attempt < 2:
+                if (not any(q in msg.lower() for q in
+                            ("credit balance", "billing", "insufficient"))
+                        and is_transient(msg) and attempt < 4):
                     wait = 5 * (2 ** attempt)
                     print(f"[Extractor:anthropic] transient error, waiting {wait}s: {msg[:120]}")
                     time.sleep(wait)

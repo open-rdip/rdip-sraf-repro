@@ -1,0 +1,413 @@
+{
+ "study_id": "study020",
+ "model": "gemini-flash",
+ "slug": "gemini-3-8-flash",
+ "n_passages": 5,
+ "n_passages_ok": 5,
+ "failures": [],
+ "records": [
+  {
+   "field": "hyperparameters",
+   "value": "64",
+   "evidence": "we used a batch size of 64",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "632 \u00d7512",
+   "evidence": "trained on 632 \u00d7512 images",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "1e\u22126",
+   "evidence": "We used a learning rate of1e\u22126",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "10 degrees",
+   "evidence": "random rotation of 10 degrees",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "5",
+   "evidence": "We used 5-fold cross-validation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "ImageNet",
+   "evidence": "Both are initialized with ImageNet-pretrained weights [ 14].",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "multi-hot encoding",
+   "evidence": "the multi-hot encoding for datapoint xiwith ordinal label li\u2208 {1, ..., K}",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Adam optimizer",
+   "evidence": "using the Adam optimizer [ 29].",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "data augmentation",
+   "evidence": "small random brightness and contrast jittering as data augmentation.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "5-fold cross-validation",
+   "evidence": "We used 5-fold cross-validation to determine the stopping iteration",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "CSAW-M",
+   "evidence": "We conducted experiments using simple models to(1)empirically analyze CSAW-M",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ResNet-34",
+   "evidence": "Both use ResNet-34 [27] as the backbone.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ResNet34 one-hot",
+   "evidence": "\u2022ResNet34 one-hot\u2013 This model uses a standard approach for categorical classification",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ResNet34 multi-hot",
+   "evidence": "\u2022ResNet34 multi-hot\u2013 This model accounts for the ordinal relation between masking levels usingmulti-hotencodings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "CSAW-M",
+   "evidence": "The principal task of CSAW-M is to model the median expert opinion",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "data augmentation",
+   "evidence": "small random brightness and contrast jittering as data augmentation.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "5-fold cross-validation",
+   "evidence": "We used 5-fold cross-validation to determine the stopping iteration",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "ordinal classification",
+   "evidence": "Task 1: Ordinal classification of masking potential.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "dependencies",
+   "value": "Libra",
+   "evidence": "computed using Libra [ 10]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study020",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "hyperparameters": {
+    "n": 5,
+    "has_evidence": 5,
+    "span_found": 5,
+    "value_in_span": 5,
+    "grounded": 5
+   },
+   "datasets": {
+    "n": 3,
+    "has_evidence": 3,
+    "span_found": 3,
+    "value_in_span": 3,
+    "grounded": 3
+   },
+   "methods": {
+    "n": 10,
+    "has_evidence": 10,
+    "span_found": 10,
+    "value_in_span": 10,
+    "grounded": 10
+   },
+   "dependencies": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 1,
+    "value_in_span": 1,
+    "grounded": 1
+   }
+  },
+  "total": {
+   "n": 19,
+   "has_evidence": 19,
+   "span_found": 19,
+   "value_in_span": 19,
+   "grounded": 19
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "batch size",
+      "value": "64",
+      "evidence": "we used a batch size of 64"
+     },
+     {
+      "name": "image size",
+      "value": "632 \u00d7512",
+      "evidence": "trained on 632 \u00d7512 images"
+     },
+     {
+      "name": "learning rate",
+      "value": "1e\u22126",
+      "evidence": "We used a learning rate of1e\u22126"
+     },
+     {
+      "name": "random rotation",
+      "value": "10 degrees",
+      "evidence": "random rotation of 10 degrees"
+     },
+     {
+      "name": "cross-validation folds",
+      "value": "5",
+      "evidence": "We used 5-fold cross-validation"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "ImageNet",
+      "version": null,
+      "evidence": "Both are initialized with ImageNet-pretrained weights [ 14]."
+     }
+    ],
+    "methods": [
+     {
+      "name": "multi-hot encoding",
+      "evidence": "the multi-hot encoding for datapoint xiwith ordinal label li\u2208 {1, ..., K}"
+     },
+     {
+      "name": "Adam optimizer",
+      "evidence": "using the Adam optimizer [ 29]."
+     },
+     {
+      "name": "data augmentation",
+      "evidence": "small random brightness and contrast jittering as data augmentation."
+     },
+     {
+      "name": "5-fold cross-validation",
+      "evidence": "We used 5-fold cross-validation to determine the stopping iteration"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "CSAW-M",
+      "version": null,
+      "evidence": "We conducted experiments using simple models to(1)empirically analyze CSAW-M"
+     }
+    ],
+    "methods": [
+     {
+      "name": "ResNet-34",
+      "evidence": "Both use ResNet-34 [27] as the backbone."
+     },
+     {
+      "name": "ResNet34 one-hot",
+      "evidence": "\u2022ResNet34 one-hot\u2013 This model uses a standard approach for categorical classification"
+     },
+     {
+      "name": "ResNet34 multi-hot",
+      "evidence": "\u2022ResNet34 multi-hot\u2013 This model accounts for the ordinal relation between masking levels usingmulti-hotencodings"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "CSAW-M",
+      "version": null,
+      "evidence": "The principal task of CSAW-M is to model the median expert opinion"
+     }
+    ],
+    "methods": [
+     {
+      "name": "data augmentation",
+      "evidence": "small random brightness and contrast jittering as data augmentation."
+     },
+     {
+      "name": "5-fold cross-validation",
+      "evidence": "We used 5-fold cross-validation to determine the stopping iteration"
+     },
+     {
+      "name": "ordinal classification",
+      "evidence": "Task 1: Ordinal classification of masking potential."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "Libra",
+      "version": null,
+      "evidence": "computed using Libra [ 10]"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [],
+    "evaluation_results": []
+   }
+  }
+ ]
+}

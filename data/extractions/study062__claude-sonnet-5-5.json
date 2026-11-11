@@ -1,0 +1,132 @@
+{
+  "study_id": "study062",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study062/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:56:26.683525+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 3,
+    "methods": 17,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "JAX",
+        "version": null
+      },
+      {
+        "name": "jax.jet",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "training iterations shown (Figure 4)",
+        "value": "0, 1\u00d710^3, 1\u00d710^4, 1\u00d710^5, 3\u00d710^5"
+      },
+      {
+        "name": "threshold parameter \u03b4",
+        "value": "\u03b4 \u2208 (0,1), chosen threshold (no specific value given)"
+      },
+      {
+        "name": "causality parameter \u03f5",
+        "value": "not specified (sensitivity discussed)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Navier-Stokes benchmark",
+        "version": null
+      },
+      {
+        "name": "Kuramoto-Sivashinsky benchmark",
+        "version": null
+      },
+      {
+        "name": "Allen-Cahn equation",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "jax.pmap data-parallel gradient descent",
+        "description": "Each device updates its own local copy of all trainable model parameters at each gradient descent iteration using a global gradient signal broadcast across all devices; implemented with the jax.pmap primitive in JAX to scale to an arbitrary number of GPUs."
+      },
+      {
+        "name": "strong and weak scaling studies",
+        "description": "Used to assess the parallel performance of the implementation (discussed in section 5.3)."
+      },
+      {
+        "name": "Causal training for PINNs",
+        "description": "General causal training algorithm (Algorithm 1) for physics-informed neural networks that re-formulates the residual and initial conditions loss by treating the initial loss as a special temporal residual at t=0 within the weighted residual loss, uses an annealing scheme for the epsilon parameter, and stops training when the temporal weights w_i converge."
+      },
+      {
+        "name": "Temporal weights with stop-gradient",
+        "description": "Temporal weights {w_i}, i=0..Nt, are functions of trainable parameters \u03b8; lax.stop_gradient in the JAX implementation prevents gradient back-propagation through the computation of w_i."
+      },
+      {
+        "name": "Periodic boundary conditions enforced exactly",
+        "description": "PDEs with periodic boundary conditions enforced in an exact manner; the causal algorithm could be adapted to incorporate boundary constraints similarly to the initial conditions loss."
+      },
+      {
+        "name": "Time-marching / curriculum training",
+        "description": "Respects temporal causality by learning the solution sequentially within separate time-windows."
+      },
+      {
+        "name": "Causal training strategy",
+        "description": "Enhancement to time-marching approaches, since violations of causality may still occur within each time window of a time-marching algorithm."
+      },
+      {
+        "name": "Algorithm 1",
+        "description": "Causal training algorithm for PINNs; the extensions in Section 4 are not crucial for its success but empirically improve accuracy and computational efficiency."
+      },
+      {
+        "name": "Modified multi-layer perceptrons",
+        "description": "Architecture proposed by Wang et al. [12] that was demonstrated to outperform conventional MLPs across a variety of settings."
+      },
+      {
+        "name": "jax.jet primitive",
+        "description": "Implementation leverages the jax.jet primitive accompanying the work of Bettencourt et al. [47, 35]."
+      },
+      {
+        "name": "Synchronous data-parallelism across multiple GPUs",
+        "description": "Each GPU stores an identical copy of all trainable parameters. A batch of training data is split into sub-batches, one per device. Batches of spatial and temporal points used to evaluate the training loss are generated randomly and independently on each GPU. Gradients of the training loss are aggregated across all devices with a collective reduce-mean operation, and each device then updates its own local copy of the parameters at each gradient descent iteration."
+      },
+      {
+        "name": "Taylor-mode automatic differentiation",
+        "description": "Uses a truncated Taylor polynomial approximation to efficiently compute high-order derivatives of function compositions via the Fa\u00e0 di Bruno formula; scales better than conventional forward- or reverse-mode automatic differentiation as the order of differentiation increases."
+      },
+      {
+        "name": "Physics-informed neural network (PINN) with temporal residual weighting (Algorithm 1)",
+        "description": "Trains a PINN using a weighted residual loss with temporal weights w_i governed by a causality parameter \u03f5 (Equation 3.2); early-time residual loss L_r(t0,\u03b8) is minimized first, then more temporal weights are activated progressively until all converge to 1."
+      },
+      {
+        "name": "Residual-weight-based stopping criterion",
+        "description": "Monitors the magnitude of the temporal residual weights {w_i} and terminates training when min_i w_i > \u03b4 for a chosen threshold \u03b4 \u2208 (0,1), used to assess PINN convergence and reported to speed up training and yield superior predictive accuracy."
+      },
+      {
+        "name": "Causal weighted residual loss",
+        "description": "Temporal residual losses are weighted using a causality parameter \u03f5 (Equation 3.2), so that later temporal residuals are only activated once earlier temporal residuals have become small."
+      },
+      {
+        "name": "Annealing strategy for \u03f5",
+        "description": "Adjusts the causality parameter \u03f5 using an increasing sequence of values {\u03f5i}, i=1..k, to gradually increase the strength with which the PDE residual constraint is enforced and avoid hyper-parameter tuning."
+      },
+      {
+        "name": "Initial data fitting as temporal residual",
+        "description": "Treats the initial loss Lic as a special temporal residual at t=0 and incorporates it into the weighted residual loss of Equation 3.1, so that temporal residuals are minimized only after the network accurately fits the initial data."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

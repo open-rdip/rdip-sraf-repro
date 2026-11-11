@@ -1,0 +1,93 @@
+{
+  "study_id": "study014",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study014/ext/grok-4-7",
+  "extracted_at": "2026-11-09T18:49:54.147856+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 6,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "ScanNet",
+        "version": null
+      },
+      {
+        "name": "SUN RGB-D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "H3DNet",
+        "description": "Consists of three modules. The first computes dense pointwise descriptors and uses them to predict geometric primitives and their latent features. The second converts these geometric primitives into object proposals. A key innovation is a parametric distance function that evaluates the distance between an object BB and predicted primitives. The regression methodology is motivated by keypoint-based pose regression for 6D object pose estimation and combines diverse geometric primitive types."
+      },
+      {
+        "name": "parametric distance function",
+        "description": "Evaluates the distance between an object bounding box and predicted primitives; incorporates diverse and overcomplete geometric primitives; local minimums correspond to object proposals, enabling continuous optimization of object bounding boxes from imprecise initial proposals."
+      },
+      {
+        "name": "object proposal classification and refinement",
+        "description": "Classifies each object proposal as a detected object or not, and predicts an offset vector of geometric parameters and a semantic label to fine-tune the detection result."
+      },
+      {
+        "name": "primitive feature aggregation",
+        "description": "Aggregates latent features associated with a varying number of geometric primitives, which may contain complementary semantic and geometric information, as input to the classification module."
+      },
+      {
+        "name": "multi-type geometric primitive prediction",
+        "description": "Predicting multiple types of geometric primitives suitable for different object types and scenes."
+      },
+      {
+        "name": "hybrid overcomplete primitive proposals",
+        "description": "Regressing a hybrid and overcomplete set of geometric primitives for generating object proposals and aggregating features associated with matching primitives for classifying and refining detected objects."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP (0.25)",
+        "value": "67.2%",
+        "split": null
+      },
+      {
+        "metric": "relative improvement over state-of-the-art",
+        "value": "8.5%",
+        "split": null
+      },
+      {
+        "metric": "relative improvement",
+        "value": "8.5%",
+        "split": null
+      },
+      {
+        "metric": "mAP (window)",
+        "value": "51.9",
+        "split": null
+      },
+      {
+        "metric": "mAP (door)",
+        "value": "61.0",
+        "split": null
+      },
+      {
+        "metric": "mAP (shower-curtain)",
+        "value": "75.3",
+        "split": null
+      }
+    ]
+  }
+}

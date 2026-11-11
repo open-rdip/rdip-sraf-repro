@@ -1,0 +1,160 @@
+{
+  "study_id": "study050",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study050/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:54:30.212657+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 14,
+    "datasets": 4,
+    "methods": 13,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "OpenAI Gym",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b1",
+        "value": "0.1"
+      },
+      {
+        "name": "\u03b3",
+        "value": "1"
+      },
+      {
+        "name": "episodes",
+        "value": "500k"
+      },
+      {
+        "name": "\u03b1 (Q-learning)",
+        "value": "0.4"
+      },
+      {
+        "name": "\u03b3 (Q-learning)",
+        "value": "1"
+      },
+      {
+        "name": "\u03b1 (DQN)",
+        "value": "0.0001"
+      },
+      {
+        "name": "\u03b3 (DQN)",
+        "value": "1"
+      },
+      {
+        "name": "episodes (DQN)",
+        "value": "100k"
+      },
+      {
+        "name": "state-space discretization bins",
+        "value": "(3,3,6,3)"
+      },
+      {
+        "name": "vanilla Q-learning learning rate \u03b1",
+        "value": "0.1"
+      },
+      {
+        "name": "vanilla Q-learning \u03b3",
+        "value": "1"
+      },
+      {
+        "name": "DQN gradient clipping",
+        "value": "[\u22121,1]"
+      },
+      {
+        "name": "DQN learning rate \u03b1",
+        "value": "0.0001"
+      },
+      {
+        "name": "DQN \u03b3",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Blackjack",
+        "version": null
+      },
+      {
+        "name": "Cartpole",
+        "version": null
+      },
+      {
+        "name": "Taxi",
+        "version": null
+      },
+      {
+        "name": "Taxi environment",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Q-Learning",
+        "description": "Reinforcement learning algorithm evaluated on cartpole simulation"
+      },
+      {
+        "name": "deep Q-Learning",
+        "description": "Deep reinforcement learning algorithm evaluated on cartpole simulation"
+      },
+      {
+        "name": "Forward Simulation",
+        "description": "Method used for trajectory visualisations and comparison with belief maps"
+      },
+      {
+        "name": "Belief map",
+        "description": "Visualisation approach used to extract an intuitive local interpretation of the RL agent's intention"
+      },
+      {
+        "name": "belief maps",
+        "description": "Technique used to extract an intuitive local interpretation of the RL agent's intention"
+      },
+      {
+        "name": "Temporal Difference",
+        "description": "Learning approach applied to the RL agent"
+      },
+      {
+        "name": "Monte Carlo",
+        "description": "Learning approach applied to the RL agent"
+      },
+      {
+        "name": "\u03f5-greedy algorithm",
+        "description": "Action selection policy used by RL agents during training"
+      },
+      {
+        "name": "table-based Q-learning",
+        "description": "Tabular reinforcement learning algorithm compared with Monte-Carlo learning"
+      },
+      {
+        "name": "Deep Belief Network (DBN)",
+        "description": "Generates the belief map, trained using the same hyperparameters."
+      },
+      {
+        "name": "DQN",
+        "description": "Deep Q-Network used to investigate agent intention."
+      },
+      {
+        "name": "vanilla Q-learning",
+        "description": "Reinforcement learning method trained until reasonably stable with discretized state-space bins"
+      },
+      {
+        "name": "Adam",
+        "description": "Optimization algorithm used to train the DQN agent"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "study_id": "study089",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study089/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:08:37.406746+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 3,
+    "methods": 20,
+    "evaluation_results": 22
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "Number of F5C blocks in each branch of frame pair (default MOL configuration)",
+        "value": "1"
+      },
+      {
+        "name": "failure threshold (mean error considered a failure)",
+        "value": "larger than 10%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CASME II",
+        "version": null
+      },
+      {
+        "name": "SAMM",
+        "version": null
+      },
+      {
+        "name": "SMIC",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "MOL",
+        "description": "Micro-expression recognition model with auxiliary tasks (optical flow estimation and facial landmark detection) and F5C blocks, which include fully-connected convolution (FCC) and channel correspondence convolution (CCC)."
+      },
+      {
+        "name": "F5C block",
+        "description": "Block comprising two main operations: fully-connected convolution (FCC) and channel correspondence convolution (CCC)."
+      },
+      {
+        "name": "MOL w/o OFE",
+        "description": "MOL variant with the optical flow estimation module removed."
+      },
+      {
+        "name": "MOL w/o FLD",
+        "description": "MOL variant with the facial landmark detection module removed."
+      },
+      {
+        "name": "MOL w/o OFE&FLD",
+        "description": "MOL variant with both the optical flow estimation and facial landmark detection modules removed."
+      },
+      {
+        "name": "MOL w/o F5C",
+        "description": "MOL variant without F5C blocks."
+      },
+      {
+        "name": "MOL w/o CCC",
+        "description": "MOL variant without channel correspondence convolution."
+      },
+      {
+        "name": "MOL w/o FCC",
+        "description": "MOL variant without fully-connected convolution."
+      },
+      {
+        "name": "UnsupFlownet",
+        "description": "Unsupervised optical flow baseline method, cited as [66], compared by average EPE."
+      },
+      {
+        "name": "RAFT",
+        "description": "Optical flow baseline method, cited as [67], compared by average EPE."
+      },
+      {
+        "name": "MOL w/o MER&FLD",
+        "description": "Ablation of MOL with both the MER and FLD components removed."
+      },
+      {
+        "name": "MOL w/o MER",
+        "description": "Ablation of MOL with the MER component removed."
+      },
+      {
+        "name": "Element-wise addition of frame features",
+        "description": "Alternative feature fusion strategy to concatenation. It performed much worse."
+      },
+      {
+        "name": "Element-wise subtraction of frame features",
+        "description": "Alternative feature fusion strategy to concatenation. It performed much worse."
+      },
+      {
+        "name": "Concatenation of frame features",
+        "description": "Feature fusion strategy that preserves sub-action clips better than addition or subtraction."
+      },
+      {
+        "name": "Input frame number analysis",
+        "description": "Compares key frames only (onset and apex) against video clips with different frame counts sampled at equal intervals from the raw videos. Inputting onset and apex frames slightly outperformed inputting 8 frames."
+      },
+      {
+        "name": "Cross-Dataset Evaluation",
+        "description": "CASME II and SAMM are each used as the training set, with SMIC used as the test set."
+      },
+      {
+        "name": "MOL w/o MER&OFE",
+        "description": "Baseline variant that only performs the facial landmark detection task, without the MER and optical flow estimation modules"
+      },
+      {
+        "name": "TCDCN",
+        "description": "Popular facial landmark detection method with released code, used for comparison"
+      },
+      {
+        "name": "HRNetV2",
+        "description": "Popular facial landmark detection method with released code, used for comparison"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Acc (MOL w/o F5C)",
+        "value": "62.90",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL w/o F5C)",
+        "value": "62.52",
+        "split": null
+      },
+      {
+        "metric": "Acc (MOL w/o CCC)",
+        "value": "76.86",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL w/o CCC)",
+        "value": "74.44",
+        "split": null
+      },
+      {
+        "metric": "Acc (MOL w/o FCC)",
+        "value": "65.45",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL w/o FCC)",
+        "value": "63.19",
+        "split": null
+      },
+      {
+        "metric": "Acc (MOL)",
+        "value": "79.23",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL)",
+        "value": "75.85",
+        "split": null
+      },
+      {
+        "metric": "Acc (MOL, 1 F5C block)",
+        "value": "79.23",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL, 1 F5C block)",
+        "value": "75.85",
+        "split": null
+      },
+      {
+        "metric": "Acc (MOL, 2 F5C blocks)",
+        "value": "78.68",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL, 2 F5C blocks)",
+        "value": "73.46",
+        "split": null
+      },
+      {
+        "metric": "Acc (MOL, 3 F5C blocks)",
+        "value": "78.27",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL, 3 F5C blocks)",
+        "value": "73.22",
+        "split": null
+      },
+      {
+        "metric": "Acc",
+        "value": "62.90",
+        "split": null
+      },
+      {
+        "metric": "WF1",
+        "value": "62.52",
+        "split": null
+      },
+      {
+        "metric": "Average EPE (UnsupFlownet)",
+        "value": "1.048",
+        "split": null
+      },
+      {
+        "metric": "Average EPE (RAFT)",
+        "value": "0.465",
+        "split": null
+      },
+      {
+        "metric": "Average EPE (MOL w/o MER&FLD)",
+        "value": "1.145",
+        "split": null
+      },
+      {
+        "metric": "Average EPE (MOL w/o FLD)",
+        "value": "0.972",
+        "split": null
+      },
+      {
+        "metric": "Average EPE (MOL w/o MER)",
+        "value": "0.839",
+        "split": null
+      },
+      {
+        "metric": "Average EPE (MOL)",
+        "value": "0.650",
+        "split": null
+      }
+    ]
+  }
+}

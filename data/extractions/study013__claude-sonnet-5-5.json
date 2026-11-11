@@ -1,0 +1,151 @@
+{
+  "study_id": "study013",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study013/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:36:10.010581+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 9,
+    "methods": 11,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Scikit-Learn",
+        "version": "[25]"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "cross-validation folds",
+        "value": "5"
+      },
+      {
+        "name": "batch size",
+        "value": "128"
+      },
+      {
+        "name": "training/validation split",
+        "value": "80% training / 20% held-out (stratified)"
+      },
+      {
+        "name": "checkpoint selection interval",
+        "value": "500 iterations"
+      },
+      {
+        "name": "image input size",
+        "value": "64x64"
+      },
+      {
+        "name": "VGG16 layers reported",
+        "value": "top 3 overall performing layers"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COOS-7",
+        "version": null
+      },
+      {
+        "name": "COOS",
+        "version": null
+      },
+      {
+        "name": "Training",
+        "version": null
+      },
+      {
+        "name": "Test1",
+        "version": null
+      },
+      {
+        "name": "Test2",
+        "version": null
+      },
+      {
+        "name": "Test3",
+        "version": null
+      },
+      {
+        "name": "Test4",
+        "version": null
+      },
+      {
+        "name": "Training dataset",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Feature extraction and classifier baselines",
+        "description": "Features were extracted and classifiers built from a wide range of classifiers to provide baselines for out-of-sample generalization on COOS-7"
+      },
+      {
+        "name": "Classification with training-only optimization",
+        "description": "All methods must be trained and optimized exclusively on the Training dataset, and their performance is evaluated on each of the four test datasets (Test1-Test4)."
+      },
+      {
+        "name": "Test3 construction",
+        "description": "Test3 uses the two chronologically latest experiments to emphasize potential non-stationarities over time; in most classes, the Test3 experiments differ from the Training dataset by a gap of months."
+      },
+      {
+        "name": "Classifier selection via cross-validation",
+        "description": "Selected the classifier with the best performance on a 5-fold cross-validation of the Training dataset"
+      },
+      {
+        "name": "Balanced classification error",
+        "description": "Reported to control for differences in class balance from dataset to dataset"
+      },
+      {
+        "name": "Logistic regression on classic computer vision features",
+        "description": "Logistic regression classifiers built on classic computer vision (texture) features"
+      },
+      {
+        "name": "Deep learning model features",
+        "description": "Features from deep learning models used for classification"
+      },
+      {
+        "name": "Fully-supervised CNN",
+        "description": "Fully-supervised convolutional neural network that achieved the lowest error on Test3 and Test4"
+      },
+      {
+        "name": "End-to-end CNN",
+        "description": "Model trained on 80% of the Training dataset with batch size 128; the checkpoint (evaluated every 500 iterations) with the best performance on the remaining stratified 20% was chosen. Features from the last fully-connected layer were also extracted for building further classifiers."
+      },
+      {
+        "name": "VGG16",
+        "description": "Features extracted from a VGG16 CNN pretrained on ImageNet, chosen as the best-performing previously reported model accepting 64x64 images. The first channel of the images was converted and rescaled to 8-bit RGB. Features were extracted from all layers (max-pooling convolutional layers), but only the top 3 performing layers are reported. Including the second channel decreased performance, so it was excluded from the final baselines."
+      },
+      {
+        "name": "PCI",
+        "description": "Features learned from a self-supervised method designed for microscopy images, which achieved unsupervised state-of-the-art results in classifying protein localization for 64x64 images of yeast cells."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "balanced classification error (best deep learning features)",
+        "value": "as little as 1.1%",
+        "split": "Test1 and Test2"
+      },
+      {
+        "metric": "balanced classification error (logistic regression on classic computer vision features)",
+        "value": "6.8% or lower",
+        "split": "Test1 and Test2"
+      }
+    ]
+  }
+}

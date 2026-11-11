@@ -1,0 +1,196 @@
+{
+  "study_id": "study025",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study025/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:20:23.207654+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 5,
+    "methods": 18,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "FreeSurfer",
+        "version": null
+      },
+      {
+        "name": "SAMSEG",
+        "version": null
+      },
+      {
+        "name": "neurite",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX A6000",
+      "cuda_version": null,
+      "cpu_info": "CPU at 2.61GHz"
+    },
+    "hyperparameters": [
+      {
+        "name": "feature_channels",
+        "value": "doubled across all convolutional layers in VXM"
+      },
+      {
+        "name": "parameter_count",
+        "value": "6.2 million"
+      },
+      {
+        "name": "temperature",
+        "value": "0.05"
+      },
+      {
+        "name": "\u03b20",
+        "value": "0"
+      },
+      {
+        "name": "search_window",
+        "value": "3\u00d73\u00d73"
+      },
+      {
+        "name": "weights for the three losses",
+        "value": "5,0.2,0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IXI",
+        "version": null
+      },
+      {
+        "name": "T1-weighted images",
+        "version": null
+      },
+      {
+        "name": "T2-weighted images",
+        "version": null
+      },
+      {
+        "name": "Learn2Reg Challenge",
+        "version": null
+      },
+      {
+        "name": "Learn2Reg 2022 Challenge",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "VoxelMorph",
+        "description": "Uses a scaling-and-squaring layer to encourage diffeomorphic registration"
+      },
+      {
+        "name": "TransMorph",
+        "description": "A hybrid deep learning architecture that combines the Transformer structure with convolutional networks"
+      },
+      {
+        "name": "Im2grid",
+        "description": "Previous method using coordinate translator modules"
+      },
+      {
+        "name": "DMR",
+        "description": "A deep learning based architecture based on the Deformer module"
+      },
+      {
+        "name": "PR-Net++",
+        "description": "A deep learning method that adopts a dual-stream architecture and incorporates correlation layers"
+      },
+      {
+        "name": "Unsupervised T1w MR Atlas to Subject Registration",
+        "description": "Atlas image used as the moving image and T1w scans from the IXI dataset used as the fixed images; 575 T1w scans were divided"
+      },
+      {
+        "name": "inner product",
+        "description": "Similarity used in the attention computation; feature maps learned with inner product shown in the top of Fig. 6."
+      },
+      {
+        "name": "cosine similarity",
+        "description": "Similarity used in the attention computation that omits magnitude; yields features with substantially greater visual similarity and a slight increase in GPU memory usage, with no noticeable difference in accuracy."
+      },
+      {
+        "name": "VXM",
+        "description": "Model with fewer parameters due to a relatively small number of feature channels."
+      },
+      {
+        "name": "VXM-diff",
+        "description": "Model with fewer parameters due to a relatively small number of feature channels."
+      },
+      {
+        "name": "high-capacity VXM",
+        "description": "VXM with the number of feature channels doubled across all convolutional layers, increasing the parameter count to 6.2 million."
+      },
+      {
+        "name": "VoxelMorph-diff",
+        "description": "A variant of VoxelMorph with a scaling-and-squaring layer to encourage diffeomorphic registration"
+      },
+      {
+        "name": "VFA",
+        "description": "Registration method that produced fewer folded voxels and smaller folded volumes than VXM, TransMorph, and DMR, and was favored by paired-observation differences."
+      },
+      {
+        "name": "SLANT",
+        "description": "Segmentation method used to segment 132 labels whose mean Dice similarity coefficient is reported."
+      },
+      {
+        "name": "Common Language Effect Size",
+        "description": "Effect size indicating the chance that a randomly selected pair shows a difference in the expected direction."
+      },
+      {
+        "name": "unsupervised registration",
+        "description": "Registration from an atlas to T1-weighted MR images and from T2-weighted to T1-weighted MR images."
+      },
+      {
+        "name": "attention temperature adjustment",
+        "description": "Temperature in the attention computation reduced to 0.05 to encourage sparse attention within the 3\u00d73\u00d73 search window; \u03b2 converges closer to 1 than when \u03b20 is 0 or 1, while \u03b20 of 2 with low temperature adversely affects performance."
+      },
+      {
+        "name": "epoch selection",
+        "description": "The number of epochs was selected based on the best validation accuracy."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "peak performance fraction",
+        "value": "95% within 100,000 iterations",
+        "split": null
+      },
+      {
+        "metric": "inference time",
+        "value": "0.9 seconds per 15 subject",
+        "split": "test"
+      },
+      {
+        "metric": "inference time (CPU)",
+        "value": "65.9 seconds",
+        "split": "test"
+      },
+      {
+        "metric": "DSC (T1w atlas to subject registration)",
+        "value": "0.771\u00b10.030",
+        "split": null
+      },
+      {
+        "metric": "DSC (T2w to T1w)",
+        "value": "0.635\u00b10.043",
+        "split": null
+      },
+      {
+        "metric": "CLES",
+        "value": "0.9652",
+        "split": null
+      },
+      {
+        "metric": "chance of difference in expected direction favoring VFA",
+        "value": "96.52%",
+        "split": null
+      }
+    ]
+  }
+}

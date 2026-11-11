@@ -1,0 +1,194 @@
+{
+  "study_id": "study010",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study010/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:12:20.661690+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 20,
+    "datasets": 2,
+    "methods": 16,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PaddlePaddle",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "4x Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "image_resize",
+        "value": "32\u00d764"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.05"
+      },
+      {
+        "name": "initial_learning_rate_english",
+        "value": "5 104\u00d7batchsize 2048"
+      },
+      {
+        "name": "lr_scheduler",
+        "value": "cosine with linear warm-up"
+      },
+      {
+        "name": "warmup_epochs_english",
+        "value": "2"
+      },
+      {
+        "name": "total_epochs_english",
+        "value": "21"
+      },
+      {
+        "name": "data_augmentation_english",
+        "value": "rotation; perspective distortion; motion blur; Gaussian noise"
+      },
+      {
+        "name": "alphabet",
+        "value": "case-insensitive alphanumerics"
+      },
+      {
+        "name": "max_predict_length_english",
+        "value": "25"
+      },
+      {
+        "name": "initial_learning_rate_chinese",
+        "value": "3 104\u00d7batchsize 512"
+      },
+      {
+        "name": "warmup_epochs_chinese",
+        "value": "5"
+      },
+      {
+        "name": "total_epochs_chinese",
+        "value": "100"
+      },
+      {
+        "name": "data_augmentation_chinese",
+        "value": null
+      },
+      {
+        "name": "max_predict_length_chinese",
+        "value": "40"
+      },
+      {
+        "name": "model_variant",
+        "value": "SVTR-T without rectification"
+      },
+      {
+        "name": "patch_embedding_method",
+        "value": "two consecutive 3\u00d73 convolutions with stride 2 and batch normalization"
+      },
+      {
+        "name": "alternative_projection_1",
+        "value": "4\u00d74 disjoint linear projection"
+      },
+      {
+        "name": "alternative_projection_2",
+        "value": "7\u00d77 convolution with stride 4"
+      },
+      {
+        "name": "local_mixing_window_size",
+        "value": "7\u00d711"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IC13",
+        "version": null
+      },
+      {
+        "name": "IC15",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "SVTR",
+        "description": "Model family compared against state-of-the-art on six English benchmarks and one Chinese scene dataset; demonstrates competitive accuracy."
+      },
+      {
+        "name": "SVTR-T",
+        "description": "Smallest model in the SVTR family; achieves highly competitive accuracy."
+      },
+      {
+        "name": "Local-before-global mixing",
+        "description": "Placing the local mixing block in front of the global one helps the global block focus on long-term dependencies and improves feature learning, especially on irregular text."
+      },
+      {
+        "name": "[L]6[G]6",
+        "description": "Configuration with six local mixing blocks followed by six global mixing blocks; reports the best accuracy among tested schemes."
+      },
+      {
+        "name": "Language-aware vs language-free grouping",
+        "description": "Methods are grouped by whether they utilize language information (lan-free vs lan-aware)."
+      },
+      {
+        "name": "Distortion correction by resizing",
+        "description": "Image text resized to 32\u00d764 for distortion correction."
+      },
+      {
+        "name": "AdamW optimizer",
+        "description": "Optimization with AdamW and weight decay 0.05."
+      },
+      {
+        "name": "Cosine learning rate scheduler with warm-up",
+        "description": "Cosine schedule with linear warm-up (2 epochs for English over 21 epochs; 5 epochs for Chinese over 100 epochs)."
+      },
+      {
+        "name": "Data augmentation (English models)",
+        "description": "Random rotation, perspective distortion, motion blur, and Gaussian noise during training."
+      },
+      {
+        "name": "SVTR-L",
+        "description": "Accurate, fast, and versatile; a highly competitive choice in accuracy-oriented applications."
+      },
+      {
+        "name": "Mixing Block",
+        "description": "Introduces two kinds of mixing to leverage 2D feature representation for text recognition at the character component level."
+      },
+      {
+        "name": "global mixing",
+        "description": "A mixing operation over embedded components; illustrated in Figure 4(a)."
+      },
+      {
+        "name": "local mixing",
+        "description": "A mixing operation focusing on local regions; illustrated in Figure 4(b)."
+      },
+      {
+        "name": "patch embedding",
+        "description": "Implemented with two consecutive 3\u00d73 convolutions with stride 2 and batch normalization to progressively add feature dimension; compared against 4\u00d74 disjoint linear projection and 7\u00d77 convolution with stride 4."
+      },
+      {
+        "name": "Global Mixing Block",
+        "description": "Applies layer normalization followed by multi-head self-attention for dependence modeling, then a layer norm and MLP for feature fusion with shortcut connections, forming the global mixing block."
+      },
+      {
+        "name": "Local Mixing Block",
+        "description": "Evaluates correlations within a predefined neighborhood using a sliding-window self-attention mechanism to capture local patterns and character morphology; window size empirically set to 7\u00d711."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy gain",
+        "value": "1.9%",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "study_id": "study078",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study078/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:18:28.228095+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 4,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "QUDIO (QUantum DIstributed Optimization)",
+        "description": "A distributed variational quantum algorithm (distributed-VQA) using lazy communication to mitigate communication bottlenecks, quantum circuit noise, and privacy leakage."
+      },
+      {
+        "name": "Shuffle-QUDIO",
+        "description": "A quantum distributed optimization framework where, before each iteration, each local worker randomly shuffles and samples local Hamiltonian terms without replacement according to the worker\u2019s rank to balance contributions and reduce accumulated deviation under large communication intervals."
+      },
+      {
+        "name": "QUDIO",
+        "description": "A baseline distributed optimization method for VQEs against which Shuffle-QUDIO is compared; Shuffle-QUDIO achieves smaller approximation error, lower communication overhead, and sub-linear speedup ratio relative to QUDIO."
+      },
+      {
+        "name": "parameter-shift rule",
+        "description": "Each processor estimates the gradient component g(t,w)_i using the parameter-shift rule in a parallel setup with K processors."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

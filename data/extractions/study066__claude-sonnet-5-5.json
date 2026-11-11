@@ -1,0 +1,399 @@
+{
+  "study_id": "study066",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study066/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:57:56.908188+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 24,
+    "datasets": 6,
+    "methods": 26,
+    "evaluation_results": 26
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GluonCV",
+        "version": null
+      },
+      {
+        "name": "MXNet",
+        "version": null
+      },
+      {
+        "name": "Detectron2",
+        "version": "[60]"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "Split-Attention setting",
+        "value": "2s1x64d"
+      },
+      {
+        "name": "crop size (ResNeSt-200)",
+        "value": "256\u00d7256"
+      },
+      {
+        "name": "crop size (ResNeSt-269)",
+        "value": "320\u00d7320"
+      },
+      {
+        "name": "inference mini-batch size",
+        "value": "16"
+      },
+      {
+        "name": "upsampling strategy for input size greater than 256",
+        "value": "Bicubic"
+      },
+      {
+        "name": "radix range explored",
+        "value": "0 to 4"
+      },
+      {
+        "name": "batch size (ResNeSt-101)",
+        "value": "4096"
+      },
+      {
+        "name": "batch size (ResNeSt-200, ResNeSt-269)",
+        "value": "2048"
+      },
+      {
+        "name": "evaluation resize ratio",
+        "value": "1/0.875 of the crop size along the short edge"
+      },
+      {
+        "name": "evaluation crop",
+        "value": "center crop"
+      },
+      {
+        "name": "dropout ratio (drop layer before final classification layer)",
+        "value": "0.2"
+      },
+      {
+        "name": "training epochs",
+        "value": "270"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.0001"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "learning rate schedule",
+        "value": "cosine"
+      },
+      {
+        "name": "warm-up epochs",
+        "value": "5"
+      },
+      {
+        "name": "mini-batch size (ResNeSt-50)",
+        "value": "8192"
+      },
+      {
+        "name": "mini-batch size (ResNeSt-101)",
+        "value": "4096"
+      },
+      {
+        "name": "mini-batch size (ResNeSt-200, ResNeSt-269)",
+        "value": "2048"
+      },
+      {
+        "name": "weight initialization",
+        "value": "Kaiming Initialization"
+      },
+      {
+        "name": "image scale augmentation (short side)",
+        "value": "random from 640 to 800"
+      },
+      {
+        "name": "batch normalization",
+        "value": "synchronized"
+      },
+      {
+        "name": "feature pyramid",
+        "value": "FPN"
+      },
+      {
+        "name": "inference scale",
+        "value": "single scale"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "MS-COCO (COCO-2017 training set, 118k images)",
+        "version": "2017"
+      },
+      {
+        "name": "MS-COCO (COCO-2017 validation set / minival, 5k images)",
+        "version": "2017"
+      },
+      {
+        "name": "COCO-2017 training set (118k images)",
+        "version": "2017"
+      },
+      {
+        "name": "COCO-2017 validation set (5k images, minival)",
+        "version": "2017"
+      },
+      {
+        "name": "COCO test-dev",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Split-Attention",
+        "description": "Split-Attention block with radix s, cardinality x and network width d; the 2s1x64d setting (radix 2, cardinality 1, width 64) is used in subsequent experiments for a good trade-off between speed, accuracy and memory usage"
+      },
+      {
+        "name": "ResNet-D residual block",
+        "description": "Standard residual block used when radix is 0"
+      },
+      {
+        "name": "Bicubic upsampling",
+        "description": "Used for input sizes greater than 256 when training deeper models with larger crop sizes"
+      },
+      {
+        "name": "ResNeSt-200",
+        "description": "Deeper model trained with 256\u00d7256 crop size"
+      },
+      {
+        "name": "ResNeSt-269",
+        "description": "Deeper model trained with 320\u00d7320 crop size"
+      },
+      {
+        "name": "Inference speed benchmark",
+        "description": "Inference speeds measured with a mini-batch of 16 using the original author's implementation on a single NVIDIA V100 GPU"
+      },
+      {
+        "name": "ResNeSt",
+        "description": "Network based on the ResNet-D model that uses Split-Attention blocks"
+      },
+      {
+        "name": "ResNet-D",
+        "description": "Base model (ResNet variant) on which ResNeSt is based"
+      },
+      {
+        "name": "Mixup training",
+        "description": "Training augmentation that improves ResNetD-50 accuracy from 78.31% to 79.15%"
+      },
+      {
+        "name": "Auto augmentation",
+        "description": "Data augmentation that further improves accuracy by 0.26%"
+      },
+      {
+        "name": "Split-Attention block",
+        "description": "Block used to form ResNeSt-50-fast, boosting accuracy to 80.64%"
+      },
+      {
+        "name": "ResNeSt-50-fast",
+        "description": "Variant where effective average downsampling is applied prior to the 3\u00d73 convolution to avoid extra computational cost"
+      },
+      {
+        "name": "ResNeSt-50",
+        "description": "Variant with the downsampling operation moved after the convolutional layer"
+      },
+      {
+        "name": "Radix vs. Cardinality ablation",
+        "description": "Ablation of ResNeSt variants with different radix (s), cardinality (x) and width (d), with network width adjusted to keep computational cost similar to ResNet variants"
+      },
+      {
+        "name": "Data sharding",
+        "description": "Distributed training on ImageNet with data evenly partitioned across GPUs; each iteration samples a mini-batch from the corresponding shard without replacement."
+      },
+      {
+        "name": "Standard data augmentation",
+        "description": "Random size crop, random horizontal flip, color jittering, and lighting change, followed by RGB normalization via mean/standard-deviation rescaling."
+      },
+      {
+        "name": "Batch Normalization",
+        "description": "Used after each convolutional layer before ReLU activation."
+      },
+      {
+        "name": "Kaiming Initialization",
+        "description": "Used to initialize network weights."
+      },
+      {
+        "name": "Dropout",
+        "description": "A drop layer inserted before the final classification layer with ratio 0.2."
+      },
+      {
+        "name": "Cosine learning rate schedule with warm-up",
+        "description": "Cosine learning rate schedule with the first 5 epochs reserved for warm-up; trained for 270 epochs."
+      },
+      {
+        "name": "Inference speed measurement",
+        "description": "Average inference latency/throughput measured on a single NVIDIA V100 GPU using the original author's code implementation of each model with a mini-batch size of 16"
+      },
+      {
+        "name": "Object detection evaluation",
+        "description": "Models trained on the COCO-2017 training set and evaluated on the COCO-2017 validation set (minival) using the standard COCO AP metric"
+      },
+      {
+        "name": "ResNeSt backbone",
+        "description": "ResNeSt replaces vanilla ResNet backbones in Faster-RCNN and Cascade-RCNN, using default hyper-parameters and detection heads"
+      },
+      {
+        "name": "Faster-RCNN",
+        "description": "Detection model trained with FPN, synchronized batch normalization and image scale augmentation using Detectron2"
+      },
+      {
+        "name": "Cascade-RCNN",
+        "description": "Detection model trained with FPN, synchronized batch normalization and image scale augmentation using Detectron2"
+      },
+      {
+        "name": "Cascade-RCNN with ResNeSt101 deformable",
+        "description": "Trained with 1x learning rate schedule and evaluated on COCO test-dev with single scale inference"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy (ResNetD-50 baseline)",
+        "value": "78.31%",
+        "split": null
+      },
+      {
+        "metric": "accuracy (ResNetD-50 with Mixup)",
+        "value": "79.15%",
+        "split": null
+      },
+      {
+        "metric": "accuracy improvement from Auto augmentation",
+        "value": "0.26%",
+        "split": null
+      },
+      {
+        "metric": "accuracy (ResNeSt-50-fast)",
+        "value": "80.64%",
+        "split": null
+      },
+      {
+        "metric": "accuracy (ResNeSt-50)",
+        "value": "81.13%",
+        "split": null
+      },
+      {
+        "metric": "ResNeSt-101 top-1 accuracy (%)",
+        "value": "83.0",
+        "split": null
+      },
+      {
+        "metric": "ResNeSt-101 throughput (img/sec)",
+        "value": "291.3",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B4 top-1 accuracy (%)",
+        "value": "83.0",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B4 throughput (img/sec)",
+        "value": "149.3",
+        "split": null
+      },
+      {
+        "metric": "SENet-154 top-1 accuracy (%)",
+        "value": "82.7",
+        "split": null
+      },
+      {
+        "metric": "SENet-154 throughput (img/sec)",
+        "value": "133.8",
+        "split": null
+      },
+      {
+        "metric": "NASNet-A top-1 accuracy (%)",
+        "value": "82.7",
+        "split": null
+      },
+      {
+        "metric": "NASNet-A throughput (img/sec)",
+        "value": "103.3",
+        "split": null
+      },
+      {
+        "metric": "AmoebaNet-A top-1 accuracy (%)",
+        "value": "82.8",
+        "split": null
+      },
+      {
+        "metric": "ResNeSt-200 top-1 accuracy (%)",
+        "value": "83.9",
+        "split": null
+      },
+      {
+        "metric": "ResNeSt-200 throughput (img/sec)",
+        "value": "105.3",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B5 top-1 accuracy (%)",
+        "value": "83.7",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B5 throughput (img/sec)",
+        "value": "84.3",
+        "split": null
+      },
+      {
+        "metric": "AmoebaNet-C top-1 accuracy (%)",
+        "value": "83.5",
+        "split": null
+      },
+      {
+        "metric": "ResNeSt-269 top-1 accuracy (%)",
+        "value": "84.5",
+        "split": null
+      },
+      {
+        "metric": "ResNeSt-269 throughput (img/sec)",
+        "value": "51.2",
+        "split": null
+      },
+      {
+        "metric": "GPipe top-1 accuracy (%)",
+        "value": "84.3",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B7 top-1 accuracy (%)",
+        "value": "84.4",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B7 throughput (img/sec)",
+        "value": "34.9",
+        "split": null
+      },
+      {
+        "metric": "box mAP",
+        "value": "49.2",
+        "split": "test"
+      },
+      {
+        "metric": "mean average precision improvement over ResNet baselines",
+        "value": "around 3%",
+        "split": "validation"
+      }
+    ]
+  }
+}

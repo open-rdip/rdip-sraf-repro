@@ -1,0 +1,518 @@
+{
+  "study_id": "study027",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study027/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:41:58.723455+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 65,
+    "datasets": 9,
+    "methods": 43,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "STAMP",
+        "version": "v1.1.1"
+      },
+      {
+        "name": "ptflops",
+        "version": null
+      },
+      {
+        "name": "UMAP",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX A6000, L40, H100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "value": "0.7"
+      },
+      {
+        "name": "maximum token length",
+        "value": "1,000"
+      },
+      {
+        "name": "GPT-4o runs per image",
+        "value": "three"
+      },
+      {
+        "name": "example images per class (GPT-4o prompt)",
+        "value": "two"
+      },
+      {
+        "name": "number of EAGLE-selected tiles (top)",
+        "value": "25"
+      },
+      {
+        "name": "UMAP n_neighbors",
+        "value": "15"
+      },
+      {
+        "name": "UMAP min_dist",
+        "value": "0.1"
+      },
+      {
+        "name": "number of WSIs selected for efficiency analysis",
+        "value": "25"
+      },
+      {
+        "name": "WSI selection percentiles",
+        "value": "2, 6, 10, \u2026, 98 by tile count"
+      },
+      {
+        "name": "retrieval queries per external cohort",
+        "value": "five random patients"
+      },
+      {
+        "name": "retrieval results returned",
+        "value": "top three"
+      },
+      {
+        "name": "number of selected tiles averaged for slide-level embedding",
+        "value": "25"
+      },
+      {
+        "name": "tile weighting in embedding aggregation",
+        "value": "equal (mean of tile embeddings)"
+      },
+      {
+        "name": "patient stratification threshold",
+        "value": "median EAGLE risk score"
+      },
+      {
+        "name": "magnification for timing experiments (tile distribution)",
+        "value": "0.5 MPP"
+      },
+      {
+        "name": "number of WSIs sampled for timing experiments",
+        "value": "25"
+      },
+      {
+        "name": "WSI sampling range",
+        "value": "2nd to 98th percentile at regular intervals"
+      },
+      {
+        "name": "EAGLE and Virchow2 magnification (efficiency comparison)",
+        "value": "2 MPP"
+      },
+      {
+        "name": "TITAN magnification (normalization baseline)",
+        "value": "0.5 MPP"
+      },
+      {
+        "name": "tile size",
+        "value": "224\u00d7224 pixels"
+      },
+      {
+        "name": "tile size (CONCH v1.5/TITAN)",
+        "value": "512\u00d7512 pixels, downsampled to 448\u00d7448 pixels before model inference"
+      },
+      {
+        "name": "effective resolution",
+        "value": "0.5, ~1.14, or 2 MPP"
+      },
+      {
+        "name": "effective resolution (CONCH v1.5)",
+        "value": "~0.57 and ~2.28 MPP"
+      },
+      {
+        "name": "Canny edge detection thresholds",
+        "value": "40, 100"
+      },
+      {
+        "name": "edge pixel fraction rejection threshold",
+        "value": "fewer than 2% of pixels classified as edges"
+      },
+      {
+        "name": "MLP input size",
+        "value": "768"
+      },
+      {
+        "name": "MLP hidden size",
+        "value": "256"
+      },
+      {
+        "name": "MLP activation",
+        "value": "SiLU"
+      },
+      {
+        "name": "MLP regularization",
+        "value": "dropout"
+      },
+      {
+        "name": "epochs",
+        "value": "32"
+      },
+      {
+        "name": "learning rate scheduler",
+        "value": "one-cycle policy"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning rate",
+        "value": "1\u00d710-4"
+      },
+      {
+        "name": "weight decay",
+        "value": "1\u00d710\u22122"
+      },
+      {
+        "name": "loss function",
+        "value": "Cross-entropy loss with class weighting"
+      },
+      {
+        "name": "early stopping monitor",
+        "value": "validation loss"
+      },
+      {
+        "name": "cross-validation folds",
+        "value": "five"
+      },
+      {
+        "name": "logistic regression solver",
+        "value": "lbfgs"
+      },
+      {
+        "name": "logistic regression L2 penalty",
+        "value": "1.0"
+      },
+      {
+        "name": "logistic regression maximum iterations",
+        "value": "10,000"
+      },
+      {
+        "name": "logistic regression class weights",
+        "value": "balanced"
+      },
+      {
+        "name": "few-shot k (samples per class)",
+        "value": "1, 2, 4, 8, 16, 32"
+      },
+      {
+        "name": "few-shot repetitions per setting",
+        "value": "ten"
+      },
+      {
+        "name": "EAGLE vs GPT-4o comparison k",
+        "value": "2"
+      },
+      {
+        "name": "GPT-4o prompt example images per class",
+        "value": "two"
+      },
+      {
+        "name": "EAGLE-selected tiles for GPT-4o query",
+        "value": "top 25"
+      },
+      {
+        "name": "standard ABMIL attention heads",
+        "value": "single-head"
+      },
+      {
+        "name": "standard ABMIL bag size",
+        "value": "512"
+      },
+      {
+        "name": "gated ABMIL tile subsampling",
+        "value": "none (full bags)"
+      },
+      {
+        "name": "gated ABMIL attention gating",
+        "value": "multiplicative gating in the attention pathway"
+      },
+      {
+        "name": "number of random patients queried per external cohort",
+        "value": "five"
+      },
+      {
+        "name": "number of top matches returned",
+        "value": "three"
+      },
+      {
+        "name": "embedding normalization",
+        "value": "L2"
+      },
+      {
+        "name": "similarity metric",
+        "value": "cosine similarity"
+      },
+      {
+        "name": "attention normalization",
+        "value": "softmax within each patient bag"
+      },
+      {
+        "name": "cumulative attention mass thresholds",
+        "value": "50% and 80%"
+      },
+      {
+        "name": "top-k mass statistics",
+        "value": "top 1, top 2, and top 25"
+      },
+      {
+        "name": "number of top tiles reviewed for EAGLE",
+        "value": "25"
+      },
+      {
+        "name": "training/validation split",
+        "value": "80% training / 20% validation (early stopping)"
+      },
+      {
+        "name": "number of independently trained models per task",
+        "value": "five"
+      },
+      {
+        "name": "PathoBench train/test split",
+        "value": "80% train / 20% test"
+      },
+      {
+        "name": "validation subset within each training split",
+        "value": "20% of cases, case-level"
+      },
+      {
+        "name": "number of training patients for classifiers",
+        "value": "300, 150 or 75"
+      },
+      {
+        "name": "number of top tiles compared (EAGLE vs supervised baseline)",
+        "value": "25"
+      },
+      {
+        "name": "number of randomly chosen DACHS WSIs for artifact prevalence analysis",
+        "value": "50"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IEO cohort",
+        "version": null
+      },
+      {
+        "name": "GECCO consortium datasets",
+        "version": null
+      },
+      {
+        "name": "PathoBench",
+        "version": null
+      },
+      {
+        "name": "CPTAC pancreatic ductal adenocarcinoma (PDA) cohort",
+        "version": null
+      },
+      {
+        "name": "CPTAC",
+        "version": null
+      },
+      {
+        "name": "DACHS",
+        "version": null
+      },
+      {
+        "name": "Kiel",
+        "version": null
+      },
+      {
+        "name": "Bern",
+        "version": null
+      },
+      {
+        "name": "IEO",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "EAGLE",
+        "description": "Slide encoder method implemented in the EAGLE repository (https://github.com/KatherLab/EAGLE)"
+      },
+      {
+        "name": "MLP classifier",
+        "description": "MLP classifier implementation provided within the EAGLE repository"
+      },
+      {
+        "name": "LP classifier",
+        "description": "Linear probe classifier implementation provided within the EAGLE repository"
+      },
+      {
+        "name": "GPT-4o-based in-context learning",
+        "description": "In-context learning using GPT-4o, implementation provided within the EAGLE repository"
+      },
+      {
+        "name": "UMAP visualization",
+        "description": "UMAP visualization implemented in the EAGLE repository"
+      },
+      {
+        "name": "Top tiles and slide search",
+        "description": "Top tiles and slide search functionality provided within the EAGLE repository"
+      },
+      {
+        "name": "Foundation models benchmarking",
+        "description": "Benchmarking of publicly available foundation models (CTransPath, Prov-GigaPath, CONCH, Virchow, Virchow2, etc.) using STAMP software"
+      },
+      {
+        "name": "Logistic regression",
+        "description": "Standard approach used as the classifier for the non-GPT-4o comparison"
+      },
+      {
+        "name": "GPT-4o prompting",
+        "description": "Prompts with two example images per class plus the query image (top 25 EAGLE-selected tiles vs. a single thumbnail); run three times per image; strict JSON output forcing a single label per response"
+      },
+      {
+        "name": "Computational efficiency analysis",
+        "description": "Inference time and FLOPs measured for each tile encoder on 25 representative WSIs selected at percentiles 2, 6, 10, \u2026, 98 by tile count; FLOPs derived using ptflops and multiplied by the average tile count in the overall dataset to estimate total cost"
+      },
+      {
+        "name": "Slide-level retrieval",
+        "description": "EAGLE embeddings L2-normalized and searched by cosine similarity; five random patients queried per external cohort and top three results returned"
+      },
+      {
+        "name": "Virchow2",
+        "description": "Tile encoder used to extract detailed feature embeddings from selected tiles."
+      },
+      {
+        "name": "CHIEF",
+        "description": "Slide encoder used to provide tile-level relevance/attention scores for selecting informative tiles; chosen for strong performance and computational efficiency."
+      },
+      {
+        "name": "Equal-weight mean pooling",
+        "description": "Averaging the 25 tile embeddings so each tile contributes equally, to avoid single-tile dominance and for conceptual simplicity."
+      },
+      {
+        "name": "Tile encoder ablation",
+        "description": "Ablation studies substituting Virchow2 with other tile encoders (Fig. 3b)."
+      },
+      {
+        "name": "Negative control for region selection",
+        "description": "Uniform random tile selection without replacement from the same set of tiles, used as a control."
+      },
+      {
+        "name": "Two-sided log-rank test",
+        "description": "Used to compute the hazard ratio and p-value for low- vs high-risk groups stratified by median EAGLE risk score."
+      },
+      {
+        "name": "TITAN",
+        "description": "Baseline model compared against EAGLE, run at 0.5 MPP and used for normalization in the efficiency comparison."
+      },
+      {
+        "name": "GigaPath",
+        "description": "Baseline model compared against EAGLE on the CPTAC PDA cohort."
+      },
+      {
+        "name": "CTransPath",
+        "description": "Model used with CHIEF in EAGLE's tile selection step."
+      },
+      {
+        "name": "STAMP pipeline",
+        "description": "Open-source protocol and software (Solid Tumor Associative Modeling in Pathology) for deep learning-based biomarker prediction from whole-slide images, used for WSI segmentation, tile extraction, and feature generation, enabling end-to-end modeling and integration of clinical and tabular data."
+      },
+      {
+        "name": "Tile extraction",
+        "description": "WSIs divided into 224\u00d7224 pixel tiles (or 512\u00d7512 pixels for CONCH v1.5/TITAN, downsampled to 448\u00d7448 before model inference); each combination of model and resolution evaluated, with best magnification reported in main experiments."
+      },
+      {
+        "name": "Background tile exclusion",
+        "description": "Tiles predominantly containing background excluded using Canny edge detection (thresholds 40, 100), rejecting tiles with fewer than 2% of pixels classified as edges."
+      },
+      {
+        "name": "Internal cross validation",
+        "description": "All models used the same predefined splits, same train and validation construction, and same early versus late fusion setting; PathoBench has no external cohorts so results reflect internal cross validation."
+      },
+      {
+        "name": "Few-shot linear probing",
+        "description": "MLP replaced with logistic regression (lbfgs solver, L2 penalty=1.0, 10,000 max iterations, balanced class weights) trained on k=1, 2, 4, 8, 16, 32 samples per class, repeated ten times with different random draws."
+      },
+      {
+        "name": "EAGLE vs GPT-4o comparison",
+        "description": "Comparison of EAGLE few-shot performance (k=2, logistic regression) against GPT-4o in-context learning with two example images per class plus the query image (top 25 EAGLE-selected tiles) on NSCLC subtyping (LUAD vs. LUSC), MSI status prediction in CRC, and ER expression in BRCA."
+      },
+      {
+        "name": "ABMIL (standard)",
+        "description": "Attention-based multiple instance learning with single-head attention and bag size 512, hyperparameters fixed a priori and applied uniformly across tasks without task-specific tuning"
+      },
+      {
+        "name": "ABMIL (gated)",
+        "description": "Gated attention-based multiple instance learning baseline using full bags (no tile subsampling) and multiplicative gating in the attention pathway to avoid undercapacity effects"
+      },
+      {
+        "name": "Slide encoders",
+        "description": "Combine tile embeddings (and sometimes tile coordinates) into a single task-agnostic embedding vector per slide or patient, with a small classifier trained for downstream tasks"
+      },
+      {
+        "name": "EAGLE (Efficient Approach for Guided Local Examination)",
+        "description": "Two-stage framework that uses the frozen, pre-trained, task-agnostic ABMIL model CHIEF to select the most informative regions within each WSI, followed by detailed feature extraction from those regions using the tile encoder Virchow2"
+      },
+      {
+        "name": "Cosine similarity slide retrieval",
+        "description": "Each embedding is L2-normalized and a cosine similarity search is performed; five random patients per external cohort were queried and the top three matches returned, then assessed by a board-certified pathologist for quality and importance of selected WSI regions."
+      },
+      {
+        "name": "Attention concentration analysis",
+        "description": "Per-tile attention weights from CHIEF, ABMIL, and gated ABMIL are softmax-normalized within each patient bag; tiles are ranked by attention and Lorenz curves (cumulative attention mass vs cumulative fraction of tiles) are computed."
+      },
+      {
+        "name": "Concentration summary metrics",
+        "description": "Gini coefficient, fraction of tiles required to accumulate 50% and 80% of total attention mass, and top-k mass statistics (top 1, top 2, top 25)."
+      },
+      {
+        "name": "Rank-profile averaging of Lorenz curves",
+        "description": "To aggregate across tasks without averaging attention for the same physical tile across models or folds, tiles are aligned by rank position per patient and ordered attention values are averaged across patients and tasks."
+      },
+      {
+        "name": "EAGLE top-tile robustness review",
+        "description": "Systematic review of EAGLE's top 25 tiles to investigate robustness of top-tile selection in the presence of artifacts."
+      },
+      {
+        "name": "ABMIL",
+        "description": "Attention-based multiple instance learning model producing per-tile attention weights, used in attention concentration analysis."
+      },
+      {
+        "name": "Gated ABMIL",
+        "description": "Gated attention-based multiple instance learning model producing per-tile attention weights, used in attention concentration analysis."
+      },
+      {
+        "name": "Five-fold training with external testing",
+        "description": "Five independently trained models per task, each trained on a different partition of the training sets (with 20% validation for early stopping), applied to the external test cohorts, with results averaged across the five models."
+      },
+      {
+        "name": "PathoBench protocol",
+        "description": "Predefined 80% train / 20% test splits; within each training split a case-level validation subset of 20% was defined, stratified for categorical endpoints when feasible; the test portion was never used for model selection."
+      },
+      {
+        "name": "Early fusion of multiple slides per patient",
+        "description": "Used for models that do not rely on spatial coordinates; all models other than TITAN and GigaPath used early fusion."
+      },
+      {
+        "name": "Slide embedding averaging",
+        "description": "For TITAN and GigaPath, each slide was pooled separately and slide embeddings were averaged to obtain a patient representation."
+      },
+      {
+        "name": "Supervised baseline",
+        "description": "Baseline for MSI status prediction using Virchow2 embeddings aggregated via the STAMP pipeline; top tiles often highlight background, slide edges, pen marks and other artifacts."
+      },
+      {
+        "name": "UMAP",
+        "description": "Dimensionality reduction used to visualize slide embeddings from EAGLE and other slide encoders, color-coded by four tissue types."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AUROC threshold for listed biomarkers (Supplementary Table 4)",
+        "value": "> 0.800",
+        "split": null
+      }
+    ]
+  }
+}

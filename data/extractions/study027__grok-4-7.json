@@ -1,0 +1,536 @@
+{
+  "study_id": "study027",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study027/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:27:42.526761+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 0,
+    "hyperparameters": 64,
+    "datasets": 9,
+    "methods": 48,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "STAMP",
+        "version": "v1.1.1"
+      },
+      {
+        "name": "ptflops",
+        "version": null
+      },
+      {
+        "name": "GPT-4o",
+        "version": null
+      },
+      {
+        "name": "CONCH",
+        "version": "1.5"
+      },
+      {
+        "name": "TITAN",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX A6000, L40 or H100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "value": "0.7"
+      },
+      {
+        "name": "maximum_token_length",
+        "value": "1,000"
+      },
+      {
+        "name": "runs_per_image",
+        "value": "3"
+      },
+      {
+        "name": "example_images_per_class",
+        "value": "2"
+      },
+      {
+        "name": "eagle_selected_tiles",
+        "value": "25"
+      },
+      {
+        "name": "representative_wsis",
+        "value": "25"
+      },
+      {
+        "name": "wsi_tile_count_percentiles",
+        "value": "2, 6, 10, \u2026, 98"
+      },
+      {
+        "name": "umap_n_neighbors",
+        "value": "15"
+      },
+      {
+        "name": "umap_min_dist",
+        "value": "0.1"
+      },
+      {
+        "name": "query_patients_per_external_cohort",
+        "value": "5"
+      },
+      {
+        "name": "top_retrieval_results",
+        "value": "3"
+      },
+      {
+        "name": "num_tile_embeddings",
+        "value": "25"
+      },
+      {
+        "name": "tile_weighting",
+        "value": "equal"
+      },
+      {
+        "name": "WSI_magnification",
+        "value": "0.5 MPP"
+      },
+      {
+        "name": "EAGLE_Virchow2_magnification",
+        "value": "2 MPP"
+      },
+      {
+        "name": "timing_experiment_WSI_count",
+        "value": "25"
+      },
+      {
+        "name": "sampling_interval",
+        "value": "regular intervals from the 2nd to the 98th percentile"
+      },
+      {
+        "name": "risk_stratification",
+        "value": "median EAGLE risk score"
+      },
+      {
+        "name": "tile_size",
+        "value": "224\u00d7224 pixels"
+      },
+      {
+        "name": "tile_size_CONCH_v1.5_TITAN",
+        "value": "512\u00d7512 pixels"
+      },
+      {
+        "name": "downsample_size_before_inference",
+        "value": "448\u00d7448 pixels"
+      },
+      {
+        "name": "effective_resolution_MPP",
+        "value": "0.5, ~1.14, or 2"
+      },
+      {
+        "name": "CONCH_v1.5_effective_resolution_MPP",
+        "value": "~0.57 and ~2.28"
+      },
+      {
+        "name": "Canny_edge_detection_thresholds",
+        "value": "40, 100"
+      },
+      {
+        "name": "background_tile_rejection_edge_pixel_fraction",
+        "value": "fewer than 2%"
+      },
+      {
+        "name": "input_size",
+        "value": "768"
+      },
+      {
+        "name": "hidden_size",
+        "value": "256"
+      },
+      {
+        "name": "activation",
+        "value": "SiLU"
+      },
+      {
+        "name": "dropout",
+        "value": "used (value not stated)"
+      },
+      {
+        "name": "epochs",
+        "value": "32"
+      },
+      {
+        "name": "training_policy",
+        "value": "one-cycle"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1\u00d710-4"
+      },
+      {
+        "name": "weight_decay",
+        "value": "1\u00d710\u22122"
+      },
+      {
+        "name": "loss",
+        "value": "cross-entropy with class weighting"
+      },
+      {
+        "name": "early_stopping_monitor",
+        "value": "validation loss"
+      },
+      {
+        "name": "cross_validation_folds",
+        "value": "5"
+      },
+      {
+        "name": "few_shot_model",
+        "value": "logistic regression"
+      },
+      {
+        "name": "solver",
+        "value": "lbfgs"
+      },
+      {
+        "name": "L2_penalty",
+        "value": "1.0"
+      },
+      {
+        "name": "maximum_iterations",
+        "value": "10000"
+      },
+      {
+        "name": "class_weights",
+        "value": "balanced"
+      },
+      {
+        "name": "samples_per_class_k",
+        "value": "1, 2, 4, 8, 16, 32"
+      },
+      {
+        "name": "repeats",
+        "value": "10"
+      },
+      {
+        "name": "gpt4o_comparison_k",
+        "value": "2"
+      },
+      {
+        "name": "gpt4o_examples_per_class",
+        "value": "2"
+      },
+      {
+        "name": "attention",
+        "value": "single-head"
+      },
+      {
+        "name": "bag_size",
+        "value": "512"
+      },
+      {
+        "name": "tile_subsampling",
+        "value": "none (full bags)"
+      },
+      {
+        "name": "gating",
+        "value": "multiplicative"
+      },
+      {
+        "name": "patients_queried_per_external_cohort",
+        "value": "5"
+      },
+      {
+        "name": "top_matches_returned",
+        "value": "3"
+      },
+      {
+        "name": "attention_mass_accumulation_thresholds",
+        "value": "50%, 80%"
+      },
+      {
+        "name": "top_k_mass_statistics",
+        "value": "top 1, top 2, top 25"
+      },
+      {
+        "name": "eagle_review_top_tiles",
+        "value": "25"
+      },
+      {
+        "name": "validation_split",
+        "value": "20%"
+      },
+      {
+        "name": "n_independently_trained_models",
+        "value": "5"
+      },
+      {
+        "name": "n_folds",
+        "value": "5"
+      },
+      {
+        "name": "train_split",
+        "value": "eighty percent"
+      },
+      {
+        "name": "test_split",
+        "value": "twenty percent"
+      },
+      {
+        "name": "validation_subset",
+        "value": "twenty percent of cases"
+      },
+      {
+        "name": "training_patients",
+        "value": "300"
+      },
+      {
+        "name": "top_tiles",
+        "value": "25"
+      },
+      {
+        "name": "randomly_chosen_DACHS_WSIs",
+        "value": "50"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IEO",
+        "version": null
+      },
+      {
+        "name": "GECCO",
+        "version": null
+      },
+      {
+        "name": "PathoBench",
+        "version": null
+      },
+      {
+        "name": "CPTAC pancreatic ductal adenocarcinoma (PDA) cohort",
+        "version": null
+      },
+      {
+        "name": "9,528 whole-slide images",
+        "version": null
+      },
+      {
+        "name": "CPTAC",
+        "version": null
+      },
+      {
+        "name": "DACHS",
+        "version": null
+      },
+      {
+        "name": "Kiel",
+        "version": null
+      },
+      {
+        "name": "Bern",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "EAGLE",
+        "description": "Implementation provided within the EAGLE repository"
+      },
+      {
+        "name": "slide encoders",
+        "description": "Tested slide encoders provided within the EAGLE repository"
+      },
+      {
+        "name": "MLP",
+        "description": "MLP classifier implementation provided within the EAGLE repository"
+      },
+      {
+        "name": "LP",
+        "description": "LP classifier implementation provided within the EAGLE repository"
+      },
+      {
+        "name": "GPT-4o-based in-context learning",
+        "description": "GPT-4o-based in-context learning provided within the EAGLE repository"
+      },
+      {
+        "name": "UMAP",
+        "description": "UMAP visualization provided within the EAGLE repository"
+      },
+      {
+        "name": "top tiles and slide search",
+        "description": "Top tiles and slide search provided within the EAGLE repository"
+      },
+      {
+        "name": "CTransPath",
+        "description": "Publicly available foundation model used in benchmarking experiments"
+      },
+      {
+        "name": "Prov-GigaPath",
+        "description": "Publicly available foundation model used in benchmarking experiments"
+      },
+      {
+        "name": "CONCH",
+        "description": "Publicly available foundation model used in benchmarking experiments"
+      },
+      {
+        "name": "Virchow",
+        "description": "Publicly available foundation model used in benchmarking experiments"
+      },
+      {
+        "name": "Virchow2",
+        "description": "Publicly available foundation model used in benchmarking experiments"
+      },
+      {
+        "name": "logistic regression",
+        "description": "Standard logistic regression approach used as a baseline."
+      },
+      {
+        "name": "GPT-4o prompting",
+        "description": "Prompts containing two example images per class plus the query image (top 25 EAGLE-selected tiles vs. a single thumbnail); run three times per image; strict JSON format forced a single label per response."
+      },
+      {
+        "name": "computational efficiency analysis",
+        "description": "Selected 25 representative WSIs at percentiles 2, 6, 10, \u2026, 98 by tile count and measured inference time and FLOPs for each tile encoder; FLOP counts from ptflops were multiplied by the average tile count in the overall dataset."
+      },
+      {
+        "name": "slide-level retrieval",
+        "description": "Embeddings normalized with L2 and searched with cosine similarity; five random patients queried per external cohort, returning the top three."
+      },
+      {
+        "name": "equal averaging",
+        "description": "The resulting 25 embeddings are averaged so each tile contributes equally, producing a compact unsupervised slide-level representation and avoiding single-tile dominance."
+      },
+      {
+        "name": "CHIEF",
+        "description": "Slide encoder chosen for strong performance and computational efficiency; provides tile-level relevance or attention scores required by the approach."
+      },
+      {
+        "name": "MLP classifier",
+        "description": "Small lightweight classifier used for downstream tasks on the final embeddings."
+      },
+      {
+        "name": "uniform random tile selection",
+        "description": "Negative control for region selection using uniform random tile selection without replacement."
+      },
+      {
+        "name": "two-sided log-rank test",
+        "description": "Patients stratified by the median EAGLE risk score into low- and high-risk groups; hazard ratio and p-value computed using a two-sided log-rank test"
+      },
+      {
+        "name": "timing experiment sampling",
+        "description": "25 WSIs sampled at regular intervals from the 2nd to the 98th percentile of the tile distribution across 9,528 WSIs at 0.5 MPP; mean 17,771 tiles, differing by less than 0.3% from the dataset-wide average of 17,819 tiles"
+      },
+      {
+        "name": "efficiency normalization",
+        "description": "Time, FLOPs, and number of analyzed tiles for 25 WSIs with EAGLE and Virchow2 at 2 MPP normalized to TITAN at 0.5 MPP; FLOPs include tile extraction and time includes both tile and slide processing"
+      },
+      {
+        "name": "STAMP pipeline",
+        "description": "Open-source protocol and software (Solid Tumor Associative Modeling in Pathology) used for WSI segmentation, tile extraction, and subsequent feature generation, enabling end-to-end deep learning-based biomarker prediction and integration of clinical and tabular data."
+      },
+      {
+        "name": "shared experimental setting",
+        "description": "All models used the same predefined splits, the same train and validation construction, and the same early versus late fusion setting."
+      },
+      {
+        "name": "internal cross validation",
+        "description": "PathoBench contains no external cohorts, so all PathoBench results reflect internal cross validation."
+      },
+      {
+        "name": "tiling and resolution selection",
+        "description": "WSIs were divided into patches; each combination of model and resolution was evaluated, with the best magnification reported in the main experiments. CONCH v1.5 tiles were downsampled before model inference."
+      },
+      {
+        "name": "Canny edge detection background exclusion",
+        "description": "Tiles predominantly containing background were excluded using Canny edge detection, rejecting those with fewer than 2% of pixels classified as edges."
+      },
+      {
+        "name": "image normalization",
+        "description": "Before model input, all images were normalized (method not specified in the passage)."
+      },
+      {
+        "name": "Early stopping with five-fold cross-validation",
+        "description": "Early stopping monitored through validation loss in a five-fold cross-validation scheme selected the best checkpoints."
+      },
+      {
+        "name": "Few-shot linear probing",
+        "description": "MLP replaced with logistic regression (lbfgs solver, L2 penalty=1.0, 10,000 maximum iterations, balanced class weights), trained on k=1, 2, 4, 8, 16, 32 samples per class; each setting repeated ten times with different random draws."
+      },
+      {
+        "name": "EAGLE vs GPT-4o few-shot comparison",
+        "description": "EAGLE few-shot performance at k=2 compared with GPT-4o in-context learning on NSCLC subtyping (LUAD vs. LUSC), MSI status prediction in CRC, and ER expression in BRCA. EAGLE used logistic regression; GPT-4o received prompts with two example images per class plus the query image (top 25 EAGLE-selected tiles vs. incomplete comparison in passage)."
+      },
+      {
+        "name": "standard ABMIL",
+        "description": "Commonly used setting with single-head attention and bag size 512; hyperparameters fixed a priori and applied uniformly across all tasks without task-specific tuning."
+      },
+      {
+        "name": "gated ABMIL",
+        "description": "Baseline configured to avoid potential undercapacity effects by using full bags (no tile subsampling) and multiplicative gating in the attention pathway."
+      },
+      {
+        "name": "L2-normalized cosine similarity search",
+        "description": "Each embedding was L2-normalized and queried with cosine similarity; five random patients per external cohort were queried and the top three matches returned."
+      },
+      {
+        "name": "pathologist assessment of retrieved slides",
+        "description": "Retrieved slides were assessed by a board-certified pathologist for quality and importance of selected WSI regions."
+      },
+      {
+        "name": "attention concentration metrics",
+        "description": "Per-tile attention weights from CHIEF, ABMIL, and gated ABMIL were softmax-normalized within each patient bag; tiles were ranked by attention and Lorenz curves computed as cumulative attention mass versus cumulative fraction of tiles."
+      },
+      {
+        "name": "concentration summary statistics",
+        "description": "Concentration summarized with the Gini coefficient, fraction of tiles needed to accumulate 50% and 80% of total mass, and top-k mass statistics (top 1, top 2, and top 25)."
+      },
+      {
+        "name": "rank-profile aggregation of Lorenz curves",
+        "description": "Lorenz curves aggregated across tasks by aligning each patient by rank position and averaging ordered attention values across patients and tasks, without averaging attention for the same physical tile across models or folds."
+      },
+      {
+        "name": "EAGLE top-tile robustness review",
+        "description": "Systematic review of EAGLE top-25 tile selection for robustness in the presence of artifacts; the passage is truncated at a review conducted on 50."
+      },
+      {
+        "name": "early stopping",
+        "description": "20% of data used for validation to perform early stopping"
+      },
+      {
+        "name": "five-model averaging",
+        "description": "Five independently trained models per task, each trained on a different partition of the training sets; results averaged across the five folds to minimize single-run bias"
+      },
+      {
+        "name": "external validation",
+        "description": "Each of the five models applied to external test cohorts not used during training; test portion never used for model selection"
+      },
+      {
+        "name": "PathoBench protocol",
+        "description": "Predefined eighty percent train and twenty percent test splits; within each training split a validation subset of twenty percent of cases at the case level, stratified for categorical endpoints when feasible"
+      },
+      {
+        "name": "early fusion",
+        "description": "Early fusion of multiple slides per patient for models that do not rely on spatial coordinates"
+      },
+      {
+        "name": "TITAN and GigaPath patient representation",
+        "description": "Pooling each slide separately and averaging slide embeddings to obtain a patient representation"
+      },
+      {
+        "name": "STAMP",
+        "description": "Pipeline used to aggregate Virchow2 embeddings for the supervised baseline on MSI status prediction"
+      },
+      {
+        "name": "supervised baseline",
+        "description": "MSI status prediction baseline using Virchow2 embeddings aggregated via the STAMP pipeline; frequently highlights background, slide edge, pen mark, and other artifacts"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

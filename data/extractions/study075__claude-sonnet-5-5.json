@@ -1,0 +1,134 @@
+{
+  "study_id": "study075",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study075/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:02:32.862462+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 0,
+    "methods": 13,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "Gene 5",
+        "value": "nanoparticle volumetric concentration"
+      },
+      {
+        "name": "Gene 6",
+        "value": "nanoparticle domain size"
+      },
+      {
+        "name": "Gene 7",
+        "value": "domain compactness"
+      },
+      {
+        "name": "Gene 8",
+        "value": "spacing between domains"
+      },
+      {
+        "name": "Gene 9",
+        "value": "background scattering intensity"
+      },
+      {
+        "name": "Gene 10",
+        "value": "system size, specified as the number of nanoparticles used in the 3D reconstruction"
+      },
+      {
+        "name": "average micelle diameter",
+        "value": "50 nm"
+      },
+      {
+        "name": "micelle size dispersity",
+        "value": "0.05"
+      },
+      {
+        "name": "core-micelle size ratio",
+        "value": "0.25"
+      },
+      {
+        "name": "micelle volume fraction",
+        "value": "0.15"
+      },
+      {
+        "name": "number of genes in previously developed CREASE for S(q)",
+        "value": "10"
+      },
+      {
+        "name": "micelle diameter target value",
+        "value": "50 nm \u00b1 1 nm"
+      },
+      {
+        "name": "micelle size dispersity target value",
+        "value": "0.15 \u00b1 0.01"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "CREASE",
+        "description": "Computational method that evaluates P(q) (Equation 2) and combines it with S(q) (Equation 1) to obtain the overall scattering intensity I(q); recent versions use a machine learning model (neural network) to directly relate the gene set to the scattering intensity profile."
+      },
+      {
+        "name": "S(q) ML model",
+        "description": "Separate neural network model linking the gene set to the structure factor S(q); intended for reuse with other concentrated primary particle solutions (e.g., concentrated solutions of amphiphilic polymer vesicles)."
+      },
+      {
+        "name": "P(q) ML model",
+        "description": "Separate neural network model linking the gene set to the form factor P(q)."
+      },
+      {
+        "name": "P(q) and S(q) CREASE",
+        "description": "CREASE implementation using separate ML models for P(q) and S(q), validated in silico on concentrated micelle solutions where the micelle shell thickness scales with the core size (constant ratio of core radius to total radius), and then applied to experimental scattering data."
+      },
+      {
+        "name": "Genetic algorithm",
+        "description": "Optimizer used in CREASE to search for the genes (structure and form) whose computed scattering best matches the input scattering profile(s)."
+      },
+      {
+        "name": "Debye scattering equation",
+        "description": "Direct method for computing the scattering profile(s) in CREASE from the real-space structure."
+      },
+      {
+        "name": "Machine learning (ML) model for scattering computation",
+        "description": "Alternative to the Debye scattering equation for determining computed scattering profile(s) in CREASE."
+      },
+      {
+        "name": "Core-shell/core-corona primary particle modeling",
+        "description": "Modification of CREASE with additional genes for the core and shell/corona. The shell may have constant thickness regardless of core size, a thickness that scales with core size, or a mean thickness and dispersity independent of the core's. Particles may be treated as hard core-shell or soft core-shell, where shells of multiple primary particles can overlap."
+      },
+      {
+        "name": "Previously developed CREASE for S(q)",
+        "description": "Uses 10 genes to reconstruct the structural arrangement of spherical nanoparticles in solution: Genes 1 & 2 are average nanoparticle diameter and dispersity; Genes 3 & 4 are coarse-grained solvent particles controlling degree of aggregation; Gene 5 is nanoparticle volumetric concentration; Genes 6-8 relate to further structural parameters (text truncated)."
+      },
+      {
+        "name": "Debye scattering approach",
+        "description": "Computes the form factor P(q) (Equation 2) and combines it with the structure factor S(q) (Equation 1) to obtain the overall scattering intensity I(q); described as very computationally intensive."
+      },
+      {
+        "name": "Instrument smearing of SANS profiles",
+        "description": "Experimental SANS profiles are analyzed by incorporating smearing effects using the instrument's output variance \u03c3 and mean scattering vector q, via convolution of I(q) with a resolution function R(q, q\u0304) (Equations 3 and 4). I(q) must be calculated at q values below and above the smallest and highest experimental q values."
+      },
+      {
+        "name": "CREASE with partial contrast-matched SANS profiles",
+        "description": "Evaluation of how CREASE performs when only some of the contrast-matched scattering profiles (only total and core) are provided, since obtaining contrast-matched SANS profiles for all individual components is laborious."
+      },
+      {
+        "name": "Point scatterer form factor calculation",
+        "description": "f_total(q) considers point scatterers in both core and shell, f_core(q) only those in the core, and f_shell(q) only those in the shell, with Np point scatterers and scattering length density difference \u0394\u03c1i between solvent and component (core or shell)."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

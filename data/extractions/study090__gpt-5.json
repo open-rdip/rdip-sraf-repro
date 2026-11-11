@@ -1,0 +1,202 @@
+{
+  "study_id": "study090",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study090/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:28:41.887823+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 14,
+    "datasets": 1,
+    "methods": 15,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "input_image_resolution",
+        "value": "640 \u00d71600"
+      },
+      {
+        "name": "convolution_kernel",
+        "value": "3\u00d71 along depth axis"
+      },
+      {
+        "name": "Resolution",
+        "value": "900\u00d71600"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning_rate",
+        "value": "2e-4"
+      },
+      {
+        "name": "batch_size",
+        "value": "64"
+      },
+      {
+        "name": "epochs_ablation",
+        "value": "24"
+      },
+      {
+        "name": "epochs_BEVDdepth_with_CBGS",
+        "value": "20"
+      },
+      {
+        "name": "CBGS_usage",
+        "value": "disabled for ablation; enabled for BEVDepth comparison"
+      },
+      {
+        "name": "Camera-aware DepthNet placement",
+        "value": "feature level with stride 16"
+      },
+      {
+        "name": "image_backbone",
+        "value": "ResNet-50"
+      },
+      {
+        "name": "image_size",
+        "value": "256\u00d7704"
+      },
+      {
+        "name": "image_augmentations",
+        "value": "random cropping; random scaling; random flipping; random rotation"
+      },
+      {
+        "name": "bev_augmentations",
+        "value": "random (details not specified)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "nuScenes",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "BEVDepth",
+        "description": "Uses pretrained VovNet as backbone; BEVDepth\u2020 uses ConvNeXT as backbone."
+      },
+      {
+        "name": "Efficient Voxel Pooling",
+        "description": "Replaces Lift-splat cumsum-based voxel pooling by assigning each frustum feature a CUDA thread to add to its BEV grid, leveraging GPU parallelism."
+      },
+      {
+        "name": "Multi-frame Fusion",
+        "description": "Helps better detect objects and endows model capabilities for improved detection."
+      },
+      {
+        "name": "BEVDepth (vanilla)",
+        "description": "Baseline BEVDepth model; achieves 28.2% mAP and 32.7% NDS before additional components."
+      },
+      {
+        "name": "Depth Loss",
+        "description": "Additional loss (including BCELoss and L1Loss variants) used to supervise depth; improves classification (mAP) and slightly reduces mATE."
+      },
+      {
+        "name": "Modeling camera parameters into DepthNet",
+        "description": "Incorporates camera intrinsics/extrinsics into DepthNet, further reducing mATE by making the model camera-aware."
+      },
+      {
+        "name": "Depth Refinement Module",
+        "description": "Refines depth features (e.g., via different convolution kernels) to make features along the depth axis more compact; improves mAP."
+      },
+      {
+        "name": "FCOS3D",
+        "description": "3D object detection baseline evaluated at 900\u00d71600 resolution."
+      },
+      {
+        "name": "DETR3D",
+        "description": "3D object detection baseline evaluated at 900\u00d71600 resolution."
+      },
+      {
+        "name": "Image data augmentations",
+        "description": "Random cropping, random scaling, random flipping, and random rotation applied to images."
+      },
+      {
+        "name": "BEV data augmentations",
+        "description": "Random scaling, random flipping, and random rotation applied in BEV space."
+      },
+      {
+        "name": "CBGS strategy",
+        "description": "Class-Balanced Grouping and Sampling; disabled for ablation (24 epochs) and enabled for BEVDepth comparison training (20 epochs)."
+      },
+      {
+        "name": "Camera-aware DepthNet",
+        "description": "Placed at the feature level with stride 16 to incorporate camera awareness."
+      },
+      {
+        "name": "Camera-awareness",
+        "description": "Module enabling camera-aware features within the depth estimation pipeline."
+      },
+      {
+        "name": "Multi-frame (MF)",
+        "description": "Uses multiple frames for improved performance."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "training_time",
+        "value": "5 days -> 1.5 days",
+        "split": null
+      },
+      {
+        "metric": "pooling_speedup",
+        "value": "80\u00d7",
+        "split": null
+      },
+      {
+        "metric": "mAP",
+        "value": "0.314",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE",
+        "value": "0.706",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE",
+        "value": "0.647",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS",
+        "value": "0.357",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP",
+        "value": "0.282",
+        "split": null
+      },
+      {
+        "metric": "NDS",
+        "value": "0.327",
+        "split": null
+      },
+      {
+        "metric": "mATE",
+        "value": "0.707",
+        "split": null
+      },
+      {
+        "metric": "mAOE",
+        "value": "0.636",
+        "split": null
+      }
+    ]
+  }
+}

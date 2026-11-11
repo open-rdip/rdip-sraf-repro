@@ -1,0 +1,181 @@
+{
+  "study_id": "study032",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study032/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:36:20.659764+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 3,
+    "methods": 10,
+    "evaluation_results": 17
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "interactive_attention_frequency_hz",
+        "value": "2"
+      },
+      {
+        "name": "rollout_duration_seconds",
+        "value": "8"
+      },
+      {
+        "name": "interactive_attention",
+        "value": "none (marginal rollouts after initial states)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "WOMD interactive",
+        "version": null
+      },
+      {
+        "name": "WOMD",
+        "version": null
+      },
+      {
+        "name": "Waymo Open Motion Dataset (WOMD)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "marginal",
+        "description": "Unconditioned prediction setting without conditioning on a query agent's trajectory."
+      },
+      {
+        "name": "temporally causal conditional",
+        "description": "Fix one query agent to follow a specified trajectory and stochastically roll out the target agent, conditioning only on causally available (past) information."
+      },
+      {
+        "name": "acausal conditional",
+        "description": "Modify the model to leak the query agent\u2019s full trajectory, exposing its future to the target agent during conditioning."
+      },
+      {
+        "name": "LSTM Baseline",
+        "description": "Baseline LSTM model as reported in Table 3."
+      },
+      {
+        "name": "Scene Transformer",
+        "description": "Transformer-based scene model as reported in Table 3."
+      },
+      {
+        "name": "JFP",
+        "description": "JFP model as reported in Table 3."
+      },
+      {
+        "name": "MotionLM (joint)",
+        "description": "Performs interactive attention across modeled agents during both training and inference rollouts; uses 2 Hz interactive attention."
+      },
+      {
+        "name": "MotionLM (marginal)",
+        "description": "No interactive attention after initial states (0.125 Hz corresponds to observing only initial states), agents proceed with the 8-second rollout without further communication."
+      },
+      {
+        "name": "Autoregressive rollouts",
+        "description": "Able to adequately capture the diversity of multimodal future behavior without reliance on trajectory anchors or static intention points."
+      },
+      {
+        "name": "MotionLM",
+        "description": "Evaluated on marginal and joint motion forecasting benchmarks; examines conditional predictions and includes ablations of modeling choices."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Soft mAP",
+        "value": "8.2% increase relative to marginal (acausal conditioning)",
+        "split": null
+      },
+      {
+        "metric": "Prediction Overlap",
+        "value": "0.07462",
+        "split": null
+      },
+      {
+        "metric": "minADE (Marginal)",
+        "value": "0.6069",
+        "split": "validation"
+      },
+      {
+        "metric": "minFDE (Marginal)",
+        "value": "1.2236",
+        "split": "validation"
+      },
+      {
+        "metric": "Miss Rate (Marginal)",
+        "value": "0.1406",
+        "split": "validation"
+      },
+      {
+        "metric": "Soft mAP (Marginal)",
+        "value": "0.3951",
+        "split": "validation"
+      },
+      {
+        "metric": "minADE (Temporally causal conditional)",
+        "value": "0.5997",
+        "split": "validation"
+      },
+      {
+        "metric": "minFDE (Temporally causal conditional)",
+        "value": "1.2034",
+        "split": "validation"
+      },
+      {
+        "metric": "Miss Rate (Temporally causal conditional)",
+        "value": "0.1377",
+        "split": "validation"
+      },
+      {
+        "metric": "Soft mAP (Temporally causal conditional)",
+        "value": "0.4096",
+        "split": "validation"
+      },
+      {
+        "metric": "minADE (Acausal conditional)",
+        "value": "0.5899",
+        "split": "validation"
+      },
+      {
+        "metric": "minFDE (Acausal conditional)",
+        "value": "1.1804",
+        "split": "validation"
+      },
+      {
+        "metric": "Miss Rate (Acausal conditional)",
+        "value": "0.1338",
+        "split": "validation"
+      },
+      {
+        "metric": "Soft mAP (Acausal conditional)",
+        "value": "0.4274",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP",
+        "value": "6% relative improvement",
+        "split": null
+      },
+      {
+        "metric": "miss rate",
+        "value": "3% relative improvement",
+        "split": null
+      },
+      {
+        "metric": "Prediction Overlap",
+        "value": "0.07462",
+        "split": "test"
+      }
+    ]
+  }
+}

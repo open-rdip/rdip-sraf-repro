@@ -1,0 +1,156 @@
+{
+  "study_id": "study020",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study020/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:21:46.518489+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 16,
+    "datasets": 1,
+    "methods": 13,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Libra",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "64"
+      },
+      {
+        "name": "image_size",
+        "value": "632 \u00d7512"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1e\u22126"
+      },
+      {
+        "name": "data_augmentation_random_horizontal_flip",
+        "value": "enabled"
+      },
+      {
+        "name": "data_augmentation_random_vertical_flip",
+        "value": "enabled"
+      },
+      {
+        "name": "data_augmentation_random_rotation_degrees",
+        "value": "10"
+      },
+      {
+        "name": "data_augmentation_random_brightness_jitter",
+        "value": "small"
+      },
+      {
+        "name": "data_augmentation_random_contrast_jitter",
+        "value": "small"
+      },
+      {
+        "name": "pretrained_initialization",
+        "value": "ImageNet-pretrained weights"
+      },
+      {
+        "name": "cross_validation_folds",
+        "value": "5"
+      },
+      {
+        "name": "early_stopping_selection",
+        "value": "stopping iteration determined by 5-fold cross-validation"
+      },
+      {
+        "name": "rotation_degrees",
+        "value": "10"
+      },
+      {
+        "name": "brightness_contrast_jitter",
+        "value": "small random"
+      },
+      {
+        "name": "final_training_data",
+        "value": "all training data"
+      },
+      {
+        "name": "label_range",
+        "value": "[1-8]"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CSAW-M",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Ordinal multi-hot encoding",
+        "description": "For ordinal classification with K classes, encode label li \u2208 {1,...,K} as y^k_i = 1{li > k} for k \u2208 {1,...,K\u22121}, making K\u22121 binary tasks where each class is a superset of the previous."
+      },
+      {
+        "name": "ImageNet-pretrained initialization",
+        "description": "Models initialized with ImageNet-pretrained weights."
+      },
+      {
+        "name": "Data augmentation",
+        "description": "Applied random horizontal and vertical flipping, random rotation of 10 degrees, and small random brightness and contrast jittering."
+      },
+      {
+        "name": "5-fold cross-validation for early stopping",
+        "description": "Used 5-fold cross-validation to determine the stopping iteration."
+      },
+      {
+        "name": "ResNet34 one-hot",
+        "description": "ResNet-34 backbone trained for categorical classification of masking levels using softmax and cross-entropy loss to predict one-hot encodings."
+      },
+      {
+        "name": "ResNet34 multi-hot",
+        "description": "ResNet-34 backbone trained with multi-hot encodings to account for ordinal relations between masking levels, framed as multi-label classification."
+      },
+      {
+        "name": "Identification of low- and high-masking mammograms",
+        "description": "Groups masking levels 1\u20132 as low-masking and 7\u20138 as high-masking based on expert feedback; evaluates performance using F1-score."
+      },
+      {
+        "name": "Identification of interval and large invasive cancers",
+        "description": "Assesses correlation between predicted masking estimates and interval/large invasive cancers; evaluates using AUC for individual cancer types and a composite endpoint (CEP), and computes odds ratio (OR)."
+      },
+      {
+        "name": "Ordinal classification of masking potential",
+        "description": "Modeled the median expert opinion of masking potential levels in the ordinal range [1-8], accounting for ordinal relationships between classes."
+      },
+      {
+        "name": "Evaluation with AMAE and Kendall\u2019s \u03c4b",
+        "description": "Assessed performance using average mean absolute error (AMAE) and Kendall\u2019s \u03c4b to measure ordinal error and rank correlation, respectively; also examined performance on low- and high-masking cases."
+      },
+      {
+        "name": "Odds ratio by prediction quartiles",
+        "description": "Model predictions are partitioned into quartile groups gi (i in {1,2,3,4}). For each group gi, compute odds Oi = ICi / I\u0304Ci, where ICi is the number with interval cancer and I\u0304Ci is the number without. Compute odds ratios ORi = Oi / O1 using the first quartile g1 as reference (OR1 = 1)."
+      },
+      {
+        "name": "Continuous score from discrete masking predictions",
+        "description": "Convert discrete masking predictions into a continuous value by computing the weighted average of the probabilities that an input belongs to each masking level."
+      },
+      {
+        "name": "Comparison with density measures",
+        "description": "Compare baseline models to dense area and percent density computed using the Libra tool, due to known correlation with clinical endpoints."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

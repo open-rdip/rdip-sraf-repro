@@ -1,0 +1,86 @@
+{
+  "study_id": "study037",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study037/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:43:14.893183+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 0,
+    "methods": 6,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "hidden layers",
+        "value": "2"
+      },
+      {
+        "name": "hidden layer size",
+        "value": "2048"
+      },
+      {
+        "name": "activations",
+        "value": "leaky ReLU"
+      },
+      {
+        "name": "learning rate (Adam)",
+        "value": "10\u22123"
+      },
+      {
+        "name": "gradient ascent steps for computing samples \u00b5(x)",
+        "value": "50"
+      },
+      {
+        "name": "gradient-ascent learning rate (continuous tasks)",
+        "value": "0.05"
+      },
+      {
+        "name": "gradient-ascent learning rate (discrete tasks)",
+        "value": "2.0"
+      },
+      {
+        "name": "learning rate",
+        "value": "\u03b7"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "gradient ascent",
+        "description": "used to \ufb01nd x\u22c6on the learned conservative model, \u02c6f\u03b8"
+      },
+      {
+        "name": "conservative objective model",
+        "description": "Modeled as a neural network with two hidden layers of size 2048 each and leaky ReLU activations"
+      },
+      {
+        "name": "Adam optimizer",
+        "description": "Used to train the conservative objective model with a learning rate of 10\u22123"
+      },
+      {
+        "name": "gradient-ascent optimizer",
+        "description": "Used during optimization with a learning rate of 0.05 for continuous tasks and 2.0 for discrete tasks"
+      },
+      {
+        "name": "conservative training",
+        "description": "Training \u02c6f\u03b8 by performing gradient descent on \u03b8 with respect to the objective in Equation 7 with a learning rate \u03b7 to lower-bound the true function."
+      },
+      {
+        "name": "neural tangent kernel (NTK)",
+        "description": "Model of neural nets where the kernel of the function \u02c6f(x) is defined as Gf(xi,xj) := \u2207\u03b8\u02c6f\u03b8(xi)T\u2207\u03b8\u02c6f\u03b8(xj)."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

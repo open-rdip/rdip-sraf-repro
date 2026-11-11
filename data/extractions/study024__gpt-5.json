@@ -1,0 +1,164 @@
+{
+  "study_id": "study024",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study024/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:25:26.859036+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 17,
+    "datasets": 0,
+    "methods": 15,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "pump value",
+        "value": "optimized for the highest success probability through parameter tuning"
+      },
+      {
+        "name": "system parameters",
+        "value": "optimized for the highest success probability through parameter tuning"
+      },
+      {
+        "name": "clamping",
+        "value": "applied at the end of evolution as a post-processing step"
+      },
+      {
+        "name": "scaling factor s",
+        "value": "used in xi = 1/2 (ci/s + 1)"
+      },
+      {
+        "name": "pump_field_schedule_Langevin_pumpedLangevin_DL-CCVM",
+        "value": "p(t) = (t/T) * p0 (linear schedule)"
+      },
+      {
+        "name": "pump_field_schedule_MF-CCVM",
+        "value": "p(t) = (t/T) * p0 + 1 + j(t)"
+      },
+      {
+        "name": "measurement_strength",
+        "value": "j(t) = j0 * exp(-alpha * t / T)"
+      },
+      {
+        "name": "injected_noise_DL-CCVM",
+        "value": "r(t) = r0 * exp(-beta * t / T)"
+      },
+      {
+        "name": "p0",
+        "value": "unspecified"
+      },
+      {
+        "name": "j0",
+        "value": "unspecified"
+      },
+      {
+        "name": "alpha",
+        "value": "unspecified"
+      },
+      {
+        "name": "r0",
+        "value": "unspecified"
+      },
+      {
+        "name": "beta",
+        "value": "unspecified"
+      },
+      {
+        "name": "T",
+        "value": "unspecified"
+      },
+      {
+        "name": "Tpulse",
+        "value": "10 picoseconds"
+      },
+      {
+        "name": "num_trials_Ps",
+        "value": "1000"
+      },
+      {
+        "name": "optimality_gap_threshold",
+        "value": "0.1%"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Clamping post-processing",
+        "description": "Clamp amplitudes ci at the end of the evolution on a classical computer, then compute xi = 1/2 (ci/s + 1) to enforce 0 \u2264 xi \u2264 1."
+      },
+      {
+        "name": "Parameter tuning",
+        "description": "Optimize system parameters, including the pump value, to maximize success probability."
+      },
+      {
+        "name": "Wall-clock TTS comparison",
+        "description": "Compare wall-clock time-to-solution for optics-based CCVM implementations using physical device parameters against classical solvers using CPU time on digital devices."
+      },
+      {
+        "name": "Langevin solver",
+        "description": "Stochastic solver with linear pump field schedule p(t) = (t/T) * p0."
+      },
+      {
+        "name": "Pumped Langevin solver",
+        "description": "Variant of Langevin solver using linear pump field schedule p(t) = (t/T) * p0."
+      },
+      {
+        "name": "DL-CCVM",
+        "description": "Optics-inspired solver with linear pump field p(t) = (t/T) * p0 and injected noise r(t) = r0 * exp(-beta * t / T)."
+      },
+      {
+        "name": "MF-CCVM",
+        "description": "Optics-inspired solver with pump field p(t) = (t/T) * p0 + 1 + j(t) and measurement strength j(t) = j0 * exp(-alpha * t / T)."
+      },
+      {
+        "name": "Wall-clock TTS on GPU",
+        "description": "Time-to-solution measured as wall-clock time for solving instances on a GPU; curves show medians with IQR shading."
+      },
+      {
+        "name": "Success probability estimation (Ps)",
+        "description": "Ps is computed by solving a given problem instance 1000 times and counting how many times the global maximum is found."
+      },
+      {
+        "name": "Tmax estimation",
+        "description": "The time for a single trial is estimated as Tmax = niter \u00b7 N \u00b7 Tpulse, where Tpulse is the delay between pulses; Tpulse = 10 picoseconds was used."
+      },
+      {
+        "name": "Time to Solution (TTS) vs multiplicative optimality gap",
+        "description": "TTS is reported for finding approximate solutions within specified multiplicative gaps of the global optimum; interquartile ranges are shown as shaded regions."
+      },
+      {
+        "name": "R99 definition",
+        "description": "R99 is defined using the success probability Ps of a single trial as part of the time-to-solution analysis."
+      },
+      {
+        "name": "QCQP solver",
+        "description": "Quadratically constrained quadratic programming solver; a general heuristic solver for quadratic programming problems."
+      },
+      {
+        "name": "CPLEX",
+        "description": "Exact solver whose TTS heavily depends on problem density."
+      },
+      {
+        "name": "Gurobi",
+        "description": "Exact solver whose TTS heavily depends on problem density."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "wall-clock TTS",
+        "value": "more than three orders of magnitude lower than the CPU wall-clock TTS values for the conventional digital solvers",
+        "split": null
+      }
+    ]
+  }
+}

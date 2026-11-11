@@ -1,0 +1,215 @@
+{
+  "study_id": "study036",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study036/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:42:44.795630+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 5,
+    "methods": 19,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "training_split",
+        "value": "80%"
+      },
+      {
+        "name": "validation_split",
+        "value": "20%"
+      },
+      {
+        "name": "answer_order_randomization",
+        "value": "true"
+      },
+      {
+        "name": "classifier_layers",
+        "value": "1"
+      },
+      {
+        "name": "dataset_full_size",
+        "value": "546 questions"
+      },
+      {
+        "name": "dataset_main_size",
+        "value": "448 questions"
+      },
+      {
+        "name": "dataset_diamond_size",
+        "value": "198 questions"
+      },
+      {
+        "name": "extended_set_size",
+        "value": "564 questions"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "GPQA",
+        "version": null
+      },
+      {
+        "name": "GPQA Diamond",
+        "version": null
+      },
+      {
+        "name": "extended set",
+        "version": null
+      },
+      {
+        "name": "main set",
+        "version": null
+      },
+      {
+        "name": "diamond set",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Closed-book",
+        "description": "The model doesn\u2019t have runtime access to external information beyond the question, the prompt, and the model\u2019s own parameters."
+      },
+      {
+        "name": "Open-book",
+        "description": "The model is given access to an internet search tool and internet references returned by the searches."
+      },
+      {
+        "name": "Use of highly skilled non-experts",
+        "description": "Highly skilled non-experts were used to determine an upper bound on non-expert accuracy in the context of scalable oversight experiments."
+      },
+      {
+        "name": "Sourcing experts via Upwork",
+        "description": "Experts were sourced through Upwork without enforcing representation of particular regions or demographics."
+      },
+      {
+        "name": "Involved validation process",
+        "description": "Dataset construction included an involved validation process."
+      },
+      {
+        "name": "Few-shot chain-of-thought prompting with GPT-4",
+        "description": "GPT-4 prompted with few-shot chain-of-thought examples to answer GPQA questions."
+      },
+      {
+        "name": "GPT-4 with internet search via self-ask",
+        "description": "GPT-4 uses the self-ask framework to perform multi-hop Q&A with access to internet search tools."
+      },
+      {
+        "name": "Backoff strategy from search to few-shot CoT",
+        "description": "When the search-enabled model abstains from answering, the system falls back to the few-shot chain-of-thought GPT-4 answer."
+      },
+      {
+        "name": "GPT-4\u2013based baseline",
+        "description": "A strongest baseline model based on GPT-4 evaluated on the GPQA dataset."
+      },
+      {
+        "name": "Human non-expert baseline",
+        "description": "Highly skilled, resourced, and motivated non-experts with internet access spending over 30 minutes per question."
+      },
+      {
+        "name": "Zero-Shot GPT-4",
+        "description": "Direct zero-shot prompting of GPT-4."
+      },
+      {
+        "name": "Few-Shot GPT-4",
+        "description": "Few-shot prompting of GPT-4 with example prompts (Appendix A.3.1)."
+      },
+      {
+        "name": "Zero-Shot CoT GPT-4",
+        "description": "Zero-shot chain-of-thought prompting of GPT-4."
+      },
+      {
+        "name": "Few-Shot CoT GPT-4",
+        "description": "Few-shot chain-of-thought prompting of GPT-4."
+      },
+      {
+        "name": "GPT-4 with search",
+        "description": "GPT-4 augmented with search during inference."
+      },
+      {
+        "name": "Answer-only T5 (small and base) span-identification",
+        "description": "Fine-tuned T5-small and T5-base to select the correct answer label from options '(a)...(d)' with randomized answer order."
+      },
+      {
+        "name": "Single-layer continuous bag-of-words classifier with RoBERTa embeddings",
+        "description": "Answer-only classifier using RoBERTa embeddings; randomized answer order; trained on 80% of 564-question extended set and validated on 20%."
+      },
+      {
+        "name": "Validator accuracy by domain heatmap",
+        "description": "Measured validator accuracy across question and validator domains; diagonal represents expert validation and off-diagonal represents non-expert validation."
+      },
+      {
+        "name": "Non-expert validator accuracy measurement",
+        "description": "For each question, three individuals with expertise in domains different from the question\u2019s domain attempted to answer it. Validators had access to unrestricted internet resources except LLMs."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "non-expert validations taking more than 15 minutes",
+        "value": "90%",
+        "split": null
+      },
+      {
+        "metric": "median time spent per non-expert validation",
+        "value": "30 minutes",
+        "split": null
+      },
+      {
+        "metric": "top 20% non-expert validation time",
+        "value": "\u226545 minutes",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "between 38% and 40%",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "58.1%",
+        "split": "biology"
+      },
+      {
+        "metric": "accuracy",
+        "value": "37.0%",
+        "split": "physics"
+      },
+      {
+        "metric": "accuracy",
+        "value": "31.8%",
+        "split": "chemistry"
+      },
+      {
+        "metric": "accuracy",
+        "value": "39.4%",
+        "split": "extended set"
+      },
+      {
+        "metric": "abstention rate",
+        "value": "37.2%",
+        "split": "main set"
+      },
+      {
+        "metric": "estimated objectivity",
+        "value": "74%",
+        "split": null
+      },
+      {
+        "metric": "average non-expert validator accuracy",
+        "value": "34.1%\u00b12.3%",
+        "split": null
+      }
+    ]
+  }
+}

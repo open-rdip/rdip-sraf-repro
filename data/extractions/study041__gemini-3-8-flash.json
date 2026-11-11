@@ -1,0 +1,95 @@
+{
+  "study_id": "study041",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study041/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:46:48.222151+00:00",
+  "counts": {
+    "dependencies": 8,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 6,
+    "methods": 2,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Binary Trees",
+        "version": "Debian CLBG Rust#2"
+      },
+      {
+        "name": "Regex-Redux",
+        "version": "Debian CLBG Rust#1"
+      },
+      {
+        "name": "Alacritty",
+        "version": "v0.15.0-dev"
+      },
+      {
+        "name": "fd",
+        "version": "v9.0.0"
+      },
+      {
+        "name": "grmtools",
+        "version": "v0.13.4"
+      },
+      {
+        "name": "Ripgrep",
+        "version": "v14.1.1"
+      },
+      {
+        "name": "som-rs-ast",
+        "version": "git #35b780"
+      },
+      {
+        "name": "som-rs-bc",
+        "version": "git #35b780"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "Binary Trees",
+        "version": "Debian CLBG Rust#2"
+      },
+      {
+        "name": "Regex-Redux",
+        "version": "Debian CLBG Rust#1"
+      },
+      {
+        "name": "Alacritty",
+        "version": "v0.15.0-dev"
+      },
+      {
+        "name": "fd",
+        "version": "v9.0.0"
+      },
+      {
+        "name": "Ripgrep",
+        "version": null
+      },
+      {
+        "name": "SOM",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Alloy",
+        "description": "memory allocation strategy"
+      },
+      {
+        "name": "Rc<T>",
+        "description": "memory allocation strategy / shared ownership approach"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

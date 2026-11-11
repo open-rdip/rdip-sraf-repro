@@ -1,0 +1,87 @@
+{
+  "study_id": "study016",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study016/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:17:22.996511+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 2,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "DreamerV2 discrete latents",
+        "value": "disabled"
+      },
+      {
+        "name": "DreamerV2 mixed precision training",
+        "value": "disabled"
+      },
+      {
+        "name": "No worlds seen twice during training",
+        "value": "true"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "our benchmark",
+        "version": null
+      },
+      {
+        "name": "Avalon",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "IMPALA",
+        "description": "Used as a baseline algorithm due to simplicity and robustness across problems."
+      },
+      {
+        "name": "PPO",
+        "description": "Used as a baseline algorithm due to simplicity and robustness across problems."
+      },
+      {
+        "name": "DreamerV2",
+        "description": "Used as a representative model-based baseline without discrete latents and without mixed precision training."
+      },
+      {
+        "name": "Bayesian optimization",
+        "description": "Used to tune hyper-parameters using runs with a smaller number of steps."
+      },
+      {
+        "name": "Natural Evolution Strategies (NES)",
+        "description": "Used to tune hyper-parameters using runs with a smaller number of steps."
+      },
+      {
+        "name": "Difficulty curriculum",
+        "description": "Training/evaluation setup referenced as the difficulty curriculum; no further details provided in the passage."
+      },
+      {
+        "name": "Difficulty-based curriculum learning",
+        "description": "A simple form of Automated Curriculum Learning where, when the agent succeeds (fails) at a task, the maximum difficulty of future generated worlds for that task is increased (decreased) slightly; similar to approaches in [24,30]."
+      },
+      {
+        "name": "MT-TB",
+        "description": "basic tasks (MT-TB)"
+      },
+      {
+        "name": "MT-TA",
+        "description": "agents trained on all 20 tasks (MT-TA)"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

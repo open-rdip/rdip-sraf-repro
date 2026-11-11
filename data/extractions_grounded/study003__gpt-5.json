@@ -1,0 +1,1897 @@
+{
+ "study_id": "study003",
+ "model": "gpt5",
+ "slug": "gpt-5",
+ "n_passages": 9,
+ "n_passages_ok": 9,
+ "failures": [],
+ "records": [
+  {
+   "field": "dependencies",
+   "value": "Swim Transformer Block",
+   "evidence": "Swim Transformer Block",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "200",
+   "evidence": "W= 200",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "200",
+   "evidence": "H= 200",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "16",
+   "evidence": "there are 16 boxes in a batch",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "1",
+   "evidence": "\u00d71denotes obtaining 1 new sample",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "2",
+   "evidence": "\u00d72denotes obtaining 2 new samples",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "4",
+   "evidence": "\u00d74denotes obtaining 4 new",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "CAFR approach",
+   "evidence": "CAFR approach",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Sparse Feature Refinement Module",
+   "evidence": "Sparse Feature Refinement Module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Adaptive Gradient Propagation Module",
+   "evidence": "Adaptive Gradient Propagation Module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "APG and SFR modules",
+   "evidence": "APG and SFR modules",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Localization Loss",
+   "evidence": "Localization Loss",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Classification Loss",
+   "evidence": "Classification Loss",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Word -Region Contrastive Loss",
+   "evidence": "Word -Region Contrastive Loss",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "SINet",
+   "evidence": "SINet [11]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "SegMaR",
+   "evidence": "SegMaR [4]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "PreyNet",
+   "evidence": "PreyNet [20]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ZoomNet",
+   "evidence": "ZoomNet [21]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "FSEL",
+   "evidence": "FSEL [22]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Faster R-CNN",
+   "evidence": "Faster R-CNN",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Mask R-CNN",
+   "evidence": "segmentation (Mask R-CNN)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "77.0",
+   "evidence": "S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "81.1",
+   "evidence": "SegMaR [4] ResNet50 81.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "81.0",
+   "evidence": "PreyNet [20] ResNet50 81.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "83.5",
+   "evidence": "ZoomNet [21] ResNet50 83.5",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "87.3",
+   "evidence": "FSEL [22] ResNet50 87.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "95.7",
+   "evidence": "Faster R-CNN ResNet50 95.7",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "96.1",
+   "evidence": "Faster R-CNN ResNet101 96.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "99.1",
+   "evidence": "Faster R-CNN Swin-L 99.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "CUDA",
+   "evidence": "additional CUDA memory usage",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "16",
+   "evidence": "a batch includes 16 bounding",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "16",
+   "evidence": "select 16 boxes at a time",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "2\u00d72,3\u00d73, and 4\u00d74",
+   "evidence": "sizes 2\u00d72,3\u00d73, and 4\u00d74",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "new dataset",
+   "evidence": "form a new dataset for training the detection network.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Offline Implementation of SFR",
+   "evidence": "Offline Implementation of SFR",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "online approach",
+   "evidence": "online approach",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "randomly shuffle",
+   "evidence": "randomly shuffle",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "canvas filling",
+   "evidence": "canvas filling",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "dependencies",
+   "value": "MMDetection",
+   "evidence": "MMDetection [54]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "AdamW",
+   "evidence": "we employ the AdamW optimizer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "0.0003",
+   "evidence": "initial learning rate of 0.0003",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "0.05",
+   "evidence": "momentum of 0.05",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "10",
+   "evidence": "train 10 groups of random seeds",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "RCOD",
+   "evidence": "RCOD data",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "CAFR",
+   "evidence": "our proposed CAFR",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "SFR",
+   "evidence": "between SFR and APG",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "APG",
+   "evidence": "between SFR and APG",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "coco-style mAP",
+   "evidence": "coco-style [55] mAP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "two 2-dimensional convolutional layers",
+   "evidence": "adapter module composed of two 2-dimensional convolutional layers",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "GLIP tiny model",
+   "evidence": "GLIP tiny model [9]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "GLIP+Adapter",
+   "evidence": "GLIP+Adapter fails to adapt to the COD task",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "adapter module",
+   "evidence": "an adapter module composed of two 2-dimensional convolutional layers",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "AGP",
+   "evidence": "we propose the AGP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "contrastive loss",
+   "evidence": "our contrastive loss Lc",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "GIoU",
+   "evidence": "GIoU [50] as our Localization loss Lbbox",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "focal loss",
+   "evidence": "focal loss [51] as our classification loss Lcls",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "swin-transformer",
+   "evidence": "swin-transformer [10] as the feature extractor",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "FPN",
+   "evidence": "FPN [52] for feature refinement",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "SFR module",
+   "evidence": "we propose the SFR module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "AGP-based loss",
+   "evidence": "AGP-based loss",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "RCOD",
+   "evidence": "In RCOD",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "COD10K-D",
+   "evidence": "COD10K-D, NC4K-D, and CAMO- D datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K-D",
+   "evidence": "COD10K-D, NC4K-D, and CAMO- D datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "CAMO- D",
+   "evidence": "COD10K-D, NC4K-D, and CAMO- D datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "CAMO",
+   "evidence": "the original camouflaged CAMO dataset [13]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "Mask RCNN",
+   "evidence": "Mask RCNN [56] ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "Faster RCNN",
+   "evidence": "Faster RCNN [17] ResNet50 34 176.54",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "Large Model SAM",
+   "evidence": "Large Model SAM [57] Vit-T 89 371.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "GDino + CAFR",
+   "evidence": "GDino + CAFR Swin-T 165 353.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "SAM",
+   "evidence": "SAM [57] Vit-L 298 1314.89",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "GDino + CAFR",
+   "evidence": "GDino + CAFR Swin-L 222 524.68",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "hyperparameters",
+   "value": "68",
+   "evidence": "select 68 valid classes for our detection task",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "hyperparameters",
+   "value": "6000",
+   "evidence": "using 6000 images for training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "hyperparameters",
+   "value": "4000",
+   "evidence": "and 4000 images for testing",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "hyperparameters",
+   "value": "4121",
+   "evidence": "we carefully select 4121 clearer images from the NC4K dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "CAMO-D",
+   "evidence": "Fig. 4 from the CAMO-D dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "COD10K-v2",
+   "evidence": "the original dataset COD10K-v2",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K-D",
+   "evidence": "Moving on to NC4K-D",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K",
+   "evidence": "from the NC4K dataset [12]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "Mask RCNN",
+   "evidence": "Mask RCNN [56]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "Faster RCNN",
+   "evidence": "Faster RCNN [17]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "SAM",
+   "evidence": "SAM [57]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "GDino + CAFR",
+   "evidence": "GDino + CAFR",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "41",
+   "evidence": "Mask RCNN [56] ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "289.97",
+   "evidence": "Mask RCNN [56] ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "34",
+   "evidence": "Faster RCNN [17] ResNet50 34 176.54",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "176.54",
+   "evidence": "Faster RCNN [17] ResNet50 34 176.54",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "89",
+   "evidence": "SAM [57] Vit-T 89 371.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "371.98",
+   "evidence": "SAM [57] Vit-T 89 371.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "165",
+   "evidence": "GDino + CAFR Swin-T 165",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "COD10K-D",
+   "evidence": "COD10K-D, NC4K-D, AND CAMO-D DATASETS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K-D",
+   "evidence": "COD10K-D, NC4K-D, AND CAMO-D DATASETS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "datasets",
+   "value": "CAMO-D",
+   "evidence": "COD10K-D, NC4K-D, AND CAMO-D DATASETS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "YOLOv7-L",
+   "evidence": "YOLOv7-L [15]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "DEF-DETR",
+   "evidence": "DEF-DETR ISDEFORMABLE DETR [35]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "GLIP",
+   "evidence": "GLIP WITH ITS TINY AND LARGE PRE -TRAINED MODELS [9]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "CSPDarknet",
+   "evidence": "CSPDarknet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "3.8",
+   "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "8.2",
+   "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "2.8",
+   "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.0",
+   "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "4.0",
+   "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.8",
+   "evidence": "6.8 14.2 6.0 1.7 7.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "14.2",
+   "evidence": "6.8 14.2 6.0 1.7 7.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.0",
+   "evidence": "6.8 14.2 6.0 1.7 7.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.7",
+   "evidence": "6.8 14.2 6.0 1.7 7.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "7.3",
+   "evidence": "6.8 14.2 6.0 1.7 7.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "5.4",
+   "evidence": "5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "gpt-5",
+   "passage_index": 8
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "dependencies": {
+    "n": 3,
+    "has_evidence": 3,
+    "span_found": 3,
+    "value_in_span": 3,
+    "grounded": 3
+   },
+   "hyperparameters": {
+    "n": 18,
+    "has_evidence": 18,
+    "span_found": 18,
+    "value_in_span": 18,
+    "grounded": 18
+   },
+   "methods": {
+    "n": 48,
+    "has_evidence": 48,
+    "span_found": 47,
+    "value_in_span": 47,
+    "grounded": 46
+   },
+   "evaluation_results": {
+    "n": 26,
+    "has_evidence": 26,
+    "span_found": 26,
+    "value_in_span": 26,
+    "grounded": 26
+   },
+   "datasets": {
+    "n": 13,
+    "has_evidence": 13,
+    "span_found": 13,
+    "value_in_span": 13,
+    "grounded": 13
+   }
+  },
+  "total": {
+   "n": 108,
+   "has_evidence": 108,
+   "span_found": 107,
+   "value_in_span": 107,
+   "grounded": 106
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "Swim Transformer Block",
+      "version": null,
+      "evidence": "Swim Transformer Block"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "W",
+      "value": "200",
+      "evidence": "W= 200"
+     },
+     {
+      "name": "H",
+      "value": "200",
+      "evidence": "H= 200"
+     },
+     {
+      "name": "batch_boxes",
+      "value": "16",
+      "evidence": "there are 16 boxes in a batch"
+     },
+     {
+      "name": "x1_new_samples",
+      "value": "1",
+      "evidence": "\u00d71denotes obtaining 1 new sample"
+     },
+     {
+      "name": "x2_new_samples",
+      "value": "2",
+      "evidence": "\u00d72denotes obtaining 2 new samples"
+     },
+     {
+      "name": "x4_new_samples",
+      "value": "4",
+      "evidence": "\u00d74denotes obtaining 4 new"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "CAFR approach",
+      "evidence": "CAFR approach"
+     },
+     {
+      "name": "Sparse Feature Refinement Module",
+      "evidence": "Sparse Feature Refinement Module"
+     },
+     {
+      "name": "Adaptive Gradient Propagation Module",
+      "evidence": "Adaptive Gradient Propagation Module"
+     },
+     {
+      "name": "APG and SFR modules",
+      "evidence": "APG and SFR modules"
+     },
+     {
+      "name": "Localization Loss",
+      "evidence": "Localization Loss"
+     },
+     {
+      "name": "Classification Loss",
+      "evidence": "Classification Loss"
+     },
+     {
+      "name": "Word -Region Contrastive Loss",
+      "evidence": "Word -Region Contrastive Loss"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "SINet",
+      "evidence": "SINet [11]"
+     },
+     {
+      "name": "SegMaR",
+      "evidence": "SegMaR [4]"
+     },
+     {
+      "name": "PreyNet",
+      "evidence": "PreyNet [20]"
+     },
+     {
+      "name": "ZoomNet",
+      "evidence": "ZoomNet [21]"
+     },
+     {
+      "name": "FSEL",
+      "evidence": "FSEL [22]"
+     },
+     {
+      "name": "Faster R-CNN",
+      "evidence": "Faster R-CNN"
+     },
+     {
+      "name": "Mask R-CNN",
+      "evidence": "segmentation (Mask R-CNN)"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "77.0",
+      "split": null,
+      "evidence": "S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0"
+     },
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "81.1",
+      "split": null,
+      "evidence": "SegMaR [4] ResNet50 81.1"
+     },
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "81.0",
+      "split": null,
+      "evidence": "PreyNet [20] ResNet50 81.0"
+     },
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "83.5",
+      "split": null,
+      "evidence": "ZoomNet [21] ResNet50 83.5"
+     },
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "87.3",
+      "split": null,
+      "evidence": "FSEL [22] ResNet50 87.3"
+     },
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "95.7",
+      "split": null,
+      "evidence": "Faster R-CNN ResNet50 95.7"
+     },
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "96.1",
+      "split": null,
+      "evidence": "Faster R-CNN ResNet101 96.1"
+     },
+     {
+      "metric": "S\u03b1/ mIoU",
+      "value": "99.1",
+      "split": null,
+      "evidence": "Faster R-CNN Swin-L 99.1"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "CUDA",
+      "version": null,
+      "evidence": "additional CUDA memory usage"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "batch_size",
+      "value": "16",
+      "evidence": "a batch includes 16 bounding"
+     },
+     {
+      "name": "boxes_per_selection",
+      "value": "16",
+      "evidence": "select 16 boxes at a time"
+     },
+     {
+      "name": "sample_sizes",
+      "value": "2\u00d72,3\u00d73, and 4\u00d74",
+      "evidence": "sizes 2\u00d72,3\u00d73, and 4\u00d74"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "new dataset",
+      "version": null,
+      "evidence": "form a new dataset for training the detection network."
+     }
+    ],
+    "methods": [
+     {
+      "name": "Offline Implementation of SFR",
+      "evidence": "Offline Implementation of SFR"
+     },
+     {
+      "name": "online approach",
+      "evidence": "online approach"
+     },
+     {
+      "name": "randomly shuffle",
+      "evidence": "randomly shuffle"
+     },
+     {
+      "name": "canvas filling",
+      "evidence": "canvas filling"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "MMDetection",
+      "version": null,
+      "evidence": "MMDetection [54]"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "optimizer",
+      "value": "AdamW",
+      "evidence": "we employ the AdamW optimizer"
+     },
+     {
+      "name": "learning rate",
+      "value": "0.0003",
+      "evidence": "initial learning rate of 0.0003"
+     },
+     {
+      "name": "momentum",
+      "value": "0.05",
+      "evidence": "momentum of 0.05"
+     },
+     {
+      "name": "random seed groups",
+      "value": "10",
+      "evidence": "train 10 groups of random seeds"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "RCOD",
+      "version": null,
+      "evidence": "RCOD data"
+     }
+    ],
+    "methods": [
+     {
+      "name": "CAFR",
+      "evidence": "our proposed CAFR"
+     },
+     {
+      "name": "SFR",
+      "evidence": "between SFR and APG"
+     },
+     {
+      "name": "APG",
+      "evidence": "between SFR and APG"
+     },
+     {
+      "name": "coco-style mAP",
+      "evidence": "coco-style [55] mAP"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "adapter module layers",
+      "value": "two 2-dimensional convolutional layers",
+      "evidence": "adapter module composed of two 2-dimensional convolutional layers"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "GLIP tiny model",
+      "evidence": "GLIP tiny model [9]"
+     },
+     {
+      "name": "GLIP+Adapter",
+      "evidence": "GLIP+Adapter fails to adapt to the COD task"
+     },
+     {
+      "name": "adapter module",
+      "evidence": "an adapter module composed of two 2-dimensional convolutional layers"
+     },
+     {
+      "name": "AGP",
+      "evidence": "we propose the AGP"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "contrastive loss",
+      "evidence": "our contrastive loss Lc"
+     },
+     {
+      "name": "GIoU",
+      "evidence": "GIoU [50] as our Localization loss Lbbox"
+     },
+     {
+      "name": "focal loss",
+      "evidence": "focal loss [51] as our classification loss Lcls"
+     },
+     {
+      "name": "swin-transformer",
+      "evidence": "swin-transformer [10] as the feature extractor"
+     },
+     {
+      "name": "FPN",
+      "evidence": "FPN [52] for feature refinement"
+     },
+     {
+      "name": "SFR module",
+      "evidence": "we propose the SFR module"
+     },
+     {
+      "name": "AGP-based loss",
+      "evidence": "AGP-based loss"
+     },
+     {
+      "name": "RCOD",
+      "evidence": "In RCOD"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 6,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COD10K-D",
+      "version": null,
+      "evidence": "COD10K-D, NC4K-D, and CAMO- D datasets"
+     },
+     {
+      "name": "NC4K-D",
+      "version": null,
+      "evidence": "COD10K-D, NC4K-D, and CAMO- D datasets"
+     },
+     {
+      "name": "CAMO- D",
+      "version": null,
+      "evidence": "COD10K-D, NC4K-D, and CAMO- D datasets"
+     },
+     {
+      "name": "CAMO",
+      "version": null,
+      "evidence": "the original camouflaged CAMO dataset [13]"
+     }
+    ],
+    "methods": [
+     {
+      "name": "Mask RCNN",
+      "evidence": "Mask RCNN [56] ResNet50 41 289.97"
+     },
+     {
+      "name": "Faster RCNN",
+      "evidence": "Faster RCNN [17] ResNet50 34 176.54"
+     },
+     {
+      "name": "Large Model SAM",
+      "evidence": "Large Model SAM [57] Vit-T 89 371.98"
+     },
+     {
+      "name": "GDino + CAFR",
+      "evidence": "GDino + CAFR Swin-T 165 353.98"
+     },
+     {
+      "name": "SAM",
+      "evidence": "SAM [57] Vit-L 298 1314.89"
+     },
+     {
+      "name": "GDino + CAFR",
+      "evidence": "GDino + CAFR Swin-L 222 524.68"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 7,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "num_classes",
+      "value": "68",
+      "evidence": "select 68 valid classes for our detection task"
+     },
+     {
+      "name": "train_images",
+      "value": "6000",
+      "evidence": "using 6000 images for training"
+     },
+     {
+      "name": "test_images",
+      "value": "4000",
+      "evidence": "and 4000 images for testing"
+     },
+     {
+      "name": "selected_images_nc4k",
+      "value": "4121",
+      "evidence": "we carefully select 4121 clearer images from the NC4K dataset"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "CAMO-D",
+      "version": null,
+      "evidence": "Fig. 4 from the CAMO-D dataset"
+     },
+     {
+      "name": "COD10K-v2",
+      "version": "v2",
+      "evidence": "the original dataset COD10K-v2"
+     },
+     {
+      "name": "NC4K-D",
+      "version": null,
+      "evidence": "Moving on to NC4K-D"
+     },
+     {
+      "name": "NC4K",
+      "version": null,
+      "evidence": "from the NC4K dataset [12]"
+     }
+    ],
+    "methods": [
+     {
+      "name": "Mask RCNN",
+      "evidence": "Mask RCNN [56]"
+     },
+     {
+      "name": "Faster RCNN",
+      "evidence": "Faster RCNN [17]"
+     },
+     {
+      "name": "SAM",
+      "evidence": "SAM [57]"
+     },
+     {
+      "name": "GDino + CAFR",
+      "evidence": "GDino + CAFR"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "Par (M)",
+      "value": "41",
+      "split": null,
+      "evidence": "Mask RCNN [56] ResNet50 41 289.97"
+     },
+     {
+      "metric": "FLOPs (G)",
+      "value": "289.97",
+      "split": null,
+      "evidence": "Mask RCNN [56] ResNet50 41 289.97"
+     },
+     {
+      "metric": "Par (M)",
+      "value": "34",
+      "split": null,
+      "evidence": "Faster RCNN [17] ResNet50 34 176.54"
+     },
+     {
+      "metric": "FLOPs (G)",
+      "value": "176.54",
+      "split": null,
+      "evidence": "Faster RCNN [17] ResNet50 34 176.54"
+     },
+     {
+      "metric": "Par (M)",
+      "value": "89",
+      "split": null,
+      "evidence": "SAM [57] Vit-T 89 371.98"
+     },
+     {
+      "metric": "FLOPs (G)",
+      "value": "371.98",
+      "split": null,
+      "evidence": "SAM [57] Vit-T 89 371.98"
+     },
+     {
+      "metric": "Par (M)",
+      "value": "165",
+      "split": null,
+      "evidence": "GDino + CAFR Swin-T 165"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 8,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COD10K-D",
+      "version": null,
+      "evidence": "COD10K-D, NC4K-D, AND CAMO-D DATASETS"
+     },
+     {
+      "name": "NC4K-D",
+      "version": null,
+      "evidence": "COD10K-D, NC4K-D, AND CAMO-D DATASETS"
+     },
+     {
+      "name": "CAMO-D",
+      "version": null,
+      "evidence": "COD10K-D, NC4K-D, AND CAMO-D DATASETS"
+     }
+    ],
+    "methods": [
+     {
+      "name": "YOLOv7-L",
+      "evidence": "YOLOv7-L [15]"
+     },
+     {
+      "name": "DEF-DETR",
+      "evidence": "DEF-DETR ISDEFORMABLE DETR [35]"
+     },
+     {
+      "name": "GLIP",
+      "evidence": "GLIP WITH ITS TINY AND LARGE PRE -TRAINED MODELS [9]"
+     },
+     {
+      "name": "CSPDarknet",
+      "evidence": "CSPDarknet"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "mAP",
+      "value": "3.8",
+      "split": "COD10K-D",
+      "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0"
+     },
+     {
+      "metric": "AP50",
+      "value": "8.2",
+      "split": "COD10K-D",
+      "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0"
+     },
+     {
+      "metric": "AP75",
+      "value": "2.8",
+      "split": "COD10K-D",
+      "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0"
+     },
+     {
+      "metric": "APm",
+      "value": "1.0",
+      "split": "COD10K-D",
+      "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0"
+     },
+     {
+      "metric": "APl",
+      "value": "4.0",
+      "split": "COD10K-D",
+      "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0"
+     },
+     {
+      "metric": "mAP",
+      "value": "6.8",
+      "split": "NC4K-D",
+      "evidence": "6.8 14.2 6.0 1.7 7.3"
+     },
+     {
+      "metric": "AP50",
+      "value": "14.2",
+      "split": "NC4K-D",
+      "evidence": "6.8 14.2 6.0 1.7 7.3"
+     },
+     {
+      "metric": "AP75",
+      "value": "6.0",
+      "split": "NC4K-D",
+      "evidence": "6.8 14.2 6.0 1.7 7.3"
+     },
+     {
+      "metric": "APm",
+      "value": "1.7",
+      "split": "NC4K-D",
+      "evidence": "6.8 14.2 6.0 1.7 7.3"
+     },
+     {
+      "metric": "APl",
+      "value": "7.3",
+      "split": "NC4K-D",
+      "evidence": "6.8 14.2 6.0 1.7 7.3"
+     },
+     {
+      "metric": "mAP",
+      "value": "5.4",
+      "split": "CAMO-D",
+      "evidence": "5.4"
+     }
+    ]
+   }
+  }
+ ]
+}

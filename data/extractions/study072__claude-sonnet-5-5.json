@@ -1,0 +1,148 @@
+{
+  "study_id": "study072",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study072/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:01:03.673009+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 3,
+    "methods": 15,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA GTX 4090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b2",
+        "value": "investigated for its effect on classification accuracy on the validation set (value not stated)"
+      },
+      {
+        "name": "P (number of linear interpolations)",
+        "value": "increase investigated (value not stated)"
+      },
+      {
+        "name": "mini-batch size",
+        "value": "32"
+      },
+      {
+        "name": "mini-batch size (w-RA vs wo-RA&ER comparison)",
+        "value": "128"
+      },
+      {
+        "name": "mini-batch size (Food-101, ResNet-101)",
+        "value": "48"
+      },
+      {
+        "name": "mini-batch size (mini-ImageNet, ResNet-34)",
+        "value": "16"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Food-101",
+        "version": null
+      },
+      {
+        "name": "CIFAR-100",
+        "version": null
+      },
+      {
+        "name": "mini-ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "w-RA&ER",
+        "description": "Approach evaluated with and without RA&ER (w-RA&ER vs wo-RA&ER); its performance is influenced by model architecture, and higher wo-RA&ER accuracy is associated with higher w-RA&ER accuracy."
+      },
+      {
+        "name": "w-RA&ER(MM)",
+        "description": "Variant of w-RA&ER after which the accuracy advantage disappeared and accuracy was 1.22% lower."
+      },
+      {
+        "name": "MobileNetV3-Large",
+        "description": "Lightweight model focused on execution efficiency, with weaker feature extraction capabilities than the other two models."
+      },
+      {
+        "name": "tiny-SwinTransformer",
+        "description": "Hierarchical transformer structure with shifted window mechanism, delivering superior feature extraction capabilities."
+      },
+      {
+        "name": "Hyperparameter investigation",
+        "description": "Investigates how hyperparameter \u03b2 affects classification accuracy on the validation set under various conditions, and the effect of increasing the number P of linear interpolations."
+      },
+      {
+        "name": "SynerMix",
+        "description": "Method that improves classification accuracy but almost doubles training cost; can be tailored for tasks with classification components such as object detection."
+      },
+      {
+        "name": "SynerMix-Intra",
+        "description": "Component of SynerMix that adds a branch closely mirroring the original model, markedly accelerating model convergence as measured by epoch count."
+      },
+      {
+        "name": "wo-RA&ER",
+        "description": "Configuration without RA&ER, used as the baseline for epoch duration comparison."
+      },
+      {
+        "name": "w-RA&ER(M)",
+        "description": "Configuration with RA&ER (M), with a longer training time per epoch than wo-RA&ER."
+      },
+      {
+        "name": "w-ER",
+        "description": "Training with ER, which uses hidden representations; introduces variability in mini-batch loss calculations, leading to slower convergence than wo-RA&ER"
+      },
+      {
+        "name": "w-ER(M)",
+        "description": "Variant of w-ER that underperforms wo-RA&ER at mini-batch size 16, with high standard deviations in accuracy"
+      },
+      {
+        "name": "w-ER(MM)",
+        "description": "Variant of w-ER that underperforms wo-RA&ER at mini-batch size 16, with high standard deviations in accuracy"
+      },
+      {
+        "name": "w-RA",
+        "description": "When combined with w-ER, mitigates the slow and unstable convergence of w-ER (Section 4.2.3)"
+      },
+      {
+        "name": "ResNet-34",
+        "description": "Model used with CIFAR-100, showing a modest decline in accuracy at mini-batch size 32"
+      },
+      {
+        "name": "ResNet-101",
+        "description": "Model used with the Food-101 dataset at mini-batch size 48."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy difference after applying w-RA&ER(MM)",
+        "value": "1.22% lower",
+        "split": null
+      },
+      {
+        "metric": "epoch duration (wo-RA&ER, ResNet-101, Food-101)",
+        "value": "roughly 290 seconds",
+        "split": null
+      },
+      {
+        "metric": "epoch duration (w-RA&ER(M), ResNet-101, Food-101)",
+        "value": "about 570 seconds",
+        "split": null
+      },
+      {
+        "metric": "accuracy change of w-RA relative to wo-RA&ER (mini-batch size 128)",
+        "value": "-0.41%",
+        "split": null
+      }
+    ]
+  }
+}

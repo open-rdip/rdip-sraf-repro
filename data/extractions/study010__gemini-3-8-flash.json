@@ -1,0 +1,159 @@
+{
+  "study_id": "study010",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study010/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:10:45.809184+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 14,
+    "datasets": 2,
+    "methods": 12,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PaddlePaddle",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "image text resize",
+        "value": "32\u00d764"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.05"
+      },
+      {
+        "name": "initial learning rate (English models)",
+        "value": "5 104\u00d7batchsize 2048"
+      },
+      {
+        "name": "warm-up epochs (English models)",
+        "value": "2"
+      },
+      {
+        "name": "epochs (English models)",
+        "value": "21"
+      },
+      {
+        "name": "maximum predict length (English models)",
+        "value": "25"
+      },
+      {
+        "name": "initial learning rate (Chinese models)",
+        "value": "3 104\u00d7batchsize 512"
+      },
+      {
+        "name": "warm-up epochs (Chinese models)",
+        "value": "5"
+      },
+      {
+        "name": "epochs (Chinese models)",
+        "value": "100"
+      },
+      {
+        "name": "maximum predict length (Chinese models)",
+        "value": "40"
+      },
+      {
+        "name": "number of GPUs",
+        "value": "4"
+      },
+      {
+        "name": "patch embedding convolution kernel size",
+        "value": "3\u00d73"
+      },
+      {
+        "name": "patch embedding convolution stride",
+        "value": "2"
+      },
+      {
+        "name": "window size",
+        "value": "7\u00d711"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IC13",
+        "version": null
+      },
+      {
+        "name": "IC15",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "[L]6[G]6",
+        "description": "Architecture configuration placing local mixing blocks in front of global mixing blocks to capture long-term dependence"
+      },
+      {
+        "name": "SVTR",
+        "description": "Model family for text recognition evaluated on regular and irregular text benchmarks"
+      },
+      {
+        "name": "SVTR-T",
+        "description": "Smallest variant of the SVTR model family"
+      },
+      {
+        "name": "AdamW",
+        "description": "optimizer used with weight decay of 0.05 for training"
+      },
+      {
+        "name": "cosine learning rate scheduler",
+        "description": "learning rate scheduler used with linear warm-up"
+      },
+      {
+        "name": "Data augmentation",
+        "description": "randomly performed during training, including rotation, perspective distortion, motion blur, and Gaussian noise"
+      },
+      {
+        "name": "SVTR-L",
+        "description": "A model variant characterized as accurate, fast, versatile, and competitive for accuracy-oriented applications."
+      },
+      {
+        "name": "patch embedding",
+        "description": "Projects character components from input X in R^(H\u00d7W\u00d73) to C_0 in R^(H/4\u00d7W/4\u00d7D_0) using two consecutive 3\u00d73 convolutions with stride 2 and batch normalization."
+      },
+      {
+        "name": "global mixing",
+        "description": "A mixing operation illustrated in Figure 4(a) for character component feature representation."
+      },
+      {
+        "name": "local mixing",
+        "description": "A mixing operation illustrated in Figure 4(b) for character component feature representation."
+      },
+      {
+        "name": "Mixing Block",
+        "description": "A block designed to process 2D feature representations at the character component level for text recognition."
+      },
+      {
+        "name": "Global Mixing Block",
+        "description": "Applies layer norm followed by multi-head self-attention for dependence modeling, followed by layer norm and MLP for feature fusion, combined with shortcut connections."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy gain on IC13 (vs. none)",
+        "value": "1.9%",
+        "split": null
+      },
+      {
+        "metric": "accuracy gain on IC15 (vs. none)",
+        "value": "6.6%",
+        "split": null
+      }
+    ]
+  }
+}

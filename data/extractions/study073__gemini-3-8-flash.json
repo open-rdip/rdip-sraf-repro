@@ -1,0 +1,105 @@
+{
+  "study_id": "study073",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study073/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:17:17.048412+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 2,
+    "methods": 9,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX 3090",
+      "cuda_version": null,
+      "cpu_info": "Intel i9-10980XE"
+    },
+    "hyperparameters": [
+      {
+        "name": "reference images",
+        "value": "16"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "YCB-Video",
+        "version": null
+      },
+      {
+        "name": "LINEMOD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "W/o transformer",
+        "description": "replaces the transformer-based architecture by convolutional and linear layers while keeping the similar number of parameters"
+      },
+      {
+        "name": "W/o hierarchical comparison",
+        "description": "only compares the rendering and the cropped input trained by pose-conditioned triplet loss without two-level hierarchical comparison, comparing each pose hypothesis with the input observation independently and outputting the pose with the highest score at test time"
+      },
+      {
+        "name": "Ours-InfoNCE",
+        "description": "replaces contrast validated pair-wise loss by the InfoNCE loss"
+      },
+      {
+        "name": "Ours\u2020",
+        "description": "Unified framework allowing for end-to-end pose estimation and tracking without external pose initialization."
+      },
+      {
+        "name": "W/o LLM texture augmentation",
+        "description": "Ablation variant that removes the LLM-aided texture augmentation for synthetic training."
+      },
+      {
+        "name": "pose estimation",
+        "description": "Pose estimation evaluated for running time per object."
+      },
+      {
+        "name": "Random texture blending",
+        "description": "Texture blending method referenced in visual examples."
+      },
+      {
+        "name": "tracking",
+        "description": "runs at \u223c32 Hz using only pose refinement without multiple pose hypotheses"
+      },
+      {
+        "name": "our method",
+        "description": "uses the same trained model and configurations for inference without any fine-tuning"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "running time",
+        "value": "about 1.3 s",
+        "split": null
+      },
+      {
+        "metric": "pose initialization time",
+        "value": "4 ms",
+        "split": null
+      },
+      {
+        "metric": "refinement time",
+        "value": "0.88 s",
+        "split": null
+      },
+      {
+        "metric": "pose selection time",
+        "value": "0.42 s",
+        "split": null
+      },
+      {
+        "metric": "tracking frame rate",
+        "value": "\u223c32 Hz",
+        "split": null
+      }
+    ]
+  }
+}

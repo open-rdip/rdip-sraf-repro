@@ -1,0 +1,208 @@
+{
+  "study_id": "study079",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study079/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:19:31.236651+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 3,
+    "methods": 26,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "vLLM",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100 Tensor Core (80GB VRAM)",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "16"
+      },
+      {
+        "name": "warmup_ratio",
+        "value": "0.1"
+      },
+      {
+        "name": "learning_rate",
+        "value": "2e-5"
+      },
+      {
+        "name": "num_epochs",
+        "value": "5"
+      },
+      {
+        "name": "beta",
+        "value": "0.1"
+      },
+      {
+        "name": "max_length",
+        "value": "1024"
+      },
+      {
+        "name": "lora_r",
+        "value": "256"
+      },
+      {
+        "name": "lora_alpha",
+        "value": "128"
+      },
+      {
+        "name": "lora_dropout",
+        "value": "0.05"
+      },
+      {
+        "name": "epochs",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "HQ2A",
+        "version": null
+      },
+      {
+        "name": "ASQA",
+        "version": null
+      },
+      {
+        "name": "ELI5",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Consistency scoring with LLaMA-13B-chat",
+        "description": "For each ith sentence in the original answer, a LLaMA-13B-chat model checks support against a sampled answer Sn, mapping responses to scores {Yes: 1.0, No: 0.0, N/A: 0.5}; the final consistency score S_prompt(i) is the average over N samples."
+      },
+      {
+        "name": "ERROR-INFORMED REFINEMENT",
+        "description": "Refines answers using an error-informed approach; reported runtimes: 0.5h (HQ2A), 3h (ASQA), 23h (ELI5) on a single A100 GPU."
+      },
+      {
+        "name": "LoRA fine-tuning",
+        "description": "LoRA fine-tuning of the LLaMA2-13B-chat refinement model using HQ2A preference data; 2 hours on a single A100 GPU."
+      },
+      {
+        "name": "Fine-tuning LLaMA2-13B feedback model",
+        "description": "Fine-tuning on HQ2A dataset; 6 hours on 2\u00d7 A100 GPUs."
+      },
+      {
+        "name": "DPO (Direct Preference Optimization)",
+        "description": "Training language models with DPO using collected preference annotations."
+      },
+      {
+        "name": "Evaluation with Tiger-Score (LLaMA-7B) via vLLM",
+        "description": "Evaluates refined answers using Tiger-Score implemented with the vLLM inference library; runtimes: ~1 min (HQ2A), 15 min (ASQA), 30 min (ELI5) on a single A100 GPU."
+      },
+      {
+        "name": "DPO-aligned refinement model",
+        "description": "A refinement model aligned with DPO optimization; does not reduce the overall number of error samples compared to the vanilla refinement model but achieves the best error scores on ASQA and ELI5, suggesting effectiveness in correcting major errors to some extent."
+      },
+      {
+        "name": "Vanilla refinement model",
+        "description": "Baseline refinement model used for comparison with the DPO-aligned refinement model regarding error reduction."
+      },
+      {
+        "name": "ZERO-SHOT",
+        "description": "Zero-shot prompting (direct prompting); when using LLaMA3-8B-Instruct as the refinement model, improves answer quality over BASELINE on all datasets except ASQA, where it generates lower quality answers likely due to question ambiguity."
+      },
+      {
+        "name": "IMPROVE",
+        "description": "Refining without detailed feedback (coarse-grained); when using LLaMA3-8B-Instruct as the refinement model, improves answer quality over BASELINE on all datasets."
+      },
+      {
+        "name": "GENERIC",
+        "description": "Prompting with more targeted (coarse-grained) feedback."
+      },
+      {
+        "name": "EIR",
+        "description": "Refinement using fine-grained feedback."
+      },
+      {
+        "name": "BASELINE",
+        "description": "Original answers from the dataset used as a baseline for comparison."
+      },
+      {
+        "name": "LLaMA3-8B-Instruct",
+        "description": "Used as the refinement model in experiments evaluating ZERO-SHOT, IMPROVE, GENERIC, and EIR."
+      },
+      {
+        "name": "Mistral-7B-Instruct-v0.3",
+        "description": "Used as a model in experiments corresponding to Table 10."
+      },
+      {
+        "name": "Direct Preference Optimization (DPO)",
+        "description": "Fine-tune LLaMA2-7B-chat and Mistral-7B-Instruct-v0.1 on a preference dataset with chosen/rejected responses."
+      },
+      {
+        "name": "LoRA",
+        "description": "Efficient fine-tuning of LLaMA2-13B-chat with r=256, alpha=128, dropout=0.05."
+      },
+      {
+        "name": "Zero-shot prompt refinement",
+        "description": "Use a zero-shot prompt for LLaMA2-13B-chat to refine long-form answers using error feedback from an error detection model."
+      },
+      {
+        "name": "Error-informed feedback approach",
+        "description": "An approach that refines answers using feedback derived from detected errors to improve performance."
+      },
+      {
+        "name": "EIR (error detection model)",
+        "description": "A model that provides fine-grained feedback based on detected errors, used to refine answers."
+      },
+      {
+        "name": "Fine-grained feedback",
+        "description": "Feedback providing detailed, specific guidance from the error detection model (EIR) to refine answers."
+      },
+      {
+        "name": "Coarse-grained feedback",
+        "description": "Feedback that provides high-level guidance with less detail than fine-grained feedback."
+      },
+      {
+        "name": "GENERIC approach",
+        "description": "A baseline approach using simplistic feedback instructions to improve answers."
+      },
+      {
+        "name": "Annotation Interface for Expert Error Annotations",
+        "description": "Experts see a human-written and model-generated answer (randomized order), select the evaluation layer, highlight error spans in the question or answer, provide justifications with web references where applicable, and judge the better answer with reasons."
+      },
+      {
+        "name": "Transforming Expert Annotations for Completeness to Sentence-Level Annotations",
+        "description": "Examples of transforming expert annotations for completeness to sentence-level annotations for training the feedback model."
+      },
+      {
+        "name": "Expert annotation on INCEpTION platform",
+        "description": "Screenshot of an expert annotated answer on the INCEpTION platform; additional examples of expert annotated errors in long-form answers based on the defined evaluation criteria."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Error samples reduction",
+        "value": "~2%",
+        "split": null
+      },
+      {
+        "metric": "Error score reduction",
+        "value": "~\u039427%",
+        "split": null
+      },
+      {
+        "metric": "F1 score improvement",
+        "value": "~ 4%",
+        "split": null
+      }
+    ]
+  }
+}

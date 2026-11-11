@@ -1,0 +1,226 @@
+{
+  "study_id": "study066",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study066/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:09:42.801129+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 17,
+    "datasets": 4,
+    "methods": 18,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GluonCV",
+        "version": null
+      },
+      {
+        "name": "MXNet",
+        "version": null
+      },
+      {
+        "name": "Detectron2",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "Split-Attention setting",
+        "value": "2s1x64d"
+      },
+      {
+        "name": "crop size (ResNeSt-200)",
+        "value": "256\u00d7256"
+      },
+      {
+        "name": "crop size (ResNeSt-269)",
+        "value": "320\u00d7320"
+      },
+      {
+        "name": "mini-batch",
+        "value": "16"
+      },
+      {
+        "name": "resize ratio",
+        "value": "1/0.875 of the crop size"
+      },
+      {
+        "name": "dropout ratio",
+        "value": "0.2"
+      },
+      {
+        "name": "epochs",
+        "value": "270"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.0001"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "learning rate schedule",
+        "value": "cosine"
+      },
+      {
+        "name": "warm-up epochs",
+        "value": "5"
+      },
+      {
+        "name": "mini-batch size (ResNeSt-50)",
+        "value": "8192"
+      },
+      {
+        "name": "mini-batch size (ResNeSt-101)",
+        "value": "4096"
+      },
+      {
+        "name": "mini-batch size (ResNeSt-200, 269)",
+        "value": "2048"
+      },
+      {
+        "name": "evaluation resize ratio",
+        "value": "1/0.875 of the crop size"
+      },
+      {
+        "name": "mini-batch size",
+        "value": "16"
+      },
+      {
+        "name": "image scale augmentation (short size)",
+        "value": "640 to 800"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "MS-COCO",
+        "version": "2017"
+      },
+      {
+        "name": "COCO",
+        "version": "2017"
+      },
+      {
+        "name": "COCO test-dev",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Split-Attention",
+        "description": "employed with the 2s1x64d setting to ensure blocks scale to deeper networks with a trade-off between speed, accuracy and memory usage"
+      },
+      {
+        "name": "Bicubic up-sampling strategy",
+        "description": "employed for input-size greater than 256"
+      },
+      {
+        "name": "center crop",
+        "description": "Applied along with resizing to 1/0.875 of crop size along the short edge for evaluation"
+      },
+      {
+        "name": "ResNeSt",
+        "description": "Model based on the ResNet-D model incorporating Split-Attention blocks"
+      },
+      {
+        "name": "ResNet-D",
+        "description": "Base network model used as baseline"
+      },
+      {
+        "name": "Mixup training",
+        "description": "Training augmentation technique that improves ResNetD-50 accuracy"
+      },
+      {
+        "name": "Auto augmentation",
+        "description": "Augmentation technique that improves accuracy by 0.26%"
+      },
+      {
+        "name": "Split-Attention block",
+        "description": "Block employed to form ResNeSt models"
+      },
+      {
+        "name": "effective average downsampling",
+        "description": "Applied prior to or after the 3x3 convolution for downsampling"
+      },
+      {
+        "name": "Data sharding",
+        "description": "Evenly partitioning the data across GPUs for distributed training, sampling a mini-batch from the corresponding shard without replacement at each iteration."
+      },
+      {
+        "name": "Standard transformations",
+        "description": "Applying random size crop, random horizontal flip, color jittering, changing lighting, and RGB normalization via mean/standard-deviation rescaling."
+      },
+      {
+        "name": "Batch Normalization",
+        "description": "Used after each convolutional layer before ReLU activation."
+      },
+      {
+        "name": "Kaiming Initialization",
+        "description": "Used to initialize network weights."
+      },
+      {
+        "name": "FPN",
+        "description": "Feature pyramid network used for training models"
+      },
+      {
+        "name": "synchronized batch normalization",
+        "description": "Normalization method used across training processes"
+      },
+      {
+        "name": "image scale augmentation",
+        "description": "Randomly picking the short size of an image from 640 to 800"
+      },
+      {
+        "name": "Faster-RCNNs",
+        "description": "Object detection model architecture"
+      },
+      {
+        "name": "Cascade-RCNNs",
+        "description": "Multi-stage object detection architecture"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "78.31%",
+        "split": null
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "0.26%",
+        "split": null
+      },
+      {
+        "metric": "img/sec",
+        "value": "291.3",
+        "split": null
+      },
+      {
+        "metric": "acc(%)",
+        "value": "83.0",
+        "split": null
+      },
+      {
+        "metric": "box mAP",
+        "value": "49.2",
+        "split": "test-dev"
+      }
+    ]
+  }
+}

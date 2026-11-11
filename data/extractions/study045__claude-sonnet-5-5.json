@@ -1,0 +1,154 @@
+{
+  "study_id": "study045",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study045/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:50:11.249925+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 6,
+    "methods": 15,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Jraph",
+        "version": null
+      },
+      {
+        "name": "JAX",
+        "version": null
+      },
+      {
+        "name": "Haiku",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of seeds",
+        "value": "3"
+      },
+      {
+        "name": "number of QM9 targets fine-tuned",
+        "value": "12"
+      },
+      {
+        "name": "hyperparameter tuning target",
+        "value": "HOMO"
+      },
+      {
+        "name": "GNS model sizes (parameters)",
+        "value": "10 million to 1.2 billion, scaled by increasing the hidden layer sizes in the MLPs"
+      },
+      {
+        "name": "GNS trained from scratch model size (parameters)",
+        "value": "130 million"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "QM9",
+        "version": null
+      },
+      {
+        "name": "PCQM4Mv2",
+        "version": null
+      },
+      {
+        "name": "OC20",
+        "version": null
+      },
+      {
+        "name": "OC20 S2EF",
+        "version": null
+      },
+      {
+        "name": "DES15K",
+        "version": null
+      },
+      {
+        "name": "OC20 IS2RE/IS2RS trajectories",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GNS-TAT with Noisy Nodes",
+        "description": "Graph Network-based Simulator with TAT modifications and Noisy Nodes, trained from random initialization or from pre-trained parameters, and evaluated on QM9."
+      },
+      {
+        "name": "Pre-training via denoising",
+        "description": "Pre-training on PCQM4Mv2 via denoising, with atom type masking and prediction added for best performance on QM9."
+      },
+      {
+        "name": "Fine-tuning",
+        "description": "A separate model is fine-tuned for each of the 12 QM9 targets from a single pre-trained model; repeated for three seeds including pre-training."
+      },
+      {
+        "name": "GNS with Noisy Nodes",
+        "description": "Baseline GNS with Noisy Nodes, which GNS-TAT with Noisy Nodes significantly improves upon."
+      },
+      {
+        "name": "Pre-training",
+        "description": "Pre-training applied to the architecture and evaluated on the HOMO and LUMO targets in QM9, yielding improved performance and SOTA results."
+      },
+      {
+        "name": "TorchMD-NET",
+        "description": "Architecture from Th\u00f6lke & De Fabritiis [2022]; results shown are from the authors' own runs using the open-source code, which gave slightly worse results than published."
+      },
+      {
+        "name": "GNS-TAT",
+        "description": "GNS-TAT model evaluated on its own as a baseline in the dataset-size experiments."
+      },
+      {
+        "name": "GNS",
+        "description": "Graph network simulator model evaluated alongside GNS-TAT while varying the amount of pre-training data with fixed downstream dataset size."
+      },
+      {
+        "name": "Pre-training by denoising",
+        "description": "Pre-training neural networks by denoising in the space of 3D molecular structures, shown to be equivalent to learning a force field, used to improve downstream molecular property prediction tasks."
+      },
+      {
+        "name": "AttrMask",
+        "description": "2D-based pre-training method (Hu et al., 2020a) that masks and predicts atomic numbers"
+      },
+      {
+        "name": "Noisy Nodes",
+        "description": "Technique that significantly improves performance compared to training from scratch"
+      },
+      {
+        "name": "GNS + NN",
+        "description": "GNS architecture with Noisy Nodes, evaluated on QM9 HOMO while varying the pre-training data size on PCQM4Mv2"
+      },
+      {
+        "name": "GNS-TAT + NN",
+        "description": "GNS-TAT architecture with Noisy Nodes, evaluated on QM9 HOMO while varying downstream and upstream dataset sizes"
+      },
+      {
+        "name": "Self-supervised pre-training",
+        "description": "Pre-training on unlabelled structures from PCQM4Mv2, so test set contamination is not possible"
+      },
+      {
+        "name": "Training from scratch",
+        "description": "130 million parameter GNS variant trained without pre-training, used as a baseline; it underperforms the pre-trained models"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "number of QM9 targets with new state-of-the-art performance (pre-trained model)",
+        "value": "10 out of 12",
+        "split": null
+      }
+    ]
+  }
+}

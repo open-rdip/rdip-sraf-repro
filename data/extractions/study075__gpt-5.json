@@ -1,0 +1,122 @@
+{
+  "study_id": "study075",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study075/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:16:56.086569+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 0,
+    "methods": 13,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "average_diameter",
+        "value": "50 nm"
+      },
+      {
+        "name": "micelle_size_dispersity",
+        "value": "0.05"
+      },
+      {
+        "name": "core_micelle_size_ratio",
+        "value": "0.25"
+      },
+      {
+        "name": "micelle_volume_fraction",
+        "value": "0.15"
+      },
+      {
+        "name": "number_of_genes",
+        "value": "10"
+      },
+      {
+        "name": "micelle_diameter_target",
+        "value": "50 nm"
+      },
+      {
+        "name": "micelle_diameter_tolerance",
+        "value": "\u00b1 1 nm"
+      },
+      {
+        "name": "micelle_size_dispersity_target",
+        "value": "0.15"
+      },
+      {
+        "name": "micelle_size_dispersity_tolerance",
+        "value": "\u00b1 0.01"
+      },
+      {
+        "name": "I(q)_inputs",
+        "value": "3"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Neural network linking gene set to S(q)",
+        "description": "A machine learning model (neural network) trained to directly relate the gene set to the structure factor S(q), intended for broader application to concentrated primary particle solutions."
+      },
+      {
+        "name": "Neural network linking gene set to P(q)",
+        "description": "A machine learning model (neural network) trained to directly relate the gene set to the form factor P(q)."
+      },
+      {
+        "name": "P(q) and S(q) CREASE",
+        "description": "An approach that evaluates P(q) and combines it with S(q) to obtain the overall scattering intensity I(q), with separate ML models for P(q) and S(q); validation focused on in silico concentrated micelle solutions assuming shell thickness scales with core size."
+      },
+      {
+        "name": "CREASE workflow (P(q) and S(q) CREASE)",
+        "description": "Takes small-angle X-ray or neutron scattering profile(s) as input and utilizes a genetic algorithm to optimize a low-dimensional feature space (genes) representing structural arrangement S(q) and primary particle form P(q) to match computed scattering profiles to the input."
+      },
+      {
+        "name": "Genetic algorithm",
+        "description": "Optimizes the set of genes corresponding to structural arrangement S(q) and primary particle form P(q) so that the computed scattering profile(s) most closely match the input scattering profile(s)."
+      },
+      {
+        "name": "Debye scattering equation",
+        "description": "Used to directly compute scattering profiles within CREASE."
+      },
+      {
+        "name": "Machine learning model for scattering computation",
+        "description": "Alternative to the Debye scattering equation to compute scattering profiles within CREASE."
+      },
+      {
+        "name": "CREASE",
+        "description": "Structure generation using gene parameters: genes 3 & 4 control coarse-grained solvent particles and aggregation degree; gene 5 sets nanoparticle volumetric concentration; genes 6\u20138 control nanoparticle domain size (gene 6), domain compactness (gene 7), and spacing between domains (gene 8); gene 9 applies background scattering intensity; gene 10 sets system size via number of nanoparticles for 3D reconstruction. Additional genes modify core\u2013shell or core\u2013corona primary particles, including options for constant shell thickness, shell thickness scaling with core size, or shell with independent mean thickness and dispersity; supports hard or soft core\u2013shell particles allowing possible shell overlap."
+      },
+      {
+        "name": "P(q) and S(q) CREASE with three I(q) inputs",
+        "description": "Uses three I(q) inputs and includes additional information about total micelle size (50 nm \u00b1 1 nm) and size dispersity (0.15 \u00b1 0.01); converges to micelle core and shell sizes similar to the target and yields RDF profiles that nearly perfectly match, with higher micelle volume fraction than the target."
+      },
+      {
+        "name": "P(q) and S(q) CREASE with two I(q) inputs",
+        "description": "Uses only two I(q) inputs but with the same target constraints on micelle size (50 nm \u00b1 1 nm) and dispersity (0.15 \u00b1 0.01); produces scattering profiles quantitatively similar to the target, converging to similar micelle core and shell sizes and RDF profiles, and a higher micelle volume fraction than the target."
+      },
+      {
+        "name": "Instrument smearing incorporation",
+        "description": "Computed scattering profiles I(q) are convolved with an instrument response R(q, q') using the instrument's output variance \u03c3 and mean scattering vector q to account for smearing effects."
+      },
+      {
+        "name": "Debye scattering approach",
+        "description": "Calculate the form factor P(q) and combine it with the structure factor S(q) to obtain overall scattering intensity I(q), acknowledging high computational cost."
+      },
+      {
+        "name": "CREASE with partial contrast-matched profiles",
+        "description": "Evaluate performance when only some contrast-matched SANS profiles are provided, specifically using only total and core scattering profiles instead of all components."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

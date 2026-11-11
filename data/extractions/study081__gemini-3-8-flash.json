@@ -1,0 +1,71 @@
+{
+  "study_id": "study081",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study081/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:24:19.026017+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 2,
+    "methods": 6,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch size",
+        "value": "32"
+      },
+      {
+        "name": "model parameters",
+        "value": "11.6M"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "LJ Speech corpus of American English",
+        "version": null
+      },
+      {
+        "name": "Indigenous language training data",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Tacotron2",
+        "description": "NVIDIA implementation of attention-based neural TTS trained on incremental partitions of the LJ Speech corpus"
+      },
+      {
+        "name": "Montreal Forced Aligner",
+        "description": "Forced alignment model trained on limited Indigenous language training data"
+      },
+      {
+        "name": "CTC loss function",
+        "description": "Used to respect the monotonic alignment between text inputs and speech outputs to improve training of the attention network"
+      },
+      {
+        "name": "FastSpeech2",
+        "description": "A speech synthesis model"
+      },
+      {
+        "name": "LightSpeech modification",
+        "description": "Modification of the base architecture by removing the energy adaptor, replacing convolutional layers in the encoder, decoder, and remaining variance predictors with depthwise separable convolutions, and matching kernel sizes with Luo et al. (2021)."
+      },
+      {
+        "name": "MUSHRA",
+        "description": "Listening test survey method used to compare speech synthesis models against reference recordings."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

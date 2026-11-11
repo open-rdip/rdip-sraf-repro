@@ -1,0 +1,49 @@
+{
+  "study_id": "study074",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study074/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:16:59.745166+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 5,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "two-step solution",
+        "description": "When the LLM model chooses to edit in a text box, DroidBot-GPT sends another prompt ended with \u201cWhat should I enter to the view with the text \u2018<text content>\u2019? Just return the text and nothing else.\u201d and then types in the response."
+      },
+      {
+        "name": "choice extraction",
+        "description": "If ChatGPT returns a sentence instead of a choice, DroidBot-GPT extracts the first choice it contains."
+      },
+      {
+        "name": "DroidBot-GPT",
+        "description": "GPT-powered UI automation for Android that synthesizes prompts from the task, GUI elements, action history, and output requirement."
+      },
+      {
+        "name": "Prompt synthesis",
+        "description": "Besides GUI descriptions and the action space, the prompt includes a history action sequence to avoid repetition. The prompt consists of the task, the GUI elements with the action choices they provide, the action history, and the requirement whether the output should be a single choice or a sentence that is to be typed in."
+      },
+      {
+        "name": "GUI description",
+        "description": "Converts a graphical user interface into natural language sentences for GPT models by extracting all user-visible elements, checking their properties, and generating a prompt of the form \"A view <name> that can ...\" for each element, instead of inputting the structured tree-form GUI description."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

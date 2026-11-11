@@ -1,0 +1,147 @@
+{
+  "study_id": "study047",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study047/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:19:51.889401+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 16,
+    "datasets": 1,
+    "methods": 12,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "gradient_clipping_max_L2_norm",
+        "value": "5"
+      },
+      {
+        "name": "room_height_sampling_range",
+        "value": "2 to 5 meters"
+      },
+      {
+        "name": "T60_sampling_range",
+        "value": "0.1 to 0.5 seconds"
+      },
+      {
+        "name": "speaker_snr_range",
+        "value": "-5 to 5 dB"
+      },
+      {
+        "name": "overlap_ratio",
+        "value": "50% on average"
+      },
+      {
+        "name": "noise_snr_range",
+        "value": "10 to 20 dB"
+      },
+      {
+        "name": "epochs",
+        "value": "100"
+      },
+      {
+        "name": "segment_length",
+        "value": "4 seconds"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1e-3"
+      },
+      {
+        "name": "learning_rate_decay",
+        "value": "0.98 every two epochs"
+      },
+      {
+        "name": "early_stopping_patience",
+        "value": "10 consecutive epochs"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "number of filters",
+        "value": "64"
+      },
+      {
+        "name": "DPRNN blocks",
+        "value": "6"
+      },
+      {
+        "name": "hidden units",
+        "value": "128"
+      },
+      {
+        "name": "chunk size K",
+        "value": "K\u2248\u221a2L"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Microsoft's internal gender-balanced clean speech collection",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "uPIT",
+        "description": "utterance-level permutation invariant training used to train all models to maximize scale-invariant SNR (SI-SNR)"
+      },
+      {
+        "name": "SDRi",
+        "description": "signal-to-distortion ratio improvement used to measure improvement in signal fidelity"
+      },
+      {
+        "name": "SI-SNRi",
+        "description": "SI-SNR improvement used to measure improvement in signal fidelity"
+      },
+      {
+        "name": "WER",
+        "description": "word error rate used to measure speech recognition accuracy on both separated speakers"
+      },
+      {
+        "name": "mixture generation",
+        "description": "Speaker and microphone locations are randomly sampled; two reverberated signals are rescaled to a random SNR between -5 and 5 dB and shifted to 50% average overlap, then corrupted by random isotropic noise at SNR between 10 and 20 dB. Separation target is reverberant clean speech for both speakers."
+      },
+      {
+        "name": "Adam",
+        "description": "Adam is used as the optimizer."
+      },
+      {
+        "name": "early stopping",
+        "description": "Early stopping is applied if no best model is found on the validation set for 10 consecutive epochs."
+      },
+      {
+        "name": "gradient clipping",
+        "description": "Gradient clipping with maximum L2-norm of 5 is applied for all experiments."
+      },
+      {
+        "name": "TasNet",
+        "description": "Time-domain audio separation network with a linear 1-D convolutional encoder, a separator that estimates C masking matrices for C target sources, and a linear 1-D transposed convolutional decoder."
+      },
+      {
+        "name": "DPRNN",
+        "description": "Deep DPRNN separator using 6 blocks with BLSTM as the intra- and inter-chunk RNNs with 128 hidden units in each direction; chunk size K defined empirically so that K\u2248\u221a2L in the training set."
+      },
+      {
+        "name": "encoder and decoder",
+        "description": "Same encoder and decoder design as in [4], with the number of filters set to 64."
+      },
+      {
+        "name": "TCN",
+        "description": "Optimally configured TCN described in [4], used as the comparison separator."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

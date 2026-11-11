@@ -1,0 +1,118 @@
+{
+  "study_id": "study013",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study013/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:14:35.513047+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 8,
+    "methods": 5,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Python",
+        "version": null
+      },
+      {
+        "name": "Scikit-Learn",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch size",
+        "value": "128"
+      },
+      {
+        "name": "iteration interval",
+        "value": "500"
+      },
+      {
+        "name": "train split",
+        "value": "80%"
+      },
+      {
+        "name": "validation split",
+        "value": "20%"
+      },
+      {
+        "name": "image size",
+        "value": "64x64"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COOS-7",
+        "version": null
+      },
+      {
+        "name": "COOS",
+        "version": null
+      },
+      {
+        "name": "Training dataset",
+        "version": null
+      },
+      {
+        "name": "Test1",
+        "version": null
+      },
+      {
+        "name": "Test2",
+        "version": null
+      },
+      {
+        "name": "Test3",
+        "version": null
+      },
+      {
+        "name": "Test4",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "5-fold cross-validation",
+        "description": "Used on the Training dataset to select the classifier with the best performance"
+      },
+      {
+        "name": "logistic regression",
+        "description": "Classifiers built on classic computer vision features that weigh features"
+      },
+      {
+        "name": "fully-supervised CNN",
+        "description": "Deep learning model achieving the lowest error on test datasets with larger covariate shifts"
+      },
+      {
+        "name": "VGG16",
+        "description": "Pre-trained convolutional neural network on ImageNet used to extract features from 64x64 images converted to 8-bit RGB"
+      },
+      {
+        "name": "PCI",
+        "description": "Self-supervised feature extraction method designed for microscopy images of yeast cells"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "error",
+        "value": "1.1%",
+        "split": "test"
+      }
+    ]
+  }
+}

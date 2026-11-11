@@ -1,0 +1,192 @@
+{
+  "study_id": "study057",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study057/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:38:19.125318+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 18,
+    "datasets": 2,
+    "methods": 17,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Faiss",
+        "version": null
+      },
+      {
+        "name": "NumPy",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "8x NVIDIA Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "mag_z_limit",
+        "value": "z<20"
+      },
+      {
+        "name": "n_most_similar_images",
+        "value": "999"
+      },
+      {
+        "name": "similarity_array_size",
+        "value": "~42 million\u00d71000"
+      },
+      {
+        "name": "N",
+        "value": "42 million"
+      },
+      {
+        "name": "r_band_magnitude_search_range",
+        "value": "0.5"
+      },
+      {
+        "name": "num_gpus",
+        "value": "8"
+      },
+      {
+        "name": "epochs",
+        "value": "40"
+      },
+      {
+        "name": "batch_size",
+        "value": "512"
+      },
+      {
+        "name": "optimizer",
+        "value": "SGD"
+      },
+      {
+        "name": "loss",
+        "value": "binary cross-entropy"
+      },
+      {
+        "name": "learning_rate_classification_head",
+        "value": "0.01"
+      },
+      {
+        "name": "learning_rate_remaining_network",
+        "value": "0.001"
+      },
+      {
+        "name": "oversampling_factor",
+        "value": null
+      },
+      {
+        "name": "minibatch_size",
+        "value": "\u223c128"
+      },
+      {
+        "name": "class_imbalance_ratio",
+        "value": "1:1"
+      },
+      {
+        "name": "encoder_output_dimension",
+        "value": "2048"
+      },
+      {
+        "name": "queue_length",
+        "value": "262,144"
+      },
+      {
+        "name": "representation_dimension",
+        "value": "2048"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "DR9 imaging",
+        "version": null
+      },
+      {
+        "name": "south region of DR9",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "random nonlens selection",
+        "description": "Select nonlens samples randomly from the full dataset, excluding those with a lensing galaxy near the central galaxy and those flagged as lenses in other data sets but hard to distinguish visually in DR9 imaging, so training and validation sets reflect the expected scarcity of lensed galaxies."
+      },
+      {
+        "name": "linear model contamination check",
+        "description": "Used an initial linear model to predict labels for the training and validation nonlenses, then visually examined the images with the highest predictions to identify and remove contamination from mislabeled undiscovered lenses."
+      },
+      {
+        "name": "Faiss cosine similarity",
+        "description": "Calculated cosine similarity without employing any of the compression techniques available in Faiss; it outperformed its NumPy equivalent on CPU and benefited from an additional speed-up on GPU."
+      },
+      {
+        "name": "Faiss similarity search",
+        "description": "Compute the 999 most similar images per source with Facebook AI Research\u2019s Faiss library on eight GPUs, saving a similarity array of size ~42 million\u00d71000. The full N\u00d7N matrix (N=42 million) is not computed; search is limited to sources within a magnitude range of 0.5 in r-band, reported as nearly equivalent to the full search."
+      },
+      {
+        "name": "linear classification on self-supervised representations",
+        "description": "Automated classification of strong lens candidates by linear classification directly on representations from a pre-trained self-supervised model."
+      },
+      {
+        "name": "fine-tuning self-supervised model",
+        "description": "Automated classification of strong lens candidates by fine-tuning the pre-trained self-supervised model."
+      },
+      {
+        "name": "linear classifier fine-tuning",
+        "description": "Used a linear classifier and oversampled lenses during fine-tuning so each batch had a nonzero average number of lenses; oversampling factor treated as a hyperparameter tuned on the validation set."
+      },
+      {
+        "name": "data augmentation",
+        "description": "At each training epoch, images were augmented with jitter/crop, random rotations, Gaussian noise, and Gaussian blur, so each sampled lens had different augmentation realizations."
+      },
+      {
+        "name": "supervised training",
+        "description": "Trained in PyTorch with binary cross-entropy loss and SGD for 40 epochs, batch size 512, learning rate 0.01 for the classification head and 0.001 for remaining network parameters, following Hayat et al. (2021). Approximately 1 hour per epoch, excluding self-supervised pretraining."
+      },
+      {
+        "name": "fine-tuning self-supervised network",
+        "description": "Fine-tuning a self-supervised network to improve model robustness over purely supervised learning"
+      },
+      {
+        "name": "minibatch gradient descent",
+        "description": "Supervised CNN classification of strong lenses using minibatch gradient descent due to memory constraints from large CNN models and image dimensionality"
+      },
+      {
+        "name": "linear classifier",
+        "description": "Linear classifier trained with a single large batch, allowing training with a high degree of class imbalance"
+      },
+      {
+        "name": "oversampling",
+        "description": "Lenses oversampled during fine-tuning so each batch has a nonzero average number of lenses"
+      },
+      {
+        "name": "Fine-tuned Self-supervised Classification",
+        "description": "Attach a fully connected layer on the 2048-dimensional output of the self-supervised encoder CNN and fine-tune the network in a supervised setup using available lens labels. A smaller learning rate updates the CNN encoder parameters and a larger learning rate is applied to the linear classification head, training the linear classifier from a random initialization while only marginally modifying the CNN parameters optimized during self-supervised learning."
+      },
+      {
+        "name": "Self-supervised representation learning",
+        "description": "Self-supervised representation learning that reduces training complicated CNN models in parallel to a problem solvable with minimal computing resources and computational background."
+      },
+      {
+        "name": "ResNet50",
+        "description": "Standard ResNet50 encoder; convolutional kernels and pooling layers yield a 2048-dimensional representation vector. Same network and training hyperparameters as Hayat et al. (2021), except queue length increased to K=262,144 for a larger training set."
+      },
+      {
+        "name": "self-supervised pretraining",
+        "description": "Differing views of each image produced by a set of image augmentations reflecting symmetries, uncertainties, or noise, applied in succession during pretraining so pairs remain nontrivial to associate while preserving important features."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

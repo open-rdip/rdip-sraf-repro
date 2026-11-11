@@ -1,0 +1,161 @@
+{
+  "study_id": "study056",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study056/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:00:03.691565+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 1,
+    "methods": 14,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Geant4",
+        "version": null
+      },
+      {
+        "name": "CaloHadronic",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA\u00aeA100 GPU 80GB",
+      "cuda_version": null,
+      "cpu_info": "AMD EPYC 7402 (single core used)"
+    },
+    "hyperparameters": [
+      {
+        "name": "NFE",
+        "value": "59"
+      },
+      {
+        "name": "batch_size",
+        "value": "1"
+      },
+      {
+        "name": "incident_energies",
+        "value": "10 to 90 GeV in 10 GeV increments"
+      },
+      {
+        "name": "showers_per_energy",
+        "value": "100"
+      },
+      {
+        "name": "runs",
+        "value": "3"
+      },
+      {
+        "name": "learning_rate_scheduler",
+        "value": "OneCycleLR"
+      },
+      {
+        "name": "ECal_cell_size",
+        "value": "5x5 mm^2"
+      },
+      {
+        "name": "HCal_cell_size",
+        "value": "30x30 mm^2"
+      },
+      {
+        "name": "cell_energy_cut",
+        "value": "~10^-2 MeV"
+      },
+      {
+        "name": "calibration_procedure",
+        "value": "Calibrate number of points per layer using PointCountFM; assign CaloHadronic-generated points to corresponding layer"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Geant4 simulated pi+ showers",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "CaloHadronic",
+        "description": "Point-cloud based generative model extended to simultaneously simulate the ECal and HCal parts of a hadronic shower."
+      },
+      {
+        "name": "Transformer-based diffusion modules",
+        "description": "Diffusion model components based on transformers; they dominate runtime and may benefit from accelerated sampling techniques."
+      },
+      {
+        "name": "Pandora Particle Flow",
+        "description": "Particle-flow reconstruction algorithm used to reconstruct hadronic showers; relies on visually faithful sub-shower tracks."
+      },
+      {
+        "name": "Classifier test",
+        "description": "Downstream classification used to assess generative fidelity, indicating need for further improvements especially for fine-grained HCal track-like structures."
+      },
+      {
+        "name": "ECal edm-diffusion",
+        "description": "Transformer-based diffusion model for electromagnetic calorimeter showers; sampling performed with 59 NFE."
+      },
+      {
+        "name": "HCal edm-diffusion",
+        "description": "Transformer-based diffusion model for hadronic calorimeter showers; sampling performed with 59 NFE."
+      },
+      {
+        "name": "PandoraPFA particle flow algorithm",
+        "description": "State-of-the-art particle flow reconstruction algorithm used in the ILD standard reconstruction chain."
+      },
+      {
+        "name": "Geant4",
+        "description": "Physics-based simulation toolkit used to produce simulated hits for comparison or input to reconstruction."
+      },
+      {
+        "name": "Sequential conditioning of generative models",
+        "description": "Strategy of sequentially conditioning several generative models to handle complex generative simulation tasks, demonstrated on calorimeter simulations."
+      },
+      {
+        "name": "Downstream processing with reconstruction algorithms",
+        "description": "Comparison of generative outputs to ground truth after applying reconstruction algorithms, assessing degree of agreement."
+      },
+      {
+        "name": "OneCycleLR",
+        "description": "Learning rate schedule used during fine-tuning to accelerate convergence and improve generalization for complex models"
+      },
+      {
+        "name": "PointCountFM",
+        "description": "Model used to estimate the distribution and number of points per layer for calibration"
+      },
+      {
+        "name": "Diffusion model",
+        "description": "Generative diffusion-based approach; noted to be less precise along the layer (y) coordinate"
+      },
+      {
+        "name": "Post-processing and projection",
+        "description": "Reverse preprocessing, apply layer-wise calibration, and project final point-cloud showers onto a regular grid matching ILD calorimeter cell sizes"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "speed-up over Geant4 (CPU)",
+        "value": "modest",
+        "split": null
+      },
+      {
+        "metric": "speed-up over Geant4 (GPU)",
+        "value": "up to three orders of magnitude",
+        "split": null
+      },
+      {
+        "metric": "Time / Shower [s]",
+        "value": "2.09\u00b10.05",
+        "split": null
+      },
+      {
+        "metric": "Speed-up",
+        "value": "\u00d71",
+        "split": null
+      }
+    ]
+  }
+}

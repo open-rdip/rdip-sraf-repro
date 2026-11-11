@@ -1,0 +1,85 @@
+{
+  "study_id": "study077",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study077/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:03:19.911671+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 9,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "GSM8K",
+        "version": null
+      },
+      {
+        "name": "MBPP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "AFlow",
+        "description": "A novel framework for automated workflow optimization that uses Monte Carlo Tree Search and code-represented workflows to efficiently navigate the search space of possible workflows."
+      },
+      {
+        "name": "MATH_SOLVE_PROMPT modification",
+        "description": "Prompt modification across iterations: from asking for a clear, concise final answer as a single numerical value without units or explanatory text, to adding instructions to double-check calculations at each step, verify the solution by plugging it back or using an alternative method, and show each step clearly."
+      },
+      {
+        "name": "Test generation and execution by LLMs",
+        "description": "Workflow structure discovered by AFlow on MBPP, similar to existing manually designed workflows (Ridnik et al., 2024)."
+      },
+      {
+        "name": "Operators",
+        "description": "Human-designed components introduced to enhance search efficiency, helping AFLOW discover better workflows more efficiently"
+      },
+      {
+        "name": "Ablation study without operators",
+        "description": "AFLOW run without operators on GSM8K, which autonomously develops ensemble-like structures"
+      },
+      {
+        "name": "Custom operator",
+        "description": "Generates a solution for the problem using an instruction prompt (MATH_SOLVE_PROMPT); called multiple times to collect candidate solutions."
+      },
+      {
+        "name": "ScEnsemble operator",
+        "description": "Self-consistency ensemble that aggregates multiple candidate solutions into a final solution for the problem."
+      },
+      {
+        "name": "Programmer operator",
+        "description": "Verification/review step that takes the problem and the ensemble's analysis and produces a verified output; if it returns output that is used, otherwise the ensemble's response is returned."
+      },
+      {
+        "name": "Prompt modification",
+        "description": "Modifying the custom prompt for formatting the final answer and for step-by-step reasoning and checking."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Performance (AFLOW without operators, GSM8K)",
+        "value": "93.1%",
+        "split": null
+      },
+      {
+        "metric": "Score",
+        "value": "0.8591",
+        "split": null
+      }
+    ]
+  }
+}

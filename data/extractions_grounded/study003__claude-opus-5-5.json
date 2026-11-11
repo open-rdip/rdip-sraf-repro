@@ -1,0 +1,1819 @@
+{
+ "study_id": "study003",
+ "model": "opus",
+ "slug": "claude-opus-5-5",
+ "n_passages": 9,
+ "n_passages_ok": 9,
+ "failures": [],
+ "records": [
+  {
+   "field": "hyperparameters",
+   "value": "200",
+   "evidence": "each box is cropped to W= 200 andH= 200",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "200",
+   "evidence": "each box is cropped to W= 200 andH= 200",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "CAFR",
+   "evidence": "our proposed CAFR approach that incorporates APG and SFR modules",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Adaptive Gradient Propagation Module (APG/AGP)",
+   "evidence": "Adaptive Gradient Propagation Module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Sparse Feature Refinement Module (SFR)",
+   "evidence": "Sparse Feature Refinement Module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Swin Transformer Block",
+   "evidence": "Swim Transformer Block",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Word-Region Contrastive Loss",
+   "evidence": "Word -Region Contrastive Loss",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Localization Loss",
+   "evidence": "Localization Loss",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Classification Loss",
+   "evidence": "Classification LossWord",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "SINet",
+   "evidence": "SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "SegMaR",
+   "evidence": "SegMaR [4] ResNet50 81.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "PreyNet",
+   "evidence": "PreyNet [20] ResNet50 81.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ZoomNet",
+   "evidence": "ZoomNet [21] ResNet50 83.5",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "FSEL",
+   "evidence": "FSEL [22] ResNet50 87.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Faster R-CNN",
+   "evidence": "we select detection (Faster R-CNN) and segmentation (Mask R-CNN) frameworks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Mask R-CNN",
+   "evidence": "we select detection (Faster R-CNN) and segmentation (Mask R-CNN) frameworks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ResNet50",
+   "evidence": "Faster R-CNN ResNet50 95.7",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ResNet101",
+   "evidence": "Faster R-CNN ResNet101 96.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Swin-L",
+   "evidence": "Faster R-CNN Swin-L 99.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "77.0",
+   "evidence": "SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "81.1",
+   "evidence": "SegMaR [4] ResNet50 81.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "81.0",
+   "evidence": "PreyNet [20] ResNet50 81.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "83.5",
+   "evidence": "ZoomNet [21] ResNet50 83.5",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "87.3",
+   "evidence": "FSEL [22] ResNet50 87.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "95.7",
+   "evidence": "Faster R-CNN ResNet50 95.7",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "96.1",
+   "evidence": "Faster R-CNN ResNet101 96.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "99.1",
+   "evidence": "Faster R-CNN Swin-L 99.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "16",
+   "evidence": "we assume that a batch includes 16 bounding",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "2\u00d72,3\u00d73, and 4\u00d74",
+   "evidence": "new samples of sizes 2\u00d72,3\u00d73, and 4\u00d74are obtained simultaneously",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Offline Implementation of SFR",
+   "evidence": "2) Offline Implementation of SFR",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "online approach",
+   "evidence": "The online approach offers the advantage of directly pro- cessing input data to obtain scaled-down data",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "canvas filling",
+   "evidence": "We then sequentially select 16 boxes at a time for canvas filling with new label settings.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "dependencies",
+   "value": "MMDetection",
+   "evidence": "Our code is deployed under the MMDetection [54] frame- work.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "AdamW",
+   "evidence": "we employ the AdamW optimizer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "0.0003",
+   "evidence": "an initial learning rate of 0.0003",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "0.05",
+   "evidence": "a momentum of 0.05",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "10",
+   "evidence": "we train 10 groups of random seeds for each model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "RCOD",
+   "evidence": "Due to the limited number of samples for each class of RCOD data",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "CAFR",
+   "evidence": "the experimental settings of our proposed CAFR",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "SFR",
+   "evidence": "the impact of the components between SFR and APG",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "APG",
+   "evidence": "the impact of the components between SFR and APG",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "adapter module",
+   "evidence": "we introduce an adapter module composed of two 2-dimensional convolutional layers",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "GLIP tiny model",
+   "evidence": "the feature extractor from the GLIP tiny model [9]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "GLIP+Adapter",
+   "evidence": "GLIP+Adapter fails to adapt to the COD task",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "AGP",
+   "evidence": "we propose the AGP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "AGP-based loss",
+   "evidence": "the AGP-based loss can be expressed as",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "RCOD",
+   "evidence": "In RCOD, we adopt [49] as our contrastive loss Lc",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "GIoU",
+   "evidence": "GIoU [50] as our Localization lossLbbox",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "focal loss",
+   "evidence": "focal loss [51] as our classification loss Lcls",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "Sparse Feature Refinement Module",
+   "evidence": "C. Sparse Feature Refinement Module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "swin-transformer",
+   "evidence": "utilize the swin-transformer [10] as the feature extractor",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "FPN",
+   "evidence": "FPN [52] for feature refinement",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "SFR module",
+   "evidence": "we propose the SFR module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "CAMO-D",
+   "evidence": "Regarding the CAMO- D dataset, we combine 1000 training images and 250 test images",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "CAMO",
+   "evidence": "from the original camouflaged CAMO dataset [13]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "COD10K-D",
+   "evidence": "our newly created COD10K-D, NC4K-D, and CAMO- D datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K-D",
+   "evidence": "our newly created COD10K-D, NC4K-D, and CAMO- D datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "Mask RCNN (ResNet50)",
+   "evidence": "Mask RCNN [56] ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "Faster RCNN (ResNet50)",
+   "evidence": "Faster RCNN [17] ResNet50 34 176.54",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "SAM (Vit-T)",
+   "evidence": "SAM [57] Vit-T 89 371.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "SAM (Vit-L)",
+   "evidence": "SAM [57] Vit-L 298 1314.89",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "GDino + CAFR (Swin-T)",
+   "evidence": "GDino + CAFR Swin-T 165 353.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "GDino + CAFR (Swin-L)",
+   "evidence": "GDino + CAFR Swin-L 222 524.68",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "CAMO-D",
+   "evidence": "as shown in Fig. 4 from the CAMO-D dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "COD10K",
+   "evidence": "the COD10K-v2 dataset offers comprehensive category annota- tions",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K-D",
+   "evidence": "Moving on to NC4K-D, we carefully select 4121 clearer images",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K",
+   "evidence": "4121 clearer images from the NC4K dataset [12]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "Mask RCNN",
+   "evidence": "Mask RCNN [56] ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "Faster RCNN",
+   "evidence": "Faster RCNN [17] ResNet50 34 176.54",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "SAM",
+   "evidence": "SAM [57] Vit-T 89 371.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "Grounding DINO",
+   "evidence": "GD INO: GROUNDING DINO",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "GDino + CAFR",
+   "evidence": "GDino + CAFR Swin-T 165",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "Swin Transformer",
+   "evidence": "SWIN: SWIN TRANSFORMER",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "Vision Transformer",
+   "evidence": "VIT: VISION TRANSFORMER",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "ResNet50",
+   "evidence": "Faster RCNN [17] ResNet50 34 176.54",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "41",
+   "evidence": "Mask RCNN [56] ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "289.97",
+   "evidence": "Mask RCNN [56] ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "34",
+   "evidence": "Faster RCNN [17] ResNet50 34 176.54",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "176.54",
+   "evidence": "Faster RCNN [17] ResNet50 34 176.54",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "89",
+   "evidence": "SAM [57] Vit-T 89 371.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "371.98",
+   "evidence": "SAM [57] Vit-T 89 371.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "165",
+   "evidence": "GDino + CAFR Swin-T 165",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "COD10K-D",
+   "evidence": "ON COD10K-D, NC4K-D, AND CAMO-D DATASETS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K-D",
+   "evidence": "ON COD10K-D, NC4K-D, AND CAMO-D DATASETS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "datasets",
+   "value": "CAMO-D",
+   "evidence": "ON COD10K-D, NC4K-D, AND CAMO-D DATASETS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "Deformable DETR",
+   "evidence": "DEF-DETR ISDEFORMABLE DETR [35]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "Swin-Transformer",
+   "evidence": "S WIN REPRESENTS SWIN -TRASFORMER WITH ITS TINY BASE ,AND LARGE PRE -TRAINED MODELS [10]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "ResNet50",
+   "evidence": "R50 AND R101 ARE RESNET50AND RSENET101",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "ResNet101",
+   "evidence": "R50 AND R101 ARE RESNET50AND RSENET101",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "GLIP",
+   "evidence": "GLIP WITH ITS TINY AND LARGE PRE -TRAINED MODELS [9]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "Grounding DINO",
+   "evidence": "GD INO IS GROUNDING DION ITS TINY AND BASE PRE-TRAINED MODELS [25]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "YOLOv7-L",
+   "evidence": "YOLOv7-L [15] CSPDarknet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "CSPDarknet",
+   "evidence": "YOLOv7-L [15] CSPDarknet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "3.8",
+   "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "8.2",
+   "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "2.8",
+   "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.0",
+   "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "4.0",
+   "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.8",
+   "evidence": "4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "14.2",
+   "evidence": "4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.0",
+   "evidence": "4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.7",
+   "evidence": "4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "7.3",
+   "evidence": "4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "5.4",
+   "evidence": "4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "claude-opus-5-5",
+   "passage_index": 8
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "hyperparameters": {
+    "n": 8,
+    "has_evidence": 8,
+    "span_found": 8,
+    "value_in_span": 8,
+    "grounded": 8
+   },
+   "methods": {
+    "n": 57,
+    "has_evidence": 57,
+    "span_found": 57,
+    "value_in_span": 44,
+    "grounded": 44
+   },
+   "evaluation_results": {
+    "n": 26,
+    "has_evidence": 26,
+    "span_found": 26,
+    "value_in_span": 26,
+    "grounded": 26
+   },
+   "dependencies": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 1,
+    "value_in_span": 1,
+    "grounded": 1
+   },
+   "datasets": {
+    "n": 12,
+    "has_evidence": 12,
+    "span_found": 12,
+    "value_in_span": 11,
+    "grounded": 11
+   }
+  },
+  "total": {
+   "n": 104,
+   "has_evidence": 104,
+   "span_found": 104,
+   "value_in_span": 90,
+   "grounded": 90
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "SFR box crop width",
+      "value": "200",
+      "evidence": "each box is cropped to W= 200 andH= 200"
+     },
+     {
+      "name": "SFR box crop height",
+      "value": "200",
+      "evidence": "each box is cropped to W= 200 andH= 200"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "CAFR",
+      "evidence": "our proposed CAFR approach that incorporates APG and SFR modules"
+     },
+     {
+      "name": "Adaptive Gradient Propagation Module (APG/AGP)",
+      "evidence": "Adaptive Gradient Propagation Module"
+     },
+     {
+      "name": "Sparse Feature Refinement Module (SFR)",
+      "evidence": "Sparse Feature Refinement Module"
+     },
+     {
+      "name": "Swin Transformer Block",
+      "evidence": "Swim Transformer Block"
+     },
+     {
+      "name": "Word-Region Contrastive Loss",
+      "evidence": "Word -Region Contrastive Loss"
+     },
+     {
+      "name": "Localization Loss",
+      "evidence": "Localization Loss"
+     },
+     {
+      "name": "Classification Loss",
+      "evidence": "Classification LossWord"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "SINet",
+      "evidence": "SINet [11] ResNet50 77.0"
+     },
+     {
+      "name": "SegMaR",
+      "evidence": "SegMaR [4] ResNet50 81.1"
+     },
+     {
+      "name": "PreyNet",
+      "evidence": "PreyNet [20] ResNet50 81.0"
+     },
+     {
+      "name": "ZoomNet",
+      "evidence": "ZoomNet [21] ResNet50 83.5"
+     },
+     {
+      "name": "FSEL",
+      "evidence": "FSEL [22] ResNet50 87.3"
+     },
+     {
+      "name": "Faster R-CNN",
+      "evidence": "we select detection (Faster R-CNN) and segmentation (Mask R-CNN) frameworks"
+     },
+     {
+      "name": "Mask R-CNN",
+      "evidence": "we select detection (Faster R-CNN) and segmentation (Mask R-CNN) frameworks"
+     },
+     {
+      "name": "ResNet50",
+      "evidence": "Faster R-CNN ResNet50 95.7"
+     },
+     {
+      "name": "ResNet101",
+      "evidence": "Faster R-CNN ResNet101 96.1"
+     },
+     {
+      "name": "Swin-L",
+      "evidence": "Faster R-CNN Swin-L 99.1"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "S\u03b1/ mIoU (SINet, ResNet50)",
+      "value": "77.0",
+      "split": null,
+      "evidence": "SINet [11] ResNet50 77.0"
+     },
+     {
+      "metric": "S\u03b1/ mIoU (SegMaR, ResNet50)",
+      "value": "81.1",
+      "split": null,
+      "evidence": "SegMaR [4] ResNet50 81.1"
+     },
+     {
+      "metric": "S\u03b1/ mIoU (PreyNet, ResNet50)",
+      "value": "81.0",
+      "split": null,
+      "evidence": "PreyNet [20] ResNet50 81.0"
+     },
+     {
+      "metric": "S\u03b1/ mIoU (ZoomNet, ResNet50)",
+      "value": "83.5",
+      "split": null,
+      "evidence": "ZoomNet [21] ResNet50 83.5"
+     },
+     {
+      "metric": "S\u03b1/ mIoU (FSEL, ResNet50)",
+      "value": "87.3",
+      "split": null,
+      "evidence": "FSEL [22] ResNet50 87.3"
+     },
+     {
+      "metric": "S\u03b1/ mIoU (Faster R-CNN, ResNet50)",
+      "value": "95.7",
+      "split": null,
+      "evidence": "Faster R-CNN ResNet50 95.7"
+     },
+     {
+      "metric": "S\u03b1/ mIoU (Faster R-CNN, ResNet101)",
+      "value": "96.1",
+      "split": null,
+      "evidence": "Faster R-CNN ResNet101 96.1"
+     },
+     {
+      "metric": "S\u03b1/ mIoU (Faster R-CNN, Swin-L)",
+      "value": "99.1",
+      "split": null,
+      "evidence": "Faster R-CNN Swin-L 99.1"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "bounding boxes per batch (offline SFR)",
+      "value": "16",
+      "evidence": "we assume that a batch includes 16 bounding"
+     },
+     {
+      "name": "canvas filling sizes",
+      "value": "2\u00d72,3\u00d73, and 4\u00d74",
+      "evidence": "new samples of sizes 2\u00d72,3\u00d73, and 4\u00d74are obtained simultaneously"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Offline Implementation of SFR",
+      "evidence": "2) Offline Implementation of SFR"
+     },
+     {
+      "name": "online approach",
+      "evidence": "The online approach offers the advantage of directly pro- cessing input data to obtain scaled-down data"
+     },
+     {
+      "name": "canvas filling",
+      "evidence": "We then sequentially select 16 boxes at a time for canvas filling with new label settings."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "MMDetection",
+      "version": null,
+      "evidence": "Our code is deployed under the MMDetection [54] frame- work."
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "optimizer",
+      "value": "AdamW",
+      "evidence": "we employ the AdamW optimizer"
+     },
+     {
+      "name": "initial learning rate",
+      "value": "0.0003",
+      "evidence": "an initial learning rate of 0.0003"
+     },
+     {
+      "name": "momentum",
+      "value": "0.05",
+      "evidence": "a momentum of 0.05"
+     },
+     {
+      "name": "number of random seed groups",
+      "value": "10",
+      "evidence": "we train 10 groups of random seeds for each model"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "RCOD",
+      "version": null,
+      "evidence": "Due to the limited number of samples for each class of RCOD data"
+     }
+    ],
+    "methods": [
+     {
+      "name": "CAFR",
+      "evidence": "the experimental settings of our proposed CAFR"
+     },
+     {
+      "name": "SFR",
+      "evidence": "the impact of the components between SFR and APG"
+     },
+     {
+      "name": "APG",
+      "evidence": "the impact of the components between SFR and APG"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "adapter module",
+      "evidence": "we introduce an adapter module composed of two 2-dimensional convolutional layers"
+     },
+     {
+      "name": "GLIP tiny model",
+      "evidence": "the feature extractor from the GLIP tiny model [9]"
+     },
+     {
+      "name": "GLIP+Adapter",
+      "evidence": "GLIP+Adapter fails to adapt to the COD task"
+     },
+     {
+      "name": "AGP",
+      "evidence": "we propose the AGP"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "AGP-based loss",
+      "evidence": "the AGP-based loss can be expressed as"
+     },
+     {
+      "name": "RCOD",
+      "evidence": "In RCOD, we adopt [49] as our contrastive loss Lc"
+     },
+     {
+      "name": "GIoU",
+      "evidence": "GIoU [50] as our Localization lossLbbox"
+     },
+     {
+      "name": "focal loss",
+      "evidence": "focal loss [51] as our classification loss Lcls"
+     },
+     {
+      "name": "Sparse Feature Refinement Module",
+      "evidence": "C. Sparse Feature Refinement Module"
+     },
+     {
+      "name": "swin-transformer",
+      "evidence": "utilize the swin-transformer [10] as the feature extractor"
+     },
+     {
+      "name": "FPN",
+      "evidence": "FPN [52] for feature refinement"
+     },
+     {
+      "name": "SFR module",
+      "evidence": "we propose the SFR module"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 6,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "CAMO-D",
+      "version": null,
+      "evidence": "Regarding the CAMO- D dataset, we combine 1000 training images and 250 test images"
+     },
+     {
+      "name": "CAMO",
+      "version": null,
+      "evidence": "from the original camouflaged CAMO dataset [13]"
+     },
+     {
+      "name": "COD10K-D",
+      "version": null,
+      "evidence": "our newly created COD10K-D, NC4K-D, and CAMO- D datasets"
+     },
+     {
+      "name": "NC4K-D",
+      "version": null,
+      "evidence": "our newly created COD10K-D, NC4K-D, and CAMO- D datasets"
+     }
+    ],
+    "methods": [
+     {
+      "name": "Mask RCNN (ResNet50)",
+      "evidence": "Mask RCNN [56] ResNet50 41 289.97"
+     },
+     {
+      "name": "Faster RCNN (ResNet50)",
+      "evidence": "Faster RCNN [17] ResNet50 34 176.54"
+     },
+     {
+      "name": "SAM (Vit-T)",
+      "evidence": "SAM [57] Vit-T 89 371.98"
+     },
+     {
+      "name": "SAM (Vit-L)",
+      "evidence": "SAM [57] Vit-L 298 1314.89"
+     },
+     {
+      "name": "GDino + CAFR (Swin-T)",
+      "evidence": "GDino + CAFR Swin-T 165 353.98"
+     },
+     {
+      "name": "GDino + CAFR (Swin-L)",
+      "evidence": "GDino + CAFR Swin-L 222 524.68"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 7,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "CAMO-D",
+      "version": null,
+      "evidence": "as shown in Fig. 4 from the CAMO-D dataset"
+     },
+     {
+      "name": "COD10K",
+      "version": "v2",
+      "evidence": "the COD10K-v2 dataset offers comprehensive category annota- tions"
+     },
+     {
+      "name": "NC4K-D",
+      "version": null,
+      "evidence": "Moving on to NC4K-D, we carefully select 4121 clearer images"
+     },
+     {
+      "name": "NC4K",
+      "version": null,
+      "evidence": "4121 clearer images from the NC4K dataset [12]"
+     }
+    ],
+    "methods": [
+     {
+      "name": "Mask RCNN",
+      "evidence": "Mask RCNN [56] ResNet50 41 289.97"
+     },
+     {
+      "name": "Faster RCNN",
+      "evidence": "Faster RCNN [17] ResNet50 34 176.54"
+     },
+     {
+      "name": "SAM",
+      "evidence": "SAM [57] Vit-T 89 371.98"
+     },
+     {
+      "name": "Grounding DINO",
+      "evidence": "GD INO: GROUNDING DINO"
+     },
+     {
+      "name": "GDino + CAFR",
+      "evidence": "GDino + CAFR Swin-T 165"
+     },
+     {
+      "name": "Swin Transformer",
+      "evidence": "SWIN: SWIN TRANSFORMER"
+     },
+     {
+      "name": "Vision Transformer",
+      "evidence": "VIT: VISION TRANSFORMER"
+     },
+     {
+      "name": "ResNet50",
+      "evidence": "Faster RCNN [17] ResNet50 34 176.54"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "Parameters (M) - Mask RCNN",
+      "value": "41",
+      "split": null,
+      "evidence": "Mask RCNN [56] ResNet50 41 289.97"
+     },
+     {
+      "metric": "FLOPs (G) - Mask RCNN",
+      "value": "289.97",
+      "split": null,
+      "evidence": "Mask RCNN [56] ResNet50 41 289.97"
+     },
+     {
+      "metric": "Parameters (M) - Faster RCNN",
+      "value": "34",
+      "split": null,
+      "evidence": "Faster RCNN [17] ResNet50 34 176.54"
+     },
+     {
+      "metric": "FLOPs (G) - Faster RCNN",
+      "value": "176.54",
+      "split": null,
+      "evidence": "Faster RCNN [17] ResNet50 34 176.54"
+     },
+     {
+      "metric": "Parameters (M) - SAM",
+      "value": "89",
+      "split": null,
+      "evidence": "SAM [57] Vit-T 89 371.98"
+     },
+     {
+      "metric": "FLOPs (G) - SAM",
+      "value": "371.98",
+      "split": null,
+      "evidence": "SAM [57] Vit-T 89 371.98"
+     },
+     {
+      "metric": "Parameters (M) - GDino + CAFR",
+      "value": "165",
+      "split": null,
+      "evidence": "GDino + CAFR Swin-T 165"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 8,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COD10K-D",
+      "version": null,
+      "evidence": "ON COD10K-D, NC4K-D, AND CAMO-D DATASETS"
+     },
+     {
+      "name": "NC4K-D",
+      "version": null,
+      "evidence": "ON COD10K-D, NC4K-D, AND CAMO-D DATASETS"
+     },
+     {
+      "name": "CAMO-D",
+      "version": null,
+      "evidence": "ON COD10K-D, NC4K-D, AND CAMO-D DATASETS"
+     }
+    ],
+    "methods": [
+     {
+      "name": "Deformable DETR",
+      "evidence": "DEF-DETR ISDEFORMABLE DETR [35]"
+     },
+     {
+      "name": "Swin-Transformer",
+      "evidence": "S WIN REPRESENTS SWIN -TRASFORMER WITH ITS TINY BASE ,AND LARGE PRE -TRAINED MODELS [10]"
+     },
+     {
+      "name": "ResNet50",
+      "evidence": "R50 AND R101 ARE RESNET50AND RSENET101"
+     },
+     {
+      "name": "ResNet101",
+      "evidence": "R50 AND R101 ARE RESNET50AND RSENET101"
+     },
+     {
+      "name": "GLIP",
+      "evidence": "GLIP WITH ITS TINY AND LARGE PRE -TRAINED MODELS [9]"
+     },
+     {
+      "name": "Grounding DINO",
+      "evidence": "GD INO IS GROUNDING DION ITS TINY AND BASE PRE-TRAINED MODELS [25]"
+     },
+     {
+      "name": "YOLOv7-L",
+      "evidence": "YOLOv7-L [15] CSPDarknet"
+     },
+     {
+      "name": "CSPDarknet",
+      "evidence": "YOLOv7-L [15] CSPDarknet"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "mAP (YOLOv7-L, COD10K-D)",
+      "value": "3.8",
+      "split": null,
+      "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0"
+     },
+     {
+      "metric": "AP50 (YOLOv7-L, COD10K-D)",
+      "value": "8.2",
+      "split": null,
+      "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0"
+     },
+     {
+      "metric": "AP75 (YOLOv7-L, COD10K-D)",
+      "value": "2.8",
+      "split": null,
+      "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0"
+     },
+     {
+      "metric": "APm (YOLOv7-L, COD10K-D)",
+      "value": "1.0",
+      "split": null,
+      "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0"
+     },
+     {
+      "metric": "APl (YOLOv7-L, COD10K-D)",
+      "value": "4.0",
+      "split": null,
+      "evidence": "YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0"
+     },
+     {
+      "metric": "mAP (YOLOv7-L, NC4K-D)",
+      "value": "6.8",
+      "split": null,
+      "evidence": "4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "AP50 (YOLOv7-L, NC4K-D)",
+      "value": "14.2",
+      "split": null,
+      "evidence": "4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "AP75 (YOLOv7-L, NC4K-D)",
+      "value": "6.0",
+      "split": null,
+      "evidence": "4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "APm (YOLOv7-L, NC4K-D)",
+      "value": "1.7",
+      "split": null,
+      "evidence": "4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "APl (YOLOv7-L, NC4K-D)",
+      "value": "7.3",
+      "split": null,
+      "evidence": "4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "mAP (YOLOv7-L, CAMO-D)",
+      "value": "5.4",
+      "split": null,
+      "evidence": "4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     }
+    ]
+   }
+  }
+ ]
+}

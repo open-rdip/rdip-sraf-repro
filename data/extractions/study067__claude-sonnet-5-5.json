@@ -1,0 +1,121 @@
+{
+  "study_id": "study067",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study067/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:58:20.384327+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 2,
+    "methods": 14,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of posterior samples for estimating counterfactual effects",
+        "value": "100"
+      },
+      {
+        "name": "number of additional posterior samples for conditional variance",
+        "value": "20"
+      },
+      {
+        "name": "round difference range for selected actions",
+        "value": "between 4 and 10"
+      },
+      {
+        "name": "absolute r-SSE threshold",
+        "value": "\u2265 0.1"
+      },
+      {
+        "name": "r-SSE variance threshold",
+        "value": "\u2265 0.01"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Gridworld",
+        "version": null
+      },
+      {
+        "name": "Sepsis",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "r-SSE-ICC",
+        "description": "Method that attributes contribution ratios to all state variables (reverse state-specific effect, intrinsic causal contribution), shown in Plot 2c."
+      },
+      {
+        "name": "TCFE",
+        "description": "Total counterfactual effect: return of the counterfactual trajectory minus the observed return."
+      },
+      {
+        "name": "tot-ASE",
+        "description": "Total agent-specific effect (Definition 3.1): isolates the effect of the intervention that propagates only through the agents (A1, A2 and Planner); estimated using the counterfactual trajectory in which stochastic penalties are realized as if A2 carries the pink object."
+      },
+      {
+        "name": "SSE",
+        "description": "State-specific effect (Definition 3.2): isolates the effect of the intervention that propagates only through states; estimated using the counterfactual trajectory in which agents take their factual actions but stochastic penalties are realized as if A2 carries the green object."
+      },
+      {
+        "name": "reverse SSE",
+        "description": "Computed (Eq. 2) as the difference between the returns of the counterfactual trajectories considered for tot-ASE and TCFE."
+      },
+      {
+        "name": "Causal explanation formula",
+        "description": "Theorem 3.3, decomposing TCFE into tot-ASE and SSE; empirically validated in this scenario."
+      },
+      {
+        "name": "ASE-SV",
+        "description": "Shapley-value-based attribution of agent-specific effects (mentioned; passage truncated)."
+      },
+      {
+        "name": "Counterfactual effect decomposition",
+        "description": "Approach for decomposing the total agent-specific effect (tot-ASE) into contributions of individual agents, evaluated empirically in Gridworld and Sepsis environments."
+      },
+      {
+        "name": "Counterfactual effects (TCFE, ASE, SSE, r-SSE, 1-SE, 2-SE, Planner-SE)",
+        "description": "Various counterfactual effects computed on the discounted total reward of the trajectory and compared in Plot 2b."
+      },
+      {
+        "name": "Counterfactual trajectory intervention",
+        "description": "Actor A2 is forced to pick up the green object instead of the pink one, prompting the Planner to issue an alternative instruction to deliver to the green location; A1's behavior is unaffected."
+      },
+      {
+        "name": "Gini coefficient",
+        "description": "Measure of inequality (Gini, 1936) applied to the distribution of r-SSE-ICC scores across states, shown for various round differences (trajectory sizes) in Plot 3c"
+      },
+      {
+        "name": "Planner-Actor-Reporter system",
+        "description": "Multi-agent gridworld setup akin to Dasgupta et al., 2023, where the Planner is implemented with a pre-trained LLM and few-shot learning to provide instructions to actors (A1 and A2) that deliver colored objects to matching delivery locations."
+      },
+      {
+        "name": "Counterfactual effect estimation via posterior sampling",
+        "description": "Counterfactual effects are estimated using 100 posterior samples, with 20 additional samples used for the conditional variance."
+      },
+      {
+        "name": "r-SSE",
+        "description": "Reverse state-specific effect, computed for each selected action together with its variance."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "number of alternative actions selected for r-SSE-ICC evaluation",
+        "value": "437",
+        "split": null
+      }
+    ]
+  }
+}

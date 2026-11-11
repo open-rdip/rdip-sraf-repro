@@ -1,0 +1,120 @@
+{
+  "study_id": "study023",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study023/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:24:42.398875+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 1,
+    "methods": 5,
+    "evaluation_results": 12
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "value": "0"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Mobile-Eval",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Mobile-Agent-v2",
+        "description": "An agent architecture consisting of components including a planning agent, reflection agent, and memory unit for mobile device operation."
+      },
+      {
+        "name": "GPT-4V",
+        "description": "A multimodal model evaluated directly for end-to-end operation and combined with the agent architecture as an operational assistant."
+      },
+      {
+        "name": "knowledge injection",
+        "description": "Manually injected operation knowledge and tutorials to instruct agents and mitigate limitations in operation capability."
+      },
+      {
+        "name": "Mobile-Agent",
+        "description": "a single-agent architecture based on GPT-4V end-to-end screen recognition"
+      },
+      {
+        "name": "reflection agent",
+        "description": "An agent component within Mobile-Agent-v2 to mitigate errors in decision-making."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Basic SR&DA (GPT-4V w/o agent)",
+        "value": "2.7",
+        "split": null
+      },
+      {
+        "metric": "Advanced SR&DA (GPT-4V w/o agent)",
+        "value": "0.9",
+        "split": null
+      },
+      {
+        "metric": "Basic SR&DA (Gemini-1.5-Pro)",
+        "value": "38.2",
+        "split": null
+      },
+      {
+        "metric": "Advanced SR&DA (Gemini-1.5-Pro)",
+        "value": "29.8",
+        "split": null
+      },
+      {
+        "metric": "Basic SR&DA (Qwen-VL-Max)",
+        "value": "42.1",
+        "split": null
+      },
+      {
+        "metric": "Advanced SR&DA (Qwen-VL-Max)",
+        "value": "33.6",
+        "split": null
+      },
+      {
+        "metric": "Basic SR&DA (GPT-4V)",
+        "value": "92.7",
+        "split": null
+      },
+      {
+        "metric": "Advanced SR&DA (GPT-4V)",
+        "value": "83.5",
+        "split": null
+      },
+      {
+        "metric": "success rate",
+        "value": "55%",
+        "split": null
+      },
+      {
+        "metric": "average improvement in success rate",
+        "value": "27%",
+        "split": null
+      },
+      {
+        "metric": "completion rate",
+        "value": "100%",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "99%",
+        "split": null
+      }
+    ]
+  }
+}

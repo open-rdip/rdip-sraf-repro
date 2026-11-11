@@ -1,0 +1,835 @@
+{
+ "study_id": "study017",
+ "model": "gemini-flash",
+ "slug": "gemini-3-8-flash",
+ "n_passages": 6,
+ "n_passages_ok": 6,
+ "failures": [],
+ "records": [
+  {
+   "field": "methods",
+   "value": "Vahadane Stain Norm",
+   "evidence": "Vahadane Stain Norm I I",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Macenko Stain Norm",
+   "evidence": "Macenko Stain Norm I I",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Tissue Mask Detection",
+   "evidence": "Tissue Mask Detection I M",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Nuclei Detection",
+   "evidence": "Nuclei Detection I M",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Deep Feature Extraction",
+   "evidence": "Deep Feature Extraction I,M X",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Feature Cube Extraction",
+   "evidence": "Feature Cube Extraction I X",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "k-NN Graph Building",
+   "evidence": "k-NN Graph Building X,M G",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "RAG Graph Building",
+   "evidence": "RAG Graph Building X,M G",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Cell-Graph Model",
+   "evidence": "Cell-Graph Model G P",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Tissue-Graph Model",
+   "evidence": "Tissue-Graph Model G P",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "HACT Model",
+   "evidence": "HACT Model G,G,X P",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GnnExplainer",
+   "evidence": "GnnExplainer G S",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM",
+   "evidence": "GraphGrad-CAM G S",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM++",
+   "evidence": "GraphGrad-CAM++ G S",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GraphLRP",
+   "evidence": "GraphLRP G S",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Gaussian smoothing",
+   "evidence": "iteratively applies Gaussian smoothing",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "PanNuke",
+   "evidence": "trained on PanNuke (Gamper et al., 2020) and MoNuSac",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "MoNuSac",
+   "evidence": "PanNuke (Gamper et al., 2020) and MoNuSac (Ruchika et al., 2020) datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Gaussian smoothing",
+   "evidence": "iteratively applies Gaussian smoothing and Otsu thresholding",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Otsu thresholding",
+   "evidence": "iteratively applies Gaussian smoothing and Otsu thresholding",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "HoVerNet",
+   "evidence": "checkpoints for the state-of-the-art HoVerNet model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Simple Linear Iterative Clustering (SLIC)",
+   "evidence": "homogeneous superpixels using Simple Linear Iterative Clustering (SLIC) (Achanta et al., 2012) algorithm.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "DGL",
+   "evidence": "All the graph modules are implemented using DGL (Wang et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "dependencies",
+   "value": "PyTorch",
+   "evidence": "a state-of-the-art library for GNNs built around PyTorch.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM",
+   "evidence": "GraphGrad-CAM (Sel- varaju et al., 2017; Pope et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM++",
+   "evidence": "GraphGrad-CAM++ (Chattopadhay et al., 2018; Jaume et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GnnExplainer",
+   "evidence": "GnnExplainer (Ying et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphLRP",
+   "evidence": "GraphLRP (Schwarzenberg et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "hardware",
+   "value": "single-core POWER8 processor",
+   "evidence": "assessed on a single-core POWER8 processor and a NVIDIA P100 GPU, respectively.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "NVIDIA P100 GPU",
+   "evidence": "assessed on a single-core POWER8 processor and a NVIDIA P100 GPU, respectively.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "HistoCartography",
+   "evidence": "We benchmark HistoCartography in terms of run-time and performance for various histopathology tasks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Vahadane Stain Norm",
+   "evidence": "PreprocessingVahadane Stain Norm 1.77",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Macenko Stain Norm",
+   "evidence": "Macenko Stain Norm 0.80",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "dependencies",
+   "value": "python",
+   "evidence": "As the library is built on python",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "cell-graph model",
+   "evidence": "interpret a cell-graph model.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "post-hoc feature attribution methods",
+   "evidence": "applying post-hoc feature attribution methods on trained cell-graph model.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "BRACS",
+   "evidence": "Classi\ufb01cation is performed on BRACS (Pati et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "BACH",
+   "evidence": "BACH (Aresta et al., 2019) datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "UZH",
+   "evidence": "prostate cancer images from UZH (Zhong et al., 2017)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "SICAPv2",
+   "evidence": "and SICAPv2 (Silva- Rodr\u00b4 \u0131guez et al., 2020)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "HistoCartography",
+   "evidence": "performance of HistoCartography for classi\ufb01cation and segmen- tation tasks.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "cell-graph model",
+   "evidence": "characterize breast tumors using cell-graph model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "tissue-graph model",
+   "evidence": "tissue-graph model, and HACT-Net",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "HACT-Net",
+   "evidence": "HACT-Net (Pati et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "SegGini",
+   "evidence": "Segmentation is performed using SegGini (Anklin et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "GraphGradCAM",
+   "evidence": "outcome of GraphGradCAM module in HistoCartography",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "methods": {
+    "n": 35,
+    "has_evidence": 35,
+    "span_found": 35,
+    "value_in_span": 35,
+    "grounded": 35
+   },
+   "datasets": {
+    "n": 6,
+    "has_evidence": 6,
+    "span_found": 6,
+    "value_in_span": 6,
+    "grounded": 6
+   },
+   "dependencies": {
+    "n": 3,
+    "has_evidence": 3,
+    "span_found": 3,
+    "value_in_span": 3,
+    "grounded": 3
+   },
+   "hardware": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   }
+  },
+  "total": {
+   "n": 46,
+   "has_evidence": 46,
+   "span_found": 46,
+   "value_in_span": 46,
+   "grounded": 46
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Vahadane Stain Norm",
+      "evidence": "Vahadane Stain Norm I I"
+     },
+     {
+      "name": "Macenko Stain Norm",
+      "evidence": "Macenko Stain Norm I I"
+     },
+     {
+      "name": "Tissue Mask Detection",
+      "evidence": "Tissue Mask Detection I M"
+     },
+     {
+      "name": "Nuclei Detection",
+      "evidence": "Nuclei Detection I M"
+     },
+     {
+      "name": "Deep Feature Extraction",
+      "evidence": "Deep Feature Extraction I,M X"
+     },
+     {
+      "name": "Feature Cube Extraction",
+      "evidence": "Feature Cube Extraction I X"
+     },
+     {
+      "name": "k-NN Graph Building",
+      "evidence": "k-NN Graph Building X,M G"
+     },
+     {
+      "name": "RAG Graph Building",
+      "evidence": "RAG Graph Building X,M G"
+     },
+     {
+      "name": "Cell-Graph Model",
+      "evidence": "Cell-Graph Model G P"
+     },
+     {
+      "name": "Tissue-Graph Model",
+      "evidence": "Tissue-Graph Model G P"
+     },
+     {
+      "name": "HACT Model",
+      "evidence": "HACT Model G,G,X P"
+     },
+     {
+      "name": "GnnExplainer",
+      "evidence": "GnnExplainer G S"
+     },
+     {
+      "name": "GraphGrad-CAM",
+      "evidence": "GraphGrad-CAM G S"
+     },
+     {
+      "name": "GraphGrad-CAM++",
+      "evidence": "GraphGrad-CAM++ G S"
+     },
+     {
+      "name": "GraphLRP",
+      "evidence": "GraphLRP G S"
+     },
+     {
+      "name": "Gaussian smoothing",
+      "evidence": "iteratively applies Gaussian smoothing"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "PanNuke",
+      "version": null,
+      "evidence": "trained on PanNuke (Gamper et al., 2020) and MoNuSac"
+     },
+     {
+      "name": "MoNuSac",
+      "version": null,
+      "evidence": "PanNuke (Gamper et al., 2020) and MoNuSac (Ruchika et al., 2020) datasets"
+     }
+    ],
+    "methods": [
+     {
+      "name": "Gaussian smoothing",
+      "evidence": "iteratively applies Gaussian smoothing and Otsu thresholding"
+     },
+     {
+      "name": "Otsu thresholding",
+      "evidence": "iteratively applies Gaussian smoothing and Otsu thresholding"
+     },
+     {
+      "name": "HoVerNet",
+      "evidence": "checkpoints for the state-of-the-art HoVerNet model"
+     },
+     {
+      "name": "Simple Linear Iterative Clustering (SLIC)",
+      "evidence": "homogeneous superpixels using Simple Linear Iterative Clustering (SLIC) (Achanta et al., 2012) algorithm."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "DGL",
+      "version": null,
+      "evidence": "All the graph modules are implemented using DGL (Wang et al., 2019)"
+     },
+     {
+      "name": "PyTorch",
+      "version": null,
+      "evidence": "a state-of-the-art library for GNNs built around PyTorch."
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "GraphGrad-CAM",
+      "evidence": "GraphGrad-CAM (Sel- varaju et al., 2017; Pope et al., 2019)"
+     },
+     {
+      "name": "GraphGrad-CAM++",
+      "evidence": "GraphGrad-CAM++ (Chattopadhay et al., 2018; Jaume et al., 2021)"
+     },
+     {
+      "name": "GnnExplainer",
+      "evidence": "GnnExplainer (Ying et al., 2019)"
+     },
+     {
+      "name": "GraphLRP",
+      "evidence": "GraphLRP (Schwarzenberg et al., 2019)"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "cpu_info",
+      "value": "single-core POWER8 processor",
+      "evidence": "assessed on a single-core POWER8 processor and a NVIDIA P100 GPU, respectively."
+     },
+     {
+      "slot": "gpu_model",
+      "value": "NVIDIA P100 GPU",
+      "evidence": "assessed on a single-core POWER8 processor and a NVIDIA P100 GPU, respectively."
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "HistoCartography",
+      "evidence": "We benchmark HistoCartography in terms of run-time and performance for various histopathology tasks"
+     },
+     {
+      "name": "Vahadane Stain Norm",
+      "evidence": "PreprocessingVahadane Stain Norm 1.77"
+     },
+     {
+      "name": "Macenko Stain Norm",
+      "evidence": "Macenko Stain Norm 0.80"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "python",
+      "version": null,
+      "evidence": "As the library is built on python"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "cell-graph model",
+      "evidence": "interpret a cell-graph model."
+     },
+     {
+      "name": "post-hoc feature attribution methods",
+      "evidence": "applying post-hoc feature attribution methods on trained cell-graph model."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "BRACS",
+      "version": null,
+      "evidence": "Classi\ufb01cation is performed on BRACS (Pati et al., 2021)"
+     },
+     {
+      "name": "BACH",
+      "version": null,
+      "evidence": "BACH (Aresta et al., 2019) datasets"
+     },
+     {
+      "name": "UZH",
+      "version": null,
+      "evidence": "prostate cancer images from UZH (Zhong et al., 2017)"
+     },
+     {
+      "name": "SICAPv2",
+      "version": null,
+      "evidence": "and SICAPv2 (Silva- Rodr\u00b4 \u0131guez et al., 2020)"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HistoCartography",
+      "evidence": "performance of HistoCartography for classi\ufb01cation and segmen- tation tasks."
+     },
+     {
+      "name": "cell-graph model",
+      "evidence": "characterize breast tumors using cell-graph model"
+     },
+     {
+      "name": "tissue-graph model",
+      "evidence": "tissue-graph model, and HACT-Net"
+     },
+     {
+      "name": "HACT-Net",
+      "evidence": "HACT-Net (Pati et al., 2021)"
+     },
+     {
+      "name": "SegGini",
+      "evidence": "Segmentation is performed using SegGini (Anklin et al., 2021)"
+     },
+     {
+      "name": "GraphGradCAM",
+      "evidence": "outcome of GraphGradCAM module in HistoCartography"
+     }
+    ],
+    "evaluation_results": []
+   }
+  }
+ ]
+}

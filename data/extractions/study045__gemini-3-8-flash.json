@@ -1,0 +1,115 @@
+{
+  "study_id": "study045",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study045/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:50:23.268567+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 6,
+    "methods": 12,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Jraph",
+        "version": null
+      },
+      {
+        "name": "JAX",
+        "version": null
+      },
+      {
+        "name": "Haiku",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "QM9",
+        "version": null
+      },
+      {
+        "name": "PCQM4Mv2",
+        "version": null
+      },
+      {
+        "name": "OC20",
+        "version": null
+      },
+      {
+        "name": "OC20 S2EF",
+        "version": null
+      },
+      {
+        "name": "DES15K",
+        "version": null
+      },
+      {
+        "name": "S2EF",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GNS-TAT with Noisy Nodes",
+        "description": "Graph neural network model variant incorporating TAT modifications trained with Noisy Nodes from random initialization or pre-trained parameters."
+      },
+      {
+        "name": "GNS with Noisy Nodes",
+        "description": "Baseline graph neural network model trained with Noisy Nodes."
+      },
+      {
+        "name": "Denoising pre-training",
+        "description": "Pre-training strategy performed on PCQM4Mv2 via denoising."
+      },
+      {
+        "name": "Atom type masking and prediction",
+        "description": "Auxiliary pre-training objective used alongside denoising to improve performance on QM9."
+      },
+      {
+        "name": "TorchMD-NET",
+        "description": "Model architecture evaluated using Th\u00f6lke & De Fabritiis's [2022] open-source code on HOMO and LUMO targets in QM9"
+      },
+      {
+        "name": "GNS-TAT",
+        "description": "Graph neural network model architecture evaluated on the QM9 HOMO target"
+      },
+      {
+        "name": "GNS",
+        "description": "Graph neural network model architecture evaluated with varying amounts of pre-training data"
+      },
+      {
+        "name": "denoising",
+        "description": "pre-training neural networks by denoising in the space of 3D molecular structures, equivalent to learning a force field"
+      },
+      {
+        "name": "AttrMask",
+        "description": "2D-based pre-training method that masks and predicts atomic numbers"
+      },
+      {
+        "name": "Noisy Nodes",
+        "description": "Method to improve performance compared to training from scratch"
+      },
+      {
+        "name": "Pre-training via denoising",
+        "description": "Pre-training by denoising structures obtained through methods such as DFT"
+      },
+      {
+        "name": "DFT",
+        "description": "Relatively cheap method used to obtain structures for pre-training"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "study_id": "study025",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study025/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:40:44.200717+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 10,
+    "methods": 24,
+    "evaluation_results": 18
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "neurite",
+        "version": null
+      },
+      {
+        "name": "FreeSurfer",
+        "version": null
+      },
+      {
+        "name": "SAMSEG",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX A6000",
+      "cuda_version": null,
+      "cpu_info": "2.61GHz CPU"
+    },
+    "hyperparameters": [
+      {
+        "name": "training epochs",
+        "value": "determined using the validation dataset"
+      },
+      {
+        "name": "iterations to reach 95% of peak performance (VFA)",
+        "value": "within 100,000 iterations (typical)"
+      },
+      {
+        "name": "VXM feature channels (extra comparison experiment)",
+        "value": "doubled across all convolutional layers"
+      },
+      {
+        "name": "VXM parameter count (high-capacity)",
+        "value": "6.2 million"
+      },
+      {
+        "name": "temperature parameter in attention computation (reduced setting)",
+        "value": "0.05"
+      },
+      {
+        "name": "\u03b20 (initial value of \u03b2)",
+        "value": "0, 1, or 2"
+      },
+      {
+        "name": "search window size",
+        "value": "3\u00d73\u00d73"
+      },
+      {
+        "name": "loss weights (three losses)",
+        "value": "5, 0.2, 0.05"
+      },
+      {
+        "name": "number of epochs",
+        "value": "selected based on best validation accuracy"
+      },
+      {
+        "name": "size of matrix R (2D)",
+        "value": "9\u00d72"
+      },
+      {
+        "name": "size of matrix R (3D)",
+        "value": "27\u00d73"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IXI dataset (T1w scans)",
+        "version": null
+      },
+      {
+        "name": "T1w MR atlas image from reference 42",
+        "version": null
+      },
+      {
+        "name": "inter-subject T1w MR registration",
+        "version": null
+      },
+      {
+        "name": "intra-subject lung CT registration",
+        "version": null
+      },
+      {
+        "name": "Learn2Reg Challenge",
+        "version": null
+      },
+      {
+        "name": "T1-weighted MR images",
+        "version": null
+      },
+      {
+        "name": "T2-weighted MR images",
+        "version": null
+      },
+      {
+        "name": "atlas",
+        "version": null
+      },
+      {
+        "name": "Learn2Reg Challenge training scans (inter-subject T1w MR, 394 training scans)",
+        "version": null
+      },
+      {
+        "name": "Learn2Reg 2022 Challenge inhale and exhale lung CT registration",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "VoxelMorph with scaling-and-squaring layer",
+        "description": "Registration method with a scaling-and-squaring layer to encourage diffeomorphic registration"
+      },
+      {
+        "name": "TransMorph",
+        "description": "Hybrid deep learning architecture combining Transformer structure with convolutional networks"
+      },
+      {
+        "name": "Im2grid",
+        "description": "Previous method by the authors using coordinate translator modules"
+      },
+      {
+        "name": "DMR",
+        "description": "Deep learning based architecture based on the Deformer module"
+      },
+      {
+        "name": "PR-Net++",
+        "description": "Deep learning method adopting a dual-stream architecture and incorporating correlation layers"
+      },
+      {
+        "name": "VFA",
+        "description": "Proposed method; achieves 95% of its peak performance within 100,000 iterations"
+      },
+      {
+        "name": "Cosine similarity in attention computation",
+        "description": "Replaces inner product similarity in the attention computation, omitting magnitude; produces feature maps with substantially greater visual similarity between T2-weighted and T1-weighted images, with no noticeable accuracy difference but slightly higher GPU memory usage."
+      },
+      {
+        "name": "Inner product in attention computation",
+        "description": "Baseline similarity measure in attention computation, used for comparison with cosine similarity in feature map visualization."
+      },
+      {
+        "name": "High-capacity VXM",
+        "description": "VXM model with the number of feature channels doubled across all convolutional layers, increasing parameter count to 6.2 million, used to analyze the effect of model capacity."
+      },
+      {
+        "name": "ND Volume",
+        "description": "Measures the severity of space folding under the digital diffeomorphism criteria"
+      },
+      {
+        "name": "Mean DSC",
+        "description": "Accuracy metric for inter-subject T1w MRI registration, measured between warped and fixed segmentations of 35 anatomic labels obtained using FreeSurfer and SAMSEG"
+      },
+      {
+        "name": "HD95",
+        "description": "95% percentile of Hausdorff distance between warped and fixed segmentations"
+      },
+      {
+        "name": "TRE",
+        "description": "Target registration error using manual landmarks, used to measure accuracy of intra-subject lung CT registration"
+      },
+      {
+        "name": "TRE30",
+        "description": "The 30% lowest TRE among all test cases, used to indicate robustness of algorithms"
+      },
+      {
+        "name": "SDLogJ",
+        "description": "Standard deviation of the logarithm of the central difference approximated Jacobian determinant, used to evaluate smoothness of transformations"
+      },
+      {
+        "name": "VoxelMorph (VXM)",
+        "description": "Deep learning method based on a U-Net architecture"
+      },
+      {
+        "name": "VoxelMorph-diff (VXM-diff)",
+        "description": "Variant of VoxelMorph with a scaling-and-squaring layer to encourage diffeomorphic registration"
+      },
+      {
+        "name": "VXM",
+        "description": "Unsupervised registration baseline compared against VFA"
+      },
+      {
+        "name": "Common Language Effect Size (CLES)",
+        "description": "Statistic giving the probability that a randomly selected pair shows a difference in the expected direction favoring VFA"
+      },
+      {
+        "name": "SLANT",
+        "description": "Segmentation method used to produce 132 labels for computing the mean Dice similarity coefficient"
+      },
+      {
+        "name": "TRE loss",
+        "description": "Target registration error loss computed from \u03d5 at locations of automatically generated keypoints provided by the challenge"
+      },
+      {
+        "name": "Displacement-based attention",
+        "description": "Displacement vectors r(k) between x and its adjacent candidates from the feature matching step are stored in a matrix R that serves as the value matrix for attention computation. The attention of x gives a weighted sum of the vectors in R, retrieving the displacement of candidates relative to x based on feature similarity."
+      },
+      {
+        "name": "Soft attention map for sub-voxel displacement",
+        "description": "Because the attention map is soft, the output displacement can be floating-point rather than restricted to vectors within r(k), allowing more precise localization of correspondences. A single highlighted candidate yields its exact displacement, and multiple highlighted candidates yield a weighted sum of their displacement vectors."
+      },
+      {
+        "name": "Voxel-to-scanner coordinate conversion",
+        "description": "The estimated displacement vector in the voxel coordinate system is converted to a displacement in the scanner coordinate system in real-world units by applying an affine transformation."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "VFA average inference time per 15 subjects on GPU",
+        "value": "0.9 seconds",
+        "split": "test"
+      },
+      {
+        "metric": "VFA average inference time per 15 subjects on CPU (2.61GHz)",
+        "value": "65.9 seconds",
+        "split": "test"
+      },
+      {
+        "metric": "DSC (T1w atlas to subject registration, high-capacity VXM)",
+        "value": "0.771\u00b10.030",
+        "split": null
+      },
+      {
+        "metric": "DSC (T2w to T1w registration, high-capacity VXM)",
+        "value": "0.635\u00b10.043",
+        "split": null
+      },
+      {
+        "metric": "Common Language Effect Size (CLES)",
+        "value": "0.9652",
+        "split": null
+      },
+      {
+        "metric": "DSC (VXM, T1w Atlas to T1w Subject)",
+        "value": "70.726\u00b10.048",
+        "split": null
+      },
+      {
+        "metric": "DSC (VXM, T2w Subject to T1w Subject)",
+        "value": "0.593\u00b10.053",
+        "split": null
+      },
+      {
+        "metric": "Im2grid (first reported metric, likely Dice)",
+        "value": "0.824",
+        "split": null
+      },
+      {
+        "metric": "Im2grid (second reported metric)",
+        "value": "1.689",
+        "split": null
+      },
+      {
+        "metric": "Im2grid (third reported metric)",
+        "value": "0.195",
+        "split": null
+      },
+      {
+        "metric": "TransMorph (first reported metric, likely Dice)",
+        "value": "0.829",
+        "split": null
+      },
+      {
+        "metric": "TransMorph (second reported metric)",
+        "value": "1.580",
+        "split": null
+      },
+      {
+        "metric": "TransMorph (third reported metric)",
+        "value": "0.093",
+        "split": null
+      },
+      {
+        "metric": "VFA (first reported metric, likely Dice)",
+        "value": "0.834",
+        "split": null
+      },
+      {
+        "metric": "VFA (second reported metric)",
+        "value": "1.658",
+        "split": null
+      },
+      {
+        "metric": "VFA (third reported metric)",
+        "value": "0.234",
+        "split": null
+      },
+      {
+        "metric": "TRE",
+        "value": "VFA ranked among the top three with the lowest TRE",
+        "split": "test"
+      },
+      {
+        "metric": "TRE30",
+        "value": "best TRE30 among all compared methods",
+        "split": "test"
+      }
+    ]
+  }
+}

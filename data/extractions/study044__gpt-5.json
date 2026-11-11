@@ -1,0 +1,119 @@
+{
+  "study_id": "study044",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study044/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:49:04.482123+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 8,
+    "methods": 12,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "top_n_tokens",
+        "value": "5"
+      },
+      {
+        "name": "k",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "AIME",
+        "version": "2024"
+      },
+      {
+        "name": "LiveCodeBench",
+        "version": null
+      },
+      {
+        "name": "Math500",
+        "version": null
+      },
+      {
+        "name": "AIME 2024",
+        "version": null
+      },
+      {
+        "name": "GSM8K",
+        "version": null
+      },
+      {
+        "name": "GPQA-Diamond",
+        "version": null
+      },
+      {
+        "name": "HumanEval",
+        "version": null
+      },
+      {
+        "name": "MBPPMBPP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Soft Thinking",
+        "description": "A reasoning approach where token probability distributions vary across steps, being more uniform during exploratory reasoning and nearly one-hot during precise calculations, integrating path exploration across consecutive concept tokens."
+      },
+      {
+        "name": "COCONUT-TF (training-free COCONUT)",
+        "description": "A training-free variant of the COCONUT method that directly feeds the previous hidden state as the next input in ablation comparisons."
+      },
+      {
+        "name": "Cold Stop mechanism",
+        "description": "A mechanism evaluated in ablation to assess its impact on Soft Thinking, affecting termination or transition behavior during reasoning."
+      },
+      {
+        "name": "Concept token strategies",
+        "description": "Different strategies for handling concept tokens, compared in ablation to evaluate their effect on reasoning flexibility and depth."
+      },
+      {
+        "name": "COCONUT",
+        "description": "Training-free approach that directly feeds the previous hidden state as the next input embedding."
+      },
+      {
+        "name": "Average embedding",
+        "description": "Takes the mean of the top-n token embeddings."
+      },
+      {
+        "name": "Cold Stop",
+        "description": "Mechanism to prevent generation collapse due to out-of-distribution concept tokens by stopping before reaching maximum generation length."
+      },
+      {
+        "name": "discrete CoT (Standard CoT)",
+        "description": "Replaces each summation with sampling a single token, discarding mass from all other paths."
+      },
+      {
+        "name": "Soft Thinking with Cold Stop",
+        "description": "Solves more problems than standard CoT and achieves greater overall efficiency."
+      },
+      {
+        "name": "standard CoT",
+        "description": "Baseline method compared against Soft Thinking with Cold Stop."
+      },
+      {
+        "name": "Standard CoT Thinking",
+        "description": "Baseline method that employs explicit step-by-step reasoning."
+      },
+      {
+        "name": "Standard Greedy CoT Thinking",
+        "description": "Baseline method that utilizes greedy decoding at each step of the reasoning process."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

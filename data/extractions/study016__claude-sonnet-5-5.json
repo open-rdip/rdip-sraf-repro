@@ -1,0 +1,83 @@
+{
+  "study_id": "study016",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study016/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:36:48.046552+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 1,
+    "methods": 8,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "DreamerV2 discrete latents",
+        "value": "not used"
+      },
+      {
+        "name": "DreamerV2 mixed precision training",
+        "value": "not used"
+      },
+      {
+        "name": "number of runs for 50m step results",
+        "value": "5"
+      },
+      {
+        "name": "number of runs for 500m step results",
+        "value": "3"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Avalon",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "IMPALA",
+        "description": "Baseline algorithm; one of the simplest SOTA algorithms on which many other SOTA algorithms are based, robust across problems"
+      },
+      {
+        "name": "PPO",
+        "description": "Baseline algorithm; one of the simplest SOTA algorithms on which many other SOTA algorithms are based, robust across problems"
+      },
+      {
+        "name": "DreamerV2",
+        "description": "Representative model-based baseline, used without discrete latents and without mixed precision training"
+      },
+      {
+        "name": "Bayesian optimization",
+        "description": "Used in combination with NES to tune hyper-parameters using runs with a smaller number of steps"
+      },
+      {
+        "name": "Natural Evolution Strategies (NES)",
+        "description": "Used in combination with Bayesian optimization to tune hyper-parameters using runs with a smaller number of steps"
+      },
+      {
+        "name": "Difficulty curriculum",
+        "description": "Training curriculum in which no worlds are seen twice during training"
+      },
+      {
+        "name": "MT-TB",
+        "description": "Multi-task training on basic tasks only; agents perform as well as or better than agents trained on all 20 tasks, even on compositional tasks never seen in training"
+      },
+      {
+        "name": "MT-TA",
+        "description": "Multi-task training on all 20 tasks"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

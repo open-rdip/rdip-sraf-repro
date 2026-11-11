@@ -1,0 +1,207 @@
+{
+  "study_id": "study005",
+  "backend": "anthropic",
+  "model": "claude-opus-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study005/ext/claude-opus-5-5",
+  "extracted_at": "2026-11-10T00:11:10.914425+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 5,
+    "methods": 22,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Imaginaire",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of feed-forward evaluations for timing",
+        "value": "100"
+      },
+      {
+        "name": "minimum image shortest side (base model)",
+        "value": "64 pixels"
+      },
+      {
+        "name": "minimum image shortest side (SR256 model)",
+        "value": "256 pixels"
+      },
+      {
+        "name": "minimum image shortest side (SR1024 model)",
+        "value": "1024 pixels"
+      },
+      {
+        "name": "SR1024 training random crop size",
+        "value": "256\u00d7256"
+      },
+      {
+        "name": "SR1024 inference resolution",
+        "value": "1024\u00d71024"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.0001"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.01"
+      },
+      {
+        "name": "batch_size",
+        "value": "2048"
+      },
+      {
+        "name": "num_gpus_base_model",
+        "value": "256"
+      },
+      {
+        "name": "num_gpus_per_super_resolution_model",
+        "value": "128"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Collection of public and proprietary text-image pairs (about one billion pairs, CLIP- and aesthetic-filtered)",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "Visual Genome",
+        "version": null
+      },
+      {
+        "name": "collection of public and proprietary datasets (training)",
+        "version": null
+      },
+      {
+        "name": "MS-COCO",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "eDiff-I",
+        "description": "Text-to-image diffusion model that increases network capacity by increasing the number of experts (ensemble of expert denoisers) rather than model depth; compared against DALL\u00b7E 2 and Stable Diffusion on long detailed captions."
+      },
+      {
+        "name": "DALL\u00b7E 2",
+        "description": "Baseline text-to-image model used for qualitative sample comparison."
+      },
+      {
+        "name": "Stable Diffusion",
+        "description": "Baseline text-to-image diffusion model used for qualitative sample comparison."
+      },
+      {
+        "name": "Increasing model depth",
+        "description": "Capacity scaling scheme that uses the same base model architecture but increases the number of residual blocks; compared against increasing number of experts for single feed-forward inference time."
+      },
+      {
+        "name": "CLIP-based filtering",
+        "description": "A pretrained CLIP model measures the image-text alignment score; image-text pairs that fail to meet a preset CLIP score threshold are removed."
+      },
+      {
+        "name": "Aesthetic score filtering",
+        "description": "An aesthetic scorer ranks image quality; pairs that fail to meet a preset aesthetic score are removed."
+      },
+      {
+        "name": "Resize-central crop",
+        "description": "Used to train the base and SR256 models. Images are resized so that the shortest side has the same number of pixels as the input image side, then center-cropped."
+      },
+      {
+        "name": "Random crop training for SR1024",
+        "description": "The SR1024 model is trained on random 256\u00d7256 crops and applied at 1024\u00d71024 resolution during inference."
+      },
+      {
+        "name": "Zero-shot evaluation",
+        "description": "The COCO and Visual Genome datasets are excluded from training to measure zero-shot text-to-image generation performance."
+      },
+      {
+        "name": "Ours",
+        "description": "Proposed text-to-image generation approach that succeeds in generating English text within images across a wide range of samples."
+      },
+      {
+        "name": "T5 text encoder",
+        "description": "T5 language model used as text encoder; performs better than CLIP in isolation on Visual Genome due to longer, more descriptive captions"
+      },
+      {
+        "name": "CLIP text encoder",
+        "description": "CLIP text encoder used for text conditioning; similar performance to T5 in isolation on COCO"
+      },
+      {
+        "name": "CLIP+T5 text encoders",
+        "description": "Combined use of CLIP and T5 text encoders, giving the best results on both COCO and Visual Genome"
+      },
+      {
+        "name": "Base diffusion model",
+        "description": "Base text-to-image diffusion model trained with AdamW on 256 NVIDIA A100 GPUs"
+      },
+      {
+        "name": "Super-resolution diffusion models",
+        "description": "Two super-resolution diffusion models, each trained with 128 NVIDIA A100 GPUs"
+      },
+      {
+        "name": "CLIP-based data filtering",
+        "description": "Heavy filtering of training data using a pretrained CLIP model to ensure high-quality training data"
+      },
+      {
+        "name": "CLIP text embeddings",
+        "description": "Text conditioning using CLIP text embeddings alone; images typically have the correct foreground object but lack compositionality, counting, and text generation"
+      },
+      {
+        "name": "T5 text embeddings",
+        "description": "Text conditioning using T5 text embeddings alone; better compositions but inferior at generating foreground objects such as dog breeds"
+      },
+      {
+        "name": "CLIP+T5 text embeddings",
+        "description": "Conditioning on both T5 and CLIP text embeddings, letting the model use attributes from each; gives better CLIP-FID trade-off curves"
+      },
+      {
+        "name": "CLIP-FID trade-off curve",
+        "description": "Quantitative evaluation of the effect of individual text embeddings on MS-COCO and Visual Genome datasets (Figure 8)"
+      },
+      {
+        "name": "Ensemble-of-expert-denoisers",
+        "description": "Scheme that scales model size without incurring additional computation at inference time"
+      },
+      {
+        "name": "CLIP and T5 text embeddings conditioning",
+        "description": "Model is trained with both CLIP text embeddings and T5 text embeddings, with random dropout applied independently to each embedding during training so the model can generate images using either embedding in isolation"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "average number of words per caption (MS-COCO)",
+        "value": "10.62",
+        "split": null
+      },
+      {
+        "metric": "average number of words per caption (Visual Genome)",
+        "value": "61.92",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "study_id": "study063",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study063/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:56:56.603828+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 7,
+    "methods": 18,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Audio Degradation Toolbox",
+        "version": "(Mauch & Ewert, 2013)"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "audio chunk length",
+        "value": "30-second"
+      },
+      {
+        "name": "low noise SNR level",
+        "value": "40 dB"
+      },
+      {
+        "name": "pub noise SNR threshold below which Whisper outperforms other models",
+        "value": "below 10 dB"
+      },
+      {
+        "name": "subsampled dataset fractions",
+        "value": "0.5%, 1%, 2%, 4%, 8% of the full dataset"
+      },
+      {
+        "name": "exponential moving average smoothing rate",
+        "value": "0.9999"
+      },
+      {
+        "name": "model size for dataset scaling experiments",
+        "value": "medium"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "VoxPopuli",
+        "version": null
+      },
+      {
+        "name": "MLS",
+        "version": null
+      },
+      {
+        "name": "LibriSpeech",
+        "version": null
+      },
+      {
+        "name": "Fleurs",
+        "version": null
+      },
+      {
+        "name": "SpeechStew",
+        "version": null
+      },
+      {
+        "name": "Whisper dataset",
+        "version": null
+      },
+      {
+        "name": "Whisper full training dataset (680,000 hours of audio)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "VP-10K+FT",
+        "description": "Baseline from the original VoxPopuli paper, which Whisper outperforms on VoxPopuli; involves pre-training on 10K hours of unlabeled VoxPopuli data followed by fine-tuning."
+      },
+      {
+        "name": "Whisper zero-shot translation",
+        "description": "Whisper models evaluated zero-shot on translation, with performance compared against the amount of pre-training translation supervision per language (Figure 4)."
+      },
+      {
+        "name": "Text normalization before WER calculation",
+        "description": "Extensive standardization of text before computing WER to minimize penalization of non-semantic differences; the normalizer was developed through iterative manual inspection to identify common patterns where naive WER penalized Whisper models for innocuous differences (e.g., reference transcripts separating contractions from words with whitespace). Full details are in Appendix C and the code is being released."
+      },
+      {
+        "name": "Zero-shot evaluation with Whisper",
+        "description": "Whisper models are evaluated zero-shot, without observing examples of specific datasets' transcript formats."
+      },
+      {
+        "name": "Additive noise SNR calculation",
+        "description": "The level of additive noise for a given signal-to-noise ratio (SNR) is calculated based on the signal power of individual examples."
+      },
+      {
+        "name": "Buffered long-form transcription",
+        "description": "Long audio is transcribed by consecutively transcribing 30-second segments and shifting the window according to the timestamps predicted by the model."
+      },
+      {
+        "name": "Beam search",
+        "description": "Observed to be crucial for long-form transcription."
+      },
+      {
+        "name": "Temperature scheduling",
+        "description": "Observed to be crucial for long-form transcription (passage is truncated after 'based on')."
+      },
+      {
+        "name": "Log-log linear regression",
+        "description": "Linear fit between the log of word error rate and the log of the amount of training data per language, used to study how training data amount relates to zero-shot performance. It gives a squared correlation coefficient of 0.83 and an estimate that WER halves for every 16x increase in training data."
+      },
+      {
+        "name": "Zero-shot evaluation of Whisper on Fleurs",
+        "description": "Whisper models are evaluated zero-shot on the Fleurs dataset to assess multilingual speech recognition performance across languages. Whisper's training data covers speech recognition in 75 languages."
+      },
+      {
+        "name": "Zero-shot language identification",
+        "description": "Whisper evaluated zero-shot on Fleurs language identification; it underperforms supervised SOTA, and the Whisper training data has no data for 20 of the 102 Fleurs languages, capping accuracy at 80.4%."
+      },
+      {
+        "name": "Additive noise robustness evaluation",
+        "description": "WER measured for Whisper models and 14 LibriSpeech-trained models (twelve pre-trained and/or fine-tuned on LibriSpeech, two NVIDIA STT models trained on a mixture dataset including LibriSpeech) after adding white noise or pub noise from the Audio Degradation Toolbox. Noise level for a given SNR is computed from the signal power of individual examples."
+      },
+      {
+        "name": "Dataset scaling",
+        "description": "Trained a series of medium-sized models on subsampled versions of the dataset (0.5%, 1%, 2%, 4%, 8%) and compared their performance with the same medium-sized model trained on the full dataset."
+      },
+      {
+        "name": "Early stopping",
+        "description": "Early stopping based on validation loss was used to select model checkpoints for each dataset size."
+      },
+      {
+        "name": "Exponential moving average of parameters",
+        "description": "Evaluation was performed on an exponential moving average estimate of the parameters (Polyak & Juditsky, 1992) with a smoothing rate of 0.9999 to reduce the effect of the learning rate not fully decaying to zero for models trained on subsampled datasets."
+      },
+      {
+        "name": "Multilingual speech recognition scaling analysis",
+        "description": "WER improvements follow a power-law trend up to 54,000 hours of training audio, then deviate from the trend, improving only a further 7 points when scaling to the full dataset size."
+      },
+      {
+        "name": "X\u2192en translation scaling analysis",
+        "description": "Performance is practically zero with 7,000 hours of audio or less, then improves roughly log-linearly up to 54,000 hours, before showing diminishing returns at the full dataset size."
+      },
+      {
+        "name": "Multitask and multilingual joint training",
+        "description": "A single model is trained jointly on many tasks and languages; the potential concern is negative transfer, i.e. interference between tasks and languages."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "r2 (correlation between pre-training translation data amount and BLEU)",
+        "value": "0.24",
+        "split": null
+      },
+      {
+        "metric": "WER drop from text normalization",
+        "value": "up to 50 percent for several datasets",
+        "split": null
+      },
+      {
+        "metric": "squared correlation coefficient between log WER and log training data amount per language",
+        "value": "0.83",
+        "split": null
+      },
+      {
+        "metric": "WER reduction per increase in training data",
+        "value": "WER halves for every 16x increase in training data",
+        "split": null
+      },
+      {
+        "metric": "Zero-shot language identification accuracy gap vs. supervised SOTA on Fleurs",
+        "value": "underperforms by 13.6%",
+        "split": null
+      },
+      {
+        "metric": "Upper-bound language identification accuracy on Fleurs (102 languages)",
+        "value": "80.4%",
+        "split": null
+      },
+      {
+        "metric": "Language identification accuracy of best Whisper model on 82 overlapping Fleurs languages",
+        "value": "80.3%",
+        "split": null
+      },
+      {
+        "metric": "WER improvement (multilingual speech recognition) from 54,000 hours to full dataset",
+        "value": "7 points",
+        "split": null
+      }
+    ]
+  }
+}

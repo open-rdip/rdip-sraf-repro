@@ -1,0 +1,187 @@
+{
+  "study_id": "study082",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study082/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:05:11.164207+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 4,
+    "methods": 22,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "training image resolution",
+        "value": "14x14"
+      },
+      {
+        "name": "number of trials (averaging)",
+        "value": "3"
+      },
+      {
+        "name": "Optimizer",
+        "value": "Adam (Kingma & Ba, 2014)"
+      },
+      {
+        "name": "learning rate",
+        "value": "7\u00b710\u22124"
+      },
+      {
+        "name": "batch size",
+        "value": "64"
+      },
+      {
+        "name": "Input keys",
+        "value": "64"
+      },
+      {
+        "name": "Input Values",
+        "value": "Size of individual RIM * 4"
+      },
+      {
+        "name": "Input Heads",
+        "value": "4"
+      },
+      {
+        "name": "Input Dropout",
+        "value": "0.1"
+      },
+      {
+        "name": "Communication keys",
+        "value": "32"
+      },
+      {
+        "name": "Communication Values",
+        "value": "32"
+      },
+      {
+        "name": "Communication heads",
+        "value": "4"
+      },
+      {
+        "name": "Communication Dropout",
+        "value": "0.1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Sequential MNIST Resolution Task",
+        "version": null
+      },
+      {
+        "name": "Bouncing Balls",
+        "version": null
+      },
+      {
+        "name": "ball video prediction task (bouncing balls)",
+        "version": null
+      },
+      {
+        "name": "partial observation video prediction task",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Top-down bias",
+        "description": "Top-down bias from higher brain areas lets the system selectively devote resources to input information of particular interest or relevance, by pre-activating units that match the internal model of an object or process of interest so they gain an advantage in the competition among brain mechanisms."
+      },
+      {
+        "name": "Sparse Information Flow",
+        "description": "Each RIM's dynamics should only be affected by RIMs deemed relevant. In the presence of noisy or distracting information, a large subset of RIMs should stay dormant and unaffected by the noise, which makes training an ensemble of RIMs more robust to out-of-distribution or distractor observations than training one big homogeneous neural network."
+      },
+      {
+        "name": "Modular Computation Flow and Modular Parameterization",
+        "description": "Each RIM has its own dynamics operating by default, in the absence of interaction with other RIMs. The total number of parameters can be reduced because RIMs can specialize on simple sub-problems, which can speed up computation and improve generalisation."
+      },
+      {
+        "name": "RIMs (Recurrent Independent Mechanisms)",
+        "description": "Ensemble of simple, modular recurrent units that specialize on simple sub-problems; most parameters are associated with individual RIMs, so each maintains its own independent functionality even as other RIMs change."
+      },
+      {
+        "name": "Relational RNN",
+        "description": "Recurrent model with modular memory compared against RIMs (Santoro et al., 2018)."
+      },
+      {
+        "name": "NTM (Neural Turing Machine)",
+        "description": "Recurrent model with external modular memory (Graves et al., 2014a/b)."
+      },
+      {
+        "name": "SAB",
+        "description": "Sparse attentive backtracking, recurrent model compared in the related-work table (Ke et al., 2018)."
+      },
+      {
+        "name": "IndRNN",
+        "description": "Independently recurrent neural network compared in the related-work table (Li et al., 2018)."
+      },
+      {
+        "name": "LSTM / RNN",
+        "description": "Standard recurrent baselines included in the comparison of modular memory properties."
+      },
+      {
+        "name": "RIMs",
+        "description": "Recurrent Independent Mechanisms: RNN with modules (corresponding to factors) that dynamically select which variables (instances) they apply to, with sparse module activation and sparse communication via attention heads; smaller recurrent transition matrices mitigate vanishing and exploding gradients."
+      },
+      {
+        "name": "Consciousness Prior",
+        "description": "Inductive bias of a sparse graphical model describing interactions between high-level variables, each factor involving few variables and capturing an independent mechanism, using attention to select a subset of high-level variables to interact at any particular time during inference (Bengio, 2017)."
+      },
+      {
+        "name": "Recurrent Entity Networks (EntNet)",
+        "description": "A set of separate recurrent models whose hidden states store memory slots; hidden states are either fixed by the gates or modified through a simple RNN-style update (Henaff et al., 2016)."
+      },
+      {
+        "name": "LSTM",
+        "description": "Baseline model whose performance degraded more severely when the sequence length/resolution changed"
+      },
+      {
+        "name": "Transformers",
+        "description": "Strong baseline outperformed by RIMs"
+      },
+      {
+        "name": "EntNet",
+        "description": "Strong baseline outperformed by RIMs"
+      },
+      {
+        "name": "RMC",
+        "description": "Strong baseline outperformed by RIMs"
+      },
+      {
+        "name": "DNC",
+        "description": "Differentiable Neural Computer (Graves et al., 2016); baseline outperformed by RIMs"
+      },
+      {
+        "name": "Null input appending for RIM activation",
+        "description": "Appending a vector of zeros to the input representation, so that the RIMs paying least attention to the null input (in the input attention) are activated."
+      },
+      {
+        "name": "Output concatenation of RIM representations",
+        "description": "Concatenating the representations of the different RIMs on the output side and using the concatenated representation for learning a policy (in RL experiments) or for predicting the input at the next time step (bouncing balls and all other experiments)."
+      },
+      {
+        "name": "Additional output key-value attention",
+        "description": "Adding another layer of (multi-headed) key-value attention on the output, explored as an architectural change."
+      },
+      {
+        "name": "TTO",
+        "description": "Time travelling oracle upper bound baseline that does not model the dynamics and has access to true dynamics."
+      },
+      {
+        "name": "Out-of-distribution generalization evaluation",
+        "description": "Train with 4 balls and evaluate with 6-8 balls; train with 6-8 balls and evaluate with 4 balls. Models receive an input image at each time step."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

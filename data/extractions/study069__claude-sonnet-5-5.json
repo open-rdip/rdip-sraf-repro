@@ -1,0 +1,150 @@
+{
+  "study_id": "study069",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study069/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:59:11.722013+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 6,
+    "methods": 18,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "focusing factor \u03b2",
+        "value": "controls the down-weighting rate of easy sample pairs; increasing \u03b2 increases the down-weighting rate; HSAN is not sensitive to \u03b2"
+      },
+      {
+        "name": "confidence hyper-parameter \u03c4",
+        "value": "analyzed in Figure 5"
+      },
+      {
+        "name": "\u03c4 (confidence)",
+        "value": "selected from {0.1,0.3,0.5,0.7,0.9}; promising performance when \u03c4\u2208[0.1,0.3] on BAT / CITE datasets and \u03c4\u2208[0.7,0.9] on other datasets; set to a fixed value"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CORA",
+        "version": null
+      },
+      {
+        "name": "CITE",
+        "version": null
+      },
+      {
+        "name": "AMAP",
+        "version": null
+      },
+      {
+        "name": "BAT",
+        "version": null
+      },
+      {
+        "name": "EAT",
+        "version": null
+      },
+      {
+        "name": "UAT",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "HSAN",
+        "description": "Hard sample aware network for graph clustering using a hard sample aware contrastive loss with a focusing factor \u03b2 that down-weights easy sample pairs"
+      },
+      {
+        "name": "t-SNE",
+        "description": "2D t-SNE visualization of learned node embeddings (Van der Maaten and Hinton 2008) to show cluster structure compared with baselines"
+      },
+      {
+        "name": "infoNCE",
+        "description": "Baseline contrastive loss compared against the proposed hard sample aware contrastive loss in convergence analysis"
+      },
+      {
+        "name": "Convergence analysis",
+        "description": "Plots of loss and clustering ACC trends; loss and ACC gradually converge after 350 epochs, and after 50 epochs the proposed method differs from infoNCE"
+      },
+      {
+        "name": "B (baseline)",
+        "description": "Baseline used in the ablation study"
+      },
+      {
+        "name": "B+M",
+        "description": "Baseline plus the proposed weight modulating function M, which guides the network to focus on hard sample pairs and improves performance over B"
+      },
+      {
+        "name": "S",
+        "description": "Proposed attribute-structure similarity function"
+      },
+      {
+        "name": "M",
+        "description": "Proposed weight modulating function that enhances discriminative capability of samples by focusing on hard sample pairs"
+      },
+      {
+        "name": "Ours (S+M)",
+        "description": "Combination of the attribute-structure similarity function S and weight modulating function M, achieving the best clustering performance"
+      },
+      {
+        "name": "Hard Sample Aware Network (HSAN)",
+        "description": "Mines hard samples in contrastive deep graph clustering using attribute and structure encoders that embed sample attributes and structure into the latent space."
+      },
+      {
+        "name": "Comprehensive similarity measure criterion",
+        "description": "Calculates sample similarities by considering both attribute and structure information to better reveal potential sample relations."
+      },
+      {
+        "name": "Dynamic weight modulating function",
+        "description": "Guided by high-confidence clustering information, up-weights hard sample pairs while down-weighting easy/negative ones."
+      },
+      {
+        "name": "Hard sample aware contrastive loss",
+        "description": "Loss that down-weights easy sample pairs and up-weights hard sample pairs, yielding larger loss values and better performance than infoNCE."
+      },
+      {
+        "name": "infoNCE loss",
+        "description": "Classical contrastive loss used as the baseline for time and space cost comparison."
+      },
+      {
+        "name": "ProGCL",
+        "description": "Baseline method (Xia et al. 2022a) that the proposed method is compared against"
+      },
+      {
+        "name": "Attribute-structure similarity function S",
+        "description": "Measures similarity between samples by considering both attribute and structure information"
+      },
+      {
+        "name": "Weight modulating function M",
+        "description": "Proposed function that improves baseline performance when added (B+M)"
+      },
+      {
+        "name": "Ablation study",
+        "description": "Compares baseline (B), B+S, B+M, and full model (Ours) to verify effectiveness of S and M"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "NMI improvement of Ours over B on CORA",
+        "value": "8.48%",
+        "split": null
+      },
+      {
+        "metric": "NMI improvement over ProGCL on CORA",
+        "value": "18.99 %",
+        "split": null
+      }
+    ]
+  }
+}

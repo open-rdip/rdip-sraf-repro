@@ -1,0 +1,84 @@
+{
+  "study_id": "study092",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study092/ext/grok-4-7",
+  "extracted_at": "2026-11-09T22:00:01.864078+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 1,
+    "methods": 10,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "YOLOv3",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "N",
+        "value": "one"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "baseline live Re-ID",
+        "description": "Uses object detection to generate a search gallery from raw videos and classic Re-ID to find the query in the gallery; galleries are large and contain outlier images that do not represent human bodies."
+      },
+      {
+        "name": "TrADe",
+        "description": "Uses a tracking algorithm to group successive bounding boxes of the same individual into tracklets, then an anomaly detection model to select the most normal image of each tracklet, producing smaller galleries with fewer outliers."
+      },
+      {
+        "name": "F*1",
+        "description": "Optimal F1 configuration corresponding to the highest F1 among all possible values of the Re-ID threshold beta; single reported FR and TVR values correspond to this optimal F1 threshold."
+      },
+      {
+        "name": "TrADe Re-ID",
+        "description": "Live Re-ID approach using tracklets with maximum length N, compared against a baseline and a gallery-size reduction approach."
+      },
+      {
+        "name": "baseline",
+        "description": "Approach presented in [3], corresponding to the limit case when the maximum length of the tracklet (N) is set to one."
+      },
+      {
+        "name": "Skip",
+        "description": "Simpler gallery size reduction that runs the YOLOv3 object detector once every N frames, where N is the maximum tracklet size for TrADe, producing galleries of the same size as TrADe."
+      },
+      {
+        "name": "deep neural network pipeline",
+        "description": "Pipeline uses several deep neural networks all pre-trained on ImageNet (initial layers), with four modules based on deep learning; considers a single image per tracklet."
+      },
+      {
+        "name": "BoT",
+        "description": "Method for which Finding Rate starts decreasing when tracklet size N is above 20, due to label switching excluding some persons from the final gallery."
+      },
+      {
+        "name": "classic Re-ID",
+        "description": "Re-ID module whose processing time decreases as tracklet size N increases because the gallery shrinks and fewer images must be processed; the time decrease is less pronounced once N exceeds 20 because most gallery images fit in a single GPU batch."
+      },
+      {
+        "name": "live Re-ID",
+        "description": "Re-ID setting that uses raw videos as search galleries instead of manually cropped images."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

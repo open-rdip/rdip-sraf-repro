@@ -1,0 +1,167 @@
+{
+  "study_id": "study087",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study087/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:48:06.683296+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 3,
+    "methods": 19,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "N-way",
+        "value": "2"
+      },
+      {
+        "name": "K-shot",
+        "value": "1"
+      },
+      {
+        "name": "class_sets",
+        "value": "4"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning_rate_classification",
+        "value": "10\u22124"
+      },
+      {
+        "name": "learning_rate_segmentation",
+        "value": "10\u22123"
+      },
+      {
+        "name": "training_episodes",
+        "value": "1-way 1-shot"
+      },
+      {
+        "name": "evaluation_episodes",
+        "value": "arbitrary N-way K-shot"
+      },
+      {
+        "name": "class_occurrence_threshold",
+        "value": "0.5"
+      },
+      {
+        "name": "attention_heads",
+        "value": "8"
+      },
+      {
+        "name": "correlation_pyramid_P",
+        "value": "3"
+      },
+      {
+        "name": "backbone_frozen",
+        "value": "true"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pascal-5i",
+        "version": null
+      },
+      {
+        "name": "COCO-20i",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ASNet",
+        "description": "Few-shot segmentation method that processes correlation features with smaller channel dimensions (at most 128); in Tables 3 and 4 it is trained and evaluated following the FS-S setup, not the proposed FS-CS setup."
+      },
+      {
+        "name": "HSNet",
+        "description": "Method that casts few-shot segmentation as a correlation feature transform task."
+      },
+      {
+        "name": "FS-S",
+        "description": "Setup used to train and evaluate ASNet in Tables 3 and 4."
+      },
+      {
+        "name": "FS-CS",
+        "description": "Proposed setup; ASNet results in Tables 3 and 4 are not measured under this setup."
+      },
+      {
+        "name": "global self-attention ablation",
+        "description": "Global self-attention in the ASNet layer is replaced with local self-attention to assess the effect of global self-attention (Table 5 a)."
+      },
+      {
+        "name": "local self-attention ASNet",
+        "description": "Replace global self-attention in the ASNet layer with local self-attention to assess the effect of global self-attention on classification exact ratio and segmentation mIoU."
+      },
+      {
+        "name": "attention masking ablation",
+        "description": "Ablate the attention masking prior in Eq. (11) to verify its effectiveness."
+      },
+      {
+        "name": "spatial average pooling fusion replacement",
+        "description": "Replace the multi-layer fusion path with spatial average pooling over the support dimensions followed by element-wise addition."
+      },
+      {
+        "name": "episode construction",
+        "description": "Within each fold, an episode is constructed by randomly sampling a query and an N-way K-shot support set that annotates the query with N-way class labels and an (N+1)-way segmentation mask in the context of the support set."
+      },
+      {
+        "name": "data splits",
+        "description": "For the FS-S task, Pascal-5i and COCO-20i are used following the same data splits as [65] and [48], respectively. Each dataset is split into four mutually disjoint class sets and cross-validated."
+      },
+      {
+        "name": "iFSL",
+        "description": "Learning framework investigated on the FS-CS task; ablation studies are conducted using it."
+      },
+      {
+        "name": "exact ratio",
+        "description": "Multi-label classification metric: 0/1 exact ratio ER = 1[y_gt = y_C]."
+      },
+      {
+        "name": "accuracy",
+        "description": "Multi-label classification metric reported in the supplementary material: acc = 1/N_P sum_n 1[y_gt^(n) = y_C^(n)]."
+      },
+      {
+        "name": "mean IoU",
+        "description": "Segmentation metric mIoU = 1/|C_P| sum_c IoU_c, where IoU_c is the IoU of the c-th class."
+      },
+      {
+        "name": "backbone",
+        "description": "ResNet50 and ResNet-101 pretrained on ImageNet, frozen during training"
+      },
+      {
+        "name": "AS layers",
+        "description": "All AS layers implemented as multi-head attention with 8 heads"
+      },
+      {
+        "name": "class occurrence inference",
+        "description": "Infer class occurrences using threshold \u03b4=0.5"
+      },
+      {
+        "name": "correlation pyramid",
+        "description": "Number of correlation pyramid set to P=3"
+      },
+      {
+        "name": "training and evaluation protocol",
+        "description": "Train all models with 1-way 1-shot training episodes and evaluate on arbitrary N-way K-shot episodes"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "study_id": "study067",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study067/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:10:38.481661+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 2,
+    "methods": 7,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "posterior samples for estimating counterfactual effects",
+        "value": "100"
+      },
+      {
+        "name": "additional posterior samples for conditional variance",
+        "value": "20"
+      },
+      {
+        "name": "round difference",
+        "value": "between 4 and 10"
+      },
+      {
+        "name": "absolute r-SSE",
+        "value": "\u22650.1"
+      },
+      {
+        "name": "variance",
+        "value": "\u22650.01"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Gridworld",
+        "version": null
+      },
+      {
+        "name": "Sepsis",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "r-SSE-ICC",
+        "description": "attributes contribution ratios to all state variables"
+      },
+      {
+        "name": "total agent-specific effect (tot-ASE)",
+        "description": "isolates the effect of the intervention that propagates only through the agents (A1, A2 and Planner)"
+      },
+      {
+        "name": "state-specific effect (SSE)",
+        "description": "isolates the effect of the intervention that propagates only through states"
+      },
+      {
+        "name": "reverse SSE",
+        "description": "computes the difference between the returns of the counterfactual trajectories considered for tot-ASE and TCFE"
+      },
+      {
+        "name": "ASE-SV",
+        "description": "Method that attributes the effect efficiently to the clinician and AI"
+      },
+      {
+        "name": "Gini coefficient",
+        "description": "Statistical measure used to depict how spread attribution scores are across state variables"
+      },
+      {
+        "name": "Planner-Actor-Reporter system",
+        "description": "System akin to (Dasgupta et al., 2023) where Planner is implemented using a pre-trained LLM and few-shot learning to provide actors with instructions."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "discrepancies",
+        "value": "up to 95%",
+        "split": null
+      }
+    ]
+  }
+}

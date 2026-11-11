@@ -1,0 +1,278 @@
+{
+  "study_id": "study035",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study035/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:41:23.399677+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 18,
+    "datasets": 6,
+    "methods": 25,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA Jetson AGX Xavier",
+      "cuda_version": null,
+      "cpu_info": "Xeon Silver 4114"
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "1"
+      },
+      {
+        "name": "learning_rate_generator",
+        "value": "0.0002"
+      },
+      {
+        "name": "learning_rate_discriminator",
+        "value": "0.0002"
+      },
+      {
+        "name": "batch_size_horse\u2192zebra",
+        "value": "1"
+      },
+      {
+        "name": "batch_size_edges\u2192shoes",
+        "value": "4"
+      },
+      {
+        "name": "batch_size_map\u2192aerial photo",
+        "value": "1"
+      },
+      {
+        "name": "batch_size_cityscapes",
+        "value": "1"
+      },
+      {
+        "name": "gaugan_batch_size",
+        "value": "16"
+      },
+      {
+        "name": "gaugan_original_batch_size",
+        "value": "32"
+      },
+      {
+        "name": "evolutionary_population_size_P",
+        "value": "100"
+      },
+      {
+        "name": "evolutionary_iterations_T",
+        "value": "500"
+      },
+      {
+        "name": "evolutionary_parent_ratio_rp",
+        "value": "0.25"
+      },
+      {
+        "name": "evolutionary_mutation_ratio_rm",
+        "value": "0.5"
+      },
+      {
+        "name": "evolutionary_mutation_probability_rp",
+        "value": "0.2"
+      },
+      {
+        "name": "distillation_intermediate_activations",
+        "value": "4"
+      },
+      {
+        "name": "resnet_residual_blocks",
+        "value": "9"
+      },
+      {
+        "name": "distillation_group_size",
+        "value": "3"
+      },
+      {
+        "name": "distillation_interval_layers",
+        "value": "every 3 layers"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "horse\u2192zebra",
+        "version": null
+      },
+      {
+        "name": "edges\u2192shoes",
+        "version": null
+      },
+      {
+        "name": "Cityscapes",
+        "version": null
+      },
+      {
+        "name": "horse \u2192zebra",
+        "version": null
+      },
+      {
+        "name": "map\u2192aerial photo",
+        "version": null
+      },
+      {
+        "name": "horse \u2192 zebra",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "CycleGAN",
+        "description": "Used for training and search time comparisons on multiple datasets."
+      },
+      {
+        "name": "Pix2pix",
+        "description": "Used for training and search time comparisons on multiple datasets."
+      },
+      {
+        "name": "GauGAN",
+        "description": "Training time measured on 8 2080Ti GPUs for comparison."
+      },
+      {
+        "name": "GAN Compression",
+        "description": "Baseline method whose training and search times are compared."
+      },
+      {
+        "name": "Fast GAN Compression",
+        "description": "Accelerates training of GAN Compression by 1.6\u20133.7\u00d7 and reduces search cost by 3.5\u201312\u00d7 by removing Mobile Teacher Training and Pre-distillation and switching to an evolutionary algorithm."
+      },
+      {
+        "name": "Evolutionary algorithm",
+        "description": "Used to replace brute-force search, dramatically reducing search cost."
+      },
+      {
+        "name": "Brute-force search",
+        "description": "Baseline search method replaced by evolutionary algorithm to reduce search cost."
+      },
+      {
+        "name": "Compressed CycleGAN generator",
+        "description": "Achieves about 40FPS inference speed on the edge GPU of Jetson Xavier."
+      },
+      {
+        "name": "SPADE module computation analysis",
+        "description": "Identified \u03b2 and \u03b3 convolutions in SPADE modules as highly redundant, accounting for about 88% of SPADE computation."
+      },
+      {
+        "name": "MUNIT generator decomposition",
+        "description": "Decomposed ResBlock layers in the content encoder and decoder, and the up-sample layers in the decoder; kept the style encoder unchanged since it consumes less than 10% of computation."
+      },
+      {
+        "name": "FID evaluation protocol for paired I2I",
+        "description": "For paired image-to-image translation models (pix2pix and GauGAN), computed FID between translated test images and real test images using features from an InceptionV3 network and open-sourced FID code."
+      },
+      {
+        "name": "FID evaluation protocol for unpaired I2I",
+        "description": "For unpaired image-to-image translation (CycleGAN), computed FID between translated test images and real training+test images to stabilize evaluation, following prior unconditional GAN practice, using InceptionV3 features and open-sourced FID code."
+      },
+      {
+        "name": "Unpaired-to-paired Transform",
+        "description": "Transforms unpaired conditional GAN training into a pseudo paired setting by using the teacher model\u2019s outputs as targets, improving stability when computation budget is reduced."
+      },
+      {
+        "name": "Pruning",
+        "description": "Model pruning applied in the ablation; when combined with distillation it achieves the best performance on both datasets."
+      },
+      {
+        "name": "Distillation",
+        "description": "Knowledge distillation from a teacher model to a student model; helps transfer the learned mapping from teacher to student."
+      },
+      {
+        "name": "Intermediate Distillation",
+        "description": "Distillation strategy leveraging intermediate representations to improve student learning effectiveness."
+      },
+      {
+        "name": "Inheriting the Teacher Discriminator",
+        "description": "The student inherits the discriminator\u2019s weights from the teacher (Keep D.), allowing learning from real target images via the inherited discriminator."
+      },
+      {
+        "name": "Original Model",
+        "description": "Uncompressed Pix2pix baseline evaluated on the Cityscapes dataset."
+      },
+      {
+        "name": "From-scratch Training",
+        "description": "Training approach without distillation for the Pix2pix model."
+      },
+      {
+        "name": "Aguinaldo et al. [54]",
+        "description": "A distillation method compared for Pix2pix on Cityscapes."
+      },
+      {
+        "name": "Yim et al. [55]",
+        "description": "A distillation method used in recognition networks and compared for Pix2pix on Cityscapes."
+      },
+      {
+        "name": "Feature distillation for ResNet generator",
+        "description": "Select 4 intermediate activations for distillation; split 9 residual blocks into groups of size 3 and apply feature distillation every three layers."
+      },
+      {
+        "name": "LPIPS",
+        "description": "Used to measure the perceptual similarity of generated images to corresponding real images; lower LPIPS indicates better reconstruction."
+      },
+      {
+        "name": "Human preference test on AMT",
+        "description": "Workers on Amazon Mechanical Turk choose which image is more like a real zebra between the GAN Compression model and 0.25 CycleGAN on the horse \u2192 zebra dataset, following the protocol of Isola et al."
+      },
+      {
+        "name": "FID (Fr\u00e9chet Inception Distance) protocols",
+        "description": "In CycleGAN setting, FID computed between translated test images and real training+test images for this work, while Shu et al. compute FID between translated test images and real test images; reported differences between protocols are small."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "inference speed",
+        "value": "about 40FPS",
+        "split": null
+      },
+      {
+        "metric": "training acceleration factor",
+        "value": "1.6-3.7\u00d7",
+        "split": null
+      },
+      {
+        "metric": "search cost reduction factor",
+        "value": "3.5-12\u00d7",
+        "split": null
+      },
+      {
+        "metric": "latency",
+        "value": "0.10s",
+        "split": null
+      },
+      {
+        "metric": "speedup",
+        "value": "3.2\u00d7",
+        "split": null
+      },
+      {
+        "metric": "MACs",
+        "value": "56.8G",
+        "split": null
+      },
+      {
+        "metric": "mIoU",
+        "value": "42.06",
+        "split": null
+      },
+      {
+        "metric": "FID (original model)",
+        "value": "65.48",
+        "split": "test"
+      },
+      {
+        "metric": "FID (Shu et al. [40])",
+        "value": "96.15",
+        "split": "test"
+      },
+      {
+        "metric": "FID (our compressed model)",
+        "value": "69.54",
+        "split": "test"
+      }
+    ]
+  }
+}

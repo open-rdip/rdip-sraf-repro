@@ -1,0 +1,192 @@
+{
+  "study_id": "study060",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study060/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:04:19.838711+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 14,
+    "datasets": 2,
+    "methods": 19,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "sampling rate",
+        "value": "22 kHz"
+      },
+      {
+        "name": "upsamplers parameter count",
+        "value": "1B"
+      },
+      {
+        "name": "top-level prior parameter count",
+        "value": "1B"
+      },
+      {
+        "name": "model size",
+        "value": "5 billion parameters"
+      },
+      {
+        "name": "learning rate",
+        "value": "0.00015"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.002"
+      },
+      {
+        "name": "upsamplers parameters",
+        "value": "one billion"
+      },
+      {
+        "name": "top-level prior parameters",
+        "value": "5 billion"
+      },
+      {
+        "name": "batch size",
+        "value": "32"
+      },
+      {
+        "name": "audio clip duration",
+        "value": "3 seconds"
+      },
+      {
+        "name": "sample rate",
+        "value": "44 kHz"
+      },
+      {
+        "name": "hop length (bottom level)",
+        "value": "8"
+      },
+      {
+        "name": "hop length (middle level)",
+        "value": "32"
+      },
+      {
+        "name": "hop length (top level)",
+        "value": "128"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "songs primarily in English",
+        "version": null
+      },
+      {
+        "name": "MAESTRO",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "human-in-the-loop co-composition",
+        "description": "Process at the top level where the model generates multiple samples, a person picks a favorite by listening to rough VQ-VAE decodings, and the model continues generating multiple samples continuing the favorite."
+      },
+      {
+        "name": "distillation",
+        "description": "Distills information from a model with fast parallel evaluation of likelihood and slow autoregressive sampling into a model with fast parallel sampling by generating samples, evaluating likelihood and entropy, and minimising KL divergence."
+      },
+      {
+        "name": "raw audio hierarchical VQ-VAE",
+        "description": "Hierarchical VQ-VAE model trained on raw audio, tested with bottom layers explicitly modeling residuals to push information to higher levels."
+      },
+      {
+        "name": "separate autoencoders",
+        "description": "An approach using separate autoencoders found to be cleaner and more effective than hierarchical VQ-VAE for raw audio modeling."
+      },
+      {
+        "name": "Generative Adversarial Networks (GANs)",
+        "description": "Generative models using generator and discriminator networks contesting each other to produce realistic samples."
+      },
+      {
+        "name": "ancestral sampling",
+        "description": "generating multiple continuations from the same initial segment to explore diversity through a branching tree"
+      },
+      {
+        "name": "Jukebox",
+        "description": "a model capable of conditioning on various styles, lyrics, and raw audio to generate songs"
+      },
+      {
+        "name": "VQ-VAE",
+        "description": "Used with 44 kHz sampling rate to improve sample fidelity and reduce noise in upsampling and decoding steps."
+      },
+      {
+        "name": "seq2seq model with lyric conditioning",
+        "description": "Sequence-to-sequence model trained with lyric conditioning on songs primarily in English to make singing intelligible and controllable."
+      },
+      {
+        "name": "WaveNet",
+        "description": "Autoregressive model conditioning on acoustic features or spectrograms that uses a categorical distribution for audio samples"
+      },
+      {
+        "name": "Parallel WaveNet",
+        "description": "Uses a mixture of logistics distribution and probability density distillation to learn a parallel feed-forward network from a pre-trained autoregressive model for faster sampling"
+      },
+      {
+        "name": "ClariNet",
+        "description": "Audio generation model using a simple Gaussian distribution with a closed-form loss function, eliminating the need for Monte-Carlo sampling"
+      },
+      {
+        "name": "SampleRNN",
+        "description": "Uses a multi-scale, hierarchical recurrent neural network with convolutional upsampling to model long-range complex structures"
+      },
+      {
+        "name": "WaveRNN",
+        "description": "Uses recurrent neural networks operating separately on the most significant and least significant bytes for efficient deployment on mobile devices"
+      },
+      {
+        "name": "WaveGlow",
+        "description": "A flow-based model for parallel sample-level audio synthesis trained with maximum-likelihood estimation"
+      },
+      {
+        "name": "Adam",
+        "description": "Optimizer used for training with learning rate 0.00015 and weight decay 0.002"
+      },
+      {
+        "name": "lyrics conditioning",
+        "description": "Reuses the prior and adds a small encoder, trained on 512 V100s for 2 weeks"
+      },
+      {
+        "name": "Opus codec",
+        "description": "Baseline codec that encodes audio at constant bitrates comparable to the VQ-VAE."
+      },
+      {
+        "name": "Spectral convergence",
+        "description": "Metric measuring the amount of spectral error relative to signal, used as test error and proxy for reconstruction fidelity."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "time to upsample one minute of top level tokens",
+        "value": "around 8 hours",
+        "split": null
+      },
+      {
+        "metric": "Spectral convergence (dB) - Ablation: None",
+        "value": "\u22128.3",
+        "split": "test"
+      },
+      {
+        "metric": "Spectral convergence (dB) - Ablation: Without spectral loss",
+        "value": "\u22126.3",
+        "split": "test"
+      },
+      {
+        "metric": "Spectral convergence (dB) - Ablation: With single autoencoder",
+        "value": "2.9",
+        "split": "test"
+      }
+    ]
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "study_id": "study025",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study025/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:26:52.875661+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 3,
+    "methods": 16,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "FreeSurfer",
+        "version": null
+      },
+      {
+        "name": "SAMSEG",
+        "version": null
+      },
+      {
+        "name": "neurite",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX A6000",
+      "cuda_version": null,
+      "cpu_info": "CPU at 2.61GHz"
+    },
+    "hyperparameters": [
+      {
+        "name": "training_epochs",
+        "value": "determined using the validation dataset"
+      },
+      {
+        "name": "feature_channels_multiplier",
+        "value": "2x"
+      },
+      {
+        "name": "parameter_count",
+        "value": "6.2 million"
+      },
+      {
+        "name": "attention_temperature",
+        "value": "0.05"
+      },
+      {
+        "name": "beta0",
+        "value": "0"
+      },
+      {
+        "name": "search_window_size",
+        "value": "3\u00d73\u00d73"
+      },
+      {
+        "name": "loss_functions",
+        "value": "mean squared error; diffusion regularizer; Dice loss"
+      },
+      {
+        "name": "weak_supervision",
+        "value": "Dice loss uses auxiliary anatomical segmentation maps"
+      },
+      {
+        "name": "training_scans",
+        "value": "394"
+      },
+      {
+        "name": "loss_weights",
+        "value": "5, 0.2, 0.05"
+      },
+      {
+        "name": "training_mode",
+        "value": "semi-supervised"
+      },
+      {
+        "name": "epoch_selection",
+        "value": "best validation accuracy"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IXI",
+        "version": null
+      },
+      {
+        "name": "Learn2Reg Challenge",
+        "version": null
+      },
+      {
+        "name": "Learn2Reg 2022 Challenge (inhale\u2013exhale lung CT registration task)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "V oxelMorph",
+        "description": "with a scaling-and-squaring layer to encourage diffeomorphic registration"
+      },
+      {
+        "name": "TransMorph",
+        "description": "A hybrid deep learning architecture that combines the Transformer structure with convolutional networks"
+      },
+      {
+        "name": "Im2grid",
+        "description": "our previous method using coordinate translator modules"
+      },
+      {
+        "name": "DMR",
+        "description": "A deep learning based architecture based on the Deformer module"
+      },
+      {
+        "name": "PR-Net++",
+        "description": "A deep learning method that adopts a dual-stream architecture and incorporates correlation layers"
+      },
+      {
+        "name": "Cosine similarity in attention",
+        "description": "Used cosine similarity instead of inner product for attention computation; yielded greater visual similarity in feature maps and slightly increased GPU memory usage."
+      },
+      {
+        "name": "Inner product similarity in attention",
+        "description": "Used inner product for attention computation; comparable accuracy to cosine similarity."
+      },
+      {
+        "name": "VXM",
+        "description": "VoxelMorph (VXM) model for image registration; baseline has relatively small number of feature channels."
+      },
+      {
+        "name": "VXM-diff",
+        "description": "Variant of VoxelMorph with fewer parameters due to a smaller number of feature channels."
+      },
+      {
+        "name": "High-capacity VXM (doubled channels)",
+        "description": "VXM with feature channels doubled across all convolutional layers, increasing parameters to 6.2 million."
+      },
+      {
+        "name": "VoxelMorph (VXM)",
+        "description": "A deep learning image registration method based on a U-Net architecture."
+      },
+      {
+        "name": "VoxelMorph-diff (VXM-diff)",
+        "description": "A VoxelMorph variant with a scaling-and-squaring layer to encourage diffeomorphic registration."
+      },
+      {
+        "name": "VFA",
+        "description": "Produced fewer folded voxels and smaller folded volumes compared with VXM, TransMorph, and DMR."
+      },
+      {
+        "name": "SLANT",
+        "description": "Segmentation method used to derive 132 labels for computing DSC."
+      },
+      {
+        "name": "Weakly-supervised inter-subject T1w MR registration",
+        "description": "Training setup using weak supervision from segmentation maps for T1-weighted MR inter-subject registration."
+      },
+      {
+        "name": "TRE loss",
+        "description": "Target Registration Error loss computed at locations of automatically generated keypoints provided by the challenge to guide training."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "inference_time",
+        "value": "0.9seconds per 15 subject on our GPU",
+        "split": null
+      },
+      {
+        "metric": "peak_performance_fraction",
+        "value": "95% of its peak performance within 100,000 iterations",
+        "split": null
+      },
+      {
+        "metric": "DSC",
+        "value": "0.771\u00b10.030",
+        "split": null
+      },
+      {
+        "metric": "Common Language Effect Size (CLES)",
+        "value": "0.9652",
+        "split": null
+      },
+      {
+        "metric": "Dice Similarity Coefficient (DSC) for VXM on T1w Atlas\u2192T1w Subject",
+        "value": "0.726\u00b10.048",
+        "split": null
+      },
+      {
+        "metric": "Dice Similarity Coefficient (DSC) for VXM on T2w Subject\u2192T1w Subject",
+        "value": "0.593\u00b10.053",
+        "split": null
+      },
+      {
+        "metric": "Non-diffeomorphic voxels (ND Voxels) percentage for VXM on T1w Atlas\u2192T1w Subject",
+        "value": "0.24%",
+        "split": null
+      },
+      {
+        "metric": "Non-diffeomorphic volume (ND Volume) percentage for VXM on T1w Atlas\u2192T1w Subject",
+        "value": "0.09%",
+        "split": null
+      },
+      {
+        "metric": "Non-diffeomorphic voxels (ND Voxels) percentage for VXM on T2w Subject\u2192T1w Subject",
+        "value": "0.01%",
+        "split": null
+      },
+      {
+        "metric": "Non-diffeomorphic volume (ND Volume) percentage for VXM on T2w Subject\u2192T1w Subject",
+        "value": "<0.01%",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "study_id": "study050",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study050/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:25:04.728685+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 17,
+    "datasets": 4,
+    "methods": 15,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "OpenAI Gym",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b1",
+        "value": "0.1"
+      },
+      {
+        "name": "\u03b3",
+        "value": "1"
+      },
+      {
+        "name": "episodes",
+        "value": "500k"
+      },
+      {
+        "name": "alpha",
+        "value": "0.0001"
+      },
+      {
+        "name": "gamma",
+        "value": "1"
+      },
+      {
+        "name": "Q-learning alpha",
+        "value": "0.4"
+      },
+      {
+        "name": "Q-learning gamma",
+        "value": "1"
+      },
+      {
+        "name": "DQN alpha",
+        "value": "0.0001"
+      },
+      {
+        "name": "DQN gamma",
+        "value": "1"
+      },
+      {
+        "name": "DQN episodes",
+        "value": "100k"
+      },
+      {
+        "name": "vanilla_q_learning_learning_rate",
+        "value": "0.1"
+      },
+      {
+        "name": "vanilla_q_learning_gamma",
+        "value": "1"
+      },
+      {
+        "name": "dqn_optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "dqn_gradient_clipping",
+        "value": "[-1,1]"
+      },
+      {
+        "name": "dqn_learning_rate",
+        "value": "0.0001"
+      },
+      {
+        "name": "dqn_gamma",
+        "value": "1"
+      },
+      {
+        "name": "state_space_bins",
+        "value": "(3,3,6,3)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Blackjack",
+        "version": null
+      },
+      {
+        "name": "Cartpole",
+        "version": null
+      },
+      {
+        "name": "Taxi",
+        "version": null
+      },
+      {
+        "name": "Taxi environment",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Q-Learning",
+        "description": "Belief maps and forward simulation visualised for Q-Learning"
+      },
+      {
+        "name": "deep Q-Learning",
+        "description": "Belief maps and forward simulation visualised for deep Q-Learning"
+      },
+      {
+        "name": "Forward Simulation",
+        "description": "Forward simulation shown for Q-learning and deep Q-learning"
+      },
+      {
+        "name": "Belief maps",
+        "description": "Used to extract an intuitive local interpretation of the RL agent's intention solely from the belief maps"
+      },
+      {
+        "name": "belief map interpretation",
+        "description": "Extract an intuitive local interpretation of the RL agent's intention solely from the belief maps; correctness verified in each environment using Theorem 2, and equation (9) confirmed numerically."
+      },
+      {
+        "name": "Temporal Difference",
+        "description": "Findings reported from TD; minimal differences versus Monte Carlo. MC results are in the supplementary material."
+      },
+      {
+        "name": "Monte Carlo",
+        "description": "Monte-Carlo learning performed similarly to table-based Q-learning; details in supplementary results."
+      },
+      {
+        "name": "epsilon-greedy",
+        "description": "RL agents always use an \u03f5-greedy algorithm during training."
+      },
+      {
+        "name": "simplified blackjack",
+        "description": "Infinite-card shoe; only hit and stick allowed; blackjacks not accounted for. Non-deterministic card draws and stochastic dealer-hand reward. Four additional states make reward a deterministic function of the stochastic state: hit and bust; stuck and won; stuck and drew; stuck and lost."
+      },
+      {
+        "name": "table-based Q-learning",
+        "description": "Compared with Monte-Carlo learning, which performed similarly."
+      },
+      {
+        "name": "Deep Belief Network",
+        "description": "Deep network generating the belief map, trained using the same hyperparameters (alpha=0.0001, gamma=1)."
+      },
+      {
+        "name": "DQN",
+        "description": "Agent trained with alpha=0.0001 and gamma=1 for 100k episodes."
+      },
+      {
+        "name": "vanilla Q-learning",
+        "description": "Trained on cartpole with learning rate \u03b1=0.1 and \u03b3=1 until reasonably stable, to investigate agent intention."
+      },
+      {
+        "name": "state-space discretization",
+        "description": "Cartpole continuous 4-tuple state space \u27e8x, x\u0307, \u03b8, \u03b8\u0307\u27e9 discretized into bins of (3,3,6,3) for like-with-like comparison; discrete action space of 2 actions (left and right)."
+      },
+      {
+        "name": "Deep Belief Network (DBN)",
+        "description": "Deep network used to generate the belief map."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

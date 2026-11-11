@@ -1,0 +1,363 @@
+{
+  "study_id": "study009",
+  "backend": "anthropic",
+  "model": "claude-opus-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study009/ext/claude-opus-5-5",
+  "extracted_at": "2026-11-10T00:13:01.896475+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 2,
+    "methods": 15,
+    "evaluation_results": 47
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of deconvolution modules",
+        "value": "1 (2 also evaluated, giving lower performance)"
+      },
+      {
+        "name": "number of deconvolution modules (COCO)",
+        "value": "1"
+      },
+      {
+        "name": "training image size",
+        "value": "512"
+      },
+      {
+        "name": "number of residual blocks in deconvolution module",
+        "value": "4"
+      },
+      {
+        "name": "backbone",
+        "value": "HRNet-W32"
+      },
+      {
+        "name": "crop size",
+        "value": "640\u00d7640"
+      },
+      {
+        "name": "training parameters",
+        "value": "follow COCO exactly"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": "2017"
+      },
+      {
+        "name": "CrowdPose",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "HigherHRNet",
+        "description": "Bottom-up pose estimation network that extends HRNet with deconvolution module(s) to produce higher-resolution heatmaps for scale-aware prediction, while also using smaller-resolution heatmaps for prediction"
+      },
+      {
+        "name": "HRNet",
+        "description": "Baseline high-resolution network on which HigherHRNet is built"
+      },
+      {
+        "name": "Multi-resolution supervision (MSR)",
+        "description": "Supervision applied at multiple heatmap resolutions; ablated component of HigherHRNet"
+      },
+      {
+        "name": "Feature concatenation",
+        "description": "Concatenation of features as input to the deconvolution module; ablated component of HigherHRNet"
+      },
+      {
+        "name": "Residual blocks",
+        "description": "Residual blocks added after the deconvolution module to refine upsampled feature maps; ablated component of HigherHRNet"
+      },
+      {
+        "name": "Deconvolution module",
+        "description": "Module added after HRNet to upsample feature maps to higher resolution; adding two modules to reach input-image resolution decreased performance compared with one module"
+      },
+      {
+        "name": "Scale-aware prediction",
+        "description": "Making predictions at multiple heatmap resolutions to handle persons of different scales"
+      },
+      {
+        "name": "HRNet-W32",
+        "description": "Backbone with 28.6M parameters and 47.8 GFLOPs"
+      },
+      {
+        "name": "HRNet-W40",
+        "description": "Backbone with 44.5M parameters and 110.7 GFLOPs"
+      },
+      {
+        "name": "HRNet-W48",
+        "description": "Backbone with 63.8M parameters and 154.3 GFLOPs"
+      },
+      {
+        "name": "Heatmap aggregation",
+        "description": "Inference strategy that aggregates heatmaps across multiple resolutions for scale-aware prediction"
+      },
+      {
+        "name": "Extra residual blocks",
+        "description": "4 residual blocks added in the deconvolution module to refine feature maps"
+      },
+      {
+        "name": "HigherHRNet-W48",
+        "description": "Best HigherHRNet bottom-up pose estimation model, trained on the CrowdPose train and val sets and evaluated on the CrowdPose test set with a 640\u00d7640 crop size for training and testing"
+      },
+      {
+        "name": "SPPE",
+        "description": "Previous best method [24] that performs a global refinement of a top-down method [15]; used as a baseline"
+      },
+      {
+        "name": "Naive top-down methods",
+        "description": "Top-down pose estimation baselines compared against HigherHRNet"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AP (HigherHRNet ablation row c)",
+        "value": "66.3",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_M (HigherHRNet ablation row c)",
+        "value": "60.8",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_L (HigherHRNet ablation row c)",
+        "value": "74.0",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (HigherHRNet ablation row d)",
+        "value": "66.9",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_M (HigherHRNet ablation row d)",
+        "value": "61.0",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_L (HigherHRNet ablation row d)",
+        "value": "75.7",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (HigherHRNet ablation row e, all components)",
+        "value": "67.1",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_M (HigherHRNet ablation row e, all components)",
+        "value": "61.5",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_L (HigherHRNet ablation row e, all components)",
+        "value": "76.1",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_M (HRNet)",
+        "value": "57.1",
+        "split": null
+      },
+      {
+        "metric": "AP_M (HigherHRNet)",
+        "value": "61.0",
+        "split": null
+      },
+      {
+        "metric": "AP (HigherHRNet with two deconvolution modules)",
+        "value": "66.5",
+        "split": null
+      },
+      {
+        "metric": "AP (HigherHRNet with one deconvolution module)",
+        "value": "66.9",
+        "split": null
+      },
+      {
+        "metric": "AP_M change (two vs one deconvolution modules)",
+        "value": "+0.1",
+        "split": null
+      },
+      {
+        "metric": "AP_L change (two vs one deconvolution modules)",
+        "value": "-0.8",
+        "split": null
+      },
+      {
+        "metric": "AP (HRNet baseline, highest resolution feature maps only)",
+        "value": "64.4",
+        "split": null
+      },
+      {
+        "metric": "AP (HRNet + one deconvolution module)",
+        "value": "66.0",
+        "split": null
+      },
+      {
+        "metric": "AP improvement from one deconvolution module",
+        "value": "+1.6",
+        "split": null
+      },
+      {
+        "metric": "AP change on large persons (higher resolution feature maps)",
+        "value": "-0.8",
+        "split": null
+      },
+      {
+        "metric": "AP (training size 512)",
+        "value": "67.1",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_M (training size 512)",
+        "value": "61.5",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_L (training size 512)",
+        "value": "76.1",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (training size 640)",
+        "value": "68.5",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_M (training size 640)",
+        "value": "64.3",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_L (training size 640)",
+        "value": "75.3",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (training size 768)",
+        "value": "68.5",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_M (training size 768)",
+        "value": "64.9",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_L (training size 768)",
+        "value": "73.8",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (HRNet-W32)",
+        "value": "68.5",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_M (HRNet-W32)",
+        "value": "64.3",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_L (HRNet-W32)",
+        "value": "75.3",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (HRNet-W40)",
+        "value": "69.2",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_M (HRNet-W40)",
+        "value": "64.9",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_L (HRNet-W40)",
+        "value": "75.9",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (HRNet-W48)",
+        "value": "69.9",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_M (HRNet-W48)",
+        "value": "65.4",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_L (HRNet-W48)",
+        "value": "76.4",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (highest resolution heatmaps only, Fig 3c)",
+        "value": "66.3",
+        "split": null
+      },
+      {
+        "metric": "AP (heatmap aggregation, Fig 3d)",
+        "value": "66.9",
+        "split": null
+      },
+      {
+        "metric": "AP_L gain from heatmap aggregation",
+        "value": "+1.7",
+        "split": null
+      },
+      {
+        "metric": "AP (with extra residual blocks)",
+        "value": "67.1",
+        "split": null
+      },
+      {
+        "metric": "AP gain from increasing training image size to 640",
+        "value": "1.4",
+        "split": null
+      },
+      {
+        "metric": "AP improvement over naive top-down methods",
+        "value": "+6.6 AP",
+        "split": "test"
+      },
+      {
+        "metric": "AP improvement over SPPE [24]",
+        "value": "+1.6 AP",
+        "split": "test"
+      },
+      {
+        "metric": "APM improvement over SPPE [24]",
+        "value": "+1.8 AP",
+        "split": "test"
+      },
+      {
+        "metric": "APH improvement over SPPE [24]",
+        "value": "+1.5 AP",
+        "split": "test"
+      },
+      {
+        "metric": "APH improvement over SPPE [24] without multi-scale test",
+        "value": "+0.5",
+        "split": "test"
+      }
+    ]
+  }
+}

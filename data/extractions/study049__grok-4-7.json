@@ -1,0 +1,41 @@
+{
+  "study_id": "study049",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study049/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:23:19.172112+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 3,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "simple interpretation",
+        "description": "A formula phi(x,y) in the signature of (colored) graphs defines a simple interpretation I_phi of (colored) graphs in (colored) graphs, where rho_0 is a tautology, rho_E(x,y) := (x != y) and (phi(x,y) or phi(y,x)), and if the target structure is colored rho_Pi(x) := Pi(x)."
+      },
+      {
+        "name": "simple equivalence",
+        "description": "A simple equivalence of two classes C and D of (colored) graphs is a pair (phi, psi) of first-order formulas such that I_phi is a bijection from C to D with inverse I_psi, so I_psi composed with I_phi is the identity on C."
+      },
+      {
+        "name": "Gy\u00e1rf\u00e1s decomposition",
+        "description": "A rooted tree Y on a connected graph G whose nodes (bags) are pairwise disjoint non-empty subsets of V(G) whose union is V(G), i.e. a partition of V(G); encapsulates Gy\u00e1rf\u00e1s\u2019 path argument and is close to treedepth and Tr\u00e9maux (DFS) trees."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

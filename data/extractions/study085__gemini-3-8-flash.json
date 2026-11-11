@@ -1,0 +1,176 @@
+{
+  "study_id": "study085",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study085/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:27:57.680663+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 16,
+    "datasets": 1,
+    "methods": 16,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "RDkit",
+        "version": null
+      },
+      {
+        "name": "gnina",
+        "version": null
+      },
+      {
+        "name": "libmolgrid",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "samples per protein-ligand complex",
+        "value": "100"
+      },
+      {
+        "name": "grid side length",
+        "value": "23.5\u00c5"
+      },
+      {
+        "name": "grid resolution",
+        "value": "0.5\u00c5"
+      },
+      {
+        "name": "NX",
+        "value": "48"
+      },
+      {
+        "name": "NY",
+        "value": "48"
+      },
+      {
+        "name": "NZ",
+        "value": "48"
+      },
+      {
+        "name": "\u03bbrecon",
+        "value": "4.0"
+      },
+      {
+        "name": "\u03bbKL",
+        "value": "0.1"
+      },
+      {
+        "name": "\u03bbsteric",
+        "value": "1.0"
+      },
+      {
+        "name": "ramped \u03bbKL",
+        "value": "1.6"
+      },
+      {
+        "name": "KL ramp duration",
+        "value": "200,000 iterations"
+      },
+      {
+        "name": "KL ramp start iteration",
+        "value": "450,000"
+      },
+      {
+        "name": "optimizer",
+        "value": "RMSprop"
+      },
+      {
+        "name": "learning rate",
+        "value": "1e\u22125"
+      },
+      {
+        "name": "iterations",
+        "value": "1,000,000"
+      },
+      {
+        "name": "batch size",
+        "value": "8"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CrossDocked2020",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "posterior sampling",
+        "description": "Sampling where the reference molecule is provided to the input encoder."
+      },
+      {
+        "name": "variability factor scaling",
+        "description": "Scales the standard deviations used to sample the latent space using a variability factor denoted \u03bbvar (z\u2032=\u00b5+\u03bbvar\u03c3z)."
+      },
+      {
+        "name": "prior-posterior interpolation",
+        "description": "Controls the amount of bias towards the reference molecule by linearly interpolating distribution parameters between prior and posterior according to a bias factor \u03bbbias."
+      },
+      {
+        "name": "conditional variational autoencoder (CVAE)",
+        "description": "Generative model where an input branch encodes the full complex density to a probabilistic latent space and a conditional branch encodes the receptor density, with a decoder generating output ligand density from a sampled latent vector combined with a conditional vector"
+      },
+      {
+        "name": "atom typing and gridding",
+        "description": "Operations that convert a docked protein-ligand complex into an atomic density representation"
+      },
+      {
+        "name": "atom fitting and bond adding",
+        "description": "Converts generated output ligand density into a final 3D molecular structure"
+      },
+      {
+        "name": "RDkit sanitization",
+        "description": "Checks valency constraints and attempts to Kekulize aromatic bonds to determine molecular validity."
+      },
+      {
+        "name": "Universal Force Field (UFF) minimization",
+        "description": "Relaxes internal bond lengths and angles of generated molecules in the context of the binding site, used to measure internal energy and root-mean-squared-deviation (RMSD)."
+      },
+      {
+        "name": "Vina minimization and scoring",
+        "description": "Minimization and scoring of real and generated molecules with respect to the receptor, performed using gnina."
+      },
+      {
+        "name": "CNN affinity prediction",
+        "description": "Estimates binding affinity of minimized structures using an ensemble of CNN scoring functions trained on the CrossDocked2020 data set, performed using gnina."
+      },
+      {
+        "name": "Atom fitting algorithm",
+        "description": "Combines iterative atom detection with gradient descent to find a set of atoms that best fits a reference density grid"
+      },
+      {
+        "name": "Steric clash loss",
+        "description": "An additional loss term that minimizes steric clash in terms of the overlap between the generated ligand density and the receptor density by summing across grid channels and multiplying receptor and ligand density at each point."
+      },
+      {
+        "name": "Combined loss function",
+        "description": "Combines reconstruction loss, KL divergence loss, and steric clash loss with weighted terms: L = \u03bbrecon Lrecon + \u03bbKL LKL + \u03bbsteric Lsteric."
+      },
+      {
+        "name": "U-Net skip connections",
+        "description": "included between the convolutional features of the conditional encoder and the decoder to enhance the processing of receptor context"
+      },
+      {
+        "name": "Spectral normalization",
+        "description": "applied to all learnable parameters during training"
+      },
+      {
+        "name": "combinatorial docking procedure",
+        "description": "Each ligand was re-docked to its known receptor and cross-docked to every other receptor with a similar pocket"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

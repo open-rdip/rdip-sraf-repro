@@ -1,0 +1,140 @@
+{
+  "study_id": "study094",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study094/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:10:23.034137+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 10,
+    "methods": 6,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "TensorRT",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA Orin NX; A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "input size",
+        "value": "640 \u00d7 640"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "LVIS",
+        "version": null
+      },
+      {
+        "name": "V3Det",
+        "version": null
+      },
+      {
+        "name": "OpenImages",
+        "version": null
+      },
+      {
+        "name": "CC3M",
+        "version": null
+      },
+      {
+        "name": "SA-1B",
+        "version": null
+      },
+      {
+        "name": "LVIS-minival",
+        "version": null
+      },
+      {
+        "name": "O365",
+        "version": null
+      },
+      {
+        "name": "GoldG",
+        "version": null
+      },
+      {
+        "name": "Cap4M",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Grounding DINO 1.5 Pro",
+        "description": "Open-set object detection model evaluated qualitatively on common object detection scenarios, including monochromatic and blurry images."
+      },
+      {
+        "name": "Grounding DINO 1.5 Edge",
+        "description": "Real-time open-set object detector evaluated zero-shot on COCO and LVIS, without language cache in end-to-end setting; optimized with TensorRT for deployment on NVIDIA Orin NX"
+      },
+      {
+        "name": "TensorRT optimization",
+        "description": "Grounding DINO 1.5 Edge model optimized with TensorRT and deployed on NVIDIA Orin NX, achieving over 10 FPS at 640 \u00d7 640 input size"
+      },
+      {
+        "name": "Video Object Detection",
+        "description": "Grounding DINO 1.5 Pro applied to videos processed offline, producing consistent object bounding boxes in most cases."
+      },
+      {
+        "name": "Grounding DINO",
+        "description": "Baseline model used in side-by-side qualitative comparison against Grounding DINO 1.5 Pro."
+      },
+      {
+        "name": "Long-tailed Object Detection",
+        "description": "Evaluation of Grounding DINO 1.5 Pro's capability to detect long-tailed objects, i.e. less frequently encountered categories that pose unique challenges for object detection (Section 4.2)."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AP (zero-shot, Grounding DINO 1.5 Edge)",
+        "value": "45.0",
+        "split": "COCO"
+      },
+      {
+        "metric": "AP (zero-shot, Grounding DINO 1.5 Edge)",
+        "value": "36.2",
+        "split": "LVIS-minival"
+      },
+      {
+        "metric": "AP (OmDet-Turbo-T)",
+        "value": "30.3",
+        "split": "LVIS-minival"
+      },
+      {
+        "metric": "AP (YOLO-Worldv2-L)",
+        "value": "32.9",
+        "split": "LVIS-minival"
+      },
+      {
+        "metric": "AP (YOLO-Worldv2-M)",
+        "value": "30.0",
+        "split": "LVIS-minival"
+      },
+      {
+        "metric": "AP (YOLO-Worldv2-S)",
+        "value": "22.7",
+        "split": "LVIS-minival"
+      },
+      {
+        "metric": "FPS (Grounding DINO 1.5 Edge, TensorRT on NVIDIA Orin NX, 640 \u00d7 640)",
+        "value": "over 10",
+        "split": null
+      }
+    ]
+  }
+}

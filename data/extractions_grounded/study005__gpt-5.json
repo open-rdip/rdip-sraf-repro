@@ -1,0 +1,954 @@
+{
+ "study_id": "study005",
+ "model": "gpt5",
+ "slug": "gpt-5",
+ "n_passages": 6,
+ "n_passages_ok": 6,
+ "failures": [],
+ "records": [
+  {
+   "field": "hardware",
+   "value": "NVIDIA A100 GPU",
+   "evidence": "NVIDIA A100 GPU",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "DALL \u00b7E 2",
+   "evidence": "DALL \u00b7E 2",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Stable Diffusion",
+   "evidence": "Stable Diffusion",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "eDiff-I",
+   "evidence": "eDiff-I",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "dependencies",
+   "value": "CLIP",
+   "evidence": "pretrained CLIP model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "aesthetic scorer",
+   "evidence": "aesthetic scorer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "64 pixels",
+   "evidence": "shortest side greater than 64 pixels.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "256",
+   "evidence": "shortest side greater than 256",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "1024",
+   "evidence": "and 1024 pixels to train our SR256 and SR1024 models",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "resize-central crop",
+   "evidence": "resize-central crop.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "256\u00d7256",
+   "evidence": "randomly crop 256\u00d7256regions during training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "1024\u00d71024",
+   "evidence": "apply it on 1024\u00d71024 resolution during inference.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "shortest side has the same number of pixels as the input image side",
+   "evidence": "shortest side has the same number of pixels as the input image side.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "about one billion text-image pairs",
+   "evidence": "contains about one billion text-image pairs.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "COCO",
+   "evidence": "We use COCO and Visual Genome datasets for evaluation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "Visual Genome",
+   "evidence": "Visual Genome",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "CLIP-based filtering",
+   "evidence": "using a pretrained CLIP model to measure the image-text alignment score",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "aesthetic scoring",
+   "evidence": "as well as an aesthetic scorer to rank the image quality.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "resize-central crop",
+   "evidence": "resize-central crop.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "random crop 256\u00d7256",
+   "evidence": "randomly crop 256\u00d7256regions during training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "DALL \u00b7E 2",
+   "evidence": "DALL \u00b7E 2",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Stable Diffusion",
+   "evidence": "Stable Diffusion",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "our approach",
+   "evidence": "our approach",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "dependencies",
+   "value": "Imaginaire library",
+   "evidence": "Imaginaire library [44]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "dependencies",
+   "value": "PyTorch",
+   "evidence": "PyTorch [54]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "NVIDIA A100",
+   "evidence": "256 NVIDIA A100 GPUs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "AdamW",
+   "evidence": "AdamW [45] optimizer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "0.0001",
+   "evidence": "learning rate of 0.0001",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "0.01",
+   "evidence": "weight decay of 0.01",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "2048",
+   "evidence": "a batch size of 2048",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "COCO",
+   "evidence": "COCO dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "visual genome",
+   "evidence": "visual genome dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "CLIP text encoder",
+   "evidence": "CLIP text encoder",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "T5 encoder",
+   "evidence": "T5 encoder",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "CLIP+T5",
+   "evidence": "CLIP+T5",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "super-resolution diffusion models",
+   "evidence": "super-resolution diffu- sion models",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "AdamW optimizer",
+   "evidence": "AdamW [45] optimizer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "MS-COCO",
+   "evidence": "on MS- COCO and Visual Genome datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "Visual Genome",
+   "evidence": "on MS- COCO and Visual Genome datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "CLIP text embeddings",
+   "evidence": "CLIP text embeddings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "T5 text embeddings",
+   "evidence": "T5 text embeddings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "CLIP+T5 embeddings",
+   "evidence": "CLIP+T5 embeddings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "CLIP-FID trade-off curve",
+   "evidence": "CLIP-FID trade-off curve",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "dependencies",
+   "value": "CLIP",
+   "evidence": "CLIP text embed- dings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "dependencies",
+   "value": "T5",
+   "evidence": "T5 text embed- dings",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "hyperparameters",
+   "value": "random dropout independently on the individual embeddings",
+   "evidence": "we perform random dropout independently on the individual embeddings during training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "eDiff-I",
+   "evidence": "eDiff-I can handle",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "ensemble-of-expert-denoisers",
+   "evidence": "ensemble-of-expert-denoisers scheme",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "CLIP text embeddings",
+   "evidence": "CLIP text embed- dings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "T5 text embeddings",
+   "evidence": "T5 text embed- dings",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "DALL \u00b7E 2",
+   "evidence": "DALL \u00b7E 2",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "Stable Diffusion",
+   "evidence": "Stable Diffusion",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study005",
+   "slug": "gpt-5",
+   "passage_index": 5
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "hardware": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   },
+   "methods": {
+    "n": 25,
+    "has_evidence": 25,
+    "span_found": 24,
+    "value_in_span": 18,
+    "grounded": 18
+   },
+   "dependencies": {
+    "n": 6,
+    "has_evidence": 6,
+    "span_found": 5,
+    "value_in_span": 6,
+    "grounded": 5
+   },
+   "hyperparameters": {
+    "n": 13,
+    "has_evidence": 13,
+    "span_found": 13,
+    "value_in_span": 13,
+    "grounded": 13
+   },
+   "datasets": {
+    "n": 6,
+    "has_evidence": 6,
+    "span_found": 6,
+    "value_in_span": 5,
+    "grounded": 5
+   }
+  },
+  "total": {
+   "n": 52,
+   "has_evidence": 52,
+   "span_found": 50,
+   "value_in_span": 44,
+   "grounded": 43
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "NVIDIA A100 GPU",
+      "evidence": "NVIDIA A100 GPU"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "DALL \u00b7E 2",
+      "evidence": "DALL \u00b7E 2"
+     },
+     {
+      "name": "Stable Diffusion",
+      "evidence": "Stable Diffusion"
+     },
+     {
+      "name": "eDiff-I",
+      "evidence": "eDiff-I"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "CLIP",
+      "version": null,
+      "evidence": "pretrained CLIP model"
+     },
+     {
+      "name": "aesthetic scorer",
+      "version": null,
+      "evidence": "aesthetic scorer"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "min_image_shortest_side",
+      "value": "64 pixels",
+      "evidence": "shortest side greater than 64 pixels."
+     },
+     {
+      "name": "SR256_min_shortest_side",
+      "value": "256",
+      "evidence": "shortest side greater than 256"
+     },
+     {
+      "name": "SR1024_min_shortest_side",
+      "value": "1024",
+      "evidence": "and 1024 pixels to train our SR256 and SR1024 models"
+     },
+     {
+      "name": "crop_method",
+      "value": "resize-central crop",
+      "evidence": "resize-central crop."
+     },
+     {
+      "name": "train_crop_size",
+      "value": "256\u00d7256",
+      "evidence": "randomly crop 256\u00d7256regions during training"
+     },
+     {
+      "name": "inference_resolution",
+      "value": "1024\u00d71024",
+      "evidence": "apply it on 1024\u00d71024 resolution during inference."
+     },
+     {
+      "name": "resize_rule",
+      "value": "shortest side has the same number of pixels as the input image side",
+      "evidence": "shortest side has the same number of pixels as the input image side."
+     },
+     {
+      "name": "training_dataset_size",
+      "value": "about one billion text-image pairs",
+      "evidence": "contains about one billion text-image pairs."
+     }
+    ],
+    "datasets": [
+     {
+      "name": "COCO",
+      "version": null,
+      "evidence": "We use COCO and Visual Genome datasets for evaluation"
+     },
+     {
+      "name": "Visual Genome",
+      "version": null,
+      "evidence": "Visual Genome"
+     }
+    ],
+    "methods": [
+     {
+      "name": "CLIP-based filtering",
+      "evidence": "using a pretrained CLIP model to measure the image-text alignment score"
+     },
+     {
+      "name": "aesthetic scoring",
+      "evidence": "as well as an aesthetic scorer to rank the image quality."
+     },
+     {
+      "name": "resize-central crop",
+      "evidence": "resize-central crop."
+     },
+     {
+      "name": "random crop 256\u00d7256",
+      "evidence": "randomly crop 256\u00d7256regions during training"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "DALL \u00b7E 2",
+      "evidence": "DALL \u00b7E 2"
+     },
+     {
+      "name": "Stable Diffusion",
+      "evidence": "Stable Diffusion"
+     },
+     {
+      "name": "our approach",
+      "evidence": "our approach"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "Imaginaire library",
+      "version": null,
+      "evidence": "Imaginaire library [44]"
+     },
+     {
+      "name": "PyTorch",
+      "version": null,
+      "evidence": "PyTorch [54]"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "NVIDIA A100",
+      "evidence": "256 NVIDIA A100 GPUs"
+     }
+    ],
+    "hyperparameters": [
+     {
+      "name": "optimizer",
+      "value": "AdamW",
+      "evidence": "AdamW [45] optimizer"
+     },
+     {
+      "name": "learning_rate",
+      "value": "0.0001",
+      "evidence": "learning rate of 0.0001"
+     },
+     {
+      "name": "weight_decay",
+      "value": "0.01",
+      "evidence": "weight decay of 0.01"
+     },
+     {
+      "name": "batch_size",
+      "value": "2048",
+      "evidence": "a batch size of 2048"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "COCO",
+      "version": null,
+      "evidence": "COCO dataset"
+     },
+     {
+      "name": "visual genome",
+      "version": null,
+      "evidence": "visual genome dataset"
+     }
+    ],
+    "methods": [
+     {
+      "name": "CLIP text encoder",
+      "evidence": "CLIP text encoder"
+     },
+     {
+      "name": "T5 encoder",
+      "evidence": "T5 encoder"
+     },
+     {
+      "name": "CLIP+T5",
+      "evidence": "CLIP+T5"
+     },
+     {
+      "name": "super-resolution diffusion models",
+      "evidence": "super-resolution diffu- sion models"
+     },
+     {
+      "name": "AdamW optimizer",
+      "evidence": "AdamW [45] optimizer"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "MS-COCO",
+      "version": null,
+      "evidence": "on MS- COCO and Visual Genome datasets"
+     },
+     {
+      "name": "Visual Genome",
+      "version": null,
+      "evidence": "on MS- COCO and Visual Genome datasets"
+     }
+    ],
+    "methods": [
+     {
+      "name": "CLIP text embeddings",
+      "evidence": "CLIP text embeddings"
+     },
+     {
+      "name": "T5 text embeddings",
+      "evidence": "T5 text embeddings"
+     },
+     {
+      "name": "CLIP+T5 embeddings",
+      "evidence": "CLIP+T5 embeddings"
+     },
+     {
+      "name": "CLIP-FID trade-off curve",
+      "evidence": "CLIP-FID trade-off curve"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "CLIP",
+      "version": null,
+      "evidence": "CLIP text embed- dings"
+     },
+     {
+      "name": "T5",
+      "version": null,
+      "evidence": "T5 text embed- dings"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "dropout",
+      "value": "random dropout independently on the individual embeddings",
+      "evidence": "we perform random dropout independently on the individual embeddings during training"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "eDiff-I",
+      "evidence": "eDiff-I can handle"
+     },
+     {
+      "name": "ensemble-of-expert-denoisers",
+      "evidence": "ensemble-of-expert-denoisers scheme"
+     },
+     {
+      "name": "CLIP text embeddings",
+      "evidence": "CLIP text embed- dings"
+     },
+     {
+      "name": "T5 text embeddings",
+      "evidence": "T5 text embed- dings"
+     },
+     {
+      "name": "DALL \u00b7E 2",
+      "evidence": "DALL \u00b7E 2"
+     },
+     {
+      "name": "Stable Diffusion",
+      "evidence": "Stable Diffusion"
+     }
+    ],
+    "evaluation_results": []
+   }
+  }
+ ]
+}

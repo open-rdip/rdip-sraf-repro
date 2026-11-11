@@ -1,0 +1,165 @@
+{
+  "study_id": "study073",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study073/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:16:20.014508+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 2,
+    "methods": 24,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX 3090",
+      "cuda_version": null,
+      "cpu_info": "Intel i9-10980XE CPU"
+    },
+    "hyperparameters": [
+      {
+        "name": "reference_images",
+        "value": "16"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "YCB-Video",
+        "version": null
+      },
+      {
+        "name": "LINEMOD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "W/o transformer",
+        "description": "Replaces the transformer-based architecture by convolutional and linear layers while keeping a similar number of parameters."
+      },
+      {
+        "name": "W/o hierarchical comparison",
+        "description": "Only compares the rendering and the cropped input trained by pose-conditioned triplet loss (Eq. 11) without two-level hierarchical comparison. At test time, compares each pose hypothesis with the input observation independently and outputs the pose with the highest score."
+      },
+      {
+        "name": "Ours-InfoNCE",
+        "description": "Replaces contrast validated pair-wise loss (Eq. 14) by the InfoNCE loss as used in [46]."
+      },
+      {
+        "name": "DeepIM",
+        "description": "Comparison method [36]. Initial pose GT, re-initialization Yes (290), novel object not supported, model-based object setup."
+      },
+      {
+        "name": "se(3)-TrackNet",
+        "description": "Comparison method. Initial pose GT, re-initialization No, novel object not supported, model-based object setup."
+      },
+      {
+        "name": "PoseRBPF",
+        "description": "Comparison method [8]. Initial pose PoseCNN, re-initialization Yes (2), novel object not supported, model-based object setup."
+      },
+      {
+        "name": "W\u00fcthrich",
+        "description": "Comparison method [72]. Initial pose GT, re-initialization No, supports novel objects, model-based object setup."
+      },
+      {
+        "name": "RGF",
+        "description": "Comparison method [29]. Initial pose GT, re-initialization No, supports novel objects, model-based object setup."
+      },
+      {
+        "name": "ICG",
+        "description": "Comparison method [56]. Initial pose GT, re-initialization No, supports novel objects, model-based object setup."
+      },
+      {
+        "name": "Ours",
+        "description": "Proposed method. Initial pose GT, re-initialization No, supports novel objects, model-based object setup. Number of reference images is varied and results are measured by AUC of ADD and ADD-S."
+      },
+      {
+        "name": "Ours\u2020 + SDF",
+        "description": "Variant Ours\u2020 [67] + SDF. Initial pose GT, re-initialization No, supports novel objects, model-free object setup."
+      },
+      {
+        "name": "Ours\u2020",
+        "description": "End-to-end pose estimation and tracking without external pose initialization, noted as the only method with this capability."
+      },
+      {
+        "name": "instance-wise training method",
+        "description": "Method [67] trained with ground-truth pose initialization; outperformed by the proposed method under the model-based setup."
+      },
+      {
+        "name": "W\u00fcthrich et al.",
+        "description": "Baseline that can be instantly applied to novel objects when provided with a CAD model."
+      },
+      {
+        "name": "LLM texture augmentation",
+        "description": "LLM-aided texture augmentation for synthetic training; removed in the W/o LLM texture augmentation ablation."
+      },
+      {
+        "name": "transformer-based architecture",
+        "description": "Default architecture; in the W/o transformer ablation it is replaced by convolutional and linear layers while keeping a similar number of parameters."
+      },
+      {
+        "name": "pose initialization",
+        "description": "Pose estimation initialization step, reported to take 4 ms."
+      },
+      {
+        "name": "pose refinement",
+        "description": "Refinement of pose, reported to take 0.88 s; the only step required during tracking."
+      },
+      {
+        "name": "pose selection",
+        "description": "Selection among pose hypotheses, reported to take 0.42 s."
+      },
+      {
+        "name": "tracking",
+        "description": "Tracking mode that runs pose refinement only, without multiple pose hypotheses, for real-time performance after a single pose-estimation initialization."
+      },
+      {
+        "name": "model-based setup",
+        "description": "A CAD model is provided for the novel object."
+      },
+      {
+        "name": "inference without fine-tuning",
+        "description": "In all evaluation except ablation, the same trained model and configurations are used for inference without any fine-tuning."
+      },
+      {
+        "name": "perturbed ground-truth bounding box",
+        "description": "Following [22], all methods are given the perturbed ground-truth bounding box as 2D detection for fair comparison on YCB-Video."
+      },
+      {
+        "name": "model-free pose estimation",
+        "description": "Model-free comparison against state-of-the-art RGBD methods on YCB-Video and LINEMOD, with baseline results adopted from prior work."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "running time",
+        "value": "about 1.3 s",
+        "split": null
+      },
+      {
+        "metric": "pose initialization time",
+        "value": "4 ms",
+        "split": null
+      },
+      {
+        "metric": "refinement time",
+        "value": "0.88 s",
+        "split": null
+      },
+      {
+        "metric": "pose selection time",
+        "value": "0.42 s",
+        "split": null
+      },
+      {
+        "metric": "tracking rate",
+        "value": "\u223c32 Hz",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "study_id": "study093",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study093/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:10:05.835768+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 7,
+    "methods": 8,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "GeForce RTX 3090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of transformer layers in fusion module",
+        "value": "4"
+      },
+      {
+        "name": "image size",
+        "value": "224\u00d7224"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning rate",
+        "value": "1\u00d710\u22124"
+      },
+      {
+        "name": "batch size",
+        "value": "128"
+      },
+      {
+        "name": "epochs",
+        "value": "100"
+      },
+      {
+        "name": "warm-up epochs",
+        "value": "10"
+      },
+      {
+        "name": "number of learnable answer prompt vectors in text encoder (VQA)",
+        "value": "10"
+      },
+      {
+        "name": "number of learnable question prompt vectors in text encoder (VQA)",
+        "value": "10"
+      },
+      {
+        "name": "visual encoder",
+        "value": "ResNet50"
+      },
+      {
+        "name": "text encoder",
+        "value": "PubmedBERT"
+      },
+      {
+        "name": "ITR evaluation sample size (image-text pairs from ROCO test set)",
+        "value": "2,000"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "MedMINIST",
+        "version": null
+      },
+      {
+        "name": "VQA-RAD",
+        "version": null
+      },
+      {
+        "name": "SLAKE",
+        "version": null
+      },
+      {
+        "name": "ROCO",
+        "version": null
+      },
+      {
+        "name": "MedICaT",
+        "version": null
+      },
+      {
+        "name": "MIMIC-CXR",
+        "version": null
+      },
+      {
+        "name": "PubMed",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ResNet50",
+        "description": "Visual encoder, trained from scratch during pre-training"
+      },
+      {
+        "name": "PubmedBERT",
+        "description": "Text encoder, initialized from pretrained PubmedBERT weights during pre-training"
+      },
+      {
+        "name": "Transformer fusion module",
+        "description": "Fusion module with 4 transformer layers, trained from scratch during pre-training"
+      },
+      {
+        "name": "AdamW",
+        "description": "Optimizer used for pre-training with lr=1\u00d710\u22124 and 10 warm-up epochs"
+      },
+      {
+        "name": "PMC-CLIP",
+        "description": "Model with visual encoder (ResNet50), text encoder (PubmedBERT) and a fusion module of 4 transformer layers."
+      },
+      {
+        "name": "PMC-CLIP adaptation to VQA",
+        "description": "Most pre-trained parameters (visual encoder, text encoder, fusion) are kept. The image and question are fed into PMC-CLIP, and the fusion module output embedding is used to compute similarity with each answer candidate, which is encoded with the text encoder. 10 learnable answer prompt vectors and 10 learnable question prompt vectors are used in the text encoder."
+      },
+      {
+        "name": "Image-Text Retrieval (ITR)",
+        "description": "Includes image-to-text (I2T) and text-to-image (T2I) retrieval; evaluated on 2,000 image-text pairs sampled from the ROCO test set, with duplication between training data and ROCO removed so results resemble zero-shot evaluation."
+      },
+      {
+        "name": "Classification",
+        "description": "Model is finetuned for different downstream image classification tasks, including MedMINIST which contains 12 tasks covering primary biomedical image modalities (e.g., Colon Pathology, Dermatoscope, Retinal)."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

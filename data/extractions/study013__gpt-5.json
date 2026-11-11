@@ -1,0 +1,174 @@
+{
+  "study_id": "study013",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study013/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:15:31.341753+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 13,
+    "methods": 11,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Python",
+        "version": null
+      },
+      {
+        "name": "scikit-learn",
+        "version": null
+      },
+      {
+        "name": "VGG16 (pretrained on ImageNet)",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "cross_validation_folds",
+        "value": "5"
+      },
+      {
+        "name": "train_validation_split",
+        "value": "80% train / 20% validation (stratified)"
+      },
+      {
+        "name": "selection_interval_iterations",
+        "value": "500"
+      },
+      {
+        "name": "input_image_size",
+        "value": "64x64"
+      },
+      {
+        "name": "channels_used",
+        "value": "first channel only; converted and rescaled to 8-bit RGB"
+      },
+      {
+        "name": "feature_layers",
+        "value": "all max-pooling convolutional layers; benchmarks reported for top 3 performing layers"
+      },
+      {
+        "name": "feature_extraction_layer",
+        "value": "last fully-connected layer of trained model"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COOS-7",
+        "version": null
+      },
+      {
+        "name": "COOS",
+        "version": null
+      },
+      {
+        "name": "COOS-7 Training",
+        "version": null
+      },
+      {
+        "name": "COOS-7 Test1",
+        "version": null
+      },
+      {
+        "name": "COOS-7 Test2",
+        "version": null
+      },
+      {
+        "name": "COOS-7 Test3",
+        "version": null
+      },
+      {
+        "name": "COOS-7 Test4",
+        "version": null
+      },
+      {
+        "name": "Training",
+        "version": null
+      },
+      {
+        "name": "Test1",
+        "version": null
+      },
+      {
+        "name": "Test2",
+        "version": null
+      },
+      {
+        "name": "Test3",
+        "version": null
+      },
+      {
+        "name": "Test4",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Randomized plate arrangements and replication of experiments over time",
+        "description": "Randomized plate arrangements and the replication of experiments over time, directly enabling stratification of the dataset by multiple kinds of covariate shifts and providing multiple test datasets with controlled and known covariate shifts."
+      },
+      {
+        "name": "Classification baselines for COOS-7",
+        "description": "To provide baselines for out-of-sample generalization on COOS-7, features were extracted and classifiers were built using a variety."
+      },
+      {
+        "name": "Logistic Regression Classifier",
+        "description": "A linear classifier trained on classic computer vision features; models that weigh features performed better for texture features."
+      },
+      {
+        "name": "Fully-supervised CNN",
+        "description": "A convolutional neural network trained with supervision that achieved the lowest error on datasets with larger covariate shift (Test3 and Test4)."
+      },
+      {
+        "name": "Deep Learning Feature Representations",
+        "description": "Features extracted from deep learning models that achieved as little as 1.1% balanced classification error on datasets similar to training (Test1/Test2)."
+      },
+      {
+        "name": "5-fold Cross-Validation Model Selection",
+        "description": "Selected the classifier with the best performance using 5-fold cross-validation on the Training dataset."
+      },
+      {
+        "name": "Balanced Classification Error",
+        "description": "Evaluation metric reported to control for differences in class balance across datasets."
+      },
+      {
+        "name": "End-to-end CNN training with validation-based model selection",
+        "description": "Train on 80% of the dataset and select the iteration with best performance on the remaining 20% (stratified), evaluating at intervals of 500 iterations."
+      },
+      {
+        "name": "Feature extraction from trained model",
+        "description": "Extract features from the last fully-connected layer of the trained model for building additional classifiers."
+      },
+      {
+        "name": "Pretrained VGG16 feature extraction",
+        "description": "Use a pre-trained VGG16 (ImageNet) model that accepts 64x64 images; convert and rescale the first channel to 8-bit RGB; exclude second-channel features; extract features from all max-pooling convolutional layers and report the top 3 performing layers."
+      },
+      {
+        "name": "PCI self-supervised features",
+        "description": "Extract features learned from a self-supervised method (PCI) designed for microscopy images, previously achieving SOTA on 64x64 yeast cell images."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "balanced classification error",
+        "value": "1.1%",
+        "split": "test"
+      }
+    ]
+  }
+}

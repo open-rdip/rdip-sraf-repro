@@ -1,0 +1,223 @@
+{
+  "study_id": "study033",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study033/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:37:44.614469+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 4,
+    "methods": 30,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "Pix2Pix",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "merging_block_operation",
+        "value": "concatenate along channel dimension then 1x1 convolution"
+      },
+      {
+        "name": "merge_conv_kernel",
+        "value": "1x1"
+      },
+      {
+        "name": "EI/EIadown_count",
+        "value": "1"
+      },
+      {
+        "name": "EI/EIadown_channels",
+        "value": "64"
+      },
+      {
+        "name": "EI/EIadown_kernel",
+        "value": "7"
+      },
+      {
+        "name": "EI/EIadown_stride",
+        "value": "1"
+      },
+      {
+        "name": "padding",
+        "value": "reflection padding in all convolutional layers of encoder/decoder blocks"
+      },
+      {
+        "name": "upsampling_method",
+        "value": "interpolation followed by a convolutional layer"
+      },
+      {
+        "name": "merge_strategy",
+        "value": "concatenate content and artifact feature maps along the channel dimension"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "SYN",
+        "version": null
+      },
+      {
+        "name": "CL1 (Spineweb vertebrae localization and identification)",
+        "version": null
+      },
+      {
+        "name": "CL2",
+        "version": null
+      },
+      {
+        "name": "CL1",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "UNet",
+        "description": "Used a publicly available implementation in PyTorch."
+      },
+      {
+        "name": "cGANMAR",
+        "description": "Trained using the official Pix2Pix code; backend is identical to Pix2Pix."
+      },
+      {
+        "name": "CNNMAR-based synthesis",
+        "description": "Synthesized metal artifacts by simulating beam hardening effect and Poisson noise to generate paired training data from artifact-free CT images."
+      },
+      {
+        "name": "LI",
+        "description": "Conventional method for metal artifact reduction (MAR)."
+      },
+      {
+        "name": "NMAR",
+        "description": "Conventional method for metal artifact reduction (MAR)."
+      },
+      {
+        "name": "CNNMAR",
+        "description": "Supervised approach dedicated to MAR."
+      },
+      {
+        "name": "CycleGAN",
+        "description": "Unsupervised image-to-image translation method."
+      },
+      {
+        "name": "DIP",
+        "description": "Unsupervised image-to-image translation method."
+      },
+      {
+        "name": "MUNIT",
+        "description": "Unsupervised image-to-image translation method."
+      },
+      {
+        "name": "DRIT",
+        "description": "Unsupervised image-to-image translation method."
+      },
+      {
+        "name": "Artifact Pyramid Decoding (APD)",
+        "description": "A decoding design inspired by feature pyramid networks that merges artifact code at multiple scales to effectively recover artifact details during generation."
+      },
+      {
+        "name": "EIa (Artifact Encoder)",
+        "description": "An encoder composed of several downsampling blocks that outputs multi-scale feature maps forming a feature pyramid."
+      },
+      {
+        "name": "GIa (Artifact-Affected Image Generator/Decoder)",
+        "description": "A decoder consisting of residual, merge, upsample, and final blocks that generates artifact-affected images by merging artifact code at different scales during decoding."
+      },
+      {
+        "name": "Merging Blocks in GIa",
+        "description": "Blocks that first concatenate content and artifact feature maps along the channel dimension to combine information."
+      },
+      {
+        "name": "ADN (Artifact Disentanglement Network)",
+        "description": "A framework that learns encoders and decoders jointly to disentangle artifact and content components, producing four intended images via designed loss functions without requiring paired data."
+      },
+      {
+        "name": "Adversarial Losses (LI_adv and LIa_adv)",
+        "description": "Two GAN-style losses encouraging outputs: x\u0302 that removes artifacts from xa (Eqn. 3) and \u0177a that adds artifacts to y (Eqn. 2), enabling manipulation of the artifact component in latent space."
+      },
+      {
+        "name": "Artifact Consistency Loss (Lart)",
+        "description": "A loss enforcing consistency of the artifact component across transformations to support artifact disentanglement."
+      },
+      {
+        "name": "Reconstruction Loss (Lrec)",
+        "description": "A loss encouraging accurate reconstruction of inputs to regularize the encoders and decoders."
+      },
+      {
+        "name": "Self-Reduction Loss (Lself)",
+        "description": "A loss promoting self-reduction of artifacts to further regularize disentanglement."
+      },
+      {
+        "name": "Overall Objective",
+        "description": "Weighted sum of losses: L = \u03bb_adv (LI_adv + LIa_adv) + \u03bb_art Lart + \u03bb_rec Lrec + \u03bb_self Lself, where \u03bb terms control the importance of each component."
+      },
+      {
+        "name": "Artifact Consistency Loss (L_art)",
+        "description": "A loss enforcing anatomical consistency between pairs by minimizing the L1 norm of (xa \u2212 x\u0302) \u2212 (\u0177a \u2212 y), encouraging shared artifact differences without forcing exact reconstruction."
+      },
+      {
+        "name": "Self-Reduction Loss (L_self)",
+        "description": "A self-supervised mechanism that adds artifacts to y to get \u0177a, removes them to get \u1ef9, and applies an L1 regression ||\u1ef9 \u2212 y||1 to regularize artifact reduction."
+      },
+      {
+        "name": "CNN-based Encoders/Decoders/Discriminators",
+        "description": "Network components implemented as convolutional neural networks comprising residual, downsampling, upsampling, final, and merging blocks."
+      },
+      {
+        "name": "Residual Block",
+        "description": "A building block used within the CNN components to facilitate training via identity connections."
+      },
+      {
+        "name": "Downsampling Block",
+        "description": "A building block performing spatial resolution reduction within the CNN architecture."
+      },
+      {
+        "name": "Upsampling Block",
+        "description": "A building block performing spatial resolution increase within the CNN architecture."
+      },
+      {
+        "name": "Final Block",
+        "description": "The concluding block of the decoder responsible for producing the output."
+      },
+      {
+        "name": "Merging Block",
+        "description": "A block that merges features, including artifact code, within the APD."
+      },
+      {
+        "name": "ADN",
+        "description": "Proposed method; on par with conventional and supervised methods and outperforms projection interpolation approaches both quantitatively and qualitatively."
+      },
+      {
+        "name": "Ours",
+        "description": "Proposed method evaluated alongside baselines."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "PSNR",
+        "value": "32.0",
+        "split": null
+      },
+      {
+        "metric": "SSIM",
+        "value": "91.0",
+        "split": null
+      }
+    ]
+  }
+}

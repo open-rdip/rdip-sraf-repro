@@ -1,0 +1,160 @@
+{
+  "study_id": "study020",
+  "backend": "anthropic",
+  "model": "claude-opus-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study020/ext/claude-opus-5-5",
+  "extracted_at": "2026-11-10T00:14:58.308888+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 2,
+    "methods": 19,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Libra",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "64"
+      },
+      {
+        "name": "image_size",
+        "value": "632 x 512"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1e-6"
+      },
+      {
+        "name": "weight_initialization",
+        "value": "ImageNet-pretrained weights"
+      },
+      {
+        "name": "data_augmentation",
+        "value": "random horizontal and vertical flipping, random rotation of 10 degrees, small random brightness and contrast jittering"
+      },
+      {
+        "name": "cross_validation_folds",
+        "value": "5"
+      },
+      {
+        "name": "rotation augmentation",
+        "value": "10 degrees"
+      },
+      {
+        "name": "brightness and contrast jittering",
+        "value": "small random"
+      },
+      {
+        "name": "cross-validation folds",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "CSAW-M",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "one-hot encoding model",
+        "description": "Ordinal classification model for mammograms trained with standard one-hot label encoding; compared against expert labels."
+      },
+      {
+        "name": "multi-hot encoding (ordinal) model",
+        "description": "Ordinal classification with K classes encoded as K-1 independent binary classifications, each class a superset of the previous; for label l_i, y_i^k = 1{l_i > k} for k in {1,...,K-1}."
+      },
+      {
+        "name": "5-fold cross-validation",
+        "description": "Used to determine the stopping iteration for training."
+      },
+      {
+        "name": "data augmentation",
+        "description": "Random horizontal and vertical flipping, random rotation of 10 degrees, and small random brightness and contrast jittering."
+      },
+      {
+        "name": "ResNet-34",
+        "description": "Backbone architecture used by both baseline models to predict masking potential from mammography images"
+      },
+      {
+        "name": "ResNet34 one-hot",
+        "description": "Baseline using standard categorical classification where each masking level is treated independently; predicted with standard softmax and cross-entropy loss on one-hot encodings"
+      },
+      {
+        "name": "ResNet34 multi-hot",
+        "description": "Baseline accounting for the ordinal relation between masking levels using multi-hot encodings, framed as multi-label classification over K ordinal classes"
+      },
+      {
+        "name": "Low-/high-masking level grouping",
+        "description": "Masking levels 1 and 2 are grouped as low-masking and levels 7 and 8 as high-masking, based on expert feedback, to assess model performance on tail masking levels."
+      },
+      {
+        "name": "F1-score evaluation (Task 1)",
+        "description": "F1-score, a common information retrieval metric, is used to assess how well models identify images in the tail (low- and high-) masking levels."
+      },
+      {
+        "name": "AUC evaluation (Task 2)",
+        "description": "Area under the ROC curve measures how well predicted masking estimates predict interval cancers, large invasive cancers, and the composite endpoint (CEP) containing both, without explicit training for these tasks."
+      },
+      {
+        "name": "Odds ratio (OR)",
+        "description": "The ratio of the odds of an event occurring in one group to the odds of it occurring in another group, used as a clinical measure of association between masking estimates and cancers."
+      },
+      {
+        "name": "5-fold cross-validation for early stopping",
+        "description": "5-fold cross-validation used to determine the stopping iteration, which was then used in a final training run on all training data"
+      },
+      {
+        "name": "Ordinal classification of masking potential",
+        "description": "Model the median expert opinion of masking potential level in the range 1-8, treating labels as ordinally related"
+      },
+      {
+        "name": "Average mean absolute error (AMAE)",
+        "description": "Measures the average distance of predicted classes w.r.t. true classes; robust to class imbalance"
+      },
+      {
+        "name": "Kendall's tau-b",
+        "description": "Measures correlation of two rankings based on numbers of concordant and discordant pairs; ranges from -1 to 1"
+      },
+      {
+        "name": "Odds ratio",
+        "description": "Ratio of the odds of interval cancer in one group to the odds in a reference group. Model predictions are divided into quartile groups gi (i in {1,2,3,4}). Odds for each group are Oi = ICi / ~ICi, where ICi is the number of participants in gi with interval cancer and ~ICi is the number without. Odds ratios are ORi = Oi / O1, using the first quartile as reference, so OR1 = 1."
+      },
+      {
+        "name": "Dense area",
+        "description": "Breast density measure computed using Libra, used as a comparison baseline because density is known to be correlated with clinical endpoints."
+      },
+      {
+        "name": "Percent density",
+        "description": "Breast density measure computed using Libra, used as a comparison baseline because density is known to be correlated with clinical endpoints."
+      },
+      {
+        "name": "Continuous masking score",
+        "description": "Converts discrete masking predictions to a continuous value by taking the weighted average of the probabilities that an input belongs to each masking level, to allow a fair comparison with density measures."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

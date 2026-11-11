@@ -1,0 +1,107 @@
+{
+  "study_id": "study038",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study038/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:01:49.544069+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 6,
+    "methods": 12,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "n_random_subsamples",
+        "value": "100"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Hpoly.Day10",
+        "version": null
+      },
+      {
+        "name": "IFN-\u03b2 stimulated and control peripheral blood single-cell gene expression dataset",
+        "version": null
+      },
+      {
+        "name": "Morpho-MNIST",
+        "version": null
+      },
+      {
+        "name": "MNIST",
+        "version": null
+      },
+      {
+        "name": "CelebA",
+        "version": null
+      },
+      {
+        "name": "peripheral blood mononuclear cells (PBMCs)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "MMD regularization",
+        "description": "Regularization that forces representations to be similar across conditions"
+      },
+      {
+        "name": "trVAE",
+        "description": "Resulting model that outperforms existing modeling approaches on benchmark and real-world data sets"
+      },
+      {
+        "name": "CVAE",
+        "description": "Within the bottleneck layer, already displays well-controlled behavior; regularization does not improve performance"
+      },
+      {
+        "name": "UMAP",
+        "description": "Visualization of conditions and cell type for gut cells."
+      },
+      {
+        "name": "Pearson correlation (R2)",
+        "description": "Pearson correlation between ground truth and predicted values for mean and variance of 1,000 genes and for the predicted 1,000-dimensional x."
+      },
+      {
+        "name": "Pearson R2",
+        "description": "Pearson correlation between ground truth and predicted values, used to compare mean and variance gene expression between real and predicted cells."
+      },
+      {
+        "name": "VFAE",
+        "description": "Baseline similar to VFAE (Louizos et al., 2015)"
+      },
+      {
+        "name": "MMD-regularized autoencoder",
+        "description": "MMD-regularized autoencoder (Dziugaite et al., 2015b; Amodio et al., 2019)"
+      },
+      {
+        "name": "CycleGAN",
+        "description": "CycleGAN (Zhu et al., 2017)"
+      },
+      {
+        "name": "scGen",
+        "description": "A VAE combined with vector arithmetics (Lotfollahi et al., 2019)"
+      },
+      {
+        "name": "scVI",
+        "description": "A CVAE with a negative binomial output distribution (Lopez et al., 2018a)"
+      },
+      {
+        "name": "grid-search",
+        "description": "Optimal hyper-parameters for each application chosen by a parameter grid-search for each model; details reported in tables 1-9 in appendix A"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

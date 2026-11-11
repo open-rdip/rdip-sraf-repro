@@ -1,0 +1,247 @@
+{
+  "study_id": "study006",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study006/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:32:58.513097+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 12,
+    "methods": 21,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "planning horizon (Adroit tasks)",
+        "value": "15"
+      },
+      {
+        "name": "control rate (locomotion tasks)",
+        "value": "approximately 10 Hz"
+      },
+      {
+        "name": "number of training seeds",
+        "value": "3"
+      },
+      {
+        "name": "evaluation episodes per seed",
+        "value": "20"
+      },
+      {
+        "name": "macro action length",
+        "value": "3"
+      },
+      {
+        "name": "planning horizon in raw action space (gym locomotion tasks)",
+        "value": "9"
+      },
+      {
+        "name": "planning horizon in raw action space (Adroit tasks)",
+        "value": "15"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Stochastic MuJoCo",
+        "version": null
+      },
+      {
+        "name": "Adroit",
+        "version": null
+      },
+      {
+        "name": "Medium-Replay-High Hopper",
+        "version": null
+      },
+      {
+        "name": "Medium-Expert-Mod Hopper",
+        "version": null
+      },
+      {
+        "name": "AntMaze",
+        "version": null
+      },
+      {
+        "name": "AntMaze Umaze",
+        "version": null
+      },
+      {
+        "name": "AntMaze Medium-Diverse",
+        "version": null
+      },
+      {
+        "name": "AntMaze Large-Play",
+        "version": null
+      },
+      {
+        "name": "AntMaze Large-Diverse",
+        "version": null
+      },
+      {
+        "name": "Adroit (Pen, Hammer, Relocate, Door tasks)",
+        "version": null
+      },
+      {
+        "name": "Cloned dataset",
+        "version": null
+      },
+      {
+        "name": "Expert dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "L-MAP",
+        "description": "Proposed model-based method that outperforms TAP and TT across all datasets and environments on Stochastic MuJoCo tasks"
+      },
+      {
+        "name": "TAP",
+        "description": "Model-based baseline"
+      },
+      {
+        "name": "TT",
+        "description": "Model-based baseline (Trajectory Transformer)"
+      },
+      {
+        "name": "1R2R",
+        "description": "Risk-averse model-based algorithm designed for stochastic domains"
+      },
+      {
+        "name": "CQL",
+        "description": "Model-free baseline"
+      },
+      {
+        "name": "IQL",
+        "description": "Model-free baseline"
+      },
+      {
+        "name": "Latent Macro Action Planner (L-MAP)",
+        "description": "Leverages temporal abstractions learned with a state-conditioned VQ-VAE to construct a discrete latent space of macro-actions, enabling efficient planning in high-dimensional continuous action spaces within stochastic environments. Reconstructs return-to-go estimates via a decoder within the VQ-VAE framework, and combined with planning algorithms refines expected return estimates. The latent code representation and transition model reduce the need to learn separate policy, dynamics, and value components in the offline setting."
+      },
+      {
+        "name": "State-conditioned VQ-VAE",
+        "description": "Used to learn temporal abstractions and construct a discrete latent space of macro-actions; includes a decoder that reconstructs return-to-go estimates."
+      },
+      {
+        "name": "Risk-averse model-based algorithm for stochastic domains",
+        "description": "Baseline risk-averse model-based algorithm designed for stochastic domains (Rigter et al., 2023)"
+      },
+      {
+        "name": "TT (+Q)",
+        "description": "Baseline (Trajectory Transformer) that uses an IQL critic for value estimation, requiring sampling with a separate Q-network"
+      },
+      {
+        "name": "IQL critic",
+        "description": "Critic used by TT (+Q) for value estimation"
+      },
+      {
+        "name": "Monte Carlo planning",
+        "description": "Used by L-MAP to provide refined value estimates"
+      },
+      {
+        "name": "CompILE",
+        "description": "Learns latent codes representing variable-length behavior segments, enabling cross-task generalization"
+      },
+      {
+        "name": "RPL",
+        "description": "Employs a hierarchical policy architecture to simplify long-horizon tasks by decomposing them into sub-policies"
+      },
+      {
+        "name": "OPAL",
+        "description": "Introduces a continuous space of primitive actions to reduce distributional shift in offline RL, enhancing policy robustness"
+      },
+      {
+        "name": "PRISE",
+        "description": "Applies sequence compression to learn variable-length action primitives, improving behavior cloning by capturing essential behavioral patterns"
+      },
+      {
+        "name": "ACT",
+        "description": "Model-free method leveraging temporal abstraction (cited as Zhao et al., 2023)"
+      },
+      {
+        "name": "BC",
+        "description": "Behavior Cloning, included as an additional baseline because the original 1R2R method was not evaluated on Adroit tasks."
+      },
+      {
+        "name": "Monte Carlo Tree Search (MCTS)",
+        "description": "Macro-level planning procedure that iteratively selects actions using the UCT policy, performs parallel expansion of multiple macro actions and their potential outcomes, and backpropagates estimated Q-values to explore and refine the planning tree."
+      },
+      {
+        "name": "UCT policy",
+        "description": "Upper Confidence bounds applied to Trees; used for action selection in the MCTS process."
+      },
+      {
+        "name": "Progressive widening",
+        "description": "Extends MCTS to incrementally expand the search tree, balancing exploration of new states with exploitation of already visited states; addresses premature divergence into unexplored regions and difficulty building deep trees under high stochasticity or uncertainty."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "average success rate (L-MAP, all AntMaze environments)",
+        "value": "83.33%",
+        "split": null
+      },
+      {
+        "metric": "average success rate (TT (+Q), all AntMaze environments)",
+        "value": "84.00%",
+        "split": null
+      },
+      {
+        "metric": "success rate (L-MAP, Large-Play)",
+        "value": "78.33%",
+        "split": null
+      },
+      {
+        "metric": "success rate (L-MAP, Large-Diverse)",
+        "value": "81.67%",
+        "split": null
+      },
+      {
+        "metric": "success rate (TT (+Q), Large-Play)",
+        "value": "66.7%",
+        "split": null
+      },
+      {
+        "metric": "success rate (TT (+Q), Large-Diverse)",
+        "value": "60.0%",
+        "split": null
+      },
+      {
+        "metric": "success rate (L-MAP, Umaze)",
+        "value": "93.33%",
+        "split": null
+      },
+      {
+        "metric": "success rate (L-MAP, Medium-Diverse)",
+        "value": "88.33%",
+        "split": null
+      },
+      {
+        "metric": "success rate",
+        "value": "93.33%",
+        "split": null
+      },
+      {
+        "metric": "Average score across all datasets and environments (L-MAP)",
+        "value": "51.40",
+        "split": null
+      },
+      {
+        "metric": "Average score across non-expert datasets (L-MAP)",
+        "value": "18.79",
+        "split": null
+      }
+    ]
+  }
+}

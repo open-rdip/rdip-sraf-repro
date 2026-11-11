@@ -1,0 +1,201 @@
+{
+  "study_id": "study048",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study048/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:53:13.333353+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 16,
+    "datasets": 1,
+    "methods": 19,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "total_searches_fixed",
+        "value": "true"
+      },
+      {
+        "name": "number_of_runs_overall",
+        "value": "7"
+      },
+      {
+        "name": "longer_unseeded_runs_for_LJ38",
+        "value": "5"
+      },
+      {
+        "name": "reduced_temperature",
+        "value": "0.8"
+      },
+      {
+        "name": "simulation_ensemble",
+        "value": "canonical (NVT)"
+      },
+      {
+        "name": "rms_gradient_tolerance_conjugate_gradient",
+        "value": "0.01 (reduced units)"
+      },
+      {
+        "name": "energy_change_tolerance_conjugate_gradient",
+        "value": "0.1 \u03b5 between consecutive steps"
+      },
+      {
+        "name": "initial_rms_gradient_tolerance_trial",
+        "value": "0.1"
+      },
+      {
+        "name": "reopt_rms_force_tolerance",
+        "value": "1e-4"
+      },
+      {
+        "name": "reopt_energy_difference_tolerance",
+        "value": "1e-9"
+      },
+      {
+        "name": "angular_move_target_acceptance_ratio",
+        "value": "0.5"
+      },
+      {
+        "name": "cluster_size_problem_threshold_for_0.1_rms_tol",
+        "value": "60 atoms"
+      },
+      {
+        "name": "steps_per_run",
+        "value": "5000"
+      },
+      {
+        "name": "num_runs",
+        "value": "100"
+      },
+      {
+        "name": "algorithm_bias",
+        "value": "unbiased"
+      },
+      {
+        "name": "initialization",
+        "value": "varied; some runs seeded from decahedra/global minima (e.g., LJ75, LJ76, LJ77, LJ102\u2013LJ104)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Cambridge Cluster Database",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Unbiased global minimum search based on Marks decahedron",
+        "description": "An unbiased algorithm to find global minima for Lennard-Jones clusters, based on the Marks decahedron motif, demonstrated around LJ 75 and LJ 102."
+      },
+      {
+        "name": "Transformed potential energy surface via minimization mapping",
+        "description": "Defines a transformed energy \u1ebc(X) = min{E(X)}, where an energy minimization is performed from configuration X, preserving the global minimum and relative energies of local minima to facilitate efficient global minimum location."
+      },
+      {
+        "name": "Monte Carlo runs",
+        "description": "Monte Carlo simulations were conducted at a temperature that was not systematically optimized."
+      },
+      {
+        "name": "Unbiased algorithm",
+        "description": "Algorithm performance was gauged without biasing the initial configurations, starting from random configurations rather than seeded decahedral, icosahedral, or fcc morphologies."
+      },
+      {
+        "name": "Global optimization for Lennard-Jones clusters",
+        "description": "Global minima search for Lennard-Jones clusters (N \u2264 110) considered relatively easy compared to Morse clusters."
+      },
+      {
+        "name": "Morse clusters evaluation",
+        "description": "Used Morse potential with varying range as a more stringent and general test; at short range the PES is very rugged with increasing numbers of minima and barrier heights as the range decreases."
+      },
+      {
+        "name": "Unbiased global optimization algorithm",
+        "description": "An unbiased algorithm performing multiple Monte Carlo runs to locate global minima of Lennard-Jones clusters."
+      },
+      {
+        "name": "Monte Carlo runs (unseeded and seeded)",
+        "description": "Longer unseeded and shorter seeded Monte Carlo runs; seeding from structurally related/neighboring cluster global minima was used in short runs."
+      },
+      {
+        "name": "Polak-Ribiere Conjugate Gradient Minimization",
+        "description": "Energy minimizations performed using the Polak-Ribiere variant of the conjugate gradient algorithm to map configurations to their local minima."
+      },
+      {
+        "name": "Energy Landscape Transformation to Local Minima",
+        "description": "Assigns the energy of any configuration to that of the local minimum obtained by geometry optimization, producing a staircase-like potential energy surface."
+      },
+      {
+        "name": "Canonical Monte Carlo Sampling",
+        "description": "The transformed energy landscape was explored via a canonical Monte Carlo simulation at constant reduced temperature."
+      },
+      {
+        "name": "Conjugate gradient search",
+        "description": "Local optimization requiring RMS gradient < 0.01 (reduced units) and energy change < 0.1 \u03b5 between steps; tighter tolerances used in reoptimization."
+      },
+      {
+        "name": "Canonical simulation with reoptimization",
+        "description": "Lowest-energy structures from a canonical simulation were saved and reoptimized with RMS force tolerance 1e-4 and energy difference tolerance 1e-9."
+      },
+      {
+        "name": "Seeding",
+        "description": "Technique employed to aid calculations; initial configurations used to start optimizations."
+      },
+      {
+        "name": "Freezing",
+        "description": "Technique employed to aid calculations; subset of atoms held fixed during certain moves."
+      },
+      {
+        "name": "Angular moves",
+        "description": "If the highest pair energy E(i) exceeded a fraction \u03b1 of the lowest pair energy, an angular move was applied to that atom with others fixed; \u03b1 adjusted to target 0.5 acceptance ratio."
+      },
+      {
+        "name": "Pair energy per atom criterion",
+        "description": "Used E(i) = 4\u03b5 \u03a3_{j\u2260i}[(\u03c3/rij)^12 \u2212 (\u03c3/rij)^6] to compute per-atom pair energy; total energy E = 1/2 \u03a3_i E(i)."
+      },
+      {
+        "name": "Unbiased Monte Carlo search",
+        "description": "Multiple Monte Carlo runs conducted to locate decahedral global minima without biasing the sampling."
+      },
+      {
+        "name": "Seeding from decahedral/global-minimum structures",
+        "description": "Short runs initialized from specific decahedral or global-minimum geometries (e.g., LJ75, LJ76, LJ77, LJ102\u2013LJ104) to probe catchment areas."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Global minimum found frequency (LJ38, longer unseeded runs)",
+        "value": "four out of five",
+        "split": null
+      },
+      {
+        "metric": "Average steps to first success (LJ38)",
+        "value": "within a thousand Monte Carlo steps on average",
+        "split": null
+      },
+      {
+        "metric": "Global minimum found frequency (LJ75, longer Monte Carlo runs)",
+        "value": "just one",
+        "split": null
+      },
+      {
+        "metric": "Global minimum found in short run seeded from LJ76 global minimum (for LJ75)",
+        "value": "yes",
+        "split": null
+      },
+      {
+        "metric": "LJ75 decahedral global minimum found (success frequency)",
+        "value": "4 out of 100",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "study_id": "study032",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study032/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:44:14.632710+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 3,
+    "methods": 16,
+    "evaluation_results": 27
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "interactive attention frequency (leaderboard results)",
+        "value": "2 Hz"
+      },
+      {
+        "name": "interactive attention frequency (lowest studied)",
+        "value": "0.125 Hz"
+      },
+      {
+        "name": "rollout length",
+        "value": "8 seconds"
+      },
+      {
+        "name": "number of predicted trajectories per target agent (marginal challenge)",
+        "value": "6"
+      },
+      {
+        "name": "number of weighted joint trajectories output (interactive challenge)",
+        "value": "6"
+      },
+      {
+        "name": "number of interacting agents labeled per test example (interactive challenge)",
+        "value": "2"
+      },
+      {
+        "name": "input context length",
+        "value": "1 second"
+      },
+      {
+        "name": "prediction target horizon",
+        "value": "8 seconds"
+      },
+      {
+        "name": "window of interest length",
+        "value": "9 seconds"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "WOMD interactive",
+        "version": null
+      },
+      {
+        "name": "WOMD",
+        "version": null
+      },
+      {
+        "name": "Waymo Open Motion Dataset (WOMD)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Temporally causal conditioning",
+        "description": "One query agent is fixed to follow a specified trajectory while the target agent is stochastically rolled out; the model naturally supports this setting, similar to previous autoregressive approaches."
+      },
+      {
+        "name": "Acausal conditioning",
+        "description": "The model is modified to leak the query agent's full trajectory, exposing its future to the target agent during conditioning; resembles approaches that model the acausal conditional distribution directly or access it via inference in an energy-based model."
+      },
+      {
+        "name": "Marginal prediction",
+        "description": "Predictions from the model without conditioning on a query agent's trajectory, used as the baseline setting for comparison."
+      },
+      {
+        "name": "MotionLM (joint)",
+        "description": "Joint rollout model performing interactive attention across modeled agents at 2 Hz during training and inference rollouts, allowing agents to react to one another."
+      },
+      {
+        "name": "MotionLM (marginal)",
+        "description": "Marginal version that does not perform interactive attention across modeled agents during training and inference rollouts; agents only observe each other's initial states (0.125 Hz)."
+      },
+      {
+        "name": "Interactive attention frequency ablation",
+        "description": "Varies the frequency of the interactive attention operation while keeping other architecture details constant to assess importance of inter-agent reactivity during joint rollouts."
+      },
+      {
+        "name": "Prediction overlap",
+        "description": "Custom prediction overlap metric (lower is better) used to compare model configurations on the WOMD interactive test and validation sets."
+      },
+      {
+        "name": "Temporally causal conditional prediction",
+        "description": "Conditional prediction in which the query agent's future influences other agents' predictions only in a temporally causal manner, preserving the directionality of reactions"
+      },
+      {
+        "name": "Acausal conditional prediction",
+        "description": "Conditional prediction that exposes the model to the query agent's full future without temporal causality constraints, yielding better scores but potentially nonsensical reactions"
+      },
+      {
+        "name": "MotionLM",
+        "description": "Autoregressive model that generates joint rollouts directly for multimodal future behavior prediction, without reliance on trajectory anchors or static intention points"
+      },
+      {
+        "name": "JFP",
+        "description": "Previous top scoring entry that scores pairs of previously constructed marginal trajectories"
+      },
+      {
+        "name": "Scene Transformer",
+        "description": "Baseline model compared on prediction overlap rate"
+      },
+      {
+        "name": "LSTM Baseline",
+        "description": "Baseline model compared on prediction overlap rate"
+      },
+      {
+        "name": "Marginal prediction challenge",
+        "description": "Model outputs six trajectories for each target agent, along with likelihoods of each mode."
+      },
+      {
+        "name": "Interactive prediction challenge",
+        "description": "Two interacting agents are labeled per test example; the model outputs six weighted joint trajectories."
+      },
+      {
+        "name": "Evaluation metrics",
+        "description": "Soft mAP (primary, marginal), mAP (primary, interactive), miss rate (secondary), and minADE and minFDE (distance metrics)."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Soft mAP relative increase (acausal conditioning vs. marginal)",
+        "value": "8.2%",
+        "split": null
+      },
+      {
+        "metric": "Soft mAP relative increase (temporally causal conditioning vs. marginal)",
+        "value": "3.7%",
+        "split": null
+      },
+      {
+        "metric": "Prediction Overlap (\u2193) - LSTM Baseline [14]",
+        "value": "0.07462",
+        "split": "test"
+      },
+      {
+        "metric": "Prediction Overlap (\u2193) - Scene Transformer [32]",
+        "value": "0.04336",
+        "split": "test"
+      },
+      {
+        "metric": "Prediction Overlap (\u2193) - JFP [29]",
+        "value": "0.02671",
+        "split": "test"
+      },
+      {
+        "metric": "Prediction Overlap (\u2193) - MotionLM (joint)",
+        "value": "0.02607",
+        "split": "test"
+      },
+      {
+        "metric": "Prediction Overlap (\u2193) - MotionLM (marginal)",
+        "value": "0.0404",
+        "split": "validation"
+      },
+      {
+        "metric": "Prediction Overlap (\u2193) - MotionLM (joint)",
+        "value": "0.0292",
+        "split": "validation"
+      },
+      {
+        "metric": "minADE (marginal)",
+        "value": "0.6069",
+        "split": "validation"
+      },
+      {
+        "metric": "minFDE (marginal)",
+        "value": "1.2236",
+        "split": "validation"
+      },
+      {
+        "metric": "Miss Rate (marginal)",
+        "value": "0.1406",
+        "split": "validation"
+      },
+      {
+        "metric": "Soft mAP (marginal)",
+        "value": "0.3951",
+        "split": "validation"
+      },
+      {
+        "metric": "minADE (temporally causal conditional)",
+        "value": "0.5997",
+        "split": "validation"
+      },
+      {
+        "metric": "minFDE (temporally causal conditional)",
+        "value": "1.2034",
+        "split": "validation"
+      },
+      {
+        "metric": "Miss Rate (temporally causal conditional)",
+        "value": "0.1377",
+        "split": "validation"
+      },
+      {
+        "metric": "Soft mAP (temporally causal conditional)",
+        "value": "0.4096",
+        "split": "validation"
+      },
+      {
+        "metric": "minADE (acausal conditional)",
+        "value": "0.5899",
+        "split": "validation"
+      },
+      {
+        "metric": "minFDE (acausal conditional)",
+        "value": "1.1804",
+        "split": "validation"
+      },
+      {
+        "metric": "Miss Rate (acausal conditional)",
+        "value": "0.1338",
+        "split": "validation"
+      },
+      {
+        "metric": "Soft mAP (acausal conditional)",
+        "value": "0.4274",
+        "split": "validation"
+      },
+      {
+        "metric": "Soft mAP increase (temporally causal)",
+        "value": "3.7%",
+        "split": null
+      },
+      {
+        "metric": "mAP relative improvement over JFP (interactive prediction)",
+        "value": "6%",
+        "split": null
+      },
+      {
+        "metric": "miss rate relative improvement over JFP (interactive prediction)",
+        "value": "3%",
+        "split": null
+      },
+      {
+        "metric": "Prediction Overlap (LSTM Baseline)",
+        "value": "0.07462",
+        "split": "test"
+      },
+      {
+        "metric": "Prediction Overlap (Scene Transformer)",
+        "value": "0.04336",
+        "split": "test"
+      },
+      {
+        "metric": "Prediction Overlap (JFP)",
+        "value": "0.02671",
+        "split": "test"
+      },
+      {
+        "metric": "Prediction Overlap (MotionLM joint)",
+        "value": "0.02607",
+        "split": "test"
+      }
+    ]
+  }
+}

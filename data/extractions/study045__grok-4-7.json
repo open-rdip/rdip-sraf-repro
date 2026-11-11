@@ -1,0 +1,156 @@
+{
+  "study_id": "study045",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study045/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:15:26.336280+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 7,
+    "methods": 18,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Jraph",
+        "version": null
+      },
+      {
+        "name": "JAX",
+        "version": null
+      },
+      {
+        "name": "Haiku",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "gns_model_size_range",
+        "value": "10 million to 1.2 billion parameters"
+      },
+      {
+        "name": "gns_from_scratch_model_size",
+        "value": "130 million parameters"
+      },
+      {
+        "name": "num_gns_models",
+        "value": "4"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "QM9",
+        "version": null
+      },
+      {
+        "name": "PCQM4Mv2",
+        "version": null
+      },
+      {
+        "name": "OC20",
+        "version": null
+      },
+      {
+        "name": "DES15K",
+        "version": null
+      },
+      {
+        "name": "S2EF",
+        "version": null
+      },
+      {
+        "name": "IS2RE",
+        "version": null
+      },
+      {
+        "name": "IS2RS",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GNS-TAT with Noisy Nodes (random initialization)",
+        "description": "GNS-TAT with Noisy Nodes trained from a random initialization, evaluated on QM9."
+      },
+      {
+        "name": "GNS-TAT with Noisy Nodes (pre-trained)",
+        "description": "GNS-TAT with Noisy Nodes using pre-trained parameters, evaluated on QM9."
+      },
+      {
+        "name": "Denoising pre-training",
+        "description": "Pre-training is done on PCQM4Mv2 via denoising."
+      },
+      {
+        "name": "Atom type masking and prediction",
+        "description": "Atom type masking and prediction used during pre-training, which additionally helped QM9 performance."
+      },
+      {
+        "name": "Per-target fine-tuning",
+        "description": "A separate model is fine-tuned for each of the 12 QM9 targets using a single pre-trained model, repeated for three seeds including pre-training."
+      },
+      {
+        "name": "HOMO-tuned hyperparameters",
+        "description": "Hyperparameters, including the noise scale for denoising during pre-training and fine-tuning, are tuned on the HOMO target and then kept fixed for all other targets."
+      },
+      {
+        "name": "pre-training",
+        "description": "Pre-training applied to the architecture on the HOMO and LUMO targets in QM9, yielding a performance boost and SOTA results."
+      },
+      {
+        "name": "TorchMD-NET",
+        "description": "Results shown are from the authors' runs using Th\u00f6lke & De Fabritiis's 2022 open-source code, which led to slightly worse results than the published ones; pre-training results still outperform the published results."
+      },
+      {
+        "name": "GNS-TAT with Noisy Nodes",
+        "description": "Compared when trained from scratch or using pre-trained parameters for different numbers of training examples from QM9."
+      },
+      {
+        "name": "GNS-TAT",
+        "description": "Included as a baseline; also assessed when varying the amount of pre-training data with fixed downstream dataset size."
+      },
+      {
+        "name": "GNS",
+        "description": "Assessed when varying the amount of pre-training data while fixing the downstream dataset size."
+      },
+      {
+        "name": "AttrMask",
+        "description": "2D-based pre-training by masking and predicting atomic numbers"
+      },
+      {
+        "name": "Noisy Nodes",
+        "description": "Improves performance compared to training from scratch"
+      },
+      {
+        "name": "Denoising",
+        "description": "Pre-training by denoising structures, including structures obtained through DFT"
+      },
+      {
+        "name": "DFT",
+        "description": "Relatively cheap method used to obtain structures for denoising pre-training"
+      },
+      {
+        "name": "self-supervised pre-training",
+        "description": "Pre-training is self-supervised using only unlabelled structures"
+      },
+      {
+        "name": "pre-training via denoising",
+        "description": "Each model is pre-trained via denoising using the trajectories provided for the IS2RE/IS2RS tasks as described in Section 4.3."
+      },
+      {
+        "name": "training from scratch",
+        "description": "A 130 million parameter variant of GNS trained from scratch, which underperforms the pre-trained models."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

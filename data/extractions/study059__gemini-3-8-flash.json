@@ -1,0 +1,121 @@
+{
+  "study_id": "study059",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study059/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:03:09.359349+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 2,
+    "methods": 8,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03bb2",
+        "value": "1.0"
+      },
+      {
+        "name": "training rounds",
+        "value": "10"
+      },
+      {
+        "name": "K",
+        "value": "3"
+      },
+      {
+        "name": "C",
+        "value": "3"
+      },
+      {
+        "name": "rounds",
+        "value": "10"
+      },
+      {
+        "name": "epochs",
+        "value": "50"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "R8",
+        "version": null
+      },
+      {
+        "name": "Reuters8",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "FedSeIT",
+        "description": "A method in FCL setup where alignment and relevance of foreign tasks parameters at each client minimise inter-client interference and improve inter-client transfer learning without dense-layer-sharing"
+      },
+      {
+        "name": "FedWeIT",
+        "description": "Baseline model performing weighted additive filter composition."
+      },
+      {
+        "name": "Fed-SeIT+DLS",
+        "description": "Baseline or ablation variant evaluated against FedSeIT"
+      },
+      {
+        "name": "Federated Selective Inter-client Transfer (FedSeIT)",
+        "description": "A framework designed to minimize inter-client interference and communication cost while maximizing inter-client knowledge transfer in federated continual learning by decomposing each client's model parameters into dense local base parameters, sparse task-adaptive parameters, and sparse mask parameters."
+      },
+      {
+        "name": "SIT",
+        "description": "Mechanism for selecting relevant foreign parameters from historical tasks of foreign clients"
+      },
+      {
+        "name": "dense-layer-sharing (DLS)",
+        "description": "Application of sharing dense layers across clients in FedSeIT"
+      },
+      {
+        "name": "Additive parameter decomposition",
+        "description": "Decomposes client model parameters into base parameters masked for selective global knowledge utilization and task-adaptive parameters capturing task-specific knowledge."
+      },
+      {
+        "name": "Server parameter aggregation",
+        "description": "Accumulates task-generic global knowledge across clients by aggregating local base parameters sent from all clients."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "improvement over Fed-SeIT+DLS (\u03bb2=1.0)",
+        "value": "4.4%",
+        "split": null
+      },
+      {
+        "metric": "improvement over Fed-SeIT+DLS (\u03bb2=0.1)",
+        "value": "19.1%",
+        "split": null
+      },
+      {
+        "metric": "average gain over FedWeIT in text classification",
+        "value": "12.4%",
+        "split": null
+      },
+      {
+        "metric": "performance gain of FedSeIT vs FedWeIT (\u03bb2=1.0)",
+        "value": "6.8%",
+        "split": "test"
+      },
+      {
+        "metric": "performance gain of FedSeIT vs FedWeIT (\u03bb2=0.1)",
+        "value": "12.5%",
+        "split": "test"
+      }
+    ]
+  }
+}

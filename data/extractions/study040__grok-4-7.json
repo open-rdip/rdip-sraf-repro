@@ -1,0 +1,116 @@
+{
+  "study_id": "study040",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study040/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:06:27.401383+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 5,
+    "datasets": 4,
+    "methods": 9,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      2021
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "L",
+        "value": "{3,4,5}"
+      },
+      {
+        "name": "D",
+        "value": "{128,256}"
+      },
+      {
+        "name": "F",
+        "value": "2D"
+      },
+      {
+        "name": "default_maximum_epochs",
+        "value": "100"
+      },
+      {
+        "name": "maximum_epochs_ablation_electricity_traffic",
+        "value": "20"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ILI",
+        "version": null
+      },
+      {
+        "name": "Electricity",
+        "version": null
+      },
+      {
+        "name": "Traffic",
+        "version": null
+      },
+      {
+        "name": "Weather",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Original TST",
+        "description": "Neither patching nor channel-independence is included; the original TST model (Zerveas et al., 2021)."
+      },
+      {
+        "name": "Patching with channel-independence",
+        "description": "Patching together with channel-independence achieves the best results, especially on larger datasets (Weather, Traffic, and Electricity) that are less susceptible to overfitting; improvement is also significant on ILI."
+      },
+      {
+        "name": "Instance Normalization",
+        "description": "Normalization technology used in many time series models to improve forecasting performance."
+      },
+      {
+        "name": "supervised PatchTST",
+        "description": "Multivariate long-term forecasting with instance normalization (+in) or without instance normalization (-in)."
+      },
+      {
+        "name": "transfer learning",
+        "description": "Pre-training on the Electricity dataset then transferred to other 6 datasets. Except Traffic, the number of time series used in pre-training is much larger than during fine-tuning."
+      },
+      {
+        "name": "PatchTST",
+        "description": "Model trained as PatchTST/64 and PatchTST/42, with and without instance normalization, and evaluated as self-supervised PatchTST on multivariate forecasting."
+      },
+      {
+        "name": "patching",
+        "description": "Design credited, together with channel independence, as the main source of improvement over other Transformer methods."
+      },
+      {
+        "name": "channel independence",
+        "description": "Design credited, together with patching, as the main source of forecasting improvement."
+      },
+      {
+        "name": "self-supervised representation learning",
+        "description": "Self-supervised PatchTST used for a full multivariate forecasting benchmark in Table 12, an extended version of Table 4."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "MSE",
+        "value": "0.152",
+        "split": null
+      },
+      {
+        "metric": "MAE",
+        "value": "0.199",
+        "split": null
+      }
+    ]
+  }
+}

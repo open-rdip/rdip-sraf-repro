@@ -1,0 +1,186 @@
+{
+  "study_id": "study013",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study013/ext/grok-4-7",
+  "extracted_at": "2026-11-09T18:48:46.557840+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 9,
+    "methods": 17,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Python",
+        "version": null
+      },
+      {
+        "name": "Scikit-Learn",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "cross-validation",
+        "value": "5-fold"
+      },
+      {
+        "name": "size",
+        "value": "128"
+      },
+      {
+        "name": "training_fraction",
+        "value": "80%"
+      },
+      {
+        "name": "held_out_fraction",
+        "value": "20%"
+      },
+      {
+        "name": "iteration_selection_interval",
+        "value": "500"
+      },
+      {
+        "name": "stratification",
+        "value": "preserve percentage of samples per class"
+      },
+      {
+        "name": "image_size",
+        "value": "64x64"
+      },
+      {
+        "name": "input_conversion",
+        "value": "first channel converted and rescaled to 8-bit RGB"
+      },
+      {
+        "name": "reported_layers",
+        "value": "top 3 overall performing layers"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COOS-7",
+        "version": null
+      },
+      {
+        "name": "COOS",
+        "version": null
+      },
+      {
+        "name": "Training",
+        "version": null
+      },
+      {
+        "name": "Test1",
+        "version": null
+      },
+      {
+        "name": "Test2",
+        "version": null
+      },
+      {
+        "name": "Test3",
+        "version": null
+      },
+      {
+        "name": "Test4",
+        "version": null
+      },
+      {
+        "name": "Training dataset",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "protein localization classification",
+        "description": "Dataset structured as a protein localization classification problem using proteins chosen as distinct examples of different protein localizations"
+      },
+      {
+        "name": "randomized plate arrangements",
+        "description": "Randomized plate arrangements used to enable stratification of the dataset by multiple kinds of covariate shifts."
+      },
+      {
+        "name": "temporal experiment replication",
+        "description": "Replication of experiments over time, enabling stratification by covariate shifts including variation across sites and microscopes."
+      },
+      {
+        "name": "classification baselines",
+        "description": "Features were extracted and classifiers were built using a variety of classifiers to provide baselines for out-of-sample generalization on COOS-7."
+      },
+      {
+        "name": "classification setting",
+        "description": "All methods must be trained and optimized using the Training dataset exclusively, and their performance evaluated on each of the four test datasets."
+      },
+      {
+        "name": "Test3 construction",
+        "description": "Chose the two chronologically latest experiments to emphasize potential non-stationarities over time; in most classes, Test3 experiments differ from the Training dataset by a gap of months."
+      },
+      {
+        "name": "5-fold cross-validation",
+        "description": "Selected the classifier with the best performance on a 5-fold cross-validation of the Training dataset."
+      },
+      {
+        "name": "Scikit-Learn classifiers",
+        "description": "All classifiers were implemented in Python with Scikit-Learn."
+      },
+      {
+        "name": "balanced classification error",
+        "description": "Reported balanced classification error to control for differences in class balance from dataset to dataset."
+      },
+      {
+        "name": "deep learning features",
+        "description": "Features from deep learning models evaluated on test datasets."
+      },
+      {
+        "name": "logistic regression",
+        "description": "Logistic regression classifiers built on classic computer vision features."
+      },
+      {
+        "name": "fully-supervised CNN",
+        "description": "Fully-supervised CNN achieved the lowest error on Test3 and Test4."
+      },
+      {
+        "name": "texture features",
+        "description": "Texture features benefited more from classification models that weigh features (e.g. logistic regression)."
+      },
+      {
+        "name": "end-to-end evaluation",
+        "description": "Report end-to-end performance of the trained model."
+      },
+      {
+        "name": "last fully-connected layer features",
+        "description": "Extracted features from the last fully-connected layer of the trained model for building further classifiers."
+      },
+      {
+        "name": "VGG16",
+        "description": "Extracted features from a pretrained VGG16 CNN on ImageNet, the best-performing previously-reported model that accepts 64x64 images. First channel converted and rescaled to 8-bit RGB; second-channel features excluded because they decreased performance. Features extracted from all max-pooling convolutional layers; benchmarks reported only for the top 3 overall performing layers."
+      },
+      {
+        "name": "PCI",
+        "description": "Extracted features learned from a self-supervised method designed for microscopy images, which achieved unsupervised state-of-the-art results in classifying protein localization for 64x64 images of yeast cells."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "error",
+        "value": "as little as 1.1%",
+        "split": "Test1, Test2"
+      }
+    ]
+  }
+}

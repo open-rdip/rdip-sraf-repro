@@ -1,0 +1,192 @@
+{
+  "study_id": "study009",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study009/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:11:34.244182+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 3,
+    "methods": 17,
+    "evaluation_results": 8
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "feature_stride",
+        "value": "1"
+      },
+      {
+        "name": "deconvolution_modules",
+        "value": "1"
+      },
+      {
+        "name": "training_image_size",
+        "value": "512"
+      },
+      {
+        "name": "backbone",
+        "value": "HRNet-W32"
+      },
+      {
+        "name": "residual_blocks_in_deconvolution_module",
+        "value": "4"
+      },
+      {
+        "name": "testing_image_size",
+        "value": "same as training image size"
+      },
+      {
+        "name": "crop_size",
+        "value": "640x640"
+      },
+      {
+        "name": "training_parameters",
+        "value": "follow COCO exactly"
+      },
+      {
+        "name": "train_split",
+        "value": "CrowdPose train and val"
+      },
+      {
+        "name": "test_split",
+        "value": "CrowdPose test"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": "2017"
+      },
+      {
+        "name": "COCO2017 val dataset",
+        "version": null
+      },
+      {
+        "name": "CrowdPose",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "HigherHRNet",
+        "description": "Bottom-up human pose estimation model using higher-resolution heatmaps and scale-aware prediction."
+      },
+      {
+        "name": "HRNet",
+        "description": "Baseline network for human pose estimation; compared against HigherHRNet in ablations."
+      },
+      {
+        "name": "Multi-resolution supervision (MSR)",
+        "description": "Supervision strategy applied at multiple resolutions to improve performance."
+      },
+      {
+        "name": "Feature concatenation",
+        "description": "Concatenation of feature maps as a model component in ablation."
+      },
+      {
+        "name": "Residual blocks",
+        "description": "Use of residual blocks as a component in HigherHRNet ablation."
+      },
+      {
+        "name": "Deconvolution modules after HRNet",
+        "description": "One or two deconvolution modules appended to HRNet to upsample features to input resolution; two modules reduced AP compared to one."
+      },
+      {
+        "name": "Scale-aware prediction",
+        "description": "Combines higher and smaller resolution heatmaps to maintain performance across person scales."
+      },
+      {
+        "name": "Deconvolution module",
+        "description": "Adds a deconvolution layer to generate higher resolution heatmaps; one module used by default for COCO."
+      },
+      {
+        "name": "Heatmap aggregation strategy",
+        "description": "Aggregates heatmaps across resolutions/scales for inference, yielding scale-aware predictions and improved AP, especially for large persons."
+      },
+      {
+        "name": "Deconvolution module with extra residual blocks",
+        "description": "Adds 4 residual blocks in the deconvolution module to refine feature maps and improve AP for medium and large persons."
+      },
+      {
+        "name": "Backbone variants",
+        "description": "Evaluated HRNet backbones HRNet-W32, HRNet-W40, and HRNet-W48, affecting parameter count, FLOPs, and AP on COCO2017 val."
+      },
+      {
+        "name": "HRNet-W32",
+        "description": "Backbone where the 1/4 resolution feature map has 32 channels; used in previous experiments."
+      },
+      {
+        "name": "HRNet-W40",
+        "description": "Larger backbone variant evaluated to improve performance for medium and large persons."
+      },
+      {
+        "name": "HRNet-W48",
+        "description": "Largest backbone variant evaluated; shows consistent performance improvements for medium and large persons."
+      },
+      {
+        "name": "HigherHRNet-W48",
+        "description": "Best model trained on CrowdPose train and val with a crop size of 640x640 and evaluated on the test set; outperforms prior top-down methods."
+      },
+      {
+        "name": "SPPE [24]",
+        "description": "Previous best method that performs a global refinement of a top-down method; used as a comparison baseline."
+      },
+      {
+        "name": "naive top-down methods",
+        "description": "Baseline category of top-down approaches used for comparison."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AP",
+        "value": "66.3",
+        "split": "validation"
+      },
+      {
+        "metric": "AP^M",
+        "value": "60.8",
+        "split": "validation"
+      },
+      {
+        "metric": "AP^L",
+        "value": "74.0",
+        "split": "validation"
+      },
+      {
+        "metric": "AP",
+        "value": "\u22120.8AP",
+        "split": null
+      },
+      {
+        "metric": "AP_M",
+        "value": "61.5",
+        "split": "validation"
+      },
+      {
+        "metric": "AP_L",
+        "value": "76.1",
+        "split": "validation"
+      },
+      {
+        "metric": "APM",
+        "value": "+1.8 AP",
+        "split": null
+      },
+      {
+        "metric": "APH",
+        "value": "+1.5 AP",
+        "split": null
+      }
+    ]
+  }
+}

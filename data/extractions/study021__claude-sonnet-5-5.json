@@ -1,0 +1,218 @@
+{
+  "study_id": "study021",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study021/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:39:03.523955+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 2,
+    "methods": 21,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "N (number of samples)",
+        "value": "varied; results in Table 3 (specific values not stated in passage)"
+      },
+      {
+        "name": "R in L_match",
+        "value": "varied; results in Table 4 (specific values not stated in passage)"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "0.01"
+      },
+      {
+        "name": "optimizer",
+        "value": "SGD"
+      },
+      {
+        "name": "batch size",
+        "value": "3 on 1 GPU"
+      },
+      {
+        "name": "training steps",
+        "value": "60,000 for each of the three tasks"
+      },
+      {
+        "name": "\u03b1",
+        "value": "10"
+      },
+      {
+        "name": "N",
+        "value": "20"
+      },
+      {
+        "name": "R",
+        "value": "1.0"
+      },
+      {
+        "name": "dimension size of relation feature and prototype (d)",
+        "value": "128"
+      },
+      {
+        "name": "prototype L2 norm",
+        "value": "\u2225ci\u22252 = 1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "VG",
+        "version": null
+      },
+      {
+        "name": "GQA",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DPL",
+        "description": "Model-agnostic approach that improves baseline scene graph generation models by understanding semantic diversity of predicates and integrating them during inference, despite biased training."
+      },
+      {
+        "name": "TDE",
+        "description": "Unbiased SGG method that performs unbiased prediction from biased training; used as a comparison."
+      },
+      {
+        "name": "DLFE",
+        "description": "Unbiased SGG method that performs unbiased prediction from biased training; used as a comparison."
+      },
+      {
+        "name": "Motifs",
+        "description": "Baseline SGG model [37] used for ablation studies on the PredCls task on the VG dataset."
+      },
+      {
+        "name": "Re-balancing methods",
+        "description": "Recent unbiased SGG methods based on re-balancing, used as comparisons to DPL."
+      },
+      {
+        "name": "Motifs + re-weighting",
+        "description": "Motifs baseline combined with a re-weighting strategy; tends to predict 'on' with the highest confidence, followed by 'in'."
+      },
+      {
+        "name": "Motifs + DPL",
+        "description": "Motifs combined with DPL, which gives relatively unbiased predictions with fine-grained predicates (e.g., growing on, hanging from, mounted on, attached to)."
+      },
+      {
+        "name": "sample-relation feature matching",
+        "description": "Process that matches samples generated from predicates (e.g., attached to, growing on) with relation features, used to learn the range each predicate can represent and to estimate the specific semantics associated with relation features."
+      },
+      {
+        "name": "orthogonal loss",
+        "description": "Loss applied to prevent unexpected overlap between distributions of unrelated predicates that arises from the symmetry of the normal distribution around each prototype, where increased variance in one direction also increases it in the opposite direction."
+      },
+      {
+        "name": "PCA visualization",
+        "description": "Principal component analysis used to visualize prototypes, relation features of subject-object pairs, and samples of each prototype; variances are equally scaled up to generate samples to illustrate learned variances"
+      },
+      {
+        "name": "Matching loss and orthogonal loss",
+        "description": "Used together to effectively learn appropriate variance; removing the orthogonal loss causes a performance drop due to unexpected overlap"
+      },
+      {
+        "name": "Euclidean distance-based prediction",
+        "description": "Conventional prediction approach that tends to classify most relationships as the predicate 'on', indicating biased predictions"
+      },
+      {
+        "name": "Pretrained object detector",
+        "description": "A new object detector pretrained for the GQA dataset, so performance cannot be directly compared with other studies"
+      },
+      {
+        "name": "IMP",
+        "description": "Baseline model [30] compared in Table 1 on the VG dataset"
+      },
+      {
+        "name": "Semantic Diversity aware Prototype-based Learning (DPL)",
+        "description": "Framework that obtains a relation feature from each subject-object pair, creates a prototype for each predicate, and performs prototype-based biased training, semantic diversity learning, and unbiased inference."
+      },
+      {
+        "name": "Prototype-based Biased Training",
+        "description": "Trains each relation feature z = \u03d5proj(r), z\u2208R^d, to move closer to the L2-normalized prototype of its ground-truth predicate class. The probability of the i-th predicate class is computed as Softmax(\u2212a\u2225z\u2212ci\u22252+b) using Euclidean distance."
+      },
+      {
+        "name": "Semantic Diversity Learning",
+        "description": "Training stage (Sec 3.3) that uses a sample matching loss and an orthogonal loss, along with cross entropy loss, to learn the semantic diversity of predicates."
+      },
+      {
+        "name": "Unbiased Inference",
+        "description": "Inference stage described in Sec 3.4 of the paper."
+      },
+      {
+        "name": "Case 1 (N assignment)",
+        "description": "Head classes are assigned larger N while tail classes receive smaller N, with the total sum of N per predicate held constant"
+      },
+      {
+        "name": "Case 2 (N assignment)",
+        "description": "Tail classes are assigned larger N while head classes receive smaller N, with the total sum of N per predicate held constant"
+      },
+      {
+        "name": "Component ablation (L_ortho, L_match)",
+        "description": "Ablation study comparing the influence of each component, including L_ortho and L_match, on performance improvement"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Unspecified metric (table fragment)",
+        "value": "56.3",
+        "split": null
+      },
+      {
+        "metric": "mAP (object detector on GQA)",
+        "value": "25.33",
+        "split": null
+      },
+      {
+        "metric": "PredCls R@50 / R@100 (IMP)",
+        "value": "61.1 / 63.1",
+        "split": null
+      },
+      {
+        "metric": "PredCls mR@50 / mR@100 (IMP)",
+        "value": "11.0 / 11.8",
+        "split": null
+      },
+      {
+        "metric": "PredCls F@50 / F@100 (IMP)",
+        "value": "18.6 / 19.9",
+        "split": null
+      },
+      {
+        "metric": "SGCls R@50 / R@100 (IMP)",
+        "value": "37.4 / 38.3",
+        "split": null
+      },
+      {
+        "metric": "SGCls mR@50 / mR@100 (IMP)",
+        "value": "6.4 / 6.7",
+        "split": null
+      },
+      {
+        "metric": "SGCls F@50 / F@100 (IMP)",
+        "value": "10.9 / 11.4",
+        "split": null
+      },
+      {
+        "metric": "SGDet R@50 / R@100 (IMP)",
+        "value": "23.6 / 28.7",
+        "split": null
+      },
+      {
+        "metric": "SGDet mR@50 / mR@100 (IMP)",
+        "value": "3.3 / 4.1",
+        "split": null
+      }
+    ]
+  }
+}

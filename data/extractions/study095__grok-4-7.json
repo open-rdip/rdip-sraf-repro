@@ -1,0 +1,206 @@
+{
+  "study_id": "study095",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study095/ext/grok-4-7",
+  "extracted_at": "2026-11-09T22:05:05.383354+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 4,
+    "methods": 14,
+    "evaluation_results": 13
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Faiss",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "eight Nvidia V100 GPUs",
+      "cuda_version": null,
+      "cpu_info": "two Intel Xeon E5-2698 v4 CPUs"
+    },
+    "hyperparameters": [
+      {
+        "name": "PQ code size",
+        "value": "96 and 8 bits"
+      },
+      {
+        "name": "top-k",
+        "value": "1, 20, 100"
+      },
+      {
+        "name": "top_candidates",
+        "value": "1000"
+      },
+      {
+        "name": "LSH bits per passage",
+        "value": "768"
+      },
+      {
+        "name": "PQ number of centroids",
+        "value": "96"
+      },
+      {
+        "name": "fork",
+        "value": "1"
+      },
+      {
+        "name": "l",
+        "value": "1000"
+      },
+      {
+        "name": "k",
+        "value": "\u226520"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NQ",
+        "version": null
+      },
+      {
+        "name": "TQA",
+        "version": null
+      },
+      {
+        "name": "English Wikipedia",
+        "version": null
+      },
+      {
+        "name": "DPR preprocessed Wikipedia corpus",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "BPR",
+        "description": "Evaluated model for passage retrieval and QA, compared with DPR on top-k recall, index size, query time, and exact match accuracy."
+      },
+      {
+        "name": "DPR",
+        "description": "Baseline and training method from Karpukhin et al. (2020); experimental setup follows DPR and uses the same BERT-based reader."
+      },
+      {
+        "name": "BERT-based reader",
+        "description": "Same BERT-based reader as used by DPR, combined with the retrieval model to measure exact match QA accuracy."
+      },
+      {
+        "name": "Faiss",
+        "description": "Used to build the passage index (Johnson et al., 2019)."
+      },
+      {
+        "name": "candidate generation",
+        "description": "Treating all passages as candidates yields the same performance as using only top-1000 candidates, but significantly increases query time due to expensive inner product computation over all passage embeddings."
+      },
+      {
+        "name": "ELECTRA-large reader",
+        "description": "Improved reader based on ELECTRA-large (Clark et al., 2020) used instead of BERT-base."
+      },
+      {
+        "name": "Fusion-in-Decoder",
+        "description": "Large FiD model containing more than twice as many parameters as the authors' model; the only compared model not outperformed by the improved model."
+      },
+      {
+        "name": "DPR with linear scan",
+        "description": "Primary baseline: DPR using linear scan, following Karpukhin et al. (2020)."
+      },
+      {
+        "name": "DPR with HSNW",
+        "description": "Primary baseline: DPR with Hierarchical Navigable Small World (HSNW) graphs, a multi-layer structure of proximity graphs, following Karpukhin et al. (2020)."
+      },
+      {
+        "name": "LSH",
+        "description": "Post-hoc quantization of the DPR passage index using simple locality sensitive hashing, with 768 bits per passage."
+      },
+      {
+        "name": "PQ",
+        "description": "Post-hoc quantization of the DPR passage index using product quantization, with 96 centroids and 8-bit code size."
+      },
+      {
+        "name": "RAG",
+        "description": "Lewis et al., 2020. Pretrained model BART-large with 406M parameters."
+      },
+      {
+        "name": "FiD",
+        "description": "Izacard and Grave, 2020. FiD (base) uses T5-base (220M parameters); FiD (large) uses T5-large (770M parameters)."
+      },
+      {
+        "name": "ablation",
+        "description": "Disabling reranking degrades performance, supporting the two-stage approach. Disabling candidate generation treats all passages as candidates and is reported to match the performance of using only the remaining (text truncated) condition."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "index size",
+        "value": "65GB",
+        "split": "test"
+      },
+      {
+        "metric": "exact match QA accuracy (RAG, BART-large, NQ)",
+        "value": "44.5",
+        "split": null
+      },
+      {
+        "metric": "exact match QA accuracy (RAG, BART-large, TQA)",
+        "value": "56.1",
+        "split": null
+      },
+      {
+        "metric": "exact match QA accuracy (FiD base, T5-base, NQ)",
+        "value": "48.2",
+        "split": null
+      },
+      {
+        "metric": "exact match QA accuracy (FiD base, T5-base, TQA)",
+        "value": "65.0",
+        "split": null
+      },
+      {
+        "metric": "exact match QA accuracy (FiD large, T5-large, NQ)",
+        "value": "51.4",
+        "split": null
+      },
+      {
+        "metric": "exact match QA accuracy (FiD large, T5-large, TQA)",
+        "value": "67.6",
+        "split": null
+      },
+      {
+        "metric": "exact match QA accuracy (BPR l=1000, BERT-base, NQ)",
+        "value": "41.6",
+        "split": null
+      },
+      {
+        "metric": "exact match QA accuracy (BPR l=1000, BERT-base, TQA)",
+        "value": "56.8",
+        "split": null
+      },
+      {
+        "metric": "exact match QA accuracy (BPR l=1000, ELECTRA-large, NQ)",
+        "value": "49.0",
+        "split": null
+      },
+      {
+        "metric": "exact match QA accuracy (BPR l=1000, ELECTRA-large, TQA)",
+        "value": "65.6",
+        "split": null
+      },
+      {
+        "metric": "size",
+        "value": "65GB to 2GB",
+        "split": null
+      },
+      {
+        "metric": "DPR+HNSW storage",
+        "value": "151GB",
+        "split": null
+      }
+    ]
+  }
+}

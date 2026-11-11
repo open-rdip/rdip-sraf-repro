@@ -1,0 +1,268 @@
+{
+  "study_id": "study070",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study070/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:09:39.932675+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 2,
+    "methods": 16,
+    "evaluation_results": 27
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "SBERT",
+        "version": "all-mpnet-v2"
+      },
+      {
+        "name": "code-davinci-002",
+        "version": null
+      },
+      {
+        "name": "GPT-Neo",
+        "version": "2.7B"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning_rate",
+        "value": "2\u00d710\u22125"
+      },
+      {
+        "name": "warmup_steps",
+        "value": "1000"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "training_data_sample_ratio",
+        "value": "1%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pile",
+        "version": null
+      },
+      {
+        "name": "MultiWOZ",
+        "version": "2.1"
+      }
+    ],
+    "methods": [
+      {
+        "name": "retriever fine-tuning",
+        "description": "The retriever is fine-tuned on a selection pool sampled from training data and does not see any other DST data."
+      },
+      {
+        "name": "zero-shot setting",
+        "description": "No labeled examples are retrieved; a single formatting example turn is included, following previous zero-shot learning work."
+      },
+      {
+        "name": "Codex-Davinci",
+        "description": "Codex, pretrained on open-source code from Github, substantially outperforms GPT3, so Codex-Davinci is used for the experiments."
+      },
+      {
+        "name": "GPT-Neo and CodeGen",
+        "description": "Results are also reported using GPT-Neo (2.7B) and CodeGen (2.7B), both pretrained on Pile and open-source code."
+      },
+      {
+        "name": "joint goal accuracy",
+        "description": "Standard joint goal accuracy treats a prediction as correct only if for every domain all slots exactly match the ground-truth values."
+      },
+      {
+        "name": "all-domain JGA",
+        "description": "Prediction is correct only if for every domain all slots exactly match the ground-truth values; reported on few-shot settings, consistent with Wu et al., 2019."
+      },
+      {
+        "name": "per-domain JGA",
+        "description": "Reported on zero-shot settings."
+      },
+      {
+        "name": "slot-value F1",
+        "description": "F1 on slot-value pairs reported for analysis."
+      },
+      {
+        "name": "IC-DST",
+        "description": "Retriever initialized with SBERT all-mpnet-v2 (220M); finetuned with AdamW; similarity computed from the target for each training sample."
+      },
+      {
+        "name": "in-context learning",
+        "description": "Uses the code-davinci-002 engine; Codex-Davinci size of 175B is mentioned by some papers but not officially confirmed by OpenAI."
+      },
+      {
+        "name": "TRADE",
+        "description": "An encoder-decoder framework applied to the DST problem, enabling generalization to unseen values and domains. The first work to explore cross-domain transfer in DST. Makes a prediction for each domain and slot pair in separate passes."
+      },
+      {
+        "name": "SGP-DST",
+        "description": "Schema information is used as a prompt to query a sequence-to-sequence language model (e.g., T5). Achieves SOTA on MultiWOZ 2.2. The value for each domain and slot pair is predicted in a separate pass."
+      },
+      {
+        "name": "TransferQA",
+        "description": "Cited as Lin et al., 2021a; description not provided in the passage."
+      },
+      {
+        "name": "DS2",
+        "description": "DST reformulated as a dialogue summarization problem. Sequence-to-sequence language models are trained with synthetic summary templates. Dialogue states are recovered by reversing the template generation rules. Requires finetuning on DST labels. Strongest few-shot model in the literature."
+      },
+      {
+        "name": "T5-DST",
+        "description": "Recent few-shot DST model outperformed by DS2."
+      },
+      {
+        "name": "few-shot multi-domain setting",
+        "description": "Follows the multi-domain scenario from Wu et al. (2020), where 1%, 5%, and 10% of training data are sampled as the selection pool. The retriever is fine-tuned on the selection pool and does not see any other DST data."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "all-domain JGA TRADE MultiWOZ 2.1 1%",
+        "value": "12.58",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA TRADE MultiWOZ 2.1 5%",
+        "value": "31.17",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA TRADE MultiWOZ 2.1 10%",
+        "value": "36.18",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA TRADE MultiWOZ 2.1 100%",
+        "value": "46.00",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA TRADE MultiWOZ 2.4 100%",
+        "value": "55.05",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA SGPDST MultiWOZ 2.1 1%",
+        "value": "32.11",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA SGPDST MultiWOZ 2.1 5%",
+        "value": "43.14",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA SGPDST MultiWOZ 2.1 10%",
+        "value": "46.92",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA SGPDST MultiWOZ 2.1 100%",
+        "value": "56.66",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-BART MultiWOZ 2.1 1%",
+        "value": "28.25",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-BART MultiWOZ 2.1 5%",
+        "value": "37.71",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-BART MultiWOZ 2.1 10%",
+        "value": "40.29",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-BART MultiWOZ 2.1 100%",
+        "value": "46.86",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-BART MultiWOZ 2.4 1%",
+        "value": "30.55",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-BART MultiWOZ 2.4 5%",
+        "value": "42.53",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-BART MultiWOZ 2.4 10%",
+        "value": "41.73",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-BART MultiWOZ 2.4 100%",
+        "value": "46.14",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-T5 MultiWOZ 2.1 1%",
+        "value": "33.76",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-T5 MultiWOZ 2.1 5%",
+        "value": "44.20",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-T5 MultiWOZ 2.1 10%",
+        "value": "45.38",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-T5 MultiWOZ 2.1 100%",
+        "value": "52.32",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-T5 MultiWOZ 2.4 1%",
+        "value": "36.76",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-T5 MultiWOZ 2.4 5%",
+        "value": "49.89",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-T5 MultiWOZ 2.4 10%",
+        "value": "51.05",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA DS2-T5 MultiWOZ 2.4 100%",
+        "value": "57.85",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA IC-DST GPT-Neo 2.7B MultiWOZ 2.1 1%",
+        "value": "16.70",
+        "split": null
+      },
+      {
+        "metric": "all-domain JGA IC-DST GPT-Neo 2.7B MultiWOZ 2.1 5%",
+        "value": "26.90",
+        "split": null
+      }
+    ]
+  }
+}

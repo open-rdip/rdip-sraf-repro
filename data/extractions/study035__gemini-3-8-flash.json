@@ -1,0 +1,188 @@
+{
+  "study_id": "study035",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study035/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:41:16.007055+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 5,
+    "methods": 16,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Jetson AGX Xavier",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning rate (CycleGAN and Pix2pix, generator and discriminator)",
+        "value": "0.0002"
+      },
+      {
+        "name": "batch size (horse\u2192zebra)",
+        "value": "1"
+      },
+      {
+        "name": "batch size (edges\u2192shoes)",
+        "value": "4"
+      },
+      {
+        "name": "batch size (map\u2192aerial photo)",
+        "value": "1"
+      },
+      {
+        "name": "batch size (cityscapes)",
+        "value": "1"
+      },
+      {
+        "name": "batch size (GauGAN)",
+        "value": "16"
+      },
+      {
+        "name": "population size P",
+        "value": "100"
+      },
+      {
+        "name": "number of iterations T",
+        "value": "500"
+      },
+      {
+        "name": "parent ratio rp",
+        "value": "0.25"
+      },
+      {
+        "name": "mutation ratio rm",
+        "value": "0.5"
+      },
+      {
+        "name": "mutation probability rp",
+        "value": "0.2"
+      },
+      {
+        "name": "intermediate distillation activations",
+        "value": "4"
+      },
+      {
+        "name": "residual block group size for distillation",
+        "value": "3"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "horse \u2192zebra",
+        "version": null
+      },
+      {
+        "name": "edges\u2192shoes",
+        "version": null
+      },
+      {
+        "name": "Cityscapes",
+        "version": null
+      },
+      {
+        "name": "horse\u2192zebra",
+        "version": null
+      },
+      {
+        "name": "map\u2192aerial photo",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "CycleGAN",
+        "description": "Generative model whose compressed generator inference speed is evaluated."
+      },
+      {
+        "name": "GauGAN",
+        "description": "Generative model evaluated on the Cityscapes dataset."
+      },
+      {
+        "name": "Pix2pix",
+        "description": "Generative model evaluated on the edges\u2192shoes dataset."
+      },
+      {
+        "name": "GAN Compression",
+        "description": "Baseline compression framework for generative models."
+      },
+      {
+        "name": "Fast GAN Compression",
+        "description": "Accelerates training of GAN Compression by removing Mobile Teacher Training and Pre-distillation."
+      },
+      {
+        "name": "evolutionary algorithm",
+        "description": "Search method used to reduce search cost compared to brute-force search."
+      },
+      {
+        "name": "MUNIT generator decomposition",
+        "description": "Decomposing the ResBlock layers in the content encoder and decoder, and the up-sample layers in the decoder."
+      },
+      {
+        "name": "Fr\u00e9chet Inception Distance (FID)",
+        "description": "Calculates the distance between the distribution of feature vectors extracted from real and generated images using an InceptionV3 network to measure similarity and assess image quality."
+      },
+      {
+        "name": "Pruning",
+        "description": "Pruning technique combined with distillation"
+      },
+      {
+        "name": "Distillation",
+        "description": "Distillation combined with pruning"
+      },
+      {
+        "name": "Keep D.",
+        "description": "Inheriting the discriminator's weights from the teacher discriminator"
+      },
+      {
+        "name": "pseudo paired training",
+        "description": "Transforming unpaired conditional GANs into a pseudo paired training setting using the teacher model's output"
+      },
+      {
+        "name": "Intermediate Distillation",
+        "description": "Intermediate distillation used between student and teacher models"
+      },
+      {
+        "name": "LPIPS metric",
+        "description": "used to measure the perceptual similarity of generated images and the corresponding real images"
+      },
+      {
+        "name": "human preference test",
+        "description": "conducted on Amazon Mechanical Turk (AMT) asking workers to decide which image is more like a real zebra image between GAN Compression model and 0.25 CycleGAN"
+      },
+      {
+        "name": "0.25 CycleGAN",
+        "description": "baseline model with a reduced number of channels"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "inference speed",
+        "value": "about 40FPS",
+        "split": null
+      },
+      {
+        "metric": "training acceleration",
+        "value": "1.6-3.7\u00d7",
+        "split": null
+      },
+      {
+        "metric": "search cost reduction",
+        "value": "3.5-12 \u00d7",
+        "split": null
+      },
+      {
+        "metric": "FID",
+        "value": "65.48",
+        "split": null
+      }
+    ]
+  }
+}

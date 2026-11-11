@@ -1,0 +1,82 @@
+{
+  "study_id": "study091",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study091/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:35:06.622006+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 11,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Travis CI",
+        "version": null
+      },
+      {
+        "name": "Grimoire Lab",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "identification of code debt",
+        "description": "Identifying debt-ridden files and code debt using tools and rule-based artifacts"
+      },
+      {
+        "name": "code smells detection",
+        "description": "Detecting anti-patterns such as Modularity Violation and Unstable interface to identify debt-ridden files"
+      },
+      {
+        "name": "measuring TD",
+        "description": "Measuring technical debt and calculating TD interest to estimate extra effort for repaying technical debt"
+      },
+      {
+        "name": "piranha",
+        "description": "Refactors source code considering the name and types of feature flags, sending the results as pull requests in GitHub"
+      },
+      {
+        "name": "FixMe",
+        "description": "A bot running on the Probot Framework that identifies SATD in code comments and generates issues when source code is committed to GitHub"
+      },
+      {
+        "name": "TDM Automation Strategy",
+        "description": "Refers to how TDM automation should be addressed in software development."
+      },
+      {
+        "name": "TDM Automation Orchestrator",
+        "description": "A software responsible for managing the TDM Automation Artifacts in the strategy."
+      },
+      {
+        "name": "TDM Automation Rule",
+        "description": "Defines when the automation happens and which TDM Automation Software is used."
+      },
+      {
+        "name": "SMS",
+        "description": "Systematic Mapping Study cataloging existing tools and uncovering research directions in the TD community"
+      },
+      {
+        "name": "search string calibration",
+        "description": "Addition of the terms 'replication package' and 'supplementary material' to the search string following a pilot study"
+      },
+      {
+        "name": "static code analysis",
+        "description": "automation artifacts that use source code as input"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,319 @@
+{
+  "study_id": "study035",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study035/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:46:05.102534+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 15,
+    "datasets": 4,
+    "methods": 24,
+    "evaluation_results": 23
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA Jetson AGX Xavier",
+      "cuda_version": null,
+      "cpu_info": "Xeon Silver 4114"
+    },
+    "hyperparameters": [
+      {
+        "name": "batch size",
+        "value": "1"
+      },
+      {
+        "name": "learning rate (generator and discriminator, CycleGAN and Pix2pix)",
+        "value": "0.0002"
+      },
+      {
+        "name": "batch size (CycleGAN/Pix2pix, horse\u2192zebra)",
+        "value": "1"
+      },
+      {
+        "name": "batch size (CycleGAN/Pix2pix, edges\u2192shoes)",
+        "value": "4"
+      },
+      {
+        "name": "batch size (CycleGAN/Pix2pix, map\u2192aerial photo)",
+        "value": "1"
+      },
+      {
+        "name": "batch size (CycleGAN/Pix2pix, cityscapes)",
+        "value": "1"
+      },
+      {
+        "name": "batch size (GauGAN)",
+        "value": "16"
+      },
+      {
+        "name": "population size P (evolutionary algorithm)",
+        "value": "100"
+      },
+      {
+        "name": "number of iterations T (evolutionary algorithm)",
+        "value": "500"
+      },
+      {
+        "name": "parent ratio rp (evolutionary algorithm)",
+        "value": "0.25"
+      },
+      {
+        "name": "mutation ratio rm (evolutionary algorithm)",
+        "value": "0.5"
+      },
+      {
+        "name": "mutation probability (evolutionary algorithm, written as rp)",
+        "value": "0.2"
+      },
+      {
+        "name": "number of intermediate activations for distillation (ResNet generator)",
+        "value": "4"
+      },
+      {
+        "name": "residual block group size for feature distillation",
+        "value": "3"
+      },
+      {
+        "name": "number of residual blocks (ResNet generator)",
+        "value": "9"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "horse\u2192zebra",
+        "version": null
+      },
+      {
+        "name": "edges\u2192shoes",
+        "version": null
+      },
+      {
+        "name": "Cityscapes",
+        "version": null
+      },
+      {
+        "name": "map\u2192aerial photo",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GAN Compression",
+        "description": "Compression framework for conditional GANs, including Mobile Teacher Training and Pre-distillation, evaluated on CycleGAN, Pix2pix, and GauGAN"
+      },
+      {
+        "name": "Fast GAN Compression",
+        "description": "Variant of GAN Compression that removes Mobile Teacher Training and Pre-distillation and uses an evolutionary algorithm instead of brute-force search; accelerates training by 1.6-3.7\u00d7 and reduces search cost by 3.5-12\u00d7"
+      },
+      {
+        "name": "SPADE module compression",
+        "description": "The \u03b2 and \u03b3 convolutions consume about 88% of the computation of the SPADE modules and are considered highly redundant."
+      },
+      {
+        "name": "MUNIT generator decomposition",
+        "description": "The ResBlock layers in the content encoder and decoder, and the upsample layers in the decoder, are decomposed because they consume most of the model computation. The style encoder remains unchanged since it consumes less than 10% of computation."
+      },
+      {
+        "name": "Fr\u00e9chet Inception Distance (FID)",
+        "description": "Calculates the distance between the distributions of feature vectors extracted from real and generated images using an InceptionV3 network. A lower score indicates better quality of generated images. An open-sourced FID evaluation code is used."
+      },
+      {
+        "name": "FID for paired image-to-image translation (pix2pix and GauGAN)",
+        "description": "FID is calculated between translated test images and real test images."
+      },
+      {
+        "name": "FID for unpaired image-to-image translation (CycleGAN)",
+        "description": "FID is calculated between translated test images and real training+test images, allowing more images for a stable FID evaluation."
+      },
+      {
+        "name": "Inference acceleration measurement",
+        "description": "Inference speed of compressed models measured on several devices with different computational power (NVIDIA Jetson AGX Xavier, Jetson Nano, 1080Ti GPU, Xeon CPU) using batch size 1 to simulate interactive applications."
+      },
+      {
+        "name": "Pruning",
+        "description": "Pruning of the student model to reduce computation budget, used in the ablation study (Pr.)."
+      },
+      {
+        "name": "Distillation",
+        "description": "Distillation from teacher to student, including intermediate distillation (Dstl in the ablation study)."
+      },
+      {
+        "name": "Keep D.",
+        "description": "Student inherits the discriminator's weights from the teacher discriminator."
+      },
+      {
+        "name": "Unpaired-to-paired transform",
+        "description": "Transforms unpaired conditional GAN training into a pseudo paired training setting using the teacher model's output; the student learns the mapping directly from the teacher model."
+      },
+      {
+        "name": "Intermediate Distillation",
+        "description": "Distillation method (without NAS) that distills intermediate representations, compared against other distillation methods for the Pix2pix model."
+      },
+      {
+        "name": "From-scratch Training",
+        "description": "Baseline training the compressed Pix2pix model from scratch without distillation."
+      },
+      {
+        "name": "Aguinaldo et al. [54]",
+        "description": "Competing distillation method used as a baseline for comparison."
+      },
+      {
+        "name": "Yim et al. [55]",
+        "description": "Distillation method used in recognition networks, used as a baseline for comparison."
+      },
+      {
+        "name": "Pix2pix",
+        "description": "Conditional GAN model used for the Cityscapes benchmark of distillation methods."
+      },
+      {
+        "name": "CycleGAN",
+        "description": "Image-to-image translation model trained with learning rate 0.0002 for generator and discriminator; ResNet generator."
+      },
+      {
+        "name": "GauGAN",
+        "description": "Follows the setting of the original paper [5], except batch size is 16 instead of 32."
+      },
+      {
+        "name": "Evolutionary algorithm",
+        "description": "Search algorithm with population size 100, 500 iterations, parent ratio 0.25, mutation ratio 0.5, and mutation probability 0.2."
+      },
+      {
+        "name": "Intermediate feature distillation",
+        "description": "For the ResNet generator, 4 intermediate activations are chosen for distillation; the 9 residual blocks are split into groups of 3 and feature distillation is applied every three layers."
+      },
+      {
+        "name": "LPIPS",
+        "description": "Metric used to measure the perceptual similarity of generated images and corresponding real images; lower LPIPS indicates better reconstruction of generated images"
+      },
+      {
+        "name": "Human preference test (AMT)",
+        "description": "Perceptual study on the horse\u2192zebra dataset using Amazon Mechanical Turk, following the protocol of Isola et al. [3], where workers decide which image looks more like a real zebra between the GAN Compression model and 0.25 CycleGAN"
+      },
+      {
+        "name": "FID evaluation protocol (CycleGAN)",
+        "description": "FID computed between translated test images and real training+test images for the original model, the proposed model and baselines; Shu et al. [40] compute FID between translated test images and real test images"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Inference speed of compressed CycleGAN generator on Jetson Xavier edge GPU",
+        "value": "about 40FPS",
+        "split": null
+      },
+      {
+        "metric": "Training speedup of Fast GAN Compression over GAN Compression",
+        "value": "1.6-3.7\u00d7",
+        "split": null
+      },
+      {
+        "metric": "Search cost reduction (evolutionary algorithm vs brute-force search)",
+        "value": "3.5-12\u00d7",
+        "split": null
+      },
+      {
+        "metric": "Latency (Jetson Nano CPU)",
+        "value": "6.30s (14.0\u00d7)",
+        "split": null
+      },
+      {
+        "metric": "Latency (Nano GPU)",
+        "value": "0.16s (4.0\u00d7)",
+        "split": null
+      },
+      {
+        "metric": "Latency (1080Ti)",
+        "value": "0.005s (2.5\u00d7)",
+        "split": null
+      },
+      {
+        "metric": "Latency (Xeon Silver 4114 CPU)",
+        "value": "0.11s (3.4\u00d7)",
+        "split": null
+      },
+      {
+        "metric": "Ablation table score (unspecified metric)",
+        "value": "40.98",
+        "split": null
+      },
+      {
+        "metric": "MACs (Original Model)",
+        "value": "56.8G",
+        "split": null
+      },
+      {
+        "metric": "mIoU (Original Model)",
+        "value": "42.06",
+        "split": null
+      },
+      {
+        "metric": "MACs (From-scratch Training)",
+        "value": "5.82G (9.5\u00d7)",
+        "split": null
+      },
+      {
+        "metric": "mIoU (From-scratch Training)",
+        "value": "32.57 (9.49 drop)",
+        "split": null
+      },
+      {
+        "metric": "MACs (Aguinaldo et al. [54])",
+        "value": "5.82G (9.5\u00d7)",
+        "split": null
+      },
+      {
+        "metric": "mIoU (Aguinaldo et al. [54])",
+        "value": "35.67 (6.39 drop)",
+        "split": null
+      },
+      {
+        "metric": "MACs (Yim et al. [55])",
+        "value": "5.82G (9.5\u00d7)",
+        "split": null
+      },
+      {
+        "metric": "mIoU (Yim et al. [55])",
+        "value": "36.69 (5.37 drop)",
+        "split": null
+      },
+      {
+        "metric": "MACs (Intermediate Distillation)",
+        "value": "5.82G (9.5\u00d7)",
+        "split": null
+      },
+      {
+        "metric": "mIoU (Intermediate Distillation)",
+        "value": "38.26 (3.80 drop)",
+        "split": null
+      },
+      {
+        "metric": "MACs (GAN Compression)",
+        "value": "5.66G (10.0\u00d7)",
+        "split": null
+      },
+      {
+        "metric": "mIoU (GAN Compression)",
+        "value": "40.77 (1.29 drop)",
+        "split": null
+      },
+      {
+        "metric": "FID (original CycleGAN model, Shu et al. protocol)",
+        "value": "65.48",
+        "split": "test"
+      },
+      {
+        "metric": "FID (Shu et al. [40], their protocol)",
+        "value": "96.15",
+        "split": "test"
+      },
+      {
+        "metric": "FID (GAN Compression compressed model, Shu et al. protocol)",
+        "value": "69.54",
+        "split": "test"
+      }
+    ]
+  }
+}

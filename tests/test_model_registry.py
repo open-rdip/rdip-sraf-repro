@@ -20,7 +20,12 @@ def test_every_spec_is_well_formed():
     for key, sp in REGISTRY.items():
         assert sp.key == key
         assert sp.backend and sp.model and sp.key_env
-        assert sp.prompt_per_mtok > 0 and sp.completion_per_mtok > 0
+        if sp.backend == "vllm":
+            # Served locally on the cluster: the compute is ours, so there is
+            # no per-token price to record and the meter must stay at zero.
+            assert sp.prompt_per_mtok == 0 and sp.completion_per_mtok == 0
+        else:
+            assert sp.prompt_per_mtok > 0 and sp.completion_per_mtok > 0
         assert sp.scope in ("corpus", "gold")
         assert sp.note, f"{key} must say why it exists"
 

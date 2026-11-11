@@ -1,0 +1,95 @@
+{
+  "study_id": "study076",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study076/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:19:46.597943+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 1,
+    "methods": 13,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "K",
+        "value": "[1,10]"
+      },
+      {
+        "name": "cross-validation folds",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "social support network",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PIHAM",
+        "description": "a versatile and scalable probabilistic generative model designed to perform inference in attributed multilayer networks"
+      },
+      {
+        "name": "Laplace approximations",
+        "description": "used to accommodate any combination of the input data and avoid the need for explicit derivations"
+      },
+      {
+        "name": "automatic differentiation",
+        "description": "used to avoid the need for explicit derivations"
+      },
+      {
+        "name": "cross-validation",
+        "description": "routine used to determine the optimal combination of layers and attributes"
+      },
+      {
+        "name": "softmax",
+        "description": "Applied to every row of the community membership matrices to ensure values are positive and normalized to one"
+      },
+      {
+        "name": "Logistic",
+        "description": "Transformation function g(\u00b7) used for Bernoulli distribution"
+      },
+      {
+        "name": "Exponential",
+        "description": "Transformation function g(\u00b7) used for Poisson distribution"
+      },
+      {
+        "name": "LM technique",
+        "description": "Technique used to transform posterior distributions into the simplex space employing Dirichlet distributions."
+      },
+      {
+        "name": "Bernoulli distribution modeling",
+        "description": "Used to model the binary layers [A\u2113]\u2113\u2208[1,6]"
+      },
+      {
+        "name": "Gaussian distribution modeling",
+        "description": "Used to model the distance layer A7"
+      },
+      {
+        "name": "Categorical distribution modeling",
+        "description": "Used to characterize the attributes caste X\u00b71 and religion X\u00b72"
+      },
+      {
+        "name": "Poisson distribution modeling",
+        "description": "Used to model the covariate X\u00b73"
+      },
+      {
+        "name": "5-fold cross-validation",
+        "description": "Employed to determine the number of communities K for K\u2208[1,10]"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

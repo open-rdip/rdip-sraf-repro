@@ -1,0 +1,379 @@
+{
+  "study_id": "study084",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study084/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:41:15.805077+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 23,
+    "datasets": 10,
+    "methods": 30,
+    "evaluation_results": 19
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "k",
+        "value": "16"
+      },
+      {
+        "name": "pretrain_epochs",
+        "value": "30"
+      },
+      {
+        "name": "batch_size",
+        "value": "512"
+      },
+      {
+        "name": "num_gpus",
+        "value": "8"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.02"
+      },
+      {
+        "name": "learning_rate_warmup",
+        "value": "1e\u22124"
+      },
+      {
+        "name": "warmup_iterations",
+        "value": "1000"
+      },
+      {
+        "name": "learning_rate_final",
+        "value": "1e\u22125"
+      },
+      {
+        "name": "lr_schedule",
+        "value": "cosine"
+      },
+      {
+        "name": "pretrain_image_resolution",
+        "value": "256\u00d7256"
+      },
+      {
+        "name": "finetune_image_resolution",
+        "value": "384\u00d7384"
+      },
+      {
+        "name": "momentum",
+        "value": "0.995"
+      },
+      {
+        "name": "queue_size",
+        "value": "65,536"
+      },
+      {
+        "name": "distillation_weight_alpha_start",
+        "value": "0"
+      },
+      {
+        "name": "distillation_weight_alpha_end",
+        "value": "0.4"
+      },
+      {
+        "name": "distillation_weight_rampup",
+        "value": "1st epoch"
+      },
+      {
+        "name": "bert_base_parameters",
+        "value": "123.7M"
+      },
+      {
+        "name": "vit_b16_parameters",
+        "value": "85.8M"
+      },
+      {
+        "name": "alpha",
+        "value": "0.4"
+      },
+      {
+        "name": "random_token_replacement_ratio",
+        "value": "10%"
+      },
+      {
+        "name": "unchanged_token_ratio",
+        "value": "10%"
+      },
+      {
+        "name": "mask_token_ratio",
+        "value": "80%"
+      },
+      {
+        "name": "TA pre-training epochs",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NLVR2",
+        "version": null
+      },
+      {
+        "name": "VQA",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "Flickr30K",
+        "version": null
+      },
+      {
+        "name": "Conceptual 12M",
+        "version": null
+      },
+      {
+        "name": "Conceptual Captions",
+        "version": null
+      },
+      {
+        "name": "SBU Captions",
+        "version": null
+      },
+      {
+        "name": "Visual Genome",
+        "version": null
+      },
+      {
+        "name": "4M images",
+        "version": null
+      },
+      {
+        "name": "RefCOCO+",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "text-assignment (TA) pre-training",
+        "description": "Pre-train the model for image-pair using text-assignment."
+      },
+      {
+        "name": "parameter sharing",
+        "description": "Three strategies for the two multimodal blocks: (1) share all parameters, (2) only the cross-attention (CA) layers are shared, (3) no sharing."
+      },
+      {
+        "name": "hard negative mining",
+        "description": "Effect validated in the last column."
+      },
+      {
+        "name": "Grad-CAM",
+        "description": "Visualizations whose gradients are acquired by maximizing the image-text matching score s_itm"
+      },
+      {
+        "name": "image-text matching",
+        "description": "s_itm score calculated on filtered candidates and used for ranking"
+      },
+      {
+        "name": "s_itc top-k filtering",
+        "description": "s_itc used during inference to filter top-k candidates before s_itm ranking"
+      },
+      {
+        "name": "grounding encoder",
+        "description": "Encoder layer specialized in grounding objects, attributes, and relationships"
+      },
+      {
+        "name": "ALBEF",
+        "description": "Model whose Grad-CAM visualizations are highly correlated with where humans would look when making decisions"
+      },
+      {
+        "name": "BERT base",
+        "description": "Text encoder with 123.7M parameters"
+      },
+      {
+        "name": "ViT-B/16",
+        "description": "Vision transformer image encoder with 85.8M parameters"
+      },
+      {
+        "name": "AdamW",
+        "description": "Optimizer with weight decay of 0.02"
+      },
+      {
+        "name": "cosine learning rate schedule",
+        "description": "Learning rate warmed up to 1e\u22124 in the first 1000 iterations and decayed to 1e\u22125 following a cosine schedule"
+      },
+      {
+        "name": "random image crops",
+        "description": "Random image crops of resolution 256\u00d7256 used as input during pre-training"
+      },
+      {
+        "name": "RandAugment",
+        "description": "Data augmentation applied during pre-training"
+      },
+      {
+        "name": "positional encoding interpolation",
+        "description": "During fine-tuning, image resolution increased to 384\u00d7384 and positional encoding of image patches interpolated"
+      },
+      {
+        "name": "momentum model",
+        "description": "Momentum parameter for updating the momentum model set to 0.995"
+      },
+      {
+        "name": "image-text contrastive learning",
+        "description": "Queue size used for image-text contrastive learning set to 65,536"
+      },
+      {
+        "name": "distillation",
+        "description": "Distillation weight alpha linearly ramped up from 0 to 0.4 within the 1st epoch"
+      },
+      {
+        "name": "soft pseudo-targets",
+        "description": "Soft pseudo-targets qi2t and qt2i are computed by replacing s with s' in Equation 1."
+      },
+      {
+        "name": "ITC MoD",
+        "description": "ITC momentum distillation loss Lmod_itc = (1-alpha)*Litc + (alpha/2)*E_(I,T)~D[KL(qi2t(I) || pi2t(I)) + KL(qt2i(T) || pt2i(T))]."
+      },
+      {
+        "name": "MLM token replacement",
+        "description": "Following BERT, replacements are 10% random tokens, 10% unchanged, and 80% [MASK]."
+      },
+      {
+        "name": "MLM MoD",
+        "description": "MLM momentum distillation loss Lmod_mlm = (1-alpha)*Lmlm + alpha*E_(I,T_hat)~D KL(qmsk(I, T_hat) || pmsk(I, T_hat)), where qmsk is the momentum model's prediction probability for the masked token."
+      },
+      {
+        "name": "downstream MoD",
+        "description": "MoD is applied to downstream tasks; the final loss for each task is a weighted combination of the original task loss and the KL-divergence between the model's prediction and the pseudo-targets, with weight alpha set to 0.4 for all pre-training and downstream tasks."
+      },
+      {
+        "name": "pre-training data construction",
+        "description": "Following UNITER, pre-training data is constructed from two web datasets (Conceptual Captions, SBU Captions) and two in-domain datasets (COCO and Visual Genome), with 4.0M unique images and 5.1M image-text pairs."
+      },
+      {
+        "name": "three-way classification",
+        "description": "FC layer on the [CLS] representation predicts assignment to the first image, the second image, or none of them."
+      },
+      {
+        "name": "TA pre-training",
+        "description": "Pre-train with TA for only 1 epoch using the 4M images."
+      },
+      {
+        "name": "Visual Grounding",
+        "description": "Weakly-supervised localization of the image region corresponding to a textual description, with no bounding box annotations; fine-tuned using only image-text supervision following the image-text retrieval strategy."
+      },
+      {
+        "name": "contrastive hard negative mining",
+        "description": "Proposed pre-training method evaluated on downstream tasks."
+      },
+      {
+        "name": "momentum distillation",
+        "description": "Proposed pre-training method evaluated on downstream tasks."
+      },
+      {
+        "name": "MLM+ITM",
+        "description": "Baseline pre-training tasks."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "NLVR2 w/ TA share all",
+        "value": "82.13",
+        "split": "dev"
+      },
+      {
+        "metric": "NLVR2 w/ TA share CA",
+        "value": "82.55",
+        "split": "dev"
+      },
+      {
+        "metric": "NLVR2 w/ TA no share",
+        "value": "81.93",
+        "split": "dev"
+      },
+      {
+        "metric": "NLVR2 w/o TA share all",
+        "value": "80.52",
+        "split": "dev"
+      },
+      {
+        "metric": "NLVR2 w/o TA share CA",
+        "value": "80.28",
+        "split": "dev"
+      },
+      {
+        "metric": "NLVR2 w/o TA no share",
+        "value": "77.84",
+        "split": "dev"
+      },
+      {
+        "metric": "NLVR2 w/ TA share all",
+        "value": "82.36",
+        "split": "test-P"
+      },
+      {
+        "metric": "NLVR2 w/ TA share CA",
+        "value": "83.14",
+        "split": "test-P"
+      },
+      {
+        "metric": "NLVR2 w/ TA no share",
+        "value": "82.85",
+        "split": "test-P"
+      },
+      {
+        "metric": "NLVR2 w/o TA share all",
+        "value": "81.29",
+        "split": "test-P"
+      },
+      {
+        "metric": "NLVR2 w/o TA share CA",
+        "value": "80.45",
+        "split": "test-P"
+      },
+      {
+        "metric": "NLVR2 w/o TA no share",
+        "value": "77.58",
+        "split": "test-P"
+      },
+      {
+        "metric": "TR average recall",
+        "value": "97.30",
+        "split": "test"
+      },
+      {
+        "metric": "IR average recall",
+        "value": "90.95",
+        "split": "test"
+      },
+      {
+        "metric": "TR",
+        "value": "93.96",
+        "split": "flickr test"
+      },
+      {
+        "metric": "IR",
+        "value": "88.55",
+        "split": "flickr test"
+      },
+      {
+        "metric": "SNLI-VE",
+        "value": "77.06",
+        "split": "test"
+      },
+      {
+        "metric": "NLVR2",
+        "value": "77.51",
+        "split": "test-P"
+      },
+      {
+        "metric": "VQA",
+        "value": "71.40",
+        "split": "test-dev"
+      }
+    ]
+  }
+}

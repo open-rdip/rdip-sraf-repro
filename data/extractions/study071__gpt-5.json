@@ -1,0 +1,248 @@
+{
+  "study_id": "study071",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study071/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:14:24.258985+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 1,
+    "methods": 28,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Stable Diffusion XL (Alpha variant)",
+        "version": "Alpha variant"
+      },
+      {
+        "name": "Dreamlike Photoreal",
+        "version": "2.0"
+      },
+      {
+        "name": "Stable Diffusion",
+        "version": "2.1"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "A100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "classifier-free guidance scale",
+        "value": "9"
+      },
+      {
+        "name": "training_steps",
+        "value": "4000"
+      },
+      {
+        "name": "learning_rate",
+        "value": "3e-6"
+      },
+      {
+        "name": "total_batch_size",
+        "value": "128"
+      },
+      {
+        "name": "warmup_steps",
+        "value": "500"
+      },
+      {
+        "name": "lr_schedule",
+        "value": "linear decay after warmup"
+      },
+      {
+        "name": "num_gpus",
+        "value": "8"
+      },
+      {
+        "name": "guidance_scale",
+        "value": "9"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pick-a-Pic",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PickScore",
+        "description": "Scoring method that selects one image out of 100 generations; tends to choose images that are more aesthetic and better aligned with the prompt."
+      },
+      {
+        "name": "Random Seed +Null Template",
+        "description": "Baseline comparison condition for selecting one image out of 100."
+      },
+      {
+        "name": "+Random Template",
+        "description": "Baseline comparison condition for selecting one image out of 100."
+      },
+      {
+        "name": "Aesthetics [14]",
+        "description": "Aesthetic scoring function used as a comparator."
+      },
+      {
+        "name": "CLIP-H [7]",
+        "description": "Scoring function used as a comparator."
+      },
+      {
+        "name": "Vanilla text-to-image model",
+        "description": "Baseline text-to-image model whose generated images are compared to images selected by PickScore from a set of 100 generations."
+      },
+      {
+        "name": "aesthetic scorer",
+        "description": "Comparator method that selects images based on aesthetic score; used to evaluate PickScore."
+      },
+      {
+        "name": "Stable Diffusion XL (Alpha variant) with varying classifier-free guidance scales",
+        "description": "Generate images using Stable Diffusion XL (Alpha variant) while varying the classifier-free guidance scale to study its effect on human preferences."
+      },
+      {
+        "name": "Win/Tie/Lose ratio computation from human preferences",
+        "description": "For each guidance scale, compute the win ratio (percentage of judgments where it is preferred) along with tie and lose ratios using user preference comparisons."
+      },
+      {
+        "name": "Annotation option: 4 images, no ties",
+        "description": "Piloted annotation strategy presenting 4 images per comparison with no option to select ties."
+      },
+      {
+        "name": "Annotation option: 2 images, no ties",
+        "description": "Piloted annotation strategy presenting 2 images per comparison with no option to select ties."
+      },
+      {
+        "name": "Annotation option: 2 images, with ties",
+        "description": "Piloted annotation strategy presenting 2 images per comparison with an option to select ties; found to yield higher user engagement and inter-rater agreement and selected as the final setup."
+      },
+      {
+        "name": "Preprocessing: NSFW and banned user filtering",
+        "description": "During processing of collected interactions, prompts with NSFW phrases and interactions from banned users are filtered out."
+      },
+      {
+        "name": "Privacy: user anonymization and consent",
+        "description": "All users provide explicit consent to share interactions; user IDs are anonymized to ensure privacy."
+      },
+      {
+        "name": "Model comparison via preferences",
+        "description": "Used the Pick-a-Pic dataset to perform model selection and evaluation, including comparison between Stable Diffusion 2.1 and Dreamlike Photoreal 2.0, and analysis of win rate versus classifier-free guidance scale for Stable Diffusion XL (Alpha)."
+      },
+      {
+        "name": "KL-divergence preference optimization",
+        "description": "Optimize scoring function parameters by minimizing KL-divergence between target preference distribution and softmax-normalized scores of paired outputs."
+      },
+      {
+        "name": "Prompt-frequency inverse weighting",
+        "description": "Weight each example inversely proportional to its prompt frequency to mitigate overfitting to frequent prompts when reducing batch loss."
+      },
+      {
+        "name": "In-batch negatives (ablation)",
+        "description": "Experimented with incorporating in-batch negatives into the objective; found to reduce accuracy."
+      },
+      {
+        "name": "Finetuning CLIP-H",
+        "description": "Finetune the CLIP-H model on the Pick-a-Pic training set using the described preference-learning objective."
+      },
+      {
+        "name": "User preference evaluation between backbone models",
+        "description": "Pairwise comparison of images generated by different backbone models (e.g., Dreamlike Photoreal 2.0 vs Stable Diffusion 2.1) to determine which is preferred by users."
+      },
+      {
+        "name": "PickScore (Ours)",
+        "description": "Proposed model evaluated on the Pick-a-Pic dataset."
+      },
+      {
+        "name": "CLIP-H",
+        "description": "Baseline model compared on the Pick-a-Pic dataset."
+      },
+      {
+        "name": "Aesthetics predictor (built on CLIP-L)",
+        "description": "An aesthetics predictor built on top of CLIP-L."
+      },
+      {
+        "name": "Random classifier",
+        "description": "Random baseline classifier."
+      },
+      {
+        "name": "Human Expert",
+        "description": "Human expert judgments without tie selection (ties allowed)."
+      },
+      {
+        "name": "HPS",
+        "description": "Concurrent work baseline compared on the Pick-a-Pic dataset."
+      },
+      {
+        "name": "ImageReward",
+        "description": "Concurrent work baseline compared on the Pick-a-Pic dataset."
+      },
+      {
+        "name": "Tie threshold selection",
+        "description": "Evaluate various tie threshold probabilities to determine the most optimal tie threshold for each model; no tie selection for human experts."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Human preference win rate (PickScore vs Random Seed +Null Template)",
+        "value": "71.4%",
+        "split": null
+      },
+      {
+        "metric": "Human preference win rate (PickScore vs +Random Template)",
+        "value": "82.0%",
+        "split": null
+      },
+      {
+        "metric": "Human preference win rate (PickScore vs Aesthetics [14])",
+        "value": "85.1%",
+        "split": null
+      },
+      {
+        "metric": "Human preference win rate (PickScore vs CLIP-H [7])",
+        "value": "71.3%",
+        "split": null
+      },
+      {
+        "metric": "Aesthetic score win rate (PickScore vs CLIP-H by aesthetic scoring function)",
+        "value": "68.5%",
+        "split": null
+      },
+      {
+        "metric": "Percentage of prompts where PickScore selects an image with a higher aesthetic score",
+        "value": "68.5%",
+        "split": null
+      },
+      {
+        "metric": "Percentage of PickScore\u2019s choices with higher CLIP-H text-alignment score than images chosen by the aesthetic scorer",
+        "value": "90.5%",
+        "split": null
+      },
+      {
+        "metric": "Preference distribution - Dreamlike Photoreal 2.0",
+        "value": "53.5%",
+        "split": null
+      },
+      {
+        "metric": "Preference distribution - Stable Diffusion 2.1",
+        "value": "35.2%",
+        "split": null
+      },
+      {
+        "metric": "Preference distribution - Tie",
+        "value": "11.2%",
+        "split": null
+      },
+      {
+        "metric": "Accuracy",
+        "value": "56.8",
+        "split": "test"
+      }
+    ]
+  }
+}

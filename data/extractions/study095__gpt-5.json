@@ -1,0 +1,216 @@
+{
+  "study_id": "study095",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study095/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:31:51.226181+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 4,
+    "methods": 18,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Faiss",
+        "version": null
+      },
+      {
+        "name": "BERT-based reader",
+        "version": null
+      },
+      {
+        "name": "DPR",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia V100",
+      "cuda_version": null,
+      "cpu_info": "two Intel Xeon E5-2698 v4 CPUs"
+    },
+    "hyperparameters": [
+      {
+        "name": "PQ code size",
+        "value": "96"
+      },
+      {
+        "name": "PQ code bits",
+        "value": "8 bits"
+      },
+      {
+        "name": "LSH bits per passage",
+        "value": "768"
+      },
+      {
+        "name": "PQ number of centroids",
+        "value": "96"
+      },
+      {
+        "name": "l",
+        "value": "1000"
+      },
+      {
+        "name": "k",
+        "value": "\u226520"
+      },
+      {
+        "name": "fork",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NQ",
+        "version": null
+      },
+      {
+        "name": "TQA",
+        "version": null
+      },
+      {
+        "name": "English Wikipedia corpus (21M passages)",
+        "version": null
+      },
+      {
+        "name": "DPR retriever training/validation datasets",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "BPR",
+        "description": "Retrieval model evaluated by top-k recall, EM QA accuracy, index size, and query time; trained with the same method as DPR and paired with a BERT-based reader."
+      },
+      {
+        "name": "DPR",
+        "description": "Baseline dense passage retrieval method; training procedure and BERT-based reader followed."
+      },
+      {
+        "name": "top-k recall",
+        "description": "Percentage of positive passages in the top-k retrieved passages (k in {1,20,100})."
+      },
+      {
+        "name": "Exact Match (EM) QA accuracy",
+        "description": "QA accuracy measured by combining the retriever with a BERT-based reader."
+      },
+      {
+        "name": "Faiss index",
+        "description": "Passage index built using Faiss for retrieval and indexing."
+      },
+      {
+        "name": "ELECTRA-large reader",
+        "description": "Improved reader based on ELECTRA-large instead of BERT-base."
+      },
+      {
+        "name": "BERT-base reader",
+        "description": "Baseline reader model used for comparison with the improved ELECTRA-large reader."
+      },
+      {
+        "name": "Fusion-in-Decoder (FiD, large)",
+        "description": "State-of-the-art large model that outperforms the improved model but has more than twice as many parameters."
+      },
+      {
+        "name": "DPR with linear scan",
+        "description": "Dense Passage Retrieval baseline using exhaustive linear scan over passages."
+      },
+      {
+        "name": "DPR with HNSW graphs",
+        "description": "Baseline using Hierarchical Navigable Small World graphs, building a multi-layer structure of hierarchical proximity graphs."
+      },
+      {
+        "name": "LSH",
+        "description": "Post-hoc quantization of DPR passage index using simple locality sensitive hashing."
+      },
+      {
+        "name": "PQ",
+        "description": "Post-hoc quantization of DPR passage index using product quantization."
+      },
+      {
+        "name": "DPR+HNSW",
+        "description": "Faster than BPR but requires 151GB of storage."
+      },
+      {
+        "name": "Reranking (two-stage)",
+        "description": "Disabling reranking clearly degrades performance, showing effectiveness of the two-stage approach."
+      },
+      {
+        "name": "Candidate generation",
+        "description": "Ablation mentions disabling candidate generation (treating all passages as candidates)."
+      },
+      {
+        "name": "RAG (Lewis et al., 2020)",
+        "description": "Model using BART-large; reported exact match QA accuracy on NQ and TQA."
+      },
+      {
+        "name": "FiD (base) (Izacard and Grave, 2020)",
+        "description": "Model using T5-base; reported exact match QA accuracy on NQ and TQA."
+      },
+      {
+        "name": "FiD (large) (Izacard and Grave, 2020)",
+        "description": "Model using T5-large; reported exact match QA accuracy on NQ and TQA."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "index size",
+        "value": "65GB",
+        "split": "test"
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) \u2014 RAG (BART-large)",
+        "value": "44.5",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) \u2014 RAG (BART-large)",
+        "value": "56.1",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) \u2014 FiD (base, T5-base)",
+        "value": "48.2",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) \u2014 FiD (base, T5-base)",
+        "value": "65.0",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) \u2014 FiD (large, T5-large)",
+        "value": "51.4",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) \u2014 FiD (large, T5-large)",
+        "value": "67.6",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) \u2014 BPR (l=1000, BERT-base)",
+        "value": "41.6",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) \u2014 BPR (l=1000, BERT-base)",
+        "value": "56.8",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) \u2014 BPR (l=1000, ELECTRA-large)",
+        "value": "49.0",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) \u2014 BPR (l=1000, ELECTRA-large)",
+        "value": "65.6",
+        "split": null
+      }
+    ]
+  }
+}

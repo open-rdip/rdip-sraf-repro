@@ -1,0 +1,209 @@
+{
+  "study_id": "study008",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study008/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:08:33.535574+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 18,
+    "datasets": 11,
+    "methods": 14,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "precision",
+        "value": "pure bfloat16"
+      },
+      {
+        "name": "learning rate schedule",
+        "value": "infinite"
+      },
+      {
+        "name": "Training steps (Ours Main)",
+        "value": "7,680"
+      },
+      {
+        "name": "Training steps (LeoLM)",
+        "value": "15,360"
+      },
+      {
+        "name": "Warmup steps (Ours Main)",
+        "value": "76"
+      },
+      {
+        "name": "Warmup steps (LeoLM)",
+        "value": "153"
+      },
+      {
+        "name": "Batch size (Ours Main)",
+        "value": "256"
+      },
+      {
+        "name": "Batch size (LeoLM)",
+        "value": "512"
+      },
+      {
+        "name": "Context length (Ours Main)",
+        "value": "4,096"
+      },
+      {
+        "name": "Context length (LeoLM)",
+        "value": "8,192"
+      },
+      {
+        "name": "Total training tokens (Ours Main)",
+        "value": "8 billion"
+      },
+      {
+        "name": "Total training tokens (LeoLM)",
+        "value": "64 billion"
+      },
+      {
+        "name": "Optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "Learning rate (Ours Main)",
+        "value": "4\u00d710\u22125"
+      },
+      {
+        "name": "Learning rate (LeoLM)",
+        "value": "2\u00d710\u22125"
+      },
+      {
+        "name": "Learning rate decay",
+        "value": "Cosine to 2\u00d710\u22126"
+      },
+      {
+        "name": "Adam \u03b2",
+        "value": "(0.9, 0.95)"
+      },
+      {
+        "name": "Weight decay",
+        "value": "0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CulturaX",
+        "version": null
+      },
+      {
+        "name": "OSCAR",
+        "version": "23.01"
+      },
+      {
+        "name": "BOOLQ",
+        "version": null
+      },
+      {
+        "name": "COPA",
+        "version": null
+      },
+      {
+        "name": "HellaSwag",
+        "version": null
+      },
+      {
+        "name": "Open-BookQA",
+        "version": null
+      },
+      {
+        "name": "PIQA",
+        "version": null
+      },
+      {
+        "name": "RACE",
+        "version": null
+      },
+      {
+        "name": "SciTail",
+        "version": null
+      },
+      {
+        "name": "TOXI-GEN",
+        "version": null
+      },
+      {
+        "name": "AlGhafa-T",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "bfloat16 mixed-precision training",
+        "description": "The forward and backward pass is computed in bfloat16 instead of float32 to increase computational efficiency, while a master copy of the model weights and the optimizer states are stored in float32 and used during the optimizer step."
+      },
+      {
+        "name": "PyTorch FSDP",
+        "description": "Used for parallel training with adjustable ZeRO stages to fit GPU memory."
+      },
+      {
+        "name": "FlashAttention",
+        "description": "Self-attention CUDA kernels used for efficiency."
+      },
+      {
+        "name": "RMSNorm CUDA kernels",
+        "description": "CUDA kernels used for RMSNorm."
+      },
+      {
+        "name": "Tokenizer swapping",
+        "description": "Swapping tokenizers based on findings from main experiments for hindsight study."
+      },
+      {
+        "name": "Adjusted attention masks",
+        "description": "Attention masks adjusted to prevent cross-document attention."
+      },
+      {
+        "name": "macro average",
+        "description": "macro average as in OALL (Elfilali et al., 2024) counting the benchmarks in AlGhafa-T individually"
+      },
+      {
+        "name": "Mistral-7B",
+        "description": "Language model whose parameter weight distributions are analyzed"
+      },
+      {
+        "name": "RMSNorm",
+        "description": "Normalization layer evaluated for parameter weight magnitudes"
+      },
+      {
+        "name": "pure bfloat16 training",
+        "description": "Training models using bfloat16 numerics without keeping higher-precision master weights"
+      },
+      {
+        "name": "Cosine learning rate decay",
+        "description": "Decaying learning rate via cosine schedule to 2\u00d710\u22126"
+      },
+      {
+        "name": "AdamW",
+        "description": "Optimization algorithm used for training"
+      },
+      {
+        "name": "mixed-precision bfloat16 training",
+        "description": "Training where optimizer states are stored in float32 and used during the optimizer step to offset reduced precision."
+      },
+      {
+        "name": "activation check-pointing",
+        "description": "Technique used to reduce memory cost at the cost of lower training efficiency."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "training speed improvement over mixed-precision bfloat16",
+        "value": "39% faster",
+        "split": null
+      }
+    ]
+  }
+}

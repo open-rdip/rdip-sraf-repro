@@ -1,0 +1,98 @@
+{
+  "study_id": "study054",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study054/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:57:59.251703+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 0,
+    "methods": 12,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "q_s",
+        "value": ">0"
+      },
+      {
+        "name": "k_s",
+        "value": "0<k_s<\u221e"
+      },
+      {
+        "name": "number_of_responsive_robots",
+        "value": "3"
+      },
+      {
+        "name": "number_of_nonresponsive_agents",
+        "value": "6"
+      },
+      {
+        "name": "control_input_set_bound",
+        "value": "assumed bounded U"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Consolidated Control Barrier Function (C-CBF)",
+        "description": "A method that smoothly synthesizes multiple candidate control barrier functions into one consolidated CBF to ensure safety when multiple constraints must be satisfied."
+      },
+      {
+        "name": "Parameter adaptation law for C-CBF",
+        "description": "An adaptation law that renders the candidate C-CBF valid for safe control design across varying constituent gains."
+      },
+      {
+        "name": "CBF condition with static gain vector",
+        "description": "For a static gain vector (dot k = 0_{c\u00d71}), H is a CBF on S if there exists \u03b1_H \u2208 K_\u221e such that LFH(x,k) + LGH(x,k) u \u2265 \u2212\u03b1_H(H(x,k)) for all x \u2208 S \u2283 C(k), where LFH(x) = \u2212\u2211_{s=1}^c (\u2202\u03c6/\u2202h_s) LF h_s(x) and LGH(x) = \u2212\u2211_{s=1}^c (\u2202\u03c6/\u2202h_s) LG h_s(x)."
+      },
+      {
+        "name": "Exponential composition \u03c6(h_s, k_s) = e^{\u2212h_s k_s}",
+        "description": "Using \u03c6(h_s, k_s) = e^{\u2212h_s k_s}, we have \u2202\u03c6/\u2202h_s = \u2212k_s e^{\u2212h_s k_s}. The gain vector k weights the constituent candidate CBFs h_s and their derivative terms in the CBF condition. Higher k_s indicates a weaker weight in the CBF dynamics; for arbitrary k there may exist x \u2208 C(k) with LGH(x) = 0, potentially violating safety, motivating online adaptation of k to achieve LGH(x) \u2260 0 for all t \u2265 0."
+      },
+      {
+        "name": "Composite Control Barrier Function (CBF) H",
+        "description": "H consolidates multiple constraints into a single CBF condition; with gains k adapted according to law (14), guaranteeing LG H \u2260 0 (1\u00d7M) and ensuring H is a CBF for the set C(k(t)) for all t \u2265 0."
+      },
+      {
+        "name": "Centralized CBF-QP controller (8) replaced by (19)",
+        "description": "Solve u*_Ac = arg min_{u_Ac \u2208 U_Ac} (1/2)||u_Ac \u2212 u0_Ac||^2 subject to a + b u_Ac \u2265 0, where a = L_F H + \u03b1_H(H) and b = L_G H[i \u2208 A_c]; guarantees trajectories remain within C(k(t)) \u2282 S when all agents are communicative (A_c = A)."
+      },
+      {
+        "name": "Decentralized CBF-QP controller (7) replaced by (20)",
+        "description": "In the presence of non-communicative agents, use u*_i = arg min_{u_i \u2208 U_i} (1/2)||u_i \u2212 u0_i||^2 subject to CBF constraints (as per equation (20))."
+      },
+      {
+        "name": "Finite-difference approximation of Q\u0307",
+        "description": "Approximate the time derivative of Q numerically using finite-difference methods under the practical observation that rank(N(L_g^T)) is constant."
+      },
+      {
+        "name": "C-CBF controller",
+        "description": "A communicative control barrier function (C-CBF) controller applied to decentralized multi-robot goal-reaching with safety constraints in environments with responsive and non-responsive agents."
+      },
+      {
+        "name": "Decentralized CBF-QP replacement for non-communicative agents",
+        "description": "For non-communicative agents, replaces the decentralized CBF-QP with a quadratic program minimizing 1/2||ui - ui0||^2 subject to a + bi ui \u2265 d, where bi = LGH[mi:m(i+1)] and d = e^{-rH} max_{u\u2208U} \u03a3_{j\u2260i} LGH[jm:j(m+1)] uj, assuming bounded control authority U and r > 0."
+      },
+      {
+        "name": "Dynamic extension of kinematic bicycle model",
+        "description": "Robots modeled by a dynamic extension of the kinematic bicycle model: x\u0307i = vi(cos\u03c8i \u2212 sin\u03c8i tan\u03b2i), y\u0307i = vi(sin\u03c8i + cos\u03c8i tan\u03b2i), \u03c8\u0307i = (vi/lr) tan\u03b2i, \u03b2\u0307i = \u03c9i, v\u0307i = ai."
+      },
+      {
+        "name": "CBF-based decentralized controller via quadratic program",
+        "description": "For each agent i, compute control u_i* by solving: minimize (1/2)||u_i - u_i^0||^2 subject to linear safety constraints a_{s,i} + b_{s,i} u_i >= 0 for all s in [1..c], where a_{s,i} = L_f^i h_s + alpha_s(h_s) and b_{s,i} = L_g^i h_s. This encodes c candidate control barrier function constraints to ensure safety while staying close to a nominal input u_i^0."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

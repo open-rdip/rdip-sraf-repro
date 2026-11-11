@@ -1,0 +1,94 @@
+{
+  "study_id": "study076",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study076/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:17:40.429157+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 0,
+    "methods": 14,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "cross_validation_folds",
+        "value": "5"
+      },
+      {
+        "name": "K_search_range",
+        "value": "1-10"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "PIHAM",
+        "description": "A versatile and scalable probabilistic generative model for inference in attributed multilayer networks that uses automatic differentiation, supports variable transformation functions (e.g., mapping Gaussian parameters to a Dirichlet on the simplex), and flexibly handles Bernoulli, Poisson, Gaussian, and categorical data types."
+      },
+      {
+        "name": "Laplace approximations",
+        "description": "Used to enable inference without the need for explicit derivations."
+      },
+      {
+        "name": "Automatic differentiation",
+        "description": "Applied to avoid explicit derivations in the inference procedure."
+      },
+      {
+        "name": "Cross-validation",
+        "description": "Used as a model selection routine to determine the optimal combination of layers and attributes."
+      },
+      {
+        "name": "Row-wise softmax for community membership",
+        "description": "Select f(\u00b7) as the softmax function applied to every row of the community membership matrices to ensure positive, normalized memberships and interpretability."
+      },
+      {
+        "name": "Distribution-specific transformation g(\u00b7)",
+        "description": "Choose g(\u00b7) based on the distribution type (e.g., Logistic for Bernoulli, Exponential for Poisson, identity for Gaussian) to transform latent variables without numerical overflow/underflow."
+      },
+      {
+        "name": "LM technique",
+        "description": "Transforms posterior distributions into the simplex space, facilitating interpretation."
+      },
+      {
+        "name": "Dirichlet transformation",
+        "description": "Employs Dirichlet distributions to map posteriors into the simplex space, providing a more straightforward interpretation."
+      },
+      {
+        "name": "Heterogeneous attributed multilayer network likelihood",
+        "description": "Model likelihood defined per Eq. (2) and Eq. (4), customized for observed data types."
+      },
+      {
+        "name": "Bernoulli distributions for binary layers",
+        "description": "Binary adjacency layers A_\u2113 for \u2113 in [1,6] are modeled with Bernoulli distributions."
+      },
+      {
+        "name": "Gaussian distribution for distance layer",
+        "description": "The distance layer A7 is modeled with a Gaussian distribution."
+      },
+      {
+        "name": "Categorical distributions for attributes",
+        "description": "Caste (Zcaste with 14 categories) and religion (Zreligion with 3 categories) attributes are modeled with Categorical distributions."
+      },
+      {
+        "name": "Poisson distribution for covariate",
+        "description": "Years of education covariate X\u00b73 is modeled with a Poisson distribution."
+      },
+      {
+        "name": "Cross-validation for community count selection",
+        "description": "5-fold cross-validation over K in [1,10] is used to select the number of communities K."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

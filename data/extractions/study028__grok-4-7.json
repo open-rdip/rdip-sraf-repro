@@ -1,0 +1,234 @@
+{
+  "study_id": "study028",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study028/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:30:27.304373+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 16,
+    "datasets": 6,
+    "methods": 21,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX 3090 24 GB",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning_rate_schedule",
+        "value": "cycle cosine annealing"
+      },
+      {
+        "name": "epochs",
+        "value": "256"
+      },
+      {
+        "name": "blurred_region_pixel_value_distribution",
+        "value": "uniform [0.59, 1]"
+      },
+      {
+        "name": "gaussian_blur_radius_distribution",
+        "value": "uniform [0, 15]"
+      },
+      {
+        "name": "normal_image_label",
+        "value": "0"
+      },
+      {
+        "name": "augmented_image_label",
+        "value": "1"
+      },
+      {
+        "name": "batch_size",
+        "value": "64"
+      },
+      {
+        "name": "initial_learning_rate",
+        "value": "0.03"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.00003"
+      },
+      {
+        "name": "optimizer",
+        "value": "SGD"
+      },
+      {
+        "name": "backbone",
+        "value": "ResNet18"
+      },
+      {
+        "name": "projection_head",
+        "value": "three fully connected layers"
+      },
+      {
+        "name": "classifier",
+        "value": "one-class classifier"
+      },
+      {
+        "name": "anomaly_score_threshold",
+        "value": "0.067"
+      },
+      {
+        "name": "ensemble_size",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Chexpert",
+        "version": null
+      },
+      {
+        "name": "officially split validation dataset",
+        "version": null
+      },
+      {
+        "name": "RSNA Pneumonia Detection Challenge dataset",
+        "version": null
+      },
+      {
+        "name": "NIH chest radiograph dataset",
+        "version": null
+      },
+      {
+        "name": "Zhanglab",
+        "version": null
+      },
+      {
+        "name": "RSNA",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "fAnoGAN",
+        "description": "State-of-the-art unsupervised anomaly detection model for medical images with a three-component architecture containing an encoder, decoder, and discriminator. Trained using only normal images; abnormal images are detected when the decoder fails to restore them, leading to increased reconstruction errors."
+      },
+      {
+        "name": "Ganomaly",
+        "description": "GAN-based unsupervised anomaly detection model that employs adversarial loss, contextual loss, and encoder loss."
+      },
+      {
+        "name": "CutPaste",
+        "description": "One-class classifier model with SSL for anomaly detection in industrial products. Employs a pretext task to extract a region from a normal image and paste it on."
+      },
+      {
+        "name": "validation-AUC checkpointing",
+        "description": "The model is trained for 256 epochs and weights are saved when AUC on the validation dataset is highest; those weights are loaded to evaluate performance on the test dataset."
+      },
+      {
+        "name": "AnatPaste",
+        "description": "Augmentation that generates an anomalous image from a normal chest radiograph, a patch, and an anatomical mask via Xanomaly = Xnormal * (1 - Xmask) + Xpatch * Xmask, using element-wise multiplication and summation with random crop and random paste."
+      },
+      {
+        "name": "Anatomical mask construction",
+        "description": "Xmask is formed by element-wise multiplication between the segmented lung region and a blurred region whose pixel values and Gaussian blur radius are sampled from uniform distributions."
+      },
+      {
+        "name": "Lung segmentation",
+        "description": "Algorithm 1 takes a normal chest radiograph and a lung-region threshold t, equalizes the local histogram with CLAHE, binarizes with Otsu\u2019s thresholding, and outputs a binarized lung segmentation image; step 3 is incomplete in the passage."
+      },
+      {
+        "name": "Binary CNN training",
+        "description": "A CNN f makes binary predictions. Loss is the mean over N normal images of cross-entropy on the original image labeled 0 plus cross-entropy on the AnatPaste-augmented image labeled 1."
+      },
+      {
+        "name": "Grad-CAM",
+        "description": "Visualization of annotated areas using the last convolutional layer's feature map of the pretext model to calculate the gradient; abnormal areas are highlighted in red."
+      },
+      {
+        "name": "supervised learning",
+        "description": "Comparison approach from the original paper for AUC of consolidation, edema, and pleural effusion."
+      },
+      {
+        "name": "one-class classifier",
+        "description": "One-class classifier using ResNet18 for feature extraction, with three fully connected layers added to the backbone as the projection head."
+      },
+      {
+        "name": "SGD optimization",
+        "description": "Network optimized using an SGD optimizer with initial learning rate 0.03, momentum 0.9, and weight decay 0.00003."
+      },
+      {
+        "name": "cycle cosine annealing schedule",
+        "description": "Learning rate scheduled using a cycle cosine annealing schedule; model trained for 256 epochs with batch size 64."
+      },
+      {
+        "name": "patient non-overlap validation",
+        "description": "Patients do not overlap. Officially split validation set uses 14 normal and 19 abnormal PA images for validation as suggested by Xiang et al.; used in the ablation study. Some images are used in visualization."
+      },
+      {
+        "name": "RSNA data split",
+        "description": "RSNA dataset is a subset of the NIH chest radiograph dataset, consisting of 9,790 normal and 19,894 abnormal (no lung opacity/not normal or lung opacity) chest radiographs. Of these, 6,614 normal PA images are used for training, 300 normal and 300 abnormal images for validation, and 300 normal and 300 abnormal images for testing."
+      },
+      {
+        "name": "Anomaly score prediction",
+        "description": "Anomaly scores calculated for each image to assess tendencies in normal and abnormal labels; threshold set to 0.067 based on the best F1-score"
+      },
+      {
+        "name": "ROC",
+        "description": "Receiver operating characteristic curve of the comparison methods on the three datasets"
+      },
+      {
+        "name": "SSL",
+        "description": "Proposed for anomaly detection in industrial products; employs a pretext task to extract a region from a normal image, paste it on another part of the image, and classify the image as an anomaly."
+      },
+      {
+        "name": "CutPaste-Scar",
+        "description": "Variant used, which exhibits the best accuracy in the original study."
+      },
+      {
+        "name": "SALAD",
+        "description": "Validated on the Zhanglab dataset; compared using accuracy reported in the respective paper because original code is unavailable."
+      },
+      {
+        "name": "SQUID",
+        "description": "Validated on the Zhanglab dataset; compared using accuracy reported in the respective paper because original code is unavailable."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AUC (consolidation, supervised learning, original paper)",
+        "value": "approximately 93%",
+        "split": null
+      },
+      {
+        "metric": "AUC (edema, supervised learning, original paper)",
+        "value": "approximately 93%",
+        "split": null
+      },
+      {
+        "metric": "AUC (pleural effusion, supervised learning, original paper)",
+        "value": "approximately 93%",
+        "split": null
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "0.7%",
+        "split": null
+      },
+      {
+        "metric": "AUC",
+        "value": "76.8%",
+        "split": null
+      }
+    ]
+  }
+}

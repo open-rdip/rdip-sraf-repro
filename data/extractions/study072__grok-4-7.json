@@ -1,0 +1,119 @@
+{
+  "study_id": "study072",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study072/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:13:57.245965+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 3,
+    "methods": 14,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA GTX 4090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "mini-batch size",
+        "value": "32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Food-101",
+        "version": null
+      },
+      {
+        "name": "CIFAR-100",
+        "version": null
+      },
+      {
+        "name": "mini-ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "w-RA&ER(MM)",
+        "description": "Applied variant after which the advantage disappeared and accuracy was 1.22% lower"
+      },
+      {
+        "name": "wo-RA&ER",
+        "description": "Setting without RA&ER; higher accuracy with wo-RA&ER is associated with even higher accuracy when using w-RA&ER, and its accuracy is influenced by model architecture"
+      },
+      {
+        "name": "w-RA&ER",
+        "description": "Setting with RA&ER whose performance is influenced by the model architecture and associated with wo-RA&ER accuracy"
+      },
+      {
+        "name": "MobileNetV3-Large",
+        "description": "Lightweight model focused on execution efficiency, with weaker feature extraction capabilities compared to the other two models"
+      },
+      {
+        "name": "tiny-SwinTransformer",
+        "description": "Uses a hierarchical transformer structure and a shifted window mechanism to deliver superior feature extraction capabilities"
+      },
+      {
+        "name": "SynerMix",
+        "description": "Approach that can be tailored for tasks involving classification components such as object detection; yields notable gains in classification accuracy but an almost twofold increase in training costs"
+      },
+      {
+        "name": "SynerMix-Intra",
+        "description": "Adds a branch that closely mirrors the original model and is attributed as the source of increased training cost; proven effective in markedly accelerating model convergence as measured by epoch count"
+      },
+      {
+        "name": "ResNet-101",
+        "description": "Model used on the Food-101 dataset with a mini-batch size of 32"
+      },
+      {
+        "name": "w-RA&ER(M)",
+        "description": "Configuration whose training time extends to about 570 seconds per epoch"
+      },
+      {
+        "name": "w-ER",
+        "description": "Converges more slowly than wo-RA&ER due to high variability in loss calculations across mini-batches from randomness in hidden representations"
+      },
+      {
+        "name": "w-ER(M)",
+        "description": "Largely underperforms compared to wo-RA&ER at mini-batch size 16, with high standard deviations in accuracy"
+      },
+      {
+        "name": "w-ER(MM)",
+        "description": "Largely underperforms compared to wo-RA&ER at mini-batch size 16, with high standard deviations in accuracy"
+      },
+      {
+        "name": "w-RA",
+        "description": "When combined with w-ER, mitigates the slow and unstable convergence observed with w-ER alone"
+      },
+      {
+        "name": "ResNet-34",
+        "description": "Model used with the CIFAR-100 dataset at a mini-batch size of 32, where a modest decline in accuracy was observed"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "1.22% lower",
+        "split": null
+      },
+      {
+        "metric": "epoch duration",
+        "value": "roughly 290 seconds",
+        "split": null
+      },
+      {
+        "metric": "training time per epoch",
+        "value": "about 570 seconds",
+        "split": null
+      }
+    ]
+  }
+}

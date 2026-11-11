@@ -1,0 +1,123 @@
+{
+  "study_id": "study047",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study047/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:52:13.449048+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 15,
+    "datasets": 1,
+    "methods": 7,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "gradient clipping maximum L2-norm",
+        "value": "5"
+      },
+      {
+        "name": "room height",
+        "value": "between 2 and 5 meters"
+      },
+      {
+        "name": "reverberation time (T60)",
+        "value": "between 0.1 and 0.5 seconds"
+      },
+      {
+        "name": "signal SNR",
+        "value": "between -5 and 5 dB"
+      },
+      {
+        "name": "overlap ratio",
+        "value": "50% on average"
+      },
+      {
+        "name": "noise SNR",
+        "value": "between 10 and 20 dB"
+      },
+      {
+        "name": "epochs",
+        "value": "100"
+      },
+      {
+        "name": "segment duration",
+        "value": "4-second"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "1e\u22123"
+      },
+      {
+        "name": "learning rate decay",
+        "value": "0.98 for every two epochs"
+      },
+      {
+        "name": "early stopping patience",
+        "value": "10 consecutive epochs"
+      },
+      {
+        "name": "number of filters",
+        "value": "64"
+      },
+      {
+        "name": "DPRNN blocks",
+        "value": "6"
+      },
+      {
+        "name": "hidden units in each direction",
+        "value": "128"
+      },
+      {
+        "name": "chunk size K",
+        "value": "\u2248\u221a 2L"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Microsoft\u2019s internal gender-balanced clean speech collection",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "utterance-level permutation invariant training (uPIT)",
+        "description": "trained to maximize scale-invariant SNR (SI-SNR)"
+      },
+      {
+        "name": "Adam",
+        "description": "used as the optimizer"
+      },
+      {
+        "name": "Early stopping",
+        "description": "applied if no best model is found in the validation set for 10 consecutive epochs"
+      },
+      {
+        "name": "Gradient clipping",
+        "description": "applied with maximum L2-norm of 5 for all experiments"
+      },
+      {
+        "name": "TasNet",
+        "description": "Time-domain audio separation network consisting of a linear 1-D convolutional encoder, a separator estimating masking matrices, and a linear 1-D transposed convolutional decoder."
+      },
+      {
+        "name": "DPRNN",
+        "description": "Deep dual-path recurrent neural network separator using BLSTM as intra- and inter-chunk RNNs."
+      },
+      {
+        "name": "TCN",
+        "description": "Temporal convolutional network separator used as a baseline for comparison."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

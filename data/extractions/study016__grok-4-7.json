@@ -1,0 +1,90 @@
+{
+  "study_id": "study016",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study016/ext/grok-4-7",
+  "extracted_at": "2026-11-09T18:51:51.715314+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 0,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "discrete_latents",
+        "value": "without"
+      },
+      {
+        "name": "mixed_precision_training",
+        "value": "without"
+      },
+      {
+        "name": "worlds_seen_twice",
+        "value": "no"
+      },
+      {
+        "name": "num_runs_50m_steps",
+        "value": "5"
+      },
+      {
+        "name": "num_runs_500m_steps",
+        "value": "3"
+      },
+      {
+        "name": "training_steps",
+        "value": "50m"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "IMPALA",
+        "description": "Baseline chosen as one of the simplest SOTA algorithms on which many other SOTA algorithms are based, and tends to be robust across problems."
+      },
+      {
+        "name": "PPO",
+        "description": "Baseline chosen as one of the simplest SOTA algorithms on which many other SOTA algorithms are based, and tends to be robust across problems."
+      },
+      {
+        "name": "DreamerV2",
+        "description": "Representative model-based baseline used without discrete latents and without mixed precision training."
+      },
+      {
+        "name": "Bayesian optimization",
+        "description": "Used in combination with Natural Evolution Strategies to tune hyperparameters using runs with a smaller number of steps."
+      },
+      {
+        "name": "Natural Evolution Strategies",
+        "description": "Used in combination with Bayesian optimization to tune hyperparameters using runs with a smaller number of steps."
+      },
+      {
+        "name": "difficulty-based curriculum",
+        "description": "Simple form of Automated Curriculum Learning: when the agent succeeds (fails) at a task, the maximum difficulty of future generated worlds for that task is increased (decreased) slightly. Used because uniform random sampling of worlds yields very low probability of reward under random exploration and agents failed to learn on uniformly sampled worlds."
+      },
+      {
+        "name": "MT-TB",
+        "description": "Agents trained on basic tasks; compositional tasks were never seen in training."
+      },
+      {
+        "name": "MT-TA",
+        "description": "Agents trained on all 20 tasks."
+      },
+      {
+        "name": "procedural generation",
+        "description": "Generated worlds used in Avalon environments; some generated worlds are impossible to complete."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

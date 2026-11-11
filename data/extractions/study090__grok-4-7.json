@@ -1,0 +1,357 @@
+{
+  "study_id": "study090",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study090/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:57:08.311931+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 14,
+    "datasets": 1,
+    "methods": 19,
+    "evaluation_results": 36
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "VoVNet",
+        "version": null
+      },
+      {
+        "name": "ConvNeXT",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "input_image_resolution",
+        "value": "640 \u00d7 1600"
+      },
+      {
+        "name": "conv",
+        "value": "3\u00d71"
+      },
+      {
+        "name": "FCOS3D resolution",
+        "value": "900\u00d71600"
+      },
+      {
+        "name": "DETR3D resolution",
+        "value": "900\u00d71600"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning_rate",
+        "value": "2e-4"
+      },
+      {
+        "name": "batch_size",
+        "value": "64"
+      },
+      {
+        "name": "ablation_epochs",
+        "value": "24"
+      },
+      {
+        "name": "ablation_cbgs",
+        "value": "not used"
+      },
+      {
+        "name": "comparison_epochs",
+        "value": "20"
+      },
+      {
+        "name": "comparison_cbgs",
+        "value": "used"
+      },
+      {
+        "name": "camera_aware_depthnet_feature_stride",
+        "value": "16"
+      },
+      {
+        "name": "image_backbone",
+        "value": "ResNet-50"
+      },
+      {
+        "name": "image_size",
+        "value": "256 \u00d7704"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "nuScenes",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "BEVDepth",
+        "description": "Uses pretrained VoVNet as backbone"
+      },
+      {
+        "name": "BEVDepth\u2020",
+        "description": "Uses ConvNeXT as backbone"
+      },
+      {
+        "name": "Efficient Voxel Pooling",
+        "description": "Assigns each frustum feature a CUDA thread to add the feature to its corresponding BEV grid, replacing the Lift-splat cumsum trick of sorting and cumulative sum"
+      },
+      {
+        "name": "Multi-frame Fusion",
+        "description": "Helps better detect objects and endows the model"
+      },
+      {
+        "name": "Depth Loss",
+        "description": "Ablation of different Depth Loss, including BCELoss and L1Loss. Adding Depth Loss improves mAP by 2.2% and is beneficial to classification; mATE marginally reduces 0.21."
+      },
+      {
+        "name": "BCELoss",
+        "description": "Depth Loss variant included in the ablation study."
+      },
+      {
+        "name": "L1Loss",
+        "description": "Depth Loss variant included in the ablation study."
+      },
+      {
+        "name": "DepthNet",
+        "description": "Modeling camera parameters into DepthNet further reduces mATE by 0.41, revealing the importance of camera awareness."
+      },
+      {
+        "name": "Depth Refinement Module",
+        "description": "Improves 0.8% mAP. Hypothesized to make features along the depth axis more compact and reduce false response. Ablation studies the convolution kernel (CD\u00d7W)."
+      },
+      {
+        "name": "detection loss",
+        "description": "Naive BEVDepth already learns to predict depth partially with the help of detection loss."
+      },
+      {
+        "name": "FCOS3D",
+        "description": "Comparison method at resolution 900\u00d71600."
+      },
+      {
+        "name": "DETR3D",
+        "description": "Comparison method at resolution 900\u00d71600."
+      },
+      {
+        "name": "image data augmentations",
+        "description": "random cropping, random scaling, random flipping, and random rotation"
+      },
+      {
+        "name": "BEV data augmentations",
+        "description": "random scaling, random flipping, and random rotation"
+      },
+      {
+        "name": "AdamW",
+        "description": "optimizer used with learning rate 2e-4 and batch size 64"
+      },
+      {
+        "name": "CBGS",
+        "description": "not used for ablation experiments trained 24 epochs; used when BEVDepth is trained 20 epochs for comparison to other methods"
+      },
+      {
+        "name": "Camera-aware DepthNet",
+        "description": "placed at the feature level with stride 16"
+      },
+      {
+        "name": "Camera-awareness",
+        "description": "ablated component denoted CA"
+      },
+      {
+        "name": "multi-frame",
+        "description": "ablated component denoted MF"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "training time",
+        "value": "reduced from 5 days to 1.5 days",
+        "split": null
+      },
+      {
+        "metric": "pooling operation speed",
+        "value": "80\u00d7 faster than Lift-splat baseline",
+        "split": null
+      },
+      {
+        "metric": "mAP",
+        "value": "0.314",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE",
+        "value": "0.706",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE",
+        "value": "0.647",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS",
+        "value": "0.357",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP",
+        "value": "28.2%",
+        "split": null
+      },
+      {
+        "metric": "NDS",
+        "value": "32.7%",
+        "split": null
+      },
+      {
+        "metric": "mAP_DL",
+        "value": "0.304",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE_DL",
+        "value": "0.747",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE_DL",
+        "value": "0.671",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS_DL",
+        "value": "0.344",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP_DL_CA",
+        "value": "0.314",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE_DL_CA",
+        "value": "0.706",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE_DL_CA",
+        "value": "0.647",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS_DL_CA",
+        "value": "0.357",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP_DL_CA_DR",
+        "value": "0.322",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE_DL_CA_DR",
+        "value": "0.707",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE_DL_CA_DR",
+        "value": "0.636",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS_DL_CA_DR",
+        "value": "0.367",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP_DL_CA_DR_MF",
+        "value": "0.330",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE_DL_CA_DR_MF",
+        "value": "0.699",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE_DL_CA_DR_MF",
+        "value": "0.545",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS_DL_CA_DR_MF",
+        "value": "0.442",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP_BCE",
+        "value": "0.322",
+        "split": null
+      },
+      {
+        "metric": "mATE_BCE",
+        "value": "0.707",
+        "split": null
+      },
+      {
+        "metric": "mAOE_BCE",
+        "value": "0.636",
+        "split": null
+      },
+      {
+        "metric": "NDS_BCE",
+        "value": "0.367",
+        "split": null
+      },
+      {
+        "metric": "mAP_L1",
+        "value": "0.321",
+        "split": null
+      },
+      {
+        "metric": "mATE_L1",
+        "value": "0.703",
+        "split": null
+      },
+      {
+        "metric": "mAOE_L1",
+        "value": "0.629",
+        "split": null
+      },
+      {
+        "metric": "NDS_L1",
+        "value": "0.371",
+        "split": null
+      },
+      {
+        "metric": "mAP_BCE_L1",
+        "value": "0.323",
+        "split": null
+      },
+      {
+        "metric": "mATE_BCE_L1",
+        "value": "0.706",
+        "split": null
+      },
+      {
+        "metric": "mAOE_BCE_L1",
+        "value": "0.608",
+        "split": null
+      },
+      {
+        "metric": "NDS_BCE_L1",
+        "value": "0.372",
+        "split": null
+      }
+    ]
+  }
+}

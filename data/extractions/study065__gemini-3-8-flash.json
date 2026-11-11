@@ -1,0 +1,87 @@
+{
+  "study_id": "study065",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study065/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:08:31.296420+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 2,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "topic boundary threshold",
+        "value": "\u00b5s \u2212 \u03c3s"
+      },
+      {
+        "name": "L",
+        "value": "12"
+      },
+      {
+        "name": "H",
+        "value": "768"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "AMI Meeting Corpus",
+        "version": null
+      },
+      {
+        "name": "SNLI dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Modified TextTiling",
+        "description": "An unsupervised topic segmentation method that detects topic changes based on a similarity score using BERT embeddings, block-wise max pooling, and cosine similarity between adjacent utterance blocks."
+      },
+      {
+        "name": "BERT embeddings",
+        "description": "Used to compute representations for every utterance in the meeting transcript."
+      },
+      {
+        "name": "Block-wise max pooling",
+        "description": "Aggregates utterance embeddings within blocks of utterances to extract block-level embeddings."
+      },
+      {
+        "name": "Cosine similarity",
+        "description": "Measures semantic similarity between adjacent utterance blocks."
+      },
+      {
+        "name": "Sentence-BERT",
+        "description": "Pre-trained sentence representation model used to extract fixed size sentence embeddings using a mean over all output vectors."
+      },
+      {
+        "name": "Max pooling",
+        "description": "Repeatedly applied to extract words with high semantic value and filter out words that hold limited semantic value from a given utterance."
+      },
+      {
+        "name": "topic segmentation model",
+        "description": "Consists of a sentence representation model to extract semantic similarity between sentences and a segmentation scheme that employs semantic similarity variations over time to detect topic changes."
+      },
+      {
+        "name": "RoBERTa",
+        "description": "A pre-training configuration of BERT trained with the Masked Language Modelling objective on five large English-language corpora totaling over 160GB of uncompressed text, used to extract fixed features without additional fine-tuning."
+      },
+      {
+        "name": "Feature extraction",
+        "description": "Extracting a fixed sized vector via max pooling of the second to last layer of a pre-trained model without additional fine-tuning"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

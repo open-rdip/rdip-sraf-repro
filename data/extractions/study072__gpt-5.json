@@ -1,0 +1,131 @@
+{
+  "study_id": "study072",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study072/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:15:03.060809+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 3,
+    "methods": 13,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA GTX 4090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "beta (\u03b2)",
+        "value": "varied; exact values not specified (affects validation accuracy)"
+      },
+      {
+        "name": "P (number of linear interpolations)",
+        "value": "increased; exact values not specified"
+      },
+      {
+        "name": "model",
+        "value": "ResNet-101"
+      },
+      {
+        "name": "mini-batch size",
+        "value": "32"
+      },
+      {
+        "name": "learning_rate_schedule",
+        "value": "decreases during training"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Food-101",
+        "version": null
+      },
+      {
+        "name": "CIFAR-100",
+        "version": null
+      },
+      {
+        "name": "mini-ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "w-RA&ER",
+        "description": "Model variant with RA&ER enabled; accuracy influenced by underlying model architecture and correlates with wo-RA&ER performance."
+      },
+      {
+        "name": "wo-RA&ER",
+        "description": "Model variant without RA&ER; improvements in this baseline tend to yield higher accuracy when RA&ER is enabled."
+      },
+      {
+        "name": "MobileNetV3-Large",
+        "description": "Lightweight CNN architecture optimized for execution efficiency with comparatively weaker feature extraction."
+      },
+      {
+        "name": "tiny-SwinTransformer",
+        "description": "Hierarchical transformer with shifted window mechanism providing superior feature extraction."
+      },
+      {
+        "name": "SynerMix",
+        "description": "Method that yields notable gains in classification accuracy but nearly doubles training costs."
+      },
+      {
+        "name": "SynerMix-Intra",
+        "description": "Adds a branch that closely mirrors the original model; accelerates model convergence and introduces beneficial stochasticity via synthesized feature representations within the convex hull or on line segments."
+      },
+      {
+        "name": "w-RA&ER(M)",
+        "description": "Training configuration with training time extending to about 570 seconds per epoch on Food-101 using ResNet-101 and mini-batch size 32 on an NVIDIA GTX 4090."
+      },
+      {
+        "name": "w-ER",
+        "description": "Method with randomness in hidden representations causing high variability in loss across mini-batches; converges more slowly than wo-RA&ER but issues are mitigated when combined with w-RA."
+      },
+      {
+        "name": "w-RA",
+        "description": "When combined with w-ER, mitigates the initial slow and unstable convergence of w-ER."
+      },
+      {
+        "name": "w-ER(M)",
+        "description": "Variant of w-ER that underperforms compared to wo-RA&ER at mini-batch size 16 with high standard deviations in accuracy."
+      },
+      {
+        "name": "w-ER(MM)",
+        "description": "Variant of w-ER that underperforms compared to wo-RA&ER at mini-batch size 16 with high standard deviations in accuracy."
+      },
+      {
+        "name": "ResNet-34",
+        "description": "Model architecture used on CIFAR-100; showed a modest decline in accuracy at mini-batch size 32."
+      },
+      {
+        "name": "w-RA&ER(MM)",
+        "description": "Combination of w-RA with ER variant MM; demonstrated stable accuracy improvements across \u03b2 settings."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "1.22% lower (after applying w-RA&ER(MM))",
+        "split": null
+      },
+      {
+        "metric": "epoch duration",
+        "value": "roughly 290 seconds",
+        "split": null
+      },
+      {
+        "metric": "training time per epoch",
+        "value": "about 570 seconds per epoch",
+        "split": null
+      }
+    ]
+  }
+}

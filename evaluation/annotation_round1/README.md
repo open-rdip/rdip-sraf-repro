@@ -1,7 +1,9 @@
 # Second annotator pack
 
-Thank you for agreeing to help. About eight hours in total. Please spread it over
-several sessions rather than one sitting.
+Thank you for agreeing to help. Expect six to nine hours in total. Please
+spread it over several sessions rather than one sitting, and tell us if it is
+running longer than that so we can cut the sample rather than let it eat your
+week.
 
 ## What this is for
 
@@ -28,7 +30,7 @@ SAMPLE.json          which studies were selected, and the seed used
 ...
 ```
 
-Twenty folders, one per study.
+Twelve folders, one per study.
 
 ## How to do it
 
@@ -39,9 +41,9 @@ Twenty folders, one per study.
 
 2. **Start with folders 01, 02 and 03 only.** Do those three, then stop and send
    them back. We will compare, find where the definitions were ambiguous, fix the
-   codebook together, and only then will you do the remaining seventeen. Please
-   do not do all twenty in one go. If a definition is unclear we would rather
-   find out after three studies than after twenty.
+   codebook together, and only then will you do the remaining nine. Please do not
+   do all twelve in one go. If a definition is unclear we would rather find out
+   after three studies than after twelve.
 
 3. **For each study**, open `STUDY.md`, read the paper and skim the repository,
    then work down `annotate.csv`. Put `K`, `D` or `U` in the `decision` column.

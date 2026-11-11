@@ -1,0 +1,191 @@
+{
+  "study_id": "study048",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study048/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:21:58.602689+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 2,
+    "methods": 18,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of Monte Carlo runs for smallest clusters",
+        "value": "seven"
+      },
+      {
+        "name": "average Monte Carlo steps to first success for LJ38",
+        "value": "a thousand"
+      },
+      {
+        "name": "reduced temperature",
+        "value": "0.8"
+      },
+      {
+        "name": "RMS gradient tolerance",
+        "value": "0.01"
+      },
+      {
+        "name": "energy change tolerance",
+        "value": "0.1\u03b5"
+      },
+      {
+        "name": "initial RMS gradient tolerance",
+        "value": "0.1"
+      },
+      {
+        "name": "RMS force reoptimization tolerance",
+        "value": "10^-4"
+      },
+      {
+        "name": "energy difference reoptimization tolerance",
+        "value": "10^-9"
+      },
+      {
+        "name": "angular move acceptance ratio",
+        "value": "0.5"
+      },
+      {
+        "name": "Monte Carlo steps per run",
+        "value": "5000"
+      },
+      {
+        "name": "number of Monte Carlo runs",
+        "value": "100"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Cambridge Cluster Database",
+        "version": null
+      },
+      {
+        "name": "LJ clusters",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "master equation approach",
+        "description": "Analysis of model energy landscapes using a master equation approach for the dynamics, indicating that an efficient surface should have a large potential energy gradient and the lowest possible transition state energies or rearrangement barriers."
+      },
+      {
+        "name": "transformed potential energy surface",
+        "description": "Transformed energy defined by E-tilde(X) = min{E(X)}, where X is the 3N-dimensional vector of nuclear coordinates and min means an energy minimization is performed starting from X. The transformation does not change the global minimum or the relative energies of any local minima."
+      },
+      {
+        "name": "unbiased global-minimum search",
+        "description": "Unbiased algorithm reported to find the global minima based on the Marks decahedron for LJ 75 and LJ 102."
+      },
+      {
+        "name": "unbiased algorithm",
+        "description": "Performance of the unbiased algorithm was gauged; starting from morphological seeds (decahedral, icosahedral, or fcc) was checked as an effective bias but was not used as the aim of the present work."
+      },
+      {
+        "name": "Monte Carlo",
+        "description": "Monte Carlo runs were conducted at a temperature that was not optimized systematically."
+      },
+      {
+        "name": "global optimization of Lennard-Jones clusters",
+        "description": "Global optimization for Lennard-Jones clusters at most sizes is described as a relatively easy task; global minima of LJ_N for N\u2264110 are tabulated."
+      },
+      {
+        "name": "Morse cluster optimization",
+        "description": "Morse clusters provide a more stringent test, with structural behaviour depending on the range of the potential; at short range the PES is very rugged, with more minima and higher barriers as the range decreases."
+      },
+      {
+        "name": "Polak-Ribiere conjugate gradient",
+        "description": "Energy minimizations were performed using the Polak-Ribiere variant of the conjugate gradient algorithm, assigning the energy at any point in configuration space to that of the local minimum obtained by geometry optimization."
+      },
+      {
+        "name": "canonical Monte Carlo",
+        "description": "The energy landscape for the transformed function was explored using a canonical Monte Carlo simulation at a constant reduced temperature of 0.8, displacing all coordinates at each step."
+      },
+      {
+        "name": "conjugate gradient search",
+        "description": "Required the RMS gradient to fall below 0.01 in reduced units and the energy to change by less than 0.1\u03b5 between consecutive steps."
+      },
+      {
+        "name": "canonical simulation",
+        "description": "Lowest energy structures obtained during the canonical simulation were saved and reoptimized."
+      },
+      {
+        "name": "reoptimization",
+        "description": "Saved structures were reoptimized with tolerances of 10^-4 for the RMS force and 10^-9 for the energy difference; final energies accurate to about six decimal places."
+      },
+      {
+        "name": "seeding",
+        "description": "Technique employed in the calculations."
+      },
+      {
+        "name": "freezing",
+        "description": "Technique employed in the calculations."
+      },
+      {
+        "name": "angular moves",
+        "description": "If the highest pair energy rose above a fraction \u03b1 of the lowest pair energy, an angular move was used for that atom with all other atoms fixed; \u03b1 was adjusted for an acceptance ratio of 0.5."
+      },
+      {
+        "name": "pair energy per atom",
+        "description": "E(i) = 4\u03b5 \u03a3_{j\u2260i} [(\u03c3/r_ij)^12 \u2212 (\u03c3/r_ij)^6], with total energy E = (1/2) \u03a3_i E(i)."
+      },
+      {
+        "name": "unbiased Monte Carlo",
+        "description": "Unbiased Monte Carlo search for Lennard-Jones global minima; a successful run requires an initial geometry in the decahedral catchment area, otherwise the lowest icosahedral minimum is produced and the decahedron is never found."
+      },
+      {
+        "name": "seeded short runs",
+        "description": "Short runs seeded from decahedral structures of neighboring sizes (LJ 75, LJ 76, LJ 77, LJ 103, and larger or smaller decahedra) used to locate decahedral minima."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "LJ38 truncated octahedron found in longer unseeded runs",
+        "value": "four out of five",
+        "split": null
+      },
+      {
+        "metric": "LJ38 first success Monte Carlo steps",
+        "value": "within a thousand on average",
+        "split": null
+      },
+      {
+        "metric": "LJ38 global minimum located in shorter runs from N=37 and N=39",
+        "value": "not located",
+        "split": null
+      },
+      {
+        "metric": "LJ75 global minimum found in longer Monte Carlo runs",
+        "value": "one",
+        "split": null
+      },
+      {
+        "metric": "LJ75 global minimum found in short run from LJ76 global minimum",
+        "value": "found",
+        "split": null
+      },
+      {
+        "metric": "LJ76 minimum found in short runs seeded from LJ75 and LJ77 decahedra",
+        "value": "only found in those short runs",
+        "split": null
+      },
+      {
+        "metric": "decahedral global minimum found for LJ 75",
+        "value": "4 out of 100",
+        "split": null
+      }
+    ]
+  }
+}

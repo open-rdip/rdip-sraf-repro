@@ -1,0 +1,133 @@
+{
+  "study_id": "study015",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study015/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:16:50.664107+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 26,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Block preconditioner for thermo-poromechanics with frictional deformation of fractures",
+        "description": "A block preconditioner addressing thermo-poromechanics with frictional deformation of fractures."
+      },
+      {
+        "name": "PorePy-based numerical modelling of multiphysics in fractured porous media",
+        "description": "Flexible and rigorous numerical modelling of multiphysics processes in fractured porous media using PorePy."
+      },
+      {
+        "name": "Finite volume discretization for poroelastic media with fracture contact mechanics",
+        "description": "Finite volume discretization for poroelastic media with fractures modeled by contact mechanics."
+      },
+      {
+        "name": "PorePy software for multiphysics in fractured porous media",
+        "description": "PorePy: An open-source software for simulation of multiphysics processes in fractured porous media."
+      },
+      {
+        "name": "Fixed-stress-splitting-based preconditioner for mixed-dimensional contact poromechanics",
+        "description": "An efficient preconditioner for mixed-dimensional contact poromechanics based on the fixed stress splitting scheme (Version Number: 1)."
+      },
+      {
+        "name": "Block-partitioned solvers for coupled poromechanics",
+        "description": "A unified framework of block-partitioned solvers for coupled poromechanics."
+      },
+      {
+        "name": "Iterative coupling for coupled flow and geomechanics",
+        "description": "Convergence of iterative coupling for coupled flow and geomechanics."
+      },
+      {
+        "name": "Two-stage preconditioner for multiphase poromechanics in reservoir simulation",
+        "description": "A preconditioning approach designed to accelerate the solution of multiphase poromechanics problems in reservoir simulation."
+      },
+      {
+        "name": "Scalable Multigrid Reduction Framework for Multiphase Poromechanics of Heterogeneous Media",
+        "description": "A multigrid reduction framework aimed at scalable solution of multiphase poromechanics in heterogeneous media."
+      },
+      {
+        "name": "Finite Volume Framework for Fully Implicit Thermal-Hydro-Mechanical-Compositional Modeling",
+        "description": "A finite volume framework enabling fully implicit coupling of thermal, hydraulic, mechanical, and compositional processes for geo-energy applications."
+      },
+      {
+        "name": "Gmsh",
+        "description": "A 3D finite element mesh generator with built-in pre- and post-processing facilities."
+      },
+      {
+        "name": "Multipoint flux approximations for quadrilateral grids",
+        "description": "A family of discretization schemes using multipoint flux approximations tailored for quadrilateral grids."
+      },
+      {
+        "name": "Stable cell-centered finite volume discretization for Biot equations",
+        "description": "A stable cell-centered finite volume method for discretizing the Biot poroelasticity equations."
+      },
+      {
+        "name": "Algebraic multigrid approach for Stokes problems",
+        "description": "A new algebraic multigrid approach for Stokes problems."
+      },
+      {
+        "name": "Incomplete Gaussian Elimination preconditioner for Conjugate Gradient acceleration",
+        "description": "Incomplete Gaussian Elimination as a preconditioning for generalized Conjugate Gradient acceleration."
+      },
+      {
+        "name": "Constrained Residual Acceleration of Conjugate Residual Methods",
+        "description": "Constrained Residual Acceleration applied to Conjugate Residual methods."
+      },
+      {
+        "name": "Block preconditioner for non-isothermal flow in porous media",
+        "description": "A block preconditioner for non-isothermal flow in porous media."
+      },
+      {
+        "name": "Constrained pressure-temperature residual (CPTR) preconditioner",
+        "description": "Constrained pressure-temperature residual (CPTR) preconditioner performance for large-scale thermal CO2 injection simulation."
+      },
+      {
+        "name": "Multigrid smoothers for ultraparallel computing",
+        "description": "Multigrid smoothers designed for ultraparallel computing."
+      },
+      {
+        "name": "System-AMG approaches for reservoir simulations",
+        "description": "System-AMG approaches for industrial fully and adaptive implicit oil reservoir simulations."
+      },
+      {
+        "name": "Unified approach to discretization of flow in fractured porous media",
+        "description": "Unified approach to discretization of flow in fractured porous media"
+      },
+      {
+        "name": "Semi\u2013smooth Newton methods for variational inequalities of the first kind",
+        "description": "Semi\u2013smooth Newton methods for variational inequalities of the first kind"
+      },
+      {
+        "name": "Effective Preconditioners for Mixed-Dimensional Scalar Elliptic Problems",
+        "description": "Effective preconditioners for mixed-dimensional scalar elliptic problems"
+      },
+      {
+        "name": "Constrained Pressure-Temperature Residual (CPTR) Method for Non-Isothermal Multiphase Flow in Porous Media",
+        "description": "A constrained pressure-temperature residual method for non-isothermal multiphase flow in porous media"
+      },
+      {
+        "name": "Line search algorithm for multiphysics problems with fracture deformation",
+        "description": "Line search algorithm tailored for multiphysics problems with fracture deformation"
+      },
+      {
+        "name": "Highly parallel multilevel Newton\u2013Krylov\u2013Schwarz method",
+        "description": "A highly parallel multilevel Newton\u2013Krylov\u2013Schwarz method with subspace-based coarsening and partition-based balancing for the multigroup neutron transport equation on three-dimensional unstructured meshes"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "study_id": "study085",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study085/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:06:27.765759+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 0,
+    "hyperparameters": 17,
+    "datasets": 1,
+    "methods": 25,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "RDkit",
+        "version": null
+      },
+      {
+        "name": "gnina",
+        "version": null
+      },
+      {
+        "name": "Universal Force Field (UFF)",
+        "version": null
+      },
+      {
+        "name": "Vina",
+        "version": null
+      },
+      {
+        "name": "libmolgrid",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "variability factor (\u03bbvar)",
+        "value": "scales the standard deviations used to sample the latent space: z\u2032=\u00b5+\u03bbvar\u03c3z"
+      },
+      {
+        "name": "bias factor (\u03bbbias)",
+        "value": "linearly interpolates between prior and posterior parameters: \u00b5interp=\u03bbbias\u00b5post+(1\u2212\u03bbbias)\u00b5prior; \u03c3interp=\u03bbbias\u03c3post+(1\u2212\u03bbbias)\u03c3prior"
+      },
+      {
+        "name": "samples per protein-ligand complex",
+        "value": "100"
+      },
+      {
+        "name": "grid side length",
+        "value": "23.5\u00c5"
+      },
+      {
+        "name": "grid resolution",
+        "value": "0.5\u00c5"
+      },
+      {
+        "name": "grid spatial dimensions (NX=NY=NZ)",
+        "value": "48"
+      },
+      {
+        "name": "grid shape",
+        "value": "cubic"
+      },
+      {
+        "name": "lambda_recon (initial)",
+        "value": "4.0"
+      },
+      {
+        "name": "lambda_KL (initial)",
+        "value": "0.1"
+      },
+      {
+        "name": "lambda_steric (initial)",
+        "value": "1.0"
+      },
+      {
+        "name": "lambda_KL final value after ramp-up",
+        "value": "1.6"
+      },
+      {
+        "name": "lambda_KL ramp duration",
+        "value": "200,000 iterations"
+      },
+      {
+        "name": "lambda_KL ramp start",
+        "value": "iteration 450,000"
+      },
+      {
+        "name": "optimizer",
+        "value": "RMSprop"
+      },
+      {
+        "name": "learning rate",
+        "value": "1e-5"
+      },
+      {
+        "name": "training iterations",
+        "value": "1,000,000"
+      },
+      {
+        "name": "batch size",
+        "value": "8"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CrossDocked2020",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Prior sampling",
+        "description": "Latent vectors are sampled from a standard normal distribution with no intentional bias towards a specific real ligand, then combined with the conditional receptor encoding before decoding an output ligand density."
+      },
+      {
+        "name": "Posterior sampling",
+        "description": "Latent vectors are sampled using the input encoder given the reference molecule (the known ligand for the conditional receptor), then combined with the conditional receptor encoding before decoding an output ligand density."
+      },
+      {
+        "name": "Variability factor sampling",
+        "description": "Scales the standard deviations used to sample the latent space (z\u2032=\u00b5+\u03bbvar\u03c3z) to investigate different levels of sampling variance."
+      },
+      {
+        "name": "Bias factor interpolation sampling",
+        "description": "Samples from distributions whose parameters are linearly interpolated between the prior and posterior according to \u03bbbias, to control the amount of bias towards the reference molecule."
+      },
+      {
+        "name": "Validity metric",
+        "description": "A molecule is valid if it consists of a single connected fragment."
+      },
+      {
+        "name": "Atom typing and gridding",
+        "description": "A docked protein-ligand complex is converted to an atomic density representation through atom typing and gridding operations."
+      },
+      {
+        "name": "Conditional variational autoencoder (CVAE)",
+        "description": "Density grids are input to a CVAE. The input branch encodes the full complex density and the conditional branch encodes only the receptor density. The complex density is mapped to a probabilistic latent space and sampled as a latent vector z ~ N(\u00b5,\u03c3), which is combined with the conditional vector c from the conditional encoder and passed to the decoder."
+      },
+      {
+        "name": "Atom fitting and bond inference",
+        "description": "The decoder generates an output ligand density, which is converted into the final 3D molecular structure through atom fitting and bond adding."
+      },
+      {
+        "name": "Validity check",
+        "description": "A molecule is valid if it consists of a single connected fragment and can be sanitized by RDKit, which checks valency constraints and attempts to Kekulize aromatic bonds."
+      },
+      {
+        "name": "Novelty check",
+        "description": "A molecule is novel if its canonical SMILES string was not in the training set."
+      },
+      {
+        "name": "Uniqueness check",
+        "description": "A molecule is unique if its canonical SMILES string was not already generated in the course of test evaluations."
+      },
+      {
+        "name": "UFF minimization",
+        "description": "Internal bond lengths and angles of each generated molecule were relaxed in the context of the binding site by Universal Force Field minimization; internal energy and RMSD were measured."
+      },
+      {
+        "name": "Vina minimization and scoring",
+        "description": "Both real and generated molecules underwent Vina minimization and scoring with respect to the receptor, performed using gnina."
+      },
+      {
+        "name": "CNN affinity prediction",
+        "description": "Binding affinity of minimized structures was estimated using an ensemble of CNN scoring functions trained on the CrossDocked2020 data set, performed using gnina."
+      },
+      {
+        "name": "Grid-based molecular representation",
+        "description": "Molecules are represented on cubic grids (23.5\u00c5 side, 0.5\u00c5 resolution, 48x48x48), centered on the input molecule with random translations and rotations added during both training and evaluation; all atoms fitting within the grid extent are represented, with no maximum number of atoms per grid."
+      },
+      {
+        "name": "On-the-fly grid computation with libmolgrid",
+        "description": "Grids are computed on-the-fly using libmolgrid, a GPU-accelerated molecular gridding library that also allows backpropagating gradients from grid values to atomic coordinates."
+      },
+      {
+        "name": "Atom fitting algorithm",
+        "description": "Solves the inverse problem of converting a reference density grid into a discrete 3D molecular structure by optimizing argmin over T,C of ||G_ref - g(T,C)||^2; combines iterative atom detection (selecting grid points with largest density values as initial atom locations) with gradient descent to find a set of atoms that best fits the reference density."
+      },
+      {
+        "name": "Conditional encoder-decoder (latent representation of receptor-ligand interactions)",
+        "description": "Real (rec, lig) examples are given to the encoder to get latent representations of their interactions, then the likelihood of decoding the latent vectors back to the corresponding ligand densities, conditioned on the cognate receptor density, is maximized."
+      },
+      {
+        "name": "Steric clash loss",
+        "description": "Additional loss term minimizing overlap between generated ligand density and receptor density, computed by summing across grid channels and then multiplying receptor and ligand density at each point (Eq. 7). Validated by checking that real protein-ligand complexes have no density overlap, given a density kernel with a relatively small, fixed atomic radius."
+      },
+      {
+        "name": "Combined loss function",
+        "description": "Weighted sum of reconstruction loss, KL divergence loss, and steric clash loss: L = \u03bb_recon*L_recon + \u03bb_KL*L_KL + \u03bb_steric*L_steric (Eq. 8), with the KL weight gradually ramped up during training."
+      },
+      {
+        "name": "Transposed convolutions with nearest-neighbor upsampling",
+        "description": "Decoder operates in reverse of the encoder, using transposed convolutions and nearest-neighbor upsampling instead of pooling."
+      },
+      {
+        "name": "U-Net skip connections",
+        "description": "Skip connections included between the convolutional features of the conditional encoder and the decoder to enhance processing of receptor context."
+      },
+      {
+        "name": "Spectral normalization",
+        "description": "Applied to all learnable parameters during training."
+      },
+      {
+        "name": "Cross-docking",
+        "description": "Each ligand was re-docked to its known receptor and cross-docked to every other receptor with a similar pocket, starting from 18,450 bound protein-ligand crystal structures clustered by pocket similarity."
+      },
+      {
+        "name": "Cross-validation split selection",
+        "description": "CrossDocked2020 has cross-validation splits based on pocket similarity; the first split was used to construct the training and test data sets."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

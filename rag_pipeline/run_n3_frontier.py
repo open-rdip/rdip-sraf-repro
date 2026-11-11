@@ -55,6 +55,12 @@ MARK_DIR = REPO_ROOT / "validation" / "extraction_done"
 REPORT_DIR = REPO_ROOT / "analysis"
 RUN_LOG = REPO_ROOT / "data" / "usage" / "n3_run_log.jsonl"
 
+#: Stop a model's pass after this many studies fail back to back. One failure is
+#: a bad paper; five in a row is the network, the quota or the provider, and
+#: continuing spends money on calls that cannot succeed. Isolated failures do
+#: not trip it, because the counter resets on every success.
+MAX_CONSECUTIVE_FAILURES = 5
+
 
 def _log(event: str, **fields) -> None:
     RUN_LOG.parent.mkdir(parents=True, exist_ok=True)
@@ -85,6 +91,7 @@ def extract_for(spec: ModelSpec, limit: int = 0, force: bool = False) -> dict:
               "from the headline comparison.")
 
     done = failed = skipped = 0
+    consecutive = 0
     for r in rows:
         sid = (r.get("study_id") or "").strip()
         pdf = (r.get("paper_url_pdf") or r.get("paper_url") or "").strip()
@@ -108,6 +115,7 @@ def extract_for(spec: ModelSpec, limit: int = 0, force: bool = False) -> dict:
                       model=spec.model)
             mark.write_text(json.dumps(res))
             done += 1
+            consecutive = 0
             print(f"    {sid}: +{res.get('triples_added', 0)} triples "
                   f"(seeds={res.get('seeds_found', 0)}, "
                   f"params={res.get('params_found', 0)}, "
@@ -120,8 +128,19 @@ def extract_for(spec: ModelSpec, limit: int = 0, force: bool = False) -> dict:
             raise
         except Exception as e:  # noqa: BLE001 — one bad paper must not stop a pass
             failed += 1
+            consecutive += 1
             print(f"    {sid}: extraction FAILED — {type(e).__name__}: {str(e)[:140]}")
-            _log("study_failed", model=spec.key, study=sid, error=str(e)[:300])
+            _log("study_failed", model=spec.key, study=sid, error=str(e)[:300],
+                 consecutive=consecutive)
+            if consecutive >= MAX_CONSECUTIVE_FAILURES:
+                print(f"\n    STOPPING {spec.key}: {consecutive} studies failed "
+                      f"in a row. That is not bad luck. Check the network, the "
+                      f"provider status and the account balance, then re-run; "
+                      f"resume skips everything already completed.")
+                _log("consecutive_failure_abort", model=spec.key,
+                     study=sid, consecutive=consecutive)
+                set_study(None)
+                break
         finally:
             set_study(None)
 
@@ -171,14 +190,22 @@ def pick_best(compare: dict, specs: list[ModelSpec]) -> str | None:
                 for sp in specs
                 if sp.key in UNCONTAMINATED_CORPUS}
     best, best_f1 = None, -1.0
-    for slug, payload in (compare.get("models") or compare).items():
-        if slug not in eligible:
+    # compare_models writes {"tier","strict","models":[slug,...],
+    # "tables":[{"reports": {slug: {"headline_micro": {"f1": ...}, ...}}}]}.
+    # "models" is a list of slugs, not a mapping, so read the reports.
+    reports = {}
+    for table in (compare.get("tables") or []):
+        reports.update(table.get("reports") or {})
+    if not reports and isinstance(compare.get("models"), dict):
+        reports = compare["models"]          # tolerate an older shape
+
+    for slug, payload in reports.items():
+        if slug not in eligible or not isinstance(payload, dict):
             continue
-        f1 = None
-        if isinstance(payload, dict):
-            f1 = (payload.get("headline", {}) or {}).get("f1")
-            if f1 is None:
-                f1 = payload.get("f1")
+        f1 = ((payload.get("headline_micro") or payload.get("headline") or {})
+              .get("f1"))
+        if f1 is None:
+            f1 = payload.get("f1")
         if f1 is not None and float(f1) > best_f1:
             best, best_f1 = slug, float(f1)
     if best:

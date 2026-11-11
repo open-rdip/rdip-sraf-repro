@@ -1,0 +1,289 @@
+{
+  "study_id": "study030",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study030/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:33:55.785337+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 31,
+    "datasets": 7,
+    "methods": 15,
+    "evaluation_results": 9
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "synthetic camera shift maximum",
+        "value": "30 px"
+      },
+      {
+        "name": "image pair random interval",
+        "value": "4, 8 and 12 frames"
+      },
+      {
+        "name": "negative sample replacement ratio",
+        "value": "20%"
+      },
+      {
+        "name": "Nesterov momentum",
+        "value": "0.95"
+      },
+      {
+        "name": "batch size",
+        "value": "32"
+      },
+      {
+        "name": "weight decay",
+        "value": "10\u22125"
+      },
+      {
+        "name": "learning rate warmup duration",
+        "value": "one epoch"
+      },
+      {
+        "name": "learning rate warmup initial value",
+        "value": "10\u22123 of its target value"
+      },
+      {
+        "name": "learning rate decay duration",
+        "value": "10 epochs"
+      },
+      {
+        "name": "learning rate decay factor",
+        "value": "10"
+      },
+      {
+        "name": "exponentially weighted parameter decay constant",
+        "value": "10\u22122"
+      },
+      {
+        "name": "synthetic shifts",
+        "value": "up to 30px"
+      },
+      {
+        "name": "optimizer step frequency",
+        "value": "every two batches"
+      },
+      {
+        "name": "epochs",
+        "value": "50"
+      },
+      {
+        "name": "batches per epoch",
+        "value": "4994"
+      },
+      {
+        "name": "crowd-index",
+        "value": "> 0.8"
+      },
+      {
+        "name": "longer edge",
+        "value": "801 px"
+      },
+      {
+        "name": "horizontal flipping",
+        "value": "false"
+      },
+      {
+        "name": "multi-scale evaluation",
+        "value": "false"
+      },
+      {
+        "name": "stride",
+        "value": "16"
+      },
+      {
+        "name": "features at each location",
+        "value": "2048"
+      },
+      {
+        "name": "ShuffleNetV2K16 output features (block repeats)",
+        "value": "24 (1), 348 (4), 696 (8), 1392 (4), 1392 (1)"
+      },
+      {
+        "name": "ShuffleNetV2K30 output features (block repeats)",
+        "value": "32 (1), 512 (8), 1024 (16), 2048 (6), 2048 (1)"
+      },
+      {
+        "name": "spatial convolution kernel size",
+        "value": "5\u00d75"
+      },
+      {
+        "name": "decay constant for exponentially weighted model parameters",
+        "value": "10\u22122"
+      },
+      {
+        "name": "training epochs (CrowdPose)",
+        "value": "300"
+      },
+      {
+        "name": "target learning rate (CrowdPose)",
+        "value": "10\u22125"
+      },
+      {
+        "name": "learning rate decay epochs (CrowdPose)",
+        "value": "250 and 280"
+      },
+      {
+        "name": "target learning rate (COCO)",
+        "value": "10\u22124"
+      },
+      {
+        "name": "learning rate decay epochs (COCO)",
+        "value": "130 and 140"
+      },
+      {
+        "name": "training epochs (ShuffleNetV2K16)",
+        "value": "150"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CrowdPose",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "PoseTrack",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "COCO keypoint",
+        "version": "2017"
+      },
+      {
+        "name": "PoseTrack 2017",
+        "version": null
+      },
+      {
+        "name": "PoseTrack 2018",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "OpenPifPaf",
+        "description": "Pose prediction framework"
+      },
+      {
+        "name": "ResNet",
+        "description": "Backbone trained with ImageNet pretrained models"
+      },
+      {
+        "name": "ShuffleNetV2",
+        "description": "Models trained from random initializations"
+      },
+      {
+        "name": "SGD",
+        "description": "Optimizer used with Nesterov momentum"
+      },
+      {
+        "name": "Model averaging",
+        "description": "Exponentially weighted version of model parameters updated at each optimization step to extract stable models for validation"
+      },
+      {
+        "name": "Alternating task training",
+        "description": "Alternates tasks between batches, feeding PoseTrack image pairs in one batch and COCO images converted to pairs via synthetic shifts in the next batch"
+      },
+      {
+        "name": "bottom-up method",
+        "description": "Single forward pass keypoint estimation evaluated without horizontal flipping and without multi-scale evaluation"
+      },
+      {
+        "name": "ResNet base network",
+        "description": "Standard ResNet base network with input max-pooling operation removed."
+      },
+      {
+        "name": "ShuffleNetV2K16/K30",
+        "description": "Custom configurations using standard building blocks of ShuffleNetV2 backbones with spatial 3\u00d73 convolutions replaced with 5\u00d75 depth-wise convolutions and input max-pooling operation removed."
+      },
+      {
+        "name": "Head network",
+        "description": "A single 1\u00d71 convolution followed by a sub-pixel convolution to double the spatial resolution."
+      },
+      {
+        "name": "Exponentially weighted parameter averaging",
+        "description": "Updates an exponentially weighted version of model parameters at each optimization step with a decay constant of 10\u22122"
+      },
+      {
+        "name": "ShuffleNetV2K16",
+        "description": "Model architecture/backbone evaluated for pose estimation"
+      },
+      {
+        "name": "ShuffleNetV2k30",
+        "description": "Backbone used for all tracking experiments"
+      },
+      {
+        "name": "Multi-task training with auxiliary task",
+        "description": "Trains on PoseTrack and COCO simultaneously by alternating the two tasks between batches, keeping single-image pose estimation on COCO as an auxiliary task"
+      },
+      {
+        "name": "TCAF",
+        "description": "multiple temporal connections that form a single tracked pose across occlusions"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "FPS",
+        "value": "13.7",
+        "split": "validation"
+      },
+      {
+        "metric": "average time per image (GTX1080Ti)",
+        "value": "152 ms",
+        "split": "test"
+      },
+      {
+        "metric": "average time per image (V100)",
+        "value": "63 ms",
+        "split": "test"
+      },
+      {
+        "metric": "MOTA",
+        "value": "61.7",
+        "split": null
+      },
+      {
+        "metric": "FPS",
+        "value": "12.2",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": "71.9",
+        "split": null
+      },
+      {
+        "metric": "MOTP",
+        "value": "84.5",
+        "split": null
+      },
+      {
+        "metric": "precision",
+        "value": "84.1",
+        "split": null
+      },
+      {
+        "metric": "recall",
+        "value": "77.7",
+        "split": null
+      }
+    ]
+  }
+}

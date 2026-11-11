@@ -1,0 +1,123 @@
+{
+  "study_id": "study044",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study044/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:13:04.671712+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 7,
+    "methods": 14,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "top-n",
+        "value": "5"
+      },
+      {
+        "name": "k",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "AIME 2024",
+        "version": null
+      },
+      {
+        "name": "LiveCodeBench",
+        "version": null
+      },
+      {
+        "name": "Math500",
+        "version": null
+      },
+      {
+        "name": "GSM8K",
+        "version": null
+      },
+      {
+        "name": "GPQA-Diamond",
+        "version": null
+      },
+      {
+        "name": "HumanEval",
+        "version": null
+      },
+      {
+        "name": "MBPPMBPP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Soft Thinking",
+        "description": "Uses concept tokens whose probability distributions are more uniform during exploratory reasoning and nearly one-hot during precise calculations, integrating path exploration across consecutive concept tokens."
+      },
+      {
+        "name": "COCONUT-TF",
+        "description": "Training-free COCONUT that directly feeds the previous hidden state as the next input."
+      },
+      {
+        "name": "Cold Stop",
+        "description": "Mechanism whose impact is assessed in ablation studies of Soft Thinking."
+      },
+      {
+        "name": "COCONUT",
+        "description": "Training-free approach that directly feeds the previous hidden state as the next input embedding."
+      },
+      {
+        "name": "average embedding",
+        "description": "Takes the mean of the top-n token embeddings."
+      },
+      {
+        "name": "discrete CoT",
+        "description": "Standard chain-of-thought that replaces each summation over next-token probabilities with sampling a single token, discarding probability mass from all other paths."
+      },
+      {
+        "name": "Soft Thinking with Cold Stop",
+        "description": "Compared with standard CoT in Tables 1 and 2; solves more problems and achieves greater overall efficiency."
+      },
+      {
+        "name": "standard CoT",
+        "description": "Baseline against which Soft Thinking with Cold Stop solves more problems and is more efficient."
+      },
+      {
+        "name": "Standard CoT Thinking",
+        "description": "Baseline that employs explicit step-by-step reasoning."
+      },
+      {
+        "name": "Standard Greedy CoT Thinking",
+        "description": "Baseline that utilizes greedy decoding at each step of the reasoning process."
+      },
+      {
+        "name": "QwQ-32B training",
+        "description": "Trained with reinforcement learning."
+      },
+      {
+        "name": "DeepSeek training",
+        "description": "DeepSeek models are trained via supervised distillation."
+      },
+      {
+        "name": "Concept tokens",
+        "description": "Reuse the model's existing embedding matrix without any extra parameters or layers as concept tokens."
+      },
+      {
+        "name": "Pass@1",
+        "description": "Accuracy metric defined as Pass@1 = c/n, where n is the total number of samples and c is the number of correct samples; k is set to 1."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

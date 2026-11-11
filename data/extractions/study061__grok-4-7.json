@@ -1,0 +1,116 @@
+{
+  "study_id": "study061",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study061/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:46:07.440812+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 2,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PedSim",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "pedestrian collaboration coefficient",
+        "value": "0"
+      },
+      {
+        "name": "robot collaboration coefficient",
+        "value": "1"
+      },
+      {
+        "name": "CADRL agents",
+        "value": "4"
+      },
+      {
+        "name": "sub-goal horizon",
+        "value": "6 seconds"
+      },
+      {
+        "name": "checkpoint reach distance",
+        "value": "1 meter"
+      },
+      {
+        "name": "simulation modes",
+        "value": "Synchronous and Schematic"
+      },
+      {
+        "name": "network_version",
+        "value": "4-agent"
+      },
+      {
+        "name": "nearest_pedestrians",
+        "value": "3"
+      },
+      {
+        "name": "planning_horizon",
+        "value": "6 seconds"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "SocNavBench",
+        "version": null
+      },
+      {
+        "name": "curated set of 33 episodes",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ORCA",
+        "description": "Optimal Reciprocal Collision Avoidance navigation planner that provides theoretical non-collision guarantees assuming all agents use the same planning policy, based on reciprocal velocity obstacles. Pedestrian collaboration coefficient set to 0 and robot to 1 because pedestrians do not react to the robot. Run in unbounded angular velocity mode without kinematic constraints on linear velocities."
+      },
+      {
+        "name": "SA-CADRL",
+        "description": "Socially aware collision avoidance with deep reinforcement learning that formulates social navigation as a cooperative multi-agent collision avoidance problem with rules to inject social awareness. The 4-agent version is used."
+      },
+      {
+        "name": "Social Forces",
+        "description": "Formulation of pedestrian navigation as motion under social forces, including an attractive force to the goal, a repulsive force from other pedestrians and obstacles, and attractive forces to interesting objects or other pedestrians; open-source implementation taken from the PedSim crowd simulator."
+      },
+      {
+        "name": "CADRL",
+        "description": "Recent, popular, and relatively state-of-the-art model using a deep reinforcement learning-based navigation method."
+      },
+      {
+        "name": "pedestrian-unaware baseline",
+        "description": "Simple pedestrian-unaware baseline evaluated alongside three existing social navigation algorithms on SocNavBench."
+      },
+      {
+        "name": "meta planner",
+        "description": "Plans a sub-goal within a 6-second horizon (around 4\u20137 meters) each time a new checkpoint is requested; checkpoint reached if within 1 meter."
+      },
+      {
+        "name": "3D unicycle model",
+        "description": "Position and heading unicycle model (Eq. 1, Sec. 3.3.3) applied for kinematic constraints; no kinematic constraint application when used as a meta-planner."
+      },
+      {
+        "name": "experimental protocol",
+        "description": "Default simulation settings (Synchronous and Schematic modes); for algorithms assuming no kinematic constraints, kinematic constraints turned off leaving only the maximum linear speed constraint; tested on 33 episodes from Sec. 3.2."
+      },
+      {
+        "name": "meta-level planner",
+        "description": "Sampling planner that samples trajectories from a connectivity graph, evaluates them via heuristic cost functions, and returns the minimum cost trajectory within a budget. Identifies a near-future waypoint directing the robot away from obstacles, with heuristic-based obstacle avoidance and goal-seeking. Plans a sub-goal within a 6-second horizon each time a new checkpoint is requested."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

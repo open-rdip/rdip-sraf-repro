@@ -1,0 +1,180 @@
+{
+  "study_id": "study080",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study080/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:23:29.757300+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 6,
+    "methods": 18,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "move action distance",
+        "value": "0.25m"
+      },
+      {
+        "name": "rotation action angle",
+        "value": "30\u25e6"
+      },
+      {
+        "name": "k (CLIP-Ref.)",
+        "value": "9"
+      },
+      {
+        "name": "k (CLIP-Patch)",
+        "value": "9"
+      },
+      {
+        "name": "STOP distance",
+        "value": "1.0m"
+      },
+      {
+        "name": "training navigation steps (CoW)",
+        "value": "0"
+      },
+      {
+        "name": "training steps (SemanticNav-ZSON)",
+        "value": "500M"
+      },
+      {
+        "name": "training steps (EmbCLIP-ZSON)",
+        "value": "60M"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ROBOTHOR",
+        "version": null
+      },
+      {
+        "name": "PASTURE",
+        "version": null
+      },
+      {
+        "name": "HABITAT",
+        "version": "2021 challenge"
+      },
+      {
+        "name": "MP3D",
+        "version": null
+      },
+      {
+        "name": "HABITAT (MP3D)",
+        "version": null
+      },
+      {
+        "name": "LAION-5B",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "FBE heuristic exploration",
+        "description": "Default CoW exploration strategy"
+      },
+      {
+        "name": "Learned exploration",
+        "description": "Exploration policy optimized on Habitat (MP3D) or RoboTHOR train scenes"
+      },
+      {
+        "name": "CLIP-Ref.",
+        "description": "CLIP with k=9 referring expressions for object localization"
+      },
+      {
+        "name": "CLIP-Patch",
+        "description": "CLIP with k=9 patches for object localization"
+      },
+      {
+        "name": "CLIP-Grad.",
+        "description": "CLIP with gradient relevance for object localization"
+      },
+      {
+        "name": "MDETR",
+        "description": "MDETR segmentation model for object localization"
+      },
+      {
+        "name": "OWL-ViT",
+        "description": "OWL-ViT detector for object localization"
+      },
+      {
+        "name": "CoW",
+        "description": "baselines for L-ZSON"
+      },
+      {
+        "name": "CoWs",
+        "description": "Zero-shot navigation method evaluated on PASTURE and ROBOTHOR for L-ZSON"
+      },
+      {
+        "name": "CLIP",
+        "description": "Vision-language model architecture evaluated across different compute backbones"
+      },
+      {
+        "name": "Center pixel mask post-processing",
+        "description": "Post-processing mask predictions by using only the center pixel as a representative target for navigation"
+      },
+      {
+        "name": "SemanticNav-ZSON",
+        "description": "Baseline trained in the target evaluation simulators for 500M steps"
+      },
+      {
+        "name": "EmbCLIP-ZSON",
+        "description": "Baseline trained in the target evaluation simulators for 60M steps"
+      },
+      {
+        "name": "FBE",
+        "description": "Exploration method used for experiments and compared against learnable exploration"
+      },
+      {
+        "name": "OWL, B/32, with post-processing (\u25b3)",
+        "description": "Object localizer with post-processing"
+      },
+      {
+        "name": "ROBOTHOR learnable exploration",
+        "description": "Learnable exploration method"
+      },
+      {
+        "name": "HABITAT learnable exploration",
+        "description": "Learnable exploration method"
+      },
+      {
+        "name": "OWL ViT- B/32 CoW with post-post processing",
+        "description": "Open-vocabulary object localization model with post-processing"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "unspecified metric (CoW)",
+        "value": "4.9",
+        "split": null
+      },
+      {
+        "metric": "unspecified metric (competitor)",
+        "value": "4.8",
+        "split": null
+      },
+      {
+        "metric": "improvement over EmbCLIP-ZSON ROBOTHOR",
+        "value": "15.6 percentage points",
+        "split": null
+      },
+      {
+        "metric": "SUCCESS",
+        "value": "by\u223c6 percentage points",
+        "split": null
+      }
+    ]
+  }
+}

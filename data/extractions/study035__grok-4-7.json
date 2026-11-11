@@ -1,0 +1,380 @@
+{
+  "study_id": "study035",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study035/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:54:09.024471+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 14,
+    "datasets": 5,
+    "methods": 28,
+    "evaluation_results": 32
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Jetson AGX Xavier",
+      "cuda_version": null,
+      "cpu_info": "Xeon Silver 4114"
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "1"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.0002"
+      },
+      {
+        "name": "batch_size_horse\u2192zebra",
+        "value": "1"
+      },
+      {
+        "name": "batch_size_edges\u2192shoes",
+        "value": "4"
+      },
+      {
+        "name": "batch_size_map\u2192aerial photo",
+        "value": "1"
+      },
+      {
+        "name": "batch_size_cityscapes",
+        "value": "1"
+      },
+      {
+        "name": "batch_size_GauGAN",
+        "value": "16"
+      },
+      {
+        "name": "population_size",
+        "value": "100"
+      },
+      {
+        "name": "number_of_iterations",
+        "value": "500"
+      },
+      {
+        "name": "parent_ratio",
+        "value": "0.25"
+      },
+      {
+        "name": "mutation_ratio",
+        "value": "0.5"
+      },
+      {
+        "name": "mutation_probability",
+        "value": "0.2"
+      },
+      {
+        "name": "intermediate_activations",
+        "value": "4"
+      },
+      {
+        "name": "residual_block_group_size",
+        "value": "3"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "horse \u2192zebra",
+        "version": null
+      },
+      {
+        "name": "edges\u2192shoes",
+        "version": null
+      },
+      {
+        "name": "Cityscapes",
+        "version": null
+      },
+      {
+        "name": "horse\u2192zebra",
+        "version": null
+      },
+      {
+        "name": "map\u2192aerial photo",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GAN Compression",
+        "description": "Baseline compression method whose training and search time are compared against Fast GAN Compression for CycleGAN, Pix2pix, and GauGAN."
+      },
+      {
+        "name": "Fast GAN Compression",
+        "description": "Variant that removes Mobile Teacher Training and Pre-distillation, accelerating GAN Compression training by 1.6-3.7\u00d7, and switches from brute-force search to an evolutionary algorithm."
+      },
+      {
+        "name": "CycleGAN",
+        "description": "Generative model evaluated on horse \u2192zebra; compressed generator inference measured on Jetson Xavier."
+      },
+      {
+        "name": "Pix2pix",
+        "description": "Generative model whose training and search time are compared on edges\u2192shoes."
+      },
+      {
+        "name": "GauGAN",
+        "description": "Generative model whose training time is measured on 8 2080Ti GPUs, evaluated on Cityscapes."
+      },
+      {
+        "name": "Mobile Teacher Training",
+        "description": "Training stage removed from the pipeline in Fast GAN Compression (Figure 4)."
+      },
+      {
+        "name": "Pre-distillation",
+        "description": "Stage removed from the pipeline in Fast GAN Compression (Figure 4)."
+      },
+      {
+        "name": "evolutionary algorithm",
+        "description": "Search method used instead of brute-force search, reducing search cost by 3.5-12\u00d7."
+      },
+      {
+        "name": "brute-force search",
+        "description": "Original search method replaced by the evolutionary algorithm."
+      },
+      {
+        "name": "SPADE module analysis",
+        "description": "\u03b2 and \u03b3 convolutions consume about 88% of the computation of the SPADE modules and are highly redundant."
+      },
+      {
+        "name": "MUNIT generator decomposition",
+        "description": "Decompose the ResBlock layers in the content encoder and decoder, and the upsample layers in the decoder, which consume the majority of model computation. The style encoder remains unchanged because it consumes less than 10% of computation."
+      },
+      {
+        "name": "Fr\u00e9chet Inception Distance (FID)",
+        "description": "Calculates the distance between distributions of feature vectors extracted from real and generated images using an InceptionV3 network. A lower score indicates better generated-image quality. Uses an open-sourced FID evaluation code. For paired image-to-image translation (pix2pix and GauGAN), FID is calculated between translated test images and real test images. For unpaired image-to-image translation (CycleGAN), FID is calculated between translated test images and real training+test images."
+      },
+      {
+        "name": "sub-network student-teacher training",
+        "description": "Training strategy that automatically finds a sub-network with a smaller gap between the student and teacher model, making learning easier than distillation when the teacher is too recondite."
+      },
+      {
+        "name": "hardware inference measurement",
+        "description": "Inference speed of compressed models measured on devices with different computational powers, using batch size 1 to simulate interactive applications."
+      },
+      {
+        "name": "Unpaired-to-paired Transform",
+        "description": "Transforming unpaired conditional GANs into a pseudo paired training setting using the teacher model's output."
+      },
+      {
+        "name": "Pseudo paired training",
+        "description": "After the teacher learns the mapping between source and target domains, the student learns it directly from the teacher; image quality remains relatively stable as computation budget reduces, unlike unpaired training."
+      },
+      {
+        "name": "Pruning",
+        "description": "Ablation factor (Pr.); combined with distillation achieves the best performance on both datasets."
+      },
+      {
+        "name": "Distillation",
+        "description": "Ablation factor (Dstl); combined with pruning achieves the best performance on both datasets."
+      },
+      {
+        "name": "Inheriting the teacher discriminator",
+        "description": "Keep D.: inherit the discriminator's weights from the teacher discriminator so the student can learn extra information on the real target images."
+      },
+      {
+        "name": "Intermediate distillation",
+        "description": "Table 5 is used to demonstrate the effectiveness of intermediate distillation and inheriting the teacher discriminator; the passage is truncated before the full description."
+      },
+      {
+        "name": "From-scratch Training",
+        "description": "Baseline of training the compressed Pix2pix model from scratch, compared without NAS on Cityscapes."
+      },
+      {
+        "name": "Aguinaldo et al.",
+        "description": "Distillation method compared without NAS for the Pix2pix model on Cityscapes."
+      },
+      {
+        "name": "Yim et al.",
+        "description": "Distillation method used in recognition networks, compared without NAS for the Pix2pix model on Cityscapes."
+      },
+      {
+        "name": "knowledge distillation",
+        "description": "Used to alleviate training instability when compressing conditional GAN generators."
+      },
+      {
+        "name": "neural architecture search",
+        "description": "Used to increase model efficiency when compressing conditional GAN generators."
+      },
+      {
+        "name": "LPIPS",
+        "description": "Perceptual similarity between generated images and corresponding real images; lower LPIPS indicates better reconstruction."
+      },
+      {
+        "name": "Human preference test",
+        "description": "AMT study on horse \u2192zebra for CycleGAN following Isola et al., asking workers which image is more like a real zebra between GAN Compression and 0.25 CycleGAN."
+      },
+      {
+        "name": "FID",
+        "description": "For CycleGAN, FID between translated test images and real training+test images; Shu et al. protocol uses translated test images vs real test images. Difference between protocols is small."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "inference speed",
+        "value": "about 40FPS",
+        "split": null
+      },
+      {
+        "metric": "training acceleration",
+        "value": "1.6-3.7\u00d7",
+        "split": null
+      },
+      {
+        "metric": "search cost reduction",
+        "value": "3.5-12 \u00d7",
+        "split": null
+      },
+      {
+        "metric": "SPADE \u03b2 and \u03b3 convolution computation share",
+        "value": "about 88%",
+        "split": null
+      },
+      {
+        "metric": "style encoder computation share",
+        "value": "less than 10%",
+        "split": null
+      },
+      {
+        "metric": "latency",
+        "value": "0.10s",
+        "split": null
+      },
+      {
+        "metric": "speedup",
+        "value": "3.2\u00d7",
+        "split": null
+      },
+      {
+        "metric": "MACs (Original Model)",
+        "value": "56.8G",
+        "split": null
+      },
+      {
+        "metric": "mIoU (Original Model)",
+        "value": "42.06",
+        "split": null
+      },
+      {
+        "metric": "MACs (From-scratch Training)",
+        "value": "5.82G",
+        "split": null
+      },
+      {
+        "metric": "compression ratio (From-scratch Training)",
+        "value": "9.5 \u00d7",
+        "split": null
+      },
+      {
+        "metric": "mIoU (From-scratch Training)",
+        "value": "32.57",
+        "split": null
+      },
+      {
+        "metric": "mIoU drop (From-scratch Training)",
+        "value": "9.49",
+        "split": null
+      },
+      {
+        "metric": "MACs (Aguinaldo et al.)",
+        "value": "5.82G",
+        "split": null
+      },
+      {
+        "metric": "compression ratio (Aguinaldo et al.)",
+        "value": "9.5 \u00d7",
+        "split": null
+      },
+      {
+        "metric": "mIoU (Aguinaldo et al.)",
+        "value": "35.67",
+        "split": null
+      },
+      {
+        "metric": "mIoU drop (Aguinaldo et al.)",
+        "value": "6.39",
+        "split": null
+      },
+      {
+        "metric": "MACs (Yim et al.)",
+        "value": "5.82G",
+        "split": null
+      },
+      {
+        "metric": "compression ratio (Yim et al.)",
+        "value": "9.5 \u00d7",
+        "split": null
+      },
+      {
+        "metric": "mIoU (Yim et al.)",
+        "value": "36.69",
+        "split": null
+      },
+      {
+        "metric": "mIoU drop (Yim et al.)",
+        "value": "5.37",
+        "split": null
+      },
+      {
+        "metric": "MACs (Intermediate Distillation)",
+        "value": "5.82G",
+        "split": null
+      },
+      {
+        "metric": "compression ratio (Intermediate Distillation)",
+        "value": "9.5 \u00d7",
+        "split": null
+      },
+      {
+        "metric": "mIoU (Intermediate Distillation)",
+        "value": "38.26",
+        "split": null
+      },
+      {
+        "metric": "mIoU drop (Intermediate Distillation)",
+        "value": "3.80",
+        "split": null
+      },
+      {
+        "metric": "MACs (GAN Compression)",
+        "value": "5.66G",
+        "split": null
+      },
+      {
+        "metric": "compression ratio (GAN Compression)",
+        "value": "10.0\u00d7",
+        "split": null
+      },
+      {
+        "metric": "mIoU (GAN Compression)",
+        "value": "40.77",
+        "split": null
+      },
+      {
+        "metric": "mIoU drop (GAN Compression)",
+        "value": "1.29",
+        "split": null
+      },
+      {
+        "metric": "FID (original model, Shu et al. protocol)",
+        "value": "65.48",
+        "split": "test"
+      },
+      {
+        "metric": "FID (Shu et al.)",
+        "value": "96.15",
+        "split": "test"
+      },
+      {
+        "metric": "FID (compressed model, Shu et al. protocol)",
+        "value": "69.54",
+        "split": "test"
+      }
+    ]
+  }
+}

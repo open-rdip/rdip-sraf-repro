@@ -1,0 +1,174 @@
+{
+  "study_id": "study094",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study094/ext/grok-4-7",
+  "extracted_at": "2026-11-09T22:02:29.209267+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 11,
+    "methods": 9,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "A100; NVIDIA Orin NX",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "input_size",
+        "value": "640 \u00d7 640"
+      },
+      {
+        "name": "test_size",
+        "value": "800 \u00d7 1333"
+      },
+      {
+        "name": "tensorrt_precision",
+        "value": "FP32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "LVIS",
+        "version": null
+      },
+      {
+        "name": "V3Det",
+        "version": null
+      },
+      {
+        "name": "OpenImages",
+        "version": null
+      },
+      {
+        "name": "CC3M",
+        "version": null
+      },
+      {
+        "name": "SA-1B",
+        "version": null
+      },
+      {
+        "name": "LVIS-minival",
+        "version": null
+      },
+      {
+        "name": "LVIS-val",
+        "version": null
+      },
+      {
+        "name": "O365",
+        "version": null
+      },
+      {
+        "name": "GoldG",
+        "version": null
+      },
+      {
+        "name": "Cap4M",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Grounding DINO 1.5",
+        "description": "Detection results of Grounding DINO 1.5 models are visualized in real-world scenarios using images and text prompts from public datasets."
+      },
+      {
+        "name": "Grounding DINO 1.5 Pro",
+        "description": "Common object detection model that identifies objects in monochromatic images via shape and texture and detects blurry objects under image degradations."
+      },
+      {
+        "name": "Case Analysis and Qualitative Visualization",
+        "description": "Qualitative visualization of detection results for common object detection, including challenging conditions such as monochromatic and blurry images."
+      },
+      {
+        "name": "Grounding DINO 1.5 Edge",
+        "description": "Real-time end-to-end open-set detector evaluated zero-shot without language cache"
+      },
+      {
+        "name": "TensorRT",
+        "description": "Model optimized with TensorRT; speed reported as PyTorch speed / TensorRT FP32 speed"
+      },
+      {
+        "name": "GLIP-T",
+        "description": "Open-set detector with Swin-T backbone, pre-trained on O365, GoldG, and Cap4M"
+      },
+      {
+        "name": "Dense Object Detection",
+        "description": "Grounding DINO 1.5 Pro discerns objects within dense scenarios where multiple objects are closely positioned or overlapping, identifying both common names and specialized terminology."
+      },
+      {
+        "name": "Video Object Detection",
+        "description": "Grounding DINO 1.5 Pro produces consistent object bounding boxes in most cases; videos are processed offline."
+      },
+      {
+        "name": "Side-by-side Comparison",
+        "description": "Comparison of results between Grounding DINO 1.5 Pro and Grounding DINO, with Grounding DINO 1.5 Pro demonstrating superior performance."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "zero-shot AP (COCO)",
+        "value": "45.0",
+        "split": "test"
+      },
+      {
+        "metric": "AP (LVIS-minival)",
+        "value": "36.2",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (LVIS-minival, OmDet-Turbo-T)",
+        "value": "30.3",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (LVIS-minival, YOLO-Worldv2-L)",
+        "value": "32.9",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (LVIS-minival, YOLO-Worldv2-M)",
+        "value": "30.0",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (LVIS-minival, YOLO-Worldv2-S)",
+        "value": "22.7",
+        "split": "validation"
+      },
+      {
+        "metric": "FPS (NVIDIA Orin NX, TensorRT, 640 \u00d7 640)",
+        "value": "over 10",
+        "split": null
+      },
+      {
+        "metric": "COCO APall (GLIP-T)",
+        "value": "46.3",
+        "split": null
+      },
+      {
+        "metric": "COCO APr (GLIP-T)",
+        "value": "26.0",
+        "split": null
+      },
+      {
+        "metric": "COCO APc (GLIP-T)",
+        "value": "20.8",
+        "split": null
+      }
+    ]
+  }
+}

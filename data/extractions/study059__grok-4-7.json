@@ -1,0 +1,169 @@
+{
+  "study_id": "study059",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study059/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:41:34.235748+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 2,
+    "methods": 18,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03bb2",
+        "value": "1.0"
+      },
+      {
+        "name": "training_rounds",
+        "value": "10"
+      },
+      {
+        "name": "num_tasks",
+        "value": "5"
+      },
+      {
+        "name": "evaluated_client",
+        "value": "Client-3"
+      },
+      {
+        "name": "K",
+        "value": "3"
+      },
+      {
+        "name": "C",
+        "value": "3"
+      },
+      {
+        "name": "epochs",
+        "value": "50"
+      },
+      {
+        "name": "runs",
+        "value": "3"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "R8",
+        "version": null
+      },
+      {
+        "name": "Reuters8",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "FedSeIT",
+        "description": "Proposed method in an FCL setup that aligns and assesses relevance of foreign task parameters at each client for all tasks at each model training round, minimising inter-client interference and improving inter-client transfer learning without dense-layer-sharing."
+      },
+      {
+        "name": "FedWeIT",
+        "description": "Baseline model that performs weighted additive filter composition, producing a composite convolution filter."
+      },
+      {
+        "name": "Inter-client knowledge transfer",
+        "description": "Server transmits the global aggregated parameter \u03b8G to all participating clients for inter-client knowledge transfer in the next training round r+1."
+      },
+      {
+        "name": "FedSeIT+DLS",
+        "description": "Comparison variant of FedSeIT; FedSeIT outperforms FedSeIT+DLS on average over the five datasets."
+      },
+      {
+        "name": "Federated Selective Inter-client Transfer (FedSeIT)",
+        "description": "Framework that aims to minimize inter-client interference and communication cost while maximizing inter-client knowledge transfer in the FCL paradigm. Motivated by Yoon et al. (2021), it decomposes each client's model parameters into dense local base parameters, sparse task-adaptive parameters, and sparse mask parameters."
+      },
+      {
+        "name": "dense local base parameters",
+        "description": "Parameters that capture and accumulate task-generic knowledge across a client's private task sequence. For each client, randomly initialized only once before training on the first task and shared throughout."
+      },
+      {
+        "name": "sparse task-adaptive parameters",
+        "description": "Parameters that capture task-specific knowledge for each task in the client's private task sequence."
+      },
+      {
+        "name": "sparse mask parameters",
+        "description": "Parameters that allow the client model to selectively utilize global knowledge."
+      },
+      {
+        "name": "SIT",
+        "description": "Selects relevant and domain-aligned foreign parameters from all historical tasks of foreign clients for augmented-learning."
+      },
+      {
+        "name": "DLS",
+        "description": "Dense-layer-sharing applied in FedSeIT; FedSeIT without DLS outperforms FedSeIT+DLS across all datasets."
+      },
+      {
+        "name": "augmented-learning",
+        "description": "Considers a window of foreign parameters from a sequence of historical tasks in continual learning; window-size extended by increasing K to 5."
+      },
+      {
+        "name": "Micro-averaged Accuracy (MAA)",
+        "description": "After training finishes for all C clients, model parameters are frozen for all tasks and MAA is computed for each of the T past tasks of all C clients."
+      },
+      {
+        "name": "Task-averaged Test Accuracy (TTA)",
+        "description": "Final score obtained by averaging C\u00d7T MAA scores, used to compare the proposed model with the baseline; reported as an average of 3 runs with 3 different seed values for task ordering at each client."
+      },
+      {
+        "name": "additive parameter decomposition",
+        "description": "For each client c and task t, model parameters are \u03b8t_c = Bt_c \u2299 mt_c + At_c, where Bt_c is the local base parameter, mt_c is a mask, and At_c is the task-adaptive parameter."
+      },
+      {
+        "name": "local base parameter initialization",
+        "description": "Bt_c is randomly initialized only once before training on the first task and shared throughout the task sequence Tc; before each task t, the client reinitializes Bt_c from the server global parameter \u03b8G."
+      },
+      {
+        "name": "per-task adaptive and mask parameters",
+        "description": "A new At_c and mt_c are initialized for each task t; mt_c selectively utilizes global knowledge and restricts inter-client interference, while At_c captures task-specific knowledge."
+      },
+      {
+        "name": "server parameter aggregation",
+        "description": "Global parameter \u03b8G accumulates task-generic knowledge by aggregating local base parameters sent from all clients."
+      },
+      {
+        "name": "cross-client task-adaptive knowledge transfer",
+        "description": "Clients can access task-adaptive parameters At_c of past tasks from foreign clients to selectively utilize relevant task-specific knowledge, reducing inter-client interference."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "average outperformance of FedSeIT over FedSeIT+DLS (\u03bb2=1.0)",
+        "value": "4.4%",
+        "split": null
+      },
+      {
+        "metric": "average outperformance of FedSeIT over FedSeIT+DLS (\u03bb2=0.1)",
+        "value": "19.1%",
+        "split": null
+      },
+      {
+        "metric": "average gain of FedSeIT over FedWeIT in text classification",
+        "value": "12.4%",
+        "split": null
+      },
+      {
+        "metric": "average performance gain of FedSeIT vs FedWeIT (\u03bb2=1.0)",
+        "value": "6.8%",
+        "split": null
+      },
+      {
+        "metric": "average performance gain of FedSeIT vs FedWeIT (\u03bb2=0.1)",
+        "value": "12.5%",
+        "split": null
+      }
+    ]
+  }
+}

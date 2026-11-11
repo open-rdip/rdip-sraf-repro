@@ -1,0 +1,70 @@
+{
+  "study_id": "study004",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study004/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:32:07.408459+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 1,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "CIFAR-10",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PAC-Bayesian risk bound on neural nets",
+        "description": "A PAC-Bayesian risk bound derived for neural networks, based on a noise resilience guarantee for a certain class of neural nets."
+      },
+      {
+        "name": "Noise resilience guarantee",
+        "description": "A guarantee of noise resilience for a certain class of neural networks."
+      },
+      {
+        "name": "RMSProp",
+        "description": "Optimizer discussed in the experimental results; reported to be sensitive to the choice of \u03be."
+      },
+      {
+        "name": "ADAM",
+        "description": "Optimizer discussed in the experimental results; reported to be sensitive to the choice of \u03be."
+      },
+      {
+        "name": "Tracking \u03bbmin(Hessian) of the loss function",
+        "description": "Experiment that tracks the minimum eigenvalue of the Hessian of the loss function."
+      },
+      {
+        "name": "Full-batch performance comparison",
+        "description": "Comparison of optimizer performance in the full-batch setting."
+      },
+      {
+        "name": "Mini-batch corroboration",
+        "description": "Experiment corroborating the full-batch behaviors in the mini-batch setting."
+      },
+      {
+        "name": "Image classification on convolutional neural nets",
+        "description": "Experiment on image classification using convolutional neural networks."
+      },
+      {
+        "name": "PAC-Bayesian Risk Bounds for Neural Nets",
+        "description": "Chapter 6 topic: PAC-Bayesian risk bounds applied to neural networks, including a reformulation of the PAC-Bayesian risk bound on neural nets from Neyshabur et al., 2017"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

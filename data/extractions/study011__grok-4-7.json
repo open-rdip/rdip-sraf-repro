@@ -1,0 +1,434 @@
+{
+  "study_id": "study011",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study011/ext/grok-4-7",
+  "extracted_at": "2026-11-09T18:43:23.536088+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 1,
+    "methods": 23,
+    "evaluation_results": 53
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "1080Ti",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "layers_per_block",
+        "value": "2"
+      },
+      {
+        "name": "stage2_residual_blocks",
+        "value": "2"
+      },
+      {
+        "name": "stage3_residual_blocks",
+        "value": "3"
+      },
+      {
+        "name": "stage4_residual_blocks",
+        "value": "8"
+      },
+      {
+        "name": "conv_kernel_size",
+        "value": "3x3"
+      },
+      {
+        "name": "epochs",
+        "value": "200"
+      },
+      {
+        "name": "batch_size",
+        "value": "128"
+      },
+      {
+        "name": "precision",
+        "value": "fp32"
+      },
+      {
+        "name": "data_augmentation",
+        "value": "simple"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RepVGG",
+        "description": "fast, simple and practical ConvNets designed for the maximum speed on GPU and specialized hardware, less concerning the number of parameters"
+      },
+      {
+        "name": "DiracNet",
+        "description": "Adopts a well-designed re-parameterization of conv kernels; official PyTorch code is used to build layers replacing the original 3x3 conv."
+      },
+      {
+        "name": "Trivial Re-param",
+        "description": "Simpler re-parameterization of conv kernels by directly adding an identity kernel to the 3x3 kernel; a degraded version of DiracNet (W-hat = I + W)."
+      },
+      {
+        "name": "Asymmetric Conv Block (ACB)",
+        "description": "Another form of structural re-parameterization, compared to test whether gains come from component-level over-parameterization that makes every 3x3 conv stronger."
+      },
+      {
+        "name": "Residual Reorg",
+        "description": "Builds each stage in a ResNet-like manner with 2 layers per block: one 3x3 layer in the first and last stages and 2, 3, 8 residual blocks in stages 2, 3, and 4, using shortcuts like ResNet-18/34."
+      },
+      {
+        "name": "Autoaugment",
+        "description": "Used together with label smoothing and mixup for 200-epoch training."
+      },
+      {
+        "name": "label smoothing",
+        "description": "Used together with Autoaugment and mixup for 200-epoch training."
+      },
+      {
+        "name": "mixup",
+        "description": "Used together with Autoaugment and label smoothing for 200-epoch training."
+      },
+      {
+        "name": "structural re-parameterization",
+        "description": "Significance verified by training models from scratch for 120 epochs; ablation removes the identity and/or 1x1 branch from every block of RepVGG-B0, and with both branches removed the training-time model degrades into an ordinary model."
+      },
+      {
+        "name": "Winograd",
+        "description": "Theoretical FLOPs and Wino MULs counted as proxies of computational complexity; none of the conv in EfficientNet-B0/B3 is accelerated by the Winograd algorithm."
+      },
+      {
+        "name": "RePr",
+        "description": "a pruning-based training method"
+      },
+      {
+        "name": "speed test",
+        "description": "tested on 1080Ti with a batch size of 128, full precision (fp32), measured in examples/second"
+      },
+      {
+        "name": "structural re-param",
+        "description": "Uses the params of a structure to parameterize another structure; relies on actual dataflow through a concrete structure with nonlinear behavior (training-time BN) and cannot be approximated by trivial re-parameterization."
+      },
+      {
+        "name": "RepVGG-B0",
+        "description": "Model used for 120-epoch ablation studies and variant comparisons; all compared models have the same final structure. Inference speed w/o re-param is tested on models before conversion."
+      },
+      {
+        "name": "Identity branch",
+        "description": "Optional training-time identity branch in the RepVGG-B0 ablation."
+      },
+      {
+        "name": "1x1 branch",
+        "description": "Optional training-time 1x1 branch in the RepVGG-B0 ablation."
+      },
+      {
+        "name": "Identity w/o BN",
+        "description": "Variant with identity branch without BN."
+      },
+      {
+        "name": "Post-addition BN",
+        "description": "Variant that places BN after addition."
+      },
+      {
+        "name": "Full-featured reparam",
+        "description": "Full-featured structural re-parameterization variant."
+      },
+      {
+        "name": "+ReLU in branch",
+        "description": "Variant that adds ReLU in the branch."
+      },
+      {
+        "name": "ACB",
+        "description": "Baseline cited as ACB [10]."
+      },
+      {
+        "name": "ablation of identity and/or 1\u00d71 branch",
+        "description": "removing the identity and/or 1\u00d71 branch from every block of RepVGG-B0; with both branches removed the training-time model degrades into an ordinary plain model"
+      },
+      {
+        "name": "+ReLU in branches",
+        "description": "inserts ReLU into each branch (after BN and before addition); such a block cannot be converted into a single conv layer"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "RepVGG-B2g4 Acc",
+        "value": "79.38",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B2g4 Speed",
+        "value": "581",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B2g4 Params",
+        "value": "55.77",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B2g4 FLOPs",
+        "value": "11.3",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B2g4 MULs",
+        "value": "6.0",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B3g4 Acc",
+        "value": "80.21",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B3g4 Speed",
+        "value": "464",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B3g4 Params",
+        "value": "75.62",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B3g4 FLOPs",
+        "value": "16.1",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B3g4 MULs",
+        "value": "8.4",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B3 Acc",
+        "value": "80.52",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B3 Speed",
+        "value": "363",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B3 Params",
+        "value": "110.96",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B3 FLOPs",
+        "value": "26.2",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B3 MULs",
+        "value": "12.9",
+        "split": null
+      },
+      {
+        "metric": "RegNetX-12GF Acc",
+        "value": "80.55",
+        "split": null
+      },
+      {
+        "metric": "RegNetX-12GF Speed",
+        "value": "277",
+        "split": null
+      },
+      {
+        "metric": "RegNetX-12GF Params",
+        "value": "46.05",
+        "split": null
+      },
+      {
+        "metric": "RegNetX-12GF FLOPs",
+        "value": "12.1",
+        "split": null
+      },
+      {
+        "metric": "RegNetX-12GF MULs",
+        "value": "10.9",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B3 Acc",
+        "value": "79.31",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B3 Speed",
+        "value": "224",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B3 Params",
+        "value": "12.19",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B3 FLOPs",
+        "value": "1.8",
+        "split": null
+      },
+      {
+        "metric": "speed",
+        "value": "10% faster",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "6.57% higher",
+        "split": null
+      },
+      {
+        "metric": "VGG accuracy",
+        "value": "74.5%",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B2 accuracy improvement over VGG trained with RePr",
+        "value": "4.28%",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-A2 vs EfficientNet-B0",
+        "value": "1.37%/59% better",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B1 vs RegNetX-3.2GF",
+        "value": "0.39% better",
+        "split": null
+      },
+      {
+        "metric": "RepVGG accuracy",
+        "value": "above 80%",
+        "split": null
+      },
+      {
+        "metric": "RepVGG-B3 speed vs RegNetX-12GF",
+        "value": "31% faster",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (no identity branch, no 1x1 branch)",
+        "value": "72.39",
+        "split": null
+      },
+      {
+        "metric": "Inference speed w/o re-param (examples/s, no identity branch, no 1x1 branch)",
+        "value": "1810",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (identity branch only)",
+        "value": "74.79",
+        "split": null
+      },
+      {
+        "metric": "Inference speed w/o re-param (examples/s, identity branch only)",
+        "value": "1569",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (1x1 branch only)",
+        "value": "73.15",
+        "split": null
+      },
+      {
+        "metric": "Inference speed w/o re-param (examples/s, 1x1 branch only)",
+        "value": "1230",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (identity branch and 1x1 branch)",
+        "value": "75.14",
+        "split": null
+      },
+      {
+        "metric": "Inference speed w/o re-param (examples/s, identity branch and 1x1 branch)",
+        "value": "1061",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (Identity w/o BN)",
+        "value": "74.18",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (Post-addition BN)",
+        "value": "73.52",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (Full-featured reparam)",
+        "value": "75.14",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (+ReLU in branch)",
+        "value": "75.69",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (DiracNet)",
+        "value": "73.97",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (Trivial Re-param)",
+        "value": "73.51",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (ACB)",
+        "value": "73.58",
+        "split": null
+      },
+      {
+        "metric": "Accuracy (Residual Reorg)",
+        "value": "74.56",
+        "split": null
+      },
+      {
+        "metric": "accuracy (both branches removed, ordinary plain model)",
+        "value": "72.39%",
+        "split": null
+      },
+      {
+        "metric": "accuracy (with 1\u00d71)",
+        "value": "73.15%",
+        "split": null
+      },
+      {
+        "metric": "accuracy (with identity)",
+        "value": "74.79%",
+        "split": null
+      },
+      {
+        "metric": "accuracy (full featured RepVGG-B0)",
+        "value": "75.14%",
+        "split": null
+      },
+      {
+        "metric": "accuracy improvement of full RepVGG-B0 over ordinary plain model",
+        "value": "2.75%",
+        "split": null
+      }
+    ]
+  }
+}

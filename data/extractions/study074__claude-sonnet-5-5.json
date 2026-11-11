@@ -1,0 +1,57 @@
+{
+  "study_id": "study074",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study074/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:01:50.821025+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 7,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "DroidBot-GPT two-step text input",
+        "description": "When the LLM chooses to edit in a text box, DroidBot-GPT sends a second prompt ending with 'What should I enter to the view with the text '<text content>'? Just return the text and nothing else.' and types in the response."
+      },
+      {
+        "name": "Response post-processing for invalid outputs",
+        "description": "If ChatGPT returns a sentence instead of a choice, DroidBot-GPT extracts the first choice contained in the response."
+      },
+      {
+        "name": "DroidBot-GPT prompt synthesis",
+        "description": "DroidBot-GPT synthesizes prompts containing the task, GUI elements, action history, and output requirement for the LLM to select an action; illustrated with the 'Noice' music player app task 'set the sleep time noise to 5 minutes'."
+      },
+      {
+        "name": "Prompt synthesis",
+        "description": "The prompt consists of the task, the GUI elements with the action choices they provide, the action history (a history action sequence to avoid repetition), and the output requirement specifying whether the output should be a single choice or a sentence to be typed in."
+      },
+      {
+        "name": "Prompt color-coding",
+        "description": "The task, GUI elements, action history, and output requirement are represented in blue, green, yellow, and purple colors respectively to aid understanding."
+      },
+      {
+        "name": "DroidBot-GPT",
+        "description": "System that takes an Android application and a user-described task, fetches the app state and describes it in natural language, combines the state information, action history, and task into a prompt, sends it to ChatGPT, and executes the returned action on the phone."
+      },
+      {
+        "name": "GUI description",
+        "description": "Converts the GUI into natural language sentences instead of feeding the structured tree-form description directly. User-visible elements are extracted and their properties checked, and for each element a prompt of the form 'A view <name> that can ...' is generated."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

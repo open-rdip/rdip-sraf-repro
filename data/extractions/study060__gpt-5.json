@@ -1,0 +1,291 @@
+{
+  "study_id": "study060",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study060/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:05:08.189431+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 27,
+    "datasets": 1,
+    "methods": 33,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "samples_per_one_minute_extension",
+        "value": "4"
+      },
+      {
+        "name": "initial_sample_duration_minutes",
+        "value": "1"
+      },
+      {
+        "name": "extension_duration_minutes",
+        "value": "1"
+      },
+      {
+        "name": "completions_by_three_minutes",
+        "value": "16"
+      },
+      {
+        "name": "sampling_rate",
+        "value": "22 kHz"
+      },
+      {
+        "name": "vq_vae_sampling_rate",
+        "value": "44 kHz"
+      },
+      {
+        "name": "upsampler_parameters",
+        "value": "1B"
+      },
+      {
+        "name": "top_level_prior_parameters",
+        "value": "1B"
+      },
+      {
+        "name": "model_architecture",
+        "value": "seq2seq"
+      },
+      {
+        "name": "conditioning",
+        "value": "lyric conditioning"
+      },
+      {
+        "name": "dataset_filter",
+        "value": "songs primarily in English"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.00015"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.002"
+      },
+      {
+        "name": "vqvae_code_rate_khz",
+        "value": "22"
+      },
+      {
+        "name": "raw_audio_context_seconds_top",
+        "value": "1.5"
+      },
+      {
+        "name": "raw_audio_context_seconds_middle",
+        "value": "1.5"
+      },
+      {
+        "name": "raw_audio_context_seconds_bottom",
+        "value": "1.5"
+      },
+      {
+        "name": "training_time_upsamplers",
+        "value": "2 weeks on 128 V100s"
+      },
+      {
+        "name": "training_time_top_level_prior",
+        "value": "4 weeks on 512 V100s"
+      },
+      {
+        "name": "training_time_lyrics_conditioning",
+        "value": "2 weeks on 512 V100s"
+      },
+      {
+        "name": "batch_size",
+        "value": "32"
+      },
+      {
+        "name": "audio_clip_duration_seconds",
+        "value": "3"
+      },
+      {
+        "name": "sample_rate",
+        "value": "44 kHz"
+      },
+      {
+        "name": "hop_length_bottom",
+        "value": "8"
+      },
+      {
+        "name": "hop_length_middle",
+        "value": "32"
+      },
+      {
+        "name": "hop_length_top",
+        "value": "128"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "MAESTRO",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Human-in-the-loop co-composition with top-level token selection",
+        "description": "The top-level model generates multiple samples; a human listens to fast VQ-VAE decoder upsamplings to choose a favorite, and the model continues generation conditioned on the selected sample."
+      },
+      {
+        "name": "VQ-VAE decoder for fast rough upsampling",
+        "description": "Use VQ-VAE decoders to quickly upsample top-level tokens to obtain a rough audio preview of model outputs, enabling rapid human audition during selection."
+      },
+      {
+        "name": "Distillation to parallel sampler via KL minimization",
+        "description": "Generate samples from a parallel sampler and evaluate their likelihood and entropy with a parallel likelihood evaluator, then optimize the sampler by minimizing the KL divergence from the current autoregressive model."
+      },
+      {
+        "name": "Model architecture trade-off",
+        "description": "Current models perform fast parallel likelihood evaluation but slow autoregressive sampling; an alternative model enables fast parallel sampling with slow autoregressive likelihood evaluation."
+      },
+      {
+        "name": "Hierarchical VQ-VAE",
+        "description": "A raw audio hierarchical vector-quantized variational autoencoder trained with multiple levels; observed difficulty in pushing information to higher levels, with middle and top-level reconstructions capturing little."
+      },
+      {
+        "name": "Residual modeling in bottom layers",
+        "description": "Bottom layers explicitly model residuals to encourage more information flow to higher levels."
+      },
+      {
+        "name": "Separate autoencoders",
+        "description": "Using separate autoencoders instead of a hierarchical setup, reported as cleaner and more effective."
+      },
+      {
+        "name": "Ancestral sampling with branching tree",
+        "description": "Generate multiple continuations from the same one-minute segment by independently sampling four times per one-minute extension; by the three-minute mark this yields 16 completions to explore diversity."
+      },
+      {
+        "name": "Conditioning on styles, lyrics, and raw audio",
+        "description": "Model can be conditioned on various styles, provided lyrics, and raw audio to guide generation."
+      },
+      {
+        "name": "Windowed generation for lyrics alignment",
+        "description": "Linearly moving the window may not yield good lyrics alignment for certain genres like hip hop and rap, lowering the chance of plausible singing."
+      },
+      {
+        "name": "VQ-VAE at 44 kHz",
+        "description": "Increased the VQ-VAE sampling rate from 22 kHz to 44 kHz to improve fidelity."
+      },
+      {
+        "name": "1B parameter upsamplers",
+        "description": "Used 1B parameter upsamplers to reduce noise from upsampling and decoding."
+      },
+      {
+        "name": "Top-level prior scaling to 5B",
+        "description": "Increased the top-level prior from 1B to 5B parameters to better model diverse songs and enable initial singing."
+      },
+      {
+        "name": "Seq2seq with lyric conditioning",
+        "description": "Trained a seq2seq model conditioned on lyrics to make singing intelligible and controllable."
+      },
+      {
+        "name": "Language-filtered training data",
+        "description": "Limited training data to songs primarily in English to improve lyric intelligibility."
+      },
+      {
+        "name": "Jukebox final model",
+        "description": "Combined higher sampling rate, large upsamplers, larger top-level prior, and lyric-conditioned seq2seq training."
+      },
+      {
+        "name": "WaveNet",
+        "description": "An autoregressive model for audio that uses a categorical distribution for samples, leading to quantization noise, with notoriously slow sampling."
+      },
+      {
+        "name": "Parallel WaveNet",
+        "description": "Uses a mixture of logistics (continuous) distribution and probability density distillation to learn a parallel feed-forward network from a pre-trained autoregressive model, enabling faster high-fidelity sampling."
+      },
+      {
+        "name": "ClariNet",
+        "description": "Achieves similar audio quality using a simple Gaussian distribution with a closed-form loss, eliminating the need for Monte Carlo sampling."
+      },
+      {
+        "name": "SampleRNN",
+        "description": "A multi-scale, hierarchical recurrent neural network with convolutional upsampling to model long-range complex structures in audio."
+      },
+      {
+        "name": "WaveRNN",
+        "description": "Recurrent neural networks operating separately on the most significant and least significant bytes, efficiently deployable on mobile devices with audio quality comparable to WaveNet."
+      },
+      {
+        "name": "WaveGlow",
+        "description": "A flow-based model for parallel sample-level audio synthesis trained via straightforward maximum-likelihood estimation."
+      },
+      {
+        "name": "Hierarchical prior with upsamplers",
+        "description": "A multi-level model generating 1.5 seconds of raw audio at the top, middle, and bottom levels with upsamplers to increase fidelity."
+      },
+      {
+        "name": "Upsamplers (1B params)",
+        "description": "Upsampling models each with approximately one billion parameters trained on 128 V100 GPUs for 2 weeks."
+      },
+      {
+        "name": "Top-level prior (5B params)",
+        "description": "Top-level prior model with approximately five billion parameters trained on 512 V100 GPUs for 4 weeks."
+      },
+      {
+        "name": "Lyrics conditioning with small encoder",
+        "description": "Reuses the prior and adds a small encoder for lyrics conditioning; trained on 512 V100 GPUs for 2 weeks."
+      },
+      {
+        "name": "VQ-VAE codes at 22 kHz",
+        "description": "Models trained using 22 kHz VQ-VAE codes to represent audio."
+      },
+      {
+        "name": "Adam optimizer",
+        "description": "Optimization performed with Adam using learning rate 0.00015 and weight decay 0.002."
+      },
+      {
+        "name": "VQ-VAE (raw audio)",
+        "description": "Raw audio vector-quantized variational autoencoders trained with varying compression ratios, objectives, and architectures."
+      },
+      {
+        "name": "Hierarchical autoencoder",
+        "description": "Multi-level (bottom, middle, top) autoencoder structure with hop lengths of 8, 32, and 128 respectively."
+      },
+      {
+        "name": "Nonautoregressive decoder",
+        "description": "Decoders are nonautoregressive with continuous output representations."
+      },
+      {
+        "name": "Spectral loss",
+        "description": "Loss component aiding training of top-level codes; removing it degrades reconstruction fidelity."
+      },
+      {
+        "name": "Opus codec baseline",
+        "description": "Baseline codec encoding audio at constant bitrates comparable to VQ-VAE; fails to capture higher frequencies and introduces artifacts at highest compression."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Spectral convergence (dB) - None",
+        "value": "-8.3",
+        "split": "test"
+      },
+      {
+        "metric": "Spectral convergence (dB) - Without spectral loss",
+        "value": "-6.3",
+        "split": "test"
+      },
+      {
+        "metric": "Spectral convergence (dB) - With single autoencoder",
+        "value": "2.9",
+        "split": "test"
+      }
+    ]
+  }
+}

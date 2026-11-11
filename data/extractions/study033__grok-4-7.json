@@ -1,0 +1,272 @@
+{
+  "study_id": "study033",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study033/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:46:22.351985+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 5,
+    "methods": 24,
+    "evaluation_results": 19
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "Pix2Pix",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "merge_convolution_kernel",
+        "value": "1\u00d71"
+      },
+      {
+        "name": "EI/EIadown_count",
+        "value": "1"
+      },
+      {
+        "name": "EI/EIadown_channels",
+        "value": "64"
+      },
+      {
+        "name": "EI/EIadown_kernel",
+        "value": "7"
+      },
+      {
+        "name": "EI/EIadown_stride",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "SYN",
+        "version": null
+      },
+      {
+        "name": "CL1",
+        "version": null
+      },
+      {
+        "name": "CL2",
+        "version": null
+      },
+      {
+        "name": "DeepLesion",
+        "version": null
+      },
+      {
+        "name": "vertebrae localization and identification dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "UNet",
+        "description": "Publicly available implementation in PyTorch."
+      },
+      {
+        "name": "cGANMAR",
+        "description": "Trained with the official code of Pix2Pix; identical to Pix2Pix at the backend."
+      },
+      {
+        "name": "CNNMAR",
+        "description": "Supervised metal artifact reduction approach used to synthesize metal artifacts by simulating beam hardening effect and Poisson noise when generating metal-affected polychromatic projection data from artifact-free CT images."
+      },
+      {
+        "name": "Pix2Pix",
+        "description": "Official code used to train cGANMAR."
+      },
+      {
+        "name": "GIa merging blocks",
+        "description": "Concatenate content feature maps and artifact feature maps along the channel dimension, then use a 1\u00d71 convolution to locally merge the features."
+      },
+      {
+        "name": "LI",
+        "description": "Conventional method widely used for metal artifact reduction (MAR)."
+      },
+      {
+        "name": "NMAR",
+        "description": "Conventional method widely used for metal artifact reduction (MAR)."
+      },
+      {
+        "name": "CycleGAN",
+        "description": "Unsupervised state-of-the-art approach to image-to-image translation."
+      },
+      {
+        "name": "DIP",
+        "description": "Unsupervised method compared for image-to-image translation."
+      },
+      {
+        "name": "MUNIT",
+        "description": "Unsupervised state-of-the-art approach to image-to-image translation."
+      },
+      {
+        "name": "DRIT",
+        "description": "Unsupervised state-of-the-art approach to image-to-image translation."
+      },
+      {
+        "name": "interpolation followed by convolutional upsampling",
+        "description": "Upsampling uses interpolation followed by a convolutional layer instead of a deconvolutional layer, to avoid the checkerboard effect."
+      },
+      {
+        "name": "reflection padding",
+        "description": "The padding of all the convolutional layers in the blocks of the encoders and decoders is reflection padding, which provides better results along the edges of the generated images."
+      },
+      {
+        "name": "artifact pyramid decoding (APD)",
+        "description": "A special way to merge the artifact code and the content code during decoding of an artifact-affected image, proposed in respect to the feature pyramid network (FPN). A feature pyramid design includes high-definition features with relatively cheaper costs to recover artifact details. EIa consists of several downsampling blocks and outputs feature maps at different scales, i.e. a feature pyramid. GIa consists of a stack of residual, merge, upsample and final blocks and generates artifact-affected images by merging the artifact code at different scales during decoding. The merging blocks in GIa first concatenate the content feature maps and artifact feature maps along the channel."
+      },
+      {
+        "name": "ADN",
+        "description": "Learns Ec, Ia, and GI together with other encoders and decoders so different learning signals regularize their training and remove the requirement of paired data, encouraging encoder and decoder outputs to achieve artifact disentanglement."
+      },
+      {
+        "name": "adversarial loss",
+        "description": "Two adversarial losses LI_adv and LIa_adv. By manipulating the artifact component in the latent space, ADN outputs x-hat, which removes artifacts from xa, and y-hat_a, which adds artifacts to y."
+      },
+      {
+        "name": "artifact consistency loss",
+        "description": "Lart, one of the five loss forms enabled by ADN."
+      },
+      {
+        "name": "reconstruction loss",
+        "description": "Lrec, one of the five loss forms enabled by ADN."
+      },
+      {
+        "name": "self-reduction loss",
+        "description": "Lself, one of the five loss forms enabled by ADN."
+      },
+      {
+        "name": "overall objective",
+        "description": "Weighted sum L = \u03bbadv(LI_adv + LIa_adv) + \u03bbart Lart + \u03bbrec Lrec + \u03bbself Lself, where the \u03bb hyperparameters control the importance of each term."
+      },
+      {
+        "name": "artifact pyramid decoding",
+        "description": "The artifact-affected decoder GI uses APD to effectively merge the artifact code from EIa."
+      },
+      {
+        "name": "CNN building components",
+        "description": "Encoders, decoders, and discriminators are formulated as convolutional neural networks whose blocks include residual, downsampling, upsampling, final, and merging blocks."
+      },
+      {
+        "name": "forward projection synthesis",
+        "description": "For SYN, artifact-free CT images are forward projected and metal traces masked out. For CL1 and CL2, artifact-affected CT images are forward projected because no ground-truth artifact-free CT is available; metal traces are segmented and masked out for projection interpolation. Artifact-free images reuse CT images from CL1. A referenced dataset has 2,560 CBCT images, of which 200 are withheld for testing; images are noisy and mostly contain metal artifacts with implants largely outside the field of view."
+      },
+      {
+        "name": "Ours",
+        "description": "Proposed method included in the quantitative comparison on the SYN dataset."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "LI PSNR",
+        "value": "32.0",
+        "split": null
+      },
+      {
+        "metric": "LI SSIM",
+        "value": "91.0",
+        "split": null
+      },
+      {
+        "metric": "NMAR PSNR",
+        "value": "32.1",
+        "split": null
+      },
+      {
+        "metric": "NMAR SSIM",
+        "value": "91.2",
+        "split": null
+      },
+      {
+        "metric": "CNNMAR PSNR",
+        "value": "32.5",
+        "split": null
+      },
+      {
+        "metric": "CNNMAR SSIM",
+        "value": "91.4",
+        "split": null
+      },
+      {
+        "metric": "UNet PSNR",
+        "value": "34.8",
+        "split": null
+      },
+      {
+        "metric": "UNet SSIM",
+        "value": "93.1",
+        "split": null
+      },
+      {
+        "metric": "cGANMAR PSNR",
+        "value": "34.1",
+        "split": null
+      },
+      {
+        "metric": "cGANMAR SSIM",
+        "value": "93.4",
+        "split": null
+      },
+      {
+        "metric": "CycleGAN PSNR",
+        "value": "30.8",
+        "split": null
+      },
+      {
+        "metric": "CycleGAN SSIM",
+        "value": "72.9",
+        "split": null
+      },
+      {
+        "metric": "DIP PSNR",
+        "value": "26.4",
+        "split": null
+      },
+      {
+        "metric": "DIP SSIM",
+        "value": "75.9",
+        "split": null
+      },
+      {
+        "metric": "MUNIT PSNR",
+        "value": "14.9",
+        "split": null
+      },
+      {
+        "metric": "MUNIT SSIM",
+        "value": "7.5",
+        "split": null
+      },
+      {
+        "metric": "DRIT PSNR",
+        "value": "25.6",
+        "split": null
+      },
+      {
+        "metric": "DRIT SSIM",
+        "value": "79.7",
+        "split": null
+      },
+      {
+        "metric": "Ours PSNR",
+        "value": "33.6",
+        "split": null
+      }
+    ]
+  }
+}

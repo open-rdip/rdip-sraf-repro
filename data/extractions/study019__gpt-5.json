@@ -1,0 +1,180 @@
+{
+  "study_id": "study019",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study019/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:21:06.337779+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 5,
+    "methods": 13,
+    "evaluation_results": 12
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "s",
+        "value": "4"
+      },
+      {
+        "name": "input_size",
+        "value": "224 \u00d7224"
+      },
+      {
+        "name": "model_variant",
+        "value": "18w \u00d74s"
+      },
+      {
+        "name": "output_stride",
+        "value": "16 (training and evaluation)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "DUT-OMRON",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "CIFAR-100",
+        "version": null
+      },
+      {
+        "name": "augmented PASCAL VOC12",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Res2Net",
+        "description": "Backbone/module with hierarchical feature splits {yi} computed sequentially; typical setting s = 4."
+      },
+      {
+        "name": "Res2Net-50 (18w \u00d74s)",
+        "description": "A Res2Net-50 configuration with width 18w and scale 4s, achieving lower FLOPs than ResNet-50."
+      },
+      {
+        "name": "ResNet v1d",
+        "description": "A ResNet variant whose modifications are followed to adjust Res2Net."
+      },
+      {
+        "name": "Res2Net v1b",
+        "description": "Modified Res2Net following ResNet v1d and trained with CutMix, improving ImageNet classification and downstream tasks."
+      },
+      {
+        "name": "CutMix",
+        "description": "Data augmentation technique used during training."
+      },
+      {
+        "name": "SimpleBaseline",
+        "description": "Key-points estimation method; backbone replaced with the proposed Res2Net."
+      },
+      {
+        "name": "ResNet-50 backbone",
+        "description": "Used as a baseline backbone for salient object detection and key-points estimation."
+      },
+      {
+        "name": "Res2Net-50 backbone",
+        "description": "Proposed multi-scale representation backbone used to replace ResNet-50 in key-points estimation and salient object detection."
+      },
+      {
+        "name": "Class Activation Mapping (CAM)",
+        "description": "Visualization technique to localize discriminative image regions for classification."
+      },
+      {
+        "name": "Grad-CAM",
+        "description": "Method used to generate class activation maps for visualizing model attention."
+      },
+      {
+        "name": "DeepLab v3+",
+        "description": "Semantic segmentation method; used with backbone replaced by ResNet or the proposed Res2Net."
+      },
+      {
+        "name": "Res2Net backbone",
+        "description": "Backbone network (Res2Net-50/Res2Net-101) used to replace the original backbone in DeepLab v3+ to enhance multi-scale representation."
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "Instance segmentation method combining object detection and semantic segmentation."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 error",
+        "value": "3.05 %",
+        "split": null
+      },
+      {
+        "metric": "FLOPs",
+        "value": "69%",
+        "split": null
+      },
+      {
+        "metric": "F-measure",
+        "value": "5.2% improvement",
+        "split": null
+      },
+      {
+        "metric": "MAE",
+        "value": "2.1% improvement",
+        "split": null
+      },
+      {
+        "metric": "AP (ResNet-50)",
+        "value": "70.4",
+        "split": "validation"
+      },
+      {
+        "metric": "AP50 (ResNet-50)",
+        "value": "88.6",
+        "split": "validation"
+      },
+      {
+        "metric": "AP75 (ResNet-50)",
+        "value": "78.3",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (ResNet-50)",
+        "value": "67.1",
+        "split": "validation"
+      },
+      {
+        "metric": "APL (ResNet-50)",
+        "value": "77.2",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (Res2Net-50)",
+        "value": "71.5",
+        "split": "validation"
+      },
+      {
+        "metric": "AP50 (Res2Net-50)",
+        "value": "89.0",
+        "split": "validation"
+      },
+      {
+        "metric": "mean IoU",
+        "value": "outperforms counterpart by 1.5 %",
+        "split": null
+      }
+    ]
+  }
+}

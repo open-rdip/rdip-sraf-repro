@@ -1,0 +1,93 @@
+{
+  "study_id": "study054",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study054/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:53:11.575881+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 16,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Consolidated control barrier function (C-CBF)",
+        "description": "A candidate CBF H: R^N x R^c_+ -> R that smoothly synthesizes multiple candidate CBFs h_s into a single function with constituent gains k = [k_1,...,k_c]^T, such that the zero super-level set C(k) = {x | H(x,k) >= 0} is a subset of the intersection S of the safe sets S_s for all 0 < k_s < infinity."
+      },
+      {
+        "name": "Parameter adaptation law",
+        "description": "An adaptation law for the C-CBF gains that renders the candidate C-CBF valid for safe control design."
+      },
+      {
+        "name": "Quadratic penalty on constraint-violation terms in the objective function",
+        "description": "Existing approach that adds a term sum over s=1..c of (1/2) q_s p_s^2 with q_s > 0 to the objective function; its performance depends heavily on the gains q_s."
+      },
+      {
+        "name": "Single-active-constraint assumption",
+        "description": "Existing approach that assumes only one constraint needs satisfaction at a time [15]; may lead to chattering behavior or loss of existence and uniqueness of solutions."
+      },
+      {
+        "name": "Single non-smooth candidate CBF synthesis",
+        "description": "Existing approach that synthesizes a single non-smooth candidate CBF [16], [17]; may lead to chattering behavior or loss of existence and uniqueness of solutions."
+      },
+      {
+        "name": "Composite control barrier function (C-CBF)",
+        "description": "A function H(x,k) that combines constituent candidate CBFs h_s through a function \u03c6 with a gain vector k, and is a CBF on set S if the condition L_F H(x,k) + L_G H(x,k)u \u2265 \u2212\u03b1_H(H(x,k)) holds for all x in S \u2283 C(k), with \u03b1_H in class K\u221e."
+      },
+      {
+        "name": "Exponential composition function",
+        "description": "Example choice \u03c6(h_s,k_s)=e^{\u2212h_s k_s}, with \u2202\u03c6/\u2202h_s = \u2212k_s e^{\u2212h_s k_s}. The gain vector k weights the constituent CBFs h_s and their Lie derivative terms L_F h_s and L_G h_s in the CBF condition, and a higher k_s gives a weaker weight."
+      },
+      {
+        "name": "Online adaptation of gain vector k",
+        "description": "Adapting k online may keep L_G H(x) \u2260 0 for all t \u2265 0. This avoids the condition L_G H(x)=0 that could violate (6) and let the state exit C(k) and potentially S."
+      },
+      {
+        "name": "Adaptive gain law for CBF",
+        "description": "Gains k adapted according to law (14) guarantee LGH \u2260 0_{1\u00d7M}, so that H is a control barrier function (CBF) for the set C(k(t)) for all t \u2265 0."
+      },
+      {
+        "name": "Finite-difference approximation of Q-dot",
+        "description": "Q depends on basis vectors spanning N(L^T g). Because analytical derivations of Q-dot are not available, it is approximated numerically using finite-difference methods, with the observation that the rank of N(L^T g) is constant in practice."
+      },
+      {
+        "name": "Centralized CBF-QP controller with consolidated CBF",
+        "description": "Replaces the centralized CBF-QP controller (8) with u*_Ac = argmin over U_Ac of 1/2||u_Ac - u0_Ac||^2 subject to a + b u_Ac >= 0, where a = LFH + alpha_H(H) and b = LGH[i\u2208Ac]. When all agents are communicative (Ac = A), trajectories stay within C(k(t)) \u2282 S and remain safe."
+      },
+      {
+        "name": "Decentralized CBF-QP controller for non-communicative agents",
+        "description": "Replaces the decentralized CBF-QP controller (7) with u*_i = argmin over U_i of 1/2||u_i - u0_i||^2 subject to constraints (20), for use in the presence of non-communicative agents."
+      },
+      {
+        "name": "C-CBF controller multi-robot numerical study",
+        "description": "Decentralized multi-robot goal-reaching in a warehouse: 3 non-communicative but responsive robots traverse a narrow corridor intersected by a passageway occupied by 6 non-responsive agents (e.g. humans or dynamic obstacles)."
+      },
+      {
+        "name": "Dynamic extension of kinematic bicycle model",
+        "description": "Robot dynamics modeled per [31, Ch. 2] with states x, y, psi, beta, v: x_dot = v(cos psi - sin psi tan beta), y_dot = v(sin psi + cos psi tan beta), psi_dot = (v/l_r) tan beta, beta_dot = omega, v_dot = a."
+      },
+      {
+        "name": "Control Barrier Function (CBF)",
+        "description": "A function h defining safe set S is a CBF if there exists a class K\u221e function \u03b1 such that LGh(x)=0 implies LFh(x)+\u03b1(h(x))>0; with unbounded control authority (U=R^M), LGh(x)\u22600 for all x in S is a sufficient condition, though this does not generally hold with multiple CBF constraints."
+      },
+      {
+        "name": "Decentralized CBF-based controller",
+        "description": "Each agent i computes its input from local information by solving a minimization of 1/2||u_i - u_i^0||^2 over u_i in U_i, subject to c>1 CBF safety constraints a_{s,i} + b_{s,i} u_i >= 0 for all s in [1..c], where a_{s,i}=L_{f_i}h_s+\u03b1_s(h_s) and b_{s,i}=L_{g_i}h_s. The resulting solution deviates minimally from a nominal input but is not guaranteed to be feasible or to preserve safety between agents."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

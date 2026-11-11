@@ -1,0 +1,99 @@
+{
+  "study_id": "study042",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study042/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:47:32.288948+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 2,
+    "methods": 13,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "kernel size",
+        "value": "3\u00d73"
+      },
+      {
+        "name": "number of groups",
+        "value": "K"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "DressCode",
+        "version": null
+      },
+      {
+        "name": "VITON-HD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "D4-VTON",
+        "description": "Virtual try-on framework"
+      },
+      {
+        "name": "DSDM",
+        "description": "Module that generates attention maps demonstrating distinct semantic responses"
+      },
+      {
+        "name": "DITP",
+        "description": "Component featuring a denoising path to enhance the generality of the framework"
+      },
+      {
+        "name": "DCI-VTON",
+        "description": "Baseline virtual try-on method evaluated for warped results comparison"
+      },
+      {
+        "name": "GP-VTON",
+        "description": "Baseline virtual try-on method that mitigates texture squeezing using dynamic gradient truncation"
+      },
+      {
+        "name": "PBE",
+        "description": "Exemplar-based image inpainting architecture whose architecture and pretrained parameters are adopted by the synthesis network."
+      },
+      {
+        "name": "Differential Information Tracking Path (DITP)",
+        "description": "A path introduced to replace a simplistic inpainting path to address conflicts and learning ambiguities when simultaneously managing denoising and inpainting tasks."
+      },
+      {
+        "name": "Dynamic Semantics Selector",
+        "description": "Dynamically selects feature channels that capture similar semantics using the self-similarity of garment features to unsupervisedly generate selection masks indicating each channel's semantic group."
+      },
+      {
+        "name": "Group Warping Block",
+        "description": "Responsible for generating flows and attention maps for different channel groups."
+      },
+      {
+        "name": "Disentangled Warping Operation",
+        "description": "Uses the selection mask and predicted flows and attention maps to deform garment features."
+      },
+      {
+        "name": "Gumbel-Softmax",
+        "description": "A differentiable method ensuring exclusive assignment to determine the semantic group for each channel based on responses in the self-similarity matrix."
+      },
+      {
+        "name": "fixed grouping",
+        "description": "An ablation setting where all channels are evenly divided sequentially without using the Dynamic Semantics Selector"
+      },
+      {
+        "name": "Vanilla",
+        "description": "A baseline setting used to train the deformation network without semantics grouping or DSDM"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

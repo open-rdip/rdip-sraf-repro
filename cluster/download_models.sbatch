@@ -31,6 +31,24 @@ MODELS=(
   "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a8"        # secondary ~9  GB
   "RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w8a8"   # third     ~24 GB
 )
+
+# The home volume was cut from 200 GB to 100 GB, so all three (~48 GB) no
+# longer fit alongside everything else. Pass KEY to fetch exactly one, which
+# is what the sequential grounded run needs:
+#   sbatch --export=ALL,HF_TOKEN=$HF_TOKEN,KEY=llama cluster/download_models.sbatch
+# Without KEY the original behaviour is unchanged: fetch all three.
+if [ -n "${KEY:-}" ]; then
+  ONE="$(PYTHONPATH="${SLURM_SUBMIT_DIR:-.}" "${CONDA_PY}" -c \
+    "from rag_pipeline.model_registry import REGISTRY; import sys
+k=sys.argv[1]
+s=REGISTRY.get(k)
+assert s is not None, f'unknown key {k}; known: {sorted(REGISTRY)}'
+print(s.model)" "$KEY")" || { echo "could not resolve KEY=$KEY"; exit 1; }
+  MODELS=("$ONE")
+  echo "==> KEY=$KEY, fetching only $ONE"
+fi
+
+echo "==> free space before: $(df -h "$HOME" | awk 'NR==2{print $4}')"
 export HF_TOKEN="${HF_TOKEN:-}"
 
 for repo in "${MODELS[@]}"; do

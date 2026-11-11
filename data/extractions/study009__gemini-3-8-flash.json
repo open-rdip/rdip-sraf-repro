@@ -1,0 +1,142 @@
+{
+  "study_id": "study009",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study009/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:09:57.703382+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 3,
+    "methods": 7,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "feature stride",
+        "value": "1"
+      },
+      {
+        "name": "number of deconvolution modules",
+        "value": "1"
+      },
+      {
+        "name": "extra residual blocks",
+        "value": "4"
+      },
+      {
+        "name": "training image size",
+        "value": "640\u00d7640"
+      },
+      {
+        "name": "HRNet-W32 feature map channels",
+        "value": "32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO2017",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "CrowdPose",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "HigherHRNet",
+        "description": "A bottom-up pose estimation network using higher resolution heatmaps, multi-resolution supervision, and scale-aware prediction."
+      },
+      {
+        "name": "HRNet",
+        "description": "High-Resolution Network used as a base architecture for pose estimation."
+      },
+      {
+        "name": "deconvolution module",
+        "description": "Module added to generate higher resolution heatmaps"
+      },
+      {
+        "name": "heatmap aggregation strategy",
+        "description": "Strategy for predicting heatmaps across resolutions that is scale-aware and aggregates heatmaps for inference."
+      },
+      {
+        "name": "HRNet-W32",
+        "description": "Backbone network where the 1/4 resolution feature map has 32 channels"
+      },
+      {
+        "name": "HRNet-W40",
+        "description": "Larger backbone network used for pose estimation experiments"
+      },
+      {
+        "name": "HRNet-W48",
+        "description": "Larger backbone network used for pose estimation experiments"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "APM",
+        "value": "57.1",
+        "split": "val"
+      },
+      {
+        "metric": "AP",
+        "value": "66.5",
+        "split": "val"
+      },
+      {
+        "metric": "performance of large person",
+        "value": "-0.8AP",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": "64.4AP",
+        "split": null
+      },
+      {
+        "metric": "AP gain",
+        "value": "1.6AP",
+        "split": null
+      },
+      {
+        "metric": "AP",
+        "value": "67.1",
+        "split": "validation"
+      },
+      {
+        "metric": "APM",
+        "value": "61.5",
+        "split": "validation"
+      },
+      {
+        "metric": "APL",
+        "value": "76.1",
+        "split": "validation"
+      },
+      {
+        "metric": "#Params",
+        "value": "28.6",
+        "split": "validation"
+      },
+      {
+        "metric": "GFLOPs",
+        "value": "47.8",
+        "split": "validation"
+      }
+    ]
+  }
+}

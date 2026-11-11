@@ -1,0 +1,123 @@
+{
+  "study_id": "study053",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study053/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:57:21.373666+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 12,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "input prompt",
+        "value": "a photo of a[kth class name ],k= 1, . . . , K"
+      },
+      {
+        "name": "LoRA module location",
+        "value": "every levels of both encoders"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "StanfordCars",
+        "version": null
+      },
+      {
+        "name": "SUN397",
+        "version": null
+      },
+      {
+        "name": "Aircraft",
+        "version": null
+      },
+      {
+        "name": "EuroSAT",
+        "version": null
+      },
+      {
+        "name": "Stanford-Cars",
+        "version": null
+      },
+      {
+        "name": "Food101",
+        "version": null
+      },
+      {
+        "name": "OxfordPets",
+        "version": null
+      },
+      {
+        "name": "Flower102",
+        "version": null
+      },
+      {
+        "name": "Caltech101",
+        "version": null
+      },
+      {
+        "name": "DTD",
+        "version": null
+      },
+      {
+        "name": "UCF101",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "CoOp",
+        "description": "text-only prompt tuning"
+      },
+      {
+        "name": "LoRA",
+        "description": "adapting weight matrices such as value or output matrices (Wv and Wo) and placing modules across layers"
+      },
+      {
+        "name": "AdaLoRA",
+        "description": "dynamically adjusts the rank of matrices, allocating a larger rank to middle and last layers"
+      },
+      {
+        "name": "Prompt tuning",
+        "description": "Optimizes text-input tokens, which could be extended to intermediate layers, or tunes additional intermediate tokens."
+      },
+      {
+        "name": "Adapters",
+        "description": "Updates a set of additional parameters."
+      },
+      {
+        "name": "CLIP-LoRA",
+        "description": "Adapts both visual and text modalities by positioning LoRA modules at every level of both encoders."
+      },
+      {
+        "name": "CoOp (4)",
+        "description": "Prompt-based comparative method with 4 learnable tokens."
+      },
+      {
+        "name": "CoOp (16)",
+        "description": "Prompt-based comparative method with 16 learnable tokens."
+      },
+      {
+        "name": "Co-CoOp",
+        "description": "Prompt-based comparative method."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

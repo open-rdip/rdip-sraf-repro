@@ -1,0 +1,41 @@
+{
+  "study_id": "study074",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study074/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:17:39.594455+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 3,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "DroidBot-GPT",
+        "description": "GPT-powered UI automation framework for Android that employs a two-step prompting mechanism to handle text box inputs and extracts valid choices from ChatGPT responses."
+      },
+      {
+        "name": "Prompt synthesis",
+        "description": "Constructs a prompt consisting of the task, GUI elements with provided action choices, an action history sequence to avoid repetition, and output requirements (single choice or typed sentence)."
+      },
+      {
+        "name": "GUI description",
+        "description": "Translates a graphical user interface into natural language by extracting user-visible elements, checking their properties, and generating descriptive text for GPT models."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "study_id": "study043",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study043/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:49:25.049075+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 18,
+    "datasets": 2,
+    "methods": 18,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "TITAN V",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "training steps",
+        "value": "3M"
+      },
+      {
+        "name": "training steps per stage",
+        "value": "1.5M"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning rate",
+        "value": "10\u22124"
+      },
+      {
+        "name": "beta",
+        "value": "(0.5, 0.9)"
+      },
+      {
+        "name": "batch size",
+        "value": "8"
+      },
+      {
+        "name": "data augmentation",
+        "value": "dequantization, random crop, allpass filters with random coefficients"
+      },
+      {
+        "name": "audio sampling rate",
+        "value": "48kHz"
+      },
+      {
+        "name": "multiband decomposition bands",
+        "value": "16"
+      },
+      {
+        "name": "latent representation dimensionality",
+        "value": "128"
+      },
+      {
+        "name": "train/test split (Strings)",
+        "value": "90/10"
+      },
+      {
+        "name": "sampling rate (Strings, original)",
+        "value": "48kHz"
+      },
+      {
+        "name": "sampling rate (Strings, downsampled for NSynth and SING)",
+        "value": "16kHz"
+      },
+      {
+        "name": "train/test split (VCTK)",
+        "value": "90/10"
+      },
+      {
+        "name": "sampling rate (VCTK, original)",
+        "value": "48kHz"
+      },
+      {
+        "name": "sampling rate (VCTK, downsampled for other methods)",
+        "value": "16 kHz"
+      },
+      {
+        "name": "waveform sub-network activation",
+        "value": "tanh"
+      },
+      {
+        "name": "loudness sub-network activation",
+        "value": "sigmoid"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Strings (internal dataset)",
+        "version": null
+      },
+      {
+        "name": "VCTK (Voice Conversion ToolKit)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RAVE",
+        "description": "Model trained in two stages following the training procedure of section 3.1, 1.5M steps each, for unsupervised representation learning of audio signals, handling both monophonic and polyphonic signals"
+      },
+      {
+        "name": "NSynth (unsupervised)",
+        "description": "Baseline: unsupervised NSynth (Engel et al., 2017), official implementation with default parameters"
+      },
+      {
+        "name": "SING autoencoder",
+        "description": "Baseline: autoencoder from SING (D\u00e9fossez et al., 2018), official implementation with default parameters"
+      },
+      {
+        "name": "Adam optimizer",
+        "description": "Optimizer (Kingma & Ba, 2015) used for training"
+      },
+      {
+        "name": "RAVE (Realtime Audio Variational autoEncoder)",
+        "description": "Variational autoencoder for high-quality audio representation learning and faster than realtime synthesis of 48kHz audio signals"
+      },
+      {
+        "name": "Multiband decomposition",
+        "description": "Decomposes the raw waveform into 16 bands to decrease the temporal dimensionality of the data, expanding the temporal receptive field without a major increase in computational complexity"
+      },
+      {
+        "name": "Encoder",
+        "description": "Multiband decomposition followed by a simple convolutional neural network that transforms the raw waveform into a 128-dimensional latent representation"
+      },
+      {
+        "name": "Decoder",
+        "description": "Modified version of the generator proposed by Kumar et al. (2019), using the same alternation of upsampling layers and residual networks"
+      },
+      {
+        "name": "Post-training analysis",
+        "description": "Analysis presented in section 3.2 used to produce a compact latent representation"
+      },
+      {
+        "name": "NSynth",
+        "description": "Compared method; operates on data downsampled to 16kHz"
+      },
+      {
+        "name": "SING",
+        "description": "Compared method; operates on data downsampled to 16kHz"
+      },
+      {
+        "name": "Generator (modified Kumar et al. 2019)",
+        "description": "Alternation of upsampling layers and residual networks; the last hidden layer is fed to three sub-networks (waveform, loudness, noise synthesizer) instead of directly outputting the raw waveform."
+      },
+      {
+        "name": "Waveform sub-network",
+        "description": "Synthesizes a multiband audio signal with tanh activation, multiplied by the output of the loudness sub-network."
+      },
+      {
+        "name": "Loudness sub-network",
+        "description": "Generates an amplitude envelope with sigmoid activation, which helps reduce artifacts in silent parts of the signal."
+      },
+      {
+        "name": "Noise synthesizer",
+        "description": "As proposed in Engel et al. (2019); produces multiband filtered noise added to the previous signal, slightly increasing reconstruction naturalness of noisy signals."
+      },
+      {
+        "name": "Discriminator (Kumar et al. 2019)",
+        "description": "Strided convolutional network applied on different scales of the audio signal to prevent artifacts."
+      },
+      {
+        "name": "Feature matching loss",
+        "description": "Same feature matching loss as in the original Kumar et al. (2019) paper."
+      },
+      {
+        "name": "Training procedure",
+        "description": "Follows the training procedure proposed in section 3.1 and trains RAVE for 3M steps."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

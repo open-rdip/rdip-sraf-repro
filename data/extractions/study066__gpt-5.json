@@ -1,0 +1,469 @@
+{
+  "study_id": "study066",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study066/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:09:38.316092+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 32,
+    "datasets": 5,
+    "methods": 39,
+    "evaluation_results": 24
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GluonCV",
+        "version": null
+      },
+      {
+        "name": "MXNet",
+        "version": null
+      },
+      {
+        "name": "Detectron2",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "split-attention_setting",
+        "value": "2s1x64d"
+      },
+      {
+        "name": "training_crop_size_ResNeSt-200",
+        "value": "256x256"
+      },
+      {
+        "name": "training_crop_size_ResNeSt-269",
+        "value": "320x320"
+      },
+      {
+        "name": "upsampling_strategy",
+        "value": "bicubic for input-size greater than 256"
+      },
+      {
+        "name": "inference_batch_size",
+        "value": "16"
+      },
+      {
+        "name": "image_resize_short_edge",
+        "value": "1/0.875 of crop size"
+      },
+      {
+        "name": "center_crop",
+        "value": "applied"
+      },
+      {
+        "name": "data_sharding",
+        "value": "evenly partition data across GPUs"
+      },
+      {
+        "name": "sampling_without_replacement",
+        "value": "true"
+      },
+      {
+        "name": "augmentation_policy",
+        "value": "AutoAugment (learned) applied to each image"
+      },
+      {
+        "name": "transform_random_size_crop",
+        "value": "applied"
+      },
+      {
+        "name": "transform_random_horizontal_flip",
+        "value": "applied"
+      },
+      {
+        "name": "transform_color_jitter",
+        "value": "applied"
+      },
+      {
+        "name": "transform_lighting_change",
+        "value": "applied"
+      },
+      {
+        "name": "normalization",
+        "value": "RGB mean/std rescaling"
+      },
+      {
+        "name": "mixup",
+        "value": "mix each sample with its reversed-order sample"
+      },
+      {
+        "name": "batch_normalization",
+        "value": "after each convolutional layer before ReLU"
+      },
+      {
+        "name": "initialization",
+        "value": "Kaiming Initialization"
+      },
+      {
+        "name": "dropout_ratio",
+        "value": "0.2"
+      },
+      {
+        "name": "epochs",
+        "value": "270"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.0001"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "learning_rate_schedule",
+        "value": "cosine"
+      },
+      {
+        "name": "warmup_epochs",
+        "value": "5"
+      },
+      {
+        "name": "mini_batch_size_ResNeSt-50",
+        "value": "8192"
+      },
+      {
+        "name": "mini_batch_size_ResNeSt-101",
+        "value": "4096"
+      },
+      {
+        "name": "mini_batch_size_ResNeSt-200_269",
+        "value": "2048"
+      },
+      {
+        "name": "evaluation_resize",
+        "value": "resize each image to 1/0.875 of the crop size"
+      },
+      {
+        "name": "mini-batch size",
+        "value": "16"
+      },
+      {
+        "name": "learning rate schedule",
+        "value": "1x"
+      },
+      {
+        "name": "image scale augmentation short size",
+        "value": "randomly from 640 to 800"
+      },
+      {
+        "name": "inference scale",
+        "value": "single scale"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "MS-COCO",
+        "version": "2017"
+      },
+      {
+        "name": "COCO-2017 train",
+        "version": "2017"
+      },
+      {
+        "name": "COCO-2017 validation (minival)",
+        "version": "2017"
+      },
+      {
+        "name": "COCO test-dev",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Split-Attention",
+        "description": "Employed with the 2s1x64d setting to scale to deeper networks with a good trade-off between speed, accuracy, and memory."
+      },
+      {
+        "name": "ResNeSt",
+        "description": "CNN architecture using Split-Attention blocks; deeper models trained with larger crop sizes for comparison."
+      },
+      {
+        "name": "Depth-wise convolution",
+        "description": "Widely used, but noted as not optimized for inference speed in this benchmark."
+      },
+      {
+        "name": "ResNet-D standard residual block",
+        "description": "Used when radix/cardinality setting of 0s is selected."
+      },
+      {
+        "name": "ResNet-D backbone",
+        "description": "Base architecture for ResNeSt models."
+      },
+      {
+        "name": "Image resize and center crop",
+        "description": "Resize each image to 1/0.875 of the crop size along the short edge, then apply a center crop for evaluation."
+      },
+      {
+        "name": "Mixup training",
+        "description": "Applied to ResNetD-50 to improve accuracy."
+      },
+      {
+        "name": "Auto augmentation",
+        "description": "Applied in addition to Mixup to further improve accuracy."
+      },
+      {
+        "name": "Split-Attention block (ResNeSt-50-fast)",
+        "description": "Introduces split-attention to boost accuracy with effective average downsampling before the 3\u00d73 convolution to avoid extra compute."
+      },
+      {
+        "name": "Downsampling position adjustment",
+        "description": "Move downsampling after the 3\u00d73 convolution in ResNeSt-50 to further improve accuracy."
+      },
+      {
+        "name": "Radix vs. Cardinality ablation",
+        "description": "Vary radix (s), cardinality (x), and network width (d) while keeping compute similar to ResNet variants."
+      },
+      {
+        "name": "GluonCV with MXNet",
+        "description": "Code implementation framework used for ImageNet training."
+      },
+      {
+        "name": "Distributed data sharding",
+        "description": "Evenly partition ImageNet across GPUs; sample mini-batches from each shard without replacement."
+      },
+      {
+        "name": "AutoAugment",
+        "description": "Apply transformations from a learned AutoAugment policy to each image."
+      },
+      {
+        "name": "Standard data augmentations",
+        "description": "Random size crop, random horizontal flip, color jittering, and lighting change."
+      },
+      {
+        "name": "RGB normalization",
+        "description": "Normalize images via mean/standard-deviation rescaling."
+      },
+      {
+        "name": "Batch Normalization",
+        "description": "Apply BN after each convolutional layer before ReLU activation."
+      },
+      {
+        "name": "Kaiming Initialization",
+        "description": "Initialize network weights using Kaiming Initialization."
+      },
+      {
+        "name": "Dropout",
+        "description": "Insert a dropout layer before the final classification layer with dropout ratio 0.2."
+      },
+      {
+        "name": "Cosine learning rate schedule with warm-up",
+        "description": "Use cosine LR schedule with first 5 epochs reserved for warm-up."
+      },
+      {
+        "name": "Evaluation preprocessing",
+        "description": "Resize each image to 1/0.875 of the crop size before evaluation."
+      },
+      {
+        "name": "ResNeSt-101",
+        "description": "Convolutional neural network evaluated on ImageNet; inference measured on a single NVIDIA V100 GPU with mini-batch size 16 using original code implementation."
+      },
+      {
+        "name": "ResNeSt-200",
+        "description": "Convolutional neural network evaluated on ImageNet; inference measured on a single NVIDIA V100 GPU with mini-batch size 16 using original code implementation."
+      },
+      {
+        "name": "ResNeSt-269",
+        "description": "Convolutional neural network evaluated on ImageNet; inference measured on a single NVIDIA V100 GPU with mini-batch size 16 using original code implementation."
+      },
+      {
+        "name": "EfficientNet-B4",
+        "description": "Convolutional neural network evaluated on ImageNet; throughput and accuracy reported."
+      },
+      {
+        "name": "EfficientNet-B5",
+        "description": "Convolutional neural network evaluated on ImageNet; throughput and accuracy reported."
+      },
+      {
+        "name": "EfficientNet-B7",
+        "description": "Convolutional neural network evaluated on ImageNet; throughput and accuracy reported."
+      },
+      {
+        "name": "SENet-154",
+        "description": "Convolutional neural network evaluated on ImageNet; throughput and accuracy reported."
+      },
+      {
+        "name": "NASNet-A",
+        "description": "Neural architecture search-based CNN evaluated on ImageNet; throughput and accuracy reported."
+      },
+      {
+        "name": "AmoebaNet-A",
+        "description": "Neural architecture search-based CNN evaluated on ImageNet; throughput and accuracy reported."
+      },
+      {
+        "name": "AmoebaNet-C",
+        "description": "Neural architecture search-based CNN evaluated on ImageNet; throughput and accuracy reported."
+      },
+      {
+        "name": "GPipe",
+        "description": "Large-scale CNN evaluated on ImageNet; accuracy reported."
+      },
+      {
+        "name": "Object Detection on MS-COCO",
+        "description": "Models trained on COCO-2017 training set (118k images) and evaluated on COCO-2017 validation set (5k images, minival) using the standard COCO AP metric."
+      },
+      {
+        "name": "Feature Pyramid Network (FPN)",
+        "description": "Used for all models during training"
+      },
+      {
+        "name": "Synchronized Batch Normalization",
+        "description": "Batch normalization synchronized across devices during training"
+      },
+      {
+        "name": "Image scale augmentation",
+        "description": "Short side of image randomly selected from 640 to 800 pixels"
+      },
+      {
+        "name": "Faster R-CNN",
+        "description": "Object detection model with ResNeSt backbone replacing ResNet"
+      },
+      {
+        "name": "Cascade R-CNN",
+        "description": "Object detection model with ResNeSt backbone; also evaluated with ResNeSt101 deformable"
+      },
+      {
+        "name": "ResNeSt backbone",
+        "description": "Backbone network used to replace vanilla ResNet (including ResNeSt50 and ResNeSt101 deformable)"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy",
+        "value": "78.31%",
+        "split": null
+      },
+      {
+        "metric": "img/sec (ResNeSt-101)",
+        "value": "291.3",
+        "split": null
+      },
+      {
+        "metric": "acc(%) (ResNeSt-101)",
+        "value": "83.0",
+        "split": null
+      },
+      {
+        "metric": "img/sec (EfficientNet-B4)",
+        "value": "149.3",
+        "split": null
+      },
+      {
+        "metric": "acc(%) (EfficientNet-B4)",
+        "value": "83.0",
+        "split": null
+      },
+      {
+        "metric": "img/sec (SENet-154)",
+        "value": "133.8",
+        "split": null
+      },
+      {
+        "metric": "acc(%) (SENet-154)",
+        "value": "82.7",
+        "split": null
+      },
+      {
+        "metric": "img/sec (NASNet-A)",
+        "value": "103.3",
+        "split": null
+      },
+      {
+        "metric": "acc(%) (NASNet-A)",
+        "value": "82.7",
+        "split": null
+      },
+      {
+        "metric": "img/sec (AmoebaNet-A)",
+        "value": "-",
+        "split": null
+      },
+      {
+        "metric": "acc(%) (AmoebaNet-A)",
+        "value": "82.8",
+        "split": null
+      },
+      {
+        "metric": "img/sec (ResNeSt-200)",
+        "value": "105.3",
+        "split": null
+      },
+      {
+        "metric": "acc(%) (ResNeSt-200)",
+        "value": "83.9",
+        "split": null
+      },
+      {
+        "metric": "img/sec (EfficientNet-B5)",
+        "value": "84.3",
+        "split": null
+      },
+      {
+        "metric": "acc(%) (EfficientNet-B5)",
+        "value": "83.7",
+        "split": null
+      },
+      {
+        "metric": "img/sec (AmoebaNet-C)",
+        "value": "-",
+        "split": null
+      },
+      {
+        "metric": "acc(%) (AmoebaNet-C)",
+        "value": "83.5",
+        "split": null
+      },
+      {
+        "metric": "img/sec (ResNeSt-269)",
+        "value": "51.2",
+        "split": null
+      },
+      {
+        "metric": "acc(%) (ResNeSt-269)",
+        "value": "84.5",
+        "split": null
+      },
+      {
+        "metric": "img/sec (GPipe)",
+        "value": "-",
+        "split": null
+      },
+      {
+        "metric": "acc(%) (GPipe)",
+        "value": "84.3",
+        "split": null
+      },
+      {
+        "metric": "img/sec (EfficientNet-B7)",
+        "value": "34.9",
+        "split": null
+      },
+      {
+        "metric": "acc(%) (EfficientNet-B7)",
+        "value": "84.4",
+        "split": null
+      },
+      {
+        "metric": "box mAP",
+        "value": "49.2",
+        "split": "test"
+      }
+    ]
+  }
+}

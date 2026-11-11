@@ -1,0 +1,224 @@
+{
+  "study_id": "study005",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study005/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:06:45.662537+00:00",
+  "counts": {
+    "dependencies": 6,
+    "random_seeds": 0,
+    "hyperparameters": 17,
+    "datasets": 3,
+    "methods": 22,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "CLIP (pretrained)",
+        "version": null
+      },
+      {
+        "name": "Aesthetic scorer",
+        "version": null
+      },
+      {
+        "name": "Imaginaire",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "CLIP",
+        "version": null
+      },
+      {
+        "name": "T5",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A100 GPU",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "num_feedforward_evaluations",
+        "value": "100"
+      },
+      {
+        "name": "capacity_scaling_schemes",
+        "value": "increase model depth (more residual blocks); increase number of experts in eDiff-I"
+      },
+      {
+        "name": "image_shortest_side_min_base",
+        "value": "64"
+      },
+      {
+        "name": "image_shortest_side_min_SR256",
+        "value": "256"
+      },
+      {
+        "name": "image_shortest_side_min_SR1024",
+        "value": "1024"
+      },
+      {
+        "name": "crop_strategy_base_and_SR256",
+        "value": "resize-central crop"
+      },
+      {
+        "name": "training_crop_size_SR1024",
+        "value": "256x256"
+      },
+      {
+        "name": "inference_resolution_SR1024",
+        "value": "1024x1024"
+      },
+      {
+        "name": "clip_score_threshold",
+        "value": "preset threshold"
+      },
+      {
+        "name": "aesthetic_score_threshold",
+        "value": "preset threshold"
+      },
+      {
+        "name": "training_dataset_size_pairs",
+        "value": "about 1000000000"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.0001"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.01"
+      },
+      {
+        "name": "batch_size",
+        "value": "2048"
+      },
+      {
+        "name": "base_model_gpu_count",
+        "value": "256"
+      },
+      {
+        "name": "super_resolution_model_gpu_count",
+        "value": "128"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "Visual Genome",
+        "version": null
+      },
+      {
+        "name": "MS-COCO",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Our approach",
+        "description": "Generated multiple outputs per prompt and selected the best; claims better handling of long detailed descriptions than other methods."
+      },
+      {
+        "name": "DALL\u00b7E 2",
+        "description": "Baseline text-to-image model; sometimes fails to include all attributes in long descriptions."
+      },
+      {
+        "name": "Stable Diffusion",
+        "description": "Baseline text-to-image model; sometimes fails to include all attributes in long descriptions."
+      },
+      {
+        "name": "eDiff-I",
+        "description": "Diffusion model with experts; capacity scaled by increasing number of experts; inference time compared across capacities."
+      },
+      {
+        "name": "Data filtering with CLIP and aesthetic scorer",
+        "description": "Use a pretrained CLIP model to score image-text alignment and an aesthetic scorer to rank image quality; remove pairs below preset CLIP and aesthetic thresholds."
+      },
+      {
+        "name": "Base and SR256 training preprocessing",
+        "description": "Resize so the shortest side matches the input image side, then apply center crop."
+      },
+      {
+        "name": "SR1024 training and inference strategy",
+        "description": "Randomly crop 256x256 regions during training and apply the model at 1024x1024 resolution during inference."
+      },
+      {
+        "name": "Data selection by resolution",
+        "description": "Use all images with shortest side >64 for the base model; only images with shortest side >256 for SR256 and >1024 for SR1024."
+      },
+      {
+        "name": "Zero-shot evaluation protocol",
+        "description": "Evaluate zero-shot text-to-image generation on COCO and Visual Genome, which are excluded from training."
+      },
+      {
+        "name": "Our model",
+        "description": "Text-to-image generation method that successfully generates specified English text within images across a range of samples; multiple outputs were generated and the best was selected for presentation."
+      },
+      {
+        "name": "CLIP text encoder",
+        "description": "Used as a standalone text encoder; on COCO performed similarly to T5 alone, and on Visual Genome performed worse than T5 alone."
+      },
+      {
+        "name": "T5 encoder",
+        "description": "Used as a standalone text encoder; on COCO performed similarly to CLIP alone, and on Visual Genome outperformed CLIP alone due to longer, more descriptive captions."
+      },
+      {
+        "name": "CLIP+T5 encoders",
+        "description": "Combined use of CLIP and T5 text encoders; achieved the best results on both COCO and Visual Genome with the proposed model."
+      },
+      {
+        "name": "Base diffusion model training",
+        "description": "Trained with AdamW optimizer, lr=0.0001, weight decay=0.01, batch size=2048, using 256 NVIDIA A100 GPUs."
+      },
+      {
+        "name": "Super-resolution diffusion models training",
+        "description": "Two super-resolution diffusion models trained with AdamW optimizer, lr=0.0001, weight decay=0.01, batch size=2048, each using 128 NVIDIA A100 GPUs."
+      },
+      {
+        "name": "Data filtering with pretrained CLIP",
+        "description": "Applied heavy filtering of training data using a pretrained CLIP model to ensure high-quality training data."
+      },
+      {
+        "name": "Implementation framework",
+        "description": "Implementation based on the Imaginaire library written in PyTorch."
+      },
+      {
+        "name": "CLIP text embeddings",
+        "description": "Generate images conditioned solely on CLIP text embeddings; tends to capture correct foreground objects but struggles with compositionality, counting, and text generation."
+      },
+      {
+        "name": "T5 text embeddings",
+        "description": "Generate images conditioned solely on T5 text embeddings; yields better compositions but is less accurate for specific foreground objects such as dog breeds."
+      },
+      {
+        "name": "CLIP+T5 text embeddings",
+        "description": "Combine CLIP and T5 text embeddings for image generation to leverage attributes from both, producing improved CLIP-FID trade-off curves on MS-COCO and better performance on descriptive text like Visual Genome."
+      },
+      {
+        "name": "eDiff-I with ensemble-of-expert-denoisers",
+        "description": "An ensemble-of-expert-denoisers scheme used to scale model size without incurring additional computation during inference."
+      },
+      {
+        "name": "Dual text embeddings with independent dropout",
+        "description": "Training uses both CLIP and T5 text embeddings with independent random dropout on each embedding, enabling image generation from either embedding in isolation."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

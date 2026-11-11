@@ -1,0 +1,1866 @@
+{
+ "study_id": "study017",
+ "model": "grok",
+ "slug": "grok-4-7",
+ "n_passages": 6,
+ "n_passages_ok": 6,
+ "failures": [],
+ "records": [
+  {
+   "field": "dependencies",
+   "value": "np.array",
+   "evidence": "an image (np.array (Harris et al., 2020))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "dependencies",
+   "value": "torch",
+   "evidence": "features (torch.Tensor (Paszke et al., 2019))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "dependencies",
+   "value": "DGLGraph",
+   "evidence": "a graph (DGLGraph (Wang et al., 2019))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "dependencies",
+   "value": "HistoCartography",
+   "evidence": "in HistoCartography iteratively applies Gaussian smoothing",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Vahadane Stain Norm",
+   "evidence": "Vahadane Stain Norm",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Macenko Stain Norm",
+   "evidence": "Macenko Stain Norm",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Tissue Mask Detection",
+   "evidence": "Tissue Mask Detection",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Nuclei Detection",
+   "evidence": "Nuclei Detection",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Nuclei Concepts",
+   "evidence": "Nuclei Concepts",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Tissue Component Detection",
+   "evidence": "Tissue Component Detection",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Deep Feature Extraction",
+   "evidence": "Deep Feature Extraction",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Feature Cube Extraction",
+   "evidence": "Feature Cube Extraction",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "k-NN Graph Building",
+   "evidence": "k-NN Graph Building",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "RAG Graph Building",
+   "evidence": "RAG Graph Building",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Cell-Graph Model",
+   "evidence": "Cell-Graph Model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Tissue-Graph Model",
+   "evidence": "Tissue-Graph Model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "HACT Model",
+   "evidence": "HACT Model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GnnExplainer",
+   "evidence": "GnnExplainer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM",
+   "evidence": "GraphGrad-CAM",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM++",
+   "evidence": "GraphGrad-CAM++",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GraphLRP",
+   "evidence": "GraphLRP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Tissue Detection",
+   "evidence": "Tissue Detection: A WSI usually includes",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Gaussian smoothing",
+   "evidence": "iteratively applies Gaussian smoothing",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 0
+  },
+  {
+   "field": "dependencies",
+   "value": "HistoCartography",
+   "evidence": "HistoCartography iteratively applies",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "Histolab",
+   "evidence": "common across Histolab ,Syntax ,HistomicsTK andQuPath",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "Syntax",
+   "evidence": "Histolab ,Syntax ,HistomicsTK andQuPath",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "HistomicsTK",
+   "evidence": "Syntax ,HistomicsTK andQuPath",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "QuPath",
+   "evidence": "HistomicsTK andQuPath",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "PanNuke",
+   "evidence": "trained on PanNuke (Gamper et al., 2020)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "MoNuSac",
+   "evidence": "MoNuSac (Ruchika et al., 2020) datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Gaussian smoothing",
+   "evidence": "applies Gaussian smoothing and Otsu thresholding",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Otsu thresholding",
+   "evidence": "Gaussian smoothing and Otsu thresholding until",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "HoVerNet",
+   "evidence": "state-of-the-art HoVerNet model (Graham et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Simple Linear Iterative Clustering (SLIC)",
+   "evidence": "using Simple Linear Iterative Clustering (SLIC) (Achanta et al., 2012) algorithm",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "DGL",
+   "evidence": "implemented using DGL",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "dependencies",
+   "value": "PyTorch",
+   "evidence": "built around PyTorch",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM",
+   "evidence": "GraphGrad-CAM",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM++",
+   "evidence": "GraphGrad-CAM++",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GnnExplainer",
+   "evidence": "GnnExplainer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphLRP",
+   "evidence": "GraphLRP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "hardware",
+   "value": "single-core POWER8 processor",
+   "evidence": "single-core POWER8 processor",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "NVIDIA P100 GPU",
+   "evidence": "NVIDIA P100 GPU",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "HistoCartography",
+   "evidence": "HistoCartography",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "stain normalization",
+   "evidence": "stain normalization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "tissue detection",
+   "evidence": "tissue detection",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "tumor classi\ufb01cation",
+   "evidence": "tumor classi\ufb01cation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "seg- mentation",
+   "evidence": "seg- mentation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Vahadane Stain Norm",
+   "evidence": "Vahadane Stain Norm",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Macenko Stain Norm",
+   "evidence": "Macenko Stain Norm",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Tissue Mask Detection",
+   "evidence": "Tissue Mask Detection",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Feature Cube Extraction",
+   "evidence": "Feature Cube Extraction",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Cell-Graph Generation",
+   "evidence": "Cell-Graph Generation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Tissue-Graph Generation",
+   "evidence": "Tissue-Graph Generation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Cell-Graph Model",
+   "evidence": "Cell-Graph Model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.77",
+   "evidence": "1.77",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6 .46",
+   "evidence": "6 .46",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "29 .03",
+   "evidence": "29 .03",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "30.67",
+   "evidence": "30.67",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "68 .27",
+   "evidence": "68 .27",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "186 .10",
+   "evidence": "186 .10",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.80",
+   "evidence": "0.80",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "2 .86",
+   "evidence": "2 .86",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "11 .19",
+   "evidence": "11 .19",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "15.98",
+   "evidence": "15.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "32 .37",
+   "evidence": "32 .37",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "81 .72",
+   "evidence": "81 .72",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.04",
+   "evidence": "1.04",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "2 .11",
+   "evidence": "2 .11",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "8 .09",
+   "evidence": "8 .09",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.24",
+   "evidence": "0.24",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1 .61",
+   "evidence": "1 .61",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "5 .92",
+   "evidence": "5 .92",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "5.83",
+   "evidence": "5.83",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "11 .77",
+   "evidence": "11 .77",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "30 .21",
+   "evidence": "30 .21",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "2.51",
+   "evidence": "2.51",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "13 .33",
+   "evidence": "13 .33",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "50 .26",
+   "evidence": "50 .26",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "4.14",
+   "evidence": "4.14",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "21 .30",
+   "evidence": "21 .30",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "83 .66",
+   "evidence": "83 .66",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "39.18",
+   "evidence": "39.18",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "93 .26",
+   "evidence": "93 .26",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "276 .71",
+   "evidence": "276 .71",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.028",
+   "evidence": "0.028",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0 .033",
+   "evidence": "0 .033",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0 .040",
+   "evidence": "0 .040",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 3
+  },
+  {
+   "field": "dependencies",
+   "value": "python",
+   "evidence": "the library is built on python",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "cell-graph model",
+   "evidence": "interpret a cell-graph model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "node- level saliency maps",
+   "evidence": "in terms of node- level saliency maps",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "post-hoc feature attribution methods",
+   "evidence": "applying post-hoc feature attribution methods",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "characterizing the highlighted important nuclei",
+   "evidence": "by characterizing the highlighted important nuclei per-image",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "10\u00d7",
+   "evidence": "121\u00d7106(10\u00d7)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "hyperparameters",
+   "value": "40\u00d7",
+   "evidence": "9 .6\u00d7106(40\u00d7)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "hyperparameters",
+   "value": "ten",
+   "evidence": "highlight the ten most important nuclei",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "BRACS",
+   "evidence": "performed on BRACS (Pati et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "BACH",
+   "evidence": "BACH (Aresta et al., 2019) datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "UZH",
+   "evidence": "images from UZH (Zhong et al., 2017)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "SICAPv2",
+   "evidence": "and SICAPv2 (Silva- Rodr\u00b4 \u0131guez et al., 2020)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "HistoCartography",
+   "evidence": "performance of HistoCartography for classi\ufb01cation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "cell-graph model",
+   "evidence": "using cell-graph model, tissue-graph model, and HACT-Net",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "tissue-graph model",
+   "evidence": "using cell-graph model, tissue-graph model, and HACT-Net",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "HACT-Net",
+   "evidence": "and HACT-Net (Pati et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "SegGini",
+   "evidence": "Segmentation is performed using SegGini (Anklin et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "GraphGradCAM",
+   "evidence": "outcome of GraphGradCAM module in HistoCartography",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "post-hoc feature attribution",
+   "evidence": "applying post-hoc feature attribution methods",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "44 .3\u00b12.0",
+   "evidence": "44 .3\u00b12.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66 .0\u00b13.1",
+   "evidence": "UZH SegGini TMA 9 .6\u00d7106(40\u00d7) 4 66 .0\u00b13.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "dependencies": {
+    "n": 12,
+    "has_evidence": 12,
+    "span_found": 12,
+    "value_in_span": 12,
+    "grounded": 12
+   },
+   "methods": {
+    "n": 50,
+    "has_evidence": 50,
+    "span_found": 50,
+    "value_in_span": 50,
+    "grounded": 50
+   },
+   "datasets": {
+    "n": 6,
+    "has_evidence": 6,
+    "span_found": 6,
+    "value_in_span": 6,
+    "grounded": 6
+   },
+   "hardware": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   },
+   "evaluation_results": {
+    "n": 35,
+    "has_evidence": 35,
+    "span_found": 35,
+    "value_in_span": 35,
+    "grounded": 35
+   },
+   "hyperparameters": {
+    "n": 3,
+    "has_evidence": 3,
+    "span_found": 3,
+    "value_in_span": 3,
+    "grounded": 3
+   }
+  },
+  "total": {
+   "n": 108,
+   "has_evidence": 108,
+   "span_found": 108,
+   "value_in_span": 108,
+   "grounded": 108
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "np.array",
+      "version": null,
+      "evidence": "an image (np.array (Harris et al., 2020))"
+     },
+     {
+      "name": "torch",
+      "version": null,
+      "evidence": "features (torch.Tensor (Paszke et al., 2019))"
+     },
+     {
+      "name": "DGLGraph",
+      "version": null,
+      "evidence": "a graph (DGLGraph (Wang et al., 2019))"
+     },
+     {
+      "name": "HistoCartography",
+      "version": null,
+      "evidence": "in HistoCartography iteratively applies Gaussian smoothing"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Vahadane Stain Norm",
+      "evidence": "Vahadane Stain Norm"
+     },
+     {
+      "name": "Macenko Stain Norm",
+      "evidence": "Macenko Stain Norm"
+     },
+     {
+      "name": "Tissue Mask Detection",
+      "evidence": "Tissue Mask Detection"
+     },
+     {
+      "name": "Nuclei Detection",
+      "evidence": "Nuclei Detection"
+     },
+     {
+      "name": "Nuclei Concepts",
+      "evidence": "Nuclei Concepts"
+     },
+     {
+      "name": "Tissue Component Detection",
+      "evidence": "Tissue Component Detection"
+     },
+     {
+      "name": "Deep Feature Extraction",
+      "evidence": "Deep Feature Extraction"
+     },
+     {
+      "name": "Feature Cube Extraction",
+      "evidence": "Feature Cube Extraction"
+     },
+     {
+      "name": "k-NN Graph Building",
+      "evidence": "k-NN Graph Building"
+     },
+     {
+      "name": "RAG Graph Building",
+      "evidence": "RAG Graph Building"
+     },
+     {
+      "name": "Cell-Graph Model",
+      "evidence": "Cell-Graph Model"
+     },
+     {
+      "name": "Tissue-Graph Model",
+      "evidence": "Tissue-Graph Model"
+     },
+     {
+      "name": "HACT Model",
+      "evidence": "HACT Model"
+     },
+     {
+      "name": "GnnExplainer",
+      "evidence": "GnnExplainer"
+     },
+     {
+      "name": "GraphGrad-CAM",
+      "evidence": "GraphGrad-CAM"
+     },
+     {
+      "name": "GraphGrad-CAM++",
+      "evidence": "GraphGrad-CAM++"
+     },
+     {
+      "name": "GraphLRP",
+      "evidence": "GraphLRP"
+     },
+     {
+      "name": "Tissue Detection",
+      "evidence": "Tissue Detection: A WSI usually includes"
+     },
+     {
+      "name": "Gaussian smoothing",
+      "evidence": "iteratively applies Gaussian smoothing"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "HistoCartography",
+      "version": null,
+      "evidence": "HistoCartography iteratively applies"
+     },
+     {
+      "name": "Histolab",
+      "version": null,
+      "evidence": "common across Histolab ,Syntax ,HistomicsTK andQuPath"
+     },
+     {
+      "name": "Syntax",
+      "version": null,
+      "evidence": "Histolab ,Syntax ,HistomicsTK andQuPath"
+     },
+     {
+      "name": "HistomicsTK",
+      "version": null,
+      "evidence": "Syntax ,HistomicsTK andQuPath"
+     },
+     {
+      "name": "QuPath",
+      "version": null,
+      "evidence": "HistomicsTK andQuPath"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "PanNuke",
+      "version": null,
+      "evidence": "trained on PanNuke (Gamper et al., 2020)"
+     },
+     {
+      "name": "MoNuSac",
+      "version": null,
+      "evidence": "MoNuSac (Ruchika et al., 2020) datasets"
+     }
+    ],
+    "methods": [
+     {
+      "name": "Gaussian smoothing",
+      "evidence": "applies Gaussian smoothing and Otsu thresholding"
+     },
+     {
+      "name": "Otsu thresholding",
+      "evidence": "Gaussian smoothing and Otsu thresholding until"
+     },
+     {
+      "name": "HoVerNet",
+      "evidence": "state-of-the-art HoVerNet model (Graham et al., 2019)"
+     },
+     {
+      "name": "Simple Linear Iterative Clustering (SLIC)",
+      "evidence": "using Simple Linear Iterative Clustering (SLIC) (Achanta et al., 2012) algorithm"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "DGL",
+      "version": null,
+      "evidence": "implemented using DGL"
+     },
+     {
+      "name": "PyTorch",
+      "version": null,
+      "evidence": "built around PyTorch"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "GraphGrad-CAM",
+      "evidence": "GraphGrad-CAM"
+     },
+     {
+      "name": "GraphGrad-CAM++",
+      "evidence": "GraphGrad-CAM++"
+     },
+     {
+      "name": "GnnExplainer",
+      "evidence": "GnnExplainer"
+     },
+     {
+      "name": "GraphLRP",
+      "evidence": "GraphLRP"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "cpu_info",
+      "value": "single-core POWER8 processor",
+      "evidence": "single-core POWER8 processor"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "NVIDIA P100 GPU",
+      "evidence": "NVIDIA P100 GPU"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "HistoCartography",
+      "evidence": "HistoCartography"
+     },
+     {
+      "name": "stain normalization",
+      "evidence": "stain normalization"
+     },
+     {
+      "name": "tissue detection",
+      "evidence": "tissue detection"
+     },
+     {
+      "name": "tumor classi\ufb01cation",
+      "evidence": "tumor classi\ufb01cation"
+     },
+     {
+      "name": "seg- mentation",
+      "evidence": "seg- mentation"
+     },
+     {
+      "name": "Vahadane Stain Norm",
+      "evidence": "Vahadane Stain Norm"
+     },
+     {
+      "name": "Macenko Stain Norm",
+      "evidence": "Macenko Stain Norm"
+     },
+     {
+      "name": "Tissue Mask Detection",
+      "evidence": "Tissue Mask Detection"
+     },
+     {
+      "name": "Feature Cube Extraction",
+      "evidence": "Feature Cube Extraction"
+     },
+     {
+      "name": "Cell-Graph Generation",
+      "evidence": "Cell-Graph Generation"
+     },
+     {
+      "name": "Tissue-Graph Generation",
+      "evidence": "Tissue-Graph Generation"
+     },
+     {
+      "name": "Cell-Graph Model",
+      "evidence": "Cell-Graph Model"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "run time",
+      "value": "1.77",
+      "split": null,
+      "evidence": "1.77"
+     },
+     {
+      "metric": "run time",
+      "value": "6 .46",
+      "split": null,
+      "evidence": "6 .46"
+     },
+     {
+      "metric": "run time",
+      "value": "29 .03",
+      "split": null,
+      "evidence": "29 .03"
+     },
+     {
+      "metric": "run time",
+      "value": "30.67",
+      "split": null,
+      "evidence": "30.67"
+     },
+     {
+      "metric": "run time",
+      "value": "68 .27",
+      "split": null,
+      "evidence": "68 .27"
+     },
+     {
+      "metric": "run time",
+      "value": "186 .10",
+      "split": null,
+      "evidence": "186 .10"
+     },
+     {
+      "metric": "run time",
+      "value": "0.80",
+      "split": null,
+      "evidence": "0.80"
+     },
+     {
+      "metric": "run time",
+      "value": "2 .86",
+      "split": null,
+      "evidence": "2 .86"
+     },
+     {
+      "metric": "run time",
+      "value": "11 .19",
+      "split": null,
+      "evidence": "11 .19"
+     },
+     {
+      "metric": "run time",
+      "value": "15.98",
+      "split": null,
+      "evidence": "15.98"
+     },
+     {
+      "metric": "run time",
+      "value": "32 .37",
+      "split": null,
+      "evidence": "32 .37"
+     },
+     {
+      "metric": "run time",
+      "value": "81 .72",
+      "split": null,
+      "evidence": "81 .72"
+     },
+     {
+      "metric": "run time",
+      "value": "1.04",
+      "split": null,
+      "evidence": "1.04"
+     },
+     {
+      "metric": "run time",
+      "value": "2 .11",
+      "split": null,
+      "evidence": "2 .11"
+     },
+     {
+      "metric": "run time",
+      "value": "8 .09",
+      "split": null,
+      "evidence": "8 .09"
+     },
+     {
+      "metric": "run time",
+      "value": "0.24",
+      "split": null,
+      "evidence": "0.24"
+     },
+     {
+      "metric": "run time",
+      "value": "1 .61",
+      "split": null,
+      "evidence": "1 .61"
+     },
+     {
+      "metric": "run time",
+      "value": "5 .92",
+      "split": null,
+      "evidence": "5 .92"
+     },
+     {
+      "metric": "run time",
+      "value": "5.83",
+      "split": null,
+      "evidence": "5.83"
+     },
+     {
+      "metric": "run time",
+      "value": "11 .77",
+      "split": null,
+      "evidence": "11 .77"
+     },
+     {
+      "metric": "run time",
+      "value": "30 .21",
+      "split": null,
+      "evidence": "30 .21"
+     },
+     {
+      "metric": "run time",
+      "value": "2.51",
+      "split": null,
+      "evidence": "2.51"
+     },
+     {
+      "metric": "run time",
+      "value": "13 .33",
+      "split": null,
+      "evidence": "13 .33"
+     },
+     {
+      "metric": "run time",
+      "value": "50 .26",
+      "split": null,
+      "evidence": "50 .26"
+     },
+     {
+      "metric": "run time",
+      "value": "4.14",
+      "split": null,
+      "evidence": "4.14"
+     },
+     {
+      "metric": "run time",
+      "value": "21 .30",
+      "split": null,
+      "evidence": "21 .30"
+     },
+     {
+      "metric": "run time",
+      "value": "83 .66",
+      "split": null,
+      "evidence": "83 .66"
+     },
+     {
+      "metric": "run time",
+      "value": "39.18",
+      "split": null,
+      "evidence": "39.18"
+     },
+     {
+      "metric": "run time",
+      "value": "93 .26",
+      "split": null,
+      "evidence": "93 .26"
+     },
+     {
+      "metric": "run time",
+      "value": "276 .71",
+      "split": null,
+      "evidence": "276 .71"
+     },
+     {
+      "metric": "run time",
+      "value": "0.028",
+      "split": null,
+      "evidence": "0.028"
+     },
+     {
+      "metric": "run time",
+      "value": "0 .033",
+      "split": null,
+      "evidence": "0 .033"
+     },
+     {
+      "metric": "run time",
+      "value": "0 .040",
+      "split": null,
+      "evidence": "0 .040"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "python",
+      "version": null,
+      "evidence": "the library is built on python"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "cell-graph model",
+      "evidence": "interpret a cell-graph model"
+     },
+     {
+      "name": "node- level saliency maps",
+      "evidence": "in terms of node- level saliency maps"
+     },
+     {
+      "name": "post-hoc feature attribution methods",
+      "evidence": "applying post-hoc feature attribution methods"
+     },
+     {
+      "name": "characterizing the highlighted important nuclei",
+      "evidence": "by characterizing the highlighted important nuclei per-image"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "magnification",
+      "value": "10\u00d7",
+      "evidence": "121\u00d7106(10\u00d7)"
+     },
+     {
+      "name": "magnification",
+      "value": "40\u00d7",
+      "evidence": "9 .6\u00d7106(40\u00d7)"
+     },
+     {
+      "name": "most important nuclei",
+      "value": "ten",
+      "evidence": "highlight the ten most important nuclei"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "BRACS",
+      "version": null,
+      "evidence": "performed on BRACS (Pati et al., 2021)"
+     },
+     {
+      "name": "BACH",
+      "version": null,
+      "evidence": "BACH (Aresta et al., 2019) datasets"
+     },
+     {
+      "name": "UZH",
+      "version": null,
+      "evidence": "images from UZH (Zhong et al., 2017)"
+     },
+     {
+      "name": "SICAPv2",
+      "version": null,
+      "evidence": "and SICAPv2 (Silva- Rodr\u00b4 \u0131guez et al., 2020)"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HistoCartography",
+      "evidence": "performance of HistoCartography for classi\ufb01cation"
+     },
+     {
+      "name": "cell-graph model",
+      "evidence": "using cell-graph model, tissue-graph model, and HACT-Net"
+     },
+     {
+      "name": "tissue-graph model",
+      "evidence": "using cell-graph model, tissue-graph model, and HACT-Net"
+     },
+     {
+      "name": "HACT-Net",
+      "evidence": "and HACT-Net (Pati et al., 2021)"
+     },
+     {
+      "name": "SegGini",
+      "evidence": "Segmentation is performed using SegGini (Anklin et al., 2021)"
+     },
+     {
+      "name": "GraphGradCAM",
+      "evidence": "outcome of GraphGradCAM module in HistoCartography"
+     },
+     {
+      "name": "post-hoc feature attribution",
+      "evidence": "applying post-hoc feature attribution methods"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "weighted-F1",
+      "value": "44 .3\u00b12.0",
+      "split": null,
+      "evidence": "44 .3\u00b12.0"
+     },
+     {
+      "metric": "average Dice score",
+      "value": "66 .0\u00b13.1",
+      "split": "UZH TMA",
+      "evidence": "UZH SegGini TMA 9 .6\u00d7106(40\u00d7) 4 66 .0\u00b13.1"
+     }
+    ]
+   }
+  }
+ ]
+}

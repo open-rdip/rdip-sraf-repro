@@ -1,0 +1,211 @@
+{
+  "study_id": "study010",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study010/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:34:47.119406+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 25,
+    "datasets": 2,
+    "methods": 14,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PaddlePaddle",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "mixing block configuration",
+        "value": "[L]6[G]6"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.05"
+      },
+      {
+        "name": "initial learning rate (English models)",
+        "value": "5\u00d710^-4 \u00d7 batchsize/2048"
+      },
+      {
+        "name": "learning rate scheduler",
+        "value": "cosine"
+      },
+      {
+        "name": "linear warm-up epochs (English models)",
+        "value": "2"
+      },
+      {
+        "name": "total epochs (English models)",
+        "value": "21"
+      },
+      {
+        "name": "maximum predict length (English models)",
+        "value": "25"
+      },
+      {
+        "name": "initial learning rate (Chinese models)",
+        "value": "3\u00d710^-4 \u00d7 batchsize/512"
+      },
+      {
+        "name": "linear warm-up epochs (Chinese models)",
+        "value": "5"
+      },
+      {
+        "name": "total epochs (Chinese models)",
+        "value": "100"
+      },
+      {
+        "name": "maximum predict length (Chinese models)",
+        "value": "40"
+      },
+      {
+        "name": "image text resize",
+        "value": "32\u00d764"
+      },
+      {
+        "name": "number of GPUs",
+        "value": "4"
+      },
+      {
+        "name": "data augmentation (English models)",
+        "value": "rotation, perspective distortion, motion blur, Gaussian noise"
+      },
+      {
+        "name": "data augmentation (Chinese models)",
+        "value": "not used"
+      },
+      {
+        "name": "alphabet (English models)",
+        "value": "case-insensitive alphanumerics"
+      },
+      {
+        "name": "patch embedding option (a): disjoint linear projection kernel size",
+        "value": "4\u00d74"
+      },
+      {
+        "name": "patch embedding option (b): convolution kernel size",
+        "value": "7\u00d77"
+      },
+      {
+        "name": "patch embedding option (b): convolution stride",
+        "value": "4"
+      },
+      {
+        "name": "implemented patch embedding: number of consecutive convolutions",
+        "value": "2"
+      },
+      {
+        "name": "implemented patch embedding: convolution kernel size",
+        "value": "3\u00d73"
+      },
+      {
+        "name": "implemented patch embedding: convolution stride",
+        "value": "2"
+      },
+      {
+        "name": "implemented patch embedding: normalization",
+        "value": "batch normalization"
+      },
+      {
+        "name": "local mixing window size",
+        "value": "7\u00d711"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "IC13",
+        "version": null
+      },
+      {
+        "name": "IC15",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "SVTR",
+        "description": "Scene text recognition model family (including SVTR-T, the smallest variant) compared with previous works on six English benchmarks covering regular and irregular text and one Chinese scene dataset."
+      },
+      {
+        "name": "Local and global mixing blocks",
+        "description": "Mixing blocks for feature learning in complex scenarios; placing the local mixing block in front of the global one guides the global block to focus on long-term dependence, while the reverse order may confuse its role. The [L]6[G]6 configuration reports the best accuracy."
+      },
+      {
+        "name": "Distortion correction",
+        "description": "Image text is resized to 32\u00d764 for distortion correction"
+      },
+      {
+        "name": "Cosine learning rate scheduler with linear warm-up",
+        "description": "Cosine schedule with 2 epochs warm-up over 21 epochs for English models, and 5 epochs warm-up over 100 epochs for Chinese models"
+      },
+      {
+        "name": "Data augmentation",
+        "description": "Random rotation, perspective distortion, motion blur and Gaussian noise for English models; not used for Chinese models"
+      },
+      {
+        "name": "SVTR-L",
+        "description": "Large SVTR variant described as accurate, fast and versatile; a highly competitive choice in accuracy-oriented applications"
+      },
+      {
+        "name": "SVTR-T",
+        "description": "Tiny SVTR variant described as effective, much smaller and quite fast; suited to resource-limited scenarios"
+      },
+      {
+        "name": "Patch embedding with two consecutive 3\u00d73 convolutions",
+        "description": "Patch embedding implemented using two consecutive 3\u00d73 convolutions with stride 2 and batch normalization, which increases computational cost slightly but progressively adds feature dimension, favoring feature fusion. Maps input X\u2208R^{H\u00d7W\u00d73} to character components of size H/4\u00d7W/4\u00d7D0."
+      },
+      {
+        "name": "4\u00d74 disjoint linear projection",
+        "description": "Common one-step patch embedding projection (Figure 3(a))."
+      },
+      {
+        "name": "7\u00d77 convolution with stride 4",
+        "description": "Common one-step patch embedding projection alternative."
+      },
+      {
+        "name": "Mixing block (global mixing and local mixing)",
+        "description": "Block operating on embedded character components using a 2D feature representation, with global mixing and local mixing (Figure 4), motivated by the need to capture character-component-level features for text recognition."
+      },
+      {
+        "name": "Global mixing block",
+        "description": "A layer norm followed by multi-head self-attention for dependence modeling, then a layer norm and an MLP applied sequentially for feature fusion, with shortcut connections."
+      },
+      {
+        "name": "Local mixing",
+        "description": "Evaluates correlation among components within a predefined window in a sliding-window manner, similar to convolution, using self-attention to capture local patterns. It encodes character morphology features and associations between components within a character."
+      },
+      {
+        "name": "Merging",
+        "description": "Merging operation between stages introduced to avoid maintaining a constant spatial resolution across stages, which is computationally expensive and leads to redundant representation."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "accuracy gain on IC13 of [L]6[G]6 vs none",
+        "value": "1.9%",
+        "split": null
+      },
+      {
+        "metric": "accuracy gain on IC15 of [L]6[G]6 vs none",
+        "value": "6.6%",
+        "split": null
+      }
+    ]
+  }
+}

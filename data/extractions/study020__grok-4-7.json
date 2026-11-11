@@ -1,0 +1,144 @@
+{
+  "study_id": "study020",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study020/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:05:53.794879+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 2,
+    "methods": 14,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Libra",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "64"
+      },
+      {
+        "name": "image_size",
+        "value": "632 \u00d7 512"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1e-6"
+      },
+      {
+        "name": "initialization",
+        "value": "ImageNet-pretrained weights"
+      },
+      {
+        "name": "augmentation_horizontal_flip",
+        "value": "random"
+      },
+      {
+        "name": "augmentation_vertical_flip",
+        "value": "random"
+      },
+      {
+        "name": "augmentation_rotation",
+        "value": "10 degrees"
+      },
+      {
+        "name": "augmentation_brightness_contrast",
+        "value": "small random jittering"
+      },
+      {
+        "name": "cross_validation",
+        "value": "5-fold"
+      },
+      {
+        "name": "cross_validation_folds",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "CSAW-M",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "multi-hot ordinal encoding",
+        "description": "For an ordinal classification problem with K classes, the multi-hot encoding of datapoint xi with ordinal label li is {y1_i, ..., y_{K-1}_i} where yk_i = 1{li > k} for k in {1, ..., K-1}, equivalent to solving K-1 independent binary classifications, each class a superset of the previous."
+      },
+      {
+        "name": "training",
+        "description": "Both models trained with batch size 64 on 632 \u00d7 512 images using Adam, initialized with ImageNet-pretrained weights, learning rate 1e-6, and data augmentation of random horizontal and vertical flipping, random rotation of 10 degrees, and small random brightness and contrast jittering. 5-fold cross-validation used to determine the stopping iteration."
+      },
+      {
+        "name": "ResNet34 one-hot",
+        "description": "Baseline using ResNet-34 backbone; categorical classification treating each class independently, predicting masking levels with standard softmax and cross-entropy loss on one-hot encodings."
+      },
+      {
+        "name": "ResNet34 multi-hot",
+        "description": "Baseline using ResNet-34 backbone; accounts for ordinal relation between masking levels using multi-hot encodings, treated as multi-label classification of an item into K ordinal classes."
+      },
+      {
+        "name": "low- and high-masking identification",
+        "description": "The two lowest masking levels (1 and 2) are treated together as low-masking and the two highest (7 and 8) as high-masking, based on expert feedback; performance at identifying these tail masking levels is assessed with F1-score."
+      },
+      {
+        "name": "identification of interval and large invasive cancers",
+        "description": "Secondary task measuring correlation between predicted masking estimates and interval cancers and large invasive cancers without explicit training for these tasks; performance measured with AUC for individual cancer types and the composite endpoint (CEP), and with odds ratio (OR)."
+      },
+      {
+        "name": "data augmentation",
+        "description": "10 degrees, and small random brightness and contrast jittering"
+      },
+      {
+        "name": "5-fold cross-validation",
+        "description": "Used to determine the stopping iteration, which was used in the final training run using all the training data"
+      },
+      {
+        "name": "ordinal classification of masking potential",
+        "description": "Principal task of CSAW-M is to model the median expert opinion of masking potential level in the range [1-8]; expert labels are ordinally related"
+      },
+      {
+        "name": "AMAE",
+        "description": "Average mean absolute error measuring the average distance of predicted classes with respect to the true classes; robust to class imbalance; considers performance over all masking levels"
+      },
+      {
+        "name": "Kendall's \u03c4b",
+        "description": "Measures the correlation of two rankings based on the number of concordant and discordant pairs; ranges from -1 (perfect inverse correlation) to 1 (perfect correlation), and 0 indicates no correlation; considers performance over all masking levels"
+      },
+      {
+        "name": "odds ratio",
+        "description": "Model predictions are divided into quartile groups g_i with i in {1,2,3,4}. Odds of interval cancer for group g_i are O_i = IC_i / ~IC_i, where IC_i is the number of participants in g_i with interval cancer and ~IC_i is the number without. Odds ratio is OR_i = O_i / O_1 relative to the first quartile g_1, so OR_1 = 1 for all models. A good masking predictor shows strong, monotonically increasing odds ratios in the top quartiles."
+      },
+      {
+        "name": "dense area and percent density baselines",
+        "description": "Baseline models are compared with dense area and percent density computed using Libra, because density is known to be correlated with the clinical endpoints."
+      },
+      {
+        "name": "continuous masking score",
+        "description": "Discrete masking predictions are converted to continuous values as the weighted average of probabilities that an input belongs to each masking level."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "study_id": "study014",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study014/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:16:03.621823+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 3,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "ScanNet",
+        "version": null
+      },
+      {
+        "name": "SUN RGB-D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "H3DNet",
+        "description": "A 3D object detection approach consisting of three modules: (1) computes dense pointwise descriptors to predict geometric primitives and their latent features; (2) converts these geometric primitives into object proposals; (3) introduces a parametric distance function to evaluate the distance between an object bounding box (BB) and predicted primitives. The methodology leverages diverse primitive types to focus on different regions of the point cloud and uses an overcomplete set of constraints to tolerate outliers and reduce the influence of individual prediction errors."
+      },
+      {
+        "name": "Regressing and aggregating an overcomplete set of geometric primitives",
+        "description": "Formulates object detection by regressing an overcomplete set of geometric primitives and aggregating them for proposal generation and detection."
+      },
+      {
+        "name": "Predicting multiple types of geometric primitives",
+        "description": "Predicts different types of geometric primitives suitable for various object types and scenes to improve detection performance."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP (0.25)",
+        "value": "67.2%",
+        "split": null
+      },
+      {
+        "metric": "relative improvement over state-of-the-art",
+        "value": "8.5%",
+        "split": null
+      },
+      {
+        "metric": "mAP (window)",
+        "value": "38.1 -> 51.9",
+        "split": null
+      },
+      {
+        "metric": "mAP (door)",
+        "value": "47.3 -> 61.0",
+        "split": null
+      },
+      {
+        "metric": "mAP (shower-curtain)",
+        "value": "57.1 -> 75.3",
+        "split": null
+      }
+    ]
+  }
+}

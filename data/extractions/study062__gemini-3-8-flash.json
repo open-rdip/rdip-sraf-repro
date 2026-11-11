@@ -1,0 +1,104 @@
+{
+  "study_id": "study062",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study062/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:06:15.846618+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 2,
+    "methods": 13,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "JAX",
+        "version": null
+      },
+      {
+        "name": "jax.jet",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "causality parameter \u03f5",
+        "value": "increasing sequence of values {\u03f5i}k i=1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Navier-Stokes benchmark",
+        "version": null
+      },
+      {
+        "name": "Kuramoto-Sivashinsky benchmark",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "jax.pmap",
+        "description": "Primitive used to parallelize and scale code across an arbitrary number of GPUs by broadcasting global gradient signals to update local model parameters at each gradient descent iteration"
+      },
+      {
+        "name": "Causal training for PINNs",
+        "description": "A training algorithm for PINNs summarizing a re-formulation of the residual and initial conditions loss, an annealing scheme for the \u03f5 parameter, and a stopping criterion terminating training upon convergence of temporal weights wi."
+      },
+      {
+        "name": "causal training strategy",
+        "description": "A training strategy respecting temporal causality within time windows, serving as an enhancement to time-marching approaches."
+      },
+      {
+        "name": "time-marching or curriculum training strategies",
+        "description": "Strategies respecting temporal causality by learning the solution sequentially within separate time-windows."
+      },
+      {
+        "name": "PINNs",
+        "description": "Physics-Informed Neural Networks used to solve problems exhibiting sensitivity to initial data and strong spatio-temporal correlations."
+      },
+      {
+        "name": "Modified multi-layer perceptrons",
+        "description": "A neural network architecture proposed by Wang et al. designed to outperform conventional MLPs."
+      },
+      {
+        "name": "synchronous data-parallelism",
+        "description": "Data-parallel training across multiple GPUs where each device stores an identical copy of trainable parameters, generates batches of spatial and temporal points independently, and aggregates training loss gradients via a collective reduce-mean operation."
+      },
+      {
+        "name": "Taylor-mode automatic differentiation",
+        "description": "Accelerates the computation of high-order derivatives by leveraging a truncated Taylor polynomial approximation of function compositions via the Fa\u00e0 di Bruno formula."
+      },
+      {
+        "name": "physics-informed neural network",
+        "description": "Model trained to solve the Allen-Cahn equation using Algorithm 1 with temporal residual loss minimization."
+      },
+      {
+        "name": "weighted residual loss",
+        "description": "Loss formulation utilizing temporal weights {wi} that activate and converge to 1 as the PDE residual loss is minimized, sensitive to a causality parameter \u03f5."
+      },
+      {
+        "name": "residual weights stopping criterion",
+        "description": "Convergence assessment method that terminates training when min_i wi > \u03b4 for a threshold parameter \u03b4 \u2208 (0, 1)."
+      },
+      {
+        "name": "annealing strategy for adjusting \u03f5",
+        "description": "Gradually increases the strength with which the PDE residual constraint is enforced using an increasing sequence of values {\u03f5i}k i=1 to avoid tedious hyper-parameter tuning."
+      },
+      {
+        "name": "Fitting the initial data",
+        "description": "Treats the initial loss Lic as a special temporal residual at t=0 and incorporates it into the weighted residual loss."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

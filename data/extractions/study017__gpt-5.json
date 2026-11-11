@@ -1,0 +1,251 @@
+{
+  "study_id": "study017",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study017/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:18:33.545245+00:00",
+  "counts": {
+    "dependencies": 4,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 6,
+    "methods": 31,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "NumPy",
+        "version": null
+      },
+      {
+        "name": "torch",
+        "version": null
+      },
+      {
+        "name": "DGL",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA P100 GPU",
+      "cuda_version": null,
+      "cpu_info": "single-core POWER8 processor"
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "PanNuke",
+        "version": null
+      },
+      {
+        "name": "MoNuSac",
+        "version": null
+      },
+      {
+        "name": "BRACS",
+        "version": null
+      },
+      {
+        "name": "BACH",
+        "version": null
+      },
+      {
+        "name": "UZH",
+        "version": null
+      },
+      {
+        "name": "SICAPv2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Vahadane Stain Norm",
+        "description": "Preprocessing module. Input: image (np.array). Output: image (np.array)."
+      },
+      {
+        "name": "Macenko Stain Norm",
+        "description": "Preprocessing module. Input: image (np.array). Output: image (np.array)."
+      },
+      {
+        "name": "Tissue Mask Detection",
+        "description": "Preprocessing module. Input: image (np.array). Output: mask (np.array)."
+      },
+      {
+        "name": "Nuclei Detection",
+        "description": "Preprocessing module. Input: image (np.array). Output: mask (np.array)."
+      },
+      {
+        "name": "Nuclei Concepts",
+        "description": "Preprocessing module. Input: image (np.array), mask (np.array). Output: mask (np.array)."
+      },
+      {
+        "name": "Tissue Component Detection",
+        "description": "Preprocessing module. Input: image (np.array). Output: mask (np.array)."
+      },
+      {
+        "name": "Deep Feature Extraction",
+        "description": "Feature extraction module. Input: image (np.array), mask (np.array). Output: features (torch.Tensor)."
+      },
+      {
+        "name": "Feature Cube Extraction",
+        "description": "Feature processing module. Input: image (np.array). Output: features (torch.Tensor)."
+      },
+      {
+        "name": "k-NN Graph Building",
+        "description": "Graph construction module. Input: features (torch.Tensor), mask (np.array). Output: graph (DGLGraph)."
+      },
+      {
+        "name": "RAG Graph Building",
+        "description": "Graph construction module. Input: features (torch.Tensor), mask (np.array). Output: graph (DGLGraph)."
+      },
+      {
+        "name": "MLCell-Graph Model",
+        "description": "Model module. Input: graph (DGLGraph). Output: predictions (torch.Tensor)."
+      },
+      {
+        "name": "Tissue-Graph Model",
+        "description": "Model module. Input: graph (DGLGraph). Output: predictions (torch.Tensor)."
+      },
+      {
+        "name": "HACT Model",
+        "description": "Model module. Input: graph (DGLGraph), graph (DGLGraph), features (torch.Tensor). Output: predictions (torch.Tensor)."
+      },
+      {
+        "name": "GnnExplainer",
+        "description": "Explainer module. Input: graph (DGLGraph). Output: importance scores (torch.Tensor)."
+      },
+      {
+        "name": "GraphGrad-CAM",
+        "description": "Explainer module. Input: graph (DGLGraph). Output: importance scores (torch.Tensor)."
+      },
+      {
+        "name": "GraphGrad-CAM++",
+        "description": "Explainer module. Input: graph (DGLGraph). Output: importance scores (torch.Tensor)."
+      },
+      {
+        "name": "GraphLRP",
+        "description": "Explainer module. Input: graph (DGLGraph). Output: importance scores (torch.Tensor)."
+      },
+      {
+        "name": "Tissue Detection (Gaussian smoothing)",
+        "description": "Preprocessing step applying iterative Gaussian smoothing to identify tissue regions in whole-slide images."
+      },
+      {
+        "name": "Tissue Detection",
+        "description": "Iteratively applies Gaussian smoothing and Otsu thresholding until the mean of non-tissue pixels is below a threshold to identify tissue regions."
+      },
+      {
+        "name": "Nuclei Detection (HoVerNet)",
+        "description": "Integrates two checkpoints of the HoVerNet model trained on PanNuke and MoNuSac datasets for nuclei segmentation and classification."
+      },
+      {
+        "name": "Tissue Component Detection (SLIC + hierarchical merging)",
+        "description": "Oversegments tissue into superpixels using SLIC, then hierarchically merges neighboring superpixels using color similarity to form meaningful tissue regions such as epithelium and stroma."
+      },
+      {
+        "name": "Pipeline Runner",
+        "description": "Utility to define a series of pipeline steps with loading and saving functions to reduce boilerplate and enable human-readable workflows."
+      },
+      {
+        "name": "Cell-Graph Generation",
+        "description": "Cell-graph construction module in HistoCartography benchmarked for run-time on RoIs."
+      },
+      {
+        "name": "Tissue-Graph Generation",
+        "description": "Tissue-graph construction module in HistoCartography benchmarked for run-time on RoIs and WSIs."
+      },
+      {
+        "name": "HistoCartography library",
+        "description": "An open-source Python library for graph analytics in computational pathology, providing tools for graph representation, learning, and explainability."
+      },
+      {
+        "name": "Cell-graph model interpretability via post-hoc feature attribution",
+        "description": "Generates per-image explanations by applying post-hoc feature attribution methods to trained cell-graph models, producing node-level saliency maps and highlighting important nuclei."
+      },
+      {
+        "name": "HistoCartography",
+        "description": "A framework using entity-graphs for classification and segmentation of histopathology images, scalable to tumor ROIs, tissue microarrays, and whole-slide images."
+      },
+      {
+        "name": "Cell-graph model",
+        "description": "A graph-based model operating on cell-level entities to characterize breast tumors; explanations generated via GraphGradCAM."
+      },
+      {
+        "name": "HACT-Net",
+        "description": "A model (Pati et al., 2021) used for breast tumor classification in the benchmark."
+      },
+      {
+        "name": "SegGini",
+        "description": "A segmentation method (Anklin et al., 2021) used to delineate Gleason patterns in prostate cancer images."
+      },
+      {
+        "name": "GraphGradCAM",
+        "description": "A module in HistoCartography that produces per-image, node-level saliency maps via post-hoc feature attribution on trained cell-graph models."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "runtime_seconds (Vahadane Stain Norm, Tumor RoI)",
+        "value": "1.77",
+        "split": null
+      },
+      {
+        "metric": "runtime_seconds (Vahadane Stain Norm, WSI)",
+        "value": "30.67",
+        "split": null
+      },
+      {
+        "metric": "runtime_seconds (Macenko Stain Norm, Tumor RoI)",
+        "value": "0.80",
+        "split": null
+      },
+      {
+        "metric": "runtime_seconds (Macenko Stain Norm, WSI)",
+        "value": "15.98",
+        "split": null
+      },
+      {
+        "metric": "runtime_seconds (Tissue Mask Detection, WSI)",
+        "value": "1.04",
+        "split": null
+      },
+      {
+        "metric": "runtime_seconds (Feature Cube Extraction, Tumor RoI)",
+        "value": "0.24",
+        "split": null
+      },
+      {
+        "metric": "runtime_seconds (Feature Cube Extraction, WSI)",
+        "value": "5.83",
+        "split": null
+      },
+      {
+        "metric": "runtime_seconds (Cell-Graph Generation, Tumor RoI)",
+        "value": "2.51",
+        "split": null
+      },
+      {
+        "metric": "runtime_seconds (Tissue-Graph Generation, Tumor RoI)",
+        "value": "4.14",
+        "split": null
+      },
+      {
+        "metric": "runtime_seconds (Tissue-Graph Generation, WSI)",
+        "value": "39.18",
+        "split": null
+      },
+      {
+        "metric": "runtime_seconds (MLCell-Graph Model, Tumor RoI)",
+        "value": "0.028",
+        "split": null
+      }
+    ]
+  }
+}

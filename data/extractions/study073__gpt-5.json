@@ -1,0 +1,152 @@
+{
+  "study_id": "study073",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study073/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:15:47.688867+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 2,
+    "methods": 22,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX 3090",
+      "cuda_version": null,
+      "cpu_info": "Intel i9-10980XE CPU"
+    },
+    "hyperparameters": [
+      {
+        "name": "reference images (model-free setup)",
+        "value": "16"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "YCB-Video",
+        "version": null
+      },
+      {
+        "name": "LINEMOD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "W/o transformer",
+        "description": "Replaces the transformer-based architecture with convolutional and linear layers while keeping a similar number of parameters."
+      },
+      {
+        "name": "W/o hierarchical comparison",
+        "description": "Compares the rendering and the cropped input trained by pose-conditioned triplet loss (Eq. 11) without two-level hierarchical comparison; at test time, compares each pose hypothesis with the input observation independently and outputs the pose with the highest score."
+      },
+      {
+        "name": "Ours-InfoNCE",
+        "description": "Replaces the contrast validated pair-wise loss (Eq. 14) with the InfoNCE loss as used in [46]."
+      },
+      {
+        "name": "Ours (proposed)",
+        "description": "Default version under the model-free setup with 16 reference images; unified framework for pose estimation and tracking."
+      },
+      {
+        "name": "Ours\u007f",
+        "description": "End-to-end pose estimation and tracking without external pose initialization."
+      },
+      {
+        "name": "DeepIM",
+        "description": "Baseline that needs training on the same object instances."
+      },
+      {
+        "name": "se(3)-TrackNet",
+        "description": "Baseline that needs training on the same object instances."
+      },
+      {
+        "name": "PoseRBPF",
+        "description": "Baseline that needs training on the same object instances."
+      },
+      {
+        "name": "W\u0000fthrich et al.",
+        "description": "Method that can be instantly applied to novel objects when provided with a CAD model."
+      },
+      {
+        "name": "RGF",
+        "description": "Method that can be instantly applied to novel objects when provided with a CAD model."
+      },
+      {
+        "name": "ICG",
+        "description": "Method that can be instantly applied to novel objects when provided with a CAD model."
+      },
+      {
+        "name": "LLM texture augmentation",
+        "description": "LLM-aided texture augmentation used for synthetic training; an ablation removes this component."
+      },
+      {
+        "name": "Transformer-based architecture",
+        "description": "Primary architecture; ablation replaces it with convolutional and linear layers keeping a similar number of parameters."
+      },
+      {
+        "name": "Model-based setup",
+        "description": "Experimental setup in which results are compared (Table 4)."
+      },
+      {
+        "name": "Instance-wise training method [67] with ground-truth pose initialization",
+        "description": "Baseline approach that requires ground-truth pose initialization and training on specific instances."
+      },
+      {
+        "name": "Pose initialization",
+        "description": "Initial pose estimation step; reported to take 4 ms."
+      },
+      {
+        "name": "Pose refinement",
+        "description": "Refines pose estimate; reported to take 0.88 s per object."
+      },
+      {
+        "name": "Pose selection",
+        "description": "Selects among multiple pose hypotheses; reported to take 0.42 s."
+      },
+      {
+        "name": "Tracking mode",
+        "description": "Real-time tracking using only pose refinement without multiple pose hypotheses; runs at approximately 32 Hz after a single pose estimation for initialization."
+      },
+      {
+        "name": "Model-free comparison",
+        "description": "Comparison against state-of-the-art RGBD methods on YCB-Video and LINEMOD; all methods are given perturbed ground-truth bounding boxes as 2D detections for fair comparison."
+      },
+      {
+        "name": "Inference without fine-tuning",
+        "description": "The same trained model and configurations are used for all evaluations without any fine-tuning, except in ablation studies."
+      },
+      {
+        "name": "Evaluation metrics",
+        "description": "Area under the curve (AUC) of ADD and ADD-S; Recall of ADD < 0.1 of the object diameter (ADD-0.1d); Average Recall (AR) of VSD, MSSD, and MSPD from the BOP challenge."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "pose initialization time",
+        "value": "4 ms",
+        "split": null
+      },
+      {
+        "metric": "pose refinement time",
+        "value": "0.88 s",
+        "split": null
+      },
+      {
+        "metric": "pose selection time",
+        "value": "0.42 s",
+        "split": null
+      },
+      {
+        "metric": "tracking speed (Hz)",
+        "value": "\u223c32",
+        "split": null
+      }
+    ]
+  }
+}

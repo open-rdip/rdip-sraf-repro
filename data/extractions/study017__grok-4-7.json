@@ -1,0 +1,353 @@
+{
+  "study_id": "study017",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study017/ext/grok-4-7",
+  "extracted_at": "2026-11-09T18:57:29.651251+00:00",
+  "counts": {
+    "dependencies": 4,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 6,
+    "methods": 29,
+    "evaluation_results": 33
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "np",
+        "version": null
+      },
+      {
+        "name": "torch",
+        "version": null
+      },
+      {
+        "name": "DGL",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA P100 GPU",
+      "cuda_version": null,
+      "cpu_info": "single-core POWER8 processor"
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "PanNuke",
+        "version": null
+      },
+      {
+        "name": "MoNuSac",
+        "version": null
+      },
+      {
+        "name": "BRACS",
+        "version": null
+      },
+      {
+        "name": "BACH",
+        "version": null
+      },
+      {
+        "name": "UZH",
+        "version": null
+      },
+      {
+        "name": "SICAPv2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Vahadane Stain Norm",
+        "description": "Preprocessing module; input image (I), output image (I); available in extant libraries; CPU supported, GPU not supported."
+      },
+      {
+        "name": "Macenko Stain Norm",
+        "description": "Preprocessing module; input image (I), output image (I); available in extant libraries; CPU supported, GPU not supported."
+      },
+      {
+        "name": "Tissue Mask Detection",
+        "description": "Preprocessing module; input image (I), output mask (M); available in extant libraries; CPU supported, GPU not supported."
+      },
+      {
+        "name": "Nuclei Detection",
+        "description": "Preprocessing module; input image (I), output mask (M); available in extant libraries; CPU and GPU supported."
+      },
+      {
+        "name": "Nuclei Concepts",
+        "description": "Preprocessing module; inputs image (I) and mask (M), output mask (M); available in extant libraries; CPU supported, GPU not supported."
+      },
+      {
+        "name": "Tissue Component Detection",
+        "description": "Preprocessing module; input image (I), output mask (M); not available in extant libraries; CPU supported, GPU not supported."
+      },
+      {
+        "name": "Deep Feature Extraction",
+        "description": "Preprocessing module; inputs image (I) and mask (M), output features (X); not available in extant libraries; CPU and GPU supported."
+      },
+      {
+        "name": "Feature Cube Extraction",
+        "description": "Preprocessing module; input image (I), output features (X); not available in extant libraries; CPU and GPU supported."
+      },
+      {
+        "name": "k-NN Graph Building",
+        "description": "Preprocessing module; inputs features (X) and mask (M), output graph (G); not available in extant libraries; CPU supported, GPU not supported."
+      },
+      {
+        "name": "RAG Graph Building",
+        "description": "Preprocessing module; inputs features (X) and mask (M), output graph (G); not available in extant libraries; CPU supported, GPU not supported."
+      },
+      {
+        "name": "Cell-Graph Model",
+        "description": "ML module; input graph (G), output predictions (P); not available in extant libraries; CPU and GPU supported."
+      },
+      {
+        "name": "Tissue-Graph Model",
+        "description": "ML module; input graph (G), output predictions (P); not available in extant libraries; CPU and GPU supported."
+      },
+      {
+        "name": "HACT Model",
+        "description": "ML module; inputs two graphs (G, G) and features (X), output predictions (P); not available in extant libraries; CPU and GPU supported."
+      },
+      {
+        "name": "GnnExplainer",
+        "description": "Explainer module; input graph (G), output importance scores (S); not available in extant libraries; CPU and GPU supported."
+      },
+      {
+        "name": "GraphGrad-CAM",
+        "description": "Explainer module; input graph (G), output importance scores (S); not available in extant libraries; CPU and GPU supported."
+      },
+      {
+        "name": "GraphGrad-CAM++",
+        "description": "Explainer module; input graph (G), output importance scores (S); not available in extant libraries; CPU and GPU supported."
+      },
+      {
+        "name": "GraphLRP",
+        "description": "Explainer module; input graph (G), output importance scores (S); not available in extant libraries; CPU and GPU supported."
+      },
+      {
+        "name": "Tissue Detection",
+        "description": "Identifies tissue regions in a WSI, which usually includes significant non-tissue region, to confine analysis and reduce computational effort. The tissue detector in HistoCartography iteratively applies Gaussian smoothing."
+      },
+      {
+        "name": "Tissue detector",
+        "description": "Iteratively applies Gaussian smoothing and Otsu thresholding until the mean of non-tissue pixels is below a threshold, to identify tissue regions and exclude significant non-tissue regions."
+      },
+      {
+        "name": "Pipeline Runner",
+        "description": "defines a series of pipeline steps along with loading and saving utilities to reduce boilerplate code"
+      },
+      {
+        "name": "HistoCartography benchmarking",
+        "description": "Benchmark of run-time and performance for histopathology tasks including stain normalization, tissue detection, tumor classification and segmentation on images of varying dimensions, using CPU- and GPU-compatible modules on RoIs and WSIs."
+      },
+      {
+        "name": "Cell-Graph Generation",
+        "description": "Preprocessing module; run-time reported for Tumor RoIs."
+      },
+      {
+        "name": "Tissue-Graph Generation",
+        "description": "Preprocessing module; run-time measured on Tumor RoIs and WSIs."
+      },
+      {
+        "name": "Tissue-Graph",
+        "description": "ML module named in the run-time table; row is truncated and no timing values are given."
+      },
+      {
+        "name": "post-hoc feature attribution",
+        "description": "Renders per-image explanations as node-level saliency maps on a trained cell-graph model"
+      },
+      {
+        "name": "HistoCartography",
+        "description": "Open source Python library for graph representation, learning, and explainability in computational pathology"
+      },
+      {
+        "name": "HACT-Net",
+        "description": "Used to characterize breast tumors on BRACS and BACH; classification performance measured by weighted-F1 score."
+      },
+      {
+        "name": "SegGini",
+        "description": "Segments Gleason patterns in prostate cancer images from UZH and SICAPv2; performance measured by average Dice score."
+      },
+      {
+        "name": "GraphGradCAM",
+        "description": "Interprets a trained cell-graph model with per-image node-level saliency maps via post-hoc feature attribution, highlighting the ten most important nuclei."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Vahadane Stain Norm runtime (s), Tumor RoI 1000^2",
+        "value": "1.77",
+        "split": null
+      },
+      {
+        "metric": "Vahadane Stain Norm runtime (s), Tumor RoI 2500^2",
+        "value": "6.46",
+        "split": null
+      },
+      {
+        "metric": "Vahadane Stain Norm runtime (s), Tumor RoI 5000^2",
+        "value": "29.03",
+        "split": null
+      },
+      {
+        "metric": "Vahadane Stain Norm runtime (s), WSI 5000^2",
+        "value": "30.67",
+        "split": null
+      },
+      {
+        "metric": "Vahadane Stain Norm runtime (s), WSI 7500^2",
+        "value": "68.27",
+        "split": null
+      },
+      {
+        "metric": "Vahadane Stain Norm runtime (s), WSI 11000^2",
+        "value": "186.10",
+        "split": null
+      },
+      {
+        "metric": "Macenko Stain Norm runtime (s), Tumor RoI 1000^2",
+        "value": "0.80",
+        "split": null
+      },
+      {
+        "metric": "Macenko Stain Norm runtime (s), Tumor RoI 2500^2",
+        "value": "2.86",
+        "split": null
+      },
+      {
+        "metric": "Macenko Stain Norm runtime (s), Tumor RoI 5000^2",
+        "value": "11.19",
+        "split": null
+      },
+      {
+        "metric": "Macenko Stain Norm runtime (s), WSI 5000^2",
+        "value": "15.98",
+        "split": null
+      },
+      {
+        "metric": "Macenko Stain Norm runtime (s), WSI 7500^2",
+        "value": "32.37",
+        "split": null
+      },
+      {
+        "metric": "Macenko Stain Norm runtime (s), WSI 11000^2",
+        "value": "81.72",
+        "split": null
+      },
+      {
+        "metric": "Tissue Mask Detection runtime (s), WSI 5000^2",
+        "value": "1.04",
+        "split": null
+      },
+      {
+        "metric": "Tissue Mask Detection runtime (s), WSI 7500^2",
+        "value": "2.11",
+        "split": null
+      },
+      {
+        "metric": "Tissue Mask Detection runtime (s), WSI 11000^2",
+        "value": "8.09",
+        "split": null
+      },
+      {
+        "metric": "Feature Cube Extraction runtime (s), Tumor RoI 1000^2",
+        "value": "0.24",
+        "split": null
+      },
+      {
+        "metric": "Feature Cube Extraction runtime (s), Tumor RoI 2500^2",
+        "value": "1.61",
+        "split": null
+      },
+      {
+        "metric": "Feature Cube Extraction runtime (s), Tumor RoI 5000^2",
+        "value": "5.92",
+        "split": null
+      },
+      {
+        "metric": "Feature Cube Extraction runtime (s), WSI 5000^2",
+        "value": "5.83",
+        "split": null
+      },
+      {
+        "metric": "Feature Cube Extraction runtime (s), WSI 7500^2",
+        "value": "11.77",
+        "split": null
+      },
+      {
+        "metric": "Feature Cube Extraction runtime (s), WSI 11000^2",
+        "value": "30.21",
+        "split": null
+      },
+      {
+        "metric": "Cell-Graph Generation runtime (s), Tumor RoI 1000^2",
+        "value": "2.51",
+        "split": null
+      },
+      {
+        "metric": "Cell-Graph Generation runtime (s), Tumor RoI 2500^2",
+        "value": "13.33",
+        "split": null
+      },
+      {
+        "metric": "Cell-Graph Generation runtime (s), Tumor RoI 5000^2",
+        "value": "50.26",
+        "split": null
+      },
+      {
+        "metric": "Tissue-Graph Generation runtime (s), Tumor RoI 1000^2",
+        "value": "4.14",
+        "split": null
+      },
+      {
+        "metric": "Tissue-Graph Generation runtime (s), Tumor RoI 2500^2",
+        "value": "21.30",
+        "split": null
+      },
+      {
+        "metric": "Tissue-Graph Generation runtime (s), Tumor RoI 5000^2",
+        "value": "83.66",
+        "split": null
+      },
+      {
+        "metric": "Tissue-Graph Generation runtime (s), WSI 5000^2",
+        "value": "39.18",
+        "split": null
+      },
+      {
+        "metric": "Tissue-Graph Generation runtime (s), WSI 7500^2",
+        "value": "93.26",
+        "split": null
+      },
+      {
+        "metric": "Tissue-Graph Generation runtime (s), WSI 11000^2",
+        "value": "276.71",
+        "split": null
+      },
+      {
+        "metric": "Cell-Graph Model runtime (s), Tumor RoI 1000^2",
+        "value": "0.028",
+        "split": null
+      },
+      {
+        "metric": "Cell-Graph Model runtime (s), Tumor RoI 2500^2",
+        "value": "0.033",
+        "split": null
+      },
+      {
+        "metric": "Cell-Graph Model runtime (s), Tumor RoI 5000^2",
+        "value": "0.040",
+        "split": null
+      }
+    ]
+  }
+}

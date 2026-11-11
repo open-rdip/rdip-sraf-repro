@@ -1,0 +1,155 @@
+{
+  "study_id": "study053",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study053/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:56:58.902314+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 12,
+    "methods": 14,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "single GPU of 24 Gb",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "lora_module_placement",
+        "value": "all layers"
+      },
+      {
+        "name": "matrix_adaptation_choice",
+        "value": "value (Wv) and output (Wo) attention matrices"
+      },
+      {
+        "name": "M",
+        "value": null
+      },
+      {
+        "name": "input_prompt",
+        "value": "a photo of a [kth class name]"
+      },
+      {
+        "name": "lora_placement",
+        "value": "LoRA modules positioned at every level of both encoders"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "StanfordCars",
+        "version": null
+      },
+      {
+        "name": "SUN397",
+        "version": null
+      },
+      {
+        "name": "Aircraft",
+        "version": null
+      },
+      {
+        "name": "EuroSAT",
+        "version": null
+      },
+      {
+        "name": "Stanford-Cars",
+        "version": null
+      },
+      {
+        "name": "Food101",
+        "version": null
+      },
+      {
+        "name": "OxfordPets",
+        "version": null
+      },
+      {
+        "name": "Flower102",
+        "version": null
+      },
+      {
+        "name": "Caltech101",
+        "version": null
+      },
+      {
+        "name": "DTD",
+        "version": null
+      },
+      {
+        "name": "UCF101",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "LoRA",
+        "description": "Adaptation using low-rank matrices (LoRA modules), with selection of matrices and rank to maximize performance."
+      },
+      {
+        "name": "Layer placement strategies",
+        "description": "Positioning low-rank matrices on the last half levels (Up), the first half levels (Bottom), or at every level (All)."
+      },
+      {
+        "name": "Adapt value and output attention matrices (Wv, Wo)",
+        "description": "Adapting the value (Wv) and output (Wo) attention matrices yields the most consistent performance improvements among the four attention matrices studied."
+      },
+      {
+        "name": "AdaLoRA",
+        "description": "Method suggesting allocating larger rank to the middle and last layers rather than the first ones for better results."
+      },
+      {
+        "name": "Prompt tuning (P)",
+        "description": "Tune learnable prompt tokens for VLMs; prompting strategy can significantly impact performance."
+      },
+      {
+        "name": "Adapters (A)",
+        "description": "Update a set of additional parameters via adapter modules instead of full model fine-tuning."
+      },
+      {
+        "name": "Soft prompt tuning",
+        "description": "Optimizes text-input tokens and can be extended to intermediate layers."
+      },
+      {
+        "name": "Transformer-based vision token insertion",
+        "description": "When using transformer-based architectures, learnable tokens can be inserted in vision models."
+      },
+      {
+        "name": "Context Optimization (CoOp)",
+        "description": "Constructs text input as continuous trainable vectors ck = (v1_k, ..., vM_k, [class_k]) for few-shot VLMs, where M is a hyper-parameter."
+      },
+      {
+        "name": "Temperature scaling in CLIP",
+        "description": "Each CLIP version includes a temperature parameter \u03c4 that is optimized along with learnable parameters during pre-training."
+      },
+      {
+        "name": "CLIP-LoRA",
+        "description": "Few-shot visual classification using CLIP with LoRA; input prompt set to 'a photo of a [kth class name]'; LoRA modules positioned at every level of both encoders."
+      },
+      {
+        "name": "CoOp (4)",
+        "description": "Prompt-based method with 4 learnable tokens."
+      },
+      {
+        "name": "CoOp (16)",
+        "description": "Prompt-based method with 16 learnable tokens."
+      },
+      {
+        "name": "Co-CoOp",
+        "description": "Prompt-based method (conditional CoOp)."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

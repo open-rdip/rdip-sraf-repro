@@ -1,0 +1,139 @@
+{
+  "study_id": "study073",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study073/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:01:36.153164+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 2,
+    "methods": 24,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX 3090",
+      "cuda_version": null,
+      "cpu_info": "Intel i9-10980XE CPU"
+    },
+    "hyperparameters": [
+      {
+        "name": "number of reference images (model-free setup)",
+        "value": "16"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "YCB-Video",
+        "version": null
+      },
+      {
+        "name": "LINEMOD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "W/o transformer",
+        "description": "Ablation replacing the transformer-based architecture with convolutional and linear layers while keeping a similar number of parameters."
+      },
+      {
+        "name": "W/o hierarchical comparison",
+        "description": "Ablation that only compares the rendering and the cropped input trained by pose-conditioned triplet loss (Eq. 11) without two-level hierarchical comparison. At test time, it compares each pose hypothesis with the input observation independently and outputs the pose with the highest score."
+      },
+      {
+        "name": "Ours-InfoNCE",
+        "description": "Ablation replacing the contrast validated pair-wise loss (Eq. 14) with the InfoNCE loss as used in [46]."
+      },
+      {
+        "name": "Number of reference images study",
+        "description": "Analysis of how the number of reference images affects results measured by AUC of ADD and ADD-S on YCB-Video (Fig. 6)."
+      },
+      {
+        "name": "Ours",
+        "description": "Unified framework for pose estimation and tracking, applicable to novel objects given a CAD model (model-based) or reference images (model-free, 16 reference images)"
+      },
+      {
+        "name": "Ours\u2020",
+        "description": "Variant of the proposed method performing end-to-end pose estimation and tracking without external pose initialization"
+      },
+      {
+        "name": "se(3)-TrackNet",
+        "description": "Instance-wise training pose tracking baseline requiring training on the same object instances; evaluated with ground-truth pose initialization"
+      },
+      {
+        "name": "DeepIM",
+        "description": "Baseline pose tracking method that needs training on the same object instances"
+      },
+      {
+        "name": "PoseRBPF",
+        "description": "Baseline pose tracking method that needs training on the same object instances"
+      },
+      {
+        "name": "W\u00fcthrich et al.",
+        "description": "Baseline pose tracking method that can be applied to novel objects given a CAD model"
+      },
+      {
+        "name": "RGF",
+        "description": "Baseline pose tracking method that can be applied to novel objects given a CAD model"
+      },
+      {
+        "name": "ICG",
+        "description": "Baseline pose tracking method that can be applied to novel objects given a CAD model"
+      },
+      {
+        "name": "W/o LLM texture augmentation",
+        "description": "Ablation that removes the LLM-aided texture augmentation for synthetic training"
+      },
+      {
+        "name": "Pose estimation running time measurement",
+        "description": "Running time measured on Intel i9-10980XE CPU and NVIDIA RTX 3090 GPU; pose estimation takes about 1.3 s for one object"
+      },
+      {
+        "name": "Training data size ablation",
+        "description": "Effect of the amount of training data on AUC of ADD and ADD-S metrics on YCB-Video; gain saturates around 1M"
+      },
+      {
+        "name": "Number of reference images ablation",
+        "description": "Effect of the number of reference images (3 to 17) on ADD and ADD-S AUC"
+      },
+      {
+        "name": "Pose estimation",
+        "description": "Pose initialization takes 4 ms, refinement takes 0.88 s, and pose selection takes 0.42 s per object, using multiple pose hypotheses."
+      },
+      {
+        "name": "Tracking",
+        "description": "Runs at ~32 Hz since only pose refinement is needed and there are no multiple pose hypotheses; pose estimation can be run once for initialization and then switched to tracking mode for real-time performance."
+      },
+      {
+        "name": "Model-based setup",
+        "description": "A CAD model is provided for the novel object; the same trained model and configurations are used for inference without any fine-tuning in all evaluations except ablation."
+      },
+      {
+        "name": "Model-free setup",
+        "description": "Comparison against state-of-the-art RGBD methods [22, 28, 57] on YCB-Video, with perturbed ground-truth bounding boxes given as 2D detection for all methods, following [22]; baseline results adopted from [22]."
+      },
+      {
+        "name": "LINEMOD comparison",
+        "description": "Comparison on LINEMOD with baseline results adopted from [19, 22]; RGB-based methods [19, 40, 58] are given additional privilege."
+      },
+      {
+        "name": "AUC of ADD and ADD-S",
+        "description": "Area under the curve of ADD and ADD-S metrics [73]."
+      },
+      {
+        "name": "ADD-0.1d",
+        "description": "Recall of ADD less than 0.1 of the object diameter, as used in [19, 22]."
+      },
+      {
+        "name": "Average recall (AR) of VSD, MSSD and MSPD",
+        "description": "Average recall of the VSD, MSSD and MSPD metrics introduced in the BOP challenge [26]."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

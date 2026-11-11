@@ -1,0 +1,840 @@
+{
+ "study_id": "study002",
+ "model": "opus",
+ "slug": "claude-opus-5-5",
+ "n_passages": 5,
+ "n_passages_ok": 5,
+ "failures": [],
+ "records": [
+  {
+   "field": "hyperparameters",
+   "value": "{.1,.2}",
+   "evidence": "For label smoothingand label relaxatio n, weconsider /u1D6FC\u2208 {.1,.2}.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "1000",
+   "evidence": "many unique con\ufb01gurations with very large number of epochs ( 1000)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "21",
+   "evidence": "training threemodelswith21 uniquecon- \ufb01gurationsfor1000epochs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "KINSHIP",
+   "evidence": "(KINSHIPandUMLSdatasets)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "UMLS",
+   "evidence": "(KINSHIPandUMLSdatasets)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "grid search",
+   "evidence": "a grid search.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "label smoothing",
+   "evidence": "For label smoothingand label relaxatio n",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "label relaxation",
+   "evidence": "For label smoothingand label relaxatio n",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Kronecker Decomposition",
+   "evidence": "ytheimpactofKroneckerDecompositionina\ufb01ne-grained",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "1000",
+   "evidence": "Wetrainedthemodelfor1000epochswithalearn-",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": ".01",
+   "evidence": "ingrateof .01andabatchsizeof1024",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "1024",
+   "evidence": "ingrateof .01andabatchsizeof1024",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "{4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400}",
+   "evidence": "{4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400} using a grid search",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "{.1,.2}",
+   "evidence": "weconsider /u1D6FC\u2208 {.1,.2}",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "UMLS",
+   "evidence": "UMLS 136 93 10,432 1304 1965",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "KINSHIP",
+   "evidence": "KINSHIP 105 51 17,088 2136 3210",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "1vsAll training strategy",
+   "evidence": "Wetrainedapproacheswiththe1vsAlltrainingstrategy",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "A DAM optimizer",
+   "evidence": "All models are trained with the A DAM optimizer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "cross entropy loss",
+   "evidence": "minimize the cross entropy loss function",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "batch normalization",
+   "evidence": "Moreover,weapplyt hebatchnormalization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "grid search",
+   "evidence": "using a grid search",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "label smoothing",
+   "evidence": "For label smoothingand label relaxatio n",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "KD-DistMult",
+   "evidence": "KD-DistMult (h,r,t)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Kronecker Decomposition",
+   "evidence": "Kronecker DecompositionforKnowledgeGraph Embeddings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Kronecker Decomposition (KD)",
+   "evidence": "Particularly,theKronec ker Decomposition(KD) elucidated in Section 3.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Kronecker Decompression for Knowledge Graph Embeddings",
+   "evidence": "4.1 Kronecker Decompression for KnowledgeGraph Embedding s",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Knowledge graph embedding (KGE)",
+   "evidence": "existing knowledge graph embedding (KGE) models",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "DistMult",
+   "evidence": "(sayDistMult[Yanget al.2015])",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "sigmoid/logistic function",
+   "evidence": "mapped to the unit interval using the sigmoid/logistic function",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "DistMult",
+   "evidence": "KDonrelationembeddings of DistMultcan beappliedas KD-Rel-DistMult",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "KD-Rel-DistMult",
+   "evidence": "KD-Rel-DistMult (h,r,t)=h\u25e6 (r\u2297r) \u00b7t, (8)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Kronecker Decomposition",
+   "evidence": "4.2 Kronecker Decomposition forRelation Embeddings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Kronecker Decomposition of Embeddings for 1vsAll",
+   "evidence": "4.3 Kronecker Decomposition ofEmbeddingsfor 1vsAll",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "batch normalisation",
+   "evidence": "the batch normalis ation or layer normalizationcan be applied",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "layer normalization",
+   "evidence": "the batch normalis ation or layer normalizationcan be applied",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "dependencies",
+   "value": "PyTorch Lightning",
+   "evidence": "based on PyTorch Lightning [Falconet al. 2019]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "dependencies",
+   "value": "DASK",
+   "evidence": "DASK [Rocklin 2015]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "random_seeds",
+   "value": "1",
+   "evidence": "seed f or the pseudo-random generator was \ufb01xed to 1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "1000",
+   "evidence": "for1000epochs(seeSection5.1)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "21",
+   "evidence": "training threemodelswith21 uniquecon- \ufb01gurations",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "WN18RR",
+   "evidence": "datasetscomparedtoWN18RR,FB15K-237,and YAGO3- 10",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "FB15K-237",
+   "evidence": "datasetscomparedtoWN18RR,FB15K-237,and YAGO3- 10",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "YAGO3-10",
+   "evidence": "onWN18RR,FB15 K-237,andYAGO3-10cantakeuptoamonth",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "DistMult",
+   "evidence": "we illustrate our methodology with DistMult",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "1vsAll",
+   "evidence": "In1vsAllorKvsAll,foreachtesttriple",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "KvsAll",
+   "evidence": "In1vsAllorKvsAll,foreachtesttriple",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "hyperparameters": {
+    "n": 10,
+    "has_evidence": 10,
+    "span_found": 10,
+    "value_in_span": 10,
+    "grounded": 10
+   },
+   "datasets": {
+    "n": 7,
+    "has_evidence": 7,
+    "span_found": 7,
+    "value_in_span": 7,
+    "grounded": 7
+   },
+   "methods": {
+    "n": 26,
+    "has_evidence": 26,
+    "span_found": 25,
+    "value_in_span": 18,
+    "grounded": 17
+   },
+   "dependencies": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   },
+   "random_seeds": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 1,
+    "value_in_span": 1,
+    "grounded": 1
+   }
+  },
+  "total": {
+   "n": 46,
+   "has_evidence": 46,
+   "span_found": 45,
+   "value_in_span": 38,
+   "grounded": 37
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "alpha (label smoothing / label relaxation)",
+      "value": "{.1,.2}",
+      "evidence": "For label smoothingand label relaxatio n, weconsider /u1D6FC\u2208 {.1,.2}."
+     },
+     {
+      "name": "epochs",
+      "value": "1000",
+      "evidence": "many unique con\ufb01gurations with very large number of epochs ( 1000)"
+     },
+     {
+      "name": "number of unique configurations",
+      "value": "21",
+      "evidence": "training threemodelswith21 uniquecon- \ufb01gurationsfor1000epochs"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "KINSHIP",
+      "version": null,
+      "evidence": "(KINSHIPandUMLSdatasets)"
+     },
+     {
+      "name": "UMLS",
+      "version": null,
+      "evidence": "(KINSHIPandUMLSdatasets)"
+     }
+    ],
+    "methods": [
+     {
+      "name": "grid search",
+      "evidence": "a grid search."
+     },
+     {
+      "name": "label smoothing",
+      "evidence": "For label smoothingand label relaxatio n"
+     },
+     {
+      "name": "label relaxation",
+      "evidence": "For label smoothingand label relaxatio n"
+     },
+     {
+      "name": "Kronecker Decomposition",
+      "evidence": "ytheimpactofKroneckerDecompositionina\ufb01ne-grained"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "epochs",
+      "value": "1000",
+      "evidence": "Wetrainedthemodelfor1000epochswithalearn-"
+     },
+     {
+      "name": "learning rate",
+      "value": ".01",
+      "evidence": "ingrateof .01andabatchsizeof1024"
+     },
+     {
+      "name": "batch size",
+      "value": "1024",
+      "evidence": "ingrateof .01andabatchsizeof1024"
+     },
+     {
+      "name": "embedding vector size (grid search)",
+      "value": "{4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400}",
+      "evidence": "{4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400} using a grid search"
+     },
+     {
+      "name": "label smoothing / label relaxation alpha",
+      "value": "{.1,.2}",
+      "evidence": "weconsider /u1D6FC\u2208 {.1,.2}"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "UMLS",
+      "version": null,
+      "evidence": "UMLS 136 93 10,432 1304 1965"
+     },
+     {
+      "name": "KINSHIP",
+      "version": null,
+      "evidence": "KINSHIP 105 51 17,088 2136 3210"
+     }
+    ],
+    "methods": [
+     {
+      "name": "1vsAll training strategy",
+      "evidence": "Wetrainedapproacheswiththe1vsAlltrainingstrategy"
+     },
+     {
+      "name": "A DAM optimizer",
+      "evidence": "All models are trained with the A DAM optimizer"
+     },
+     {
+      "name": "cross entropy loss",
+      "evidence": "minimize the cross entropy loss function"
+     },
+     {
+      "name": "batch normalization",
+      "evidence": "Moreover,weapplyt hebatchnormalization"
+     },
+     {
+      "name": "grid search",
+      "evidence": "using a grid search"
+     },
+     {
+      "name": "label smoothing",
+      "evidence": "For label smoothingand label relaxatio n"
+     },
+     {
+      "name": "KD-DistMult",
+      "evidence": "KD-DistMult (h,r,t)"
+     },
+     {
+      "name": "Kronecker Decomposition",
+      "evidence": "Kronecker DecompositionforKnowledgeGraph Embeddings"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Kronecker Decomposition (KD)",
+      "evidence": "Particularly,theKronec ker Decomposition(KD) elucidated in Section 3.4"
+     },
+     {
+      "name": "Kronecker Decompression for Knowledge Graph Embeddings",
+      "evidence": "4.1 Kronecker Decompression for KnowledgeGraph Embedding s"
+     },
+     {
+      "name": "Knowledge graph embedding (KGE)",
+      "evidence": "existing knowledge graph embedding (KGE) models"
+     },
+     {
+      "name": "DistMult",
+      "evidence": "(sayDistMult[Yanget al.2015])"
+     },
+     {
+      "name": "sigmoid/logistic function",
+      "evidence": "mapped to the unit interval using the sigmoid/logistic function"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "DistMult",
+      "evidence": "KDonrelationembeddings of DistMultcan beappliedas KD-Rel-DistMult"
+     },
+     {
+      "name": "KD-Rel-DistMult",
+      "evidence": "KD-Rel-DistMult (h,r,t)=h\u25e6 (r\u2297r) \u00b7t, (8)"
+     },
+     {
+      "name": "Kronecker Decomposition",
+      "evidence": "4.2 Kronecker Decomposition forRelation Embeddings"
+     },
+     {
+      "name": "Kronecker Decomposition of Embeddings for 1vsAll",
+      "evidence": "4.3 Kronecker Decomposition ofEmbeddingsfor 1vsAll"
+     },
+     {
+      "name": "batch normalisation",
+      "evidence": "the batch normalis ation or layer normalizationcan be applied"
+     },
+     {
+      "name": "layer normalization",
+      "evidence": "the batch normalis ation or layer normalizationcan be applied"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "PyTorch Lightning",
+      "version": null,
+      "evidence": "based on PyTorch Lightning [Falconet al. 2019]"
+     },
+     {
+      "name": "DASK",
+      "version": null,
+      "evidence": "DASK [Rocklin 2015]"
+     }
+    ],
+    "random_seeds": [
+     {
+      "value": "1",
+      "evidence": "seed f or the pseudo-random generator was \ufb01xed to 1"
+     }
+    ],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "epochs",
+      "value": "1000",
+      "evidence": "for1000epochs(seeSection5.1)"
+     },
+     {
+      "name": "number of unique configurations",
+      "value": "21",
+      "evidence": "training threemodelswith21 uniquecon- \ufb01gurations"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "WN18RR",
+      "version": null,
+      "evidence": "datasetscomparedtoWN18RR,FB15K-237,and YAGO3- 10"
+     },
+     {
+      "name": "FB15K-237",
+      "version": null,
+      "evidence": "datasetscomparedtoWN18RR,FB15K-237,and YAGO3- 10"
+     },
+     {
+      "name": "YAGO3-10",
+      "version": null,
+      "evidence": "onWN18RR,FB15 K-237,andYAGO3-10cantakeuptoamonth"
+     }
+    ],
+    "methods": [
+     {
+      "name": "DistMult",
+      "evidence": "we illustrate our methodology with DistMult"
+     },
+     {
+      "name": "1vsAll",
+      "evidence": "In1vsAllorKvsAll,foreachtesttriple"
+     },
+     {
+      "name": "KvsAll",
+      "evidence": "In1vsAllorKvsAll,foreachtesttriple"
+     }
+    ],
+    "evaluation_results": []
+   }
+  }
+ ]
+}

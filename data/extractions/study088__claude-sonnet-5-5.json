@@ -1,0 +1,448 @@
+{
+  "study_id": "study088",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study088/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:08:13.287144+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 19,
+    "datasets": 5,
+    "methods": 28,
+    "evaluation_results": 39
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "UperNet",
+        "version": null
+      },
+      {
+        "name": "mmseg",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "window size M (patches per window side)",
+        "value": "7"
+      },
+      {
+        "name": "window size M (default)",
+        "value": "7"
+      },
+      {
+        "name": "query dimension of each head d",
+        "value": "32"
+      },
+      {
+        "name": "MLP expansion layer ratio \u03b1",
+        "value": "4"
+      },
+      {
+        "name": "Swin-T channel number C",
+        "value": "96"
+      },
+      {
+        "name": "Swin-T layer numbers",
+        "value": "{2,2,6,2}"
+      },
+      {
+        "name": "Swin-S channel number C",
+        "value": "96"
+      },
+      {
+        "name": "Swin-S layer numbers",
+        "value": "{2,2,18,2}"
+      },
+      {
+        "name": "Swin-B channel number C",
+        "value": "128"
+      },
+      {
+        "name": "Swin-B layer numbers",
+        "value": "{2,2,18,2}"
+      },
+      {
+        "name": "Swin-L channel number C",
+        "value": "192"
+      },
+      {
+        "name": "Swin-L layer numbers",
+        "value": "{2,2,18,2}"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "epochs",
+        "value": "300"
+      },
+      {
+        "name": "learning rate scheduler",
+        "value": "cosine decay"
+      },
+      {
+        "name": "warm-up epochs",
+        "value": "20 (linear warm-up)"
+      },
+      {
+        "name": "batch size",
+        "value": "1024"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "0.001"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.05"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet-1K",
+        "version": null
+      },
+      {
+        "name": "ADE20K",
+        "version": null
+      },
+      {
+        "name": "ImageNet-22K",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Performer",
+        "description": "One of the fastest Transformer architectures, used as a baseline for comparison against Swin Transformer."
+      },
+      {
+        "name": "Shifted window based self-attention",
+        "description": "Proposed self-attention computation in Swin Transformer that is slightly faster than Performer."
+      },
+      {
+        "name": "Swin Transformer",
+        "description": "Proposed overall architecture, slightly faster than Performer; the Swin-T variant achieves +2.3% top-1 accuracy over Performer on ImageNet-1K."
+      },
+      {
+        "name": "UperNet",
+        "description": "Semantic segmentation framework used with Swin-S, Swin-B and Swin-L backbones on ADE20K"
+      },
+      {
+        "name": "Cascade Mask R-CNN",
+        "description": "Detection framework used to compare Swin Transformer against ResNeXt101-64x4d and DeiT-S under different model capacity"
+      },
+      {
+        "name": "HTC",
+        "description": "Improved Hybrid Task Cascade detection framework used as a higher baseline for comparison with Swin Transformer"
+      },
+      {
+        "name": "ResNeXt101-64x4d",
+        "description": "Baseline convolutional backbone with similar model size, FLOPs and latency compared with Swin Transformer"
+      },
+      {
+        "name": "DeiT-S",
+        "description": "Baseline vision transformer compared against Swin-T using the Cascade Mask R-CNN framework"
+      },
+      {
+        "name": "Self-attention in non-overlapped windows (W-MSA)",
+        "description": "Self-attention is computed within local windows that evenly partition the image without overlap. Each window contains M\u00d7M patches. Complexity is linear in patch number hw when M is fixed: \u03a9(W-MSA) = 4hwC^2 + 2M^2hwC, versus global MSA: \u03a9(MSA) = 4hwC^2 + 2(hw)^2C."
+      },
+      {
+        "name": "Shifted window partitioning in successive blocks",
+        "description": "Alternates between two window partitioning configurations in consecutive Swin Transformer blocks to introduce cross-window connections while keeping the efficient computation of non-overlapping windows. The first module uses regular window partitioning starting from the top-left pixel."
+      },
+      {
+        "name": "Cyclic implementation of shifted window self-attention",
+        "description": "Cyclic implementation is more hardware efficient than naive padding, particularly for deeper stages, giving a 13%, 18% and 18% speed-up on Swin-T, Swin-S and Swin-B respectively."
+      },
+      {
+        "name": "Shifted window self-attention",
+        "description": "Shifted window approach is 40.8\u00d7/2.5\u00d7, 20.2\u00d7/2.5\u00d7, 9.3\u00d7/2.1\u00d7, and 7.6\u00d7/1.8\u00d7 more efficient than sliding windows in naive/kernel implementations on the four network stages; Swin Transformer with shifted windows is 4.1/1.5, 4.0/1.5, 3.6/1.5 times faster than sliding-window variants for Swin-T, Swin-S, Swin-B."
+      },
+      {
+        "name": "Sliding window self-attention",
+        "description": "Baseline self-attention computation with naive and kernel implementations, compared against shifted windows; similarly accurate in visual modeling on three tasks (Table 6)."
+      },
+      {
+        "name": "Swin Transformer block",
+        "description": "Consists of a shifted window based MSA module followed by a 2-layer MLP with GELU nonlinearity in between; a LayerNorm (LN) layer is applied before each MSA module and each MLP, and a residual connection is applied after each module."
+      },
+      {
+        "name": "Bi-cubic interpolation of relative position bias",
+        "description": "The learnt relative position bias from pre-training can be used to initialize a model for fine-tuning with a different window size through bi-cubic interpolation."
+      },
+      {
+        "name": "Swin-B",
+        "description": "Base model with model size and computational complexity similar to ViT-B/DeiT-B."
+      },
+      {
+        "name": "Swin-T",
+        "description": "Variant with about 0.25\u00d7 the model size and computational complexity of Swin-B; complexity similar to ResNet-50 (DeiT-S)."
+      },
+      {
+        "name": "Swin-S",
+        "description": "Variant with about 0.5\u00d7 the model size and computational complexity of Swin-B; complexity similar to ResNet-101."
+      },
+      {
+        "name": "Swin-L",
+        "description": "Variant with about 2\u00d7 the model size and computational complexity of Swin-B."
+      },
+      {
+        "name": "Regular ImageNet-1K training",
+        "description": "Training setting mostly following [63]: AdamW optimizer for 300 epochs with cosine decay learning rate scheduler and 20 epochs of linear warm-up, including most augmentation and regularization strategies of [63] except repeated augmentation and EMA, which do not enhance performance"
+      },
+      {
+        "name": "Cyclic-shift window partitioning",
+        "description": "Cyclic shift keeps the number of batched windows the same as regular window partitioning, so it is efficient and has low latency (Table 5). Bottom-right padding is applied to the feature map when the window size (M, M) is not divisible by the feature map size (h, w)."
+      },
+      {
+        "name": "Relative position bias",
+        "description": "A relative position bias B in R^{M^2 x M^2} is added to the query-key similarity in each attention head: Attention(Q,K,V) = SoftMax(QK^T/sqrt(d) + B)V. Because relative position along each axis lies in [-M+1, M-1], a smaller bias matrix B_hat in R^{(2M-1)x(2M-1)} is parameterized, and the values of B are taken from B_hat. The bias learnt in pre-training can be used to initialize a model for fine-tuning."
+      },
+      {
+        "name": "Absolute position embedding (ablation)",
+        "description": "Adding absolute position embedding to the input, as in [20], slightly drops performance, so it is not adopted in the implementation."
+      },
+      {
+        "name": "Shifted window partitioning",
+        "description": "Window partitioning approach that shifts windows between layers to build connections among windows; Swin-T with it outperforms single window partitioning at each stage"
+      },
+      {
+        "name": "Shifted window approach",
+        "description": "Ablation comparing shifted window partitioning against regular window partitioning (w/o shifting) in all self-attention modules, using the Swin-T architecture"
+      },
+      {
+        "name": "Position embedding variants",
+        "description": "Ablation comparing no position embedding, absolute position embedding (abs. pos., as in ViT), relative position bias (rel. pos., default, Eq. (4)), and relative position bias without the first scaled dot-product term (rel. pos. w/o app.)"
+      },
+      {
+        "name": "UperNet in mmseg",
+        "description": "Base framework for semantic segmentation experiments, chosen for its high efficiency"
+      },
+      {
+        "name": "Swin-L with ImageNet-22K pre-training",
+        "description": "Swin-L backbone pre-trained on ImageNet-22K and evaluated for semantic segmentation"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "top-1 accuracy improvement of Swin-T over Performer",
+        "value": "+2.3%",
+        "split": null
+      },
+      {
+        "metric": "mIoU (Swin-S, UperNet)",
+        "value": "49.3",
+        "split": "validation"
+      },
+      {
+        "metric": "mIoU (Swin-B\u2021, UperNet)",
+        "value": "51.6",
+        "split": "validation"
+      },
+      {
+        "metric": "mIoU (Swin-L\u2021, UperNet)",
+        "value": "53.5",
+        "split": "validation"
+      },
+      {
+        "metric": "score (Swin-L\u2021, UperNet)",
+        "value": "62.8",
+        "split": "test"
+      },
+      {
+        "metric": "box AP (Swin Transformer, Cascade Mask R-CNN)",
+        "value": "51.9",
+        "split": null
+      },
+      {
+        "metric": "mask AP (Swin Transformer, Cascade Mask R-CNN)",
+        "value": "45.0",
+        "split": null
+      },
+      {
+        "metric": "box AP gain over ResNeXt101-64x4d",
+        "value": "+3.6",
+        "split": null
+      },
+      {
+        "metric": "mask AP gain over ResNeXt101-64x4d",
+        "value": "+3.3",
+        "split": null
+      },
+      {
+        "metric": "box AP (HTC baseline)",
+        "value": "52.3",
+        "split": null
+      },
+      {
+        "metric": "mask AP (HTC baseline)",
+        "value": "46.0",
+        "split": null
+      },
+      {
+        "metric": "box AP gain (Swin vs. improved HTC baseline)",
+        "value": "+4.1",
+        "split": null
+      },
+      {
+        "metric": "mask AP gain (Swin vs. improved HTC baseline)",
+        "value": "+3.1",
+        "split": null
+      },
+      {
+        "metric": "box AP gain of Swin-T over DeiT-S",
+        "value": "+2.5",
+        "split": null
+      },
+      {
+        "metric": "Speed-up of cyclic implementation over naive padding (Swin-T)",
+        "value": "13%",
+        "split": null
+      },
+      {
+        "metric": "Speed-up of cyclic implementation over naive padding (Swin-S)",
+        "value": "18%",
+        "split": null
+      },
+      {
+        "metric": "Speed-up of cyclic implementation over naive padding (Swin-B)",
+        "value": "18%",
+        "split": null
+      },
+      {
+        "metric": "Efficiency of shifted windows vs sliding windows, stage 1 (naive/kernel)",
+        "value": "40.8\u00d7/2.5\u00d7",
+        "split": null
+      },
+      {
+        "metric": "Efficiency of shifted windows vs sliding windows, stage 2 (naive/kernel)",
+        "value": "20.2\u00d7/2.5\u00d7",
+        "split": null
+      },
+      {
+        "metric": "Efficiency of shifted windows vs sliding windows, stage 3 (naive/kernel)",
+        "value": "9.3\u00d7/2.1\u00d7",
+        "split": null
+      },
+      {
+        "metric": "Efficiency of shifted windows vs sliding windows, stage 4 (naive/kernel)",
+        "value": "7.6\u00d7/1.8\u00d7",
+        "split": null
+      },
+      {
+        "metric": "Speed of Swin-T with shifted windows vs sliding windows (naive/kernel)",
+        "value": "4.1/1.5 times faster",
+        "split": null
+      },
+      {
+        "metric": "Speed of Swin-S with shifted windows vs sliding windows (naive/kernel)",
+        "value": "4.0/1.5 times faster",
+        "split": null
+      },
+      {
+        "metric": "Speed of Swin-B with shifted windows vs sliding windows (naive/kernel)",
+        "value": "3.6/1.5 times faster",
+        "split": null
+      },
+      {
+        "metric": "mIoU (Swin-L, ImageNet-22K pre-training)",
+        "value": "53.5",
+        "split": "validation"
+      },
+      {
+        "metric": "mIoU improvement over previous best (SETR, 50.3 mIoU)",
+        "value": "+3.2",
+        "split": "validation"
+      },
+      {
+        "metric": "mIoU (SETR)",
+        "value": "50.3",
+        "split": "validation"
+      },
+      {
+        "metric": "top-1 accuracy gain, shifted windows vs single window (ImageNet-1K, Swin-T)",
+        "value": "+1.1%",
+        "split": null
+      },
+      {
+        "metric": "box AP gain, shifted windows (COCO, Swin-T)",
+        "value": "+2.8",
+        "split": null
+      },
+      {
+        "metric": "mask AP gain, shifted windows (COCO, Swin-T)",
+        "value": "+2.2",
+        "split": null
+      },
+      {
+        "metric": "mIoU gain, shifted windows (ADE20K, Swin-T)",
+        "value": "+2.8",
+        "split": null
+      },
+      {
+        "metric": "top-1 accuracy gain, relative position bias (ImageNet-1K, Swin-T)",
+        "value": "+1.2%/+0.8%",
+        "split": null
+      },
+      {
+        "metric": "box AP gain, relative position bias (COCO, Swin-T)",
+        "value": "+1.3/+1.5",
+        "split": null
+      },
+      {
+        "metric": "mask AP gain, relative position bias (COCO, Swin-T)",
+        "value": "+1.1/+1.3",
+        "split": null
+      },
+      {
+        "metric": "mIoU (Swin-S)",
+        "value": "49.3",
+        "split": null
+      },
+      {
+        "metric": "mIoU (DeiT-S)",
+        "value": "44.0",
+        "split": null
+      },
+      {
+        "metric": "mIoU difference, Swin-S vs. DeiT-S",
+        "value": "+5.3",
+        "split": null
+      },
+      {
+        "metric": "mIoU difference, Swin-S vs. ResNet-101",
+        "value": "+4.4",
+        "split": null
+      },
+      {
+        "metric": "mIoU difference, Swin-S vs. ResNeSt-101",
+        "value": "+2.4",
+        "split": null
+      }
+    ]
+  }
+}

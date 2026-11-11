@@ -1,0 +1,130 @@
+{
+  "study_id": "study024",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study024/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:25:25.979289+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 1,
+    "methods": 14,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "pump field p(t) (Langevin, pumped Langevin, DL-CCVM)",
+        "value": "t/T p0"
+      },
+      {
+        "name": "pump field p(t) (MF-CCVM)",
+        "value": "t/T p0 + 1 + j(t)"
+      },
+      {
+        "name": "measurement strength j(t)",
+        "value": "j0 exp(-alpha t/T)"
+      },
+      {
+        "name": "injected noise parameter r(t) (DL-CCVM)",
+        "value": "r0 exp(-beta t/T)"
+      },
+      {
+        "name": "Tpulse",
+        "value": "10 picoseconds"
+      },
+      {
+        "name": "number of trials per instance",
+        "value": "1000"
+      },
+      {
+        "name": "gap from the optimal solution",
+        "value": "0 .1%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "BoxQP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Langevin DL-CCVM (CPU)",
+        "description": "Classical solver implemented on conventional digital devices based on CPU time"
+      },
+      {
+        "name": "DL-CCVM (physical)",
+        "description": "Optics-based CCVM implementation calculated using parameters of the physical device"
+      },
+      {
+        "name": "MF-CCVM (CPU)",
+        "description": "Classical solver implemented on conventional digital devices based on CPU time"
+      },
+      {
+        "name": "MF-CCVM (physical)",
+        "description": "Optics-based CCVM implementation calculated using parameters of the physical device"
+      },
+      {
+        "name": "clamping",
+        "description": "Post-processing step performed on a classical computer at the end of evolution, where amplitudes ci are plugged into xi=1 2(ci/s+ 1) to obtain problem variables implementing box constraint 0 \u2264xi\u22641"
+      },
+      {
+        "name": "Langevin",
+        "description": "solver using a linear pump field schedule"
+      },
+      {
+        "name": "pumped Langevin",
+        "description": "solver using a linear pump field schedule"
+      },
+      {
+        "name": "DL-CCVM",
+        "description": "solver using a linear pump field schedule and injected noise parameter r(t)"
+      },
+      {
+        "name": "MF-CCVM",
+        "description": "solver with pump field programmed to compensate for measurement and background loss"
+      },
+      {
+        "name": "R99",
+        "description": "A metric where quantity Ps denotes the success probability of a single trial, evaluated by solving a given problem instance 1000 times and counting the number of times the global maximum was found"
+      },
+      {
+        "name": "TTS",
+        "description": "Time to solution for finding an approximate solution that is correct up to a multiplicative error"
+      },
+      {
+        "name": "QCQP solver",
+        "description": "A general heuristic solver for quadratically constrained quadratic programming problems"
+      },
+      {
+        "name": "CPLEX",
+        "description": "Exact solver"
+      },
+      {
+        "name": "Gurobi",
+        "description": "Exact solver"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "TTS",
+        "value": "more than three orders of magnitude lower than the CPU wall-clock TTS values for the conventional digital solvers",
+        "split": null
+      },
+      {
+        "metric": "approximate objective value relative to global optimal value",
+        "value": "within 0.1%",
+        "split": null
+      }
+    ]
+  }
+}

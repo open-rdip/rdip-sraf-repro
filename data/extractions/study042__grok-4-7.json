@@ -1,0 +1,127 @@
+{
+  "study_id": "study042",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study042/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:09:42.593894+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 2,
+    "methods": 21,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "kernel_size",
+        "value": "3\u00d73"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "DressCode",
+        "version": null
+      },
+      {
+        "name": "VITON-HD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DSDM",
+        "description": "Generates attention maps whose groups show distinct semantic responses; may struggle to understand missing semantics for partially obscured garments such as a right sleeve."
+      },
+      {
+        "name": "DITP",
+        "description": "Denoising path in the full model; removing it (DITP-) improves paired-setting performance but underperforms in the unpaired setting, indicating the path improves generality."
+      },
+      {
+        "name": "D4-VTON",
+        "description": "Full virtual try-on model using DSDM and DITP."
+      },
+      {
+        "name": "DCI-VTON",
+        "description": "Representative comparison method that exhibits texture squeezing and stretching phenomena."
+      },
+      {
+        "name": "GP-VTON",
+        "description": "Representative comparison method that mitigates texture squeezing using dynamic gradient truncation but still experiences stretching in the sleeve area."
+      },
+      {
+        "name": "PBE",
+        "description": "Synthesis network adopts the architecture of PBE with its pretrained parameters; PBE is trained on millions of images and used for image inpainting conditioned on exemplar images."
+      },
+      {
+        "name": "two-path diffusion pipeline",
+        "description": "Denoising path takes the ground truth human image I as input; inpainting path uses I', created by integrating the warped garment into the clothing-agnostic image. I' is concatenated with both inputs at each training step as a condition."
+      },
+      {
+        "name": "Differential Information Tracking Path (DITP)",
+        "description": "Replaces a simplistic inpainting path to avoid learning ambiguities from the standard similarity objective when jointly managing denoising and inpainting across different paths."
+      },
+      {
+        "name": "Dynamic Semantics Selector",
+        "description": "Uses self-similarity of garment features to unsupervisedly generate selection masks indicating each channel's semantic group."
+      },
+      {
+        "name": "Group Warping Block",
+        "description": "Generates flows and attention maps for different channel groups."
+      },
+      {
+        "name": "Disentangled Warping Operation",
+        "description": "Uses the selection mask and predicted flows and attention maps to deform garment features."
+      },
+      {
+        "name": "Gumbel-Softmax",
+        "description": "Differentiable method ensuring exclusive assignment of each channel to a semantic group based on self-similarity responses."
+      },
+      {
+        "name": "differential diffusion based synthesis network",
+        "description": "Synthesis network whose training pipeline includes the Dynamic Semantics Selector and Group Warping Block."
+      },
+      {
+        "name": "Vanilla",
+        "description": "Baseline setting used to train the deformation network"
+      },
+      {
+        "name": "fixed grouping",
+        "description": "Evenly divided all channels sequentially without using the Dynamic Semantics Selector"
+      },
+      {
+        "name": "PF-AFN",
+        "description": "Method included in qualitative comparison on VITON-HD"
+      },
+      {
+        "name": "FS-VTON",
+        "description": "Method included in qualitative comparison on VITON-HD"
+      },
+      {
+        "name": "HR-VTON",
+        "description": "Method included in qualitative comparison on VITON-HD"
+      },
+      {
+        "name": "SDAFN",
+        "description": "Method included in qualitative comparison on VITON-HD"
+      },
+      {
+        "name": "LADI-VTON",
+        "description": "Method included in qualitative comparison on VITON-HD"
+      },
+      {
+        "name": "SD-VTON",
+        "description": "Method included in qualitative comparison on VITON-HD"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

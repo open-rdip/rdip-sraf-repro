@@ -1,0 +1,223 @@
+{
+  "study_id": "study055",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study055/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:59:07.728826+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 0,
+    "hyperparameters": 19,
+    "datasets": 0,
+    "methods": 24,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GluonTS",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "pytorch lightning",
+        "version": null
+      },
+      {
+        "name": "forecast",
+        "version": null
+      },
+      {
+        "name": "forecTheta",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": "CPU"
+    },
+    "hyperparameters": [
+      {
+        "name": "loss",
+        "value": "normalized MQ loss defined in (13)"
+      },
+      {
+        "name": "epochs",
+        "value": "15"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning rate schedule",
+        "value": "inverse square root learning rate annealing"
+      },
+      {
+        "name": "maximum learning rate",
+        "value": "0.0005"
+      },
+      {
+        "name": "warm-up period",
+        "value": "400 batches"
+      },
+      {
+        "name": "batch size",
+        "value": "1024"
+      },
+      {
+        "name": "history length",
+        "value": "168 points (24 hours times 7 days)"
+      },
+      {
+        "name": "prediction horizon",
+        "value": "48 points (two times 24 hours)"
+      },
+      {
+        "name": "Layers ( L)",
+        "value": "3"
+      },
+      {
+        "name": "Sharing",
+        "value": "False"
+      },
+      {
+        "name": "Lookback period ( w, hours)",
+        "value": "168"
+      },
+      {
+        "name": "Learning rate",
+        "value": "0.0005"
+      },
+      {
+        "name": "forecast horizon",
+        "value": "48"
+      },
+      {
+        "name": "\u03b20",
+        "value": "0.3"
+      },
+      {
+        "name": "initial batch size",
+        "value": "2"
+      },
+      {
+        "name": "increased batch size",
+        "value": "5"
+      },
+      {
+        "name": "epoch (3 and 4-layer models)",
+        "value": "5"
+      },
+      {
+        "name": "epoch (5-layer models)",
+        "value": "6"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "AQ-NBEATS-FiLM",
+        "description": "has similar compute explosion due to concatenation of quantiles multiplying inference compute cost by a factor of Q, but clearly better accuracy"
+      },
+      {
+        "name": "AQ-NBEATS-OUT",
+        "description": "has comparable accuracy, but compute cost is multiplied by a factor of Q only for one of the blocks, making it order of magnitude more compute efficient"
+      },
+      {
+        "name": "parametric approach",
+        "description": "assumes a certain PDF for the forecast distribution and involves a forecasting model that produces parameters of this PDF"
+      },
+      {
+        "name": "Gaussian processes",
+        "description": "a viable option for slightly more general modeling"
+      },
+      {
+        "name": "Student-t distribution",
+        "description": "more heavy-tail model used on top of MLP, DeepAR and Transformer models"
+      },
+      {
+        "name": "MLP",
+        "description": "model used with Student-t distribution"
+      },
+      {
+        "name": "DeepAR",
+        "description": "model used with Student-t distribution"
+      },
+      {
+        "name": "Transformer",
+        "description": "model used with Student-t distribution"
+      },
+      {
+        "name": "Gaussian mixture model",
+        "description": "approach to handling multi-modality and asymmetry of forecast distribution"
+      },
+      {
+        "name": "AQ-NBEATS",
+        "description": "Model trained by minimizing normalized quantile loss on the validation set using CRPS."
+      },
+      {
+        "name": "normalized quantile loss",
+        "description": "Objective function used to train the network."
+      },
+      {
+        "name": "Naive",
+        "description": "A seasonal naive method where the forecasted demand profile for day t is the same as the profile for day"
+      },
+      {
+        "name": "ARIMA",
+        "description": "Fitted using the auto.arima() function in the forecast package, assuming normal distribution of future values"
+      },
+      {
+        "name": "ES",
+        "description": "Fitted using the ets() function in the forecast package, assuming normal distribution of future values"
+      },
+      {
+        "name": "Theta method",
+        "description": "Estimates quantiles through bootstrapping using the dotm() function in the forecTheta package"
+      },
+      {
+        "name": "Neural models",
+        "description": "Sourced from GluonTS for probabilistic time-series modeling"
+      },
+      {
+        "name": "N-BEATS",
+        "description": "Forecasting architecture used to predict time-series."
+      },
+      {
+        "name": "AQ-NBEATS-CAT",
+        "description": "Input quantile concatenation scheme where quantile level is appended as one of the elements in the input time-series history."
+      },
+      {
+        "name": "AQ-ESRNN",
+        "description": "Model containing global learnable parameters and time-series specific learnable parameters, using dilations across layers and a symmetrical Beta distribution for generating quantiles during training."
+      },
+      {
+        "name": "batch size scheduling",
+        "description": "Increasing batch size from 2 to 5 during training, decreasing updates per epoch from 1750 to approximately 1450."
+      },
+      {
+        "name": "learning rate scheduling",
+        "description": "Scheduling learning rate with an LR multiplier boosting the learning rate for per-series parameters."
+      },
+      {
+        "name": "any-quantile distributional training",
+        "description": "A probabilistic forecasting approach enabling a machine learning model to produce an arbitrary quantile at inference time."
+      },
+      {
+        "name": "ESRNN with any-quantile capability",
+        "description": "Architectural modifications to the ESRNN forecasting algorithm expanding it with the any-quantile capability."
+      },
+      {
+        "name": "N-BEATS with any-quantile capability",
+        "description": "Architectural modifications to the N-BEATS forecasting algorithm expanding it with the any-quantile capability."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

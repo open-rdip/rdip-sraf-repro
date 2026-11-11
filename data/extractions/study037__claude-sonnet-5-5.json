@@ -1,0 +1,102 @@
+{
+  "study_id": "study037",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study037/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:47:01.227631+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 0,
+    "methods": 8,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "hidden layers in conservative objective model",
+        "value": "2"
+      },
+      {
+        "name": "hidden layer size",
+        "value": "2048"
+      },
+      {
+        "name": "activation function",
+        "value": "leaky ReLU"
+      },
+      {
+        "name": "training optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning rate (model training, Adam)",
+        "value": "10^-3"
+      },
+      {
+        "name": "number of gradient ascent steps for computing samples \u00b5(x)",
+        "value": "50"
+      },
+      {
+        "name": "gradient-ascent learning rate (continuous tasks)",
+        "value": "0.05"
+      },
+      {
+        "name": "gradient-ascent learning rate (discrete tasks)",
+        "value": "2.0"
+      },
+      {
+        "name": "learning rate (\u03b7)",
+        "value": "\u03b7 (symbolic, no numeric value given)"
+      },
+      {
+        "name": "\u03c3 (std of Gaussian conditional distribution D(x'|x))",
+        "value": "\u03c3 (symbolic, no numeric value given)"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Gradient ascent on learned conservative model",
+        "description": "Gradient ascent is used to find x\u22c6 on the learned conservative model \u02c6f\u03b8, with the number of gradient ascent steps less than T (via Equation 5), so the bound with an additional offset holds for x\u22c6 in expectation and the estimated value of the point does not overestimate its true value. The offset depends on the Lipschitz constant \u02c6L and the distance between x\u22c6 and the optimized solutions xT found for other data points x0\u2208D."
+      },
+      {
+        "name": "Conservative objective model",
+        "description": "Neural network \u02c6f\u03b8 with two hidden layers of size 2048 and leaky ReLU activations, trained with the Adam optimizer (Kingma & Ba, 2015) at a learning rate of 10^-3."
+      },
+      {
+        "name": "Gradient ascent optimization of designs",
+        "description": "Samples \u00b5(x) are computed with 50 gradient ascent steps starting from a design x0 in the dataset D; step size \u03b7 is chosen as the largest value such that successive xt follow the gradient vector field of \u02c6f\u22c6\u03b8(xt). The final solution is x\u22c6=xT, where step T is chosen per Equation 5."
+      },
+      {
+        "name": "Gradient ascent",
+        "description": "Used to compute xT, with noise added during the gradient ascent."
+      },
+      {
+        "name": "Gradient descent training of \u02c6f\u03b8",
+        "description": "The learned function \u02c6f\u03b8 is trained by gradient descent over iterations k=1,2,..."
+      },
+      {
+        "name": "Conservative training",
+        "description": "Training \u02c6f\u03b8 by gradient descent on the objective in Equation 7, so that the learned model lower-bounds the true function (Proposition 1). The analysis builds on conservative Q-learning (Kumar et al., 2020)."
+      },
+      {
+        "name": "Neural tangent kernel (NTK) analysis",
+        "description": "Analysis of neural nets under the NTK model (Jacot et al., 2018), with kernel Gf(xi,xj) := \u2207\u03b8 \u02c6f\u03b8(xi)^T \u2207\u03b8 \u02c6f\u03b8(xj)."
+      },
+      {
+        "name": "Gaussian conditional distribution D(x'|x)",
+        "description": "Defined for analysis as a Gaussian centered at x: N(x'|x,\u03c3^2)."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

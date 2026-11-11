@@ -1,0 +1,107 @@
+{
+  "study_id": "study051",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study051/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:52:09.764090+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 0,
+    "methods": 13,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Python",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of initializations per time series",
+        "value": "30"
+      },
+      {
+        "name": "termination tolerance \u03b5",
+        "value": "user-specified (value not stated)"
+      },
+      {
+        "name": "number of clusters M",
+        "value": "presumed/user-specified (value not stated)"
+      },
+      {
+        "name": "latent variable dimension d",
+        "value": "predetermined (value not stated)"
+      },
+      {
+        "name": "\u03b5 (convergence tolerance)",
+        "value": "0.1"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Per-series parameter estimation with vectorization",
+        "description": "A set of parameters \u02c6\u03b8i is estimated for each time series i, and each \u02c6\u03b8i is vectorized so that each parameter set is a single vector."
+      },
+      {
+        "name": "k-means clustering initialization",
+        "description": "k-means clustering is performed over all vectorized \u02c6\u03b8i, returning cluster centers and proportions of class membership, which are converted back (by reversing the vectorization) into the initial parameter set \u0398(0). This is generally preferred as it empirically leads to higher final log-likelihood values, but is less suited when the number of parameters in a single LGSSM is too large relative to the number of time observations per series."
+      },
+      {
+        "name": "k-means initialization for VISTA",
+        "description": "k-means is used only to determine an initialization for VISTA, which further develops the model parameters. The only parameter varying among the initializations is A(0)_k, following the initialization method in [55], so that as much of the signal as possible is described by the evolution of the latent variable rather than attributed to noise."
+      },
+      {
+        "name": "LGSSM fitting via EM from multiple initializations",
+        "description": "For each time series, a predetermined number of initializations are generated and an LGSSM is fit from each using the EM algorithm."
+      },
+      {
+        "name": "Model selection by log-likelihood",
+        "description": "For each time series i, the LGSSM with the largest log-likelihood log p(Yi|\u03b8i) from equation (6), evaluated at the terminal EM parameters \u03b8i, is chosen, giving parameter set \u03b8\u0302i."
+      },
+      {
+        "name": "Parameter vectorization",
+        "description": "Each \u03b8\u0302i is vectorized so that each parameter set is a single vector."
+      },
+      {
+        "name": "VISTA",
+        "description": "Mixture LGSSM clustering algorithm implemented in Python, building on the EM implementation of [55]. It takes as input data Y, observation time stamps, number of clusters M, latent dimension d, termination tolerance \u03b5, maximum iterations, number of CPUs, and initialization method with hyperparameters. It avoids precomputing large arrays to reduce computational burden."
+      },
+      {
+        "name": "EM implementation from [55]",
+        "description": "Assumes identical number of time samples across the population and precomputes x\u0302, \u03a9, and \u03a9_{k,k-1} for all samples in parallel over time series and clusters, producing arrays of size N\u00d7M\u00d7T\u00d7d, N\u00d7M\u00d7T\u00d7d\u00d7d, and N\u00d7M\u00d7(T-1)\u00d7d\u00d7d to compute parameter updates (14) with linear algebra array operations."
+      },
+      {
+        "name": "Online parallel summation over time series",
+        "description": "Instead of forming large N\u00d7M\u00d7T\u00d7d arrays, the sums in Eq. (14) are computed online in parallel over all time series to avoid memory issues for large datasets."
+      },
+      {
+        "name": "Kalman filter and RTS smoother",
+        "description": "Run during the summing process for each time series i to compute the smoothed state estimates and covariances (x\u0302, \u03a9, and lag-one covariance \u03a9_{k,k-1}), following [55] with modifications so parameters are functions of the timestep due to the discretization."
+      },
+      {
+        "name": "Cluster responsibility computation with log-sum-exp style stabilization",
+        "description": "Prior to summing, compute the posterior cluster probabilities \u03c0\u0303_{l|Y_i} for all time series and clusters, stored in an N\u00d7M array, by calculating log p(Y_i|\u03b8_u)\u03c0_u for each cluster u and series i and then exponentiating to avoid overflow."
+      },
+      {
+        "name": "EM algorithm",
+        "description": "M-step updates are performed at each iteration s using the E-step quantities and previous parameter values. Termination occurs when the sum of absolute differences between successive parameter sets {\u03b8_1..\u03b8_M} falls below a threshold (the passage is truncated)."
+      },
+      {
+        "name": "EM (Expectation-Maximization)",
+        "description": "Iterative scheme in which the expected posterior expectation Q(\u0398|\u0398(s)) is non-decreasing across iterations. It is not guaranteed to converge to the global maximum of the log-likelihood, so initialization is important."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

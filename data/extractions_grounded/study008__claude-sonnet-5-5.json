@@ -1,0 +1,776 @@
+{
+ "study_id": "study008",
+ "model": "sonnet",
+ "slug": "claude-sonnet-5-5",
+ "n_passages": 6,
+ "n_passages_ok": 6,
+ "failures": [],
+ "records": [
+  {
+   "field": "methods",
+   "value": "bfloat16 mixed-precision training",
+   "evidence": "bfloat16 mixed-precision training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "continued pretraining",
+   "evidence": "continued pretraining",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "dependencies",
+   "value": "PyTorch FSDP",
+   "evidence": "parallel training with PyTorch FSDP (Zhao et al., 2023)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "FlashAttention",
+   "evidence": "We use the FlashAttention self-attention and RMSNorm CUDA kernels (Dao, 2023)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB",
+   "evidence": "two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "CulturaX",
+   "evidence": "We use training data from CulturaX (Nguyen et al., 2024)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "OSCAR23.01",
+   "evidence": "instead of OSCAR23.01",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "PyTorch FSDP parallel training",
+   "evidence": "parallel training with PyTorch FSDP (Zhao et al., 2023)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ZeRO stages",
+   "evidence": "different ZeRO (Rajbhandari et al., 2019) stages of Py- Torch FSDP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "activation checkpointing",
+   "evidence": "micro-batch size, activation checkpointing, or different ZeRO",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "pure bfloat16 training",
+   "evidence": "using pure bfloat16 and tokenizer swapping",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "tokenizer swapping",
+   "evidence": "using pure bfloat16 and tokenizer swapping",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "infinite learning rate schedule",
+   "evidence": "using an infinite learning rate schedule following Ibrahim et al. (2024)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "BoolQ",
+   "evidence": "BOOLQ (Clark et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "COPA",
+   "evidence": "COPA (Roem- mele et al., 2011)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "HellaSwag",
+   "evidence": "HellaSwag (Zellers et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "OpenBookQA",
+   "evidence": "Open- BookQA (Mihaylov et al., 2018)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "PIQA",
+   "evidence": "PIQA (Bisk et al., 2020)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "RACE",
+   "evidence": "RACE (Lai et al., 2017)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "SciTail",
+   "evidence": "SciTail (Welbl et al., 2017)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "TOXIGEN",
+   "evidence": "TOXI- GEN (Hartvigsen et al., 2022)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "macro average",
+   "evidence": "We report a macro average as in OALL",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "bfloat16",
+   "evidence": "For bfloat16 , we always",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Histogram of absolute parameter weight values of Mistral-7B",
+   "evidence": "Histogram of absolute individual parameter weight values of Mistral-7B",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "7,680 (Ours Main); 15,360 (LeoLM)",
+   "evidence": "Training steps 7,680 15,360",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "76 (Ours Main); 153 (LeoLM)",
+   "evidence": "Warmup steps 76 153",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "256 (Ours Main); 512 (LeoLM)",
+   "evidence": "Batch size 256 512",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "4,096 (Ours Main); 8,192 (LeoLM)",
+   "evidence": "Context length 4,096 8,192",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "8 billion (Ours Main); 64 billion (LeoLM)",
+   "evidence": "Total training tokens 8 billion 64 billion",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "AdamW",
+   "evidence": "Optimizer AdamW AdamW",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "4\u00d710\u22125 (Ours Main); 2\u00d710\u22125 (LeoLM)",
+   "evidence": "Learning rate 4\u00d710\u221252\u00d710\u22125",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "Cosine to 2\u00d710\u22126",
+   "evidence": "Learning rate decay Cosine to 2\u00d710\u22126Cosine to 2\u00d710\u22126",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "(0.9, 0.95)",
+   "evidence": "Adam \u03b2 (0.9, 0.95) (0.9, 0.95)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "0.05",
+   "evidence": "Weight decay 0.05 0.05",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "pure bfloat16 training",
+   "evidence": "training in pure bfloat16",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "AdamW optimizer",
+   "evidence": "Optimizer AdamW AdamW",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "hardware",
+   "value": "80GB GPUs",
+   "evidence": "in our experiments with two 80GB GPUs, pure bfloat16 was 39% faster than mixed-precision bfloat16 training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "pure bfloat16 training",
+   "evidence": "we extensively analyze the viability of pure bfloat16 training for language adaptation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "mixed-precision bfloat16 training",
+   "evidence": "pure bfloat16 was 39% faster than mixed-precision bfloat16 training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "39% faster",
+   "evidence": "pure bfloat16 was 39% faster than mixed-precision bfloat16 training",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study008",
+   "slug": "claude-sonnet-5-5",
+   "passage_index": 5
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "methods": {
+    "n": 15,
+    "has_evidence": 15,
+    "span_found": 15,
+    "value_in_span": 9,
+    "grounded": 9
+   },
+   "dependencies": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   },
+   "hardware": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   },
+   "datasets": {
+    "n": 10,
+    "has_evidence": 10,
+    "span_found": 10,
+    "value_in_span": 8,
+    "grounded": 8
+   },
+   "hyperparameters": {
+    "n": 10,
+    "has_evidence": 10,
+    "span_found": 10,
+    "value_in_span": 4,
+    "grounded": 4
+   },
+   "evaluation_results": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 1,
+    "value_in_span": 1,
+    "grounded": 1
+   }
+  },
+  "total": {
+   "n": 40,
+   "has_evidence": 40,
+   "span_found": 40,
+   "value_in_span": 26,
+   "grounded": 26
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "bfloat16 mixed-precision training",
+      "evidence": "bfloat16 mixed-precision training"
+     },
+     {
+      "name": "continued pretraining",
+      "evidence": "continued pretraining"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "PyTorch FSDP",
+      "version": null,
+      "evidence": "parallel training with PyTorch FSDP (Zhao et al., 2023)"
+     },
+     {
+      "name": "FlashAttention",
+      "version": null,
+      "evidence": "We use the FlashAttention self-attention and RMSNorm CUDA kernels (Dao, 2023)"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB",
+      "evidence": "two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "CulturaX",
+      "version": null,
+      "evidence": "We use training data from CulturaX (Nguyen et al., 2024)"
+     },
+     {
+      "name": "OSCAR23.01",
+      "version": "23.01",
+      "evidence": "instead of OSCAR23.01"
+     }
+    ],
+    "methods": [
+     {
+      "name": "PyTorch FSDP parallel training",
+      "evidence": "parallel training with PyTorch FSDP (Zhao et al., 2023)"
+     },
+     {
+      "name": "ZeRO stages",
+      "evidence": "different ZeRO (Rajbhandari et al., 2019) stages of Py- Torch FSDP"
+     },
+     {
+      "name": "activation checkpointing",
+      "evidence": "micro-batch size, activation checkpointing, or different ZeRO"
+     },
+     {
+      "name": "pure bfloat16 training",
+      "evidence": "using pure bfloat16 and tokenizer swapping"
+     },
+     {
+      "name": "tokenizer swapping",
+      "evidence": "using pure bfloat16 and tokenizer swapping"
+     },
+     {
+      "name": "infinite learning rate schedule",
+      "evidence": "using an infinite learning rate schedule following Ibrahim et al. (2024)"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "BoolQ",
+      "version": null,
+      "evidence": "BOOLQ (Clark et al., 2019)"
+     },
+     {
+      "name": "COPA",
+      "version": null,
+      "evidence": "COPA (Roem- mele et al., 2011)"
+     },
+     {
+      "name": "HellaSwag",
+      "version": null,
+      "evidence": "HellaSwag (Zellers et al., 2019)"
+     },
+     {
+      "name": "OpenBookQA",
+      "version": null,
+      "evidence": "Open- BookQA (Mihaylov et al., 2018)"
+     },
+     {
+      "name": "PIQA",
+      "version": null,
+      "evidence": "PIQA (Bisk et al., 2020)"
+     },
+     {
+      "name": "RACE",
+      "version": null,
+      "evidence": "RACE (Lai et al., 2017)"
+     },
+     {
+      "name": "SciTail",
+      "version": null,
+      "evidence": "SciTail (Welbl et al., 2017)"
+     },
+     {
+      "name": "TOXIGEN",
+      "version": null,
+      "evidence": "TOXI- GEN (Hartvigsen et al., 2022)"
+     }
+    ],
+    "methods": [
+     {
+      "name": "macro average",
+      "evidence": "We report a macro average as in OALL"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "bfloat16",
+      "evidence": "For bfloat16 , we always"
+     },
+     {
+      "name": "Histogram of absolute parameter weight values of Mistral-7B",
+      "evidence": "Histogram of absolute individual parameter weight values of Mistral-7B"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "Training steps",
+      "value": "7,680 (Ours Main); 15,360 (LeoLM)",
+      "evidence": "Training steps 7,680 15,360"
+     },
+     {
+      "name": "Warmup steps",
+      "value": "76 (Ours Main); 153 (LeoLM)",
+      "evidence": "Warmup steps 76 153"
+     },
+     {
+      "name": "Batch size",
+      "value": "256 (Ours Main); 512 (LeoLM)",
+      "evidence": "Batch size 256 512"
+     },
+     {
+      "name": "Context length",
+      "value": "4,096 (Ours Main); 8,192 (LeoLM)",
+      "evidence": "Context length 4,096 8,192"
+     },
+     {
+      "name": "Total training tokens",
+      "value": "8 billion (Ours Main); 64 billion (LeoLM)",
+      "evidence": "Total training tokens 8 billion 64 billion"
+     },
+     {
+      "name": "Optimizer",
+      "value": "AdamW",
+      "evidence": "Optimizer AdamW AdamW"
+     },
+     {
+      "name": "Learning rate",
+      "value": "4\u00d710\u22125 (Ours Main); 2\u00d710\u22125 (LeoLM)",
+      "evidence": "Learning rate 4\u00d710\u221252\u00d710\u22125"
+     },
+     {
+      "name": "Learning rate decay",
+      "value": "Cosine to 2\u00d710\u22126",
+      "evidence": "Learning rate decay Cosine to 2\u00d710\u22126Cosine to 2\u00d710\u22126"
+     },
+     {
+      "name": "Adam \u03b2",
+      "value": "(0.9, 0.95)",
+      "evidence": "Adam \u03b2 (0.9, 0.95) (0.9, 0.95)"
+     },
+     {
+      "name": "Weight decay",
+      "value": "0.05",
+      "evidence": "Weight decay 0.05 0.05"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "pure bfloat16 training",
+      "evidence": "training in pure bfloat16"
+     },
+     {
+      "name": "AdamW optimizer",
+      "evidence": "Optimizer AdamW AdamW"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "80GB GPUs",
+      "evidence": "in our experiments with two 80GB GPUs, pure bfloat16 was 39% faster than mixed-precision bfloat16 training"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "pure bfloat16 training",
+      "evidence": "we extensively analyze the viability of pure bfloat16 training for language adaptation"
+     },
+     {
+      "name": "mixed-precision bfloat16 training",
+      "evidence": "pure bfloat16 was 39% faster than mixed-precision bfloat16 training"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "training speedup of pure bfloat16 over mixed-precision bfloat16",
+      "value": "39% faster",
+      "split": null,
+      "evidence": "pure bfloat16 was 39% faster than mixed-precision bfloat16 training"
+     }
+    ]
+   }
+  }
+ ]
+}

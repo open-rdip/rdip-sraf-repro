@@ -1,0 +1,152 @@
+{
+  "study_id": "study061",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study061/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:05:49.625823+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 14,
+    "datasets": 2,
+    "methods": 11,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PedSim",
+        "version": null
+      },
+      {
+        "name": "ORCA",
+        "version": null
+      },
+      {
+        "name": "SA-CADRL",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "collaboration_coefficients_pedestrians",
+        "value": "0"
+      },
+      {
+        "name": "collaboration_coefficients_robot",
+        "value": "1"
+      },
+      {
+        "name": "angular_velocity_mode",
+        "value": "unbounded"
+      },
+      {
+        "name": "kinematic_constraints_linear_velocity",
+        "value": "disabled"
+      },
+      {
+        "name": "SA-CADRL_variant",
+        "value": "4-agent version"
+      },
+      {
+        "name": "sub-goal planning horizon (seconds)",
+        "value": "6"
+      },
+      {
+        "name": "checkpoint reach threshold (meters)",
+        "value": "1"
+      },
+      {
+        "name": "simulation modes",
+        "value": "Synchronous; Schematic"
+      },
+      {
+        "name": "kinematic constraints",
+        "value": "off (except maximum linear speed constraint)"
+      },
+      {
+        "name": "number of episodes",
+        "value": "33"
+      },
+      {
+        "name": "agent_count",
+        "value": "4"
+      },
+      {
+        "name": "num_nearest_pedestrians_observed",
+        "value": "3"
+      },
+      {
+        "name": "subgoal_horizon_seconds",
+        "value": "6"
+      },
+      {
+        "name": "pretrained_model",
+        "value": "provided by the authors"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "SocNavBench",
+        "version": null
+      },
+      {
+        "name": "curated set of 33 episodes",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ORCA (Optimal Reciprocal Collision Avoidance)",
+        "description": "Efficient navigation planner using reciprocal velocity obstacles; run with pedestrians having collaboration coefficient 0 and robot 1; executed in unbounded angular velocity mode without kinematic constraints on linear velocities."
+      },
+      {
+        "name": "SA-CADRL (Socially Aware Collision Avoidance with Deep Reinforcement Learning)",
+        "description": "Deep reinforcement learning-based social navigation method formulating cooperative multi-agent collision avoidance with social-awareness rules; using the 4-agent version."
+      },
+      {
+        "name": "Social Forces",
+        "description": "A social forces-based pedestrian dynamics model where pedestrian navigation behavior is driven by attractive force to the goal, repulsive force from other pedestrians and obstacles, and other attractive forces to interesting objects or other pedestrians; implemented using the PedSim simulator."
+      },
+      {
+        "name": "ORCA",
+        "description": "A popular baseline method used by many recent social navigation algorithms for performance comparisons."
+      },
+      {
+        "name": "SA-CADRL",
+        "description": "A recent, popular, relatively state-of-the-art deep reinforcement learning-based navigation method."
+      },
+      {
+        "name": "Pedestrian-unaware baseline",
+        "description": "A simple baseline that is unaware of pedestrians."
+      },
+      {
+        "name": "Pedestrian-unaware Baseline meta-planner",
+        "description": "Baseline navigation algorithm that does not account for pedestrians; plans a sub-goal within a 6-second horizon, considers a checkpoint reached if within 1 meter, and then requests a new checkpoint."
+      },
+      {
+        "name": "3D unicycle model (position and heading)",
+        "description": "Applied as a kinematic model for planning (Eq. 1, Sec. 3.3.3); no kinematic constraint application when used as a meta-planner."
+      },
+      {
+        "name": "Experimental protocol",
+        "description": "Used default simulation settings (Synchronous and Schematic). For algorithms assuming no kinematic constraints, constraints were turned off leaving only the maximum linear speed constraint. Tested on a curated set of 33 episodes."
+      },
+      {
+        "name": "CADRL",
+        "description": "Cooperative multi-agent collision avoidance with social awareness; using the 4-agent version of the network, taking observations from the three nearest pedestrians; uses the pre-trained model provided by the authors; does not consider kinematic constraints; augmented with a meta-level planner for obstacle avoidance."
+      },
+      {
+        "name": "Meta-level sampling planner",
+        "description": "Sampling-based planner (from [50]) that samples trajectories from a connectivity graph, evaluates them with heuristic cost functions, and returns the minimum-cost trajectory within a budget; provides heuristic-based obstacle avoidance and goal-seeking; plans a sub-goal within a 6-second horizon when a new checkpoint is requested."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

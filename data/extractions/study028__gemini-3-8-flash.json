@@ -1,0 +1,163 @@
+{
+  "study_id": "study028",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study028/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:31:20.969147+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 6,
+    "methods": 14,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX 3090 24 GB",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "epochs",
+        "value": "256"
+      },
+      {
+        "name": "learning rate schedule",
+        "value": "cycle cosine annealing schedule"
+      },
+      {
+        "name": "pixel values of the blurred region uniform distribution",
+        "value": "[0.59,1]"
+      },
+      {
+        "name": "Gaussian blurred radius uniform distribution",
+        "value": "[0,15]"
+      },
+      {
+        "name": "batch size",
+        "value": "64"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "0.03"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.00003"
+      },
+      {
+        "name": "threshold",
+        "value": "0.067"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "X-ray security-screening datasets",
+        "version": null
+      },
+      {
+        "name": "Chexpert",
+        "version": null
+      },
+      {
+        "name": "RSNA Pneumonia Detection Challenge dataset",
+        "version": null
+      },
+      {
+        "name": "NIH chest radiograph dataset",
+        "version": null
+      },
+      {
+        "name": "Zhanglab",
+        "version": null
+      },
+      {
+        "name": "RSNA",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "fAnoGAN",
+        "description": "state-of-the-art UAD model in for medical images containing an encoder, decoder, and discriminator, trained using only normal images"
+      },
+      {
+        "name": "Ganomaly",
+        "description": "GAN-based UAD model employing adversarial loss, contextual loss, and encoder loss in anomaly detection"
+      },
+      {
+        "name": "CutPaste",
+        "description": "one-class classifier model with SSL proposed for anomaly detection in industrial products employing a pretext task to extract a region from a normal image, paste it on"
+      },
+      {
+        "name": "AnatPaste",
+        "description": "Augmentation technique generating anomalous images using normal images, patches, and an anatomical mask."
+      },
+      {
+        "name": "CLAHE",
+        "description": "Used to equalize local image histogram in lung segmentation."
+      },
+      {
+        "name": "Otsu\u2019s thresholding",
+        "description": "Used to binarize histogram equalized image in lung segmentation."
+      },
+      {
+        "name": "Grad-CAM",
+        "description": "Visualization method using the last convolutional layer's feature map of the pretext model to calculate gradients and highlight predictive areas"
+      },
+      {
+        "name": "one-class classifier",
+        "description": "Classifier with ResNet18 backbone for feature extraction and three fully connected layers as the projection head"
+      },
+      {
+        "name": "ResNet18",
+        "description": "Backbone used for feature extraction"
+      },
+      {
+        "name": "SGD optimizer",
+        "description": "Optimizer used to optimize the network"
+      },
+      {
+        "name": "cycle cosine annealing schedule",
+        "description": "Schedule used for learning rate"
+      },
+      {
+        "name": "CutPaste-Scar",
+        "description": "Variant of CutPaste that exhibits the best accuracy in the original study, employing a pretext task to extract a region from a normal image, paste it on another part of the image, and classify the image as an anomaly"
+      },
+      {
+        "name": "SALAD",
+        "description": "Contemporary method validated on the Zhanglab dataset"
+      },
+      {
+        "name": "SQUID",
+        "description": "Contemporary method validated on the Zhanglab dataset"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AUC",
+        "value": "approximately 93%",
+        "split": null
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "0.7%",
+        "split": null
+      }
+    ]
+  }
+}

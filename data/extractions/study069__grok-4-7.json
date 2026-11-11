@@ -1,0 +1,130 @@
+{
+  "study_id": "study069",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study069/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:06:47.058784+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 6,
+    "methods": 15,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "confidence \u03c4",
+        "value": "selected in {0.1, 0.3, 0.5, 0.7, 0.9}"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CORA",
+        "version": null
+      },
+      {
+        "name": "CITE",
+        "version": null
+      },
+      {
+        "name": "AMAP",
+        "version": null
+      },
+      {
+        "name": "BAT",
+        "version": null
+      },
+      {
+        "name": "EAT",
+        "version": null
+      },
+      {
+        "name": "UAT",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "HSAN",
+        "description": "Proposed method whose learned node embeddings are visualized with 2D t-SNE and whose loss and clustering ACC convergence are analyzed."
+      },
+      {
+        "name": "t-SNE",
+        "description": "2D t-SNE (Van der Maaten and Hinton 2008) applied to learned node embeddings to reveal cluster structure."
+      },
+      {
+        "name": "hard sample aware contrastive loss",
+        "description": "Proposed contrastive loss used by the method (denoted Ours); loss and clustering ACC gradually converge after 350 epochs."
+      },
+      {
+        "name": "infoNCE",
+        "description": "Contrastive loss compared with the hard sample aware contrastive loss in the convergence analysis."
+      },
+      {
+        "name": "attribute-structure similarity function S",
+        "description": "Proposed similarity function whose effectiveness is verified; combined with M it achieves the most superior clustering performance."
+      },
+      {
+        "name": "weight modulating function M",
+        "description": "Enhances the discriminative capability of samples by guiding the network to focus on the hard sample pairs."
+      },
+      {
+        "name": "B+M",
+        "description": "Improves the performance of B."
+      },
+      {
+        "name": "Ours",
+        "description": "Combination of S and M that achieves the most superior clustering performance."
+      },
+      {
+        "name": "Hard Sample Aware Network (HSAN)",
+        "description": "Mines hard samples in contrastive deep graph clustering."
+      },
+      {
+        "name": "attribute and structure encoders",
+        "description": "Embed the attribute and structure of samples into the latent space."
+      },
+      {
+        "name": "comprehensive similarity measure criterion",
+        "description": "Calculates sample similarities by considering both attribute and structure information to reveal potential sample relations."
+      },
+      {
+        "name": "dynamic weight modulating function",
+        "description": "Guided by high-confidence clustering information, up-weights hard sample pairs while down-weighting the negative ones."
+      },
+      {
+        "name": "infoNCE loss",
+        "description": "Classical contrastive loss used as the baseline for time and space cost comparison."
+      },
+      {
+        "name": "ProGCL",
+        "description": "Baseline method (Xia et al. 2022a) surpassed by the proposed method on CORA under the NMI metric."
+      },
+      {
+        "name": "ablation variants",
+        "description": "B denotes the baseline; B+S is baseline with S; B+M is baseline with M; Ours is baseline with both S and M."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "NMI improvement of Ours over B on CORA",
+        "value": "8.48 %",
+        "split": null
+      },
+      {
+        "metric": "NMI",
+        "value": "18.99%",
+        "split": null
+      }
+    ]
+  }
+}

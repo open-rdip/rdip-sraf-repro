@@ -1,0 +1,196 @@
+{
+  "study_id": "study039",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study039/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:45:21.254706+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 5,
+    "methods": 12,
+    "evaluation_results": 12
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "learning rate",
+        "value": "0.005"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.0001"
+      },
+      {
+        "name": "decay strategy",
+        "value": "step decay, or cosine decay with a warm-up"
+      },
+      {
+        "name": "\u03bb",
+        "value": "0"
+      },
+      {
+        "name": "regularization penalty parameter \u03bb",
+        "value": "2.5"
+      },
+      {
+        "name": "learned slope a",
+        "value": "11.04"
+      },
+      {
+        "name": "learned shift b",
+        "value": "-0.59"
+      },
+      {
+        "name": "number of learnable parameters",
+        "value": "2"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Kinetics-400",
+        "version": null
+      },
+      {
+        "name": "Kinetics-600",
+        "version": null
+      },
+      {
+        "name": "FineGym",
+        "version": null
+      },
+      {
+        "name": "MPII Cooking 2",
+        "version": null
+      },
+      {
+        "name": "HMDB-51",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "motion prompts",
+        "description": "Prompts whose length matches the original input video frames by requiring an additional frame in the layer"
+      },
+      {
+        "name": "regularization",
+        "description": "Regularization term used to remove unnecessary motion details, resulting in smoother and cleaner attention maps"
+      },
+      {
+        "name": "TimeSformer",
+        "description": "Backbone model pretrained on Kinetics-600 used for fine-tuning."
+      },
+      {
+        "name": "frame differencing maps",
+        "description": "Used to capture negative and positive motions with learnable slope and shift parameters."
+      },
+      {
+        "name": "SlowFast",
+        "description": "Backbone model explored in three variants by adding motion prompts into the slow-only stream, fast-only stream, and both slow and fast streams."
+      },
+      {
+        "name": "C2D",
+        "description": "Backbone model used for evaluations."
+      },
+      {
+        "name": "I3D",
+        "description": "Backbone model used for evaluations."
+      },
+      {
+        "name": "X3D",
+        "description": "Backbone model used for evaluations."
+      },
+      {
+        "name": "Video Motion Prompts",
+        "description": "Motion prompts added to model streams or backbones."
+      },
+      {
+        "name": "VMPs",
+        "description": "Action recognition approach evaluated across various recent backbones"
+      },
+      {
+        "name": "attention variation regularization",
+        "description": "A regularization term used to generate smooth and clean attention maps with reduced background noise, improving motion prompt quality."
+      },
+      {
+        "name": "motion prompt layer",
+        "description": "A module guided by two learnable parameters that highlights visual contents of interest while capturing temporal dynamics over short periods."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance gain compared to the baseline",
+        "value": "0.8%",
+        "split": null
+      },
+      {
+        "metric": "average performance gain",
+        "value": "1.1%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 mean average precision improvement for SlowFast on MPII Cooking 2",
+        "value": "3.9%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 mean average precision improvement for C2D on MPII Cooking 2",
+        "value": "2.1%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 mean average precision improvement for I3D on MPII Cooking 2",
+        "value": "3.0%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 mean average precision improvement for X3D on MPII Cooking 2",
+        "value": "0.7%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 mean average precision improvement for TimeSformer on MPII Cooking 2",
+        "value": "6.0%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 accuracy increase for TimeSformer on FineGym",
+        "value": "0.8%",
+        "split": null
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "1.5%",
+        "split": "split 1"
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "1.2%",
+        "split": "split 2"
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "0.7%",
+        "split": "split 3"
+      },
+      {
+        "metric": "performance gain",
+        "value": "1.1%",
+        "split": null
+      }
+    ]
+  }
+}

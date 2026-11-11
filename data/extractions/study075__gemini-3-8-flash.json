@@ -1,0 +1,78 @@
+{
+  "study_id": "study075",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study075/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:18:44.782016+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 0,
+    "methods": 7,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "average diameter",
+        "value": "50 nm"
+      },
+      {
+        "name": "micelle size dispersity",
+        "value": "0.05"
+      },
+      {
+        "name": "core-micelle size ratio",
+        "value": "0.25"
+      },
+      {
+        "name": "micelle volume fraction",
+        "value": "0.15"
+      },
+      {
+        "name": "micelle diameter range",
+        "value": "target value (50 nm) \u00b1 1 nm"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "CREASE",
+        "description": "Implementation of a machine learning (ML) model (neural network) to directly relate the gene set to the corresponding scattering intensity profile"
+      },
+      {
+        "name": "P(q) and S(q) CREASE",
+        "description": "Development of separate ML models linking the gene set to the structure factor S(q) and form factor P(q) to obtain overall scattering intensity I(q)"
+      },
+      {
+        "name": "genetic algorithm",
+        "description": "Optimizes for the set of genes (low dimensional feature space corresponding to a structural arrangement, S(q), and primary particle form, P(q)) possessing a computed scattering profile that most closely matches the input scattering profile(s)."
+      },
+      {
+        "name": "Debye scattering equation",
+        "description": "Used to directly determine computed scattering profile(s) in CREASE."
+      },
+      {
+        "name": "machine learning (ML) model",
+        "description": "Used to determine computed scattering profile(s) in CREASE."
+      },
+      {
+        "name": "CREASE for S(q)",
+        "description": "A previously developed version utilizing 10 different genes to reconstruct the structural arrangement of spherical nanoparticles in solution."
+      },
+      {
+        "name": "Debye scattering approach",
+        "description": "Calculates computed scattering profiles by first evaluating P(q) and combining it with S(q) to obtain the overall scattering intensity I(q)."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

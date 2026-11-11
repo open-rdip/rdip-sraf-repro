@@ -1,0 +1,230 @@
+{
+  "study_id": "study068",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study068/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:04:41.947140+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 1,
+    "methods": 29,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "MATLAB",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia GTX Titan Xp",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "uniformly_sampled_points",
+        "value": "2048"
+      },
+      {
+        "name": "voxel_resolution",
+        "value": "323"
+      },
+      {
+        "name": "patch_based_synthesis_resolution",
+        "value": "1283"
+      },
+      {
+        "name": "batch_size",
+        "value": "50"
+      },
+      {
+        "name": "voxel_space",
+        "value": "323"
+      },
+      {
+        "name": "patch_based_completion_resolution",
+        "value": "1283"
+      },
+      {
+        "name": "sampled_points",
+        "value": "2048"
+      },
+      {
+        "name": "points",
+        "value": "2048"
+      },
+      {
+        "name": "missing_points",
+        "value": "20%"
+      },
+      {
+        "name": "shape_centering",
+        "value": "origin"
+      },
+      {
+        "name": "bounding_box_diagonal",
+        "value": "unit length"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ShapeNetCore",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RL-GAN-Net",
+        "description": "Shape completion method used as quick preprocessing of captured real partial and noisy 3D measurements before other point cloud processing tasks."
+      },
+      {
+        "name": "AE",
+        "description": "Method used to complete shapes, mentioned with RL-GAN-Net in the accuracy comparison."
+      },
+      {
+        "name": "shape completion pipeline",
+        "description": "Incomplete input is first processed through the shape completion pipeline before downstream analysis."
+      },
+      {
+        "name": "PointNet",
+        "description": "Classification network evaluated on completed point cloud input and compared against incomplete input."
+      },
+      {
+        "name": "vanilla RL-GAN-Net",
+        "description": "RL agent whose main achievement is often limited to finding the correct semantic categories in the latent space."
+      },
+      {
+        "name": "hybrid approach",
+        "description": "Approach that overcomes the limitation of vanilla RL-GAN-Net."
+      },
+      {
+        "name": "Dai et al.",
+        "description": "Compared with RL-GAN-Net for their 32^3 and 128^3 resolution results; their distance was converted."
+      },
+      {
+        "name": "RL agent",
+        "description": "Produces clean GFV from observation of noisy GFV and creates the appropriate z-vector"
+      },
+      {
+        "name": "AE only",
+        "description": "Baseline method using AE only"
+      },
+      {
+        "name": "hybrid RL-GAN-Net",
+        "description": "Hybrid RL-GAN-Net shape completion from partial point clouds"
+      },
+      {
+        "name": "isosurface",
+        "description": "MATLAB function used for representation, after which 2048 points were uniformly sampled for comparison."
+      },
+      {
+        "name": "encoder-decoder network (Voxel 323)",
+        "description": "Produces smoother results than AE-processed point clouds because volume accumulation compensates for random noise, but is limited in resolution and washes out local details."
+      },
+      {
+        "name": "patch-based synthesis",
+        "description": "Applied at 1283 resolution; recovered local details remain limited."
+      },
+      {
+        "name": "classification",
+        "description": "Alternative evaluation of semantic shape completion by comparing classification accuracy of shapes completed by AE and RL-GAN-Net."
+      },
+      {
+        "name": "encoder-decoder network",
+        "description": "Dai et al. approach operating in 323 voxel space"
+      },
+      {
+        "name": "analytic patch-based completion",
+        "description": "Follows the encoder-decoder network at 1283 resolution"
+      },
+      {
+        "name": "uniform sampling",
+        "description": "Uniformly sampled 2048 points from the surface representation"
+      },
+      {
+        "name": "Chamfer loss",
+        "description": "LCH increases for a large amount of missing data and was not very efficient when used alone, interpreted as the curse of dimensionality when completing 2048 points."
+      },
+      {
+        "name": "GFV loss",
+        "description": "LGFV increases for a large amount of missing data; alone enables the controller to find the correct semantic shape category, though details are often mismatched."
+      },
+      {
+        "name": "LDis",
+        "description": "Almost constant as the pre-trained generator synthesizes according to the learned distribution given the z input."
+      },
+      {
+        "name": "l-GAN",
+        "description": "Controlled by the agent; Chamfer loss alone is not enough to inform the agent to find the correct control of the l-GAN."
+      },
+      {
+        "name": "Chamfer distance",
+        "description": "Widely used metric to compare two shapes."
+      },
+      {
+        "name": "discriminator loss",
+        "description": "Essential to create a realistic shape. Used alone, the RL agent creates a reasonable but unrelated shape because the reward only encourages realism."
+      },
+      {
+        "name": "GAN",
+        "description": "Controlled by the RL agent; latent space representation reduces dimension and boosts GAN performance."
+      },
+      {
+        "name": "RL-GAN-Net hybrid approach",
+        "description": "Selects AE results when the shape is more reasonable according to the trained discriminator; operates directly on scanned points only, without mask information."
+      },
+      {
+        "name": "vanilla approach",
+        "description": "Compared with the hybrid approach on Chamfer distance and on classification (finding the correct category)."
+      },
+      {
+        "name": "Dai et al. comparison",
+        "description": "RL-GAN-Net compared to Dai et al. at 32^3 and 128^3 resolution; their distance function output was converted to the point cloud domain. They additionally use mask information."
+      },
+      {
+        "name": "reward function analysis",
+        "description": "Effects of three different loss terms, including Chamfer loss LCH and GFV, on generated point clouds with different amounts of missing data."
+      },
+      {
+        "name": "shape preprocessing",
+        "description": "Shapes from cars, airplanes, chairs, and desks (26,829 total) are translated to the origin and scaled so bounding-box diagonals have unit length; ground-truth point clouds are generated by uniform sampling."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "average action time",
+        "value": "1.295",
+        "split": null
+      },
+      {
+        "metric": "z-vector creation time",
+        "value": "approximately one millisecond",
+        "split": null
+      },
+      {
+        "metric": "Chamfer distance (70% points missing)",
+        "value": "up to 16% of the diagonal of the shape",
+        "split": null
+      },
+      {
+        "metric": "Chamfer distance (AE, vanilla RL-GAN-Net, hybrid RL-GAN-Net)",
+        "value": "less than 9% of the distances",
+        "split": null
+      },
+      {
+        "metric": "running time",
+        "value": "324 seconds",
+        "split": null
+      }
+    ]
+  }
+}

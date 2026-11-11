@@ -1,0 +1,241 @@
+{
+  "study_id": "study089",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study089/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:27:49.589727+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 4,
+    "methods": 23,
+    "evaluation_results": 17
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "Number of F5C blocks per branch",
+        "value": "1"
+      },
+      {
+        "name": "number_of_input_frames",
+        "value": "8"
+      },
+      {
+        "name": "key_frames_input",
+        "value": "onset and apex frames"
+      },
+      {
+        "name": "frame_sampling",
+        "value": "equal intervals from raw videos"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CASME II (five classes)",
+        "version": null
+      },
+      {
+        "name": "CASME II",
+        "version": null
+      },
+      {
+        "name": "SAMM",
+        "version": null
+      },
+      {
+        "name": "SMIC",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "MOL",
+        "description": "Proposed MER method using auxiliary tasks (optical flow estimation and facial landmark detection) and F5C blocks composed of FCC and CCC in each branch of a frame pair."
+      },
+      {
+        "name": "F5C block",
+        "description": "A block that includes fully-connected convolution (FCC) and channel correspondence convolution (CCC)."
+      },
+      {
+        "name": "FCC",
+        "description": "Fully-connected convolution operation used within the F5C block."
+      },
+      {
+        "name": "CCC",
+        "description": "Channel correspondence convolution operation used within the F5C block."
+      },
+      {
+        "name": "MOL w/o F5C",
+        "description": "Variant of MOL with the F5C block removed."
+      },
+      {
+        "name": "MOL w/o CCC",
+        "description": "Variant of MOL with the channel correspondence convolution (CCC) removed."
+      },
+      {
+        "name": "MOL w/o FCC",
+        "description": "Variant of MOL with the fully-connected convolution (FCC) removed."
+      },
+      {
+        "name": "MOL w/o OFE",
+        "description": "Variant of MOL with the optical flow estimation module removed."
+      },
+      {
+        "name": "MOL w/o FLD",
+        "description": "Variant of MOL with the facial landmark detection module removed."
+      },
+      {
+        "name": "MOL w/o OFE&FLD",
+        "description": "Variant of MOL with both optical flow estimation and facial landmark detection modules removed."
+      },
+      {
+        "name": "FCC (transformer-style)",
+        "description": "A component of the F5C block; maintains global receptive field; its removal decreases the capacity to maintain a global receptive field."
+      },
+      {
+        "name": "CCC (graph-style)",
+        "description": "A component of the F5C block; its removal may cause failure of modeling."
+      },
+      {
+        "name": "UnsupFlownet",
+        "description": "Baseline method referenced as [66]."
+      },
+      {
+        "name": "RAFT",
+        "description": "Baseline method referenced as [67]."
+      },
+      {
+        "name": "MOL w/o MER&FLD",
+        "description": "MOL variant without MER and FLD modules."
+      },
+      {
+        "name": "MOL w/o MER",
+        "description": "MOL variant without the MER module."
+      },
+      {
+        "name": "Element-wise addition feature fusion",
+        "description": "Feature fusion strategy using element-wise addition of frame features; performs worse than concatenation."
+      },
+      {
+        "name": "Element-wise subtraction feature fusion",
+        "description": "Feature fusion strategy using element-wise subtraction of frame features; performs worse than concatenation."
+      },
+      {
+        "name": "fully-connected convolution (FCC)",
+        "description": "An operation within the F5C block."
+      },
+      {
+        "name": "channel correspondence convolution (CCC)",
+        "description": "An operation within the F5C block."
+      },
+      {
+        "name": "MOL w/o MER&OFE",
+        "description": "Baseline method that performs only facial landmark detection, removing both the MER and optical flow estimation modules."
+      },
+      {
+        "name": "TCDCN",
+        "description": "A popular facial landmark detection method used for comparison."
+      },
+      {
+        "name": "HRNetV2",
+        "description": "A popular facial landmark detection method used for comparison."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Acc (MOL w/o F5C)",
+        "value": "62.90",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL w/o F5C)",
+        "value": "62.52",
+        "split": null
+      },
+      {
+        "metric": "Acc (MOL w/o CCC)",
+        "value": "76.86",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL w/o CCC)",
+        "value": "74.44",
+        "split": null
+      },
+      {
+        "metric": "Acc (MOL w/o FCC)",
+        "value": "65.45",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL w/o FCC)",
+        "value": "63.19",
+        "split": null
+      },
+      {
+        "metric": "Acc (MOL)",
+        "value": "79.23",
+        "split": null
+      },
+      {
+        "metric": "WF1 (MOL)",
+        "value": "75.85",
+        "split": null
+      },
+      {
+        "metric": "Acc (F5C blocks=1)",
+        "value": "79.23",
+        "split": null
+      },
+      {
+        "metric": "WF1 (F5C blocks=1)",
+        "value": "75.85",
+        "split": null
+      },
+      {
+        "metric": "Acc (F5C blocks=2)",
+        "value": "78.68",
+        "split": null
+      },
+      {
+        "metric": "WF1 (F5C blocks=2)",
+        "value": "73.46",
+        "split": null
+      },
+      {
+        "metric": "Acc (F5C blocks=3)",
+        "value": "78.27",
+        "split": null
+      },
+      {
+        "metric": "WF1 (F5C blocks=3)",
+        "value": "73.22",
+        "split": null
+      },
+      {
+        "metric": "Acc",
+        "value": "62.90",
+        "split": null
+      },
+      {
+        "metric": "WF1",
+        "value": "62.52",
+        "split": null
+      },
+      {
+        "metric": "Average EPE",
+        "value": "1.048",
+        "split": null
+      }
+    ]
+  }
+}

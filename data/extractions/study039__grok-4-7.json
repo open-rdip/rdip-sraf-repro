@@ -1,0 +1,190 @@
+{
+  "study_id": "study039",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study039/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:04:31.238580+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 5,
+    "methods": 14,
+    "evaluation_results": 10
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.005"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.0001"
+      },
+      {
+        "name": "decay_strategy",
+        "value": "step decay, or cosine decay with a warm-up"
+      },
+      {
+        "name": "lambda",
+        "value": "0"
+      },
+      {
+        "name": "\u03bb",
+        "value": "2.5"
+      },
+      {
+        "name": "a",
+        "value": "11.04"
+      },
+      {
+        "name": "b",
+        "value": "-0.59"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Kinetics-400",
+        "version": null
+      },
+      {
+        "name": "Kinetics-600",
+        "version": null
+      },
+      {
+        "name": "FineGym",
+        "version": null
+      },
+      {
+        "name": "MPII Cooking 2",
+        "version": null
+      },
+      {
+        "name": "HMDB-51",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "fine-tuning",
+        "description": "Fine-tune models pretrained on Kinetics-400 or Kinetics-600 as the baseline; learning rate, weight decay, decay strategy, and number of sampled video frames per video follow those specified in the original papers."
+      },
+      {
+        "name": "additional frame for motion prompts",
+        "description": "The layer requires an additional frame so that the resulting motion prompts have exactly the same length as the original input video frames (Eq. 4)."
+      },
+      {
+        "name": "regularization",
+        "description": "Regularization term (lambda) removes unnecessary motion details, producing smoother and cleaner attention maps; compared without regularization (lambda=0) and with regularization (lambda=2.5) on the uneven bar action from FineGym."
+      },
+      {
+        "name": "learnable slope and shift",
+        "description": "Analysis of the learning process of learnable parameters a and b versus the number of fine-tuning epochs."
+      },
+      {
+        "name": "TimeSformer fine-tuning with motion prompts",
+        "description": "Fine-tune TimeSformer pretrained on Kinetics-600 on FineGym using motion prompts."
+      },
+      {
+        "name": "TimeSformer",
+        "description": "Backbone used to visualize pairs of learned a and b from top performers per dataset, and used as an evaluation backbone."
+      },
+      {
+        "name": "SlowFast",
+        "description": "Backbone evaluated with three variants by adding motion prompts into the slow-only stream, fast-only stream, and both slow and fast streams. SlowFast-f denotes the fast-only stream."
+      },
+      {
+        "name": "C2D",
+        "description": "Backbone used for evaluations on HMDB-51, FineGym, and MPII Cooking 2."
+      },
+      {
+        "name": "I3D",
+        "description": "Backbone used for evaluations on HMDB-51, FineGym, and MPII Cooking 2."
+      },
+      {
+        "name": "X3D",
+        "description": "Backbone used for evaluations on HMDB-51, FineGym, and MPII Cooking 2."
+      },
+      {
+        "name": "motion prompts",
+        "description": "Motion prompts added to backbone streams; using them on the SlowFast fast-only stream results in a steeper slope compared to the SlowFast slow-only stream. K600 denotes use of a Kinetics-600 pretrained model."
+      },
+      {
+        "name": "VMPs",
+        "description": "Approach showing consistent improvements across various recent action recognition backbones; benefits depend on the backbone's ability to handle motion."
+      },
+      {
+        "name": "attention variation regularization",
+        "description": "Regularization term that reduces noise in generated attention maps, especially in the background, producing smoother and cleaner attention maps and improving motion prompt quality."
+      },
+      {
+        "name": "motion prompt layer",
+        "description": "Layer integrated with a TimeSformer backbone for generic action recognition, guided by only two learnable parameters to highlight visual contents of interest and capture short-term dynamics."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance gain",
+        "value": "0.8%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 mean average precision improvement (SlowFast, MPII Cooking 2)",
+        "value": "3.9%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 mean average precision improvement (C2D, MPII Cooking 2)",
+        "value": "2.1%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 mean average precision improvement (I3D, MPII Cooking 2)",
+        "value": "3.0%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 mean average precision improvement (X3D, MPII Cooking 2)",
+        "value": "0.7%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 mean average precision improvement (TimeSformer, MPII Cooking 2)",
+        "value": "6.0%",
+        "split": null
+      },
+      {
+        "metric": "Top-1 accuracy increase (TimeSformer, FineGym)",
+        "value": "0.8%",
+        "split": null
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "1.5%",
+        "split": "split 1"
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "1.2%",
+        "split": "split 2"
+      },
+      {
+        "metric": "accuracy improvement",
+        "value": "0.7%",
+        "split": "split 3"
+      }
+    ]
+  }
+}

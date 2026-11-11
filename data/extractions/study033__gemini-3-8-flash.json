@@ -1,0 +1,240 @@
+{
+  "study_id": "study033",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study033/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:37:28.806384+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 5,
+    "methods": 16,
+    "evaluation_results": 19
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "merging blocks convolution kernel size",
+        "value": "1\u00d71"
+      },
+      {
+        "name": "EI/EIadown Layer Count",
+        "value": "1"
+      },
+      {
+        "name": "EI/EIadown Channel",
+        "value": "64"
+      },
+      {
+        "name": "EI/EIadown Kernel",
+        "value": "7"
+      },
+      {
+        "name": "EI/EIadown Stride",
+        "value": "1"
+      },
+      {
+        "name": "padding",
+        "value": "reflection padding"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "SYN",
+        "version": null
+      },
+      {
+        "name": "CL1",
+        "version": null
+      },
+      {
+        "name": "CL2",
+        "version": null
+      },
+      {
+        "name": "DeepLesion",
+        "version": null
+      },
+      {
+        "name": "vertebrae localization and identification dataset from Spineweb",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "UNet",
+        "description": "Baseline method using a publicly available implementation in PyTorch."
+      },
+      {
+        "name": "cGANMAR",
+        "description": "Model trained with the official code of Pix2Pix, identical to Pix2Pix at the backend."
+      },
+      {
+        "name": "Pix2Pix",
+        "description": "Backend implementation used for training cGANMAR."
+      },
+      {
+        "name": "CNNMAR",
+        "description": "Supervised approach to metal artifact reduction (MAR) used to synthesize metal artifacts by simulating the beam hardening effect and Poisson noise during synthesis of polychromatic projection data."
+      },
+      {
+        "name": "LI",
+        "description": "Conventional method widely used for metal artifact reduction (MAR)"
+      },
+      {
+        "name": "NMAR",
+        "description": "Conventional method widely used for metal artifact reduction (MAR)"
+      },
+      {
+        "name": "CycleGAN",
+        "description": "Unsupervised state-of-the-art approach to image-to-image translation problems"
+      },
+      {
+        "name": "DIP",
+        "description": "Unsupervised state-of-the-art approach to image-to-image translation problems"
+      },
+      {
+        "name": "MUNIT",
+        "description": "Unsupervised state-of-the-art approach to image-to-image translation problems"
+      },
+      {
+        "name": "DRIT",
+        "description": "Unsupervised state-of-the-art approach to image-to-image translation problems"
+      },
+      {
+        "name": "artifact pyramid decoding (APD)",
+        "description": "A design that merges artifact code and content code at different scales across a feature pyramid during decoding of an artifact-affected image"
+      },
+      {
+        "name": "upsampling",
+        "description": "Interpolation followed by a convolutional layer to avoid the checkerboard effect"
+      },
+      {
+        "name": "ADN",
+        "description": "A framework that learns encoders and decoders to achieve artifact disentanglement without requiring paired data, optimized via an objective function combining adversarial losses, an artifact consistency loss, a reconstruction loss, and a self-reduction loss."
+      },
+      {
+        "name": "artifact consistency loss",
+        "description": "Addresses anatomical preciseness defined as Lart=EI,Ia[||(xa\u2212\u02c6x)\u2212(\u02c6ya\u2212y)||1], requiring xa and \u02c6x to be anatomically close based on the observation that the difference between xa and \u02c6x and the difference between \u02c6ya and y should be close due to using the same artifact."
+      },
+      {
+        "name": "Self-Reduction Loss",
+        "description": "Regularizes artifact reduction with regression Lself=EI,Ia[||\u02dcy\u2212y||1] by first adding artifacts to y to create \u02c6ya and then removing artifacts from \u02c6ya to produce \u02dcy."
+      },
+      {
+        "name": "Ours",
+        "description": "Proposed method"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "LI PSNR",
+        "value": "32.0",
+        "split": null
+      },
+      {
+        "metric": "LI SSIM",
+        "value": "91.0",
+        "split": null
+      },
+      {
+        "metric": "NMAR PSNR",
+        "value": "32.1",
+        "split": null
+      },
+      {
+        "metric": "NMAR SSIM",
+        "value": "91.2",
+        "split": null
+      },
+      {
+        "metric": "CNNMAR PSNR",
+        "value": "32.5",
+        "split": null
+      },
+      {
+        "metric": "CNNMAR SSIM",
+        "value": "91.4",
+        "split": null
+      },
+      {
+        "metric": "UNet PSNR",
+        "value": "34.8",
+        "split": null
+      },
+      {
+        "metric": "UNet SSIM",
+        "value": "93.1",
+        "split": null
+      },
+      {
+        "metric": "cGANMAR PSNR",
+        "value": "34.1",
+        "split": null
+      },
+      {
+        "metric": "cGANMAR SSIM",
+        "value": "93.4",
+        "split": null
+      },
+      {
+        "metric": "CycleGAN PSNR",
+        "value": "30.8",
+        "split": null
+      },
+      {
+        "metric": "CycleGAN SSIM",
+        "value": "72.9",
+        "split": null
+      },
+      {
+        "metric": "DIP PSNR",
+        "value": "26.4",
+        "split": null
+      },
+      {
+        "metric": "DIP SSIM",
+        "value": "75.9",
+        "split": null
+      },
+      {
+        "metric": "MUNIT PSNR",
+        "value": "14.9",
+        "split": null
+      },
+      {
+        "metric": "MUNIT SSIM",
+        "value": "7.5",
+        "split": null
+      },
+      {
+        "metric": "DRIT PSNR",
+        "value": "25.6",
+        "split": null
+      },
+      {
+        "metric": "DRIT SSIM",
+        "value": "79.7",
+        "split": null
+      },
+      {
+        "metric": "Ours PSNR",
+        "value": "33.6",
+        "split": null
+      }
+    ]
+  }
+}

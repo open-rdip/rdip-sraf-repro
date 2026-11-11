@@ -1,0 +1,140 @@
+{
+  "study_id": "study040",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study040/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:46:00.719947+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 6,
+    "datasets": 4,
+    "methods": 14,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      2021
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "L",
+        "value": "{3,4,5}"
+      },
+      {
+        "name": "D",
+        "value": "{128,256}"
+      },
+      {
+        "name": "F",
+        "value": "2D"
+      },
+      {
+        "name": "max_epochs",
+        "value": "20 (ablation on Electricity and Traffic)"
+      },
+      {
+        "name": "model_variant",
+        "value": "PatchTST/64"
+      },
+      {
+        "name": "instance_normalization",
+        "value": "with_and_without"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ILI",
+        "version": null
+      },
+      {
+        "name": "Electricity",
+        "version": null
+      },
+      {
+        "name": "Traffic",
+        "version": null
+      },
+      {
+        "name": "Weather",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Hyperparameter exploration",
+        "description": "Examined 6 different sets of model hyper-parameters with L in {3,4,5}, D in {128,256}, and inner-layer size F set to 2D."
+      },
+      {
+        "name": "PatchTST/42",
+        "description": "Supervised PatchTST variant evaluated with ablations on patching and channel-independence."
+      },
+      {
+        "name": "Patching",
+        "description": "Model input patching; when combined with channel-independence, achieves the best results, especially on larger datasets (Weather, Traffic, Electricity)."
+      },
+      {
+        "name": "Channel-independence",
+        "description": "Processes channels independently; combined with patching yields robust improvements across datasets, including ILI."
+      },
+      {
+        "name": "Original TST (Zerveas et al., 2021)",
+        "description": "Baseline Transformer for time series without patching or channel-independence."
+      },
+      {
+        "name": "Instance Normalization",
+        "description": "Normalization technique commonly used in time series models to improve forecasting performance."
+      },
+      {
+        "name": "Supervised PatchTST",
+        "description": "Transformer-based time series forecasting model evaluated for multivariate long-term forecasting, used with and without instance normalization (+in/-in)."
+      },
+      {
+        "name": "Instance normalization (+in / -in)",
+        "description": "A normalization variant applied within PatchTST; results reported comparing inclusion (+in) versus exclusion (-in) of instance normalization."
+      },
+      {
+        "name": "Transfer learning (pre-train on Electricity, fine-tune on other datasets)",
+        "description": "Model pre-trained on the Electricity dataset and transferred to six other datasets; except for the Traffic dataset, the number of time series used in pre-training exceeds that used during fine-tuning."
+      },
+      {
+        "name": "PatchTST",
+        "description": "Self-supervised PatchTST for multivariate forecasting; evaluated with variants PatchTST/64 and PatchTST/42."
+      },
+      {
+        "name": "FEDformer",
+        "description": "Transformer-based baseline method reported for comparison."
+      },
+      {
+        "name": "P+CI",
+        "description": "Baseline method reported in the comparison table."
+      },
+      {
+        "name": "CI",
+        "description": "Baseline method reported in the comparison table."
+      },
+      {
+        "name": "P",
+        "description": "Baseline method reported in the comparison table."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "MSE",
+        "value": "0.152",
+        "split": null
+      },
+      {
+        "metric": "MAE",
+        "value": "0.199",
+        "split": null
+      }
+    ]
+  }
+}

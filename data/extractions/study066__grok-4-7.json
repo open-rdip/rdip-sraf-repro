@@ -1,0 +1,375 @@
+{
+  "study_id": "study066",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study066/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:56:49.301257+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 21,
+    "datasets": 4,
+    "methods": 26,
+    "evaluation_results": 26
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GluonCV",
+        "version": null
+      },
+      {
+        "name": "MXNet",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "split_attention_setting",
+        "value": "2s1x64d"
+      },
+      {
+        "name": "radix",
+        "value": "2"
+      },
+      {
+        "name": "cardinality",
+        "value": "1"
+      },
+      {
+        "name": "network_width",
+        "value": "64"
+      },
+      {
+        "name": "crop_size_ResNeSt-200",
+        "value": "256\u00d7256"
+      },
+      {
+        "name": "crop_size_ResNeSt-269",
+        "value": "320\u00d7320"
+      },
+      {
+        "name": "inference_mini_batch_size",
+        "value": "16"
+      },
+      {
+        "name": "dropout_ratio",
+        "value": "0.2"
+      },
+      {
+        "name": "epochs",
+        "value": "270"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.0001"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "learning_rate_schedule",
+        "value": "cosine"
+      },
+      {
+        "name": "warmup_epochs",
+        "value": "5"
+      },
+      {
+        "name": "mini_batch_size_ResNeSt-50",
+        "value": "8192"
+      },
+      {
+        "name": "mini_batch_size_ResNeSt-101",
+        "value": "4096"
+      },
+      {
+        "name": "mini_batch_size_ResNeSt-200_269",
+        "value": "2048"
+      },
+      {
+        "name": "eval_resize_factor",
+        "value": "1/0.875 of the crop size"
+      },
+      {
+        "name": "inference mini-batch size",
+        "value": "16"
+      },
+      {
+        "name": "image_scale_augmentation_short_size",
+        "value": "randomly from 640 to 800"
+      },
+      {
+        "name": "hyperparameters_and_detection_heads",
+        "value": "default settings"
+      },
+      {
+        "name": "inference",
+        "value": "single scale"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "MS-COCO",
+        "version": "2017"
+      },
+      {
+        "name": "COCO-2017",
+        "version": null
+      },
+      {
+        "name": "COCO test-dev",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Split-Attention",
+        "description": "Employed with the 2s1x64d setting so blocks scale to deeper networks with a trade-off between speed, accuracy and memory usage."
+      },
+      {
+        "name": "ResNet-D residual block",
+        "description": "0s represents the use of a standard residual block as in ResNet-D."
+      },
+      {
+        "name": "Bicubic upsampling",
+        "description": "Bicubic upsampling strategy is employed for input-size greater than 256."
+      },
+      {
+        "name": "evaluation preprocessing",
+        "description": "Resize each image to 1/0.875 of the crop size along the short edge and apply a center crop."
+      },
+      {
+        "name": "ResNeSt",
+        "description": "Based on the ResNet-D model."
+      },
+      {
+        "name": "Mixup training",
+        "description": "Improves the accuracy of ResNetD-50 from 78.31% to 79.15%."
+      },
+      {
+        "name": "Auto augmentation",
+        "description": "Further improves the accuracy by 0.26%."
+      },
+      {
+        "name": "Split-Attention block",
+        "description": "Employed to form a ResNeSt-50-fast model, boosting accuracy to 80.64%."
+      },
+      {
+        "name": "average downsampling",
+        "description": "In the ResNeSt-fast setting, effective average downsampling is applied prior to the 3x3 convolution to avoid introducing extra computational costs."
+      },
+      {
+        "name": "downsampling after convolution",
+        "description": "With the downsampling operation moved after the convolutional layer, ResNeSt-50 achieves 81.13% accuracy."
+      },
+      {
+        "name": "radix vs cardinality ablation",
+        "description": "Ablation on ResNeSt variants with different radix and cardinality, adjusting network width so computational cost remains similar to ResNet variants. s denotes radix, x cardinality, and d network width; 0s represents a standard residual block as in ResNet-D."
+      },
+      {
+        "name": "data sharding",
+        "description": "Distributed training with data evenly partitioned across GPUs; each mini-batch is sampled from the corresponding shard without replacement"
+      },
+      {
+        "name": "standard image transformations",
+        "description": "Random size crop, random horizontal flip, color jittering, and changing the lighting"
+      },
+      {
+        "name": "RGB normalization",
+        "description": "Image data RGB-normalized via mean/standard-deviation rescaling"
+      },
+      {
+        "name": "mixup",
+        "description": "Each sample from the current mini-batch is mixed with its reversed order sample"
+      },
+      {
+        "name": "Batch Normalization",
+        "description": "Used after each convolutional layer before ReLU activation"
+      },
+      {
+        "name": "Kaiming Initialization",
+        "description": "Network weights initialized using Kaiming Initialization"
+      },
+      {
+        "name": "dropout",
+        "description": "Drop layer inserted before the final classification layer with dropout ratio 0.2"
+      },
+      {
+        "name": "cosine learning rate schedule with warm-up",
+        "description": "Training for 270 epochs using a cosine learning rate schedule with the first 5 epochs reserved for warm-up"
+      },
+      {
+        "name": "evaluation resize",
+        "description": "For evaluation, each image is first resized to 1/0.875 of the crop size"
+      },
+      {
+        "name": "Transfer learning object detection",
+        "description": "Detection models trained on the COCO-2017 training set (118k images) and evaluated on the COCO-2017 validation set (5k images, minival) using the standard COCO AP metric."
+      },
+      {
+        "name": "FPN",
+        "description": "Used to train all models"
+      },
+      {
+        "name": "synchronized batch normalization",
+        "description": "Used to train all models"
+      },
+      {
+        "name": "image scale augmentation",
+        "description": "Short size of an image is picked randomly from 640 to 800"
+      },
+      {
+        "name": "Faster-RCNN",
+        "description": "Experiments conducted using Detectron2, replacing vanilla ResNet backbones with ResNeSt and using default hyper-parameters and detection heads"
+      },
+      {
+        "name": "Cascade-RCNN",
+        "description": "Experiments conducted using Detectron2 with ResNeSt backbones; Cascade-RCNN with ResNeSt101 deformable trained using 1x learning rate schedule"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "ResNetD-50 accuracy",
+        "value": "78.31%",
+        "split": null
+      },
+      {
+        "metric": "ResNetD-50 accuracy with mixup",
+        "value": "79.15%",
+        "split": null
+      },
+      {
+        "metric": "accuracy improvement from auto augmentation",
+        "value": "0.26%",
+        "split": null
+      },
+      {
+        "metric": "ResNeSt-50-fast accuracy",
+        "value": "80.64%",
+        "split": null
+      },
+      {
+        "metric": "ResNeSt-50 accuracy",
+        "value": "81.13%",
+        "split": null
+      },
+      {
+        "metric": "ResNeSt-101 acc(%)",
+        "value": "83.0",
+        "split": null
+      },
+      {
+        "metric": "ResNeSt-101 img/sec",
+        "value": "291.3",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B4 acc(%)",
+        "value": "83.0",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B4 img/sec",
+        "value": "149.3",
+        "split": null
+      },
+      {
+        "metric": "SENet-154 acc(%)",
+        "value": "82.7",
+        "split": null
+      },
+      {
+        "metric": "SENet-154 img/sec",
+        "value": "133.8",
+        "split": null
+      },
+      {
+        "metric": "NASNet-A acc(%)",
+        "value": "82.7",
+        "split": null
+      },
+      {
+        "metric": "NASNet-A img/sec",
+        "value": "103.3",
+        "split": null
+      },
+      {
+        "metric": "AmoebaNet-A acc(%)",
+        "value": "82.8",
+        "split": null
+      },
+      {
+        "metric": "ResNeSt-200 acc(%)",
+        "value": "83.9",
+        "split": null
+      },
+      {
+        "metric": "ResNeSt-200 img/sec",
+        "value": "105.3",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B5 acc(%)",
+        "value": "83.7",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B5 img/sec",
+        "value": "84.3",
+        "split": null
+      },
+      {
+        "metric": "AmoebaNet-C acc(%)",
+        "value": "83.5",
+        "split": null
+      },
+      {
+        "metric": "ResNeSt-269 acc(%)",
+        "value": "84.5",
+        "split": null
+      },
+      {
+        "metric": "ResNeSt-269 img/sec",
+        "value": "51.2",
+        "split": null
+      },
+      {
+        "metric": "GPipe acc(%)",
+        "value": "84.3",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B7 acc(%)",
+        "value": "84.4",
+        "split": null
+      },
+      {
+        "metric": "EfficientNet-B7 img/sec",
+        "value": "34.9",
+        "split": null
+      },
+      {
+        "metric": "COCO AP",
+        "value": "around 3% boost in mean average precision",
+        "split": "validation"
+      },
+      {
+        "metric": "box mAP",
+        "value": "49.2",
+        "split": "test-dev"
+      }
+    ]
+  }
+}

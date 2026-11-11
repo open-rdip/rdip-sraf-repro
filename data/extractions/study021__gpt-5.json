@@ -1,0 +1,294 @@
+{
+  "study_id": "study021",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study021/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:22:55.454055+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 14,
+    "datasets": 2,
+    "methods": 27,
+    "evaluation_results": 18
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of samples N",
+        "value": null
+      },
+      {
+        "name": "value of R in Lmatch",
+        "value": null
+      },
+      {
+        "name": "loss_function",
+        "value": "matching loss and orthogonal loss together"
+      },
+      {
+        "name": "backbone",
+        "value": "Motifs"
+      },
+      {
+        "name": "initial_learning_rate",
+        "value": "0.01"
+      },
+      {
+        "name": "optimizer",
+        "value": "SGD"
+      },
+      {
+        "name": "batch_size",
+        "value": "3"
+      },
+      {
+        "name": "num_gpus",
+        "value": "1"
+      },
+      {
+        "name": "training_steps",
+        "value": "60000"
+      },
+      {
+        "name": "alpha",
+        "value": "10"
+      },
+      {
+        "name": "N",
+        "value": "20"
+      },
+      {
+        "name": "Rare",
+        "value": "1.0"
+      },
+      {
+        "name": "d",
+        "value": "128"
+      },
+      {
+        "name": "R",
+        "value": "varied; small or large values decreased performance due to overfitting or insufficient variance learning"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "GQA",
+        "version": null
+      },
+      {
+        "name": "VG",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DPL",
+        "description": "A model-agnostic approach that improves baseline models by understanding semantic diversity of predicates and effectively integrating them during the inference phase."
+      },
+      {
+        "name": "TDE",
+        "description": "An unbiased SGG method that performs unbiased prediction from biased training."
+      },
+      {
+        "name": "DLFE",
+        "description": "An unbiased SGG method that performs unbiased prediction from biased training."
+      },
+      {
+        "name": "re-balancing methods",
+        "description": "Recent re-balancing methods that have been extensively researched."
+      },
+      {
+        "name": "Motifs baseline model",
+        "description": "Baseline model used for the PredCls task on the VG dataset."
+      },
+      {
+        "name": "Motifs",
+        "description": "Baseline model producing a predicted distribution over predicate classes; on a test triplet <banana, hanging from, tree> it predicted 'on' with highest confidence followed by 'in', and on <sign, attached to, pole> it mostly focused on 'on'."
+      },
+      {
+        "name": "Motifs + re-weighting",
+        "description": "Motifs model with re-weighting; on a test triplet <banana, hanging from, tree> it predicted 'on' with highest confidence followed by 'in', and on <sign, attached to, pole> it mostly focused on 'on'."
+      },
+      {
+        "name": "Motifs + DPL",
+        "description": "Motifs model augmented with DPL; on a test triplet <banana, hanging from, tree> it predicted 'growing on' with highest confidence followed by 'hanging from', and on <sign, attached to, pole> it identified predicates like 'mounted on' and 'attached to', providing relatively unbiased predictions with fine-grained predicates."
+      },
+      {
+        "name": "Orthogonal Loss",
+        "description": "An additional loss applied to maintain orthogonality among predicate distributions around prototypes, preventing unintended overlap caused by the symmetry of normal distributions."
+      },
+      {
+        "name": "Sample-relation feature matching process",
+        "description": "Matches generated samples with relation features to determine which semantics a predicate feature exhibits, learning both the range representable by each predicate and estimating specific associated semantics."
+      },
+      {
+        "name": "Semantic Diversity-aware Prototype-based Learning (DPL)",
+        "description": "Prototype-based learning approach modeling semantic diversity of relation features; uses matching loss with orthogonal loss to learn appropriate variance and reduce overlap; analysis shows Euclidean distance prediction biases toward the predicate 'on'."
+      },
+      {
+        "name": "Motifs backbone",
+        "description": "Scene graph model used as the backbone for DPL to obtain representations of prototypes and relation features."
+      },
+      {
+        "name": "IMP",
+        "description": "Baseline model IMP used for comparison on the VG dataset."
+      },
+      {
+        "name": "Object detector pretraining",
+        "description": "Pretrained a new object detector for use on the GQA dataset."
+      },
+      {
+        "name": "Semantic Diversity aware Prototype-based Learning (DPL) framework",
+        "description": "End-to-end framework that obtains relation features from each subject\u2013object pair, creates a prototype for each predicate, trains features to approach their class prototype, and performs unbiased inference."
+      },
+      {
+        "name": "Prototype-based biased training",
+        "description": "Training objective that encourages each relation feature to move closer to the prototype of its ground-truth predicate class."
+      },
+      {
+        "name": "Semantic Diversity Learning",
+        "description": "A component aimed at improving semantic diversity during training (details referenced as Sec 3.3)."
+      },
+      {
+        "name": "Unbiased Inference",
+        "description": "Inference procedure designed to reduce bias in predictions (referenced as Sec 3.4)."
+      },
+      {
+        "name": "Sample Matching Loss",
+        "description": "Loss used to align relation features with their corresponding prototypes."
+      },
+      {
+        "name": "Cross Entropy Loss",
+        "description": "Standard classification loss applied during training."
+      },
+      {
+        "name": "Faster R-CNN",
+        "description": "Backbone detector used to obtain relation features from subject\u2013object pairs."
+      },
+      {
+        "name": "L2 normalization of prototypes",
+        "description": "Prototypes are normalized to unit L2 norm (||ci||2 = 1) to keep them in a consistent range."
+      },
+      {
+        "name": "Softmax over negative squared Euclidean distance with scaling and bias",
+        "description": "Class probability computed as Softmax(\u2212a||z \u2212 ci||^2 + b), where z is the relation feature and ci is the i-th class prototype."
+      },
+      {
+        "name": "Case 1",
+        "description": "Head classes assigned larger N and tail classes smaller N, with equal total N per predicate across cases; led to higher F@K due to a greater difference in R@K than in mR@K."
+      },
+      {
+        "name": "Case 2",
+        "description": "Tail classes assigned larger N and head classes smaller N, with equal total N per predicate across cases; resulted in lower F@K compared to Case 1."
+      },
+      {
+        "name": "Lortho",
+        "description": "Component whose influence on performance improvement is evaluated."
+      },
+      {
+        "name": "Lmatch",
+        "description": "Component whose influence on performance improvement is evaluated."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP (GQA object detector)",
+        "value": "25.33",
+        "split": null
+      },
+      {
+        "metric": "R@50 (PredCls, VG, IMP)",
+        "value": "61.1",
+        "split": null
+      },
+      {
+        "metric": "R@100 (PredCls, VG, IMP)",
+        "value": "63.1",
+        "split": null
+      },
+      {
+        "metric": "mR@50 (PredCls, VG, IMP)",
+        "value": "11.0",
+        "split": null
+      },
+      {
+        "metric": "mR@100 (PredCls, VG, IMP)",
+        "value": "11.8",
+        "split": null
+      },
+      {
+        "metric": "F@50 (PredCls, VG, IMP)",
+        "value": "18.6",
+        "split": null
+      },
+      {
+        "metric": "F@100 (PredCls, VG, IMP)",
+        "value": "19.9",
+        "split": null
+      },
+      {
+        "metric": "R@50 (SGCls, VG, IMP)",
+        "value": "37.4",
+        "split": null
+      },
+      {
+        "metric": "R@100 (SGCls, VG, IMP)",
+        "value": "38.3",
+        "split": null
+      },
+      {
+        "metric": "mR@50 (SGCls, VG, IMP)",
+        "value": "6.4",
+        "split": null
+      },
+      {
+        "metric": "mR@100 (SGCls, VG, IMP)",
+        "value": "6.7",
+        "split": null
+      },
+      {
+        "metric": "F@50 (SGCls, VG, IMP)",
+        "value": "10.9",
+        "split": null
+      },
+      {
+        "metric": "F@100 (SGCls, VG, IMP)",
+        "value": "11.4",
+        "split": null
+      },
+      {
+        "metric": "R@50 (SGDet, VG, IMP)",
+        "value": "23.6",
+        "split": null
+      },
+      {
+        "metric": "R@100 (SGDet, VG, IMP)",
+        "value": "28.7",
+        "split": null
+      },
+      {
+        "metric": "mR@50 (SGDet, VG, IMP)",
+        "value": "3.3",
+        "split": null
+      },
+      {
+        "metric": "mR@100 (SGDet, VG, IMP)",
+        "value": "4.1",
+        "split": null
+      },
+      {
+        "metric": "F@50 / 100 (SGDet, VG, IMP)",
+        "value": "5.8",
+        "split": null
+      }
+    ]
+  }
+}

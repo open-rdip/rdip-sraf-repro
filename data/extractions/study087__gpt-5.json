@@ -1,0 +1,151 @@
+{
+  "study_id": "study087",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study087/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:25:29.821632+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 10,
+    "datasets": 2,
+    "methods": 18,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "correlation_feature_channels_max",
+        "value": "128"
+      },
+      {
+        "name": "visual_feature_channels_max",
+        "value": "2048"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning_rate_classification_loss",
+        "value": "10\u22124"
+      },
+      {
+        "name": "learning_rate_segmentation_loss",
+        "value": "10\u22123"
+      },
+      {
+        "name": "training_episodes",
+        "value": "1-way 1-shot"
+      },
+      {
+        "name": "occurrence_threshold_delta",
+        "value": "0.5"
+      },
+      {
+        "name": "attention_heads",
+        "value": "8"
+      },
+      {
+        "name": "correlation_pyramid_levels",
+        "value": "3"
+      },
+      {
+        "name": "backbone_frozen",
+        "value": "true"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pascal-5i",
+        "version": null
+      },
+      {
+        "name": "COCO-20i",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ASNet",
+        "description": "Few-shot segmentation method casting the task as correlation feature transform; processes correlation features with smaller channel dimensions (at most 128) and employs global self-attention in the ASNet layer; trained and evaluated under the FS-S setup in the reported tables."
+      },
+      {
+        "name": "HSNet",
+        "description": "Few-shot segmentation method that also casts the task as correlation feature transform; compared against ASNet."
+      },
+      {
+        "name": "Global self-attention",
+        "description": "Used in the ASNet layer; ablation replaces it with local self-attention to assess its effect."
+      },
+      {
+        "name": "Local self-attention",
+        "description": "Ablation variant replacing global self-attention in the ASNet layer to analyze architectural impact."
+      },
+      {
+        "name": "FS-S setup",
+        "description": "Few-shot segmentation setup used to train and evaluate ASNet in the referenced tables."
+      },
+      {
+        "name": "FS-CS setup",
+        "description": "Proposed few-shot class segmentation setup; not used for the ASNet results in the referenced tables."
+      },
+      {
+        "name": "ASNet with global self-attention",
+        "description": "Baseline ASNet layer using global self-attention for learning global context of feature correlations; shows higher segmentation mIoU while maintaining classification exact ratio."
+      },
+      {
+        "name": "ASNet with local self-attention",
+        "description": "Variant replacing global self-attention with local self-attention; compatible in classification exact ratio but significantly degrades segmentation mIoU."
+      },
+      {
+        "name": "Attention masking prior (Eq. 11)",
+        "description": "Ablation removing attention masking to verify its effectiveness; results indicate the masking prior is effective."
+      },
+      {
+        "name": "Multi-layer fusion path",
+        "description": "Fusion of outputs from multi-layer correlations to estimate class occurrence and segmentation masks; found crucial for precise estimation."
+      },
+      {
+        "name": "Spatial average pooling + element-wise addition",
+        "description": "Replacement of multi-layer fusion with spatial average pooling over support dimensions followed by element-wise addition; performs worse than multi-layer fusion."
+      },
+      {
+        "name": "Episodic sampling (N-way K-shot)",
+        "description": "Within each fold, construct an episode by randomly sampling a query and an N-way K-shot support set that annotates the query with N-way class labels and an (N+1)-way segmentation mask in the context of the support set."
+      },
+      {
+        "name": "Class-split cross-validation",
+        "description": "Each dataset is split into four mutually disjoint class sets and cross-validated."
+      },
+      {
+        "name": "iFSL learning framework",
+        "description": "Investigated on the FS-CS task."
+      },
+      {
+        "name": "FS-CS",
+        "description": "Few-shot class selection task; benchmark constructed from Pascal-5i and COCO-20i images and splits."
+      },
+      {
+        "name": "iFSL framework",
+        "description": "Framework evaluated for the FS-CS task; details not provided in the passage."
+      },
+      {
+        "name": "ResNet50 backbone",
+        "description": "Pretrained on ImageNet and frozen during training."
+      },
+      {
+        "name": "ResNet-101 backbone",
+        "description": "Pretrained on ImageNet and frozen during training."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

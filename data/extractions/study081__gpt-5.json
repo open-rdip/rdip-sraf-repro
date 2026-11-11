@@ -1,0 +1,100 @@
+{
+  "study_id": "study081",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study081/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:21:05.146708+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 1,
+    "methods": 13,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "NVIDIA Tacotron2 implementation",
+        "version": null
+      },
+      {
+        "name": "Python",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "LJ Speech corpus (American English)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Tacotron2 (attention-based TTS)",
+        "description": "Trained five Tacotron2 models on incremental partitions of the LJ Speech corpus using the NVIDIA implementation with default hyperparameters except a reduced batch size of 32."
+      },
+      {
+        "name": "Tacotron2-based architectures",
+        "description": "Neural TTS systems trained from scratch using Tacotron2-style architectures."
+      },
+      {
+        "name": "Montreal Forced Aligner",
+        "description": "Used to obtain forced alignments from limited Indigenous language training data to enable more data-efficient TTS training."
+      },
+      {
+        "name": "Mel-cepstral distance measure",
+        "description": "Objective speech quality assessment using mel-cepstral distance"
+      },
+      {
+        "name": "Gaussian Mixture Models for Spoken Speaker Identification",
+        "description": "Speaker identification using Gaussian Mixture Models with a Python implementation"
+      },
+      {
+        "name": "Tacotron2",
+        "description": "Autoregressive TTS model trained with a root mean square error objective over predicted acoustic features; prone to attention failures such as skipping or repeating words, especially when relying on teacher forcing during training."
+      },
+      {
+        "name": "Teacher forcing",
+        "description": "Training technique where ground-truth inputs are provided; may lead the model to copy inputs or disregard text, resulting in a degenerate attention network that fails at inference when teacher forcing is unavailable."
+      },
+      {
+        "name": "Attention guidance",
+        "description": "Training approach that guides the attention network to improve alignment and reduce attention failures."
+      },
+      {
+        "name": "CTC loss for monotonic alignment",
+        "description": "Using a CTC loss to respect the monotonic alignment between text inputs and speech outputs."
+      },
+      {
+        "name": "Increase reduction factor (dropout on autoregressive frames)",
+        "description": "Increasing the reduction factor applies dropout to autoregressive frames, encouraging the model to rely more on the attention network than teacher forcing inputs, with potential risk to synthesis quality."
+      },
+      {
+        "name": "FastSpeech2",
+        "description": "Mentioned as related work; no details provided in the passage."
+      },
+      {
+        "name": "FastSpeech2 architecture modification",
+        "description": "Modified base FastSpeech2 to match the Light-Speech model (Luo et al., 2021): removed the energy adaptor, replaced convolutional layers in the encoder, decoder, and variance predictors with depthwise separable convolutions, and matched encoder/decoder convolutional kernel sizes to Luo et al. (2021), reducing parameters from 35M to 11.6M."
+      },
+      {
+        "name": "Model comparison: Tacotron2 vs FastSpeech2 with constrained data",
+        "description": "Compared Tacotron2 (TT2) and FastSpeech2 (FS2) models trained with varying amounts of data (15m, 30m, 1hr, 3hr, 5hr, 10hr, Full) using MUSHRA listening tests."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

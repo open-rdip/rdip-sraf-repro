@@ -1,0 +1,244 @@
+{
+  "study_id": "study007",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study007/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:09:11.527235+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 31,
+    "datasets": 2,
+    "methods": 19,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Tile coding software (Sutton and Barto, 2018, Chapter 10.1)",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "n",
+        "value": "varied"
+      },
+      {
+        "name": "beta",
+        "value": "varied"
+      },
+      {
+        "name": "projection_radius",
+        "value": "infinity"
+      },
+      {
+        "name": "behavior_policy",
+        "value": "fixed"
+      },
+      {
+        "name": "target_policy",
+        "value": "\u03c0(dashed|s) = 0"
+      },
+      {
+        "name": "gamma",
+        "value": "0.99"
+      },
+      {
+        "name": "i(s)",
+        "value": "1"
+      },
+      {
+        "name": "target_policy_temperature_tau",
+        "value": "0.01"
+      },
+      {
+        "name": "behavior_epsilon",
+        "value": "0.95"
+      },
+      {
+        "name": "behavior_temperature_tau",
+        "value": "1"
+      },
+      {
+        "name": "evaluation_interval_steps",
+        "value": "5000"
+      },
+      {
+        "name": "evaluation_episodes",
+        "value": "10"
+      },
+      {
+        "name": "feature_vector_dimension",
+        "value": "1024"
+      },
+      {
+        "name": "truncation_length",
+        "value": "varied"
+      },
+      {
+        "name": "learning_rate_alpha",
+        "value": "tuned from \u039b maximizing evaluation"
+      },
+      {
+        "name": "n (trace truncation length)",
+        "value": "around 700 (suggested by Lemma 3); experiments used n much smaller than this"
+      },
+      {
+        "name": "\u03c0(dashed|s)",
+        "value": "{0, 0.02, 0.04, 0.06, 0.08, 0.1}"
+      },
+      {
+        "name": "mixture_policy_prob_behavior",
+        "value": "0.9"
+      },
+      {
+        "name": "mixture_policy_prob_softmax",
+        "value": "0.1"
+      },
+      {
+        "name": "softmax_temperature",
+        "value": "1"
+      },
+      {
+        "name": "episode_max_steps",
+        "value": "1000"
+      },
+      {
+        "name": "reward_per_step",
+        "value": "+1"
+      },
+      {
+        "name": "discount_factor",
+        "value": "0.99"
+      },
+      {
+        "name": "reward",
+        "value": "0"
+      },
+      {
+        "name": "initial_state_distribution",
+        "value": "uniform over 7 states"
+      },
+      {
+        "name": "behavior_policy_mu(solid|s)",
+        "value": "1 7"
+      },
+      {
+        "name": "behavior_policy_mu(dashed|s)",
+        "value": "6 7"
+      },
+      {
+        "name": "target_policy_pi(dashed|s)",
+        "value": "0 to 0.1"
+      },
+      {
+        "name": "function_approximation",
+        "value": "linear"
+      },
+      {
+        "name": "truncation length n",
+        "value": "\u221e"
+      },
+      {
+        "name": "learning rate \u03b1",
+        "value": "tuned from \u039b maximizing the evaluation return at the end of the training"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CartPole",
+        "version": null
+      },
+      {
+        "name": "Baird\u2019s counterexample",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Algorithm 4",
+        "description": "Benchmarked in the control setting with a fixed behavior policy; evaluated with different selections of n and its \u03b2-variant; projection radius set to infinity; when n = \u221e, implementation becomes a straightforward extension of ETD(0) to control."
+      },
+      {
+        "name": "ETD(0)",
+        "description": "Known to fail under the target policy \u03c0(dashed|s)=0 as observed by Sutton and Barto (2018); serves as the limiting case of Algorithm 4 when n = \u221e in control."
+      },
+      {
+        "name": "Truncation (prediction setting)",
+        "description": "Applied to reduce variance in prediction experiments; suggested as promising though not guaranteed to maintain convergence."
+      },
+      {
+        "name": "Tile coding",
+        "description": "Map four-dimensional observations (velocity, acceleration, angular velocity, angular acceleration) to a 1024-dimensional binary feature vector."
+      },
+      {
+        "name": "Linear function approximation",
+        "description": "Apply linear function approximation on tile-coded features."
+      },
+      {
+        "name": "Algorithm 4 \u03b2-variant",
+        "description": "Variant of Algorithm 4 using parameter \u03b2 (cf. (9))."
+      },
+      {
+        "name": "Target policy: softmax",
+        "description": "Softmax policy with temperature \u03c4 = 0.01."
+      },
+      {
+        "name": "Behavior policy: \u03b5-softmax",
+        "description": "With probability 0.95 select an action uniformly at random; otherwise select according to a softmax policy with temperature \u03c4 = 1."
+      },
+      {
+        "name": "Evaluation protocol",
+        "description": "Evaluate every 5\u00d710^3 steps for 10 episodes and report averaged undiscounted episodic return."
+      },
+      {
+        "name": "Hard truncation of traces",
+        "description": "Applies hard truncation to ensure Ft,n is always bounded; offers empirical and theoretical advantages, enabling finite-sample analysis for prediction and control."
+      },
+      {
+        "name": "Soft truncation (Hallak et al., 2016)",
+        "description": "A prior truncation approach used for comparison; the paper reports empirical advantages of hard truncation over this method."
+      },
+      {
+        "name": "Mixture behavior policy",
+        "description": "At each time step, with probability 0.9 use the behavior policy from the prediction setting and with probability 0.1 use a softmax policy with temperature 1."
+      },
+      {
+        "name": "Softmax policy",
+        "description": "A stochastic policy that samples actions according to a softmax distribution with temperature 1."
+      },
+      {
+        "name": "Truncated Emphatic TD methods",
+        "description": "Temporal-difference learning methods with truncated emphatic weighting evaluated in the CartPole domain."
+      },
+      {
+        "name": "Prediction setting",
+        "description": "Behavior policy \u00b5(solid|s) = 1 7 and \u00b5(dashed|s) = 6 7; target policy \u03c0(dashed|s) varied from 0 to 0.1; \u03b3 = 0.99; reward always 0; initial state sampled uniformly from 7 states."
+      },
+      {
+        "name": "Control with a fixed behavior policy",
+        "description": "Control experiments on Baird\u2019s counterexample under a fixed behavior policy."
+      },
+      {
+        "name": "Control with a changing behavior policy",
+        "description": "Control experiments on Baird\u2019s counterexample under a changing behavior policy."
+      },
+      {
+        "name": "off-policy expected SARSA without followon trace",
+        "description": "Agent trained with n=0 (naive off-policy expected SARSA without followon trace)."
+      },
+      {
+        "name": "truncation length study",
+        "description": "Investigated effect of different truncation lengths n in off-policy training, including n=\u221e (no truncation), n=0, n=2, and n=4."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

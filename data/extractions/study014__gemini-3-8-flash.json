@@ -1,0 +1,78 @@
+{
+  "study_id": "study014",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study014/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:15:07.087190+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 1,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "ScanNet",
+        "version": null
+      },
+      {
+        "name": "SUN RGB-D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "H3DNet",
+        "description": "Consists of three modules: the first computes dense pointwise descriptors to predict geometric primitives and their latent features, the second converts geometric primitives into object proposals, and it defines a parametric distance function to evaluate distance between an object BB and primitives."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP (0.25)",
+        "value": "67.2%",
+        "split": null
+      },
+      {
+        "metric": "relative improvement",
+        "value": "8.5%",
+        "split": null
+      },
+      {
+        "metric": "relative improvement from state-of-the-art methods",
+        "value": "8.5%",
+        "split": null
+      },
+      {
+        "metric": "relative improvement from the same set of state-of-the-art methods",
+        "value": "2.4%",
+        "split": null
+      },
+      {
+        "metric": "mAP on window",
+        "value": "51.9",
+        "split": null
+      },
+      {
+        "metric": "mAP on door",
+        "value": "61.0",
+        "split": null
+      },
+      {
+        "metric": "mAP on shower-curtain",
+        "value": "75.3",
+        "split": null
+      }
+    ]
+  }
+}

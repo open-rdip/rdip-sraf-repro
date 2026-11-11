@@ -1,0 +1,1410 @@
+{
+ "study_id": "study009",
+ "model": "opus",
+ "slug": "claude-opus-5-5",
+ "n_passages": 5,
+ "n_passages_ok": 5,
+ "failures": [],
+ "records": [
+  {
+   "field": "hyperparameters",
+   "value": "one",
+   "evidence": "66.9AP for adding only one de- convolution module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "COCO2017",
+   "evidence": "Ablation study of HigherHRNet\u2019s components on COCO2017 val dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet",
+   "evidence": "Ablation study of HigherHRNet\u2019s components on COCO2017 val dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "HRNet",
+   "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "multi-resolution supervision",
+   "evidence": "MSR: multi-resolution supervision.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "feature concatenation",
+   "evidence": "feature concat.: feature concatenation.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "residual blocks",
+   "evidence": "res. blocks: residual blocks.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "deconvolution module",
+   "evidence": "add a sequence of two deconvolution modules after HRNet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "scale-aware prediction",
+   "evidence": "scale-aware prediction is important",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "57.1",
+   "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "61.0",
+   "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.5",
+   "evidence": "the performance decreases to 66.5AP from 66.9AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.9",
+   "evidence": "the performance decreases to 66.5AP from 66.9AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "+0.1",
+   "evidence": "The improvement for medium person is marginal ( +0.1AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "\u22120.8",
+   "evidence": "formance of large person ( \u22120.8AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "one",
+   "evidence": "we only use one deconvo- lution module by default for the COCO dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "COCO",
+   "evidence": "we only use one deconvo- lution module by default for the COCO dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet",
+   "evidence": "HigherHRNet gain breakdown.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "HRNet",
+   "evidence": "HRNet (Fig- ure 3 (a)) achieves a baseline of 64.4AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "deconvolution module",
+   "evidence": "We perform ablation study on the effect of adding deconvolution module to gener- ate higher resolution heatmaps.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.4",
+   "evidence": "HRNet (Fig- ure 3 (a)) achieves a baseline of 64.4AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.0",
+   "evidence": "By adding one de- convolution module, the model achieves 66.0AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.6",
+   "evidence": "66.0AP which is 1.6AP better",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "\u22120.8",
+   "evidence": "in the per- formance of large person ( \u22120.8AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "512",
+   "evidence": "512 67.1 61.5 76.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "640",
+   "evidence": "640 68.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "768",
+   "evidence": "768 68.5 64.9 73.8",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "4",
+   "evidence": "We add 4 residual blocks in the deconvolution module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "COCO",
+   "evidence": "Ablation study of HigherHRNet with different training image size on COCO2017 val dataset.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet",
+   "evidence": "Ablation study of HigherHRNet with different backbone onCOCO2017 val dataset.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "HRNet-W32",
+   "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "HRNet-W40",
+   "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "HRNet-W48",
+   "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "heatmap aggregation strategy",
+   "evidence": "applying heatmap aggrega- tion strategy achieves 66.9AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "residual blocks in deconvolution module",
+   "evidence": "We add 4 residual blocks in the deconvolution module",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "67.1",
+   "evidence": "512 67.1 61.5 76.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "61.5",
+   "evidence": "512 67.1 61.5 76.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "76.1",
+   "evidence": "512 67.1 61.5 76.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "68.5",
+   "evidence": "640 68.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.3",
+   "evidence": "640 68.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "75.3",
+   "evidence": "640 68.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "68.5",
+   "evidence": "768 68.5 64.9 73.8",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.9",
+   "evidence": "768 68.5 64.9 73.8",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "73.8",
+   "evidence": "768 68.5 64.9 73.8",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "68.5",
+   "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.3",
+   "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "75.3",
+   "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "69.2",
+   "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.9",
+   "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "75.9",
+   "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "69.9",
+   "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "65.4",
+   "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "76.4",
+   "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.3",
+   "evidence": "ure 3 (c) ( 66.3AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.9",
+   "evidence": "heatmap aggrega- tion strategy achieves 66.9AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "+1.7",
+   "evidence": "large person ( +1.7AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "67.1",
+   "evidence": "our best model achieves 67.1AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "640\u00d7640",
+   "evidence": "we train HigherHRNet with 640\u00d7640 and768\u00d7768",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "768\u00d7768",
+   "evidence": "we train HigherHRNet with 640\u00d7640 and768\u00d7768",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "32",
+   "evidence": "HRNet-W32 (1/4 resolution feature map has 32 channels)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "5:1:4",
+   "evidence": "The training, validation and testing subset are split in proportional to 5:1:4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "CrowdPose",
+   "evidence": "The CrowdPose [24] dataset consists of 20,000 images, containing about 80,000 persons.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "COCO",
+   "evidence": "Crowd- Pose has more crowded scenes than the COCO",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet",
+   "evidence": "we train HigherHRNet with 640\u00d7640 and768\u00d7768",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "HRNet-W32",
+   "evidence": "we use HRNet-W32 (1/4 resolution feature map has 32 channels) as backbone",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "HRNet-W40",
+   "evidence": "larger back- bones HRNet-W40 and HRNet-W48",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "HRNet-W48",
+   "evidence": "larger back- bones HRNet-W40 and HRNet-W48",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.4",
+   "evidence": "by increasing training image size to640, there is a signi\ufb01cant gain of 1.4AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "640\u00d7640",
+   "evidence": "we use a crop size of 640\u00d7640for both training and testing",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "CrowdPose",
+   "evidence": "We train our best HigherHRNet-W48 model on the CrowdPose train and val setand report performance on the testset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "COCO",
+   "evidence": "All training pa- rameters follow COCO exactly",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet-W48",
+   "evidence": "We train our best HigherHRNet-W48 model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "SPPE",
+   "evidence": "HigherHRNet outperforms SPPE [24] by 0.5 in APH",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "multi-scale test",
+   "evidence": "Even without multi-scale test",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.6 AP",
+   "evidence": "outperforms na \u00a8\u0131ve top-down methods by a large margin of 6.6 AP",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.6 AP",
+   "evidence": "by a healthy margin of 1.6 AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "+1.8 AP",
+   "evidence": "APM(+1.8 AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "+1.5 AP",
+   "evidence": "APH (+1.5 AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.5",
+   "evidence": "HigherHRNet outperforms SPPE [24] by 0.5 in APH",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "claude-opus-5-5",
+   "passage_index": 4
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "hyperparameters": {
+    "n": 11,
+    "has_evidence": 11,
+    "span_found": 11,
+    "value_in_span": 11,
+    "grounded": 11
+   },
+   "datasets": {
+    "n": 7,
+    "has_evidence": 7,
+    "span_found": 7,
+    "value_in_span": 7,
+    "grounded": 7
+   },
+   "methods": {
+    "n": 23,
+    "has_evidence": 23,
+    "span_found": 23,
+    "value_in_span": 21,
+    "grounded": 21
+   },
+   "evaluation_results": {
+    "n": 38,
+    "has_evidence": 38,
+    "span_found": 37,
+    "value_in_span": 38,
+    "grounded": 37
+   }
+  },
+  "total": {
+   "n": 79,
+   "has_evidence": 79,
+   "span_found": 78,
+   "value_in_span": 77,
+   "grounded": 76
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "number of deconvolution modules",
+      "value": "one",
+      "evidence": "66.9AP for adding only one de- convolution module"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "COCO2017",
+      "version": null,
+      "evidence": "Ablation study of HigherHRNet\u2019s components on COCO2017 val dataset"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HigherHRNet",
+      "evidence": "Ablation study of HigherHRNet\u2019s components on COCO2017 val dataset"
+     },
+     {
+      "name": "HRNet",
+      "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet"
+     },
+     {
+      "name": "multi-resolution supervision",
+      "evidence": "MSR: multi-resolution supervision."
+     },
+     {
+      "name": "feature concatenation",
+      "evidence": "feature concat.: feature concatenation."
+     },
+     {
+      "name": "residual blocks",
+      "evidence": "res. blocks: residual blocks."
+     },
+     {
+      "name": "deconvolution module",
+      "evidence": "add a sequence of two deconvolution modules after HRNet"
+     },
+     {
+      "name": "scale-aware prediction",
+      "evidence": "scale-aware prediction is important"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "APM",
+      "value": "57.1",
+      "split": "val",
+      "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet"
+     },
+     {
+      "metric": "APM",
+      "value": "61.0",
+      "split": "val",
+      "evidence": "APMis improved from 57.1for HRNet to 61.0for HigherHRNet"
+     },
+     {
+      "metric": "AP",
+      "value": "66.5",
+      "split": "val",
+      "evidence": "the performance decreases to 66.5AP from 66.9AP"
+     },
+     {
+      "metric": "AP",
+      "value": "66.9",
+      "split": "val",
+      "evidence": "the performance decreases to 66.5AP from 66.9AP"
+     },
+     {
+      "metric": "AP medium person change",
+      "value": "+0.1",
+      "split": "val",
+      "evidence": "The improvement for medium person is marginal ( +0.1AP)"
+     },
+     {
+      "metric": "AP large person change",
+      "value": "\u22120.8",
+      "split": "val",
+      "evidence": "formance of large person ( \u22120.8AP)"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "number of deconvolution modules",
+      "value": "one",
+      "evidence": "we only use one deconvo- lution module by default for the COCO dataset"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "COCO",
+      "version": null,
+      "evidence": "we only use one deconvo- lution module by default for the COCO dataset"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HigherHRNet",
+      "evidence": "HigherHRNet gain breakdown."
+     },
+     {
+      "name": "HRNet",
+      "evidence": "HRNet (Fig- ure 3 (a)) achieves a baseline of 64.4AP"
+     },
+     {
+      "name": "deconvolution module",
+      "evidence": "We perform ablation study on the effect of adding deconvolution module to gener- ate higher resolution heatmaps."
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP",
+      "value": "64.4",
+      "split": null,
+      "evidence": "HRNet (Fig- ure 3 (a)) achieves a baseline of 64.4AP"
+     },
+     {
+      "metric": "AP",
+      "value": "66.0",
+      "split": null,
+      "evidence": "By adding one de- convolution module, the model achieves 66.0AP"
+     },
+     {
+      "metric": "AP",
+      "value": "1.6",
+      "split": null,
+      "evidence": "66.0AP which is 1.6AP better"
+     },
+     {
+      "metric": "AP (large person)",
+      "value": "\u22120.8",
+      "split": null,
+      "evidence": "in the per- formance of large person ( \u22120.8AP)"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "training image size",
+      "value": "512",
+      "evidence": "512 67.1 61.5 76.1"
+     },
+     {
+      "name": "training image size",
+      "value": "640",
+      "evidence": "640 68.5 64.3 75.3"
+     },
+     {
+      "name": "training image size",
+      "value": "768",
+      "evidence": "768 68.5 64.9 73.8"
+     },
+     {
+      "name": "number of residual blocks in deconvolution module",
+      "value": "4",
+      "evidence": "We add 4 residual blocks in the deconvolution module"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "COCO",
+      "version": "2017",
+      "evidence": "Ablation study of HigherHRNet with different training image size on COCO2017 val dataset."
+     }
+    ],
+    "methods": [
+     {
+      "name": "HigherHRNet",
+      "evidence": "Ablation study of HigherHRNet with different backbone onCOCO2017 val dataset."
+     },
+     {
+      "name": "HRNet-W32",
+      "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3"
+     },
+     {
+      "name": "HRNet-W40",
+      "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9"
+     },
+     {
+      "name": "HRNet-W48",
+      "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4"
+     },
+     {
+      "name": "heatmap aggregation strategy",
+      "evidence": "applying heatmap aggrega- tion strategy achieves 66.9AP"
+     },
+     {
+      "name": "residual blocks in deconvolution module",
+      "evidence": "We add 4 residual blocks in the deconvolution module"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP (training size 512)",
+      "value": "67.1",
+      "split": "val",
+      "evidence": "512 67.1 61.5 76.1"
+     },
+     {
+      "metric": "APM (training size 512)",
+      "value": "61.5",
+      "split": "val",
+      "evidence": "512 67.1 61.5 76.1"
+     },
+     {
+      "metric": "APL (training size 512)",
+      "value": "76.1",
+      "split": "val",
+      "evidence": "512 67.1 61.5 76.1"
+     },
+     {
+      "metric": "AP (training size 640)",
+      "value": "68.5",
+      "split": "val",
+      "evidence": "640 68.5 64.3 75.3"
+     },
+     {
+      "metric": "APM (training size 640)",
+      "value": "64.3",
+      "split": "val",
+      "evidence": "640 68.5 64.3 75.3"
+     },
+     {
+      "metric": "APL (training size 640)",
+      "value": "75.3",
+      "split": "val",
+      "evidence": "640 68.5 64.3 75.3"
+     },
+     {
+      "metric": "AP (training size 768)",
+      "value": "68.5",
+      "split": "val",
+      "evidence": "768 68.5 64.9 73.8"
+     },
+     {
+      "metric": "APM (training size 768)",
+      "value": "64.9",
+      "split": "val",
+      "evidence": "768 68.5 64.9 73.8"
+     },
+     {
+      "metric": "APL (training size 768)",
+      "value": "73.8",
+      "split": "val",
+      "evidence": "768 68.5 64.9 73.8"
+     },
+     {
+      "metric": "AP (HRNet-W32 backbone)",
+      "value": "68.5",
+      "split": "val",
+      "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3"
+     },
+     {
+      "metric": "APM (HRNet-W32 backbone)",
+      "value": "64.3",
+      "split": "val",
+      "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3"
+     },
+     {
+      "metric": "APL (HRNet-W32 backbone)",
+      "value": "75.3",
+      "split": "val",
+      "evidence": "HRNet-W32 28.6 47.868.5 64.3 75.3"
+     },
+     {
+      "metric": "AP (HRNet-W40 backbone)",
+      "value": "69.2",
+      "split": "val",
+      "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9"
+     },
+     {
+      "metric": "APM (HRNet-W40 backbone)",
+      "value": "64.9",
+      "split": "val",
+      "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9"
+     },
+     {
+      "metric": "APL (HRNet-W40 backbone)",
+      "value": "75.9",
+      "split": "val",
+      "evidence": "HRNet-W40 44.5 110.769.2 64.9 75.9"
+     },
+     {
+      "metric": "AP (HRNet-W48 backbone)",
+      "value": "69.9",
+      "split": "val",
+      "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4"
+     },
+     {
+      "metric": "APM (HRNet-W48 backbone)",
+      "value": "65.4",
+      "split": "val",
+      "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4"
+     },
+     {
+      "metric": "APL (HRNet-W48 backbone)",
+      "value": "76.4",
+      "split": "val",
+      "evidence": "HRNet-W48 63.8 154.369.9 65.4 76.4"
+     },
+     {
+      "metric": "AP (highest resolution heatmaps only, Figure 3 (c))",
+      "value": "66.3",
+      "split": null,
+      "evidence": "ure 3 (c) ( 66.3AP)"
+     },
+     {
+      "metric": "AP (heatmap aggregation)",
+      "value": "66.9",
+      "split": null,
+      "evidence": "heatmap aggrega- tion strategy achieves 66.9AP"
+     },
+     {
+      "metric": "AP gain on large persons from heatmap aggregation",
+      "value": "+1.7",
+      "split": null,
+      "evidence": "large person ( +1.7AP)"
+     },
+     {
+      "metric": "AP (best model with extra residual blocks)",
+      "value": "67.1",
+      "split": null,
+      "evidence": "our best model achieves 67.1AP"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "training image size",
+      "value": "640\u00d7640",
+      "evidence": "we train HigherHRNet with 640\u00d7640 and768\u00d7768"
+     },
+     {
+      "name": "training image size",
+      "value": "768\u00d7768",
+      "evidence": "we train HigherHRNet with 640\u00d7640 and768\u00d7768"
+     },
+     {
+      "name": "backbone 1/4 resolution feature map channels",
+      "value": "32",
+      "evidence": "HRNet-W32 (1/4 resolution feature map has 32 channels)"
+     },
+     {
+      "name": "CrowdPose train/validation/test split ratio",
+      "value": "5:1:4",
+      "evidence": "The training, validation and testing subset are split in proportional to 5:1:4"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "CrowdPose",
+      "version": null,
+      "evidence": "The CrowdPose [24] dataset consists of 20,000 images, containing about 80,000 persons."
+     },
+     {
+      "name": "COCO",
+      "version": null,
+      "evidence": "Crowd- Pose has more crowded scenes than the COCO"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HigherHRNet",
+      "evidence": "we train HigherHRNet with 640\u00d7640 and768\u00d7768"
+     },
+     {
+      "name": "HRNet-W32",
+      "evidence": "we use HRNet-W32 (1/4 resolution feature map has 32 channels) as backbone"
+     },
+     {
+      "name": "HRNet-W40",
+      "evidence": "larger back- bones HRNet-W40 and HRNet-W48"
+     },
+     {
+      "name": "HRNet-W48",
+      "evidence": "larger back- bones HRNet-W40 and HRNet-W48"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP gain (training image size 640)",
+      "value": "1.4",
+      "split": null,
+      "evidence": "by increasing training image size to640, there is a signi\ufb01cant gain of 1.4AP"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "crop size",
+      "value": "640\u00d7640",
+      "evidence": "we use a crop size of 640\u00d7640for both training and testing"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "CrowdPose",
+      "version": null,
+      "evidence": "We train our best HigherHRNet-W48 model on the CrowdPose train and val setand report performance on the testset"
+     },
+     {
+      "name": "COCO",
+      "version": null,
+      "evidence": "All training pa- rameters follow COCO exactly"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HigherHRNet-W48",
+      "evidence": "We train our best HigherHRNet-W48 model"
+     },
+     {
+      "name": "SPPE",
+      "evidence": "HigherHRNet outperforms SPPE [24] by 0.5 in APH"
+     },
+     {
+      "name": "multi-scale test",
+      "evidence": "Even without multi-scale test"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP improvement over na\u00efve top-down methods",
+      "value": "6.6 AP",
+      "split": "test",
+      "evidence": "outperforms na \u00a8\u0131ve top-down methods by a large margin of 6.6 AP"
+     },
+     {
+      "metric": "AP improvement over previous best method [24]",
+      "value": "1.6 AP",
+      "split": "test",
+      "evidence": "by a healthy margin of 1.6 AP"
+     },
+     {
+      "metric": "APM improvement",
+      "value": "+1.8 AP",
+      "split": "test",
+      "evidence": "APM(+1.8 AP)"
+     },
+     {
+      "metric": "APH improvement",
+      "value": "+1.5 AP",
+      "split": "test",
+      "evidence": "APH (+1.5 AP)"
+     },
+     {
+      "metric": "APH improvement over SPPE without multi-scale test",
+      "value": "0.5",
+      "split": "test",
+      "evidence": "HigherHRNet outperforms SPPE [24] by 0.5 in APH"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+{
+  "study_id": "study077",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study077/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:20:16.447884+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 6,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "GSM8K",
+        "version": null
+      },
+      {
+        "name": "MBPP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "AF LOW",
+        "description": "A novel framework for automated workflow optimization that leverages Monte Carlo Tree Search and code-represented workflows to navigate the vast search space of possible workflows efficiently."
+      },
+      {
+        "name": "Monte Carlo Tree Search",
+        "description": "Used to navigate the vast search space of possible workflows efficiently."
+      },
+      {
+        "name": "AFLOW",
+        "description": "Automates the design of agentic workflows using an execution model to obtain feedback to identify cost-effective workflows"
+      },
+      {
+        "name": "operators",
+        "description": "Human-designed effort introduced to enhance search efficiency"
+      },
+      {
+        "name": "ScEnsemble",
+        "description": "An ensemble operator (sc_ensemble) combining multiple solutions."
+      },
+      {
+        "name": "Programmer operator",
+        "description": "An operator used as a verification/review step to verify solutions against the problem."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance",
+        "value": "93.1%",
+        "split": null
+      },
+      {
+        "metric": "Score",
+        "value": "0.8591",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "study_id": "study093",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study093/ext/grok-4-7",
+  "extracted_at": "2026-11-09T22:00:49.841268+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 6,
+    "methods": 12,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "GeForce RTX 3090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "fusion_transformer_layers",
+        "value": "4"
+      },
+      {
+        "name": "image_size",
+        "value": "224 \u00d7 224"
+      },
+      {
+        "name": "lr",
+        "value": "1\u00d710\u22124"
+      },
+      {
+        "name": "batch_size",
+        "value": "128"
+      },
+      {
+        "name": "epochs",
+        "value": "100"
+      },
+      {
+        "name": "warmup_epochs",
+        "value": "10"
+      },
+      {
+        "name": "learnable_answer_prompt_vectors",
+        "value": "10"
+      },
+      {
+        "name": "learnable_question_prompt_vectors",
+        "value": "10"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "MedMINIST",
+        "version": null
+      },
+      {
+        "name": "VQA-RAD",
+        "version": null
+      },
+      {
+        "name": "SLAKE",
+        "version": null
+      },
+      {
+        "name": "ROCO",
+        "version": null
+      },
+      {
+        "name": "MedICaT",
+        "version": null
+      },
+      {
+        "name": "MIMIC-CXR",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "visual encoder",
+        "description": "ResNet50"
+      },
+      {
+        "name": "text encoder",
+        "description": "PubmedBERT, initialized from PubmedBERT during pre-training"
+      },
+      {
+        "name": "fusion module",
+        "description": "4 transformer layers, trained from scratch"
+      },
+      {
+        "name": "vision encoder training",
+        "description": "trained from scratch"
+      },
+      {
+        "name": "optimizer",
+        "description": "AdamW"
+      },
+      {
+        "name": "warmup",
+        "description": "The first 10 epochs are set for warming up"
+      },
+      {
+        "name": "PMC-CLIP VQA adaptation",
+        "description": "Most pre-trained parameters are maintained, including visual encoder, text encoder, and fusion. Image and question are fed into PMC-CLIP; the fusion-module output embedding is used to compute similarity with each answer candidate encoded by the text encoder."
+      },
+      {
+        "name": "ResNet50",
+        "description": "Visual encoder."
+      },
+      {
+        "name": "PubmedBERT",
+        "description": "Text encoder."
+      },
+      {
+        "name": "learnable prompt vectors",
+        "description": "10 learnable answer prompt vectors and 10 learnable question prompt vectors in the text encoder."
+      },
+      {
+        "name": "Image-Text Retrieval",
+        "description": "ITR contains both image-to-text (I2T) and text-to-image (T2I) retrieval. PMC-CLIP is trained on different datasets and evaluated on the ROCO testset after explicit deduplication, resembling zero-shot evaluation. 2,000 image-text pairs are sampled from ROCO's testset for evaluation."
+      },
+      {
+        "name": "Classification",
+        "description": "The model is finetuned for downstream image classification tasks. MedMINIST contains 12 tasks covering primary biomedical image modalities, including Colon Pathology, Dermatoscope, and Retinal."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

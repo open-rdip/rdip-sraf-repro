@@ -1,0 +1,229 @@
+{
+  "study_id": "study031",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study031/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:43:51.679537+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 5,
+    "methods": 16,
+    "evaluation_results": 16
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "TensorFlow",
+        "version": "2"
+      },
+      {
+        "name": "Scikit-learn",
+        "version": null
+      },
+      {
+        "name": "Label Studio",
+        "version": "free version"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "split ratio (training/validation/test)",
+        "value": "70%/10%/20%"
+      },
+      {
+        "name": "horizontal and vertical flip probability",
+        "value": "30%"
+      },
+      {
+        "name": "random brightness, contrast, and saturation adjustment probability",
+        "value": "10%"
+      },
+      {
+        "name": "aspect ratio (experiment over all classes)",
+        "value": "1:2"
+      },
+      {
+        "name": "image size multiple",
+        "value": "32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Plankton anomaly dataset",
+        "version": null
+      },
+      {
+        "name": "Dataset published in [48] (OK samples)",
+        "version": null
+      },
+      {
+        "name": "Unpublished 2021 Ut\u00f6 data (NOK samples)",
+        "version": "2021"
+      },
+      {
+        "name": "Derived dataset for object detection based experiment",
+        "version": null
+      },
+      {
+        "name": "Phytoplankton anomaly dataset (Ut\u00f6 IFCB, Baltic Sea, February\u2013August 2021, nine classes)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Autoencoder-based approach",
+        "description": "Framework combining five autoencoder types, six pairs of convolutional layers, six feature extractors and four one-class classifiers; the optimal combination was selected by maximal F1 score."
+      },
+      {
+        "name": "ROC curve construction",
+        "description": "Specificity plotted on the x-axis and recall on the y-axis for each threshold step, where each point corresponds to one threshold setting."
+      },
+      {
+        "name": "ConvM2-VQVAE1 with HardNet1 feature extractor",
+        "description": "Best-performing combination of autoencoder and feature extractor for anomaly detection across all plankton species (classifier not stated in the passage)."
+      },
+      {
+        "name": "Manual annotation with Label Studio",
+        "description": "Over 6200 samples across 9 plankton classes were manually annotated and expert-validated using the free version of Label Studio; the dataset is available in COCO and YOLO formats."
+      },
+      {
+        "name": "Plankton anomaly dataset construction",
+        "description": "The anomaly dataset was derived from the annotated images used to train the classifier. OK samples came from the dataset in [48] and NOK samples came from the unpublished 2021 Ut\u00f6 data."
+      },
+      {
+        "name": "ConvM2-VQVAE1",
+        "description": "Autoencoder model that achieved the best results for anomaly detection across plankton species"
+      },
+      {
+        "name": "HardNet1",
+        "description": "Feature extractor used in the best-performing anomaly detection model combination"
+      },
+      {
+        "name": "Local Outlier Factor",
+        "description": "One-class classifier used in the best-performing anomaly detection model combination"
+      },
+      {
+        "name": "Per-species optimal anomaly detection models",
+        "description": "Selecting the optimal anomaly detection model for each plankton species separately, giving approximately 10% better detection results than a single model trained on all datasets"
+      },
+      {
+        "name": "Object detection experiment",
+        "description": "Model trained in a supervised manner on a derived dataset; training and validation sets contain no clean samples, while the test set contains a balanced number of anomalies and clean images."
+      },
+      {
+        "name": "Image resizing",
+        "description": "Samples resized to multiples of 32 while preserving the major aspect ratio of each class (1:4 for five classes, 1:1 for three classes, 1:2 for one class); 1:2 chosen as a compromise for the experiment over all classes."
+      },
+      {
+        "name": "Data augmentation",
+        "description": "Horizontal and vertical flip with probability 30%; random brightness, contrast, and saturation adjustment with probability 10%."
+      },
+      {
+        "name": "Autoencoder experiment",
+        "description": "Autoencoder-based approach for phytoplankton parasite detection, compared against the object detection experiment using true positive and true negative predictions against ground truth labels."
+      },
+      {
+        "name": "Imaging FlowCytobot (IFCB) sampling",
+        "description": "IFCB deployed at Ut\u00f6 Atmospheric and Marine Research Station takes a 5 ml sample nearly every 20 minutes, triggered by chlorophyll a detection to target phytoplankton cells; water pumped from a ~5 m deep inlet 250 m offshore."
+      },
+      {
+        "name": "Phytoplankton classification",
+        "description": "Ut\u00f6 IFCB phytoplankton data can be classified near real-time into 50 different classes as described by [48]."
+      },
+      {
+        "name": "Manual annotation of putative parasite infection images",
+        "description": "Experts manually annotated putative parasite infection images using Ut\u00f6 data collected between February\u2013August 2021, covering nine phytoplankton classes selected for importance during spring or summer blooms in the Baltic Sea."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Pauliella (first column, metric name not stated in passage)",
+        "value": "0.75",
+        "split": null
+      },
+      {
+        "metric": "Pauliella (second column, metric name not stated in passage)",
+        "value": "0.69",
+        "split": null
+      },
+      {
+        "metric": "Pauliella (third column, metric name not stated in passage)",
+        "value": "0.83",
+        "split": null
+      },
+      {
+        "metric": "Peridiniella Chain (first column, metric name not stated in passage)",
+        "value": "0.67",
+        "split": null
+      },
+      {
+        "metric": "Peridiniella Chain (second column, metric name not stated in passage)",
+        "value": "0.50",
+        "split": null
+      },
+      {
+        "metric": "Peridiniella Chain (third column, metric name not stated in passage)",
+        "value": "1",
+        "split": null
+      },
+      {
+        "metric": "Peridiniella Single (first column, metric name not stated in passage)",
+        "value": "0.67",
+        "split": null
+      },
+      {
+        "metric": "Peridiniella Single (second column, metric name not stated in passage)",
+        "value": "0.50",
+        "split": null
+      },
+      {
+        "metric": "Peridiniella Single (third column, metric name not stated in passage)",
+        "value": "1",
+        "split": null
+      },
+      {
+        "metric": "Skeletonem (first column, metric name not stated in passage)",
+        "value": "0.53",
+        "split": null
+      },
+      {
+        "metric": "Skeletonem (second column, metric name not stated in passage)",
+        "value": "0.48",
+        "split": null
+      },
+      {
+        "metric": "Skeletonem (third column, metric name not stated in passage)",
+        "value": "0.61",
+        "split": null
+      },
+      {
+        "metric": "Average (first column, metric name not stated in passage)",
+        "value": "0.62",
+        "split": null
+      },
+      {
+        "metric": "Average (second column, metric name not stated in passage)",
+        "value": "0.53",
+        "split": null
+      },
+      {
+        "metric": "Average (third column, metric name not stated in passage)",
+        "value": "0.75",
+        "split": null
+      },
+      {
+        "metric": "F1 score (highest over all model, feature extractor and classifier combinations)",
+        "value": "0.75",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "study_id": "study085",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study085/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:23:52.282370+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 20,
+    "datasets": 1,
+    "methods": 32,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "RDKit",
+        "version": null
+      },
+      {
+        "name": "gnina",
+        "version": null
+      },
+      {
+        "name": "libmolgrid",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "variability_factor_lambda_var",
+        "value": null
+      },
+      {
+        "name": "bias_factor_lambda_bias",
+        "value": null
+      },
+      {
+        "name": "num_samples_per_protein_ligand_complex_test",
+        "value": "100"
+      },
+      {
+        "name": "grid_side_length_angstroms",
+        "value": "23.5"
+      },
+      {
+        "name": "grid_resolution_angstroms",
+        "value": "0.5"
+      },
+      {
+        "name": "grid_dimensions",
+        "value": "NX=NY=NZ=48"
+      },
+      {
+        "name": "optimizer",
+        "value": "RMSprop"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1e\u22125"
+      },
+      {
+        "name": "iterations",
+        "value": "1000000"
+      },
+      {
+        "name": "batch_size",
+        "value": "8"
+      },
+      {
+        "name": "loss_weight_lambda_recon",
+        "value": "4.0"
+      },
+      {
+        "name": "loss_weight_lambda_KL_initial",
+        "value": "0.1"
+      },
+      {
+        "name": "loss_weight_lambda_steric",
+        "value": "1.0"
+      },
+      {
+        "name": "kl_weight_ramp_target",
+        "value": "1.6"
+      },
+      {
+        "name": "kl_weight_ramp_start_iteration",
+        "value": "450000"
+      },
+      {
+        "name": "kl_weight_ramp_duration_iterations",
+        "value": "200000"
+      },
+      {
+        "name": "conv_kernel_size",
+        "value": "3x3x3"
+      },
+      {
+        "name": "pooling",
+        "value": "2x2x2 AvgPool"
+      },
+      {
+        "name": "activation",
+        "value": "ReLU"
+      },
+      {
+        "name": "cross_validation_split",
+        "value": "first"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CrossDocked2020",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Posterior sampling",
+        "description": "Sample latent vector from the posterior distribution conditioned on the reference molecule and combine with conditional receptor encoding before decoding ligand density."
+      },
+      {
+        "name": "Prior sampling",
+        "description": "Sample latent vector from a standard normal prior distribution and combine with conditional receptor encoding before decoding ligand density."
+      },
+      {
+        "name": "Variability factor (\u03bbvar)",
+        "description": "Scales the standard deviation during latent sampling as z' = \u03bc + \u03bbvar \u03c3 z to control sampling variance."
+      },
+      {
+        "name": "Bias factor (\u03bbbias) interpolation",
+        "description": "Linearly interpolates between prior and posterior parameters: \u03bcinterp = \u03bbbias \u03bcpost + (1 \u2212 \u03bbbias) \u03bcprior; \u03c3interp = \u03bbbias \u03c3post + (1 \u2212 \u03bbbias) \u03c3prior; sample z' = \u03bcinterp + \u03c3interp z to control bias towards the reference molecule."
+      },
+      {
+        "name": "Validity metric",
+        "description": "A generated molecule is valid if it consists of a single connected fragment."
+      },
+      {
+        "name": "Atom typing",
+        "description": "Assigns atom type vectors to molecules prior to grid conversion."
+      },
+      {
+        "name": "Atom gridding",
+        "description": "Converts molecules to an atomic density grid representation."
+      },
+      {
+        "name": "Conditional variational autoencoder (CVAE)",
+        "description": "Takes density grids as input; encodes the full complex density and conditions on receptor density to map to a probabilistic latent space."
+      },
+      {
+        "name": "Input encoder",
+        "description": "Encodes the full protein\u2013ligand complex density into a latent distribution."
+      },
+      {
+        "name": "Conditional encoder",
+        "description": "Encodes only the receptor density to produce a conditional vector c."
+      },
+      {
+        "name": "Decoder",
+        "description": "Combines sampled latent vector z with conditional vector c to generate an output ligand density."
+      },
+      {
+        "name": "Atom fitting",
+        "description": "Converts generated ligand density into a 3D molecular structure by fitting atoms."
+      },
+      {
+        "name": "Bond inference",
+        "description": "Adds bonds to the fitted atoms to produce the final molecular structure."
+      },
+      {
+        "name": "Atomic density grid",
+        "description": "Representation of atomic structures as density grids used as inputs to the CVAE."
+      },
+      {
+        "name": "Validity criterion",
+        "description": "A molecule is valid if it consists of a single connected fragment and can be sanitized by RDKit, which checks valency constraints and attempts to Kekulize aromatic bonds."
+      },
+      {
+        "name": "Novelty criterion",
+        "description": "A molecule is novel if its canonical SMILES string was not in the training set."
+      },
+      {
+        "name": "Uniqueness criterion",
+        "description": "A molecule is unique if its canonical SMILES string was not generated already during test evaluations."
+      },
+      {
+        "name": "UFF minimization",
+        "description": "Relax internal bond lengths and angles of each generated molecule in the context of the binding site using Universal Force Field (UFF) minimization; measure internal energy and RMSD via UFF minimization."
+      },
+      {
+        "name": "Vina minimization and scoring",
+        "description": "Perform Vina-based minimization and scoring of both real and generated molecules with respect to the receptor."
+      },
+      {
+        "name": "CNN ensemble affinity prediction",
+        "description": "Estimate binding affinity of minimized structures using an ensemble of CNN scoring functions trained on the CrossDocked2020 dataset."
+      },
+      {
+        "name": "gnina docking and scoring",
+        "description": "Use gnina, a deep learning-based molecular docking program, to perform Vina minimization and CNN affinity prediction."
+      },
+      {
+        "name": "On-the-fly molecular gridding with libmolgrid",
+        "description": "Grids are computed on-the-fly using libmolgrid, centered on the input molecule with random translations and rotations applied during both training and evaluation."
+      },
+      {
+        "name": "Coordinate frame mapping",
+        "description": "A mapping s: Z^3 -> R^3 is used from grid indices to spatial coordinates; grids are centered on the input molecule."
+      },
+      {
+        "name": "Atom fitting via iterative detection and gradient descent",
+        "description": "Initial atom locations are detected by selecting grid points with largest density values; the grid representation supports backpropagation of gradients to atomic coordinates, enabling an optimization that combines iterative atom detection with gradient descent to fit a reference density."
+      },
+      {
+        "name": "Steric clash loss",
+        "description": "Additional loss term minimizing overlap between generated ligand density and receptor density by summing across grid channels and multiplying receptor and ligand densities at each point: L_steric = \u27e8\u2211_i rec_i, \u2211_i lig_gen,i\u27e9."
+      },
+      {
+        "name": "Weighted loss combination",
+        "description": "Final loss L = \u03bb_recon L_recon + \u03bb_KL L_KL + \u03bb_steric L_steric with initial weights \u03bb_recon=4.0, \u03bb_KL=0.1, \u03bb_steric=1.0; \u03bb_KL ramped to 1.6 over 200,000 iterations starting at iteration 450,000."
+      },
+      {
+        "name": "Training procedure",
+        "description": "Model trained for 1,000,000 iterations with RMSprop optimizer, learning rate 1e\u22125, batch size 8."
+      },
+      {
+        "name": "Encoder-decoder with 3D convolutions",
+        "description": "Uses Conv3D blocks with 3x3x3 convolutions, ReLU activations, and 2x2x2 average pooling; encodes receptor\u2013ligand examples to latent space and decodes ligand densities conditioned on receptor density."
+      },
+      {
+        "name": "U-Net skip connections",
+        "description": "Included between the convolutional features of the conditional encoder and the decoder to enhance processing of receptor context."
+      },
+      {
+        "name": "Spectral normalization",
+        "description": "Applied to all learnable parameters during training."
+      },
+      {
+        "name": "Transposed convolutions and nearest-neighbor upsampling",
+        "description": "Used instead of pooling in the decoder."
+      },
+      {
+        "name": "Cross-validation split usage",
+        "description": "Used the first split of CrossDocked2020 to construct training and test datasets."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

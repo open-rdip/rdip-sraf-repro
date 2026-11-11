@@ -1,0 +1,459 @@
+{
+  "study_id": "study036",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study036/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:58:30.901281+00:00",
+  "counts": {
+    "dependencies": 4,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 10,
+    "methods": 23,
+    "evaluation_results": 50
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GPT-4",
+        "version": null
+      },
+      {
+        "name": "T5-small",
+        "version": null
+      },
+      {
+        "name": "T5-base",
+        "version": null
+      },
+      {
+        "name": "RoBERTa",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "train_validation_split",
+        "value": "80%/20%"
+      },
+      {
+        "name": "validation_subset",
+        "value": "randomly-selected 20%"
+      },
+      {
+        "name": "answer_option_order",
+        "value": "randomized"
+      },
+      {
+        "name": "answer_choice_labels",
+        "value": "(a) (b) (c) (d)"
+      },
+      {
+        "name": "t5_variants",
+        "value": "small and base"
+      },
+      {
+        "name": "cbow_classifier",
+        "value": "single-layer"
+      },
+      {
+        "name": "chance_accuracy",
+        "value": "25%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "GPQA",
+        "version": null
+      },
+      {
+        "name": "GPQA Diamond",
+        "version": null
+      },
+      {
+        "name": "GPQA full set (546 questions)",
+        "version": null
+      },
+      {
+        "name": "GPQA main set (448 questions)",
+        "version": null
+      },
+      {
+        "name": "GPQA diamond set (198 questions)",
+        "version": null
+      },
+      {
+        "name": "GPQA extended set (564 questions)",
+        "version": null
+      },
+      {
+        "name": "extended set of questions",
+        "version": null
+      },
+      {
+        "name": "extended set",
+        "version": null
+      },
+      {
+        "name": "main set",
+        "version": null
+      },
+      {
+        "name": "diamond set",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "closed-book evaluation",
+        "description": "Model has no runtime access to external information beyond the question, the prompt, and the model's own parameters."
+      },
+      {
+        "name": "open-book evaluation",
+        "description": "Model is given access to an internet search tool and internet references returned by the searches."
+      },
+      {
+        "name": "foundation model baselines",
+        "description": "Closed-book baselines are Llama-2-70B-chat (Touvron et al., 2023), GPT-3.5-turbo-16k (OpenAI), and GPT-4."
+      },
+      {
+        "name": "expert sourcing",
+        "description": "Experts sourced through Upwork without enforcing representation of any particular region or demographics, under high qualification requirements, high hourly rates, and an involved validation process."
+      },
+      {
+        "name": "non-expert accuracy upper bound",
+        "description": "Highly skilled non-experts used to determine an upper bound on non-expert accuracy in the context of scalable oversight experiments."
+      },
+      {
+        "name": "few-shot chain-of-thought prompting",
+        "description": "Few-shot chain-of-thought prompting used with GPT-4."
+      },
+      {
+        "name": "self-ask",
+        "description": "Structured framework for multi-hop Q&A for language models with access to internet search tools (Press et al., 2022), used to enable GPT-4 to use the internet. Full prompt provided in Appendix A.3.1."
+      },
+      {
+        "name": "backoff strategy",
+        "description": "Whenever the search model abstains from answering, back off and use the few-shot CoT answer instead."
+      },
+      {
+        "name": "expert assessment",
+        "description": "Domain experts in biology, physics, and chemistry wrote multiple-choice questions; objectivity estimated on the basis of expert assessment."
+      },
+      {
+        "name": "non-expert evaluation",
+        "description": "Highly skilled, resourced, and motivated non-experts with access to internet resources spent over 30 minutes on average answering each question."
+      },
+      {
+        "name": "GPT-4-based baseline",
+        "description": "Strongest GPT-4-based baseline evaluated on the questions."
+      },
+      {
+        "name": "Zero-Shot GPT-4",
+        "description": "Zero-shot GPT-4 baseline. Full prompts are in Appendix A.3.1."
+      },
+      {
+        "name": "Few-Shot GPT-4",
+        "description": "Few-shot GPT-4 baseline. Full prompts are in Appendix A.3.1."
+      },
+      {
+        "name": "Zero-Shot CoT GPT-4",
+        "description": "Zero-shot chain-of-thought GPT-4 baseline. Full prompts are in Appendix A.3.1."
+      },
+      {
+        "name": "Few-Shot CoT GPT-4",
+        "description": "Few-shot chain-of-thought GPT-4 baseline. Full prompts are in Appendix A.3.1."
+      },
+      {
+        "name": "GPT-4 with search",
+        "description": "GPT-4 baseline with search. Full prompts are in Appendix A.3.1."
+      },
+      {
+        "name": "T5 answer-only span identification",
+        "description": "Fine-tune T5-small and T5-base for span identification, given only labelled answer options, to pick the label of the correct answer. Answer option order is randomized."
+      },
+      {
+        "name": "RoBERTa CBOW answer-only classifier",
+        "description": "Train a smaller single-layer continuous bag-of-words classifier with RoBERTa embeddings on the answers only, randomizing answer order, to test lexical generalization from a small dataset."
+      },
+      {
+        "name": "skilled non-expert validator accuracy",
+        "description": "For each question, three individuals with expertise in domains different from the question's domain attempt to answer the question to the best of their ability, with access to unrestricted internet resources excepting LLMs."
+      },
+      {
+        "name": "validator accuracy by domain",
+        "description": "Heatmap of the accuracy of validators with expertise in each domain (columns) when they answer questions in each domain (rows). The diagonal represents expert validation and the off-diagonal represents non-expert validation."
+      },
+      {
+        "name": "scalable oversight",
+        "description": "A non-expert interacts with an unreliable model to try to achieve accuracy close to that of the expert validators."
+      },
+      {
+        "name": "red teaming",
+        "description": "Language models help elicit undesirable or unsafe behaviors."
+      },
+      {
+        "name": "sandwiching experiments",
+        "description": "Non-experts are tested on their ability to determine ground-truth answers through interacting with the model."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "non-expert validations taking more than 15 minutes",
+        "value": "90%",
+        "split": null
+      },
+      {
+        "metric": "median time spent by non-expert validators",
+        "value": "30 minutes",
+        "split": null
+      },
+      {
+        "metric": "top 20% of non-expert validations time",
+        "value": "\u226545 minutes",
+        "split": null
+      },
+      {
+        "metric": "few-shot CoT accuracy",
+        "value": "between 38% and 40%",
+        "split": "three sets"
+      },
+      {
+        "metric": "few-shot CoT accuracy (biology)",
+        "value": "58.1%",
+        "split": null
+      },
+      {
+        "metric": "few-shot CoT accuracy (physics)",
+        "value": "37.0%",
+        "split": null
+      },
+      {
+        "metric": "few-shot CoT accuracy (chemistry)",
+        "value": "31.8%",
+        "split": null
+      },
+      {
+        "metric": "accuracy difference vs non-expert",
+        "value": "10\u201320 percentage points higher",
+        "split": null
+      },
+      {
+        "metric": "GPT-4 with search accuracy",
+        "value": "39.4%",
+        "split": "extended set"
+      },
+      {
+        "metric": "GPT-4 with search abstention rate",
+        "value": "37.2%",
+        "split": "main set"
+      },
+      {
+        "metric": "few-shot CoT abstention rate",
+        "value": "4.0%",
+        "split": null
+      },
+      {
+        "metric": "estimated objectivity",
+        "value": "74%",
+        "split": null
+      },
+      {
+        "metric": "accuracy (non-experts)",
+        "value": "34%",
+        "split": null
+      },
+      {
+        "metric": "accuracy (GPT-4-based baseline)",
+        "value": "39%",
+        "split": null
+      },
+      {
+        "metric": "Zero-Shot GPT-4 accuracy",
+        "value": "31.3",
+        "split": "full"
+      },
+      {
+        "metric": "Zero-Shot GPT-4 accuracy",
+        "value": "32.1",
+        "split": "main"
+      },
+      {
+        "metric": "Zero-Shot GPT-4 accuracy",
+        "value": "34.2",
+        "split": "diamond"
+      },
+      {
+        "metric": "Few-Shot GPT-4 accuracy",
+        "value": "38.1",
+        "split": "full"
+      },
+      {
+        "metric": "Few-Shot GPT-4 accuracy",
+        "value": "38.1",
+        "split": "main"
+      },
+      {
+        "metric": "Few-Shot GPT-4 accuracy",
+        "value": "39.3",
+        "split": "diamond"
+      },
+      {
+        "metric": "Zero-Shot CoT GPT-4 accuracy",
+        "value": "38.1",
+        "split": "full"
+      },
+      {
+        "metric": "Zero-Shot CoT GPT-4 accuracy",
+        "value": "39.5",
+        "split": "main"
+      },
+      {
+        "metric": "Zero-Shot CoT GPT-4 accuracy",
+        "value": "35.7",
+        "split": "diamond"
+      },
+      {
+        "metric": "Few-Shot CoT GPT-4 accuracy",
+        "value": "38.7",
+        "split": "full"
+      },
+      {
+        "metric": "Few-Shot CoT GPT-4 accuracy",
+        "value": "39.7",
+        "split": "main"
+      },
+      {
+        "metric": "Few-Shot CoT GPT-4 accuracy",
+        "value": "38.8",
+        "split": "diamond"
+      },
+      {
+        "metric": "GPT-4 with search accuracy",
+        "value": "28.2",
+        "split": "full"
+      },
+      {
+        "metric": "GPT-4 with search accuracy",
+        "value": "28.7",
+        "split": "main"
+      },
+      {
+        "metric": "GPT-4 with search accuracy",
+        "value": "27.6",
+        "split": "diamond"
+      },
+      {
+        "metric": "T5 answer-only accuracy",
+        "value": "unable to attain better than 25%",
+        "split": "validation"
+      },
+      {
+        "metric": "CBOW answer-only accuracy",
+        "value": "not better than chance accuracy",
+        "split": "validation"
+      },
+      {
+        "metric": "average non-expert validator accuracy (extended set of questions, before filtering)",
+        "value": "34.1%\u00b12.3%",
+        "split": null
+      },
+      {
+        "metric": "validator accuracy (question domain: biology, validator domain: biology)",
+        "value": "68.9%",
+        "split": null
+      },
+      {
+        "metric": "sample size (question domain: biology, validator domain: biology)",
+        "value": "106",
+        "split": null
+      },
+      {
+        "metric": "validator accuracy (question domain: biology, validator domain: chemistry)",
+        "value": "45.6%",
+        "split": null
+      },
+      {
+        "metric": "sample size (question domain: biology, validator domain: chemistry)",
+        "value": "103",
+        "split": null
+      },
+      {
+        "metric": "validator accuracy (question domain: biology, validator domain: physics)",
+        "value": "42.0%",
+        "split": null
+      },
+      {
+        "metric": "sample size (question domain: biology, validator domain: physics)",
+        "value": "212",
+        "split": null
+      },
+      {
+        "metric": "validator accuracy (question domain: chemistry, validator domain: biology)",
+        "value": "28.8%",
+        "split": null
+      },
+      {
+        "metric": "sample size (question domain: chemistry, validator domain: biology)",
+        "value": "66",
+        "split": null
+      },
+      {
+        "metric": "validator accuracy (question domain: chemistry, validator domain: chemistry)",
+        "value": "72.6%",
+        "split": null
+      },
+      {
+        "metric": "sample size (question domain: chemistry, validator domain: chemistry)",
+        "value": "219",
+        "split": null
+      },
+      {
+        "metric": "validator accuracy (question domain: chemistry, validator domain: physics)",
+        "value": "31.6%",
+        "split": null
+      },
+      {
+        "metric": "sample size (question domain: chemistry, validator domain: physics)",
+        "value": "563",
+        "split": null
+      },
+      {
+        "metric": "validator accuracy (question domain: physics, validator domain: biology)",
+        "value": "30.4%",
+        "split": null
+      },
+      {
+        "metric": "sample size (question domain: physics, validator domain: biology)",
+        "value": "411",
+        "split": null
+      },
+      {
+        "metric": "validator accuracy (question domain: physics, validator domain: chemistry)",
+        "value": "34.5%",
+        "split": null
+      },
+      {
+        "metric": "sample size (question domain: physics, validator domain: chemistry)",
+        "value": "339",
+        "split": null
+      },
+      {
+        "metric": "validator accuracy (question domain: physics, validator domain: physics)",
+        "value": "57.9%",
+        "split": null
+      },
+      {
+        "metric": "sample size (question domain: physics, validator domain: physics)",
+        "value": "233",
+        "split": null
+      }
+    ]
+  }
+}

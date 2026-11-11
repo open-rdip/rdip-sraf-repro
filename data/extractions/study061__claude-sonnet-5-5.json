@@ -1,0 +1,128 @@
+{
+  "study_id": "study061",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study061/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:56:02.890375+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 2,
+    "methods": 8,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PedSim",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "pedestrian collaboration coefficient (ORCA)",
+        "value": "0"
+      },
+      {
+        "name": "robot collaboration coefficient (ORCA)",
+        "value": "1"
+      },
+      {
+        "name": "ORCA angular velocity constraint",
+        "value": "unbounded (no kinematic constraints on linear velocities)"
+      },
+      {
+        "name": "SA-CADRL number of agents",
+        "value": "4"
+      },
+      {
+        "name": "meta planner sub-goal planning horizon",
+        "value": "6 seconds"
+      },
+      {
+        "name": "sub-goal distance (corresponding to 6-second horizon)",
+        "value": "around 4\u20137 meters"
+      },
+      {
+        "name": "checkpoint reached threshold",
+        "value": "within 1 meter"
+      },
+      {
+        "name": "robot kinematic model for pedestrian-unaware baseline",
+        "value": "3D (position and heading) unicycle model"
+      },
+      {
+        "name": "kinematic constraints when used as meta-planner",
+        "value": "none applied"
+      },
+      {
+        "name": "simulation modes",
+        "value": "Synchronous and Schematic"
+      },
+      {
+        "name": "kinematic constraints for algorithms assuming no kinematic constraints",
+        "value": "off, only maximum linear speed constraint retained"
+      },
+      {
+        "name": "number of agents in network (CADRL)",
+        "value": "4"
+      },
+      {
+        "name": "number of nearest pedestrians observed by robot",
+        "value": "3"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "SocNavBench",
+        "version": null
+      },
+      {
+        "name": "curated set of episodes (Sec. 3.2)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PedSim",
+        "description": "Open-source implementation of a pedestrian crowd simulator method used as a navigation baseline; does not follow an angular velocity constraint."
+      },
+      {
+        "name": "ORCA",
+        "description": "Optimal Reciprocal Collision Avoidance; efficient navigation planner with theoretical non-collision guarantees when all agents use the same policy; based on reciprocal velocity obstacles. Run with pedestrian collaboration coefficient 0 and robot coefficient 1, in unbounded angular velocity mode without kinematic constraints on linear velocities."
+      },
+      {
+        "name": "SA-CADRL",
+        "description": "Socially aware collision avoidance with deep reinforcement learning; formulates social navigation as a cooperative multi-agent collision avoidance problem with rules to inject social awareness; the 4-agent version is used."
+      },
+      {
+        "name": "Social Forces",
+        "description": "Social forces based pedestrian dynamics model explaining pedestrian navigation as influenced by an attractive force to the goal, repulsive forces from other pedestrians and obstacles, and other attractive forces to interesting objects or pedestrians; open-source implementation from the PedSim crowd simulator."
+      },
+      {
+        "name": "Pedestrian-unaware baseline",
+        "description": "A simple baseline navigation algorithm that is unaware of pedestrians."
+      },
+      {
+        "name": "Meta planner",
+        "description": "Plans a sub-goal within a 6-second horizon (around 4\u20137 meters) each time a new checkpoint is requested; the robot is considered to have reached the checkpoint within 1 meter, after which a new checkpoint is requested."
+      },
+      {
+        "name": "CADRL",
+        "description": "Cooperative multi-agent collision avoidance formulation of social navigation with well-crafted rules to inject social awareness; 4-agent version of the network used with observations from the three nearest pedestrians; pre-trained model provided by the authors; does not consider kinematic constraints or obstacle avoidance."
+      },
+      {
+        "name": "Meta-level planner",
+        "description": "Sampling planner (from [50]) that samples trajectories from a connectivity graph, evaluates them via heuristic cost functions, and returns the minimum cost trajectory within a budget; provides heuristic-based obstacle avoidance and goal-seeking; plans a sub-goal within a 6-second horizon each time a new checkpoint is requested; used for ORCA and CADRL."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

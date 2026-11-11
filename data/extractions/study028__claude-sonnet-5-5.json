@@ -1,0 +1,227 @@
+{
+  "study_id": "study028",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study028/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:42:23.810315+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 18,
+    "datasets": 5,
+    "methods": 17,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": "[58]"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA RTX 3090 24 GB",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning rate schedule",
+        "value": "cycle cosine annealing"
+      },
+      {
+        "name": "epochs",
+        "value": "256"
+      },
+      {
+        "name": "checkpoint selection criterion",
+        "value": "highest validation AUC"
+      },
+      {
+        "name": "unnamed hyperparameter values (partial, truncated passage)",
+        "value": "0.03, 0.9, 0.00003"
+      },
+      {
+        "name": "pixel values of blurred region (uniform distribution range)",
+        "value": "[0.59,1]"
+      },
+      {
+        "name": "Gaussian blur radius (uniform distribution range)",
+        "value": "[0,15]"
+      },
+      {
+        "name": "images per disease for validation",
+        "value": "300"
+      },
+      {
+        "name": "normal images for validation",
+        "value": "300"
+      },
+      {
+        "name": "batch size",
+        "value": "64"
+      },
+      {
+        "name": "optimizer",
+        "value": "SGD"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "0.03"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.00003"
+      },
+      {
+        "name": "number of fully connected layers in projection head",
+        "value": "3"
+      },
+      {
+        "name": "anomaly score threshold",
+        "value": "0.067"
+      },
+      {
+        "name": "number of repeated runs",
+        "value": "five"
+      },
+      {
+        "name": "validation threshold selection",
+        "value": "best F1-score"
+      },
+      {
+        "name": "CutPaste variant",
+        "value": "CutPaste-Scar"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Chexpert",
+        "version": null
+      },
+      {
+        "name": "RSNA Pneumonia Detection Challenge dataset",
+        "version": null
+      },
+      {
+        "name": "NIH chest radiograph dataset",
+        "version": null
+      },
+      {
+        "name": "Zhanglab",
+        "version": null
+      },
+      {
+        "name": "RSNA",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "fAnoGAN",
+        "description": "State-of-the-art unsupervised anomaly detection model for medical images with an encoder, decoder, and discriminator; trained only on normal images; abnormal images are detected through increased reconstruction error."
+      },
+      {
+        "name": "Ganomaly",
+        "description": "GAN-based unsupervised anomaly detection model using three losses: adversarial, contextual, and encoder loss."
+      },
+      {
+        "name": "CutPaste",
+        "description": "One-class classifier with self-supervised learning for anomaly detection in industrial products; uses a pretext task that extracts a region from a normal image and pastes it onto another."
+      },
+      {
+        "name": "Cycle cosine annealing",
+        "description": "Learning rate scheduling method used in training."
+      },
+      {
+        "name": "AnatPaste augmentation",
+        "description": "Generates an anomalous image from a normal chest radiograph by pasting a patch (randomly cropped and pasted region) within the anatomical lung mask: X_anomaly = X_normal*(1-X_mask) + X_patch*X_mask. The mask is the element-wise product of the segmented lung region and a blurred region."
+      },
+      {
+        "name": "Binary CNN classifier training",
+        "description": "A CNN model f makes binary predictions; original normal images are labeled 0 and AnatPaste-augmented images are labeled 1, trained with the average cross entropy loss over N normal images."
+      },
+      {
+        "name": "Cross entropy loss",
+        "description": "Lce used in loss L = (1/N) * sum_i {Lce(f(X_i),0) + Lce(f(Aug(X_i)),1)}."
+      },
+      {
+        "name": "Lung segmentation (Algorithm 1)",
+        "description": "Takes a normal chest radiograph as input and outputs a binarized lung segmentation image. Step 1: equalize local image histogram using CLAHE. Step 2: binarize the equalized image using Otsu's thresholding. Step 3: truncated in the passage. Includes a threshold t initialized for considering lung region."
+      },
+      {
+        "name": "Gaussian blur",
+        "description": "Blurred region with pixel values sampled from uniform [0.59,1] and Gaussian blur radius sampled from uniform [0,15]."
+      },
+      {
+        "name": "Grad-CAM",
+        "description": "Visualization using the gradient computed from the last convolutional layer's feature map of the pretext model, highlighting areas judged abnormal in red"
+      },
+      {
+        "name": "AnatPaste",
+        "description": "Method evaluated by disease on the Chexpert dataset for abnormality detection; 300 images per disease and 300 normal images randomly selected for validation"
+      },
+      {
+        "name": "Supervised learning baseline",
+        "description": "Supervised learning from the original paper [2], with AUC of approximately 93% for consolidation, edema, and pleural effusion"
+      },
+      {
+        "name": "One-class classifier",
+        "description": "One-class classifier with ResNet18 as the feature extraction backbone and three fully connected layers added as the projection head"
+      },
+      {
+        "name": "SGD optimizer",
+        "description": "Stochastic gradient descent with momentum used to optimize the network"
+      },
+      {
+        "name": "Anomaly score prediction",
+        "description": "Anomaly scores calculated for each image to assess tendencies in normal and abnormal labels, with the threshold set based on the best F1-score"
+      },
+      {
+        "name": "SALAD",
+        "description": "Comparison method validated on the Zhanglab dataset; original code unavailable, so accuracy reported in the original paper is used."
+      },
+      {
+        "name": "SQUID",
+        "description": "Comparison method validated on the Zhanglab dataset; original code unavailable, so accuracy reported in the original paper is used."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "AUC (supervised learning, consolidation, edema, pleural effusion)",
+        "value": "approximately 93%",
+        "split": null
+      },
+      {
+        "metric": "Accuracy improvement of ensemble of five AnatPaste models (Zhanglab)",
+        "value": "0.7%",
+        "split": null
+      },
+      {
+        "metric": "Accuracy improvement of ensemble of five AnatPaste models (Chexpert)",
+        "value": "2.7%",
+        "split": null
+      },
+      {
+        "metric": "Accuracy improvement of ensemble of five AnatPaste models (RSNA)",
+        "value": "1.5%",
+        "split": null
+      },
+      {
+        "metric": "AUC (CutPaste)",
+        "value": "76.8%",
+        "split": null
+      },
+      {
+        "metric": "AUC improvement of AnatPaste over CutPaste",
+        "value": "14.6% higher",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "study_id": "study023",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study023/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:24:48.717783+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 1,
+    "methods": 15,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Mobile-Agent",
+        "version": null
+      },
+      {
+        "name": "Mobile-Agent-v2",
+        "version": "v2"
+      },
+      {
+        "name": "GPT-4V",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "value": "0"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Mobile-Eval",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GPT-4V with agent architecture",
+        "description": "Combines GPT-4V with an agent framework for mobile device operation, reported as the most effective configuration for operational capabilities."
+      },
+      {
+        "name": "Direct GPT-4V end-to-end",
+        "description": "Uses GPT-4V directly without the agent architecture; found to be almost infeasible for mobile device operation."
+      },
+      {
+        "name": "Planning agent (ablation)",
+        "description": "Component whose removal has the most significant negative impact, highlighting the difficulty of long-sequence navigation in current MLLMs."
+      },
+      {
+        "name": "Reflection agent (ablation)",
+        "description": "Component that corrects erroneous operations, preventing actions on incorrect pages and loops of invalid operations; performance declines when removed."
+      },
+      {
+        "name": "Memory unit (ablation)",
+        "description": "Component crucial for multi-app scenarios; records positions of critical UI elements to aid localization across sub-tasks; performance declines when removed."
+      },
+      {
+        "name": "Knowledge injection",
+        "description": "Manually injected operation knowledge to guide agents, which effectively enhanced the operation performance of Mobile-Agent-v2 and mitigated limitations in operation capability."
+      },
+      {
+        "name": "Instruction conversion to single-step tasks",
+        "description": "All evaluation instructions were converted to single-step forms to measure success rate (decision accuracy) on single-step tasks."
+      },
+      {
+        "name": "Model comparison across MLLMs",
+        "description": "Evaluated Mobile-Agent-v2 performance using different MLLMs (e.g., GPT-4V, Gemini-1.5-Pro, Qwen-VL-Max) to assess impact on success rate."
+      },
+      {
+        "name": "Mobile-Agent",
+        "description": "Baseline single-agent architecture based on GPT-4V end-to-end screen recognition."
+      },
+      {
+        "name": "Mobile-Agent-v2",
+        "description": "An updated variant of Mobile-Agent; evaluated with and without knowledge injection."
+      },
+      {
+        "name": "Reflection agent",
+        "description": "Component emphasizing post-decision reflection to mitigate errors, shown important when knowledge injection leads to erroneous decisions despite high completion rates."
+      },
+      {
+        "name": "Multi-agent architecture",
+        "description": "System design enabling collaboration among agents, contributing to higher success rates on challenging advanced instructions."
+      },
+      {
+        "name": "Planning agent",
+        "description": "Plans the task so the decision agent can navigate the task progress correctly with single-image input."
+      },
+      {
+        "name": "Decision agent",
+        "description": "Navigates task progress correctly and can access stored chat content when required for search."
+      },
+      {
+        "name": "Memory unit",
+        "description": "Accurately stores chat content needed for the task to aid navigation when required for search."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "success rate (Basic)",
+        "value": "2.7",
+        "split": null
+      },
+      {
+        "metric": "success rate (Advanced)",
+        "value": "0.9",
+        "split": null
+      },
+      {
+        "metric": "success rate",
+        "value": "55%",
+        "split": null
+      },
+      {
+        "metric": "success rate improvement",
+        "value": "27%",
+        "split": null
+      },
+      {
+        "metric": "completion rate",
+        "value": "100%",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "99%",
+        "split": null
+      }
+    ]
+  }
+}

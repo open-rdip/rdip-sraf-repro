@@ -1,0 +1,159 @@
+{
+  "study_id": "study043",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study043/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:11:11.880514+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 15,
+    "datasets": 2,
+    "methods": 15,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "TITAN V",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "training_steps",
+        "value": "3M"
+      },
+      {
+        "name": "steps_per_stage",
+        "value": "1.5M"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning_rate",
+        "value": "10\u22124"
+      },
+      {
+        "name": "beta",
+        "value": "(0.5,0.9)"
+      },
+      {
+        "name": "batch_size",
+        "value": "8"
+      },
+      {
+        "name": "sample_rate",
+        "value": "48kHz"
+      },
+      {
+        "name": "multiband_decomposition",
+        "value": "16-band"
+      },
+      {
+        "name": "latent_dimension",
+        "value": "128"
+      },
+      {
+        "name": "strings_sampling_rate",
+        "value": "48kHz"
+      },
+      {
+        "name": "strings_train_test_split",
+        "value": "90/10"
+      },
+      {
+        "name": "strings_downsample_rate",
+        "value": "16kHz"
+      },
+      {
+        "name": "vctk_sampling_rate",
+        "value": "48kHz"
+      },
+      {
+        "name": "vctk_train_test_split",
+        "value": "90/10"
+      },
+      {
+        "name": "vctk_downsample_rate",
+        "value": "16 kHz"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Strings",
+        "version": null
+      },
+      {
+        "name": "VCTK",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RAVE",
+        "description": "Follows the training procedure in section 3.1 with the same feature matching loss as the original paper; trained for 3M steps (1.5M steps per stage), approximately 6 days on one TITAN V GPU."
+      },
+      {
+        "name": "data augmentation",
+        "description": "Dequantization, random crop, and allpass filters with random coefficients."
+      },
+      {
+        "name": "baselines",
+        "description": "Unsupervised representation learning comparison against unsupervised NSynth and the SING autoencoder using official implementations with default parameters. DDSP and NSF were not evaluated because they are restricted to monophonic signals."
+      },
+      {
+        "name": "multiband decomposition",
+        "description": "Decomposition of the raw waveform used to decrease temporal dimensionality and expand the temporal receptive field without a major increase in computational complexity"
+      },
+      {
+        "name": "Encoder",
+        "description": "Multiband decomposition followed by a simple convolutional neural network transforming the raw waveform into a 128-dimensional latent representation"
+      },
+      {
+        "name": "Decoder",
+        "description": "Modified version of the generator proposed by Kumar et al. (2019), using the same alternation of upsampling layers and residual networks"
+      },
+      {
+        "name": "NSynth",
+        "description": "Used with the Strings dataset downsampled to 16kHz"
+      },
+      {
+        "name": "SING",
+        "description": "Used with the Strings dataset downsampled to 16kHz"
+      },
+      {
+        "name": "generator",
+        "description": "Modified version of the generator proposed by Kumar et al. (2019), using the same alternation of upsampling layers and residual networks, but feeding the last hidden layer to three sub-networks instead of directly outputting the raw waveform."
+      },
+      {
+        "name": "waveform sub-network",
+        "description": "Synthesizes a multiband audio signal with tanh activation, which is multiplied by the loudness sub-network output."
+      },
+      {
+        "name": "loudness sub-network",
+        "description": "Generates an amplitude envelope with sigmoid activation; an explicit amplitude envelope helps reduce artifacts in silent parts of the signal."
+      },
+      {
+        "name": "noise synthesizer",
+        "description": "Noise synthesizer as proposed in Engel et al. (2019) that produces multiband filtered noise added to the previous signal, slightly increasing reconstruction naturalness of noisy signals."
+      },
+      {
+        "name": "discriminator",
+        "description": "Exact same discriminator as in Kumar et al. (2019): a strided convolutional network applied on different scales of the audio signal to prevent artifacts."
+      },
+      {
+        "name": "feature matching loss",
+        "description": "Same feature matching loss as in the original paper (Kumar et al., 2019)."
+      },
+      {
+        "name": "training",
+        "description": "Follows the training procedure proposed in section 3.1 and trains RAVE for 3M steps."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

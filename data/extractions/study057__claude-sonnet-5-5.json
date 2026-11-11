@@ -1,0 +1,204 @@
+{
+  "study_id": "study057",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study057/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:54:35.925132+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 19,
+    "datasets": 2,
+    "methods": 19,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Faiss",
+        "version": null
+      },
+      {
+        "name": "NumPy",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA Tesla V100",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of most similar images per source",
+        "value": "999"
+      },
+      {
+        "name": "r-band magnitude range for similarity search",
+        "value": "0.5"
+      },
+      {
+        "name": "number of GPUs",
+        "value": "eight"
+      },
+      {
+        "name": "magnitude cut",
+        "value": "z<20"
+      },
+      {
+        "name": "epochs",
+        "value": "40"
+      },
+      {
+        "name": "batch size",
+        "value": "512"
+      },
+      {
+        "name": "optimizer",
+        "value": "SGD"
+      },
+      {
+        "name": "learning rate (classification head)",
+        "value": "0.01"
+      },
+      {
+        "name": "learning rate (remaining network parameters)",
+        "value": "0.001"
+      },
+      {
+        "name": "loss function",
+        "value": "binary cross-entropy"
+      },
+      {
+        "name": "oversampling factor",
+        "value": "explored during training to optimize validation performance (value not stated)"
+      },
+      {
+        "name": "training time per epoch",
+        "value": "approximately 1 hour"
+      },
+      {
+        "name": "minibatch size",
+        "value": "\u223c128 images"
+      },
+      {
+        "name": "encoder output dimension",
+        "value": "2048"
+      },
+      {
+        "name": "classification head",
+        "value": "fully connected layer attached to the encoder output, trained from random initialization"
+      },
+      {
+        "name": "learning rate (CNN encoder)",
+        "value": "smaller than the classification head learning rate (value not stated)"
+      },
+      {
+        "name": "learning rate (linear classification head)",
+        "value": "larger than the encoder learning rate (value not stated)"
+      },
+      {
+        "name": "queue length (K)",
+        "value": "262,144"
+      },
+      {
+        "name": "representation vector dimension",
+        "value": "2048"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "DR9 imaging",
+        "version": null
+      },
+      {
+        "name": "DR9 (south region)",
+        "version": "DR9"
+      }
+    ],
+    "methods": [
+      {
+        "name": "Random nonlens selection",
+        "description": "Nonlens samples are randomly selected from the full dataset, excluding those with a lensing galaxy near the central galaxy and those flagged as lenses in other data sets but hard to distinguish visually in DR9 imaging, so that training and validation sets reflect the scarcity of lensed galaxies (O(10-4))."
+      },
+      {
+        "name": "Class leakage check with linear model",
+        "description": "An initial linear model was used to predict labels for the training and validation nonlenses, and the images with the highest predictions were visually examined to identify and remove contamination from undiscovered lenses."
+      },
+      {
+        "name": "Cosine similarity with Faiss",
+        "description": "Cosine similarity was calculated with Faiss without any of its compression techniques; it outperformed the NumPy equivalent on CPU and gained an additional speed-up on GPU."
+      },
+      {
+        "name": "Similarity search",
+        "description": "Faiss-based similarity search computing the 999 most similar images per source, limited to sources within 0.5 r-band magnitude; the resulting similarity array (~42 million x 1000) is saved for reuse"
+      },
+      {
+        "name": "Linear classification on self-supervised representations",
+        "description": "Automated strong lens classification by training a linear classifier directly on representations from a pre-trained self-supervised model"
+      },
+      {
+        "name": "Fine-tuning of self-supervised model",
+        "description": "Automated strong lens classification by fine-tuning the pre-trained self-supervised model in a supervised manner"
+      },
+      {
+        "name": "Linear classifier fine-tuning with lens oversampling",
+        "description": "Lenses were oversampled during fine-tuning to ensure a nonzero average number of lenses in each batch; the oversampling factor is an additional hyperparameter tuned on the validation set."
+      },
+      {
+        "name": "Data augmentation",
+        "description": "Images were augmented at each training epoch with jitter/crop, random rotations, Gaussian noise, and Gaussian blur, so each sampled version of a lens has different augmentation realizations."
+      },
+      {
+        "name": "Differential learning rates",
+        "description": "Learning rate of 0.01 for the classification head and 0.001 for the remaining network parameters, as in Hayat et al. (2021)."
+      },
+      {
+        "name": "Self-supervised pretraining",
+        "description": "Self-supervised pretraining is performed once and does not need to be repeated for each supervised hyperparameter setup; its compute time is not included in the reported training time."
+      },
+      {
+        "name": "Fine-tuning a self-supervised network",
+        "description": "Fine-tuning a self-supervised network, which is reported to improve model robustness over purely supervised learning (Hendrycks et al. 2019)."
+      },
+      {
+        "name": "Minibatch gradient descent for supervised CNN classification of strong lenses",
+        "description": "Prior works use minibatch gradient descent because of memory constraints from large CNN models and image dimensionality. Each minibatch requires instances of both classes."
+      },
+      {
+        "name": "Reduced class imbalance in training set",
+        "description": "Choosing a training-set class imbalance much lower than the true data, e.g. 1:1 (Jacobs et al. 2019b) or 1:33 (Huang et al. 2020)."
+      },
+      {
+        "name": "Oversampling of lenses",
+        "description": "Sampling lenses more often than nonlenses so each batch has a nonzero average number of lenses. Used during fine-tuning to match the training set of the linear classifier."
+      },
+      {
+        "name": "Linear classifier trained with a single large batch",
+        "description": "A linear classifier trained with a single large batch, which does not require balanced minibatches and can be trained with a high degree of class imbalance."
+      },
+      {
+        "name": "Fine-tuned Self-supervised Classification",
+        "description": "Attach a fully connected layer to the 2048-dimensional output of the self-supervised encoder CNN and fine-tune the network in a supervised setup using the available lens labels. A smaller learning rate is applied to the encoder and a larger one to the linear head, so the CNN parameters from self-supervised pretraining are only marginally modified."
+      },
+      {
+        "name": "ResNet50 encoder",
+        "description": "Standard ResNet50 network used as the encoder, with the same network and training hyperparameters as Hayat et al. (2021); produces a 2048-dimensional representation vector"
+      },
+      {
+        "name": "Self-supervised pretraining with image augmentations",
+        "description": "Different views of each image are produced by a set of augmentations applied in succession during pretraining, reflecting symmetries, uncertainties, or noise in the dataset, so that it is nontrivial to associate augmented pairs of the same image while preserving important input features"
+      },
+      {
+        "name": "Increased queue length",
+        "description": "Queue length increased to K=262,144 relative to Hayat et al. (2021) to accommodate a larger training set"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

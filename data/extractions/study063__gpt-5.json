@@ -1,0 +1,216 @@
+{
+  "study_id": "study063",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study063/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:07:36.658740+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 8,
+    "methods": 22,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Audio Degradation Toolbox",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "audio_chunk_length",
+        "value": "30 seconds"
+      },
+      {
+        "name": "segment_window_length",
+        "value": "30 seconds"
+      },
+      {
+        "name": "transcription_settings",
+        "value": "default English (as of September 1, 2022)"
+      },
+      {
+        "name": "ema_smoothing_rate",
+        "value": "0.9999"
+      },
+      {
+        "name": "dataset_fraction",
+        "value": "0.5%"
+      },
+      {
+        "name": "model_size",
+        "value": "medium"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "V oxPopuli",
+        "version": null
+      },
+      {
+        "name": "MLS",
+        "version": null
+      },
+      {
+        "name": "LibriSpeech",
+        "version": null
+      },
+      {
+        "name": "Meanwhile",
+        "version": null
+      },
+      {
+        "name": "Kincaid46",
+        "version": null
+      },
+      {
+        "name": "Fleurs",
+        "version": null
+      },
+      {
+        "name": "Whisper dataset",
+        "version": null
+      },
+      {
+        "name": "SpeechStew",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Whisper",
+        "description": "Whisper significantly underperforms prior work on V oxPopuli and only beats the VP-10K+FT baseline; zero-shot performance on a language correlates with the amount of pre-training translation data."
+      },
+      {
+        "name": "VP-10K+FT baseline",
+        "description": "Baseline from the original paper that Whisper only beats on V oxPopuli."
+      },
+      {
+        "name": "Unsupervised pre-training",
+        "description": "Other models include the V oxPopuli distribution as a major source for unsupervised pre-training data."
+      },
+      {
+        "name": "Fine-tuning",
+        "description": "The dataset has significantly more supervised data, which benefits fine-tuning."
+      },
+      {
+        "name": "Text normalization before WER calculation",
+        "description": "Extensive standardization of transcripts prior to computing WER to minimize penalization of non-semantic formatting differences (e.g., handling contractions and whitespace), developed via iterative manual inspection of common error patterns."
+      },
+      {
+        "name": "Additive noise with SNR control",
+        "description": "Compute additive noise level for each example based on its signal power to achieve a target signal-to-noise ratio (SNR)."
+      },
+      {
+        "name": "Buffered long-form transcription",
+        "description": "Transcribe long audio by consecutively processing 30-second segments and shifting the window using the model\u2019s predicted timestamps."
+      },
+      {
+        "name": "Beam search decoding",
+        "description": "Use beam search during decoding to improve transcription robustness and accuracy."
+      },
+      {
+        "name": "Temperature scheduling",
+        "description": "Adjust the sampling temperature during decoding according to a schedule to improve transcription under challenging conditions."
+      },
+      {
+        "name": "Whisper evaluation",
+        "description": "Compared Whisper against other ASR systems across multiple datasets."
+      },
+      {
+        "name": "NVIDIA STT buffered inference (FrameBatchASR)",
+        "description": "Used the buffered inference implementation in the FrameBatchASR class to enable long-form transcription for the NVIDIA STT model."
+      },
+      {
+        "name": "Human performance comparison",
+        "description": "Selected 25 recordings from the Kincaid46 dataset and obtained transcripts from 5 services: one computer-assisted and four entirely human-transcribed."
+      },
+      {
+        "name": "Zero-shot evaluation on Fleurs",
+        "description": "Evaluate Whisper's zero-shot performance across languages in the Fleurs dataset."
+      },
+      {
+        "name": "Log-log linear regression analysis",
+        "description": "Analyze the relationship between the log of word error rate (WER) and the log of the amount of training data per language; estimate that WER halves for every 16\u00d7 increase in training data."
+      },
+      {
+        "name": "Zero-shot language identification on Fleurs",
+        "description": "Evaluate Whisper models in a zero-shot setting for language identification on the Fleurs dataset, considering overlap of training languages."
+      },
+      {
+        "name": "Additive noise robustness evaluation",
+        "description": "Measure WER when adding white noise or pub noise from the Audio Degradation Toolbox to audio, with SNR levels computed based on the signal power of individual examples."
+      },
+      {
+        "name": "Model comparison on LibriSpeech-trained systems",
+        "description": "Compare robustness across 14 models, including 12 pre-trained and/or fine-tuned on LibriSpeech and 2 NVIDIA STT models trained on a mixture dataset similar to SpeechStew that includes LibriSpeech."
+      },
+      {
+        "name": "Early stopping",
+        "description": "Model checkpoints selected using early stopping based on validation loss for each subsampled dataset size."
+      },
+      {
+        "name": "Exponential Moving Average (EMA) evaluation",
+        "description": "Evaluation performed on an EMA of parameters (Polyak & Juditsky, 1992) with smoothing rate 0.9999 to mitigate effects of incomplete learning rate decay."
+      },
+      {
+        "name": "Dataset subsampling",
+        "description": "Trained medium-sized models on subsampled versions of the 680,000-hour dataset at 0.5%, 1%, 2%, 4%, and 8% of full size and compared to training on the full dataset."
+      },
+      {
+        "name": "Multilingual speech recognition scaling",
+        "description": "WER follows a power-law trend up to 54,000 hours and then deviates, showing diminishing returns when scaling to the full dataset size of 680,000 hours."
+      },
+      {
+        "name": "X\u2192en translation scaling",
+        "description": "Performance is practically zero when training on 7,000 hours of audio or less, then shows roughly log-linear improvement up to 54,000 hours before diminishing returns when scaling to the full dataset size."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "r2",
+        "value": "0.24",
+        "split": null
+      },
+      {
+        "metric": "WER drop",
+        "value": "up to 50 percent",
+        "split": null
+      },
+      {
+        "metric": "squared correlation coefficient (R^2) between log(WER) and log(training data)",
+        "value": "0.83",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "80.3%",
+        "split": null
+      },
+      {
+        "metric": "upper-bound accuracy",
+        "value": "80.4%",
+        "split": null
+      },
+      {
+        "metric": "underperforms supervised SOTA by",
+        "value": "13.6%",
+        "split": null
+      },
+      {
+        "metric": "WER improvement",
+        "value": "7 points",
+        "split": null
+      }
+    ]
+  }
+}

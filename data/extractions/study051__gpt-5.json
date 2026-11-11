@@ -1,0 +1,94 @@
+{
+  "study_id": "study051",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study051/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:55:15.571702+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 0,
+    "methods": 14,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "num_initializations",
+        "value": "30"
+      },
+      {
+        "name": "tolerance_epsilon",
+        "value": "0.1"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "K-means clustering initialization of LGSSM parameters",
+        "description": "Vectorize each estimated parameter set for each time series, perform k-means clustering over these vectors to obtain centers and class membership proportions, then convert the centers back to parameter form to construct the initial parameter set for model initialization; generally preferred as it tends to yield higher final log-likelihoods, but less suitable when the LGSSM has many parameters relative to the number of observations per time series."
+      },
+      {
+        "name": "k-means initialization for VISTA",
+        "description": "Use k-means only to provide initializations for VISTA; generate 30 initializations per time series with only A(0)_k varying following [55]."
+      },
+      {
+        "name": "LGSSM fitting via EM",
+        "description": "Fit a Linear Gaussian State Space Model (LGSSM) from each initialization using the EM algorithm to obtain terminal parameter values \u03b8_i for each time series."
+      },
+      {
+        "name": "Model selection by log-likelihood",
+        "description": "Compute log p(Y_i | \u03b8_i) for each fitted LGSSM and select the model with the largest log-likelihood for each time series."
+      },
+      {
+        "name": "Parameter vectorization",
+        "description": "Vectorize the selected parameter set \u02c6\u03b8_i for each time series into a single vector."
+      },
+      {
+        "name": "VISTA",
+        "description": "A mixture LGSSM clustering algorithm implemented in Python that takes as input the data Y, time stamps for each observation in each time series, the number of clusters M, the latent dimension d, a termination tolerance \u03b5, a maximum number of iterations, the number of CPUs to use, and an initialization method with associated hyperparameters; it avoids precomputing large arrays for variable-length time series to reduce computational burden."
+      },
+      {
+        "name": "Mixture LGSSM clustering with EM (baseline from [55])",
+        "description": "An EM-based implementation assuming identical numbers of time samples across time series, precomputing x\u0302_{i,l}^{k|j}, \u03a9_{i,l}^k, and \u03a9_{i,l}^{k,k\u22121} for all samples in parallel over time series and clusters, forming arrays of sizes N\u00d7M\u00d7T\u00d7d, N\u00d7M\u00d7T\u00d7d\u00d7d, and N\u00d7M\u00d7T\u22121\u00d7d\u00d7d to enable linear algebra array operations."
+      },
+      {
+        "name": "Kalman filter",
+        "description": "Run per time series to compute filtered state estimates x\u0302 and associated covariances during the summing process."
+      },
+      {
+        "name": "Rauch\u2013Tung\u2013Striebel (RTS) smoother",
+        "description": "Applied after filtering to compute smoothed state estimates and cross-covariances \u03a9k,k\u22121 for each time series."
+      },
+      {
+        "name": "Expectation-Maximization (EM) algorithm",
+        "description": "Iteratively updates parameters via M-step using sufficient statistics accumulated online; terminated when the sum of absolute parameter differences between iterations falls below a threshold."
+      },
+      {
+        "name": "Online parallel summation over time series",
+        "description": "Avoids constructing large arrays by computing sums in parallel across all time series to reduce memory usage."
+      },
+      {
+        "name": "Log-domain computation of responsibilities",
+        "description": "Computes log p(Yi|\u03b8u) + log \u03c0u per cluster and time series, then exponentiates to obtain normalized responsibilities \u03c0\u0303 to prevent overflow."
+      },
+      {
+        "name": "Time-varying parameters via discretization",
+        "description": "Modifies filtering and smoothing to handle parameters that are functions of the timestep due to discretization."
+      },
+      {
+        "name": "Expectation-Maximization (EM)",
+        "description": "Uses an EM scheme where the expected posterior expectation Q(\u0398|\u0398(s)) is non-decreasing across iterations but is not guaranteed to reach a global maximum; initialization critically affects convergence."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "study_id": "study013",
+  "backend": "anthropic",
+  "model": "claude-opus-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study013/ext/claude-opus-5-5",
+  "extracted_at": "2026-11-10T00:13:27.761433+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 13,
+    "methods": 16,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Python",
+        "version": null
+      },
+      {
+        "name": "Scikit-Learn",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "cross-validation folds",
+        "value": "5"
+      },
+      {
+        "name": "hyperparameter search values (partial)",
+        "value": "2, 4, 8, 16"
+      },
+      {
+        "name": "batch size",
+        "value": "128"
+      },
+      {
+        "name": "training split",
+        "value": "80% of the Training dataset"
+      },
+      {
+        "name": "validation split",
+        "value": "remaining 20% (stratified to preserve percentage of samples per class)"
+      },
+      {
+        "name": "checkpoint selection interval",
+        "value": "500 iterations"
+      },
+      {
+        "name": "input image size",
+        "value": "64x64"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COOS-7",
+        "version": null
+      },
+      {
+        "name": "COOS",
+        "version": null
+      },
+      {
+        "name": "COOS-7 Training",
+        "version": null
+      },
+      {
+        "name": "COOS-7 Test1",
+        "version": null
+      },
+      {
+        "name": "COOS-7 Test2",
+        "version": null
+      },
+      {
+        "name": "COOS-7 Test3",
+        "version": null
+      },
+      {
+        "name": "COOS-7 Test4",
+        "version": null
+      },
+      {
+        "name": "Training dataset",
+        "version": null
+      },
+      {
+        "name": "Test1",
+        "version": null
+      },
+      {
+        "name": "Test2",
+        "version": null
+      },
+      {
+        "name": "Test3",
+        "version": null
+      },
+      {
+        "name": "Test4",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Classification baselines for COOS-7",
+        "description": "Features were extracted and a variety of classifiers were built to provide baselines for out-of-sample generalization on COOS-7."
+      },
+      {
+        "name": "Covariate shift stratification",
+        "description": "Randomized plate arrangements and replication of experiments over time and across sites/microscopes enable stratifying the dataset into multiple test sets with controlled, known covariate shifts."
+      },
+      {
+        "name": "Training dataset split",
+        "description": "Images from 4 independent plates for each class; 41,456 images. All methods must be trained and optimized using the Training dataset exclusively."
+      },
+      {
+        "name": "Test1 split",
+        "description": "Randomly held-out images from the same plates as the training dataset; 10,364 images."
+      },
+      {
+        "name": "Test2 split",
+        "description": "Images from the same plates but different wells than the training dataset; 17,021 images."
+      },
+      {
+        "name": "Test3 split",
+        "description": "Images from 2 independent plates for each class, reproduced on different days than the training dataset; the two chronologically latest experiments were chosen to emphasize potential non-stationarities over time (in most classes a gap of months from the training data); 32,596 images."
+      },
+      {
+        "name": "Test4 split",
+        "description": "Images from 1 plate for each class, reproduced on a different day and imaged under a different microscope than the training dataset; 30,772 images."
+      },
+      {
+        "name": "5-fold cross-validation",
+        "description": "Classifier selection based on best performance in 5-fold cross-validation on the Training dataset"
+      },
+      {
+        "name": "Logistic regression",
+        "description": "Classifier built on classic computer vision features (e.g., texture features)"
+      },
+      {
+        "name": "Fully-supervised CNN",
+        "description": "Deep learning model; achieved the lowest error on the test datasets with larger covariate shifts (Test3 and Test4)"
+      },
+      {
+        "name": "Deep learning feature representations",
+        "description": "Features extracted from deep learning models used for classification"
+      },
+      {
+        "name": "Texture features",
+        "description": "Classic computer vision features that benefited more from classification models that weigh features"
+      },
+      {
+        "name": "Balanced classification error",
+        "description": "Evaluation metric used to control for differences in class balance across datasets"
+      },
+      {
+        "name": "End-to-end CNN",
+        "description": "CNN trained on 80% of the Training dataset with the best iteration chosen on the held-out 20%; end-to-end performance reported and features from the last fully-connected layer extracted for building further classifiers"
+      },
+      {
+        "name": "VGG16",
+        "description": "Features extracted from all layers (max-pooling convolutional layers) of a VGG16 model pretrained on ImageNet, using the first image channel converted and rescaled to 8-bit RGB; benchmarks reported for the top 3 overall performing layers"
+      },
+      {
+        "name": "PCI",
+        "description": "Features learned from a self-supervised method designed for microscopy images, which achieved unsupervised state-of-the-art results in classifying protein localization for 64x64 images of yeast cells"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "balanced classification error (deep learning features, best)",
+        "value": "1.1%",
+        "split": "test (Test1 and Test2)"
+      },
+      {
+        "metric": "balanced classification error (logistic regression on classic computer vision features)",
+        "value": "6.8% or lower",
+        "split": "test (Test1 and Test2)"
+      }
+    ]
+  }
+}

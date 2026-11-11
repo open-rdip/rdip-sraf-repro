@@ -1,0 +1,152 @@
+{
+  "study_id": "study020",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study020/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:38:35.587883+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 3,
+    "methods": 15,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Libra",
+        "version": "[10]"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch size",
+        "value": "64"
+      },
+      {
+        "name": "image size",
+        "value": "632 \u00d7 512"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "weight initialization",
+        "value": "ImageNet-pretrained"
+      },
+      {
+        "name": "learning rate",
+        "value": "1e\u22126"
+      },
+      {
+        "name": "data augmentation: random flipping",
+        "value": "random horizontal and vertical flipping"
+      },
+      {
+        "name": "data augmentation: random rotation",
+        "value": "10 degrees"
+      },
+      {
+        "name": "data augmentation: brightness and contrast jittering",
+        "value": "small random brightness and contrast jittering"
+      },
+      {
+        "name": "cross-validation",
+        "value": "5-fold, used to determine stopping iteration"
+      },
+      {
+        "name": "rotation augmentation",
+        "value": "10 degrees"
+      },
+      {
+        "name": "cross-validation folds",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "mammograms",
+        "version": null
+      },
+      {
+        "name": "CSAW-M",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "multi-hot encoding for ordinal classification",
+        "description": "For an ordinal classification problem with K classes, datapoint x_i with ordinal label l_i in {1,...,K} is encoded as {y^1_i,...,y^{K-1}_i} where y^k_i = 1{l_i > k}; equivalent to solving K\u22121 independent binary classifications, each class being a superset of the previous."
+      },
+      {
+        "name": "5-fold cross-validation for stopping iteration",
+        "description": "5-fold cross-validation was used to determine the stopping iteration used in training."
+      },
+      {
+        "name": "data augmentation",
+        "description": "Random horizontal and vertical flipping, random rotation of 10 degrees, and small random brightness and contrast jittering."
+      },
+      {
+        "name": "ResNet34 one-hot",
+        "description": "Baseline model with a ResNet-34 backbone for categorical classification of masking potential, treating each class independently; masking levels are predicted independently using standard softmax and cross-entropy loss to predict one-hot encodings."
+      },
+      {
+        "name": "ResNet34 multi-hot",
+        "description": "Baseline model with a ResNet-34 backbone that accounts for the ordinal relation between masking levels using multi-hot encodings; training can be seen as multi-label classification where classifying an item into K ordinal classes is treated as multiple binary tasks."
+      },
+      {
+        "name": "Task 1: Identification of low- and high-masking mammograms",
+        "description": "Masking levels 1 and 2 are grouped as low-masking levels and levels 7 and 8 as high-masking levels, based on expert feedback; model performance at identifying images in these tail masking levels is assessed using F1-score."
+      },
+      {
+        "name": "Task 2: Identification of interval and large invasive cancers",
+        "description": "Measures the correlation between predicted masking estimates and interval cancers and large invasive cancers, without explicit training for these tasks. Performance is measured using AUC for individual cancer types and for the composite endpoint (CEP) containing both types, and using the odds ratio (OR)."
+      },
+      {
+        "name": "Odds ratio",
+        "description": "Ratio of the odds of an event occurring in one group to the odds of it occurring in another group."
+      },
+      {
+        "name": "5-fold cross-validation",
+        "description": "Used to determine the stopping iteration, which was then used in the final training run on all the training data"
+      },
+      {
+        "name": "Ordinal classification of masking potential",
+        "description": "Task 1: modeling the median expert opinion of masking potential level in the range [1-8], with ordinally related labels"
+      },
+      {
+        "name": "Average mean absolute error (AMAE)",
+        "description": "Evaluation metric measuring the average distance of predicted classes with respect to the true classes; robust to class imbalance"
+      },
+      {
+        "name": "Kendall's \u03c4b",
+        "description": "Evaluation metric measuring correlation of two rankings based on the number of concordant and discordant pairs; ranges from -1 to 1"
+      },
+      {
+        "name": "Odds ratio by prediction quartile",
+        "description": "Model predictions are divided into quartile groups g_i (i in {1,2,3,4}). For each group the odds of interval cancer is O_i = IC_i / ~IC_i, where IC_i is the number of screening participants in g_i with interval cancer and ~IC_i is the number without. The odds ratio is OR_i = O_i / O_1, relative to the first quartile g1 (OR_1 = 1 for all models). A good masking predictor shows strong, monotonically increasing odds ratios in the top quartiles."
+      },
+      {
+        "name": "Density baseline comparison",
+        "description": "Baseline models are compared with dense area and percent density computed using Libra, because density is known to be correlated with the clinical endpoints."
+      },
+      {
+        "name": "Continuous masking score",
+        "description": "Discrete masking predictions are converted to continuous values for a fair comparison, computed as the weighted average of the probabilities that an input belongs to each masking level."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

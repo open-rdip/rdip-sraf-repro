@@ -1,0 +1,133 @@
+{
+  "study_id": "study041",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study041/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:46:43.922291+00:00",
+  "counts": {
+    "dependencies": 8,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 5,
+    "methods": 11,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Binary Trees",
+        "version": "Debian CLBG Rust#2"
+      },
+      {
+        "name": "Regex-Redux",
+        "version": "Debian CLBG Rust#1"
+      },
+      {
+        "name": "Alacritty",
+        "version": "v0.15.0-dev"
+      },
+      {
+        "name": "fd",
+        "version": "v9.0.0"
+      },
+      {
+        "name": "grmtools",
+        "version": "v0.13.4"
+      },
+      {
+        "name": "Ripgrep",
+        "version": "v14.1.1"
+      },
+      {
+        "name": "som-rs-ast",
+        "version": "git #35b780"
+      },
+      {
+        "name": "som-rs-bc",
+        "version": "git #35b780"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "Binary Trees",
+        "version": "Debian CLBG Rust#2"
+      },
+      {
+        "name": "Regex-Redux",
+        "version": "Debian CLBG Rust#1"
+      },
+      {
+        "name": "Alacritty",
+        "version": "v0.15.0-dev"
+      },
+      {
+        "name": "fd",
+        "version": "v9.0.0"
+      },
+      {
+        "name": "Ripgrep",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Binary Trees",
+        "description": "Heap allocation microbenchmark"
+      },
+      {
+        "name": "Regex-Redux",
+        "description": "Regular expression matching"
+      },
+      {
+        "name": "Alacritty",
+        "description": "Terminal emulator"
+      },
+      {
+        "name": "fd",
+        "description": "Unix find replacement"
+      },
+      {
+        "name": "grmtools",
+        "description": "Lexer / parser library"
+      },
+      {
+        "name": "Ripgrep",
+        "description": "Fast grep replacement"
+      },
+      {
+        "name": "som-rs-ast",
+        "description": "SOM AST VM"
+      },
+      {
+        "name": "som-rs-bc",
+        "description": "SOM bytecode VM"
+      },
+      {
+        "name": "Benchmark selection",
+        "description": "Searched roughly the 100 most popular Rust libraries on crates.io to find suitable candidates for benchmarking."
+      },
+      {
+        "name": "Experiment E GCvs",
+        "description": "Compared programs using existing shared ownership approaches."
+      },
+      {
+        "name": "Memory allocation strategy substitution",
+        "description": "Altered benchmarks to use different memory allocation strategies (e.g., Alloy, Rc<T>, etc.)."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "How often relevant types are referenced in source code after our porting",
+        "value": "1",
+        "split": null
+      }
+    ]
+  }
+}

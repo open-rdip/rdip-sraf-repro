@@ -1,0 +1,121 @@
+{
+  "study_id": "study069",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study069/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:12:58.453992+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 6,
+    "methods": 10,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "confidence \u03c4",
+        "value": "{0.1, 0.3, 0.5, 0.7, 0.9}"
+      },
+      {
+        "name": "\u03c4 (BAT / CITE)",
+        "value": "[0.1, 0.3]"
+      },
+      {
+        "name": "\u03c4 (other datasets)",
+        "value": "[0.7, 0.9]"
+      },
+      {
+        "name": "focusing factor \u03b2",
+        "value": "analyzed in Appendix"
+      },
+      {
+        "name": "confidence parameter",
+        "value": "fixed value"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CORA",
+        "version": null
+      },
+      {
+        "name": "CITE",
+        "version": null
+      },
+      {
+        "name": "AMAP",
+        "version": null
+      },
+      {
+        "name": "BAT",
+        "version": null
+      },
+      {
+        "name": "EAT",
+        "version": null
+      },
+      {
+        "name": "UAT",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "HSAN",
+        "description": "Method using a hard sample aware contrastive loss to reveal cluster structure in learned node embeddings."
+      },
+      {
+        "name": "2D t-SNE",
+        "description": "Visualization method conducted on learned node embeddings to demonstrate cluster structure."
+      },
+      {
+        "name": "infoNCE",
+        "description": "Contrastive loss baseline used for comparison."
+      },
+      {
+        "name": "weight modulating function M",
+        "description": "enhances the discriminative capability of samples by guiding our network to focus on the hard sample pairs"
+      },
+      {
+        "name": "attribute-structure similarity function S",
+        "description": "better revealing the potential relation between samples"
+      },
+      {
+        "name": "Ours",
+        "description": "combination of S and M"
+      },
+      {
+        "name": "Hard Sample Aware Network (HSAN)",
+        "description": "A method to mine the hard samples in contrastive deep graph clustering using attribute and structure encoders, a comprehensive similarity measure criterion, and a dynamic weight modulating function."
+      },
+      {
+        "name": "hard sample aware contrastive loss",
+        "description": "A loss function that forces the network to focus on both positive and negative sample pairs by up-weighting hard sample pairs while down-weighting negative ones to improve discriminative capability."
+      },
+      {
+        "name": "infoNCE loss",
+        "description": "Classical contrastive loss used as a comparison baseline for time and space analysis."
+      },
+      {
+        "name": "ProGCL",
+        "description": "Baseline method (Xia et al. 2022a)"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "NMI",
+        "value": "8.48 %",
+        "split": null
+      }
+    ]
+  }
+}

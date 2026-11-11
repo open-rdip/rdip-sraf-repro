@@ -1,0 +1,62 @@
+{
+  "study_id": "study058",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study058/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:54:51.442940+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 0,
+    "methods": 3,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of sampled example sentences per prompt",
+        "value": "5"
+      },
+      {
+        "name": "example prefix",
+        "value": "hyphen (\"\u2013\")"
+      },
+      {
+        "name": "example suffix",
+        "value": "newline character (\"\\n\")"
+      },
+      {
+        "name": "generation stopping criterion",
+        "value": "stop GPT-3 generation once it produces a new newline character"
+      },
+      {
+        "name": "number of MTurk workers selected for human validation",
+        "value": "156"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Prompt-based sentence generation with GPT-3",
+        "description": "For a given minority group, 5 random sentences are sampled from the corresponding set of examples and joined into one string, each preceded by a hyphen and ending with a newline. An extra hyphen is appended to the prompt so the LLM writes a new sentence matching the style of the examples. Generation stops at the first newline. A new, randomly-selected set of 5 sentences is used for each generated sentence."
+      },
+      {
+        "name": "Human validation with MTurk workers",
+        "description": "156 MTurk workers with prior experience annotating toxic language were selected for human validation of generated statements."
+      },
+      {
+        "name": "Worker demographics survey",
+        "description": "Worker demographics were collected using an optional survey at the end of the annotation task."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

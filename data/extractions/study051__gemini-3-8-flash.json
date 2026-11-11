@@ -1,0 +1,70 @@
+{
+  "study_id": "study051",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study051/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:55:12.173165+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 0,
+    "methods": 8,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of initializations",
+        "value": "30"
+      },
+      {
+        "name": "\u03b5",
+        "value": "0.1"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "k-means clustering",
+        "description": "Clustering performed over vectorized parameter sets to return cluster centers and class membership proportions used to initialize the parameter set."
+      },
+      {
+        "name": "LGSSM",
+        "description": "Linear Gaussian State Space Model mentioned in the context of parameter count relative to time series observations."
+      },
+      {
+        "name": "LGSSMs",
+        "description": "Linear Gaussian state-space models fit from multiple initializations per time series"
+      },
+      {
+        "name": "k-means algorithm",
+        "description": "Used to determine an initialization for VISTA"
+      },
+      {
+        "name": "VISTA",
+        "description": "Develops model parameters further starting from k-means initialization"
+      },
+      {
+        "name": "EM algorithm",
+        "description": "Used to fit single LGSSMs and obtain terminal parameter values"
+      },
+      {
+        "name": "Kalman filter and RTS smoother",
+        "description": "Run online in parallel over all time series during the summing process to compute \u02c6 xi,l k|j, \u2126i,l k, and \u2126i,l k,k\u22121, modified to allow parameters to be functions of timestep due to discretization."
+      },
+      {
+        "name": "EM",
+        "description": "Expectation-Maximization schemes designed so that expected posterior expectation Q(\u0398|\u0398(s)) is non-decreasing throughout iterations"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

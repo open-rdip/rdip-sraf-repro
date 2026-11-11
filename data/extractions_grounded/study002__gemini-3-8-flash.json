@@ -1,0 +1,658 @@
+{
+ "study_id": "study002",
+ "model": "gemini-flash",
+ "slug": "gemini-3-8-flash",
+ "n_passages": 5,
+ "n_passages_ok": 5,
+ "failures": [],
+ "records": [
+  {
+   "field": "hyperparameters",
+   "value": "{.1,.2}",
+   "evidence": "For label smoothingand label relaxatio n, weconsider /u1D6FC\u2208 {.1,.2}.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "1000",
+   "evidence": "very large number of epochs ( 1000).",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "KINSHIP",
+   "evidence": "standardlinkpredictio nbenchmarkdatasets(KINSHIPandUMLSdatasets)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "UMLS",
+   "evidence": "standardlinkpredictio nbenchmarkdatasets(KINSHIPandUMLSdatasets)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "label smoothing",
+   "evidence": "For label smoothingand label relaxatio n, weconsider /u1D6FC\u2208 {.1,.2}.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "label relaxation",
+   "evidence": "For label smoothingand label relaxatio n, weconsider /u1D6FC\u2208 {.1,.2}.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Kronecker Decomposition",
+   "evidence": "impactofKroneckerDecompositionina\ufb01ne-grained",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "1000",
+   "evidence": "Wetrainedthemodelfor1000epochswithalearn- ingrateof .01andabatchsizeof1024.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": ".01",
+   "evidence": "Wetrainedthemodelfor1000epochswithalearn- ingrateof .01andabatchsizeof1024.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "1024",
+   "evidence": "Wetrainedthemodelfor1000epochswithalearn- ingrateof .01andabatchsizeof1024.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "{4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400}",
+   "evidence": "optimizedtheembeddin gvectorsizesin {4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400} using a grid search.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "{.1,.2}",
+   "evidence": "For label smoothingand label relaxatio n, weconsider /u1D6FC\u2208 {.1,.2}.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "UMLS",
+   "evidence": "UMLS 136 93 10,432 1304 1965",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "KINSHIP",
+   "evidence": "KINSHIP 105 51 17,088 2136 3210",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "KD-DistMult",
+   "evidence": "KDcanbeappliedas KD-DistMult",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "1vsAll training strategy",
+   "evidence": "Wetrainedapproacheswiththe1vsAlltrainingstrategy",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "A DAM optimizer",
+   "evidence": "All models are trained with the A DAM optimizer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "batch normalization",
+   "evidence": "weapplyt hebatchnormalization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "grid search",
+   "evidence": "using a grid search.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Kronecker Decomposition",
+   "evidence": "Particularly,theKronec ker Decomposition(KD) elucidated in Section 3.4 leads a signi\ufb01 cant reduction in the number of parameters",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "DistMult",
+   "evidence": "MostKGEmodelsaredesignedasaparametrizedscoringfunct ion(sayDistMult[Yanget al.2015])",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "DistMult",
+   "evidence": "KDonrelationembeddings of DistMultcan beappliedas KD-Rel-DistMult",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "KD-Rel-DistMult",
+   "evidence": "KDonrelationembeddings of DistMultcan beappliedas KD-Rel-DistMult",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "batch normalisation",
+   "evidence": "the batch normalis ation or layer normalizationcan be applied",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "layer normalization",
+   "evidence": "the batch normalis ation or layer normalizationcan be applied",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Kronecker Decomposition",
+   "evidence": "4.2 Kronecker Decomposition forRelation Embeddings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "dependencies",
+   "value": "PyTorch Lightning",
+   "evidence": "PyTorch Lightning [Falconet al. 2019]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "dependencies",
+   "value": "DASK",
+   "evidence": "DASK [Rocklin 2015]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "random_seeds",
+   "value": "1",
+   "evidence": "seed f or the pseudo-random generator was \ufb01xed to 1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "1000",
+   "evidence": "training threemodelswith21 uniquecon- \ufb01gurationsfor1000epochs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "WN18RR",
+   "evidence": "datasetscomparedtoWN18RR,FB15K-237,and YAGO3- 10",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "FB15K-237",
+   "evidence": "datasetscomparedtoWN18RR,FB15K-237,and YAGO3- 10",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "YAGO3- 10",
+   "evidence": "datasetscomparedtoWN18RR,FB15K-237,and YAGO3- 10",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "DistMult",
+   "evidence": "we illustrate our methodology with DistMult for three reasons",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "hyperparameters": {
+    "n": 8,
+    "has_evidence": 8,
+    "span_found": 8,
+    "value_in_span": 8,
+    "grounded": 8
+   },
+   "datasets": {
+    "n": 7,
+    "has_evidence": 7,
+    "span_found": 7,
+    "value_in_span": 7,
+    "grounded": 7
+   },
+   "methods": {
+    "n": 16,
+    "has_evidence": 16,
+    "span_found": 16,
+    "value_in_span": 10,
+    "grounded": 10
+   },
+   "dependencies": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   },
+   "random_seeds": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 1,
+    "value_in_span": 1,
+    "grounded": 1
+   }
+  },
+  "total": {
+   "n": 34,
+   "has_evidence": 34,
+   "span_found": 34,
+   "value_in_span": 28,
+   "grounded": 28
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "/u1D6FC",
+      "value": "{.1,.2}",
+      "evidence": "For label smoothingand label relaxatio n, weconsider /u1D6FC\u2208 {.1,.2}."
+     },
+     {
+      "name": "number of epochs",
+      "value": "1000",
+      "evidence": "very large number of epochs ( 1000)."
+     }
+    ],
+    "datasets": [
+     {
+      "name": "KINSHIP",
+      "version": null,
+      "evidence": "standardlinkpredictio nbenchmarkdatasets(KINSHIPandUMLSdatasets)"
+     },
+     {
+      "name": "UMLS",
+      "version": null,
+      "evidence": "standardlinkpredictio nbenchmarkdatasets(KINSHIPandUMLSdatasets)"
+     }
+    ],
+    "methods": [
+     {
+      "name": "label smoothing",
+      "evidence": "For label smoothingand label relaxatio n, weconsider /u1D6FC\u2208 {.1,.2}."
+     },
+     {
+      "name": "label relaxation",
+      "evidence": "For label smoothingand label relaxatio n, weconsider /u1D6FC\u2208 {.1,.2}."
+     },
+     {
+      "name": "Kronecker Decomposition",
+      "evidence": "impactofKroneckerDecompositionina\ufb01ne-grained"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "epochs",
+      "value": "1000",
+      "evidence": "Wetrainedthemodelfor1000epochswithalearn- ingrateof .01andabatchsizeof1024."
+     },
+     {
+      "name": "learning rate",
+      "value": ".01",
+      "evidence": "Wetrainedthemodelfor1000epochswithalearn- ingrateof .01andabatchsizeof1024."
+     },
+     {
+      "name": "batch size",
+      "value": "1024",
+      "evidence": "Wetrainedthemodelfor1000epochswithalearn- ingrateof .01andabatchsizeof1024."
+     },
+     {
+      "name": "embedding vector sizes",
+      "value": "{4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400}",
+      "evidence": "optimizedtheembeddin gvectorsizesin {4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400} using a grid search."
+     },
+     {
+      "name": "/u1D6FC",
+      "value": "{.1,.2}",
+      "evidence": "For label smoothingand label relaxatio n, weconsider /u1D6FC\u2208 {.1,.2}."
+     }
+    ],
+    "datasets": [
+     {
+      "name": "UMLS",
+      "version": null,
+      "evidence": "UMLS 136 93 10,432 1304 1965"
+     },
+     {
+      "name": "KINSHIP",
+      "version": null,
+      "evidence": "KINSHIP 105 51 17,088 2136 3210"
+     }
+    ],
+    "methods": [
+     {
+      "name": "KD-DistMult",
+      "evidence": "KDcanbeappliedas KD-DistMult"
+     },
+     {
+      "name": "1vsAll training strategy",
+      "evidence": "Wetrainedapproacheswiththe1vsAlltrainingstrategy"
+     },
+     {
+      "name": "A DAM optimizer",
+      "evidence": "All models are trained with the A DAM optimizer"
+     },
+     {
+      "name": "batch normalization",
+      "evidence": "weapplyt hebatchnormalization"
+     },
+     {
+      "name": "grid search",
+      "evidence": "using a grid search."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Kronecker Decomposition",
+      "evidence": "Particularly,theKronec ker Decomposition(KD) elucidated in Section 3.4 leads a signi\ufb01 cant reduction in the number of parameters"
+     },
+     {
+      "name": "DistMult",
+      "evidence": "MostKGEmodelsaredesignedasaparametrizedscoringfunct ion(sayDistMult[Yanget al.2015])"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "DistMult",
+      "evidence": "KDonrelationembeddings of DistMultcan beappliedas KD-Rel-DistMult"
+     },
+     {
+      "name": "KD-Rel-DistMult",
+      "evidence": "KDonrelationembeddings of DistMultcan beappliedas KD-Rel-DistMult"
+     },
+     {
+      "name": "batch normalisation",
+      "evidence": "the batch normalis ation or layer normalizationcan be applied"
+     },
+     {
+      "name": "layer normalization",
+      "evidence": "the batch normalis ation or layer normalizationcan be applied"
+     },
+     {
+      "name": "Kronecker Decomposition",
+      "evidence": "4.2 Kronecker Decomposition forRelation Embeddings"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "PyTorch Lightning",
+      "version": null,
+      "evidence": "PyTorch Lightning [Falconet al. 2019]"
+     },
+     {
+      "name": "DASK",
+      "version": null,
+      "evidence": "DASK [Rocklin 2015]"
+     }
+    ],
+    "random_seeds": [
+     {
+      "value": "1",
+      "evidence": "seed f or the pseudo-random generator was \ufb01xed to 1"
+     }
+    ],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "epochs",
+      "value": "1000",
+      "evidence": "training threemodelswith21 uniquecon- \ufb01gurationsfor1000epochs"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "WN18RR",
+      "version": null,
+      "evidence": "datasetscomparedtoWN18RR,FB15K-237,and YAGO3- 10"
+     },
+     {
+      "name": "FB15K-237",
+      "version": null,
+      "evidence": "datasetscomparedtoWN18RR,FB15K-237,and YAGO3- 10"
+     },
+     {
+      "name": "YAGO3- 10",
+      "version": null,
+      "evidence": "datasetscomparedtoWN18RR,FB15K-237,and YAGO3- 10"
+     }
+    ],
+    "methods": [
+     {
+      "name": "DistMult",
+      "evidence": "we illustrate our methodology with DistMult for three reasons"
+     }
+    ],
+    "evaluation_results": []
+   }
+  }
+ ]
+}

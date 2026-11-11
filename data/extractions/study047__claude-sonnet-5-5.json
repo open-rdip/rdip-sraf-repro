@@ -1,0 +1,151 @@
+{
+  "study_id": "study047",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study047/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:50:49.572905+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 18,
+    "datasets": 1,
+    "methods": 11,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "gradient clipping maximum L2-norm",
+        "value": "5"
+      },
+      {
+        "name": "training epochs",
+        "value": "100"
+      },
+      {
+        "name": "segment length",
+        "value": "4 seconds"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "1e\u22123"
+      },
+      {
+        "name": "learning rate decay",
+        "value": "0.98 every two epochs"
+      },
+      {
+        "name": "early stopping patience",
+        "value": "10 consecutive epochs without a new best model on the validation set"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "gradient clipping max L2-norm",
+        "value": "5"
+      },
+      {
+        "name": "room height range",
+        "value": "between 2 and 5 meters"
+      },
+      {
+        "name": "T60 range",
+        "value": "between 0.1 and 0.5 seconds"
+      },
+      {
+        "name": "speaker SNR range",
+        "value": "between -5 and 5 dB"
+      },
+      {
+        "name": "average overlap ratio",
+        "value": "50%"
+      },
+      {
+        "name": "isotropic noise SNR range",
+        "value": "between 10 and 20 dB"
+      },
+      {
+        "name": "number of filters",
+        "value": "64"
+      },
+      {
+        "name": "number of DPRNN blocks",
+        "value": "6"
+      },
+      {
+        "name": "intra- and inter-chunk RNN type",
+        "value": "BLSTM"
+      },
+      {
+        "name": "hidden units per direction",
+        "value": "128"
+      },
+      {
+        "name": "chunk size K",
+        "value": "K\u2248\u221a2L (L is the length of the front-end representation in the training set)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Microsoft internal gender-balanced clean speech collection (44 speakers)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "utterance-level permutation invariant training (uPIT)",
+        "description": "Training criterion applied to all models, used to maximize scale-invariant SNR (SI-SNR)"
+      },
+      {
+        "name": "Gradient clipping",
+        "description": "Gradient clipping with a maximum L2-norm of 5 applied for all experiments"
+      },
+      {
+        "name": "signal-to-distortion ratio improvement (SDRi)",
+        "description": "Metric used to measure the degree of improvement in signal fidelity"
+      },
+      {
+        "name": "SI-SNR improvement (SI-SNRi)",
+        "description": "Metric used to measure the degree of improvement in signal fidelity"
+      },
+      {
+        "name": "word error rate (WER)",
+        "description": "Metric used to measure speech recognition accuracy on both separated speakers"
+      },
+      {
+        "name": "Simulated reverberant mixture generation",
+        "description": "Two-speaker single-microphone mixtures with random room height, T60, speaker and microphone locations, random SNR rescaling, 50% average overlap, and added random isotropic noise"
+      },
+      {
+        "name": "Adam optimizer",
+        "description": "Optimizer used for training with learning rate decay and gradient clipping"
+      },
+      {
+        "name": "Early stopping",
+        "description": "Training stops if no best model is found on the validation set for 10 consecutive epochs"
+      },
+      {
+        "name": "DPRNN",
+        "description": "Deep dual-path RNN for long-term sequential modeling, using 6 blocks with BLSTM as intra- and inter-chunk RNNs, applied as the separator in TasNet"
+      },
+      {
+        "name": "TasNet",
+        "description": "Time-domain audio separation network with a linear 1-D convolutional encoder, a separator estimating C masking matrices for C target sources, and a linear 1-D transposed convolutional decoder"
+      },
+      {
+        "name": "TCN",
+        "description": "Optimally configured temporal convolutional network separator from [4], used as the comparison baseline for DPRNN"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "study_id": "study046",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study046/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:51:38.625341+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 4,
+    "methods": 11,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA GeForce GTX2070",
+      "cuda_version": null,
+      "cpu_info": "i7-8700K CPU"
+    },
+    "hyperparameters": [
+      {
+        "name": "train/test split ratio",
+        "value": "9:1"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.0005"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "weld defect dataset",
+        "version": null
+      },
+      {
+        "name": "MS COCO",
+        "version": null
+      },
+      {
+        "name": "X-ray weld image",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": "trainval35k"
+      }
+    ],
+    "methods": [
+      {
+        "name": "EFE module",
+        "description": "extracts feature maps with region division and fine-grained information"
+      },
+      {
+        "name": "LF-YOLO",
+        "description": "model for weld defect detection designed based on EFE module and multi-scale feature extraction modules"
+      },
+      {
+        "name": "RMF module",
+        "description": "network module evaluated in ablation studies"
+      },
+      {
+        "name": "stochastic gradient descent optimizer",
+        "description": "optimization algorithm used for training"
+      },
+      {
+        "name": "ResNet101",
+        "description": "baseline network architecture"
+      },
+      {
+        "name": "SPP",
+        "description": "Component evaluated in the ablation study of RMF module"
+      },
+      {
+        "name": "GDConv",
+        "description": "Component evaluated in the ablation study of RMF module"
+      },
+      {
+        "name": "SSD",
+        "description": "Classical one-stage network used as comparison baseline"
+      },
+      {
+        "name": "YOLO v3",
+        "description": "Classical one-stage network used as comparison baseline"
+      },
+      {
+        "name": "Faster-RCNN",
+        "description": "Classical two-stage network used as comparison baseline"
+      },
+      {
+        "name": "R-FCN",
+        "description": "Classical two-stage network used as comparison baseline"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP 50",
+        "value": "92.9",
+        "split": null
+      },
+      {
+        "metric": "FLOPs",
+        "value": "4.0G",
+        "split": null
+      },
+      {
+        "metric": "Params",
+        "value": "7.3M",
+        "split": null
+      },
+      {
+        "metric": "FPS",
+        "value": "61.5",
+        "split": null
+      },
+      {
+        "metric": "FLOPs(G)",
+        "value": "1.0",
+        "split": null
+      },
+      {
+        "metric": "Params(M)",
+        "value": "1.1",
+        "split": null
+      },
+      {
+        "metric": "mAP 50",
+        "value": "43.9",
+        "split": "test-dev2017"
+      }
+    ]
+  }
+}

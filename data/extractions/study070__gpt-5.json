@@ -1,0 +1,294 @@
+{
+  "study_id": "study070",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study070/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:13:22.862853+00:00",
+  "counts": {
+    "dependencies": 7,
+    "random_seeds": 0,
+    "hyperparameters": 11,
+    "datasets": 2,
+    "methods": 14,
+    "evaluation_results": 25
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Codex-Davinci",
+        "version": null
+      },
+      {
+        "name": "GPT-3",
+        "version": null
+      },
+      {
+        "name": "GPT-Neo",
+        "version": "2.7B"
+      },
+      {
+        "name": "CodeGen",
+        "version": "2.7B"
+      },
+      {
+        "name": "SBERT all-mpnet-v2",
+        "version": "220M"
+      },
+      {
+        "name": "AdamW",
+        "version": null
+      },
+      {
+        "name": "OpenAI Codex",
+        "version": "code-davinci-002"
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "learning rate",
+        "value": "2\u00d710\u22125"
+      },
+      {
+        "name": "warmup steps",
+        "value": "1000"
+      },
+      {
+        "name": "temperature",
+        "value": "0"
+      },
+      {
+        "name": "generation_strategy",
+        "value": "greedy argmax"
+      },
+      {
+        "name": "retriever_input_max_length",
+        "value": "512"
+      },
+      {
+        "name": "num_context_exemplars_Codex",
+        "value": "10"
+      },
+      {
+        "name": "num_context_exemplars_GPT-Neo",
+        "value": "5"
+      },
+      {
+        "name": "positive_example_percent",
+        "value": "5%"
+      },
+      {
+        "name": "negative_example_percent",
+        "value": "5%"
+      },
+      {
+        "name": "neighbor_selection_percent",
+        "value": "10%"
+      },
+      {
+        "name": "selection_pool_percentage",
+        "value": "1%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pile",
+        "version": null
+      },
+      {
+        "name": "MultiWOZ",
+        "version": "2.1"
+      }
+    ],
+    "methods": [
+      {
+        "name": "Retriever fine-tuning on selection pool",
+        "description": "Fine-tune the retriever only on a sampled selection pool of training data without exposure to any other DST data."
+      },
+      {
+        "name": "Zero-shot setting with single formatting example",
+        "description": "Perform zero-shot inference by providing a single formatting example turn, following prior zero-shot learning work."
+      },
+      {
+        "name": "Use of Codex-Davinci for experiments",
+        "description": "Adopt Codex-Davinci as the primary language model due to observed superior performance over GPT-3 in initial studies."
+      },
+      {
+        "name": "Baselines with GPT-Neo and CodeGen",
+        "description": "Report results using GPT-Neo (2.7B) and CodeGen (2.7B) models pretrained on the Pile and open-source code."
+      },
+      {
+        "name": "IC-DST",
+        "description": "In-context dialog state tracking; retriever initialized with SBERT all-mpnet-v2 (220M) and optimized with AdamW (learning rate 2\u00d710\u22125, 1000 warmup steps); retriever fine-tuned by computing similarity per training sample."
+      },
+      {
+        "name": "TRADE",
+        "description": "Baseline model as reported in the table."
+      },
+      {
+        "name": "SGPDST",
+        "description": "Baseline model as reported in the table."
+      },
+      {
+        "name": "DS2 - BART",
+        "description": "Baseline model using BART as reported in the table."
+      },
+      {
+        "name": "DS2 - T5",
+        "description": "Baseline model using T5 as reported in the table."
+      },
+      {
+        "name": "DS2-T5 (Shin et al., 2022)",
+        "description": "Previous state-of-the-art few-shot DST model on MultiWOZ, used as a comparison baseline."
+      },
+      {
+        "name": "SGP-DST",
+        "description": "Uses schema information as a prompt to query a sequence-to-sequence language model (e.g., T5); achieved SOTA on MultiWOZ 2.2; predicts the value for each domain and slot pair in separate passes."
+      },
+      {
+        "name": "TRADE-style slot prediction",
+        "description": "Predicts the value for each domain-slot pair in a separate pass."
+      },
+      {
+        "name": "TransferQA",
+        "description": "Reformulates DST as a QA problem; pretrained on large QA data and predicts slot values at inference using synthesized extractive questions."
+      },
+      {
+        "name": "DS2",
+        "description": "Reformulates DST as dialogue summarization; trains seq2seq models with synthetic summary templates and recovers dialogue states by reversing template generation rules; requires finetuning on DST labels."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "JGA (MultiWOZ 2.1, 1%, TRADE)",
+        "value": "12.58",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 5%, TRADE)",
+        "value": "31.17",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 10%, TRADE)",
+        "value": "36.18",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 100%, TRADE)",
+        "value": "46.00",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.4, 100%, TRADE)",
+        "value": "55.05",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 1%, SGPDST)",
+        "value": "32.11",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 5%, SGPDST)",
+        "value": "43.14",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 10%, SGPDST)",
+        "value": "46.92",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 100%, SGPDST)",
+        "value": "56.66",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 1%, DS2 - BART)",
+        "value": "28.25",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 5%, DS2 - BART)",
+        "value": "37.71",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 10%, DS2 - BART)",
+        "value": "40.29",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 100%, DS2 - BART)",
+        "value": "46.86",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.4, 1%, DS2 - BART)",
+        "value": "30.55",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.4, 5%, DS2 - BART)",
+        "value": "42.53",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.4, 10%, DS2 - BART)",
+        "value": "41.73",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.4, 100%, DS2 - BART)",
+        "value": "46.14",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 1%, DS2 - T5)",
+        "value": "33.76",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 5%, DS2 - T5)",
+        "value": "44.20",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 10%, DS2 - T5)",
+        "value": "45.38",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.1, 100%, DS2 - T5)",
+        "value": "52.32",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.4, 1%, DS2 - T5)",
+        "value": "36.76",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.4, 5%, DS2 - T5)",
+        "value": "49.89",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.4, 10%, DS2 - T5)",
+        "value": "51.05",
+        "split": null
+      },
+      {
+        "metric": "JGA (MultiWOZ 2.4, 100%, DS2 - T5)",
+        "value": "57.85",
+        "split": null
+      }
+    ]
+  }
+}

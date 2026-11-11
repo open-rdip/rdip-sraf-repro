@@ -1,0 +1,45 @@
+{
+  "study_id": "study049",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study049/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:53:38.678425+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 4,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "non-copying transduction",
+        "description": "A transduction without the copying operation, used to obtain the class of all paths from any class with unbounded shrubdepth."
+      },
+      {
+        "name": "Gy\u00e1rf\u00e1s decomposition",
+        "description": "A tree-structured decomposition of a graph into bags partitioning V(G) with specific ancestor, connectivity, and hook vertex properties."
+      },
+      {
+        "name": "simple interpretation",
+        "description": "An interpretation I of (colored) graphs in (colored) graphs defined naturally by a formula in the signature of (colored) graphs."
+      },
+      {
+        "name": "simple equivalence",
+        "description": "A pair of first-order formulas defining inverse bijections between two classes of (colored) graphs."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

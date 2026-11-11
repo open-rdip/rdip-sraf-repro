@@ -1,0 +1,93 @@
+{
+  "study_id": "study040",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study040/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:46:20.204897+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 1,
+    "hyperparameters": 5,
+    "datasets": 4,
+    "methods": 6,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [
+      2021
+    ],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "L",
+        "value": "{3,4,5}"
+      },
+      {
+        "name": "model dimension D",
+        "value": "{128,256}"
+      },
+      {
+        "name": "inner-layer of the feed forward network (F)",
+        "value": "2D"
+      },
+      {
+        "name": "default number of maximum epochs",
+        "value": "100"
+      },
+      {
+        "name": "maximum epochs for Electricity and Traffic (ablation experiments)",
+        "value": "20"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ILI",
+        "version": null
+      },
+      {
+        "name": "Electricity",
+        "version": null
+      },
+      {
+        "name": "Traffic",
+        "version": null
+      },
+      {
+        "name": "Weather",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PatchTST/42",
+        "description": "Supervised multivariate long-term forecasting model with patching and channel-independence"
+      },
+      {
+        "name": "Original TST",
+        "description": "Original time series Transformer model where neither patching nor channel-independence is included"
+      },
+      {
+        "name": "channel-independence",
+        "description": "Technique applied to time series forecasting models"
+      },
+      {
+        "name": "patching",
+        "description": "Technique applied to time series forecasting models"
+      },
+      {
+        "name": "Instance Normalization",
+        "description": "Normalization technology used in time series models to improve forecasting performance"
+      },
+      {
+        "name": "PatchTST",
+        "description": "Supervised model for multivariate long-term forecasting and transfer learning"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

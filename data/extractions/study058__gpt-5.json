@@ -1,0 +1,74 @@
+{
+  "study_id": "study058",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study058/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:02:04.931797+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 0,
+    "methods": 5,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "num_prompt_examples",
+        "value": "5"
+      },
+      {
+        "name": "example_prefix",
+        "value": "hyphen '-' before each example"
+      },
+      {
+        "name": "example_terminator",
+        "value": "newline '\\n' after each example"
+      },
+      {
+        "name": "end_of_prompt_suffix",
+        "value": "extra trailing hyphen '-'"
+      },
+      {
+        "name": "generation_stop_condition",
+        "value": "stop when model produces a new newline character"
+      },
+      {
+        "name": "per_generation_sampling",
+        "value": "use a newly and randomly selected set of 5 examples for each generated sentence"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Prompt construction and generation with GPT-3",
+        "description": "For a target minority group, sample 5 random sentences from the corresponding examples, join them so each is preceded by a hyphen and ends with a newline, append an extra trailing hyphen to the prompt, query GPT-3 to generate one continuation, and stop generation once the model produces a newline indicating the end of the sentence. For each generated sentence, resample a fresh set of 5 random examples."
+      },
+      {
+        "name": "Language model selection",
+        "description": "Use GPT-3 to generate statements; the approach is model-agnostic and could be applied to GPT-Neo, GPT-J, or Turing-NLG."
+      },
+      {
+        "name": "Human validation worker selection",
+        "description": "Select 156 MTurk workers with prior experience annotating toxic language for human validation."
+      },
+      {
+        "name": "Human validation with MTurk workers",
+        "description": "Selected 156 MTurk workers with prior experience annotating toxic language (Sap et al., 2020); 51 participated in data annotation."
+      },
+      {
+        "name": "Demographic survey",
+        "description": "Collected worker demographics via an optional survey at the end of the annotation task; reported percentages for race (56.9% White, 9.8% Black, 3.9% Hispanic, 3.9% Asian, 5.9% Other) and gender (45.1% female, 37.3% male, 2% non-binary)."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

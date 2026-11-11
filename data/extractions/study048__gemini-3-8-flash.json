@@ -1,0 +1,129 @@
+{
+  "study_id": "study048",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study048/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:53:00.586822+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 1,
+    "methods": 9,
+    "evaluation_results": 5
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "reduced temperature",
+        "value": "0.8"
+      },
+      {
+        "name": "RMS gradient tolerance",
+        "value": "0.01 in reduced units"
+      },
+      {
+        "name": "energy change tolerance",
+        "value": "0.1\u01eb"
+      },
+      {
+        "name": "reoptimization RMS force tolerance",
+        "value": "10\u22124"
+      },
+      {
+        "name": "reoptimization energy difference tolerance",
+        "value": "10\u22129"
+      },
+      {
+        "name": "angular moves acceptance ratio",
+        "value": "0.5"
+      },
+      {
+        "name": "Monte Carlo steps",
+        "value": "5000"
+      },
+      {
+        "name": "number of Monte Carlo runs",
+        "value": "100"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Cambridge Cluster Database",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PES transformation",
+        "description": "Transforms the potential energy surface without changing the global minimum or relative energies of local minima, defined by transformed energy E~(X) = min{E(X)} where energy minimization is performed starting from nuclear coordinates X"
+      },
+      {
+        "name": "Monte Carlo",
+        "description": "Unbiased global optimization algorithm runs conducted starting from initial random configurations rather than biased morphology seeds"
+      },
+      {
+        "name": "Polak-Ribiere variant of the conjugate gradient algorithm",
+        "description": "Used to perform energy minimizations starting from X."
+      },
+      {
+        "name": "canonical Monte Carlo simulation",
+        "description": "Used to explore the energy landscape for the transformed energy function at a constant reduced temperature."
+      },
+      {
+        "name": "conjugate gradient search",
+        "description": "Energy minimization requiring RMS gradient to fall below 0.01 in reduced units and energy change less than 0.1\u01eb between consecutive steps."
+      },
+      {
+        "name": "canonical simulation",
+        "description": "Simulation used to obtain lowest energy structures for subsequent reoptimization."
+      },
+      {
+        "name": "seeding",
+        "description": "Technique employed in the calculations."
+      },
+      {
+        "name": "freezing",
+        "description": "Technique employed in the calculations."
+      },
+      {
+        "name": "angular moves",
+        "description": "Move employed for an atom with all other atoms fixed if the highest pair energy rises above a fraction \u03b1 of the lowest pair energy."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "LJ 38 truncated octahedron discovery rate (longer unseeded runs)",
+        "value": "four out of five",
+        "split": null
+      },
+      {
+        "metric": "LJ 38 average steps to first success",
+        "value": "within a thousand Monte Carlo steps",
+        "split": null
+      },
+      {
+        "metric": "LJ 75 global minimum discovery count (longer runs)",
+        "value": "1",
+        "split": null
+      },
+      {
+        "metric": "energy accuracy",
+        "value": "about six decimal places",
+        "split": null
+      },
+      {
+        "metric": "frequency of finding decahedral global minimum for LJ 75",
+        "value": "four out of 100",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "study_id": "study023",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study023/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:14:09.602568+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 1,
+    "methods": 14,
+    "evaluation_results": 12
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GPT-4V",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "temperature",
+        "value": "0"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Mobile-Eval",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "single-step task modification",
+        "description": "Each step was modified to function as a single-step task, and only SR (the same as DA) is evaluated."
+      },
+      {
+        "name": "direct GPT-4V",
+        "description": "Direct use of GPT-4V, bypassing the agent architecture for end-to-end operation."
+      },
+      {
+        "name": "GPT-4V with agent architecture",
+        "description": "GPT-4V combined with the agent architecture for mobile device operation."
+      },
+      {
+        "name": "Mobile-Agent-v2 ablation",
+        "description": "Ablation studies on Mobile-Agent-v2 including the planning agent, reflection agent, and memory unit."
+      },
+      {
+        "name": "operation knowledge injection",
+        "description": "Manually injected operation knowledge to mitigate limitations of an agent's operation capability and enhance Mobile-Agent-v2 performance, including guidance via manually written operation tutorials for complex tasks."
+      },
+      {
+        "name": "single-step evaluation",
+        "description": "All instructions were converted to single-step forms and the success rate, which is the same as decision accuracy, was evaluated for each single-step task."
+      },
+      {
+        "name": "Mobile-Agent",
+        "description": "Single-agent architecture based on GPT-4V end-to-end screen recognition, used as the baseline."
+      },
+      {
+        "name": "knowledge injection",
+        "description": "Providing the agent with some operation hints in addition to the user instructions to aid the agent. Knowledge was only injected for instructions that Mobile-Agent-v2 could not accomplish; for instructions that could be completed without additional assistance, the input was kept unchanged."
+      },
+      {
+        "name": "Mobile-Agent-v2",
+        "description": "Multi-agent architecture evaluated on non-English and English scenarios for basic and advanced instructions, with input kept unchanged when additional assistance is not used."
+      },
+      {
+        "name": "Reflection agent",
+        "description": "Component highlighted because decision errors remain even with knowledge injection, while completion can still succeed."
+      },
+      {
+        "name": "planning agent",
+        "description": "Agent that plans task progress so the decision agent can navigate correctly under single-image input."
+      },
+      {
+        "name": "decision agent",
+        "description": "Agent that navigates task progress and, when search is required, navigates to chat content stored by the memory unit."
+      },
+      {
+        "name": "memory unit",
+        "description": "Stores positions of critical UI elements and chat content needed for the task to aid localization and later retrieval."
+      },
+      {
+        "name": "Analysis of Operation Sequence Length",
+        "description": "Analyzes positions of erroneous or ineffective operations within failed instructions in English scenarios by dividing relative sequence positions into three equal parts."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Basic SR&DA (GPT-4V w/o agent)",
+        "value": "2.7",
+        "split": null
+      },
+      {
+        "metric": "Advanced SR&DA (GPT-4V w/o agent)",
+        "value": "0.9",
+        "split": null
+      },
+      {
+        "metric": "Basic SR&DA (Gemini-1.5-Pro)",
+        "value": "38.2",
+        "split": null
+      },
+      {
+        "metric": "Advanced SR&DA (Gemini-1.5-Pro)",
+        "value": "29.8",
+        "split": null
+      },
+      {
+        "metric": "Basic SR&DA (Qwen-VL-Max)",
+        "value": "42.1",
+        "split": null
+      },
+      {
+        "metric": "Advanced SR&DA (Qwen-VL-Max)",
+        "value": "33.6",
+        "split": null
+      },
+      {
+        "metric": "Basic SR&DA (GPT-4V)",
+        "value": "92.7",
+        "split": null
+      },
+      {
+        "metric": "Advanced SR&DA (GPT-4V)",
+        "value": "83.5",
+        "split": null
+      },
+      {
+        "metric": "success rate",
+        "value": "55%",
+        "split": null
+      },
+      {
+        "metric": "success rate improvement",
+        "value": "27%",
+        "split": null
+      },
+      {
+        "metric": "completion rate",
+        "value": "100%",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "99%",
+        "split": null
+      }
+    ]
+  }
+}

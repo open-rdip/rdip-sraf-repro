@@ -1,0 +1,175 @@
+{
+  "study_id": "study043",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study043/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:48:13.217701+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 18,
+    "datasets": 2,
+    "methods": 16,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "TITAN V",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning_rate",
+        "value": "10\u22124"
+      },
+      {
+        "name": "beta1",
+        "value": "0.5"
+      },
+      {
+        "name": "beta2",
+        "value": "0.9"
+      },
+      {
+        "name": "batch_size",
+        "value": "8"
+      },
+      {
+        "name": "total_training_steps",
+        "value": "3000000"
+      },
+      {
+        "name": "steps_per_stage",
+        "value": "1500000"
+      },
+      {
+        "name": "num_stages",
+        "value": "2"
+      },
+      {
+        "name": "training_time_days",
+        "value": "6"
+      },
+      {
+        "name": "gpus_used",
+        "value": "1"
+      },
+      {
+        "name": "sampling_rate",
+        "value": "48kHz"
+      },
+      {
+        "name": "num_bands",
+        "value": "16"
+      },
+      {
+        "name": "latent_dim",
+        "value": "128"
+      },
+      {
+        "name": "train_test_split",
+        "value": "90/10"
+      },
+      {
+        "name": "strings_sampling_rate",
+        "value": "48kHz"
+      },
+      {
+        "name": "vctk_sampling_rate",
+        "value": "48kHz"
+      },
+      {
+        "name": "downsample_rate_for_other_methods",
+        "value": "16kHz"
+      },
+      {
+        "name": "training_steps",
+        "value": "3M steps"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Strings",
+        "version": null
+      },
+      {
+        "name": "VCTK",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "RAVE training procedure",
+        "description": "Two-stage training with 1.5M steps per stage (3M total) following Section 3.1, using the same feature matching loss as the original paper."
+      },
+      {
+        "name": "Adam optimizer",
+        "description": "Adam with learning rate 10\u22124 and \u03b2 = (0.5, 0.9)."
+      },
+      {
+        "name": "Data augmentation",
+        "description": "Dequantization, random crop, and allpass filters with random coefficients."
+      },
+      {
+        "name": "Baselines - NSynth (unsupervised)",
+        "description": "Evaluated using the official implementation with default parameters."
+      },
+      {
+        "name": "Baselines - SING autoencoder",
+        "description": "Evaluated using the official implementation with default parameters."
+      },
+      {
+        "name": "RA VE (Realtime Audio Variational autoEncoder)",
+        "description": "A VAE built for high-quality 48kHz audio representation learning and faster-than-realtime synthesis, using multiband decomposition to reduce temporal dimensionality and expand receptive field."
+      },
+      {
+        "name": "Multiband decomposition",
+        "description": "Decomposes raw 48kHz waveform into 16 bands to decrease temporal dimensionality and enable efficient modeling with larger temporal receptive fields."
+      },
+      {
+        "name": "Encoder CNN",
+        "description": "Multiband decomposition followed by a simple convolutional neural network that maps the raw waveform to a 128-dimensional latent representation."
+      },
+      {
+        "name": "Modified generator (Kumar et al., 2019)",
+        "description": "Decoder based on an alternation of upsampling layers and residual networks, modified from the generator proposed by Kumar et al. (2019)."
+      },
+      {
+        "name": "NSynth",
+        "description": "Dataset is downsampled to 16kHz when using this method."
+      },
+      {
+        "name": "SING",
+        "description": "Dataset is downsampled to 16kHz when using this method."
+      },
+      {
+        "name": "RAVE",
+        "description": "Used to evaluate speech modelling in an unsupervised fashion on VCTK."
+      },
+      {
+        "name": "Modified generator architecture",
+        "description": "Alternation of upsampling layers and residual networks (as in Kumar et al., 2019) with three sub-networks: (1) waveform sub-network synthesizing a multiband audio signal with tanh activation; (2) loudness sub-network generating an amplitude envelope with sigmoid activation, whose output multiplies the waveform; (3) noise synthesizer as proposed in Engel et al. (2019) producing multiband filtered noise added to the signal. The explicit amplitude envelope reduces silent-part artifacts; the noise synthesizer improves naturalness for noisy signals."
+      },
+      {
+        "name": "Discriminator",
+        "description": "Exact same discriminator as in Kumar et al. (2019): a strided convolutional network applied on different scales of the audio signal to prevent artifacts."
+      },
+      {
+        "name": "Feature matching loss",
+        "description": "Uses the same feature matching loss as in Kumar et al. (2019)."
+      },
+      {
+        "name": "Training procedure",
+        "description": "Follows the training procedure proposed in Section 3.1 and trains RAVE for 3M steps."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "study_id": "study022",
+  "backend": "anthropic",
+  "model": "claude-opus-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study022/ext/claude-opus-5-5",
+  "extracted_at": "2026-11-10T00:15:33.775813+00:00",
+  "counts": {
+    "dependencies": 7,
+    "random_seeds": 0,
+    "hyperparameters": 17,
+    "datasets": 3,
+    "methods": 23,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "nvFuser",
+        "version": null
+      },
+      {
+        "name": "cuCollections",
+        "version": null
+      },
+      {
+        "name": "CUDA Graphs",
+        "version": null
+      },
+      {
+        "name": "Flink",
+        "version": null
+      },
+      {
+        "name": "Kafka",
+        "version": null
+      },
+      {
+        "name": "Rockstore",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "retraining frequency",
+        "value": "twice per week (from scratch)"
+      },
+      {
+        "name": "realtime user sequence length |S|",
+        "value": "100"
+      },
+      {
+        "name": "action embedding dimension d_action",
+        "value": "32"
+      },
+      {
+        "name": "number of transformer blocks",
+        "value": "2"
+      },
+      {
+        "name": "dropout rate",
+        "value": "0.1"
+      },
+      {
+        "name": "feed forward network dimension d_hidden",
+        "value": "32"
+      },
+      {
+        "name": "positional encoding",
+        "value": "not used"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning rate warm-up steps",
+        "value": "5000"
+      },
+      {
+        "name": "peak learning rate",
+        "value": "0.0048"
+      },
+      {
+        "name": "learning rate schedule",
+        "value": "warm-up followed by cosine annealing"
+      },
+      {
+        "name": "batch size",
+        "value": "12000"
+      },
+      {
+        "name": "transformer encoder layers",
+        "value": "2"
+      },
+      {
+        "name": "attention heads",
+        "value": "1"
+      },
+      {
+        "name": "feed forward hidden dimension",
+        "value": "d_hidden"
+      },
+      {
+        "name": "early fusion method",
+        "value": "concat"
+      },
+      {
+        "name": "sequence feature dimension d",
+        "value": "d_action + 2*d_PinSage"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pinterest Homefeed view log (three weeks, internal training data)",
+        "version": null
+      },
+      {
+        "name": "FVL (offline evaluation data randomly sampled)",
+        "version": null
+      },
+      {
+        "name": "Pinterest Homefeed view log (FVL)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Pinnability",
+        "description": "Pinterest's engagement prediction model, retrained from scratch twice per week to keep its predictions from going stale while keeping training cost manageable"
+      },
+      {
+        "name": "TransAct",
+        "description": "Component integrated into Pinnability that makes the model 65 times more computationally complex in floating point operations than its predecessors"
+      },
+      {
+        "name": "GPU serving",
+        "description": "GPU model inference used to serve Pinnability with TransAct at neutral latency and cost; the main challenge is CUDA kernel launch overhead, caused by hundreds of features producing many CUDA kernels and by small online batch sizes"
+      },
+      {
+        "name": "CUDA kernel fusion",
+        "description": "Fuse operations as much as possible to reduce kernel launching overhead, using deep learning compilers such as nvFuser plus manual intervention for remaining operations"
+      },
+      {
+        "name": "GPU hash tables for raw ids",
+        "description": "Leverage cuCollections to support hash tables for raw feature ids on GPUs for raw id to table index lookup"
+      },
+      {
+        "name": "Consolidated embedding lookup module",
+        "description": "Custom module that merges embedding lookups for multiple features into one lookup, reducing hundreds of sparse-feature operations into one"
+      },
+      {
+        "name": "Combine memory copies",
+        "description": "Optimization addressing the overhead of copying hundreds of features from CPU to GPU memory as individual tensors for every inference"
+      },
+      {
+        "name": "CUDA Graphs",
+        "description": "Captures the model inference process as a static graph of operations instead of individually scheduled ones, so computation executes as a single unit without kernel launching overheads, eliminating small-operation overhead."
+      },
+      {
+        "name": "Realtime Feature Processing",
+        "description": "Flink-based application consumes user action Kafka streams from front-end events, validates action records, detects and combines duplicates, manages time discrepancies across data sources, materializes features and stores them in Rockstore; at serving time it converts sequence features into a model-usable format."
+      },
+      {
+        "name": "Form larger batches",
+        "description": "Replace a scatter-gather architecture that split requests into small batches across multiple leaf nodes with direct use of the larger batches in the original requests, which is more efficient for GPU-based inference."
+      },
+      {
+        "name": "Hybrid DRAM/SSD cache",
+        "description": "A hybrid cache using both DRAM and SSD to compensate for the loss of cache capacity after moving away from the scatter-gather setup."
+      },
+      {
+        "name": "Realtime-batch hybrid model",
+        "description": "Ranking model design that requires both realtime and batch user features."
+      },
+      {
+        "name": "Offline evaluation sampling",
+        "description": "Offline evaluation data randomly sampled from FVL to represent the true distribution of real-world traffic, with position bias eliminated."
+      },
+      {
+        "name": "Weighted cross-entropy loss",
+        "description": "Multi-head binary cross-entropy loss in which each head's cross entropy is weighted by w_h, and each training example is weighted by a user-dependent weight w_u. Reduces to standard multi-head binary cross entropy when M is diagonal."
+      },
+      {
+        "name": "Label weight matrix",
+        "description": "Matrix M of size |H|x|H| with empirically determined label weights. Head weights are computed as w_h = sum over a in H of M_{h,a} * y_a. It controls each action's contribution to each head's loss term."
+      },
+      {
+        "name": "User-dependent example weighting",
+        "description": "Each training example is weighted by w_u = w_state x w_location x w_gender, determined by user attributes and adjusted based on business needs."
+      },
+      {
+        "name": "Realtime User Action Sequence Features",
+        "description": "Variable-length feature built from a user's past action history on the platform."
+      },
+      {
+        "name": "Negative downsampling",
+        "description": "Downsampling of negative samples with a fixed ratio between positive and negative samples to balance the highly skewed dataset and improve model accuracy"
+      },
+      {
+        "name": "Label-based sampling",
+        "description": "Training data sampled based on user state and labels, with sampling ratios for different label actions designed from their statistical distribution and importance"
+      },
+      {
+        "name": "Early fusion (concat)",
+        "description": "Concatenates the candidate pin's PinSage embedding with user action features, producing a 2-d sequence feature matrix U in R^{|S| x d} where d = d_action + 2*d_PinSage; chosen based on offline experiment results"
+      },
+      {
+        "name": "PinSage embedding",
+        "description": "Pin embedding used as part of the user action sequence features and candidate pin representation"
+      },
+      {
+        "name": "Transformer-based sequence aggregation model",
+        "description": "Standard transformer encoder with 2 encoder layers and one head, without positional encoding, used to aggregate the user action sequence into a representation of short-term user preference"
+      },
+      {
+        "name": "Random Time Window Mask",
+        "description": "Uses timestamps of user actions to mask recent actions during training to mitigate the rabbit hole effect and improve Homefeed diversity"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

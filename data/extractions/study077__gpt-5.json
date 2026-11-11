@@ -1,0 +1,89 @@
+{
+  "study_id": "study077",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study077/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:18:11.111251+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 2,
+    "methods": 10,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "GSM8K",
+        "version": null
+      },
+      {
+        "name": "MBPP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "AF LOW",
+        "description": "A novel framework for automated workflow optimization that outperforms manually designed methods and existing automated approaches, can autonomously discover effective structures without pre-defined operators, and enables weaker models to outperform stronger ones on the Pareto front of cost-effectiveness."
+      },
+      {
+        "name": "Monte Carlo Tree Search",
+        "description": "Leveraged by AF LOW to navigate the vast search space of possible workflows efficiently."
+      },
+      {
+        "name": "Code-represented workflows",
+        "description": "Used by AF LOW to efficiently explore and navigate the workflow search space."
+      },
+      {
+        "name": "MATH_SOLVE_PROMPT",
+        "description": "Prompt instructing solutions to be checked step by step, double-checked and verified, with each step shown; final answer must be a single numerical value without units or additional text."
+      },
+      {
+        "name": "Operators",
+        "description": "Human-designed components introduced to enhance search efficiency, helping AF LOW discover better workflows more efficiently in ablation studies."
+      },
+      {
+        "name": "custom",
+        "description": "Initial problem-solving step using a MATH_SOLVE_PROMPT to generate a solution."
+      },
+      {
+        "name": "sc_ensemble",
+        "description": "Self-consistency ensemble operator that aggregates multiple candidate solutions to produce a final solution."
+      },
+      {
+        "name": "programmer",
+        "description": "Verification/review operator that checks the final solution and returns a verified output if available."
+      },
+      {
+        "name": "Prompt modification (formatting)",
+        "description": "Modified the custom prompt to improve formatting of the final answer."
+      },
+      {
+        "name": "Prompt modification (reasoning and checking)",
+        "description": "Modified the custom prompt to encourage step-by-step reasoning and checking."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "performance",
+        "value": "93.1%",
+        "split": null
+      },
+      {
+        "metric": "Score",
+        "value": "0.8591",
+        "split": null
+      }
+    ]
+  }
+}

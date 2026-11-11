@@ -1,0 +1,1271 @@
+{
+ "study_id": "study006",
+ "model": "gpt5",
+ "slug": "gpt-5",
+ "n_passages": 7,
+ "n_passages_ok": 7,
+ "failures": [],
+ "records": [
+  {
+   "field": "hyperparameters",
+   "value": "3",
+   "evidence": "3 different training seeds",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "20",
+   "evidence": "each seed is evaluated for 20 episodes",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "approximately 10 Hz",
+   "evidence": "control rate of approximately 10 Hz",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "15",
+   "evidence": "15 for Adroit tasks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "Stochastic MuJoCo",
+   "evidence": "Stochastic MuJoCo tasks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "Medium-Replay-High Hopper",
+   "evidence": "Medium-Replay-High Hopper dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "Medium-Expert-Mod Hopper",
+   "evidence": "Medium-Expert-Mod Hopper dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "L-MAP",
+   "evidence": "L-MAP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "TAP",
+   "evidence": "TAP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "TT",
+   "evidence": "TT",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "1R2R",
+   "evidence": "1R2R",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "CQL",
+   "evidence": "CQL",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "IQL",
+   "evidence": "IQL",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Latent Macro Action Planner (L-MAP)",
+   "evidence": "Latent Macro Action Planner (L-MAP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "VQ-V AE",
+   "evidence": "VQ-V AE framework",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "state-conditioned VQ-V AE",
+   "evidence": "state-conditioned VQ-V AE",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "decoder",
+   "evidence": "via a decoder within the VQ-V AE framework",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "planning algorithms",
+   "evidence": "Combined with planning algorithms",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "transfer learning",
+   "evidence": "exploring transfer learning to handle new tasks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "online learning",
+   "evidence": "adapting L-MAP to online learning scenarios",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "risk-averse exploration",
+   "evidence": "risk-averse ex- ploration (Luo et al., 2024)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "temporal abstractions",
+   "evidence": "leverages temporal abstractions",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "macro-actions",
+   "evidence": "macro- actions",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "latent code representation",
+   "evidence": "latent code representation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "transition model",
+   "evidence": "transition model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "3",
+   "evidence": "we set our macro action length to 3.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "9",
+   "evidence": "The planning horizon in the raw action space is set to 9 for gym locomotion tasks and 15 for Adroit tasks.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "15",
+   "evidence": "The planning horizon in the raw action space is set to 9 for gym locomotion tasks and 15 for Adroit tasks.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "Stochastic MuJoCo tasks",
+   "evidence": "We evaluate L-MAP on Stochastic MuJoCo tasks (Rigter et al., 2023)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "Adroit",
+   "evidence": "We then test L-MAP on Adroit",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "AntMaze",
+   "evidence": "we evaluate L-MAP on AntMaze",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "L-MAP",
+   "evidence": "We evaluate L-MAP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Conservative Q-Learning (CQL)",
+   "evidence": "Conservative Q- Learning (CQL; Kumar et al. (2020))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Implicit Q-Learning (IQL)",
+   "evidence": "Implicit Q-Learning (IQL; Kostrikov et al. (2022))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "TT",
+   "evidence": "TT and TAP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "TAP",
+   "evidence": "TT and TAP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "AntMaze",
+   "evidence": "AntMaze environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "TAP",
+   "evidence": "Similar to TAP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "IQL critic",
+   "evidence": "IQL critic",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "L-MAP",
+   "evidence": "L-MAP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "Monte Carlo planning",
+   "evidence": "Monte Carlo planning",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "TT (+Q)",
+   "evidence": "TT (+Q)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "83.33%",
+   "evidence": "average success rate of 83.33% across all AntMaze environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "84.00%",
+   "evidence": "84.00% average of TT (+Q)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "78.33%",
+   "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "81.67%",
+   "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.7%",
+   "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "60.0%",
+   "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "93.33%",
+   "evidence": "Umaze and Medium-Diverse, L-MAP still performs exceptionally well with success rates of 93.33% and 88.33% in these settings.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "88.33%",
+   "evidence": "Umaze and Medium-Diverse, L-MAP still performs exceptionally well with success rates of 93.33% and 88.33% in these settings.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "CompILE",
+   "evidence": "CompILE (Kipf et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "RPL",
+   "evidence": "RPL (Gupta et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "OPAL",
+   "evidence": "OPAL (Ajay et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "ACT",
+   "evidence": "ACT (Zhao et al., 2023)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "PRISE",
+   "evidence": "PRISE (Zheng et al., 2024)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "93.33%",
+   "evidence": "success rates of 93.33% and 88.33%",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "88.33%",
+   "evidence": "success rates of 93.33% and 88.33%",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "Cloned dataset",
+   "evidence": "For the Cloned dataset, which con- tains a mix of optimal and suboptimal trajectories,",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "Expert dataset",
+   "evidence": "In the Expert dataset, comprised of optimal demonstrations,",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "L-MAP",
+   "evidence": "L-MAP achieves the highest average score of 51.40",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "IQL",
+   "evidence": "IQL leads in the Pen task",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "CQL",
+   "evidence": "CQL leads in the Hammer and Relocate tasks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "TT",
+   "evidence": "surpassing TT and BC in most environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "Behavior Cloning (BC)",
+   "evidence": "Behavior Cloning (BC) as an additional baseline",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "1R2R",
+   "evidence": "the original 1R2R method was not evaluated",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "51.40",
+   "evidence": "highest average score of 51.40 across all datasets and environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "18.79",
+   "evidence": "and 18.79 across non-expert datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "MCTS",
+   "evidence": "MCTS process for macro-level planning.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "UCT policy",
+   "evidence": "UCT policy",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "progressive widening",
+   "evidence": "progressive widening",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "parallel expansion of multiple macro actions",
+   "evidence": "parallel expansion of multiple macro actions",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "backpropagates estimated Q-values",
+   "evidence": "backpropagates estimated Q-values",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "gpt-5",
+   "passage_index": 6
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "hyperparameters": {
+    "n": 7,
+    "has_evidence": 7,
+    "span_found": 7,
+    "value_in_span": 7,
+    "grounded": 7
+   },
+   "datasets": {
+    "n": 9,
+    "has_evidence": 9,
+    "span_found": 9,
+    "value_in_span": 9,
+    "grounded": 9
+   },
+   "methods": {
+    "n": 44,
+    "has_evidence": 44,
+    "span_found": 44,
+    "value_in_span": 40,
+    "grounded": 40
+   },
+   "evaluation_results": {
+    "n": 12,
+    "has_evidence": 12,
+    "span_found": 12,
+    "value_in_span": 12,
+    "grounded": 12
+   }
+  },
+  "total": {
+   "n": 72,
+   "has_evidence": 72,
+   "span_found": 72,
+   "value_in_span": 68,
+   "grounded": 68
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "num_training_seeds",
+      "value": "3",
+      "evidence": "3 different training seeds"
+     },
+     {
+      "name": "episodes_per_seed",
+      "value": "20",
+      "evidence": "each seed is evaluated for 20 episodes"
+     },
+     {
+      "name": "control_rate",
+      "value": "approximately 10 Hz",
+      "evidence": "control rate of approximately 10 Hz"
+     },
+     {
+      "name": "horizon_adroit",
+      "value": "15",
+      "evidence": "15 for Adroit tasks"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "Stochastic MuJoCo",
+      "version": null,
+      "evidence": "Stochastic MuJoCo tasks"
+     },
+     {
+      "name": "Medium-Replay-High Hopper",
+      "version": null,
+      "evidence": "Medium-Replay-High Hopper dataset"
+     },
+     {
+      "name": "Medium-Expert-Mod Hopper",
+      "version": null,
+      "evidence": "Medium-Expert-Mod Hopper dataset"
+     }
+    ],
+    "methods": [
+     {
+      "name": "L-MAP",
+      "evidence": "L-MAP"
+     },
+     {
+      "name": "TAP",
+      "evidence": "TAP"
+     },
+     {
+      "name": "TT",
+      "evidence": "TT"
+     },
+     {
+      "name": "1R2R",
+      "evidence": "1R2R"
+     },
+     {
+      "name": "CQL",
+      "evidence": "CQL"
+     },
+     {
+      "name": "IQL",
+      "evidence": "IQL"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Latent Macro Action Planner (L-MAP)",
+      "evidence": "Latent Macro Action Planner (L-MAP)"
+     },
+     {
+      "name": "VQ-V AE",
+      "evidence": "VQ-V AE framework"
+     },
+     {
+      "name": "state-conditioned VQ-V AE",
+      "evidence": "state-conditioned VQ-V AE"
+     },
+     {
+      "name": "decoder",
+      "evidence": "via a decoder within the VQ-V AE framework"
+     },
+     {
+      "name": "planning algorithms",
+      "evidence": "Combined with planning algorithms"
+     },
+     {
+      "name": "transfer learning",
+      "evidence": "exploring transfer learning to handle new tasks"
+     },
+     {
+      "name": "online learning",
+      "evidence": "adapting L-MAP to online learning scenarios"
+     },
+     {
+      "name": "risk-averse exploration",
+      "evidence": "risk-averse ex- ploration (Luo et al., 2024)"
+     },
+     {
+      "name": "temporal abstractions",
+      "evidence": "leverages temporal abstractions"
+     },
+     {
+      "name": "macro-actions",
+      "evidence": "macro- actions"
+     },
+     {
+      "name": "latent code representation",
+      "evidence": "latent code representation"
+     },
+     {
+      "name": "transition model",
+      "evidence": "transition model"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "macro action length",
+      "value": "3",
+      "evidence": "we set our macro action length to 3."
+     },
+     {
+      "name": "planning horizon (gym locomotion tasks)",
+      "value": "9",
+      "evidence": "The planning horizon in the raw action space is set to 9 for gym locomotion tasks and 15 for Adroit tasks."
+     },
+     {
+      "name": "planning horizon (Adroit tasks)",
+      "value": "15",
+      "evidence": "The planning horizon in the raw action space is set to 9 for gym locomotion tasks and 15 for Adroit tasks."
+     }
+    ],
+    "datasets": [
+     {
+      "name": "Stochastic MuJoCo tasks",
+      "version": null,
+      "evidence": "We evaluate L-MAP on Stochastic MuJoCo tasks (Rigter et al., 2023)"
+     },
+     {
+      "name": "Adroit",
+      "version": null,
+      "evidence": "We then test L-MAP on Adroit"
+     },
+     {
+      "name": "AntMaze",
+      "version": null,
+      "evidence": "we evaluate L-MAP on AntMaze"
+     }
+    ],
+    "methods": [
+     {
+      "name": "L-MAP",
+      "evidence": "We evaluate L-MAP"
+     },
+     {
+      "name": "Conservative Q-Learning (CQL)",
+      "evidence": "Conservative Q- Learning (CQL; Kumar et al. (2020))"
+     },
+     {
+      "name": "Implicit Q-Learning (IQL)",
+      "evidence": "Implicit Q-Learning (IQL; Kostrikov et al. (2022))"
+     },
+     {
+      "name": "TT",
+      "evidence": "TT and TAP."
+     },
+     {
+      "name": "TAP",
+      "evidence": "TT and TAP."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "AntMaze",
+      "version": null,
+      "evidence": "AntMaze environments"
+     }
+    ],
+    "methods": [
+     {
+      "name": "TAP",
+      "evidence": "Similar to TAP"
+     },
+     {
+      "name": "IQL critic",
+      "evidence": "IQL critic"
+     },
+     {
+      "name": "L-MAP",
+      "evidence": "L-MAP"
+     },
+     {
+      "name": "Monte Carlo planning",
+      "evidence": "Monte Carlo planning"
+     },
+     {
+      "name": "TT (+Q)",
+      "evidence": "TT (+Q)"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "success rate",
+      "value": "83.33%",
+      "split": "AntMaze (average, L-MAP)",
+      "evidence": "average success rate of 83.33% across all AntMaze environments"
+     },
+     {
+      "metric": "success rate",
+      "value": "84.00%",
+      "split": "AntMaze (average, TT (+Q))",
+      "evidence": "84.00% average of TT (+Q)"
+     },
+     {
+      "metric": "success rate",
+      "value": "78.33%",
+      "split": "Large-Play (L-MAP)",
+      "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%."
+     },
+     {
+      "metric": "success rate",
+      "value": "81.67%",
+      "split": "Large-Diverse (L-MAP)",
+      "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%."
+     },
+     {
+      "metric": "success rate",
+      "value": "66.7%",
+      "split": "Large-Play (TT (+Q))",
+      "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%."
+     },
+     {
+      "metric": "success rate",
+      "value": "60.0%",
+      "split": "Large-Diverse (TT (+Q))",
+      "evidence": "Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%."
+     },
+     {
+      "metric": "success rate",
+      "value": "93.33%",
+      "split": "Umaze (L-MAP)",
+      "evidence": "Umaze and Medium-Diverse, L-MAP still performs exceptionally well with success rates of 93.33% and 88.33% in these settings."
+     },
+     {
+      "metric": "success rate",
+      "value": "88.33%",
+      "split": "Medium-Diverse (L-MAP)",
+      "evidence": "Umaze and Medium-Diverse, L-MAP still performs exceptionally well with success rates of 93.33% and 88.33% in these settings."
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "CompILE",
+      "evidence": "CompILE (Kipf et al., 2019)"
+     },
+     {
+      "name": "RPL",
+      "evidence": "RPL (Gupta et al., 2019)"
+     },
+     {
+      "name": "OPAL",
+      "evidence": "OPAL (Ajay et al., 2021)"
+     },
+     {
+      "name": "ACT",
+      "evidence": "ACT (Zhao et al., 2023)"
+     },
+     {
+      "name": "PRISE",
+      "evidence": "PRISE (Zheng et al., 2024)"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "success rate",
+      "value": "93.33%",
+      "split": null,
+      "evidence": "success rates of 93.33% and 88.33%"
+     },
+     {
+      "metric": "success rate",
+      "value": "88.33%",
+      "split": null,
+      "evidence": "success rates of 93.33% and 88.33%"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "Cloned dataset",
+      "version": null,
+      "evidence": "For the Cloned dataset, which con- tains a mix of optimal and suboptimal trajectories,"
+     },
+     {
+      "name": "Expert dataset",
+      "version": null,
+      "evidence": "In the Expert dataset, comprised of optimal demonstrations,"
+     }
+    ],
+    "methods": [
+     {
+      "name": "L-MAP",
+      "evidence": "L-MAP achieves the highest average score of 51.40"
+     },
+     {
+      "name": "IQL",
+      "evidence": "IQL leads in the Pen task"
+     },
+     {
+      "name": "CQL",
+      "evidence": "CQL leads in the Hammer and Relocate tasks"
+     },
+     {
+      "name": "TT",
+      "evidence": "surpassing TT and BC in most environments"
+     },
+     {
+      "name": "Behavior Cloning (BC)",
+      "evidence": "Behavior Cloning (BC) as an additional baseline"
+     },
+     {
+      "name": "1R2R",
+      "evidence": "the original 1R2R method was not evaluated"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "average score",
+      "value": "51.40",
+      "split": "all datasets and environments",
+      "evidence": "highest average score of 51.40 across all datasets and environments"
+     },
+     {
+      "metric": "average score",
+      "value": "18.79",
+      "split": "non-expert datasets",
+      "evidence": "and 18.79 across non-expert datasets"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 6,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "MCTS",
+      "evidence": "MCTS process for macro-level planning."
+     },
+     {
+      "name": "UCT policy",
+      "evidence": "UCT policy"
+     },
+     {
+      "name": "progressive widening",
+      "evidence": "progressive widening"
+     },
+     {
+      "name": "parallel expansion of multiple macro actions",
+      "evidence": "parallel expansion of multiple macro actions"
+     },
+     {
+      "name": "backpropagates estimated Q-values",
+      "evidence": "backpropagates estimated Q-values"
+     }
+    ],
+    "evaluation_results": []
+   }
+  }
+ ]
+}

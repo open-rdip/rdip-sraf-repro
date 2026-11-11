@@ -27,3 +27,14 @@
 {"ts": "2026-11-09T23:26:28", "event": "model_complete", "model": "opus", "slug": "claude-opus-5-5", "done": 3, "failed": 0, "skipped": 0, "spend_usd": 0.3325}
 {"ts": "2026-11-09T23:36:00", "event": "sweep_start", "models": ["gpt5"], "limit": 3, "budget": 35.0}
 {"ts": "2026-11-09T23:40:29", "event": "model_complete", "model": "gpt5", "slug": "gpt-5", "done": 3, "failed": 0, "skipped": 0, "spend_usd": 0.6471}
+{"ts": "2026-11-10T00:03:00", "event": "sweep_start", "models": ["gemini-flash", "grok", "gpt5", "sonnet", "opus"], "limit": 0, "budget": 35.0}
+{"ts": "2026-11-10T01:38:01", "event": "study_failed", "model": "gemini-flash", "study": "study096", "error": "403 Client Error: Forbidden for url: https://www.earthdoc.org/content/papers/10.3997/2214-4609.202410861"}
+{"ts": "2026-11-10T01:38:01", "event": "model_complete", "model": "gemini-flash", "slug": "gemini-3-8-flash", "done": 92, "failed": 1, "skipped": 3, "spend_usd": 0.8161}
+{"ts": "2026-11-10T05:05:05", "event": "study_failed", "model": "grok", "study": "study096", "error": "403 Client Error: Forbidden for url: https://www.earthdoc.org/content/papers/10.3997/2214-4609.202410861"}
+{"ts": "2026-11-10T05:05:05", "event": "model_complete", "model": "grok", "slug": "grok-4-7", "done": 92, "failed": 1, "skipped": 3, "spend_usd": 2.9403}
+{"ts": "2026-11-10T06:31:51", "event": "study_failed", "model": "gpt5", "study": "study096", "error": "403 Client Error: Forbidden for url: https://www.earthdoc.org/content/papers/10.3997/2214-4609.202410861"}
+{"ts": "2026-11-10T06:31:51", "event": "model_complete", "model": "gpt5", "slug": "gpt-5", "done": 92, "failed": 1, "skipped": 3, "spend_usd": 5.8633}
+{"ts": "2026-11-10T07:10:42", "event": "study_failed", "model": "sonnet", "study": "study096", "error": "403 Client Error: Forbidden for url: https://www.earthdoc.org/content/papers/10.3997/2214-4609.202410861"}
+{"ts": "2026-11-10T07:10:42", "event": "model_complete", "model": "sonnet", "slug": "claude-sonnet-5-5", "done": 92, "failed": 1, "skipped": 3, "spend_usd": 3.6756}
+{"ts": "2026-11-10T07:15:33", "event": "model_complete", "model": "opus", "slug": "claude-opus-5-5", "done": 9, "failed": 0, "skipped": 3, "spend_usd": 1.1131}
+{"ts": "2026-11-10T11:48:50", "event": "validity_rerun", "best_slug": "claude-sonnet-5-5"}

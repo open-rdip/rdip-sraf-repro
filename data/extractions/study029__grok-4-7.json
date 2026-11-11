@@ -1,0 +1,238 @@
+{
+  "study_id": "study029",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study029/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:33:23.675430+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 1,
+    "datasets": 8,
+    "methods": 20,
+    "evaluation_results": 18
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03bb",
+        "value": "{0.0,0.1,1.0,10.0,50.0}"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Cora",
+        "version": null
+      },
+      {
+        "name": "A-photos",
+        "version": null
+      },
+      {
+        "name": "ogbn-arxiv",
+        "version": null
+      },
+      {
+        "name": "Flickr",
+        "version": null
+      },
+      {
+        "name": "A-computers",
+        "version": null
+      },
+      {
+        "name": "Reddit",
+        "version": null
+      },
+      {
+        "name": "ogbn-products",
+        "version": null
+      },
+      {
+        "name": "A-photo",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "GRE",
+        "description": "Compared method that is on par in the sequential edit setting and has worse trade-off than GRE+."
+      },
+      {
+        "name": "GRE+",
+        "description": "Proposed method that achieves better trade-off between success rate and accuracy dropdown than GRE."
+      },
+      {
+        "name": "GCN",
+        "description": "GNN architecture evaluated in independent editing for success rate and test accuracy dropdown tradeoff."
+      },
+      {
+        "name": "GraphSAGE",
+        "description": "GNN architecture evaluated in independent editing for success rate and test accuracy dropdown tradeoff."
+      },
+      {
+        "name": "independent editing",
+        "description": "Editing setting used for success rate vs test accuracy dropdown tradeoff and hyperparameter study w.r.t. lambda."
+      },
+      {
+        "name": "sequential editing",
+        "description": "Editing setting noted as more difficult, where results are on par with GRE."
+      },
+      {
+        "name": "single edit",
+        "description": "Editing setting referenced in comparison with sequential editing."
+      },
+      {
+        "name": "Pareto front",
+        "description": "Curves plotted by assigning different hyperparameters to compare accuracy dropdown and success rate trade-off."
+      },
+      {
+        "name": "gradient rewiring",
+        "description": "Facilitates target sample correction while preserving the training loss."
+      },
+      {
+        "name": "ENN",
+        "description": "When applied to GNNs, performs markedly worse than the basic editor GD."
+      },
+      {
+        "name": "GD",
+        "description": "Basic editor that performs well in MLP, consistent with the low gradient discrepancy of MLP."
+      },
+      {
+        "name": "EGNN",
+        "description": "Model family with which GRE and GRE+ are compatible and further improve performance."
+      },
+      {
+        "name": "EGNN-GCN",
+        "description": "Architecture used to evaluate the A-computers dataset with GRE, GRE+, and GD."
+      },
+      {
+        "name": "EGNN-SAGE",
+        "description": "Architecture for which GRE+ shows a negative accuracy drop on 7 out of 8 datasets, with test accuracy increasing after model editing."
+      },
+      {
+        "name": "MLP",
+        "description": "Architecture on which GD performs well, consistent with low gradient discrepancy."
+      },
+      {
+        "name": "GRE+5",
+        "description": "GRE variant with 5 training subsets"
+      },
+      {
+        "name": "GRE+2",
+        "description": "GRE variant whose test accuracy drop is exceeded by GRE+5"
+      },
+      {
+        "name": "GRE+3",
+        "description": "GRE variant whose test accuracy drop is exceeded by GRE+5"
+      },
+      {
+        "name": "batch editing",
+        "description": "All batched samples are edited simultaneously in one editing process."
+      },
+      {
+        "name": "GCNGD",
+        "description": "Editor evaluated after applying one single edit on Flickr, Reddit, ogbn-arxiv, and ogbn-products."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "GRE average accuracy drop (A-computers, EGNN-GCN)",
+        "value": "4.62%",
+        "split": null
+      },
+      {
+        "metric": "GRE+ average accuracy drop (A-computers, EGNN-GCN)",
+        "value": "0.51%",
+        "split": null
+      },
+      {
+        "metric": "GD accuracy decrease (A-computers, EGNN-GCN)",
+        "value": "0.73%",
+        "split": null
+      },
+      {
+        "metric": "GRE+ with EGNN-SAGE negative accuracy drop (test accuracy increases)",
+        "value": "7 out of 8 datasets",
+        "split": "test"
+      },
+      {
+        "metric": "GCNGD Flickr Acc",
+        "value": "13.95\u00b111.00",
+        "split": "test"
+      },
+      {
+        "metric": "GCNGD Flickr DD",
+        "value": "37.25\u00b110.20",
+        "split": "test"
+      },
+      {
+        "metric": "GCNGD Flickr SR",
+        "value": "1.00",
+        "split": null
+      },
+      {
+        "metric": "GCNGD Reddit Acc",
+        "value": "75.20\u00b112.30",
+        "split": "test"
+      },
+      {
+        "metric": "GCNGD Reddit DD",
+        "value": "20.32\u00b111.30",
+        "split": "test"
+      },
+      {
+        "metric": "GCNGD Reddit SR",
+        "value": "1.00",
+        "split": null
+      },
+      {
+        "metric": "GCNGD ogbn-arxiv Acc",
+        "value": "23.71\u00b116.90",
+        "split": "test"
+      },
+      {
+        "metric": "GCNGD ogbn-arxiv DD",
+        "value": "46.50\u00b114.90",
+        "split": "test"
+      },
+      {
+        "metric": "GCNGD ogbn-arxiv SR",
+        "value": "1.00",
+        "split": null
+      },
+      {
+        "metric": "GCNGD ogbn-products Acc",
+        "value": "53.29\u00b10.94",
+        "split": "test"
+      },
+      {
+        "metric": "GCNGD ogbn-products DD",
+        "value": "20.71\u00b10.94",
+        "split": "test"
+      },
+      {
+        "metric": "drawdown (GRE+, GCN, A-photo, single edit)",
+        "value": "43.87%",
+        "split": "test"
+      },
+      {
+        "metric": "drawdown (GRE+, GCN, A-photo, sequential edit)",
+        "value": "65%",
+        "split": "test"
+      },
+      {
+        "metric": "drawdown over GRE (GRE+, GCN, A-photo, single edit)",
+        "value": "24.52%",
+        "split": "test"
+      }
+    ]
+  }
+}

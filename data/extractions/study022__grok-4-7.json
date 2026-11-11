@@ -1,0 +1,260 @@
+{
+  "study_id": "study022",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study022/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:11:51.381571+00:00",
+  "counts": {
+    "dependencies": 7,
+    "random_seeds": 0,
+    "hyperparameters": 16,
+    "datasets": 5,
+    "methods": 25,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "nvFuser",
+        "version": null
+      },
+      {
+        "name": "cuCollections",
+        "version": null
+      },
+      {
+        "name": "CUDA Graphs",
+        "version": null
+      },
+      {
+        "name": "Flink",
+        "version": null
+      },
+      {
+        "name": "Kafka",
+        "version": null
+      },
+      {
+        "name": "Rockstore",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "retraining_frequency",
+        "value": "twice per week"
+      },
+      {
+        "name": "realtime_user_sequence_length",
+        "value": "100"
+      },
+      {
+        "name": "action_embedding_dimension",
+        "value": "32"
+      },
+      {
+        "name": "transformer_blocks",
+        "value": "2"
+      },
+      {
+        "name": "dropout_rate",
+        "value": "0.1"
+      },
+      {
+        "name": "d_hidden",
+        "value": "32"
+      },
+      {
+        "name": "positional_encoding",
+        "value": "not used"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "warmup_steps",
+        "value": "5000"
+      },
+      {
+        "name": "learning_rate",
+        "value": "0.0048"
+      },
+      {
+        "name": "learning_rate_schedule",
+        "value": "cosine annealing"
+      },
+      {
+        "name": "batch_size",
+        "value": "12000"
+      },
+      {
+        "name": "early_fusion_method",
+        "value": "concat"
+      },
+      {
+        "name": "transformer_encoder_layers",
+        "value": "2"
+      },
+      {
+        "name": "attention_heads",
+        "value": "1"
+      },
+      {
+        "name": "sequence_feature_dimension",
+        "value": "d = (d_action + 2 * d_PinSage)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pinterest's internal training data",
+        "version": null
+      },
+      {
+        "name": "Pinterest Homefeed view log",
+        "version": null
+      },
+      {
+        "name": "FVL",
+        "version": null
+      },
+      {
+        "name": "Pinterest Homefeed view log (FVL)",
+        "version": null
+      },
+      {
+        "name": "Pinterest dataset",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Pinnability retraining",
+        "description": "Retrain Pinnability from scratch twice per week so predictions do not become stale and engagement rate stays consistent at a manageable training cost."
+      },
+      {
+        "name": "GPU serving",
+        "description": "Serve Pinnability with TransAct via GPU model inference at neutral latency and cost; main challenge is CUDA kernel launch overhead because the model processes hundreds of features (many CUDA kernels) and online serving batch size is small (little computation per kernel)."
+      },
+      {
+        "name": "TransAct",
+        "description": "Used with Pinnability; makes the model 65 times more computationally complex than its predecessors in floating point operations."
+      },
+      {
+        "name": "Fuse CUDA kernels",
+        "description": "Fuse operations as much as possible using standard deep learning compilers such as nvFuser, with human intervention for many remaining operations, to reduce CUDA kernel launch overhead from many small kernels."
+      },
+      {
+        "name": "Custom consolidated embedding lookup",
+        "description": "Embedding table lookup consists of raw id to table index lookup and table index to embedding lookup, repeated hundreds of times. cuCollections hash tables store raw ids on GPUs, and a custom consolidated embedding lookup merges lookups for multiple features into one, reducing hundreds of sparse-feature operations into one."
+      },
+      {
+        "name": "Combine memory copies",
+        "description": "For every inference, hundreds of features are copied from CPU to GPU memory as individual tensors; memory copies are combined to reduce that overhead."
+      },
+      {
+        "name": "CUDA Graphs",
+        "description": "Capture the model inference process as a static graph of operations instead of individually scheduled ones so computation executes as a single unit without kernel launching overheads, eliminating remaining small operations overhead."
+      },
+      {
+        "name": "Realtime Feature Processing",
+        "description": "A Flink application consumes user action Kafka streams from front-end events, validates each action record, detects and combines duplicates, manages time discrepancies from multiple data sources, materializes features, and stores them in Rockstore. At serving time, each Homefeed logging/serving request triggers conversion of sequence features into a format utilized by the model."
+      },
+      {
+        "name": "Form larger batches",
+        "description": "Use larger batches in the original requests directly for GPU-based inference instead of a scatter-gather architecture that splits requests into small batches across multiple leaf nodes."
+      },
+      {
+        "name": "Hybrid cache",
+        "description": "Implemented a hybrid cache that uses both DRAM and SSD to compensate for the loss of cache capacity from not splitting requests into small batches."
+      },
+      {
+        "name": "Utilize CUDA graphs",
+        "description": "Use CUDA Graphs to capture the model inference process as a static graph and eliminate remaining small operations overhead."
+      },
+      {
+        "name": "realtime-batch hybrid model",
+        "description": "Proposed model requiring both realtime and batch user features"
+      },
+      {
+        "name": "transformer encoder",
+        "description": "Encoded sequence feature passed through a transformer encoder of 2 transformer blocks; feed-forward dimension 32; positional encoding not used; dropout 0.1"
+      },
+      {
+        "name": "Adam with learning rate scheduler",
+        "description": "Adam optimizer; learning rate warms up over 5000 steps to 0.0048 then is reduced by cosine annealing"
+      },
+      {
+        "name": "offline evaluation sampling",
+        "description": "Offline evaluation data randomly sampled from FVL to represent real-world traffic distribution; position bias also eliminated"
+      },
+      {
+        "name": "Pinnability weighted cross-entropy loss",
+        "description": "Loss for multi-label classification: L = wu * sum over h in H of {-wh [yh log f(x)h + (1-yh)(1-log f(x)h)]}, where f(x) in (0,1)^H and f(x)h is the output probability of head h, and yh in {0,1} is the ground truth on head h."
+      },
+      {
+        "name": "Label weight matrix",
+        "description": "Per-head weight wh = sum over a in H of M_{h,a} * ya, where M in R^{|H| x |H|} controls each action's contribution to each head's loss. A diagonal M reduces Eq (1) to standard multi-head binary cross entropy; empirically determined label weights M improve performance considerably."
+      },
+      {
+        "name": "User-dependent example weighting",
+        "description": "Each training example is weighted by wu = w_state * w_location * w_gender, determined by user attributes such as user state, gender, and location, and adjusted based on specific business needs."
+      },
+      {
+        "name": "Realtime User Action Sequence Features",
+        "description": "User's past action history is treated as a variable-length feature, since different users have different amounts of past actions on the platform."
+      },
+      {
+        "name": "temporal train/eval split",
+        "description": "Offline training dataset constructed from three weeks of Pinterest Homefeed view log (FVL); model trained on the first two weeks and evaluated on the third week."
+      },
+      {
+        "name": "user-state and label sampling",
+        "description": "Training data sampled based on user state and labels; sampling ratio for different label actions designed based on their statistical distribution and importance."
+      },
+      {
+        "name": "negative sample downsampling",
+        "description": "Downsampling applied to negative samples with a fixed ratio between positive and negative samples to balance the highly skewed dataset."
+      },
+      {
+        "name": "early fusion",
+        "description": "Concatenation of the candidate pin's PinSage embedding with user action features, chosen based on offline experiment results, producing a sequence feature matrix U in R^{|S| x d}."
+      },
+      {
+        "name": "Sequence Aggregation Model",
+        "description": "Standard transformer encoder with 2 encoder layers and one head used to aggregate the user action sequence into a representation of short-term preference; positional encoding is not used because offline experiments showed position information is ineffective."
+      },
+      {
+        "name": "Random Time Window Mask",
+        "description": "Uses timestamps of the user to avoid training on all recent actions, which can cause a rabbit hole effect that reduces Homefeed diversity and harms long-term retention."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "computational complexity (floating point operations)",
+        "value": "65 times more than predecessors",
+        "split": null
+      },
+      {
+        "metric": "serving latency",
+        "value": "neutral",
+        "split": null
+      },
+      {
+        "metric": "serving cost",
+        "value": "neutral",
+        "split": null
+      }
+    ]
+  }
+}

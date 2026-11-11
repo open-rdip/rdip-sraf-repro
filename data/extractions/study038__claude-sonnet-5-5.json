@@ -1,0 +1,139 @@
+{
+  "study_id": "study038",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study038/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:47:21.750806+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 6,
+    "methods": 14,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "number of genes (input dimensionality)",
+        "value": "1,000"
+      },
+      {
+        "name": "number of held-out cell types",
+        "value": "eight"
+      },
+      {
+        "name": "number of random subsamples (n) for R2 estimation",
+        "value": "100"
+      },
+      {
+        "name": "hyper-parameter selection",
+        "value": "parameter grid-search for each model; details in tables 1-9 in appendix A"
+      },
+      {
+        "name": "number of random subsamples for R2 estimation",
+        "value": "100"
+      },
+      {
+        "name": "number of dimensions (genes) for mean and variance comparison",
+        "value": "2,000"
+      },
+      {
+        "name": "number of top differentially-expressed genes highlighted",
+        "value": "10"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "gut cells (H.poly infection, Tuft cells; conditions including Hpoly.Day10)",
+        "version": null
+      },
+      {
+        "name": "H.poly.Day10 infection single-cell gene expression dataset (Tuft cells and eight cell types, three conditions)",
+        "version": null
+      },
+      {
+        "name": "IFN-\u03b2 stimulated and control peripheral blood single-cell gene expression dataset (7,217 stimulated and 6,359 control cells)",
+        "version": null
+      },
+      {
+        "name": "Morpho-MNIST",
+        "version": null
+      },
+      {
+        "name": "CelebA",
+        "version": null
+      },
+      {
+        "name": "peripheral blood mononuclear cells (PBMCs) with IFN-\u03b2 stimulation",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "trVAE",
+        "description": "Conditional variational autoencoder (CVAE) with an MMD regularization that forces representations to be similar across conditions"
+      },
+      {
+        "name": "MMD regularization",
+        "description": "Maximum mean discrepancy regularization applied at the bottleneck layer to make representations similar across conditions"
+      },
+      {
+        "name": "CVAE with MMD regularization on bottleneck layer",
+        "description": "Baseline conditional VAE with MMD regularization on the bottleneck layer, which does not improve performance."
+      },
+      {
+        "name": "Held-out cell type experiment",
+        "description": "trVAE trained holding out each of the eight cell types with all three conditions included to show multi-condition handling."
+      },
+      {
+        "name": "UMAP",
+        "description": "Visualization of conditions and cell types for gut cells."
+      },
+      {
+        "name": "Pearson R2 comparison of mean and variance gene expression",
+        "description": "Pearson correlation R2 between real and predicted cells for mean and variance of gene expression, computed over n=100 random subsamples per model, reporting mean and standard deviation"
+      },
+      {
+        "name": "Differentially expressed gene analysis",
+        "description": "Top 10 differentially expressed genes highlighted in red for Tuft cells; Defa24 identified as top response gene to H.poly.Day10 infection"
+      },
+      {
+        "name": "VFAE",
+        "description": "Variational fair autoencoder baseline (Louizos et al., 2015)"
+      },
+      {
+        "name": "MMD-regularized autoencoder",
+        "description": "Autoencoder regularized with maximum mean discrepancy (Dziugaite et al., 2015b; Amodio et al., 2019)"
+      },
+      {
+        "name": "CycleGAN",
+        "description": "Baseline generative model (Zhu et al., 2017)"
+      },
+      {
+        "name": "scGen",
+        "description": "A VAE combined with vector arithmetics (Lotfollahi et al., 2019)"
+      },
+      {
+        "name": "scVI",
+        "description": "A CVAE with a negative binomial output distribution (Lopez et al., 2018a)"
+      },
+      {
+        "name": "vanilla CVAE",
+        "description": "Conditional variational autoencoder whose first-layer representations after the bottleneck vary strongly across categorical conditions"
+      },
+      {
+        "name": "R2 comparison of mean and variance of gene expression",
+        "description": "R2 values between real and predicted cells for different models, reported as mean and standard deviation over n=100 random subsamples per model"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

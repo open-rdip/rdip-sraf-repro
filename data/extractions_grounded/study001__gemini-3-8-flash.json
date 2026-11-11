@@ -1,0 +1,840 @@
+{
+ "study_id": "study001",
+ "model": "gemini-flash",
+ "slug": "gemini-3-8-flash",
+ "n_passages": 7,
+ "n_passages_ok": 7,
+ "failures": [],
+ "records": [
+  {
+   "field": "hyperparameters",
+   "value": "FP16",
+   "evidence": "setting the activation to FP16",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "256",
+   "evidence": "fine-grained quantization (block-size 256)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "8",
+   "evidence": "with a low-rank dimension of m= 8",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "LoRC",
+   "evidence": "Significantly, LoRC can be viewed as a supplementary feature",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "RTN",
+   "evidence": "existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "we utilize the GPTQ quantization strategy.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "ZeroQuant-Local/Global",
+   "evidence": "existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "FGQ",
+   "evidence": "can be seamlessly integrated with FGQ.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "max(abs(x))",
+   "evidence": "Specifically, for symmetric quantization, we set S=max(abs(x))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "INT4 weight-only quantization",
+   "evidence": "INT4 weight-only quantization for small models results in substantial accuracy degradation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "quantization-aware training",
+   "evidence": "These methods such as [ 36,12,35], unlike quantization-aware training, only require a small portion of the training data",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "Particularly, GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ZeroQuant",
+   "evidence": "Particularly, GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "round-to-nearest neighborhood (RTN)",
+   "evidence": "round-to-nearest neighborhood (RTN)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "PTQ",
+   "evidence": "RTNdirectly applies PTQ on the trained data",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "symmetric quantization",
+   "evidence": "Specifically, for symmetric quantization, we set S=max(abs(x))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "post-training quantization",
+   "evidence": "making Class-1 the optimal-loss post-training quantization.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "symmetric quantization",
+   "evidence": "We employ both symmetric and asymmetric quantization to gauge the quantization sensitivity",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "asymmetric quantization",
+   "evidence": "We employ both symmetric and asymmetric quantization to gauge the quantization sensitivity",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "per-row quantization",
+   "evidence": "we implement per-row quantization [ 12] for weight quantization",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "per-token quantization",
+   "evidence": "per-token quantization for activation [36].",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "weight-only quantization",
+   "evidence": "The results of weight-only quantization in OPT and BLOOM models are summarized in Table 2.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "about 0.5",
+   "evidence": "PPL improvement is about 0.5 (see Table 2).",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "less than 0.05",
+   "evidence": "INT8 weight-only quantization, either symmetric or asymmetric, results in negligible accuracy loss (less than 0.05, i.e., Class-1).",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "around 0.3 points",
+   "evidence": "Particularly, BLOOM-176B shows PPL degradation (around 0.3 points) in Class-2",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "PTQ",
+   "evidence": "With PTQ and row-wise quantization, achieving Class-1 quantization error is challenging",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "row-wise quantization",
+   "evidence": "With PTQ and row-wise quantization, achieving Class-1 quantization error is challenging",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "block-k quantization",
+   "evidence": "Importantly, block-k quantization can be implemented on modern GPUs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "RTN",
+   "evidence": "the application of RTN still results in a non-trivial accuracy gap.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "Specifically, we utilize GPTQ and ZQ-Global for all models and settings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Global",
+   "evidence": "Specifically, we utilize GPTQ and ZQ-Global for all models and settings",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Local",
+   "evidence": "apply ZQ-Local to OPT-66B and Bloom-176B.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Local",
+   "evidence": "ZQ-Local is an extension mode of ZQ-Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Global",
+   "evidence": "ZQ-Local is an extension mode of ZQ-Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "SGD",
+   "evidence": "iterative first-order optimization method (e.g., SGD)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "asymmetric quantization",
+   "evidence": "We use asymmetric quantization for better accuracy",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "parameters used for GPTQ, ZQ-Local, and ZQ-Global",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "ZeroQuant",
+   "evidence": "An interesting finding for ZeroQuant is that the hyperparameters",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "W4A8",
+   "evidence": "existing methods using W4A8 quantization are presented in Table 3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Global\u2217",
+   "evidence": "ZQ-Global\u2217optimizes a larger subnetwork",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "GPTQ",
+   "evidence": "GPTQ only optimizes a single linear layer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "RTN",
+   "evidence": "outperform RTN significantly",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "ZQ-Local\u2217",
+   "evidence": "ZQ-Global\u2217and ZQ-Local\u2217generally outperform GPTQ",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "ZeroQuant",
+   "evidence": "ZeroQuant (including both ZQ-Global\u2217and ZQ-Local\u2217)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "INT8 weight-only quantization",
+   "evidence": "INT8 weight-only quantization can serve as a standard method for reducing memory costs in LLMs",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "INT4 weight-only quantization",
+   "evidence": "INT4 weight-only quantization for small models results in substantial accuracy degradation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study001",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 6
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "hyperparameters": {
+    "n": 5,
+    "has_evidence": 5,
+    "span_found": 5,
+    "value_in_span": 5,
+    "grounded": 5
+   },
+   "methods": {
+    "n": 38,
+    "has_evidence": 38,
+    "span_found": 38,
+    "value_in_span": 38,
+    "grounded": 38
+   },
+   "evaluation_results": {
+    "n": 3,
+    "has_evidence": 3,
+    "span_found": 3,
+    "value_in_span": 3,
+    "grounded": 3
+   }
+  },
+  "total": {
+   "n": 46,
+   "has_evidence": 46,
+   "span_found": 46,
+   "value_in_span": 46,
+   "grounded": 46
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "activation",
+      "value": "FP16",
+      "evidence": "setting the activation to FP16"
+     },
+     {
+      "name": "block-size",
+      "value": "256",
+      "evidence": "fine-grained quantization (block-size 256)"
+     },
+     {
+      "name": "low-rank dimension m",
+      "value": "8",
+      "evidence": "with a low-rank dimension of m= 8"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "LoRC",
+      "evidence": "Significantly, LoRC can be viewed as a supplementary feature"
+     },
+     {
+      "name": "RTN",
+      "evidence": "existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global"
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "we utilize the GPTQ quantization strategy."
+     },
+     {
+      "name": "ZeroQuant-Local/Global",
+      "evidence": "existing quantization methodologies such as RTN, GPTQ, and ZeroQuant-Local/Global"
+     },
+     {
+      "name": "FGQ",
+      "evidence": "can be seamlessly integrated with FGQ."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "S",
+      "value": "max(abs(x))",
+      "evidence": "Specifically, for symmetric quantization, we set S=max(abs(x))"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "INT4 weight-only quantization",
+      "evidence": "INT4 weight-only quantization for small models results in substantial accuracy degradation"
+     },
+     {
+      "name": "quantization-aware training",
+      "evidence": "These methods such as [ 36,12,35], unlike quantization-aware training, only require a small portion of the training data"
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "Particularly, GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective"
+     },
+     {
+      "name": "ZeroQuant",
+      "evidence": "Particularly, GPTQ [ 12] and ZeroQuant [ 36], have proven to be effective"
+     },
+     {
+      "name": "round-to-nearest neighborhood (RTN)",
+      "evidence": "round-to-nearest neighborhood (RTN)"
+     },
+     {
+      "name": "PTQ",
+      "evidence": "RTNdirectly applies PTQ on the trained data"
+     },
+     {
+      "name": "symmetric quantization",
+      "evidence": "Specifically, for symmetric quantization, we set S=max(abs(x))"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "post-training quantization",
+      "evidence": "making Class-1 the optimal-loss post-training quantization."
+     },
+     {
+      "name": "symmetric quantization",
+      "evidence": "We employ both symmetric and asymmetric quantization to gauge the quantization sensitivity"
+     },
+     {
+      "name": "asymmetric quantization",
+      "evidence": "We employ both symmetric and asymmetric quantization to gauge the quantization sensitivity"
+     },
+     {
+      "name": "per-row quantization",
+      "evidence": "we implement per-row quantization [ 12] for weight quantization"
+     },
+     {
+      "name": "per-token quantization",
+      "evidence": "per-token quantization for activation [36]."
+     },
+     {
+      "name": "weight-only quantization",
+      "evidence": "The results of weight-only quantization in OPT and BLOOM models are summarized in Table 2."
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "PPL improvement",
+      "value": "about 0.5",
+      "split": null,
+      "evidence": "PPL improvement is about 0.5 (see Table 2)."
+     },
+     {
+      "metric": "accuracy loss",
+      "value": "less than 0.05",
+      "split": null,
+      "evidence": "INT8 weight-only quantization, either symmetric or asymmetric, results in negligible accuracy loss (less than 0.05, i.e., Class-1)."
+     },
+     {
+      "metric": "PPL degradation",
+      "value": "around 0.3 points",
+      "split": null,
+      "evidence": "Particularly, BLOOM-176B shows PPL degradation (around 0.3 points) in Class-2"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "PTQ",
+      "evidence": "With PTQ and row-wise quantization, achieving Class-1 quantization error is challenging"
+     },
+     {
+      "name": "row-wise quantization",
+      "evidence": "With PTQ and row-wise quantization, achieving Class-1 quantization error is challenging"
+     },
+     {
+      "name": "block-k quantization",
+      "evidence": "Importantly, block-k quantization can be implemented on modern GPUs"
+     },
+     {
+      "name": "RTN",
+      "evidence": "the application of RTN still results in a non-trivial accuracy gap."
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "Specifically, we utilize GPTQ and ZQ-Global for all models and settings"
+     },
+     {
+      "name": "ZQ-Global",
+      "evidence": "Specifically, we utilize GPTQ and ZQ-Global for all models and settings"
+     },
+     {
+      "name": "ZQ-Local",
+      "evidence": "apply ZQ-Local to OPT-66B and Bloom-176B."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "ZQ-Local",
+      "evidence": "ZQ-Local is an extension mode of ZQ-Global"
+     },
+     {
+      "name": "ZQ-Global",
+      "evidence": "ZQ-Local is an extension mode of ZQ-Global"
+     },
+     {
+      "name": "SGD",
+      "evidence": "iterative first-order optimization method (e.g., SGD)"
+     },
+     {
+      "name": "asymmetric quantization",
+      "evidence": "We use asymmetric quantization for better accuracy"
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "parameters used for GPTQ, ZQ-Local, and ZQ-Global"
+     },
+     {
+      "name": "ZeroQuant",
+      "evidence": "An interesting finding for ZeroQuant is that the hyperparameters"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "quantization",
+      "value": "W4A8",
+      "evidence": "existing methods using W4A8 quantization are presented in Table 3"
+     }
+    ],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "ZQ-Global\u2217",
+      "evidence": "ZQ-Global\u2217optimizes a larger subnetwork"
+     },
+     {
+      "name": "GPTQ",
+      "evidence": "GPTQ only optimizes a single linear layer"
+     },
+     {
+      "name": "RTN",
+      "evidence": "outperform RTN significantly"
+     },
+     {
+      "name": "ZQ-Local\u2217",
+      "evidence": "ZQ-Global\u2217and ZQ-Local\u2217generally outperform GPTQ"
+     },
+     {
+      "name": "ZeroQuant",
+      "evidence": "ZeroQuant (including both ZQ-Global\u2217and ZQ-Local\u2217)"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 6,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "INT8 weight-only quantization",
+      "evidence": "INT8 weight-only quantization can serve as a standard method for reducing memory costs in LLMs"
+     },
+     {
+      "name": "INT4 weight-only quantization",
+      "evidence": "INT4 weight-only quantization for small models results in substantial accuracy degradation"
+     }
+    ],
+    "evaluation_results": []
+   }
+  }
+ ]
+}

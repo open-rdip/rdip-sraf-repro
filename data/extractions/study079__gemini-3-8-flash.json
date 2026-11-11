@@ -1,0 +1,176 @@
+{
+  "study_id": "study079",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study079/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:22:13.680057+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 4,
+    "methods": 14,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "VLLM",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA A 100 Tensor Core GPU 80GB",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch_size",
+        "value": "16"
+      },
+      {
+        "name": "warmup_ratio",
+        "value": "0.1"
+      },
+      {
+        "name": "learning_rate",
+        "value": "2e-5"
+      },
+      {
+        "name": "num_epochs",
+        "value": "5"
+      },
+      {
+        "name": "beta",
+        "value": "0.1"
+      },
+      {
+        "name": "max_length",
+        "value": "1024"
+      },
+      {
+        "name": "r",
+        "value": "256"
+      },
+      {
+        "name": "alpha",
+        "value": "128"
+      },
+      {
+        "name": "lora_dropout",
+        "value": "0.05"
+      },
+      {
+        "name": "learning_rate (LoRA)",
+        "value": "5e-5"
+      },
+      {
+        "name": "beta (LoRA)",
+        "value": "0.1"
+      },
+      {
+        "name": "max_length (LoRA)",
+        "value": "1024"
+      },
+      {
+        "name": "epochs (LoRA)",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "HQ2A",
+        "version": null
+      },
+      {
+        "name": "ASQA",
+        "version": null
+      },
+      {
+        "name": "ELI5",
+        "version": null
+      },
+      {
+        "name": "LFQA",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "LoRA fine-tuning",
+        "description": "Fine-tuning of the LLaMA2-13B-chat refinement model using preference data"
+      },
+      {
+        "name": "ERROR -INFORMED REFINEMENT",
+        "description": "Approach used for refining answers"
+      },
+      {
+        "name": "Tiger-Score",
+        "description": "Evaluation metric based on LLaMA-7B for assessing refined answers"
+      },
+      {
+        "name": "DPO",
+        "description": "Direct Preference Optimization used for training language models with collected preference annotations"
+      },
+      {
+        "name": "DPO-aligned refinement model",
+        "description": "A refinement model optimized with DPO to correct major errors in answers."
+      },
+      {
+        "name": "ZERO-SHOT",
+        "description": "Direct zero-shot prompting approach to generate answers without refinement feedback."
+      },
+      {
+        "name": "IMPROVE",
+        "description": "A coarse-grained feedback approach that refines answers without detailed feedback."
+      },
+      {
+        "name": "GENERIC",
+        "description": "A coarse-grained feedback approach that prompts with more targeted feedback."
+      },
+      {
+        "name": "EIR",
+        "description": "A fine-grained feedback approach used to refine answers."
+      },
+      {
+        "name": "LLaMA3-8B-Instruct",
+        "description": "Instruction-tuned language model used as a refinement model."
+      },
+      {
+        "name": "Mistral-7B-Instruct-v0.3",
+        "description": "Instruction-tuned language model used as a refinement model."
+      },
+      {
+        "name": "LoRA",
+        "description": "Parameter-efficient fine-tuning method used to train Llama2-13B-chat model on preference dataset"
+      },
+      {
+        "name": "Zero-shot prompting",
+        "description": "Zero-shot prompt for LLaMA2-13B-chat model to refine long-form answers with error feedback from an error detection model"
+      },
+      {
+        "name": "feedback model",
+        "description": "model trained using sentence-level annotations transformed from expert annotations for completeness"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "reduction in error samples",
+        "value": "~2%",
+        "split": null
+      },
+      {
+        "metric": "reduction in error scores",
+        "value": "~\u039427%",
+        "split": null
+      },
+      {
+        "metric": "F1 score improvement",
+        "value": "~ 4%",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "study_id": "study037",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study037/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:59:33.018368+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 0,
+    "methods": 7,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "hidden_layers",
+        "value": "2"
+      },
+      {
+        "name": "hidden_layer_size",
+        "value": "2048"
+      },
+      {
+        "name": "activation",
+        "value": "leaky ReLU"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning_rate",
+        "value": "10\u22123"
+      },
+      {
+        "name": "gradient_ascent_steps",
+        "value": "50"
+      },
+      {
+        "name": "gradient_ascent_learning_rate_continuous",
+        "value": "0.05"
+      },
+      {
+        "name": "gradient_ascent_learning_rate_discrete",
+        "value": "2.0"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "gradient ascent",
+        "description": "Used to find x\u22c6 on the learned conservative model \u02c6f\u03b8, with the number of gradient ascent steps less than T, as done in practice via Equation 5."
+      },
+      {
+        "name": "Conservative Objective Models for Offline MBO",
+        "description": "The estimated value of the point will not overestimate its true value in expectation when the bound with additional offset holds; the offset depends on the Lipschitz constant \u02c6L and the distance between x\u2217 and the optimized solutions xT found for other data points x0 \u2208 D."
+      },
+      {
+        "name": "conservative objective model",
+        "description": "Neural network \u02c6f\u03b8 with two hidden layers of size 2048 and leaky ReLU activations, trained with the Adam optimizer (Kingma & Ba, 2015) at learning rate 10\u22123."
+      },
+      {
+        "name": "gradient ascent sampling",
+        "description": "Samples \u00b5(x) computed with 50 gradient ascent steps from a design x0 in dataset D; gradient-ascent learning rate 0.05 for continuous tasks and 2.0 for discrete tasks. Largest \u03b7 selected such that successive xt follow the gradient vector field of \u02c6f\u22c6\u03b8(xt). Final solution x\u22c6=xT chosen by step T in Equation 5 (selection criterion not completed in passage)."
+      },
+      {
+        "name": "conservative training",
+        "description": "Train \u02c6f\u03b8 by gradient descent on \u03b8 with respect to the objective in Equation 7 with learning rate \u03b7; parameters at iteration k are \u03b8k and the corresponding conservative model is \u02c6fk_\u03b8."
+      },
+      {
+        "name": "neural tangent kernel",
+        "description": "Analyze \u02c6f\u03b8 under the NTK model (Jacot et al., 2018), with Gf(xi, xj) := \u2207\u03b8 \u02c6f\u03b8(xi)^T \u2207\u03b8 \u02c6f\u03b8(xj)."
+      },
+      {
+        "name": "conservative Q-learning",
+        "description": "Build on the analysis of conservative Q-learning (Kumar et al., 2020) to prove Proposition 1 (conservative training lower-bounds the true function)."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

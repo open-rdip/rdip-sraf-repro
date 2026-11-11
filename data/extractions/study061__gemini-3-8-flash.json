@@ -1,0 +1,99 @@
+{
+  "study_id": "study061",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study061/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:05:07.284216+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 2,
+    "methods": 8,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "collaboration coefficients of the pedestrians",
+        "value": "0"
+      },
+      {
+        "name": "collaboration coefficient of the robot",
+        "value": "1"
+      },
+      {
+        "name": "sub-goal planning horizon",
+        "value": "6-second"
+      },
+      {
+        "name": "checkpoint threshold distance",
+        "value": "1 meter"
+      },
+      {
+        "name": "simulation modes",
+        "value": "Synchronous andSchematic modes"
+      },
+      {
+        "name": "number of agents in network",
+        "value": "4"
+      },
+      {
+        "name": "number of nearest pedestrians observed",
+        "value": "3"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "SocNavBench",
+        "version": null
+      },
+      {
+        "name": "curated set of 33episodes described in Sec. 3.2",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ORCA",
+        "description": "Optimal Reciprocal Collision Avoidance, an efficient navigation planner that provides theoretical non-collision guarantees assuming all agents in the environment use the same planning policy"
+      },
+      {
+        "name": "SA-CADRL",
+        "description": "Socially aware collision avoidance with deep reinforcement learning, a social navigation method which formulates social navigation as a cooperative multi-agent collision avoidance problem with well-crafted rules to inject social awareness"
+      },
+      {
+        "name": "Social Forces",
+        "description": "A formulation to explain pedestrian navigation behavior as being under the influence of \"social forces\" including an attractive force to their goal, a repulsive force from other pedestrians and obstacles, and other attractive forces to interesting objects or other pedestrians in the environment."
+      },
+      {
+        "name": "CADRL",
+        "description": "A recent, popular, and relatively state-of-the-art model using a deep reinforcement learning-based navigation method."
+      },
+      {
+        "name": "pedestrian-unaware baseline",
+        "description": "A simple baseline algorithm evaluated on SocNavBench."
+      },
+      {
+        "name": "meta planner",
+        "description": "Plans a sub-goal within a 6-second horizon (around 4\u20137 meters) each time a new checkpoint is requested without kinematic constraint application."
+      },
+      {
+        "name": "3D unicycle model",
+        "description": "A position and heading model used to account for kinematic constraints."
+      },
+      {
+        "name": "meta-level planner",
+        "description": "A sampling planner that samples trajectories from a connectivity graph, evaluates them via heuristic cost functions, and returns the minimum cost trajectory within a budget to identify near-future waypoints and avoid obstacles."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

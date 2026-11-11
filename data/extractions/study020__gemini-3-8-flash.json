@@ -1,0 +1,108 @@
+{
+  "study_id": "study020",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study020/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:21:05.039740+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 2,
+    "methods": 10,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Libra",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "batch size",
+        "value": "64"
+      },
+      {
+        "name": "image size",
+        "value": "632 \u00d7 512"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "learning rate",
+        "value": "1e\u22126"
+      },
+      {
+        "name": "random rotation",
+        "value": "10 degrees"
+      },
+      {
+        "name": "cross-validation folds",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "CSAW-M",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "multi-hot encoding",
+        "description": "Formulates ordinal classification with K classes as K-1 independent binary classifications where each class is a superset of the previous."
+      },
+      {
+        "name": "data augmentation",
+        "description": "Applied random horizontal and vertical flipping, random rotation of 10 degrees, and small random brightness and contrast jittering."
+      },
+      {
+        "name": "5-fold cross-validation",
+        "description": "Used to determine the stopping iteration for training."
+      },
+      {
+        "name": "ResNet34 one-hot",
+        "description": "Standard approach for categorical classification using ResNet-34 backbone, where each class is treated independently and masking levels are predicted using softmax and cross-entropy loss to predict one-hot encodings."
+      },
+      {
+        "name": "ResNet34 multi-hot",
+        "description": "Baseline model using ResNet-34 backbone that accounts for the ordinal relation between masking levels using multi-hot encodings."
+      },
+      {
+        "name": "Grouping of masking levels",
+        "description": "Considers the two lowest masking levels (1 and 2) together as low-masking levels, and the two highest ones (7 and 8) as high-masking levels based on expert feedback."
+      },
+      {
+        "name": "Identification of interval and large invasive cancers",
+        "description": "A secondary task measuring the correlation between predicted masking estimates and certain cancers (interval cancers and large invasive cancers) without explicit training for these tasks."
+      },
+      {
+        "name": "ordinal classification",
+        "description": "modeling the median expert opinion of masking potential level in the range [1-8]"
+      },
+      {
+        "name": "Odds Ratio computation",
+        "description": "Model predictions are divided into quartiles gi (i in {1,2,3,4}), odds of interval cancer are computed as Oi = ICi / ~ICi, and odds ratios are computed relative to the first quartile as ORi = Oi / O1."
+      },
+      {
+        "name": "Continuous score conversion",
+        "description": "Converts discrete masking predictions to continuous values by computing the weighted average of probabilities that an input belongs to each masking level."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

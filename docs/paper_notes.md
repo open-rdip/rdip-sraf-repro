@@ -1912,3 +1912,613 @@ Science 256, 1649--1657, 2025, `10.1016/j.procs.2025.02.302`, CC BY-NC-ND 4.0.
 Confirmed from the Crossref record, not reconstructed. The `key =` sort
 workaround is removed and the `doi` field no longer carries a `https://doi.org/`
 prefix. The bibliography now has no author-less entry.
+
+---
+
+## AB. Two findings from running N3, both on-thesis (9 Nov 2026)
+
+### AB.1 Three of five frontier models cannot be pinned to a temperature
+
+**Updated 9 Nov 2026 after the full preflight passed.** This is broader than the
+Anthropic-only finding first recorded here.
+
+| model | provider | temperature 0.0 | why not |
+|---|---|---|---|
+| gemini-flash | Google | yes | - |
+| grok | xAI | yes | - |
+| gpt5 | OpenAI | **no** | API rejects `temperature` outright (400) |
+| sonnet | Anthropic | **no** | SDK 2.x exposes no sampling control |
+| opus | Anthropic | **no** | same |
+
+Two independent providers, two different mechanisms, three of the five passes.
+Note the composition of `UNCONTAMINATED_CORPUS = (grok, gpt5, sonnet)`: of the
+three models carrying the headline claim, **only grok is deterministic**.
+
+This is no longer just a limitation to disclose. It is a confound: a difference
+between two models' extractions could be a difference in capability or it could
+be sampling noise, and for three of five we cannot rule out the second by
+construction. The remedy is to measure what cannot be set, and it is cheap.
+
+**Stability protocol, to run before the full sweep.** For each of gpt5, sonnet
+and opus, extract the same study twice and compare the two outputs field by
+field. Three studies, two passes each, on the order of one to two dollars
+against $13.30 of headroom. If the pairs agree, the confound is empirically
+negligible and the paper says so with evidence. If they diverge, the affected
+columns need a stability figure that gemini and grok do not, and §5.2 has to
+report per-model variance rather than a single number per model.
+
+Either outcome is reportable. Running the sweep without it is the only bad
+option, because then the confound is present, unmeasured, and discoverable by a
+reviewer.
+
+### AB.1a The original Anthropic-only observation
+
+The `anthropic` SDK at 2.6.0 exposes **no sampling control at all** on
+`messages.create`: no `temperature`, no `top_p`, no `top_k`, and
+`OutputConfigParam` carries only `effort` and `format`. Verified by signature
+inspection on the installed package, not inferred.
+
+Every other backend in the N3 registry is pinned to `LLM_TEMPERATURE = 0.0`.
+The Anthropic passes therefore run at the provider default and cannot be made
+deterministic. `rag_pipeline/extractor.py` now detects this by inspecting the
+signature, passes `temperature` when the SDK accepts it, and prints a one-time
+warning naming the asymmetry when it does not. It is recorded rather than
+worked around, because a hidden sampling difference between providers would
+corrupt exactly the comparison N3 exists to make.
+
+**Why this belongs in the paper and not just in a footnote.** The thesis is that
+reproducibility fails because the information needed to re-obtain a result is
+not published. Here a major provider has removed the *control* that makes its
+own outputs re-obtainable, mid-study, with no deprecation visible to us until a
+call failed. That is the same failure in a different place: not a missing seed
+in a repository, but a missing seed-equivalent in a commercial API. It belongs
+in §5.2 as a stated limitation of the frontier comparison and in §8 as evidence
+that the problem is structural rather than a matter of author diligence.
+
+**What to do before reporting the Anthropic numbers.** Determinism cannot be
+set, so it must be measured: run the same study twice under one Anthropic model
+and report whether the extractions agree. Two extra calls, a fraction of a cent.
+If they agree the asymmetry is harmless in practice and can be reported as such;
+if they do not, the Anthropic column needs an error bar the others do not.
+
+### AB.2 The cluster cannot host N3
+
+The ASL cluster blocked AI-provider endpoints cluster-wide on 9 Nov 2026 as part
+of a policy against autonomous agents on shared nodes. Measured from the login
+node:
+
+| provider | endpoint reachable |
+|---|---|
+| Google | yes |
+| xAI | yes |
+| OpenAI | **no**, `APIConnectionError` |
+| Anthropic | **no**, `[Errno 111] Connection refused` |
+
+Connection *refused* rather than timed out, so it is an active local rule, and
+the two blocked providers are exactly the two named in the policy mail. Three of
+the five N3 passes are affected, including two of the three uncontaminated
+corpus models, so the sweep moved to local hardware. State in the artifact
+appendix that the frontier sweep ran off-cluster and why, since the rest of the
+pipeline's provenance records a cluster host and the difference would otherwise
+look like an inconsistency.
+
+---
+
+## AC. N3 run: defects found, and what they cost (10 Nov 2026)
+
+The sweep is still running. This section records what the run has established so
+far, separating what belongs in the paper from what belongs in the appendix.
+
+### AC.1 Eight defects, all caught before the sweep
+
+Every one was found by the preflight or by a three-study smoke test, at a total
+cost of $1.30. Listing them because §8 argues that the binding constraint on
+reproducibility is undocumented configuration, and this is our own instance of
+it, measured rather than asserted.
+
+| # | Defect | Where it would have surfaced |
+|---|---|---|
+| 1 | Provider SDKs absent from the cluster env (`google`, then `anthropic`) | first call of the sweep |
+| 2 | `anthropic` 2.x removed `temperature` from `messages.create` | first Anthropic call |
+| 3 | Claude 5 rejects assistant-message prefill | first Anthropic call |
+| 4 | GPT-5 requires `max_completion_tokens`, not `max_tokens` | first OpenAI call |
+| 5 | Reasoning tokens consume `max_completion_tokens`, starving the JSON | silently, as empty fields |
+| 6 | `pyarrow` 26 against pinned `numpy<2` | every extraction, after embeddings load |
+| 7 | No transient retry in the OpenAI-compatible backend | first 429 |
+| 8 | No backend retried on network errors; no consecutive-failure stop | first connection drop, cascading |
+
+Defects 5 and 8 are the instructive ones. **5 failed silently**: GPT-5 returned
+well-formed JSON with empty arrays for four of six fields, which looks like a
+capability result and is not. It was caught only by comparing against four other
+models on the same three papers, which is an argument for running a smoke test
+across all extractors rather than one. **8 would have cascaded**: no provider
+error for a dropped connection carries an HTTP status code, so every retry test
+matching on codes let a network blip through as a hard per-study failure, with
+nothing to stop it marking the remaining corpus failed. Both are now fixed;
+`is_transient()` in `rag_pipeline/extractor.py` covers the network cases and
+`MAX_CONSECUTIVE_FAILURES = 5` in `run_n3_frontier.py` stops a pass that is
+failing systematically.
+
+### AC.2 ★ Three of five frontier models cannot be pinned to a temperature
+
+Confirmed in the running sweep, not just at preflight. See AB.1 for the table.
+GPT-5 rejects `temperature` outright; the Anthropic SDK exposes no sampling
+control at all. Of the three models carrying the headline claim, only grok is
+deterministic.
+
+For §8: a paper arguing that results are irreproducible because the information
+needed to re-obtain them is not published has, in the course of its own
+experiment, met two major providers removing the control that makes their
+outputs re-obtainable. Same failure, commercial API rather than repository.
+
+### AC.3 One study is behind a paywall, and it fails for every model
+
+`study096` returns HTTP 403 from `earthdoc.org`. There is no PDF to extract, so
+it fails identically on all five passes. **Report the corpus as 95 of 96
+extractable**, with the one exclusion stated as a publisher access restriction
+rather than folded into the failure counts. It is also the one study with no
+locally cached PDF, which is consistent.
+
+### AC.4 Parse-failure rate is a quality signal with no structured counterpart
+
+Unparseable model responses are recovered from by the per-passage merge, so they
+never appear as study failures and are invisible in the run log. They exist only
+in stdout, which is why the sweep is piped through `tee`.
+
+Gemini: **10 parse warnings across 92 studies**, roughly 11% of studies with at
+least one. Grok: **0 across its first 53**. Collect the rate per model when the
+sweep finishes and report it beside F1, because output reliability under an
+identical prompt is a separate axis from extraction accuracy and the two may not
+agree.
+
+### AC.5 Cost: measured, reconciled against billing, and the check found an error
+
+**Final, after the complete sweep (10 Nov 2026).** 7h12m wall clock, five models,
+95 of 96 studies each (opus on the 12-study gold tier), zero aborts, zero
+transient errors, 4 hard failures all on the one paywalled study.
+
+| model | registry estimate | metered | **billed** |
+|---|---:|---:|---:|
+| gemini-flash | $2.52 | $0.82 | **$2.72** |
+| grok | $5.00 | $2.94 | **$4.59** |
+| gpt5 | $5.80 | $5.86 | **$5.86** |
+| sonnet | $6.71 | $3.68 | **$4.78** (with opus) |
+| opus | $1.68 | $1.11 | (in the above) |
+| **total** | **$21.70** | **$14.41** | **$17.95** |
+
+**★ The reconciliation is the finding, not the total.** Checking the meter
+against the four providers' own dashboards:
+
+| provider | billed | metered | ratio |
+|---|---:|---:|---:|
+| OpenAI | $5.86 | $5.86 | **1.00x** |
+| Anthropic | $4.78 | $4.79 | **1.00x** |
+| xAI | $4.59 | $2.94 | 1.56x |
+| Google | $2.72 | $0.82 | 3.32x |
+
+Two providers match to the cent, which establishes that the token counting and
+the arithmetic are correct. So the error is in the prices, and it was in the
+prices for the other two. `rag_pipeline/model_registry.py` now carries rates
+calibrated from the bills rather than copied from rate cards, with the date and
+the factor recorded inline.
+
+**Why this matters beyond bookkeeping.** The spend cap computes from those
+prices. Under-priced models mean the cap guards a smaller number than the one
+actually being spent: the meter read $14.41 against $17.95 real. On a sweep
+this size the margin absorbed it; on a larger one `BudgetExceeded` would have
+fired well after the real budget was gone. This is the "unpriced model silently
+disables the guard" failure the runbook warns about, in a form that is harder
+to spot because the model *was* priced, just wrongly.
+
+**Two candidate causes, unresolved.** Either the rate cards for those two models
+differ from the registry's figures, or those providers bill tokens the usage
+metadata does not surface (reasoning tokens, for instance, which OpenAI reports
+inside `completion_tokens` and which may explain why gpt-5 reconciled exactly
+while the two suspect models did not). The calibration is correct either way
+because it is derived from the bills, but a reader of the artifact should know
+which. **TODO: read the two rate cards in the consoles and record which it is.**
+
+**A currency trap worth recording.** Google billed in THB, not USD: 170 THB
+loaded and 91.07 THB spent. Read as dollars this looked like a 9.4x pricing
+error rather than 3.3x. Any cost reconciliation across providers has to
+normalise currency before comparing, and the provider's displayed balance may
+already be converted at a rate it does not state.
+
+**What §5.2 must report.** The **billed** figures, with token counts beside
+them, and the reconciliation table above. The original plan was to claim the
+cost accounting was "verified against provider billing" on the strength of the
+OpenAI match alone. That claim would have been true for two providers and false
+for two, which is a good illustration of why one spot check is not a
+verification. Report tokens as the primary unit and dollars as a dated
+derivation, since the prices here were already wrong once.
+
+### AC.5a Original pre-sweep projections, superseded
+
+Against registry estimates, with the sweep partway through:
+
+| model | estimate | measured or projected |
+|---|---:|---:|
+| gemini-flash | $2.52 | **$0.82 actual** |
+| grok | $5.00 | ~$4.30 projected |
+| gpt5 | $5.80 | ~$7.00 projected, after the reasoning fix |
+| sonnet | $6.71 | ~$4.80 projected |
+| opus | $1.68 | ~$1.32 projected |
+
+GPT-5 is the only overrun, and only after fixing defect 5; before the fix it
+projected to $12.80 while producing unusable output. `reasoning_effort: low`
+made it both cheaper and better, which is worth one sentence: on an extraction
+task, deliberation was pure cost.
+
+**Two caveats the §5.2 cost table must carry.** First, the meter computes list
+price from the registry and does not know about provider allowances; xAI applies
+subscription-included usage before credits, so the billed amount for grok is
+lower than the reported figure. Report list price, since that is what a
+reproducer without a subscription pays, and say so. Second, the OpenAI dashboard
+read $0.61 against the meter's $0.65 on the same traffic, which is close enough
+to call the cost accounting verified against provider billing. Worth stating:
+the cost figures are auditable rather than estimated.
+
+### AC.6 Per-call token accounting differs sharply between providers
+
+On byte-identical retrieved passages, prompt tokens per call: grok ~1,870,
+Claude ~993, gemini ~636. Grok's accounting is roughly 2.8x gemini's for the
+same input. This is tokenisation and accounting, not a difference in what was
+sent. It matters for anyone estimating cost or quota consumption from one
+provider's figures, and it is the reason grok's subscription allowance drains
+faster than its dollar cost suggests.
+
+### AC.7 Early cross-model agreement, n=3, not yet reportable
+
+On study001-003 across all eight extractors (counts, not accuracy):
+
+- **Llama-8B's over-reporting reproduces against seven comparators.** Every
+  other model finds exactly one random seed across the three papers; Llama finds
+  four. On dependencies, all five frontier models converge on 3 while Llama
+  reports 51. This is the N4 seed finding (52/95 vs 9/95) in miniature, now
+  against five models that were not in the original experiment. If it holds at
+  95 studies, §5.3 can say the per-extractor variance was **confirmed against
+  five additional models** rather than asserted from three.
+- **The dependency convergence is itself evidence.** Ground truth averages ~8
+  software entries because it includes the whole requirements file, while a
+  paper-only extractor should find the 2 to 4 the paper names. Five models from
+  four providers landing on 3 says the low number is right and 51 is invention.
+- **Frontier models extract 2.5x more hyperparameters and more methods**, which
+  is the plausible genuine capability difference.
+- **Grok and Opus are near-identical** (totals 177 and 174, matching per-field
+  profiles), which suggests extraction is driven by paper content rather than
+  model idiosyncrasy.
+- **One systematic disagreement to adjudicate:** on study001 all three
+  open-weights models found 2 datasets and all five frontier models found 0,
+  including GPT-5 after its fix. A clean 3-against-5 split on one field. The
+  gold-standard scoring should settle whether the open models over-extract or
+  the frontier models miss something.
+
+**Counts are not accuracy.** Llama proves it: most extracted, least trustworthy.
+Whether grok's 43 hyperparameters are 43 correct ones is a question only the
+`--rerun` scoring answers.
+
+### AC.8 The sweep ran off-cluster, and the appendix must say why
+
+The ASL cluster blocked AI-provider endpoints cluster-wide (see AB.2), so N3 ran
+on local hardware while every other sweep in this work records a cluster host.
+State the difference in the artifact appendix rather than leaving it to look
+like an inconsistency in the provenance. The embeddings and PDFs were copied
+from the cluster rather than rebuilt, so retrieval is byte-identical to the
+open-weights passes and the comparison is not confounded by re-embedding.
+
+---
+
+## AD. The evaluation was measuring the wrong thing (10 Nov 2026)
+
+Investigating why the frontier models did not beat the open-weights models
+turned up three defects in the measurement and one substantive finding about
+the reference. The headline F1 of ~0.27 cannot be read as extraction quality.
+
+### AD.1 ★ A render asymmetry had corrupted the annotation instrument
+
+`render()` in `build_annotation_bundles.py` produced different shapes for the
+same fact depending on which side it came from:
+
+| field | gold render | model render | why |
+|---|---|---|---|
+| datasets | `FB15K-237  [used]` | `FB15K-237` | gold carries `role`, models carry `version`; the code fell back to role |
+| random_seeds | `seed = 42  [code]` | `42` | gold is a dict, models emit bare integers |
+| evaluation_results | `AP = 0.5  [test, COCO]` | `AP = 0.5  [test]` | `dataset` is gold-only |
+| environment | `gpu: NVIDIA P100` | `gpu_model: NVIDIA P100` | the two schemas name the same key differently |
+
+Consequence in the shipped instrument: **86 duplicate rows and 43 where the
+answer key contradicted itself**, marking `yes` to `WN18RR  [used]` and `no` to
+`WN18RR`. An annotator correctly keeping both would have been scored wrong on
+one, across ~5% of a 1,627-row instrument. Found by accident while debugging an
+unrelated analysis, before any annotator saw it.
+
+All four fixed. The pack was regenerated: contradictions fell **43 -> 10**, and
+the surviving 10 are legitimate version-granularity questions
+(`PyTorch [version: not stated]` vs `pytorch [version: 1.11.0]`), not bugs.
+
+`dependencies` is the one field where gold and models genuinely diverge rather
+than mis-render: gold includes the whole requirements file (1,074 items) while a
+paper-only extractor finds the 2-4 the paper names. That is the documented
+repo-vs-paper asymmetry, not a defect.
+
+### AD.2 ★★ The prompt is not the problem, and here is the test
+
+If the ontology-guided prompt were weak, the models would disagree with **each
+other**. Mean pairwise Jaccard over 107 studies and eight extractors:
+
+| field | model <-> model | model <-> reference | ratio |
+|---|---:|---:|---:|
+| datasets | 0.504 | 0.238 | 2.1x |
+| methods | 0.302 | 0.060 | 5.0x |
+| hyperparameters | 0.152 | 0.028 | 5.4x |
+| environment | 0.540 | 0.033 | 16.3x |
+| evaluation_results | 0.052 | 0.001 | 100x |
+| **all paper fields** | **0.286** | **0.077** | **3.7x** |
+
+Eight models from seven organisations under the same prompt agree with each
+other roughly four times more than any agrees with the reference. A weak prompt
+produces scatter; this is convergence. **The reference is the outlier.**
+
+### AD.3 Reference recall is about 64%, and the gap is in generation not checking
+
+`analysis/gt_recall_consensus.py` (no API calls). An item counts as
+consensus-missing when >=60% of the extractors available for a study produced it
+and the reference lacks it.
+
+| scope | implied reference recall |
+|---|---:|
+| all fields | 64.3% |
+| paper-derivable only | **47.3%** |
+| paper-derivable excluding `methods` | 63.9% |
+
+`methods` at 28% is quarantined: 288 reference items against 741
+consensus-missing is a category-boundary problem (models list every technique
+named, the reference lists the core ones), not pure recall.
+
+**The calibration test came out flat** and that is informative rather than
+disappointing: 0.55 consensus-missing per gold item on the 83 `standard` files
+against 0.57 on the 24 `thorough` ones. It was designed to test whether light
+verification caused the gaps. It did not, because **verification can only
+prune, never add**. If the generating model never proposed an item, no amount
+of careful checking inserts it. The recall gap is inherited from using a single
+generator, which is a stronger and more specific claim than "the checking was
+light".
+
+**293 candidates have unanimous agreement** across every available model:
+`COCO Panoptic`, `COOS`, `BACH`, `SICAPv2`, `DUT-OMRON`. Seven or eight models
+from seven organisations did not independently invent `SICAPv2`.
+
+### AD.4 Value normalisation was built, and mostly did not help
+
+`evaluation/value_norm.py`, 20 tests, collapses numeric forms (`1e-4` =
+`0.0001`), GPU strings (`NVIDIA P100` = `Tesla P100-PCIE-16GB`) and parameter
+aliases, while deliberately keeping `Ubuntu 22.04` distinct from `Ubuntu`.
+
+Effect on model <-> reference agreement: environment 0.033 -> 0.057 (1.7x),
+hyperparameters 0.028 -> 0.032, everything else unmoved. **The
+model-to-model versus model-to-reference ratio stayed at 3.7x.**
+
+That negative result is worth more than the fix. It rules out formatting as the
+explanation: if the two sides were recording the same facts differently,
+normalisation would have closed the gap. They are recording **different facts**.
+Hyperparameters barely moving means the issue was never `lr` vs
+`learning_rate`; the models and the reference list different hyperparameters.
+
+### AD.5 `evaluation_results` F1 = 0.000 was an encoding bug, not a floor
+
+Direct inspection of study003:
+
+```
+GOLD : S_alpha = 77.0
+MODEL: Sa/mIoU (SINet, ResNet50) = 77.0      <- Greek alpha in the model's name
+```
+
+The **values matched exactly**. `_norm` in `eval_extraction.py` stripped
+non-ASCII as punctuation, so the Greek alpha vanished and `Sa` became `s`,
+which can never match `s alpha`. Fixed by transliterating Greek letters and
+sub/superscripts before punctuation stripping.
+
+After the fix: grok 0.000 -> 0.043, sonnet -> 0.036, gpt5 -> 0.030, opus ->
+0.025; gemini and the three open-weights models stay at 0.000 because they do
+not use the symbols. Headline F1 moves slightly (sonnet 0.227 -> 0.233, grok
+0.177 -> 0.184) and **the ranking is unchanged**.
+
+So the field is still effectively unmeasurable, but now for a stateable reason:
+0.00-0.04 after fixing the encoding is the open-vocabulary ceiling, not an
+artefact. Report it that way rather than as a bare 0.000.
+
+### AD.6 What §5.2 should do instead: pooled assessment
+
+Precision against an incomplete reference is not interpretable, and IR solved
+this with pooling decades ago. Adopt it and cite the precedent.
+
+1. Judge the **pool**, not the corpus: 1,245 ranked candidates already exist.
+   Take all 293 unanimous plus a random sample per agreement band, which also
+   estimates how agreement predicts correctness.
+2. Score against **gold + judged-relevant**, and report F1 against the original
+   and the pooled reference side by side. The gap between them quantifies how
+   much of the old ceiling was measurement artefact.
+3. **Per field, never pooled across fields.** Datasets match on a bare name;
+   hyperparameters need name and value simultaneously; eval depends on reading
+   PDF tables. One headline number averages three different problems.
+4. Report **inter-model agreement** as a companion statistic. It measures task
+   difficulty independently of any reference.
+
+State two limitations: pooling cannot see items no system proposed, so recall
+against the pool is an upper bound; and eight models sharing training data can
+share a blind spot, which only a human reading papers end to end bounds.
+
+**This shrinks the annotation ask** from nine hours of codebook-driven row
+judgement to roughly two hours of yes/no pool adjudication, which is the version
+of the task that can realistically be filled.
+
+### AD.7 Consequences for the regenerated pack
+
+Rebuilding with eight extractors in the pool instead of three grew the
+instrument from 1,627 to **2,153 items** across the 12 gold studies, and
+dropped `in_ground_truth` prevalence from 26.4% to **13.7%**.
+
+Two things follow. The per-row instrument **scales with the number of
+extractors**, which is the wrong direction and is the practical argument for
+the pooled design in AD.6. And at 13.7% prevalence the kappa paradox bites
+harder than the 26% the agreement plan assumed, so Gwet's AC1 is now
+load-bearing rather than a second opinion. Field counts in the new pack:
+methods 698, evaluation_results 548, hyperparameters 495, dependencies 231,
+datasets 146, environment 25, random_seeds 10 — the last two still below
+`MIN_FIELD_N = 50` as expected.
+
+`N_SILVER` is now 0 (the Z.1 cut applied at source); the original 20-study draw
+is preserved as `evaluation/annotation_round1/SAMPLE.v1.json`.
+
+## AE. Span-grounded extraction: the extractors are honest (11 Nov 2026)
+
+The N3 scores left one question unresolved. Low F1 against the reference is
+consistent with two very different worlds: models inventing content, or a
+reference that is missing content the models correctly found. Model-to-model
+convergence (AD) pointed at the second, but only by inference. This pilot
+measures it directly.
+
+### AE.1 Design
+
+`rag_pipeline/grounded.py` requires every extracted item to carry a verbatim
+`evidence` quote of at most 25 words, with the instruction that an item which
+cannot be quoted must be omitted rather than guessed. Two checks then run with
+no reference and no cost:
+
+- `span_found`: does the quoted string actually occur in the passage the model
+  was shown, after Unicode and whitespace normalisation?
+- `value_in_span`: does the extracted value occur inside its own quote?
+
+The first is an integrity check. A model that invents content has to invent a
+quote to go with it, and a quote that is not in the passage is caught by string
+comparison. The second was intended as a support check and turned out not to be
+one (AE.3).
+
+Scope: the 12 gold studies, all five frontier models, 60 output files in
+`data/extractions_grounded/`. Zero passage failures and zero parse failures.
+
+### AE.2 Integrity results
+
+| model | items | per study | evidence | span found | value in span |
+|---|---:|---:|---:|---:|---:|
+| Opus | 698 | 58.2 | 100% | 100% | 88% |
+| GPT-5 | 718 | 59.8 | 100% | 99% | 93% |
+| Gemini | 497 | 41.4 | 100% | 100% | 98% |
+| Grok | 817 | 68.1 | 100% | 100% | 98% |
+| Sonnet | 533 | 44.4 | 100% | 99% | 83% |
+
+Span fidelity is 98 to 100 percent on every field for every model: datasets,
+methods, hyperparameters, evaluation_results, dependencies, random_seeds and
+hardware. Every item carries a quote, and essentially every quote is really in
+the paper.
+
+**This is the finding.** The models are not fabricating. Whatever is wrong with
+the F1 numbers, it is not that the extractors invent content.
+
+### AE.3 `value_in_span` is a formatting check, not a fabrication detector
+
+The two Claude models sit lowest on `value_in_span`, which looked at first like
+a quality difference. It is not. Sonnet's 88 failures are 75 in `methods` and
+the pattern is benign:
+
+| extracted value | its own evidence quote |
+|---|---|
+| `Sparse Feature Refinement (SFR) module` | `Sparse Feature Refinement Module` |
+| `OpenBookQA` | `Open- BookQA (Mihaylov et al., 2018)` |
+| `44.3±2.0` | `4 44 .3±2.0` |
+| `7,680 (Ours Main); 15,360 (LeoLM)` | `Training steps 7,680 15,360` |
+
+These are PDF hyphenation across a line break, column bleed from table
+extraction, acronym expansion, and a legitimate aggregation of a two-column
+table into one labelled value. Opus shows the same pattern. The Claude models
+write tidier values than the raw text, and the check penalises them for it.
+
+Report `span_found` as the integrity number. Report `value_in_span` with this
+caveat attached, or not at all.
+
+### AE.4 Requiring evidence does not cost recall
+
+The obvious reviewer objection is that "omit anything you cannot quote" buys
+precision by discarding recall. It does the opposite. Same 12 studies, same six
+fields, grounded against the ungrounded N3 pass:
+
+| model | ungrounded | grounded | change |
+|---|---:|---:|---:|
+| Opus | 612 | 687 | +12% |
+| GPT-5 | 564 | 708 | +26% |
+| Gemini | 411 | 487 | +18% |
+| Grok | 371 | 805 | +117% |
+| Sonnet | 527 | 526 | 0% |
+
+Four of five went up and none went down. Grok's doubling is large enough to
+warrant a check on whether it genuinely found more or is splitting items more
+finely, but the direction is not in doubt.
+
+### AE.5 The reference comparison splits by field provenance
+
+Counting distinct items rather than relying on exact string matching, where
+"models >= 3" means an item carrying verbatim evidence that at least three of
+the five models independently found:
+
+| field | reference | models >= 3 | ratio | models >= 1 |
+|---|---:|---:|---:|---:|
+| datasets | 51 | 62 | 1.2x | 90 |
+| methods | 49 | 210 | 4.3x | 549 |
+| hyperparameters | 51 | 43 | 0.8x | 316 |
+| evaluation_results | 14 | 17 | 1.2x | 121 |
+| dependencies | 111 | 25 | 0.2x | 48 |
+| random_seeds | 19 | 1 | 0.1x | 1 |
+
+The split is along field provenance, not quality. Models exceed the reference
+on the paper-derivable fields. The reference exceeds the models on
+`dependencies` and `random_seeds`, and that is structural rather than a model
+failure: those come from `requirements.txt` and from source code, and the
+grounded pilot reads only PDF passages, so it cannot see them.
+
+This matches the AD.3 estimate of 64% reference recall overall against 47% on
+paper-derivable fields, reached by a different route. It also bounds the claim:
+**the grounded comparison is valid only on the paper-derivable subset.**
+
+### AE.6 Three caveats, and two analysis passes that were wrong
+
+The `methods` 4.3x is inflated by scope ambiguity. For study001 the unanimous
+items include RTN, GPTQ, ZeroQuant and PTQ, which are baselines the paper
+compares against rather than methods it uses. The spans are real and the models
+agree, but whether these belong in the extraction is a schema question that has
+to be settled before the 4.3x is quotable.
+
+Matching is exact after canonicalisation, and `canon` deliberately does not
+bridge `batch size` to `batch_size`. Per-item match rates therefore understate
+agreement, which is why AE.5 reports counts rather than match rates.
+
+`span_found` proves a quote is real. It does not prove the quote supports the
+claim. That judgement still needs a person, and it is exactly what the pooled
+adjudication of AD.6 is for. The useful side effect is that grounding makes
+that task much cheaper, because the adjudicator reads a 25-word quote instead
+of searching the PDF.
+
+Two of my own passes over this data were wrong and are recorded so the numbers
+above are not mistaken for first attempts. The first reported 100% of items
+absent from the reference, which was a reader looking for extraction field
+names (`datasets`, `methods`) when `gold_standard.json` is keyed by RDIP class
+names (`Dataset`, `Method`, `Parameter`). The second reported hyperparameters
+at 100% absent, which was the exact-match limitation above rather than a
+finding. A uniform 100% in a comparison of two independent sources is almost
+always a join bug.
+
+### AE.7 What this licenses in section 5.2
+
+Before this pilot, "the reference is the outlier" rested on convergence: models
+agree with each other 3.7x more than with the reference. That is suggestive but
+circumstantial, and a reviewer can answer it by saying models share training
+data and therefore share errors.
+
+After this pilot the claim is a measurement. On paper-derivable fields the
+models produce items backed by verbatim passages, at 98 to 100 percent span
+fidelity, that the reference does not contain, and requiring that evidence did
+not reduce yield. The shared-training-data objection does not touch it, because
+the check is against the paper's own text rather than against another model.
+
+What must still be written carefully: the claim holds for paper-derivable
+fields only, the `methods` inflation needs the scope question resolved, and
+support remains unverified pending adjudication.

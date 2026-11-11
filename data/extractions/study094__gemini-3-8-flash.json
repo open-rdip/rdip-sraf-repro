@@ -1,0 +1,147 @@
+{
+  "study_id": "study094",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study094/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:37:00.391708+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 9,
+    "methods": 9,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "A100, NVIDIA Orin NX",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "input size",
+        "value": "640 \u00d7 640"
+      },
+      {
+        "name": "test size",
+        "value": "800 \u00d7 1333"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "LVIS",
+        "version": null
+      },
+      {
+        "name": "V3Det",
+        "version": null
+      },
+      {
+        "name": "OpenImages",
+        "version": null
+      },
+      {
+        "name": "CC3M",
+        "version": null
+      },
+      {
+        "name": "SA-1B",
+        "version": null
+      },
+      {
+        "name": "O365",
+        "version": null
+      },
+      {
+        "name": "GoldG",
+        "version": null
+      },
+      {
+        "name": "Cap4M",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Grounding DINO 1.5",
+        "description": "detection models visualized in real-world scenarios"
+      },
+      {
+        "name": "Grounding DINO 1.5 Pro",
+        "description": "model applied to common object detection scenarios, capable of detecting objects under challenging conditions such as monochromatic and blurry images"
+      },
+      {
+        "name": "Grounding DINO 1.5 Edge",
+        "description": "Real-time open-set detector evaluated in an end-to-end test setting without language cache"
+      },
+      {
+        "name": "OmDet-Turbo-T",
+        "description": "State-of-the-art open-set object detection baseline"
+      },
+      {
+        "name": "YOLO-Worldv2-L",
+        "description": "State-of-the-art open-set object detection baseline"
+      },
+      {
+        "name": "YOLO-Worldv2-M",
+        "description": "State-of-the-art open-set object detection baseline"
+      },
+      {
+        "name": "YOLO-Worldv2-S",
+        "description": "State-of-the-art open-set object detection baseline"
+      },
+      {
+        "name": "GLIP-T",
+        "description": "End-to-end open-set object detection model with Swin-T backbone"
+      },
+      {
+        "name": "Grounding DINO",
+        "description": "Baseline object detection model evaluated in side-by-side comparison."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "zero-shot AP",
+        "value": "45.0",
+        "split": null
+      },
+      {
+        "metric": "zero-shot AP",
+        "value": "36.2",
+        "split": "minival"
+      },
+      {
+        "metric": "AP",
+        "value": "30.3",
+        "split": "minival"
+      },
+      {
+        "metric": "inference speed (FPS)",
+        "value": "over 10",
+        "split": null
+      },
+      {
+        "metric": "COCO AP",
+        "value": "46.3",
+        "split": null
+      },
+      {
+        "metric": "LVIS minival APall",
+        "value": "26.0",
+        "split": "minival"
+      },
+      {
+        "metric": "LVIS minival APr",
+        "value": "20.8",
+        "split": "minival"
+      }
+    ]
+  }
+}

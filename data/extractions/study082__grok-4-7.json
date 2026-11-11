@@ -1,0 +1,151 @@
+{
+  "study_id": "study082",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study082/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:36:47.980683+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 3,
+    "methods": 14,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "train_resolution",
+        "value": "14x14"
+      },
+      {
+        "name": "trials",
+        "value": "3"
+      },
+      {
+        "name": "Optimizer",
+        "value": "Adam(Kingma & Ba, 2014)"
+      },
+      {
+        "name": "learning rate",
+        "value": "7\u00b710\u22124"
+      },
+      {
+        "name": "batch size",
+        "value": "64"
+      },
+      {
+        "name": "Input keys",
+        "value": "64"
+      },
+      {
+        "name": "Input Values",
+        "value": "Size of individual RIM * 4"
+      },
+      {
+        "name": "Input Heads",
+        "value": "4"
+      },
+      {
+        "name": "Input Dropout",
+        "value": "0.1"
+      },
+      {
+        "name": "Communication keys",
+        "value": "32"
+      },
+      {
+        "name": "Communication Values",
+        "value": "32"
+      },
+      {
+        "name": "Communication heads",
+        "value": "4"
+      },
+      {
+        "name": "Communication Dropout",
+        "value": "0.1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Sequential MNIST",
+        "version": null
+      },
+      {
+        "name": "MNIST",
+        "version": null
+      },
+      {
+        "name": "bouncing balls",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Sparse Information Flow",
+        "description": "Each RIM's dynamics should only be affected by RIMs deemed relevant; in the presence of noisy or distracting information, a large subset of RIMs should stay dormant and not be affected by the noise."
+      },
+      {
+        "name": "Modular Computation Flow and Modular Parameterization",
+        "description": "Each RIM should have its own dynamics operating by default in the absence of interaction with other RIMs, allowing specialization on simple sub-problems and reducing the total number of parameters."
+      },
+      {
+        "name": "RIMs",
+        "description": "RIMs can specialize on simple sub-problems; individual RIMs in the ensemble should be simple to prevent them from dominating and modelling complex, composite mechanisms. Modular parameterization means most parameters are associated to individual RIMs only, so a RIM maintains its own independent functionality even as other RIMs are changed because its behavior is determined by its own self-contained parameters."
+      },
+      {
+        "name": "Consciousness Prior",
+        "description": "Inductive bias of a sparse graphical model of interactions between high-level variables, each factor involving few variables and capturing an independent mechanism, using attention to select only a subset of high-level variables to interact at any time during inference (Bengio, 2017)."
+      },
+      {
+        "name": "Recurrent Entity Networks (EnTNet)",
+        "description": "A set of separate recurrent models whose hidden states store memory slots; hidden states are either fixed by the gates or modified through a simple RNN-style update (Henaff et al., 2016)."
+      },
+      {
+        "name": "LSTM",
+        "description": "Baseline whose performance degraded more severely when sequence length was changed by changing image resolution"
+      },
+      {
+        "name": "Transformers",
+        "description": "Strong baseline outperformed by RIMs"
+      },
+      {
+        "name": "EntNet",
+        "description": "Strong baseline outperformed by RIMs"
+      },
+      {
+        "name": "RMC",
+        "description": "Strong baseline outperformed by RIMs"
+      },
+      {
+        "name": "DNC",
+        "description": "Strong baseline outperformed by RIMs (Graves et al., 2016)"
+      },
+      {
+        "name": "null-input RIM activation",
+        "description": "Append a vector of zeros to the input representation; the RIMs that pay least attention to the null input in the input attention are activated."
+      },
+      {
+        "name": "output concatenation",
+        "description": "Concatenate the representations of the different RIMs and use the concatenated representation for learning a policy in RL experiments or for predicting the input at the next time step for bouncing balls and all other experiments."
+      },
+      {
+        "name": "output key-value attention",
+        "description": "Adding another layer of multi-headed key-value attention on the output was empirically explored."
+      },
+      {
+        "name": "TTO",
+        "description": "Time travelling oracle upper bound baseline that does not model the dynamics and has access to true dynamics."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

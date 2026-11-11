@@ -1,0 +1,228 @@
+{
+  "study_id": "study055",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study055/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:53:44.135403+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 0,
+    "hyperparameters": 21,
+    "datasets": 0,
+    "methods": 23,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "GluonTS",
+        "version": null
+      },
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "pytorch lightning",
+        "version": null
+      },
+      {
+        "name": "forecast",
+        "version": null
+      },
+      {
+        "name": "forecTheta",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": "Training of a full 5-layer model takes around 2 days on CPU (no specific CPU model given)"
+    },
+    "hyperparameters": [
+      {
+        "name": "epochs",
+        "value": "15"
+      },
+      {
+        "name": "optimizer",
+        "value": "Adam with default settings"
+      },
+      {
+        "name": "learning rate schedule",
+        "value": "inverse square root annealing"
+      },
+      {
+        "name": "maximum learning rate",
+        "value": "0.0005"
+      },
+      {
+        "name": "warm-up period",
+        "value": "400 batches"
+      },
+      {
+        "name": "batch size",
+        "value": "1024"
+      },
+      {
+        "name": "history length",
+        "value": "168 points (24 hours times 7 days)"
+      },
+      {
+        "name": "forecast horizon",
+        "value": "48 points (two times 24 hours) ahead in one shot"
+      },
+      {
+        "name": "objective function",
+        "value": "normalized quantile loss"
+      },
+      {
+        "name": "hyperparameter tuning criterion",
+        "value": "minimizing CRPS on the validation set"
+      },
+      {
+        "name": "Layers (L)",
+        "value": "3 (search space: [2, 3, 4])"
+      },
+      {
+        "name": "Sharing",
+        "value": "False (search space: [True, False])"
+      },
+      {
+        "name": "Lookback period (w, hours)",
+        "value": "168 (search space: [24, 168, 336])"
+      },
+      {
+        "name": "Learning rate",
+        "value": "0.0005 (search space: [0.001, 0.0005])"
+      },
+      {
+        "name": "\u03b20",
+        "value": "0.3"
+      },
+      {
+        "name": "initial batch size",
+        "value": "2"
+      },
+      {
+        "name": "increased batch size",
+        "value": "5"
+      },
+      {
+        "name": "batch updates per epoch (batch size 2)",
+        "value": "1750"
+      },
+      {
+        "name": "batch updates per epoch (batch size 5)",
+        "value": "approximately 1450"
+      },
+      {
+        "name": "reporting epoch (3 and 4-layer models)",
+        "value": "5"
+      },
+      {
+        "name": "reporting epoch (5-layer models)",
+        "value": "6"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "AQ-NBEATS-FiLM",
+        "description": "Variant of the AQ-NBEATS model with similar compute explosion (inference compute cost multiplied by a factor of Q due to quantile concatenation), but clearly better accuracy."
+      },
+      {
+        "name": "AQ-NBEATS-OUT",
+        "description": "Variant of the AQ-NBEATS model with comparable accuracy, in which compute cost is multiplied by a factor of Q for only one of the blocks, making it an order of magnitude more compute efficient."
+      },
+      {
+        "name": "Normalized MQ loss",
+        "description": "Normalized multi-quantile loss defined in equation (13); may provide incremental accuracy improvements depending on architecture configuration and can be treated as a hyperparameter."
+      },
+      {
+        "name": "Parametric probabilistic forecasting",
+        "description": "Assumes a certain PDF for the forecast distribution and uses a forecasting model that produces the parameters of this PDF"
+      },
+      {
+        "name": "Normal distribution forecasting",
+        "description": "Simplest form of the PDF, represented by a normal distribution with mean and variance parameters"
+      },
+      {
+        "name": "Gaussian processes",
+        "description": "Viable option for slightly more general modeling of probabilistic forecasts"
+      },
+      {
+        "name": "Student-t distribution",
+        "description": "Heavy-tail model used on top of MLP, DeepAR and Transformer models, as done in the GluonTS library"
+      },
+      {
+        "name": "Gaussian mixture model",
+        "description": "Approach to handling multi-modality and asymmetry of the forecast distribution"
+      },
+      {
+        "name": "AQ-NBEATS",
+        "description": "Probabilistic forecasting model trained with normalized quantile loss, using a history of 168 points to predict 48 points ahead in one shot; hyperparameters tuned by minimizing CRPS on the validation set."
+      },
+      {
+        "name": "AQ-ESRNN",
+        "description": "Related model whose hyperparameters are likewise adjusted by minimizing CRPS on the validation set."
+      },
+      {
+        "name": "Naive",
+        "description": "Seasonal naive baseline: the forecasted demand profile for day t is the same as the profile for a previous day."
+      },
+      {
+        "name": "ARIMA",
+        "description": "Fitted with auto.arima() in R forecast package; normal predictive distribution with standard deviation from residuals; quantiles obtained via level parameter in forecast()"
+      },
+      {
+        "name": "ES",
+        "description": "Exponential smoothing fitted with ets() in R forecast package; normal predictive distribution with standard deviation from residuals; quantiles obtained via level parameter in forecast()"
+      },
+      {
+        "name": "Theta",
+        "description": "Theta method using dotm() in forecTheta package; quantiles estimated through bootstrapping by simulating a sample of possible future values from the estimated model"
+      },
+      {
+        "name": "Neural models",
+        "description": "Neural probabilistic time-series models sourced from GluonTS, a Python package for probabilistic time-series modeling"
+      },
+      {
+        "name": "AQ-NBEATS-CAT",
+        "description": "Input quantile concatenation scheme in which the quantile level q is appended as one element (e.g. the last element) of the input time-series history fed to N-BEATS. It requires no architectural modifications and is applicable to N-BEATS and any other forecasting architecture. For multiple quantiles Q, the input becomes a 3D tensor of size B x Q x (w+1), multiplying inference cost by a factor of Q. Additional input normalization may be needed because q lies in [0,1] and could be ignored when concatenated with large-magnitude inputs."
+      },
+      {
+        "name": "Batch size scheduling",
+        "description": "Batch size increased from 2 to 5 during training, reducing batch updates per epoch from 1750 to approximately 1450"
+      },
+      {
+        "name": "Learning rate scheduling",
+        "description": "Learning rate schedule used in addition to batch size scheduling"
+      },
+      {
+        "name": "LR multiplier for per-series parameters",
+        "value": "",
+        "description": "A learning rate multiplier boosts the learning rate for time-series specific learnable parameters"
+      },
+      {
+        "name": "Early reporting due to overfitting",
+        "description": "Results for 3 and 4-layer models reported from epoch 5, and for 5-layer models from epoch 6, due to earlier signs of overfitting in models with fewer layers"
+      },
+      {
+        "name": "Any-quantile distributional training",
+        "description": "A novel approach to probabilistic forecasting applicable to a variety of machine learning models, enabling a model to produce an arbitrary quantile at inference time."
+      },
+      {
+        "name": "ESRNN with any-quantile capability",
+        "description": "Architectural modifications to the ESRNN forecasting algorithm expanding it with the any-quantile capability."
+      },
+      {
+        "name": "N-BEATS with any-quantile capability",
+        "description": "Architectural modifications to the N-BEATS forecasting algorithm expanding it with the any-quantile capability."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

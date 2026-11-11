@@ -1,0 +1,119 @@
+{
+  "study_id": "study076",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study076/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:22:19.621095+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 3,
+    "methods": 15,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "Z_caste",
+        "value": "14"
+      },
+      {
+        "name": "Z_religion",
+        "value": "3"
+      },
+      {
+        "name": "K",
+        "value": "[1,10]"
+      },
+      {
+        "name": "cross_validation_folds",
+        "value": "5"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Indian village social support network",
+        "version": null
+      },
+      {
+        "name": "synthetic datasets",
+        "version": null
+      },
+      {
+        "name": "synthetic data",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "PIHAM",
+        "description": "A versatile and scalable probabilistic generative model for inference in attributed multilayer networks that flexibly adapts to any combination of input data types. Practitioners select a probabilistic model and variable transformation functions; remaining calculations and inference are performed automatically via automatic differentiation, making it a black-box method."
+      },
+      {
+        "name": "Gaussian-to-Dirichlet parameter transformation",
+        "description": "Transforms the parameters of a Gaussian distribution into those of a Dirichlet distribution, which operates within a positive domain and enforces normalization on a simplex."
+      },
+      {
+        "name": "Laplace approximations",
+        "description": "Used with automatic differentiation to accommodate arbitrary input combinations without explicit derivations."
+      },
+      {
+        "name": "automatic differentiation",
+        "description": "Used with Laplace approximations to avoid the need for explicit derivations."
+      },
+      {
+        "name": "cross-validation",
+        "description": "Model selection routine used to determine the optimal combination of layers and attributes."
+      },
+      {
+        "name": "softmax membership",
+        "description": "f(\u00b7) is the softmax function applied to every row of the community membership matrices, producing positive quantities normalized to one"
+      },
+      {
+        "name": "distribution-specific transformation g",
+        "description": "g(\u00b7) depends on distribution type as in Table 1: Logistic for Bernoulli with parameter space [0, 1], Exponential for Poisson with parameter space (0, \u221e); Gaussian has parameter space R"
+      },
+      {
+        "name": "individual latent transformations",
+        "description": "Transformed parameters are obtained by applying transformations individually to latent variables as in Eq. (6) and Eq. (7), rather than a single link function, for community interpretability, more stable results, and avoidance of numerical over- or under-flow"
+      },
+      {
+        "name": "LM technique",
+        "description": "Transforms posterior distributions into the simplex space."
+      },
+      {
+        "name": "Dirichlet distributions",
+        "description": "Employed with the LM technique to transform posterior distributions into the simplex space; the Dirichlet transformation provides a more straightforward interpretation of inferred node memberships."
+      },
+      {
+        "name": "Bernoulli layer model",
+        "description": "Bernoulli distributions for the binary layers A_ell, ell in [1,6]"
+      },
+      {
+        "name": "Gaussian layer model",
+        "description": "Gaussian distributions for the distance layer A7"
+      },
+      {
+        "name": "Categorical attribute model",
+        "description": "Categorical distributions for caste X\u00b71 and religion X\u00b72"
+      },
+      {
+        "name": "Poisson covariate model",
+        "description": "Poisson distribution for the years-of-education covariate X\u00b73"
+      },
+      {
+        "name": "5-fold cross-validation",
+        "description": "5-fold cross-validation for K in [1,10] to determine the number of communities K"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

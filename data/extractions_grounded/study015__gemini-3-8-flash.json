@@ -1,0 +1,162 @@
+{
+ "study_id": "study015",
+ "model": "gemini-flash",
+ "slug": "gemini-3-8-flash",
+ "n_passages": 5,
+ "n_passages_ok": 5,
+ "failures": [],
+ "records": [
+  {
+   "field": "dependencies",
+   "value": "Porepy",
+   "evidence": "Porepy: An open-source software for simulation of multiphysics processes in fractured porous media.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "Finite volume discretization",
+   "evidence": "Finite volume discretization for poroelastic media with fractures modeled by contact mechanics.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "fixed stress splitting scheme",
+   "evidence": "preconditioner for mixed-dimensional contact poromechanics based on the fixed stress splitting scheme",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 0
+  },
+  {
+   "field": "dependencies",
+   "value": "Gmsh",
+   "evidence": "Gmsh: A 3-d finite element mesh generator",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study015",
+   "slug": "gemini-3-8-flash",
+   "passage_index": 1
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "dependencies": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   },
+   "methods": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   }
+  },
+  "total": {
+   "n": 4,
+   "has_evidence": 4,
+   "span_found": 4,
+   "value_in_span": 4,
+   "grounded": 4
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "Porepy",
+      "version": null,
+      "evidence": "Porepy: An open-source software for simulation of multiphysics processes in fractured porous media."
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Finite volume discretization",
+      "evidence": "Finite volume discretization for poroelastic media with fractures modeled by contact mechanics."
+     },
+     {
+      "name": "fixed stress splitting scheme",
+      "evidence": "preconditioner for mixed-dimensional contact poromechanics based on the fixed stress splitting scheme"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "Gmsh",
+      "version": null,
+      "evidence": "Gmsh: A 3-d finite element mesh generator"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [],
+    "evaluation_results": []
+   }
+  }
+ ]
+}

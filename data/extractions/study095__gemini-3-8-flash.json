@@ -1,0 +1,187 @@
+{
+  "study_id": "study095",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study095/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:38:00.955796+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 3,
+    "methods": 16,
+    "evaluation_results": 11
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia V100",
+      "cuda_version": null,
+      "cpu_info": "two Intel Xeon E5- 2698 v4 CPUs"
+    },
+    "hyperparameters": [
+      {
+        "name": "code size of the PQ",
+        "value": "96 and 8 bits"
+      },
+      {
+        "name": "candidates",
+        "value": "top-1000"
+      },
+      {
+        "name": "number of bits per passage of the LSH",
+        "value": "768"
+      },
+      {
+        "name": "number of centroids of the PQ",
+        "value": "96"
+      },
+      {
+        "name": "k",
+        "value": "1"
+      },
+      {
+        "name": "l",
+        "value": "1000"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "NQ",
+        "version": null
+      },
+      {
+        "name": "TQA",
+        "version": null
+      },
+      {
+        "name": "English Wikipedia",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "BPR",
+        "description": "Dense retrieval model evaluated on top-k recall, index size, query time, and exact match QA accuracy."
+      },
+      {
+        "name": "DPR",
+        "description": "Dense passage retrieval baseline whose experimental setup and training method are followed."
+      },
+      {
+        "name": "BERT-based reader",
+        "description": "Reader model combined with the retrieval model to measure exact match QA accuracy."
+      },
+      {
+        "name": "Faiss",
+        "description": "Library used to build the passage index."
+      },
+      {
+        "name": "PQ",
+        "description": "Product quantization configured with 96 and 8 bits code size."
+      },
+      {
+        "name": "ELECTRA-large",
+        "description": "improved reader model based on ELECTRA-large"
+      },
+      {
+        "name": "BERT-base",
+        "description": "reader model"
+      },
+      {
+        "name": "Fusion-in-Decoder (FiD)",
+        "description": "large reader model"
+      },
+      {
+        "name": "DPR with linear scan",
+        "description": "Primary baseline"
+      },
+      {
+        "name": "DPR with Hierarchical Navigable Small World (HSNW) graphs",
+        "description": "Builds a multi-layer structure consisting of a hierarchical set of proximity graphs, following Karpukhin et al. (2020)"
+      },
+      {
+        "name": "simple locality sensitive hashing (LSH)",
+        "description": "Post-hoc quantization algorithm applied to the DPR passage index"
+      },
+      {
+        "name": "product quantization (PQ)",
+        "description": "Post-hoc quantization algorithm applied to the DPR passage index"
+      },
+      {
+        "name": "DPR+HNSW",
+        "description": "DPR indexing combined with Hierarchical Navigable Small World graphs"
+      },
+      {
+        "name": "RAG",
+        "description": "Retrieval-augmented generation model using BART-large"
+      },
+      {
+        "name": "FiD (base)",
+        "description": "Fusion-in-Decoder model using T5-base"
+      },
+      {
+        "name": "FiD (large)",
+        "description": "Fusion-in-Decoder model using T5-large"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "index size",
+        "value": "2GB",
+        "split": "test"
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) - RAG",
+        "value": "44.5",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) - RAG",
+        "value": "56.1",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) - FiD (base)",
+        "value": "48.2",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) - FiD (base)",
+        "value": "65.0",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) - FiD (large)",
+        "value": "51.4",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) - FiD (large)",
+        "value": "67.6",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) - BPR (l=1000, BERT-base)",
+        "value": "41.6",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) - BPR (l=1000, BERT-base)",
+        "value": "56.8",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (NQ) - BPR (l=1000, ELECTRA-large)",
+        "value": "49.0",
+        "split": null
+      },
+      {
+        "metric": "Exact match QA accuracy (TQA) - BPR (l=1000, ELECTRA-large)",
+        "value": "65.6",
+        "split": null
+      }
+    ]
+  }
+}

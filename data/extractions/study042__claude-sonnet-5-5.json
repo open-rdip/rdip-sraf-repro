@@ -1,0 +1,123 @@
+{
+  "study_id": "study042",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study042/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:49:07.851372+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 4,
+    "datasets": 2,
+    "methods": 17,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "kernel size of Conv_1 and Conv_2",
+        "value": "3\u00d73"
+      },
+      {
+        "name": "number of kernels in Conv_1",
+        "value": "K"
+      },
+      {
+        "name": "number of kernels in Conv_2",
+        "value": "Q"
+      },
+      {
+        "name": "number of groups",
+        "value": "K (predefined)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "DressCode",
+        "version": null
+      },
+      {
+        "name": "VITON-HD",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "D4-VTON",
+        "description": "Virtual try-on framework that incorporates DSDM and DITP, including a denoising path"
+      },
+      {
+        "name": "DSDM",
+        "description": "Module used in D4-VTON that generates grouped attention maps with distinct semantic responses; may struggle with partially obscured garments such as a missing sleeve"
+      },
+      {
+        "name": "DITP",
+        "description": "Component of D4-VTON including a denoising path; the full model (w/ DSDM & DITP) improves generality, and variants incorporating DITP show substantial improvements over other variants"
+      },
+      {
+        "name": "w/ DSDM & DITP-",
+        "description": "Ablation variant of D4-VTON using DSDM with the denoising path removed; improves performance in the paired setting but notably underperforms in the unpaired setting"
+      },
+      {
+        "name": "w/ DSDM & DITP",
+        "description": "Full D4-VTON model using DSDM and DITP with the denoising path"
+      },
+      {
+        "name": "DCI-VTON",
+        "description": "Baseline method compared qualitatively; exhibits texture squeezing and stretching in warped results."
+      },
+      {
+        "name": "GP-VTON",
+        "description": "Baseline method compared qualitatively; mitigates texture squeezing using dynamic gradient truncation but still shows stretching in the sleeve area."
+      },
+      {
+        "name": "PBE (Paint-by-Example)",
+        "description": "Architecture with pretrained parameters adopted for the synthesis network. It is trained on millions of images and performs exemplar-conditioned image inpainting with similar semantics and styles."
+      },
+      {
+        "name": "Two-path diffusion pipeline",
+        "description": "Proposed diffusion pipeline with a denoising path that takes the ground truth human image I as input and an inpainting path that takes I\u2032, the warped garment integrated into the clothing-agnostic image. I\u2032 is also concatenated with both inputs as a condition at each training step."
+      },
+      {
+        "name": "Differential Information Tracking Path (DITP)",
+        "description": "Path introduced to replace the simplistic inpainting path. It avoids the learning ambiguities that arise when a standard objective must handle denoising and inpainting simultaneously."
+      },
+      {
+        "name": "Dynamic Semantics Selector",
+        "description": "Dynamically selects feature channels capturing similar semantics by using the self-similarity of garment features to unsupervisedly generate selection masks indicating each channel's semantic group. Features l_i \u2208 R^{Q\u00d7H\u00d7W} at the i-th scale pass through Conv_1 and Conv_2 to give S1_i \u2208 R^{K\u00d7HW} (K abstract semantics) and S2_i \u2208 R^{Q\u00d7HW} (garment features). The self-similarity matrix is S_self^i = S1_i \u00b7 S2_i \u2208 R^{K\u00d7Q}, and semantic groups are assigned by filtering these responses."
+      },
+      {
+        "name": "Group Warping Block",
+        "description": "Generates flows and attention maps for different channel groups."
+      },
+      {
+        "name": "Disentangled Warping Operation",
+        "description": "Uses the selection mask and predicted flows and attention maps to deform garment features."
+      },
+      {
+        "name": "Gumbel-Softmax",
+        "description": "Differentiable method ensuring exclusive assignment of each channel to a semantic group."
+      },
+      {
+        "name": "Differential diffusion based synthesis network",
+        "description": "Synthesis network with a training pipeline that incorporates the Dynamic Semantics Selector and Group Warping Block."
+      },
+      {
+        "name": "Vanilla",
+        "description": "Baseline setting for training the deformation network without semantic grouping or DSDM"
+      },
+      {
+        "name": "Fixed grouping",
+        "description": "Ablation setting in which all channels are evenly divided sequentially without using the Dynamic Semantics Selector"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

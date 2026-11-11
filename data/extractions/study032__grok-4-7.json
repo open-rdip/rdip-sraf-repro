@@ -1,0 +1,240 @@
+{
+  "study_id": "study032",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study032/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:43:19.587219+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 3,
+    "datasets": 3,
+    "methods": 16,
+    "evaluation_results": 24
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "interactive attention frequency (leaderboard / joint)",
+        "value": "2 Hz"
+      },
+      {
+        "name": "interactive attention frequency (low end / marginal rollouts)",
+        "value": "0.125 Hz"
+      },
+      {
+        "name": "rollout duration",
+        "value": "8-second"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "WOMD interactive",
+        "version": null
+      },
+      {
+        "name": "WOMD",
+        "version": null
+      },
+      {
+        "name": "Waymo Open Motion Dataset (WOMD)",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "temporally causal conditioning",
+        "description": "Fix one query agent to follow a specified trajectory and stochastically roll out the target agent, similarly to previous autoregressive efforts."
+      },
+      {
+        "name": "acausal conditioning",
+        "description": "Modify the model to leak the query agent's full trajectory, acausally exposing its future to the target agent during conditioning."
+      },
+      {
+        "name": "marginal prediction",
+        "description": "Marginal predictions used as the baseline against which temporally causal and acausal conditional predictions are compared."
+      },
+      {
+        "name": "LSTM Baseline",
+        "description": "Baseline model compared on prediction overlap."
+      },
+      {
+        "name": "Scene Transformer",
+        "description": "Model compared on prediction overlap."
+      },
+      {
+        "name": "JFP",
+        "description": "Model compared on prediction overlap."
+      },
+      {
+        "name": "MotionLM (joint)",
+        "description": "Joint version that performs 2 Hz interactive attention across modeled agents during training and inference rollouts so agents can react to one another."
+      },
+      {
+        "name": "MotionLM (marginal)",
+        "description": "Marginal version that does not perform interactive attention; agents only observe each other's initial states and complete the rollout without further communication."
+      },
+      {
+        "name": "Interactive attention frequency ablation",
+        "description": "Varies interactive attention frequency during joint rollouts while keeping other architecture details constant; leaderboard results use the greatest studied frequency of 2 Hz, and 0.125 Hz corresponds to marginal rollouts."
+      },
+      {
+        "name": "marginal",
+        "description": "single-agent prediction setting"
+      },
+      {
+        "name": "temporally causal conditional",
+        "description": "conditional prediction that respects temporal causality, used when evaluating safety for an autonomous vehicle's proposed plans"
+      },
+      {
+        "name": "acausal conditional",
+        "description": "conditional prediction that exposes more information to the model but does not capture reaction directionality"
+      },
+      {
+        "name": "autoregressive rollouts",
+        "description": "Capture the diversity of multimodal future behavior without reliance on trajectory anchors or static intention points."
+      },
+      {
+        "name": "joint rollouts",
+        "description": "Generates joint rollouts directly rather than scoring pairs of previously constructed marginal trajectories."
+      },
+      {
+        "name": "MotionLM",
+        "description": "Evaluated on marginal and joint motion forecasting benchmarks, with examination of conditional predictions and ablations of modeling choices."
+      },
+      {
+        "name": "interactive prediction",
+        "description": "Two interacting agents are labeled in each test example; the model must output six weighted joint trajectories."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "soft mAP increase (acausal vs marginal)",
+        "value": "8.2%",
+        "split": null
+      },
+      {
+        "metric": "soft mAP increase (temporally causal vs marginal)",
+        "value": "3.7%",
+        "split": null
+      },
+      {
+        "metric": "Prediction Overlap (LSTM Baseline)",
+        "value": "0.07462",
+        "split": "test"
+      },
+      {
+        "metric": "Prediction Overlap (Scene Transformer)",
+        "value": "0.04336",
+        "split": "test"
+      },
+      {
+        "metric": "Prediction Overlap (JFP)",
+        "value": "0.02671",
+        "split": "test"
+      },
+      {
+        "metric": "Prediction Overlap (MotionLM joint)",
+        "value": "0.02607",
+        "split": "test"
+      },
+      {
+        "metric": "Prediction Overlap (MotionLM marginal)",
+        "value": "0.0404",
+        "split": "validation"
+      },
+      {
+        "metric": "Prediction Overlap (MotionLM joint)",
+        "value": "0.0292",
+        "split": "validation"
+      },
+      {
+        "metric": "relative overlap rate (marginal vs joint)",
+        "value": "38% higher",
+        "split": null
+      },
+      {
+        "metric": "minADE (marginal)",
+        "value": "0.6069",
+        "split": "validation"
+      },
+      {
+        "metric": "minFDE (marginal)",
+        "value": "1.2236",
+        "split": "validation"
+      },
+      {
+        "metric": "Miss Rate (marginal)",
+        "value": "0.1406",
+        "split": "validation"
+      },
+      {
+        "metric": "Soft mAP (marginal)",
+        "value": "0.3951",
+        "split": "validation"
+      },
+      {
+        "metric": "minADE (temporally causal conditional)",
+        "value": "0.5997",
+        "split": "validation"
+      },
+      {
+        "metric": "minFDE (temporally causal conditional)",
+        "value": "1.2034",
+        "split": "validation"
+      },
+      {
+        "metric": "Miss Rate (temporally causal conditional)",
+        "value": "0.1377",
+        "split": "validation"
+      },
+      {
+        "metric": "Soft mAP (temporally causal conditional)",
+        "value": "0.4096",
+        "split": "validation"
+      },
+      {
+        "metric": "minADE (acausal conditional)",
+        "value": "0.5899",
+        "split": "validation"
+      },
+      {
+        "metric": "minFDE (acausal conditional)",
+        "value": "1.1804",
+        "split": "validation"
+      },
+      {
+        "metric": "Miss Rate (acausal conditional)",
+        "value": "0.1338",
+        "split": "validation"
+      },
+      {
+        "metric": "Soft mAP (acausal conditional)",
+        "value": "0.4274",
+        "split": "validation"
+      },
+      {
+        "metric": "soft mAP increase (temporally causal)",
+        "value": "3.7%",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP relative improvement",
+        "value": "6%",
+        "split": null
+      },
+      {
+        "metric": "miss rate relative improvement",
+        "value": "3%",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "study_id": "study006",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study006/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:07:54.178008+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 7,
+    "datasets": 15,
+    "methods": 25,
+    "evaluation_results": 3
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "control_rate_hz",
+        "value": "approximately 10"
+      },
+      {
+        "name": "training_seeds",
+        "value": "3"
+      },
+      {
+        "name": "evaluation_episodes_per_seed",
+        "value": "20"
+      },
+      {
+        "name": "planning_horizon_Adroit",
+        "value": "15"
+      },
+      {
+        "name": "macro_action_length",
+        "value": "3"
+      },
+      {
+        "name": "planning_horizon_raw_action_space_gym_locomotion",
+        "value": "9"
+      },
+      {
+        "name": "planning_horizon_raw_action_space_adroit",
+        "value": "15"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Stochastic MuJoCo",
+        "version": null
+      },
+      {
+        "name": "Hopper",
+        "version": null
+      },
+      {
+        "name": "Walker2D",
+        "version": null
+      },
+      {
+        "name": "Medium-Replay-High Hopper",
+        "version": null
+      },
+      {
+        "name": "Medium-Expert-Mod Hopper",
+        "version": null
+      },
+      {
+        "name": "Stochastic MuJoCo tasks",
+        "version": null
+      },
+      {
+        "name": "Adroit",
+        "version": null
+      },
+      {
+        "name": "AntMaze",
+        "version": null
+      },
+      {
+        "name": "AntMaze Umaze",
+        "version": null
+      },
+      {
+        "name": "AntMaze Medium-Diverse",
+        "version": null
+      },
+      {
+        "name": "AntMaze Large-Play",
+        "version": null
+      },
+      {
+        "name": "AntMaze Large-Diverse",
+        "version": null
+      },
+      {
+        "name": "AntMaze (all environments)",
+        "version": null
+      },
+      {
+        "name": "Cloned",
+        "version": null
+      },
+      {
+        "name": "Expert",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "L-MAP",
+        "description": "Method that consistently outperforms model-based baselines TAP and TT across Stochastic MuJoCo datasets and environments, achieving highest performance in multiple datasets for Hopper and Walker2D; generally robust but outperformed by 1R2R on Medium-Replay-High Hopper and by CQL on Medium-Expert-Mod Hopper."
+      },
+      {
+        "name": "TAP",
+        "description": "Model-based baseline compared against L-MAP."
+      },
+      {
+        "name": "TT",
+        "description": "Model-based baseline compared against L-MAP."
+      },
+      {
+        "name": "1R2R",
+        "description": "Risk-averse model-based algorithm designed for stochastic domains; attains higher score than L-MAP on the Medium-Replay-High Hopper dataset."
+      },
+      {
+        "name": "CQL",
+        "description": "Model-free method that surpasses L-MAP on the Medium-Expert-Mod Hopper dataset."
+      },
+      {
+        "name": "IQL",
+        "description": "Model-free method generally outperformed by L-MAP."
+      },
+      {
+        "name": "Latent Macro Action Planner (L-MAP)",
+        "description": "A method that constructs a discrete latent space of macro-actions using temporal abstractions to enable efficient planning in high-dimensional continuous action spaces within stochastic environments, improving expected return estimates and generalization."
+      },
+      {
+        "name": "VQ-V AE (state-conditioned)",
+        "description": "A state-conditioned vector-quantized autoencoder used to learn temporal abstractions and a discrete latent code space, including a decoder that reconstructs return-to-go estimates."
+      },
+      {
+        "name": "Latent code transition model",
+        "description": "A transition model over latent codes that, together with the latent representation, reduces the need to learn separate policy, dynamics, and value components in offline settings."
+      },
+      {
+        "name": "Planning with latent macro-actions",
+        "description": "Combining planning algorithms with the learned latent macro-action space to refine expected return estimates and enhance robustness in stochastic environments."
+      },
+      {
+        "name": "Conservative Q-Learning (CQL)",
+        "description": "A model-free actor-critic method."
+      },
+      {
+        "name": "Implicit Q-Learning (IQL)",
+        "description": "A model-free actor-critic method."
+      },
+      {
+        "name": "TT (+Q)",
+        "description": "A method that requires sampling with a separate Q-network for value estimation; achieves strong performance, particularly in smaller AntMaze environments."
+      },
+      {
+        "name": "IQL critic",
+        "description": "Value estimation component used by alternative approaches; replaced by Monte Carlo planning in L-MAP."
+      },
+      {
+        "name": "CompILE",
+        "description": "Learns latent codes representing variable-length behavior segments, enabling cross-task generalization."
+      },
+      {
+        "name": "RPL",
+        "description": "Employs a hierarchical policy architecture to simplify long-horizon tasks by decomposing them into sub-policies."
+      },
+      {
+        "name": "OPAL",
+        "description": "Introduces a continuous space of primitive actions to reduce distributional shift in offline RL, enhancing policy robustness."
+      },
+      {
+        "name": "ACT",
+        "description": "A model-free method that leverages temporal abstraction."
+      },
+      {
+        "name": "PRISE",
+        "description": "Applies sequence compression to learn variable-length action primitives, improving behavior cloning by capturing essential behavioral patterns."
+      },
+      {
+        "name": "BC",
+        "description": "Included as an additional baseline; surpassed by L-MAP in most environments for Adroit tasks."
+      },
+      {
+        "name": "Monte Carlo Tree Search (MCTS)",
+        "description": "An iterative tree search algorithm applied for macro-level planning, selecting actions using the UCT policy and exploring a high-dimensional, stochastic abstracted state space."
+      },
+      {
+        "name": "UCT policy",
+        "description": "A selection strategy within MCTS used to balance exploration and exploitation during action selection."
+      },
+      {
+        "name": "Progressive widening",
+        "description": "An extension to MCTS that incrementally expands the search tree to balance exploration of new states with exploitation of visited states, improving depth in high-stochasticity scenarios."
+      },
+      {
+        "name": "Parallel expansion",
+        "description": "Parallel expansion of multiple macro actions and their potential outcomes to improve exploration efficiency within the MCTS tree."
+      },
+      {
+        "name": "Backpropagation of estimated Q-values",
+        "description": "A procedure in MCTS that backpropagates estimated Q-values through the tree to refine value estimates for planning."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "success rate",
+        "value": "83.33%",
+        "split": null
+      },
+      {
+        "metric": "average score across all datasets and environments",
+        "value": "51.40",
+        "split": null
+      },
+      {
+        "metric": "average score across non-expert datasets",
+        "value": "18.79",
+        "split": null
+      }
+    ]
+  }
+}

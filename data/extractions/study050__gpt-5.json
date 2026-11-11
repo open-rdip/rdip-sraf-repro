@@ -1,0 +1,180 @@
+{
+  "study_id": "study050",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study050/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:54:23.248283+00:00",
+  "counts": {
+    "dependencies": 1,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 5,
+    "methods": 18,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "OpenAI Gym",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "alpha",
+        "value": "0.1"
+      },
+      {
+        "name": "gamma",
+        "value": "1"
+      },
+      {
+        "name": "episodes",
+        "value": "500000"
+      },
+      {
+        "name": "policy",
+        "value": "epsilon-greedy"
+      },
+      {
+        "name": "DQN_episodes",
+        "value": "100000"
+      },
+      {
+        "name": "state_representation",
+        "value": "4-tuple of car x and y location, passenger location and destination"
+      },
+      {
+        "name": "state_space_bins",
+        "value": "(3,3,6,3)"
+      },
+      {
+        "name": "q_learning_learning_rate",
+        "value": "0.1"
+      },
+      {
+        "name": "q_learning_gamma",
+        "value": "1"
+      },
+      {
+        "name": "dqn_optimizer",
+        "value": "Adam"
+      },
+      {
+        "name": "dqn_gradient_clipping",
+        "value": "[-1,1]"
+      },
+      {
+        "name": "dqn_learning_rate",
+        "value": "0.0001"
+      },
+      {
+        "name": "dqn_gamma",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Blackjack",
+        "version": null
+      },
+      {
+        "name": "Cartpole",
+        "version": null
+      },
+      {
+        "name": "Taxi",
+        "version": null
+      },
+      {
+        "name": "Blackjack (simplified)",
+        "version": null
+      },
+      {
+        "name": "Taxi environment",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Q-Learning",
+        "description": "Belief map for Q-Learning is visualized; used in experiments to analyze agent behavior via belief maps."
+      },
+      {
+        "name": "Deep Q-Learning",
+        "description": "Belief map for deep Q-Learning is visualized; used in experiments to analyze agent behavior via belief maps."
+      },
+      {
+        "name": "Forward Simulation",
+        "description": "Forward Simulation [33] is applied for Q-learning and deep Q-learning to produce trajectory visualisations for the cartpole simulation."
+      },
+      {
+        "name": "Belief maps",
+        "description": "Visualisations of belief maps for actions and outcome belief maps; used to extract an intuitive local interpretation of the RL agent\u2019s intention solely from the belief maps."
+      },
+      {
+        "name": "Belief map interpretation",
+        "description": "Extract local interpretation of the RL agent\u2019s intention solely from belief maps."
+      },
+      {
+        "name": "Temporal Difference (TD)",
+        "description": "Applied for training; findings reported for TD."
+      },
+      {
+        "name": "Monte Carlo (MC)",
+        "description": "Applied and performed similarly to table-based Q-learning; results in supplementary material."
+      },
+      {
+        "name": "Table-based Q-learning",
+        "description": "Compared against Monte Carlo learning; similar performance reported."
+      },
+      {
+        "name": "Epsilon-greedy training",
+        "description": "RL agents always use an \u03b5-greedy algorithm during training."
+      },
+      {
+        "name": "State augmentation for deterministic rewards",
+        "description": "Added four states (hit and bust; stuck and won; stuck and drew; stuck and lost) to make reward a deterministic function of the stochastic state."
+      },
+      {
+        "name": "Blackjack environment simplifications",
+        "description": "Assumptions: infinite shoe, actions limited to hit/stick, blackjacks not accounted for."
+      },
+      {
+        "name": "Deep Belief Network (DBN)",
+        "description": "Deep network used to generate belief maps; trained using alpha=0.0001 and gamma=1."
+      },
+      {
+        "name": "DQN",
+        "description": "Deep Q-Network trained with alpha=0.0001 and gamma=1 for 100k episodes in the Taxi environment."
+      },
+      {
+        "name": "Vanilla Q-learning",
+        "description": "Q-learning applied to discretized Cartpole with learning rate \u03b1=0.1 and \u03b3=1 after discretizing the continuous state space into bins (3,3,6,3)."
+      },
+      {
+        "name": "Deep Q-Network (DQN)",
+        "description": "DQN trained on Cartpole using Adam optimizer with gradient clipping in the range [-1,1], learning rate \u03b1=0.0001, and \u03b3=1."
+      },
+      {
+        "name": "State-space discretization",
+        "description": "Continuous Cartpole state space \u27e8x, x_dot, \u03b8, \u03b8_dot\u27e9 discretized into bins of (3,3,6,3) for like-with-like comparison across learning approaches."
+      },
+      {
+        "name": "Deep Belief Network (DBN) for belief maps",
+        "description": "A deep network referred to as a DBN is trained to generate belief maps for the DQN agent."
+      },
+      {
+        "name": "Belief map visualization",
+        "description": "Belief maps for each action depicting probable future events and state visitation confidence along a trajectory."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

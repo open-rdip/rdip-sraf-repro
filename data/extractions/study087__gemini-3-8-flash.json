@@ -1,0 +1,123 @@
+{
+  "study_id": "study087",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study087/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:29:55.907479+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 3,
+    "methods": 12,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "correlation feature channel dimension",
+        "value": "at most 128"
+      },
+      {
+        "name": "visual feature channel dimension",
+        "value": "at most 2048"
+      },
+      {
+        "name": "learning rate for classification loss",
+        "value": "10\u22124"
+      },
+      {
+        "name": "learning rate for segmentation loss",
+        "value": "10\u22123"
+      },
+      {
+        "name": "training episodes",
+        "value": "1-way 1-shot"
+      },
+      {
+        "name": "threshold \u03b4",
+        "value": "0.5"
+      },
+      {
+        "name": "number of attention heads",
+        "value": "8"
+      },
+      {
+        "name": "number of correlation pyramid P",
+        "value": "3"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Pascal-5i",
+        "version": null
+      },
+      {
+        "name": "COCO-20i",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ASNet",
+        "description": "A method that casts few-shot segmentation as correlation feature transform, processing correlation features with channel dimensions of at most 128."
+      },
+      {
+        "name": "HSNet",
+        "description": "A method that casts few-shot segmentation as the task of correlation feature transform."
+      },
+      {
+        "name": "local self-attention",
+        "description": "Used as an ablation replacement for global self-attention in the ASNet layer."
+      },
+      {
+        "name": "attention masking",
+        "description": "Prior specified in Eq. (11) ablated to verify its effectiveness"
+      },
+      {
+        "name": "multi-layer fusion path",
+        "description": "Fuses outputs from multi-layer correlations to estimate class occurrence and segmentation masks"
+      },
+      {
+        "name": "spatial average pooling with element-wise addition",
+        "description": "Baseline ablation replacing the multi-layer fusion path over support dimensions"
+      },
+      {
+        "name": "iFSL",
+        "description": "Learning framework evaluated on the FS-CS task"
+      },
+      {
+        "name": "ResNet50",
+        "description": "Pretrained backbone network on ImageNet, frozen during training"
+      },
+      {
+        "name": "ResNet-101",
+        "description": "Pretrained backbone network on ImageNet, frozen during training"
+      },
+      {
+        "name": "Adam",
+        "description": "Optimizer used for training"
+      },
+      {
+        "name": "iFSL framework",
+        "description": "Framework evaluated for the FS-CS task"
+      },
+      {
+        "name": "multi-head attention",
+        "description": "Implementation used for all AS layers with 8 heads"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

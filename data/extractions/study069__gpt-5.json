@@ -1,0 +1,165 @@
+{
+  "study_id": "study069",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study069/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:12:19.894380+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 5,
+    "datasets": 6,
+    "methods": 21,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "\u03b2 (focusing factor)",
+        "value": "controls down-weighting rate of easy sample pairs; HSAN not sensitive to \u03b2 (exact value not stated)"
+      },
+      {
+        "name": "\u03c4 (confidence hyper-parameter)",
+        "value": "analyzed; affects loss and ACC as shown in Figure 5 (exact value not stated)"
+      },
+      {
+        "name": "tau (confidence)",
+        "value": "{0.1, 0.3, 0.5, 0.7, 0.9}; effective ranges: [0.1,0.3] on BAT/CITE and [0.7,0.9] on other datasets; fixed in paper (exact value not specified)"
+      },
+      {
+        "name": "beta (focusing factor)",
+        "value": "controls down-weighing; analyzed in Appendix (exact value not specified)"
+      },
+      {
+        "name": "confidence hyper-parameter \u03c4",
+        "value": null
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CORA",
+        "version": null
+      },
+      {
+        "name": "CITE",
+        "version": null
+      },
+      {
+        "name": "AMAP",
+        "version": null
+      },
+      {
+        "name": "BAT",
+        "version": null
+      },
+      {
+        "name": "EAT",
+        "version": null
+      },
+      {
+        "name": "UAT",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "HSAN (Hard Sample Aware Network)",
+        "description": "Uses a hard sample aware contrastive loss; shows improved cluster structure in learned node embeddings and stable performance across \u03b2."
+      },
+      {
+        "name": "Hard sample aware contrastive loss",
+        "description": "Proposed loss where focusing factor \u03b2 down-weights easy sample pairs more as \u03b2 increases; shows convergence behavior and ACC trends."
+      },
+      {
+        "name": "InfoNCE loss",
+        "description": "Baseline contrastive loss used for comparison with the proposed method."
+      },
+      {
+        "name": "t-SNE visualization",
+        "description": "2D t-SNE applied to learned node embeddings to demonstrate cluster structure quality across methods."
+      },
+      {
+        "name": "Convergence analysis",
+        "description": "Observed that loss and clustering ACC gradually converge after 350 epochs; after 50 epochs the proposed method outperforms InfoNCE."
+      },
+      {
+        "name": "B (baseline)",
+        "description": "Baseline method used for comparison in ablation studies."
+      },
+      {
+        "name": "M (weight modulating function)",
+        "description": "Weight modulating function that enhances discriminative capability by focusing the network on hard sample pairs."
+      },
+      {
+        "name": "S (attribute-structure similarity function)",
+        "description": "Proposed attribute-structure similarity function to better reveal potential relations between samples."
+      },
+      {
+        "name": "B+M",
+        "description": "Baseline augmented with the weight modulating function M, improving performance over B."
+      },
+      {
+        "name": "Ours (S+M)",
+        "description": "Combination of the similarity function S and weight modulating function M achieving the best clustering performance."
+      },
+      {
+        "name": "Hard Sample Aware Network (HSAN)",
+        "description": "A network for contrastive deep graph clustering that mines hard samples to improve performance."
+      },
+      {
+        "name": "Attribute and structure encoders",
+        "description": "Encoders that embed attribute and structure information of samples into a latent space."
+      },
+      {
+        "name": "Comprehensive similarity measure criterion",
+        "description": "A criterion that computes sample similarities by considering both attribute and structure information."
+      },
+      {
+        "name": "Dynamic weight modulating function",
+        "description": "A general function guided by high-confidence clustering information to up-weight hard sample pairs and down-weight easy/negative ones."
+      },
+      {
+        "name": "HSAN",
+        "description": "Proposed method; demonstrated superior performance in experiments and ablations."
+      },
+      {
+        "name": "ProGCL",
+        "description": "Baseline method (Xia et al. 2022a) used for comparison."
+      },
+      {
+        "name": "Attribute-structure similarity function S",
+        "description": "Measures similarity between samples by considering both attribute and structure information, improving baseline performance."
+      },
+      {
+        "name": "Weight modulating function M",
+        "description": "Function that enhances performance when added to the baseline."
+      },
+      {
+        "name": "Baseline B",
+        "description": "Base model used in ablation studies."
+      },
+      {
+        "name": "B+S",
+        "description": "Baseline augmented with the attribute-structure similarity function S."
+      },
+      {
+        "name": "Ours",
+        "description": "Baseline with both S and M."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "NMI",
+        "value": "8.48% improvement of Ours over B",
+        "split": null
+      }
+    ]
+  }
+}

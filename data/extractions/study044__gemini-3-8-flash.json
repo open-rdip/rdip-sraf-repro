@@ -1,0 +1,115 @@
+{
+  "study_id": "study044",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study044/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:49:07.477267+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 2,
+    "datasets": 8,
+    "methods": 11,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "top-n token embeddings",
+        "value": "5"
+      },
+      {
+        "name": "k",
+        "value": "1"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "AIME",
+        "version": "2024"
+      },
+      {
+        "name": "LiveCodeBench",
+        "version": null
+      },
+      {
+        "name": "Math500",
+        "version": null
+      },
+      {
+        "name": "AIME 2024",
+        "version": null
+      },
+      {
+        "name": "GSM8K",
+        "version": null
+      },
+      {
+        "name": "GPQA-Diamond",
+        "version": null
+      },
+      {
+        "name": "HumanEval",
+        "version": null
+      },
+      {
+        "name": "MBPPMBPP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Soft Thinking",
+        "description": "Integrates path exploration across consecutive concept tokens to enhance reasoning flexibility and depth."
+      },
+      {
+        "name": "COCONUT-TF",
+        "description": "Training-free COCONUT approach that directly feeds the previous hidden state as the next input."
+      },
+      {
+        "name": "Cold Stop mechanism",
+        "description": "A mechanism analyzed in ablation studies to assess its impact on the reasoning process."
+      },
+      {
+        "name": "COCONUT",
+        "description": "directly feeds the previous hidden state as the next input embedding"
+      },
+      {
+        "name": "average embedding strategy",
+        "description": "takes the mean of the top- ntoken embeddings"
+      },
+      {
+        "name": "Cold Stop",
+        "description": "prevents generation collapse and repetition up to maximum generation length caused by out-of-distribution concept tokens"
+      },
+      {
+        "name": "discrete CoT",
+        "description": "Replaces each summation with sampling a single token, thereby discarding mass from all other paths."
+      },
+      {
+        "name": "Soft Thinking with Cold Stop",
+        "description": "An approach that solves more problems than standard CoT while achieving greater overall efficiency."
+      },
+      {
+        "name": "standard CoT",
+        "description": "Baseline reasoning method compared against Soft Thinking with Cold Stop."
+      },
+      {
+        "name": "Standard CoT Thinking",
+        "description": "Employs explicit step-by-step reasoning."
+      },
+      {
+        "name": "Standard Greedy CoT Thinking",
+        "description": "Utilizes greedy decoding at each step of the reasoning process."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

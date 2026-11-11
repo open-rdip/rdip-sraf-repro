@@ -1,0 +1,49 @@
+{
+  "study_id": "study049",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study049/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:53:35.750126+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 5,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "Gy\u00e1rf\u00e1s decomposition",
+        "description": "A decomposition of a graph G into a rooted tree of bags where the root bag contains a single initial vertex; if vertices u and u\u00a8 are adjacent and belong to bags B and B\u00a8, then one of B, B\u00a8 is an ancestor of the other; for every bag B, the subgraph induced by B and all its descendants is connected; for every non-root bag B there exists a hook vertex h(B) in the parent bag that is adjacent to all vertices of B and non-adjacent to all vertices in strict descendants of B; for disconnected graphs, the decomposition is the union over connected components; every graph has such a decomposition and it can be efficiently computed."
+      },
+      {
+        "name": "Simple interpretation of (colored) graphs in (colored) graphs",
+        "description": "Defined by first-order formulas with \u03c40 a tautology, \u03c4E(x,y) := (x \u2260 y) \u2227 (\u03c6(x,y) \u2228 \u03c6(y,x)), and (if the target structure is colored) \u03c4Pi(x) := Pi(x); \u03c6 may use predicates Pi when source graphs are colored."
+      },
+      {
+        "name": "Simple equivalence of classes of (colored) graphs",
+        "description": "A pair (I', I) of first-order formulas such that I' is a bijection from class C to class D with inverse mapping I; I \u2218 I' is the identity on C; a strong form of transduction equivalence."
+      },
+      {
+        "name": "Gy\u00e1rf\u00e1s decomposition computation procedure",
+        "description": "Recursive algorithm: given a connected graph G and a non-empty subset A (root bag), consider connected components C1,...,Cl of G\u2212A; for each component Ci choose a vertex vi in A with a neighbor in Ci; recursively apply the procedure to Ci with Ai = N(vi) \u2229 V(Ci); attach the root bags Ai as children of A. Applied to A = {r}, this yields a Gy\u00e1rf\u00e1s decomposition with initial vertex r and runs in polynomial time."
+      },
+      {
+        "name": "Gy\u00e1rf\u00e1s decomposition properties",
+        "description": "Defines level of a bag as the distance to a root bag in the decomposition tree/forest and height as the maximum level; observing that excluding a path as an induced subgraph bounds the height."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "study_id": "study075",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study075/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:19:12.212568+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 0,
+    "methods": 15,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "average diameter",
+        "value": "50 nm"
+      },
+      {
+        "name": "micelle size dispersity",
+        "value": "0.05"
+      },
+      {
+        "name": "core-micelle size ratio",
+        "value": "0.25"
+      },
+      {
+        "name": "micelle volume fraction",
+        "value": "0.15"
+      },
+      {
+        "name": "number_of_genes_CREASE_for_S(q)",
+        "value": "10"
+      },
+      {
+        "name": "micelle diameter range",
+        "value": "target value (50 nm) \u00b1 1 nm"
+      }
+    ],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "CREASE",
+        "description": "Evaluates P(q) (Equation 2) and combines it with S(q) (Equation 1) to obtain overall scattering intensity I(q); recent implementations use a neural network to relate the gene set directly to the scattering intensity profile."
+      },
+      {
+        "name": "separate ML models for S(q) and P(q)",
+        "description": "Neural network models linking the gene set to S(q) and to P(q), developed with a similar approach to previous neural network work; complete implementation details are in ESI Section S1. The S(q) model is intended for analogous concentrated primary particle solutions such as amphiphilic polymer vesicles as well as core-corona micelle/core-shell particle solutions."
+      },
+      {
+        "name": "P(q) and S(q) CREASE",
+        "description": "In silico method validation on concentrated micelle solutions assuming micelle shell thickness scales with core size (constant ratio of core radius to total radius); all previously described shell cases are considered when applied to experimental scattering data."
+      },
+      {
+        "name": "genetic algorithm",
+        "description": "Optimizes the set of genes in a low-dimensional feature space for structural arrangement S(q) and primary particle form P(q) to match input scattering profile(s)."
+      },
+      {
+        "name": "Debye scattering equation",
+        "description": "Used to determine computed scattering profile(s) in CREASE directly."
+      },
+      {
+        "name": "machine learning model",
+        "description": "Alternative means of determining the computed scattering profile(s) in CREASE."
+      },
+      {
+        "name": "genetic representation of nanoparticle solutions",
+        "description": "Genes 3 and 4 are coarse-grained solvent particles controlling the degree of aggregation; gene 5 is the nanoparticle volumetric concentration; gene 9 applies a background scattering intensity; gene 10 sets the system size by specifying the number of nanoparticles used in the 3D reconstruction."
+      },
+      {
+        "name": "core-shell or core-corona primary particle modeling",
+        "description": "Additional genes are added for the core and shell/corona. The shell may have constant thickness independent of core size, thickness that scales with core size, or a mean thickness and dispersity independent of the core mean size and dispersity. Particles may be treated as hard core-shell or soft core-shell with possible overlap between shells of multiple primary particles."
+      },
+      {
+        "name": "CREASE for S(q)",
+        "description": "Previously developed method that utilized 10 different genes to reconstruct the structural arrangement of spherical nanoparticles in solution. Genes 1 and 2 related to average nanoparticle diameter and dispersity; Genes 3 and 4 were coarse-grained solvent particles to control the degree of aggregation; Gene 5 was the nanoparticle volumetric concentration; Genes 6-8 description is truncated in the passage."
+      },
+      {
+        "name": "P(q) and S(q) CREASE with all three I(q) inputs",
+        "description": "Variant of P(q) and S(q) CREASE using all three I(q) inputs, plotted in orange; scattering profile matches to the target are quantitatively similar to those in Figure 5."
+      },
+      {
+        "name": "P(q) and S(q) CREASE with only two I(q) inputs",
+        "description": "Variant of P(q) and S(q) CREASE using only two I(q) inputs, plotted in cyan; scattering profile matches to the target are quantitatively similar to those in Figure 5."
+      },
+      {
+        "name": "P(q) and S(q) CREASE (two I(q) inputs)",
+        "description": "Reconstructs concentrated micelle solutions using only Imicelle(q) and Icore(q); an ML model predicts computed scattering profiles. These inputs have fewer and less sharp features than Ishell(q), and this variant on average matches the target micelle-micelle RDF more closely than the three-input variant."
+      },
+      {
+        "name": "P(q) and S(q) CREASE (three I(q) inputs)",
+        "description": "Reconstructs concentrated micelle solutions using all three I(q) profiles, including Ishell(q). Ishell(q) has numerous sharp oscillations that reduce ML model accuracy at predicting peak and trough values, so this variant matches the target RDF less closely on average than the two-input variant."
+      },
+      {
+        "name": "instrument smearing",
+        "description": "Smearing effects are incorporated when analyzing experimental SANS profiles using the scattering instrument's output variance \u03c3 and the mean scattering vector; I(q) must be calculated at q values below and above the smallest and highest experimental q values."
+      },
+      {
+        "name": "Debye scattering approach",
+        "description": "Computationally intensive calculation of computed scattering profiles that first evaluates P(q) (Equation 2) and then combines it with S(q) (Equation 1) to obtain the overall scattering intensity I(q)."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "study_id": "study065",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study065/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:08:30.508444+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 2,
+    "methods": 10,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Sentence-BERT",
+        "version": null
+      },
+      {
+        "name": "BERT",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "embedding_model",
+        "value": "BERT"
+      },
+      {
+        "name": "pooling_operation",
+        "value": "block-wise max pooling"
+      },
+      {
+        "name": "similarity_metric",
+        "value": "cosine similarity"
+      },
+      {
+        "name": "threshold_rule",
+        "value": "identify boundaries where sim_i < mu_s - sigma_s"
+      },
+      {
+        "name": "L",
+        "value": "12"
+      },
+      {
+        "name": "H",
+        "value": "768"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "AMI Meeting Corpus",
+        "version": null
+      },
+      {
+        "name": "SNLI",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Modified TextTiling with BERT embeddings",
+        "description": "Unsupervised topic segmentation: compute BERT embeddings for each utterance; divide transcript into blocks of consecutive utterances and apply block-wise max pooling to obtain block embeddings; compute cosine similarity between adjacent block embeddings; derive topic boundaries at positions where the similarity is below a threshold defined as mu_s - sigma_s, where mu_s and sigma_s are the mean and variance of the block similarity sequence."
+      },
+      {
+        "name": "Sentence-BERT embeddings (mean pooling)",
+        "description": "Extract fixed-size sentence embeddings by averaging all output vectors from Sentence-BERT pre-trained on SNLI."
+      },
+      {
+        "name": "BERT embeddings (mean pooling)",
+        "description": "Compute sentence embeddings by taking the mean over all output vectors from BERT."
+      },
+      {
+        "name": "Max pooling for token selection",
+        "description": "Repeated max pooling over token representations to retain words with high semantic value and filter out low-information tokens in noisy speech transcripts."
+      },
+      {
+        "name": "Sequence labeling with TCNs",
+        "description": "Train a supervised classifier for sequence labeling using Temporal Convolutional Networks."
+      },
+      {
+        "name": "Topic segmentation formulation",
+        "description": "Formulate meeting topic segmentation as predicting a binary label per utterance indicating whether it starts a new topic segment, given an ASR-produced transcript and reference topic spans."
+      },
+      {
+        "name": "Sentence representation with pre-trained RoBERTa/BERT (fixed features)",
+        "description": "Compute semantic similarity between sentences by extracting fixed features from a pre-trained RoBERTa (a BERT configuration) model without additional fine-tuning."
+      },
+      {
+        "name": "Segmentation via semantic similarity variations over time",
+        "description": "Detect topic changes by applying a segmentation scheme that monitors variations in semantic similarity across the utterance sequence."
+      },
+      {
+        "name": "RoBERTa feature extraction without fine-tuning",
+        "description": "Use a pre-trained RoBERTa model to extract fixed features without additional fine-tuning."
+      },
+      {
+        "name": "Max pooling of second-to-last layer",
+        "description": "Compute a fixed-size vector by applying max pooling over token embeddings from the second-to-last RoBERTa layer; for a sentence of N words this yields an N\u00d7H embedding before pooling."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

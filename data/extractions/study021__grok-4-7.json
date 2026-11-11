@@ -1,0 +1,270 @@
+{
+  "study_id": "study021",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study021/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:08:51.883251+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 2,
+    "methods": 27,
+    "evaluation_results": 18
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "N",
+        "value": "number of samples"
+      },
+      {
+        "name": "R",
+        "value": "value of R in Lmatch"
+      },
+      {
+        "name": "initial learning rate",
+        "value": "0.01"
+      },
+      {
+        "name": "optimizer",
+        "value": "SGD"
+      },
+      {
+        "name": "batch size",
+        "value": "3"
+      },
+      {
+        "name": "training steps",
+        "value": "60000"
+      },
+      {
+        "name": "alpha",
+        "value": "10"
+      },
+      {
+        "name": "d",
+        "value": "128"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "GQA",
+        "version": null
+      },
+      {
+        "name": "VG",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "DPL",
+        "description": "Model-agnostic approach that improves baseline models by understanding semantic diversity of predicates and integrating them during the inference phase, despite biased training."
+      },
+      {
+        "name": "TDE",
+        "description": "Unbiased SGG method that performs unbiased prediction from biased training."
+      },
+      {
+        "name": "DLFE",
+        "description": "Unbiased SGG method that performs unbiased prediction from biased training."
+      },
+      {
+        "name": "Motifs",
+        "description": "Baseline model used for the PredCls task on the VG dataset in ablation studies."
+      },
+      {
+        "name": "PredCls",
+        "description": "Task evaluated in ablation studies with the Motifs baseline on the VG dataset."
+      },
+      {
+        "name": "Motifs + re-weighting",
+        "description": "Motifs with re-weighting; like Motifs, predicted 'on' with highest confidence followed by 'in' on <banana, hanging from, tree>, and mostly focused on 'on' for <sign, attached to, pole>."
+      },
+      {
+        "name": "Motifs+DPL",
+        "description": "Motifs with DPL; for <banana, hanging from, tree> predicted 'growing on' with highest confidence followed by 'hanging from'; for <sign, attached to, pole> identified suitable predicates such as 'mounted on' and 'attached to'. Described as providing relatively unbiased predictions with fine-grained predicates."
+      },
+      {
+        "name": "sample-relation feature matching",
+        "description": "Matches relation features near a prototype with samples generated from predicate semantics (e.g., attached to, growing on) to learn the range each predicate can represent and estimate the specific semantics associated with relation features."
+      },
+      {
+        "name": "Orthogonal Loss",
+        "description": "Applied because distributions around prototypes are assumed to follow a symmetric normal distribution; prevents unexpected overlap with unrelated predicates that would otherwise occur when variance increases in one direction and also in the opposite direction."
+      },
+      {
+        "name": "Semantic Diversity-aware Prototype-based Learning",
+        "description": "DPL; representations obtained with Motifs backbone"
+      },
+      {
+        "name": "Motifs backbone",
+        "description": "Backbone used to obtain representations with DPL"
+      },
+      {
+        "name": "matching loss",
+        "description": "Used together with the orthogonal loss to learn appropriate variance and avoid unexpected overlap"
+      },
+      {
+        "name": "Euclidean distance-based prediction",
+        "description": "Conventional prediction that tends to classify most relationships with the predicate on, indicating biased predictions"
+      },
+      {
+        "name": "PCA visualization",
+        "description": "Visualization of prototypes, relation features, and samples of subject-object pairs; variances equally scaled up to generate samples"
+      },
+      {
+        "name": "object detector pretraining",
+        "description": "A new object detector is pretrained, so performance cannot be directly compared with other studies on the GQA dataset."
+      },
+      {
+        "name": "SGD",
+        "description": "Optimizer used with an initial learning rate of 0.01."
+      },
+      {
+        "name": "Semantic Diversity aware Prototype-based Learning (DPL)",
+        "description": "Framework that obtains the relation feature from each subject-object pair, creates a prototype corresponding to each predicate, and conducts prototype-based biased training so each relation feature approaches its corresponding prototype."
+      },
+      {
+        "name": "Prototype-based Biased Training",
+        "description": "Trains each relation feature z to become closer to the prototype of its ground-truth class; class probability is computed from Euclidean distance as Softmax(-a||z-ci||^2+b), with prototypes L2-normalized so ||ci||_2=1 (Sec 3.2)."
+      },
+      {
+        "name": "Semantic Diversity Learning",
+        "description": "Component of the DPL framework (Sec 3.3)."
+      },
+      {
+        "name": "Unbiased Inference",
+        "description": "Inference stage of the DPL framework (Sec 3.4)."
+      },
+      {
+        "name": "Sample Matching Loss",
+        "description": "Loss shown in the DPL training pipeline (Fig. 2); no further definition is given in the passage."
+      },
+      {
+        "name": "Cross Entropy Loss",
+        "description": "Loss shown in the DPL training pipeline (Fig. 2); no further definition is given in the passage."
+      },
+      {
+        "name": "Faster R-CNN",
+        "description": "Model associated with relation features in the SGG/DPL pipeline figure."
+      },
+      {
+        "name": "Case 1",
+        "description": "Head classes are assigned larger N while tail classes receive smaller N; the total sum of Ns of each predicate is kept consistent with Case 2."
+      },
+      {
+        "name": "Case 2",
+        "description": "Tail classes are allocated larger N and head classes receive smaller N; the total sum of Ns of each predicate is kept consistent with Case 1."
+      },
+      {
+        "name": "Lortho",
+        "description": "Component whose influence on performance improvement is compared in Table 6."
+      },
+      {
+        "name": "Lmatch",
+        "description": "Component whose influence on performance improvement is compared in Table 6."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP",
+        "value": "25.33",
+        "split": null
+      },
+      {
+        "metric": "PredCls R@50",
+        "value": "61.1",
+        "split": null
+      },
+      {
+        "metric": "PredCls R@100",
+        "value": "63.1",
+        "split": null
+      },
+      {
+        "metric": "PredCls mR@50",
+        "value": "11.0",
+        "split": null
+      },
+      {
+        "metric": "PredCls mR@100",
+        "value": "11.8",
+        "split": null
+      },
+      {
+        "metric": "PredCls F@50",
+        "value": "18.6",
+        "split": null
+      },
+      {
+        "metric": "PredCls F@100",
+        "value": "19.9",
+        "split": null
+      },
+      {
+        "metric": "SGCls R@50",
+        "value": "37.4",
+        "split": null
+      },
+      {
+        "metric": "SGCls R@100",
+        "value": "38.3",
+        "split": null
+      },
+      {
+        "metric": "SGCls mR@50",
+        "value": "6.4",
+        "split": null
+      },
+      {
+        "metric": "SGCls mR@100",
+        "value": "6.7",
+        "split": null
+      },
+      {
+        "metric": "SGCls F@50",
+        "value": "10.9",
+        "split": null
+      },
+      {
+        "metric": "SGCls F@100",
+        "value": "11.4",
+        "split": null
+      },
+      {
+        "metric": "SGDet R@50",
+        "value": "23.6",
+        "split": null
+      },
+      {
+        "metric": "SGDet R@100",
+        "value": "28.7",
+        "split": null
+      },
+      {
+        "metric": "SGDet mR@50",
+        "value": "3.3",
+        "split": null
+      },
+      {
+        "metric": "SGDet mR@100",
+        "value": "4.1",
+        "split": null
+      },
+      {
+        "metric": "SGDet F@50",
+        "value": "5.8",
+        "split": null
+      }
+    ]
+  }
+}

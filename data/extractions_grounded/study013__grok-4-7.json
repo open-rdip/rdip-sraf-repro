@@ -1,0 +1,860 @@
+{
+ "study_id": "study013",
+ "model": "grok",
+ "slug": "grok-4-7",
+ "n_passages": 7,
+ "n_passages_ok": 7,
+ "failures": [],
+ "records": [
+  {
+   "field": "datasets",
+   "value": "COOS-7",
+   "evidence": "the value of COOS-7 for methods development",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "protein localization classi\ufb01cation",
+   "evidence": "a protein localization classi\ufb01cation problem",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "COOS",
+   "evidence": "COOS is the most extensive microscopy image dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "COOS-7",
+   "evidence": "out-of-sample generalization on COOS-7",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "domain adaptation",
+   "evidence": "studying domain adaptation",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "COOS-7",
+   "evidence": "datasets provided in COOS-7",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "Training",
+   "evidence": "Training Images from 4 independent plates for each class 41,456",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "Test1",
+   "evidence": "Test1Randomly held-out images from the same plates in training dataset10,364",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "Test2",
+   "evidence": "Test2Images from the same plates, but different wells than training dataset17,021",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "Test3",
+   "evidence": "Test3Images from 2 independent plates for each class, reproduced on different days than training dataset32,596",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "Test4",
+   "evidence": "Test4Images from 1 plate for each class, reproduced on different day and imaged under different microscope than training dataset30,772",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 4
+  },
+  {
+   "field": "dependencies",
+   "value": "Python",
+   "evidence": "implemented in Python with Scikit-Learn",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "dependencies",
+   "value": "Scikit-Learn",
+   "evidence": "implemented in Python with Scikit-Learn [25]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "hyperparameters",
+   "value": "5-fold",
+   "evidence": "a 5-fold cross-validation of the Training dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "Training dataset",
+   "evidence": "cross-validation of the Training dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "Test1",
+   "evidence": "Training dataset, Test1 and Test2",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "Test2",
+   "evidence": "Training dataset, Test1 and Test2",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "Test3",
+   "evidence": "covariate shifts, Test3 and Test4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "Test4",
+   "evidence": "covariate shifts, Test3 and Test4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "5-fold cross-validation",
+   "evidence": "a 5-fold cross-validation of the Training dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "logistic regression",
+   "evidence": "e.g. logistic regression",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "fully-supervised CNN",
+   "evidence": "the fully-supervised CNN achieved the lowest error",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "deep learning",
+   "evidence": "Features from our deep learning models",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "classic computer vision features",
+   "evidence": "built on classic computer vision features",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "texture features",
+   "evidence": "The texture features",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.1%",
+   "evidence": "Test1 and Test2. Features from our deep learning models had as little as 1.1% error",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.8%",
+   "evidence": "logistic regression classi\ufb01ers built on classic computer vision features achieved 6.8% error or lower",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 5
+  },
+  {
+   "field": "hyperparameters",
+   "value": "128",
+   "evidence": "size of 128",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "hyperparameters",
+   "value": "80%",
+   "evidence": "80% of the Training dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "hyperparameters",
+   "value": "20%",
+   "evidence": "the remaining 20%",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "hyperparameters",
+   "value": "500",
+   "evidence": "at intervals of 500",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "hyperparameters",
+   "value": "64x64",
+   "evidence": "accept 64x64 images",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "hyperparameters",
+   "value": "8-bit RGB",
+   "evidence": "to 8-bit RGB",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "hyperparameters",
+   "value": "top 3",
+   "evidence": "the top 3 overall performing layers",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "Training dataset",
+   "evidence": "the Training dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "ImageNet",
+   "evidence": "on ImageNet",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "strati\ufb01ed",
+   "evidence": "strati\ufb01ed to preserve percentage of samples per class",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "chose the iteration",
+   "evidence": "chose the iteration (at intervals of 500) with the best performance",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "end-to-end",
+   "evidence": "We report end-to-end performance",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "last fully-connected layer",
+   "evidence": "features from the last fully-connected layer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "VGG16",
+   "evidence": "pre-trained VGG16 model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "PCI",
+   "evidence": "abbreviated as PCI",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "max-pooling convolutional layers",
+   "evidence": "max-pooling convolutional layers",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "\ufb01rst channel",
+   "evidence": "rescaled the \ufb01rst channel of our images",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "second channel",
+   "evidence": "including features from the second channel",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study013",
+   "slug": "grok-4-7",
+   "passage_index": 6
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "datasets": {
+    "n": 16,
+    "has_evidence": 16,
+    "span_found": 16,
+    "value_in_span": 16,
+    "grounded": 16
+   },
+   "methods": {
+    "n": 17,
+    "has_evidence": 17,
+    "span_found": 17,
+    "value_in_span": 17,
+    "grounded": 17
+   },
+   "dependencies": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   },
+   "hyperparameters": {
+    "n": 8,
+    "has_evidence": 8,
+    "span_found": 8,
+    "value_in_span": 8,
+    "grounded": 8
+   },
+   "evaluation_results": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2
+   }
+  },
+  "total": {
+   "n": 45,
+   "has_evidence": 45,
+   "span_found": 45,
+   "value_in_span": 45,
+   "grounded": 45
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COOS-7",
+      "version": null,
+      "evidence": "the value of COOS-7 for methods development"
+     }
+    ],
+    "methods": [
+     {
+      "name": "protein localization classi\ufb01cation",
+      "evidence": "a protein localization classi\ufb01cation problem"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COOS",
+      "version": null,
+      "evidence": "COOS is the most extensive microscopy image dataset"
+     },
+     {
+      "name": "COOS-7",
+      "version": null,
+      "evidence": "out-of-sample generalization on COOS-7"
+     }
+    ],
+    "methods": [
+     {
+      "name": "domain adaptation",
+      "evidence": "studying domain adaptation"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COOS-7",
+      "version": null,
+      "evidence": "datasets provided in COOS-7"
+     },
+     {
+      "name": "Training",
+      "version": null,
+      "evidence": "Training Images from 4 independent plates for each class 41,456"
+     },
+     {
+      "name": "Test1",
+      "version": null,
+      "evidence": "Test1Randomly held-out images from the same plates in training dataset10,364"
+     },
+     {
+      "name": "Test2",
+      "version": null,
+      "evidence": "Test2Images from the same plates, but different wells than training dataset17,021"
+     },
+     {
+      "name": "Test3",
+      "version": null,
+      "evidence": "Test3Images from 2 independent plates for each class, reproduced on different days than training dataset32,596"
+     },
+     {
+      "name": "Test4",
+      "version": null,
+      "evidence": "Test4Images from 1 plate for each class, reproduced on different day and imaged under different microscope than training dataset30,772"
+     }
+    ],
+    "methods": [],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "Python",
+      "version": null,
+      "evidence": "implemented in Python with Scikit-Learn"
+     },
+     {
+      "name": "Scikit-Learn",
+      "version": null,
+      "evidence": "implemented in Python with Scikit-Learn [25]"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "cross-validation",
+      "value": "5-fold",
+      "evidence": "a 5-fold cross-validation of the Training dataset"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "Training dataset",
+      "version": null,
+      "evidence": "cross-validation of the Training dataset"
+     },
+     {
+      "name": "Test1",
+      "version": null,
+      "evidence": "Training dataset, Test1 and Test2"
+     },
+     {
+      "name": "Test2",
+      "version": null,
+      "evidence": "Training dataset, Test1 and Test2"
+     },
+     {
+      "name": "Test3",
+      "version": null,
+      "evidence": "covariate shifts, Test3 and Test4"
+     },
+     {
+      "name": "Test4",
+      "version": null,
+      "evidence": "covariate shifts, Test3 and Test4"
+     }
+    ],
+    "methods": [
+     {
+      "name": "5-fold cross-validation",
+      "evidence": "a 5-fold cross-validation of the Training dataset"
+     },
+     {
+      "name": "logistic regression",
+      "evidence": "e.g. logistic regression"
+     },
+     {
+      "name": "fully-supervised CNN",
+      "evidence": "the fully-supervised CNN achieved the lowest error"
+     },
+     {
+      "name": "deep learning",
+      "evidence": "Features from our deep learning models"
+     },
+     {
+      "name": "classic computer vision features",
+      "evidence": "built on classic computer vision features"
+     },
+     {
+      "name": "texture features",
+      "evidence": "The texture features"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "error",
+      "value": "1.1%",
+      "split": "Test1 and Test2",
+      "evidence": "Test1 and Test2. Features from our deep learning models had as little as 1.1% error"
+     },
+     {
+      "metric": "error",
+      "value": "6.8%",
+      "split": null,
+      "evidence": "logistic regression classi\ufb01ers built on classic computer vision features achieved 6.8% error or lower"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 6,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "size",
+      "value": "128",
+      "evidence": "size of 128"
+     },
+     {
+      "name": "training_portion",
+      "value": "80%",
+      "evidence": "80% of the Training dataset"
+     },
+     {
+      "name": "heldout_portion",
+      "value": "20%",
+      "evidence": "the remaining 20%"
+     },
+     {
+      "name": "iteration_interval",
+      "value": "500",
+      "evidence": "at intervals of 500"
+     },
+     {
+      "name": "image_size",
+      "value": "64x64",
+      "evidence": "accept 64x64 images"
+     },
+     {
+      "name": "image_encoding",
+      "value": "8-bit RGB",
+      "evidence": "to 8-bit RGB"
+     },
+     {
+      "name": "reported_layers",
+      "value": "top 3",
+      "evidence": "the top 3 overall performing layers"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "Training dataset",
+      "version": null,
+      "evidence": "the Training dataset"
+     },
+     {
+      "name": "ImageNet",
+      "version": null,
+      "evidence": "on ImageNet"
+     }
+    ],
+    "methods": [
+     {
+      "name": "strati\ufb01ed",
+      "evidence": "strati\ufb01ed to preserve percentage of samples per class"
+     },
+     {
+      "name": "chose the iteration",
+      "evidence": "chose the iteration (at intervals of 500) with the best performance"
+     },
+     {
+      "name": "end-to-end",
+      "evidence": "We report end-to-end performance"
+     },
+     {
+      "name": "last fully-connected layer",
+      "evidence": "features from the last fully-connected layer"
+     },
+     {
+      "name": "VGG16",
+      "evidence": "pre-trained VGG16 model"
+     },
+     {
+      "name": "PCI",
+      "evidence": "abbreviated as PCI"
+     },
+     {
+      "name": "max-pooling convolutional layers",
+      "evidence": "max-pooling convolutional layers"
+     },
+     {
+      "name": "\ufb01rst channel",
+      "evidence": "rescaled the \ufb01rst channel of our images"
+     },
+     {
+      "name": "second channel",
+      "evidence": "including features from the second channel"
+     }
+    ],
+    "evaluation_results": []
+   }
+  }
+ ]
+}

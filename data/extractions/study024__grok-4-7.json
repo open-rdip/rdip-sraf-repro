@@ -1,0 +1,154 @@
+{
+  "study_id": "study024",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study024/ext/grok-4-7",
+  "extracted_at": "2026-11-09T19:16:17.015812+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 1,
+    "methods": 18,
+    "evaluation_results": 2
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "box_constraint",
+        "value": "0 \u2264 xi \u2264 1"
+      },
+      {
+        "name": "amplitude_to_variable_mapping",
+        "value": "xi = 1/2 (ci/s + 1)"
+      },
+      {
+        "name": "pump field p(t) (Langevin, pumped Langevin, DL-CCVM)",
+        "value": "t/T p0 (linear schedule)"
+      },
+      {
+        "name": "pump field p(t) (MF-CCVM)",
+        "value": "t/T p0 + 1 + j(t)"
+      },
+      {
+        "name": "measurement strength j(t)",
+        "value": "j0 exp(-\u03b1 t / T)"
+      },
+      {
+        "name": "injected noise parameter r(t) (DL-CCVM)",
+        "value": "r0 exp(-\u03b2 t / T)"
+      },
+      {
+        "name": "Tpulse",
+        "value": "10 picoseconds"
+      },
+      {
+        "name": "trials_per_instance",
+        "value": "1000"
+      },
+      {
+        "name": "optimality_gap",
+        "value": "0.1%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "BoxQP",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Langevin",
+        "description": "Classical solver included in the wall-clock TTS comparison"
+      },
+      {
+        "name": "DL-CCVM (CPU)",
+        "description": "Digital DL-CCVM solver; wall-clock TTS computed from CPU time"
+      },
+      {
+        "name": "DL-CCVM (physical)",
+        "description": "Optics-based physical DL-CCVM implementation; TTS calculated from physical device parameters"
+      },
+      {
+        "name": "MF-CCVM (CPU)",
+        "description": "Digital MF-CCVM solver; wall-clock TTS computed from CPU time"
+      },
+      {
+        "name": "MF-CCVM (physical)",
+        "description": "Optics-based physical MF-CCVM implementation; TTS calculated from physical device parameters"
+      },
+      {
+        "name": "clamping",
+        "description": "Post-processing applied at the end of the evolution on a classical computer; clamped amplitudes ci are mapped to problem variables xi to enforce the box constraint"
+      },
+      {
+        "name": "parameter tuning",
+        "description": "System parameters, including the pump value, are optimized for the highest success probability; ranges are shown in Table I"
+      },
+      {
+        "name": "pumped Langevin",
+        "description": "Solver using a linear pump-field schedule p(t) = t/T p0"
+      },
+      {
+        "name": "DL-CCVM",
+        "description": "Solver using a linear pump-field schedule and injected noise r(t) = r0 exp(-\u03b2 t / T), with \u03b2 an arbitrary parameter"
+      },
+      {
+        "name": "MF-CCVM",
+        "description": "Solver with p(t) = t/T p0 + 1 + j(t) to compensate for measurement loss and background loss; measurement strength j(t) = j0 exp(-\u03b1 t / T), with \u03b1 an arbitrary parameter programmed to the required noise"
+      },
+      {
+        "name": "wall-clock TTS",
+        "description": "Time-to-solution for solving instances on a GPU, compared for all four solvers"
+      },
+      {
+        "name": "estimated physical TTS",
+        "description": "Benchmarking comparison for optics-based implementations of DL-CCVM and MF-CCVM"
+      },
+      {
+        "name": "R99",
+        "description": "Uses Ps, the success probability of a single trial, found by solving a given problem instance 1000 times and counting how often the global maximum was found."
+      },
+      {
+        "name": "Tmax",
+        "description": "Estimated physical time for a single trial, Tmax = niter \u00b7 N \u00b7 Tpulse, where Tpulse is the time delay between two individual pulses within the cavity."
+      },
+      {
+        "name": "TTS",
+        "description": "Time to solution for finding an approximate solution correct up to a multiplicative error relative to the global optimal value."
+      },
+      {
+        "name": "QCQP",
+        "description": "Quadratically constrained quadratic programming solver; a general heuristic solver for quadratic programming problems."
+      },
+      {
+        "name": "CPLEX",
+        "description": "Exact solver whose TTS heavily depends on problem density."
+      },
+      {
+        "name": "Gurobi",
+        "description": "Exact solver whose TTS heavily depends on problem density."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "wall-clock TTS",
+        "value": "more than three orders of magnitude lower for optics-based CCVM solvers than the CPU wall-clock TTS for conventional digital solvers",
+        "split": null
+      },
+      {
+        "metric": "approximate objective value relative to global optimal",
+        "value": "within 0.1%",
+        "split": null
+      }
+    ]
+  }
+}

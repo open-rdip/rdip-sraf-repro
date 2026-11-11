@@ -1,0 +1,340 @@
+{
+  "study_id": "study046",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study046/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-09T23:50:36.282158+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 5,
+    "methods": 14,
+    "evaluation_results": 35
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "MMdetection",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA GeForce GTX2070",
+      "cuda_version": null,
+      "cpu_info": "i7-8700K"
+    },
+    "hyperparameters": [
+      {
+        "name": "model scale version (MS COCO)",
+        "value": "\u00d71.25"
+      },
+      {
+        "name": "optimizer",
+        "value": "stochastic gradient descent"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "weight decay",
+        "value": "0.0005"
+      },
+      {
+        "name": "train/test split ratio (weld defect dataset)",
+        "value": "9:1"
+      },
+      {
+        "name": "initial learning rate (weld defect dataset)",
+        "value": "0.01"
+      },
+      {
+        "name": "total epochs (weld defect dataset)",
+        "value": "500"
+      },
+      {
+        "name": "initial learning rate (MS COCO)",
+        "value": "0.01"
+      },
+      {
+        "name": "total epochs (MS COCO)",
+        "value": "300"
+      },
+      {
+        "name": "image size (weld defect dataset)",
+        "value": "320\u00d7320"
+      },
+      {
+        "name": "image size (MS COCO)",
+        "value": "640\u00d7640"
+      },
+      {
+        "name": "width C (n=1)",
+        "value": "32"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "weld defect dataset",
+        "version": null
+      },
+      {
+        "name": "MS COCO",
+        "version": null
+      },
+      {
+        "name": "weld defect dataset (2449 digital X-ray images; blow hole, incomplete penetration, crack)",
+        "version": null
+      },
+      {
+        "name": "COCO trainval35k",
+        "version": null
+      },
+      {
+        "name": "COCO test-dev2017",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "EFE module",
+        "description": "Module whose learned feature maps show superior region division and fine-grained information on each channel."
+      },
+      {
+        "name": "Multi-scale feature exploration (two-stage)",
+        "description": "A parameter-free stage provides a basis containing existing multi-scale information, and a parameter-based stage learns implicit features among different receptive fields; the results of the two stages are combined for a more powerful representation."
+      },
+      {
+        "name": "LF-YOLO",
+        "description": "Model designed for weld defect detection based on the two modules (EFE and multi-scale feature module)."
+      },
+      {
+        "name": "EFE",
+        "description": "Module of the proposed network whose contribution is evaluated through ablation studies"
+      },
+      {
+        "name": "RMF",
+        "description": "Module of the proposed network whose contribution is evaluated through ablation studies"
+      },
+      {
+        "name": "Proposed network",
+        "description": "Network for weld defect detection compared with state-of-the-art methods on the weld defect dataset and on MS COCO"
+      },
+      {
+        "name": "RMF module",
+        "description": "A novel module designed to utilize and exploit features (the passage is truncated before the description is completed)."
+      },
+      {
+        "name": "Cascade-RCNN",
+        "description": "State-of-the-art comparison method with ResNet50 and ResNet101 backbones, trained and tested with MMdetection"
+      },
+      {
+        "name": "Faster-RCNN",
+        "description": "State-of-the-art comparison method with ResNet50 and ResNet101 backbones, trained and tested with MMdetection"
+      },
+      {
+        "name": "Dynamic-RCNN",
+        "description": "State-of-the-art comparison method with ResNet50 backbone, trained and tested with MMdetection"
+      },
+      {
+        "name": "MMdetection",
+        "description": "Open source 2D detection toolbox used to train and test the state-of-the-art methods, with hyper-parameters adjusted to the optimal"
+      },
+      {
+        "name": "SSD",
+        "description": "Classical one-stage network used as comparison baseline (SSD300)"
+      },
+      {
+        "name": "YOLO v3",
+        "description": "Classical one-stage network used as comparison baseline"
+      },
+      {
+        "name": "R-FCN",
+        "description": "Two-stage network used as comparison baseline"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP50",
+        "value": "92.9",
+        "split": null
+      },
+      {
+        "metric": "FLOPs",
+        "value": "4.0G",
+        "split": null
+      },
+      {
+        "metric": "Params",
+        "value": "7.3M",
+        "split": null
+      },
+      {
+        "metric": "FPS",
+        "value": "61.5",
+        "split": null
+      },
+      {
+        "metric": "mAP50 (MS COCO, \u00d71.25 version)",
+        "value": "50.3",
+        "split": null
+      },
+      {
+        "metric": "Table value (unlabeled column) ResNet101",
+        "value": "52.9",
+        "split": null
+      },
+      {
+        "metric": "Table value (unlabeled column) LF-YOLO \u00d70.75",
+        "value": "43.9",
+        "split": null
+      },
+      {
+        "metric": "Table value (unlabeled column) LF-YOLO",
+        "value": "47.8",
+        "split": null
+      },
+      {
+        "metric": "Table value (unlabeled column) LF-YOLO \u00d71.25",
+        "value": "50.3",
+        "split": null
+      },
+      {
+        "metric": "mAP50 (Cascade-RCNN, ResNet50)",
+        "value": "90.0",
+        "split": null
+      },
+      {
+        "metric": "FPS (Cascade-RCNN, ResNet50)",
+        "value": "10.2",
+        "split": null
+      },
+      {
+        "metric": "FLOPs(G) (Cascade-RCNN, ResNet50)",
+        "value": "243.2",
+        "split": null
+      },
+      {
+        "metric": "Params(M) (Cascade-RCNN, ResNet50)",
+        "value": "68.9",
+        "split": null
+      },
+      {
+        "metric": "mAP50 (Cascade-RCNN, ResNet101)",
+        "value": "90.7",
+        "split": null
+      },
+      {
+        "metric": "FPS (Cascade-RCNN, ResNet101)",
+        "value": "8.0",
+        "split": null
+      },
+      {
+        "metric": "FLOPs(G) (Cascade-RCNN, ResNet101)",
+        "value": "323.1",
+        "split": null
+      },
+      {
+        "metric": "Params(M) (Cascade-RCNN, ResNet101)",
+        "value": "87.9",
+        "split": null
+      },
+      {
+        "metric": "mAP50 (Faster-RCNN, ResNet50)",
+        "value": "90.1",
+        "split": null
+      },
+      {
+        "metric": "FPS (Faster-RCNN, ResNet50)",
+        "value": "13.7",
+        "split": null
+      },
+      {
+        "metric": "FLOPs(G) (Faster-RCNN, ResNet50)",
+        "value": "215.4",
+        "split": null
+      },
+      {
+        "metric": "Params(M) (Faster-RCNN, ResNet50)",
+        "value": "41.1",
+        "split": null
+      },
+      {
+        "metric": "mAP50 (Faster-RCNN, ResNet101)",
+        "value": "92.2",
+        "split": null
+      },
+      {
+        "metric": "FPS (Faster-RCNN, ResNet101)",
+        "value": "10.3",
+        "split": null
+      },
+      {
+        "metric": "FLOPs(G) (Faster-RCNN, ResNet101)",
+        "value": "295.3",
+        "split": null
+      },
+      {
+        "metric": "Params(M) (Faster-RCNN, ResNet101)",
+        "value": "60.1",
+        "split": null
+      },
+      {
+        "metric": "mAP50 (Dynamic-RCNN, ResNet50)",
+        "value": "90.3",
+        "split": null
+      },
+      {
+        "metric": "mAP 50 (LF-YOLO \u00d70.75)",
+        "value": "43.9",
+        "split": "test"
+      },
+      {
+        "metric": "mAP 50 (RMF ablation, baseline without SPP/GDConv)",
+        "value": "86.3",
+        "split": null
+      },
+      {
+        "metric": "mAP 50 (RMF ablation, first single-component variant)",
+        "value": "87.9",
+        "split": null
+      },
+      {
+        "metric": "mAP 50 (RMF ablation, second single-component variant)",
+        "value": "87.8",
+        "split": null
+      },
+      {
+        "metric": "mAP 50 (RMF ablation, SPP + GDConv)",
+        "value": "90.7",
+        "split": null
+      },
+      {
+        "metric": "FLOPs(G) (RMF ablation, SPP + GDConv)",
+        "value": "1.1",
+        "split": null
+      },
+      {
+        "metric": "Params(M) (RMF ablation, SPP + GDConv)",
+        "value": "1.8",
+        "split": null
+      },
+      {
+        "metric": "Computation of LF-YOLO \u00d70.75 relative to SSD300",
+        "value": "28.7%",
+        "split": null
+      },
+      {
+        "metric": "Computation of LF-YOLO \u00d70.75 relative to Faster-RCNN",
+        "value": "25.9%",
+        "split": null
+      }
+    ]
+  }
+}

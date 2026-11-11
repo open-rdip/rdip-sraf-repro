@@ -1,0 +1,269 @@
+{
+  "study_id": "study012",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study012/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:14:34.944687+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 26,
+    "datasets": 7,
+    "methods": 25,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "training_schedule",
+        "value": "1\u00d7 (Mask R-CNN default)"
+      },
+      {
+        "name": "scale_jitter_shorter_side_range",
+        "value": "[640, 800]"
+      },
+      {
+        "name": "num_stuff_classes",
+        "value": "53"
+      },
+      {
+        "name": "other_class_for_things",
+        "value": "single"
+      },
+      {
+        "name": "minibatch_size",
+        "value": "32"
+      },
+      {
+        "name": "crop_size",
+        "value": "512\u00d71024"
+      },
+      {
+        "name": "crops_per_gpu",
+        "value": "4"
+      },
+      {
+        "name": "random_scale_range",
+        "value": "0.5 to 2.0\u00d7"
+      },
+      {
+        "name": "training_iterations",
+        "value": "65000"
+      },
+      {
+        "name": "semantic_branch_channels",
+        "value": "128"
+      },
+      {
+        "name": "fpn_feature_aggregation",
+        "value": "element-wise sum"
+      },
+      {
+        "name": "upsampling_module_conv_layers",
+        "value": "2"
+      },
+      {
+        "name": "conv_kernel_size",
+        "value": "3x3"
+      },
+      {
+        "name": "activation",
+        "value": "ReLU"
+      },
+      {
+        "name": "upsampling_method",
+        "value": "bilinear"
+      },
+      {
+        "name": "feature_fusion",
+        "value": "concatenation"
+      },
+      {
+        "name": "data_augmentation",
+        "value": "color augmentation"
+      },
+      {
+        "name": "test_time_class_balancing",
+        "value": "enabled"
+      },
+      {
+        "name": "multi_scale_inference",
+        "value": "enabled"
+      },
+      {
+        "name": "learning_rate",
+        "value": "double compared to Cityscapes schedule"
+      },
+      {
+        "name": "batch_size",
+        "value": "half compared to Cityscapes schedule"
+      },
+      {
+        "name": "fpn_output_channels_per_scale",
+        "value": "256"
+      },
+      {
+        "name": "semantic_branch_output_channels",
+        "value": "128"
+      },
+      {
+        "name": "normalization_finetuning",
+        "value": "replace BN with fixed channel-wise affine transformation"
+      },
+      {
+        "name": "backbone",
+        "value": "ResNet-50"
+      },
+      {
+        "name": "loss_strategy",
+        "value": "combine instance and semantic losses each gradient update (default)"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "Cityscapes",
+        "version": null
+      },
+      {
+        "name": "COCO Panoptic (stuff annotations)",
+        "version": null
+      },
+      {
+        "name": "COCO-Stuff",
+        "version": "2017"
+      },
+      {
+        "name": "COCO Panoptic",
+        "version": null
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "COCO Panoptic Segmentation",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Panoptic FPN",
+        "description": "Panoptic segmentation model evaluated with PQ; predictions are post-processed by merging outputs from semantic and instance branches."
+      },
+      {
+        "name": "Mask R-CNN 1\u00d7 training setting",
+        "description": "Default Mask R-CNN training schedule with scale jitter where the shorter image side is uniformly sampled in [640, 800]."
+      },
+      {
+        "name": "Cityscapes training configuration",
+        "description": "Minibatches of 32 random 512\u00d71024 image crops (4 per GPU) with random image scaling in the range 0.5 to 2.0\u00d7, trained for 65k iterations."
+      },
+      {
+        "name": "ResNet-50 Semantic FPN",
+        "description": "Semantic segmentation using an FPN backbone with varying channel widths; 128 channels chosen for balance of accuracy and efficiency."
+      },
+      {
+        "name": "Dense-pixel labeling branch",
+        "description": "A simple semantic segmentation branch attached to the FPN; robust to design choices including channel count and feature aggregation."
+      },
+      {
+        "name": "Feature aggregation by summation",
+        "description": "Aggregating feature maps from different FPN levels using element-wise sum, found to be more efficient than concatenation with comparable accuracy."
+      },
+      {
+        "name": "Mask R-CNN instance segmentation",
+        "description": "Instance segmentation branch serving as the basis for combining with the semantic branch."
+      },
+      {
+        "name": "Multi-task training (semantic + instance)",
+        "description": "Joint training of a unified network combining the semantic segmentation branch with the Mask R-CNN instance segmentation branch."
+      },
+      {
+        "name": "Semantic segmentation branch design",
+        "description": "Each upsampling module uses two 3\u00d73 convolution layers with ReLU before bilinear upscaling to final resolution; features are concatenated instead of summed."
+      },
+      {
+        "name": "Color augmentation",
+        "description": "Applied during training."
+      },
+      {
+        "name": "Class distribution balancing at test time",
+        "description": "Balanced the class distribution during inference."
+      },
+      {
+        "name": "Multi-scale inference",
+        "description": "Used multiple input scales at test time."
+      },
+      {
+        "name": "Training schedule adjustment",
+        "description": "Schedule specific to semantic segmentation, similar to Cityscapes schedule, with double learning rate and halved batch size."
+      },
+      {
+        "name": "Feature Pyramid Network (FPN)",
+        "description": "Standard FPN configuration with 256 output channels per scale; semantic segmentation branch reduces channels to 128."
+      },
+      {
+        "name": "Backbone pretraining and normalization",
+        "description": "ResNet/ResNeXt backbones pre-trained on ImageNet using batch normalization; during fine-tuning, BN is replaced with a fixed channel-wise affine transformation."
+      },
+      {
+        "name": "Panoptic inference post-processing",
+        "description": "Resolve overlaps between instances based on confidence scores; resolve overlaps between instance and semantic segmentation in favor of instances; remove stuff regions labeled 'other' or under a given area threshold."
+      },
+      {
+        "name": "Panoptic FPN with a single backbone",
+        "description": "Joint model for panoptic segmentation; yields comparable accuracy to two separate networks with roughly half the compute and outperforms two separate networks under matched compute (ResNet-101 vs two ResNet-50)."
+      },
+      {
+        "name": "Two separate networks",
+        "description": "Train instance and semantic segmentation with separate networks (e.g., two ResNet-50 backbones) as a comparison baseline."
+      },
+      {
+        "name": "Combined loss updates",
+        "description": "Combine instance and semantic losses together during each gradient update; demonstrates better performance than alternating losses."
+      },
+      {
+        "name": "Alternating loss updates",
+        "description": "Alternate instance and semantic losses on each iteration, allowing different augmentation strategies; underperforms combined loss in Table 3c."
+      },
+      {
+        "name": "FPN channel grouping by task",
+        "description": "Architecture where FPN channels are grouped into two sets with each task using one set; compared in Table 3d."
+      },
+      {
+        "name": "Two-set FPN channel grouping for multi-task",
+        "description": "FPN channels are grouped into two sets, and each task uses one of the two feature sets as its input."
+      },
+      {
+        "name": "Loss re-weighting for multi-task segmentation",
+        "description": "Combine instance and semantic segmentation losses with tunable weights to balance scales and normalization: L = \u03bbi (Lc + Lb + Lm) + \u03bbs Ls."
+      },
+      {
+        "name": "Feature Pyramid Network (FPN) for semantic segmentation",
+        "description": "Use a single FPN-based model compatible with Mask R-CNN to jointly perform instance and semantic segmentation, providing a light-weight alternative to dilation and encoder-decoder architectures."
+      },
+      {
+        "name": "Comparison of architecture efficiency",
+        "description": "FPN is much lighter than a typical dilation-8 network, ~2\u00d7 more efficient than a symmetric encoder-decoder, and roughly equivalent to a dilation-16 network while producing 4\u00d7 higher resolution output."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "PQ",
+        "value": "4.3 point margin",
+        "split": null
+      }
+    ]
+  }
+}

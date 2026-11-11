@@ -1,0 +1,360 @@
+{
+  "study_id": "study018",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study018/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:20:03.328140+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 16,
+    "datasets": 3,
+    "methods": 17,
+    "evaluation_results": 35
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": "1.0"
+      },
+      {
+        "name": "Caffe2",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "Nvidia 1080 Ti, Nvidia M40",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "beta",
+        "value": "1.0"
+      },
+      {
+        "name": "train_schedule",
+        "value": "1x"
+      },
+      {
+        "name": "feature_pyramid_levels",
+        "value": "P3-P5"
+      },
+      {
+        "name": "backbone",
+        "value": "ResNet-50"
+      },
+      {
+        "name": "image_resize_shorter_side",
+        "value": "800 pixels"
+      },
+      {
+        "name": "data_augmentation",
+        "value": null
+      },
+      {
+        "name": "best_matching_threshold",
+        "value": "0.5 (regular matching)"
+      },
+      {
+        "name": "\u03b2",
+        "value": "1.0 (Fixed)"
+      },
+      {
+        "name": "training_scales",
+        "value": "{640, 800, 1200}"
+      },
+      {
+        "name": "iteration_schedule",
+        "value": "2x"
+      },
+      {
+        "name": "normalization (ResNet-101-FPN-GN)",
+        "value": "Group Normalization on extra layers (FPN, localization, classification)"
+      },
+      {
+        "name": "batch_normalization_replacement",
+        "value": "Not applied to all layers in ResNet-101 to avoid slowdown"
+      },
+      {
+        "name": "inference_short_side",
+        "value": "400"
+      },
+      {
+        "name": "Self-Adjusting Smooth L1 bounding region",
+        "value": "0.11"
+      },
+      {
+        "name": "Mask prediction feature levels",
+        "value": "{P3, P4, P5}"
+      },
+      {
+        "name": "Training schedule length",
+        "value": "1.5x"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO minival",
+        "version": null
+      },
+      {
+        "name": "COCO",
+        "version": "trainval135k (also called COCO 2017 train)"
+      },
+      {
+        "name": "Pascal VOC",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Self-Adjusting Smooth L1 Loss",
+        "description": "Ablation varying beta (1.0 vs 0.11); Detectron uses 0.11. Beta=1.0 favors AP0.5, while smaller beta behaves differently."
+      },
+      {
+        "name": "Best matching strategy for anchors",
+        "description": "Matching strategy that reduces duplicate detections by enforcing larger (but stable) anchor adjustments so only one survives non-maximum suppression."
+      },
+      {
+        "name": "Mask prediction module settings",
+        "description": "Ablation of different settings for adding a mask prediction module on COCO minival."
+      },
+      {
+        "name": "Best Matching policy",
+        "description": "Component of the model used to improve training by selecting optimal matches between predictions and ground truths."
+      },
+      {
+        "name": "Self-Adjusting Smooth L1",
+        "description": "Loss function variant used for bounding box regression that adjusts its behavior based on the data."
+      },
+      {
+        "name": "Mask Prediction head",
+        "description": "Additional prediction head that outputs masks alongside detections."
+      },
+      {
+        "name": "RetinaNet",
+        "description": "Baseline RetinaNet results (R) from Table 1(e) in RetinaNet [25] compared at different backbone depths/scales on COCO test-dev."
+      },
+      {
+        "name": "Our Method of BBox prediction",
+        "description": "Denoted O(B); our bounding box prediction method compared against RetinaNet across backbone depths/scales; speed evaluated on Nvidia 1080 Ti / PyTorch1.0."
+      },
+      {
+        "name": "Our Method of Mask prediction",
+        "description": "Denoted O(M); our mask prediction method with reported mask accuracies compared across backbone depths/scales."
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "Baseline reference; original numbers compared against"
+      },
+      {
+        "name": "ResNet-50-FPN backbone",
+        "description": "Used as a backbone in final models"
+      },
+      {
+        "name": "ResNet-101-FPN backbone",
+        "description": "Used as a backbone in final models"
+      },
+      {
+        "name": "ResNeXt32x8d-101-FPN backbone",
+        "description": "Used as a backbone; yields higher mAP on COCO"
+      },
+      {
+        "name": "Multi-scale training",
+        "description": "Trained with image scales {640, 800, 1200} and a 2x iterations schedule"
+      },
+      {
+        "name": "Group Normalization (GN)",
+        "description": "Applied only on extra layers (FPN, localization, classification) for ResNet-101-FPN-GN to avoid slowdown from replacing all Batch Normalization"
+      },
+      {
+        "name": "Multi-Task Training with Mask Prediction",
+        "description": "Jointly train bounding box detection with instance segmentation; using mask prediction on {P3, P4, P5} improves mAP by 0.7, and with a 1.5x schedule the improvement is 0.9 mAP."
+      },
+      {
+        "name": "Shared running mean and variance across channels",
+        "description": "Sharing running mean and variance across channels yields 36.4 mAP, slightly worse than using separate channels."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "APbb",
+        "value": "36.6",
+        "split": "validation"
+      },
+      {
+        "metric": "APbb 50",
+        "value": "55.7",
+        "split": "validation"
+      },
+      {
+        "metric": "APbb 75",
+        "value": "39.0",
+        "split": "validation"
+      },
+      {
+        "metric": "APm",
+        "value": "20.3",
+        "split": "validation"
+      },
+      {
+        "metric": "APm 50",
+        "value": "40.0",
+        "split": "validation"
+      },
+      {
+        "metric": "APm 75",
+        "value": "48.8",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP (toaster)",
+        "value": "28.9",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP (hair drier)",
+        "value": "0.9",
+        "split": null
+      },
+      {
+        "metric": "AP (Fixed \u03b2=1.0)",
+        "value": "35.3",
+        "split": "validation"
+      },
+      {
+        "metric": "AP50 (Fixed \u03b2=1.0)",
+        "value": "55.6",
+        "split": "validation"
+      },
+      {
+        "metric": "AP75 (Fixed \u03b2=1.0)",
+        "value": "37.8",
+        "split": "validation"
+      },
+      {
+        "metric": "APS (Fixed \u03b2=1.0)",
+        "value": "19.4",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (Fixed \u03b2=1.0)",
+        "value": "38.9",
+        "split": "validation"
+      },
+      {
+        "metric": "APL (Fixed \u03b2=1.0)",
+        "value": "46.9",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (Fixed \u03b2=0.11)",
+        "value": "36.2",
+        "split": "validation"
+      },
+      {
+        "metric": "AP50 (Fixed \u03b2=0.11)",
+        "value": "55.0",
+        "split": "validation"
+      },
+      {
+        "metric": "AP75 (Fixed \u03b2=0.11)",
+        "value": "38.7",
+        "split": "validation"
+      },
+      {
+        "metric": "APS (Fixed \u03b2=0.11)",
+        "value": "19.7",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (Fixed \u03b2=0.11)",
+        "value": "39.5",
+        "split": "validation"
+      },
+      {
+        "metric": "APL (Fixed \u03b2=0.11)",
+        "value": "48.6",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (Self-Adj \u03b2\u22641.0)",
+        "value": "36.4",
+        "split": "validation"
+      },
+      {
+        "metric": "AP50 (Self-Adj \u03b2\u22641.0)",
+        "value": "55.4",
+        "split": "validation"
+      },
+      {
+        "metric": "AP75 (Self-Adj \u03b2\u22641.0)",
+        "value": "39.0",
+        "split": "validation"
+      },
+      {
+        "metric": "APS (Self-Adj \u03b2\u22641.0)",
+        "value": "19.9",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (Self-Adj \u03b2\u22641.0)",
+        "value": "39.9",
+        "split": "validation"
+      },
+      {
+        "metric": "APL (Self-Adj \u03b2\u22641.0)",
+        "value": "48.1",
+        "split": "validation"
+      },
+      {
+        "metric": "AP (Self-Adj \u03b2\u22640.11)",
+        "value": "36.6",
+        "split": "validation"
+      },
+      {
+        "metric": "AP50 (Self-Adj \u03b2\u22640.11)",
+        "value": "55.7",
+        "split": "validation"
+      },
+      {
+        "metric": "AP75 (Self-Adj \u03b2\u22640.11)",
+        "value": "39.0",
+        "split": "validation"
+      },
+      {
+        "metric": "APS (Self-Adj \u03b2\u22640.11)",
+        "value": "20.3",
+        "split": "validation"
+      },
+      {
+        "metric": "APM (Self-Adj \u03b2\u22640.11)",
+        "value": "40.0",
+        "split": "validation"
+      },
+      {
+        "metric": "APL (Self-Adj \u03b2\u22640.11)",
+        "value": "48.8",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP",
+        "value": "42.6",
+        "split": null
+      },
+      {
+        "metric": "speed",
+        "value": "0.158 s/im",
+        "split": null
+      },
+      {
+        "metric": "mAP improvement",
+        "value": "0.9 mAP",
+        "split": null
+      }
+    ]
+  }
+}

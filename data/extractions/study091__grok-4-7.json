@@ -1,0 +1,86 @@
+{
+  "study_id": "study091",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study091/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:59:01.307519+00:00",
+  "counts": {
+    "dependencies": 5,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 0,
+    "methods": 9,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "SonarQube",
+        "version": null
+      },
+      {
+        "name": "VisminnerTD",
+        "version": null
+      },
+      {
+        "name": "Grimoire Lab",
+        "version": null
+      },
+      {
+        "name": "Travis CI",
+        "version": null
+      },
+      {
+        "name": "RefactoringBot",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+      {
+        "name": "piranha",
+        "description": "Refactors source code considering the name and types of flags and sends the results as pull requests in GitHub."
+      },
+      {
+        "name": "FixMe",
+        "description": "Identifies SATD in code comments; runs on top of the Probot Framework and, when source code is committed to GitHub, analyses it and generates issues each corresponding to an instance."
+      },
+      {
+        "name": "Identification",
+        "description": "SonarQube is used for the identification of Code technical debt, and this information is fed into subsequent monitoring."
+      },
+      {
+        "name": "Monitoring",
+        "description": "VisminnerTD monitors technical debt through a dashboard using identification information from SonarQube."
+      },
+      {
+        "name": "Measurement",
+        "description": "SonarQube is applied to estimate the cost of paying back the technical debt."
+      },
+      {
+        "name": "Repayment",
+        "description": "RefactoringBot is used to pay back the technical debt items identified by SonarQube."
+      },
+      {
+        "name": "Orchestration",
+        "description": "Travis CI is the orchestrator and manages the automation process; integration of artifacts via API and/or CLI was conceptualized but not evaluated in practice."
+      },
+      {
+        "name": "Travis CI",
+        "description": "Orchestrator that manages the automation process considering several rules"
+      },
+      {
+        "name": "Grimoire Lab",
+        "description": "Gateway that collects data from repositories (e.g., Github) for use with automation artifacts that use source code as input (e.g., performing static code analysis)"
+      }
+    ],
+    "evaluation_results": []
+  }
+}

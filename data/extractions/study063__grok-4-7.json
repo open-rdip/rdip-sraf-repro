@@ -1,0 +1,199 @@
+{
+  "study_id": "study063",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study063/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:51:38.744873+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 7,
+    "methods": 18,
+    "evaluation_results": 7
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "audio_chunk_length",
+        "value": "30-second"
+      },
+      {
+        "name": "SNR",
+        "value": "40 dB"
+      },
+      {
+        "name": "transcription_settings",
+        "value": "default English transcription settings as of September 1st, 2022"
+      },
+      {
+        "name": "NVIDIA STT inference",
+        "value": "buffered inference implementation in the FrameBatchASR class"
+      },
+      {
+        "name": "human_comparison_recordings",
+        "value": "25"
+      },
+      {
+        "name": "transcription_services",
+        "value": "5"
+      },
+      {
+        "name": "smoothing_rate",
+        "value": "0.9999"
+      },
+      {
+        "name": "dataset_subsample_fractions",
+        "value": "0.5%, 1%, 2%, 4%, 8%"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "VoxPopuli",
+        "version": null
+      },
+      {
+        "name": "MLS",
+        "version": null
+      },
+      {
+        "name": "LibriSpeech",
+        "version": null
+      },
+      {
+        "name": "Meanwhile",
+        "version": null
+      },
+      {
+        "name": "Kincaid46",
+        "version": null
+      },
+      {
+        "name": "Fleurs",
+        "version": null
+      },
+      {
+        "name": "Whisper",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Whisper",
+        "description": "Models that significantly underperform prior work on VoxPopuli and only beat the VP-10K+FT baseline; zero-shot translation performance is only moderately predicted by the amount of pre-training translation supervision."
+      },
+      {
+        "name": "VP-10K+FT",
+        "description": "Baseline from the original paper that Whisper beats on VoxPopuli."
+      },
+      {
+        "name": "fine-tuning",
+        "description": "Benefits from VoxPopuli having significantly more supervised data than MLS."
+      },
+      {
+        "name": "unsupervised pre-training",
+        "description": "Other models include the VoxPopuli distribution as a major source of unsupervised pre-training data."
+      },
+      {
+        "name": "text normalizer",
+        "description": "Extensive standardization of text before WER calculation to minimize penalization of non-semantic differences, developed through iterative manual inspection to identify common patterns where naive WER penalized Whisper models for innocuous differences."
+      },
+      {
+        "name": "additive noise SNR calculation",
+        "description": "The level of additive noise corresponding to a given signal-to-noise ratio (SNR) is calculated based on the signal power of individual examples."
+      },
+      {
+        "name": "Whisper zero-shot",
+        "description": "Whisper evaluated zero-shot under additive noise, including additive pub noise, and compared with models trained primarily on LibriSpeech."
+      },
+      {
+        "name": "buffered long-form transcription",
+        "description": "Whisper models are trained on 30-second audio chunks and cannot consume longer audio inputs at once; long audio is transcribed by consecutively transcribing 30-second segments and shifting the window according to the timestamps predicted by the model."
+      },
+      {
+        "name": "beam search and temperature scheduling",
+        "description": "Observed to be crucial for long-form transcription, with temperature scheduling based on an unspecified criterion in the provided passage."
+      },
+      {
+        "name": "NVIDIA STT long-form transcription",
+        "description": "Used the buffered inference implementation in the FrameBatchASR class to enable long-form transcription for the NVIDIA STT model."
+      },
+      {
+        "name": "Comparison with human performance",
+        "description": "Selected 25 recordings from the Kincaid46 dataset and used 5 services to obtain transcripts produced by professional transcribers, of which one provides computer-assisted transcription and the other four are entirely human-transcribed."
+      },
+      {
+        "name": "Whisper zero-shot evaluation",
+        "description": "Zero-shot speech recognition performance of Whisper models on Fleurs, related to the amount of pre-training translation and speech recognition training data per language (75 languages)."
+      },
+      {
+        "name": "log-log linear fit",
+        "description": "Linear fit to the log of word error rate versus the log of the amount of training data per language."
+      },
+      {
+        "name": "zero-shot language identification",
+        "description": "Zero-shot language identification with Whisper on Fleurs; the Whisper dataset has no training data for 20 of the 102 Fleurs languages, and results are also reported on the 82 overlapping languages."
+      },
+      {
+        "name": "additive noise robustness",
+        "description": "WER measured after adding white noise or pub noise from the Audio Degradation Toolbox; additive noise level for a given SNR is calculated from the signal power of individual examples. Compared with 14 LibriSpeech-trained models, of which twelve are pre-trained and/or fine-tuned on LibriSpeech and two are NVIDIA STT models trained on a mixture dataset that includes LibriSpeech."
+      },
+      {
+        "name": "dataset scaling",
+        "description": "Medium-sized models were trained on subsampled versions of the dataset at 0.5%, 1%, 2%, 4%, and 8% of the full dataset size and compared with the same medium-sized model trained on the whole dataset."
+      },
+      {
+        "name": "early stopping",
+        "description": "Early stopping based on the validation loss was used to select model checkpoints for each dataset size."
+      },
+      {
+        "name": "exponential moving average",
+        "description": "Evaluation was performed on an exponential moving average estimate of the parameters (Polyak & Juditsky, 1992) using a smoothing rate of 0.9999."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "r2",
+        "value": "0.24",
+        "split": null
+      },
+      {
+        "metric": "WER",
+        "value": "drops of up to 50 percent",
+        "split": null
+      },
+      {
+        "metric": "squared correlation coefficient",
+        "value": "0.83",
+        "split": null
+      },
+      {
+        "metric": "WER scaling with training data",
+        "value": "halves for every 16\u00d7 increase in training data",
+        "split": null
+      },
+      {
+        "metric": "underperformance_vs_supervised_sota",
+        "value": "13.6%",
+        "split": null
+      },
+      {
+        "metric": "accuracy_upper_bound",
+        "value": "80.4%",
+        "split": null
+      },
+      {
+        "metric": "accuracy",
+        "value": "80.3%",
+        "split": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "study_id": "study085",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study085/ext/grok-4-7",
+  "extracted_at": "2026-11-09T21:43:00.107058+00:00",
+  "counts": {
+    "dependencies": 3,
+    "random_seeds": 0,
+    "hyperparameters": 16,
+    "datasets": 1,
+    "methods": 26,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "RDKit",
+        "version": null
+      },
+      {
+        "name": "gnina",
+        "version": null
+      },
+      {
+        "name": "libmolgrid",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "samples_per_protein_ligand_complex",
+        "value": "100"
+      },
+      {
+        "name": "grid_side_length",
+        "value": "23.5\u00c5"
+      },
+      {
+        "name": "grid_resolution",
+        "value": "0.5\u00c5"
+      },
+      {
+        "name": "NX",
+        "value": "48"
+      },
+      {
+        "name": "NY",
+        "value": "48"
+      },
+      {
+        "name": "NZ",
+        "value": "48"
+      },
+      {
+        "name": "lambda_recon",
+        "value": "4.0"
+      },
+      {
+        "name": "lambda_KL",
+        "value": "0.1"
+      },
+      {
+        "name": "lambda_KL_final",
+        "value": "1.6"
+      },
+      {
+        "name": "lambda_steric",
+        "value": "1.0"
+      },
+      {
+        "name": "kl_ramp_iterations",
+        "value": "200000"
+      },
+      {
+        "name": "kl_ramp_start_iteration",
+        "value": "450000"
+      },
+      {
+        "name": "optimizer",
+        "value": "RMSprop"
+      },
+      {
+        "name": "learning_rate",
+        "value": "1e-5"
+      },
+      {
+        "name": "training_iterations",
+        "value": "1000000"
+      },
+      {
+        "name": "batch_size",
+        "value": "8"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "CrossDocked2020",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "posterior sampling",
+        "description": "Latent vectors are sampled from the posterior; the known ligand (reference molecule) for the conditional receptor is the same molecule provided to the input encoder. Latent vectors are combined with the conditional receptor encoding before decoding an output ligand density."
+      },
+      {
+        "name": "prior sampling",
+        "description": "Latent vectors are sampled from a standard normal distribution with no intentional bias towards a specific real ligand, then combined with the conditional receptor encoding before decoding an output ligand density."
+      },
+      {
+        "name": "variability factor",
+        "description": "\u03bbvar scales the standard deviations used to sample the latent space: z\u2032 = \u03bc + \u03bbvar \u03c3 z."
+      },
+      {
+        "name": "bias factor",
+        "description": "\u03bbbias linearly interpolates sampling-distribution parameters between the prior and posterior: \u03bc_interp = \u03bbbias \u03bc_post + (1 \u2212 \u03bbbias) \u03bc_prior and \u03c3_interp = \u03bbbias \u03c3_post + (1 \u2212 \u03bbbias) \u03c3_prior, then z\u2032 = \u03bc_interp + \u03c3_interp z."
+      },
+      {
+        "name": "Atom typing",
+        "description": "Assigning atom type vectors to atoms in a docked protein-ligand complex prior to density conversion."
+      },
+      {
+        "name": "Atom gridding",
+        "description": "Converting molecules with assigned atom type vectors to an atomic density grid representation."
+      },
+      {
+        "name": "Conditional variational autoencoder (CVAE)",
+        "description": "Input branch encodes the full complex density; conditional branch encodes only the receptor density. Complex density is mapped to a probabilistic latent space sampled as z ~ N(mu, sigma), combined with conditional vector c, and decoded to an output ligand density."
+      },
+      {
+        "name": "Atom fitting",
+        "description": "Converting the decoder output ligand density into atom types and coordinates of a 3D molecular structure."
+      },
+      {
+        "name": "Bond inference",
+        "description": "Adding bonds to the fitted atoms to produce the final 3D molecular structure."
+      },
+      {
+        "name": "validity",
+        "description": "A molecule is valid if it consists of a single connected fragment and can be sanitized by RDKit, which checks valency constraints and attempts to Kekulize aromatic bonds."
+      },
+      {
+        "name": "novelty",
+        "description": "A molecule is novel if its canonical SMILES string was not in the training set."
+      },
+      {
+        "name": "uniqueness",
+        "description": "A molecule is unique if its canonical SMILES string was not generated already in the course of test evaluations."
+      },
+      {
+        "name": "UFF minimization",
+        "description": "Internal bond lengths and angles of each generated molecule were relaxed in the context of the binding site by Universal Force Field (UFF) minimization; internal energy and RMSD were measured via UFF minimization."
+      },
+      {
+        "name": "Vina minimization and scoring",
+        "description": "Both real and generated molecules underwent Vina minimization and scoring with respect to the receptor, performed using gnina."
+      },
+      {
+        "name": "CNN affinity prediction",
+        "description": "Binding affinity of the minimized structures was estimated using an ensemble of CNN scoring functions trained on the CrossDocked2020 data set, performed using gnina."
+      },
+      {
+        "name": "on-the-fly molecular gridding",
+        "description": "Cubic grids are centered on the input molecule, then random translations and rotations are added during both training and evaluation. Grids are computed on-the-fly with libmolgrid. All atoms that fit within the spatial extent of the grid are represented; there is no maximum number of atoms per grid. Equation 3 uses a coordinate frame mapping s from grid indices to spatial coordinates."
+      },
+      {
+        "name": "atom fitting algorithm",
+        "description": "The inverse problem of converting a reference density grid Gref into a discrete 3D molecular structure has no analytic solution and is solved as T*, C* = argmin over T, C of the squared L2 norm of Gref minus g(T, C). Initial atom locations are detected by selecting grid points with the largest density values. libmolgrid computes the grid representation of an atomic structure and backpropagates a gradient from grid values to atomic coordinates. The algorithm combines iterative atom detection with gradient descent to find a set of atoms that best fits a reference density."
+      },
+      {
+        "name": "conditional density reconstruction",
+        "description": "Real receptor-ligand examples are provided to the encoder to obtain latent representations of their interactions, then the likelihood of decoding the latent vectors back to the corresponding ligand densities is maximized when conditioned on the cognate receptor density."
+      },
+      {
+        "name": "steric clash loss",
+        "description": "An additional loss term minimizes steric clash as the overlap between generated ligand density and receptor density, computed by summing across grid channels then taking the inner product of receptor and generated ligand densities at each point: L_steric = <sum_i rec_i, sum_i lig_gen,i>. Validated empirically because real protein-ligand complexes did not have density overlap when using a density kernel with a relatively small, fixed atomic radius."
+      },
+      {
+        "name": "combined weighted loss",
+        "description": "The three loss terms are combined as L = lambda_recon * L_recon + lambda_KL * L_KL + lambda_steric * L_steric, with lambda_KL gradually ramped from 0.1 to 1.6 over 200,000 iterations starting at iteration 450,000."
+      },
+      {
+        "name": "transposed convolutions with nearest-neighbor upsampling",
+        "description": "Decoder uses transposed convolutions and nearest-neighbor upsampling instead of pooling."
+      },
+      {
+        "name": "U-Net skip connections",
+        "description": "Skip connections included between the convolutional features of the conditional encoder and the decoder to enhance processing of receptor context."
+      },
+      {
+        "name": "spectral normalization",
+        "description": "Applied to all learnable parameters during training."
+      },
+      {
+        "name": "pocket-similarity clustering and combinatorial docking",
+        "description": "An initial set of 18,450 bound protein-ligand crystal structures were clustered by pocket similarity and input to a combinatorial docking procedure; each ligand was re-docked to its known receptor and cross-docked to every other receptor with a similar pocket."
+      },
+      {
+        "name": "first pocket-similarity cross-validation split",
+        "description": "The first CrossDocked2020 cross-validation split based on pocket similarity was used to construct the training and test data sets."
+      },
+      {
+        "name": "RMSD pose omission",
+        "description": "Poses that had root-mean-squared deviation (RMSD) were omitted; the passage is truncated before the threshold is stated."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

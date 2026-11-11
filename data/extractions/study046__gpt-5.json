@@ -1,0 +1,195 @@
+{
+  "study_id": "study046",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study046/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:51:09.029586+00:00",
+  "counts": {
+    "dependencies": 2,
+    "random_seeds": 0,
+    "hyperparameters": 12,
+    "datasets": 2,
+    "methods": 17,
+    "evaluation_results": 6
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "PyTorch",
+        "version": null
+      },
+      {
+        "name": "MMDetection",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "NVIDIA GeForce GTX2070",
+      "cuda_version": null,
+      "cpu_info": "Intel Core i7-8700K"
+    },
+    "hyperparameters": [
+      {
+        "name": "optimizer",
+        "value": "stochastic gradient descent"
+      },
+      {
+        "name": "momentum",
+        "value": "0.9"
+      },
+      {
+        "name": "weight_decay",
+        "value": "0.0005"
+      },
+      {
+        "name": "train_test_split",
+        "value": "9:1"
+      },
+      {
+        "name": "initial_learning_rate",
+        "value": "0.01"
+      },
+      {
+        "name": "total_epochs_weld_defect",
+        "value": "500"
+      },
+      {
+        "name": "total_epochs_MS_COCO",
+        "value": "300"
+      },
+      {
+        "name": "image_size_weld_defect",
+        "value": "320x320 (training and testing)"
+      },
+      {
+        "name": "image_size_MS_COCO",
+        "value": "640x640"
+      },
+      {
+        "name": "LF-YOLO_width_C_at_n=1",
+        "value": "32"
+      },
+      {
+        "name": "LF-YOLO_variant_rule",
+        "value": "LF-YOLO \u00d7n via changing width C; n proportional to C"
+      },
+      {
+        "name": "scale",
+        "value": "\u00d70.75"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "weld defect dataset",
+        "version": null
+      },
+      {
+        "name": "MS COCO",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "EFE module",
+        "description": "An early feature extraction module that produces per-channel feature maps with superior region division and fine-grained information."
+      },
+      {
+        "name": "Multi-scale feature exploration (parameter-free and parameter-based stages)",
+        "description": "A two-stage approach where a parameter-free stage builds a basis of existing multi-scale information and a parameter-based stage learns implicit features across different receptive fields; outputs are combined for stronger representations."
+      },
+      {
+        "name": "LF-YOLO",
+        "description": "A YOLO-based model for weld defect detection that integrates the EFE module and multi-scale feature exploration to balance speed and performance."
+      },
+      {
+        "name": "RMF module",
+        "description": "Module included in the network; evaluated via ablation to assess its contribution."
+      },
+      {
+        "name": "ResNet101",
+        "description": "Model listed in comparison."
+      },
+      {
+        "name": "LF-YOLO \u00d7n",
+        "description": "Different versions obtained by changing width C; n is proportional to C with n=1, C=32."
+      },
+      {
+        "name": "Cascade R-CNN (ResNet-50)",
+        "description": "Trained and tested based on MMdetection for weld defect detection."
+      },
+      {
+        "name": "Cascade R-CNN (ResNet-101)",
+        "description": "Trained and tested based on MMdetection for weld defect detection."
+      },
+      {
+        "name": "Faster R-CNN (ResNet-50)",
+        "description": "Trained and tested based on MMdetection for weld defect detection."
+      },
+      {
+        "name": "Faster R-CNN (ResNet-101)",
+        "description": "Trained and tested based on MMdetection for weld defect detection."
+      },
+      {
+        "name": "Dynamic R-CNN (ResNet-50)",
+        "description": "Trained and tested based on MMdetection for weld defect detection."
+      },
+      {
+        "name": "SSD",
+        "description": "Single Shot MultiBox Detector baseline used for comparison."
+      },
+      {
+        "name": "YOLO v3",
+        "description": "One-stage YOLOv3 detector used for comparison."
+      },
+      {
+        "name": "Faster-RCNN",
+        "description": "Two-stage detector used for comparison."
+      },
+      {
+        "name": "R-FCN",
+        "description": "Two-stage Region-based Fully Convolutional Network used for comparison."
+      },
+      {
+        "name": "SPP",
+        "description": "Spatial Pyramid Pooling component included in ablation of RMF module."
+      },
+      {
+        "name": "GDConv",
+        "description": "Grouped/Depthwise Convolution component included in ablation of RMF module."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP 50",
+        "value": "92.9",
+        "split": null
+      },
+      {
+        "metric": "FLOPs",
+        "value": "4.0G",
+        "split": null
+      },
+      {
+        "metric": "Params",
+        "value": "7.3M",
+        "split": null
+      },
+      {
+        "metric": "FPS",
+        "value": "61.5",
+        "split": null
+      },
+      {
+        "metric": "FLOPs(G)",
+        "value": "243.2",
+        "split": null
+      },
+      {
+        "metric": "Params(M)",
+        "value": "68.9",
+        "split": null
+      }
+    ]
+  }
+}

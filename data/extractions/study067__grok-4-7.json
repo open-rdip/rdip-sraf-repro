@@ -1,0 +1,141 @@
+{
+  "study_id": "study067",
+  "backend": "xai",
+  "model": "grok-4.7",
+  "graph_uri": "https://w3id.org/rdip/graph/study067/ext/grok-4-7",
+  "extracted_at": "2026-11-09T20:59:36.124999+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 2,
+    "methods": 18,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "posterior_samples",
+        "value": "100"
+      },
+      {
+        "name": "additional_samples_for_conditional_variance",
+        "value": "20"
+      },
+      {
+        "name": "round_difference_min",
+        "value": "4"
+      },
+      {
+        "name": "round_difference_max",
+        "value": "10"
+      },
+      {
+        "name": "absolute_r-SSE_threshold",
+        "value": "0.1"
+      },
+      {
+        "name": "variance_threshold",
+        "value": "0.01"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Gridworld",
+        "version": null
+      },
+      {
+        "name": "Sepsis",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "r-SSE-ICC",
+        "description": "Contribution ratios attributed to all state variables"
+      },
+      {
+        "name": "total agent-specific effect",
+        "description": "Isolates the effect of the intervention that propagates only through the agents (A1, A2 and Planner) by estimating the return of the counterfactual trajectory in which the stochastic penalties are realized as if A2 carries the pink object"
+      },
+      {
+        "name": "state-specific effect",
+        "description": "Isolates the effect of the intervention that propagates only through states by estimating the return of the counterfactual trajectory in which agents take their factual actions, but stochastic penalties are realized as if A2 carries the green object"
+      },
+      {
+        "name": "reverse SSE",
+        "description": "Computes the difference between the returns of the counterfactual trajectories considered for tot-ASE and TCFE"
+      },
+      {
+        "name": "TCFE",
+        "description": "Plot 2b indicates that TCFE is not decomposed into tot-ASE and SSE"
+      },
+      {
+        "name": "ASE-SV",
+        "description": "Attributes the effect efficiently to the clinician and AI, as supported by Theorem 5.3. Reports the average percentage composition of the reverse state-specific effect and agent scores with respect to the total counterfactual effect for different trust levels, averaged over selected AI or clinician actions."
+      },
+      {
+        "name": "counterfactual effect decomposition",
+        "description": "Approach empirically evaluated on the Gridworld and Sepsis environments, attributing tot-ASE to agents such as the AI and the clinician."
+      },
+      {
+        "name": "factual trajectory",
+        "description": "Both A1 and A2 are instructed to pickup the pink object and deliver it to the pink delivery location."
+      },
+      {
+        "name": "counterfactual trajectory",
+        "description": "A2 is forced to pickup the green object instead, prompting Planner to issue an alternative instruction for delivery to the green location. This intervention does not affect A1's behavior."
+      },
+      {
+        "name": "TCFE-total",
+        "description": "Counterfactual effect computed on the trajectory's discounted total reward; the negative of the value is plotted."
+      },
+      {
+        "name": "ASE",
+        "description": "Counterfactual effect computed on the trajectory's discounted total reward; the negative of the value is plotted."
+      },
+      {
+        "name": "SSE",
+        "description": "Counterfactual effect computed on the trajectory's discounted total reward; the negative of the value is plotted."
+      },
+      {
+        "name": "r-SSE",
+        "description": "Counterfactual effect computed on the trajectory's discounted total reward; the negative of the value is plotted."
+      },
+      {
+        "name": "A1-SE",
+        "description": "Counterfactual effect computed on the trajectory's discounted total reward; the negative of the value is plotted."
+      },
+      {
+        "name": "A2-SE",
+        "description": "Counterfactual effect computed on the trajectory's discounted total reward; the negative of the value is plotted."
+      },
+      {
+        "name": "Planner-SE",
+        "description": "Counterfactual effect computed on the trajectory's discounted total reward; the negative of the value is plotted."
+      },
+      {
+        "name": "Gini coefficient",
+        "description": "Distribution of Gini coefficients (Gini, 1936) of state-variable scores for various round differences, used to assess whether the effect is attributed equally across states or concentrated on a few states (Plot 3c)."
+      },
+      {
+        "name": "Planner-Actor-Reporter",
+        "description": "System akin to Dasgupta et al., 2023. Planner is implemented using a pre-trained LLM and few-shot learning to provide actors with instructions."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "discrepancy between sum of individual effects and total effect",
+        "value": "up to 95%",
+        "split": null
+      }
+    ]
+  }
+}

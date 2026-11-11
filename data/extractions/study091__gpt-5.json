@@ -1,0 +1,144 @@
+{
+  "study_id": "study091",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study091/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:29:30.597294+00:00",
+  "counts": {
+    "dependencies": 7,
+    "random_seeds": 0,
+    "hyperparameters": 0,
+    "datasets": 1,
+    "methods": 15,
+    "evaluation_results": 4
+  },
+  "metadata": {
+    "dependencies": [
+      {
+        "name": "Probot Framework",
+        "version": null
+      },
+      {
+        "name": "GitHub",
+        "version": null
+      },
+      {
+        "name": "SonarQube",
+        "version": null
+      },
+      {
+        "name": "VisminnerTD",
+        "version": null
+      },
+      {
+        "name": "Grimoire Lab",
+        "version": null
+      },
+      {
+        "name": "Refactoring-Bot",
+        "version": null
+      },
+      {
+        "name": "Travis CI",
+        "version": null
+      }
+    ],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [],
+    "datasets": [
+      {
+        "name": "Github",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Artifact comparison for code smell detection",
+        "description": "Lefever et al. [37] compared three artifacts (Structure 101, SonarQube, DV8) for code smells detection, assessing accuracy and the ability to identify debt-ridden files via anti-patterns such as Modularity Violation and Unstable Interface."
+      },
+      {
+        "name": "Tool comparison for technical debt measurement",
+        "description": "Avgeriou et al. [16] compared nine tools for technical debt measurement, reporting which tools can calculate TD interest and providing recommendations based on priorities such as estimating extra effort, security, maintainability, and architectural analysis."
+      },
+      {
+        "name": "FixMe15 bot",
+        "description": "A bot that identifies self-admitted technical debt (SATD) in code comments. It runs on top of the Probot Framework to integrate with GitHub and is triggered automatically on each commit, generating GitHub issues for each detected instance."
+      },
+      {
+        "name": "TDM Automation Strategy",
+        "description": "Refers to how TDM automation should be addressed in software development. Results suggest automation artifacts have been applied individually, focusing on automating a specific TDM activity for a TD Type. Automation also involves the choice of artifacts, their integration, and management of the automated solution, so a complete strategy must be planned."
+      },
+      {
+        "name": "TDM Automation Orchestrator",
+        "description": "A software responsible for managing the TDM Automation Artifacts in the strategy. Integration between software (e.g., VisminerTD and SDK4ED) is discussed, but existing platforms lack automated orchestration that implements rules without requiring developer intervention."
+      },
+      {
+        "name": "TDM Automation Rule",
+        "description": "Defines when the automation happens and which TDM Automation Software is used. Some artifacts are executed manually, and Section 5.4 summarizes how automation artifacts are used in software development."
+      },
+      {
+        "name": "Search string calibration",
+        "description": "Added the terms \"replication package\" and \"supplementary material\" to the search string after the pilot study."
+      },
+      {
+        "name": "Pilot study",
+        "description": "Conducted to validate which information could answer the research questions, guide the study, and identify that authors sometimes provide automation artifacts via replication packages."
+      },
+      {
+        "name": "Identification",
+        "description": "Use SonarQube to identify Technical Debt (TD) items."
+      },
+      {
+        "name": "Monitoring",
+        "description": "Use VisminnerTD (dashboard) and potentially Grimoire Lab to monitor TD."
+      },
+      {
+        "name": "Measurement",
+        "description": "Apply SonarQube to estimate the cost of repaying TD."
+      },
+      {
+        "name": "Repayment",
+        "description": "Use Refactoring-Bot to repay TD items identified by SonarQube."
+      },
+      {
+        "name": "Orchestration",
+        "description": "Use Travis CI to orchestrate and manage the automation process; integration via APIs/CLIs was conceptualized but not evaluated in practice."
+      },
+      {
+        "name": "Travis CI as orchestrator",
+        "description": "Travis CI manages the automation process considering several rules."
+      },
+      {
+        "name": "Grimoire Lab as gateway",
+        "description": "Grimoire Lab collects data from repositories (e.g., Github) for use with automation artifacts that use source code as input (e.g., performing static code analysis)."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "Level II (Examples) proportion",
+        "value": "70/121",
+        "split": null
+      },
+      {
+        "metric": "Level IV (academic studies) proportion",
+        "value": "11% (14/121)",
+        "split": null
+      },
+      {
+        "metric": "Level V (industrial studies) proportion",
+        "value": "20% (26/121)",
+        "split": null
+      },
+      {
+        "metric": "Level VI (industrial applications) proportion",
+        "value": "8% (11/121)",
+        "split": null
+      }
+    ]
+  }
+}

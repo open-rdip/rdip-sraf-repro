@@ -1,0 +1,139 @@
+{
+  "study_id": "study067",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study067/ext/gpt-5",
+  "extracted_at": "2026-11-09T23:10:31.374800+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 6,
+    "datasets": 2,
+    "methods": 19,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "posterior_samples_for_counterfactual_estimation",
+        "value": "100"
+      },
+      {
+        "name": "samples_for_conditional_variance",
+        "value": "20"
+      },
+      {
+        "name": "round_difference_min",
+        "value": "4"
+      },
+      {
+        "name": "round_difference_max",
+        "value": "10"
+      },
+      {
+        "name": "abs_r-SSE_threshold",
+        "value": "0.1"
+      },
+      {
+        "name": "variance_threshold",
+        "value": "0.01"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "Gridworld",
+        "version": null
+      },
+      {
+        "name": "Sepsis",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "r-SSE-ICC",
+        "description": "Attribution method reporting contribution ratios for all state variables; used to produce Plot 2c."
+      },
+      {
+        "name": "TCFE",
+        "description": "Total counterfactual effect baseline; noted as not decomposed into tot-ASE and SSE in Plot 2b."
+      },
+      {
+        "name": "tot-ASE (Total Agent-Specific Effect)",
+        "description": "Isolates the effect of an intervention that propagates only through agents (A1, A2, and Planner) by estimating the return of a counterfactual trajectory where stochastic penalties are realized as if A2 carries the pink object."
+      },
+      {
+        "name": "SSE (State-Specific Effect)",
+        "description": "Isolates the effect of an intervention that propagates only through states by estimating the return of a counterfactual trajectory in which agents take their factual actions, but stochastic penalties are realized as if A2 carries the green object."
+      },
+      {
+        "name": "Reverse SSE",
+        "description": "Computed as the difference between the returns of the counterfactual trajectories used for tot-ASE and TCFE (Eq. 2)."
+      },
+      {
+        "name": "ASE-SV",
+        "description": "Referenced alongside plots; details not provided in the passage."
+      },
+      {
+        "name": "Counterfactual effect decomposition",
+        "description": "An approach evaluated experimentally using the Gridworld and Sepsis environments."
+      },
+      {
+        "name": "Counterfactual experiment design",
+        "description": "Factual: both A1 and A2 pickup the pink object and deliver it to the pink location. Counterfactual: A2 is forced to pickup the green object, prompting Planner to issue an alternative instruction for delivery to the green location; A1\u2019s behavior is unaffected."
+      },
+      {
+        "name": "TCFE-total",
+        "description": "Counterfactual effect value computed on the trajectory\u2019s discounted total reward; plotted as its negative."
+      },
+      {
+        "name": "ASE-SSE",
+        "description": "Counterfactual effect value computed on the trajectory\u2019s discounted total reward; plotted as its negative."
+      },
+      {
+        "name": "r-SSE",
+        "description": "Counterfactual effect value computed on the trajectory\u2019s discounted total reward; plotted as its negative."
+      },
+      {
+        "name": "A1-SE",
+        "description": "Counterfactual effect value computed on the trajectory\u2019s discounted total reward; plotted as its negative."
+      },
+      {
+        "name": "A2-SE",
+        "description": "Counterfactual effect value computed on the trajectory\u2019s discounted total reward; plotted as its negative."
+      },
+      {
+        "name": "Planner-SE",
+        "description": "Counterfactual effect value computed on the trajectory\u2019s discounted total reward; plotted as its negative."
+      },
+      {
+        "name": "Gini coefficient distribution",
+        "description": "Depicts the distribution of state-variable scores across states for various round differences to assess how spread or concentrated the attributions are."
+      },
+      {
+        "name": "Planner-Actor-Reporter system",
+        "description": "A system akin to Dasgupta et al. (2023) with a Planner providing instructions to actors."
+      },
+      {
+        "name": "Pre-trained LLM with few-shot learning (Planner)",
+        "description": "Planner implemented using a pre-trained large language model with few-shot learning to instruct actors."
+      },
+      {
+        "name": "Posterior sampling for counterfactual estimation",
+        "description": "Counterfactual effects estimated using posterior samples, with additional samples for conditional variance."
+      },
+      {
+        "name": "Reverse state-specific effect (r-SSE) computation",
+        "description": "Compute r-SSE and its variance for selected actions, retaining those with |r-SSE| \u2265 0.1 and variance \u2265 0.01."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

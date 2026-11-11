@@ -1,0 +1,119 @@
+{
+  "study_id": "study093",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study093/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T18:36:19.505548+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 9,
+    "datasets": 7,
+    "methods": 6,
+    "evaluation_results": 0
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": "GeForce RTX 3090",
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "transformer layers",
+        "value": "4"
+      },
+      {
+        "name": "image size",
+        "value": "224 \u00d7224"
+      },
+      {
+        "name": "lr",
+        "value": "1\u00d710\u22124"
+      },
+      {
+        "name": "batch size",
+        "value": "128"
+      },
+      {
+        "name": "epochs",
+        "value": "100"
+      },
+      {
+        "name": "warmup epochs",
+        "value": "10"
+      },
+      {
+        "name": "learnable answer prompt vectors in text encoder",
+        "value": "10"
+      },
+      {
+        "name": "learnable question prompt vectors in text encoder",
+        "value": "10"
+      },
+      {
+        "name": "transformer layers for fusion module",
+        "value": "4"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "MedMINIST",
+        "version": null
+      },
+      {
+        "name": "VQA-RAD",
+        "version": null
+      },
+      {
+        "name": "SLAKE",
+        "version": null
+      },
+      {
+        "name": "ROCO",
+        "version": null
+      },
+      {
+        "name": "PubMed",
+        "version": null
+      },
+      {
+        "name": "MedICaT",
+        "version": null
+      },
+      {
+        "name": "MIMIC-CXR",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "ResNet50",
+        "description": "visual encoder"
+      },
+      {
+        "name": "PubmedBERT",
+        "description": "text encoder"
+      },
+      {
+        "name": "AdamW",
+        "description": "optimizer"
+      },
+      {
+        "name": "PMC-CLIP",
+        "description": "Pre-trained vision-language model adapted to VQA tasks with visual encoder, text encoder, and fusion module"
+      },
+      {
+        "name": "Image-Text Retrieval (ITR)",
+        "description": "Downstream task containing both image-to-text (I2T) and text-to-image (T2I) retrieval evaluated using 2,000 sampled image-text pairs."
+      },
+      {
+        "name": "Classification",
+        "description": "Downstream task finetuning the model for image classification across 12 biomedical imaging tasks."
+      }
+    ],
+    "evaluation_results": []
+  }
+}

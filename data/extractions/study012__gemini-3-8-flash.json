@@ -1,0 +1,161 @@
+{
+  "study_id": "study012",
+  "backend": "google",
+  "model": "gemini-3.8-flash",
+  "graph_uri": "https://w3id.org/rdip/graph/study012/ext/gemini-3-8-flash",
+  "extracted_at": "2026-11-09T17:13:34.550536+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 8,
+    "datasets": 6,
+    "methods": 17,
+    "evaluation_results": 1
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "COCO scale jitter shorter image side",
+        "value": "[640, 800]"
+      },
+      {
+        "name": "Cityscapes minibatch size",
+        "value": "32 random 512\u00d71024 image crops"
+      },
+      {
+        "name": "Cityscapes crops per GPU",
+        "value": "4"
+      },
+      {
+        "name": "Cityscapes random scaling",
+        "value": "0.5 to 2.0 \u00d7"
+      },
+      {
+        "name": "Cityscapes training iterations",
+        "value": "65k"
+      },
+      {
+        "name": "channels in the semantic branch",
+        "value": "128"
+      },
+      {
+        "name": "FPN output channels per scale",
+        "value": "256"
+      },
+      {
+        "name": "semantic segmentation branch channels",
+        "value": "128"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "COCO",
+        "version": null
+      },
+      {
+        "name": "Cityscapes",
+        "version": null
+      },
+      {
+        "name": "COCO Panoptic",
+        "version": null
+      },
+      {
+        "name": "COCO-Stuff",
+        "version": "2017"
+      },
+      {
+        "name": "ImageNet",
+        "version": null
+      },
+      {
+        "name": "COCO Panoptic Segmentation Challenge",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Panoptic FPN",
+        "description": "Measures performance using PQ, capturing both recognition and segmentation quality for stuff and thing categories in a unified manner."
+      },
+      {
+        "name": "Mask R-CNN 1 \u00d7 training setting",
+        "description": "Training setting with scale jitter with shorter image side in [640, 800]."
+      },
+      {
+        "name": "post-processing merging procedure",
+        "description": "Procedure applied to the outputs of the semantic and instance branches prior to PQ evaluation."
+      },
+      {
+        "name": "ResNet-50 Semantic FPN",
+        "description": "semantic segmentation branch with ResNet-50 backbone"
+      },
+      {
+        "name": "Mask R-CNN",
+        "description": "instance segmentation baseline network combined with semantic segmentation branch"
+      },
+      {
+        "name": "color augmentation",
+        "description": "Data augmentation applied during training"
+      },
+      {
+        "name": "multi-scale inference",
+        "description": "Used at test time along with balancing the class distribution"
+      },
+      {
+        "name": "semantic segmentation branch",
+        "description": "Upsampling module with two 3x3 conv layers and ReLU before bilinear upscaling to final resolution, with concatenated features"
+      },
+      {
+        "name": "ResNet/ResNeXt backbone",
+        "description": "Pre-FPN backbone pre-trained on ImageNet with batch normalization, replaced with a fixed channel-wise affine transformation during fine-tuning."
+      },
+      {
+        "name": "Panoptic inference post-processing",
+        "description": "Post-processing procedure to resolve overlaps between different instances by confidence score, prioritize instances over semantic segmentation, and filter stuff regions labeled 'other' or under an area threshold."
+      },
+      {
+        "name": "ResNet-50",
+        "description": "Backbone architecture used in separate and joint networks."
+      },
+      {
+        "name": "ResNet-101",
+        "description": "Backbone architecture used in Panoptic FPN to balance computational budget."
+      },
+      {
+        "name": "Combined loss training",
+        "description": "Combines instance and semantic losses together during each gradient update."
+      },
+      {
+        "name": "Alternating loss training",
+        "description": "Alternates instance and semantic losses on each iteration."
+      },
+      {
+        "name": "FPN",
+        "description": "architecture where FPN channels are grouped into two sets, and each task uses one of the two features sets as its input"
+      },
+      {
+        "name": "Loss re-weighting",
+        "description": "Balancing total instance segmentation loss and semantic segmentation loss using the formulation L=\u03bbi(Lc+Lb+Lm) + \u03bbsLs."
+      },
+      {
+        "name": "FPN for semantic and instance segmentation",
+        "description": "A single-network baseline using Feature Pyramid Networks (FPN) compatible with Mask R-CNN to perform both instance and semantic segmentation."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "PQ margin",
+        "value": "4.3 point",
+        "split": null
+      }
+    ]
+  }
+}

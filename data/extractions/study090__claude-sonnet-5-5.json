@@ -1,0 +1,467 @@
+{
+  "study_id": "study090",
+  "backend": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study090/ext/claude-sonnet-5-5",
+  "extracted_at": "2026-11-10T00:09:14.704610+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 13,
+    "datasets": 1,
+    "methods": 16,
+    "evaluation_results": 63
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "input image resolution",
+        "value": "640 \u00d71600"
+      },
+      {
+        "name": "Depth Refinement Module convolution kernel (CD\u00d7W) ablation options",
+        "value": "1\u00d73, 3\u00d71, 3\u00d73"
+      },
+      {
+        "name": "Input resolution (FCOS3D, DETR3D)",
+        "value": "900\u00d71600"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning_rate",
+        "value": "2e-4"
+      },
+      {
+        "name": "batch_size",
+        "value": "64"
+      },
+      {
+        "name": "epochs (ablation study, without CBGS)",
+        "value": "24"
+      },
+      {
+        "name": "epochs (BEVDepth compared to other methods, with CBGS)",
+        "value": "20"
+      },
+      {
+        "name": "Camera-aware DepthNet feature level stride",
+        "value": "16"
+      },
+      {
+        "name": "image data augmentations",
+        "value": "random cropping, random scaling, random flipping, random rotation"
+      },
+      {
+        "name": "BEV data augmentations",
+        "value": "random scaling, random flipping, random rotation"
+      },
+      {
+        "name": "image backbone",
+        "value": "ResNet-50"
+      },
+      {
+        "name": "image size",
+        "value": "256 \u00d7704"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "nuScenes",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "BEVDepth",
+        "description": "Camera-based 3D detection model using a pretrained VovNet as backbone with input resolution 640\u00d71600."
+      },
+      {
+        "name": "BEVDepth\u2020",
+        "description": "BEVDepth variant that uses ConvNeXT (Liu et al. 2022c) as backbone."
+      },
+      {
+        "name": "3\u00d71 conv",
+        "description": "Convolution allowing features to interact along the depth axis, which improves mAP and NDS; similar in effect to naive 3\u00d73 conv."
+      },
+      {
+        "name": "Efficient Voxel Pooling",
+        "description": "Replaces the Lift-splat 'cumsum trick' (sorting and cumulative sum) by assigning each frustum feature a CUDA thread that adds the feature to its corresponding BEV grid, exploiting GPU parallelism. Reduces training time of the state-of-the-art model from 5 days to 1.5 days; the pooling operation is 80\u00d7 faster than the Lift-splat baseline."
+      },
+      {
+        "name": "Multi-frame Fusion",
+        "description": "Fuses multiple frames to help better detect objects and endow the model with additional capabilities."
+      },
+      {
+        "name": "Depth Loss",
+        "description": "Explicit depth supervision; ablated with BCELoss and L1Loss. It improves mAP and marginally reduces mATE."
+      },
+      {
+        "name": "Camera-aware DepthNet",
+        "description": "Models camera parameters in DepthNet, which further reduces mATE."
+      },
+      {
+        "name": "Depth Refinement Module",
+        "description": "Module with convolution kernels (1\u00d73, 3\u00d71, 3\u00d73 ablated) that makes features along the depth axis more compact and reduces false responses."
+      },
+      {
+        "name": "FCOS3D",
+        "description": "Comparison method, resolution 900\u00d71600."
+      },
+      {
+        "name": "DETR3D",
+        "description": "Comparison method, resolution 900\u00d71600."
+      },
+      {
+        "name": "AdamW",
+        "description": "Optimizer (Loshchilov and Hutter 2017) used for training with learning rate 2e-4 and batch size 64"
+      },
+      {
+        "name": "CBGS",
+        "description": "Class-balanced grouping and sampling strategy (Zhu et al. 2019); not used in ablation experiments, used when BEVDepth is compared to other methods"
+      },
+      {
+        "name": "Multi-frame",
+        "description": "Multi-frame input (MF) ablated in the study"
+      },
+      {
+        "name": "Image data augmentation",
+        "description": "Random cropping, random scaling, random flipping, and random rotation"
+      },
+      {
+        "name": "BEV data augmentation",
+        "description": "Random scaling, random flipping, and random rotation"
+      },
+      {
+        "name": "ResNet-50",
+        "description": "Image backbone used unless otherwise specified"
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "mAP (Table 5, depth loss ablation, row with \u2713 \u2713)",
+        "value": "0.323",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE (Table 5, depth loss ablation, row with \u2713 \u2713)",
+        "value": "0.706",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE (Table 5, depth loss ablation, row with \u2713 \u2713)",
+        "value": "0.608",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS (Table 5, depth loss ablation, row with \u2713 \u2713)",
+        "value": "0.372",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP (Table 6, no refinement kernel)",
+        "value": "0.314",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE (Table 6, no refinement kernel)",
+        "value": "0.706",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE (Table 6, no refinement kernel)",
+        "value": "0.647",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS (Table 6, no refinement kernel)",
+        "value": "0.357",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP (Table 6, kernel 1\u00d73)",
+        "value": "0.315",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE (Table 6, kernel 1\u00d73)",
+        "value": "0.703",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE (Table 6, kernel 1\u00d73)",
+        "value": "0.650",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS (Table 6, kernel 1\u00d73)",
+        "value": "0.357",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP (Table 6, kernel 3\u00d71)",
+        "value": "0.320",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE (Table 6, kernel 3\u00d71)",
+        "value": "0.695",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE (Table 6, kernel 3\u00d71)",
+        "value": "0.624",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS (Table 6, kernel 3\u00d71)",
+        "value": "0.369",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP (Table 6, kernel 3\u00d73)",
+        "value": "0.322",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE (Table 6, kernel 3\u00d73)",
+        "value": "0.707",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE (Table 6, kernel 3\u00d73)",
+        "value": "0.636",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS (Table 6, kernel 3\u00d73)",
+        "value": "0.367",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP (vanilla BEVDepth)",
+        "value": "28.2%",
+        "split": null
+      },
+      {
+        "metric": "NDS (vanilla BEVDepth)",
+        "value": "32.7%",
+        "split": null
+      },
+      {
+        "metric": "mAP improvement from Depth Loss",
+        "value": "2.2%",
+        "split": null
+      },
+      {
+        "metric": "mATE reduction from Depth Loss",
+        "value": "0.21",
+        "split": null
+      },
+      {
+        "metric": "mATE reduction from camera-aware DepthNet",
+        "value": "0.41",
+        "split": null
+      },
+      {
+        "metric": "mAP improvement from Depth Refinement Module",
+        "value": "0.8%",
+        "split": null
+      },
+      {
+        "metric": "Overall mAP improvement over baseline",
+        "value": "4.0%",
+        "split": null
+      },
+      {
+        "metric": "Overall NDS improvement over baseline",
+        "value": "4.0%",
+        "split": null
+      },
+      {
+        "metric": "mAP (FCOS3D)",
+        "value": "0.295",
+        "split": null
+      },
+      {
+        "metric": "NDS (FCOS3D)",
+        "value": "0.372",
+        "split": null
+      },
+      {
+        "metric": "mAP (DETR3D)",
+        "value": "0.303",
+        "split": null
+      },
+      {
+        "metric": "mAP (Table 4, no components)",
+        "value": "0.282",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE (Table 4, no components)",
+        "value": "0.768",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE (Table 4, no components)",
+        "value": "0.698",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS (Table 4, no components)",
+        "value": "0.327",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP (Table 4, DL)",
+        "value": "0.304",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE (Table 4, DL)",
+        "value": "0.747",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE (Table 4, DL)",
+        "value": "0.671",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS (Table 4, DL)",
+        "value": "0.344",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP (Table 4, DL+CA)",
+        "value": "0.314",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE (Table 4, DL+CA)",
+        "value": "0.706",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE (Table 4, DL+CA)",
+        "value": "0.647",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS (Table 4, DL+CA)",
+        "value": "0.357",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP (Table 4, DL+CA+DR)",
+        "value": "0.322",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE (Table 4, DL+CA+DR)",
+        "value": "0.707",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE (Table 4, DL+CA+DR)",
+        "value": "0.636",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS (Table 4, DL+CA+DR)",
+        "value": "0.367",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP (Table 4, DL+CA+DR+MF)",
+        "value": "0.330",
+        "split": "validation"
+      },
+      {
+        "metric": "mATE (Table 4, DL+CA+DR+MF)",
+        "value": "0.699",
+        "split": "validation"
+      },
+      {
+        "metric": "mAOE (Table 4, DL+CA+DR+MF)",
+        "value": "0.545",
+        "split": "validation"
+      },
+      {
+        "metric": "NDS (Table 4, DL+CA+DR+MF)",
+        "value": "0.442",
+        "split": "validation"
+      },
+      {
+        "metric": "mAP (Table 5, BCE)",
+        "value": "0.322",
+        "split": null
+      },
+      {
+        "metric": "mATE (Table 5, BCE)",
+        "value": "0.707",
+        "split": null
+      },
+      {
+        "metric": "mAOE (Table 5, BCE)",
+        "value": "0.636",
+        "split": null
+      },
+      {
+        "metric": "NDS (Table 5, BCE)",
+        "value": "0.367",
+        "split": null
+      },
+      {
+        "metric": "mAP (Table 5, L1)",
+        "value": "0.321",
+        "split": null
+      },
+      {
+        "metric": "mATE (Table 5, L1)",
+        "value": "0.703",
+        "split": null
+      },
+      {
+        "metric": "mAOE (Table 5, L1)",
+        "value": "0.629",
+        "split": null
+      },
+      {
+        "metric": "NDS (Table 5, L1)",
+        "value": "0.371",
+        "split": null
+      },
+      {
+        "metric": "mAP (Table 5, BCE+L1)",
+        "value": "0.323",
+        "split": null
+      },
+      {
+        "metric": "mATE (Table 5, BCE+L1)",
+        "value": "0.706",
+        "split": null
+      },
+      {
+        "metric": "mAOE (Table 5, BCE+L1)",
+        "value": "0.608",
+        "split": null
+      },
+      {
+        "metric": "NDS (Table 5, BCE+L1)",
+        "value": "0.372",
+        "split": null
+      }
+    ]
+  }
+}

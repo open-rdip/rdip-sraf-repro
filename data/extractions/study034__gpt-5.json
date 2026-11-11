@@ -1,0 +1,440 @@
+{
+  "study_id": "study034",
+  "backend": "openai",
+  "model": "gpt-5",
+  "graph_uri": "https://w3id.org/rdip/graph/study034/ext/gpt-5",
+  "extracted_at": "2026-11-09T22:39:32.006561+00:00",
+  "counts": {
+    "dependencies": 0,
+    "random_seeds": 0,
+    "hyperparameters": 35,
+    "datasets": 3,
+    "methods": 39,
+    "evaluation_results": 20
+  },
+  "metadata": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": {
+      "gpu_model": null,
+      "cuda_version": null,
+      "cpu_info": null
+    },
+    "hyperparameters": [
+      {
+        "name": "fine_tune_iterations_matterport3d_stage1",
+        "value": "120k"
+      },
+      {
+        "name": "learning_rate_schedule_stage1",
+        "value": "polynomial-based"
+      },
+      {
+        "name": "input_size",
+        "value": "320x240"
+      },
+      {
+        "name": "lambda_geometry",
+        "value": "5.0"
+      },
+      {
+        "name": "lambda_seg",
+        "value": "25.0 (three levels)"
+      },
+      {
+        "name": "lambda_occupancy_64^3",
+        "value": "50.0"
+      },
+      {
+        "name": "lambda_occupancy_128^3",
+        "value": "25.0"
+      },
+      {
+        "name": "lambda_occupancy_256^3",
+        "value": "10.0"
+      },
+      {
+        "name": "training_iterations_stage2",
+        "value": "110k"
+      },
+      {
+        "name": "learning_rate_schedule_stage2",
+        "value": "step"
+      },
+      {
+        "name": "batch_size",
+        "value": "8"
+      },
+      {
+        "name": "initial_learning_rate",
+        "value": "1e-4"
+      },
+      {
+        "name": "lr_decay_factor_stage2",
+        "value": "10"
+      },
+      {
+        "name": "lr_decay_at_iteration_stage2",
+        "value": "80k"
+      },
+      {
+        "name": "combined_training_iterations_matterport3d_stage3",
+        "value": "100k"
+      },
+      {
+        "name": "learning_rate_stage3",
+        "value": "1e-4"
+      },
+      {
+        "name": "lr_decay_at_iteration_stage3",
+        "value": "80k"
+      },
+      {
+        "name": "freeze_2d_network_weights",
+        "value": "true"
+      },
+      {
+        "name": "output_representation_for_prq",
+        "value": "voxel-based"
+      },
+      {
+        "name": "DPQ depth thresholds",
+        "value": "{0.1,0.25,0.5}"
+      },
+      {
+        "name": "volumetric_grid_resolution",
+        "value": "256^3"
+      },
+      {
+        "name": "tdf_truncation_tau",
+        "value": "3"
+      },
+      {
+        "name": "num_decoder_layers",
+        "value": "9"
+      },
+      {
+        "name": "lambda_depth",
+        "value": "2.0"
+      },
+      {
+        "name": "loss_weights_balance",
+        "value": "no extra weight between scale-invariant log error and relative square error"
+      },
+      {
+        "name": "optimizer",
+        "value": "AdamW"
+      },
+      {
+        "name": "learning_rate_scheduler",
+        "value": "polynomial, lr = base_lr * (1 - i/N)^0.9"
+      },
+      {
+        "name": "iterations_front3d",
+        "value": "160000"
+      },
+      {
+        "name": "input_scale_range",
+        "value": "0.5 to 2.0 of original size"
+      },
+      {
+        "name": "original_image_size",
+        "value": "320x240"
+      },
+      {
+        "name": "crop_size",
+        "value": "240x240"
+      },
+      {
+        "name": "predicted_depth_map_scale",
+        "value": "1/4 of original image size"
+      },
+      {
+        "name": "gt_downsampling_method",
+        "value": "nearest neighbor interpolation to 1/4 size"
+      },
+      {
+        "name": "fine_tune_iterations_matterport3d",
+        "value": "120000"
+      },
+      {
+        "name": "fine_tune_lr_scheduler",
+        "value": "same polynomial-based scheduling"
+      }
+    ],
+    "datasets": [
+      {
+        "name": "3D-Front",
+        "version": null
+      },
+      {
+        "name": "Matterport3D",
+        "version": null
+      },
+      {
+        "name": "Front-3D",
+        "version": null
+      }
+    ],
+    "methods": [
+      {
+        "name": "Uni-3D",
+        "description": "Proposed system for 3D scene reconstruction that employs single- or multi-scale feature lifting and surpasses Pano-Re in PRQ while achieving accurate instance geometry and scene layouts."
+      },
+      {
+        "name": "Pano-Re",
+        "description": "Baseline method for 3D scene reconstruction that accurately generates instance geometry and scene layouts but is outperformed by Uni-3D in PRQ and 2D segmentation."
+      },
+      {
+        "name": "Mesh R-CNN",
+        "description": "Method that tends to generate noisy reconstructed shapes for 3D instances."
+      },
+      {
+        "name": "Total3D",
+        "description": "Method that predicts shape-based instance category priors, which can cause inconsistency between predicted shapes and 2D observations; predicts instance shapes and layouts separately, harming global structure."
+      },
+      {
+        "name": "ResNet-18 backbone features",
+        "description": "Retain features from a ResNet-18 backbone while replacing 2D segmentation and/or depth estimation results."
+      },
+      {
+        "name": "Depth-aware panoptic segmentation framework",
+        "description": "A 2D network substituted into Pano-Re that incorporates depth awareness to improve panoptic segmentation and reconstruction quality."
+      },
+      {
+        "name": "Unified design of 3D segments and 2D queries as priors",
+        "description": "Uni-3D uses a unified design where 3D segments and 2D queries act as priors to enhance reconstruction quality."
+      },
+      {
+        "name": "Multi-scale Feature Lifting",
+        "description": "Back-project multi-scale 2D features and fuse them into U-Net encoders to leverage richer semantics."
+      },
+      {
+        "name": "Uni-3D (single-scale)",
+        "description": "A 3D reconstruction/segmentation approach evaluated with ablations on 3D-Front."
+      },
+      {
+        "name": "2D queries as priors for 3D",
+        "description": "Use of 2D queries to provide strong instance-level priors for 3D reasoning."
+      },
+      {
+        "name": "2D feature integration",
+        "description": "Incorporation of 2D features to provide rich semantic information crucial for both instance (thing) and layout (stuff) classes."
+      },
+      {
+        "name": "Back-projection with depth estimation",
+        "description": "Back-projecting using estimated depth; effects analyzed by substituting ground-truth depth to assess sensitivity to depth accuracy."
+      },
+      {
+        "name": "2D weight freezing",
+        "description": "Load and freeze weights of the previously trained 2D network for subsequent 3D training."
+      },
+      {
+        "name": "3D panoptic reconstruction network training",
+        "description": "Train with fixed input size 320x240, specified loss weights for geometry, segmentation, and occupancy at resolutions 64^3, 128^3, and 256^3; use step learning rate schedule with decay at 80k iterations."
+      },
+      {
+        "name": "Matterport3D fine-tuning",
+        "description": "Fine-tune on Matterport3D for 120k iterations with polynomial-based learning rate scheduling; later combine 3D weights trained on 3D-Front with 2D weights fine-tuned on Matterport3D and train for another 100k iterations with LR decay at 80k."
+      },
+      {
+        "name": "PRQ evaluation protocol",
+        "description": "Evaluate using voxel-based representations as required by the PRQ metric."
+      },
+      {
+        "name": "Marching cubes visualization",
+        "description": "Apply the marching cubes algorithm to the predicted TDF to extract isosurfaces as meshes and color vertices for visualization."
+      },
+      {
+        "name": "Marching Cubes",
+        "description": "Extracts isosurfaces from the predicted TDF as meshes and assigns each vertex a color based on its semantic class and instance id determined by the nearest neighbor in the predicted panoptic segments."
+      },
+      {
+        "name": "Panoptic Quality (PQ)",
+        "description": "Standard metric to evaluate panoptic segmentation."
+      },
+      {
+        "name": "Depth-aware Panoptic Quality (DPQ)",
+        "description": "Evaluates segmentation and depth jointly: DPQ_\u03bb(p, g) = PQ(p_\u03bb, g), where p_\u03bb filters out pixels with relative depth errors higher than \u03bb; overall DPQ is the average over \u03bb in {0.1, 0.25, 0.5}."
+      },
+      {
+        "name": "Root Mean Square Error (RMSE) for depth",
+        "description": "Reports the RMSE of the estimated depth."
+      },
+      {
+        "name": "3D Panoptic Reconstruction Quality (3D PRQ)",
+        "description": "Metric to evaluate model performance on 3D scene understanding."
+      },
+      {
+        "name": "Dual decoders for panoptic segmentation and depth estimation",
+        "description": "Two decoders process segment and depth queries separately with masked cross-attention over encoder image features, followed by cross-decoder query association and self-attention, stacked over multiple layers for refinement."
+      },
+      {
+        "name": "Masked Cross-Attention",
+        "description": "Each decoder performs masked cross-attention with multi-scale image features (F1, F2, F3) using masks from the previous decoder output."
+      },
+      {
+        "name": "Cross-Decoder Query Association",
+        "description": "Associates segment and depth queries that belong to the same segment to enable information exchange between the two decoders."
+      },
+      {
+        "name": "3D Generative U-Net",
+        "description": "Processes the lifted 3D TDF volume for panoptic 3D scene reconstruction, following the design in prior work [8]."
+      },
+      {
+        "name": "2D depth estimation training",
+        "description": "Train a depth decoder with lambda_depth=2.0 using AdamW and a polynomial LR schedule lr=base*(1-i/N)^0.9; ground truth is downsampled via nearest neighbor to 1/4 resolution of the original image to match predicted depth maps."
+      },
+      {
+        "name": "Data augmentation",
+        "description": "Randomly scale input images from 0.5 to 2.0 of 320x240 followed by a fixed 240x240 crop; apply color augmentations per [32]."
+      },
+      {
+        "name": "Training on Front-3D",
+        "description": "Train for 160k iterations with batch size 16 using the polynomial LR schedule."
+      },
+      {
+        "name": "Fine-tuning on Matterport3D",
+        "description": "Fine-tune the model for 120k iterations with the same polynomial-based learning rate scheduling."
+      },
+      {
+        "name": "Depth DF embedding",
+        "description": "Use depth as a distance field embedding within the 3D network."
+      },
+      {
+        "name": "2D features PS(F4) and PD(F4)",
+        "description": "Incorporate 2D mask feature PS(F4) and depth feature PD(F4) into the 3D network."
+      },
+      {
+        "name": "Learned 2D queries vs randomly initialized queries",
+        "description": "Ablation replacing learned 2D queries with randomly initialized learnable query embeddings to assess impact on PRQ for stuff and things."
+      },
+      {
+        "name": "Single-scale feature lifting",
+        "description": "Using single-scale 2D features as a baseline for back-projection into the 3D network."
+      },
+      {
+        "name": "Back-projection of 2D features, depth, and 2D semantic segmentation maps",
+        "description": "Following prior work, multiple 2D inputs are back-projected and encoded in the 3D network."
+      },
+      {
+        "name": "Ablation by removing one input at a time",
+        "description": "Assess feature contributions by removing 2D features, depth, or segmentation maps individually."
+      },
+      {
+        "name": "Depth-aware Panoptic Segmentation",
+        "description": "A 2D panoptic segmentation module primarily based on Mask2Former, formulating panoptic segmentation as a mask classification task with N binary masks and category distributions over K+1 classes (including a no-object class), extended to enable monocular depth estimation within the same framework."
+      },
+      {
+        "name": "Transformer-based architecture for joint panoptic segmentation and depth estimation",
+        "description": "A Transformer-based 2D architecture that simultaneously addresses panoptic segmentation and depth estimation, sharing knowledge between the tasks instead of using a separate depth network."
+      },
+      {
+        "name": "3D network for panoptic reconstruction",
+        "description": "A 3D module that takes back-projected multi-scale features and transforms them into 3D segments using query embeddings to produce a panoptic reconstruction output."
+      }
+    ],
+    "evaluation_results": [
+      {
+        "metric": "RMSE",
+        "value": "lower than 5% of the mean depth (2.34)",
+        "split": null
+      },
+      {
+        "metric": "PRQ",
+        "value": "\u223c10 higher than Pano-Re",
+        "split": null
+      },
+      {
+        "metric": "PRQ (thing classes)",
+        "value": "+1.11",
+        "split": null
+      },
+      {
+        "metric": "PRQ (stuff classes)",
+        "value": "+0.83",
+        "split": null
+      },
+      {
+        "metric": "PRQ drop on thing classes without 2D features when 2D queries are used",
+        "value": "1.68",
+        "split": null
+      },
+      {
+        "metric": "PRQ drop on thing classes without 2D features when 2D queries are not used",
+        "value": "2.38",
+        "split": null
+      },
+      {
+        "metric": "PRQ drop on stuff classes without 2D features when 2D queries are used",
+        "value": "2.45",
+        "split": null
+      },
+      {
+        "metric": "PRQ drop on stuff classes without 2D features when 2D queries are not used",
+        "value": "2.30",
+        "split": null
+      },
+      {
+        "metric": "PRQ gain on stuff classes with ground truth depth",
+        "value": "0.54",
+        "split": null
+      },
+      {
+        "metric": "PRQ (stuff) change with depth DF embedding",
+        "value": "+0.27",
+        "split": null
+      },
+      {
+        "metric": "PRQ (stuff) influence of depth feature",
+        "value": "0.51",
+        "split": null
+      },
+      {
+        "metric": "PRQ (things) influence of depth feature",
+        "value": "0.08",
+        "split": null
+      },
+      {
+        "metric": "PRQ (stuff) change without learned 2D queries (with 2D features present)",
+        "value": "-0.15",
+        "split": null
+      },
+      {
+        "metric": "PRQ (things) change without learned 2D queries (with 2D features present)",
+        "value": "-0.96",
+        "split": null
+      },
+      {
+        "metric": "PRQ (stuff) change without 2D features",
+        "value": "0",
+        "split": null
+      },
+      {
+        "metric": "PRQ (things) change without 2D features",
+        "value": "-1.66",
+        "split": null
+      },
+      {
+        "metric": "PRQ boost",
+        "value": "1.06",
+        "split": null
+      },
+      {
+        "metric": "PRQ boost (thing classes)",
+        "value": "+1.11",
+        "split": null
+      },
+      {
+        "metric": "PRQ boost (stuff classes)",
+        "value": "+0.83",
+        "split": null
+      },
+      {
+        "metric": "PRQ gain from 2D segmentation maps",
+        "value": "0.33",
+        "split": null
+      }
+    ]
+  }
+}
