@@ -235,7 +235,57 @@ def verify(extraction: dict, passage: str) -> list[dict]:
     return out
 
 
+#: A model that cannot find a value is told to omit the item. Some write a
+#: refusal into the evidence field instead and emit the item anyway. That is
+#: schema non-compliance, not invention, and counting it as invention overstates
+#: fabrication by an order of magnitude. Observed on Llama 3.1 8B only.
+_REFUSAL = re.compile(
+    r"^\W*(not\s+(specified|mentioned|provided|available|given|stated|found|present)"
+    r"|no\s+\w+\s+(specified|mentioned)|n/?a|none|unknown|unspecified|absent)\b",
+    re.I)
+
+#: One quote cited by this many items in a single study is being reused rather
+#: than cited. Llama attached a single sentence to 27 items of one study, with
+#: values as unrelated as an OS version and a learning rate.
+_REUSE_THRESHOLD = 4
+
+#: Below this many characters a quote cannot be meaningfully verified either
+#: way. The median evidence length of Llama's misses was 4 characters.
+_MIN_VERIFIABLE_CHARS = 15
+
+
+def classify_miss(record: dict, reuse_count: int = 0) -> str:
+    """Name the failure behind a span miss.
+
+    Collapsing these into one "unsupported" bucket is actively misleading: on
+    the 11 Nov open-weight run it turned 2 real fabrications into an apparent
+    117. Each of these is a different defect with a different fix.
+    """
+    if record.get("span_loose"):
+        return "whitespace_only"          # PDF damage, the quote is right
+    if "fuzzy_token_recall" not in record:
+        return "unscored"                 # written before fuzzy scoring existed
+    ev = str(record.get("evidence") or "").strip()
+    if _REFUSAL.match(ev):
+        return "refusal"                  # said "not specified" instead of omitting
+    if reuse_count >= _REUSE_THRESHOLD:
+        return "evidence_reused"          # one quote pasted onto many items
+    if len(ev) < _MIN_VERIFIABLE_CHARS:
+        return "degenerate"               # too short to verify either way
+    if record.get("fuzzy_longest", 0) >= 0.60:
+        return "near_verbatim"            # copied, imprecisely
+    if record.get("fuzzy_token_recall", 0) >= 0.70:
+        return "paraphrase"               # restated, same vocabulary
+    return "unsupported"                  # a real quote, absent from the source
+
+
+def _ev_key(record: dict) -> tuple:
+    return (record.get("study_id"), str(record.get("evidence") or ""))
+
+
 def summarise(records: list[dict]) -> dict:
+    # How often each quote is cited, so reuse can be told from citation.
+    reuse = Counter(_ev_key(r) for r in records if r.get("has_evidence"))
     by = defaultdict(Counter)
     for r in records:
         c = by[r["field"]]
@@ -249,26 +299,7 @@ def summarise(records: list[dict]) -> dict:
         # merely reported. Thresholds are deliberately blunt: the point is to
         # separate three obviously different populations, not to score them.
         if not r["span_found"] and r.get("has_evidence"):
-            if r.get("span_loose"):
-                # Matches once whitespace is ignored: a quoting success the
-                # exact check cannot see. Counted apart so the strict number
-                # stays reported but is not mistaken for infidelity.
-                c["miss_whitespace_only"] += 1
-                continue
-            if "fuzzy_token_recall" not in r:
-                # Written before fuzzy scoring existed. Must NOT fall through
-                # to "unsupported": that would read as measured fabrication
-                # when nothing was measured. Re-score the file to populate it.
-                c["miss_unscored"] += 1
-                continue
-            tr = r.get("fuzzy_token_recall", 0.0)
-            lo = r.get("fuzzy_longest", 0.0)
-            if lo >= 0.60:
-                c["miss_near_verbatim"] += 1
-            elif tr >= 0.70:
-                c["miss_paraphrase"] += 1
-            else:
-                c["miss_unsupported"] += 1
+            c["miss_" + classify_miss(r, reuse.get(_ev_key(r), 0))] += 1
     tot = Counter()
     for c in by.values():
         tot.update(c)

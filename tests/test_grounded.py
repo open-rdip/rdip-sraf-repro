@@ -186,8 +186,7 @@ def test_summarise_classifies_every_span_miss():
          "evidence": "we set dropout to 0.5 and label smoothing of 0.1"},
     ]}
     tot = summarise(verify(ex, _PASSAGE))["total"]
-    misses = (tot.get("miss_near_verbatim", 0) + tot.get("miss_paraphrase", 0)
-              + tot.get("miss_unsupported", 0) + tot.get("miss_unscored", 0))
+    misses = sum(v for k, v in tot.items() if k.startswith("miss_"))
     assert misses == tot["n"] - tot["span_found"], \
         "every span miss must land in exactly one bucket"
 
@@ -293,3 +292,72 @@ def test_pipeline_still_re_exports_for_existing_callers():
     import inspect
     src = inspect.getsource(r)
     assert "RETRIEVAL_QUERIES" in src and "def download_pdf" in src
+
+
+# ── telling fabrication apart from the three things that mimic it ───────────
+#
+# On the 11 Nov open-weight run a single "unsupported" bucket turned 2 real
+# fabrications into an apparent 117. Each of these must stay separate.
+
+_P = "We train on 8 NVIDIA A100 GPUs with a batch size of 256 and seed 1234."
+
+
+def _cls(evidence, reuse=0, loose=False, longest=0.1, tok=0.1):
+    from rag_pipeline.grounded import classify_miss
+    return classify_miss({"evidence": evidence, "span_loose": loose,
+                          "fuzzy_longest": longest, "fuzzy_token_recall": tok,
+                          "has_evidence": True, "span_found": False}, reuse)
+
+
+def test_a_refusal_written_into_the_evidence_field_is_not_fabrication():
+    """Llama writes 'not specified' instead of omitting the item. That is
+    schema non-compliance. Counting it as invention overstates fabrication."""
+    for ev in ["not specified", "not specified in the passage", "N/A",
+               "not mentioned", "unknown", "None", "not available"]:
+        assert _cls(ev) == "refusal", ev
+
+
+def test_one_quote_pasted_onto_many_items_is_reuse_not_invention():
+    """Llama attached a single sentence to 27 items of study013, with values
+    as unrelated as an OS version and a learning rate. The quote is real; the
+    citation is lazy. 104 of its 117 apparent fabrications were this."""
+    ev = "we extracted features using Caffe, TensorFlow, and PyTorch"
+    assert _cls(ev, reuse=27) == "evidence_reused"
+    assert _cls(ev, reuse=1) == "unsupported"
+
+
+def test_evidence_too_short_to_verify_is_not_called_fabrication():
+    """Median evidence length among Llama's misses was 4 characters."""
+    assert _cls("8") == "degenerate"
+    assert _cls("A100") == "degenerate"
+
+
+def test_a_substantive_quote_absent_from_the_source_is_still_fabrication():
+    """The check must not become so forgiving that it finds nothing. The two
+    real cases were a specific CPU model invented in two unrelated papers."""
+    assert _cls("Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz", tok=0.0) == "unsupported"
+
+
+def test_whitespace_and_unscored_still_win_over_everything():
+    assert _cls("anything at all", loose=True) == "whitespace_only"
+    from rag_pipeline.grounded import classify_miss
+    assert classify_miss({"evidence": "x", "has_evidence": True,
+                          "span_found": False}) == "unscored"
+
+
+def test_paraphrase_and_near_verbatim_survive_the_new_buckets():
+    assert _cls("the batch size was 256 and the seed 1234", tok=0.9) == "paraphrase"
+    assert _cls("with a batch size of 256 and seed 1234", longest=0.8) == "near_verbatim"
+
+
+def test_every_span_miss_lands_in_exactly_one_bucket():
+    from rag_pipeline.grounded import verify, summarise
+    ex = {"hardware": [
+        {"value": "A100", "evidence": "not specified"},
+        {"value": "V100", "evidence": "8"},
+        {"value": "Xeon", "evidence": "Intel(R) Core(TM) i9-9900K @ 3.6GHz"},
+    ]}
+    recs = verify(ex, _P)
+    tot = summarise(recs)["total"]
+    misses = sum(v for k, v in tot.items() if k.startswith("miss_"))
+    assert misses == tot["n"] - tot["span_found"]
