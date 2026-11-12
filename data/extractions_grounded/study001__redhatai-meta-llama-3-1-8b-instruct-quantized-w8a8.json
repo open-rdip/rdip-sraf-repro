@@ -12,10 +12,7 @@
    "evidence": "GPTQ [ 12]",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -23,10 +20,7 @@
    "evidence": "ZeroQuant [ 36]",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -34,10 +28,7 @@
    "evidence": "round-to-nearest neighborhood (RTN)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -45,10 +36,7 @@
    "evidence": "for INT4 weight quantization",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": false
   },
   {
    "field": "hardware",
@@ -59,10 +47,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.615,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hardware",
@@ -73,10 +58,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.615,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hardware",
@@ -87,10 +69,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.615,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hyperparameters",
@@ -98,10 +77,7 @@
    "evidence": "Specifically, for symmetric quantization, we set S=max(abs(x))",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -109,10 +85,7 @@
    "evidence": "Specifically, for symmetric quantization, we set S=max(abs(x))andZ=",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -120,10 +93,7 @@
    "evidence": "GPTQ [ 12]",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -131,10 +101,7 @@
    "evidence": "ZeroQuant [ 36]",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -142,10 +109,7 @@
    "evidence": "round-to-nearest neighborhood (RTN)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "evaluation_results",
@@ -153,10 +117,7 @@
    "evidence": "(2)INT4 weight-only quantization for small models results in substantial accuracy degradation ( Class-3)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "evaluation_results",
@@ -164,10 +125,7 @@
    "evidence": "(3)Contrary to (2), INT8 activation results in minimal accuracy drops for small models ( Class-1)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "evaluation_results",
@@ -175,10 +133,7 @@
    "evidence": "(2)INT4 weight-only quantization for small models results in substantial accuracy degradation ( Class-3), but this effect lessens as the model size increases ( Class-2)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "evaluation_results",
@@ -186,10 +141,7 @@
    "evidence": "(3)Contrary to (2), INT8 activation results in minimal accuracy drops for small models ( Class-1) but larger models exhibit greater drops ( Class-3)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "evaluation_results",
@@ -197,10 +149,7 @@
    "evidence": "With INT8 activation, BLOOM shows no divergence issues up to a model size of 176B,",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "evaluation_results",
@@ -208,10 +157,7 @@
    "evidence": "OPT performs poorly from \u22656.7B model sizes.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -219,10 +165,7 @@
    "evidence": "We implement per-row quantization [ 12] for weight quantization",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -230,10 +173,7 @@
    "evidence": "for activation [36]",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": false
   },
   {
    "field": "dependencies",
@@ -241,10 +181,7 @@
    "evidence": "FP16 weight can simply be replaced with INT8 weight",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -252,10 +189,7 @@
    "evidence": "INT8 weight-only quantization, either symmetric or asymmetric",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -263,10 +197,7 @@
    "evidence": "For INT4 quantization",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -274,10 +205,7 @@
    "evidence": "the large GLM-130B [ 39]",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -285,10 +213,7 @@
    "evidence": "such as OPT-66B",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -296,10 +221,7 @@
    "evidence": "BLOOM-176B shows PPL degradation",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -310,10 +232,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hardware",
@@ -324,10 +243,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hardware",
@@ -338,10 +254,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hardware",
@@ -352,10 +265,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hyperparameters",
@@ -363,10 +273,7 @@
    "evidence": "the asymmetric method outperforms the symmetric approach",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -374,10 +281,7 @@
    "evidence": "INT8 weight-only quantization, either symmetric or asymmetric",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -385,10 +289,7 @@
    "evidence": "We implement per-row quantization [ 12] for weight quantization",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -396,10 +297,7 @@
    "evidence": "for activation [36]",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": false
   },
   {
    "field": "hyperparameters",
@@ -407,10 +305,7 @@
    "evidence": "FP16 weight can simply be replaced with INT8 weight",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -418,10 +313,7 @@
    "evidence": "INT8 weight-only quantization, either symmetric or asymmetric",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -429,10 +321,7 @@
    "evidence": "For INT4 quantization",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -440,10 +329,7 @@
    "evidence": "Robustness of Weight-only Quantization for Large Models",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -451,10 +337,7 @@
    "evidence": "We implement per-row quantization [ 12] for weight quantization",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -462,10 +345,7 @@
    "evidence": "for activation [36]",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -473,10 +353,7 @@
    "evidence": "the asymmetric method outperforms the symmetric approach",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -484,10 +361,7 @@
    "evidence": "INT8 weight-only quantization, either symmetric or asymmetric",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -495,10 +369,7 @@
    "evidence": "FP16 weight can simply be replaced with INT8 weight",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -506,10 +377,7 @@
    "evidence": "INT8 weight-only quantization, either symmetric or asymmetric",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -517,10 +385,7 @@
    "evidence": "For INT4 quantization",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": false
   },
   {
    "field": "evaluation_results",
@@ -528,10 +393,7 @@
    "evidence": "PPL improvement is about 0.5",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "evaluation_results",
@@ -539,10 +401,7 @@
    "evidence": "negligible accuracy loss (less than 0.05, i.e., Class-1)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "evaluation_results",
@@ -550,10 +409,7 @@
    "evidence": "BLOOM-176B shows PPL degradation (around 0.3 points)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -561,10 +417,7 @@
    "evidence": "we utilize GPTQ and ZQ-Global for all models and settings",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -572,10 +425,7 @@
    "evidence": "we utilize GPTQ and ZQ-Global for all models and settings",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -586,10 +436,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.953,
-   "fuzzy_token_recall": 1.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "fuzzy_token_recall": 1.0
   },
   {
    "field": "dependencies",
@@ -600,10 +447,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.953,
-   "fuzzy_token_recall": 1.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "fuzzy_token_recall": 1.0
   },
   {
    "field": "dependencies",
@@ -614,10 +458,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.953,
-   "fuzzy_token_recall": 1.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "fuzzy_token_recall": 1.0
   },
   {
    "field": "dependencies",
@@ -625,10 +466,7 @@
    "evidence": "utilizing a smaller model with INT8 weight is more advantageous than employing a model that is twice as large with INT4 weight",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -636,10 +474,7 @@
    "evidence": "utilizing a smaller model with INT8 weight is more advantageous than employing a model that is twice as large with INT4 weight",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -647,10 +482,7 @@
    "evidence": "block-k quantization can be implemented on modern GPUs",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -661,10 +493,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hardware",
@@ -675,10 +504,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hardware",
@@ -689,10 +515,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hardware",
@@ -703,10 +526,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hyperparameters",
@@ -717,10 +537,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "datasets",
@@ -731,10 +548,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "methods",
@@ -742,10 +556,7 @@
    "evidence": "One potential solution to this issue is the implementation of finer-grained quantization schemes",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -753,10 +564,7 @@
    "evidence": "With PTQ and row-wise quantization, achieving Class-1 quantization error is challenging",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -764,10 +572,7 @@
    "evidence": "With PTQ and row-wise quantization, achieving Class-1 quantization error is challenging",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -775,10 +580,7 @@
    "evidence": "achieving Class-1 quantization error is challenging for both weight-only and weight-and-activation quantization",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -786,10 +588,7 @@
    "evidence": "achieving Class-1 quantization error is challenging for both weight-only and weight-and-activation quantization",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -797,10 +596,7 @@
    "evidence": "we utilize GPTQ and ZQ-Global for all models and settings",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -808,10 +604,7 @@
    "evidence": "we utilize GPTQ and ZQ-Global for all models and settings",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -822,10 +615,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.953,
-   "fuzzy_token_recall": 1.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "fuzzy_token_recall": 1.0
   },
   {
    "field": "methods",
@@ -833,10 +623,7 @@
    "evidence": "the application of RTN still results in a non-trivial accuracy gap",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "evaluation_results",
@@ -844,10 +631,7 @@
    "evidence": "the application of RTN still results in a non-trivial accuracy gap",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -855,10 +639,7 @@
    "evidence": "ZQ-Global\u2217optimizes an entire transformer layer",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -866,10 +647,7 @@
    "evidence": "GPTQ only optimizes a single linear layer",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -880,10 +658,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 5
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hardware",
@@ -894,10 +669,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 5
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "methods",
@@ -905,10 +677,7 @@
    "evidence": "GPTQ was originally designed for weight-only quantization",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -916,10 +685,7 @@
    "evidence": "ZeroQuant (including both ZQ-Global\u2217and ZQ-Local\u2217) yields superior results",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -927,10 +693,7 @@
    "evidence": "The three light-weight optimization-based methods outperform RTN significantly",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "evaluation_results",
@@ -941,10 +704,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 5
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "evaluation_results",
@@ -955,10 +715,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 5
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "evaluation_results",
@@ -969,10 +726,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study001",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 5
+   "fuzzy_token_recall": 0.0
   }
  ],
  "summary": {
@@ -984,7 +738,7 @@
     "value_in_span": 14,
     "grounded": 11,
     "span_any": 12,
-    "miss_near_verbatim": 3
+    "miss_evidence_reused": 3
    },
    "hardware": {
     "n": 20,
@@ -993,8 +747,8 @@
     "value_in_span": 19,
     "grounded": 6,
     "span_any": 7,
-    "miss_near_verbatim": 3,
-    "miss_unsupported": 10
+    "miss_refusal": 3,
+    "miss_evidence_reused": 10
    },
    "hyperparameters": {
     "n": 10,
@@ -1003,7 +757,7 @@
     "value_in_span": 8,
     "grounded": 7,
     "span_any": 9,
-    "miss_unsupported": 1
+    "miss_evidence_reused": 1
    },
    "methods": {
     "n": 23,
@@ -1012,7 +766,7 @@
     "value_in_span": 15,
     "grounded": 14,
     "span_any": 22,
-    "miss_near_verbatim": 1
+    "miss_evidence_reused": 1
    },
    "evaluation_results": {
     "n": 13,
@@ -1021,7 +775,7 @@
     "value_in_span": 13,
     "grounded": 10,
     "span_any": 10,
-    "miss_unsupported": 3
+    "miss_evidence_reused": 3
    },
    "datasets": {
     "n": 1,
@@ -1030,7 +784,7 @@
     "value_in_span": 1,
     "grounded": 0,
     "span_any": 0,
-    "miss_unsupported": 1
+    "miss_evidence_reused": 1
    }
   },
   "total": {
@@ -1040,8 +794,8 @@
    "value_in_span": 70,
    "grounded": 48,
    "span_any": 60,
-   "miss_near_verbatim": 7,
-   "miss_unsupported": 15
+   "miss_evidence_reused": 19,
+   "miss_refusal": 3
   }
  },
  "raw": [

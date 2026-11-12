@@ -12,10 +12,7 @@
    "evidence": "GPU serving. Pinnability with TransAct is 65 times more computationally complex compared to its predecessors in terms of floating point operations.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -23,10 +20,7 @@
    "evidence": "The main challenge to serve Pinnability on GPUs is the CUDA kernel launch overhead.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -34,10 +28,7 @@
    "evidence": "Pinnability with TransAct is 65 times more computationally complex compared to its predecessors in terms of floating point operations.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -45,10 +36,7 @@
    "evidence": "We leverage standard deep learning compilers such as nvFuser7but often found human intervention is needed for many of the remaining operations.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -56,10 +44,7 @@
    "evidence": "An effective approach is to fuse operations as much as possible.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 1
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -67,10 +52,7 @@
    "evidence": "implementing a custom consolidated embedding lookup module to merge the lookup for multiple features into one lookup.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -81,10 +63,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.989,
-   "fuzzy_token_recall": 1.0,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 2
+   "fuzzy_token_recall": 1.0
   },
   {
    "field": "hardware",
@@ -95,10 +74,7 @@
    "value_in_span": false,
    "span_loose": false,
    "fuzzy_longest": 0.652,
-   "fuzzy_token_recall": 0.9,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 3
+   "fuzzy_token_recall": 0.9
   },
   {
    "field": "methods",
@@ -106,10 +82,7 @@
    "evidence": "To decrease the number of tensor copy operations, we combine multiple tensors into one continuous buffer before transferring them from CPU to GPU.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 3
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -117,10 +90,7 @@
    "evidence": "However, for GPU-based inference, larger batches are more efficient [ 29].",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 3
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -131,10 +101,7 @@
    "value_in_span": false,
    "span_loose": false,
    "fuzzy_longest": 0.652,
-   "fuzzy_token_recall": 0.9,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 3
+   "fuzzy_token_recall": 0.9
   },
   {
    "field": "dependencies",
@@ -142,10 +109,7 @@
    "evidence": "The implementation is done using PyTorch.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -153,10 +117,7 @@
    "evidence": "Realtime user sequence length is |\ud835\udc46|= 100",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -164,10 +125,7 @@
    "evidence": "the dimension of action embedding \ud835\udc51\ud835\udc4e\ud835\udc50\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b =32",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -175,10 +133,7 @@
    "evidence": "with a default dropout rate of 0.1",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -186,10 +141,7 @@
    "evidence": "the feed forward network in the transformer encoder layer has a dimension of \ud835\udc51\u210e\ud835\udc56\ud835\udc51\ud835\udc51\ud835\udc52\ud835\udc5b =32",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -197,10 +149,7 @@
    "evidence": "The batch size is 12000",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -208,10 +157,7 @@
    "evidence": "The encoded sequence feature is passed through a transformer encoder composed of 2 transformer blocks",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -222,10 +168,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.912,
-   "fuzzy_token_recall": 0.933,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 5
+   "fuzzy_token_recall": 0.933
   },
   {
    "field": "datasets",
@@ -233,10 +176,7 @@
    "evidence": "We construct the offline training dataset from three weeks of Pinterest Homefeed view log (FVL)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 6
+   "value_in_span": false
   },
   {
    "field": "hyperparameters",
@@ -244,10 +184,7 @@
    "evidence": "We employed the standard transformer encoder with 2 encoder layers and one head.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 7
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -255,10 +192,7 @@
    "evidence": "We employed the standard transformer encoder with 2 encoder layers and one head.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 7
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -266,10 +200,7 @@
    "evidence": "We experimented with different sequence aggregation architectures and choose transformer-based architectures.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 7
+   "value_in_span": true
   }
  ],
  "summary": {

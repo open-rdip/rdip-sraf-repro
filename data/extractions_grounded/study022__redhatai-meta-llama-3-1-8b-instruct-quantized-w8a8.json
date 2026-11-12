@@ -12,10 +12,7 @@
    "evidence": "GPU model inference allows us to serve Pinnability with TransAct at neutral latency and cost6.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -23,10 +20,7 @@
    "evidence": "The main challenge to serve Pinnability on GPUs is the CUDA kernel launch overhead.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 0
+   "value_in_span": false
   },
   {
    "field": "hardware",
@@ -34,10 +28,7 @@
    "evidence": "The CPU cost of launching operations on the GPU is very high, but it is often overshadowed by the prolonged GPU computation time.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 0
+   "value_in_span": false
   },
   {
    "field": "hardware",
@@ -48,10 +39,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 0
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hardware",
@@ -62,10 +50,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 0
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "methods",
@@ -73,10 +58,7 @@
    "evidence": "We retrain Pinnability from scratch twice per week.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -84,10 +66,7 @@
    "evidence": "Pinnability with TransAct is 65 times more computationally complex compared to its predecessors in terms of floating point operations.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 0
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -95,10 +74,7 @@
    "evidence": "We leverage standard deep learning compilers such as nvFuser",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -106,10 +82,7 @@
    "evidence": "We significantly reduce the number of operations by leveraging cuCollections",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "random_seeds",
@@ -120,10 +93,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hardware",
@@ -131,10 +101,7 @@
    "evidence": "large number of CUDA kernels",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -142,10 +109,7 @@
    "evidence": "We leverage standard deep learning compilers such as nvFuser7",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -153,10 +117,7 @@
    "evidence": "For every inference, hundreds of features are copied from the CPU to the GPU memory as individ- ual tensors",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -167,10 +128,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hardware",
@@ -181,10 +139,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hyperparameters",
@@ -192,10 +147,7 @@
    "evidence": "the batch size during online serving is small",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -206,10 +158,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "methods",
@@ -217,10 +166,7 @@
    "evidence": "Fuse CUDA kernels",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -228,10 +174,7 @@
    "evidence": "Combine memory copies",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -239,10 +182,7 @@
    "evidence": "implementing a custom consolidated embedding lookup module",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "evaluation_results",
@@ -253,10 +193,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 1
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "dependencies",
@@ -264,10 +201,7 @@
    "evidence": "We relied on CUDA Graphs9to com- pletely eliminate the remaining small operations overhead.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -275,10 +209,7 @@
    "evidence": "a realtime feature processing application based on Flink10consumes user action Kafka11streams generated from front-end events.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -286,10 +217,7 @@
    "evidence": "a realtime feature processing application based on Flink10consumes user action Kafka11streams generated from front-end events.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -297,10 +225,7 @@
    "evidence": "The application then materializes the features and stores them in Rock- store [ 3].",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": false
   },
   {
    "field": "dependencies",
@@ -308,10 +233,7 @@
    "evidence": "https://pytorch.org/blog/introducing-nvfuser-a-deep-learning-compiler-for- pytorch/",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -319,10 +241,7 @@
    "evidence": "https://github.com/NVIDIA/cuCollections",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -330,10 +249,7 @@
    "evidence": "https://developer.nvidia.com/blog/cuda-graphs/",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": false
   },
   {
    "field": "hardware",
@@ -341,10 +257,7 @@
    "evidence": "We relied on CUDA Graphs9to com- pletely eliminate the remaining small operations overhead.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -352,10 +265,7 @@
    "evidence": "https://developer.nvidia.com/blog/cuda-graphs/",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": false
   },
   {
    "field": "datasets",
@@ -363,10 +273,7 @@
    "evidence": "We construct the offline training dataset from three weeks of Pinterest Homefeed view log",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -374,10 +281,7 @@
    "evidence": "We compare TransAct with baseline models using Pinterest\u2019s internal training data.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -385,10 +289,7 @@
    "evidence": "We compare TransAct with baseline models using Pinterest\u2019s internal training data.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 2
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -396,10 +297,7 @@
    "evidence": "We relied on CUDA Graphs9to com- pletely eliminate the remaining small operations overhead.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -407,10 +305,7 @@
    "evidence": "We relied on CUDA Graphs9to com- pletely eliminate the remaining small operations overhead.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -418,10 +313,7 @@
    "evidence": "For every inference, hundreds of features are copied from the CPU to the GPU memory as individ- ual tensors.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -432,10 +324,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "hardware",
@@ -446,10 +335,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "methods",
@@ -457,10 +343,7 @@
    "evidence": "Initially, we used a scatter-gather architecture to split requests into small batches and run them in parallel on multiple leaf nodes for better latency.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -468,10 +351,7 @@
    "evidence": "To compensate for the loss of cache capacity, we implemented a hybrid cache that uses both DRAM and SSD.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -479,10 +359,7 @@
    "evidence": "We relied on CUDA Graphs9to com- pletely eliminate the remaining small operations overhead.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 3
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -490,10 +367,7 @@
    "evidence": "The implementation is done using PyTorch.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "dependencies",
@@ -501,10 +375,7 @@
    "evidence": "We use an Adam [14] optimizer",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -512,10 +383,7 @@
    "evidence": "The implementation is done using PyTorch.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": false
   },
   {
    "field": "hardware",
@@ -523,10 +391,7 @@
    "evidence": "The implementation is done using PyTorch.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": false
   },
   {
    "field": "hardware",
@@ -534,10 +399,7 @@
    "evidence": "The implementation is done using PyTorch.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": false
   },
   {
    "field": "hardware",
@@ -545,10 +407,7 @@
    "evidence": "The implementation is done using PyTorch.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": false
   },
   {
    "field": "hyperparameters",
@@ -556,10 +415,7 @@
    "evidence": "Realtime user sequence length is |\ud835\udc46|= 100",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -567,10 +423,7 @@
    "evidence": "The dimension of action embedding \ud835\udc51\ud835\udc4e\ud835\udc50\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b =32",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -578,10 +431,7 @@
    "evidence": "a default dropout rate of 0.1",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -589,10 +439,7 @@
    "evidence": "The feed forward network in the transformer encoder layer has a dimension of \ud835\udc51\u210e\ud835\udc56\ud835\udc51\ud835\udc51\ud835\udc52\ud835\udc5b =32",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -600,10 +447,7 @@
    "evidence": "The batch size is 12000",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -611,10 +455,7 @@
    "evidence": "the offline evaluation data, unlike training data, is randomly sampled from FVL",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -622,10 +463,7 @@
    "evidence": "The encoded sequence feature is passed through a transformer encoder composed of 2 transformer blocks",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -633,10 +471,7 @@
    "evidence": "We use an Adam [14] optimizer with a learning rate scheduler",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": false
   },
   {
    "field": "methods",
@@ -644,10 +479,7 @@
    "evidence": "finally reduced through cosine annealing",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -655,10 +487,7 @@
    "evidence": "We use an Adam [14] optimizer with a learning rate scheduler",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -666,10 +495,7 @@
    "evidence": "The learning rate begins with a warm-up phase of 5000 steps",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "evaluation_results",
@@ -677,10 +503,7 @@
    "evidence": "In addition to sampling bias, we also eliminate position bias in offline evaluation data.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 4
+   "value_in_span": false
   },
   {
    "field": "hardware",
@@ -688,10 +511,7 @@
    "evidence": "We compute \ud835\udc64\ud835\udc62by multiplying user state weight, user gender weight, and user location weight: \ud835\udc64\ud835\udc62=\ud835\udc64state\u00d7\ud835\udc64location\u00d7\ud835\udc64gender .",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 5
+   "value_in_span": false
   },
   {
    "field": "hardware",
@@ -702,10 +522,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.5,
-   "fuzzy_token_recall": 0.0,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 5
+   "fuzzy_token_recall": 0.0
   },
   {
    "field": "methods",
@@ -713,10 +530,7 @@
    "evidence": "The loss function of Pinnability is a weighted cross-entropy loss, designed to optimize for multi-label classifica- tion tasks.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -724,10 +538,7 @@
    "evidence": "We conduct all experiments with the Pinterest dataset. We do not use public datasets as they lack the necessary realtime user action sequence metadata features, such as item em- beddings and action types, required by TransAct. Furthermore, they are incompatible with our proposal of realtime-batch hybrid model, which requires both realtime and batch user features. And",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 6
+   "value_in_span": false
   },
   {
    "field": "datasets",
@@ -735,10 +546,7 @@
    "evidence": "We conduct all experiments with the Pinterest dataset. We do not use public datasets as they lack the necessary realtime user action sequence metadata features, such as item em- beddings and action types, required by TransAct. Furthermore, they are incompatible with our proposal of realtime-batch hybrid model, which requires both realtime and batch user features. And",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 6
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -746,10 +554,7 @@
    "evidence": "We do not use public datasets as they lack the necessary realtime user action sequence metadata features, such as item em- beddings and action types, required by TransAct. Furthermore, they are incompatible with our proposal of realtime-batch hybrid model, which requires both realtime and batch user features. And",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 6
+   "value_in_span": true
   },
   {
    "field": "random_seeds",
@@ -757,10 +562,7 @@
    "evidence": "offline experiment showed that position information is ineffective5",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 7
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -771,10 +573,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.308,
-   "fuzzy_token_recall": 0.5,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 7
+   "fuzzy_token_recall": 0.5
   },
   {
    "field": "hyperparameters",
@@ -782,10 +581,7 @@
    "evidence": "We employed the standard transformer encoder with 2 encoder layers and one head",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 7
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -796,10 +592,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.308,
-   "fuzzy_token_recall": 0.5,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 7
+   "fuzzy_token_recall": 0.5
   },
   {
    "field": "methods",
@@ -807,10 +600,7 @@
    "evidence": "We choose concat as our early fusion method based on the offline experiment results",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study022",
-   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
-   "passage_index": 7
+   "value_in_span": true
   }
  ],
  "summary": {
@@ -822,7 +612,8 @@
     "value_in_span": 16,
     "grounded": 8,
     "span_any": 17,
-    "miss_unsupported": 8
+    "miss_evidence_reused": 7,
+    "miss_refusal": 1
    },
    "methods": {
     "n": 18,
@@ -847,7 +638,7 @@
     "value_in_span": 2,
     "grounded": 1,
     "span_any": 1,
-    "miss_unsupported": 1
+    "miss_evidence_reused": 1
    },
    "hyperparameters": {
     "n": 7,
@@ -864,7 +655,8 @@
     "value_in_span": 5,
     "grounded": 3,
     "span_any": 3,
-    "miss_unsupported": 2
+    "miss_evidence_reused": 1,
+    "miss_refusal": 1
    },
    "evaluation_results": {
     "n": 2,
@@ -873,7 +665,7 @@
     "value_in_span": 1,
     "grounded": 0,
     "span_any": 1,
-    "miss_unsupported": 1
+    "miss_evidence_reused": 1
    }
   },
   "total": {
@@ -883,7 +675,8 @@
    "value_in_span": 57,
    "grounded": 45,
    "span_any": 58,
-   "miss_unsupported": 12
+   "miss_evidence_reused": 10,
+   "miss_refusal": 2
   }
  },
  "raw": [

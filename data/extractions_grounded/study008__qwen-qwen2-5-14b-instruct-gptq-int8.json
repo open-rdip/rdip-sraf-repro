@@ -15,10 +15,7 @@
    "value_in_span": false,
    "span_loose": false,
    "fuzzy_longest": 0.479,
-   "fuzzy_token_recall": 0.923,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 0
+   "fuzzy_token_recall": 0.923
   },
   {
    "field": "dependencies",
@@ -26,10 +23,7 @@
    "evidence": "We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs for parallel training with PyTorch FSDP (Zhao et al., 2023).",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -37,10 +31,7 @@
    "evidence": "We use either two or four Nvidia A100 80GB, A100 40GB, H100 80GB, or A6000 48GB GPUs for parallel training with PyTorch FSDP (Zhao et al., 2023).",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -51,10 +42,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.636,
-   "fuzzy_token_recall": 0.944,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 1
+   "fuzzy_token_recall": 0.944
   },
   {
    "field": "datasets",
@@ -65,10 +53,7 @@
    "value_in_span": true,
    "span_loose": false,
    "fuzzy_longest": 0.636,
-   "fuzzy_token_recall": 0.944,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 1
+   "fuzzy_token_recall": 0.944
   },
   {
    "field": "methods",
@@ -76,10 +61,7 @@
    "evidence": "We use the FlashAttention self-attention and RMSNorm CUDA kernels (Dao, 2023).",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 1
+   "value_in_span": true
   },
   {
    "field": "datasets",
@@ -87,10 +69,7 @@
    "evidence": "We provide further details in Appendix D.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": false,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 2
+   "value_in_span": false
   },
   {
    "field": "hyperparameters",
@@ -98,10 +77,7 @@
    "evidence": "Training steps 7,680 15,360",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -109,10 +85,7 @@
    "evidence": "Warmup steps 76 153",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -120,10 +93,7 @@
    "evidence": "Batch size 256 512",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -131,10 +101,7 @@
    "evidence": "Context length 4,096 8,192",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -142,10 +109,7 @@
    "evidence": "Total training tokens 8 billion 64 billion",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -153,10 +117,7 @@
    "evidence": "Optimizer AdamW AdamW",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -164,10 +125,7 @@
    "evidence": "Learning rate 4\u00d710\u221252\u00d710\u22125",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -175,10 +133,7 @@
    "evidence": "Learning rate decay Cosine to 2\u00d710\u22126Cosine to 2\u00d710\u22126",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -186,10 +141,7 @@
    "evidence": "Adam \u03b2 (0.9, 0.95) (0.9, 0.95)",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hyperparameters",
@@ -197,10 +149,7 @@
    "evidence": "Weight decay 0.05 0.05",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 4
+   "value_in_span": true
   },
   {
    "field": "hardware",
@@ -208,10 +157,7 @@
    "evidence": "In our experiments with two 80GB GPUs, pure bfloat16 was 39% faster than mixed-precision bfloat16 training.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 5
+   "value_in_span": true
   },
   {
    "field": "methods",
@@ -219,10 +165,7 @@
    "evidence": "Therefore, we extensively analyze the viability of pure bfloat16 training for language adaptation in the tight academic compute budget setting.",
    "has_evidence": true,
    "span_found": true,
-   "value_in_span": true,
-   "study_id": "study008",
-   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
-   "passage_index": 5
+   "value_in_span": true
   }
  ],
  "summary": {
