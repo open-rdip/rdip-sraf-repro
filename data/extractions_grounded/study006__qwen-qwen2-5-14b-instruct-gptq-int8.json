@@ -1,0 +1,729 @@
+{
+ "study_id": "study006",
+ "model": "qwen",
+ "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+ "n_passages": 7,
+ "n_passages_ok": 7,
+ "failures": [],
+ "records": [
+  {
+   "field": "random_seeds",
+   "value": "3",
+   "evidence": "For each task, we conduct experiments with 3 different training seeds,",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "Stochastic MuJoCo",
+   "evidence": "on the Stochastic MuJoCo tasks, with results presented in Table 1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "L-MAP",
+   "evidence": "L-MAP consistently outperforms the model-based baselines, TAP and TT, across all datasets and environments",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.906,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 0
+  },
+  {
+   "field": "evaluation_results",
+   "value": "highest",
+   "evidence": "L-MAP achieves the highest performance in multiple datasets for both the Hopper and Walker2D environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "VQ-V AE framework",
+   "evidence": "This approach models future returns more accurately in stochastic settings.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "3",
+   "evidence": "we set our macro action length to 3",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "9",
+   "evidence": "the planning horizon in the raw action space is set to 9 for gym locomotion tasks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "hyperparameters",
+   "value": "15",
+   "evidence": "the planning horizon in the raw action space is set to 15 for Adroit tasks",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.743,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "Stochastic MuJoCo tasks",
+   "evidence": "We evaluate L-MAP on Stochastic MuJoCo tasks (Rigter et al., 2023)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "Adroit",
+   "evidence": "we test L-MAP on Adroit",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.913,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "AntMaze",
+   "evidence": "we evaluate L-MAP on AntMaze",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "L-MAP",
+   "evidence": "a risk-averse model-based algorithm designed for stochastic domains",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Conservative Q-Learning (CQL)",
+   "evidence": "model-free actor-critic methods Conservative Q- Learning (CQL; Kumar et al. (2020))",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Implicit Q-Learning (IQL)",
+   "evidence": "model-free actor-critic methods Implicit Q-Learning (IQL; Kostrikov et al. (2022))",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.622,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "TT",
+   "evidence": "In this task, L-MAP achieves similar performance to TT",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "TAP",
+   "evidence": "These horizons are either smaller or equal to those used in TT and TAP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "evaluation_results",
+   "value": "similar to TT",
+   "evidence": "In this task, L-MAP achieves similar performance to TT, surpassing model-free methods",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "L-MAP",
+   "evidence": "Similar to TAP, our approach integrates goal positions into the observation space, allowing it to condition trajectory generation on specific goals.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "83.33%",
+   "evidence": "Our method achieves an average success rate of 83.33% across all AntMaze environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "78.33%",
+   "evidence": "achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "81.67%",
+   "evidence": "achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "93.33%",
+   "evidence": "L-MAP still performs exceptionally well with success rates of 93.33% and 88.33% in these settings.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "88.33%",
+   "evidence": "L-MAP still performs exceptionally well with success rates of 93.33% and 88.33% in these settings.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "CompILE",
+   "evidence": "CompILE (Kipf et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "RPL",
+   "evidence": "RPL (Gupta et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "OPAL",
+   "evidence": "OPAL (Ajay et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "ACT",
+   "evidence": "ACT (Zhao et al., 2023)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "PRISE",
+   "evidence": "PRISE (Zheng et al., 2024)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "Cloned",
+   "evidence": "For the Cloned dataset, which contains a mix of optimal and suboptimal trajectories",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.602,
+   "fuzzy_token_recall": 0.909,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "Expert",
+   "evidence": "In the Expert dataset, comprised of optimal demonstrations",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "L-MAP",
+   "evidence": "L-MAP secures top performance in the Pen and Relocate tasks.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "51.40",
+   "evidence": "Overall, L-MAP achieves the highest average score of 51.40 across all datasets and environments",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": "18.79",
+   "evidence": "and 18.79 across non-expert datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "MCTS",
+   "evidence": "Figure 4: Illustration of our MCTS process for macro-level planning.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study006",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 6
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "random_seeds": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 1,
+    "value_in_span": 1,
+    "grounded": 1,
+    "span_any": 1
+   },
+   "datasets": {
+    "n": 6,
+    "has_evidence": 6,
+    "span_found": 4,
+    "value_in_span": 6,
+    "grounded": 4,
+    "span_any": 4,
+    "miss_near_verbatim": 2
+   },
+   "methods": {
+    "n": 15,
+    "has_evidence": 15,
+    "span_found": 13,
+    "value_in_span": 10,
+    "grounded": 9,
+    "span_any": 13,
+    "miss_near_verbatim": 2
+   },
+   "evaluation_results": {
+    "n": 9,
+    "has_evidence": 9,
+    "span_found": 9,
+    "value_in_span": 8,
+    "grounded": 8,
+    "span_any": 9
+   },
+   "hyperparameters": {
+    "n": 3,
+    "has_evidence": 3,
+    "span_found": 2,
+    "value_in_span": 3,
+    "grounded": 2,
+    "span_any": 2,
+    "miss_near_verbatim": 1
+   }
+  },
+  "total": {
+   "n": 34,
+   "has_evidence": 34,
+   "span_found": 29,
+   "value_in_span": 28,
+   "grounded": 24,
+   "span_any": 29,
+   "miss_near_verbatim": 5
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [
+     {
+      "value": "3",
+      "evidence": "For each task, we conduct experiments with 3 different training seeds,"
+     }
+    ],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "Stochastic MuJoCo",
+      "version": null,
+      "evidence": "on the Stochastic MuJoCo tasks, with results presented in Table 1"
+     }
+    ],
+    "methods": [
+     {
+      "name": "L-MAP",
+      "evidence": "L-MAP consistently outperforms the model-based baselines, TAP and TT, across all datasets and environments"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "performance",
+      "value": "highest",
+      "split": null,
+      "evidence": "L-MAP achieves the highest performance in multiple datasets for both the Hopper and Walker2D environments"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "VQ-V AE framework",
+      "evidence": "This approach models future returns more accurately in stochastic settings."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "macro action length",
+      "value": "3",
+      "evidence": "we set our macro action length to 3"
+     },
+     {
+      "name": "planning horizon in raw action space for gym locomotion tasks",
+      "value": "9",
+      "evidence": "the planning horizon in the raw action space is set to 9 for gym locomotion tasks"
+     },
+     {
+      "name": "planning horizon in raw action space for Adroit tasks",
+      "value": "15",
+      "evidence": "the planning horizon in the raw action space is set to 15 for Adroit tasks"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "Stochastic MuJoCo tasks",
+      "version": null,
+      "evidence": "We evaluate L-MAP on Stochastic MuJoCo tasks (Rigter et al., 2023)"
+     },
+     {
+      "name": "Adroit",
+      "version": null,
+      "evidence": "we test L-MAP on Adroit"
+     },
+     {
+      "name": "AntMaze",
+      "version": null,
+      "evidence": "we evaluate L-MAP on AntMaze"
+     }
+    ],
+    "methods": [
+     {
+      "name": "L-MAP",
+      "evidence": "a risk-averse model-based algorithm designed for stochastic domains"
+     },
+     {
+      "name": "Conservative Q-Learning (CQL)",
+      "evidence": "model-free actor-critic methods Conservative Q- Learning (CQL; Kumar et al. (2020))"
+     },
+     {
+      "name": "Implicit Q-Learning (IQL)",
+      "evidence": "model-free actor-critic methods Implicit Q-Learning (IQL; Kostrikov et al. (2022))"
+     },
+     {
+      "name": "TT",
+      "evidence": "In this task, L-MAP achieves similar performance to TT"
+     },
+     {
+      "name": "TAP",
+      "evidence": "These horizons are either smaller or equal to those used in TT and TAP"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "performance",
+      "value": "similar to TT",
+      "split": null,
+      "evidence": "In this task, L-MAP achieves similar performance to TT, surpassing model-free methods"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "L-MAP",
+      "evidence": "Similar to TAP, our approach integrates goal positions into the observation space, allowing it to condition trajectory generation on specific goals."
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "average success rate",
+      "value": "83.33%",
+      "split": "all AntMaze environments",
+      "evidence": "Our method achieves an average success rate of 83.33% across all AntMaze environments"
+     },
+     {
+      "metric": "success rate",
+      "value": "78.33%",
+      "split": "Large-Play",
+      "evidence": "achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%."
+     },
+     {
+      "metric": "success rate",
+      "value": "81.67%",
+      "split": "Large-Diverse",
+      "evidence": "achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%."
+     },
+     {
+      "metric": "success rate",
+      "value": "93.33%",
+      "split": "Umaze",
+      "evidence": "L-MAP still performs exceptionally well with success rates of 93.33% and 88.33% in these settings."
+     },
+     {
+      "metric": "success rate",
+      "value": "88.33%",
+      "split": "Medium-Diverse",
+      "evidence": "L-MAP still performs exceptionally well with success rates of 93.33% and 88.33% in these settings."
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "CompILE",
+      "evidence": "CompILE (Kipf et al., 2019)"
+     },
+     {
+      "name": "RPL",
+      "evidence": "RPL (Gupta et al., 2019)"
+     },
+     {
+      "name": "OPAL",
+      "evidence": "OPAL (Ajay et al., 2021)"
+     },
+     {
+      "name": "ACT",
+      "evidence": "ACT (Zhao et al., 2023)"
+     },
+     {
+      "name": "PRISE",
+      "evidence": "PRISE (Zheng et al., 2024)"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "Cloned",
+      "version": null,
+      "evidence": "For the Cloned dataset, which contains a mix of optimal and suboptimal trajectories"
+     },
+     {
+      "name": "Expert",
+      "version": null,
+      "evidence": "In the Expert dataset, comprised of optimal demonstrations"
+     }
+    ],
+    "methods": [
+     {
+      "name": "L-MAP",
+      "evidence": "L-MAP secures top performance in the Pen and Relocate tasks."
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "average score",
+      "value": "51.40",
+      "split": null,
+      "evidence": "Overall, L-MAP achieves the highest average score of 51.40 across all datasets and environments"
+     },
+     {
+      "metric": "average score",
+      "value": "18.79",
+      "split": "non-expert",
+      "evidence": "and 18.79 across non-expert datasets"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 6,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "MCTS",
+      "evidence": "Figure 4: Illustration of our MCTS process for macro-level planning."
+     }
+    ],
+    "evaluation_results": []
+   }
+  }
+ ],
+ "passages": [
+  "and 15 for Adroit tasks. These horizons are either smaller or equal to those used in TT and TAP. Our choice of parameters is to ensure a control rate of approximately 10 Hz for locomotion tasks. For each task, we conduct experiments with 3 different training seeds, and each seed is evaluated for 20 episodes. Stochastic Mujoco On the Stochastic MuJoCo tasks, with results presented in Table 1, L-MAP consistently outperforms the model-based baselines, TAP and TT, across all datasets and en- vironments , demonstrating its superior capacity to handle stochasticity in continuous control tasks. Notably, L-MAP achieves the highest performance in multiple datasets for both the Hopper and Walker2D environments. When compared to 1R2R, a risk-averse model-based algorithm specifi- cally designed for stochastic domains, L-MAP shows competitive or superior results in most cases. An exception is the Medium-Replay-High Hopper dataset, where 1R2R attains a higher score. This suggests that while L-MAP exhibits robustness across a variety of stochastic settings, there are spe- cific scenarios where risk-averse strategies like 1R2R may hold an advantage. Additionally, L-MAP generally outperforms the model-free methods, CQL and IQL. However, CQL surpasses L-MAP in the Medium-Expert-Mod Hopper dataset. It is worth noting that L-MAP is",
+  "and reconstructing return-to-go estimates via a decoder within the VQ-V AE framework, L-MAP captures essential dynamics while abstracting unnecessary details. This approach models future returns more accurately in stochastic settings. Combined with planning algorithms, L-MAP refines expected return estimates, bridging the gap between temporal abstraction techniques and ro- bust performance in stochastic environments. Our latent code representation and transition model reduce the need to learn separate policy, dynamics, and value components in the offline setting, increasing planning efficiency and accounting for environmental stochasticity, thereby enhancing generalization across complex tasks. 6 D ISCUSSION AND LIMITATIONS In conclusion, we introduced the Latent Macro Action Planner (L-MAP), which leverages temporal abstractions learned with a state-conditioned VQ-V AE to construct a discrete latent space of macro- actions. This approach enables efficient planning in high-dimensional continuous action spaces within stochastic environments. Future directions include exploring transfer learning to handle new tasks, and adapting L-MAP to online learning scenarios through strategies such as risk-averse ex- ploration (Luo et al., 2024). These enhancements would enable continuous improvement and help tackle more complex challenges, ultimately improving generalization and efficiency in complex, real-world settings. 10 Published as a conference paper at ICLR 2025 7 A CKNOWLEDGEMENTS This material is",
+  "a risk-averse model-based algorithm designed for stochastic domains, and model-free actor-critic methods Conservative Q- Learning (CQL; Kumar et al. (2020)) and Implicit Q-Learning (IQL; Kostrikov et al. (2022)). We evaluate L-MAP on Stochastic MuJoCo tasks (Rigter et al., 2023), which serve as a proof of concept in the stochastic continuous control domain. We then test L-MAP on Adroit, which presents a challenge with its high state and action dimen- sionality. Finally, we evaluate L-MAP on AntMaze, a sparse-reward continuous-control problem. In this task, L-MAP achieves similar performance to TT, surpassing model-free methods. Through these diverse evaluations, we aim to demonstrate L-MAP\u2019s versatility and effectiveness across dif- ferent types of control problems, including stochastic environments, high-dimensional spaces, and sparse-reward scenarios. Additionally, we conduct an ablation study to analyze the impact of key components in L-MAP; detailed results of this study can be found in Appendix A. Hyperparameters As for the L-MAP-specific hyperparameters, we set our macro action length to 3. The planning horizon in the raw action space is set to 9 for gym locomotion tasks and 15 for Adroit tasks. These horizons are either smaller or equal to those used in TT and TAP. Our choice of parameters is to",
+  "14.9 47.5 60.0 \u00b112.7 66.67 \u00b16.09 81.67\u00b15.00 Mean 10.92 43.92 55.16 84.00 56.33 83.33 Similar to TAP, our approach integrates goal positions into the observation space, allowing it to condition trajectory generation on specific goals. This conditioning narrows the focus of sampled trajectories towards the target direction, simplifying the planning process. Instead of using the IQL critic for value estimation, L-MAP leverages Monte Carlo planning to provide refined value estimates. This alternative approach avoids the additional computational cost of sampling with a separate Q-network, as required by TT (+Q). Our method achieves an average success rate of 83.33% across all AntMaze environments, which is comparable to the 84.00% average of TT (+Q). Notably, L-MAP outperforms TT (+Q) in the more complex Large-Play and Large-Diverse environments, achieving success rates of 78.33% and 81.67% respectively, compared to TT (+Q)\u2019s 66.7% and 60.0%. This indicates that L-MAP is partic- ularly effective in larger mazes where navigation complexity is higher. While TT (+Q) attains per- fect success rates in smaller environments like Umaze and Medium-Diverse, L-MAP still performs exceptionally well with success rates of 93.33% and 88.33% in these settings. This consistency suggests that our method is robust across different scales of environment complexity.",
+  "well with success rates of 93.33% and 88.33% in these settings. This consistency suggests that our method is robust across different scales of environment complexity. 5 R ELATED WORK Recent advancements in reinforcement learning focus on learning temporally extended action prim- itives to reduce decision-making horizons and improve learning efficiency. Both model-free and model-based methods leverage temporal abstraction to manage task complexity. Model-free methods such as CompILE (Kipf et al., 2019), RPL (Gupta et al., 2019), OPAL (Ajay et al., 2021), ACT (Zhao et al., 2023), and PRISE (Zheng et al., 2024) leverage temporal abstraction in various ways. For instance, CompILE learns latent codes representing variable-length behavior segments, enabling cross-task generalization. RPL employs a hierarchical policy architecture to simplify long-horizon tasks by decomposing them into sub-policies. OPAL introduces a continuous space of primitive actions to reduce distributional shift in offline RL, enhancing policy robustness. PRISE applies sequence compression to learn variable-length action primitives, improving behavior cloning by capturing essential behavioral patterns. These approaches demonstrate the versatility of temporal abstraction in addressing different challenges in reinforcement learning, particularly in managing the complexity inherent in sequential decision-making. From a model-based perspective, recent work has treated reinforcement learning as a sequence mod- eling",
+  "performs well in other tasks. Although IQL leads in the Pen task and CQL leads in the Hammer and Relocate tasks, L-MAP maintains competitive results, par- ticularly surpassing TT and BC in most environments. This suggests that L-MAP effectively utilizes suboptimal data to make robust decisions in complex settings. For the Cloned dataset, which con- tains a mix of optimal and suboptimal trajectories, L-MAP secures top performance in the Pen and Relocate tasks. In the Expert dataset, comprised of optimal demonstrations, L-MAP attains the highest scores in the Pen and Relocate environments while remaining competitive in the Hammer and Door tasks. Overall, L-MAP achieves the highest average score of 51.40 across all datasets and environments, and 18.79 across non-expert datasets, highlighting its effectiveness in handling vary- ing levels of data optimality. Furthermore, the experimental results indicate that L-MAP effectively 1We included Behavior Cloning (BC) as an additional baseline since the original 1R2R method was not evaluated for Adroit tasks. 8 Published as a conference paper at ICLR 2025 manages the complexities of high-dimensional Adroit environments. Incorporating more action in- formation into the single token does not detract from performance; instead, it appears to enhance the model\u2019s ability to learn nuanced",
+  "Search. Despite these powerful abstraction tech- niques, the search space remains challenging due to the underlying high-dimensional nature of the 5 Published as a conference paper at ICLR 2025 ... ... ...... ... ... ...Yes ... ...NoRepeat Selection Expansion Backpropagation ... ... ... ... Figure 4: Illustration of our MCTS process for macro-level planning. The algorithm iteratively selects actions using the UCT policy, applies progressive widening to balance exploration and ex- ploitation, performs parallel expansion of multiple macro actions and their potential outcomes, and backpropagates estimated Q-values to efficiently explore and refine the planning tree. original state space, residual stochastic characteristics of transitions in the abstracted space, and the complexity of long-horizon planning scenarios. If we were to apply MCTS directly to this ab- stracted space, we would encounter two main issues: inefficient utilization of our pre-built search space, with the search potentially diverging prematurely into unexplored regions, and difficulty in building sufficiently deep trees for high-quality long-term decision-making, particularly in areas of high stochasticity or uncertainty (Cou \u00a8etoux et al., 2011). Therefore, we use progressive widening to extend MCTS to incrementally expand the search tree. It balances the exploration of new states with the exploitation of already visited states"
+ ]
+}

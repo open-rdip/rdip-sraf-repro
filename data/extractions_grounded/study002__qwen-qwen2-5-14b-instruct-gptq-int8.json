@@ -1,0 +1,650 @@
+{
+ "study_id": "study002",
+ "model": "qwen",
+ "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+ "n_passages": 5,
+ "n_passages_ok": 5,
+ "failures": [],
+ "records": [
+  {
+   "field": "hyperparameters",
+   "value": "varied",
+   "evidence": "Through large parameter sweep in the embedding vector size, we aim to obtain a fine-grained performance analysis.",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": true,
+   "fuzzy_longest": 0.504,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "KINSHIP",
+   "evidence": "We evaluated our proposed models on standard link prediction benchmark datasets (KINSHIP and UMLS datasets)",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": true,
+   "fuzzy_longest": 0.234,
+   "fuzzy_token_recall": 0.923,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "UMLS",
+   "evidence": "We evaluated our proposed models on standard link prediction benchmark datasets (KINSHIP and UMLS datasets)",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": true,
+   "fuzzy_longest": 0.234,
+   "fuzzy_token_recall": 0.923,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "label smoothing",
+   "evidence": "For label smoothing and label relaxation, we consider /u1D6FC \u2208 {.1,.2}",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": true,
+   "fuzzy_longest": 0.521,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 0
+  },
+  {
+   "field": "evaluation_results",
+   "value": null,
+   "evidence": "We use the standard metrics filtered Mean Reciprocal Rank (MRR) and hits at N (H@N) for link prediction",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.155,
+   "fuzzy_token_recall": 0.929,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 0
+  },
+  {
+   "field": "evaluation_results",
+   "value": null,
+   "evidence": "We use the standard metrics filtered Mean Reciprocal Rank (MRR) and hits at N (H@N) for link prediction",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.155,
+   "fuzzy_token_recall": 0.929,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "ADAM",
+   "evidence": "All models are trained with the ADAM optimizer",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": true,
+   "fuzzy_longest": 0.717,
+   "fuzzy_token_recall": 0.875,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": ".01",
+   "evidence": "We trained the model for 1000 epochs with a learning rate of .01",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.156,
+   "fuzzy_token_recall": 0.889,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 1
+  },
+  {
+   "field": "hyperparameters",
+   "value": "1024",
+   "evidence": "We trained the model for 1000 epochs with a learning rate of .01 and a batch size of 1024",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.112,
+   "fuzzy_token_recall": 0.923,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "UMLS",
+   "evidence": "Dataset |E| |R| |GTrain| |GVal.| |GTest| UMLS 136 93 10,432 1304 1965",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "KINSHIP",
+   "evidence": "Dataset |E| |R| |GTrain| |GVal.| |GTest| KINSHIP 105 51 17,088 2136 3210",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.569,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "1vsAll training strategy",
+   "evidence": "We trained approaches with the 1vsAll training strategy",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": true,
+   "fuzzy_longest": 0.309,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "batch normalization",
+   "evidence": "Moreover, we apply the batch normalization to facilitate numerical stability and accelerate convergence during training",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.109,
+   "fuzzy_token_recall": 0.923,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Kronecker Decomposition (KD)",
+   "evidence": "Particularly, the Kronecker Decomposition (KD) elucidated in Section 3.4 leads a significant reduction in the number of parameters with at most a mild cost of predictive accuracy.",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.318,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "Kronecker Decomposition for Relation Embeddings",
+   "evidence": "KDonrelationembeddings of DistMultcan beappliedas KD-Rel-DistMult (h,r,t)=h\u25e6 (r\u2297r) \u00b7t, (8)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "dependencies",
+   "value": "PyTorch Lightning",
+   "evidence": "We built a hardware-agnostic knowledge graph embedding framework based on PyTorch Lightning [Falconet al. 2019] and DASK [Rocklin 2015].",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.522,
+   "fuzzy_token_recall": 0.938,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "random_seeds",
+   "value": "1",
+   "evidence": "In our experiments, the seed for the pseudo-random generator was fixed to 1.",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": true,
+   "fuzzy_longest": 0.605,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "WN18RR",
+   "evidence": "training threemodelswith21 uniquecon-\ufb01gurationsfor1000epochs(seeSection5.1)onWN18RR,FB15 K-237,andYAGO3-10cantakeuptoamonth.",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": true,
+   "fuzzy_longest": 0.704,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "FB15K-237",
+   "evidence": "training threemodelswith21 uniquecon-\ufb01gurationsfor1000epochs(seeSection5.1)onWN18RR,FB15 K-237,andYAGO3-10cantakeuptoamonth.",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": true,
+   "fuzzy_longest": 0.704,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "YAGO3-10",
+   "evidence": "training threemodelswith21 uniquecon-\ufb01gurationsfor1000epochs(seeSection5.1)onWN18RR,FB15 K-237,andYAGO3-10cantakeuptoamonth.",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": true,
+   "fuzzy_longest": 0.704,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "DistMult",
+   "evidence": "We illustrate our methodology with DistMult for three reasons",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": null,
+   "evidence": "We use the standard metrics \ufb01lteredMeanReciprocalRank(MRR)andhitsatN(H@N)forlinkprediction",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": true,
+   "fuzzy_longest": 0.736,
+   "fuzzy_token_recall": 0.875,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": null,
+   "evidence": "We use the standard metrics \ufb01lteredMeanReciprocalRank(MRR)andhitsatN(H@N)forlinkprediction",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": true,
+   "fuzzy_longest": 0.736,
+   "fuzzy_token_recall": 0.875,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": null,
+   "evidence": "Next, Hi@1, H@3, and H@10 are computed in literature",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": true,
+   "fuzzy_longest": 0.923,
+   "fuzzy_token_recall": 0.8,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": null,
+   "evidence": "Next, Hi@1, H@3, and H@10 are computed in literature",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": true,
+   "fuzzy_longest": 0.923,
+   "fuzzy_token_recall": 0.8,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": null,
+   "evidence": "Next, Hi@1, H@3, and H@10 are computed in literature",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": true,
+   "fuzzy_longest": 0.923,
+   "fuzzy_token_recall": 0.8,
+   "study_id": "study002",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "hyperparameters": {
+    "n": 4,
+    "has_evidence": 4,
+    "span_found": 0,
+    "value_in_span": 3,
+    "grounded": 0,
+    "span_any": 2,
+    "miss_whitespace_only": 2,
+    "miss_paraphrase": 2
+   },
+   "datasets": {
+    "n": 7,
+    "has_evidence": 7,
+    "span_found": 1,
+    "value_in_span": 6,
+    "grounded": 1,
+    "span_any": 6,
+    "miss_whitespace_only": 5,
+    "miss_paraphrase": 1
+   },
+   "methods": {
+    "n": 6,
+    "has_evidence": 6,
+    "span_found": 2,
+    "value_in_span": 5,
+    "grounded": 1,
+    "span_any": 4,
+    "miss_whitespace_only": 2,
+    "miss_paraphrase": 2
+   },
+   "evaluation_results": {
+    "n": 7,
+    "has_evidence": 7,
+    "span_found": 0,
+    "value_in_span": 0,
+    "grounded": 0,
+    "span_any": 5,
+    "miss_paraphrase": 2,
+    "miss_whitespace_only": 5
+   },
+   "dependencies": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 0,
+    "value_in_span": 1,
+    "grounded": 0,
+    "span_any": 0,
+    "miss_paraphrase": 1
+   },
+   "random_seeds": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 0,
+    "value_in_span": 1,
+    "grounded": 0,
+    "span_any": 1,
+    "miss_whitespace_only": 1
+   }
+  },
+  "total": {
+   "n": 26,
+   "has_evidence": 26,
+   "span_found": 3,
+   "value_in_span": 16,
+   "grounded": 2,
+   "span_any": 18,
+   "miss_whitespace_only": 15,
+   "miss_paraphrase": 8
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "embedding vector size",
+      "value": "varied",
+      "evidence": "Through large parameter sweep in the embedding vector size, we aim to obtain a fine-grained performance analysis."
+     }
+    ],
+    "datasets": [
+     {
+      "name": "KINSHIP",
+      "version": null,
+      "evidence": "We evaluated our proposed models on standard link prediction benchmark datasets (KINSHIP and UMLS datasets)"
+     },
+     {
+      "name": "UMLS",
+      "version": null,
+      "evidence": "We evaluated our proposed models on standard link prediction benchmark datasets (KINSHIP and UMLS datasets)"
+     }
+    ],
+    "methods": [
+     {
+      "name": "label smoothing",
+      "evidence": "For label smoothing and label relaxation, we consider /u1D6FC \u2208 {.1,.2}"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "filtered Mean Reciprocal Rank (MRR)",
+      "value": null,
+      "split": null,
+      "evidence": "We use the standard metrics filtered Mean Reciprocal Rank (MRR) and hits at N (H@N) for link prediction"
+     },
+     {
+      "metric": "hits at N (H@N)",
+      "value": null,
+      "split": null,
+      "evidence": "We use the standard metrics filtered Mean Reciprocal Rank (MRR) and hits at N (H@N) for link prediction"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [
+     {
+      "name": "optimizer",
+      "value": "ADAM",
+      "evidence": "All models are trained with the ADAM optimizer"
+     },
+     {
+      "name": "learning_rate",
+      "value": ".01",
+      "evidence": "We trained the model for 1000 epochs with a learning rate of .01"
+     },
+     {
+      "name": "batch_size",
+      "value": "1024",
+      "evidence": "We trained the model for 1000 epochs with a learning rate of .01 and a batch size of 1024"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "UMLS",
+      "version": null,
+      "evidence": "Dataset |E| |R| |GTrain| |GVal.| |GTest| UMLS 136 93 10,432 1304 1965"
+     },
+     {
+      "name": "KINSHIP",
+      "version": null,
+      "evidence": "Dataset |E| |R| |GTrain| |GVal.| |GTest| KINSHIP 105 51 17,088 2136 3210"
+     }
+    ],
+    "methods": [
+     {
+      "name": "1vsAll training strategy",
+      "evidence": "We trained approaches with the 1vsAll training strategy"
+     },
+     {
+      "name": "batch normalization",
+      "evidence": "Moreover, we apply the batch normalization to facilitate numerical stability and accelerate convergence during training"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Kronecker Decomposition (KD)",
+      "evidence": "Particularly, the Kronecker Decomposition (KD) elucidated in Section 3.4 leads a significant reduction in the number of parameters with at most a mild cost of predictive accuracy."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "Kronecker Decomposition for Relation Embeddings",
+      "evidence": "KDonrelationembeddings of DistMultcan beappliedas KD-Rel-DistMult (h,r,t)=h\u25e6 (r\u2297r) \u00b7t, (8)"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "PyTorch Lightning",
+      "version": "2019",
+      "evidence": "We built a hardware-agnostic knowledge graph embedding framework based on PyTorch Lightning [Falconet al. 2019] and DASK [Rocklin 2015]."
+     }
+    ],
+    "random_seeds": [
+     {
+      "value": "1",
+      "evidence": "In our experiments, the seed for the pseudo-random generator was fixed to 1."
+     }
+    ],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "WN18RR",
+      "version": null,
+      "evidence": "training threemodelswith21 uniquecon-\ufb01gurationsfor1000epochs(seeSection5.1)onWN18RR,FB15 K-237,andYAGO3-10cantakeuptoamonth."
+     },
+     {
+      "name": "FB15K-237",
+      "version": null,
+      "evidence": "training threemodelswith21 uniquecon-\ufb01gurationsfor1000epochs(seeSection5.1)onWN18RR,FB15 K-237,andYAGO3-10cantakeuptoamonth."
+     },
+     {
+      "name": "YAGO3-10",
+      "version": null,
+      "evidence": "training threemodelswith21 uniquecon-\ufb01gurationsfor1000epochs(seeSection5.1)onWN18RR,FB15 K-237,andYAGO3-10cantakeuptoamonth."
+     }
+    ],
+    "methods": [
+     {
+      "name": "DistMult",
+      "evidence": "We illustrate our methodology with DistMult for three reasons"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "filteredMeanReciprocalRank(MRR)",
+      "value": null,
+      "split": null,
+      "evidence": "We use the standard metrics \ufb01lteredMeanReciprocalRank(MRR)andhitsatN(H@N)forlinkprediction"
+     },
+     {
+      "metric": "hitsatN(H@N)",
+      "value": null,
+      "split": null,
+      "evidence": "We use the standard metrics \ufb01lteredMeanReciprocalRank(MRR)andhitsatN(H@N)forlinkprediction"
+     },
+     {
+      "metric": "Hi@1",
+      "value": null,
+      "split": null,
+      "evidence": "Next, Hi@1, H@3, and H@10 are computed in literature"
+     },
+     {
+      "metric": "H@3",
+      "value": null,
+      "split": null,
+      "evidence": "Next, Hi@1, H@3, and H@10 are computed in literature"
+     },
+     {
+      "metric": "H@10",
+      "value": null,
+      "split": null,
+      "evidence": "Next, Hi@1, H@3, and H@10 are computed in literature"
+     }
+    ]
+   }
+  }
+ ],
+ "passages": [
+  "a grid search. For label smoothingand label relaxatio n, weconsider /u1D6FC\u2208 {.1,.2}. This results in training models with soften target values, i.e., 0 <y(/u1D456)<1. Through large parameter sweep in the embedding vector siz e, we aim to obtaina \ufb01ne-grained performanceanalysis. As elucidate d in Section 4, we hypothesize that the impact of learning compressed embeddings becomes more tangible as the size of t he embedding vector increases. Importantly, we also share testand trainperformanceof alloperationswith allc on\ufb01gurations.Bydoing so,weaim toquantifytheimpact of applying label smoothing and label relaxation during tra ining and testing separately. We do not apply an explicit regularization(e.g.L1,L2regularizationortheDropoutt echnique[Srivastava et al.2014])asregularizationtechn iques maynot allowtoobserve anyregularizatione\ufb00ect oflabelsm oothingand labelrelaxation. 5.2 Datasets Weevaluatedourproposedmodelsonstandardlinkpredictio nbenchmarkdatasets(KINSHIPandUMLSdatasets)[Trouillo nand Nickel 2017]. The Kinships knowledge graph describes the 26 di\ufb00ere nt kinship relations of the Alyawarra tribe and the uni\ufb01ed medical language system (UMLS) knowledge graph desc ribes 135 medical entities via 49 relations describ- ing[Trouillonand Nickel 2017].NotethatweomittedWN18RR ,FB15K-237,and YAGO3-10 fromourexperiments for tworeasons:First,weaimtoconductexperimentstoquantif ytheimpactofKroneckerDecompositionina\ufb01ne-grained many unique con\ufb01gurations with very large number of epochs ( 1000). KINSHIP and UMLS datasets are considerably smaller datasetscomparedtoWN18RR,FB15K-237,and YAGO3- 10. Hence, training threemodelswith21 uniquecon- \ufb01gurationsfor1000epochs(seeSection5.1)onWN18RR,FB15 K-237,andYAGO3-10cantakeuptoamonth.Moreover, tworecentworksshowedthatthesedatasetsinvolveentitie sonthevalidationandtestdatasplitsthatdonotoccurin thetrainsplit[Broscheit etal.2020; Demir and Ngomo 2021b ]. 5.3 Evaluation metrics andBaseline Selection Weusethestandardmetrics \ufb01lteredMeanReciprocalRank(MRR)andhitsatN(H@N)forlinkpredic",
+  "entities than relations (see Table 1). Hence, the potential parameter gain of applying KD on entity embeddings is expectedly larger than applying KD on r elation embeddings. Yet, applying KD on tail entities embeddings in 1vsAll or KvsAll increase the runtime and memo ry requirements as these training strategies require consideringallentitiestocomputeanincurredlossforasi ngleprediction(seeSection3.2).Toalleviatethislimita tion, KDcanbeappliedas KD-DistMult (h,r,t)=/u1D451/summationdisplay.1 /u1D456/u1D445((h\u2297h) \u25e6 (r\u2297r)) /u1D456\u00b7t, (9) where/u1D445(\u00b7)reshapes a /u1D4512dimensional vectorinto /u1D451by/u1D451matrix.Thematrixvectorproductoftheresultingvectoran d tis summed toobtaina scorefor aninputtriple( h,r,t). InSection4.2and 4.3,weelucidatedapplyingKDonembeddin gvectors.Yet,KDcanbealsoappliedtodecompose linear transformationweight matrices infeed-forward and convolutionalbased embeddingmodelsduringtraining. Manuscriptsubmitted to ACM Kronecker DecompositionforKnowledgeGraph Embeddings 9 Table 1. Overviewof datasets. Dataset |E| |R| |GTrain| |GVal.| |GTest| UMLS 136 93 10,432 1304 1965 KINSHIP 105 51 17,088 2136 3210 5 EXPERIMENTAL SETUP 5.1 Trainingand Optimization Wetrainedapproacheswiththe1vsAlltrainingstrategy(se eSection3.2)ascommonlydoneintheliterature[Lacroix et al. 2018; Ru\ufb03nelliet al. 2019]. All models are trained with the A DAM optimizer [Kingma and Ba 2014] and minimize the cross entropy loss function (see Equation 2). We use the s ame loss function for all approaches on all datasets asMohamedet al.[2019]previouslyshowedthatgeneralizat ionperformanceofKGEmodelscanbesigni\ufb01cantlyin\ufb02u- encedbythechoiceofthelossfunction.Moreover,weapplyt hebatchnormalization[Io\ufb00eand Szegedy2015]tofacili- tatenumericalstabilityandaccelerateconvergencedurin gtraining.Wetrainedthemodelfor1000epochswithalearn- ingrateof .01andabatchsizeof1024.Wefurtheroptimizedtheembeddin gvectorsizesin {4,9,16,25,36,49,64,81,100,121,144,169,196,225,289,324,361,400} using a grid search. For label smoothingand label relaxatio n, weconsider /u1D6FC\u2208 {.1,.2}. This results in training models with soften target values, i.e., 0 <y(/u1D456)<1. Through",
+  "4 METHODOLOGY Previous works have shown that pre-trained overparameteri zed language models canbe e\ufb00ectively decomposedinto smallerweightmatrices[Jiaoet al.2019;Rashid et al.2021 ;Sanh et al.2019;Sun etal.2020].Particularly,theKronec ker Decomposition(KD) elucidated in Section 3.4 leads a signi\ufb01 cant reduction in the number of parameters with at most amildcostofpredictiveaccuracy[Edalatiet al.2021;Taha ei et al.2021].Analogoustotheaforementionedtwoworks, \ufb01ndingsofZhang et al.[2021]andWu[2016]suggestthattrai ninganeuralnetworkviaKDonweightmatricesresults in a signi\ufb01cant parameter e\ufb03ciency. We are interested in lea rning compressed KGE by applying KD during training. We aim to design a generic technique that can be applied in exi sting knowledge graph embedding (KGE) models to reduce the number of explicitly stored parameters while ret aining their expressiveness. Importantly, through KD on embeddingmatrices, weaim tocaptureinteractions withina nembedding vectorwithoutrequiringadditionalparam- eters. This is expected to encourage parameter reuse and red uces redundancy in model\u2019s parameters [Huanget al. 2017]. 4.1 Kronecker Decompression for KnowledgeGraph Embedding s MostKGEmodelsaredesignedasaparametrizedscoringfunct ion(sayDistMult[Yanget al.2015]) /u1D719\u0398:E\u00d7R\u00d7E \u2192R that maps an input triple (h,r,t) \u2208 Gto a scalar value that is mapped to the unit interval using the sigmoid/logistic function. This normalized scalar valueis interpreted tore \ufb02ect the likelihoodof ( h,r,t) is truewhich is denoted with \u02c6/u1D45D(t|h,r)in Section 3.3. \u0398denotes the parameters of /u1D719that consists of an entity embedding matrix E\u2208R|E|\u00d7/u1D451, a relation embedding matrix R\u2208R|R|\u00d7/u1D451, and",
+  "+2(/u1D44E/u1D44F/u1D450/u1D451/u1D452/u1D453) +/u1D44F/u1D44F/u1D451/u1D451/u1D453/u1D453 .(7) ThroughthemiddleterminEquation7,interactionsbetween (/u1D44E,/u1D44F)and(/u1D44E,/u1D44E)areincorporatedwithoutrequiringaddi- tionalparameters.Hence,wearguethatDistMultde\ufb01nedinE quation6islessexpressivethanitsKDvariationde\ufb01ned in Equation 7. Consequently, if the both models are trained p roperly,the latter model is expected to perform at least aswellastheformermodelinthelinkpredictionproblem.Im portantly,thenumberofpossibleinteractionswithinan embeddingvectorgrowsby (/u1D451+1)2when/u1D451growsby1.Althoughtheseinteractionsareexpectedtoenco uragefeature reuseandreduceredundancy in model\u2019s parameters, thecomputationof KPonembedding ve ctors may becomea bot- tleneckduetohighcomputationallycomplexityofKD.Inthi ssetting, EandRcanbeseenascompressedembeddings of entities and relations. Hence, given a triple ( h,r,t), their compressed embeddings are retrieved and a triple sc ore is computedvia their decompressed embeddings. Our techniq ue can bereadily appliedon many multiplicativebased KGE models. For the numerical stability, the batch normalis ation or layer normalizationcan be applied to reduce the dependenceofgradientsonthescaleofembeddingvectorsas thesenormalizationtechniqueshavebene\ufb01ciale\ufb00ecton thegradient \ufb02ow through models[Baet al.2016;Io\ufb00e and Szeg edy2015]. 4.2 Kronecker Decomposition forRelation Embeddings KDonrelationembeddings of DistMultcan beappliedas KD-Rel-DistMult (h,r,t)=h\u25e6 (r\u2297r) \u00b7t, (8) whereh,t\u2208E:E\u2208R/u1D451, andr\u2208R:R\u2208R\u221a /u1D451. The parameter gain can be computed as (/u1D451\u2212\u221a /u1D451) \u00d7 (|R|). Note that scores of triples are still computed based on 3 d-dimensiona l embedding vectors. As the size of the input graph and thenumber ofrelations grow, theparameter gain becomes mor etangible. 4.3 Kronecker Decomposition ofEmbeddingsfor 1vsAll Most KGs contain more entities than relations (see Table 1). Hence, the potential parameter gain of applying KD on entity embeddings is expectedly larger than applying KD on r",
+  "datasetscomparedtoWN18RR,FB15K-237,and YAGO3- 10. Hence, training threemodelswith21 uniquecon- \ufb01gurationsfor1000epochs(seeSection5.1)onWN18RR,FB15 K-237,andYAGO3-10cantakeuptoamonth.Moreover, tworecentworksshowedthatthesedatasetsinvolveentitie sonthevalidationandtestdatasplitsthatdonotoccurin thetrainsplit[Broscheit etal.2020; Demir and Ngomo 2021b ]. 5.3 Evaluation metrics andBaseline Selection Weusethestandardmetrics \ufb01lteredMeanReciprocalRank(MRR)andhitsatN(H@N)forlinkpredic tion[Bala\u017eevi\u0107 et al. 2019a,b;Dettmers etal.2018].Wealsoevaluatelinkpredic tionperformancesofapproacheswithrespecttonumberof parameters.In1vsAllorKvsAll,foreachtesttriple (h,r,t),thescoreof (h,r,x)triplesforall /u1D465\u2208 Eiscomputed.Based Manuscriptsubmitted to ACM 10 Demir et al. onthesescores,the\ufb01lteredranking /u1D45F/u1D44E/u1D45B/u1D458/u1D461of thetriplehaving /u1D461is obtained.Then theMRR:1 |Gtest|/summationtext.1 (h,r,t)\u2208Gtest1 /u1D45F/u1D44E/u1D45B/u1D458/u1D461 is computed. Next, Hi@1, H@3, and H@10 are computed in litera ture [Bala\u017eevi\u0107 etal. 2019b; Dettmers et al. 2018; Ru\ufb03nelli etal. 2019].Thenumber ofparameters consists of |E|,|R|,and all othertrainable parameters.Moreover,we illustrate our methodology with DistMult for three reasons : (1) many recent KGE model can be seen as an e\ufb00ective extensionofDistMult,i.e.,theHadamardproductfollowed byaninnerproductofinputembeddings(seeSection2).(2) Findings ofRu\ufb03nelliet al.[2019]indicatethatDistMultpe rformcompetitiveperformanceprovidedthatitisproperly trained. (3) DistMult requires less \ufb02oating point operatio ns than more sophisticated recent models. Hence, it can be trained inless time[Costabelloet al.2019;Valeriani 2020 ]. 5.4 ImplementationDetailsand Reproducibility We built a hardware-agnostic knowledge graph embedding fra mework3based on PyTorch Lightning [Falconet al. 2019] and DASK [Rocklin 2015]. In our experiments, the seed f or the pseudo-random generator was \ufb01xed to 1. To alleviate the hardware requirements for the reproducibili ty of our results, we provide hyperparameter optimization, training and evaluation scriptsalongwith pretrained mode ls."
+ ]
+}

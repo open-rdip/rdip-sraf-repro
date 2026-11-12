@@ -1,0 +1,879 @@
+{
+ "study_id": "study009",
+ "model": "llama",
+ "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+ "n_passages": 5,
+ "n_passages_ok": 5,
+ "failures": [],
+ "records": [
+  {
+   "field": "hardware",
+   "value": "HRNet",
+   "evidence": "HRNet (Fig- ure 3 (a)) achieves a baseline of 64.4AP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "COCO",
+   "evidence": "Therefore, we only use one deconvo- lution module by default for the COCO dataset.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "null",
+   "evidence": "we will validate this on more datasets in our future work",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Ablation study on the effect of adding deconvolution module",
+   "evidence": "Effect of deconvolution module. We perform ablation study on the effect of adding deconvolution module to gener- ate higher resolution heatmaps.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Ablation study on each individual component",
+   "evidence": "To better understand the gain of the proposed components, we perform detailed ablation studies on each individual component.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "HRNet",
+   "evidence": "HRNet (Fig- ure 3 (a)) achieves a baseline of 64.4AP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "64.4",
+   "evidence": "HRNet (Fig- ure 3 (a)) achieves a baseline of 64.4AP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "66.0",
+   "evidence": "By adding one de- convolution module, the model achieves 66.0AP which is 1.6AP better",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.6",
+   "evidence": "By adding one de- convolution module, the model achieves 66.0AP which is 1.6AP better",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "HRNet-W32",
+   "evidence": "We perform experiments with larger back- bones HRNet-W40 and HRNet-W48.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "dependencies",
+   "value": "HRNet-W40",
+   "evidence": "We perform experiments with larger back- bones HRNet-W40 and HRNet-W48.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "dependencies",
+   "value": "HRNet-W48",
+   "evidence": "We perform experiments with larger back- bones HRNet-W40 and HRNet-W48.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "dependencies",
+   "value": "COCO",
+   "evidence": "Crowd- Pose has more crowded scenes than the COCO",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "HRNet-W32",
+   "evidence": "We perform experiments with larger back- bones HRNet-W40 and HRNet-W48.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "HRNet-W40",
+   "evidence": "We perform experiments with larger back- bones HRNet-W40 and HRNet-W48.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "HRNet-W48",
+   "evidence": "We perform experiments with larger back- bones HRNet-W40 and HRNet-W48.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "CrowdPose",
+   "evidence": "The CrowdPose [24] dataset consists of 20,000 images, containing about 80,000 persons.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet",
+   "evidence": "To answer this question, we train HigherHRNet with 640\u00d7640 and768\u00d7768",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.4",
+   "evidence": "We \ufb01nd that by increasing training image size to640, there is a signi\ufb01cant gain of 1.4AP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "null",
+   "evidence": "When we further change the training image size to 768, the overall AP does not change anymore.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "HigherHRNet-W48",
+   "evidence": "We train our best HigherHRNet-W48 model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "640\u00d7640",
+   "evidence": "All training pa- rameters follow COCO exactly and we use a crop size of 640\u00d7640for both training and testing.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "CrowdPose",
+   "evidence": "We train our best HigherHRNet-W48 model on the CrowdPose train and val setand report performance on the testset.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "COCO",
+   "evidence": "All training pa- rameters follow COCO exactly",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "HigherHRNet",
+   "evidence": "Our HigherHRNet out- performs na \u00a8\u0131ve top-down methods",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "na \u00a8\u0131ve top-down methods",
+   "evidence": "Our HigherHRNet out- performs na \u00a8\u0131ve top-down methods",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "SPPE",
+   "evidence": "Even without multi-scale test, HigherHRNet outperforms SPPE [24] by 0.5 in APH.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "global re\ufb01nement of top- down method [15]",
+   "evidence": "HigherHRNet also outperforms the previous best method [24] (which performs a global re\ufb01nement of top- down method [15]) by a healthy margin of 1.6 AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.6",
+   "evidence": "Our HigherHRNet out- performs na \u00a8\u0131ve top-down methods by a large margin of 6.6 AP.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.6",
+   "evidence": "HigherHRNet also outperforms the previous best method [24] (which performs a global re\ufb01nement of top- down method [15]) by a healthy margin of 1.6 AP",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "+1.8 AP",
+   "evidence": "most of the gain comes from APM(+1.8 AP) and APH (+1.5 AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "+1.5 AP",
+   "evidence": "most of the gain comes from APM(+1.8 AP) and APH (+1.5 AP)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.5",
+   "evidence": "Even without multi-scale test, HigherHRNet outperforms SPPE [24] by 0.5 in APH.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study009",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "hardware": {
+    "n": 15,
+    "has_evidence": 15,
+    "span_found": 5,
+    "value_in_span": 14,
+    "grounded": 4,
+    "span_any": 5,
+    "miss_unsupported": 10
+   },
+   "datasets": {
+    "n": 5,
+    "has_evidence": 5,
+    "span_found": 5,
+    "value_in_span": 4,
+    "grounded": 4,
+    "span_any": 5
+   },
+   "methods": {
+    "n": 8,
+    "has_evidence": 8,
+    "span_found": 8,
+    "value_in_span": 7,
+    "grounded": 7,
+    "span_any": 8
+   },
+   "evaluation_results": {
+    "n": 10,
+    "has_evidence": 10,
+    "span_found": 10,
+    "value_in_span": 9,
+    "grounded": 9,
+    "span_any": 10
+   },
+   "dependencies": {
+    "n": 4,
+    "has_evidence": 4,
+    "span_found": 4,
+    "value_in_span": 3,
+    "grounded": 3,
+    "span_any": 4
+   },
+   "hyperparameters": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 1,
+    "value_in_span": 2,
+    "grounded": 1,
+    "span_any": 1,
+    "miss_unsupported": 1
+   }
+  },
+  "total": {
+   "n": 44,
+   "has_evidence": 44,
+   "span_found": 33,
+   "value_in_span": 39,
+   "grounded": 28,
+   "span_any": 33,
+   "miss_unsupported": 11
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {}
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "HRNet",
+      "evidence": "HRNet (Fig- ure 3 (a)) achieves a baseline of 64.4AP."
+     },
+     {
+      "slot": "cpu_info",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "os",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "ram",
+      "value": "null",
+      "evidence": "null"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COCO",
+      "version": "null",
+      "evidence": "Therefore, we only use one deconvo- lution module by default for the COCO dataset."
+     },
+     {
+      "name": "null",
+      "version": "null",
+      "evidence": "we will validate this on more datasets in our future work"
+     }
+    ],
+    "methods": [
+     {
+      "name": "Ablation study on the effect of adding deconvolution module",
+      "evidence": "Effect of deconvolution module. We perform ablation study on the effect of adding deconvolution module to gener- ate higher resolution heatmaps."
+     },
+     {
+      "name": "Ablation study on each individual component",
+      "evidence": "To better understand the gain of the proposed components, we perform detailed ablation studies on each individual component."
+     },
+     {
+      "name": "HRNet",
+      "evidence": "HRNet (Fig- ure 3 (a)) achieves a baseline of 64.4AP."
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP",
+      "value": "64.4",
+      "split": "null",
+      "evidence": "HRNet (Fig- ure 3 (a)) achieves a baseline of 64.4AP."
+     },
+     {
+      "metric": "AP",
+      "value": "66.0",
+      "split": "null",
+      "evidence": "By adding one de- convolution module, the model achieves 66.0AP which is 1.6AP better"
+     },
+     {
+      "metric": "AP",
+      "value": "1.6",
+      "split": "null",
+      "evidence": "By adding one de- convolution module, the model achieves 66.0AP which is 1.6AP better"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {}
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "HRNet-W32",
+      "version": null,
+      "evidence": "We perform experiments with larger back- bones HRNet-W40 and HRNet-W48."
+     },
+     {
+      "name": "HRNet-W40",
+      "version": null,
+      "evidence": "We perform experiments with larger back- bones HRNet-W40 and HRNet-W48."
+     },
+     {
+      "name": "HRNet-W48",
+      "version": null,
+      "evidence": "We perform experiments with larger back- bones HRNet-W40 and HRNet-W48."
+     },
+     {
+      "name": "COCO",
+      "version": null,
+      "evidence": "Crowd- Pose has more crowded scenes than the COCO"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "HRNet-W32",
+      "evidence": "We perform experiments with larger back- bones HRNet-W40 and HRNet-W48."
+     },
+     {
+      "slot": "gpu_model",
+      "value": "HRNet-W40",
+      "evidence": "We perform experiments with larger back- bones HRNet-W40 and HRNet-W48."
+     },
+     {
+      "slot": "gpu_model",
+      "value": "HRNet-W48",
+      "evidence": "We perform experiments with larger back- bones HRNet-W40 and HRNet-W48."
+     },
+     {
+      "slot": "cpu_info",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "os",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "ram",
+      "value": "null",
+      "evidence": "null"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "CrowdPose",
+      "version": "20,000 images, containing about 80,000 persons",
+      "evidence": "The CrowdPose [24] dataset consists of 20,000 images, containing about 80,000 persons."
+     }
+    ],
+    "methods": [
+     {
+      "name": "HigherHRNet",
+      "evidence": "To answer this question, we train HigherHRNet with 640\u00d7640 and768\u00d7768"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP",
+      "value": "1.4",
+      "split": "null",
+      "evidence": "We \ufb01nd that by increasing training image size to640, there is a signi\ufb01cant gain of 1.4AP."
+     },
+     {
+      "metric": "AP",
+      "value": "null",
+      "split": "null",
+      "evidence": "When we further change the training image size to 768, the overall AP does not change anymore."
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "HigherHRNet-W48",
+      "evidence": "We train our best HigherHRNet-W48 model"
+     },
+     {
+      "slot": "cpu_info",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "os",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "ram",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "cuda_version",
+      "value": "null",
+      "evidence": "null"
+     }
+    ],
+    "hyperparameters": [
+     {
+      "name": "crop size",
+      "value": "640\u00d7640",
+      "evidence": "All training pa- rameters follow COCO exactly and we use a crop size of 640\u00d7640for both training and testing."
+     },
+     {
+      "name": "null",
+      "value": "null",
+      "evidence": "null"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "CrowdPose",
+      "version": "train and val setand testset",
+      "evidence": "We train our best HigherHRNet-W48 model on the CrowdPose train and val setand report performance on the testset."
+     },
+     {
+      "name": "COCO",
+      "version": "null",
+      "evidence": "All training pa- rameters follow COCO exactly"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HigherHRNet",
+      "evidence": "Our HigherHRNet out- performs na \u00a8\u0131ve top-down methods"
+     },
+     {
+      "name": "na \u00a8\u0131ve top-down methods",
+      "evidence": "Our HigherHRNet out- performs na \u00a8\u0131ve top-down methods"
+     },
+     {
+      "name": "SPPE",
+      "evidence": "Even without multi-scale test, HigherHRNet outperforms SPPE [24] by 0.5 in APH."
+     },
+     {
+      "name": "global re\ufb01nement of top- down method [15]",
+      "evidence": "HigherHRNet also outperforms the previous best method [24] (which performs a global re\ufb01nement of top- down method [15]) by a healthy margin of 1.6 AP"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "AP",
+      "value": "6.6",
+      "split": "null",
+      "evidence": "Our HigherHRNet out- performs na \u00a8\u0131ve top-down methods by a large margin of 6.6 AP."
+     },
+     {
+      "metric": "AP",
+      "value": "1.6",
+      "split": "null",
+      "evidence": "HigherHRNet also outperforms the previous best method [24] (which performs a global re\ufb01nement of top- down method [15]) by a healthy margin of 1.6 AP"
+     },
+     {
+      "metric": "APM",
+      "value": "+1.8 AP",
+      "split": "null",
+      "evidence": "most of the gain comes from APM(+1.8 AP) and APH (+1.5 AP)"
+     },
+     {
+      "metric": "APH",
+      "value": "+1.5 AP",
+      "split": "null",
+      "evidence": "most of the gain comes from APM(+1.8 AP) and APH (+1.5 AP)"
+     },
+     {
+      "metric": "APH",
+      "value": "0.5",
+      "split": "null",
+      "evidence": "Even without multi-scale test, HigherHRNet outperforms SPPE [24] by 0.5 in APH."
+     }
+    ]
+   }
+  }
+ ],
+ "passages": [
+  "HigherHRNet \u2713 \u2713 66.360.874.0 (d) HigherHRNet \u2713 \u2713 \u2713 66.961.075.7 (e) HigherHRNet \u2713 \u2713 \u2713 \u2713 67.161.576.1 Table 4. Ablation study of HigherHRNet\u2019s components on COCO2017 val dataset. MSR: multi-resolution supervision. feature concat.: feature concatenation. res. blocks: residual blocks. improvement comes from medium persons, where APMis improved from 57.1for HRNet to 61.0for HigherHRNet. These results show that HigherHRNet performs much better with small scales thanks to its higher resolution heatmaps. We also \ufb01nd the AP for large person pose does no drop. This is mainly because we also use smaller resolu- tion heatmaps for prediction. It demonstrates that 1) mak- ing prediction at higher resolution is bene\ufb01cial to bottom-up pose estimation and 2) scale-aware prediction is important. If we add a sequence of two deconvolution modules after HRNet to generate feature maps that is of the same resolu- tion as the input image, we observe that the performance decreases to 66.5AP from 66.9AP for adding only one de- convolution module. The improvement for medium person is marginal ( +0.1AP) but there is a large drop in the per- formance of large person ( \u22120.8AP). We hypothesize this is because the misalignment between feature map scale and object scales. Larger resolution",
+  "in the per- formance of large person ( \u22120.8AP). We hypothesize this is because the misalignment between feature map scale and object scales. Larger resolution feature maps (feature stride = 1) are good for detecting keypoints from even smaller persons but the small persons in COCO are not considered for pose estimation. Therefore, we only use one deconvo- lution module by default for the COCO dataset. But we would like to point out that the number of cascaded decon- volution modules should be dependent on datasets and we will validate this on more datasets in our future work. HigherHRNet gain breakdown. To better understand the gain of the proposed components, we perform detailed ablation studies on each individual component. Figure 3 il-lustrates all the architectures of our experiments. Results are shown in Table 4. Effect of deconvolution module. We perform ablation study on the effect of adding deconvolution module to gener- ate higher resolution heatmaps. For a fair comparison, we only use the highest resolution feature maps to gener- ate heatmaps for prediction (Figure 3 (b)). HRNet (Fig- ure 3 (a)) achieves a baseline of 64.4AP. By adding one de- convolution module, the model achieves 66.0AP which is 1.6AP better",
+  "for inference (Figure 3 (d)). Compared with Fig- 7 Training size AP APMAPL 512 67.1 61.5 76.1 640 68.5 64.3 75.3 768 68.5 64.9 73.8 Table 5. Ablation study of HigherHRNet with different training image size on COCO2017 val dataset. Backbone #Params GFLOPs AP APMAPL HRNet-W32 28.6 47.868.5 64.3 75.3 HRNet-W40 44.5 110.769.2 64.9 75.9 HRNet-W48 63.8 154.369.9 65.4 76.4 Table 6. Ablation study of HigherHRNet with different backbone onCOCO2017 val dataset. ure 3 (c) ( 66.3AP) that only uses the highest resolu- tion heatmaps for inference, applying heatmap aggrega- tion strategy achieves 66.9AP. Comparing method (d) and (e), the gain of heatmap aggregation comes from large person ( +1.7AP). And the performance of large person is even marginally better than predicting at lower resolu- tion (method (a)). It means that predicting heatmaps using heatmap aggregation strategy is truly scale-aware. Effect of extra residual blocks. We add 4 residual blocks in the deconvolution module and our best model achieves 67.1AP. Adding residual blocks can further re\ufb01ne the fea- ture maps and it increases AP for both medium and large persons equally. Training with larger image size. A natural question is can training with larger input size further improve perfor- mance?",
+  "both medium and large persons equally. Training with larger image size. A natural question is can training with larger input size further improve perfor- mance? To answer this question, we train HigherHRNet with 640\u00d7640 and768\u00d7768 and results are shown in Table 5, all three models are tested using the training im- age size. We \ufb01nd that by increasing training image size to640, there is a signi\ufb01cant gain of 1.4AP. Most of the gain comes from medium person while the performance of large person degrades slightly. When we further change the training image size to 768, the overall AP does not change anymore. We observe a marginal improvement in medium person along with large degradation in large person. Larger backbone. In previous experiments, we use HRNet-W32 (1/4 resolution feature map has 32 channels) as backbone. We perform experiments with larger back- bones HRNet-W40 and HRNet-W48. Results are shown in Table 6. We \ufb01nd using larger backbone consistently im- proves performance for both medium and large person. 4.3. CrowdPose The CrowdPose [24] dataset consists of 20,000 images, containing about 80,000 persons. The training, validation and testing subset are split in proportional to 5:1:4. Crowd- Pose has more crowded scenes than the COCO",
+  "We train our best HigherHRNet-W48 model on the CrowdPose train and val setand report performance on the testset. All training pa- rameters follow COCO exactly and we use a crop size of 640\u00d7640for both training and testing. Results are shown in Table 7. Our HigherHRNet out- performs na \u00a8\u0131ve top-down methods by a large margin of 6.6 AP. HigherHRNet also outperforms the previous best method [24] (which performs a global re\ufb01nement of top- down method [15]) by a healthy margin of 1.6 AP and most of the gain comes from APM(+1.8 AP) and APH (+1.5 AP), which contains images with the most crowd. Even without multi-scale test, HigherHRNet outperforms SPPE [24] by 0.5 in APH."
+ ]
+}

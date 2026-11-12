@@ -1,0 +1,1145 @@
+{
+ "study_id": "study017",
+ "model": "qwen",
+ "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+ "n_passages": 6,
+ "n_passages_ok": 6,
+ "failures": [],
+ "records": [
+  {
+   "field": "datasets",
+   "value": "PanNuke",
+   "evidence": "HistoCartography integrates two checkpoints for the state-of-the-art HoVerNet model (Graham et al., 2019) trained on PanNuke (Gamper et al., 2020)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 1
+  },
+  {
+   "field": "datasets",
+   "value": "MoNuSac",
+   "evidence": "HistoCartography integrates two checkpoints for the state-of-the-art HoVerNet model (Graham et al., 2019) trained on MoNuSac (Ruchika et al., 2020)",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.796,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "HoVerNet",
+   "evidence": "HistoCartography integrates two checkpoints for the state-of-the-art HoVerNet model (Graham et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Simple Linear Iterative Clustering (SLIC)",
+   "evidence": "First, the tissue is oversegmented into homogeneous superpixels using Simple Linear Iterative Clustering (SLIC) (Achanta et al., 2012) algorithm",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 1
+  },
+  {
+   "field": "dependencies",
+   "value": "DGL",
+   "evidence": "All the graph modules are implemented using DGL (Wang et al., 2019), a state-of-the-art library for GNNs built around PyTorch.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM",
+   "evidence": "GraphGrad-CAM (Selvaraju et al., 2017; Pope et al., 2019)",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.684,
+   "fuzzy_token_recall": 0.833,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphGrad-CAM++",
+   "evidence": "GraphGrad-CAM++ (Chattopadhay et al., 2018; Jaume et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GnnExplainer",
+   "evidence": "GnnExplainer (Ying et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "GraphLRP",
+   "evidence": "GraphLRP (Schwarzenberg et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 2
+  },
+  {
+   "field": "hardware",
+   "value": "NVIDIA P100",
+   "evidence": "a NVIDIA P100 GPU",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "single-core POWER8 processor",
+   "evidence": "a single-core POWER8 processor",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "HistoCartography",
+   "evidence": "We benchmark HistoCartography in terms of run-time and performance",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.77 seconds",
+   "evidence": "Vahadane Stain Norm 1.77",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.46 seconds",
+   "evidence": "Vahadane Stain Norm 6 .46",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.8,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "29.03 seconds",
+   "evidence": "Vahadane Stain Norm 29 .03",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.769,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "30.67 seconds",
+   "evidence": "Vahadane Stain Norm 30.67",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.8,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "68.27 seconds",
+   "evidence": "Vahadane Stain Norm 68 .27",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.769,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "186.10 seconds",
+   "evidence": "Vahadane Stain Norm 186 .10",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.778,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.80 seconds",
+   "evidence": "Macenko Stain Norm 0.80",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "2.86 seconds",
+   "evidence": "Macenko Stain Norm 2 .86",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.792,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "11.19 seconds",
+   "evidence": "Macenko Stain Norm 11 .19",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.76,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "15.98 seconds",
+   "evidence": "Macenko Stain Norm 15.98",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.792,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "32.37 seconds",
+   "evidence": "Macenko Stain Norm 32 .37",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.76,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "81.72 seconds",
+   "evidence": "Macenko Stain Norm 81 .72",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.76,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.04 seconds",
+   "evidence": "Tissue Mask Detection - - - 1.04",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "2.11 seconds",
+   "evidence": "Tissue Mask Detection - - - 2 .11",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.848,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "8.09 seconds",
+   "evidence": "Tissue Mask Detection - - - 8 .09",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.848,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.24 seconds",
+   "evidence": "Feature Cube Extraction 0.24",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.61 seconds",
+   "evidence": "Feature Cube Extraction 1 .61",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.828,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "5.92 seconds",
+   "evidence": "Feature Cube Extraction 5 .92",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.828,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "5.83 seconds",
+   "evidence": "Feature Cube Extraction 5.83",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.857,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "11.77 seconds",
+   "evidence": "Feature Cube Extraction 11 .77",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.8,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "30.21 seconds",
+   "evidence": "Feature Cube Extraction 30 .21",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.8,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "2.51 seconds",
+   "evidence": "Cell-Graph Generation 2.51",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "13.33 seconds",
+   "evidence": "Cell-Graph Generation 13 .33",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.786,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "50.26 seconds",
+   "evidence": "Cell-Graph Generation 50 .26",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.786,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "4.14 seconds",
+   "evidence": "Tissue-Graph Generation 4.14",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "21.30 seconds",
+   "evidence": "Tissue-Graph Generation 21 .30",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.8,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "83.66 seconds",
+   "evidence": "Tissue-Graph Generation 83 .66",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.8,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "39.18 seconds",
+   "evidence": "Tissue-Graph Generation 39.18",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.828,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "93.26 seconds",
+   "evidence": "Tissue-Graph Generation 93 .26",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.8,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "276.71 seconds",
+   "evidence": "Tissue-Graph Generation 276 .71",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.774,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.028 seconds",
+   "evidence": "MLCell-Graph Model 0.028",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.033 seconds",
+   "evidence": "MLCell-Graph Model 0 .033",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.8,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "0.040 seconds",
+   "evidence": "MLCell-Graph Model 0 .040",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.8,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "post-hoc feature attribution methods",
+   "evidence": "applying post-hoc feature attribution methods on trained cell-graph model.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "BRACS",
+   "evidence": "Classi\ufb01cation is performed on BRACS (Pati et al., 2021)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "BACH",
+   "evidence": "Classi\ufb01cation is performed on BRACS (Pati et al., 2021) and BACH (Aresta et al., 2019)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "UZH",
+   "evidence": "Segmentation is performed using SegGini (Anklin et al., 2021) to delineate Gleason patterns in prostate cancer images from UZH (Zhong et al., 2017)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "SICAPv2",
+   "evidence": "Segmentation is performed using SegGini (Anklin et al., 2021) to delineate Gleason patterns in prostate cancer images from UZH (Zhong et al., 2017) and SICAPv2 (Silva-Rodr\u00edguez et al., 2020)",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.879,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "HistoCartography",
+   "evidence": "We evaluate on various image types, i.e., tumor RoIs, tissue microarrays, and whole-slides, to highlight the scalability of entity-graphs in HistoCartography to arbitrary image dimensions",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "SegGini",
+   "evidence": "Segmentation is performed using SegGini (Anklin et al., 2021) to delineate Gleason patterns in prostate cancer images from UZH (Zhong et al., 2017) and SICAPv2 (Silva-Rodr\u00edguez et al., 2020)",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.879,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "GraphGradCAM",
+   "evidence": "Figure 2 presents the outcome of GraphGradCAM module in HistoCartography to interpret a cell-graph model",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": null,
+   "evidence": "the performance is measures by weighted-F1 score",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 5
+  },
+  {
+   "field": "evaluation_results",
+   "value": null,
+   "evidence": "the performance is measured by average Dice score",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study017",
+   "slug": "qwen-qwen2-5-14b-instruct-gptq-int8",
+   "passage_index": 5
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "datasets": {
+    "n": 6,
+    "has_evidence": 6,
+    "span_found": 4,
+    "value_in_span": 6,
+    "grounded": 4,
+    "span_any": 4,
+    "miss_near_verbatim": 2
+   },
+   "methods": {
+    "n": 11,
+    "has_evidence": 11,
+    "span_found": 9,
+    "value_in_span": 11,
+    "grounded": 9,
+    "span_any": 9,
+    "miss_near_verbatim": 2
+   },
+   "dependencies": {
+    "n": 1,
+    "has_evidence": 1,
+    "span_found": 1,
+    "value_in_span": 1,
+    "grounded": 1,
+    "span_any": 1
+   },
+   "hardware": {
+    "n": 2,
+    "has_evidence": 2,
+    "span_found": 2,
+    "value_in_span": 2,
+    "grounded": 2,
+    "span_any": 2
+   },
+   "evaluation_results": {
+    "n": 35,
+    "has_evidence": 35,
+    "span_found": 9,
+    "value_in_span": 0,
+    "grounded": 0,
+    "span_any": 9,
+    "miss_near_verbatim": 26
+   }
+  },
+  "total": {
+   "n": 55,
+   "has_evidence": 55,
+   "span_found": 25,
+   "value_in_span": 20,
+   "grounded": 16,
+   "span_any": 25,
+   "miss_near_verbatim": 30
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {}
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "PanNuke",
+      "version": null,
+      "evidence": "HistoCartography integrates two checkpoints for the state-of-the-art HoVerNet model (Graham et al., 2019) trained on PanNuke (Gamper et al., 2020)"
+     },
+     {
+      "name": "MoNuSac",
+      "version": null,
+      "evidence": "HistoCartography integrates two checkpoints for the state-of-the-art HoVerNet model (Graham et al., 2019) trained on MoNuSac (Ruchika et al., 2020)"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HoVerNet",
+      "evidence": "HistoCartography integrates two checkpoints for the state-of-the-art HoVerNet model (Graham et al., 2019)"
+     },
+     {
+      "name": "Simple Linear Iterative Clustering (SLIC)",
+      "evidence": "First, the tissue is oversegmented into homogeneous superpixels using Simple Linear Iterative Clustering (SLIC) (Achanta et al., 2012) algorithm"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "DGL",
+      "version": null,
+      "evidence": "All the graph modules are implemented using DGL (Wang et al., 2019), a state-of-the-art library for GNNs built around PyTorch."
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "GraphGrad-CAM",
+      "evidence": "GraphGrad-CAM (Selvaraju et al., 2017; Pope et al., 2019)"
+     },
+     {
+      "name": "GraphGrad-CAM++",
+      "evidence": "GraphGrad-CAM++ (Chattopadhay et al., 2018; Jaume et al., 2021)"
+     },
+     {
+      "name": "GnnExplainer",
+      "evidence": "GnnExplainer (Ying et al., 2019)"
+     },
+     {
+      "name": "GraphLRP",
+      "evidence": "GraphLRP (Schwarzenberg et al., 2019)"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "NVIDIA P100",
+      "evidence": "a NVIDIA P100 GPU"
+     },
+     {
+      "slot": "cpu_info",
+      "value": "single-core POWER8 processor",
+      "evidence": "a single-core POWER8 processor"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "HistoCartography",
+      "evidence": "We benchmark HistoCartography in terms of run-time and performance"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "run-time",
+      "value": "1.77 seconds",
+      "split": "Tumor RoI",
+      "evidence": "Vahadane Stain Norm 1.77"
+     },
+     {
+      "metric": "run-time",
+      "value": "6.46 seconds",
+      "split": "WSI Size 10002",
+      "evidence": "Vahadane Stain Norm 6 .46"
+     },
+     {
+      "metric": "run-time",
+      "value": "29.03 seconds",
+      "split": "WSI Size 25000",
+      "evidence": "Vahadane Stain Norm 29 .03"
+     },
+     {
+      "metric": "run-time",
+      "value": "30.67 seconds",
+      "split": "WSI Size 25000",
+      "evidence": "Vahadane Stain Norm 30.67"
+     },
+     {
+      "metric": "run-time",
+      "value": "68.27 seconds",
+      "split": "WSI Size 27500",
+      "evidence": "Vahadane Stain Norm 68 .27"
+     },
+     {
+      "metric": "run-time",
+      "value": "186.10 seconds",
+      "split": "WSI Size 11000",
+      "evidence": "Vahadane Stain Norm 186 .10"
+     },
+     {
+      "metric": "run-time",
+      "value": "0.80 seconds",
+      "split": "Tumor RoI",
+      "evidence": "Macenko Stain Norm 0.80"
+     },
+     {
+      "metric": "run-time",
+      "value": "2.86 seconds",
+      "split": "WSI Size 10002",
+      "evidence": "Macenko Stain Norm 2 .86"
+     },
+     {
+      "metric": "run-time",
+      "value": "11.19 seconds",
+      "split": "WSI Size 25000",
+      "evidence": "Macenko Stain Norm 11 .19"
+     },
+     {
+      "metric": "run-time",
+      "value": "15.98 seconds",
+      "split": "WSI Size 25000",
+      "evidence": "Macenko Stain Norm 15.98"
+     },
+     {
+      "metric": "run-time",
+      "value": "32.37 seconds",
+      "split": "WSI Size 27500",
+      "evidence": "Macenko Stain Norm 32 .37"
+     },
+     {
+      "metric": "run-time",
+      "value": "81.72 seconds",
+      "split": "WSI Size 11000",
+      "evidence": "Macenko Stain Norm 81 .72"
+     },
+     {
+      "metric": "run-time",
+      "value": "1.04 seconds",
+      "split": "WSI Size 25000",
+      "evidence": "Tissue Mask Detection - - - 1.04"
+     },
+     {
+      "metric": "run-time",
+      "value": "2.11 seconds",
+      "split": "WSI Size 25000",
+      "evidence": "Tissue Mask Detection - - - 2 .11"
+     },
+     {
+      "metric": "run-time",
+      "value": "8.09 seconds",
+      "split": "WSI Size 11000",
+      "evidence": "Tissue Mask Detection - - - 8 .09"
+     },
+     {
+      "metric": "run-time",
+      "value": "0.24 seconds",
+      "split": "Tumor RoI",
+      "evidence": "Feature Cube Extraction 0.24"
+     },
+     {
+      "metric": "run-time",
+      "value": "1.61 seconds",
+      "split": "WSI Size 10002",
+      "evidence": "Feature Cube Extraction 1 .61"
+     },
+     {
+      "metric": "run-time",
+      "value": "5.92 seconds",
+      "split": "WSI Size 25000",
+      "evidence": "Feature Cube Extraction 5 .92"
+     },
+     {
+      "metric": "run-time",
+      "value": "5.83 seconds",
+      "split": "WSI Size 25000",
+      "evidence": "Feature Cube Extraction 5.83"
+     },
+     {
+      "metric": "run-time",
+      "value": "11.77 seconds",
+      "split": "WSI Size 27500",
+      "evidence": "Feature Cube Extraction 11 .77"
+     },
+     {
+      "metric": "run-time",
+      "value": "30.21 seconds",
+      "split": "WSI Size 11000",
+      "evidence": "Feature Cube Extraction 30 .21"
+     },
+     {
+      "metric": "run-time",
+      "value": "2.51 seconds",
+      "split": "Tumor RoI",
+      "evidence": "Cell-Graph Generation 2.51"
+     },
+     {
+      "metric": "run-time",
+      "value": "13.33 seconds",
+      "split": "WSI Size 10002",
+      "evidence": "Cell-Graph Generation 13 .33"
+     },
+     {
+      "metric": "run-time",
+      "value": "50.26 seconds",
+      "split": "WSI Size 25000",
+      "evidence": "Cell-Graph Generation 50 .26"
+     },
+     {
+      "metric": "run-time",
+      "value": "4.14 seconds",
+      "split": "Tumor RoI",
+      "evidence": "Tissue-Graph Generation 4.14"
+     },
+     {
+      "metric": "run-time",
+      "value": "21.30 seconds",
+      "split": "WSI Size 10002",
+      "evidence": "Tissue-Graph Generation 21 .30"
+     },
+     {
+      "metric": "run-time",
+      "value": "83.66 seconds",
+      "split": "WSI Size 25000",
+      "evidence": "Tissue-Graph Generation 83 .66"
+     },
+     {
+      "metric": "run-time",
+      "value": "39.18 seconds",
+      "split": "WSI Size 25000",
+      "evidence": "Tissue-Graph Generation 39.18"
+     },
+     {
+      "metric": "run-time",
+      "value": "93.26 seconds",
+      "split": "WSI Size 27500",
+      "evidence": "Tissue-Graph Generation 93 .26"
+     },
+     {
+      "metric": "run-time",
+      "value": "276.71 seconds",
+      "split": "WSI Size 11000",
+      "evidence": "Tissue-Graph Generation 276 .71"
+     },
+     {
+      "metric": "run-time",
+      "value": "0.028 seconds",
+      "split": "Tumor RoI",
+      "evidence": "MLCell-Graph Model 0.028"
+     },
+     {
+      "metric": "run-time",
+      "value": "0.033 seconds",
+      "split": "WSI Size 10002",
+      "evidence": "MLCell-Graph Model 0 .033"
+     },
+     {
+      "metric": "run-time",
+      "value": "0.040 seconds",
+      "split": "WSI Size 25000",
+      "evidence": "MLCell-Graph Model 0 .040"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "post-hoc feature attribution methods",
+      "evidence": "applying post-hoc feature attribution methods on trained cell-graph model."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "BRACS",
+      "version": null,
+      "evidence": "Classi\ufb01cation is performed on BRACS (Pati et al., 2021)"
+     },
+     {
+      "name": "BACH",
+      "version": null,
+      "evidence": "Classi\ufb01cation is performed on BRACS (Pati et al., 2021) and BACH (Aresta et al., 2019)"
+     },
+     {
+      "name": "UZH",
+      "version": null,
+      "evidence": "Segmentation is performed using SegGini (Anklin et al., 2021) to delineate Gleason patterns in prostate cancer images from UZH (Zhong et al., 2017)"
+     },
+     {
+      "name": "SICAPv2",
+      "version": null,
+      "evidence": "Segmentation is performed using SegGini (Anklin et al., 2021) to delineate Gleason patterns in prostate cancer images from UZH (Zhong et al., 2017) and SICAPv2 (Silva-Rodr\u00edguez et al., 2020)"
+     }
+    ],
+    "methods": [
+     {
+      "name": "HistoCartography",
+      "evidence": "We evaluate on various image types, i.e., tumor RoIs, tissue microarrays, and whole-slides, to highlight the scalability of entity-graphs in HistoCartography to arbitrary image dimensions"
+     },
+     {
+      "name": "SegGini",
+      "evidence": "Segmentation is performed using SegGini (Anklin et al., 2021) to delineate Gleason patterns in prostate cancer images from UZH (Zhong et al., 2017) and SICAPv2 (Silva-Rodr\u00edguez et al., 2020)"
+     },
+     {
+      "name": "GraphGradCAM",
+      "evidence": "Figure 2 presents the outcome of GraphGradCAM module in HistoCartography to interpret a cell-graph model"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "weighted-F1 score",
+      "value": null,
+      "split": null,
+      "evidence": "the performance is measures by weighted-F1 score"
+     },
+     {
+      "metric": "average Dice score",
+      "value": null,
+      "split": null,
+      "evidence": "the performance is measured by average Dice score"
+     }
+    ]
+   }
+  }
+ ],
+ "passages": [
+  "compatibility, and availability in extant libraries for individual module. I,M,X,G,P and Sdenote an image (np.array (Harris et al., 2020)), a mask (np.array), features (torch.Tensor (Paszke et al., 2019)), a graph (DGLGraph (Wang et al., 2019)), predictions (torch.Tensor) and importance scores (torch.Tensor), respectively. Function Module Input Output Existing CPU GPUPreprocessingVahadane Stain Norm I I \u0013 \u0013 \u0017 Macenko Stain Norm I I \u0013 \u0013 \u0017 Tissue Mask Detection I M \u0013 \u0013 \u0017 Nuclei Detection I M \u0013 \u0013 \u0013 Nuclei Concepts I,M M \u0013 \u0013 \u0017 Tissue Component Detection I M \u0017 \u0013 \u0017 Deep Feature Extraction I,M X \u0017 \u0013 \u0013 Feature Cube Extraction I X \u0017 \u0013 \u0013 k-NN Graph Building X,M G \u0017 \u0013 \u0017 RAG Graph Building X,M G \u0017 \u0013 \u0017MLCell-Graph Model G P \u0017 \u0013 \u0013 Tissue-Graph Model G P \u0017 \u0013 \u0013 HACT Model G,G,X P \u0017 \u0013 \u0013ExplainersGnnExplainer G S \u0017 \u0013 \u0013 GraphGrad-CAM G S \u0017 \u0013 \u0013 GraphGrad-CAM++ G S \u0017 \u0013 \u0013 GraphLRP G S \u0017 \u0013 \u0013 Tissue Detection: A WSI usually includes signi\ufb01cant non-tissue region. Identifying the tissue regions can con\ufb01ne the analysis and reduce computational e\ufb00ort. The tissue detec- tor in HistoCartography iteratively applies Gaussian smoothing",
+  "signi\ufb01cant non-tissue region. Identifying the tissue regions can con\ufb01ne the analysis and reduce computational e\ufb00ort. The tissue detec- tor in HistoCartography iteratively applies Gaussian smoothing and Otsu thresholding until the mean of non-tissue pixels is below a threshold. This module is common across Histolab ,Syntax ,HistomicsTK andQuPath . Nuclei detection: This module enables to segment and locate nuclei in H&E images. Though it is well-studied in computational pathology, only a few public implementations are available. For instance, QuPath allows to detect nuclei but requires model train- ing and \ufb01ne-tuning. While providing \ufb02exibility, the module includes only elementary ML methods. HistoCartography integrates two checkpoints for the state-of-the-art HoVerNet model (Graham et al., 2019) trained on PanNuke (Gamper et al., 2020) and MoNuSac (Ruchika et al., 2020) datasets for nuclei segmentation and classi\ufb01cation. Tissue Component Detection: HistoCartography includes an unsupervised super- pixel based approach to segment tissue regions. First, the tissue is oversegmented into homogeneous superpixels using Simple Linear Iterative Clustering (SLIC) (Achanta et al., 2012) algorithm. Then, neighboring superpixels are hierarchically merged using color simi- larity to denote meaningful tissue regions, e.g., epithelium and stroma regions. Superpixels depicting tissue regions are used by Bejnordi et al. (2015); Pati et al. (2020,",
+  "the blueprints to accelerate the development of graph-based models in computational pathology. All the graph modules are implemented using DGL (Wang et al., 2019), a state-of-the-art library for GNNs built around PyTorch. 3.3 Explainability Module HistoCartography includes four post-hoc feature attribution graph explainers, that can generate node-level saliency maps to highlight the node-wise contribution towards an output task. Namely, the library includes two gradient-based explainers ( GraphGrad-CAM (Sel- varaju et al., 2017; Pope et al., 2019) and GraphGrad-CAM++ (Chattopadhay et al., 2018; Jaume et al., 2021)), a node pruning-based explainer ( GnnExplainer (Ying et al., 2019)), and a layer-wise relevance propagation explainer ( GraphLRP (Schwarzenberg et al., 2019)). The saliency map can be visualized by overlaying the node importances on the input image (see Figure 2). Alternatively, entities with high importances can be extracted and studied independently to assess their relevance (Jaume et al., 2021). 3.4 Pipeline Runner To facilitate an easy-to-use and human-readable development, HistoCartography in- cludes a pipeline runner. It allows to de\ufb01ne a series of pipeline steps along with loading and saving utilities to reduce boilerplate code. 4. Benchmarking HistoCartography We benchmark HistoCartography in terms of run-time and performance for various histopathology tasks, i.e., stain normalization, tissue",
+  "utilities to reduce boilerplate code. 4. Benchmarking HistoCartography We benchmark HistoCartography in terms of run-time and performance for various histopathology tasks, i.e., stain normalization, tissue detection, tumor classi\ufb01cation and seg- mentation etc., on images of varying dimensions. The CPU and GPU compatible modules are assessed on a single-core POWER8 processor and a NVIDIA P100 GPU, respectively. 4.1 Computational Time Analyzing the computational time for processing a histology image is imperative. We thor- oughly analyze the run-time of HistoCartography modules on a set of Regions of Interest (RoIs) and WSIs. The analyses are presented in Table 2, and a comprehensive extension 6 Table 2: Run time analysis of HistoCartography core functionalities (in seconds). Functionalities Modules Tumor RoI WSI Size 1000225002500025000275002110002PreprocessingVahadane Stain Norm 1.77 6 .46 29 .03 30.67 68 .27 186 .10 Macenko Stain Norm 0.80 2 .86 11 .19 15.98 32 .37 81 .72 Tissue Mask Detection - - - 1.04 2 .11 8 .09 Feature Cube Extraction 0.24 1 .61 5 .92 5.83 11 .77 30 .21 Cell-Graph Generation 2.51 13 .33 50 .26 - - - Tissue-Graph Generation 4.14 21 .30 83 .66 39.18 93 .26 276 .71MLCell-Graph Model 0.028 0 .033 0 .040 - - - Tissue-Graph",
+  "interpret a cell-graph model. This module renders per-image explanations in terms of node- level saliency maps by applying post-hoc feature attribution methods on trained cell-graph model. Further, the cell-graph model can be interpreted by characterizing the highlighted important nuclei per-image, as shown in Figure 2. 8 5. Conclusion We introduced HistoCartography , the \ufb01rst open source library, to the best of our knowl- edge, to facilitate graph analytics, i.e., graph representation, learning, and explainability, in computational pathology. It can potentially enable researchers to develop entity-graph based pathology work\ufb02ows by leveraging the inbuilt helpers. As the library is built on python, the deep learning researchers can seamlessly customize and integrate the func- tionalities into their task-speci\ufb01c work\ufb02ows. HistoCartography is constantly growing with new functionalities and improved implementations, aiming to promote the adoption of graph-based analysis in computational pathology. References R. Achanta et al. Slic superpixels compared to state-of-the-art superpixel methods. In IEEE Transactions on Pattern Analysis and Machine Intelligence , volume 34, pages 2274\u20132282, 2012. M. Adnan et al. Representation learning of histopathology images using graph neural networks. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR) Workshops , pages 4254\u20134261, 2020. D. Ahmedt-Aristizabal et al. A survey on graph-based",
+  "121\u00d7106(10\u00d7) 4 44 .3\u00b12.0 - UZH SegGini TMA 9 .6\u00d7106(40\u00d7) 4 66 .0\u00b13.1 - Figure 2: Qualitative explanations of sample breast RoIs: (a) Benign, (b) ADH, (c) DCIS. (d, e, f) highlight the ten most important nuclei for the respective samples. 4.2 Performance Benchmark Table 3 benchmarks the performance of HistoCartography for classi\ufb01cation and segmen- tation tasks. Classi\ufb01cation is performed on BRACS (Pati et al., 2021) and BACH (Aresta et al., 2019) datasets to characterize breast tumors using cell-graph model, tissue-graph model, and HACT-Net (Pati et al., 2021), and the performance is measures by weighted-F1 score. Segmentation is performed using SegGini (Anklin et al., 2021) to delineate Gleason patterns in prostate cancer images from UZH (Zhong et al., 2017) and SICAPv2 (Silva- Rodr\u00b4 \u0131guez et al., 2020), and the performance is measured by average Dice score. We evaluate on various image types, i.e., tumor RoIs, tissue microarrays, and whole-slides, to highlight the scalability of entity-graphs in HistoCartography to arbitrary image dimensions. 4.3 Qualitative Explanations Figure 2 presents the outcome of GraphGradCAM module in HistoCartography to interpret a cell-graph model. This module renders per-image explanations in terms of node- level saliency maps by applying post-hoc feature attribution methods on trained cell-graph"
+ ]
+}

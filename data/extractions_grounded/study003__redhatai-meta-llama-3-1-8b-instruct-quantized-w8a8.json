@@ -1,0 +1,2861 @@
+{
+ "study_id": "study003",
+ "model": "llama",
+ "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+ "n_passages": 9,
+ "n_passages_ok": 9,
+ "failures": [],
+ "records": [
+  {
+   "field": "dependencies",
+   "value": "Transformer",
+   "evidence": "Transformer-based feature extractors",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "random_seeds",
+   "value": "16",
+   "evidence": "each box is cropped to W= 200 andH= 200 from the input samples and randomly positioned on a square canvas.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "hardware",
+   "value": "\u00d74",
+   "evidence": "Stage2 \u00d74 \u00d72 \u00d71",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "hardware",
+   "value": "\u00d72",
+   "evidence": "Stage2 \u00d74 \u00d72 \u00d71",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "hardware",
+   "value": "\u00d71",
+   "evidence": "Stage2 \u00d74 \u00d72 \u00d71",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "hardware",
+   "value": "\u00d74",
+   "evidence": "Stage1 Stage3 Stage4 Patch PartitionVisual Features Deep Fusion fForward Backward Forward & Fusion Gradient Restriction Combination",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "hardware",
+   "value": "\u00d72",
+   "evidence": "Stage1 Stage3 Stage4 Patch PartitionVisual Features Deep Fusion fForward Backward Forward & Fusion Gradient Restriction Combination",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "hardware",
+   "value": "\u00d71",
+   "evidence": "Stage1 Stage3 Stage4 Patch PartitionVisual Features Deep Fusion fForward Backward Forward & Fusion Gradient Restriction Combination",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "hyperparameters",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "datasets",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "APG",
+   "evidence": "that incorporates APG and SFR modules",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "SFR",
+   "evidence": "that incorporates APG and SFR modules",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "methods",
+   "value": "AGP",
+   "evidence": "with SFR and AGP modules",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 0
+  },
+  {
+   "field": "hardware",
+   "value": "ResNet50",
+   "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "ResNet101",
+   "evidence": "Faster R-CNN ResNet101 96.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "Swin-L",
+   "evidence": "Faster R-CNN Swin-L 99.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "floating point operations (FLOPs)",
+   "evidence": "To verify this point, we present the results of detection and segmentation measured in floating point operations (FLOPs)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "SINet",
+   "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "SegMaR",
+   "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "PreyNet",
+   "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "ZoomNet",
+   "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "FSEL",
+   "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Faster R-CNN",
+   "evidence": "Faster R-CNN ResNet50 95.7",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Faster R-CNN",
+   "evidence": "Faster R-CNN ResNet101 96.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Faster R-CNN",
+   "evidence": "Faster R-CNN Swin-L 99.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "methods",
+   "value": "Mask R-CNN",
+   "evidence": "For a fair comparison, we select detection (Faster R-CNN) and segmentation (Mask R-CNN) frameworks",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "77.0",
+   "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "81.1",
+   "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "81.0",
+   "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "83.5",
+   "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "87.3",
+   "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "95.7",
+   "evidence": "Faster R-CNN ResNet50 95.7",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "96.1",
+   "evidence": "Faster R-CNN ResNet101 96.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "99.1",
+   "evidence": "Faster R-CNN Swin-L 99.1",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "null",
+   "evidence": "coco-style [55] mAP (IoU thresholds of .50:.05:.95)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "null",
+   "evidence": "coco-style [55] mAP (IoU thresholds of .50:.05:.95)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "null",
+   "evidence": "coco-style [55] mAP (IoU thresholds of .50:.05:.95)",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "evaluation_results",
+   "value": "null",
+   "evidence": "indicators [55], which provide an average measure of accuracy under various IoU thresholds for overlapping associations",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 1
+  },
+  {
+   "field": "random_seeds",
+   "value": "16",
+   "evidence": "We then sequentially select 16 boxes at a time for canvas filling with new label settings.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 2
+  },
+  {
+   "field": "hardware",
+   "value": "GPU",
+   "evidence": "this approach requires additional GPU usage.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 2
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 2
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 2
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 2
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 2
+  },
+  {
+   "field": "datasets",
+   "value": "dataset",
+   "evidence": "We gather all the boxes from the entire dataset",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "randomly shuffle",
+   "evidence": "We then sequentially select 16 boxes at a time for canvas filling with new label settings.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "canvas filling",
+   "evidence": "We then sequentially select 16 boxes at a time for canvas filling with new label settings.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 2
+  },
+  {
+   "field": "methods",
+   "value": "sequential selection",
+   "evidence": "We then sequentially select 16 boxes at a time for canvas filling with new label settings.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 2
+  },
+  {
+   "field": "dependencies",
+   "value": "MMDetection",
+   "evidence": "[54]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "random_seeds",
+   "value": "10",
+   "evidence": "train 10 groups of random seeds",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "0.0003",
+   "evidence": "an initial learning rate of 0.0003",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hyperparameters",
+   "value": "0.05",
+   "evidence": "a momentum of 0.05",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "RCOD data",
+   "evidence": "our proposed datasets",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "datasets",
+   "value": "coco-style",
+   "evidence": "coco-style [55]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "methods",
+   "value": "AdamW",
+   "evidence": "we employ the AdamW optimizer",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "evaluation_results",
+   "value": "null",
+   "evidence": "coco-style [55] mAP (IoU",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 3
+  },
+  {
+   "field": "hardware",
+   "value": "GLIP tiny model",
+   "evidence": "In addition, we introduce an adapter module composed of two 2-dimensional convolutional layers immediately after the feature extractor from the GLIP tiny model [9].",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "hyperparameters",
+   "value": "hard",
+   "evidence": "This finding suggests that fine-tuning the final layer parameters makes it hard to effectively capture these easily confused features since the foreground and background of camouflaged objects are extremely similar.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "datasets",
+   "value": "COD",
+   "evidence": "COD tasks.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "methods",
+   "value": "GLIP+Adapter",
+   "evidence": "However, compared with the GLIP model, GLIP+Adapter fails to adapt to the COD task and forgets the prior knowledge of the large model, as shown in Table VII.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 4
+  },
+  {
+   "field": "dependencies",
+   "value": "swin-transformer",
+   "evidence": "The current large models for object detection utilize the swin-transformer [10] as the feature extractor and FPN [52] for feature refinement.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 5
+  },
+  {
+   "field": "dependencies",
+   "value": "FPN",
+   "evidence": "The current large models for object detection utilize the swin-transformer [10] as the feature extractor and FPN [52] for feature refinement.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 5
+  },
+  {
+   "field": "dependencies",
+   "value": "focal loss",
+   "evidence": "In RCOD, we adopt [49] as our contrastive loss Lc, GIoU [50] as our Localization lossLbbox, and focal loss [51] as our classification loss Lcls.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 5
+  },
+  {
+   "field": "dependencies",
+   "value": "contrastive loss",
+   "evidence": "In RCOD, we adopt [49] as our contrastive loss Lc, GIoU [50] as our Localization lossLbbox, and focal loss [51] as our classification loss Lcls.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 5
+  },
+  {
+   "field": "dependencies",
+   "value": "Localization loss",
+   "evidence": "In RCOD, we adopt [49] as our contrastive loss Lc, GIoU [50] as our Localization lossLbbox, and focal loss [51] as our classification loss Lcls.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 5
+  },
+  {
+   "field": "hardware",
+   "value": "swin-transformer",
+   "evidence": "The current large models for object detection utilize the swin-transformer [10] as the feature extractor and FPN [52] for feature refinement.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 5
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 5
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 5
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 5
+  },
+  {
+   "field": "hyperparameters",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 5
+  },
+  {
+   "field": "datasets",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 5
+  },
+  {
+   "field": "methods",
+   "value": "SFR module",
+   "evidence": "To optimize the efficiency of the self-attention mechanism, we propose the SFR module, which serves to reduce the size of the camouflaged object within an image.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 5
+  },
+  {
+   "field": "dependencies",
+   "value": "ResNet50",
+   "evidence": "ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "dependencies",
+   "value": "Faster RCNN",
+   "evidence": "Faster RCNN [17] ResNet50 34 176.54",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "dependencies",
+   "value": "Vit-T",
+   "evidence": "Large Model SAM [57] Vit-T 89 371.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "dependencies",
+   "value": "Swin-T",
+   "evidence": "GDino + CAFR Swin-T 165 353.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "dependencies",
+   "value": "Vit-L",
+   "evidence": "SAM [57] Vit-L 298 1314.89",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "dependencies",
+   "value": "Swin-L",
+   "evidence": "GDino + CAFR Swin-L 222 524.68",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "hardware",
+   "value": "ResNet50",
+   "evidence": "ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "hardware",
+   "value": "Faster RCNN",
+   "evidence": "Faster RCNN [17] ResNet50 34 176.54",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "hardware",
+   "value": "Vit-T",
+   "evidence": "Large Model SAM [57] Vit-T 89 371.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "hardware",
+   "value": "Swin-T",
+   "evidence": "GDino + CAFR Swin-T 165 353.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "hardware",
+   "value": "Vit-L",
+   "evidence": "SAM [57] Vit-L 298 1314.89",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "hardware",
+   "value": "Swin-L",
+   "evidence": "GDino + CAFR Swin-L 222 524.68",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "hardware",
+   "value": "null",
+   "evidence": "null",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.5,
+   "fuzzy_token_recall": 0.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "COD10K-D",
+   "evidence": "By enriching existing COD datasets with boxes and class labels, our newly created COD10K-D, NC4K-D, and CAMO- D datasets offer valuable resources for realistic camouflaged detection tasks.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K-D",
+   "evidence": "By enriching existing COD datasets with boxes and class labels, our newly created COD10K-D, NC4K-D, and CAMO- D datasets offer valuable resources for realistic camouflaged detection tasks.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "datasets",
+   "value": "CAMO-D",
+   "evidence": "Regarding the CAMO- D dataset, we combine 1000 training images and 250 test images from the original camouflaged CAMO dataset [13].",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "Mask RCNN",
+   "evidence": "Method Mask RCNN [56]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "Faster RCNN",
+   "evidence": "Faster RCNN [17]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "Large Model SAM",
+   "evidence": "Large Model SAM [57]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "GDino + CAFR",
+   "evidence": "GDino + CAFR Swin-T 165 353.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "methods",
+   "value": "SAM",
+   "evidence": "SAM [57]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "evaluation_results",
+   "value": "289.97",
+   "evidence": "ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "evaluation_results",
+   "value": "176.54",
+   "evidence": "Faster RCNN [17] ResNet50 34 176.54",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "evaluation_results",
+   "value": "371.98",
+   "evidence": "Large Model SAM [57] Vit-T 89 371.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "evaluation_results",
+   "value": "353.98",
+   "evidence": "GDino + CAFR Swin-T 165 353.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1314.89",
+   "evidence": "SAM [57] Vit-L 298 1314.89",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "evaluation_results",
+   "value": "524.68",
+   "evidence": "GDino + CAFR Swin-L 222 524.68",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 6
+  },
+  {
+   "field": "hardware",
+   "value": "VIT",
+   "evidence": "VIT: VISION TRANSFORMER , SWIN: SWIN TRANSFORMER , PAR: PARAMETER , AND GD INO: GROUNDING DINO, T: TINY MODEL , L: LARGE MODEL .",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "COD10K-v2",
+   "evidence": "Fortunately, for class annotations, the COD10K-v2 dataset offers comprehensive category annota- tions, allowing us to select 68 valid classes for our detection task.",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 7
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K",
+   "evidence": "we carefully select 4121 clearer images from the NC4K dataset [12]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "Mask RCNN",
+   "evidence": "Traditional Method Mask RCNN [56] ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "Faster RCNN",
+   "evidence": "Traditional Method Mask RCNN [56] ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "SAM",
+   "evidence": "Large Model SAM [57] Vit-T 89 371.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 7
+  },
+  {
+   "field": "methods",
+   "value": "GDino + CAFR",
+   "evidence": "GDino + CAFR Swin-T 165",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "289.97",
+   "evidence": "Traditional Method Mask RCNN [56] ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "176.54",
+   "evidence": "Traditional Method Mask RCNN [56] ResNet50 41 289.97",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": false,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "371.98",
+   "evidence": "Large Model SAM [57] Vit-T 89 371.98",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 7
+  },
+  {
+   "field": "evaluation_results",
+   "value": "165",
+   "evidence": "GDino + CAFR Swin-T 165",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 7
+  },
+  {
+   "field": "dependencies",
+   "value": "YOLOv7-L",
+   "evidence": "YOLOv7-L [15]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "dependencies",
+   "value": "CSPDarknet",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "hardware",
+   "value": "3.8",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "hardware",
+   "value": "Generic Methods",
+   "evidence": "Generic Methods YOLOv7-L [15]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "hardware",
+   "value": "Generic Methods",
+   "evidence": "Generic Methods YOLOv7-L [15]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "hardware",
+   "value": "Generic Methods",
+   "evidence": "Generic Methods YOLOv7-L [15]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "hardware",
+   "value": "YOLOv7-L",
+   "evidence": "YOLOv7-L [15]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "datasets",
+   "value": "COD10K-D",
+   "evidence": "TABLE IV PREFORMANCE OF VARIOUS DETECTION METHODS ON COD10K-D, NC4K-D, AND CAMO-D DATASETS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "datasets",
+   "value": "NC4K-D",
+   "evidence": "TABLE IV PREFORMANCE OF VARIOUS DETECTION METHODS ON COD10K-D, NC4K-D, AND CAMO-D DATASETS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "datasets",
+   "value": "CAMO-D",
+   "evidence": "TABLE IV PREFORMANCE OF VARIOUS DETECTION METHODS ON COD10K-D, NC4K-D, AND CAMO-D DATASETS",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "YOLOv7-L",
+   "evidence": "YOLOv7-L [15]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "CSPDarknet",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "DEFORMABLE DETR",
+   "evidence": "DEFORMABLE DETR [35]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "S WIN",
+   "evidence": "S WIN REPRESENTS SWIN -TRASFORMER WITH ITS TINY BASE ,AND LARGE PRE -TRAINED MODELS [10]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "R50",
+   "evidence": "R50 AND RSENET101, RESPECTIVELY [58]",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": true,
+   "span_loose": false,
+   "fuzzy_longest": 0.889,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "R101",
+   "evidence": "R50 AND RSENET101, RESPECTIVELY [58]",
+   "has_evidence": true,
+   "span_found": false,
+   "value_in_span": false,
+   "span_loose": false,
+   "fuzzy_longest": 0.889,
+   "fuzzy_token_recall": 1.0,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "GLIP",
+   "evidence": "GLIP WITH ITS TINY AND LARGE PRE -TRAINED MODELS [9]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "methods",
+   "value": "GD INO",
+   "evidence": "GD INO IS GROUNDING DION ITS TINY AND BASE PRE-TRAINED MODELS [25]",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "3.8",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "8.2",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "2.8",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.0",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "4.0",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.8",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "14.2",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.0",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.7",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "7.3",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "5.4",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.8",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "14.2",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "6.0",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  },
+  {
+   "field": "evaluation_results",
+   "value": "1.7",
+   "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4",
+   "has_evidence": true,
+   "span_found": true,
+   "value_in_span": true,
+   "study_id": "study003",
+   "slug": "redhatai-meta-llama-3-1-8b-instruct-quantized-w8a8",
+   "passage_index": 8
+  }
+ ],
+ "summary": {
+  "per_field": {
+   "dependencies": {
+    "n": 15,
+    "has_evidence": 15,
+    "span_found": 15,
+    "value_in_span": 14,
+    "grounded": 14,
+    "span_any": 15
+   },
+   "random_seeds": {
+    "n": 3,
+    "has_evidence": 3,
+    "span_found": 3,
+    "value_in_span": 2,
+    "grounded": 2,
+    "span_any": 3
+   },
+   "hardware": {
+    "n": 48,
+    "has_evidence": 48,
+    "span_found": 25,
+    "value_in_span": 45,
+    "grounded": 22,
+    "span_any": 25,
+    "miss_unsupported": 23
+   },
+   "hyperparameters": {
+    "n": 5,
+    "has_evidence": 5,
+    "span_found": 3,
+    "value_in_span": 5,
+    "grounded": 3,
+    "span_any": 3,
+    "miss_unsupported": 2
+   },
+   "datasets": {
+    "n": 14,
+    "has_evidence": 14,
+    "span_found": 12,
+    "value_in_span": 12,
+    "grounded": 10,
+    "span_any": 12,
+    "miss_unsupported": 2
+   },
+   "methods": {
+    "n": 35,
+    "has_evidence": 35,
+    "span_found": 33,
+    "value_in_span": 27,
+    "grounded": 26,
+    "span_any": 33,
+    "miss_near_verbatim": 2
+   },
+   "evaluation_results": {
+    "n": 38,
+    "has_evidence": 38,
+    "span_found": 38,
+    "value_in_span": 28,
+    "grounded": 28,
+    "span_any": 38
+   }
+  },
+  "total": {
+   "n": 158,
+   "has_evidence": 158,
+   "span_found": 129,
+   "value_in_span": 133,
+   "grounded": 105,
+   "span_any": 129,
+   "miss_unsupported": 27,
+   "miss_near_verbatim": 2
+  }
+ },
+ "raw": [
+  {
+   "passage_index": 0,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "Transformer",
+      "version": null,
+      "evidence": "Transformer-based feature extractors"
+     }
+    ],
+    "random_seeds": [
+     {
+      "value": "16",
+      "evidence": "each box is cropped to W= 200 andH= 200 from the input samples and randomly positioned on a square canvas."
+     }
+    ],
+    "hardware": [
+     {
+      "slot": "cpu_info",
+      "value": "\u00d74",
+      "evidence": "Stage2 \u00d74 \u00d72 \u00d71"
+     },
+     {
+      "slot": "cpu_info",
+      "value": "\u00d72",
+      "evidence": "Stage2 \u00d74 \u00d72 \u00d71"
+     },
+     {
+      "slot": "cpu_info",
+      "value": "\u00d71",
+      "evidence": "Stage2 \u00d74 \u00d72 \u00d71"
+     },
+     {
+      "slot": "cpu_info",
+      "value": "\u00d74",
+      "evidence": "Stage1 Stage3 Stage4 Patch PartitionVisual Features Deep Fusion fForward Backward Forward & Fusion Gradient Restriction Combination"
+     },
+     {
+      "slot": "cpu_info",
+      "value": "\u00d72",
+      "evidence": "Stage1 Stage3 Stage4 Patch PartitionVisual Features Deep Fusion fForward Backward Forward & Fusion Gradient Restriction Combination"
+     },
+     {
+      "slot": "cpu_info",
+      "value": "\u00d71",
+      "evidence": "Stage1 Stage3 Stage4 Patch PartitionVisual Features Deep Fusion fForward Backward Forward & Fusion Gradient Restriction Combination"
+     },
+     {
+      "slot": "os",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "ram",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "cuda_version",
+      "value": "null",
+      "evidence": "null"
+     }
+    ],
+    "hyperparameters": [
+     {
+      "name": "null",
+      "value": "null",
+      "evidence": "null"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "null",
+      "version": null,
+      "evidence": "null"
+     }
+    ],
+    "methods": [
+     {
+      "name": "APG",
+      "evidence": "that incorporates APG and SFR modules"
+     },
+     {
+      "name": "SFR",
+      "evidence": "that incorporates APG and SFR modules"
+     },
+     {
+      "name": "AGP",
+      "evidence": "with SFR and AGP modules"
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 1,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "ResNet50",
+      "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "ResNet101",
+      "evidence": "Faster R-CNN ResNet101 96.1"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "Swin-L",
+      "evidence": "Faster R-CNN Swin-L 99.1"
+     },
+     {
+      "slot": "cpu_info",
+      "value": "floating point operations (FLOPs)",
+      "evidence": "To verify this point, we present the results of detection and segmentation measured in floating point operations (FLOPs)"
+     },
+     {
+      "slot": "os",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "ram",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "cuda_version",
+      "value": "null",
+      "evidence": "null"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [],
+    "methods": [
+     {
+      "name": "SINet",
+      "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0"
+     },
+     {
+      "name": "SegMaR",
+      "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0"
+     },
+     {
+      "name": "PreyNet",
+      "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0"
+     },
+     {
+      "name": "ZoomNet",
+      "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0"
+     },
+     {
+      "name": "FSEL",
+      "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0"
+     },
+     {
+      "name": "Faster R-CNN",
+      "evidence": "Faster R-CNN ResNet50 95.7"
+     },
+     {
+      "name": "Faster R-CNN",
+      "evidence": "Faster R-CNN ResNet101 96.1"
+     },
+     {
+      "name": "Faster R-CNN",
+      "evidence": "Faster R-CNN Swin-L 99.1"
+     },
+     {
+      "name": "Mask R-CNN",
+      "evidence": "For a fair comparison, we select detection (Faster R-CNN) and segmentation (Mask R-CNN) frameworks"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "mAP",
+      "value": "77.0",
+      "split": "null",
+      "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0"
+     },
+     {
+      "metric": "mAP",
+      "value": "81.1",
+      "split": "null",
+      "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0"
+     },
+     {
+      "metric": "mAP",
+      "value": "81.0",
+      "split": "null",
+      "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0"
+     },
+     {
+      "metric": "mAP",
+      "value": "83.5",
+      "split": "null",
+      "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0"
+     },
+     {
+      "metric": "mAP",
+      "value": "87.3",
+      "split": "null",
+      "evidence": "Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0"
+     },
+     {
+      "metric": "mAP",
+      "value": "95.7",
+      "split": "null",
+      "evidence": "Faster R-CNN ResNet50 95.7"
+     },
+     {
+      "metric": "mAP",
+      "value": "96.1",
+      "split": "null",
+      "evidence": "Faster R-CNN ResNet101 96.1"
+     },
+     {
+      "metric": "mAP",
+      "value": "99.1",
+      "split": "null",
+      "evidence": "Faster R-CNN Swin-L 99.1"
+     },
+     {
+      "metric": "AP50",
+      "value": "null",
+      "split": "null",
+      "evidence": "coco-style [55] mAP (IoU thresholds of .50:.05:.95)"
+     },
+     {
+      "metric": "AP75",
+      "value": "null",
+      "split": "null",
+      "evidence": "coco-style [55] mAP (IoU thresholds of .50:.05:.95)"
+     },
+     {
+      "metric": "APm",
+      "value": "null",
+      "split": "null",
+      "evidence": "coco-style [55] mAP (IoU thresholds of .50:.05:.95)"
+     },
+     {
+      "metric": "APl",
+      "value": "null",
+      "split": "null",
+      "evidence": "indicators [55], which provide an average measure of accuracy under various IoU thresholds for overlapping associations"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 2,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [
+     {
+      "value": "16",
+      "evidence": "We then sequentially select 16 boxes at a time for canvas filling with new label settings."
+     }
+    ],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "GPU",
+      "evidence": "this approach requires additional GPU usage."
+     },
+     {
+      "slot": "cuda_version",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "cpu_info",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "os",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "ram",
+      "value": "null",
+      "evidence": "null"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "dataset",
+      "version": "null",
+      "evidence": "We gather all the boxes from the entire dataset"
+     }
+    ],
+    "methods": [
+     {
+      "name": "randomly shuffle",
+      "evidence": "We then sequentially select 16 boxes at a time for canvas filling with new label settings."
+     },
+     {
+      "name": "canvas filling",
+      "evidence": "We then sequentially select 16 boxes at a time for canvas filling with new label settings."
+     },
+     {
+      "name": "sequential selection",
+      "evidence": "We then sequentially select 16 boxes at a time for canvas filling with new label settings."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 3,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "MMDetection",
+      "version": "null",
+      "evidence": "[54]"
+     }
+    ],
+    "random_seeds": [
+     {
+      "value": "10",
+      "evidence": "train 10 groups of random seeds"
+     }
+    ],
+    "hardware": [
+     {
+      "slot": "os",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "ram",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "cpu_info",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "cuda_version",
+      "value": "null",
+      "evidence": "null"
+     }
+    ],
+    "hyperparameters": [
+     {
+      "name": "learning rate",
+      "value": "0.0003",
+      "evidence": "an initial learning rate of 0.0003"
+     },
+     {
+      "name": "momentum",
+      "value": "0.05",
+      "evidence": "a momentum of 0.05"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "RCOD data",
+      "version": "null",
+      "evidence": "our proposed datasets"
+     },
+     {
+      "name": "coco-style",
+      "version": "null",
+      "evidence": "coco-style [55]"
+     }
+    ],
+    "methods": [
+     {
+      "name": "AdamW",
+      "evidence": "we employ the AdamW optimizer"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "mAP (IoU",
+      "value": "null",
+      "split": "null",
+      "evidence": "coco-style [55] mAP (IoU"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 4,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "GLIP tiny model",
+      "evidence": "In addition, we introduce an adapter module composed of two 2-dimensional convolutional layers immediately after the feature extractor from the GLIP tiny model [9]."
+     }
+    ],
+    "hyperparameters": [
+     {
+      "name": "fine-tuning",
+      "value": "hard",
+      "evidence": "This finding suggests that fine-tuning the final layer parameters makes it hard to effectively capture these easily confused features since the foreground and background of camouflaged objects are extremely similar."
+     }
+    ],
+    "datasets": [
+     {
+      "name": "COD",
+      "evidence": "COD tasks."
+     }
+    ],
+    "methods": [
+     {
+      "name": "GLIP+Adapter",
+      "evidence": "However, compared with the GLIP model, GLIP+Adapter fails to adapt to the COD task and forgets the prior knowledge of the large model, as shown in Table VII."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 5,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "swin-transformer",
+      "version": null,
+      "evidence": "The current large models for object detection utilize the swin-transformer [10] as the feature extractor and FPN [52] for feature refinement."
+     },
+     {
+      "name": "FPN",
+      "version": null,
+      "evidence": "The current large models for object detection utilize the swin-transformer [10] as the feature extractor and FPN [52] for feature refinement."
+     },
+     {
+      "name": "focal loss",
+      "version": null,
+      "evidence": "In RCOD, we adopt [49] as our contrastive loss Lc, GIoU [50] as our Localization lossLbbox, and focal loss [51] as our classification loss Lcls."
+     },
+     {
+      "name": "contrastive loss",
+      "version": null,
+      "evidence": "In RCOD, we adopt [49] as our contrastive loss Lc, GIoU [50] as our Localization lossLbbox, and focal loss [51] as our classification loss Lcls."
+     },
+     {
+      "name": "Localization loss",
+      "version": null,
+      "evidence": "In RCOD, we adopt [49] as our contrastive loss Lc, GIoU [50] as our Localization lossLbbox, and focal loss [51] as our classification loss Lcls."
+     }
+    ],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "swin-transformer",
+      "evidence": "The current large models for object detection utilize the swin-transformer [10] as the feature extractor and FPN [52] for feature refinement."
+     },
+     {
+      "slot": "cpu_info",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "os",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "ram",
+      "value": "null",
+      "evidence": "null"
+     }
+    ],
+    "hyperparameters": [
+     {
+      "name": "null",
+      "value": "null",
+      "evidence": "null"
+     }
+    ],
+    "datasets": [
+     {
+      "name": "null",
+      "version": null,
+      "evidence": "null"
+     }
+    ],
+    "methods": [
+     {
+      "name": "SFR module",
+      "evidence": "To optimize the efficiency of the self-attention mechanism, we propose the SFR module, which serves to reduce the size of the camouflaged object within an image."
+     }
+    ],
+    "evaluation_results": []
+   }
+  },
+  {
+   "passage_index": 6,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "ResNet50",
+      "version": "41",
+      "evidence": "ResNet50 41 289.97"
+     },
+     {
+      "name": "Faster RCNN",
+      "version": "34",
+      "evidence": "Faster RCNN [17] ResNet50 34 176.54"
+     },
+     {
+      "name": "Vit-T",
+      "version": "89",
+      "evidence": "Large Model SAM [57] Vit-T 89 371.98"
+     },
+     {
+      "name": "Swin-T",
+      "version": "165",
+      "evidence": "GDino + CAFR Swin-T 165 353.98"
+     },
+     {
+      "name": "Vit-L",
+      "version": "298",
+      "evidence": "SAM [57] Vit-L 298 1314.89"
+     },
+     {
+      "name": "Swin-L",
+      "version": "222",
+      "evidence": "GDino + CAFR Swin-L 222 524.68"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "ResNet50",
+      "evidence": "ResNet50 41 289.97"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "Faster RCNN",
+      "evidence": "Faster RCNN [17] ResNet50 34 176.54"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "Vit-T",
+      "evidence": "Large Model SAM [57] Vit-T 89 371.98"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "Swin-T",
+      "evidence": "GDino + CAFR Swin-T 165 353.98"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "Vit-L",
+      "evidence": "SAM [57] Vit-L 298 1314.89"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "Swin-L",
+      "evidence": "GDino + CAFR Swin-L 222 524.68"
+     },
+     {
+      "slot": "cuda_version",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "cpu_info",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "os",
+      "value": "null",
+      "evidence": "null"
+     },
+     {
+      "slot": "ram",
+      "value": "null",
+      "evidence": "null"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COD10K-D",
+      "version": "null",
+      "evidence": "By enriching existing COD datasets with boxes and class labels, our newly created COD10K-D, NC4K-D, and CAMO- D datasets offer valuable resources for realistic camouflaged detection tasks."
+     },
+     {
+      "name": "NC4K-D",
+      "version": "null",
+      "evidence": "By enriching existing COD datasets with boxes and class labels, our newly created COD10K-D, NC4K-D, and CAMO- D datasets offer valuable resources for realistic camouflaged detection tasks."
+     },
+     {
+      "name": "CAMO-D",
+      "version": "null",
+      "evidence": "Regarding the CAMO- D dataset, we combine 1000 training images and 250 test images from the original camouflaged CAMO dataset [13]."
+     }
+    ],
+    "methods": [
+     {
+      "name": "Mask RCNN",
+      "evidence": "Method Mask RCNN [56]"
+     },
+     {
+      "name": "Faster RCNN",
+      "evidence": "Faster RCNN [17]"
+     },
+     {
+      "name": "Large Model SAM",
+      "evidence": "Large Model SAM [57]"
+     },
+     {
+      "name": "GDino + CAFR",
+      "evidence": "GDino + CAFR Swin-T 165 353.98"
+     },
+     {
+      "name": "SAM",
+      "evidence": "SAM [57]"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "289.97",
+      "value": "289.97",
+      "split": "null",
+      "evidence": "ResNet50 41 289.97"
+     },
+     {
+      "metric": "176.54",
+      "value": "176.54",
+      "split": "null",
+      "evidence": "Faster RCNN [17] ResNet50 34 176.54"
+     },
+     {
+      "metric": "371.98",
+      "value": "371.98",
+      "split": "null",
+      "evidence": "Large Model SAM [57] Vit-T 89 371.98"
+     },
+     {
+      "metric": "353.98",
+      "value": "353.98",
+      "split": "null",
+      "evidence": "GDino + CAFR Swin-T 165 353.98"
+     },
+     {
+      "metric": "1314.89",
+      "value": "1314.89",
+      "split": "null",
+      "evidence": "SAM [57] Vit-L 298 1314.89"
+     },
+     {
+      "metric": "524.68",
+      "value": "524.68",
+      "split": "null",
+      "evidence": "GDino + CAFR Swin-L 222 524.68"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 7,
+   "extraction": {
+    "dependencies": [],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "gpu_model",
+      "value": "VIT",
+      "evidence": "VIT: VISION TRANSFORMER , SWIN: SWIN TRANSFORMER , PAR: PARAMETER , AND GD INO: GROUNDING DINO, T: TINY MODEL , L: LARGE MODEL ."
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COD10K-v2",
+      "version": "null",
+      "evidence": "Fortunately, for class annotations, the COD10K-v2 dataset offers comprehensive category annota- tions, allowing us to select 68 valid classes for our detection task."
+     },
+     {
+      "name": "NC4K",
+      "version": "null",
+      "evidence": "we carefully select 4121 clearer images from the NC4K dataset [12]"
+     }
+    ],
+    "methods": [
+     {
+      "name": "Mask RCNN",
+      "evidence": "Traditional Method Mask RCNN [56] ResNet50 41 289.97"
+     },
+     {
+      "name": "Faster RCNN",
+      "evidence": "Traditional Method Mask RCNN [56] ResNet50 41 289.97"
+     },
+     {
+      "name": "SAM",
+      "evidence": "Large Model SAM [57] Vit-T 89 371.98"
+     },
+     {
+      "name": "GDino + CAFR",
+      "evidence": "GDino + CAFR Swin-T 165"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "FLOPs",
+      "value": "289.97",
+      "split": "null",
+      "evidence": "Traditional Method Mask RCNN [56] ResNet50 41 289.97"
+     },
+     {
+      "metric": "FLOPs",
+      "value": "176.54",
+      "split": "null",
+      "evidence": "Traditional Method Mask RCNN [56] ResNet50 41 289.97"
+     },
+     {
+      "metric": "FLOPs",
+      "value": "371.98",
+      "split": "null",
+      "evidence": "Large Model SAM [57] Vit-T 89 371.98"
+     },
+     {
+      "metric": "FLOPs",
+      "value": "165",
+      "split": "null",
+      "evidence": "GDino + CAFR Swin-T 165"
+     }
+    ]
+   }
+  },
+  {
+   "passage_index": 8,
+   "extraction": {
+    "dependencies": [
+     {
+      "name": "YOLOv7-L",
+      "version": null,
+      "evidence": "YOLOv7-L [15]"
+     },
+     {
+      "name": "CSPDarknet",
+      "version": null,
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     }
+    ],
+    "random_seeds": [],
+    "hardware": [
+     {
+      "slot": "cuda_version",
+      "value": "3.8",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "slot": "cpu_info",
+      "value": "Generic Methods",
+      "evidence": "Generic Methods YOLOv7-L [15]"
+     },
+     {
+      "slot": "os",
+      "value": "Generic Methods",
+      "evidence": "Generic Methods YOLOv7-L [15]"
+     },
+     {
+      "slot": "ram",
+      "value": "Generic Methods",
+      "evidence": "Generic Methods YOLOv7-L [15]"
+     },
+     {
+      "slot": "gpu_model",
+      "value": "YOLOv7-L",
+      "evidence": "YOLOv7-L [15]"
+     }
+    ],
+    "hyperparameters": [],
+    "datasets": [
+     {
+      "name": "COD10K-D",
+      "version": null,
+      "evidence": "TABLE IV PREFORMANCE OF VARIOUS DETECTION METHODS ON COD10K-D, NC4K-D, AND CAMO-D DATASETS"
+     },
+     {
+      "name": "NC4K-D",
+      "version": null,
+      "evidence": "TABLE IV PREFORMANCE OF VARIOUS DETECTION METHODS ON COD10K-D, NC4K-D, AND CAMO-D DATASETS"
+     },
+     {
+      "name": "CAMO-D",
+      "version": null,
+      "evidence": "TABLE IV PREFORMANCE OF VARIOUS DETECTION METHODS ON COD10K-D, NC4K-D, AND CAMO-D DATASETS"
+     }
+    ],
+    "methods": [
+     {
+      "name": "YOLOv7-L",
+      "evidence": "YOLOv7-L [15]"
+     },
+     {
+      "name": "CSPDarknet",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "name": "DEFORMABLE DETR",
+      "evidence": "DEFORMABLE DETR [35]"
+     },
+     {
+      "name": "S WIN",
+      "evidence": "S WIN REPRESENTS SWIN -TRASFORMER WITH ITS TINY BASE ,AND LARGE PRE -TRAINED MODELS [10]"
+     },
+     {
+      "name": "R50",
+      "evidence": "R50 AND RSENET101, RESPECTIVELY [58]"
+     },
+     {
+      "name": "R101",
+      "evidence": "R50 AND RSENET101, RESPECTIVELY [58]"
+     },
+     {
+      "name": "GLIP",
+      "evidence": "GLIP WITH ITS TINY AND LARGE PRE -TRAINED MODELS [9]"
+     },
+     {
+      "name": "GD INO",
+      "evidence": "GD INO IS GROUNDING DION ITS TINY AND BASE PRE-TRAINED MODELS [25]"
+     }
+    ],
+    "evaluation_results": [
+     {
+      "metric": "mAP",
+      "value": "3.8",
+      "split": "COD10K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "AP50",
+      "value": "8.2",
+      "split": "COD10K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "AP75",
+      "value": "2.8",
+      "split": "COD10K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "APm",
+      "value": "1.0",
+      "split": "COD10K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "APl",
+      "value": "4.0",
+      "split": "COD10K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "mAP",
+      "value": "6.8",
+      "split": "NC4K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "AP50",
+      "value": "14.2",
+      "split": "NC4K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "AP75",
+      "value": "6.0",
+      "split": "NC4K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "APm",
+      "value": "1.7",
+      "split": "NC4K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "APl",
+      "value": "7.3",
+      "split": "NC4K-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "mAP",
+      "value": "5.4",
+      "split": "CAMO-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "AP50",
+      "value": "6.8",
+      "split": "CAMO-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "AP75",
+      "value": "14.2",
+      "split": "CAMO-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "APm",
+      "value": "6.0",
+      "split": "CAMO-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     },
+     {
+      "metric": "APl",
+      "value": "1.7",
+      "split": "CAMO-D",
+      "evidence": "CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+     }
+    ]
+   }
+  }
+ ],
+ "passages": [
+  "the challenge of extracting camouflaged objects that closely re- semble their backgrounds by optimizing Transformer-based feature extractors and fine-tuning the entire feature extraction process. III. M ETHODOLOGY In this section, we first introduce the task definition for our proposed RCOD task. We then illustrate the implementation details of our proposed CAFR approach that incorporates APG and SFR modules. 4 NeckText Features Text Encoder Localization Loss Classification LossWord -Region Contrastive Loss Swim Transformer Block Linear EmbeddingStage1 Stage3 Stage4 Patch PartitionVisual Features Deep Fusion fForward Backward Forward & Fusion Gradient Restriction Combination Generated Samples ( X\u2019 , Y\u2019)Adaptive Gradient Propagation Module Crab . Owl . Bird \u2026 Input Samples ( X, Y) \u2026 \u2026Crab Owl Bird Sparse Feature Refinement Module Input Class Labels Stage2 \u00d74 \u00d72 \u00d71ff Fig. 2. The architecture of our proposed CAFR approach with SFR and AGP modules. Concerning the SFR module, within an input batch, each box is cropped to W= 200 andH= 200 from the input samples and randomly positioned on a square canvas. It is assumed that there are 16 boxes in a batch for showcasing the SFR module. In addition, \u00d71denotes obtaining 1 new sample, \u00d72denotes obtaining 2 new samples, and \u00d74denotes obtaining 4 new",
+  "average performance as our final results for robust evaluation of detection performance. Additionally, we assess the accuracy of our models using coco-style [55] mAP (IoU thresholds of .50:.05:.95), AP50 (IoU threshold of .50), AP75 (threshold of .75), APm (medium-sized objects), andTABLE III DETECTION VERSUS SEGMENTATION IN THE CAMOUFLAGED SCENE . Methods Backbone S\u03b1/ mIoU \u2191 Segmentation SINet [11] ResNet50 77.0 SegMaR [4] ResNet50 81.1 PreyNet [20] ResNet50 81.0 ZoomNet [21] ResNet50 83.5 FSEL [22] ResNet50 87.3 Detection Faster R-CNN ResNet50 95.7 Faster R-CNN ResNet101 96.1 Faster R-CNN Swin-L 99.1 APl (large-sized objects) indicators [55], which provide an average measure of accuracy under various IoU thresholds for overlapping associations. B. Comparison of Detection and Segmentation on COD Tasks Efficiency Verification and Analysis. Existing camou- flaged object detection (COD) methods rely primarily on segmentation algorithms [1], [2], [3]. While such methods have significantly advanced in identifying the contours of camouflaged objects, they may be less efficient for tasks that only require the specific location of the object. To verify this point, we present the results of detection and segmentation measured in floating point operations (FLOPs) in Table II. For a fair comparison, we select detection (Faster R-CNN) and segmentation (Mask R-CNN) frameworks",
+  "The online approach offers the advantage of directly pro- cessing input data to obtain scaled-down data, providing greater flexibility and convenience. However, due to the new images generated in a batch, this approach requires additional GPU usage. 2) Offline Implementation of SFR: The offline approach eliminates the need for additional CUDA memory usage, but requires manual pre-processing of data befor training. In the offline process, we assume that a batch includes 16 bounding 6 Fig. 4. Comparison of annotations: existing vs. our annotations. Introducing these three new annotations establishes valuable benchmarks in the field of RCOD research. boxes. With this assumption in mind, we gather all the boxes from the entire dataset and randomly shuffle them. We then sequentially select 16 boxes at a time for canvas filling with new label settings. The filling method employed in this offline approach is the same as the one described in the main text for the online approach. Based on this fact, new samples of sizes 2\u00d72,3\u00d73, and 4\u00d74are obtained simultaneously and showcased in Figure 3. These new samples, acquired through the offline process, are subsequently merged with the original images to form a new dataset for training the detection network. Offline approach",
+  "leverage such datasets to de- velop and evaluate robust object detection algorithms capable of addressing the challenges posed by camouflaged objects. VI. E XPERIMENTS ON RCOD D ETECTION In this Section, we first introduce the experimental settings of our proposed CAFR. We then conduct a series of com- parative experiments to evaluate the effectiveness of CAFR in terms of detection performance on our proposed datasets. Finally, we investigate the impact of the components between SFR and APG, as well as the influence of different parameter settings on their performance. A. Experimental Settings Our code is deployed under the MMDetection [54] frame- work. For a fair comparison, all detection models presented in our experiments are reported by the MMDetection framework. Large detection models are utilized as our baseline. To opti- mize our model, we employ the AdamW optimizer with an initial learning rate of 0.0003 and a momentum of 0.05. Due to the limited number of samples for each class of RCOD data, we train 10 groups of random seeds for each model and present the average performance as our final results for robust evaluation of detection performance. Additionally, we assess the accuracy of our models using coco-style [55] mAP (IoU",
+  "COD tasks. This finding suggests that fine-tuning the final layer parameters makes it hard to effectively capture these easily confused features since the foreground and background of camouflaged objects are extremely similar. In addition, we introduce an adapter module composed of two 2-dimensional convolutional layers immediately after the feature extractor from the GLIP tiny model [9]. However, compared with the GLIP model, GLIP+Adapter fails to adapt to the COD task and forgets the prior knowledge of the large model, as shown in Table VII. This also proves that adding additional parameters to the last layer of the feature extractor and fine-tuning is not suitable for tasks where the background and foreground are extremely similar. On the other hand, we conjecture that discrepancy parameters and structural differences between GLIP and the GLIP with adapter network impede the direct adaptation of pre-trained model weights to the new network configuration. This could result in the model getting stuck in a local optimum or failing to learn task-specific features correctly. Consequently, the model may have become trapped in a suboptimal solution or struggled to learn task- specific features accurately. To address the mentioned issue, we propose the AGP. The",
+  "factor to control the size of parameters that can participate in training. By substituting the above formula into Eq 2, the AGP-based loss can be expressed as L=Lhead (Mh(Mn(Mb(Xi;\u03b8b);\u03b8n);\u03b8h), Y)), (4) where M(\u00b7)represents learnable function. In RCOD, we adopt [49] as our contrastive loss Lc, GIoU [50] as our Localization lossLbbox, and focal loss [51] as our classification loss Lcls. C. Sparse Feature Refinement Module The current large models for object detection utilize the swin-transformer [10] as the feature extractor and FPN [52] for feature refinement. These models incorporate self-attention- based feature extractors that are designed under the assumption that the outlines of instances are easily distinguishable [53]. This enables the models to capture long-range correlation by calculating similarities between image patches. However, in the case of camouflage scenarios, some bounding boxes encompass sparse category features, capturing less than half of the class-specific features, which may hinder the ability of models based on self-attention mechanisms to learn distin- guishing features. To optimize the efficiency of the self-attention mechanism, we propose the SFR module, which serves to reduce the size of the camouflaged object within an image. Through this approach, SFR ensures that each image patch primarily focuses \u2026 Fig. 3.",
+  "Method Mask RCNN [56] ResNet50 41 289.97 Faster RCNN [17] ResNet50 34 176.54 Large Model SAM [57] Vit-T 89 371.98 GDino + CAFR Swin-T 165 353.98 SAM [57] Vit-L 298 1314.89 GDino + CAFR Swin-L 222 524.68 annotate them with bounding boxes and 37 category labels. We then split this annotated dataset into a training set of 2863 images and a test set of 1227 images. Regarding the CAMO- D dataset, we combine 1000 training images and 250 test images from the original camouflaged CAMO dataset [13]. We diligently remove any controversial images and then annotate 1241 images for object detection with 43 diverse classes. From this annotated dataset, we randomly select 744 images for training and reserve 497 images for testing. Additionally, in Fig. I, we list the counts of categories as well as the numbers of training and test images for our proposed datasets. By enriching existing COD datasets with boxes and class labels, our newly created COD10K-D, NC4K-D, and CAMO- D datasets offer valuable resources for realistic camouflaged detection tasks. Researchers can leverage such datasets to de- velop and evaluate robust object detection algorithms capable of addressing the challenges posed by camouflaged objects. VI. E XPERIMENTS ON",
+  "disrupt the continuity of the object pixels. For example, as shown in Fig. 4 from the CAMO-D dataset, a single object may have its contiguous pixels split into two parts, causing the algorithm to erroneously produce two separate boxes. Therefore, even with manually assigned annotations, it is necessary to remove or correct any inaccurate boxes. Fortunately, for class annotations, the COD10K-v2 dataset offers comprehensive category annota- tions, allowing us to select 68 valid classes for our detection task. Class annotations for other datasets are provided manu- ally. Based on the aforementioned annotation scheme, we follow the setup of the original dataset COD10K-v2, using 6000 images for training and 4000 images for testing, with 68 annotated class labels. Moving on to NC4K-D, we carefully select 4121 clearer images from the NC4K dataset [12] and 7 TABLE II INFERENCE COST BETWEEN SEGMENTATION AND DETECTION . VIT: VISION TRANSFORMER , SWIN: SWIN TRANSFORMER , PAR: PARAMETER , AND GD INO: GROUNDING DINO, T: TINY MODEL , L: LARGE MODEL . Methods Backbone Par (M) FLOPs (G) \u2193 Traditional Method Mask RCNN [56] ResNet50 41 289.97 Faster RCNN [17] ResNet50 34 176.54 Large Model SAM [57] Vit-T 89 371.98 GDino + CAFR Swin-T 165",
+  "the experimental results presented, we can con- clude that segmentation requires the image encoder to analyze the entire image for each sample during the inference stage, leading to higher computational complexity. Furthermore, the mask decoder computes the value of each pixel in the image to generate the segmentation mask. In contrast, the inference process in detection focuses on identifying objects within the image and generating bounding boxes. Its computational load primarily lies in the extraction and analysis of image features by the feature extraction network. While computing image 8 TABLE IV PREFORMANCE OF VARIOUS DETECTION METHODS ON COD10K-D, NC4K-D, AND CAMO-D DATASETS . HERE, DEF-DETR ISDEFORMABLE DETR [35], S WIN REPRESENTS SWIN -TRASFORMER WITH ITS TINY BASE ,AND LARGE PRE -TRAINED MODELS [10], R50 AND R101 ARE RESNET50AND RSENET101, RESPECTIVELY [58], GLIP WITH ITS TINY AND LARGE PRE -TRAINED MODELS [9], AND GD INO IS GROUNDING DION ITS TINY AND BASE PRE-TRAINED MODELS [25]. B OLD FONT INDICATES THE BEST RESULT IN THE GROUP . Methods BackboneCOD10K-D NC4K-D CAMO-D mAP AP50 AP75 APm APl mAP AP50 AP75 APm APl mAP AP50 AP75 APm APl Generic Methods YOLOv7-L [15] CSPDarknet 3.8 8.2 2.8 1.0 4.0 6.8 14.2 6.0 1.7 7.3 5.4"
+ ]
+}
