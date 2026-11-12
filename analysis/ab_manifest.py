@@ -76,8 +76,26 @@ def main() -> int:
                 "slug": key_or_slug,
                 "note": "not in the registry; recorded as named"}
 
-    a, b = scores(f"{AB}/fairr_A.txt"), scores(f"{AB}/fairr_B.txt")
+    # Refuse to write a record of nothing. The first version of this happily
+    # produced a RUN.json from absent inputs and then crashed formatting a
+    # None, which is the same failure as the snapshot that captured zero
+    # graphs: a file that claims to be a record is worse than no file.
+    need = [f"{AB}/fairr_A.txt", f"{AB}/fairr_B.txt"]
+    missing = [p for p in need if not os.path.isfile(p)]
+    if missing:
+        sys.exit(
+            "no A/B outputs to record. Missing:\n  "
+            + "\n  ".join(missing)
+            + "\n\nRun the comparison first:\n"
+            f"  bash cluster/ab_pool_compare.sh {args.snapshot}")
+
+    a, b = scores(need[0]), scores(need[1])
     common = sorted(set(a) & set(b))
+    if not common:
+        sys.exit(
+            f"{need[0]} and {need[1]} share no study IDs, so there is nothing "
+            "to compare.\nEither a rescore produced no output, or the line "
+            "format changed and the parser needs updating.")
     moved = {k: {"A": a[k], "B": b[k], "delta": round(b[k] - a[k], 2)}
              for k in common if abs(a[k] - b[k]) > 1e-9}
 
