@@ -65,12 +65,12 @@
     "notes": ""
   },
   "fair_r": {
-    "total_score": 40.62,
+    "total_score": 47.29,
     "tier": "poor",
     "dimension_scores": {
       "Findable": 7.5,
       "Accessible": 5.62,
-      "Interoperable": 0.0,
+      "Interoperable": 6.67,
       "Reusable": 12.5,
       "Reproducible": 15.0
     },
@@ -106,14 +106,6 @@
         "level": "partial",
         "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
         "points_available": 2.5
-      },
-      {
-        "dimension": "Interoperable",
-        "label": "Method declared",
-        "priority": "important",
-        "level": "absent",
-        "fix": "Link the activity to an rdip:Method describing the algorithm used.",
-        "points_available": 6.67
       },
       {
         "dimension": "Interoperable",

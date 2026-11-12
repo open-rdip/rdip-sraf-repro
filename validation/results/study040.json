@@ -53,48 +53,16 @@
     "notes": "environment.yml present but built via pip venv (conda build deferred)."
   },
   "fair_r": {
-    "total_score": 56.29,
-    "tier": "fair",
+    "total_score": 87.33,
+    "tier": "excellent",
     "dimension_scores": {
-      "Findable": 7.5,
-      "Accessible": 5.62,
-      "Interoperable": 6.67,
-      "Reusable": 12.5,
+      "Findable": 15.0,
+      "Accessible": 15.0,
+      "Interoperable": 13.33,
+      "Reusable": 20.0,
       "Reproducible": 24.0
     },
     "recommendations": [
-      {
-        "dimension": "Reusable",
-        "label": "Community standard",
-        "priority": "essential",
-        "level": "absent",
-        "fix": "Adopt a community metadata / file-format standard.",
-        "points_available": 7.5
-      },
-      {
-        "dimension": "Accessible",
-        "label": "Data licence",
-        "priority": "essential",
-        "level": "absent",
-        "fix": "Declare a machine-readable data licence (SPDX identifier).",
-        "points_available": 5.62
-      },
-      {
-        "dimension": "Findable",
-        "label": "Landing page",
-        "priority": "essential",
-        "level": "absent",
-        "fix": "Link a landing page where the dataset can be accessed.",
-        "points_available": 5.0
-      },
-      {
-        "dimension": "Findable",
-        "label": "Persistent identifier",
-        "priority": "essential",
-        "level": "partial",
-        "fix": "Declare a persistent identifier (DOI / Handle), not just a repository URL.",
-        "points_available": 2.5
-      },
       {
         "dimension": "Interoperable",
         "label": "Workflow language",
@@ -102,22 +70,6 @@
         "level": "absent",
         "fix": "Declare the workflow language (Python, Snakemake, Nextflow, \u2026).",
         "points_available": 6.67
-      },
-      {
-        "dimension": "Interoperable",
-        "label": "Related links",
-        "priority": "important",
-        "level": "absent",
-        "fix": "Link related entities (datasets, publications) via typed relations.",
-        "points_available": 6.67
-      },
-      {
-        "dimension": "Accessible",
-        "label": "Access level",
-        "priority": "important",
-        "level": "absent",
-        "fix": "Declare the access level using a controlled vocabulary (open/restricted/embargoed).",
-        "points_available": 3.75
       },
       {
         "dimension": "Reproducible",

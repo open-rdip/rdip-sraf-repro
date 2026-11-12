@@ -32,15 +32,15 @@
 
 ### Spearman correlation — FAIR-R vs outcome (RQ4)
 
-- resolve_success: rho=+0.155, p=0.154  (n=86)
-- build_success: rho=+0.099, p=0.364  (n=86)
+- resolve_success: rho=+0.199, p=0.066  (n=86)
+- build_success: rho=+0.144, p=0.185  (n=86)
 
 ### Per-dimension Spearman — FAIR-R dimensions vs outcome (RQ4 diagnosis)
 
 | dimension | rho (resolve) | p | rho (build) | p |
 |---|---:|---:|---:|---:|
-| Accessible | -- | -- | -- | -- |
-| Findable | +0.000 | 1.000 | +0.000 | 1.000 |
-| Interoperable | +0.018 | 0.869 | +0.007 | 0.948 |
-| Reproducible | +0.028 | 0.799 | -0.021 | 0.844 |
-| Reusable | +0.244 | 0.024 * | +0.209 | 0.053 |
+| Accessible | +0.097 | 0.377 | +0.104 | 0.343 |
+| Findable | +0.056 | 0.606 | +0.060 | 0.580 |
+| Interoperable | +0.154 | 0.158 | +0.153 | 0.161 |
+| Reproducible | +0.079 | 0.470 | +0.031 | 0.776 |
+| Reusable | +0.256 | 0.017 * | +0.225 | 0.038 * |

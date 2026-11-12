@@ -47,14 +47,14 @@
     "notes": ""
   },
   "fair_r": {
-    "total_score": 35.29,
+    "total_score": 39.79,
     "tier": "poor",
     "dimension_scores": {
       "Findable": 7.5,
       "Accessible": 5.62,
       "Interoperable": 6.67,
       "Reusable": 5.0,
-      "Reproducible": 10.5
+      "Reproducible": 15.0
     },
     "recommendations": [
       {
@@ -123,14 +123,6 @@
       },
       {
         "dimension": "Reproducible",
-        "label": "Data provenance (R3)",
-        "priority": "\u2014",
-        "level": "absent",
-        "fix": "Record dataset identity, train/val/test splits, preprocessing, and evaluation results.",
-        "points_available": 9.0
-      },
-      {
-        "dimension": "Reproducible",
         "label": "Computational environment (R1)",
         "priority": "\u2014",
         "level": "partial",
@@ -143,6 +135,14 @@
         "priority": "\u2014",
         "level": "partial",
         "fix": "Declare random seeds, hyperparameters, and methods/algorithms.",
+        "points_available": 4.5
+      },
+      {
+        "dimension": "Reproducible",
+        "label": "Data provenance (R3)",
+        "priority": "\u2014",
+        "level": "partial",
+        "fix": "Record dataset identity, train/val/test splits, preprocessing, and evaluation results.",
         "points_available": 4.5
       }
     ]
