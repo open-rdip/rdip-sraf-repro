@@ -138,3 +138,16 @@ def test_fewer_graphs_than_expected_is_refused(pool, tmp_path):
     with pytest.raises(SystemExit) as e:
         pool._check_snapshot(str(tmp_path))
     assert "expected 95" in str(e.value)
+
+
+def test_verify_refuses_to_rerun_on_an_already_pooled_study(pool, tmp_path, monkeypatch):
+    """Shipped broken 12 Nov. `verify` captures 'before' from the live store,
+    so a second call captured the pooled graph and 'restored' study001 to 759
+    triples instead of 251, reporting success. Only the snapshot saved it."""
+    monkeypatch.setattr(pool, "MARK_DIR", str(tmp_path))
+    (tmp_path / "study001__grok-4-7.pooled").write_text("{}")
+    args = types.SimpleNamespace(study="study001", models=None, restore=True)
+    with pytest.raises(SystemExit) as e:
+        pool.cmd_verify(args)
+    assert "already pooled" in str(e.value)
+    assert "restore --snapshot" in str(e.value)

@@ -214,6 +214,20 @@ def cmd_verify(args) -> int:
     """
     sid = args.study
     uri = canonical(sid)
+    # `before` is whatever is in the store RIGHT NOW. If this study has already
+    # been pooled, that is the pooled graph, and --restore would faithfully
+    # restore the pooled state while reporting success. Observed 12 Nov: the
+    # second invocation "restored" study001 to 759 triples instead of 251.
+    # verify is a single atomic call, not two.
+    done = glob.glob(os.path.join(MARK_DIR, f"{sid}__*.pooled"))
+    if done:
+        models = ", ".join(os.path.basename(f).split("__")[1][:-7] for f in done)
+        sys.exit(
+            f"{sid} is already pooled ({models}).\n"
+            f"  'before' would be the pooled graph, so --restore here would be a\n"
+            f"  no-op that reports success. Restore from the snapshot instead:\n"
+            f"    python -m analysis.pool_extractors restore "
+            f"--snapshot <dir> --study {sid}")
     before_g = fetch_graph(uri)
     before_ttl = before_g.serialize(format="turtle")
     print(f"  {sid}: {len(before_g)} triples before\n")
